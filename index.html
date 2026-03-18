@@ -437,4 +437,862 @@
   .founder-content h2 { font-family: var(--font-display); font-size: 34px; font-weight: 800; line-height: 1.2; color: var(--text); margin-bottom: 16px; }
   .founder-content h2 span { color: var(--blue); }
   .founder-content p { font-size: 16px; color: var(--text-3); line-height: 1.8; margin-bottom: 16px; }
-  .founder-highlights { 
+  .founder-highlights { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 24px; }
+  .fh-item {
+    background: white; border: 1.5px solid var(--border); border-radius: var(--radius);
+    padding: 16px; display: flex; align-items: flex-start; gap: 12px;
+    box-shadow: var(--shadow-sm);
+  }
+  .fh-icon { font-size: 22px; flex-shrink: 0; }
+  .fh-text { font-size: 13px; font-weight: 600; color: var(--text-2); line-height: 1.4; }
+
+  /* ============ MISSION ============ */
+  .mission { background: white; }
+  .mvp-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .mvp-card {
+    border-radius: var(--radius-lg); padding: 36px 28px; text-align: center;
+    transition: all 0.25s;
+  }
+  .mvp-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); }
+  .mvp-card.blue { background: linear-gradient(135deg, #eff6ff, #dbeafe); border: 1.5px solid #bfdbfe; }
+  .mvp-card.amber { background: linear-gradient(135deg, #fffbeb, #fef3c7); border: 1.5px solid #fde68a; }
+  .mvp-card.green { background: linear-gradient(135deg, #f0fdf4, #dcfce7); border: 1.5px solid #bbf7d0; }
+  .mvp-icon { font-size: 44px; margin-bottom: 20px; }
+  .mvp-title { font-family: var(--font-display); font-size: 22px; font-weight: 800; color: var(--text); margin-bottom: 12px; }
+  .mvp-desc { font-size: 15px; color: var(--text-3); line-height: 1.7; }
+
+  /* ============ FAQ ============ */
+  .faq { background: var(--surface); }
+  .faq-list { max-width: 780px; margin: 0 auto; }
+  .faq-item {
+    background: white; border: 1.5px solid var(--border);
+    border-radius: var(--radius); margin-bottom: 12px; overflow: hidden;
+  }
+  .faq-q {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 20px 24px; cursor: pointer; gap: 16px;
+    transition: background 0.2s;
+  }
+  .faq-q:hover { background: var(--blue-xlight); }
+  .faq-q-text { font-weight: 600; font-size: 16px; color: var(--text); }
+  .faq-icon {
+    width: 28px; height: 28px; border-radius: 50%;
+    background: var(--blue-xlight); color: var(--blue);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px; flex-shrink: 0; transition: transform 0.3s, background 0.2s;
+    font-weight: 300;
+  }
+  .faq-item.open .faq-icon { transform: rotate(45deg); background: var(--blue); color: white; }
+  .faq-a {
+    max-height: 0; overflow: hidden;
+    transition: max-height 0.35s cubic-bezier(0.4,0,0.2,1), padding 0.35s;
+  }
+  .faq-a-inner { padding: 0 24px 20px; font-size: 15px; color: var(--text-3); line-height: 1.75; }
+  .faq-item.open .faq-a { max-height: 300px; }
+
+    /* ============ CONTACT ============ */
+  .contact { background: white; }
+  .contact-inner {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
+  }
+  .contact-info h2 { font-family: var(--font-display); font-size: 36px; font-weight: 800; color: var(--text); margin-bottom: 14px; }
+  .contact-info h2 span { color: var(--blue); }
+  .contact-info p { font-size: 16px; color: var(--text-3); line-height: 1.75; margin-bottom: 32px; }
+  .contact-emails { display: flex; flex-direction: column; gap: 14px; margin-bottom: 28px; }
+  .contact-email-item {
+    display: flex; align-items: center; gap: 14px;
+    background: var(--surface); border: 1.5px solid var(--border);
+    border-radius: var(--radius); padding: 14px 18px;
+    transition: border-color 0.2s;
+  }
+  .contact-email-item:hover { border-color: var(--blue); }
+  .email-icon {
+    width: 38px; height: 38px; background: var(--blue-xlight);
+    border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 18px;
+  }
+  .email-label { font-size: 11px; color: var(--text-4); font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; }
+  .email-addr { font-size: 15px; font-weight: 600; color: var(--blue); }
+
+  .contact-card {
+    background: linear-gradient(135deg, var(--blue) 0%, #1e40af 100%);
+    border-radius: var(--radius-xl); padding: 44px 36px;
+    box-shadow: var(--shadow-blue); text-align: center;
+  }
+  .contact-card-icon { font-size: 52px; margin-bottom: 20px; }
+  .contact-card h3 { font-family: var(--font-display); font-size: 26px; font-weight: 800; color: white; margin-bottom: 10px; }
+  .contact-card p { font-size: 15px; color: rgba(255,255,255,0.8); margin-bottom: 28px; line-height: 1.7; }
+  .btn-white {
+    background: white; color: var(--blue); font-weight: 700; font-size: 15px;
+    padding: 13px 32px; border-radius: var(--radius-sm);
+    transition: all 0.2s; display: inline-block; box-shadow: var(--shadow);
+  }
+  .btn-white:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+   ============ FOOTER ============ */
+  .site-footer {
+    background: #0f172a; padding: 72px 0 0;
+  }
+  .footer-top {
+    display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 56px;
+  }
+  .footer-brand .logo { margin-bottom: 16px; }
+  .footer-brand .logo-name { color: white; }
+  .footer-brand .logo-tagline-small { color: #475569; }
+  .footer-brand p { font-size: 14px; color: #64748b; line-height: 1.75; max-width: 280px; margin-bottom: 24px; }
+  .footer-socials { display: flex; gap: 10px; }
+  .social-btn {
+    width: 36px; height: 36px; border-radius: 8px;
+    background: rgba(255,255,255,0.08); display: flex; align-items: center; justify-content: center;
+    color: #94a3b8; font-size: 16px; transition: all 0.2s;
+  }
+  .social-btn:hover { background: var(--blue); color: white; }
+
+  .footer-col h4 {
+    font-family: var(--font-display); font-size: 14px; font-weight: 700;
+    color: white; margin-bottom: 18px; letter-spacing: 0.04em;
+  }
+  .footer-col ul { display: flex; flex-direction: column; gap: 10px; }
+  .footer-col ul a { font-size: 14px; color: #64748b; transition: color 0.2s; }
+  .footer-col ul a:hover { color: #93c5fd; }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.07);
+    padding: 24px 0;
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 16px;
+  }
+  .footer-copy { font-size: 13px; color: #475569; }
+  .footer-copy span { color: #64748b; }
+  .footer-legal { display: flex; gap: 20px; }
+  .footer-legal a { font-size: 13px; color: #475569; transition: color 0.2s; }
+  .footer-legal a:hover { color: #93c5fd; }
+
+  /* ============ BACK TO TOP ============ */
+  .back-to-top {
+    position: fixed; bottom: 28px; right: 28px; z-index: 500;
+    width: 44px; height: 44px; background: var(--blue); color: white;
+    border-radius: 12px; display: flex; align-items: center; justify-content: center;
+    box-shadow: var(--shadow-blue); cursor: pointer; font-size: 18px;
+    transition: all 0.3s; opacity: 0; pointer-events: none;
+    transform: translateY(16px);
+  }
+  .back-to-top.visible { opacity: 1; pointer-events: auto; transform: translateY(0); }
+  .back-to-top:hover { transform: translateY(-3px); box-shadow: 0 12px 36px rgba(37,99,235,0.35); }
+
+  /* ============ RESPONSIVE ============ */
+  @media (max-width: 1100px) {
+    .cat-grid { grid-template-columns: repeat(2, 1fr); }
+    .tools-grid { grid-template-columns: repeat(2, 1fr); }
+    .footer-top { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 900px) {
+    .desktop-nav, .header-cta { display: none; }
+    .hamburger { display: flex; }
+    .hero-inner { grid-template-columns: 1fr; }
+    .hero-visual { display: none; }
+    .hero { padding: 60px 0 72px; }
+    .problems-grid { grid-template-columns: 1fr 1fr; }
+    .mvp-grid { grid-template-columns: 1fr; }
+    .founder-inner { grid-template-columns: 1fr; }
+    .contact-inner { grid-template-columns: 1fr; }
+    .latest-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 600px) {
+    .cat-grid, .tools-grid, .latest-grid, .problems-grid { grid-template-columns: 1fr; }
+    .footer-top { grid-template-columns: 1fr; }
+    .section { padding: 60px 0; }
+    .hero-stats { gap: 20px; }
+    .founder-highlights { grid-template-columns: 1fr; }
+    .footer-bottom { flex-direction: column; text-align: center; }
+  }
+</style>
+</head>
+<body>
+  <!-- HEADER -->
+<header class="site-header">
+  <div class="container">
+    <div class="header-inner">
+      <a href="#" class="logo">
+        <div class="logo-icon">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+        </div>
+        <div class="logo-text">
+          <span class="logo-name">Raj<span>Daily</span>Tools</span>
+          <span class="logo-tagline-small">Smart Tools for Daily Life</span>
+        </div>
+      </a>
+      <nav class="desktop-nav">
+        <a href="#">Home</a>
+        <a href="#categories">Categories</a>
+        <a href="#popular">Popular</a>
+        <a href="#latest">Latest</a>
+        <a href="#about">About</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a href="#categories" class="header-cta">Explore Tools →</a>
+      <button class="hamburger" id="menuBtn" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- MOBILE DRAWER -->
+<div class="drawer-overlay" id="drawerOverlay"></div>
+<div class="mobile-drawer" id="mobileDrawer">
+  <div class="drawer-head">
+    <div class="logo">
+      <div class="logo-icon">
+        <svg viewBox="0 0 24 24" fill="white"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+      </div>
+      <div class="logo-text"><span class="logo-name">Raj<span>Daily</span>Tools</span></div>
+    </div>
+    <button class="drawer-close" id="drawerClose">✕</button>
+  </div>
+  <nav class="mobile-nav">
+    <a href="#" onclick="closeDrawer()">🏠 Home</a>
+    <a href="#categories" onclick="closeDrawer()">🗂️ Categories</a>
+    <a href="#popular" onclick="closeDrawer()">⭐ Popular Tools</a>
+    <a href="#latest" onclick="closeDrawer()">🆕 Latest Tools</a>
+    <a href="#about" onclick="closeDrawer()">👤 About Founder</a>
+    <a href="#faq" onclick="closeDrawer()">❓ FAQ</a>
+    <a href="#contact" onclick="closeDrawer()">📬 Contact</a>
+  </nav>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="dot"></span>
+          30,000+ Tools Being Built &nbsp;•&nbsp; Free Forever
+        </div>
+        <h1>Your Daily Life<br><span>Problem Solver</span></h1>
+        <p class="hero-tagline">Smart Tools for Daily Life Challenges</p>
+        <p class="hero-desc">RajDailyTools is India's most ambitious free online tools platform. Built for students, professionals, and everyday problem-solvers. Fast, accurate, and completely free.</p>
+
+        <div class="hero-search">
+          <div class="hero-search-icon">
+            <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </div>
+          <input type="text" id="searchInput" placeholder="Search 30,000+ tools… e.g. EMI Calculator">
+          <button class="hero-search-btn" onclick="handleSearch()">Search</button>
+        </div>
+
+        <div class="hero-actions">
+          <a href="#categories" class="btn-primary">Browse All Categories →</a>
+          <a href="#popular" class="btn-secondary">⭐ Popular Tools</a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat"><span class="stat-num">30,000<span>+</span></span><span class="stat-label">Tools Planned</span></div>
+          <div class="stat"><span class="stat-num">8<span>+</span></span><span class="stat-label">Categories</span></div>
+          <div class="stat"><span class="stat-num">100<span>%</span></span><span class="stat-label">Free to Use</span></div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-dashboard">
+          <div class="hd-topbar">
+            <div class="hd-dot r"></div><div class="hd-dot y"></div><div class="hd-dot g"></div>
+            <span class="hd-title">RajDailyTools Dashboard</span>
+          </div>
+          <div class="hd-search">
+            <span style="font-size:16px">🔍</span>
+            <span>Search tools…</span>
+          </div>
+          <div class="hd-tools">
+            <div class="hd-tool"><div class="hd-tool-icon">🧮</div><div class="hd-tool-name">EMI Calc</div></div>
+            <div class="hd-tool"><div class="hd-tool-icon">📊</div><div class="hd-tool-name">% Calc</div></div>
+            <div class="hd-tool"><div class="hd-tool-icon">🎂</div><div class="hd-tool-name">Age Calc</div></div>
+            <div class="hd-tool"><div class="hd-tool-icon">📝</div><div class="hd-tool-name">Word Count</div></div>
+            <div class="hd-tool"><div class="hd-tool-icon">💧</div><div class="hd-tool-name">Water Intake</div></div>
+            <div class="hd-tool"><div class="hd-tool-icon">🔄</div><div class="hd-tool-name">Converter</div></div>
+            <div class="hd-tool"><div class="hd-tool-icon">📄</div><div class="hd-tool-name">PDF Tools</div></div>
+            <div class="hd-tool"><div class="hd-tool-icon">🎓</div><div class="hd-tool-name">GPA Calc</div></div>
+            <div class="hd-tool"><div class="hd-tool-icon">❤️</div><div class="hd-tool-name">BMI Calc</div></div>
+          </div>
+          <div class="hd-bar w80"></div>
+          <div class="hd-bar w60"></div>
+          <div class="hd-bar w70"></div>
+        </div>
+        <div class="hero-float-card top">
+          <div class="float-icon">⚡</div>
+          <div class="float-text">
+            <span class="float-label">Instant Results</span>
+            <span class="float-sub">No login required</span>
+          </div>
+        </div>
+        <div class="hero-float-card bottom">
+          <div class="float-icon">🇮🇳</div>
+          <div class="float-text">
+            <span class="float-label">Made in India</span>
+            <span class="float-sub">For India & World</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-inner" id="tickerInner">
+    <span>🧮 EMI Calculator</span><span class="ticker-sep">•</span>
+    <span>📊 Percentage Calculator</span><span class="ticker-sep">•</span>
+    <span>🎂 Age Calculator</span><span class="ticker-sep">•</span>
+    <span>📝 Word Counter</span><span class="ticker-sep">•</span>
+    <span>💧 Water Intake Tracker</span><span class="ticker-sep">•</span>
+    <span>🔄 Unit Converter</span><span class="ticker-sep">•</span>
+    <span>🎓 GPA Calculator</span><span class="ticker-sep">•</span>
+    <span>📄 PDF to Image</span><span class="ticker-sep">•</span>
+    <span>❤️ BMI Calculator</span><span class="ticker-sep">•</span>
+    <span>💰 SIP Calculator</span><span class="ticker-sep">•</span>
+    <span>📐 Area Calculator</span><span class="ticker-sep">•</span>
+    <span>🌡️ Temperature Converter</span><span class="ticker-sep">•</span>
+    <span>🧮 EMI Calculator</span><span class="ticker-sep">•</span>
+    <span>📊 Percentage Calculator</span><span class="ticker-sep">•</span>
+    <span>🎂 Age Calculator</span><span class="ticker-sep">•</span>
+    <span>📝 Word Counter</span><span class="ticker-sep">•</span>
+    <span>💧 Water Intake Tracker</span><span class="ticker-sep">•</span>
+    <span>🔄 Unit Converter</span><span class="ticker-sep">•</span>
+    <span>🎓 GPA Calculator</span><span class="ticker-sep">•</span>
+    <span>📄 PDF to Image</span><span class="ticker-sep">•</span>
+    <span>❤️ BMI Calculator</span><span class="ticker-sep">•</span>
+    <span>💰 SIP Calculator</span><span class="ticker-sep">•</span>
+  </div>
+</div>
+
+<!-- CATEGORIES -->
+<section class="section categories" id="categories">
+  <div class="container">
+    <div class="section-header center">
+      <div class="section-label">All Categories</div>
+      <h2 class="section-heading">Tools for <span>Every Need</span></h2>
+      <p class="section-sub">From students to professionals — we have the right tool for every daily challenge you face.</p>
+    </div>
+    <div class="cat-grid">
+      <a href="/education-tools" class="cat-card" style="--cat-color:#2563eb;--cat-bg:#eff6ff;">
+        <div class="cat-icon-wrap">🎓</div>
+        <div class="cat-title">Education Tools</div>
+        <div class="cat-desc">GPA calculator, grade tracker, study planners, and tools for students at every level.</div>
+        <span class="cat-link">Explore Tools <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="/finance-tools" class="cat-card" style="--cat-color:#f59e0b;--cat-bg:#fffbeb;">
+        <div class="cat-icon-wrap">💰</div>
+        <div class="cat-title">Finance Tools</div>
+        <div class="cat-desc">EMI calculator, SIP planner, loan interest, tax estimator, and money management tools.</div>
+        <span class="cat-link">Explore Tools <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="/converter-tools" class="cat-card" style="--cat-color:#10b981;--cat-bg:#f0fdf4;">
+        <div class="cat-icon-wrap">🔄</div>
+        <div class="cat-title">Converter Tools</div>
+        <div class="cat-desc">Unit converter, currency converter, temperature, length, weight, and more conversions.</div>
+        <span class="cat-link">Explore Tools <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="/daily-utility-tools" class="cat-card" style="--cat-color:#8b5cf6;--cat-bg:#f5f3ff;">
+        <div class="cat-icon-wrap">⚙️</div>
+        <div class="cat-title">Daily Utility Tools</div>
+        <div class="cat-desc">Password generator, QR code maker, random picker, timer, and essential everyday tools.</div>
+        <span class="cat-link">Explore Tools <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="/calculator-tools" class="cat-card" style="--cat-color:#ef4444;--cat-bg:#fef2f2;">
+        <div class="cat-icon-wrap">🧮</div>
+        <div class="cat-title">Calculator Tools</div>
+        <div class="cat-desc">Scientific calculator, percentage, discount, tip calculator, and 100+ math tools.</div>
+        <span class="cat-link">Explore Tools <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="/health-tools" class="cat-card" style="--cat-color:#ec4899;--cat-bg:#fdf2f8;">
+        <div class="cat-icon-wrap">❤️</div>
+        <div class="cat-title">Health Tools</div>
+        <div class="cat-desc">BMI calculator, calorie tracker, water intake, sleep tracker, and wellness tools.</div>
+        <span class="cat-link">Explore Tools <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="/text-tools" class="cat-card" style="--cat-color:#0ea5e9;--cat-bg:#f0f9ff;">
+        <div class="cat-icon-wrap">📝</div>
+        <div class="cat-title">Text Tools</div>
+        <div class="cat-desc">Word counter, case converter, text formatter, lorem ipsum generator, and writing tools.</div>
+        <span class="cat-link">Explore Tools <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="/other-tools" class="cat-card" style="--cat-color:#64748b;--cat-bg:#f8fafc;">
+        <div class="cat-icon-wrap">🛠️</div>
+        <div class="cat-title">Other Useful Tools</div>
+        <div class="cat-desc">PDF tools, image compressor, color picker, base64 encoder, and many more utilities.</div>
+        <span class="cat-link">Explore Tools <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- POPULAR TOOLS -->
+<section class="section popular" id="popular">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Most Used</div>
+      <h2 class="section-heading">Popular <span>Tools</span></h2>
+      <p class="section-sub">The tools millions of users rely on every single day to solve real problems.</p>
+    </div>
+    <div class="tools-grid">
+      <a href="/emi-calculator" class="tool-card">
+        <div class="tool-card-icon">🧮</div>
+        <div class="tool-card-title">EMI Calculator</div>
+        <div class="tool-card-desc">Calculate your monthly EMI for home, car, or personal loans instantly.</div>
+        <div class="tool-card-meta"><span class="tool-tag">Finance</span><span class="tool-arrow">→</span></div>
+      </a>
+      <a href="/percentage-calculator" class="tool-card">
+        <div class="tool-card-icon">📊</div>
+        <div class="tool-card-title">Percentage Calculator</div>
+        <div class="tool-card-desc">Find percentages, discounts, increase/decrease values in seconds.</div>
+        <div class="tool-card-meta"><span class="tool-tag">Calculator</span><span class="tool-arrow">→</span></div>
+      </a>
+      <a href="/age-calculator" class="tool-card">
+        <div class="tool-card-icon">🎂</div>
+        <div class="tool-card-title">Age Calculator</div>
+        <div class="tool-card-desc">Calculate exact age in years, months, days, hours from any birth date.</div>
+        <div class="tool-card-meta"><span class="tool-tag">Utility</span><span class="tool-arrow">→</span></div>
+      </a>
+      <a href="/unit-converter" class="tool-card">
+        <div class="tool-card-icon">🔄</div>
+        <div class="tool-card-title">Unit Converter</div>
+        <div class="tool-card-desc">Convert length, weight, temperature, area, speed, and 50+ unit types.</div>
+        <div class="tool-card-meta"><span class="tool-tag">Converter</span><span class="tool-arrow">→</span></div>
+      </a>
+      <a href="/gpa-calculator" class="tool-card">
+        <div class="tool-card-icon">🎓</div>
+        <div class="tool-card-title">GPA Calculator</div>
+        <div class="tool-card-desc">Calculate your semester and cumulative GPA with custom grading scales.</div>
+        <div class="tool-card-meta"><span class="tool-tag">Education</span><span class="tool-arrow">→</span></div>
+      </a>
+      <a href="/word-counter" class="tool-card">
+        <div class="tool-card-icon">📝</div>
+        <div class="tool-card-title">Word Counter</div>
+        <div class="tool-card-desc">Count words, characters, sentences, and reading time for any text.</div>
+        <div class="tool-card-meta"><span class="tool-tag">Text</span><span class="tool-arrow">→</span></div>
+      </a>
+      <a href="/pdf-to-image" class="tool-card">
+        <div class="tool-card-icon">📄</div>
+        <div class="tool-card-title">PDF to Image</div>
+        <div class="tool-card-desc">Convert PDF pages into high-quality PNG or JPG images instantly.</div>
+        <div class="tool-card-meta"><span class="tool-tag">PDF</span><span class="tool-arrow">→</span></div>
+      </a>
+      <a href="/water-intake-calculator" class="tool-card">
+        <div class="tool-card-icon">💧</div>
+        <div class="tool-card-title">Water Intake Calculator</div>
+        <div class="tool-card-desc">Find your daily water requirement based on weight, activity & climate.</div>
+        <div class="tool-card-meta"><span class="tool-tag">Health</span><span class="tool-arrow">→</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- LATEST TOOLS -->
+<section class="section latest" id="latest">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Just Launched</div>
+      <h2 class="section-heading">Latest <span>Tools</span></h2>
+      <p class="section-sub">Freshly built and just launched — be the first to use these new tools.</p>
+    </div>
+    <div class="latest-grid">
+      <a href="/sip-calculator" class="latest-card">
+        <span class="new-badge">NEW</span>
+        <div class="latest-card-icon">📈</div>
+        <div class="latest-card-title">SIP Calculator</div>
+        <div class="latest-card-desc">Plan your mutual fund investments and see projected returns over time with our advanced SIP tool.</div>
+        <div class="latest-card-footer">
+          <span class="latest-date">March 2025</span>
+          <span class="latest-use">Use Now →</span>
+        </div>
+      </a>
+      <a href="/bmi-calculator" class="latest-card">
+        <span class="new-badge">NEW</span>
+        <div class="latest-card-icon">⚖️</div>
+        <div class="latest-card-title">BMI Calculator</div>
+        <div class="latest-card-desc">Calculate your Body Mass Index and get personalized health status with Indian BMI standards.</div>
+        <div class="latest-card-footer">
+          <span class="latest-date">March 2025</span>
+          <span class="latest-use">Use Now →</span>
+        </div>
+      </a>
+      <a href="/qr-generator" class="latest-card">
+        <span class="new-badge">NEW</span>
+        <div class="latest-card-icon">📱</div>
+        <div class="latest-card-title">QR Code Generator</div>
+        <div class="latest-card-desc">Generate custom QR codes for URLs, text, contact cards, WiFi, and more in seconds.</div>
+        <div class="latest-card-footer">
+          <span class="latest-date">Feb 2025</span>
+          <span class="latest-use">Use Now →</span>
+        </div>
+      </a>
+      <a href="/password-generator" class="latest-card">
+        <span class="new-badge">NEW</span>
+        <div class="latest-card-icon">🔐</div>
+        <div class="latest-card-title">Password Generator</div>
+        <div class="latest-card-desc">Generate strong, random passwords with custom length and character options instantly.</div>
+        <div class="latest-card-footer">
+          <span class="latest-date">Feb 2025</span>
+          <span class="latest-use">Use Now →</span>
+        </div>
+      </a>
+      <a href="/tax-calculator" class="latest-card">
+        <span class="new-badge">NEW</span>
+        <div class="latest-card-icon">🧾</div>
+        <div class="latest-card-title">Income Tax Calculator</div>
+        <div class="latest-card-desc">Calculate your income tax for FY 2024-25 under both old and new tax regimes easily.</div>
+        <div class="latest-card-footer">
+          <span class="latest-date">Jan 2025</span>
+          <span class="latest-use">Use Now →</span>
+        </div>
+      </a>
+      <a href="/color-picker" class="latest-card">
+        <span class="new-badge">NEW</span>
+        <div class="latest-card-icon">🎨</div>
+        <div class="latest-card-title">Color Picker & Converter</div>
+        <div class="latest-card-desc">Pick any color and convert between HEX, RGB, HSL, CMYK formats with live preview.</div>
+        <div class="latest-card-footer">
+          <span class="latest-date">Jan 2025</span>
+          <span class="latest-use">Use Now →</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- DAILY PROBLEMS -->
+<section class="section problems">
+  <div class="container">
+    <div class="section-header center">
+      <div class="section-label">Why RajDailyTools</div>
+      <h2 class="section-heading" style="color:white;">We Solve <span style="color:#93c5fd;">Real Problems</span></h2>
+      <p class="section-sub" style="color:#94a3b8;margin:0 auto;">Every tool on this platform is built to solve a specific challenge that people face in their real daily lives.</p>
+    </div>
+    <div class="problems-grid">
+      <div class="problem-card">
+        <div class="problem-icon">🎓</div>
+        <div class="problem-title">Students Struggle Daily</div>
+        <div class="problem-desc">From calculating CGPA to converting units in physics problems — students need fast, accurate tools at fingertips. We built exactly that.</div>
+      </div>
+      <div class="problem-card">
+        <div class="problem-icon">💼</div>
+        <div class="problem-title">Professionals Need Speed</div>
+        <div class="problem-desc">Working professionals need quick calculations — EMI, tax, salary breakdowns — without opening complex spreadsheets every time.</div>
+      </div>
+      <div class="problem-card">
+        <div class="problem-icon">🏠</div>
+        <div class="problem-title">Families Plan Finances</div>
+        <div class="problem-desc">Indian families making important financial decisions need trustworthy, easy-to-use tools for loans, savings, and investments.</div>
+      </div>
+      <div class="problem-card">
+        <div class="problem-icon">📲</div>
+        <div class="problem-title">Always on Mobile</div>
+        <div class="problem-desc">Our tools are fully mobile-optimized. Use them anywhere, anytime — no app download, no login, just open and solve.</div>
+      </div>
+      <div class="problem-card">
+        <div class="problem-icon">🌐</div>
+        <div class="problem-title">Language Barrier</div>
+        <div class="problem-desc">Many tools online are in English only. We're building towards Hindi + multilingual support to serve Bharat's 1.4 billion people.</div>
+      </div>
+      <div class="problem-card">
+        <div class="problem-icon">⚡</div>
+        <div class="problem-title">Speed is Everything</div>
+        <div class="problem-desc">Slow, ad-heavy websites waste time. RajDailyTools is engineered to be lightning-fast, giving you results in under a second.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT FOUNDER -->
+<section class="section founder" id="about">
+  <div class="container">
+    <div class="founder-inner">
+      <div class="founder-visual">
+        <div class="founder-avatar">👨‍💻</div>
+        <div class="founder-name">Raj Bhai</div>
+        <div class="founder-role">Founder & Visionary, RajDailyTools</div>
+        <div class="founder-badges">
+          <div class="founder-badge">🎓 BSc Physics Graduate</div>
+          <div class="founder-badge">💻 COPA ITI Certified</div>
+          <div class="founder-badge">🇮🇳 Building for Bharat</div>
+          <div class="founder-badge">🎯 Vision: 30,000+ Tools</div>
+        </div>
+      </div>
+      <div class="founder-content">
+        <div class="section-label">About the Founder</div>
+        <h2>Built by Someone Who<br><span>Understands Your Problems</span></h2>
+        <p>Hi, I'm Raj Bhai — a BSc Physics graduate and COPA ITI certified professional from India. I built RajDailyTools because I faced the same frustrations millions of students and working professionals face every day: no single, trustworthy, fast, and free platform to solve daily life calculations.</p>
+        <p>My vision is bold but clear: build 30,000+ free tools that solve real problems for real people — students, professionals, homemakers, and small business owners across India and the world.</p>
+        <p>Every tool on this platform is built with love, precision, and a deep understanding of what people actually need. No bloatware, no paywalls, no nonsense.</p>
+        <div class="founder-highlights">
+          <div class="fh-item"><div class="fh-icon">🚀</div><div class="fh-text">30,000+ Tools Vision for a billion-dollar platform</div></div>
+          <div class="fh-item"><div class="fh-icon">🎯</div><div class="fh-text">100% Free philosophy — no hidden charges ever</div></div>
+          <div class="fh-item"><div class="fh-icon">🇮🇳</div><div class="fh-text">Made in India for India and the global audience</div></div>
+          <div class="fh-item"><div class="fh-icon">📐</div><div class="fh-text">Physics-trained precision in every calculation</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MISSION / VISION / PROMISE -->
+<section class="section mission">
+  <div class="container">
+    <div class="section-header center">
+      <div class="section-label">Our Foundations</div>
+      <h2 class="section-heading">Mission. Vision. <span>Promise.</span></h2>
+      <p class="section-sub">Three pillars that guide every tool we build and every decision we make.</p>
+    </div>
+    <div class="mvp-grid">
+      <div class="mvp-card blue">
+        <div class="mvp-icon">🎯</div>
+        <div class="mvp-title">Our Mission</div>
+        <div class="mvp-desc">To democratize access to powerful, accurate, and beautiful tools for every person in India and beyond — completely free, forever.</div>
+      </div>
+      <div class="mvp-card amber">
+        <div class="mvp-icon">🔭</div>
+        <div class="mvp-title">Our Vision</div>
+        <div class="mvp-desc">To build the world's largest free tools platform with 30,000+ tools that solve every daily life problem of every Indian citizen and global user.</div>
+      </div>
+      <div class="mvp-card green">
+        <div class="mvp-icon">🤝</div>
+        <div class="mvp-title">Our Promise</div>
+        <div class="mvp-desc">Zero paywalls. Zero mandatory logins. Zero data selling. RajDailyTools will always be free, fast, and trustworthy. That's our commitment to you.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section-sm faq" id="faq">
+  <div class="container">
+    <div class="section-header center">
+      <div class="section-label">Got Questions?</div>
+      <h2 class="section-heading">Frequently Asked <span>Questions</span></h2>
+    </div>
+    <div class="faq-list" id="faqList">
+      <div class="faq-item">
+        <div class="faq-q"><span class="faq-q-text">Is RajDailyTools completely free to use?</span><span class="faq-icon">+</span></div>
+        <div class="faq-a"><div class="faq-a-inner">Yes, absolutely! Every tool on RajDailyTools is 100% free. No subscriptions, no premium tiers, no hidden fees. We believe powerful tools should be accessible to everyone, especially students and people who can't afford expensive software.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><span class="faq-q-text">Do I need to create an account or login?</span><span class="faq-icon">+</span></div>
+        <div class="faq-a"><div class="faq-a-inner">No login or registration is required to use any tool. Just visit the tool page and start using it instantly. We respect your time and privacy — no forced sign-ups ever.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><span class="faq-q-text">Are the calculations accurate and reliable?</span><span class="faq-icon">+</span></div>
+        <div class="faq-a"><div class="faq-a-inner">Yes. Each tool is built by Raj Bhai — a BSc Physics graduate — with thorough testing and validation. We follow standard formulas and industry conventions. For critical financial decisions, we recommend cross-verifying with a certified professional.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><span class="faq-q-text">Does RajDailyTools work on mobile phones?</span><span class="faq-icon">+</span></div>
+        <div class="faq-a"><div class="faq-a-inner">Yes! Every tool is designed mobile-first. The entire platform is fully responsive and optimized for smartphones, tablets, and desktops. No app download needed — just open your browser and use.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><span class="faq-q-text">How many tools does RajDailyTools currently have?</span><span class="faq-icon">+</span></div>
+        <div class="faq-a"><div class="faq-a-inner">We are actively building and launching new tools every week. Our founder's vision is to reach 30,000+ tools across all categories. Check our Latest Tools section to see what's newly launched.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><span class="faq-q-text">Can I suggest a tool that should be built?</span><span class="faq-icon">+</span></div>
+        <div class="faq-a"><div class="faq-a-inner">Absolutely! We love user suggestions. Email us at contact@rajdailytools.com with your tool idea. If it solves a real problem for many people, we'll build it and credit you for the suggestion.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><span class="faq-q-text">Is my data safe when I use these tools?</span><span class="faq-icon">+</span></div>
+        <div class="faq-a"><div class="faq-a-inner">Yes. Most of our tools run entirely in your browser — your data never leaves your device. We don't collect, store, or sell personal data. Your privacy is our priority.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section contact" id="contact">
+  <div class="container">
+    <div class="contact-inner">
+      <div class="contact-info">
+        <div class="section-label">Get in Touch</div>
+        <h2>Have a Question or<br><span>Feedback for Us?</span></h2>
+        <p>We'd love to hear from you. Whether it's a tool suggestion, bug report, partnership inquiry, or just a hello — our team is here to help and respond within 24 hours.</p>
+        <div class="contact-emails">
+          <div class="contact-email-item">
+            <div class="email-icon">📧</div>
+            <div>
+              <div class="email-label">Support</div>
+              <a href="mailto:support@rajdailytools.com" class="email-addr">support@rajdailytools.com</a>
+            </div>
+          </div>
+          <div class="contact-email-item">
+            <div class="email-icon">📬</div>
+            <div>
+              <div class="email-label">General Contact</div>
+              <a href="mailto:contact@rajdailytools.com" class="email-addr">contact@rajdailytools.com</a>
+            </div>
+          </div>
+        </div>
+        <a href="mailto:support@rajdailytools.com" class="btn-primary" style="display:inline-flex;">Send Us a Message →</a>
+      </div>
+      <div class="contact-card">
+        <div class="contact-card-icon">💡</div>
+        <h3>Suggest a Tool</h3>
+        <p>Have an idea for a tool that solves a real problem? Share it with us and we'll consider building it for our growing library of 30,000+ tools.</p>
+        <a href="mailto:contact@rajdailytools.com?subject=Tool Suggestion" class="btn-white">Share Your Idea →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="logo">
+          <div class="logo-icon"><svg viewBox="0 0 24 24" fill="white"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+          <div class="logo-text">
+            <span class="logo-name">Raj<span>Daily</span>Tools</span>
+            <span class="logo-tagline-small">Smart Tools for Daily Life</span>
+          </div>
+        </div>
+        <p>India's most ambitious free online tools platform. Built by Raj Bhai with a vision of 30,000+ tools. Solving daily life problems, one tool at a time.</p>
+        <div class="footer-socials">
+          <a href="#" class="social-btn" title="Twitter">𝕏</a>
+          <a href="#" class="social-btn" title="YouTube">▶</a>
+          <a href="#" class="social-btn" title="Instagram">📷</a>
+          <a href="#" class="social-btn" title="Telegram">✈</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Categories</h4>
+        <ul>
+          <li><a href="/education-tools">Education Tools</a></li>
+          <li><a href="/finance-tools">Finance Tools</a></li>
+          <li><a href="/converter-tools">Converter Tools</a></li>
+          <li><a href="/calculator-tools">Calculator Tools</a></li>
+          <li><a href="/health-tools">Health Tools</a></li>
+          <li><a href="/text-tools">Text Tools</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Popular Tools</h4>
+        <ul>
+          <li><a href="/emi-calculator">EMI Calculator</a></li>
+          <li><a href="/percentage-calculator">Percentage Calculator</a></li>
+          <li><a href="/age-calculator">Age Calculator</a></li>
+          <li><a href="/unit-converter">Unit Converter</a></li>
+          <li><a href="/gpa-calculator">GPA Calculator</a></li>
+          <li><a href="/word-counter">Word Counter</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/about">About Us</a></li>
+          <li><a href="/blog">Blog</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="/privacy-policy">Privacy Policy</a></li>
+          <li><a href="/terms-of-service">Terms of Service</a></li>
+          <li><a href="/disclaimer">Disclaimer</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2025 <span>RajDailyTools</span>. All rights reserved. Made with ❤️ in India by Raj Bhai.</p>
+      <div class="footer-legal">
+        <a href="/privacy-policy">Privacy Policy</a>
+        <a href="/terms-of-service">Terms of Service</a>
+        <a href="/disclaimer">Disclaimer</a>
+        <a href="/sitemap">Sitemap</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- BACK TO TOP -->
+<button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">↑</button>
+
+<script>
+  // ── Mobile Drawer ──
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileDrawer = document.getElementById('mobileDrawer');
+  const drawerOverlay = document.getElementById('drawerOverlay');
+  const drawerClose = document.getElementById('drawerClose');
+
+  function openDrawer() {
+    mobileDrawer.classList.add('open');
+    drawerOverlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeDrawer() {
+    mobileDrawer.classList.remove('open');
+    drawerOverlay.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  menuBtn.addEventListener('click', openDrawer);
+  drawerClose.addEventListener('click', closeDrawer);
+  drawerOverlay.addEventListener('click', closeDrawer);
+
+  // ── FAQ Accordion ──
+  document.getElementById('faqList').addEventListener('click', function(e) {
+    const q = e.target.closest('.faq-q');
+    if (!q) return;
+    const item = q.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+
+  // ── Back to Top ──
+  const backToTop = document.getElementById('backToTop');
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 400) backToTop.classList.add('visible');
+    else backToTop.classList.remove('visible');
+  }, { passive: true });
+
+  // ── Search ──
+  function handleSearch() {
+    const q = document.getElementById('searchInput').value.trim();
+    if (q) {
+      alert('🔍 Searching for: "' + q + '"\n\nThis feature will redirect to search results in the live platform.');
+    }
+  }
+  document.getElementById('searchInput').addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') handleSearch();
+  });
+
+  // ── Smooth reveal on scroll ──
+  const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.cat-card, .tool-card, .latest-card, .problem-card, .mvp-card, .faq-item').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(22px)';
+    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    observer.observe(el);
+  });
+
+  // ── Active nav link highlight ──
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.desktop-nav a');
+  window.addEventListener('scroll', function() {
+    let current = '';
+    sections.forEach(sec => {
+      if (window.scrollY >= sec.offsetTop - 100) current = sec.getAttribute('id');
+    });
+    navLinks.forEach(a => {
+      a.style.color = '';
+      a.style.background = '';
+      if (a.getAttribute('href') === '#' + current) {
+        a.style.color = 'var(--blue)';
+        a.style.background = 'var(--blue-xlight)';
+      }
+    });
+  }, { passive: true });
+</script>
+</body>
+</html>
+  
