@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About RajDailyTools | Free Online Tools Platform</title>
+<meta name="description" content="Learn about RajDailyTools – built by Raj Bhai, a BSc Physics graduate with a vision to create 30,000+ free online tools for students, professionals, and everyday users across India and the globe.">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="About RajDailyTools | Free Online Tools Platform">
+<meta property="og:description" content="Built by someone who understands your daily problems. RajDailyTools — 30,000+ free tools for India and the world.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════════
+   DESIGN TOKENS — matches homepage exactly
+═══════════════════════════════════════════ */
+:root {
+  --blue:        #2563eb;
+  --blue-dark:   #1d4ed8;
+  --blue-light:  #3b82f6;
+  --blue-xlight: #eff6ff;
+  --blue-subtle: #dbeafe;
+  --accent:      #f59e0b;
+  --accent2:     #10b981;
+  --text:        #0f172a;
+  --text-2:      #334155;
+  --text-3:      #64748b;
+  --text-4:      #94a3b8;
+  --border:      #e2e8f0;
+  --surface:     #f8fafc;
+  --white:       #ffffff;
+  --shadow-sm:   0 1px 3px rgba(15,23,42,.06), 0 1px 2px rgba(15,23,42,.04);
+  --shadow:      0 4px 16px rgba(15,23,42,.08), 0 1px 4px rgba(15,23,42,.05);
+  --shadow-md:   0 8px 32px rgba(15,23,42,.10), 0 2px 8px rgba(15,23,42,.06);
+  --shadow-lg:   0 20px 60px rgba(15,23,42,.12), 0 4px 16px rgba(15,23,42,.07);
+  --shadow-blue: 0 8px 32px rgba(37,99,235,.18);
+  --radius:      14px;
+  --radius-sm:   8px;
+  --radius-lg:   20px;
+  --radius-xl:   28px;
+  --font-display:'Sora', sans-serif;
+  --font-body:   'DM Sans', sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  font-family: var(--font-body);
+  color: var(--text);
+  background: var(--white);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+button { cursor: pointer; border: none; background: none; font-family: var(--font-body); }
+img { display: block; max-width: 100%; }
+
+.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+.section     { padding: 88px 0; }
+.section-sm  { padding: 60px 0; }
+
+.section-label {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--font-display); font-size: 12px; font-weight: 600;
+  letter-spacing: .12em; text-transform: uppercase;
+  color: var(--blue); background: var(--blue-xlight);
+  padding: 6px 14px; border-radius: 100px; margin-bottom: 16px;
+}
+.section-label::before {
+  content: ''; width: 6px; height: 6px;
+  background: var(--blue); border-radius: 50%;
+}
+.section-heading {
+  font-family: var(--font-display);
+  font-size: clamp(26px, 4vw, 40px);
+  font-weight: 700; color: var(--text);
+  line-height: 1.2; margin-bottom: 14px;
+}
+.section-heading span { color: var(--blue); }
+.section-sub {
+  font-size: 17px; color: var(--text-3);
+  max-width: 560px; line-height: 1.7;
+}
+.section-header { margin-bottom: 48px; }
+.section-header.center { text-align: center; }
+.section-header.center .section-sub { margin: 0 auto; }
+
+/* ─── Buttons ─── */
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--blue); color: #fff;
+  font-family: var(--font-display); font-weight: 600; font-size: 15px;
+  padding: 13px 28px; border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-blue); transition: all .2s;
+}
+.btn-primary:hover {
+  background: var(--blue-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(37,99,235,.28);
+}
+.btn-secondary {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: #fff; color: var(--text);
+  font-family: var(--font-display); font-weight: 600; font-size: 15px;
+  padding: 13px 28px; border-radius: var(--radius-sm);
+  border: 1.5px solid var(--border);
+  box-shadow: var(--shadow-sm); transition: all .2s;
+}
+.btn-secondary:hover {
+  border-color: var(--blue); color: var(--blue);
+  transform: translateY(-1px);
+}
+
+/* ═══════════════════════════════════════════
+   HEADER — exact homepage clone
+═══════════════════════════════════════════ */
+.site-header {
+  position: sticky; top: 0; z-index: 1000;
+  background: rgba(255,255,255,.95);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+}
+.header-inner {
+  display: flex; align-items: center; justify-content: space-between;
+  height: 68px;
+}
+.logo {
+  display: flex; align-items: center; gap: 10px;
+  font-family: var(--font-display); font-weight: 800;
+}
+.logo-icon {
+  width: 38px; height: 38px; background: var(--blue);
+  border-radius: 10px; display: flex; align-items: center; justify-content: center;
+  box-shadow: var(--shadow-blue); flex-shrink: 0;
+}
+.logo-icon svg { width: 20px; height: 20px; fill: #fff; }
+.logo-text { display: flex; flex-direction: column; line-height: 1; }
+.logo-name { font-size: 20px; font-weight: 800; color: var(--text); }
+.logo-name span { color: var(--blue); }
+.logo-sub { font-size: 10px; font-weight: 400; color: var(--text-3); letter-spacing: .05em; }
+
+.desktop-nav { display: flex; align-items: center; gap: 4px; }
+.desktop-nav a {
+  font-size: 14px; font-weight: 500; color: var(--text-2);
+  padding: 8px 14px; border-radius: var(--radius-sm); transition: all .2s;
+}
+.desktop-nav a:hover,
+.desktop-nav a.active { color: var(--blue); background: var(--blue-xlight); }
+
+.header-cta {
+  background: var(--blue); color: #fff;
+  font-family: var(--font-display); font-weight: 600; font-size: 14px;
+  padding: 9px 20px; border-radius: var(--radius-sm);
+  transition: all .2s; box-shadow: var(--shadow-blue);
+}
+.header-cta:hover { background: var(--blue-dark); transform: translateY(-1px); }
+
+.hamburger {
+  display: none; flex-direction: column; gap: 5px;
+  padding: 8px; border-radius: var(--radius-sm); cursor: pointer;
+}
+.hamburger span {
+  display: block; width: 22px; height: 2px;
+  background: var(--text); border-radius: 2px; transition: all .3s;
+}
+
+/* Mobile Drawer */
+.drawer-overlay {
+  display: none; position: fixed; inset: 0;
+  background: rgba(15,23,42,.4); z-index: 1050;
+  backdrop-filter: blur(2px);
+}
+.drawer-overlay.open { display: block; }
+.mobile-drawer {
+  position: fixed; top: 0; right: -100%; width: 280px; height: 100vh;
+  background: #fff; z-index: 1100; padding: 24px;
+  box-shadow: var(--shadow-lg);
+  transition: right .35s cubic-bezier(.4,0,.2,1);
+  overflow-y: auto;
+}
+.mobile-drawer.open { right: 0; }
+.drawer-head {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 32px;
+}
+.drawer-close {
+  width: 36px; height: 36px; border-radius: 8px;
+  background: var(--surface); color: var(--text-3);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px;
+}
+.mobile-nav { display: flex; flex-direction: column; gap: 4px; }
+.mobile-nav a {
+  font-size: 15px; font-weight: 500; color: var(--text-2);
+  padding: 12px 16px; border-radius: var(--radius-sm); transition: all .2s;
+}
+.mobile-nav a:hover { color: var(--blue); background: var(--blue-xlight); }
+
+/* ═══════════════════════════════════════════
+   PAGE HERO (breadcrumb strip)
+═══════════════════════════════════════════ */
+.page-hero {
+  background: linear-gradient(160deg, #f0f7ff 0%, #ffffff 60%, #fef9ee 100%);
+  padding: 56px 0 72px; position: relative; overflow: hidden;
+}
+.page-hero::before {
+  content: '';
+  position: absolute; top: -120px; right: -200px;
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(37,99,235,.07) 0%, transparent 70%);
+  border-radius: 50%; pointer-events: none;
+}
+.page-hero::after {
+  content: '';
+  position: absolute; bottom: -80px; left: -120px;
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, rgba(245,158,11,.05) 0%, transparent 70%);
+  border-radius: 50%; pointer-events: none;
+}
+.breadcrumb {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 13px; color: var(--text-3); margin-bottom: 24px;
+}
+.breadcrumb a { color: var(--blue); font-weight: 500; }
+.breadcrumb span { color: var(--text-4); }
+.page-hero-inner {
+  display: grid; grid-template-columns: 340px 1fr; gap: 60px;
+  align-items: center; position: relative; z-index: 1;
+}
+
+/* Founder Card */
+.founder-card {
+  background: #fff; border: 1.5px solid var(--border);
+  border-radius: var(--radius-xl); overflow: hidden;
+  box-shadow: var(--shadow-lg); text-align: center;
+  animation: fadeUp .6s ease both;
+}
+.founder-card-img-wrap {
+  background: linear-gradient(135deg, var(--blue) 0%, #1e40af 100%);
+  padding: 32px 32px 0; display: flex; justify-content: center;
+}
+.founder-img {
+  width: 130px; height: 130px; border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid rgba(255,255,255,.4);
+  box-shadow: 0 0 0 4px rgba(255,255,255,.15),
+              0 8px 32px rgba(37,99,235,.35);
+  display: block;
+}
+.founder-card-body { padding: 22px 24px 28px; }
+.founder-name {
+  font-family: var(--font-display); font-size: 22px;
+  font-weight: 800; color: var(--text); margin-bottom: 4px;
+}
+.founder-role {
+  font-size: 13px; color: var(--text-3);
+  font-weight: 500; margin-bottom: 18px;
+}
+.founder-tags {
+  display: flex; flex-wrap: wrap; gap: 8px;
+  justify-content: center;
+}
+.founder-tag {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 12px; font-weight: 600; padding: 5px 12px;
+  border-radius: 100px; background: var(--blue-xlight);
+  color: var(--blue); border: 1px solid var(--blue-subtle);
+}
+
+/* Hero right content */
+.hero-content {
+  animation: fadeUp .6s .15s ease both;
+}
+.hero-content .section-label { margin-bottom: 20px; }
+.hero-content h1 {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 4vw, 50px);
+  font-weight: 800; line-height: 1.15;
+  color: var(--text); margin-bottom: 20px;
+}
+.hero-content h1 span { color: var(--blue); }
+.hero-content p {
+  font-size: 16px; color: var(--text-3);
+  line-height: 1.8; margin-bottom: 14px;
+}
+.hero-actions {
+  display: flex; gap: 14px; flex-wrap: wrap; margin-top: 28px;
+}
+.hero-stats {
+  display: flex; gap: 32px; margin-top: 36px; flex-wrap: wrap;
+}
+.stat .stat-num {
+  font-family: var(--font-display); font-size: 26px;
+  font-weight: 800; color: var(--text);
+}
+.stat .stat-num span { color: var(--blue); }
+.stat .stat-label { font-size: 13px; color: var(--text-3); font-weight: 500; }
+
+/* ═══════════════════════════════════════════
+   HIGHLIGHTS (4 cards)
+═══════════════════════════════════════════ */
+.highlights { background: var(--surface); }
+.hl-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.hl-card {
+  background: #fff; border: 1.5px solid var(--border);
+  border-radius: var(--radius-lg); padding: 28px 22px;
+  text-align: center; transition: all .25s;
+  position: relative; overflow: hidden;
+}
+.hl-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: var(--hl-color, var(--blue));
+  transform: scaleX(0); transform-origin: left; transition: transform .3s;
+}
+.hl-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); border-color: transparent; }
+.hl-card:hover::before { transform: scaleX(1); }
+.hl-icon {
+  font-size: 36px; margin-bottom: 14px;
+  width: 64px; height: 64px;
+  background: var(--hl-bg, var(--blue-xlight));
+  border-radius: 16px;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 16px;
+}
+.hl-title {
+  font-family: var(--font-display); font-size: 15px;
+  font-weight: 700; color: var(--text); margin-bottom: 8px;
+}
+.hl-desc { font-size: 13px; color: var(--text-3); line-height: 1.6; }
+
+/* ═══════════════════════════════════════════
+   MISSION / VISION / PROMISE
+═══════════════════════════════════════════ */
+.mvp { background: #fff; }
+.mvp-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+}
+.mvp-card {
+  border-radius: var(--radius-lg); padding: 36px 28px;
+  text-align: center; transition: all .25s;
+}
+.mvp-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); }
+.mvp-card.blue  { background: linear-gradient(135deg,#eff6ff,#dbeafe); border: 1.5px solid #bfdbfe; }
+.mvp-card.amber { background: linear-gradient(135deg,#fffbeb,#fef3c7); border: 1.5px solid #fde68a; }
+.mvp-card.green { background: linear-gradient(135deg,#f0fdf4,#dcfce7); border: 1.5px solid #bbf7d0; }
+.mvp-icon { font-size: 44px; margin-bottom: 20px; }
+.mvp-title {
+  font-family: var(--font-display); font-size: 20px;
+  font-weight: 800; color: var(--text); margin-bottom: 12px;
+}
+.mvp-desc { font-size: 15px; color: var(--text-3); line-height: 1.7; }
+
+/* ═══════════════════════════════════════════
+   CATEGORIES — exact homepage cards
+═══════════════════════════════════════════ */
+.categories { background: var(--surface); }
+.cat-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;
+}
+.cat-card {
+  background: #fff; border: 1.5px solid var(--border);
+  border-radius: var(--radius-lg); padding: 28px 22px;
+  transition: all .25s; cursor: pointer; display: block;
+  position: relative; overflow: hidden;
+}
+.cat-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: var(--cat-color, var(--blue));
+  transform: scaleX(0); transform-origin: left; transition: transform .3s;
+}
+.cat-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); border-color: transparent; }
+.cat-card:hover::before { transform: scaleX(1); }
+.cat-icon-wrap {
+  width: 52px; height: 52px; border-radius: 14px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 24px; margin-bottom: 16px;
+  background: var(--cat-bg, var(--blue-xlight));
+}
+.cat-title {
+  font-family: var(--font-display); font-weight: 700;
+  font-size: 15px; color: var(--text); margin-bottom: 6px;
+}
+.cat-desc { font-size: 13px; color: var(--text-3); line-height: 1.6; margin-bottom: 14px; }
+.cat-link {
+  font-size: 13px; font-weight: 600; color: var(--blue);
+  display: flex; align-items: center; gap: 4px;
+}
+.cat-link svg { width: 14px; height: 14px; transition: transform .2s; }
+.cat-card:hover .cat-link svg { transform: translateX(4px); }
+
+/* ═══════════════════════════════════════════
+   STORY / TIMELINE
+═══════════════════════════════════════════ */
+.story { background: #fff; }
+.story-inner {
+  display: grid; grid-template-columns: 1fr 1.2fr; gap: 72px; align-items: center;
+}
+.story-visual {
+  background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+  border-radius: var(--radius-xl); padding: 40px 32px;
+  box-shadow: var(--shadow-lg);
+}
+.story-quote {
+  font-family: var(--font-display); font-size: 18px;
+  font-weight: 300; color: rgba(255,255,255,.85);
+  line-height: 1.8; margin-bottom: 28px;
+  border-left: 3px solid rgba(255,255,255,.3);
+  padding-left: 20px; font-style: italic;
+}
+.story-sig {
+  display: flex; align-items: center; gap: 14px;
+}
+.story-sig-img {
+  width: 52px; height: 52px; border-radius: 50%; object-fit: cover;
+  border: 2px solid rgba(255,255,255,.3);
+}
+.story-sig-name {
+  font-family: var(--font-display); font-size: 15px;
+  font-weight: 700; color: #fff;
+}
+.story-sig-role { font-size: 12px; color: rgba(255,255,255,.6); }
+
+.story-content h2 {
+  font-family: var(--font-display); font-size: 34px;
+  font-weight: 800; line-height: 1.2; color: var(--text); margin-bottom: 18px;
+}
+.story-content h2 span { color: var(--blue); }
+.story-content p {
+  font-size: 16px; color: var(--text-3); line-height: 1.85;
+  margin-bottom: 14px;
+}
+.story-points { margin-top: 24px; display: flex; flex-direction: column; gap: 12px; }
+.story-point {
+  display: flex; align-items: flex-start; gap: 14px;
+  background: var(--surface); border: 1.5px solid var(--border);
+  border-radius: var(--radius); padding: 16px;
+  box-shadow: var(--shadow-sm); transition: border-color .2s;
+}
+.story-point:hover { border-color: var(--blue-subtle); }
+.sp-icon { font-size: 22px; flex-shrink: 0; margin-top: 2px; }
+.sp-text { font-size: 14px; font-weight: 600; color: var(--text-2); line-height: 1.5; }
+.sp-sub  { font-size: 13px; font-weight: 400; color: var(--text-3); }
+
+/* ═══════════════════════════════════════════
+   FAQ
+═══════════════════════════════════════════ */
+.faq-section { background: var(--surface); }
+.faq-list { max-width: 780px; margin: 0 auto; }
+.faq-item {
+  background: #fff; border: 1.5px solid var(--border);
+  border-radius: var(--radius); margin-bottom: 12px; overflow: hidden;
+}
+.faq-q {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 20px 24px; cursor: pointer; gap: 16px; transition: background .2s;
+}
+.faq-q:hover { background: var(--blue-xlight); }
+.faq-q-text { font-weight: 600; font-size: 16px; color: var(--text); }
+.faq-icon {
+  width: 28px; height: 28px; border-radius: 50%;
+  background: var(--blue-xlight); color: var(--blue);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px; flex-shrink: 0;
+  transition: transform .3s, background .2s;
+}
+.faq-item.open .faq-icon { transform: rotate(45deg); background: var(--blue); color: #fff; }
+.faq-a { max-height: 0; overflow: hidden; transition: max-height .35s cubic-bezier(.4,0,.2,1); }
+.faq-a-inner { padding: 0 24px 20px; font-size: 15px; color: var(--text-3); line-height: 1.75; }
+.faq-item.open .faq-a { max-height: 300px; }
+
+/* ═══════════════════════════════════════════
+   CTA SECTION
+═══════════════════════════════════════════ */
+.cta-section {
+  background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+  padding: 88px 0; text-align: center; position: relative; overflow: hidden;
+}
+.cta-section::before {
+  content: '';
+  position: absolute; top: -100px; left: 50%; transform: translateX(-50%);
+  width: 700px; height: 400px;
+  background: radial-gradient(ellipse, rgba(37,99,235,.25) 0%, transparent 70%);
+  pointer-events: none;
+}
+.cta-label { color: #93c5fd; }
+.cta-section h2 {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 4vw, 46px);
+  font-weight: 800; color: #fff;
+  line-height: 1.2; margin-bottom: 16px;
+}
+.cta-section h2 span { color: #fbbf24; }
+.cta-section p {
+  font-size: 17px; color: rgba(255,255,255,.75);
+  max-width: 520px; margin: 0 auto 36px; line-height: 1.75;
+}
+.cta-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+.btn-gold {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: #f59e0b; color: #fff;
+  font-family: var(--font-display); font-weight: 700; font-size: 16px;
+  padding: 15px 34px; border-radius: var(--radius-sm);
+  box-shadow: 0 8px 28px rgba(245,158,11,.35); transition: all .2s;
+}
+.btn-gold:hover { background: #d97706; transform: translateY(-2px); box-shadow: 0 14px 36px rgba(245,158,11,.45); }
+.btn-ghost {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(255,255,255,.08);
+  border: 1.5px solid rgba(255,255,255,.2); color: #fff;
+  font-family: var(--font-display); font-weight: 600; font-size: 15px;
+  padding: 14px 28px; border-radius: var(--radius-sm);
+  transition: all .2s;
+}
+.btn-ghost:hover { background: rgba(255,255,255,.15); }
+
+/* ═══════════════════════════════════════════
+   FOOTER
+═══════════════════════════════════════════ */
+.site-footer { background: #0f172a; padding: 48px 0 28px; }
+.footer-top {
+  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 48px;
+}
+.footer-brand p { font-size: 14px; color: #64748b; line-height: 1.75; max-width: 270px; margin: 14px 0 20px; }
+.footer-socials { display: flex; gap: 10px; }
+.social-btn {
+  width: 36px; height: 36px; border-radius: 8px;
+  background: rgba(255,255,255,.08);
+  display: flex; align-items: center; justify-content: center;
+  color: #94a3b8; font-size: 15px; transition: all .2s;
+}
+.social-btn:hover { background: var(--blue); color: #fff; }
+.footer-col h4 {
+  font-family: var(--font-display); font-size: 13px; font-weight: 700;
+  color: #fff; margin-bottom: 16px; letter-spacing: .04em; text-transform: uppercase;
+}
+.footer-col ul { display: flex; flex-direction: column; gap: 9px; }
+.footer-col ul a { font-size: 14px; color: #64748b; transition: color .2s; }
+.footer-col ul a:hover { color: #93c5fd; }
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,.07);
+  padding-top: 24px;
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 14px;
+}
+.footer-copy { font-size: 13px; color: #475569; }
+.footer-copy span { color: #64748b; }
+.footer-legal { display: flex; gap: 20px; }
+.footer-legal a { font-size: 13px; color: #475569; transition: color .2s; }
+.footer-legal a:hover { color: #93c5fd; }
+
+/* Back to top */
+.back-to-top {
+  position: fixed; bottom: 28px; right: 28px; z-index: 500;
+  width: 44px; height: 44px; background: var(--blue); color: #fff;
+  border-radius: 12px; display: flex; align-items: center; justify-content: center;
+  box-shadow: var(--shadow-blue); font-size: 18px;
+  opacity: 0; pointer-events: none; transform: translateY(16px);
+  transition: all .3s;
+}
+.back-to-top.visible { opacity: 1; pointer-events: auto; transform: translateY(0); }
+.back-to-top:hover { transform: translateY(-3px); box-shadow: 0 12px 36px rgba(37,99,235,.35); }
+
+/* ═══════════════════════════════════════════
+   ANIMATIONS
+═══════════════════════════════════════════ */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.reveal {
+  opacity: 0; transform: translateY(22px);
+  transition: opacity .55s ease, transform .55s ease;
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ═══════════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════════ */
+@media (max-width: 1100px) {
+  .cat-grid  { grid-template-columns: repeat(2,1fr); }
+  .hl-grid   { grid-template-columns: repeat(2,1fr); }
+  .footer-top { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 900px) {
+  .desktop-nav, .header-cta { display: none; }
+  .hamburger { display: flex; }
+  .page-hero-inner { grid-template-columns: 1fr; }
+  .story-inner { grid-template-columns: 1fr; }
+  .mvp-grid { grid-template-columns: 1fr; }
+  .page-hero { padding: 40px 0 56px; }
+}
+@media (max-width: 600px) {
+  .cat-grid, .hl-grid { grid-template-columns: 1fr; }
+  .footer-top { grid-template-columns: 1fr; }
+  .section { padding: 60px 0; }
+  .hero-stats { gap: 18px; }
+  .footer-bottom { flex-direction: column; text-align: center; }
+  .story-quote { font-size: 15px; }
+  .hero-actions { flex-direction: column; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════ HEADER ═══════ -->
+<header class="site-header">
+  <div class="container">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <div class="logo-icon">
+          <svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+        </div>
+        <div class="logo-text">
+          <span class="logo-name">Raj<span>Daily</span>Tools</span>
+          <span class="logo-sub">Smart Tools for Daily Life</span>
+        </div>
+      </a>
+
+      <nav class="desktop-nav">
+        <a href="/">Home</a>
+        <a href="/#categories">Categories</a>
+        <a href="/#popular">Popular</a>
+        <a href="/#latest">Latest</a>
+        <a href="/about" class="active">About</a>
+        <a href="/#faq">FAQ</a>
+        <a href="/#contact">Contact</a>
+      </nav>
+      <a href="/#categories" class="header-cta">Explore Tools →</a>
+
+      <button class="hamburger" id="menuBtn" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile Drawer -->
+<div class="drawer-overlay" id="drawerOverlay"></div>
+<div class="mobile-drawer" id="mobileDrawer">
+  <div class="drawer-head">
+    <div class="logo">
+      <div class="logo-icon" style="width:32px;height:32px;border-radius:8px;">
+        <svg viewBox="0 0 24 24" style="width:16px;height:16px;fill:#fff;"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+      </div>
+      <div class="logo-text"><span class="logo-name" style="font-size:17px;">Raj<span>Daily</span>Tools</span></div>
+    </div>
+    <button class="drawer-close" id="drawerClose">✕</button>
+  </div>
+  <nav class="mobile-nav">
+    <a href="/" onclick="closeDrawer()">🏠 Home</a>
+    <a href="/#categories" onclick="closeDrawer()">🗂️ Categories</a>
+    <a href="/#popular" onclick="closeDrawer()">⭐ Popular Tools</a>
+    <a href="/#latest" onclick="closeDrawer()">🆕 Latest Tools</a>
+    <a href="/about" onclick="closeDrawer()">👤 About</a>
+    <a href="/#faq" onclick="closeDrawer()">❓ FAQ</a>
+    <a href="/#contact" onclick="closeDrawer()">📬 Contact</a>
+  </nav>
+</div>
+
+<!-- ═══════ PAGE HERO ═══════ -->
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="/">Home</a><span>›</span><span>About Us</span>
+    </div>
+    <div class="page-hero-inner">
+
+      <!-- Founder Card -->
+      <div class="founder-card">
+        <div class="founder-card-img-wrap">
+          <img
+            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEikX0m8DNysfOF85RwJxIFEVILF8_tS2Mtq72P_JHavl9ATJ2BzHsMm-FAGCV1tgHTEgkqZ8j4Mcfqe_WC2Epwpze7b921awwJpZG6R7Js8etDSKrGeDbvFnDA0wPBjZO7ahD4X5x3ZuYJTB1wvdqIrrHwxJrimwUC5tTQYmkbbblsc_ZLF7kF3Ulba09Y/s1600/1000829652.jpg"
+            alt="Raj Bhai – Founder of RajDailyTools"
+            class="founder-img"
+            loading="eager"
+            onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'width:130px;height:130px;border-radius:50%;background:rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;font-size:54px;margin:0 auto;\'>👨‍💻</div>';"
+          >
+        </div>
+        <div class="founder-card-body">
+          <div class="founder-name">Raj Bhai</div>
+          <div class="founder-role">Founder &amp; Visionary, RajDailyTools</div>
+          <div class="founder-tags">
+            <span class="founder-tag">🎓 BSc Physics Graduate</span>
+            <span class="founder-tag">💻 COPA ITI Certified</span>
+            <span class="founder-tag">🇮🇳 Building for Bharat</span>
+            <span class="founder-tag">🎯 Vision: 30,000+ Tools</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Text -->
+      <div class="hero-content">
+        <div class="section-label">About the Founder</div>
+        <h1>Built by Someone Who<br><span>Understands Your Problems</span></h1>
+        <p>I created RajDailyTools because I faced the same frustrations that millions of students and working professionals experience every day — scattered tools, slow websites, paywalls, and no single trustworthy platform to solve daily life calculations.</p>
+        <p>As a BSc Physics graduate and COPA ITI certified professional, I understand both the science of accuracy and the technology of building. This platform is my answer to a real-world gap.</p>
+        <p>My goal is to convert real-life calculations, tasks, and information into simple online tools that anyone can use instantly — no login, no cost, no complexity.</p>
+        <div class="hero-actions">
+          <a href="/#categories" class="btn-primary">Explore All Tools →</a>
+          <a href="/#contact" class="btn-secondary">💬 Contact Me</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat"><div class="stat-num">30,000<span>+</span></div><div class="stat-label">Tools Planned</div></div>
+          <div class="stat"><div class="stat-num">8<span>+</span></div><div class="stat-label">Categories</div></div>
+          <div class="stat"><div class="stat-num">100<span>%</span></div><div class="stat-label">Free Forever</div></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ HIGHLIGHTS ═══════ -->
+<section class="section highlights">
+  <div class="container">
+    <div class="section-header center">
+      <div class="section-label">Why Choose Us</div>
+      <h2 class="section-heading">What Makes <span>RajDailyTools</span> Different</h2>
+      <p class="section-sub">Four core pillars that make this platform stand apart from the rest.</p>
+    </div>
+    <div class="hl-grid">
+      <div class="hl-card reveal" style="--hl-color:#2563eb;--hl-bg:#eff6ff;">
+        <div class="hl-icon">🚀</div>
+        <div class="hl-title">30,000+ Tools Vision</div>
+        <div class="hl-desc">An ambitious roadmap to become the world's largest free tools platform, built tool by tool, every week.</div>
+      </div>
+      <div class="hl-card reveal" style="--hl-color:#10b981;--hl-bg:#f0fdf4;">
+        <div class="hl-icon">🆓</div>
+        <div class="hl-title">100% Free Platform</div>
+        <div class="hl-desc">No subscriptions, no premium plans, no hidden charges. Every tool is and will always remain free for everyone.</div>
+      </div>
+      <div class="hl-card reveal" style="--hl-color:#f59e0b;--hl-bg:#fffbeb;">
+        <div class="hl-icon">🌍</div>
+        <div class="hl-title">Made in India for Global Users</div>
+        <div class="hl-desc">Built with an Indian heart and a global mindset. Designed for Bharat, optimised for the world.</div>
+      </div>
+      <div class="hl-card reveal" style="--hl-color:#8b5cf6;--hl-bg:#f5f3ff;">
+        <div class="hl-icon">⚡</div>
+        <div class="hl-title">Accurate &amp; Fast Calculations</div>
+        <div class="hl-desc">Physics-trained precision in every formula. Results in milliseconds, verified against industry standards.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ STORY ═══════ -->
+<section class="section story">
+  <div class="container">
+    <div class="story-inner">
+      <div class="story-visual reveal">
+        <div class="story-quote">
+          "I realised that the best tools shouldn't be locked behind paywalls or require a PhD to operate. They should be simple, fast, and free — available to every student in a small town and every professional in a big city alike."
+        </div>
+        <div class="story-sig">
+          <img
+            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEikX0m8DNysfOF85RwJxIFEVILF8_tS2Mtq72P_JHavl9ATJ2BzHsMm-FAGCV1tgHTEgkqZ8j4Mcfqe_WC2Epwpze7b921awwJpZG6R7Js8etDSKrGeDbvFnDA0wPBjZO7ahD4X5x3ZuYJTB1wvdqIrrHwxJrimwUC5tTQYmkbbblsc_ZLF7kF3Ulba09Y/s1600/1000829652.jpg"
+            alt="Raj Bhai"
+            class="story-sig-img"
+            onerror="this.style.display='none';"
+          >
+          <div>
+            <div class="story-sig-name">Raj Bhai</div>
+            <div class="story-sig-role">Founder, RajDailyTools</div>
+          </div>
+        </div>
+      </div>
+      <div class="story-content reveal">
+        <div class="section-label">The Story Behind It All</div>
+        <h2>From Real Problems<br>to <span>Real Solutions</span></h2>
+        <p>I built RajDailyTools to solve daily life problems using digital tools. My goal is to convert real-life calculations, tasks, and information into simple online tools that anyone can use instantly — without needing any technical knowledge.</p>
+        <p>My future vision is to build 30,000+ tools that help students, professionals, and everyday users solve their problems quickly and efficiently. Each tool is crafted with the precision of a physicist and the empathy of someone who has lived through the same struggles.</p>
+        <div class="story-points">
+          <div class="story-point">
+            <div class="sp-icon">🎓</div>
+            <div><div class="sp-text">BSc Physics + COPA ITI</div><div class="sp-sub">Academic foundation behind every precise calculation on this platform</div></div>
+          </div>
+          <div class="story-point">
+            <div class="sp-icon">🔧</div>
+            <div><div class="sp-text">New Tools Every Week</div><div class="sp-sub">Actively building and launching tools to reach the 30,000+ milestone</div></div>
+          </div>
+          <div class="story-point">
+            <div class="sp-icon">💡</div>
+            <div><div class="sp-text">Community-Driven Roadmap</div><div class="sp-sub">Tools built on real suggestions from real users across India and the globe</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ MISSION / VISION / PROMISE ═══════ -->
+<section class="section mvp" id="mvp">
+  <div class="container">
+    <div class="section-header center">
+      <div class="section-label">Our Foundations</div>
+      <h2 class="section-heading">Mission. Vision. <span>Promise.</span></h2>
+      <p class="section-sub">Three unwavering commitments that shape everything we build at RajDailyTools.</p>
+    </div>
+    <div class="mvp-grid">
+      <div class="mvp-card blue reveal">
+        <div class="mvp-icon">🎯</div>
+        <div class="mvp-title">Our Mission</div>
+        <div class="mvp-desc">To provide free, powerful, and accurate tools for solving daily life problems — accessible to every person in India and the world, regardless of their background or income.</div>
+      </div>
+      <div class="mvp-card amber reveal">
+        <div class="mvp-icon">🔭</div>
+        <div class="mvp-title">Our Vision</div>
+        <div class="mvp-desc">To build the world's largest free tools platform with 30,000+ tools that cover every category imaginable — from finance and education to health, text, and utilities.</div>
+      </div>
+      <div class="mvp-card green reveal">
+        <div class="mvp-icon">🤝</div>
+        <div class="mvp-title">Our Promise</div>
+        <div class="mvp-desc">No forced login. No hidden charges. No data selling. Fast, reliable, and honest tools — always. RajDailyTools is and will remain free forever. That's our commitment to you.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ CATEGORIES ═══════ -->
+<section class="section categories" id="categories">
+  <div class="container">
+    <div class="section-header center">
+      <div class="section-label">All Categories</div>
+      <h2 class="section-heading">Tools for <span>Every Need</span></h2>
+      <p class="section-sub">From students to professionals — we have the right tool for every daily challenge you face.</p>
+    </div>
+    <div class="cat-grid">
+      <a href="/education-tools" class="cat-card reveal" style="--cat-color:#2563eb;--cat-bg:#eff6ff;">
+        <div class="cat-icon-wrap">🎓</div>
+        <div class="cat-title">Education Tools</div>
+        <div class="cat-desc">GPA calculator, grade tracker, study planners, and tools for students at every level.</div>
+        <span class="cat-link">Explore Tools <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="/finance-tools" class="cat-card reveal" style="--cat-color:#f59e0b;--cat-bg:#fffbeb;">
+        <div class="cat-icon-wrap">💰</div>
+        <div class="cat-title">Finance Tools</div>
+        <div class="cat-desc">EMI calculator, SIP planner, loan interest, tax estimator, and money management tools.</div>
+        <span class="cat-link">Explore Tools <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="/converter-tools" class="cat-card reveal" style="--cat-color:#10b981;--cat-bg:#f0fdf4;">
+        <div class="cat-icon-wrap">🔄</div>
+        <div class="cat-title">Converter Tools</div>
+        <div class="cat-desc">Unit converter, currency converter, temperature, length, weight, and more conversions.</div>
+        <span class="cat-link">Explore Tools <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="/daily-utility-tools" class="cat-card reveal" style="--cat-color:#8b5cf6;--cat-bg:#f5f3ff;">
+        <div class="cat-icon-wrap">⚙️</div>
+        <div class="cat-title">Daily Utility Tools</div>
+        <div class="cat-desc">Password generator, QR code maker, random picker, timer, and essential everyday tools.</div>
+        <span class="cat-link">Explore Tools <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="/calculator-tools" class="cat-card reveal" style="--cat-color:#ef4444;--cat-bg:#fef2f2;">
+        <div class="cat-icon-wrap">🧮</div>
+        <div class="cat-title">Calculator Tools</div>
+        <div class="cat-desc">Scientific calculator, percentage, discount, tip calculator, and 100+ math tools.</div>
+        <span class="cat-link">Explore Tools <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="/health-tools" class="cat-card reveal" style="--cat-color:#ec4899;--cat-bg:#fdf2f8;">
+        <div class="cat-icon-wrap">❤️</div>
+        <div class="cat-title">Health Tools</div>
+        <div class="cat-desc">BMI calculator, calorie tracker, water intake, sleep tracker, and wellness tools.</div>
+        <span class="cat-link">Explore Tools <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="/text-tools" class="cat-card reveal" style="--cat-color:#0ea5e9;--cat-bg:#f0f9ff;">
+        <div class="cat-icon-wrap">📝</div>
+        <div class="cat-title">Text Tools</div>
+        <div class="cat-desc">Word counter, case converter, text formatter, lorem ipsum generator, and writing tools.</div>
+        <span class="cat-link">Explore Tools <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="/other-tools" class="cat-card reveal" style="--cat-color:#64748b;--cat-bg:#f8fafc;">
+        <div class="cat-icon-wrap">🛠️</div>
+        <div class="cat-title">Other Tools</div>
+        <div class="cat-desc">PDF tools, image compressor, color picker, base64 encoder, and many more utilities.</div>
+        <span class="cat-link">Explore Tools <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ FAQ ═══════ -->
+<section class="section-sm faq-section" id="faq">
+  <div class="container">
+    <div class="section-header center">
+      <div class="section-label">Got Questions?</div>
+      <h2 class="section-heading">Frequently Asked <span>Questions</span></h2>
+    </div>
+    <div class="faq-list" id="faqList">
+      <div class="faq-item reveal">
+        <div class="faq-q"><span class="faq-q-text">Is RajDailyTools free to use?</span><span class="faq-icon">+</span></div>
+        <div class="faq-a"><div class="faq-a-inner">Yes, absolutely! Every single tool on RajDailyTools is 100% free. No subscriptions, no premium tiers, no hidden fees — now, and forever. Our mission is to make powerful tools accessible to everyone, especially students and people who cannot afford expensive software.</div></div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q"><span class="faq-q-text">Do I need to create an account to use the tools?</span><span class="faq-icon">+</span></div>
+        <div class="faq-a"><div class="faq-a-inner">No login or registration is required to use any tool on our platform. Just open the tool page and start using it immediately. We respect your time and privacy — no forced sign-ups, no email harvesting, ever.</div></div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q"><span class="faq-q-text">Are the calculations and results accurate?</span><span class="faq-icon">+</span></div>
+        <div class="faq-a"><div class="faq-a-inner">Yes. Every tool is built by Raj Bhai — a BSc Physics graduate — with thorough formula verification and testing. We follow standard industry formulas and conventions. For critical financial or medical decisions, we recommend cross-verifying with a certified professional.</div></div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q"><span class="faq-q-text">Can I suggest a new tool to be built?</span><span class="faq-icon">+</span></div>
+        <div class="faq-a"><div class="faq-a-inner">Absolutely! Tool suggestions from users are what shape our roadmap. Email your idea to contact@rajdailytools.com or use the Contact page. If your suggestion solves a real problem for many users, we'll build it and credit you for the idea.</div></div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q"><span class="faq-q-text">Is my data safe when I use these tools?</span><span class="faq-icon">+</span></div>
+        <div class="faq-a"><div class="faq-a-inner">Yes. Most tools run entirely in your browser — your data never leaves your device. We do not collect, store, or sell personal data. Your privacy is a core value, not an afterthought. We are also fully AdSense compliant and follow Google's publisher policies.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ═══════ CTA ═══════ -->
+<section class="cta-section">
+  <div class="container">
+    <div class="section-label cta-label">Ready to Begin?</div>
+    <h2>Explore <span>30,000+ Tools</span> Now</h2>
+    <p>Stop searching across multiple websites. Everything you need — calculators, converters, text tools, health tools — is right here, free, and ready to use in seconds.</p>
+    <div class="cta-btns">
+      <a href="/#categories" class="btn-gold">🚀 Explore Tools Now</a>
+      <a href="/#contact" class="btn-ghost">💬 Get in Touch</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ FOOTER ═══════ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="logo">
+          <div class="logo-icon"><svg viewBox="0 0 24 24" fill="white"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+          <div class="logo-text">
+            <span class="logo-name">Raj<span>Daily</span>Tools</span>
+            <span class="logo-sub">Smart Tools for Daily Life</span>
+          </div>
+        </div>
+        <p>India's most ambitious free online tools platform. Built by Raj Bhai with a vision of 30,000+ tools. Solving daily life problems, one tool at a time.</p>
+        <div class="footer-socials">
+          <a href="#" class="social-btn" title="Twitter/X">𝕏</a>
+          <a href="#" class="social-btn" title="YouTube">▶</a>
+          <a href="#" class="social-btn" title="Instagram">📷</a>
+          <a href="#" class="social-btn" title="Telegram">✈</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Categories</h4>
+        <ul>
+          <li><a href="/education-tools">Education Tools</a></li>
+          <li><a href="/finance-tools">Finance Tools</a></li>
+          <li><a href="/converter-tools">Converter Tools</a></li>
+          <li><a href="/calculator-tools">Calculator Tools</a></li>
+          <li><a href="/health-tools">Health Tools</a></li>
+          <li><a href="/text-tools">Text Tools</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Popular Tools</h4>
+        <ul>
+          <li><a href="/emi-calculator">EMI Calculator</a></li>
+          <li><a href="/percentage-calculator">Percentage Calculator</a></li>
+          <li><a href="/age-calculator">Age Calculator</a></li>
+          <li><a href="/unit-converter">Unit Converter</a></li>
+          <li><a href="/gpa-calculator">GPA Calculator</a></li>
+          <li><a href="/word-counter">Word Counter</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/about">About Us</a></li>
+          <li><a href="/blog">Blog</a></li>
+          <li><a href="/#contact">Contact</a></li>
+          <li><a href="/privacy-policy">Privacy Policy</a></li>
+          <li><a href="/terms-of-service">Terms of Service</a></li>
+          <li><a href="/disclaimer">Disclaimer</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2026 <span>RajDailyTools</span>. All rights reserved. Made with ❤️ in India by Raj Bhai. &nbsp;|&nbsp; Powered by <span>RajDailyTools</span></p>
+      <div class="footer-legal">
+        <a href="/privacy-policy">Privacy Policy</a>
+        <a href="/terms-of-service">Terms of Service</a>
+        <a href="/disclaimer">Disclaimer</a>
+        <a href="/sitemap">Sitemap</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Back to top -->
+<button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">↑</button>
+
+<script>
+  /* ── Mobile Drawer ── */
+  const menuBtn       = document.getElementById('menuBtn');
+  const mobileDrawer  = document.getElementById('mobileDrawer');
+  const drawerOverlay = document.getElementById('drawerOverlay');
+  const drawerClose   = document.getElementById('drawerClose');
+
+  function openDrawer()  { mobileDrawer.classList.add('open'); drawerOverlay.classList.add('open'); document.body.style.overflow='hidden'; }
+  function closeDrawer() { mobileDrawer.classList.remove('open'); drawerOverlay.classList.remove('open'); document.body.style.overflow=''; }
+
+  menuBtn.addEventListener('click', openDrawer);
+  drawerClose.addEventListener('click', closeDrawer);
+  drawerOverlay.addEventListener('click', closeDrawer);
+
+  /* ── FAQ Accordion ── */
+  document.getElementById('faqList').addEventListener('click', function(e) {
+    const q = e.target.closest('.faq-q');
+    if (!q) return;
+    const item   = q.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+
+  /* ── Back to Top ── */
+  const backToTop = document.getElementById('backToTop');
+  window.addEventListener('scroll', () => {
+    backToTop.classList.toggle('visible', window.scrollY > 400);
+  }, { passive: true });
+
+  /* ── Scroll Reveal ── */
+  const revealObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.reveal').forEach((el, i) => {
+    el.style.transitionDelay = (i % 4) * 0.08 + 's';
+    revealObserver.observe(el);
+  });
+
+  /* ── Active nav on scroll ── */
+  window.addEventListener('scroll', () => {
+    document.querySelectorAll('.desktop-nav a').forEach(a => {
+      const href = a.getAttribute('href');
+      if (href === '/about') { a.classList.add('active'); }
+      else { a.classList.remove('active'); }
+    });
+  }, { passive: true });
+</script>
+</body>
+</html>
