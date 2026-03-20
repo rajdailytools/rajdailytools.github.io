@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms &amp; Conditions – RajDailyTools | Free Online Tools Platform</title>
+<meta name="description" content="Read the Terms and Conditions of RajDailyTools. Understand the rules, user responsibilities, intellectual property rights, and disclaimers for using our free tools.">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Terms &amp; Conditions – RajDailyTools">
+<meta property="og:description" content="RajDailyTools Terms &amp; Conditions — transparent, fair, and user-first.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════
+   DESIGN TOKENS
+═══════════════════════════════════════ */
+:root{
+  --blue:#2563eb;--blue-d:#1d4ed8;--blue-l:#3b82f6;
+  --blue-xl:#eff6ff;--blue-s:#dbeafe;
+  --amber:#f59e0b;--green:#10b981;--red:#ef4444;
+  --purple:#8b5cf6;--sky:#0ea5e9;
+  --ink:#0f172a;--ink2:#334155;--ink3:#64748b;--ink4:#94a3b8;
+  --line:#e2e8f0;--surf:#f8fafc;--white:#fff;
+  --s1:0 1px 3px rgba(15,23,42,.06),0 1px 2px rgba(15,23,42,.04);
+  --s2:0 4px 16px rgba(15,23,42,.08),0 2px 6px rgba(15,23,42,.04);
+  --s3:0 12px 40px rgba(15,23,42,.10),0 3px 10px rgba(15,23,42,.06);
+  --s4:0 24px 64px rgba(15,23,42,.12),0 6px 20px rgba(15,23,42,.07);
+  --sb:0 8px 32px rgba(37,99,235,.20);
+  --fd:'Sora',sans-serif;--fb:'DM Sans',sans-serif;
+  --ease:cubic-bezier(.4,0,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);color:var(--ink);background:var(--white);overflow-x:hidden;-webkit-font-smoothing:antialiased;line-height:1.6}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+button{cursor:pointer;border:none;background:none;font-family:var(--fb)}
+.w{max-width:1180px;margin:0 auto;padding:0 24px}
+
+/* animations */
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@keyframes pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.4);opacity:.5}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@keyframes gradShift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+.rev{opacity:0;transform:translateY(22px);transition:opacity .55s var(--ease),transform .55s var(--ease)}
+.rev.in{opacity:1;transform:none}
+
+/* ═══════════════════════════════════════
+   HEADER
+═══════════════════════════════════════ */
+.hdr{position:sticky;top:0;z-index:999;background:rgba(255,255,255,.96);backdrop-filter:blur(20px);border-bottom:1px solid var(--line);box-shadow:var(--s1)}
+.hdi{display:flex;align-items:center;justify-content:space-between;height:66px}
+.logo{display:flex;align-items:center;gap:10px}
+.lb{width:36px;height:36px;background:var(--blue);border-radius:9px;display:flex;align-items:center;justify-content:center;box-shadow:var(--sb);flex-shrink:0}
+.lb svg{width:18px;height:18px;fill:#fff}
+.ln{font-family:var(--fd);font-size:19px;font-weight:800;color:var(--ink);line-height:1}
+.ln span{color:var(--blue)}
+.ls{font-size:10px;color:var(--ink4);letter-spacing:.04em}
+nav.dn{display:flex;align-items:center;gap:2px}
+nav.dn a{font-size:13.5px;font-weight:500;color:var(--ink2);padding:7px 13px;border-radius:8px;transition:.2s}
+nav.dn a:hover{color:var(--blue);background:var(--blue-xl)}
+.hcta{background:var(--blue);color:#fff;font-family:var(--fd);font-weight:600;font-size:13px;padding:8px 18px;border-radius:8px;box-shadow:var(--sb);transition:.2s}
+.hcta:hover{background:var(--blue-d);transform:translateY(-1px)}
+.brg{display:none;flex-direction:column;gap:4.5px;padding:8px;border-radius:8px}
+.brg span{display:block;width:20px;height:2px;background:var(--ink);border-radius:2px;transition:.28s}
+/* drawer */
+.dov{display:none;position:fixed;inset:0;background:rgba(15,23,42,.45);z-index:1040;backdrop-filter:blur(3px)}
+.dov.on{display:block}
+.drw{position:fixed;top:0;right:-100%;width:270px;height:100vh;background:#fff;z-index:1050;padding:22px;box-shadow:var(--s4);transition:right .32s var(--ease);overflow-y:auto}
+.drw.on{right:0}
+.dh{display:flex;align-items:center;justify-content:space-between;margin-bottom:26px}
+.dx{width:33px;height:33px;border-radius:7px;background:var(--surf);display:flex;align-items:center;justify-content:center;color:var(--ink3);font-size:17px}
+nav.mn{display:flex;flex-direction:column;gap:3px}
+nav.mn a{display:block;font-size:14px;font-weight:500;color:var(--ink2);padding:11px 13px;border-radius:8px;transition:.2s}
+nav.mn a:hover{color:var(--blue);background:var(--blue-xl)}
+
+/* ═══════════════════════════════════════
+   HERO
+═══════════════════════════════════════ */
+.hero{
+  position:relative;overflow:hidden;
+  background:linear-gradient(155deg,#f0f7ff 0%,#ffffff 46%,#fdf2ff 100%);
+  padding:68px 0 84px;
+}
+.hero::before{content:'';position:absolute;top:-150px;right:-180px;width:620px;height:620px;border-radius:50%;background:radial-gradient(circle,rgba(37,99,235,.08) 0%,transparent 68%);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-90px;left:-110px;width:460px;height:460px;border-radius:50%;background:radial-gradient(circle,rgba(139,92,246,.05) 0%,transparent 68%);pointer-events:none}
+.blob{position:absolute;border-radius:50%;pointer-events:none;animation:float 6s ease-in-out infinite}
+.b1{width:13px;height:13px;background:rgba(37,99,235,.18);top:22%;right:16%;animation-delay:0s}
+.b2{width:9px;height:9px;background:rgba(139,92,246,.22);top:60%;right:28%;animation-delay:2.2s}
+.b3{width:11px;height:11px;background:rgba(245,158,11,.20);top:36%;right:7%;animation-delay:4s}
+
+.bc{display:flex;align-items:center;gap:7px;font-size:12.5px;color:var(--ink3);margin-bottom:28px}
+.bc a{color:var(--blue);font-weight:600}
+
+.pill{display:inline-flex;align-items:center;gap:7px;font-family:var(--fd);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);background:var(--blue-xl);padding:5px 14px;border-radius:100px;margin-bottom:20px}
+.pill::before{content:'';width:6px;height:6px;background:var(--blue);border-radius:50%}
+
+.hero-inner{position:relative;z-index:1;max-width:740px;animation:fadeUp .52s ease both}
+.hero h1{font-family:var(--fd);font-size:clamp(30px,5vw,56px);font-weight:800;line-height:1.09;color:var(--ink);margin-bottom:16px}
+.hero h1 span{color:var(--blue)}
+.hero-sub{font-size:16.5px;color:var(--ink3);line-height:1.82;max-width:560px;margin-bottom:28px}
+.trust-stmt{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:var(--ink2);background:rgba(37,99,235,.06);border:1.5px solid var(--blue-s);padding:10px 18px;border-radius:100px;margin-bottom:28px}
+.trust-stmt span{color:var(--blue)}
+
+/* badges */
+.badges{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:30px}
+.badge{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:600;padding:7px 15px;border-radius:100px;transition:.22s;border:1.5px solid transparent}
+.badge:hover{transform:translateY(-2px)}
+.badge.b{background:var(--blue-xl);color:var(--blue);border-color:var(--blue-s)}
+.badge.g{background:linear-gradient(135deg,#f0fdf4,#dcfce7);color:#166534;border-color:#bbf7d0}
+.badge.p{background:linear-gradient(135deg,#faf5ff,#ede9fe);color:#6d28d9;border-color:#ddd6fe}
+.pd{width:7px;height:7px;border-radius:50%;animation:pulse 2s infinite}
+.pd.b{background:var(--blue)}.pd.g{background:var(--green)}.pd.p{background:var(--purple)}
+
+/* meta row */
+.hero-meta{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.meta-i{display:flex;align-items:center;gap:7px;font-size:13px;color:var(--ink3);font-weight:500}
+.m-sep{width:4px;height:4px;background:var(--line);border-radius:50%}
+.upd{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:700;color:var(--blue);background:var(--blue-xl);padding:6px 14px;border-radius:100px;border:1.5px solid var(--blue-s)}
+
+/* ═══════════════════════════════════════
+   TABLE OF CONTENTS
+═══════════════════════════════════════ */
+.toc-sec{background:var(--surf);padding:52px 0}
+.toc-wrap{max-width:880px;margin:0 auto}
+.toc-card{background:#fff;border:1.5px solid var(--line);border-radius:22px;padding:32px 36px;box-shadow:var(--s2)}
+.toc-hd{display:flex;align-items:center;gap:13px;margin-bottom:22px;padding-bottom:18px;border-bottom:1px solid var(--line)}
+.toc-ico{width:42px;height:42px;background:var(--blue-xl);border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:19px;flex-shrink:0}
+.toc-title{font-family:var(--fd);font-size:17px;font-weight:700;color:var(--ink)}
+.toc-sub{font-size:13px;font-weight:400;color:var(--ink3);margin-left:7px}
+.toc-grid{display:grid;grid-template-columns:1fr 1fr;gap:7px}
+.tl{display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:10px;font-size:13.5px;font-weight:500;color:var(--ink2);transition:.22s;border:1px solid transparent}
+.tl:hover{background:var(--blue-xl);color:var(--blue);border-color:var(--blue-s);transform:translateX(3px)}
+.tn{width:22px;height:22px;background:var(--blue-xl);color:var(--blue);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0}
+
+/* ═══════════════════════════════════════
+   POLICY CONTENT
+═══════════════════════════════════════ */
+.terms-wrap{padding:72px 0}
+.terms-inner{max-width:880px;margin:0 auto;display:flex;flex-direction:column;gap:26px}
+
+/* card */
+.tc{background:#fff;border:1.5px solid var(--line);border-radius:22px;padding:36px 36px;box-shadow:var(--s2);position:relative;overflow:hidden;transition:box-shadow .28s var(--ease),border-color .28s,transform .28s}
+.tc::before{content:'';position:absolute;top:0;left:0;bottom:0;width:4px;background:var(--tc-c,var(--blue));border-radius:4px 0 0 4px}
+.tc:hover{box-shadow:var(--s3);border-color:var(--blue-s);transform:translateY(-2px)}
+
+/* card header */
+.tc-hd{display:flex;align-items:flex-start;gap:16px;margin-bottom:22px;padding-bottom:20px;border-bottom:1px solid var(--line)}
+.tc-ico{width:50px;height:50px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:23px;flex-shrink:0;background:var(--tc-bg,var(--blue-xl))}
+.tc-meta{flex:1}
+.tc-num{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink4);margin-bottom:3px}
+.tc-title{font-family:var(--fd);font-size:20px;font-weight:800;color:var(--ink)}
+
+/* content */
+.tc-body{font-size:15px;color:var(--ink3);line-height:1.82}
+.tc-body p{margin-bottom:14px}
+.tc-body p:last-child{margin-bottom:0}
+.tc-body ul{display:flex;flex-direction:column;gap:9px;margin:14px 0}
+.tc-body li{display:flex;align-items:flex-start;gap:12px;font-size:14.5px;color:var(--ink3);line-height:1.7}
+.tc-body li .chk{width:20px;height:20px;border-radius:5px;background:var(--tc-c,var(--blue));color:#fff;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;margin-top:2px}
+.tc-body strong{color:var(--ink2);font-weight:700}
+
+/* highlight boxes */
+.hl{border-radius:13px;padding:16px 18px;margin-top:18px;display:flex;align-items:flex-start;gap:13px}
+.hl.blue{background:var(--blue-xl);border:1.5px solid var(--blue-s)}
+.hl.green{background:linear-gradient(135deg,#f0fdf4,#dcfce7);border:1.5px solid #bbf7d0}
+.hl.amber{background:linear-gradient(135deg,#fffbeb,#fef3c7);border:1.5px solid #fde68a}
+.hl.red{background:linear-gradient(135deg,#fff5f5,#fee2e2);border:1.5px solid #fecaca}
+.hl.purple{background:linear-gradient(135deg,#faf5ff,#ede9fe);border:1.5px solid #ddd6fe}
+.hl-ico{font-size:20px;flex-shrink:0;margin-top:1px}
+.hl-txt{font-size:13.5px;color:var(--ink2);line-height:1.72}
+.hl-txt strong{color:var(--ink);font-weight:700}
+.hl-txt a{color:var(--blue);font-weight:600}
+
+/* tag chips */
+.tag-row{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px}
+.tg{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:600;padding:4px 12px;border-radius:100px;background:var(--surf);border:1.5px solid var(--line);color:var(--ink2)}
+
+/* ═══════════════════════════════════════
+   TRUST STRIP
+═══════════════════════════════════════ */
+.trust-strip{background:var(--surf);padding:56px 0}
+.trust-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.tr-card{background:#fff;border:1.5px solid var(--line);border-radius:18px;padding:28px 22px;text-align:center;transition:.28s var(--ease);position:relative;overflow:hidden}
+.tr-card::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--tr-c);transform:scaleX(0);transform-origin:left;transition:.3s}
+.tr-card:hover{transform:translateY(-6px);box-shadow:var(--s3);border-color:transparent}
+.tr-card:hover::after{transform:scaleX(1)}
+.tr-ico{width:54px;height:54px;border-radius:15px;margin:0 auto 16px;display:flex;align-items:center;justify-content:center;font-size:24px;background:var(--tr-bg)}
+.tr-title{font-family:var(--fd);font-size:16px;font-weight:800;color:var(--ink);margin-bottom:8px}
+.tr-desc{font-size:13.5px;color:var(--ink3);line-height:1.72}
+
+/* ═══════════════════════════════════════
+   CONTACT CALLOUT
+═══════════════════════════════════════ */
+.callout{background:linear-gradient(135deg,var(--blue) 0%,#1e40af 100%);border-radius:24px;padding:40px 40px;box-shadow:var(--sb);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;max-width:880px;margin:0 auto}
+.callout::before{content:'';position:absolute;top:-60px;right:-60px;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,.06)}
+.callout::after{content:'';position:absolute;bottom:-40px;left:-40px;width:160px;height:160px;border-radius:50%;background:rgba(255,255,255,.04)}
+.cl-left{position:relative;z-index:1}
+.cl-left h3{font-family:var(--fd);font-size:22px;font-weight:800;color:#fff;margin-bottom:8px}
+.cl-left p{font-size:14.5px;color:rgba(255,255,255,.8);line-height:1.7;max-width:440px}
+.cl-left p.meta{margin-top:10px;color:rgba(255,255,255,.65);font-size:13px}
+.cl-right{position:relative;z-index:1;flex-shrink:0}
+.btn-w{display:inline-flex;align-items:center;gap:8px;background:#fff;color:var(--blue);font-family:var(--fd);font-weight:700;font-size:14.5px;padding:13px 26px;border-radius:8px;box-shadow:0 4px 20px rgba(0,0,0,.15);transition:.22s}
+.btn-w:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(0,0,0,.2)}
+
+/* ═══════════════════════════════════════
+   CTA
+═══════════════════════════════════════ */
+.cta{background:linear-gradient(140deg,#0f172a 0%,#1e3a8a 100%);padding:88px 0;text-align:center;position:relative;overflow:hidden}
+.cta::before{content:'';position:absolute;top:-80px;left:50%;transform:translateX(-50%);width:800px;height:380px;background:radial-gradient(ellipse,rgba(37,99,235,.22) 0%,transparent 68%);pointer-events:none}
+.cta::after{content:'';position:absolute;bottom:-80px;right:-80px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(245,158,11,.08) 0%,transparent 68%);pointer-events:none}
+.cta-in{position:relative;z-index:1}
+.cta .pill{color:#93c5fd;background:rgba(255,255,255,.1);margin-bottom:20px}
+.cta .pill::before{background:#93c5fd}
+.cta h2{font-family:var(--fd);font-size:clamp(26px,4vw,44px);font-weight:800;color:#fff;line-height:1.15;margin-bottom:14px}
+.cta h2 em{color:#fbbf24;font-style:normal}
+.cta p{font-size:16px;color:rgba(255,255,255,.72);max-width:480px;margin:0 auto 36px;line-height:1.78}
+.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn-gold{display:inline-flex;align-items:center;gap:8px;background:var(--amber);color:#fff;font-family:var(--fd);font-weight:800;font-size:15px;padding:14px 32px;border-radius:8px;box-shadow:0 8px 28px rgba(245,158,11,.35);transition:.22s}
+.btn-gold:hover{background:#d97706;transform:translateY(-3px);box-shadow:0 16px 40px rgba(245,158,11,.45)}
+.btn-ghost{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.09);border:1.5px solid rgba(255,255,255,.22);color:#fff;font-family:var(--fd);font-weight:600;font-size:14px;padding:13px 26px;border-radius:8px;transition:.2s}
+.btn-ghost:hover{background:rgba(255,255,255,.16)}
+
+/* ═══════════════════════════════════════
+   FOOTER
+═══════════════════════════════════════ */
+footer{background:#0f172a;padding:68px 0 0}
+.ft-grid{display:grid;grid-template-columns:1.9fr 1fr 1fr 1fr;gap:44px;margin-bottom:52px}
+.ft-brand .ln{color:#fff}.ft-brand .ls{color:#475569}
+.ft-desc{font-size:13.5px;color:#64748b;line-height:1.78;max-width:265px;margin:13px 0 20px}
+.ft-soc{display:flex;gap:9px}
+.fs{width:34px;height:34px;border-radius:7px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;color:#94a3b8;font-size:13px;transition:.2s}
+.fs:hover{background:var(--blue);color:#fff}
+.fc h4{font-family:var(--fd);font-size:12px;font-weight:700;color:#fff;margin-bottom:14px;letter-spacing:.06em;text-transform:uppercase}
+.fc ul{display:flex;flex-direction:column;gap:8px}
+.fc ul a{font-size:13.5px;color:#64748b;transition:.18s}
+.fc ul a:hover{color:#93c5fd}
+.ft-btm{border-top:1px solid rgba(255,255,255,.07);padding:22px 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.ft-cp{font-size:12.5px;color:#475569}
+.ft-cp b{color:#64748b;font-weight:600}
+.ft-lnk{display:flex;gap:18px}
+.ft-lnk a{font-size:12.5px;color:#475569;transition:.18s}
+.ft-lnk a:hover{color:#93c5fd}
+
+/* back to top */
+.btt{position:fixed;bottom:26px;right:26px;z-index:500;width:43px;height:43px;background:var(--blue);color:#fff;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:17px;box-shadow:var(--sb);opacity:0;pointer-events:none;transform:translateY(14px);transition:.28s var(--ease)}
+.btt.on{opacity:1;pointer-events:auto;transform:translateY(0)}
+.btt:hover{transform:translateY(-3px);box-shadow:0 14px 36px rgba(37,99,235,.35)}
+
+/* ═══════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════ */
+@media(max-width:1060px){.ft-grid{grid-template-columns:1fr 1fr}.toc-grid{grid-template-columns:1fr}.trust-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:860px){nav.dn,.hcta{display:none}.brg{display:flex}.tc{padding:26px 22px}.toc-card{padding:24px}}
+@media(max-width:600px){
+  .ft-grid{grid-template-columns:1fr}.ft-btm{flex-direction:column;text-align:center}
+  .tc-hd{flex-direction:column;gap:12px}.trust-grid{grid-template-columns:1fr}
+  .callout{padding:28px 22px;flex-direction:column}.btn-w{width:100%;justify-content:center}
+  .cta-btns{flex-direction:column;align-items:center}
+  .hero h1{font-size:30px}.badges{gap:7px}
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════ HEADER ═══════ -->
+<header class="hdr">
+  <div class="w">
+    <div class="hdi">
+      <a href="/" class="logo">
+        <div class="lb">
+          <svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg>
+        </div>
+        <div>
+          <div class="ln">Raj<span>Daily</span>Tools</div>
+          <div class="ls">Smart Tools for Daily Life</div>
+        </div>
+      </a>
+      <nav class="dn">
+        <a href="/">Home</a>
+        <a href="/#categories">Categories</a>
+        <a href="/#popular">Popular</a>
+        <a href="/#latest">Latest</a>
+        <a href="/about">About</a>
+        <a href="/#faq">FAQ</a>
+        <a href="/contact">Contact</a>
+      </nav>
+      <a href="/#categories" class="hcta">Explore Tools →</a>
+      <button class="brg" id="brg"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="dov" id="dov"></div>
+<div class="drw" id="drw">
+  <div class="dh">
+    <div class="logo">
+      <div class="lb" style="width:30px;height:30px;border-radius:7px">
+        <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#fff"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg>
+      </div>
+      <div class="ln" style="font-size:16px">Raj<span>Daily</span>Tools</div>
+    </div>
+    <button class="dx" id="dx">✕</button>
+  </div>
+  <nav class="mn">
+    <a href="/" onclick="cD()">🏠 Home</a>
+    <a href="/#categories" onclick="cD()">🗂️ Categories</a>
+    <a href="/#popular" onclick="cD()">⭐ Popular</a>
+    <a href="/#latest" onclick="cD()">🆕 Latest</a>
+    <a href="/about" onclick="cD()">👤 About</a>
+    <a href="/#faq" onclick="cD()">❓ FAQ</a>
+    <a href="/contact" onclick="cD()">📬 Contact</a>
+  </nav>
+</div>
+
+<!-- ═══════ HERO ═══════ -->
+<section class="hero">
+  <div class="blob b1"></div>
+  <div class="blob b2"></div>
+  <div class="blob b3"></div>
+  <div class="w">
+    <div class="bc">
+      <a href="/">Home</a>
+      <span style="color:var(--ink4)">›</span>
+      <span>Terms &amp; Conditions</span>
+    </div>
+    <div class="hero-inner">
+      <div class="pill">Legal &amp; Terms</div>
+      <h1>Terms &amp; <span>Conditions</span></h1>
+      <p class="hero-sub">These Terms &amp; Conditions govern your use of RajDailyTools and all tools available on our platform. By using our website, you agree to these terms. Please read them carefully — they are written in plain English so everyone can understand them.</p>
+      <div class="trust-stmt">
+        <span>💡</span>
+        <span>We believe in <span>transparency and fairness</span> while providing free tools for everyone.</span>
+      </div>
+      <div class="badges">
+        <span class="badge b"><span class="pd b"></span> Transparent Policies</span>
+        <span class="badge g"><span class="pd g"></span> User Protection</span>
+        <span class="badge p"><span class="pd p"></span> Fair Usage</span>
+        <span class="badge b">🆓 Always Free</span>
+        <span class="badge g">✅ No Hidden Clauses</span>
+      </div>
+      <div class="hero-meta">
+        <div class="upd">📅 Last Updated: January 2026</div>
+        <span class="m-sep"></span>
+        <span class="meta-i">📖 ~6 min read</span>
+        <span class="m-sep"></span>
+        <span class="meta-i">🌐 Applies globally</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ TABLE OF CONTENTS ═══════ -->
+<section class="toc-sec">
+  <div class="w">
+    <div class="toc-wrap">
+      <div class="toc-card rev">
+        <div class="toc-hd">
+          <div class="toc-ico">📋</div>
+          <div>
+            <div class="toc-title">Table of Contents <span class="toc-sub">— click to jump to any section</span></div>
+          </div>
+        </div>
+        <div class="toc-grid">
+          <a href="#t1" class="tl"><span class="tn">01</span> Introduction</a>
+          <a href="#t2" class="tl"><span class="tn">02</span> Use of Website</a>
+          <a href="#t3" class="tl"><span class="tn">03</span> Intellectual Property</a>
+          <a href="#t4" class="tl"><span class="tn">04</span> User Responsibility</a>
+          <a href="#t5" class="tl"><span class="tn">05</span> No Guarantees</a>
+          <a href="#t6" class="tl"><span class="tn">06</span> Limitation of Liability</a>
+          <a href="#t7" class="tl"><span class="tn">07</span> Third-Party Links</a>
+          <a href="#t8" class="tl"><span class="tn">08</span> Privacy</a>
+          <a href="#t9" class="tl"><span class="tn">09</span> Modifications</a>
+          <a href="#t10" class="tl"><span class="tn">10</span> Contact Information</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ TERMS CONTENT ═══════ -->
+<section class="terms-wrap">
+  <div class="w">
+    <div class="terms-inner">
+
+      <!-- 01 Introduction -->
+      <div id="t1" class="tc rev" style="--tc-c:#2563eb;--tc-bg:#eff6ff">
+        <div class="tc-hd">
+          <div class="tc-ico">👋</div>
+          <div class="tc-meta">
+            <div class="tc-num">Section 01</div>
+            <div class="tc-title">Introduction</div>
+          </div>
+        </div>
+        <div class="tc-body">
+          <p>Welcome to <strong>RajDailyTools</strong> — India's most ambitious free online tools platform, built and managed by <strong>Raj Bhai</strong> (BSc Physics graduate, COPA ITI certified). Our mission is to provide 30,000+ free, fast, and accurate tools that solve real daily life problems for students, professionals, and everyday users across India and the world.</p>
+          <p>By accessing, browsing, or using any part of the RajDailyTools website at <strong>rajdailytools.com</strong>, you confirm that you have read, understood, and agree to be bound by these Terms &amp; Conditions. If you do not agree with any part of these terms, please refrain from using our website.</p>
+          <p>These Terms &amp; Conditions apply to all visitors, users, and anyone else who accesses or uses any feature of the RajDailyTools platform, regardless of whether they access it through desktop, mobile, or any other device.</p>
+          <div class="hl blue">
+            <span class="hl-ico">ℹ️</span>
+            <div class="hl-txt"><strong>Effective Date:</strong> These terms were last updated in January 2026 and are effective immediately for all existing and new users of RajDailyTools. We may update these terms from time to time (see Section 09).</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 02 Use of Website -->
+      <div id="t2" class="tc rev" style="--tc-c:#10b981;--tc-bg:#f0fdf4">
+        <div class="tc-hd">
+          <div class="tc-ico">🌐</div>
+          <div class="tc-meta">
+            <div class="tc-num">Section 02</div>
+            <div class="tc-title">Use of Website</div>
+          </div>
+        </div>
+        <div class="tc-body">
+          <p>RajDailyTools grants you a free, non-exclusive, non-transferable, and revocable licence to use our website and tools for personal, educational, and lawful professional purposes. By using this platform, you agree to the following:</p>
+          <ul>
+            <li><span class="chk">✓</span>Use all tools strictly for legal, ethical, and responsible purposes only</li>
+            <li><span class="chk">✓</span>Not attempt to hack, damage, disrupt, or overload our servers or systems in any way</li>
+            <li><span class="chk">✓</span>Not scrape, crawl, or automatically extract data from the website using bots or scripts without explicit written permission</li>
+            <li><span class="chk">✓</span>Not use the platform for any activity that violates applicable local, national, or international laws or regulations</li>
+            <li><span class="chk">✓</span>Not misrepresent your identity or affiliation when contacting us or submitting tool suggestions</li>
+            <li><span class="chk">✓</span>Not reproduce, distribute, or sell any tool, design, or content from RajDailyTools without explicit written permission</li>
+          </ul>
+          <div class="hl green">
+            <span class="hl-ico">✅</span>
+            <div class="hl-txt"><strong>Permitted use:</strong> You are encouraged to share links to our tools with others, use the tools for personal calculations, reference our tools in educational materials, and suggest new tools via our Contact page. Fair use is always welcome.</div>
+          </div>
+          <div class="tag-row">
+            <span class="tg">✅ Personal Use</span>
+            <span class="tg">✅ Educational Use</span>
+            <span class="tg">✅ Professional Use</span>
+            <span class="tg">🚫 Commercial Scraping</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 03 Intellectual Property -->
+      <div id="t3" class="tc rev" style="--tc-c:#8b5cf6;--tc-bg:#f5f3ff">
+        <div class="tc-hd">
+          <div class="tc-ico">©️</div>
+          <div class="tc-meta">
+            <div class="tc-num">Section 03</div>
+            <div class="tc-title">Intellectual Property</div>
+          </div>
+        </div>
+        <div class="tc-body">
+          <p>All content, tools, features, design elements, code, graphics, text, layouts, logos, and visual identity on the RajDailyTools website are the exclusive intellectual property of <strong>RajDailyTools</strong> and its founder, Raj Bhai, unless explicitly stated otherwise.</p>
+          <ul>
+            <li><span class="chk">✓</span>The <strong>RajDailyTools brand name</strong>, logo, and visual identity are owned exclusively by the platform and may not be reproduced or imitated</li>
+            <li><span class="chk">✓</span>All <strong>tool designs, code, algorithms</strong>, and calculation methods are protected by intellectual property law</li>
+            <li><span class="chk">✓</span>All <strong>written content</strong>, descriptions, guides, and blog posts published on this platform are original and copyrighted</li>
+            <li><span class="chk">✓</span>The overall <strong>website design system</strong> — including UI components, colour palette, typography, and layout — is the creative work of Raj Bhai</li>
+          </ul>
+          <div class="hl purple">
+            <span class="hl-ico">⚠️</span>
+            <div class="hl-txt"><strong>Usage restriction:</strong> You may not copy, clone, redistribute, or republish any part of RajDailyTools without express written permission. If you wish to reference our tools in your content or partner with us, please contact us at <a href="mailto:rajdailytools@gmail.com">rajdailytools@gmail.com</a>.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 04 User Responsibility -->
+      <div id="t4" class="tc rev" style="--tc-c:#f59e0b;--tc-bg:#fffbeb">
+        <div class="tc-hd">
+          <div class="tc-ico">👤</div>
+          <div class="tc-meta">
+            <div class="tc-num">Section 04</div>
+            <div class="tc-title">User Responsibility</div>
+          </div>
+        </div>
+        <div class="tc-body">
+          <p>You are entirely responsible for how you use RajDailyTools and how you apply the results generated by our tools. Our tools are designed to assist with calculations and information tasks — they are not substitutes for professional advice.</p>
+          <ul>
+            <li><span class="chk">✓</span>You are solely responsible for verifying the accuracy of any results before making important decisions based on them</li>
+            <li><span class="chk">✓</span>For <strong>financial decisions</strong> (loans, investments, EMI planning) you should always consult a certified financial advisor</li>
+            <li><span class="chk">✓</span>For <strong>health-related calculations</strong> (BMI, water intake, calories) you should consult a qualified medical professional</li>
+            <li><span class="chk">✓</span>For <strong>academic purposes</strong> (GPA, grade calculations) always cross-verify with your institution's official grading system</li>
+            <li><span class="chk">✓</span>You are responsible for any decisions, actions, or consequences that arise from your use of any tool on this platform</li>
+          </ul>
+          <div class="hl amber">
+            <span class="hl-ico">💡</span>
+            <div class="hl-txt"><strong>Our tools are aids, not advisors:</strong> RajDailyTools provides tools to help you calculate and understand — not to replace professional guidance. Always use the results as a starting point for further research and consultation.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 05 No Guarantees -->
+      <div id="t5" class="tc rev" style="--tc-c:#0ea5e9;--tc-bg:#f0f9ff">
+        <div class="tc-hd">
+          <div class="tc-ico">⚠️</div>
+          <div class="tc-meta">
+            <div class="tc-num">Section 05</div>
+            <div class="tc-title">No Guarantees (Disclaimer of Warranties)</div>
+          </div>
+        </div>
+        <div class="tc-body">
+          <p>RajDailyTools provides all tools, content, and services on an <strong>"as is" and "as available"</strong> basis without any warranty, express or implied. While we strive for accuracy and excellence in every tool we build, we cannot guarantee perfection.</p>
+          <ul>
+            <li><span class="chk">✓</span>We do not guarantee that every tool will be 100% accurate in all scenarios or for all input types</li>
+            <li><span class="chk">✓</span>We do not guarantee continuous, uninterrupted access to the website or any specific tool at all times</li>
+            <li><span class="chk">✓</span>We do not warrant that the platform will be free from bugs, errors, viruses, or other harmful components</li>
+            <li><span class="chk">✓</span>Results generated by our tools may vary from official or professional calculations due to rounding, formula versions, or regional variations</li>
+            <li><span class="chk">✓</span>We do not guarantee that the platform will meet all specific requirements of every individual user</li>
+          </ul>
+          <div class="hl blue">
+            <span class="hl-ico">🔧</span>
+            <div class="hl-txt"><strong>Our commitment despite this:</strong> Even though we cannot legally guarantee perfection, we are deeply committed to accuracy. All tools are tested and validated before launch. If you find an error, please <a href="/contact">report it</a> and we'll fix it fast.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 06 Limitation of Liability -->
+      <div id="t6" class="tc rev" style="--tc-c:#ef4444;--tc-bg:#fef2f2">
+        <div class="tc-hd">
+          <div class="tc-ico">🛡️</div>
+          <div class="tc-meta">
+            <div class="tc-num">Section 06</div>
+            <div class="tc-title">Limitation of Liability</div>
+          </div>
+        </div>
+        <div class="tc-body">
+          <p>To the fullest extent permitted by applicable law, <strong>RajDailyTools, its founder Raj Bhai, and any affiliated contributors shall not be held liable</strong> for any direct, indirect, incidental, special, consequential, or punitive damages arising from your use of the platform.</p>
+          <ul>
+            <li><span class="chk">✓</span>Any financial loss, poor investment decision, or business loss resulting from using our finance calculators</li>
+            <li><span class="chk">✓</span>Any health consequences resulting from following output from our health and wellness tools</li>
+            <li><span class="chk">✓</span>Any academic consequences from grade or GPA calculations on this platform</li>
+            <li><span class="chk">✓</span>Any data loss, system damage, or security breach on your device caused by visiting or using the platform</li>
+            <li><span class="chk">✓</span>Any downtime, errors, or unavailability of tools that causes inconvenience or financial impact</li>
+          </ul>
+          <div class="hl red">
+            <span class="hl-ico">⚖️</span>
+            <div class="hl-txt"><strong>Legal notice:</strong> Some jurisdictions do not allow the exclusion of certain warranties or limitation of liability. In such cases, our liability is limited to the maximum extent permitted by law. RajDailyTools is a free platform and charges no fees — therefore no financial compensation claims can be made.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 07 Third-Party Links -->
+      <div id="t7" class="tc rev" style="--tc-c:#0ea5e9;--tc-bg:#f0f9ff">
+        <div class="tc-hd">
+          <div class="tc-ico">🔗</div>
+          <div class="tc-meta">
+            <div class="tc-num">Section 07</div>
+            <div class="tc-title">Third-Party Links &amp; Services</div>
+          </div>
+        </div>
+        <div class="tc-body">
+          <p>RajDailyTools may contain links to external websites, third-party tools, or embedded services that are not owned or controlled by us. These are provided purely for your convenience and to enhance your experience.</p>
+          <ul>
+            <li><span class="chk">✓</span>We have no control over the content, privacy practices, or policies of any third-party websites or services</li>
+            <li><span class="chk">✓</span><strong>Google AdSense</strong> serves advertisements on our platform — these are governed by Google's own Terms of Service</li>
+            <li><span class="chk">✓</span><strong>Google Analytics</strong> tracks anonymous usage statistics — governed by Google's Terms of Service and Privacy Policy</li>
+            <li><span class="chk">✓</span>Any embedded content (YouTube videos, Google Forms) is subject to the respective platform's own terms</li>
+            <li><span class="chk">✓</span>Clicking on external links means you leave RajDailyTools — we are not responsible for the content or safety of those pages</li>
+          </ul>
+          <div class="hl amber">
+            <span class="hl-ico">💡</span>
+            <div class="hl-txt"><strong>Our recommendation:</strong> Before using any third-party service linked from our platform, we encourage you to read their respective Terms of Service and Privacy Policy to understand your rights and obligations.</div>
+          </div>
+          <div class="tag-row">
+            <span class="tg">📊 Google Analytics</span>
+            <span class="tg">📢 Google AdSense</span>
+            <span class="tg">🔤 Google Fonts</span>
+            <span class="tg">📋 Google Forms</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 08 Privacy -->
+      <div id="t8" class="tc rev" style="--tc-c:#10b981;--tc-bg:#f0fdf4">
+        <div class="tc-hd">
+          <div class="tc-ico">🔒</div>
+          <div class="tc-meta">
+            <div class="tc-num">Section 08</div>
+            <div class="tc-title">Privacy</div>
+          </div>
+        </div>
+        <div class="tc-body">
+          <p>Your privacy is important to us and is governed by our dedicated <strong>Privacy Policy</strong>, which forms an integral part of these Terms &amp; Conditions. By using RajDailyTools, you also agree to the practices described in our Privacy Policy.</p>
+          <ul>
+            <li><span class="chk">✓</span>We collect minimal, necessary data only — primarily through Google Analytics and contact form submissions</li>
+            <li><span class="chk">✓</span>Most tools on RajDailyTools run entirely in your browser — your calculator inputs are never sent to our servers</li>
+            <li><span class="chk">✓</span>We do not sell, trade, or share your personal information with third parties for commercial gain</li>
+            <li><span class="chk">✓</span>Google AdSense uses cookies for relevant advertising — you can opt out via Google's Ad Settings</li>
+            <li><span class="chk">✓</span>All contact form data is kept confidential and used only to respond to your enquiry</li>
+          </ul>
+          <div class="hl green">
+            <span class="hl-ico">📄</span>
+            <div class="hl-txt"><strong>Read our full Privacy Policy:</strong> For complete details on how we collect, use, and protect your data, please visit our <a href="/privacy">Privacy Policy page</a>. It's written in plain English and covers everything you need to know.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 09 Modifications -->
+      <div id="t9" class="tc rev" style="--tc-c:#f59e0b;--tc-bg:#fffbeb">
+        <div class="tc-hd">
+          <div class="tc-ico">🔄</div>
+          <div class="tc-meta">
+            <div class="tc-num">Section 09</div>
+            <div class="tc-title">Modifications to Terms</div>
+          </div>
+        </div>
+        <div class="tc-body">
+          <p>RajDailyTools is a rapidly growing platform — as we add new tools, features, and services, we may need to update these Terms &amp; Conditions from time to time. We reserve the right to modify any part of these terms at our sole discretion.</p>
+          <ul>
+            <li><span class="chk">✓</span>Any changes to these Terms will be reflected on this page with an updated "Last Updated" date at the top of the page</li>
+            <li><span class="chk">✓</span>Significant changes that materially affect user rights will be announced prominently on the website</li>
+            <li><span class="chk">✓</span>Your continued use of RajDailyTools after any modification to the Terms constitutes your acceptance of the updated version</li>
+            <li><span class="chk">✓</span>If you disagree with updated terms, you should discontinue use of the platform</li>
+            <li><span class="chk">✓</span>We encourage you to review these Terms periodically, especially when using new features we launch</li>
+          </ul>
+          <div class="hl amber">
+            <span class="hl-ico">📅</span>
+            <div class="hl-txt"><strong>Current version:</strong> These Terms &amp; Conditions were last updated in <strong>January 2026</strong> — Version 1.0. As RajDailyTools grows toward its vision of 30,000+ tools, these Terms will be reviewed and updated as needed to reflect the evolving platform.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 10 Contact -->
+      <div id="t10" class="tc rev" style="--tc-c:#2563eb;--tc-bg:#eff6ff">
+        <div class="tc-hd">
+          <div class="tc-ico">📬</div>
+          <div class="tc-meta">
+            <div class="tc-num">Section 10</div>
+            <div class="tc-title">Contact Information</div>
+          </div>
+        </div>
+        <div class="tc-body">
+          <p>If you have any questions, concerns, or feedback about these Terms &amp; Conditions, or if you need clarification on any clause, please reach out to us. We believe in open communication and are happy to explain anything in more detail.</p>
+          <ul>
+            <li><span class="chk">✓</span>Questions or concerns about any clause in these Terms &amp; Conditions</li>
+            <li><span class="chk">✓</span>Requests for permission to use RajDailyTools content, tools, or brand elements</li>
+            <li><span class="chk">✓</span>Reports of content that may infringe on third-party intellectual property</li>
+            <li><span class="chk">✓</span>Business partnership or collaboration enquiries</li>
+            <li><span class="chk">✓</span>General questions about the platform, tools, or Raj Bhai's vision</li>
+          </ul>
+          <div class="hl blue">
+            <span class="hl-ico">📧</span>
+            <div class="hl-txt"><strong>Email us at:</strong> <a href="mailto:rajdailytools@gmail.com">rajdailytools@gmail.com</a> — We respond to all legitimate enquiries within 24 hours. Our founder Raj Bhai personally reviews and responds to important messages.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Callout -->
+      <div class="callout rev">
+        <div class="cl-left">
+          <h3>📬 Questions About These Terms?</h3>
+          <p>We keep our terms simple, fair, and transparent. If anything is unclear or you need more information, reach out to Raj Bhai directly — we're happy to explain anything.</p>
+          <p class="meta">📧 rajdailytools@gmail.com &nbsp;·&nbsp; 🌐 rajdailytools.com &nbsp;·&nbsp; 📍 India 🇮🇳</p>
+        </div>
+        <div class="cl-right">
+          <a href="mailto:rajdailytools@gmail.com" class="btn-w">✉️ Email Us Now →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ TRUST STRIP ═══════ -->
+<section class="trust-strip">
+  <div class="w">
+    <div style="text-align:center;margin-bottom:40px" class="rev">
+      <div class="pill" style="margin-bottom:14px">Our Commitments</div>
+      <h2 style="font-family:var(--fd);font-size:clamp(22px,3.4vw,36px);font-weight:800;color:var(--ink);margin-bottom:10px">
+        Why You Can <span style="color:var(--blue)">Trust Us</span>
+      </h2>
+      <p style="font-size:16px;color:var(--ink3);max-width:480px;margin:0 auto;line-height:1.75">Three core principles that guide everything we do at RajDailyTools.</p>
+    </div>
+    <div class="trust-grid">
+      <div class="tr-card rev" style="--tr-c:#2563eb;--tr-bg:#eff6ff">
+        <div class="tr-ico">📖</div>
+        <div class="tr-title">Transparent Policies</div>
+        <div class="tr-desc">Our Terms, Privacy Policy, and Disclaimer are written in plain English. No confusing legal jargon. What you see is what you get — always.</div>
+      </div>
+      <div class="tr-card rev" style="--tr-c:#10b981;--tr-bg:#f0fdf4">
+        <div class="tr-ico">🛡️</div>
+        <div class="tr-title">User Protection</div>
+        <div class="tr-desc">Your data is not sold. Your privacy is respected. Your tools are free. We put users first in every decision we make at RajDailyTools.</div>
+      </div>
+      <div class="tr-card rev" style="--tr-c:#f59e0b;--tr-bg:#fffbeb">
+        <div class="tr-ico">⚖️</div>
+        <div class="tr-title">Fair Usage</div>
+        <div class="tr-desc">These terms are designed to protect both users and the platform. We ask only for responsible, legal use in return for providing everything completely free.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ CTA ═══════ -->
+<section class="cta">
+  <div class="w">
+    <div class="cta-in">
+      <div class="pill">Keep Exploring</div>
+      <h2>Fair Terms. <em>Free Tools.</em></h2>
+      <p>Now that you've reviewed our terms, go ahead and use 30,000+ free tools with complete confidence. Built with transparency and fairness at the core.</p>
+      <div class="cta-btns">
+        <a href="/#categories" class="btn-gold">🚀 Explore All Tools</a>
+        <a href="/privacy" class="btn-ghost">🔒 Privacy Policy</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ FOOTER ═══════ -->
+<footer>
+  <div class="w">
+    <div class="ft-grid">
+      <div class="ft-brand">
+        <div class="logo" style="margin-bottom:4px">
+          <div class="lb"><svg viewBox="0 0 24 24" fill="#fff"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+          <div>
+            <div class="ln">Raj<span>Daily</span>Tools</div>
+            <div class="ls">Smart Tools for Daily Life</div>
+          </div>
+        </div>
+        <p class="ft-desc">India's most ambitious free tools platform. Built by Raj Bhai with a vision of 30,000+ tools. Solving daily life problems, one tool at a time.</p>
+        <div class="ft-soc">
+          <a href="https://www.facebook.com/share/1Dq3Y1k7mG/" target="_blank" class="fs">f</a>
+          <a href="https://x.com/Educator4ll" target="_blank" class="fs">𝕏</a>
+          <a href="https://youtube.com/@rajdailytools" target="_blank" class="fs">▶</a>
+          <a href="https://www.instagram.com/rajdailytools" target="_blank" class="fs">📷</a>
+        </div>
+      </div>
+      <div class="fc">
+        <h4>Categories</h4>
+        <ul>
+          <li><a href="/education-tools">Education Tools</a></li>
+          <li><a href="/finance-tools">Finance Tools</a></li>
+          <li><a href="/converter-tools">Converter Tools</a></li>
+          <li><a href="/daily-utility-tools">Daily Utility Tools</a></li>
+          <li><a href="/calculator-tools">Calculator Tools</a></li>
+          <li><a href="/health-tools">Health Tools</a></li>
+          <li><a href="/text-tools">Text Tools</a></li>
+          <li><a href="/other-tools">Other Tools</a></li>
+        </ul>
+      </div>
+      <div class="fc">
+        <h4>Popular Tools</h4>
+        <ul>
+          <li><a href="/emi-calculator">EMI Calculator</a></li>
+          <li><a href="/percentage-calculator">Percentage Calc</a></li>
+          <li><a href="/age-calculator">Age Calculator</a></li>
+          <li><a href="/unit-converter">Unit Converter</a></li>
+          <li><a href="/gpa-calculator">GPA Calculator</a></li>
+          <li><a href="/word-counter">Word Counter</a></li>
+          <li><a href="/pdf-to-image">PDF to Image</a></li>
+          <li><a href="/water-intake-calculator">Water Intake Calc</a></li>
+        </ul>
+      </div>
+      <div class="fc">
+        <h4>Legal &amp; Company</h4>
+        <ul>
+          <li><a href="/about">About Us</a></li>
+          <li><a href="/contact">Contact</a></li>
+          <li><a href="/privacy">Privacy Policy</a></li>
+          <li><a href="/terms">Terms of Service</a></li>
+          <li><a href="/disclaimer">Disclaimer</a></li>
+          <li><a href="/blog">Blog</a></li>
+          <li><a href="/sitemap">Sitemap</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ft-btm">
+      <p class="ft-cp">© 2026 <b>RajDailyTools</b>. All rights reserved. Made with ❤️ in India by Raj Bhai &nbsp;|&nbsp; Powered by <b>RajDailyTools</b></p>
+      <div class="ft-lnk">
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+        <a href="/disclaimer">Disclaimer</a>
+        <a href="/sitemap">Sitemap</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+/* Drawer */
+const brg=document.getElementById('brg'),drw=document.getElementById('drw'),dov=document.getElementById('dov');
+function oD(){drw.classList.add('on');dov.classList.add('on');document.body.style.overflow='hidden'}
+function cD(){drw.classList.remove('on');dov.classList.remove('on');document.body.style.overflow=''}
+brg.addEventListener('click',oD);
+document.getElementById('dx').addEventListener('click',cD);
+dov.addEventListener('click',cD);
+
+/* Back to top */
+const btt=document.getElementById('btt');
+window.addEventListener('scroll',()=>btt.classList.toggle('on',scrollY>380),{passive:true});
+
+/* Scroll reveal */
+const ro=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      const siblings=[...(e.target.parentElement?.children||[])];
+      e.target.style.transitionDelay=(siblings.indexOf(e.target)%4)*0.08+'s';
+      e.target.classList.add('in');
+      ro.unobserve(e.target);
+    }
+  });
+},{threshold:0.06,rootMargin:'0px 0px -24px 0px'});
+document.querySelectorAll('.rev').forEach(el=>ro.observe(el));
+
+/* Smooth TOC scroll */
+document.querySelectorAll('.tl').forEach(a=>{
+  a.addEventListener('click',e=>{
+    e.preventDefault();
+    const t=document.querySelector(a.getAttribute('href'));
+    if(t){
+      const top=t.getBoundingClientRect().top+window.scrollY-80;
+      window.scrollTo({top,behavior:'smooth'});
+    }
+  });
+});
+</script>
+</body>
+</html>
