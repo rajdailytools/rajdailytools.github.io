@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy – RajDailyTools | Free Online Tools Platform</title>
+<meta name="description" content="Read the Privacy Policy of RajDailyTools. Learn how we collect, use, and protect your information while you use our free online tools.">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Privacy Policy – RajDailyTools">
+<meta property="og:description" content="RajDailyTools Privacy Policy — transparent, simple, and user-first.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════════
+   DESIGN TOKENS — exact homepage match
+═══════════════════════════════════════════ */
+:root{
+  --blue:#2563eb; --blue-d:#1d4ed8; --blue-l:#3b82f6;
+  --blue-xl:#eff6ff; --blue-s:#dbeafe;
+  --amber:#f59e0b; --green:#10b981; --red:#ef4444;
+  --ink:#0f172a; --ink2:#334155; --ink3:#64748b; --ink4:#94a3b8;
+  --line:#e2e8f0; --surf:#f8fafc; --white:#fff;
+  --s1:0 1px 3px rgba(15,23,42,.06),0 1px 2px rgba(15,23,42,.04);
+  --s2:0 4px 16px rgba(15,23,42,.08),0 2px 6px rgba(15,23,42,.04);
+  --s3:0 12px 40px rgba(15,23,42,.10),0 3px 10px rgba(15,23,42,.06);
+  --s4:0 24px 64px rgba(15,23,42,.12),0 6px 20px rgba(15,23,42,.07);
+  --sb:0 8px 32px rgba(37,99,235,.20);
+  --fd:'Sora',sans-serif; --fb:'DM Sans',sans-serif;
+  --ease:cubic-bezier(.4,0,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);color:var(--ink);background:var(--white);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+button{cursor:pointer;border:none;background:none;font-family:var(--fb)}
+.w{max-width:1180px;margin:0 auto;padding:0 24px}
+
+/* Animations */
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@keyframes pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.4);opacity:.5}}
+@keyframes shimmer{0%{background-position:-200% 0}100%{background-position:200% 0}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+.rev{opacity:0;transform:translateY(22px);transition:opacity .55s var(--ease),transform .55s var(--ease)}
+.rev.in{opacity:1;transform:none}
+
+/* ═══════════════════════════════════════════
+   HEADER
+═══════════════════════════════════════════ */
+.hdr{position:sticky;top:0;z-index:999;background:rgba(255,255,255,.96);backdrop-filter:blur(20px);border-bottom:1px solid var(--line);box-shadow:var(--s1)}
+.hdi{display:flex;align-items:center;justify-content:space-between;height:66px}
+.logo{display:flex;align-items:center;gap:10px}
+.lb{width:36px;height:36px;background:var(--blue);border-radius:9px;display:flex;align-items:center;justify-content:center;box-shadow:var(--sb);flex-shrink:0}
+.lb svg{width:18px;height:18px;fill:#fff}
+.ln{font-family:var(--fd);font-size:19px;font-weight:800;color:var(--ink);line-height:1}
+.ln span{color:var(--blue)}
+.ls{font-size:10px;color:var(--ink4);letter-spacing:.04em}
+nav.dn{display:flex;align-items:center;gap:2px}
+nav.dn a{font-size:13.5px;font-weight:500;color:var(--ink2);padding:7px 13px;border-radius:8px;transition:.2s}
+nav.dn a:hover,nav.dn a.on{color:var(--blue);background:var(--blue-xl)}
+.hcta{background:var(--blue);color:#fff;font-family:var(--fd);font-weight:600;font-size:13px;padding:8px 18px;border-radius:8px;box-shadow:var(--sb);transition:.2s}
+.hcta:hover{background:var(--blue-d);transform:translateY(-1px)}
+.brg{display:none;flex-direction:column;gap:4.5px;padding:8px;border-radius:8px}
+.brg span{display:block;width:20px;height:2px;background:var(--ink);border-radius:2px;transition:.28s}
+/* Drawer */
+.dov{display:none;position:fixed;inset:0;background:rgba(15,23,42,.45);z-index:1040;backdrop-filter:blur(3px)}
+.dov.on{display:block}
+.drw{position:fixed;top:0;right:-100%;width:270px;height:100vh;background:#fff;z-index:1050;padding:22px;box-shadow:var(--s4);transition:right .32s var(--ease);overflow-y:auto}
+.drw.on{right:0}
+.dh{display:flex;align-items:center;justify-content:space-between;margin-bottom:26px}
+.dx{width:33px;height:33px;border-radius:7px;background:var(--surf);display:flex;align-items:center;justify-content:center;color:var(--ink3);font-size:17px}
+nav.mn a{display:block;font-size:14px;font-weight:500;color:var(--ink2);padding:11px 13px;border-radius:8px;transition:.2s}
+nav.mn a:hover{color:var(--blue);background:var(--blue-xl)}
+nav.mn{display:flex;flex-direction:column;gap:3px}
+
+/* ═══════════════════════════════════════════
+   HERO
+═══════════════════════════════════════════ */
+.hero{
+  position:relative;overflow:hidden;
+  background:linear-gradient(155deg,#ebf4ff 0%,#fff 50%,#f0fdf4 100%);
+  padding:64px 0 80px;
+}
+.hero::before{content:'';position:absolute;top:-140px;right:-180px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(37,99,235,.08) 0%,transparent 68%);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-80px;left:-100px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(16,185,129,.05) 0%,transparent 68%);pointer-events:none}
+
+/* floating blobs */
+.blob{position:absolute;border-radius:50%;pointer-events:none;animation:float 6s ease-in-out infinite}
+.b1{width:12px;height:12px;background:rgba(37,99,235,.18);top:22%;right:15%;animation-delay:0s}
+.b2{width:8px;height:8px;background:rgba(16,185,129,.25);top:60%;right:28%;animation-delay:2s}
+.b3{width:10px;height:10px;background:rgba(245,158,11,.2);top:38%;right:6%;animation-delay:4s}
+
+.bc{display:flex;align-items:center;gap:7px;font-size:12.5px;color:var(--ink3);margin-bottom:28px}
+.bc a{color:var(--blue);font-weight:600}
+.bc-sep{color:var(--ink4)}
+.hero-inner{position:relative;z-index:1;max-width:740px}
+.hero-inner{animation:fadeUp .52s ease both}
+
+.pill{display:inline-flex;align-items:center;gap:7px;font-family:var(--fd);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);background:var(--blue-xl);padding:5px 14px;border-radius:100px;margin-bottom:20px}
+.pill::before{content:'';width:6px;height:6px;background:var(--blue);border-radius:50%}
+
+.hero h1{font-family:var(--fd);font-size:clamp(30px,5vw,54px);font-weight:800;line-height:1.1;color:var(--ink);margin-bottom:16px}
+.hero h1 span{color:var(--blue)}
+.hero-sub{font-size:17px;color:var(--ink3);line-height:1.8;max-width:560px;margin-bottom:32px}
+
+/* Trust badges */
+.badges{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:32px}
+.badge{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:600;padding:7px 16px;border-radius:100px;transition:.22s}
+.badge:hover{transform:translateY(-2px)}
+.badge.g{background:linear-gradient(135deg,#f0fdf4,#dcfce7);color:#166534;border:1.5px solid #bbf7d0}
+.badge.b{background:var(--blue-xl);color:var(--blue);border:1.5px solid var(--blue-s)}
+.badge.a{background:linear-gradient(135deg,#fffbeb,#fef3c7);color:#92400e;border:1.5px solid #fde68a}
+.pd{width:7px;height:7px;border-radius:50%;animation:pulse 2s infinite}
+.pd.g{background:var(--green)} .pd.b{background:var(--blue)} .pd.a{background:var(--amber)}
+
+/* Meta row */
+.hero-meta{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.meta-item{display:flex;align-items:center;gap:7px;font-size:13px;color:var(--ink3);font-weight:500}
+.meta-dot{width:4px;height:4px;background:var(--line);border-radius:50%}
+.upd-badge{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:700;color:var(--blue);background:var(--blue-xl);padding:6px 14px;border-radius:100px;border:1.5px solid var(--blue-s)}
+
+/* ═══════════════════════════════════════════
+   TABLE OF CONTENTS
+═══════════════════════════════════════════ */
+.toc-section{background:var(--surf);padding:48px 0}
+.toc-card{background:#fff;border:1.5px solid var(--line);border-radius:20px;padding:32px 36px;box-shadow:var(--s2);max-width:860px;margin:0 auto}
+.toc-head{display:flex;align-items:center;gap:12px;margin-bottom:22px;padding-bottom:18px;border-bottom:1px solid var(--line)}
+.toc-ico{width:40px;height:40px;background:var(--blue-xl);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.toc-title{font-family:var(--fd);font-size:17px;font-weight:700;color:var(--ink)}
+.toc-title span{font-size:13px;font-weight:400;color:var(--ink3);margin-left:6px}
+.toc-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.toc-link{display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:10px;font-size:13.5px;font-weight:500;color:var(--ink2);transition:.22s;border:1px solid transparent}
+.toc-link:hover{background:var(--blue-xl);color:var(--blue);border-color:var(--blue-s);transform:translateX(3px)}
+.toc-num{width:22px;height:22px;background:var(--blue-xl);color:var(--blue);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0}
+
+/* ═══════════════════════════════════════════
+   MAIN POLICY CONTENT
+═══════════════════════════════════════════ */
+.policy-wrap{padding:72px 0}
+.policy-inner{max-width:860px;margin:0 auto;display:flex;flex-direction:column;gap:28px}
+
+/* Policy section card */
+.pc{
+  background:#fff;border:1.5px solid var(--line);
+  border-radius:20px;padding:36px 36px;
+  box-shadow:var(--s2);position:relative;overflow:hidden;
+  transition:box-shadow .28s var(--ease),border-color .28s;
+}
+.pc::before{
+  content:'';position:absolute;top:0;left:0;bottom:0;width:4px;
+  background:var(--pc-color,var(--blue));border-radius:4px 0 0 4px;
+}
+.pc:hover{box-shadow:var(--s3);border-color:var(--blue-s)}
+
+/* Section header */
+.pc-head{display:flex;align-items:flex-start;gap:16px;margin-bottom:24px;padding-bottom:20px;border-bottom:1px solid var(--line)}
+.pc-ico{width:48px;height:48px;border-radius:13px;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;background:var(--pc-bg,var(--blue-xl))}
+.pc-meta{flex:1}
+.pc-num{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink4);margin-bottom:3px}
+.pc-title{font-family:var(--fd);font-size:20px;font-weight:800;color:var(--ink)}
+
+/* Content styles */
+.pc-body{font-size:15px;color:var(--ink3);line-height:1.82}
+.pc-body p{margin-bottom:14px}
+.pc-body p:last-child{margin-bottom:0}
+.pc-body ul{padding-left:0;display:flex;flex-direction:column;gap:9px;margin:12px 0}
+.pc-body li{display:flex;align-items:flex-start;gap:12px;font-size:14.5px;color:var(--ink3);line-height:1.7}
+.pc-body li::before{content:'✓';width:20px;height:20px;background:var(--pc-color,var(--blue));color:#fff;border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;margin-top:2px}
+
+/* Highlight box inside card */
+.hl-box{background:var(--blue-xl);border:1.5px solid var(--blue-s);border-radius:12px;padding:16px 18px;margin-top:18px;display:flex;align-items:flex-start;gap:12px}
+.hl-box.green{background:linear-gradient(135deg,#f0fdf4,#dcfce7);border-color:#bbf7d0}
+.hl-box.amber{background:linear-gradient(135deg,#fffbeb,#fef3c7);border-color:#fde68a}
+.hl-icon{font-size:20px;flex-shrink:0;margin-top:1px}
+.hl-text{font-size:13.5px;color:var(--ink2);line-height:1.7}
+.hl-text strong{color:var(--ink);font-weight:700}
+
+/* Tag chips inside cards */
+.tag-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.tag{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:600;padding:4px 12px;border-radius:100px;background:var(--surf);border:1.5px solid var(--line);color:var(--ink2)}
+
+/* ═══════════════════════════════════════════
+   CONTACT CALLOUT
+═══════════════════════════════════════════ */
+.callout{
+  background:linear-gradient(135deg,var(--blue) 0%,#1e40af 100%);
+  border-radius:24px;padding:40px 40px;
+  box-shadow:var(--sb);position:relative;overflow:hidden;
+  display:flex;align-items:center;justify-content:space-between;gap:28px;
+  flex-wrap:wrap;
+}
+.callout::before{content:'';position:absolute;top:-60px;right:-60px;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,.06)}
+.callout::after{content:'';position:absolute;bottom:-40px;left:-40px;width:160px;height:160px;border-radius:50%;background:rgba(255,255,255,.04)}
+.callout-left{position:relative;z-index:1}
+.callout-left h3{font-family:var(--fd);font-size:22px;font-weight:800;color:#fff;margin-bottom:8px}
+.callout-left p{font-size:14.5px;color:rgba(255,255,255,.8);line-height:1.7;max-width:440px}
+.callout-right{position:relative;z-index:1;flex-shrink:0}
+.btn-white{display:inline-flex;align-items:center;gap:8px;background:#fff;color:var(--blue);font-family:var(--fd);font-weight:700;font-size:14.5px;padding:13px 26px;border-radius:8px;box-shadow:0 4px 20px rgba(0,0,0,.15);transition:.22s}
+.btn-white:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(0,0,0,.2)}
+
+/* ═══════════════════════════════════════════
+   CTA SECTION
+═══════════════════════════════════════════ */
+.cta{background:linear-gradient(140deg,#0f172a 0%,#1e3a8a 100%);padding:88px 0;text-align:center;position:relative;overflow:hidden}
+.cta::before{content:'';position:absolute;top:-80px;left:50%;transform:translateX(-50%);width:800px;height:380px;background:radial-gradient(ellipse,rgba(37,99,235,.22) 0%,transparent 68%);pointer-events:none}
+.cta::after{content:'';position:absolute;bottom:-80px;right:-80px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(245,158,11,.08) 0%,transparent 68%);pointer-events:none}
+.cta-in{position:relative;z-index:1}
+.cta .pill{color:#93c5fd;background:rgba(255,255,255,.1);margin-bottom:20px}
+.cta .pill::before{background:#93c5fd}
+.cta h2{font-family:var(--fd);font-size:clamp(26px,4vw,44px);font-weight:800;color:#fff;line-height:1.15;margin-bottom:14px}
+.cta h2 em{color:#fbbf24;font-style:normal}
+.cta p{font-size:16px;color:rgba(255,255,255,.72);max-width:480px;margin:0 auto 36px;line-height:1.78}
+.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn-gold{display:inline-flex;align-items:center;gap:8px;background:var(--amber);color:#fff;font-family:var(--fd);font-weight:800;font-size:15px;padding:14px 32px;border-radius:8px;box-shadow:0 8px 28px rgba(245,158,11,.35);transition:.22s}
+.btn-gold:hover{background:#d97706;transform:translateY(-3px);box-shadow:0 16px 40px rgba(245,158,11,.45)}
+.btn-ghost{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.09);border:1.5px solid rgba(255,255,255,.22);color:#fff;font-family:var(--fd);font-weight:600;font-size:14px;padding:13px 26px;border-radius:8px;transition:.2s}
+.btn-ghost:hover{background:rgba(255,255,255,.16)}
+
+/* ═══════════════════════════════════════════
+   FOOTER
+═══════════════════════════════════════════ */
+footer{background:#0f172a;padding:68px 0 0}
+.ft-grid{display:grid;grid-template-columns:1.9fr 1fr 1fr 1fr;gap:44px;margin-bottom:52px}
+.ft-brand .ln{color:#fff}
+.ft-brand .ls{color:#475569}
+.ft-desc{font-size:13.5px;color:#64748b;line-height:1.78;max-width:265px;margin:13px 0 20px}
+.ft-soc{display:flex;gap:9px}
+.fs{width:34px;height:34px;border-radius:7px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;color:#94a3b8;font-size:13px;transition:.2s}
+.fs:hover{background:var(--blue);color:#fff}
+.fc h4{font-family:var(--fd);font-size:12px;font-weight:700;color:#fff;margin-bottom:14px;letter-spacing:.06em;text-transform:uppercase}
+.fc ul{display:flex;flex-direction:column;gap:8px}
+.fc ul a{font-size:13.5px;color:#64748b;transition:.18s}
+.fc ul a:hover{color:#93c5fd}
+.ft-btm{border-top:1px solid rgba(255,255,255,.07);padding:22px 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.ft-cp{font-size:12.5px;color:#475569}
+.ft-cp b{color:#64748b;font-weight:600}
+.ft-lnk{display:flex;gap:18px}
+.ft-lnk a{font-size:12.5px;color:#475569;transition:.18s}
+.ft-lnk a:hover{color:#93c5fd}
+
+/* Back to top */
+.btt{position:fixed;bottom:26px;right:26px;z-index:500;width:43px;height:43px;background:var(--blue);color:#fff;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:17px;box-shadow:var(--sb);opacity:0;pointer-events:none;transform:translateY(14px);transition:.28s var(--ease)}
+.btt.on{opacity:1;pointer-events:auto;transform:translateY(0)}
+.btt:hover{transform:translateY(-3px);box-shadow:0 14px 36px rgba(37,99,235,.35)}
+
+/* ═══════════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════════ */
+@media(max-width:1060px){.ft-grid{grid-template-columns:1fr 1fr}.toc-grid{grid-template-columns:1fr}}
+@media(max-width:860px){nav.dn,.hcta{display:none}.brg{display:flex}.pc{padding:26px 22px}.toc-card{padding:24px}}
+@media(max-width:600px){
+  .ft-grid{grid-template-columns:1fr}.ft-btm{flex-direction:column;text-align:center}
+  .pc-head{flex-direction:column;gap:12px}.pc-ico{width:42px;height:42px}
+  .callout{padding:28px 22px}.callout-right{width:100%}.btn-white{width:100%;justify-content:center}
+  .cta-btns{flex-direction:column;align-items:center}
+  .badges{gap:8px}.hero h1{font-size:30px}
+  .toc-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════ HEADER ═══════ -->
+<header class="hdr">
+  <div class="w">
+    <div class="hdi">
+      <a href="/" class="logo">
+        <div class="lb">
+          <svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg>
+        </div>
+        <div>
+          <div class="ln">Raj<span>Daily</span>Tools</div>
+          <div class="ls">Smart Tools for Daily Life</div>
+        </div>
+      </a>
+      <nav class="dn">
+        <a href="/">Home</a>
+        <a href="/#categories">Categories</a>
+        <a href="/#popular">Popular</a>
+        <a href="/#latest">Latest</a>
+        <a href="/about">About</a>
+        <a href="/#faq">FAQ</a>
+        <a href="/contact">Contact</a>
+      </nav>
+      <a href="/#categories" class="hcta">Explore Tools →</a>
+      <button class="brg" id="brg"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="dov" id="dov"></div>
+<div class="drw" id="drw">
+  <div class="dh">
+    <div class="logo">
+      <div class="lb" style="width:30px;height:30px;border-radius:7px">
+        <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#fff"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg>
+      </div>
+      <div class="ln" style="font-size:16px">Raj<span>Daily</span>Tools</div>
+    </div>
+    <button class="dx" id="dx">✕</button>
+  </div>
+  <nav class="mn">
+    <a href="/" onclick="cD()">🏠 Home</a>
+    <a href="/#categories" onclick="cD()">🗂️ Categories</a>
+    <a href="/#popular" onclick="cD()">⭐ Popular</a>
+    <a href="/#latest" onclick="cD()">🆕 Latest</a>
+    <a href="/about" onclick="cD()">👤 About</a>
+    <a href="/#faq" onclick="cD()">❓ FAQ</a>
+    <a href="/contact" onclick="cD()">📬 Contact</a>
+  </nav>
+</div>
+
+<!-- ═══════ HERO ═══════ -->
+<section class="hero">
+  <div class="blob b1"></div>
+  <div class="blob b2"></div>
+  <div class="blob b3"></div>
+  <div class="w">
+    <div class="bc">
+      <a href="/">Home</a>
+      <span class="bc-sep">›</span>
+      <span>Privacy Policy</span>
+    </div>
+    <div class="hero-inner">
+      <div class="pill">Legal &amp; Privacy</div>
+      <h1>Privacy <span>Policy</span></h1>
+      <p class="hero-sub">At RajDailyTools, your privacy is not just a policy — it's a promise. We are fully transparent about what data we collect, how we use it, and how we protect it. Read on to understand your rights and our responsibilities.</p>
+      <div class="badges">
+        <span class="badge g"><span class="pd g"></span> Privacy First</span>
+        <span class="badge b"><span class="pd b"></span> No Data Selling</span>
+        <span class="badge a"><span class="pd a"></span> AdSense Compliant</span>
+        <span class="badge g">🔒 Secure Platform</span>
+        <span class="badge b">🚫 No Spam Ever</span>
+      </div>
+      <div class="hero-meta">
+        <div class="upd-badge">📅 Last Updated: January 2026</div>
+        <span class="meta-dot"></span>
+        <span class="meta-item">📖 ~5 min read</span>
+        <span class="meta-dot"></span>
+        <span class="meta-item">🌐 Applies globally</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ TABLE OF CONTENTS ═══════ -->
+<section class="toc-section">
+  <div class="w">
+    <div class="toc-card rev">
+      <div class="toc-head">
+        <div class="toc-ico">📋</div>
+        <div>
+          <div class="toc-title">Table of Contents <span>— jump to any section</span></div>
+        </div>
+      </div>
+      <div class="toc-grid">
+        <a href="#s1" class="toc-link"><span class="toc-num">01</span> Introduction</a>
+        <a href="#s2" class="toc-link"><span class="toc-num">02</span> Information We Collect</a>
+        <a href="#s3" class="toc-link"><span class="toc-num">03</span> How We Use Information</a>
+        <a href="#s4" class="toc-link"><span class="toc-num">04</span> Cookies Policy</a>
+        <a href="#s5" class="toc-link"><span class="toc-num">05</span> Google AdSense</a>
+        <a href="#s6" class="toc-link"><span class="toc-num">06</span> Third-Party Services</a>
+        <a href="#s7" class="toc-link"><span class="toc-num">07</span> Data Protection</a>
+        <a href="#s8" class="toc-link"><span class="toc-num">08</span> User Consent</a>
+        <a href="#s9" class="toc-link"><span class="toc-num">09</span> Updates to Policy</a>
+        <a href="#s10" class="toc-link"><span class="toc-num">10</span> Contact Information</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ POLICY CONTENT ═══════ -->
+<section class="policy-wrap">
+  <div class="w">
+    <div class="policy-inner">
+
+      <!-- 01 Introduction -->
+      <div id="s1" class="pc rev" style="--pc-color:#2563eb;--pc-bg:#eff6ff">
+        <div class="pc-head">
+          <div class="pc-ico">👋</div>
+          <div class="pc-meta">
+            <div class="pc-num">Section 01</div>
+            <div class="pc-title">Introduction</div>
+          </div>
+        </div>
+        <div class="pc-body">
+          <p>Welcome to <strong>RajDailyTools</strong> — India's most ambitious free online tools platform, built by Raj Bhai with a vision to create 30,000+ tools that solve real daily life problems for students, professionals, and everyday users worldwide.</p>
+          <p>This Privacy Policy explains how we collect, use, store, and protect your information when you use our website at <strong>rajdailytools.com</strong>. By accessing or using RajDailyTools, you agree to the practices described in this policy.</p>
+          <p>We are committed to full transparency. We believe your privacy is a fundamental right, not an afterthought. This document is written in clear, simple language so you always know exactly what's happening with your information.</p>
+          <div class="hl-box green">
+            <span class="hl-icon">✅</span>
+            <div class="hl-text"><strong>Our core promise:</strong> RajDailyTools does not sell, trade, or rent your personal information to third parties. Period. Your trust is more valuable to us than any data deal.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 02 Information We Collect -->
+      <div id="s2" class="pc rev" style="--pc-color:#8b5cf6;--pc-bg:#f5f3ff">
+        <div class="pc-head">
+          <div class="pc-ico">📊</div>
+          <div class="pc-meta">
+            <div class="pc-num">Section 02</div>
+            <div class="pc-title">Information We Collect</div>
+          </div>
+        </div>
+        <div class="pc-body">
+          <p>We collect two types of information depending on how you use our platform. Most tools on RajDailyTools run entirely in your browser and collect no personal data whatsoever.</p>
+          <p><strong>Personal Information (only when you contact us):</strong></p>
+          <ul>
+            <li>Your name (if provided in the contact form)</li>
+            <li>Your email address (for responding to your queries)</li>
+            <li>Your message content (to address your request or feedback)</li>
+          </ul>
+          <p style="margin-top:14px"><strong>Non-Personal / Automatically Collected Information:</strong></p>
+          <ul>
+            <li>IP address and approximate geographic location</li>
+            <li>Browser type, version, and operating system</li>
+            <li>Device type (desktop, mobile, tablet)</li>
+            <li>Pages visited, time spent, and navigation patterns</li>
+            <li>Referring website or search engine</li>
+            <li>Session duration and interaction data</li>
+          </ul>
+          <div class="hl-box">
+            <span class="hl-icon">ℹ️</span>
+            <div class="hl-text"><strong>Important:</strong> Most of our tools run entirely client-side in your browser. When you use a calculator or converter, the data you enter never leaves your device. It is processed locally and discarded when you close the page.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 03 How We Use Information -->
+      <div id="s3" class="pc rev" style="--pc-color:#10b981;--pc-bg:#f0fdf4">
+        <div class="pc-head">
+          <div class="pc-ico">⚙️</div>
+          <div class="pc-meta">
+            <div class="pc-num">Section 03</div>
+            <div class="pc-title">How We Use Your Information</div>
+          </div>
+        </div>
+        <div class="pc-body">
+          <p>Any information we collect is used only to improve your experience on RajDailyTools and to keep the platform running smoothly. We are committed to responsible, minimal data usage.</p>
+          <ul>
+            <li>Respond to your messages, feedback, bug reports, and tool suggestions sent through our contact form</li>
+            <li>Analyse aggregated traffic patterns to improve existing tools and plan new ones</li>
+            <li>Identify and fix technical issues, bugs, and performance problems</li>
+            <li>Understand which tools are most useful to build better features</li>
+            <li>Maintain platform security and prevent abuse or misuse</li>
+            <li>Improve site performance, loading speed, and mobile responsiveness</li>
+            <li>Comply with applicable legal obligations if required by law</li>
+          </ul>
+          <div class="hl-box green">
+            <span class="hl-icon">🚫</span>
+            <div class="hl-text"><strong>We NEVER use your data for:</strong> Sending unsolicited emails or spam, selling data to advertisers or data brokers, building personal profiles for targeted advertising, or sharing your information with unrelated third parties.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 04 Cookies -->
+      <div id="s4" class="pc rev" style="--pc-color:#f59e0b;--pc-bg:#fffbeb">
+        <div class="pc-head">
+          <div class="pc-ico">🍪</div>
+          <div class="pc-meta">
+            <div class="pc-num">Section 04</div>
+            <div class="pc-title">Cookies Policy</div>
+          </div>
+        </div>
+        <div class="pc-body">
+          <p>Cookies are small text files stored on your device when you visit a website. They help websites remember your preferences and understand how you use them. RajDailyTools uses cookies in a limited, responsible way.</p>
+          <p><strong>Types of cookies we use:</strong></p>
+          <ul>
+            <li><strong>Analytical Cookies:</strong> Used by Google Analytics to understand how visitors use our site, which pages they visit, and how long they stay. This data is aggregated and anonymous.</li>
+            <li><strong>Advertising Cookies:</strong> Used by Google AdSense to serve relevant advertisements. These cookies track browsing activity to show more relevant ads (see Section 05 for details).</li>
+            <li><strong>Functional Cookies:</strong> Small cookies that help the website function correctly, remember your preferences, and improve performance during your session.</li>
+          </ul>
+          <div class="hl-box amber">
+            <span class="hl-icon">💡</span>
+            <div class="hl-text"><strong>Your cookie control:</strong> You can manage, disable, or delete cookies through your browser settings at any time. Note that disabling cookies may affect the functionality of some features on RajDailyTools.</div>
+          </div>
+          <div class="tag-row">
+            <span class="tag">📊 Analytics</span>
+            <span class="tag">📢 Advertising</span>
+            <span class="tag">⚙️ Functional</span>
+            <span class="tag">🔒 No tracking profiles</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 05 Google AdSense -->
+      <div id="s5" class="pc rev" style="--pc-color:#ef4444;--pc-bg:#fef2f2">
+        <div class="pc-head">
+          <div class="pc-ico">📢</div>
+          <div class="pc-meta">
+            <div class="pc-num">Section 05</div>
+            <div class="pc-title">Google AdSense &amp; Advertising</div>
+          </div>
+        </div>
+        <div class="pc-body">
+          <p>RajDailyTools uses <strong>Google AdSense</strong> to display advertisements on our website. AdSense helps us keep all tools free by generating revenue through relevant ads shown to visitors.</p>
+          <p><strong>How Google AdSense works on our site:</strong></p>
+          <ul>
+            <li>Google uses the <strong>DoubleClick cookie</strong> to serve ads based on a user's prior visits to our website and other sites on the internet</li>
+            <li>Google AdSense uses <strong>interest-based advertising</strong> (also known as personalised advertising) to show you ads relevant to your interests</li>
+            <li>Third-party vendors, including Google, use cookies to serve ads based on your prior visits to RajDailyTools and other websites</li>
+            <li>Users may <strong>opt out</strong> of personalised advertising by visiting Google's <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener" style="color:var(--blue);font-weight:600">Ads Settings page</a></li>
+            <li>Alternatively, users can opt out of third-party vendor cookies by visiting the <a href="https://www.aboutads.info/choices/" target="_blank" rel="noopener" style="color:var(--blue);font-weight:600">Network Advertising Initiative opt-out page</a></li>
+          </ul>
+          <div class="hl-box">
+            <span class="hl-icon">🔗</span>
+            <div class="hl-text"><strong>Learn more:</strong> Google's use of advertising cookies is governed by Google's own Privacy Policy, which you can review at <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" style="color:var(--blue);font-weight:600">policies.google.com/privacy</a>. RajDailyTools has no control over Google's cookie practices.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 06 Third-Party Services -->
+      <div id="s6" class="pc rev" style="--pc-color:#0ea5e9;--pc-bg:#f0f9ff">
+        <div class="pc-head">
+          <div class="pc-ico">🔗</div>
+          <div class="pc-meta">
+            <div class="pc-num">Section 06</div>
+            <div class="pc-title">Third-Party Services</div>
+          </div>
+        </div>
+        <div class="pc-body">
+          <p>RajDailyTools integrates with a small number of trusted third-party services to help operate and improve the platform. Each of these services has its own privacy policy and data practices.</p>
+          <ul>
+            <li><strong>Google Analytics:</strong> Tracks anonymised visitor behaviour, page views, session duration, and geographic data to help us understand how the platform is used and improve it</li>
+            <li><strong>Google AdSense:</strong> Displays relevant advertisements to support the free operation of RajDailyTools (see Section 05 for details)</li>
+            <li><strong>Google Fonts:</strong> Loads typography files from Google's CDN — this may involve your IP address being sent to Google servers but no personal data is stored</li>
+            <li><strong>Embedded Content:</strong> Some tools may embed content from other platforms (such as YouTube videos or Google Forms for contact). These embeds are subject to the third party's own privacy policy</li>
+          </ul>
+          <div class="hl-box amber">
+            <span class="hl-icon">⚠️</span>
+            <div class="hl-text"><strong>External links:</strong> Our website may contain links to third-party websites. Once you click on an external link and leave RajDailyTools, we have no control over that site's content or privacy practices. We encourage you to review their respective privacy policies.</div>
+          </div>
+          <div class="tag-row">
+            <span class="tag">📊 Google Analytics</span>
+            <span class="tag">📢 Google AdSense</span>
+            <span class="tag">🔤 Google Fonts</span>
+            <span class="tag">📋 Google Forms</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 07 Data Protection -->
+      <div id="s7" class="pc rev" style="--pc-color:#10b981;--pc-bg:#f0fdf4">
+        <div class="pc-head">
+          <div class="pc-ico">🛡️</div>
+          <div class="pc-meta">
+            <div class="pc-num">Section 07</div>
+            <div class="pc-title">Data Protection &amp; Security</div>
+          </div>
+        </div>
+        <div class="pc-body">
+          <p>We take the security of your information seriously. RajDailyTools implements multiple layers of protection to ensure your data remains safe and confidential at all times.</p>
+          <ul>
+            <li>Our website uses <strong>HTTPS encryption</strong> (SSL/TLS) to ensure all data transmitted between your browser and our server is encrypted and secure</li>
+            <li>Most tools run <strong>entirely in your browser</strong> — any data you enter into a calculator, converter, or text tool is never sent to our servers</li>
+            <li>We do not store any calculator inputs, query data, or tool-specific information on our servers</li>
+            <li>Access to any contact form data is restricted to authorised personnel only (Raj Bhai and trusted team members)</li>
+            <li>We regularly review and update our security practices to address emerging threats</li>
+            <li>We retain contact form submissions only as long as necessary to respond to your query</li>
+          </ul>
+          <div class="hl-box green">
+            <span class="hl-icon">✅</span>
+            <div class="hl-text"><strong>Our security commitment:</strong> While no system is 100% immune to security risks, we follow industry best practices and continuously work to protect your data. If you ever suspect a security issue, please contact us immediately at <a href="mailto:rajdailytools@gmail.com" style="color:var(--blue);font-weight:600">rajdailytools@gmail.com</a>.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 08 User Consent -->
+      <div id="s8" class="pc rev" style="--pc-color:#8b5cf6;--pc-bg:#f5f3ff">
+        <div class="pc-head">
+          <div class="pc-ico">✅</div>
+          <div class="pc-meta">
+            <div class="pc-num">Section 08</div>
+            <div class="pc-title">User Consent</div>
+          </div>
+        </div>
+        <div class="pc-body">
+          <p>By accessing and using the RajDailyTools website and its tools, you explicitly agree to the terms outlined in this Privacy Policy. Your continued use of our platform constitutes your consent to these practices.</p>
+          <ul>
+            <li>Using any tool on RajDailyTools means you accept our cookie policy and data usage practices as described in this document</li>
+            <li>Submitting a contact form means you consent to us using your email and message to respond to your enquiry</li>
+            <li>You acknowledge that anonymous, aggregated analytics data may be collected through Google Analytics to help us improve the platform</li>
+            <li>You understand that Google AdSense may use cookies to display personalised advertising as described in Section 05</li>
+          </ul>
+          <div class="hl-box">
+            <span class="hl-icon">👤</span>
+            <div class="hl-text"><strong>Your rights:</strong> You have the right to request access to any personal information we hold about you, ask for it to be corrected or deleted, and opt out of any non-essential data collection. Contact us at <a href="mailto:rajdailytools@gmail.com" style="color:var(--blue);font-weight:600">rajdailytools@gmail.com</a> to exercise these rights.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 09 Updates to Policy -->
+      <div id="s9" class="pc rev" style="--pc-color:#f59e0b;--pc-bg:#fffbeb">
+        <div class="pc-head">
+          <div class="pc-ico">🔄</div>
+          <div class="pc-meta">
+            <div class="pc-num">Section 09</div>
+            <div class="pc-title">Updates to This Policy</div>
+          </div>
+        </div>
+        <div class="pc-body">
+          <p>RajDailyTools is an evolving platform and we may update this Privacy Policy from time to time as we add new tools, integrate new services, or respond to changes in applicable laws and regulations.</p>
+          <ul>
+            <li>Any changes to this Privacy Policy will be reflected on this page with an updated "Last Updated" date at the top</li>
+            <li>Significant changes that affect how your data is used will be prominently announced on the website</li>
+            <li>We encourage you to review this Privacy Policy periodically to stay informed about how we protect your information</li>
+            <li>Your continued use of RajDailyTools after any policy changes constitutes your acceptance of the updated terms</li>
+          </ul>
+          <div class="hl-box amber">
+            <span class="hl-icon">📅</span>
+            <div class="hl-text"><strong>Current version:</strong> This policy was last updated in <strong>January 2026</strong>. This is version 1.0 of our Privacy Policy. As RajDailyTools grows toward its vision of 30,000+ tools, this policy will be reviewed and updated accordingly.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 10 Contact -->
+      <div id="s10" class="pc rev" style="--pc-color:#2563eb;--pc-bg:#eff6ff">
+        <div class="pc-head">
+          <div class="pc-ico">📬</div>
+          <div class="pc-meta">
+            <div class="pc-num">Section 10</div>
+            <div class="pc-title">Contact Information</div>
+          </div>
+        </div>
+        <div class="pc-body">
+          <p>If you have any questions, concerns, or requests regarding this Privacy Policy or how RajDailyTools handles your data, please do not hesitate to reach out. We value every message and respond within 24 hours.</p>
+          <ul>
+            <li>Privacy-related questions and data access requests</li>
+            <li>Requests to delete your personal information</li>
+            <li>Reporting potential security vulnerabilities or privacy concerns</li>
+            <li>General questions about how your data is used</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Contact callout -->
+      <div class="callout rev">
+        <div class="callout-left">
+          <h3>📬 Have Privacy Questions?</h3>
+          <p>We're fully transparent and happy to answer any questions about this Privacy Policy or how your data is handled. Reach out to Raj Bhai directly — we respond within 24 hours.</p>
+          <p style="margin-top:10px;color:rgba(255,255,255,.7);font-size:13.5px">📧 rajdailytools@gmail.com &nbsp;·&nbsp; 🌐 rajdailytools.com &nbsp;·&nbsp; 📍 India 🇮🇳</p>
+        </div>
+        <div class="callout-right">
+          <a href="mailto:rajdailytools@gmail.com" class="btn-white">✉️ Email Us Now →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ CTA ═══════ -->
+<section class="cta">
+  <div class="w">
+    <div class="cta-in">
+      <div class="pill">Keep Exploring</div>
+      <h2>Your Privacy. Our <em>Responsibility.</em></h2>
+      <p>Now that you understand how we protect your data, go ahead and use our 30,000+ free tools with full confidence and peace of mind.</p>
+      <div class="cta-btns">
+        <a href="/#categories" class="btn-gold">🚀 Explore All Tools</a>
+        <a href="/contact" class="btn-ghost">📬 Contact Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ FOOTER ═══════ -->
+<footer>
+  <div class="w">
+    <div class="ft-grid">
+      <div class="ft-brand">
+        <div class="logo" style="margin-bottom:4px">
+          <div class="lb"><svg viewBox="0 0 24 24" fill="#fff"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+          <div>
+            <div class="ln">Raj<span>Daily</span>Tools</div>
+            <div class="ls">Smart Tools for Daily Life</div>
+          </div>
+        </div>
+        <p class="ft-desc">India's most ambitious free tools platform. Built by Raj Bhai with a vision of 30,000+ tools. Solving daily life problems, one tool at a time.</p>
+        <div class="ft-soc">
+          <a href="https://www.facebook.com/share/1Dq3Y1k7mG/" target="_blank" class="fs">f</a>
+          <a href="https://x.com/Educator4ll" target="_blank" class="fs">𝕏</a>
+          <a href="https://youtube.com/@rajdailytools" target="_blank" class="fs">▶</a>
+          <a href="https://www.instagram.com/rajdailytools" target="_blank" class="fs">📷</a>
+        </div>
+      </div>
+      <div class="fc">
+        <h4>Categories</h4>
+        <ul>
+          <li><a href="/education-tools">Education Tools</a></li>
+          <li><a href="/finance-tools">Finance Tools</a></li>
+          <li><a href="/converter-tools">Converter Tools</a></li>
+          <li><a href="/daily-utility-tools">Daily Utility Tools</a></li>
+          <li><a href="/calculator-tools">Calculator Tools</a></li>
+          <li><a href="/health-tools">Health Tools</a></li>
+          <li><a href="/text-tools">Text Tools</a></li>
+          <li><a href="/other-tools">Other Tools</a></li>
+        </ul>
+      </div>
+      <div class="fc">
+        <h4>Popular Tools</h4>
+        <ul>
+          <li><a href="/emi-calculator">EMI Calculator</a></li>
+          <li><a href="/percentage-calculator">Percentage Calc</a></li>
+          <li><a href="/age-calculator">Age Calculator</a></li>
+          <li><a href="/unit-converter">Unit Converter</a></li>
+          <li><a href="/gpa-calculator">GPA Calculator</a></li>
+          <li><a href="/word-counter">Word Counter</a></li>
+          <li><a href="/pdf-to-image">PDF to Image</a></li>
+          <li><a href="/water-intake-calculator">Water Intake Calc</a></li>
+        </ul>
+      </div>
+      <div class="fc">
+        <h4>Legal &amp; Company</h4>
+        <ul>
+          <li><a href="/about">About Us</a></li>
+          <li><a href="/contact">Contact</a></li>
+          <li><a href="/privacy">Privacy Policy</a></li>
+          <li><a href="/terms">Terms of Service</a></li>
+          <li><a href="/disclaimer">Disclaimer</a></li>
+          <li><a href="/blog">Blog</a></li>
+          <li><a href="/sitemap">Sitemap</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ft-btm">
+      <p class="ft-cp">© 2026 <b>RajDailyTools</b>. All rights reserved. Made with ❤️ in India by Raj Bhai &nbsp;|&nbsp; Powered by <b>RajDailyTools</b></p>
+      <div class="ft-lnk">
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+        <a href="/disclaimer">Disclaimer</a>
+        <a href="/sitemap">Sitemap</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+/* Drawer */
+const brg=document.getElementById('brg'),drw=document.getElementById('drw'),dov=document.getElementById('dov');
+function oD(){drw.classList.add('on');dov.classList.add('on');document.body.style.overflow='hidden'}
+function cD(){drw.classList.remove('on');dov.classList.remove('on');document.body.style.overflow=''}
+brg.addEventListener('click',oD);
+document.getElementById('dx').addEventListener('click',cD);
+dov.addEventListener('click',cD);
+
+/* Back to top */
+const btt=document.getElementById('btt');
+window.addEventListener('scroll',()=>btt.classList.toggle('on',scrollY>380),{passive:true});
+
+/* Scroll reveal */
+const ro=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      const siblings=[...(e.target.parentElement?.children||[])];
+      e.target.style.transitionDelay=(siblings.indexOf(e.target)%4)*0.08+'s';
+      e.target.classList.add('in');
+      ro.unobserve(e.target);
+    }
+  });
+},{threshold:0.06,rootMargin:'0px 0px -24px 0px'});
+document.querySelectorAll('.rev').forEach(el=>ro.observe(el));
+
+/* Smooth TOC scroll */
+document.querySelectorAll('.toc-link').forEach(a=>{
+  a.addEventListener('click',e=>{
+    e.preventDefault();
+    const t=document.querySelector(a.getAttribute('href'));
+    if(t)t.scrollIntoView({behavior:'smooth',block:'start'});
+  });
+});
+</script>
+</body>
+</html>
