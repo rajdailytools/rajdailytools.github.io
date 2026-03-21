@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KV Priority Category Checker 2026 – Check KV Admission Chances Online | RajDailyTools</title>
+<meta name="description" content="Check your KV admission priority category and selection chances instantly using our KV Priority Category Checker 2026. Based on official Kendriya Vidyalaya guidelines.">
+<meta name="keywords" content="KV Priority Category Checker 2026, KV Admission Priority, Kendriya Vidyalaya Admission Chances, KV Category List, KV Priority 1 2 3, KV Single Girl Child, KV EWS Admission">
+<meta name="robots" content="index, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ══════════════════════════════════════
+   DESIGN TOKENS
+══════════════════════════════════════ */
+:root{
+  --blue:#2563eb;--blue-d:#1d4ed8;--blue-xl:#eff6ff;--blue-s:#dbeafe;
+  --amber:#f59e0b;--green:#10b981;--red:#ef4444;--purple:#8b5cf6;
+  --green-xl:#f0fdf4;--green-s:#bbf7d0;
+  --red-xl:#fef2f2;--red-s:#fecaca;
+  --amber-xl:#fffbeb;--amber-s:#fde68a;
+  --yellow:#eab308;--yellow-xl:#fefce8;--yellow-s:#fef08a;
+  --ink:#0f172a;--ink2:#334155;--ink3:#64748b;--ink4:#94a3b8;
+  --line:#e2e8f0;--surf:#f8fafc;--white:#fff;
+  --s1:0 1px 3px rgba(15,23,42,.06),0 1px 2px rgba(15,23,42,.04);
+  --s2:0 4px 16px rgba(15,23,42,.08),0 2px 6px rgba(15,23,42,.04);
+  --s3:0 12px 40px rgba(15,23,42,.11),0 3px 10px rgba(15,23,42,.06);
+  --s4:0 24px 64px rgba(15,23,42,.13),0 6px 20px rgba(15,23,42,.07);
+  --sb:0 8px 32px rgba(37,99,235,.20);
+  --fd:'Sora',sans-serif;--fb:'DM Sans',sans-serif;
+  --ease:cubic-bezier(.4,0,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);color:var(--ink);background:var(--white);overflow-x:hidden;-webkit-font-smoothing:antialiased;line-height:1.6}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+button{cursor:pointer;border:none;background:none;font-family:var(--fb)}
+.w{max-width:1180px;margin:0 auto;padding:0 24px}
+.wa{max-width:860px;margin:0 auto;padding:0 24px}
+select,input{appearance:none;-webkit-appearance:none}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@keyframes pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.4);opacity:.5}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+@keyframes resultIn{from{opacity:0;transform:translateY(18px) scale(.97)}to{opacity:1;transform:none}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes countUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.rev{opacity:0;transform:translateY(22px);transition:opacity .55s var(--ease),transform .55s var(--ease)}
+.rev.in{opacity:1;transform:none}
+
+/* ══ HEADER ══ */
+.hdr{position:sticky;top:0;z-index:999;background:rgba(255,255,255,.96);backdrop-filter:blur(20px);border-bottom:1px solid var(--line);box-shadow:var(--s1)}
+.hdi{display:flex;align-items:center;justify-content:space-between;height:66px}
+.logo{display:flex;align-items:center;gap:10px}
+.lb{width:36px;height:36px;background:var(--blue);border-radius:9px;display:flex;align-items:center;justify-content:center;box-shadow:var(--sb);flex-shrink:0}
+.lb svg{width:18px;height:18px;fill:#fff}
+.ln{font-family:var(--fd);font-size:19px;font-weight:800;color:var(--ink);line-height:1}
+.ln span{color:var(--blue)}
+.ls{font-size:10px;color:var(--ink4);letter-spacing:.04em}
+nav.dn{display:flex;align-items:center;gap:2px}
+nav.dn a{font-size:13.5px;font-weight:500;color:var(--ink2);padding:7px 13px;border-radius:8px;transition:.2s}
+nav.dn a:hover{color:var(--blue);background:var(--blue-xl)}
+.hcta{background:var(--blue);color:#fff;font-family:var(--fd);font-weight:600;font-size:13px;padding:8px 18px;border-radius:8px;box-shadow:var(--sb);transition:.2s}
+.hcta:hover{background:var(--blue-d);transform:translateY(-1px)}
+.brg{display:none;flex-direction:column;gap:4.5px;padding:8px;border-radius:8px}
+.brg span{display:block;width:20px;height:2px;background:var(--ink);border-radius:2px;transition:.28s}
+.dov{display:none;position:fixed;inset:0;background:rgba(15,23,42,.45);z-index:1040;backdrop-filter:blur(3px)}
+.dov.on{display:block}
+.drw{position:fixed;top:0;right:-100%;width:270px;height:100vh;background:#fff;z-index:1050;padding:22px;box-shadow:var(--s4);transition:right .32s var(--ease);overflow-y:auto}
+.drw.on{right:0}
+.dh{display:flex;align-items:center;justify-content:space-between;margin-bottom:26px}
+.dx{width:33px;height:33px;border-radius:7px;background:var(--surf);display:flex;align-items:center;justify-content:center;color:var(--ink3);font-size:17px}
+nav.mn{display:flex;flex-direction:column;gap:3px}
+nav.mn a{display:block;font-size:14px;font-weight:500;color:var(--ink2);padding:11px 13px;border-radius:8px;transition:.2s}
+nav.mn a:hover{color:var(--blue);background:var(--blue-xl)}
+
+/* ══ HERO ══ */
+.hero{position:relative;overflow:hidden;background:linear-gradient(150deg,#ebf4ff 0%,#fff 46%,#fdf2ff 100%);padding:64px 0 72px}
+.hero::before{content:'';position:absolute;top:-140px;right:-180px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(37,99,235,.08) 0%,transparent 68%);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-80px;left:-100px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(139,92,246,.05) 0%,transparent 68%);pointer-events:none}
+.blob{position:absolute;border-radius:50%;pointer-events:none;animation:float 6s ease-in-out infinite}
+.b1{width:13px;height:13px;background:rgba(37,99,235,.18);top:22%;right:15%;animation-delay:0s}
+.b2{width:9px;height:9px;background:rgba(245,158,11,.24);top:60%;right:26%;animation-delay:2.2s}
+.b3{width:11px;height:11px;background:rgba(139,92,246,.2);top:36%;right:6%;animation-delay:4s}
+.bc{display:flex;align-items:center;gap:7px;font-size:12.5px;color:var(--ink3);margin-bottom:22px;position:relative;z-index:1;flex-wrap:wrap}
+.bc a{color:var(--blue);font-weight:600}
+.pill{display:inline-flex;align-items:center;gap:7px;font-family:var(--fd);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);background:var(--blue-xl);padding:5px 14px;border-radius:100px;margin-bottom:18px}
+.pill::before{content:'';width:6px;height:6px;background:var(--blue);border-radius:50%}
+.hero-inner{position:relative;z-index:1;max-width:720px;animation:fadeUp .5s ease both}
+.hero h1{font-family:var(--fd);font-size:clamp(26px,4.5vw,50px);font-weight:800;line-height:1.1;color:var(--ink);margin-bottom:14px}
+.hero h1 span{color:var(--blue)}
+.hero-sub{font-size:16px;color:var(--ink3);line-height:1.8;margin-bottom:22px;max-width:600px}
+.hero-chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.chip{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;padding:6px 14px;border-radius:100px;background:#fff;border:1.5px solid var(--line);color:var(--ink2);box-shadow:var(--s1);transition:.22s}
+.chip:hover{border-color:var(--blue);color:var(--blue);transform:translateY(-1px)}
+.hero-meta{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:26px}
+.upd{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:700;color:var(--blue);background:var(--blue-xl);padding:6px 14px;border-radius:100px;border:1.5px solid var(--blue-s)}
+.mi{font-size:13px;color:var(--ink3);font-weight:500}
+/* how to use */
+.howto{background:var(--amber-xl);border:2px solid var(--amber-s);border-radius:16px;padding:22px 26px;max-width:560px}
+.howto-ttl{display:flex;align-items:center;gap:9px;font-family:var(--fd);font-size:15px;font-weight:800;color:var(--ink);margin-bottom:12px}
+.howto-steps{display:flex;flex-direction:column;gap:9px}
+.hs-step{display:flex;align-items:flex-start;gap:11px;font-size:14px;color:var(--ink2);line-height:1.6}
+.sn{width:25px;height:25px;background:var(--amber);color:#fff;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex-shrink:0;margin-top:1px}
+
+/* ══ AGE CALC CROSS-PROMO ══ */
+.age-promo{background:linear-gradient(135deg,#f0f9ff 0%,var(--blue-xl) 100%);border:1.5px solid var(--blue-s);border-radius:18px;padding:24px 28px;margin:40px 0 0;position:relative;z-index:1;max-width:580px;display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.ap-ico{font-size:36px;flex-shrink:0}
+.ap-txt h3{font-family:var(--fd);font-size:16px;font-weight:800;color:var(--ink);margin-bottom:5px}
+.ap-txt p{font-size:13.5px;color:var(--ink3);line-height:1.65;margin-bottom:12px}
+.btn-blue{display:inline-flex;align-items:center;gap:7px;background:var(--blue);color:#fff;font-family:var(--fd);font-weight:700;font-size:13.5px;padding:10px 20px;border-radius:8px;box-shadow:var(--sb);transition:.22s}
+.btn-blue:hover{background:var(--blue-d);transform:translateY(-1px)}
+
+/* ══ TOOL SECTION ══ */
+.tool-sec{background:var(--surf);padding:80px 0}
+.tool-wrap{max-width:840px;margin:0 auto}
+.tool-card{background:#fff;border:1.5px solid var(--line);border-radius:28px;overflow:hidden;box-shadow:var(--s4)}
+.tool-hdr{background:linear-gradient(135deg,#1d4ed8 0%,#2563eb 55%,#3b82f6 100%);padding:32px 40px;position:relative;overflow:hidden}
+.tool-hdr::before{content:'';position:absolute;top:-60px;right:-60px;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,.07)}
+.tool-hdr::after{content:'';position:absolute;bottom:-40px;left:-40px;width:180px;height:180px;border-radius:50%;background:rgba(255,255,255,.04)}
+.th-in{position:relative;z-index:1}
+.th-in h2{font-family:var(--fd);font-size:21px;font-weight:800;color:#fff;margin-bottom:6px}
+.th-in p{font-size:14px;color:rgba(255,255,255,.82);line-height:1.65}
+.th-badges{display:flex;flex-wrap:wrap;gap:9px;margin-top:15px}
+.thb{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:rgba(255,255,255,.9);background:rgba(255,255,255,.13);padding:5px 12px;border-radius:100px}
+.tool-body{padding:36px 40px}
+
+/* form grid */
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:20px}
+.form-grid.three{grid-template-columns:1fr 1fr 1fr}
+.fld{display:flex;flex-direction:column;gap:7px}
+.flbl{font-size:13px;font-weight:700;color:var(--ink2)}
+.flbl span{font-size:11px;font-weight:600;color:var(--ink4);margin-left:5px}
+.fsel{
+  padding:12px 16px;font-size:14.5px;color:var(--ink);
+  background:#fff;border:1.5px solid var(--line);border-radius:10px;
+  outline:none;transition:.22s;font-family:var(--fb);cursor:pointer;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2364748b' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 14px center;
+  padding-right:40px;
+}
+.fsel:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(37,99,235,.10)}
+
+/* radio group */
+.radio-group{display:flex;gap:8px;flex-wrap:wrap}
+.radio-option{position:relative}
+.radio-option input{position:absolute;opacity:0;width:0;height:0}
+.radio-option label{
+  display:inline-flex;align-items:center;gap:7px;
+  font-size:13.5px;font-weight:600;color:var(--ink2);
+  padding:9px 16px;border-radius:9px;
+  border:1.5px solid var(--line);background:#fff;
+  cursor:pointer;transition:.22s;
+}
+.radio-option input:checked+label{
+  border-color:var(--blue);background:var(--blue-xl);color:var(--blue);
+}
+.radio-option label:hover{border-color:var(--blue-s);background:var(--blue-xl)}
+
+.hint-box{display:flex;align-items:flex-start;gap:9px;font-size:13px;color:var(--ink2);background:var(--blue-xl);border:1.5px solid var(--blue-s);border-radius:10px;padding:11px 14px;margin-bottom:22px;line-height:1.65}
+.hint-box svg{width:16px;height:16px;stroke:var(--blue);fill:none;stroke-width:2;flex-shrink:0;margin-top:2px}
+
+.check-btn{
+  width:100%;padding:16px;
+  background:linear-gradient(135deg,var(--blue) 0%,#1e40af 100%);
+  color:#fff;font-family:var(--fd);font-weight:800;font-size:16px;
+  border-radius:12px;box-shadow:var(--sb);
+  transition:all .25s var(--ease);
+  display:flex;align-items:center;justify-content:center;gap:10px;
+}
+.check-btn:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(37,99,235,.32)}
+.check-btn:active{transform:translateY(0)}
+
+/* ══ RESULT ══ */
+#resultArea{display:none;margin-top:28px;animation:resultIn .45s var(--ease) both}
+
+/* priority badge */
+.priority-hero{
+  border-radius:18px;padding:28px 28px 24px;margin-bottom:18px;
+  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;
+  position:relative;overflow:hidden;
+}
+.priority-hero::before{content:'';position:absolute;inset:0;opacity:.05;background-image:repeating-linear-gradient(45deg,currentColor 0,currentColor 1px,transparent 0,transparent 50%);background-size:12px 12px;pointer-events:none}
+.priority-hero.p1{background:linear-gradient(135deg,#f0fdf4,#dcfce7);border:2px solid var(--green-s)}
+.priority-hero.p2{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid var(--blue-s)}
+.priority-hero.p3{background:linear-gradient(135deg,#fefce8,#fef08a55);border:2px solid var(--yellow-s)}
+.priority-hero.p4{background:linear-gradient(135deg,#fff7ed,#fed7aa55);border:2px solid #fed7aa}
+.priority-hero.p5{background:var(--red-xl);border:2px solid var(--red-s)}
+
+.ph-left{display:flex;flex-direction:column;gap:6px}
+.ph-label{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink3)}
+.ph-prio{font-family:var(--fd);font-size:30px;font-weight:800;line-height:1;color:var(--ink)}
+.ph-cat{font-size:14px;color:var(--ink2);font-weight:500;margin-top:2px}
+
+.ph-right{display:flex;flex-direction:column;align-items:flex-end;gap:8px}
+.chance-pill{
+  font-family:var(--fd);font-size:15px;font-weight:800;
+  padding:8px 20px;border-radius:100px;
+  display:flex;align-items:center;gap:7px;
+}
+.chance-pill.high{background:var(--green-xl);color:var(--green);border:1.5px solid var(--green-s)}
+.chance-pill.medium{background:var(--yellow-xl);color:var(--yellow);border:1.5px solid var(--yellow-s)}
+.chance-pill.low{background:var(--red-xl);color:var(--red);border:1.5px solid var(--red-s)}
+
+/* progress bar */
+.chance-bar-wrap{width:140px;height:8px;background:rgba(0,0,0,.08);border-radius:4px;overflow:hidden}
+.chance-bar{height:100%;border-radius:4px;transition:width 1s var(--ease)}
+.chance-bar.high{background:linear-gradient(90deg,var(--green),#059669)}
+.chance-bar.medium{background:linear-gradient(90deg,var(--yellow),#ca8a04)}
+.chance-bar.low{background:linear-gradient(90deg,var(--red),#dc2626)}
+
+/* info boxes */
+.result-cards{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px}
+.rc{border-radius:14px;padding:18px 20px;border:1.5px solid var(--line)}
+.rc-head{display:flex;align-items:center;gap:8px;font-family:var(--fd);font-size:13.5px;font-weight:700;color:var(--ink);margin-bottom:10px}
+.rc-ico{font-size:20px}
+.rc-body{font-size:13.5px;color:var(--ink3);line-height:1.72}
+.rc.expl{background:var(--blue-xl);border-color:var(--blue-s)}
+.rc.sugg{background:var(--green-xl);border-color:var(--green-s)}
+
+/* factor list */
+.factor-list{display:flex;flex-direction:column;gap:7px;margin-top:14px}
+.fl-item{display:flex;align-items:center;gap:9px;font-size:13px;color:var(--ink2)}
+.fl-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.fl-dot.pos{background:var(--green)}.fl-dot.neg{background:var(--red)}.fl-dot.neu{background:var(--amber)}
+
+/* ══ PRIORITY TABLE ══ */
+.tbl-sec{background:#fff;padding:72px 0}
+.tbl-wr{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:14px}
+thead th{background:linear-gradient(135deg,var(--blue) 0%,#1e40af 100%);color:#fff;padding:14px 16px;text-align:left;font-family:var(--fd);font-size:13px;font-weight:700;letter-spacing:.03em}
+tbody tr{border-bottom:1px solid var(--line);transition:.2s}
+tbody tr:hover{background:var(--blue-xl)}
+tbody td{padding:13px 16px;color:var(--ink2);font-size:14px;vertical-align:middle}
+.pbadge{display:inline-flex;align-items:center;gap:5px;font-size:11.5px;font-weight:700;padding:4px 10px;border-radius:100px}
+.pbadge.p1{background:var(--green-xl);color:var(--green);border:1px solid var(--green-s)}
+.pbadge.p2{background:var(--blue-xl);color:var(--blue);border:1px solid var(--blue-s)}
+.pbadge.p3{background:var(--yellow-xl);color:var(--yellow);border:1px solid var(--yellow-s)}
+.pbadge.p4{background:linear-gradient(135deg,#fff7ed,#fed7aa33);color:#ea580c;border:1px solid #fed7aa}
+.pbadge.p5{background:var(--red-xl);color:var(--red);border:1px solid var(--red-s)}
+.ch-bar{display:inline-flex;gap:3px;align-items:center}
+.cb{width:10px;height:10px;border-radius:2px}
+.cb.fill.g{background:var(--green)}.cb.fill.b{background:var(--blue)}.cb.fill.y{background:var(--yellow)}.cb.fill.o{background:#ea580c}.cb.fill.r{background:var(--red)}
+.cb.empty{background:var(--line)}
+
+/* ══ STORY ══ */
+.story-sec{background:var(--surf);padding:72px 0}
+.story-card{background:#fff;border:1.5px solid var(--line);border-radius:24px;padding:40px;box-shadow:var(--s3);position:relative;overflow:hidden}
+.story-card::before{content:'';position:absolute;top:0;left:0;bottom:0;width:5px;background:linear-gradient(180deg,var(--blue) 0%,var(--purple) 100%);border-radius:5px 0 0 5px}
+.sq{font-size:54px;color:var(--blue-s);font-family:Georgia,serif;line-height:1;padding-left:8px}
+.sb{font-size:15.5px;color:var(--ink2);line-height:1.9;padding:0 8px}
+.sauth{display:flex;align-items:center;gap:14px;margin-top:22px;padding-top:20px;border-top:1px solid var(--line)}
+.savt{width:48px;height:48px;background:var(--blue);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+.sname{font-family:var(--fd);font-size:15px;font-weight:700;color:var(--ink)}
+.srole{font-size:12.5px;color:var(--ink3)}
+
+/* ══ ARTICLE ══ */
+.art-sec{background:#fff;padding:72px 0}
+.art-body h2{font-family:var(--fd);font-size:21px;font-weight:800;color:var(--ink);margin:28px 0 11px;line-height:1.3}
+.art-body h2:first-child{margin-top:0}
+.art-body h3{font-family:var(--fd);font-size:17px;font-weight:700;color:var(--ink2);margin:20px 0 9px}
+.art-body p{font-size:15px;color:var(--ink3);line-height:1.85;margin-bottom:14px}
+.art-body ul{display:flex;flex-direction:column;gap:8px;margin:12px 0 16px}
+.art-body li{display:flex;align-items:flex-start;gap:10px;font-size:14.5px;color:var(--ink3);line-height:1.7}
+.art-body li::before{content:'✓';width:18px;height:18px;background:var(--blue);color:#fff;border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;flex-shrink:0;margin-top:3px}
+.art-body strong{color:var(--ink2);font-weight:700}
+.art-body a{color:var(--blue);font-weight:600}
+.ibox{background:var(--blue-xl);border:1.5px solid var(--blue-s);border-radius:13px;padding:15px 18px;margin:16px 0;display:flex;gap:11px;font-size:14px;color:var(--ink2);line-height:1.7}
+.ibox svg{width:17px;height:17px;stroke:var(--blue);fill:none;stroke-width:2;flex-shrink:0;margin-top:2px}
+.ibox.g{background:var(--green-xl);border-color:var(--green-s)}
+.ibox.g svg{stroke:var(--green)}
+.ibox.a{background:var(--amber-xl);border-color:var(--amber-s)}
+.ibox.a svg{stroke:var(--amber)}
+
+/* ══ FAQ ══ */
+.faq-sec{background:var(--surf);padding:72px 0}
+.fql{max-width:780px;margin:0 auto}
+.fq{background:#fff;border:1.5px solid var(--line);border-radius:13px;margin-bottom:10px;overflow:hidden}
+.fq-q{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;cursor:pointer;gap:14px;transition:.2s}
+.fq-q:hover{background:var(--blue-xl)}
+.fq-t{font-weight:600;font-size:15px;color:var(--ink);line-height:1.4}
+.fq-i{width:28px;height:28px;border-radius:50%;background:var(--blue-xl);color:var(--blue);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;transition:transform .28s,background .2s}
+.fq.open .fq-i{transform:rotate(45deg);background:var(--blue);color:#fff}
+.fq-a{max-height:0;overflow:hidden;transition:max-height .35s var(--ease)}
+.fq-ai{padding:0 22px 18px;font-size:14.5px;color:var(--ink3);line-height:1.78}
+.fq.open .fq-a{max-height:400px}
+
+/* ══ DISC ══ */
+.disc{background:var(--amber-xl);border-top:1px solid var(--amber-s);border-bottom:1px solid var(--amber-s);padding:15px 0}
+.disc-in{display:flex;align-items:flex-start;gap:12px;font-size:13.5px;color:var(--ink2);line-height:1.7}
+
+/* ══ CONTACT ══ */
+.contact-sec{background:#fff;padding:60px 0}
+.contact-card{max-width:600px;margin:0 auto;background:var(--surf);border:1.5px solid var(--line);border-radius:20px;padding:32px;text-align:center;box-shadow:var(--s2)}
+.contact-card h3{font-family:var(--fd);font-size:20px;font-weight:800;color:var(--ink);margin-bottom:10px}
+.contact-card p{font-size:15px;color:var(--ink3);line-height:1.75;margin-bottom:20px}
+.contact-card a.cta-link{display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:#fff;font-family:var(--fd);font-weight:700;font-size:14.5px;padding:12px 26px;border-radius:8px;box-shadow:var(--sb);transition:.22s}
+.contact-card a.cta-link:hover{background:var(--blue-d);transform:translateY(-1px)}
+.privacy-note{font-size:12px;color:var(--ink4);margin-top:14px}
+
+/* ══ CTA ══ */
+.cta{background:linear-gradient(140deg,#0f172a 0%,#1e3a8a 100%);padding:80px 0;text-align:center;position:relative;overflow:hidden}
+.cta::before{content:'';position:absolute;top:-80px;left:50%;transform:translateX(-50%);width:800px;height:380px;background:radial-gradient(ellipse,rgba(37,99,235,.22) 0%,transparent 68%);pointer-events:none}
+.cta-in{position:relative;z-index:1}
+.cta .pill{color:#93c5fd;background:rgba(255,255,255,.1);margin-bottom:18px}
+.cta .pill::before{background:#93c5fd}
+.cta h2{font-family:var(--fd);font-size:clamp(24px,4vw,42px);font-weight:800;color:#fff;line-height:1.15;margin-bottom:12px}
+.cta h2 em{color:#fbbf24;font-style:normal}
+.cta p{font-size:16px;color:rgba(255,255,255,.72);max-width:480px;margin:0 auto 32px;line-height:1.78}
+.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn-gold{display:inline-flex;align-items:center;gap:8px;background:var(--amber);color:#fff;font-family:var(--fd);font-weight:800;font-size:15px;padding:14px 30px;border-radius:8px;box-shadow:0 8px 28px rgba(245,158,11,.35);transition:.22s}
+.btn-gold:hover{background:#d97706;transform:translateY(-3px)}
+.btn-ghost{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.09);border:1.5px solid rgba(255,255,255,.22);color:#fff;font-family:var(--fd);font-weight:600;font-size:14px;padding:13px 26px;border-radius:8px;transition:.2s}
+.btn-ghost:hover{background:rgba(255,255,255,.16)}
+
+/* ══ FOOTER ══ */
+footer{background:#0f172a;padding:68px 0 0}
+.ft-grid{display:grid;grid-template-columns:1.9fr 1fr 1fr 1fr;gap:44px;margin-bottom:52px}
+.ft-brand .ln{color:#fff}.ft-brand .ls{color:#475569}
+.ft-desc{font-size:13.5px;color:#64748b;line-height:1.78;max-width:265px;margin:13px 0 20px}
+.ft-soc{display:flex;gap:9px}
+.fts{width:34px;height:34px;border-radius:7px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;color:#94a3b8;font-size:13px;transition:.2s}
+.fts:hover{background:var(--blue);color:#fff}
+.fc h4{font-family:var(--fd);font-size:12px;font-weight:700;color:#fff;margin-bottom:14px;letter-spacing:.06em;text-transform:uppercase}
+.fc ul{display:flex;flex-direction:column;gap:8px}
+.fc ul a{font-size:13.5px;color:#64748b;transition:.18s}
+.fc ul a:hover{color:#93c5fd}
+.ft-btm{border-top:1px solid rgba(255,255,255,.07);padding:22px 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.ft-cp{font-size:12.5px;color:#475569}
+.ft-cp b{color:#64748b;font-weight:600}
+.ft-lnk{display:flex;gap:18px}
+.ft-lnk a{font-size:12.5px;color:#475569;transition:.18s}
+.ft-lnk a:hover{color:#93c5fd}
+.btt{position:fixed;bottom:26px;right:26px;z-index:500;width:43px;height:43px;background:var(--blue);color:#fff;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:17px;box-shadow:var(--sb);opacity:0;pointer-events:none;transform:translateY(14px);transition:.28s var(--ease)}
+.btt.on{opacity:1;pointer-events:auto;transform:translateY(0)}
+.btt:hover{transform:translateY(-3px)}
+
+/* ══ RESPONSIVE ══ */
+@media(max-width:1060px){.ft-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:860px){
+  nav.dn,.hcta{display:none}.brg{display:flex}
+  .tool-body{padding:24px 22px}.tool-hdr{padding:24px 22px}
+  .form-grid{grid-template-columns:1fr}.form-grid.three{grid-template-columns:1fr 1fr}
+  .result-cards{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+  .ft-grid{grid-template-columns:1fr}.ft-btm{flex-direction:column;text-align:center}
+  .form-grid.three{grid-template-columns:1fr}
+  .priority-hero{flex-direction:column}.ph-right{align-items:flex-start}
+  .cta-btns{flex-direction:column;align-items:center}
+  .story-card{padding:26px 20px}
+  .chance-bar-wrap{width:100%}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="hdr">
+  <div class="w">
+    <div class="hdi">
+      <a href="/" class="logo">
+        <div class="lb"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+        <div><div class="ln">Raj<span>Daily</span>Tools</div><div class="ls">Smart Tools for Daily Life</div></div>
+      </a>
+      <nav class="dn">
+        <a href="/">Home</a><a href="/categories">Categories</a>
+        <a href="/#popular">Popular</a><a href="/about">About</a><a href="/contact">Contact</a>
+      </nav>
+      <a href="/categories" class="hcta">All Tools →</a>
+      <button class="brg" id="brg"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="dov" id="dov"></div>
+<div class="drw" id="drw">
+  <div class="dh">
+    <div class="logo">
+      <div class="lb" style="width:30px;height:30px;border-radius:7px"><svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#fff"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+      <div class="ln" style="font-size:16px">Raj<span>Daily</span>Tools</div>
+    </div>
+    <button class="dx" id="dx">✕</button>
+  </div>
+  <nav class="mn">
+    <a href="/" onclick="cD()">🏠 Home</a>
+    <a href="/categories" onclick="cD()">🗂️ Categories</a>
+    <a href="/#popular" onclick="cD()">⭐ Popular</a>
+    <a href="/about" onclick="cD()">👤 About</a>
+    <a href="/contact" onclick="cD()">📬 Contact</a>
+  </nav>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+  <div class="w">
+    <div class="bc">
+      <a href="/">Home</a><span style="color:var(--ink4)">›</span>
+      <a href="/education-tools">Education Tools</a><span style="color:var(--ink4)">›</span>
+      <span>KV Priority Checker</span>
+    </div>
+    <div class="hero-inner">
+      <div class="pill">Education Tools</div>
+      <h1>KV Priority Category <span>Checker 2026</span></h1>
+      <p class="hero-sub">Check your Kendriya Vidyalaya admission priority category and selection chances instantly. Based on official KV Sangathan guidelines. Know where you stand before applying.</p>
+      <div class="hero-chips">
+        <span class="chip">🎯 5 Priority Levels</span>
+        <span class="chip">📊 Admission Chances</span>
+        <span class="chip">👧 Single Girl Child</span>
+        <span class="chip">💡 Smart Suggestions</span>
+        <span class="chip">🆓 100% Free</span>
+      </div>
+      <div class="hero-meta">
+        <div class="upd">📅 Session: 2026–27</div>
+        <span class="mi">✅ Official KV guidelines</span>
+        <span class="mi">🔒 No data stored</span>
+      </div>
+      <div class="howto">
+        <div class="howto-ttl">💡 How to Use This Tool</div>
+        <div class="howto-steps">
+          <div class="hs-step"><span class="sn">1</span>Fill all details about parent's job type, category, and special quotas</div>
+          <div class="hs-step"><span class="sn">2</span>Click "Check KV Priority & Chances" button</div>
+          <div class="hs-step"><span class="sn">3</span>Get your Priority Category, admission chances, and improvement tips instantly</div>
+        </div>
+      </div>
+
+      <!-- Age Calc Cross Promo -->
+      <div class="age-promo">
+        <div class="ap-ico">📅</div>
+        <div class="ap-txt">
+          <h3>Check KV Age Eligibility First</h3>
+          <p>Before checking priority, make sure your child meets the age criteria for KV admission using our KV Age Calculator tool.</p>
+          <a href="https://rajdailytools.github.io/kv-age-calculator-2026.html" target="_blank" rel="noopener" class="btn-blue">👉 Use KV Age Calculator</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOOL SECTION -->
+<section class="tool-sec" id="tool">
+  <div class="w">
+    <div class="tool-wrap">
+      <div class="tool-card rev">
+        <div class="tool-hdr">
+          <div class="th-in">
+            <h2>🎯 KV Admission Priority & Chances Checker</h2>
+            <p>Fill in all the details below. Our smart algorithm applies official KV Sangathan priority rules to calculate your admission category and chances.</p>
+            <div class="th-badges">
+              <span class="thb">🏛️ Official KV Rules Applied</span>
+              <span class="thb">⚡ Instant Smart Result</span>
+              <span class="thb">💡 Personalized Tips</span>
+              <span class="thb">🔒 No Data Stored</span>
+            </div>
+          </div>
+        </div>
+        <div class="tool-body">
+
+          <!-- ROW 1: Job Type + Category -->
+          <div class="form-grid">
+            <div class="fld">
+              <label class="flbl" for="jobType">Parent's Job Type <span>Required</span></label>
+              <select class="fsel" id="jobType">
+                <option value="">-- Select Job Type --</option>
+                <option value="cg_defence">Central Govt — Defence (Army/Navy/Air Force)</option>
+                <option value="cg_transfer">Central Govt — Transferable (Other)</option>
+                <option value="cg_nontransfer">Central Govt — Non-Transferable</option>
+                <option value="ex_defence">Ex-Serviceman (Defence Retired)</option>
+                <option value="state_govt">State Government Employee</option>
+                <option value="psu">PSU (Public Sector Undertaking)</option>
+                <option value="private">Private Job / Self-Employed</option>
+                <option value="kv_employee">KV / Education Dept. Employee</option>
+              </select>
+            </div>
+            <div class="fld">
+              <label class="flbl" for="category">Social Category <span>Required</span></label>
+              <select class="fsel" id="category">
+                <option value="">-- Select Category --</option>
+                <option value="general">General</option>
+                <option value="obc">OBC (Other Backward Class)</option>
+                <option value="sc">SC (Scheduled Caste)</option>
+                <option value="st">ST (Scheduled Tribe)</option>
+                <option value="ews">EWS (Economically Weaker Section)</option>
+                <option value="bpl">BPL (Below Poverty Line)</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- ROW 2: Transferable + Distance -->
+          <div class="form-grid">
+            <div class="fld">
+              <label class="flbl">Is the Job Transferable? <span>Required</span></label>
+              <div class="radio-group">
+                <div class="radio-option">
+                  <input type="radio" name="transferable" id="t_yes" value="yes">
+                  <label for="t_yes">✅ Yes</label>
+                </div>
+                <div class="radio-option">
+                  <input type="radio" name="transferable" id="t_no" value="no">
+                  <label for="t_no">❌ No</label>
+                </div>
+              </div>
+            </div>
+            <div class="fld">
+              <label class="flbl" for="distance">Distance from KV School <span>Optional</span></label>
+              <select class="fsel" id="distance">
+                <option value="near">0–5 km (Very Close)</option>
+                <option value="medium">5–10 km (Moderate)</option>
+                <option value="far">10+ km (Far)</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- ROW 3: Special Quotas -->
+          <div class="form-grid three">
+            <div class="fld">
+              <label class="flbl">Single Girl Child? <span>Special Quota</span></label>
+              <div class="radio-group">
+                <div class="radio-option">
+                  <input type="radio" name="sgc" id="sgc_yes" value="yes">
+                  <label for="sgc_yes">👧 Yes</label>
+                </div>
+                <div class="radio-option">
+                  <input type="radio" name="sgc" id="sgc_no" value="no" checked>
+                  <label for="sgc_no">❌ No</label>
+                </div>
+              </div>
+            </div>
+            <div class="fld">
+              <label class="flbl">RTE / BPL Quota? <span>Optional</span></label>
+              <div class="radio-group">
+                <div class="radio-option">
+                  <input type="radio" name="rte" id="rte_yes" value="yes">
+                  <label for="rte_yes">✅ Yes</label>
+                </div>
+                <div class="radio-option">
+                  <input type="radio" name="rte" id="rte_no" value="no" checked>
+                  <label for="rte_no">❌ No</label>
+                </div>
+              </div>
+            </div>
+            <div class="fld">
+              <label class="flbl">Previous School: KV? <span>Optional</span></label>
+              <div class="radio-group">
+                <div class="radio-option">
+                  <input type="radio" name="prevkv" id="pk_yes" value="yes">
+                  <label for="pk_yes">✅ Yes</label>
+                </div>
+                <div class="radio-option">
+                  <input type="radio" name="prevkv" id="pk_no" value="no" checked>
+                  <label for="pk_no">❌ No</label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="hint-box">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            <div>Priority is determined by <strong>parent's job type first</strong>, then social category, then special quotas. Single Girl Child gets additional weight in priority. Results are based on official KV Sangathan 2026 guidelines.</div>
+          </div>
+
+          <button class="check-btn" onclick="checkPriority()">🎯 Check KV Priority &amp; Chances</button>
+
+          <!-- RESULT AREA -->
+          <div id="resultArea">
+            <div id="priorityHero"></div>
+            <div class="result-cards" id="resultCards"></div>
+            <div id="factorBox" style="margin-top:14px"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- PRIORITY TABLE -->
+<section class="tbl-sec" id="priority-table">
+  <div class="w">
+    <div style="max-width:840px;margin:0 auto">
+      <div class="rev" style="text-align:center;margin-bottom:36px">
+        <div class="pill" style="margin-bottom:14px">Official Priority List</div>
+        <h2 style="font-family:var(--fd);font-size:clamp(22px,3.5vw,36px);font-weight:800;color:var(--ink);margin-bottom:10px">KV Admission <span style="color:var(--blue)">Priority System 2026</span></h2>
+        <p style="font-size:15px;color:var(--ink3);max-width:500px;margin:0 auto;line-height:1.75">Complete official priority order as per KV Sangathan admission guidelines for session 2026–27.</p>
+      </div>
+      <div class="tbl-wr rev">
+        <table>
+          <thead>
+            <tr>
+              <th>Priority</th>
+              <th>Category</th>
+              <th>Description</th>
+              <th>Chances</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="pbadge p1">⭐ Priority 1</span></td>
+              <td>Central Govt — Defence</td>
+              <td>Army, Navy, Air Force serving/transferred employees — highest priority</td>
+              <td><div class="ch-bar"><div class="cb fill g"></div><div class="cb fill g"></div><div class="cb fill g"></div><div class="cb fill g"></div><div class="cb fill g"></div></div> Very High</td>
+            </tr>
+            <tr>
+              <td><span class="pbadge p1">⭐ Priority 1</span></td>
+              <td>Central Govt — Transferable</td>
+              <td>CG employees with transferable posts — strong preference</td>
+              <td><div class="ch-bar"><div class="cb fill g"></div><div class="cb fill g"></div><div class="cb fill g"></div><div class="cb fill g"></div><div class="cb empty"></div></div> High</td>
+            </tr>
+            <tr>
+              <td><span class="pbadge p1">⭐ Priority 1</span></td>
+              <td>KV / Education Dept. Employees</td>
+              <td>KV Sangathan and Govt Education department staff</td>
+              <td><div class="ch-bar"><div class="cb fill g"></div><div class="cb fill g"></div><div class="cb fill g"></div><div class="cb fill g"></div><div class="cb fill g"></div></div> Very High</td>
+            </tr>
+            <tr>
+              <td><span class="pbadge p2">🔵 Priority 2</span></td>
+              <td>Central Govt — Non-Transferable</td>
+              <td>CG employees in non-transferable posts — good standing</td>
+              <td><div class="ch-bar"><div class="cb fill b"></div><div class="cb fill b"></div><div class="cb fill b"></div><div class="cb empty"></div><div class="cb empty"></div></div> Good</td>
+            </tr>
+            <tr>
+              <td><span class="pbadge p2">🔵 Priority 2</span></td>
+              <td>Ex-Serviceman / Defence Retired</td>
+              <td>Retired Defence personnel's children — good priority</td>
+              <td><div class="ch-bar"><div class="cb fill b"></div><div class="cb fill b"></div><div class="cb fill b"></div><div class="cb empty"></div><div class="cb empty"></div></div> Good</td>
+            </tr>
+            <tr>
+              <td><span class="pbadge p3">🟡 Priority 3</span></td>
+              <td>State Government</td>
+              <td>State Govt transferable employees — medium chances</td>
+              <td><div class="ch-bar"><div class="cb fill y"></div><div class="cb fill y"></div><div class="cb empty"></div><div class="cb empty"></div><div class="cb empty"></div></div> Medium</td>
+            </tr>
+            <tr>
+              <td><span class="pbadge p4">🟠 Priority 4</span></td>
+              <td>PSU / Autonomous Bodies</td>
+              <td>Public Sector employees — conditional on vacant seats</td>
+              <td><div class="ch-bar"><div class="cb fill o"></div><div class="cb empty"></div><div class="cb empty"></div><div class="cb empty"></div><div class="cb empty"></div></div> Low-Medium</td>
+            </tr>
+            <tr>
+              <td><span class="pbadge p5">🔴 Priority 5</span></td>
+              <td>Private Job / General Public</td>
+              <td>Private sector / self-employed — lowest priority, seats permitting</td>
+              <td><div class="ch-bar"><div class="cb fill r"></div><div class="cb empty"></div><div class="cb empty"></div><div class="cb empty"></div><div class="cb empty"></div></div> Very Low</td>
+            </tr>
+            <tr style="background:linear-gradient(135deg,#fdf2f8,#fce7f3)">
+              <td colspan="2" style="font-weight:700;color:var(--ink)">👧 Single Girl Child — ALL Categories</td>
+              <td>Get additional weightage — can boost priority across all levels</td>
+              <td><span style="font-size:12px;font-weight:600;color:#9d174d;background:#fce7f3;padding:4px 10px;border-radius:100px;border:1px solid #fbcfe8">+Bonus Priority</span></td>
+            </tr>
+            <tr>
+              <td colspan="2" style="font-weight:700;color:var(--ink)">🎓 EWS/BPL — RTE Act Quota</td>
+              <td>25% seats reserved under RTE Act — regardless of parent job type</td>
+              <td><span style="font-size:12px;font-weight:600;color:#166534;background:var(--green-xl);padding:4px 10px;border-radius:100px;border:1px solid var(--green-s)">RTE Reserved</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STORY -->
+<section class="story-sec">
+  <div class="wa">
+    <div class="rev" style="text-align:center;margin-bottom:36px">
+      <div class="pill" style="margin-bottom:14px">Personal Story</div>
+      <h2 style="font-family:var(--fd);font-size:clamp(22px,3.4vw,34px);font-weight:800;color:var(--ink);margin-bottom:8px">Why I <span style="color:var(--blue)">Built This Tool</span></h2>
+      <p style="font-size:15px;color:var(--ink3)">Ek family confusion jo ek useful tool ban gayi.</p>
+    </div>
+    <div class="story-card rev">
+      <div class="sq">"</div>
+      <div class="sb">
+        Maine ye tool isliye banaya kyunki mere <strong>bhaiya Central Government mein kaam karte hain</strong> aur unki beti Single Girl Child hai. Dusri taraf, mere <strong>jija ji ki beti EWS category mein aati hai</strong>. Hum donon families mein ye confusion tha — kiski priority zyada hogi? Kiski chances better hain? KV mein admission milega ya nahi?<br><br>
+        Hum log government websites aur PDFs mein itna kuch padh rahe the ki dimag chakra gaya. Priority system itna complex hai ki without proper research samajhna mushkil hai. Aur hamare jaise normal log — jo lawyers ya government experts nahi hain — ke liye ye bahut frustrating hota hai.<br><br>
+        Isliye maine <strong>official KV Sangathan guidelines ko thoroughly research kiya</strong> aur ek simple, smart tool build kiya. Ab koi bhi apni details fill kare aur instantly jaane — unki priority kya hai, chances kaise hain, aur kya improve kiya ja sakta hai.<br><br>
+        <strong>Mera mission: Jo problems mujhe aur mere family ko huin, woh aur kisi ko na ho.</strong> RajDailyTools isi vision ka naam hai. 🙏
+      </div>
+      <div class="sauth">
+        <div class="savt">👨‍💻</div>
+        <div>
+          <div class="sname">Raj Bhai</div>
+          <div class="srole">Founder, RajDailyTools · BSc Physics · COPA ITI Certified</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ARTICLE -->
+<section class="art-sec">
+  <div class="wa">
+    <div class="rev">
+      <div class="pill" style="margin-bottom:14px">Complete Guide</div>
+      <h2 style="font-family:var(--fd);font-size:clamp(22px,3.5vw,36px);font-weight:800;color:var(--ink);margin-bottom:8px">KV Admission Priority System <span style="color:var(--blue)">Explained 2026</span></h2>
+      <p style="font-size:15px;color:var(--ink3);margin-bottom:32px">KV admission ka priority system samajhna bahut zaroori hai. Ye guide har parent ke liye useful hai.</p>
+    </div>
+    <div class="art-body rev">
+      <h2>KV Priority System Kya Hota Hai?</h2>
+      <p>Kendriya Vidyalaya mein admission ek <strong>priority-based system</strong> par kaam karta hai. Jab available seats se zyada applications aate hain (jo aksar hota hai), tab KV Sangathan official priority order ke hisaab se students ko seats allot karta hai.</p>
+      <p>Priority mainly <strong>parent ke job type</strong> se determine hoti hai — Central Government, State Government, ya Private. Iske baad social category aur special quotas bhi role play karte hain.</p>
+      <div class="ibox">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        <div>KV Sangathan har saal admission guidelines update karta hai. Latest aur exact guidelines ke liye <a href="https://kvsangathan.nic.in/" target="_blank" rel="noopener"><strong>kvsangathan.nic.in</strong></a> zaroor check karein.</div>
+      </div>
+
+      <h2>Priority 1 Kiski Hoti Hai?</h2>
+      <p><strong>Priority 1 — sabse highest priority</strong> — unhe milti hai jo KV Sangathan ke direct employees hain ya Central Government ke Defence (Army, Navy, Air Force) serving employees hain. Ye log transferable hote hain aur KV schools ki original foundation hi unke families ke liye thi.</p>
+      <ul>
+        <li>KV / Kendriya Vidyalaya Sangathan employees</li>
+        <li>Defence Ministry employees (serving)</li>
+        <li>Central Government transferable employees</li>
+        <li>Ministry of Education employees</li>
+      </ul>
+
+      <h2>Single Girl Child Ka Special Benefit</h2>
+      <p>KV admission mein <strong>Single Girl Child</strong> ko special consideration milti hai. Agar kisi family mein sirf ek beti hai (koi bhai nahi), toh woh Single Girl Child quota ke tahat additional priority pa sakti hai. Ye provision government ki "Beti Bachao, Beti Padhao" scheme se aligned hai.</p>
+      <div class="ibox g">
+        <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        <div><strong>Important:</strong> Single Girl Child benefit sirf tabhi milta hai jab parent official affidavit submit kare ki ye unki ek aur only beti hai. Supporting documents submit karne hote hain.</div>
+      </div>
+
+      <h2>EWS aur BPL Ka Kya Role Hai?</h2>
+      <p>Right to Education (RTE) Act ke tahat, <strong>EWS (Economically Weaker Section) aur BPL (Below Poverty Line)</strong> category ke students ke liye <strong>25% seats reserved</strong> hain — aur ye seats priority system se alag hain. Iska matlab hai ki even if parent private job mein hai, EWS/BPL certificate hone par admission ki chances bahut improve ho jaati hain.</p>
+      <ul>
+        <li>EWS certificate required: Annual family income ₹8 lakh se kam honi chahiye</li>
+        <li>BPL certificate state government dwara issued hona chahiye</li>
+        <li>25% RTE seats parent ke job type se independent hain</li>
+        <li>Ye seats regular priority seats se alag count hoti hain</li>
+      </ul>
+
+      <h2>Private Job Walon Ka Admission Hota Hai?</h2>
+      <p>Haan hota hai — lekin <strong>sirf tab jab higher priority categories ke baad seats vacant rahe</strong>. Private job employees Priority 5 (lowest) pe aate hain. Agar ek KV mein 40 seats hain aur Priority 1-4 se hi 40 applications aa gaye, toh private job walon ko seat milna mushkil ho sakti hai.</p>
+      <div class="ibox a">
+        <svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        <div><strong>Tip for Private Employees:</strong> Agar aap EWS ya SC/ST category mein aate hain, toh reservation benefit milega. Also, Single Girl Child quota se additional weightage milti hai. Inhe zaroor use karein.</div>
+      </div>
+
+      <h2>Admission Chances Kaise Improve Karein?</h2>
+      <ul>
+        <li>Early registration karein — notification aate hi form bharen</li>
+        <li>Agar EWS/BPL eligible hain toh certificate banwa lein pehle se</li>
+        <li>Single Girl Child affidavit ready rakhein</li>
+        <li>Multiple KV schools mein apply karein (closest KV prefer karein)</li>
+        <li>Sahi documents ready rakhein — birth certificate, address proof, category certificate</li>
+        <li>Previous KV school ka TC agar available ho toh advantage hota hai</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- DISCLAIMER -->
+<div class="disc">
+  <div class="wa">
+    <div class="disc-in">
+      <span style="font-size:20px;flex-shrink:0">⚠️</span>
+      <div><strong>Disclaimer:</strong> Ye tool sirf informational aur educational purposes ke liye hai. Official KV Sangathan guidelines par based hai lekin kisi sarkari body se affiliated nahi hai. Final result ke liye hamesha <a href="https://kvsangathan.nic.in/" target="_blank" rel="noopener" style="color:var(--blue);font-weight:700">kvsangathan.nic.in</a> ya nearest KV school se verify karein. Rules change ho sakte hain. <strong>Hum koi bhi personal data collect ya store nahi karte.</strong></div>
+    </div>
+  </div>
+</div>
+
+<!-- FAQ -->
+<section class="faq-sec">
+  <div class="w">
+    <div style="text-align:center;margin-bottom:40px" class="rev">
+      <div class="pill" style="margin-bottom:14px">FAQs</div>
+      <h2 style="font-family:var(--fd);font-size:clamp(22px,3.5vw,36px);font-weight:800;color:var(--ink);margin-bottom:10px">Frequently Asked <span style="color:var(--blue)">Questions</span></h2>
+      <p style="font-size:15px;color:var(--ink3);max-width:480px;margin:0 auto">KV admission priority ke baare mein sabse common sawaal aur unke detailed jawaab.</p>
+    </div>
+    <div class="fql" id="faqList">
+      <div class="fq rev">
+        <div class="fq-q"><span class="fq-t">KV priority category kya hoti hai?</span><span class="fq-i">+</span></div>
+        <div class="fq-a"><div class="fq-ai">KV priority category ek system hai jisme parent ke job type ke aadhar par admission preference decide ki jaati hai. Priority 1 (highest) Defence/CG employees ke liye hoti hai, aur Priority 5 (lowest) private employees ke liye. Jab seats limited hoon, priority wale pehle seat paate hain.</div></div>
+      </div>
+      <div class="fq rev">
+        <div class="fq-q"><span class="fq-t">KV admission mein sabse high priority kiski hoti hai?</span><span class="fq-i">+</span></div>
+        <div class="fq-a"><div class="fq-ai"><strong>Priority 1 — highest</strong> — KV Sangathan ke apne employees aur Central Government Defence (serving) employees ke bache ko milti hai. Iske baad CG transferable employees aate hain. Ye isliye hai kyunki KV schools originally military aur government families ke liye hi banaye gaye the.</div></div>
+      </div>
+      <div class="fq rev">
+        <div class="fq-q"><span class="fq-t">Single Girl Child ka KV admission mein kya benefit hai?</span><span class="fq-i">+</span></div>
+        <div class="fq-a"><div class="fq-ai">Single Girl Child ko <strong>additional priority weightage</strong> milti hai — Beti Bachao, Beti Padhao scheme ke tahat. Iske liye parent ko affidavit submit karna hota hai ki unki sirf ek beti hai. Ye benefit priority levels ke andar apply hoti hai aur selection chances improve karta hai.</div></div>
+      </div>
+      <div class="fq rev">
+        <div class="fq-q"><span class="fq-t">EWS / BPL category ka KV admission mein kya role hai?</span><span class="fq-i">+</span></div>
+        <div class="fq-a"><div class="fq-ai">RTE (Right to Education) Act ke tahat <strong>25% seats EWS aur BPL category</strong> ke liye reserved hain. Ye seats priority system se alag hain — matlab even private job wale ya low priority wale EWS certificate par admission pa sakte hain. EWS ke liye annual family income ₹8 lakh se kam honi chahiye.</div></div>
+      </div>
+      <div class="fq rev">
+        <div class="fq-q"><span class="fq-t">Private job walon ka KV mein admission hota hai kya?</span><span class="fq-i">+</span></div>
+        <div class="fq-a"><div class="fq-ai">Haan, hota hai — lekin <strong>sirf jab seats vacant rahe</strong> Priority 1–4 se. Private employees Priority 5 mein aate hain. Urban areas mein jahan KV mein demand zyada hoti hai, wahan chances kam hote hain. Lekin agar EWS certificate hai ya Single Girl Child hai toh chances better hote hain.</div></div>
+      </div>
+      <div class="fq rev">
+        <div class="fq-q"><span class="fq-t">SC/ST category ke liye KV mein kya reservation hai?</span><span class="fq-i">+</span></div>
+        <div class="fq-a"><div class="fq-ai">SC/ST category ke students ke liye <strong>RTE provisions ke tahat reservation</strong> milti hai. Additionally, general admission seats mein bhi SC/ST ko preference milti hai. SC/ST parents agar Central Government employee hain toh combined benefit milta hai — yani priority aur category dono ka advantage.</div></div>
+      </div>
+      <div class="fq rev">
+        <div class="fq-q"><span class="fq-t">KV admission mein transferable job ka kya faayda hai?</span><span class="fq-i">+</span></div>
+        <div class="fq-a"><div class="fq-ai">Transferable job walon ko <strong>higher priority</strong> milti hai kyunki KV schools originally un families ke liye banaye gaye the jinke parents frequently transfer hote hain. Central Government transferable employees Priority 1 mein aate hain jabki non-transferable Priority 2 mein. Isliye job letter mein "transferable" clearly mention hona chahiye.</div></div>
+      </div>
+      <div class="fq rev">
+        <div class="fq-q"><span class="fq-t">Kya OBC category ka KV admission mein koi special benefit hai?</span><span class="fq-i">+</span></div>
+        <div class="fq-a"><div class="fq-ai">OBC category ke students ke liye KV Class 1 mein <strong>27% reservation</strong> hoti hai under OBC (Non-Creamy Layer) category. Ye benefit tabhi milega jab valid OBC certificate available ho aur NCL (Non-Creamy Layer) status prove ho sake. OBC certificate state government dwara issued hona chahiye.</div></div>
+      </div>
+      <div class="fq rev">
+        <div class="fq-q"><span class="fq-t">Kya Defence retired (Ex-Serviceman) ke bache ko priority milti hai?</span><span class="fq-i">+</span></div>
+        <div class="fq-a"><div class="fq-ai">Haan, <strong>Ex-Servicemen (retired Defence personnel)</strong> ke bache ko Priority 2 milti hai — jo serving employees ke baad aate hain lekin State Government se pehle. Iske liye valid Ex-Serviceman certificate aur discharge certificate submit karna hota hai.</div></div>
+      </div>
+      <div class="fq rev">
+        <div class="fq-q"><span class="fq-t">Kya ye KV Priority Checker official tool hai?</span><span class="fq-i">+</span></div>
+        <div class="fq-a"><div class="fq-ai">Nahi, ye <strong>RajDailyTools ka educational tool</strong> hai jo official KV Sangathan guidelines par based hai. Ye KV Sangathan ya kisi government agency se affiliated nahi hai. Tool ke results informational hain — final confirmation ke liye hamesha official KV school ya kvsangathan.nic.in se verify karein.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-sec">
+  <div class="w">
+    <div class="contact-card rev">
+      <h3>💬 Have Questions or Suggestions?</h3>
+      <p>Agar aapko is tool mein koi issue mile ya koi improvement suggest karna ho — ya phir aapka koi sawaal ho KV admission ke baare mein — hum se zaroor sampark karein. Hum jaldi reply karte hain.</p>
+      <a href="/contact" class="cta-link">📩 Contact Us</a>
+      <p class="privacy-note">🔒 We do not collect or store any personal data. Your inputs are processed locally and discarded immediately.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="w">
+    <div class="cta-in">
+      <div class="pill">More KV Tools</div>
+      <h2>Also Check <em>KV Age Eligibility</em></h2>
+      <p>Check krein ki aapke bachche ki age KV admission ke criteria ko meet karti hai ya nahi — hamara free KV Age Calculator use karein.</p>
+      <div class="cta-btns">
+        <a href="https://rajdailytools.github.io/kv-age-calculator-2026.html" target="_blank" class="btn-gold">📅 KV Age Calculator</a>
+        <a href="/education-tools" class="btn-ghost">🎓 All Education Tools</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="w">
+    <div class="ft-grid">
+      <div class="ft-brand">
+        <div class="logo" style="margin-bottom:4px">
+          <div class="lb"><svg viewBox="0 0 24 24" fill="#fff"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+          <div><div class="ln">Raj<span>Daily</span>Tools</div><div class="ls">Smart Tools for Daily Life</div></div>
+        </div>
+        <p class="ft-desc">India's most ambitious free tools platform. Built by Raj Bhai with a vision of 30,000+ tools. Solving daily life problems, one tool at a time.</p>
+        <div class="ft-soc">
+          <a href="https://www.facebook.com/share/1Dq3Y1k7mG/" target="_blank" class="fts">f</a>
+          <a href="https://x.com/Educator4ll" target="_blank" class="fts">𝕏</a>
+          <a href="https://youtube.com/@rajdailytools" target="_blank" class="fts">▶</a>
+          <a href="https://www.instagram.com/rajdailytools" target="_blank" class="fts">📷</a>
+        </div>
+      </div>
+      <div class="fc"><h4>Categories</h4><ul>
+        <li><a href="/education-tools">Education Tools</a></li>
+        <li><a href="/finance-tools">Finance Tools</a></li>
+        <li><a href="/converter-tools">Converter Tools</a></li>
+        <li><a href="/calculator-tools">Calculator Tools</a></li>
+        <li><a href="/health-tools">Health Tools</a></li>
+        <li><a href="/text-tools">Text Tools</a></li>
+        <li><a href="/other-tools">Other Tools</a></li>
+      </ul></div>
+      <div class="fc"><h4>Popular Tools</h4><ul>
+        <li><a href="https://rajdailytools.github.io/kv-age-calculator-2026.html">KV Age Calculator</a></li>
+        <li><a href="/emi-calculator">EMI Calculator</a></li>
+        <li><a href="/gpa-calculator">GPA Calculator</a></li>
+        <li><a href="/age-calculator">Age Calculator</a></li>
+        <li><a href="/percentage-calculator">Percentage Calc</a></li>
+        <li><a href="/bmi-calculator">BMI Calculator</a></li>
+        <li><a href="/word-counter">Word Counter</a></li>
+      </ul></div>
+      <div class="fc"><h4>Company</h4><ul>
+        <li><a href="/about">About Us</a></li>
+        <li><a href="/contact">Contact</a></li>
+        <li><a href="/privacy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
+        <li><a href="/sitemap">Sitemap</a></li>
+      </ul></div>
+    </div>
+    <div class="ft-btm">
+      <p class="ft-cp">Copyright © 2026 <b>RajDailyTools</b>. All rights reserved. Made with ❤️ in India by Raj Bhai &nbsp;|&nbsp; Powered by <b>RajDailyTools</b></p>
+      <div class="ft-lnk"><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/disclaimer">Disclaimer</a></div>
+    </div>
+  </div>
+</footer>
+<button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+/* Drawer */
+const brg=document.getElementById('brg'),drw=document.getElementById('drw'),dov=document.getElementById('dov');
+function oD(){drw.classList.add('on');dov.classList.add('on');document.body.style.overflow='hidden'}
+function cD(){drw.classList.remove('on');dov.classList.remove('on');document.body.style.overflow=''}
+brg.addEventListener('click',oD);
+document.getElementById('dx').addEventListener('click',cD);
+dov.addEventListener('click',cD);
+const btt=document.getElementById('btt');
+window.addEventListener('scroll',()=>btt.classList.toggle('on',scrollY>380),{passive:true});
+const ro=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      const s=[...(e.target.parentElement?.children||[])];
+      e.target.style.transitionDelay=(s.indexOf(e.target)%4)*0.08+'s';
+      e.target.classList.add('in');ro.unobserve(e.target);
+    }
+  });
+},{threshold:0.06,rootMargin:'0px 0px -20px 0px'});
+document.querySelectorAll('.rev').forEach(el=>ro.observe(el));
+document.getElementById('faqList').addEventListener('click',function(e){
+  const q=e.target.closest('.fq-q');if(!q)return;
+  const item=q.closest('.fq'),open=item.classList.contains('open');
+  document.querySelectorAll('.fq.open').forEach(i=>i.classList.remove('open'));
+  if(!open)item.classList.add('open');
+});
+
+/* ══════════════════════════════════════
+   KV PRIORITY CHECKER LOGIC
+══════════════════════════════════════ */
+function getRadio(name){
+  const el=document.querySelector(`input[name="${name}"]:checked`);
+  return el?el.value:'';
+}
+
+function checkPriority(){
+  const jobType=document.getElementById('jobType').value;
+  const category=document.getElementById('category').value;
+  const transferable=getRadio('transferable');
+  const sgc=getRadio('sgc');
+  const rte=getRadio('rte');
+  const prevkv=getRadio('prevkv');
+  const distance=document.getElementById('distance').value;
+
+  if(!jobType||!category){alert('Please fill in all required fields (Job Type and Category) before checking.');return}
+  if(!transferable){alert('Please select whether the job is transferable or not.');return}
+
+  // Priority calculation
+  let priority=5,priorityLabel='',priorityClass='p5',chanceLevel='low',chanceText='Very Low',chanceBar=10;
+  let explanation='',suggestion='';
+  const factors=[];
+
+  // Base priority from job type
+  if(jobType==='kv_employee'){
+    priority=1;priorityLabel='Priority 1 — KV / Education Employee';priorityClass='p1';
+    factors.push({t:'KV Sangathan / Education Dept. employee — highest internal priority',s:'pos'});
+  } else if(jobType==='cg_defence'){
+    priority=1;priorityLabel='Priority 1 — Central Govt (Defence)';priorityClass='p1';
+    factors.push({t:'Serving Defence employee — highest government priority',s:'pos'});
+  } else if(jobType==='ex_defence'){
+    priority=2;priorityLabel='Priority 2 — Ex-Serviceman (Retired Defence)';priorityClass='p2';
+    factors.push({t:'Retired Defence personnel — Priority 2 preference',s:'pos'});
+  } else if(jobType==='cg_transfer'){
+    priority=1;priorityLabel='Priority 1 — Central Govt (Transferable)';priorityClass='p1';
+    factors.push({t:'Central Government transferable employee — strong priority',s:'pos'});
+  } else if(jobType==='cg_nontransfer'){
+    priority=2;priorityLabel='Priority 2 — Central Govt (Non-Transferable)';priorityClass='p2';
+    factors.push({t:'Central Government non-transferable employee',s:'pos'});
+    factors.push({t:'Non-transferable status reduces priority by one level vs. transferable',s:'neu'});
+  } else if(jobType==='state_govt'){
+    priority=3;priorityLabel='Priority 3 — State Government Employee';priorityClass='p3';
+    factors.push({t:'State Government employee — Priority 3',s:'neu'});
+    if(transferable==='yes')factors.push({t:'Transferable State Govt post — slight advantage within Priority 3',s:'pos'});
+  } else if(jobType==='psu'){
+    priority=4;priorityLabel='Priority 4 — PSU / Autonomous Body Employee';priorityClass='p4';
+    factors.push({t:'PSU employee — seat available after Priority 1-3 fulfilled',s:'neu'});
+  } else if(jobType==='private'){
+    priority=5;priorityLabel='Priority 5 — Private / General Public';priorityClass='p5';
+    factors.push({t:'Private sector employee — lowest priority level',s:'neg'});
+  }
+
+  // EWS/BPL RTE boost
+  let rteBoost=false;
+  if(rte==='yes'||(category==='ews'||category==='bpl')){
+    rteBoost=true;
+    factors.push({t:'EWS/BPL: 25% seats reserved under RTE Act — significant advantage',s:'pos'});
+  }
+
+  // Category bonuses
+  if(category==='sc'||category==='st'){
+    factors.push({t:`${category.toUpperCase()} category — reservation benefits apply`,s:'pos'});
+  } else if(category==='obc'){
+    factors.push({t:'OBC (NCL) — 27% OBC reservation in eligible seats',s:'pos'});
+  } else if(category==='ews'){
+    factors.push({t:'EWS — 25% RTE seats + income-based reservation benefit',s:'pos'});
+  } else if(category==='bpl'){
+    factors.push({t:'BPL certificate — RTE Act protection applies',s:'pos'});
+  }
+
+  // SGC boost
+  if(sgc==='yes'){
+    factors.push({t:'Single Girl Child — bonus priority weightage applies across all levels',s:'pos'});
+    if(priority>1)priority=Math.max(1,priority-1);
+  }
+
+  // Previous KV
+  if(prevkv==='yes'){
+    factors.push({t:'Previously enrolled in KV — continuity preference in same school',s:'pos'});
+  }
+
+  // Distance factor
+  if(distance==='near'){
+    factors.push({t:'Distance: 0–5 km — nearest KV preference benefit',s:'pos'});
+  } else if(distance==='far'){
+    factors.push({t:'Distance: 10+ km — may affect school proximity preference',s:'neg'});
+  }
+
+  // Calculate chance
+  let score=0;
+  if(priority===1)score=85;
+  else if(priority===2)score=65;
+  else if(priority===3)score=45;
+  else if(priority===4)score=30;
+  else score=15;
+  if(rteBoost)score=Math.min(score+20,95);
+  if(sgc==='yes')score=Math.min(score+10,95);
+  if(category==='sc'||category==='st')score=Math.min(score+10,95);
+  if(category==='obc')score=Math.min(score+8,90);
+  if(prevkv==='yes')score=Math.min(score+8,90);
+  if(distance==='near')score=Math.min(score+5,95);
+  if(distance==='far')score=Math.max(score-5,5);
+  chanceBar=score;
+
+  if(score>=65){chanceLevel='high';chanceText='High Chance'}
+  else if(score>=40){chanceLevel='medium';chanceText='Medium Chance'}
+  else{chanceLevel='low';chanceText='Low Chance'}
+
+  // Explanation
+  const jobLabels={cg_defence:'Central Govt Defence (Serving)',cg_transfer:'Central Govt Transferable',cg_nontransfer:'Central Govt Non-Transferable',ex_defence:'Ex-Serviceman (Retired)',state_govt:'State Government',psu:'PSU Employee',private:'Private / General',kv_employee:'KV/Education Dept Employee'};
+  explanation=`Aapke parent <strong>${jobLabels[jobType]||jobType}</strong> hain, jo <strong>${priorityLabel.split('—')[0].trim()}</strong> mein aate hain. `;
+  if(rteBoost)explanation+=`EWS/BPL category hone ke karan <strong>RTE Act ke under 25% reserved seats</strong> bhi applicable hain — ye bahut important advantage hai. `;
+  if(sgc==='yes')explanation+=`<strong>Single Girl Child</strong> hone ke karan additional priority weightage milti hai. `;
+  explanation+=`Overall admission chances <strong>${chanceText}</strong> hain (Score: ${score}/100).`;
+
+  // Suggestions
+  const suggs=[];
+  if(priority>=3&&!rteBoost)suggs.push('EWS certificate banwaein agar eligible hain (family income &lt; ₹8 lakh/year) — 25% reserved seats milenge');
+  if(sgc!=='yes')suggs.push('Agar aapke sirf ek beti hai toh Single Girl Child affidavit zaroor banwaein');
+  if(priority>=4)suggs.push('Multiple KV schools mein apply karein — zyada options better chances dete hain');
+  if(distance!=='near')suggs.push('Nearest KV mein apply karein — proximity preference milti hai');
+  if(priority>=3)suggs.push('Notification aate hi turant form bhar dein — early application important hai');
+  if(category==='general'&&priority>=4)suggs.push('SC/ST/OBC certificate apply nahi hota? Verify karein — category benefit miss na ho');
+  suggestion=suggs.length?suggs.map((s,i)=>`<div style="display:flex;gap:10px;margin-bottom:8px"><span style="width:20px;height:20px;background:var(--green);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;flex-shrink:0">${i+1}</span><span style="font-size:13.5px;color:var(--ink2);line-height:1.6">${s}</span></div>`).join(''):'<p style="font-size:13.5px;color:var(--ink3)">Aapki profile already strong hai! Bas documents ready rakhein aur early apply karein.</p>';
+
+  // Build result HTML
+  document.getElementById('priorityHero').innerHTML=`
+    <div class="priority-hero ${priorityClass}" style="margin-top:0">
+      <div class="ph-left">
+        <div class="ph-label">Your KV Admission Priority</div>
+        <div class="ph-prio">${priorityLabel.split('—')[0].trim()}</div>
+        <div class="ph-cat">${priorityLabel.split('—')[1]?.trim()||''}</div>
+      </div>
+      <div class="ph-right">
+        <div class="chance-pill ${chanceLevel}">${chanceLevel==='high'?'✅':chanceLevel==='medium'?'⚠️':'❌'} ${chanceText}</div>
+        <div style="font-size:12px;color:var(--ink3);text-align:right">Admission Score: ${score}/100</div>
+        <div class="chance-bar-wrap"><div class="chance-bar ${chanceLevel}" id="cbar" style="width:0%"></div></div>
+      </div>
+    </div>
+  `;
+
+  document.getElementById('resultCards').innerHTML=`
+    <div class="rc expl">
+      <div class="rc-head"><span class="rc-ico">💡</span> Why This Priority?</div>
+      <div class="rc-body">${explanation}</div>
+    </div>
+    <div class="rc sugg">
+      <div class="rc-head"><span class="rc-ico">🚀</span> How to Improve Chances</div>
+      <div class="rc-body">${suggestion}</div>
+    </div>
+  `;
+
+  const flist=factors.map(f=>`<div class="fl-item"><div class="fl-dot ${f.s}"></div><span style="font-size:13px;color:var(--ink2)">${f.t}</span></div>`).join('');
+  document.getElementById('factorBox').innerHTML=`
+    <div style="background:var(--surf);border:1.5px solid var(--line);border-radius:14px;padding:18px 20px">
+      <div style="font-family:var(--fd);font-size:14px;font-weight:700;color:var(--ink);margin-bottom:12px">📋 Factors Considered</div>
+      <div class="factor-list">${flist}</div>
+    </div>
+  `;
+
+  const ra=document.getElementById('resultArea');
+  ra.style.display='block';
+  ra.style.animation='none';ra.offsetHeight;
+  ra.style.animation='resultIn .45s var(--ease) both';
+  setTimeout(()=>{
+    document.getElementById('cbar').style.width=chanceBar+'%';
+    ra.scrollIntoView({behavior:'smooth',block:'nearest'});
+  },150);
+}
+</script>
+</body>
+</html>
