@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KV Admission Documents List 2026–27 – Category Wise Checklist Tool | RajDailyTools</title>
+<meta name="description" content="Check complete KV admission documents list for 2026–27 session. Get category-wise required documents (SC, ST, OBC, EWS, BPL, Single Girl Child, Defence, Govt Job) instantly with smart checker tool.">
+<meta name="keywords" content="kv admission documents 2026, kv required documents list, kv admission form documents, kendriya vidyalaya documents, kv school admission checklist">
+<meta name="robots" content="index, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ══════════════════════════════════════
+   DESIGN TOKENS
+══════════════════════════════════════ */
+:root{
+  --blue:#2563eb;--blue-d:#1d4ed8;--blue-xl:#eff6ff;--blue-s:#dbeafe;
+  --amber:#f59e0b;--green:#10b981;--red:#ef4444;--purple:#8b5cf6;
+  --teal:#14b8a6;
+  --green-xl:#f0fdf4;--green-s:#bbf7d0;
+  --red-xl:#fef2f2;--red-s:#fecaca;
+  --amber-xl:#fffbeb;--amber-s:#fde68a;
+  --purple-xl:#faf5ff;--purple-s:#ddd6fe;
+  --ink:#0f172a;--ink2:#334155;--ink3:#64748b;--ink4:#94a3b8;
+  --line:#e2e8f0;--surf:#f8fafc;--white:#fff;
+  --s1:0 1px 3px rgba(15,23,42,.06),0 1px 2px rgba(15,23,42,.04);
+  --s2:0 4px 16px rgba(15,23,42,.08),0 2px 6px rgba(15,23,42,.04);
+  --s3:0 12px 40px rgba(15,23,42,.11),0 3px 10px rgba(15,23,42,.06);
+  --s4:0 24px 64px rgba(15,23,42,.13),0 6px 20px rgba(15,23,42,.07);
+  --sb:0 8px 32px rgba(37,99,235,.20);
+  --fd:'Sora',sans-serif;--fb:'DM Sans',sans-serif;
+  --ease:cubic-bezier(.4,0,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);color:var(--ink);background:var(--white);overflow-x:hidden;-webkit-font-smoothing:antialiased;line-height:1.6}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+button{cursor:pointer;border:none;background:none;font-family:var(--fb)}
+.w{max-width:1180px;margin:0 auto;padding:0 24px}
+.wa{max-width:860px;margin:0 auto;padding:0 24px}
+select,input{appearance:none;-webkit-appearance:none}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.35);opacity:.5}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+@keyframes resultIn{from{opacity:0;transform:translateY(18px) scale(.97)}to{opacity:1;transform:none}}
+@keyframes checkIn{from{opacity:0;transform:translateX(-12px)}to{opacity:1;transform:none}}
+@keyframes spin{to{transform:rotate(360deg)}}
+.rev{opacity:0;transform:translateY(22px);transition:opacity .55s var(--ease),transform .55s var(--ease)}
+.rev.in{opacity:1;transform:none}
+
+/* ══ HEADER ══ */
+.hdr{position:sticky;top:0;z-index:999;background:rgba(255,255,255,.96);backdrop-filter:blur(20px);border-bottom:1px solid var(--line);box-shadow:var(--s1)}
+.hdi{display:flex;align-items:center;justify-content:space-between;height:66px}
+.logo{display:flex;align-items:center;gap:10px}
+.lb{width:36px;height:36px;background:var(--blue);border-radius:9px;display:flex;align-items:center;justify-content:center;box-shadow:var(--sb);flex-shrink:0}
+.lb svg{width:18px;height:18px;fill:#fff}
+.ln{font-family:var(--fd);font-size:19px;font-weight:800;color:var(--ink);line-height:1}
+.ln span{color:var(--blue)}
+.ls{font-size:10px;color:var(--ink4);letter-spacing:.04em}
+nav.dn{display:flex;align-items:center;gap:2px}
+nav.dn a{font-size:13.5px;font-weight:500;color:var(--ink2);padding:7px 13px;border-radius:8px;transition:.2s}
+nav.dn a:hover{color:var(--blue);background:var(--blue-xl)}
+.hcta{background:var(--blue);color:#fff;font-family:var(--fd);font-weight:600;font-size:13px;padding:8px 18px;border-radius:8px;box-shadow:var(--sb);transition:.2s}
+.hcta:hover{background:var(--blue-d);transform:translateY(-1px)}
+.brg{display:none;flex-direction:column;gap:4.5px;padding:8px;border-radius:8px}
+.brg span{display:block;width:20px;height:2px;background:var(--ink);border-radius:2px;transition:.28s}
+.dov{display:none;position:fixed;inset:0;background:rgba(15,23,42,.45);z-index:1040;backdrop-filter:blur(3px)}
+.dov.on{display:block}
+.drw{position:fixed;top:0;right:-100%;width:270px;height:100vh;background:#fff;z-index:1050;padding:22px;box-shadow:var(--s4);transition:right .32s var(--ease);overflow-y:auto}
+.drw.on{right:0}
+.dh{display:flex;align-items:center;justify-content:space-between;margin-bottom:26px}
+.dx{width:33px;height:33px;border-radius:7px;background:var(--surf);display:flex;align-items:center;justify-content:center;color:var(--ink3);font-size:17px}
+nav.mn{display:flex;flex-direction:column;gap:3px}
+nav.mn a{display:block;font-size:14px;font-weight:500;color:var(--ink2);padding:11px 13px;border-radius:8px;transition:.2s}
+nav.mn a:hover{color:var(--blue);background:var(--blue-xl)}
+
+/* ══ HERO ══ */
+.hero{position:relative;overflow:hidden;background:linear-gradient(150deg,#ebf4ff 0%,#fff 46%,#f0fdf4 100%);padding:64px 0 72px}
+.hero::before{content:'';position:absolute;top:-140px;right:-180px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(37,99,235,.08) 0%,transparent 68%);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-80px;left:-100px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(16,185,129,.05) 0%,transparent 68%);pointer-events:none}
+.blob{position:absolute;border-radius:50%;pointer-events:none;animation:float 6s ease-in-out infinite}
+.b1{width:13px;height:13px;background:rgba(37,99,235,.18);top:22%;right:14%;animation-delay:0s}
+.b2{width:9px;height:9px;background:rgba(245,158,11,.24);top:58%;right:26%;animation-delay:2.2s}
+.b3{width:11px;height:11px;background:rgba(16,185,129,.20);top:36%;right:6%;animation-delay:4s}
+.bc{display:flex;align-items:center;gap:7px;font-size:12.5px;color:var(--ink3);margin-bottom:22px;position:relative;z-index:1;flex-wrap:wrap}
+.bc a{color:var(--blue);font-weight:600}
+.pill{display:inline-flex;align-items:center;gap:7px;font-family:var(--fd);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);background:var(--blue-xl);padding:5px 14px;border-radius:100px;margin-bottom:18px}
+.pill::before{content:'';width:6px;height:6px;background:var(--blue);border-radius:50%}
+.hero-inner{position:relative;z-index:1;max-width:720px;animation:fadeUp .5s ease both}
+.hero h1{font-family:var(--fd);font-size:clamp(26px,4.5vw,50px);font-weight:800;line-height:1.1;color:var(--ink);margin-bottom:14px}
+.hero h1 span{color:var(--blue)}
+.hero-sub{font-size:16px;color:var(--ink3);line-height:1.8;margin-bottom:22px;max-width:600px}
+.hero-chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.chip{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;padding:6px 14px;border-radius:100px;background:#fff;border:1.5px solid var(--line);color:var(--ink2);box-shadow:var(--s1);transition:.22s}
+.chip:hover{border-color:var(--blue);color:var(--blue);transform:translateY(-1px)}
+.hero-meta{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:26px}
+.upd{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:700;color:var(--blue);background:var(--blue-xl);padding:6px 14px;border-radius:100px;border:1.5px solid var(--blue-s)}
+.mi{font-size:13px;color:var(--ink3);font-weight:500}
+
+/* HOW TO USE */
+.howto{background:var(--amber-xl);border:2px solid var(--amber-s);border-radius:16px;padding:22px 26px;max-width:560px;margin-bottom:24px}
+.howto-ttl{display:flex;align-items:center;gap:9px;font-family:var(--fd);font-size:15px;font-weight:800;color:var(--ink);margin-bottom:13px}
+.howto-steps{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.hs-step{display:flex;align-items:flex-start;gap:10px;font-size:13.5px;color:var(--ink2);line-height:1.6}
+.sn{width:24px;height:24px;background:var(--amber);color:#fff;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex-shrink:0;margin-top:1px}
+
+/* cross-promo boxes */
+.promo-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:26px;position:relative;z-index:1}
+.promo-box{border-radius:16px;padding:20px 22px;display:flex;align-items:center;gap:16px;transition:.22s}
+.promo-box:hover{transform:translateY(-3px);box-shadow:var(--s3)}
+.promo-box.age{background:linear-gradient(135deg,#f0f9ff,var(--blue-xl));border:1.5px solid var(--blue-s)}
+.promo-box.pri{background:linear-gradient(135deg,var(--purple-xl),#ede9fe);border:1.5px solid var(--purple-s)}
+.pb-ico{font-size:32px;flex-shrink:0}
+.pb-txt h4{font-family:var(--fd);font-size:14px;font-weight:800;color:var(--ink);margin-bottom:5px}
+.pb-txt p{font-size:12.5px;color:var(--ink3);line-height:1.55;margin-bottom:10px}
+.btn-sm{display:inline-flex;align-items:center;gap:6px;font-family:var(--fd);font-weight:700;font-size:12.5px;padding:8px 16px;border-radius:7px;transition:.22s}
+.btn-sm.blue{background:var(--blue);color:#fff;box-shadow:var(--sb)}
+.btn-sm.blue:hover{background:var(--blue-d);transform:translateY(-1px)}
+.btn-sm.purple{background:var(--purple);color:#fff;box-shadow:0 6px 20px rgba(139,92,246,.25)}
+.btn-sm.purple:hover{background:#7c3aed;transform:translateY(-1px)}
+
+/* ══ TOOL SECTION ══ */
+.tool-sec{background:var(--surf);padding:80px 0}
+.tool-wrap{max-width:860px;margin:0 auto}
+.tool-card{background:#fff;border:1.5px solid var(--line);border-radius:28px;overflow:hidden;box-shadow:var(--s4)}
+.tool-hdr{background:linear-gradient(135deg,#1d4ed8 0%,#2563eb 55%,#3b82f6 100%);padding:32px 40px;position:relative;overflow:hidden}
+.tool-hdr::before{content:'';position:absolute;top:-60px;right:-60px;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,.07)}
+.tool-hdr::after{content:'';position:absolute;bottom:-40px;left:-40px;width:180px;height:180px;border-radius:50%;background:rgba(255,255,255,.04)}
+.th{position:relative;z-index:1}
+.th h2{font-family:var(--fd);font-size:21px;font-weight:800;color:#fff;margin-bottom:6px}
+.th p{font-size:14px;color:rgba(255,255,255,.82);line-height:1.65}
+.th-badges{display:flex;flex-wrap:wrap;gap:9px;margin-top:14px}
+.thb{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:rgba(255,255,255,.9);background:rgba(255,255,255,.13);padding:5px 12px;border-radius:100px}
+.tool-body{padding:36px 40px}
+
+/* form */
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+.form-grid.three{grid-template-columns:1fr 1fr 1fr}
+.fld{display:flex;flex-direction:column;gap:7px}
+.flbl{font-size:13px;font-weight:700;color:var(--ink2)}
+.flbl span{font-size:11px;font-weight:500;color:var(--ink4);margin-left:5px;background:var(--surf);padding:2px 7px;border-radius:5px;border:1px solid var(--line)}
+.fsel{padding:12px 16px;font-size:14px;color:var(--ink);background:#fff;border:1.5px solid var(--line);border-radius:10px;outline:none;transition:.22s;font-family:var(--fb);cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2364748b' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:40px}
+.fsel:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(37,99,235,.10)}
+.radio-group{display:flex;gap:8px;flex-wrap:wrap}
+.ro{position:relative}
+.ro input{position:absolute;opacity:0;width:0;height:0}
+.ro label{display:inline-flex;align-items:center;gap:6px;font-size:13.5px;font-weight:600;color:var(--ink2);padding:9px 16px;border-radius:9px;border:1.5px solid var(--line);background:#fff;cursor:pointer;transition:.22s}
+.ro input:checked+label{border-color:var(--blue);background:var(--blue-xl);color:var(--blue)}
+.ro label:hover{border-color:var(--blue-s);background:var(--blue-xl)}
+.hint-box{display:flex;align-items:flex-start;gap:9px;font-size:13px;color:var(--ink2);background:var(--blue-xl);border:1.5px solid var(--blue-s);border-radius:10px;padding:11px 14px;margin:16px 0;line-height:1.65}
+.hint-box svg{width:16px;height:16px;stroke:var(--blue);fill:none;stroke-width:2;flex-shrink:0;margin-top:2px}
+.check-btn{width:100%;padding:16px;background:linear-gradient(135deg,var(--blue) 0%,#1e40af 100%);color:#fff;font-family:var(--fd);font-weight:800;font-size:16px;border-radius:12px;box-shadow:var(--sb);transition:all .25s var(--ease);display:flex;align-items:center;justify-content:center;gap:10px}
+.check-btn:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(37,99,235,.32)}
+.check-btn:active{transform:translateY(0)}
+
+/* ══ RESULT ══ */
+#resultArea{display:none;margin-top:28px;animation:resultIn .45s var(--ease) both}
+
+/* result header */
+.res-hdr{background:linear-gradient(135deg,#f0fdf4,#dcfce7);border:2px solid var(--green-s);border-radius:18px;padding:22px 26px;margin-bottom:20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.res-hdr-left h3{font-family:var(--fd);font-size:18px;font-weight:800;color:var(--ink);margin-bottom:4px}
+.res-hdr-left p{font-size:13px;color:var(--ink3)}
+.res-count{font-family:var(--fd);font-size:28px;font-weight:800;color:var(--green);text-align:right}
+.res-count span{font-size:13px;font-weight:500;color:var(--ink3);display:block}
+
+/* doc groups */
+.doc-group{margin-bottom:18px}
+.dg-title{display:flex;align-items:center;gap:9px;font-family:var(--fd);font-size:15px;font-weight:800;color:var(--ink);margin-bottom:11px;padding:10px 14px;border-radius:10px}
+.dg-title.mandatory{background:linear-gradient(135deg,#fef2f2,#fee2e2);color:#991b1b;border:1px solid var(--red-s)}
+.dg-title.category{background:var(--blue-xl);color:var(--blue-d);border:1px solid var(--blue-s)}
+.dg-title.quota{background:linear-gradient(135deg,var(--purple-xl),#ede9fe);color:#5b21b6;border:1px solid var(--purple-s)}
+.dg-title.stage{background:linear-gradient(135deg,#fffbeb,#fef3c7);color:#92400e;border:1px solid var(--amber-s)}
+.dg-title svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2;flex-shrink:0}
+.doc-list{display:flex;flex-direction:column;gap:8px}
+.doc-item{
+  display:flex;align-items:flex-start;gap:13px;
+  padding:13px 16px;border-radius:11px;
+  border:1.5px solid var(--line);background:#fff;
+  transition:.22s;animation:checkIn .3s var(--ease) both;
+  cursor:default;
+}
+.doc-item:hover{border-color:var(--blue-s);background:var(--blue-xl);transform:translateX(4px)}
+.doc-cb{
+  width:20px;height:20px;border-radius:6px;
+  border:2px solid var(--line);flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;
+  transition:.2s;cursor:pointer;margin-top:1px;
+}
+.doc-cb.checked{background:var(--green);border-color:var(--green)}
+.doc-cb.checked::after{content:'✓';color:#fff;font-size:11px;font-weight:700}
+.doc-info{flex:1}
+.doc-name{font-size:14px;font-weight:700;color:var(--ink);margin-bottom:2px}
+.doc-desc{font-size:12.5px;color:var(--ink3);line-height:1.55}
+.doc-badge{font-size:11px;font-weight:700;padding:2px 9px;border-radius:100px;margin-left:6px;vertical-align:middle}
+.doc-badge.req{background:var(--red-xl);color:var(--red);border:1px solid var(--red-s)}
+.doc-badge.imp{background:var(--amber-xl);color:#92400e;border:1px solid var(--amber-s)}
+.doc-badge.opt{background:var(--green-xl);color:var(--green);border:1px solid var(--green-s)}
+
+/* warning box */
+.warn-box{background:var(--amber-xl);border:2px solid var(--amber-s);border-radius:14px;padding:16px 20px;display:flex;align-items:flex-start;gap:13px;margin-top:18px}
+.warn-ico{font-size:22px;flex-shrink:0}
+.warn-txt{font-size:14px;color:var(--ink2);line-height:1.72}
+.warn-txt strong{color:var(--ink);font-weight:700;display:block;margin-bottom:4px}
+
+/* print/download btn */
+.action-row{display:flex;gap:12px;margin-top:16px;flex-wrap:wrap}
+.btn-print{display:inline-flex;align-items:center;gap:7px;font-family:var(--fd);font-weight:700;font-size:14px;padding:11px 22px;border-radius:9px;transition:.22s}
+.btn-print.green{background:var(--green-xl);color:var(--green);border:1.5px solid var(--green-s)}
+.btn-print.green:hover{background:var(--green);color:#fff;transform:translateY(-1px)}
+.btn-print.blue{background:var(--blue-xl);color:var(--blue);border:1.5px solid var(--blue-s)}
+.btn-print.blue:hover{background:var(--blue);color:#fff;transform:translateY(-1px)}
+
+/* ══ DOCUMENT TABLE ══ */
+.tbl-sec{background:#fff;padding:72px 0}
+.tbl-wr{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+thead th{background:linear-gradient(135deg,var(--blue) 0%,#1e40af 100%);color:#fff;padding:14px 16px;text-align:left;font-family:var(--fd);font-size:13px;font-weight:700;letter-spacing:.03em}
+tbody tr{border-bottom:1px solid var(--line);transition:.2s}
+tbody tr:hover{background:var(--blue-xl)}
+tbody td{padding:13px 16px;color:var(--ink2);vertical-align:top;line-height:1.65}
+.ct{display:inline-flex;font-size:11px;font-weight:700;padding:3px 9px;border-radius:100px;margin-bottom:4px}
+.ct.g{background:var(--blue-xl);color:var(--blue);border:1px solid var(--blue-s)}
+.ct.o{background:var(--amber-xl);color:#92400e;border:1px solid var(--amber-s)}
+.ct.s{background:var(--purple-xl);color:#5b21b6;border:1px solid var(--purple-s)}
+.ct.e{background:var(--green-xl);color:var(--green);border:1px solid var(--green-s)}
+.ct.r{background:var(--red-xl);color:var(--red);border:1px solid var(--red-s)}
+.imp-dot{width:8px;height:8px;border-radius:50%;display:inline-block;margin-right:4px}
+.imp-dot.high{background:var(--red)}.imp-dot.med{background:var(--amber)}.imp-dot.low{background:var(--green)}
+
+/* ══ STORY ══ */
+.story-sec{background:var(--surf);padding:72px 0}
+.story-card{background:#fff;border:1.5px solid var(--line);border-radius:24px;padding:40px;box-shadow:var(--s3);position:relative;overflow:hidden}
+.story-card::before{content:'';position:absolute;top:0;left:0;bottom:0;width:5px;background:linear-gradient(180deg,var(--blue) 0%,var(--green) 100%);border-radius:5px 0 0 5px}
+.sq{font-size:54px;color:var(--blue-s);font-family:Georgia,serif;line-height:1;padding-left:8px}
+.sb{font-size:15.5px;color:var(--ink2);line-height:1.9;padding:0 8px}
+.sauth{display:flex;align-items:center;gap:14px;margin-top:22px;padding-top:20px;border-top:1px solid var(--line)}
+.savt{width:48px;height:48px;background:var(--blue);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+.sname{font-family:var(--fd);font-size:15px;font-weight:700;color:var(--ink)}
+.srole{font-size:12.5px;color:var(--ink3)}
+
+/* ══ GUIDE ══ */
+.guide-sec{background:#fff;padding:72px 0}
+.guide-body h2{font-family:var(--fd);font-size:21px;font-weight:800;color:var(--ink);margin:28px 0 11px;line-height:1.3}
+.guide-body h2:first-child{margin-top:0}
+.guide-body h3{font-family:var(--fd);font-size:17px;font-weight:700;color:var(--ink2);margin:20px 0 9px}
+.guide-body p{font-size:15px;color:var(--ink3);line-height:1.85;margin-bottom:14px}
+.guide-body ul{display:flex;flex-direction:column;gap:8px;margin:12px 0 16px}
+.guide-body li{display:flex;align-items:flex-start;gap:10px;font-size:14.5px;color:var(--ink3);line-height:1.7}
+.guide-body li::before{content:'✓';width:18px;height:18px;background:var(--blue);color:#fff;border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;flex-shrink:0;margin-top:3px}
+.guide-body strong{color:var(--ink2);font-weight:700}
+.guide-body a{color:var(--blue);font-weight:600}
+.ibox{background:var(--blue-xl);border:1.5px solid var(--blue-s);border-radius:13px;padding:15px 18px;margin:16px 0;display:flex;gap:11px;font-size:14px;color:var(--ink2);line-height:1.7}
+.ibox svg{width:17px;height:17px;stroke:var(--blue);fill:none;stroke-width:2;flex-shrink:0;margin-top:2px}
+.ibox.g{background:var(--green-xl);border-color:var(--green-s)}
+.ibox.g svg{stroke:var(--green)}
+.ibox.a{background:var(--amber-xl);border-color:var(--amber-s)}
+.ibox.a svg{stroke:var(--amber)}
+
+/* mistakes grid */
+.mistakes-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:16px 0}
+.mk{background:var(--red-xl);border:1.5px solid var(--red-s);border-radius:12px;padding:16px}
+.mk-head{display:flex;align-items:center;gap:8px;font-family:var(--fd);font-size:14px;font-weight:700;color:#b91c1c;margin-bottom:6px}
+.mk-desc{font-size:13px;color:var(--ink3);line-height:1.65}
+
+/* ══ FAQ ══ */
+.faq-sec{background:var(--surf);padding:72px 0}
+.fql{max-width:780px;margin:0 auto}
+.fq{background:#fff;border:1.5px solid var(--line);border-radius:13px;margin-bottom:10px;overflow:hidden}
+.fq-q{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;cursor:pointer;gap:14px;transition:.2s}
+.fq-q:hover{background:var(--blue-xl)}
+.fq-t{font-weight:600;font-size:15px;color:var(--ink);line-height:1.4}
+.fq-i{width:28px;height:28px;border-radius:50%;background:var(--blue-xl);color:var(--blue);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;transition:transform .28s,background .2s}
+.fq.open .fq-i{transform:rotate(45deg);background:var(--blue);color:#fff}
+.fq-a{max-height:0;overflow:hidden;transition:max-height .35s var(--ease)}
+.fq-ai{padding:0 22px 18px;font-size:14.5px;color:var(--ink3);line-height:1.78}
+.fq.open .fq-a{max-height:400px}
+
+/* ══ DISC ══ */
+.disc{background:var(--amber-xl);border-top:1px solid var(--amber-s);border-bottom:1px solid var(--amber-s);padding:15px 0}
+.disc-in{display:flex;align-items:flex-start;gap:12px;font-size:13.5px;color:var(--ink2);line-height:1.7}
+
+/* ══ CTA ══ */
+.cta{background:linear-gradient(140deg,#0f172a 0%,#1e3a8a 100%);padding:80px 0;text-align:center;position:relative;overflow:hidden}
+.cta::before{content:'';position:absolute;top:-80px;left:50%;transform:translateX(-50%);width:800px;height:380px;background:radial-gradient(ellipse,rgba(37,99,235,.22) 0%,transparent 68%);pointer-events:none}
+.cta-in{position:relative;z-index:1}
+.cta .pill{color:#93c5fd;background:rgba(255,255,255,.1);margin-bottom:18px}
+.cta .pill::before{background:#93c5fd}
+.cta h2{font-family:var(--fd);font-size:clamp(24px,4vw,42px);font-weight:800;color:#fff;line-height:1.15;margin-bottom:12px}
+.cta h2 em{color:#fbbf24;font-style:normal}
+.cta p{font-size:16px;color:rgba(255,255,255,.72);max-width:480px;margin:0 auto 32px;line-height:1.78}
+.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn-gold{display:inline-flex;align-items:center;gap:8px;background:var(--amber);color:#fff;font-family:var(--fd);font-weight:800;font-size:15px;padding:14px 30px;border-radius:8px;box-shadow:0 8px 28px rgba(245,158,11,.35);transition:.22s}
+.btn-gold:hover{background:#d97706;transform:translateY(-3px)}
+.btn-ghost{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.09);border:1.5px solid rgba(255,255,255,.22);color:#fff;font-family:var(--fd);font-weight:600;font-size:14px;padding:13px 26px;border-radius:8px;transition:.2s}
+.btn-ghost:hover{background:rgba(255,255,255,.16)}
+
+/* ══ FOOTER ══ */
+footer{background:#0f172a;padding:48px 0 0}
+.ft-inner{max-width:1180px;margin:0 auto;padding:0 24px}
+.ft-top{display:grid;grid-template-columns:1.9fr 1fr 1fr 1fr;gap:44px;margin-bottom:44px}
+.ft-brand .ln{color:#fff}.ft-brand .ls{color:#475569}
+.ft-desc{font-size:13.5px;color:#64748b;line-height:1.78;max-width:265px;margin:13px 0 20px}
+.ft-soc{display:flex;gap:9px}
+.fts{width:34px;height:34px;border-radius:7px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;color:#94a3b8;font-size:13px;transition:.2s}
+.fts:hover{background:var(--blue);color:#fff}
+.fc h4{font-family:var(--fd);font-size:12px;font-weight:700;color:#fff;margin-bottom:14px;letter-spacing:.06em;text-transform:uppercase}
+.fc ul{display:flex;flex-direction:column;gap:8px}
+.fc ul a{font-size:13.5px;color:#64748b;transition:.18s}
+.fc ul a:hover{color:#93c5fd}
+.ft-btm{border-top:1px solid rgba(255,255,255,.07);padding:22px 0;text-align:center}
+.ft-cp{font-size:12.5px;color:#475569;line-height:1.7}
+.ft-cp b{color:#64748b;font-weight:600}
+.ft-tag{font-size:12px;color:#334155;margin-top:4px;font-style:italic}
+.btt{position:fixed;bottom:26px;right:26px;z-index:500;width:43px;height:43px;background:var(--blue);color:#fff;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:17px;box-shadow:var(--sb);opacity:0;pointer-events:none;transform:translateY(14px);transition:.28s var(--ease)}
+.btt.on{opacity:1;pointer-events:auto;transform:translateY(0)}
+.btt:hover{transform:translateY(-3px)}
+
+/* ══ RESPONSIVE ══ */
+@media(max-width:1060px){.ft-top{grid-template-columns:1fr 1fr}.mistakes-grid{grid-template-columns:1fr}}
+@media(max-width:860px){
+  nav.dn,.hcta{display:none}.brg{display:flex}
+  .tool-body{padding:24px 22px}.tool-hdr{padding:24px 22px}
+  .form-grid{grid-template-columns:1fr}.form-grid.three{grid-template-columns:1fr 1fr}
+  .promo-row{grid-template-columns:1fr}
+  .howto-steps{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+  .ft-top{grid-template-columns:1fr}
+  .form-grid.three{grid-template-columns:1fr}
+  .cta-btns{flex-direction:column;align-items:center}
+  .story-card{padding:26px 20px}
+  .action-row{flex-direction:column}
+  .res-hdr{flex-direction:column}
+  .res-count{text-align:left}
+  .mistakes-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="hdr">
+  <div class="w">
+    <div class="hdi">
+      <a href="/" class="logo">
+        <div class="lb"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+        <div><div class="ln">Raj<span>Daily</span>Tools</div><div class="ls">Smart Tools for Daily Life</div></div>
+      </a>
+      <nav class="dn">
+        <a href="/">Home</a><a href="/categories">Categories</a>
+        <a href="/#popular">Popular</a><a href="/about">About</a><a href="/contact">Contact</a>
+      </nav>
+      <a href="/categories" class="hcta">All Tools →</a>
+      <button class="brg" id="brg"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="dov" id="dov"></div>
+<div class="drw" id="drw">
+  <div class="dh">
+    <div class="logo">
+      <div class="lb" style="width:30px;height:30px;border-radius:7px"><svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#fff"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+      <div class="ln" style="font-size:16px">Raj<span>Daily</span>Tools</div>
+    </div>
+    <button class="dx" id="dx">✕</button>
+  </div>
+  <nav class="mn">
+    <a href="/" onclick="cD()">🏠 Home</a>
+    <a href="/categories" onclick="cD()">🗂️ Categories</a>
+    <a href="/#popular" onclick="cD()">⭐ Popular</a>
+    <a href="/about" onclick="cD()">👤 About</a>
+    <a href="/contact" onclick="cD()">📬 Contact</a>
+  </nav>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+  <div class="w">
+    <div class="bc">
+      <a href="/">Home</a><span style="color:var(--ink4)">›</span>
+      <a href="/education-tools">Education Tools</a><span style="color:var(--ink4)">›</span>
+      <span>KV Documents Checker</span>
+    </div>
+    <div class="hero-inner">
+      <div class="pill">Education Tools</div>
+      <h1>KV Admission <span>Documents Checker</span> 2026–27</h1>
+      <p class="hero-sub">Get your <strong>complete, personalized KV admission documents checklist</strong> instantly. Category-wise, quota-wise, and class-wise. Never miss a document again. Based on official KV Sangathan 2026–27 guidelines.</p>
+      <div class="hero-chips">
+        <span class="chip">📋 Complete Checklist</span>
+        <span class="chip">🎯 Category-Wise</span>
+        <span class="chip">📅 Session 2026–27</span>
+        <span class="chip">🖨️ Print Ready</span>
+        <span class="chip">🆓 100% Free</span>
+      </div>
+      <div class="hero-meta">
+        <div class="upd">📅 Session: 2026–27</div>
+        <span class="mi">✅ Official KV guidelines</span>
+        <span class="mi">🔒 No data collected</span>
+      </div>
+
+      <!-- HOW TO USE -->
+      <div class="howto">
+        <div class="howto-ttl">💡 How to Use This Tool</div>
+        <div class="howto-steps">
+          <div class="hs-step"><span class="sn">1</span>Select your child's class and social category</div>
+          <div class="hs-step"><span class="sn">2</span>Choose parent type and special quotas</div>
+          <div class="hs-step"><span class="sn">3</span>Click "Get My Documents Checklist"</div>
+          <div class="hs-step"><span class="sn">4</span>Tick off documents and print your list</div>
+        </div>
+      </div>
+
+      <!-- CROSS PROMO -->
+      <div class="promo-row">
+        <div class="promo-box age">
+          <div class="pb-ico">📅</div>
+          <div class="pb-txt">
+            <h4>Check KV Age Eligibility</h4>
+            <p>Verify your child's age meets KV admission criteria before collecting documents.</p>
+            <a href="https://rajdailytools.github.io/kv-age-calculator-2026.html" target="_blank" rel="noopener" class="btn-sm blue">👉 KV Age Calculator</a>
+          </div>
+        </div>
+        <div class="promo-box pri">
+          <div class="pb-ico">🎯</div>
+          <div class="pb-txt">
+            <h4>Check KV Admission Priority</h4>
+            <p>Know your admission priority category and selection chances before applying.</p>
+            <a href="https://rajdailytools.github.io/kv-priority-category-checker-2026.html" target="_blank" rel="noopener" class="btn-sm purple">👉 Priority Checker</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOOL SECTION -->
+<section class="tool-sec" id="tool">
+  <div class="w">
+    <div class="tool-wrap">
+      <div class="tool-card rev">
+        <div class="tool-hdr">
+          <div class="th">
+            <h2>📋 KV Documents Checklist Generator 2026–27</h2>
+            <p>Fill in the details below. Our smart system will generate a complete, personalized documents checklist tailored exactly for your situation.</p>
+            <div class="th-badges">
+              <span class="thb">✅ Official KV Guidelines</span>
+              <span class="thb">⚡ Instant Checklist</span>
+              <span class="thb">🖨️ Printable</span>
+              <span class="thb">🔒 No Data Stored</span>
+            </div>
+          </div>
+        </div>
+        <div class="tool-body">
+
+          <!-- ROW 1 -->
+          <div class="form-grid">
+            <div class="fld">
+              <label class="flbl" for="classInput">Child's Class <span>Required</span></label>
+              <select class="fsel" id="classInput">
+                <option value="">-- Select Class --</option>
+                <option value="bv1">🌱 Balvatika 1 (Pre-School)</option>
+                <option value="bv2">🌱 Balvatika 2 (Pre-School)</option>
+                <option value="bv3">🌱 Balvatika 3 (Pre-School)</option>
+                <option value="c1">📗 Class 1</option>
+                <option value="c2">📗 Class 2</option>
+                <option value="c3">📗 Class 3</option>
+                <option value="c4">📗 Class 4</option>
+                <option value="c5">📗 Class 5</option>
+                <option value="c6">📘 Class 6</option>
+                <option value="c7">📘 Class 7</option>
+                <option value="c8">📘 Class 8</option>
+                <option value="c9">📙 Class 9</option>
+                <option value="c10">📙 Class 10</option>
+                <option value="c11">📕 Class 11</option>
+                <option value="c12">📕 Class 12</option>
+              </select>
+            </div>
+            <div class="fld">
+              <label class="flbl" for="category">Social Category <span>Required</span></label>
+              <select class="fsel" id="category">
+                <option value="">-- Select Category --</option>
+                <option value="general">General</option>
+                <option value="obc">OBC (Non-Creamy Layer)</option>
+                <option value="sc">SC (Scheduled Caste)</option>
+                <option value="st">ST (Scheduled Tribe)</option>
+                <option value="ews">EWS (Economically Weaker Section)</option>
+                <option value="bpl">BPL (Below Poverty Line)</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- ROW 2 -->
+          <div class="form-grid">
+            <div class="fld">
+              <label class="flbl" for="parentType">Parent Job Type <span>Required</span></label>
+              <select class="fsel" id="parentType">
+                <option value="">-- Select Parent Type --</option>
+                <option value="cg_defence">Central Govt — Defence (Army/Navy/Air Force)</option>
+                <option value="cg_transfer">Central Govt — Transferable Civil</option>
+                <option value="cg_nontransfer">Central Govt — Non-Transferable</option>
+                <option value="ex_defence">Ex-Serviceman (Retired Defence)</option>
+                <option value="kv_employee">KV / Education Dept. Employee</option>
+                <option value="state_govt">State Government Employee</option>
+                <option value="psu">PSU / Autonomous Body</option>
+                <option value="private">Private Job / Self-Employed</option>
+              </select>
+            </div>
+            <div class="fld">
+              <label class="flbl" for="gender">Child's Gender <span>Optional</span></label>
+              <select class="fsel" id="gender">
+                <option value="any">Not Specified</option>
+                <option value="girl">Girl</option>
+                <option value="boy">Boy</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- ROW 3 -->
+          <div class="form-grid three">
+            <div class="fld">
+              <label class="flbl">Single Girl Child? <span>Quota</span></label>
+              <div class="radio-group">
+                <div class="ro"><input type="radio" name="sgc" id="sgc_y" value="yes"><label for="sgc_y">👧 Yes</label></div>
+                <div class="ro"><input type="radio" name="sgc" id="sgc_n" value="no" checked><label for="sgc_n">❌ No</label></div>
+              </div>
+            </div>
+            <div class="fld">
+              <label class="flbl">RTE / BPL Quota? <span>Optional</span></label>
+              <div class="radio-group">
+                <div class="ro"><input type="radio" name="rte" id="rte_y" value="yes"><label for="rte_y">✅ Yes</label></div>
+                <div class="ro"><input type="radio" name="rte" id="rte_n" value="no" checked><label for="rte_n">❌ No</label></div>
+              </div>
+            </div>
+            <div class="fld">
+              <label class="flbl">Blood Group <span>Optional</span></label>
+              <select class="fsel" id="bloodGroup">
+                <option value="">Not Known</option>
+                <option value="a+">A+</option><option value="a-">A-</option>
+                <option value="b+">B+</option><option value="b-">B-</option>
+                <option value="ab+">AB+</option><option value="ab-">AB-</option>
+                <option value="o+">O+</option><option value="o-">O-</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="hint-box">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            <div>Documents list is <strong>personalized based on your inputs</strong>. Always carry originals + 2 photocopies of every document. Final verification requires original documents at the school.</div>
+          </div>
+
+          <button class="check-btn" onclick="generateChecklist()">📋 Get My Complete Documents Checklist</button>
+
+          <!-- RESULT -->
+          <div id="resultArea">
+            <div class="res-hdr">
+              <div class="res-hdr-left">
+                <h3 id="resTitle">Your Personalized KV Documents Checklist</h3>
+                <p id="resSubtitle"></p>
+              </div>
+              <div class="res-count"><span>Total Documents</span><span id="totalCount">0</span></div>
+            </div>
+
+            <div id="mandatoryGroup"></div>
+            <div id="categoryGroup"></div>
+            <div id="quotaGroup"></div>
+            <div id="stageGroup"></div>
+
+            <div class="warn-box">
+              <div class="warn-ico">⚠️</div>
+              <div class="warn-txt">
+                <strong>Important Reminder</strong>
+                Final admission depends on official KV Sangathan verification. Always carry <strong>original documents + 2 self-attested photocopies</strong> of each. Documents are verified offline at the school regardless of online registration. Verify exact requirements from your nearest KV school or <a href="https://kvsangathan.nic.in/" target="_blank" rel="noopener" style="color:var(--blue);font-weight:700">kvsangathan.nic.in</a>.
+              </div>
+            </div>
+
+            <div class="action-row">
+              <button class="btn-print green" onclick="window.print()">🖨️ Print Checklist</button>
+              <button class="btn-print blue" onclick="copyChecklist()">📋 Copy to Clipboard</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DOCUMENT TABLE -->
+<section class="tbl-sec" id="doc-table">
+  <div class="w">
+    <div style="max-width:860px;margin:0 auto">
+      <div class="rev" style="text-align:center;margin-bottom:36px">
+        <div class="pill" style="margin-bottom:14px">Category-Wise Documents</div>
+        <h2 style="font-family:var(--fd);font-size:clamp(22px,3.5vw,36px);font-weight:800;color:var(--ink);margin-bottom:10px">KV Admission <span style="color:var(--blue)">Documents by Category</span></h2>
+        <p style="font-size:15px;color:var(--ink3);max-width:500px;margin:0 auto;line-height:1.75">Quick reference table for all KV admission documents by category for session 2026–27.</p>
+      </div>
+      <div class="tbl-wr rev">
+        <table>
+          <thead>
+            <tr><th>Category</th><th>Required Documents</th><th>Importance</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="ct g">All Categories</span></td>
+              <td>Birth Certificate, Aadhaar Card, Address Proof, Passport Photo (4–6), School TC (Class 2+)</td>
+              <td><span class="imp-dot high"></span><strong>Mandatory</strong> — admission not possible without these</td>
+            </tr>
+            <tr>
+              <td><span class="ct o">OBC</span></td>
+              <td>OBC (Non-Creamy Layer) Certificate + above mandatory docs</td>
+              <td><span class="imp-dot high"></span><strong>Mandatory for OBC quota</strong> — must be current year</td>
+            </tr>
+            <tr>
+              <td><span class="ct s">SC / ST</span></td>
+              <td>Caste Certificate (State Govt issued) + mandatory docs</td>
+              <td><span class="imp-dot high"></span><strong>Mandatory for reservation</strong> — must be authentic</td>
+            </tr>
+            <tr>
+              <td><span class="ct e">EWS</span></td>
+              <td>EWS Income Certificate (income &lt;₹8L/yr) + mandatory docs</td>
+              <td><span class="imp-dot high"></span><strong>Mandatory for RTE 25% seats</strong> — verify income</td>
+            </tr>
+            <tr>
+              <td><span class="ct r">BPL</span></td>
+              <td>BPL Ration Card / Certificate + mandatory docs</td>
+              <td><span class="imp-dot high"></span><strong>Mandatory for BPL quota</strong> — State issued</td>
+            </tr>
+            <tr>
+              <td><span class="ct g">Defence Parent</span></td>
+              <td>Service Certificate, Posting Order / Transfer Certificate, Defence ID Card + mandatory docs</td>
+              <td><span class="imp-dot high"></span><strong>Mandatory</strong> — must be from unit/commanding officer</td>
+            </tr>
+            <tr>
+              <td><span class="ct o">Govt Employee</span></td>
+              <td>Service Certificate, Transferable Post Proof, Employer Letter + mandatory docs</td>
+              <td><span class="imp-dot med"></span><strong>Important</strong> — determines priority category</td>
+            </tr>
+            <tr>
+              <td><span class="ct s">Single Girl Child</span></td>
+              <td>Affidavit (notarized) — stating only one girl child + mandatory docs</td>
+              <td><span class="imp-dot high"></span><strong>Mandatory for SGC quota</strong> — notary required</td>
+            </tr>
+            <tr>
+              <td><span class="ct e">Ex-Serviceman</span></td>
+              <td>Discharge Certificate, PPO (Pension Payment Order), Ex-Serviceman ID + mandatory docs</td>
+              <td><span class="imp-dot high"></span><strong>Mandatory</strong> — proves ex-serviceman status</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STORY -->
+<section class="story-sec">
+  <div class="wa">
+    <div class="rev" style="text-align:center;margin-bottom:36px">
+      <div class="pill" style="margin-bottom:14px">Personal Story</div>
+      <h2 style="font-family:var(--fd);font-size:clamp(22px,3.4vw,34px);font-weight:800;color:var(--ink);margin-bottom:8px">Why I <span style="color:var(--blue)">Created This Tool</span></h2>
+      <p style="font-size:15px;color:var(--ink3)">Ek painful real experience jo ek zaroori tool ban gayi.</p>
+    </div>
+    <div class="story-card rev">
+      <div class="sq">"</div>
+      <div class="sb">
+        Yaar, maine ye tool isliye banaya kyunki jab main <strong>apne bhai ka KV admission karane gaya tha</strong>, toh last moment par ek document missing hone ki wajah se admission nahi ho paya.<br><br>
+        Hum school pahunche, line mein khade rahe, aur jab verification ka waqt aaya — toh officer ne bola ki <strong>OBC Non-Creamy Layer certificate current year ka hona chahiye</strong>. Hamara certificate purana tha. Admission ruk gaya.<br><br>
+        Agar mujhe pehle se exact documents ki complete list pata hoti — <strong>exactly kaunse documents, kaise, aur kab valid hone chahiye</strong> — toh shayad wo din alag hota. Us raat mujhe bahut bura laga.<br><br>
+        Usi din se maine ye tool banane ki thaani — <strong>taki koi bhi parent last moment par sirf ek document ki wajah se reject na ho</strong>. Ye tool is liye nahi ke mujhe kuch milega — ye isliye hai ki aapko wo takleef nahi honi chahiye jo mere bhai ko hui. 🙏
+      </div>
+      <div class="sauth">
+        <div class="savt">👨‍💻</div>
+        <div>
+          <div class="sname">Raj Bhai</div>
+          <div class="srole">Founder, RajDailyTools · BSc Physics · COPA ITI Certified</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPLETE GUIDE -->
+<section class="guide-sec">
+  <div class="wa">
+    <div class="rev">
+      <div class="pill" style="margin-bottom:14px">Complete Guide</div>
+      <h2 style="font-family:var(--fd);font-size:clamp(22px,3.5vw,36px);font-weight:800;color:var(--ink);margin-bottom:8px">KV Admission Process <span style="color:var(--blue)">2026–27 Guide</span></h2>
+      <p style="font-size:15px;color:var(--ink3);margin-bottom:32px">Admission process se lekar documents verification tak — sab kuch detail mein samjhein.</p>
+    </div>
+    <div class="guide-body rev">
+      <h2>KV Admission Process 2026–27</h2>
+      <p>KV admission process do phases mein hota hai — <strong>Online Registration Phase</strong> (mainly for Class 1 and Balvatika) aur <strong>Offline Verification Phase</strong> (sabke liye mandatory). Dono phases ke liye alag documents ki zaroorat ho sakti hai.</p>
+
+      <div class="ibox">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        <div>Official KV admission notification aur latest updates ke liye visit karein: <a href="https://kvsangathan.nic.in/" target="_blank" rel="noopener"><strong>kvsangathan.nic.in</strong></a></div>
+      </div>
+
+      <h2>Online Registration vs Offline Admission</h2>
+      <p><strong>Online Registration</strong> (Class 1 aur Balvatika): Parents KVS portal par digital form fill karte hain. Is stage par scanned copies upload karni ho sakti hain.</p>
+      <p><strong>Offline Verification</strong> (Sabke liye): Original documents school mein verify kiye jaate hain. Ye stage sabse important hai — ek bhi document missing hone par provisional seat cancel ho sakti hai.</p>
+
+      <h2>Document Verification Process</h2>
+      <ul>
+        <li>Original documents school mein physical verification ke liye le jaayein</li>
+        <li>Har document ki <strong>2 self-attested photocopies</strong> ready rakhein</li>
+        <li>Documents ko plastic folder ya file mein organized rakhein</li>
+        <li>Verification ke baad documents wapas mil jaate hain — school only photocopy rakhti hai</li>
+        <li>Agar koi document missing ho toh <strong>7 days ka time diya jaata hai</strong> — lekin ye guaranteed nahi hai</li>
+      </ul>
+
+      <h2>Common Mistakes Parents Karte Hain</h2>
+      <div class="mistakes-grid">
+        <div class="mk">
+          <div class="mk-head">❌ Outdated Category Certificate</div>
+          <div class="mk-desc">OBC/EWS certificates expire ho jaate hain. Hamesha <strong>current financial year ka certificate</strong> banwaein.</div>
+        </div>
+        <div class="mk">
+          <div class="mk-head">❌ Wrong Address Proof</div>
+          <div class="mk-desc">Address proof mein <strong>same address</strong> hona chahiye jahan aap rahte hain. Mismatched address reject hota hai.</div>
+        </div>
+        <div class="mk">
+          <div class="mk-head">❌ Unofficial Birth Certificate</div>
+          <div class="mk-desc">Hospital slip se kaam nahi chalta. Municipal Corporation ya <strong>Government issued birth certificate</strong> chahiye.</div>
+        </div>
+        <div class="mk">
+          <div class="mk-head">❌ Missing Affidavit for SGC</div>
+          <div class="mk-desc">Single Girl Child ke liye <strong>notarized affidavit</strong> mandatory hai. Simple declaration accepted nahi hoti.</div>
+        </div>
+      </div>
+      <div class="ibox g">
+        <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        <div><strong>Pro Tip:</strong> KV admission ke liye ek dedicated folder banaayein aur sabse pehle sab documents check kar lein — verification date se <strong>at least 15 days pehle</strong>. Koi document missing ho toh replace karna kafi time leta hai.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DISCLAIMER -->
+<div class="disc">
+  <div class="wa">
+    <div class="disc-in">
+      <span style="font-size:20px;flex-shrink:0">⚠️</span>
+      <div><strong>Disclaimer:</strong> Ye tool sirf informational purposes ke liye hai. KV Sangathan official guidelines par based hai lekin kisi government body se affiliated nahi hai. Documents requirements change ho sakti hain — final verification ke liye <a href="https://kvsangathan.nic.in/" target="_blank" rel="noopener" style="color:var(--blue);font-weight:700">kvsangathan.nic.in</a> ya nearest KV school se zaroor confirm karein. <strong>Hum koi personal data collect ya store nahi karte.</strong></div>
+    </div>
+  </div>
+</div>
+
+<!-- FAQ -->
+<section class="faq-sec">
+  <div class="w">
+    <div style="text-align:center;margin-bottom:40px" class="rev">
+      <div class="pill" style="margin-bottom:14px">FAQs</div>
+      <h2 style="font-family:var(--fd);font-size:clamp(22px,3.5vw,36px);font-weight:800;color:var(--ink);margin-bottom:10px">Frequently Asked <span style="color:var(--blue)">Questions</span></h2>
+      <p style="font-size:15px;color:var(--ink3);max-width:480px;margin:0 auto">KV admission documents ke baare mein sabse common sawaal.</p>
+    </div>
+    <div class="fql" id="faqList">
+      <div class="fq rev">
+        <div class="fq-q"><span class="fq-t">KV admission ke liye kaunse documents sabse important hain?</span><span class="fq-i">+</span></div>
+        <div class="fq-a"><div class="fq-ai"><strong>Birth Certificate</strong> sabse important document hai — bina iske admission possible nahi. Iske baad Address Proof, Passport Photo, aur Aadhaar (if available) mandatory hain. Agar aap kisi special category ya quota mein hain toh us category ka certificate bhi essential hai.</div></div>
+      </div>
+      <div class="fq rev">
+        <div class="fq-q"><span class="fq-t">Kya KV admission ke liye Aadhaar card mandatory hai?</span><span class="fq-i">+</span></div>
+        <div class="fq-a"><div class="fq-ai">Aadhaar card <strong>mandatory nahi hai</strong> lekin "if available" category mein hai. Agar bachche ka Aadhaar available hai toh submit karna recommended hai kyunki ye strong address proof aur identity proof dono hota hai. Aadhaar nahi hone par alternative documents (birth certificate + separate address proof) submit karne honge.</div></div>
+      </div>
+      <div class="fq rev">
+        <div class="fq-q"><span class="fq-t">Income certificate kab lagta hai KV admission mein?</span><span class="fq-i">+</span></div>
+        <div class="fq-a"><div class="fq-ai">Income certificate <strong>EWS (Economically Weaker Section) category</strong> ke liye mandatory hai — annual family income ₹8 lakh se kam honi chahiye. BPL category ke liye BPL Ration Card ya BPL certificate lagta hai (income certificate separate nahi). General, OBC, SC, ST ke liye income certificate ki zaroorat nahi hoti (sirf caste certificate).</div></div>
+      </div>
+      <div class="fq rev">
+        <div class="fq-q"><span class="fq-t">Original documents kab verify hote hain KV mein?</span><span class="fq-i">+</span></div>
+        <div class="fq-a"><div class="fq-ai">Original documents <strong>offline verification stage</strong> par verify hote hain — ye online registration ke baad hota hai. School mein jab aap jaate hain toh original documents leke jaane mandatory hai. Officer original dekhkar photocopy rakhi jaati hai aur original wapas kar dete hain. Bina originals ke provisional admission cancel ho sakta hai.</div></div>
+      </div>
+      <div class="fq rev">
+        <div class="fq-q"><span class="fq-t">RTE quota ke liye kya documents chahiye?</span><span class="fq-i">+</span></div>
+        <div class="fq-a"><div class="fq-ai">RTE (Right to Education) Act ke tahat admission ke liye: <strong>EWS Certificate ya BPL Certificate</strong> (income/poverty proof), standard mandatory documents (birth certificate, address proof, photo), aur parents ki income/BPL status supporting documents. RTE quota 25% seats ke liye hota hai — ye quota regular priority se alag hai.</div></div>
+      </div>
+      <div class="fq rev">
+        <div class="fq-q"><span class="fq-t">Single Girl Child affidavit kahan se banwaayen?</span><span class="fq-i">+</span></div>
+        <div class="fq-a"><div class="fq-ai">Single Girl Child affidavit <strong>Notary Public ya Judicial Magistrate</strong> se banwana hota hai. Ye plain paper par nahi chalta — notarized stamp mandatory hai. Affidavit mein clearly mention hona chahiye ki aapki sirf ek beti hai (koi bhai ya aur behen nahi). Kisi bhi legal stationery shop par ya court ke bahar notary se ban sakta hai — typically ₹100-200 mein.</div></div>
+      </div>
+      <div class="fq rev">
+        <div class="fq-q"><span class="fq-t">Defence employee ke liye kya special documents chahiye?</span><span class="fq-i">+</span></div>
+        <div class="fq-a"><div class="fq-ai">Defence (serving) employees ke liye: <strong>Service Certificate</strong> (commanding officer/unit se), <strong>Posting Order</strong> (current posting showing transferable nature), aur <strong>Defence ID Card</strong>. Retired Defence (Ex-Serviceman) ke liye: Discharge Certificate, PPO (Pension Payment Order), aur Ex-Serviceman Certificate. Ye documents KV admission mein Priority 1 establish karte hain.</div></div>
+      </div>
+      <div class="fq rev">
+        <div class="fq-q"><span class="fq-t">Class 2 aur above ke liye kaunsa extra document chahiye?</span><span class="fq-i">+</span></div>
+        <div class="fq-a"><div class="fq-ai">Class 2 aur above (upto Class 12) mein admission ke liye <strong>Transfer Certificate (TC)</strong> previous school se mandatory hai. TC original hona chahiye aur school ke official seal ke saath. Iske bina Class 2+ mein admission nahi hota — isko pehle se arrange kar lein kyunki TC milne mein 7-15 din lag sakte hain.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="w">
+    <div class="cta-in">
+      <div class="pill">Explore More KV Tools</div>
+      <h2>Our Complete <em>KV Admission Toolkit</em></h2>
+      <p>Age check karo, priority jaano, documents ready karo — KV admission ke liye teen tools, ek platform.</p>
+      <div class="cta-btns">
+        <a href="https://rajdailytools.github.io/kv-age-calculator-2026.html" target="_blank" class="btn-gold">📅 KV Age Calculator</a>
+        <a href="https://rajdailytools.github.io/kv-priority-category-checker-2026.html" target="_blank" class="btn-ghost">🎯 Priority Checker</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-inner">
+    <div class="ft-top">
+      <div class="ft-brand">
+        <div class="logo" style="margin-bottom:4px">
+          <div class="lb"><svg viewBox="0 0 24 24" fill="#fff"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+          <div><div class="ln">Raj<span>Daily</span>Tools</div><div class="ls">Smart Tools for Daily Life</div></div>
+        </div>
+        <p class="ft-desc">India's most ambitious free tools platform. Built by Raj Bhai with a vision of 30,000+ tools. Solving daily life problems, one tool at a time.</p>
+        <div class="ft-soc">
+          <a href="https://www.facebook.com/share/1Dq3Y1k7mG/" target="_blank" class="fts">f</a>
+          <a href="https://x.com/Educator4ll" target="_blank" class="fts">𝕏</a>
+          <a href="https://youtube.com/@rajdailytools" target="_blank" class="fts">▶</a>
+          <a href="https://www.instagram.com/rajdailytools" target="_blank" class="fts">📷</a>
+        </div>
+      </div>
+      <div class="fc"><h4>KV Tools</h4><ul>
+        <li><a href="https://rajdailytools.github.io/kv-age-calculator-2026.html">KV Age Calculator</a></li>
+        <li><a href="https://rajdailytools.github.io/kv-priority-category-checker-2026.html">KV Priority Checker</a></li>
+        <li><a href="#">KV Documents Checker</a></li>
+      </ul></div>
+      <div class="fc"><h4>Categories</h4><ul>
+        <li><a href="/education-tools">Education Tools</a></li>
+        <li><a href="/finance-tools">Finance Tools</a></li>
+        <li><a href="/calculator-tools">Calculator Tools</a></li>
+        <li><a href="/health-tools">Health Tools</a></li>
+        <li><a href="/text-tools">Text Tools</a></li>
+      </ul></div>
+      <div class="fc"><h4>Company</h4><ul>
+        <li><a href="/about">About Us</a></li>
+        <li><a href="/contact">Contact</a></li>
+        <li><a href="/privacy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
+      </ul></div>
+    </div>
+    <div class="ft-btm">
+      <p class="ft-cp">Copyright © 2026 <b>RajDailyTools</b>. All rights reserved. Designed &amp; Developed by <b>RajDailyTools</b></p>
+      <p class="ft-tag">"Solving daily life problems with smart tools" — Made with ❤️ in India by Raj Bhai</p>
+    </div>
+  </div>
+</footer>
+<button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+/* Drawer */
+const brg=document.getElementById('brg'),drw=document.getElementById('drw'),dov=document.getElementById('dov');
+function oD(){drw.classList.add('on');dov.classList.add('on');document.body.style.overflow='hidden'}
+function cD(){drw.classList.remove('on');dov.classList.remove('on');document.body.style.overflow=''}
+brg.addEventListener('click',oD);
+document.getElementById('dx').addEventListener('click',cD);
+dov.addEventListener('click',cD);
+const btt=document.getElementById('btt');
+window.addEventListener('scroll',()=>btt.classList.toggle('on',scrollY>380),{passive:true});
+const ro=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      const s=[...(e.target.parentElement?.children||[])];
+      e.target.style.transitionDelay=(s.indexOf(e.target)%4)*0.08+'s';
+      e.target.classList.add('in');ro.unobserve(e.target);
+    }
+  });
+},{threshold:0.06,rootMargin:'0px 0px -20px 0px'});
+document.querySelectorAll('.rev').forEach(el=>ro.observe(el));
+document.getElementById('faqList').addEventListener('click',function(e){
+  const q=e.target.closest('.fq-q');if(!q)return;
+  const item=q.closest('.fq'),open=item.classList.contains('open');
+  document.querySelectorAll('.fq.open').forEach(i=>i.classList.remove('open'));
+  if(!open)item.classList.add('open');
+});
+
+/* ══════════════════════════════════════
+   DOCUMENTS CHECKER LOGIC
+══════════════════════════════════════ */
+function getRadio(name){const el=document.querySelector(`input[name="${name}"]:checked`);return el?el.value:''}
+
+function makeGroup(title,icon,cls,docs,delay=0){
+  if(!docs.length)return '';
+  const items=docs.map((d,i)=>`
+    <div class="doc-item" style="animation-delay:${delay+i*0.06}s" onclick="toggleCheck(this)">
+      <div class="doc-cb" tabindex="0"></div>
+      <div class="doc-info">
+        <div class="doc-name">${d.name} <span class="doc-badge ${d.badge||'req'}">${d.badge==='opt'?'Optional':d.badge==='imp'?'Important':'Required'}</span></div>
+        <div class="doc-desc">${d.desc}</div>
+      </div>
+    </div>
+  `).join('');
+  return `
+    <div class="doc-group">
+      <div class="dg-title ${cls}">${icon} ${title}</div>
+      <div class="doc-list">${items}</div>
+    </div>
+  `;
+}
+
+function toggleCheck(el){
+  const cb=el.querySelector('.doc-cb');
+  cb.classList.toggle('checked');
+}
+
+function generateChecklist(){
+  const classVal=document.getElementById('classInput').value;
+  const cat=document.getElementById('category').value;
+  const parent=document.getElementById('parentType').value;
+  const gender=document.getElementById('gender').value;
+  const sgc=getRadio('sgc');
+  const rte=getRadio('rte');
+  const blood=document.getElementById('bloodGroup').value;
+
+  if(!classVal||!cat||!parent){alert('Please fill all required fields — Class, Category, and Parent Type.');return}
+
+  const isHigherClass=['c2','c3','c4','c5','c6','c7','c8','c9','c10','c11','c12'].includes(classVal);
+  const isPreSchool=['bv1','bv2','bv3'].includes(classVal);
+  const classLabels={bv1:'Balvatika 1',bv2:'Balvatika 2',bv3:'Balvatika 3',c1:'Class 1',c2:'Class 2',c3:'Class 3',c4:'Class 4',c5:'Class 5',c6:'Class 6',c7:'Class 7',c8:'Class 8',c9:'Class 9',c10:'Class 10',c11:'Class 11',c12:'Class 12'};
+  const catLabels={general:'General',obc:'OBC',sc:'SC',st:'ST',ews:'EWS',bpl:'BPL'};
+  const parentLabels={cg_defence:'Central Govt Defence',cg_transfer:'Central Govt Transferable',cg_nontransfer:'Central Govt Non-Transferable',ex_defence:'Ex-Serviceman',kv_employee:'KV Employee',state_govt:'State Govt',psu:'PSU',private:'Private'};
+
+  /* 1. MANDATORY DOCS */
+  const mandatory=[
+    {name:'Birth Certificate',desc:'Municipal Corporation / Gram Panchayat / Hospital issued. Original + 2 photocopies required.',badge:'req'},
+    {name:'Aadhaar Card (Child)',desc:'If available. Strongly recommended as combined identity + address proof.',badge:'imp'},
+    {name:'Address Proof',desc:'Aadhaar / Voter ID / Passport / Utility Bill / Rent Agreement. Must match current address.',badge:'req'},
+    {name:'Passport Size Photographs',desc:'4–6 recent colour passport size photos of the child (white background preferred).',badge:'req'},
+  ];
+  if(isHigherClass)mandatory.push({name:'Transfer Certificate (TC)',desc:'From previous school — original with school seal. Mandatory for Class 2 and above.',badge:'req'});
+  if(isHigherClass)mandatory.push({name:'Previous Class Marksheet / Report Card',desc:'Latest academic result from previous class. Original + photocopy.',badge:'imp'});
+  if(blood)mandatory.push({name:`Blood Group Card / Report (${blood.toUpperCase()})`,desc:'Medical record or blood test report showing blood group. Useful for school records.',badge:'opt'});
+
+  /* 2. CATEGORY-BASED */
+  const catDocs=[];
+  if(cat==='obc')catDocs.push({name:'OBC (Non-Creamy Layer) Certificate',desc:'Issued by competent authority. Must be for current financial year — expired certificates rejected.',badge:'req'});
+  if(cat==='sc')catDocs.push({name:'SC Caste Certificate',desc:'Issued by State Government / District Magistrate. Original with official seal required.',badge:'req'});
+  if(cat==='st')catDocs.push({name:'ST Tribe Certificate',desc:'Issued by State Government / District Magistrate. Original with official seal required.',badge:'req'});
+  if(cat==='ews'){
+    catDocs.push({name:'EWS Income Certificate',desc:'Annual family income must be below ₹8 lakh. Issued by competent authority (SDM/Tehsildar).',badge:'req'});
+    catDocs.push({name:'EWS Declaration / Affidavit',desc:'Self-declaration of income on stamp paper — some schools require this additionally.',badge:'imp'});
+  }
+  if(cat==='bpl'||rte==='yes'){
+    catDocs.push({name:'BPL Ration Card / BPL Certificate',desc:'State Government issued. Shows family is below poverty line. Required for BPL/RTE quota.',badge:'req'});
+  }
+  if(cat!=='general'&&cat!=='bpl')catDocs.push({name:'Parent Aadhaar Card',desc:'For verification of parent identity during category certificate verification.',badge:'imp'});
+
+  /* 3. QUOTA-BASED */
+  const quotaDocs=[];
+  if(parent==='cg_defence'){
+    quotaDocs.push({name:'Service Certificate',desc:'Issued by Commanding Officer / Unit — stating serving status and transferable nature.',badge:'req'});
+    quotaDocs.push({name:'Posting Order / Transfer Order',desc:'Current posting order showing parent is a transferable Defence employee.',badge:'req'});
+    quotaDocs.push({name:'Defence Service ID Card',desc:'Official Defence ID card of the parent. Original for verification.',badge:'req'});
+  }
+  if(parent==='ex_defence'){
+    quotaDocs.push({name:'Discharge Certificate',desc:'Official discharge certificate from Defence establishment.',badge:'req'});
+    quotaDocs.push({name:'PPO (Pension Payment Order)',desc:'Pension document proving ex-serviceman pension status.',badge:'req'});
+    quotaDocs.push({name:'Ex-Serviceman Certificate',desc:'Issued by District Sainik Welfare Office. Proves ex-serviceman status.',badge:'req'});
+  }
+  if(parent==='cg_transfer'||parent==='cg_nontransfer'||parent==='kv_employee'){
+    quotaDocs.push({name:'Service Certificate / Employment Letter',desc:'From employer/office head stating government employment, designation, and transferable/non-transferable nature.',badge:'req'});
+    if(parent==='cg_transfer')quotaDocs.push({name:'Transferable Post Proof',desc:'Official letter or order proving the post is transferable — critical for Priority 1 classification.',badge:'req'});
+    if(parent==='kv_employee')quotaDocs.push({name:'KV Employee ID / Appointment Letter',desc:'Proof of KV Sangathan / Education Department employment — gives highest internal priority.',badge:'req'});
+  }
+  if(parent==='state_govt')quotaDocs.push({name:'State Govt Service Certificate',desc:'From employer/department stating state government employment.',badge:'req'});
+  if(parent==='psu')quotaDocs.push({name:'PSU Employment Certificate',desc:'Letter from PSU/Autonomous body confirming employment.',badge:'imp'});
+  if(sgc==='yes'||(gender==='girl'&&sgc==='yes')){
+    quotaDocs.push({name:'Single Girl Child Affidavit',desc:'Notarized affidavit by both parents stating the child is the only girl (no other children). Get it from any Notary Public.',badge:'req'});
+  }
+
+  /* 4. STAGE DOCS */
+  const stageDocs=[
+    {name:'Online Registration Form (Printout)',desc:'Printed copy of submitted online registration form with application number.',badge:'req'},
+    {name:'Admission Notification Copy',desc:'Print the official KV admission notification for reference during school visit.',badge:'imp'},
+    {name:'Self-Attested Photocopies of All Documents',desc:'2 sets of self-attested photocopies of every document. School will keep one set.',badge:'req'},
+  ];
+  if(isPreSchool)stageDocs.push({name:'Immunization / Vaccination Record',desc:'Child\'s vaccination record / immunization card — useful for Balvatika admission.',badge:'imp'});
+
+  const total=mandatory.length+catDocs.length+quotaDocs.length+stageDocs.length;
+
+  /* Update subtitle */
+  document.getElementById('resTitle').textContent=`KV Documents Checklist — ${classLabels[classVal]}`;
+  document.getElementById('resSubtitle').textContent=`${catLabels[cat]} Category · ${parentLabels[parent]} · ${total} documents required`;
+  document.getElementById('totalCount').textContent=total;
+
+  document.getElementById('mandatoryGroup').innerHTML=makeGroup('Mandatory Documents (All Applicants)','📌','mandatory',mandatory,0);
+  document.getElementById('categoryGroup').innerHTML=catDocs.length?makeGroup('Category-Based Documents','🏷️','category',catDocs,.2):'';
+  document.getElementById('quotaGroup').innerHTML=quotaDocs.length?makeGroup('Special Quota / Parent Type Documents','🎯','quota',quotaDocs,.4):'';
+  document.getElementById('stageGroup').innerHTML=makeGroup('Admission Stage Documents','📋','stage',stageDocs,.6);
+
+  const ra=document.getElementById('resultArea');
+  ra.style.display='block';
+  ra.style.animation='none';ra.offsetHeight;
+  ra.style.animation='resultIn .45s var(--ease) both';
+  setTimeout(()=>ra.scrollIntoView({behavior:'smooth',block:'nearest'}),120);
+}
+
+function copyChecklist(){
+  const items=[...document.querySelectorAll('.doc-name')].map(el=>el.textContent.replace(/Required|Important|Optional/g,'').trim());
+  const text='KV Admission Documents Checklist 2026-27\n'+('='.repeat(40))+'\n'+items.map((d,i)=>`${i+1}. ${d}`).join('\n')+'\n\nGenerated by RajDailyTools — rajdailytools.com';
+  navigator.clipboard.writeText(text).then(()=>alert('✅ Checklist copied to clipboard! You can now paste it anywhere.')).catch(()=>alert('Copy failed. Please use Print option.'));
+}
+</script>
+</body>
+</html>
