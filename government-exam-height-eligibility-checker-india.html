@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Government Exam Height Eligibility Checker 2026 – Check All Exams Eligibility | RajDailyTools</title>
+<meta name="description" content="Check height eligibility for all government exams like SSC GD, Police, Army, CAPF, Railway and State Police. Enter your height, category, and gender to see all eligible exams instantly.">
+<meta name="keywords" content="height eligibility government exams, ssc gd height requirement, police height criteria india, army height eligibility, govt job height checker, CAPF height, RPF height requirement">
+<meta name="robots" content="index, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ══════════════════════════════════════
+   DESIGN TOKENS
+══════════════════════════════════════ */
+:root{
+  --blue:#2563eb;--blue-d:#1d4ed8;--blue-xl:#eff6ff;--blue-s:#dbeafe;
+  --amber:#f59e0b;--green:#10b981;--red:#ef4444;--purple:#8b5cf6;--teal:#14b8a6;
+  --green-xl:#f0fdf4;--green-s:#bbf7d0;
+  --red-xl:#fef2f2;--red-s:#fecaca;
+  --amber-xl:#fffbeb;--amber-s:#fde68a;
+  --purple-xl:#faf5ff;--purple-s:#ddd6fe;
+  --ink:#0f172a;--ink2:#334155;--ink3:#64748b;--ink4:#94a3b8;
+  --line:#e2e8f0;--surf:#f8fafc;--white:#fff;
+  --s1:0 1px 3px rgba(15,23,42,.06),0 1px 2px rgba(15,23,42,.04);
+  --s2:0 4px 16px rgba(15,23,42,.08),0 2px 6px rgba(15,23,42,.04);
+  --s3:0 12px 40px rgba(15,23,42,.11),0 3px 10px rgba(15,23,42,.06);
+  --s4:0 24px 64px rgba(15,23,42,.13),0 6px 20px rgba(15,23,42,.07);
+  --sb:0 8px 32px rgba(37,99,235,.20);
+  --fd:'Sora',sans-serif;--fb:'DM Sans',sans-serif;
+  --ease:cubic-bezier(.4,0,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);color:var(--ink);background:var(--white);overflow-x:hidden;-webkit-font-smoothing:antialiased;line-height:1.6}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+button{cursor:pointer;border:none;background:none;font-family:var(--fb)}
+.w{max-width:1180px;margin:0 auto;padding:0 24px}
+.wa{max-width:880px;margin:0 auto;padding:0 24px}
+select,input{appearance:none;-webkit-appearance:none}
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.35);opacity:.5}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+@keyframes resultIn{from{opacity:0;transform:translateY(18px) scale(.97)}to{opacity:1;transform:none}}
+@keyframes barGrow{from{width:0}to{width:var(--tw)}}
+@keyframes slideIn{from{opacity:0;transform:translateX(-10px)}to{opacity:1;transform:none}}
+.rev{opacity:0;transform:translateY(22px);transition:opacity .55s var(--ease),transform .55s var(--ease)}
+.rev.in{opacity:1;transform:none}
+
+/* ══ HEADER ══ */
+.hdr{position:sticky;top:0;z-index:999;background:rgba(255,255,255,.96);backdrop-filter:blur(20px);border-bottom:1px solid var(--line);box-shadow:var(--s1)}
+.hdi{display:flex;align-items:center;justify-content:space-between;height:66px}
+.logo{display:flex;align-items:center;gap:10px}
+.lb{width:36px;height:36px;background:var(--blue);border-radius:9px;display:flex;align-items:center;justify-content:center;box-shadow:var(--sb);flex-shrink:0}
+.lb svg{width:18px;height:18px;fill:#fff}
+.ln{font-family:var(--fd);font-size:19px;font-weight:800;color:var(--ink);line-height:1}
+.ln span{color:var(--blue)}
+.ls{font-size:10px;color:var(--ink4);letter-spacing:.04em}
+nav.dn{display:flex;align-items:center;gap:2px}
+nav.dn a{font-size:13.5px;font-weight:500;color:var(--ink2);padding:7px 13px;border-radius:8px;transition:.2s}
+nav.dn a:hover{color:var(--blue);background:var(--blue-xl)}
+.hcta{background:var(--blue);color:#fff;font-family:var(--fd);font-weight:600;font-size:13px;padding:8px 18px;border-radius:8px;box-shadow:var(--sb);transition:.2s}
+.hcta:hover{background:var(--blue-d);transform:translateY(-1px)}
+.brg{display:none;flex-direction:column;gap:4.5px;padding:8px;border-radius:8px}
+.brg span{display:block;width:20px;height:2px;background:var(--ink);border-radius:2px;transition:.28s}
+.dov{display:none;position:fixed;inset:0;background:rgba(15,23,42,.45);z-index:1040;backdrop-filter:blur(3px)}
+.dov.on{display:block}
+.drw{position:fixed;top:0;right:-100%;width:270px;height:100vh;background:#fff;z-index:1050;padding:22px;box-shadow:var(--s4);transition:right .32s var(--ease);overflow-y:auto}
+.drw.on{right:0}
+.dh{display:flex;align-items:center;justify-content:space-between;margin-bottom:26px}
+.dx{width:33px;height:33px;border-radius:7px;background:var(--surf);display:flex;align-items:center;justify-content:center;color:var(--ink3);font-size:17px}
+nav.mn{display:flex;flex-direction:column;gap:3px}
+nav.mn a{display:block;font-size:14px;font-weight:500;color:var(--ink2);padding:11px 13px;border-radius:8px;transition:.2s}
+nav.mn a:hover{color:var(--blue);background:var(--blue-xl)}
+
+/* ══ HERO ══ */
+.hero{position:relative;overflow:hidden;background:linear-gradient(150deg,#ebf4ff 0%,#fff 46%,#fdf2ff 100%);padding:64px 0 72px}
+.hero::before{content:'';position:absolute;top:-140px;right:-180px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(37,99,235,.08) 0%,transparent 68%);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-80px;left:-100px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(139,92,246,.05) 0%,transparent 68%);pointer-events:none}
+.blob{position:absolute;border-radius:50%;pointer-events:none;animation:float 6s ease-in-out infinite}
+.b1{width:13px;height:13px;background:rgba(37,99,235,.18);top:22%;right:14%;animation-delay:0s}
+.b2{width:9px;height:9px;background:rgba(245,158,11,.24);top:58%;right:26%;animation-delay:2.2s}
+.b3{width:11px;height:11px;background:rgba(16,185,129,.20);top:36%;right:6%;animation-delay:4s}
+.bc{display:flex;align-items:center;gap:7px;font-size:12.5px;color:var(--ink3);margin-bottom:22px;position:relative;z-index:1;flex-wrap:wrap}
+.bc a{color:var(--blue);font-weight:600}
+.pill{display:inline-flex;align-items:center;gap:7px;font-family:var(--fd);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);background:var(--blue-xl);padding:5px 14px;border-radius:100px;margin-bottom:18px}
+.pill::before{content:'';width:6px;height:6px;background:var(--blue);border-radius:50%}
+.hero-inner{position:relative;z-index:1;max-width:720px;animation:fadeUp .5s ease both}
+.hero h1{font-family:var(--fd);font-size:clamp(26px,4.5vw,50px);font-weight:800;line-height:1.1;color:var(--ink);margin-bottom:14px}
+.hero h1 span{color:var(--blue)}
+.hero-sub{font-size:16px;color:var(--ink3);line-height:1.8;margin-bottom:22px;max-width:600px}
+.hero-chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.chip{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;padding:6px 14px;border-radius:100px;background:#fff;border:1.5px solid var(--line);color:var(--ink2);box-shadow:var(--s1);transition:.22s}
+.chip:hover{border-color:var(--blue);color:var(--blue);transform:translateY(-1px)}
+.hero-meta{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:24px}
+.upd{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:700;color:var(--blue);background:var(--blue-xl);padding:6px 14px;border-radius:100px;border:1.5px solid var(--blue-s)}
+.mi{font-size:13px;color:var(--ink3);font-weight:500}
+
+/* HOW TO USE */
+.howto{background:var(--amber-xl);border:2px solid var(--amber-s);border-radius:16px;padding:22px 26px;max-width:580px;margin-bottom:24px}
+.howto-ttl{display:flex;align-items:center;gap:9px;font-family:var(--fd);font-size:15px;font-weight:800;color:var(--ink);margin-bottom:13px}
+.howto-steps{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.hs{display:flex;align-items:flex-start;gap:10px;font-size:13.5px;color:var(--ink2);line-height:1.6}
+.sn{width:24px;height:24px;background:var(--amber);color:#fff;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex-shrink:0;margin-top:1px}
+
+/* internal links */
+.link-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;position:relative;z-index:1}
+.lg-box{border-radius:14px;padding:16px 16px 14px;display:flex;flex-direction:column;gap:9px;transition:.22s}
+.lg-box:hover{transform:translateY(-3px);box-shadow:var(--s3)}
+.lg-box.pri{background:linear-gradient(135deg,var(--purple-xl),#ede9fe);border:1.5px solid var(--purple-s)}
+.lg-box.age{background:linear-gradient(135deg,#f0f9ff,var(--blue-xl));border:1.5px solid var(--blue-s)}
+.lg-box.doc{background:linear-gradient(135deg,var(--green-xl),#dcfce7);border:1.5px solid var(--green-s)}
+.lg-ico{font-size:24px}
+.lg-txt h4{font-family:var(--fd);font-size:12.5px;font-weight:800;color:var(--ink);margin-bottom:3px}
+.lg-txt p{font-size:11.5px;color:var(--ink3);line-height:1.5}
+.btn-xs{display:inline-flex;align-items:center;gap:5px;font-family:var(--fd);font-weight:700;font-size:11.5px;padding:6px 12px;border-radius:7px;transition:.22s;margin-top:4px}
+.btn-xs.p{background:var(--purple);color:#fff}.btn-xs.p:hover{background:#7c3aed}
+.btn-xs.b{background:var(--blue);color:#fff}.btn-xs.b:hover{background:var(--blue-d)}
+.btn-xs.g{background:var(--green);color:#fff}.btn-xs.g:hover{background:#059669}
+
+/* ══ TOOL SECTION ══ */
+.tool-sec{background:var(--surf);padding:80px 0}
+.tool-wrap{max-width:920px;margin:0 auto}
+.tool-card{background:#fff;border:1.5px solid var(--line);border-radius:28px;overflow:hidden;box-shadow:var(--s4)}
+.tool-hdr{background:linear-gradient(135deg,#1d4ed8 0%,#2563eb 55%,#3b82f6 100%);padding:32px 40px;position:relative;overflow:hidden}
+.tool-hdr::before{content:'';position:absolute;top:-60px;right:-60px;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,.07)}
+.tool-hdr::after{content:'';position:absolute;bottom:-40px;left:-40px;width:180px;height:180px;border-radius:50%;background:rgba(255,255,255,.04)}
+.th{position:relative;z-index:1}
+.th h2{font-family:var(--fd);font-size:21px;font-weight:800;color:#fff;margin-bottom:6px}
+.th p{font-size:14px;color:rgba(255,255,255,.82);line-height:1.65}
+.th-badges{display:flex;flex-wrap:wrap;gap:9px;margin-top:14px}
+.thb{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:rgba(255,255,255,.9);background:rgba(255,255,255,.13);padding:5px 12px;border-radius:100px}
+.tool-body{padding:36px 40px}
+
+/* form */
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+.fgrid3{grid-template-columns:1fr 1fr 1fr}
+.fld{display:flex;flex-direction:column;gap:7px}
+.flbl{font-size:13px;font-weight:700;color:var(--ink2)}
+.flbl span{font-size:11px;font-weight:500;color:var(--ink4);margin-left:5px;background:var(--surf);padding:2px 7px;border-radius:5px;border:1px solid var(--line)}
+.finp,.fsel{padding:12px 16px;font-size:14.5px;color:var(--ink);background:#fff;border:1.5px solid var(--line);border-radius:10px;outline:none;transition:.22s;font-family:var(--fb);width:100%}
+.finp:focus,.fsel:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(37,99,235,.10)}
+.fsel{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2364748b' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:40px}
+
+/* radio groups */
+.ro-row{display:flex;gap:8px;flex-wrap:wrap}
+.ro{position:relative}
+.ro input{position:absolute;opacity:0;width:0;height:0}
+.ro label{display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:600;color:var(--ink2);padding:10px 18px;border-radius:9px;border:1.5px solid var(--line);background:#fff;cursor:pointer;transition:.22s}
+.ro input:checked+label{border-color:var(--blue);background:var(--blue-xl);color:var(--blue)}
+.ro label:hover{border-color:var(--blue-s);background:var(--blue-xl)}
+
+/* height input with unit */
+.height-wrap{display:flex;align-items:center;gap:0}
+.height-wrap .finp{border-radius:10px 0 0 10px;border-right:none;flex:1}
+.height-unit{background:var(--surf);border:1.5px solid var(--line);border-left:none;border-radius:0 10px 10px 0;padding:12px 16px;font-size:14.5px;font-weight:600;color:var(--ink3)}
+
+.hint-box{display:flex;align-items:flex-start;gap:9px;font-size:13px;color:var(--ink2);background:var(--blue-xl);border:1.5px solid var(--blue-s);border-radius:10px;padding:11px 14px;margin:16px 0;line-height:1.65}
+.hint-box svg{width:16px;height:16px;stroke:var(--blue);fill:none;stroke-width:2;flex-shrink:0;margin-top:2px}
+.chk-btn{width:100%;padding:16px;background:linear-gradient(135deg,var(--blue) 0%,#1e40af 100%);color:#fff;font-family:var(--fd);font-weight:800;font-size:16px;border-radius:12px;box-shadow:var(--sb);transition:all .25s var(--ease);display:flex;align-items:center;justify-content:center;gap:10px}
+.chk-btn:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(37,99,235,.32)}
+.chk-btn:active{transform:translateY(0)}
+
+/* ══ RESULT ══ */
+#resultArea{display:none;margin-top:28px;animation:resultIn .45s var(--ease) both}
+
+/* height visual bar */
+.height-viz{background:var(--surf);border:1.5px solid var(--line);border-radius:16px;padding:20px 24px;margin-bottom:20px}
+.hv-title{font-family:var(--fd);font-size:14px;font-weight:700;color:var(--ink);margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.hv-bars{display:flex;flex-direction:column;gap:8px}
+.hv-bar-row{display:flex;align-items:center;gap:12px}
+.hv-exam-name{font-size:12px;font-weight:600;color:var(--ink2);width:140px;flex-shrink:0;text-align:right}
+.hv-bar-track{flex:1;height:20px;background:var(--line);border-radius:10px;overflow:hidden;position:relative}
+.hv-bar-fill{height:100%;border-radius:10px;display:flex;align-items:center;padding-left:8px;font-size:10.5px;font-weight:700;color:#fff;transition:width 1s var(--ease)}
+.hv-bar-fill.ok{background:linear-gradient(90deg,var(--green),#059669)}
+.hv-bar-fill.no{background:linear-gradient(90deg,var(--red),#dc2626)}
+.hv-bar-status{font-size:12px;font-weight:700;width:80px;flex-shrink:0}
+.hv-bar-status.ok{color:var(--green)}.hv-bar-status.no{color:var(--red)}
+
+/* stats row */
+.stats-row{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:20px}
+.stat-box{border-radius:14px;padding:18px 16px;text-align:center}
+.stat-box.eligible{background:var(--green-xl);border:1.5px solid var(--green-s)}
+.stat-box.notelig{background:var(--red-xl);border:1.5px solid var(--red-s)}
+.stat-box.near{background:var(--amber-xl);border:1.5px solid var(--amber-s)}
+.stat-num{font-family:var(--fd);font-size:30px;font-weight:800;line-height:1}
+.stat-num.g{color:var(--green)}.stat-num.r{color:var(--red)}.stat-num.a{color:var(--amber)}
+.stat-lbl{font-size:12.5px;color:var(--ink3);font-weight:600;margin-top:4px}
+
+/* exam cards grid */
+.exam-section{margin-bottom:18px}
+.es-title{display:flex;align-items:center;gap:9px;font-family:var(--fd);font-size:14.5px;font-weight:800;color:var(--ink);margin-bottom:11px;padding:10px 14px;border-radius:10px}
+.es-title.elig{background:var(--green-xl);border:1.5px solid var(--green-s);color:#166534}
+.es-title.noelig{background:var(--red-xl);border:1.5px solid var(--red-s);color:#991b1b}
+.es-title.near{background:var(--amber-xl);border:1.5px solid var(--amber-s);color:#92400e}
+.exam-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.exam-card{border-radius:12px;padding:14px 16px;border:1.5px solid var(--line);background:#fff;display:flex;flex-direction:column;gap:6px;transition:.22s;animation:slideIn .35s var(--ease) both}
+.exam-card:hover{border-color:var(--blue-s);box-shadow:var(--s2);transform:translateY(-2px)}
+.ec-top{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.ec-name{font-family:var(--fd);font-size:13px;font-weight:800;color:var(--ink)}
+.ec-badge{font-size:11px;font-weight:700;padding:3px 9px;border-radius:100px}
+.ec-badge.ok{background:var(--green-xl);color:var(--green);border:1px solid var(--green-s)}
+.ec-badge.no{background:var(--red-xl);color:var(--red);border:1px solid var(--red-s)}
+.ec-badge.close{background:var(--amber-xl);color:#92400e;border:1px solid var(--amber-s)}
+.ec-detail{font-size:12px;color:var(--ink3);display:flex;align-items:center;gap:6px}
+.ec-detail strong{color:var(--ink2);font-weight:700}
+.ec-gap{font-size:11.5px;font-weight:600;color:var(--ink3)}
+
+/* warn */
+.res-warn{background:var(--amber-xl);border:1.5px solid var(--amber-s);border-radius:12px;padding:14px 18px;display:flex;gap:10px;font-size:13.5px;color:var(--ink2);line-height:1.7;margin-top:16px}
+
+/* ══ TABLE SECTION ══ */
+.tbl-sec{background:#fff;padding:72px 0}
+.tbl-wr{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+thead th{background:linear-gradient(135deg,var(--blue) 0%,#1e40af 100%);color:#fff;padding:14px 16px;text-align:left;font-family:var(--fd);font-size:13px;font-weight:700;letter-spacing:.03em}
+tbody tr{border-bottom:1px solid var(--line);transition:.2s}
+tbody tr:hover{background:var(--blue-xl)}
+tbody td{padding:12px 16px;color:var(--ink2);vertical-align:middle;font-size:13.5px}
+.tbadge{display:inline-flex;font-size:11px;font-weight:700;padding:3px 8px;border-radius:100px}
+.tbadge.g{background:var(--green-xl);color:var(--green);border:1px solid var(--green-s)}
+.tbadge.b{background:var(--blue-xl);color:var(--blue);border:1px solid var(--blue-s)}
+.tbadge.a{background:var(--amber-xl);color:#92400e;border:1px solid var(--amber-s)}
+
+/* ══ STORY ══ */
+.story-sec{background:var(--surf);padding:72px 0}
+.story-card{background:#fff;border:1.5px solid var(--line);border-radius:24px;padding:40px;box-shadow:var(--s3);position:relative;overflow:hidden}
+.story-card::before{content:'';position:absolute;top:0;left:0;bottom:0;width:5px;background:linear-gradient(180deg,var(--blue) 0%,var(--red) 100%);border-radius:5px 0 0 5px}
+.sq{font-size:54px;color:var(--blue-s);font-family:Georgia,serif;line-height:1;padding-left:8px}
+.sb{font-size:15.5px;color:var(--ink2);line-height:1.9;padding:0 8px}
+.sauth{display:flex;align-items:center;gap:14px;margin-top:22px;padding-top:20px;border-top:1px solid var(--line)}
+.savt{width:48px;height:48px;background:var(--blue);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+.sname{font-family:var(--fd);font-size:15px;font-weight:700;color:var(--ink)}
+.srole{font-size:12.5px;color:var(--ink3)}
+.founder-msg{background:linear-gradient(135deg,var(--blue-xl),var(--blue-s));border:1.5px solid var(--blue-s);border-radius:14px;padding:20px 22px;margin-top:22px;display:flex;gap:13px}
+.fm-ico{font-size:26px;flex-shrink:0}
+.fm-txt{font-size:14px;color:var(--ink2);line-height:1.75;font-style:italic}
+.fm-txt strong{color:var(--ink);font-weight:700;font-style:normal}
+
+/* ══ GUIDE ══ */
+.guide-sec{background:#fff;padding:72px 0}
+.guide-body h2{font-family:var(--fd);font-size:21px;font-weight:800;color:var(--ink);margin:28px 0 11px;line-height:1.3}
+.guide-body h2:first-child{margin-top:0}
+.guide-body h3{font-family:var(--fd);font-size:17px;font-weight:700;color:var(--ink2);margin:20px 0 9px}
+.guide-body p{font-size:15px;color:var(--ink3);line-height:1.85;margin-bottom:14px}
+.guide-body ul{display:flex;flex-direction:column;gap:8px;margin:12px 0 16px}
+.guide-body li{display:flex;align-items:flex-start;gap:10px;font-size:14.5px;color:var(--ink3);line-height:1.7}
+.guide-body li::before{content:'✓';width:18px;height:18px;background:var(--blue);color:#fff;border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;flex-shrink:0;margin-top:3px}
+.guide-body strong{color:var(--ink2);font-weight:700}
+.guide-body a{color:var(--blue);font-weight:600}
+.ibox{background:var(--blue-xl);border:1.5px solid var(--blue-s);border-radius:13px;padding:15px 18px;margin:16px 0;display:flex;gap:11px;font-size:14px;color:var(--ink2);line-height:1.7}
+.ibox svg{width:17px;height:17px;stroke:var(--blue);fill:none;stroke-width:2;flex-shrink:0;margin-top:2px}
+.ibox.g{background:var(--green-xl);border-color:var(--green-s)}
+.ibox.g svg{stroke:var(--green)}
+.ibox.a{background:var(--amber-xl);border-color:var(--amber-s)}
+.ibox.a svg{stroke:var(--amber)}
+
+/* mistakes */
+.mistakes-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0}
+.mk{background:var(--red-xl);border:1.5px solid var(--red-s);border-radius:12px;padding:16px}
+.mk-head{font-family:var(--fd);font-size:13.5px;font-weight:700;color:#b91c1c;margin-bottom:6px}
+.mk-desc{font-size:13px;color:var(--ink3);line-height:1.65}
+
+/* ══ CATEGORY TABLE ══ */
+.cat-tbl-sec{background:var(--surf);padding:72px 0}
+
+/* ══ FAQ ══ */
+.faq-sec{background:#fff;padding:72px 0}
+.fql{max-width:780px;margin:0 auto}
+.fq{background:var(--surf);border:1.5px solid var(--line);border-radius:13px;margin-bottom:10px;overflow:hidden}
+.fq-q{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;cursor:pointer;gap:14px;transition:.2s}
+.fq-q:hover{background:var(--blue-xl)}
+.fq-t{font-weight:600;font-size:15px;color:var(--ink);line-height:1.4}
+.fq-i{width:28px;height:28px;border-radius:50%;background:var(--blue-xl);color:var(--blue);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;transition:transform .28s,background .2s}
+.fq.open .fq-i{transform:rotate(45deg);background:var(--blue);color:#fff}
+.fq-a{max-height:0;overflow:hidden;transition:max-height .35s var(--ease)}
+.fq-ai{padding:0 22px 18px;font-size:14.5px;color:var(--ink3);line-height:1.78}
+.fq.open .fq-a{max-height:400px}
+
+/* ══ CONTACT ══ */
+.contact-sec{background:var(--surf);padding:60px 0}
+.contact-card{max-width:600px;margin:0 auto;background:#fff;border:1.5px solid var(--line);border-radius:20px;padding:32px;text-align:center;box-shadow:var(--s2)}
+.contact-card h3{font-family:var(--fd);font-size:19px;font-weight:800;color:var(--ink);margin-bottom:10px}
+.contact-card p{font-size:15px;color:var(--ink3);line-height:1.75;margin-bottom:20px}
+.btn-blue{display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:#fff;font-family:var(--fd);font-weight:700;font-size:14.5px;padding:12px 26px;border-radius:8px;box-shadow:var(--sb);transition:.22s}
+.btn-blue:hover{background:var(--blue-d);transform:translateY(-1px)}
+.priv-note{font-size:12px;color:var(--ink4);margin-top:14px}
+
+/* ══ DISC ══ */
+.disc{background:var(--amber-xl);border-top:1px solid var(--amber-s);border-bottom:1px solid var(--amber-s);padding:15px 0}
+.disc-in{display:flex;align-items:flex-start;gap:12px;font-size:13.5px;color:var(--ink2);line-height:1.7}
+
+/* ══ CTA ══ */
+.cta{background:linear-gradient(140deg,#0f172a 0%,#1e3a8a 100%);padding:80px 0;text-align:center;position:relative;overflow:hidden}
+.cta::before{content:'';position:absolute;top:-80px;left:50%;transform:translateX(-50%);width:800px;height:380px;background:radial-gradient(ellipse,rgba(37,99,235,.22) 0%,transparent 68%);pointer-events:none}
+.cta-in{position:relative;z-index:1}
+.cta .pill{color:#93c5fd;background:rgba(255,255,255,.1);margin-bottom:18px}
+.cta .pill::before{background:#93c5fd}
+.cta h2{font-family:var(--fd);font-size:clamp(24px,4vw,42px);font-weight:800;color:#fff;line-height:1.15;margin-bottom:12px}
+.cta h2 em{color:#fbbf24;font-style:normal}
+.cta p{font-size:16px;color:rgba(255,255,255,.72);max-width:480px;margin:0 auto 32px;line-height:1.78}
+.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn-gold{display:inline-flex;align-items:center;gap:8px;background:var(--amber);color:#fff;font-family:var(--fd);font-weight:800;font-size:15px;padding:14px 30px;border-radius:8px;box-shadow:0 8px 28px rgba(245,158,11,.35);transition:.22s}
+.btn-gold:hover{background:#d97706;transform:translateY(-3px)}
+.btn-ghost{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.09);border:1.5px solid rgba(255,255,255,.22);color:#fff;font-family:var(--fd);font-weight:600;font-size:14px;padding:13px 26px;border-radius:8px;transition:.2s}
+.btn-ghost:hover{background:rgba(255,255,255,.16)}
+
+/* ══ FOOTER ══ */
+footer{background:#0f172a;padding:52px 0 0}
+.ft-inner{max-width:1180px;margin:0 auto;padding:0 24px}
+.ft-top{display:grid;grid-template-columns:1.9fr 1fr 1fr 1fr;gap:44px;margin-bottom:44px}
+.ft-brand .ln{color:#fff}.ft-brand .ls{color:#475569}
+.ft-desc{font-size:13.5px;color:#64748b;line-height:1.78;max-width:265px;margin:13px 0 20px}
+.ft-soc{display:flex;gap:9px}
+.fts{width:34px;height:34px;border-radius:7px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;color:#94a3b8;font-size:13px;transition:.2s}
+.fts:hover{background:var(--blue);color:#fff}
+.fc h4{font-family:var(--fd);font-size:12px;font-weight:700;color:#fff;margin-bottom:14px;letter-spacing:.06em;text-transform:uppercase}
+.fc ul{display:flex;flex-direction:column;gap:8px}
+.fc ul a{font-size:13.5px;color:#64748b;transition:.18s}
+.fc ul a:hover{color:#93c5fd}
+.ft-btm{border-top:1px solid rgba(255,255,255,.07);padding:20px 0;text-align:center}
+.ft-cp{font-size:12.5px;color:#475569}
+.ft-cp b{color:#64748b;font-weight:600}
+.ft-tag{font-size:12px;color:#334155;margin-top:4px;font-style:italic}
+.btt{position:fixed;bottom:26px;right:26px;z-index:500;width:43px;height:43px;background:var(--blue);color:#fff;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:17px;box-shadow:var(--sb);opacity:0;pointer-events:none;transform:translateY(14px);transition:.28s var(--ease)}
+.btt.on{opacity:1;pointer-events:auto;transform:translateY(0)}
+.btt:hover{transform:translateY(-3px)}
+
+/* RESPONSIVE */
+@media(max-width:1060px){.ft-top{grid-template-columns:1fr 1fr}.link-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:860px){
+  nav.dn,.hcta{display:none}.brg{display:flex}
+  .tool-body{padding:24px 22px}.tool-hdr{padding:24px 22px}
+  .fgrid{grid-template-columns:1fr}.fgrid.fgrid3{grid-template-columns:1fr 1fr}
+  .exam-grid{grid-template-columns:1fr}.howto-steps{grid-template-columns:1fr}
+  .mistakes-grid{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+  .ft-top{grid-template-columns:1fr}.link-grid{grid-template-columns:1fr}
+  .fgrid.fgrid3{grid-template-columns:1fr}
+  .cta-btns{flex-direction:column;align-items:center}
+  .story-card{padding:26px 20px}.stats-row{grid-template-columns:1fr 1fr}
+  .hv-bar-row{flex-wrap:wrap}.hv-exam-name{width:auto;text-align:left}
+}
+</style>
+</head>
+<body>
+<!-- HEADER -->
+<header class="hdr">
+  <div class="w">
+    <div class="hdi">
+      <a href="/" class="logo">
+        <div class="lb"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+        <div><div class="ln">Raj<span>Daily</span>Tools</div><div class="ls">Smart Tools for Daily Life</div></div>
+      </a>
+      <nav class="dn">
+        <a href="/">Home</a><a href="/categories">Categories</a>
+        <a href="/#popular">Popular</a><a href="/about">About</a><a href="/contact">Contact</a>
+      </nav>
+      <a href="/categories" class="hcta">All Tools →</a>
+      <button class="brg" id="brg"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="dov" id="dov"></div>
+<div class="drw" id="drw">
+  <div class="dh">
+    <div class="logo">
+      <div class="lb" style="width:30px;height:30px;border-radius:7px"><svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#fff"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+      <div class="ln" style="font-size:16px">Raj<span>Daily</span>Tools</div>
+    </div>
+    <button class="dx" id="dx">✕</button>
+  </div>
+  <nav class="mn">
+    <a href="/" onclick="cD()">🏠 Home</a>
+    <a href="/categories" onclick="cD()">🗂️ Categories</a>
+    <a href="/#popular" onclick="cD()">⭐ Popular</a>
+    <a href="/about" onclick="cD()">👤 About</a>
+    <a href="/contact" onclick="cD()">📬 Contact</a>
+  </nav>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+  <div class="w">
+    <div class="bc">
+      <a href="/">Home</a><span style="color:var(--ink4)">›</span>
+      <a href="/categories">Tools</a><span style="color:var(--ink4)">›</span>
+      <span>Height Eligibility Checker</span>
+    </div>
+    <div class="hero-inner">
+      <div class="pill">Govt Exam Tools</div>
+      <h1>Govt Exam <span>Height Eligibility</span> Checker 2026</h1>
+      <p class="hero-sub">Enter your height, gender, and category — instantly check eligibility for <strong>20+ government exams</strong> including SSC GD, Army, Police, CAPF, RPF, BSF, CISF, and more. Category and region-based relaxation automatically applied.</p>
+      <div class="hero-chips">
+        <span class="chip">📏 20+ Exams Covered</span>
+        <span class="chip">🎖️ Army &amp; Police</span>
+        <span class="chip">🏔️ Region Relaxation</span>
+        <span class="chip">📊 Visual Bar Chart</span>
+        <span class="chip">🆓 100% Free</span>
+      </div>
+      <div class="hero-meta">
+        <div class="upd">📅 Updated: 2026</div>
+        <span class="mi">✅ Based on official notifications</span>
+        <span class="mi">🔒 No data stored</span>
+      </div>
+      <!-- HOW TO USE -->
+      <div class="howto">
+        <div class="howto-ttl">💡 How to Use This Tool</div>
+        <div class="howto-steps">
+          <div class="hs"><span class="sn">1</span>Select gender and enter height in cm</div>
+          <div class="hs"><span class="sn">2</span>Choose category and region/special category</div>
+          <div class="hs"><span class="sn">3</span>Click "Check Height Eligibility"</div>
+          <div class="hs"><span class="sn">4</span>See eligible &amp; not eligible exams instantly</div>
+        </div>
+      </div>
+      <!-- INTERNAL LINKS -->
+      <div class="link-grid">
+        <div class="lg-box pri">
+          <div class="lg-ico">🎯</div>
+          <div class="lg-txt">
+            <h4>KV Priority Checker</h4>
+            <p>Check KV admission priority and chances</p>
+            <a href="http://rajdailytools.in/kv-priority-category-checker-2026.html" target="_blank" rel="noopener" class="btn-xs p">Check Now →</a>
+          </div>
+        </div>
+        <div class="lg-box age">
+          <div class="lg-ico">📅</div>
+          <div class="lg-txt">
+            <h4>KV Age Calculator</h4>
+            <p>Check KV admission age eligibility</p>
+            <a href="https://rajdailytools.github.io/kv-age-calculator-2026.html" target="_blank" rel="noopener" class="btn-xs b">Calculate →</a>
+          </div>
+        </div>
+        <div class="lg-box doc">
+          <div class="lg-ico">📋</div>
+          <div class="lg-txt">
+            <h4>KV Documents List</h4>
+            <p>Get complete KV documents checklist</p>
+            <a href="http://rajdailytools.in/kv-admission-documents-list-2026.html" target="_blank" rel="noopener" class="btn-xs g">Get List →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOOL SECTION -->
+<section class="tool-sec" id="tool">
+  <div class="w">
+    <div class="tool-wrap">
+      <div class="tool-card rev">
+        <div class="tool-hdr">
+          <div class="th">
+            <h2>📏 Height Eligibility Checker — All Govt Exams 2026</h2>
+            <p>Enter your details below. Our system checks your height against official recruitment criteria for 20+ government exams and shows exactly where you qualify.</p>
+            <div class="th-badges">
+              <span class="thb">✅ 20+ Exams Checked</span>
+              <span class="thb">🏔️ Region Relaxation Applied</span>
+              <span class="thb">📊 Visual Comparison</span>
+              <span class="thb">🔒 No Data Stored</span>
+            </div>
+          </div>
+        </div>
+        <div class="tool-body">
+
+          <!-- ROW 1: Gender + Height -->
+          <div class="fgrid">
+            <div class="fld">
+              <label class="flbl">Gender <span>Required</span></label>
+              <div class="ro-row">
+                <div class="ro"><input type="radio" name="gender" id="gm" value="male" checked><label for="gm">👨 Male</label></div>
+                <div class="ro"><input type="radio" name="gender" id="gf" value="female"><label for="gf">👩 Female</label></div>
+              </div>
+            </div>
+            <div class="fld">
+              <label class="flbl" for="height">Your Height <span>Required</span></label>
+              <div class="height-wrap">
+                <input class="finp" type="number" id="height" placeholder="e.g. 170" min="100" max="250">
+                <div class="height-unit">cm</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ROW 2: Category + Region -->
+          <div class="fgrid">
+            <div class="fld">
+              <label class="flbl" for="category">Social Category <span>Required</span></label>
+              <select class="fsel" id="category">
+                <option value="gen">General / EWS / OBC</option>
+                <option value="sc">SC (Scheduled Caste)</option>
+                <option value="st">ST (Scheduled Tribe)</option>
+              </select>
+            </div>
+            <div class="fld">
+              <label class="flbl" for="region">Region / Special Category <span>Optional</span></label>
+              <select class="fsel" id="region">
+                <option value="general">General (All India)</option>
+                <option value="gorkha">Gorkha / Garhwali / Kumaoni</option>
+                <option value="northeast">North East / Assam</option>
+                <option value="dogra">Dogra</option>
+                <option value="st_area">ST Area / Tribal Belt</option>
+                <option value="andaman">Andaman &amp; Nicobar / Lakshadweep</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="hint-box">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            <div>Height criteria may vary by <strong>specific notification and exam cycle</strong>. This tool is based on commonly notified height requirements. Always verify from the official exam notification before applying. Category and regional relaxations are automatically applied based on your selection.</div>
+          </div>
+
+          <button class="chk-btn" onclick="checkHeight()">📏 Check Height Eligibility for All Exams</button>
+
+          <!-- RESULT AREA -->
+          <div id="resultArea">
+            <div class="stats-row" id="statsRow"></div>
+            <div class="height-viz" id="heightViz">
+              <div class="hv-title">📊 Height vs Required Height — Visual Comparison</div>
+              <div class="hv-bars" id="hvBars"></div>
+            </div>
+            <div id="eligSection"></div>
+            <div id="nearSection"></div>
+            <div id="notEligSection"></div>
+            <div class="res-warn">
+              <span style="font-size:20px;flex-shrink:0">⚠️</span>
+              <div style="font-size:13.5px;color:var(--ink2);line-height:1.72"><strong>Important:</strong> This tool provides general eligibility based on standard height norms. Actual height criteria may differ by notification year, state variant, and exam-specific rules. Always check the official recruitment notification before applying. <strong>We do not collect or store any personal user data.</strong></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HEIGHT TABLE -->
+<section class="tbl-sec" id="height-table">
+  <div class="w">
+    <div style="max-width:920px;margin:0 auto">
+      <div class="rev" style="text-align:center;margin-bottom:36px">
+        <div class="pill" style="margin-bottom:14px">Official Height Chart</div>
+        <h2 style="font-family:var(--fd);font-size:clamp(22px,3.5vw,36px);font-weight:800;color:var(--ink);margin-bottom:10px">Govt Exam <span style="color:var(--blue)">Height Requirements 2026</span></h2>
+        <p style="font-size:15px;color:var(--ink3);max-width:520px;margin:0 auto;line-height:1.75">Complete official height criteria for major Indian government exams — Male and Female candidates.</p>
+      </div>
+      <div class="tbl-wr rev">
+        <table>
+          <thead><tr><th>Exam / Post</th><th>Male (General)</th><th>Female (General)</th><th>SC/ST Relaxation</th><th>Region Relaxation</th></tr></thead>
+          <tbody>
+            <tr><td><strong>SSC GD Constable</strong></td><td>170 cm</td><td>157 cm</td><td>5 cm relaxation for SC/ST</td><td>5 cm for Gorkha/NE/ST area</td></tr>
+            <tr><td><strong>Indian Army — GD/Soldier</strong></td><td>170 cm (general); 160–165 cm (NE/hill)</td><td>152 cm</td><td>Varies by state</td><td>160 cm Gorkha/NE; 157 cm Assam</td></tr>
+            <tr><td><strong>Indian Navy — Sailor/AA/SSR</strong></td><td>157 cm</td><td>152 cm</td><td>—</td><td>—</td></tr>
+            <tr><td><strong>Indian Air Force — Airman</strong></td><td>152.5 cm (Group X/Y)</td><td>152 cm</td><td>—</td><td>—</td></tr>
+            <tr><td><strong>Indian Coast Guard — Navik</strong></td><td>157 cm</td><td>152 cm</td><td>—</td><td>—</td></tr>
+            <tr><td><strong>CRPF</strong></td><td>165 cm</td><td>157 cm</td><td>5 cm SC/ST</td><td>5 cm Gorkha/NE/ST</td></tr>
+            <tr><td><strong>BSF (Border Security Force)</strong></td><td>170 cm</td><td>157 cm</td><td>5 cm SC/ST</td><td>5 cm Gorkha/NE/ST</td></tr>
+            <tr><td><strong>CISF (Central Ind. Security Force)</strong></td><td>170 cm</td><td>157 cm</td><td>5 cm SC/ST</td><td>5 cm Gorkha/NE/ST</td></tr>
+            <tr><td><strong>ITBP (Indo-Tibetan Border Police)</strong></td><td>167 cm</td><td>157 cm</td><td>5 cm SC/ST</td><td>5 cm NE/Ladakh</td></tr>
+            <tr><td><strong>SSB (Sashastra Seema Bal)</strong></td><td>167 cm</td><td>157 cm</td><td>5 cm SC/ST</td><td>5 cm NE/Gorkha</td></tr>
+            <tr><td><strong>CAPF (ASI / HC)</strong></td><td>165–170 cm</td><td>157 cm</td><td>5 cm SC/ST</td><td>5 cm Gorkha/NE</td></tr>
+            <tr><td><strong>RPF / RPSF Constable</strong></td><td>165 cm</td><td>157 cm</td><td>5 cm SC/ST</td><td>—</td></tr>
+            <tr><td><strong>Delhi Police Constable</strong></td><td>170 cm</td><td>157 cm</td><td>5 cm SC/ST</td><td>—</td></tr>
+            <tr><td><strong>UP Police Constable</strong></td><td>168 cm</td><td>152 cm</td><td>2–5 cm SC/ST</td><td>—</td></tr>
+            <tr><td><strong>Bihar Police Constable</strong></td><td>165 cm</td><td>155 cm</td><td>Varies</td><td>—</td></tr>
+            <tr><td><strong>MP Police Constable</strong></td><td>167 cm</td><td>152 cm</td><td>5 cm SC/ST</td><td>—</td></tr>
+            <tr><td><strong>Rajasthan Police Constable</strong></td><td>168 cm</td><td>152 cm</td><td>Varies</td><td>—</td></tr>
+            <tr><td><strong>Forest Guard / Van Rakshak</strong></td><td>163 cm</td><td>150 cm</td><td>5 cm ST</td><td>Varies by state</td></tr>
+            <tr><td><strong>Excise / Home Guard</strong></td><td>160 cm</td><td>148 cm</td><td>Varies</td><td>State-specific</td></tr>
+            <tr><td><strong>NDA / CDS (Officers)</strong></td><td>157 cm</td><td>152 cm (Women Officers)</td><td>—</td><td>—</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:12.5px;color:var(--ink4);margin-top:12px;text-align:center">* Always verify from official notification. Values based on commonly published criteria — may vary by exam cycle.</p>
+    </div>
+  </div>
+</section>
+
+<!-- STORY -->
+<section class="story-sec">
+  <div class="wa">
+    <div class="rev" style="text-align:center;margin-bottom:36px">
+      <div class="pill" style="margin-bottom:14px">Personal Story</div>
+      <h2 style="font-family:var(--fd);font-size:clamp(22px,3.4vw,34px);font-weight:800;color:var(--ink);margin-bottom:8px">Why I <span style="color:var(--blue)">Built This Tool</span></h2>
+      <p style="font-size:15px;color:var(--ink3)">Ek painful real experience jo ek zaroori tool ban gayi.</p>
+    </div>
+    <div class="story-card rev">
+      <div class="sq">"</div>
+      <div class="sb">
+        Maine ye tool isliye banaya kyunki <strong>mere yahan ek bhaiya kiraye par rehte the</strong>. Unhone SSC GD exam ki tyari mein bahut mehnat ki — din raat padhai, PT practice, aur sab kuch sahi kiya.<br><br>
+        Unhone exam mein <strong>itne ache marks laaye ki unka selection almost pakka tha</strong>. Sab khush the, celebrations ready thi. Lekin unhe apni height ke exact criteria ka pata nahi tha — sirf rough idea tha.<br><br>
+        <strong>Jab final physical stage aayi, toh wo height ke basis par reject ho gaye.</strong> Sirf 1-2 cm ka difference tha. Itni mehnat, itna time, aur itna paisa — sab ek document ki wajah se nahi, sirf height ki wajah se bekaar gaya.<br><br>
+        Us din mujhe realize hua ki agar unhe pehle se exact height criteria ka pata hota, toh <strong>wo kisi aur exam ke liye apply kar sakte the jahan unki height qualify karti thi</strong>. Ye tool isliye banaya — taki koi bhi sirf height ki wajah se apna chance na gawa de. 🙏
+      </div>
+      <div class="sauth">
+        <div class="savt">👨‍💻</div>
+        <div>
+          <div class="sname">Raj Bhai</div>
+          <div class="srole">Founder, RajDailyTools · BSc Physics · COPA ITI Certified</div>
+        </div>
+      </div>
+    </div>
+    <div class="founder-msg rev" style="margin-top:18px">
+      <div class="fm-ico">💡</div>
+      <div class="fm-txt">
+        <strong>Founder's Message:</strong> "RajDailyTools is built to solve real-life problems through smart tools. Our mission is to simplify important decisions using technology — so no one has to lose their opportunity just because they didn't have the right information at the right time."
+        <br><span style="font-size:13px;color:var(--ink3);font-style:normal;margin-top:6px;display:block">— Raj Bhai, Founder, RajDailyTools</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPLETE GUIDE -->
+<section class="guide-sec">
+  <div class="wa">
+    <div class="rev">
+      <div class="pill" style="margin-bottom:14px">Complete Guide</div>
+      <h2 style="font-family:var(--fd);font-size:clamp(22px,3.5vw,36px);font-weight:800;color:var(--ink);margin-bottom:8px">Govt Exam Height Criteria <span style="color:var(--blue)">Explained 2026</span></h2>
+      <p style="font-size:15px;color:var(--ink3);margin-bottom:32px">Height requirement ke baare mein poori jankari — category relaxation, region-based rules, aur common mistakes.</p>
+    </div>
+    <div class="guide-body rev">
+      <h2>Govt Exams Mein Height Criteria Kya Hota Hai?</h2>
+      <p>Government exams — especially <strong>police, paramilitary, and defence forces</strong> — mein physical fitness standards ka ek important part height requirement hota hai. Ye ensure karta hai ki candidates operational duties perform karne ke liye physically capable hain.</p>
+      <p>Height criteria <strong>exam-specific, gender-specific, category-specific, aur region-specific</strong> hoti hai. General category ke male candidates ke liye typically highest criteria hoti hai, aur relaxation reserved categories aur specific regions ke candidates ko milti hai.</p>
+
+      <h2>Category Relaxation Kya Hota Hai?</h2>
+      <p>SC/ST category ke candidates ko <strong>5 cm ki height relaxation</strong> milti hai in most exams. Matlab agar SSC GD ke liye general category mein 170 cm chahiye, toh SC/ST candidates ke liye 165 cm sufficient ho sakta hai.</p>
+      <ul>
+        <li>SC/ST: Typically 5 cm relaxation in most exams</li>
+        <li>OBC/EWS: Generally no height relaxation (same as General)</li>
+        <li>Women candidates: Already have separate (lower) height criteria</li>
+        <li>PH (Physically Handicapped): Separate norms as per exam</li>
+      </ul>
+      <div class="ibox">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        <div><strong>Note:</strong> Category relaxation sirf height mein hoti hai — qualifying criteria (marks, age) may have separate relaxation norms. Check official notification for complete relaxation list.</div>
+      </div>
+
+      <h2>Region-Based Height Relaxation</h2>
+      <p>Certain regions ke candidates ko <strong>special height relaxation</strong> milti hai because of geographical and physiological factors:</p>
+      <ul>
+        <li><strong>Gorkha / Garhwali / Kumaoni:</strong> 5 cm relaxation in SSC GD, BSF, CRPF, CISF</li>
+        <li><strong>North East / Assam:</strong> 5 cm relaxation — separate criteria in Indian Army also</li>
+        <li><strong>Dogra:</strong> Region-based relaxation in some paramilitary exams</li>
+        <li><strong>ST Area / Tribal Belt:</strong> 5 cm relaxation generally applicable</li>
+        <li><strong>Andaman &amp; Nicobar / Lakshadweep:</strong> Separate criteria in some exams</li>
+      </ul>
+      <div class="ibox g">
+        <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        <div><strong>Important:</strong> Region relaxation ke liye typically domicile certificate ya relevant regional proof require hota hai. Certificate ready rakhein pehle se.</div>
+      </div>
+
+      <h2>SSC GD vs Police vs Army — Key Differences</h2>
+      <p><strong>SSC GD:</strong> 170 cm (Male General), 157 cm (Female) — one of the more competitive height requirements. Category/region relaxation available.</p>
+      <p><strong>Indian Army GD:</strong> Region-specific — 170 cm general, 160-165 cm for NE/Hill states. More varied criteria based on regiment.</p>
+      <p><strong>Navy/Air Force:</strong> Lower height requirement (157-163 cm) — more candidates qualify here.</p>
+      <p><strong>State Police:</strong> Varies significantly by state — UP Police 168 cm, MP Police 167 cm, Bihar Police 165 cm for males.</p>
+
+       <h2>Common Mistakes Candidates Karte Hain</h2>
+      <div class="mistakes-grid">
+        <div class="mk">
+          <div class="mk-head">❌ Height Check Na Karna Pehle</div>
+          <div class="mk-desc">Bina exact criteria jaane form fill karna — fee waste aur time waste dono hota hai.</div>
+        </div>
+        <div class="mk">
+          <div class="mk-head">❌ Category Relaxation Ignore Karna</div>
+          <div class="mk-desc">SC/ST candidates apna 5 cm relaxation claim nahi karte — eligible exams miss ho jaate hain.</div>
+        </div>
+        <div class="mk">
+          <div class="mk-head">❌ Old Notification Follow Karna</div>
+          <div class="mk-desc">Height criteria change ho sakti hai har notification mein — always latest official notification check karein.</div>
+        </div>
+        <div class="mk">
+          <div class="mk-head">❌ State Police Ignore Karna</div>
+          <div class="mk-desc">State police exams mein criteria often lower hoti hai — candidates better fit hone ke bawajood apply nahi karte.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CATEGORY TABLE -->
+<section class="cat-tbl-sec" id="category-table">
+  <div class="w">
+    <div style="max-width:860px;margin:0 auto">
+      <div class="rev" style="text-align:center;margin-bottom:36px">
+        <div class="pill" style="margin-bottom:14px">Category Relaxation</div>
+        <h2 style="font-family:var(--fd);font-size:clamp(22px,3.5vw,36px);font-weight:800;color:var(--ink);margin-bottom:10px">Height <span style="color:var(--blue)">Relaxation by Category</span></h2>
+      </div>
+      <div class="tbl-wr rev">
+        <table>
+          <thead><tr><th>Category / Region</th><th>Height Relaxation</th><th>Applicable Exams</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td><strong>General / OBC / EWS</strong></td><td>No relaxation (baseline)</td><td>All exams</td><td>Full height criteria applies</td></tr>
+            <tr><td><strong>SC (Scheduled Caste)</strong></td><td><span class="tbadge g">−5 cm</span></td><td>SSC GD, BSF, CRPF, CISF, Delhi Police</td><td>Applicable in most central exams</td></tr>
+            <tr><td><strong>ST (Scheduled Tribe)</strong></td><td><span class="tbadge g">−5 cm</span></td><td>SSC GD, BSF, CRPF, CISF, State Police</td><td>Often combined with regional relaxation</td></tr>
+            <tr><td><strong>Gorkha / Garhwali / Kumaoni</strong></td><td><span class="tbadge b">−5 cm</span></td><td>SSC GD, CRPF, BSF, CISF, ITBP</td><td>Domicile/caste certificate required</td></tr>
+            <tr><td><strong>North East / Assam</strong></td><td><span class="tbadge b">−5 cm</span></td><td>SSC GD, CRPF, BSF, Army NE</td><td>State domicile certificate required</td></tr>
+            <tr><td><strong>Dogra</strong></td><td><span class="tbadge b">−5 cm</span></td><td>SSC GD, CRPF, BSF</td><td>J&amp;K domicile certificate required</td></tr>
+            <tr><td><strong>ST Area / Tribal Belt</strong></td><td><span class="tbadge g">−5 cm</span></td><td>Most paramilitary, State Police</td><td>ST area certificate required</td></tr>
+            <tr><td><strong>Andaman &amp; Nicobar / Lakshadweep</strong></td><td><span class="tbadge a">Varies</span></td><td>Exam-specific</td><td>Check specific notification</td></tr>
+            <tr><td><strong>Women Candidates</strong></td><td><span class="tbadge g">Separate criteria</span></td><td>All exams</td><td>Typically 12–15 cm lower than male</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DISC -->
+<div class="disc">
+  <div class="wa">
+    <div class="disc-in">
+      <span style="font-size:20px;flex-shrink:0">⚠️</span>
+      <div><strong>Disclaimer:</strong> Ye tool sirf informational purposes ke liye hai. Height criteria may vary by specific notification, exam cycle, and state rules. Ye tool kisi government body se affiliated nahi hai. Final eligibility sirf official exam notification se confirm karein. <strong>Hum koi personal data collect ya store nahi karte.</strong></div>
+    </div>
+  </div>
+</div>
+
+<!-- FAQ -->
+<section class="faq-sec">
+  <div class="w">
+    <div style="text-align:center;margin-bottom:40px" class="rev">
+      <div class="pill" style="margin-bottom:14px">FAQs</div>
+      <h2 style="font-family:var(--fd);font-size:clamp(22px,3.5vw,36px);font-weight:800;color:var(--ink);margin-bottom:10px">Frequently Asked <span style="color:var(--blue)">Questions</span></h2>
+      <p style="font-size:15px;color:var(--ink3);max-width:480px;margin:0 auto">Government exam height criteria ke baare mein common sawaal.</p>
+    </div>
+    <div class="fql" id="faqList">
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">SSC GD ke liye height kitni chahiye male aur female ke liye?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">SSC GD Constable ke liye <strong>Male (General): 170 cm</strong> aur <strong>Female (General): 157 cm</strong> height required hai. SC/ST candidates ke liye 5 cm ki relaxation milti hai — Male SC/ST: 165 cm, Female SC/ST: 152 cm. Gorkha, Garhwali, Kumaoni, NE, Dogra aur ST area ke candidates ko bhi 5 cm relaxation milti hai.</div></div></div>
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">Indian Army mein height kitni honi chahiye?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">Indian Army GD ke liye height state/region ke hisaab se vary karti hai. <strong>General: 170 cm (most states)</strong>. Gorkha/NE/Hill states: 160–165 cm. Assam region: 157–162 cm. Female candidates (Officer entry): 152 cm. Tribal areas: region-specific criteria apply. Har unit ya regiment ke hisaab se slight variation possible hai.</div></div></div>
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">Ladkiyon ke liye police mein height criteria kya hai?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">Female candidates ke liye police height criteria: <strong>SSC GD: 157 cm, Delhi Police: 157 cm, CRPF/BSF/CISF: 157 cm, UP Police: 152 cm, MP Police: 152 cm, Bihar Police: 155 cm</strong>. Navy/Coast Guard: 152 cm. State police mein criteria vary karta hai — kuch states mein 150 cm bhi acceptable hai. Hamesha specific state notification check karein.</div></div></div>
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">ST category ko height mein kitna relaxation milta hai?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">ST (Scheduled Tribe) category ke candidates ko majority of central government exams mein <strong>5 cm ki height relaxation</strong> milti hai. Iska matlab — SSC GD mein general 170 cm ki jagah ST candidates ke liye 165 cm sufficient hai. Iske alawa, agar ST candidate hill/tribal area se hai, toh additional relaxation bhi possible hai. OBC category ke liye height mein relaxation generally nahi milti.</div></div></div>
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">Assam aur North East ke candidates ke liye alag height rules hote hain?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">Haan, bilkul. <strong>Assam aur North East candidates ke liye 5 cm ki height relaxation</strong> milti hai SSC GD, CRPF, BSF, CISF aur kuch aur exams mein. Indian Army mein toh NE region ke liye separate height criteria hi hoti hai — generally 157–165 cm depending on state. State domicile certificate ya relevant proof submit karna hota hai is relaxation ke liye.</div></div></div>
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">CRPF aur BSF ke liye height kya honi chahiye?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai"><strong>CRPF:</strong> Male General 165 cm, Female 157 cm. SC/ST: 5 cm relaxation. <strong>BSF:</strong> Male General 170 cm, Female 157 cm. SC/ST: 5 cm, Gorkha/NE/ST area: 5 cm. <strong>CISF:</strong> Male General 170 cm, Female 157 cm. Same relaxation rules. Exact criteria notification mein confirm karein — every recruitment cycle mein slight changes ho sakte hain.</div></div></div>
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">Agar height 1-2 cm se kam reh jaaye toh kya karein?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">Agar height criteria se 1-2 cm kam hai toh: 1) <strong>Category relaxation check karein</strong> — SC/ST candidate hain toh 5 cm relaxation milti hai; 2) <strong>Regional relaxation check karein</strong> — Gorkha/NE/Hill area ke hain toh relaxation milti hai; 3) <strong>Other exams check karein</strong> — Navy, Air Force, RPF, Forest Guard mein lower criteria hoti hai; 4) <strong>State police check karein</strong> — kuch states mein height requirement lower hoti hai. Is tool se other options explore karein.</div></div></div>
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">RPF aur Forest Guard ke liye height kitni chahiye?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai"><strong>RPF (Railway Protection Force) Constable:</strong> Male 165 cm, Female 157 cm. SC/ST: 5 cm relaxation. <strong>Forest Guard:</strong> Male approximately 163 cm, Female 150 cm (state-specific variation hoti hai). Forest Guard criteria state forest department ke hisaab se decide hoti hai — UP, MP, Rajasthan etc. mein alag criteria ho sakti hai. Official state forest department notification zaroor check karein.</div></div></div>
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">Navy aur Air Force mein height criteria SSC GD se alag hai?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">Haan — <strong>Navy aur Air Force mein height criteria SSC GD se kam hoti hai</strong>. Indian Navy Sailor (AA/SSR): 157 cm Male, 152 cm Female. Indian Air Force (Group X/Y Airman): 152.5 cm Male. Indian Coast Guard Navik: 157 cm Male. Inka matlab hai ki jo candidates SSC GD ke liye height se thode kam hain, woh Navy ya Air Force ke liye eligible ho sakte hain. Is tool se check kar sakte hain.</div></div></div>
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">Height measurement mein koi relaxation milti hai ya exact hona chahiye?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">Government exams mein height <strong>exact honi chahiye ya minimum criteria se upar</strong>. Koi "rounding off" nahi hota — agar 170 cm chahiye aur aap 169.9 cm hain toh ineligible maana ja sakta hai. Physical examination mein measuring tape ya medical equipment se accurate measurement hoti hai. <strong>Subah fresh hone par height generally thodi zyada hoti hai</strong> — physical test ke liye subah ka time prefer karein.</div></div></div>
+    </div>
+  </div>
+</section>
+<!-- CONTACT -->
+<section class="contact-sec">
+  <div class="w">
+    <div class="contact-card rev">
+      <h3>💬 Suggestions or Issues?</h3>
+      <p>Agar kisi exam ka height criteria missing lag raha ho ya koi error mile, please contact karein. Hum jaldi update karte hain.</p>
+      <a href="/contact" class="btn-blue">📩 Contact Us</a>
+      <p class="priv-note">🔒 We do not collect or store any personal data. All processing is done locally in your browser.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="w">
+    <div class="cta-in">
+      <div class="pill">Explore More Tools</div>
+      <h2>More Smart Tools for <em>Government Aspirants</em></h2>
+      <p>RajDailyTools pe aur bhi bahut saare free tools hain jo government job aspirants ke daily problems solve karte hain.</p>
+      <div class="cta-btns">
+        <a href="/categories" class="btn-gold">🚀 Explore All Tools</a>
+        <a href="/contact" class="btn-ghost">💡 Suggest a Tool</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-inner">
+    <div class="ft-top">
+      <div class="ft-brand">
+        <div class="logo" style="margin-bottom:4px">
+          <div class="lb"><svg viewBox="0 0 24 24" fill="#fff"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+          <div><div class="ln">Raj<span>Daily</span>Tools</div><div class="ls">Smart Tools for Daily Life</div></div>
+        </div>
+        <p class="ft-desc">India's most ambitious free tools platform. Built by Raj Bhai. Solving daily life problems, one tool at a time.</p>
+        <div class="ft-soc">
+          <a href="https://www.facebook.com/share/1Dq3Y1k7mG/" target="_blank" class="fts">f</a>
+          <a href="https://x.com/Educator4ll" target="_blank" class="fts">𝕏</a>
+          <a href="https://youtube.com/@rajdailytools" target="_blank" class="fts">▶</a>
+          <a href="https://www.instagram.com/rajdailytools" target="_blank" class="fts">📷</a>
+        </div>
+      </div>
+      <div class="fc"><h4>Govt Tools</h4><ul>
+        <li><a href="#">Height Eligibility Checker</a></li>
+        <li><a href="https://rajdailytools.github.io/kv-age-calculator-2026.html">KV Age Calculator</a></li>
+        <li><a href="http://rajdailytools.in/kv-priority-category-checker-2026.html">KV Priority Checker</a></li>
+        <li><a href="http://rajdailytools.in/kv-admission-documents-list-2026.html">KV Documents List</a></li>
+      </ul></div>
+      <div class="fc"><h4>Categories</h4><ul>
+        <li><a href="/education-tools">Education Tools</a></li>
+        <li><a href="/finance-tools">Finance Tools</a></li>
+        <li><a href="/calculator-tools">Calculator Tools</a></li>
+        <li><a href="/health-tools">Health Tools</a></li>
+        <li><a href="/text-tools">Text Tools</a></li>
+      </ul></div>
+      <div class="fc"><h4>Company</h4><ul>
+        <li><a href="/about">About Us</a></li>
+        <li><a href="/contact">Contact</a></li>
+        <li><a href="/privacy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
+      </ul></div>
+    </div>
+    <div class="ft-btm">
+      <p class="ft-cp">Copyright © 2026 <b>RajDailyTools</b>. All rights reserved. Designed by <b>RajDailyTools</b></p>
+      <p class="ft-tag">Made with ❤️ in India — "Solving daily life problems with smart tools"</p>
+    </div>
+  </div>
+</footer>
+<button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+/* Drawer */
+const brg=document.getElementById('brg'),drw=document.getElementById('drw'),dov=document.getElementById('dov');
+function oD(){drw.classList.add('on');dov.classList.add('on');document.body.style.overflow='hidden'}
+function cD(){drw.classList.remove('on');dov.classList.remove('on');document.body.style.overflow=''}
+brg.addEventListener('click',oD);document.getElementById('dx').addEventListener('click',cD);dov.addEventListener('click',cD);
+const btt=document.getElementById('btt');
+window.addEventListener('scroll',()=>btt.classList.toggle('on',scrollY>380),{passive:true});
+const ro=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){const s=[...(e.target.parentElement?.children||[])];e.target.style.transitionDelay=(s.indexOf(e.target)%4)*0.08+'s';e.target.classList.add('in');ro.unobserve(e.target);}});
+},{threshold:0.06,rootMargin:'0px 0px -20px 0px'});
+document.querySelectorAll('.rev').forEach(el=>ro.observe(el));
+document.getElementById('faqList').addEventListener('click',function(e){
+  const q=e.target.closest('.fq-q');if(!q)return;
+  const item=q.closest('.fq'),open=item.classList.contains('open');
+  document.querySelectorAll('.fq.open').forEach(i=>i.classList.remove('open'));
+  if(!open)item.classList.add('open');
+});
+
+/* ══════════════════════════════════════
+   HEIGHT CHECKER LOGIC
+══════════════════════════════════════ */
+function getR(name){const el=document.querySelector(`input[name="${name}"]:checked`);return el?el.value:'male'}
+
+/* EXAM DATABASE — [name, maleReq_gen, femaleReq_gen, sc_relax, st_relax, region_relax, category, icon] */
+/* relax values are cm to subtract */
+const EXAMS=[
+  /* name, male_gen, female_gen, sc_rel, region_rel, icon */
+  {n:'SSC GD Constable',m:170,f:157,sc:5,st:5,rr:5,ico:'🎖️',desc:'Paramilitary / Central Govt'},
+  {n:'Indian Army GD / Soldier',m:170,f:152,sc:0,st:0,rr:10,ico:'🪖',desc:'Defence — region heavily varies'},
+  {n:'Indian Navy — Sailor AA/SSR',m:157,f:152,sc:0,st:0,rr:0,ico:'⚓',desc:'Defence Navy'},
+  {n:'Indian Air Force — Airman Gp X/Y',m:152,f:152,sc:0,st:0,rr:0,ico:'✈️',desc:'Defence Air Force'},
+  {n:'Indian Coast Guard — Navik',m:157,f:152,sc:0,st:0,rr:0,ico:'🚢',desc:'Defence Coast Guard'},
+  {n:'NDA / CDS — Officer Entry',m:157,f:152,sc:0,st:0,rr:0,ico:'⭐',desc:'Defence Officer'},
+  {n:'CRPF Constable',m:165,f:157,sc:5,st:5,rr:5,ico:'🛡️',desc:'Paramilitary CRPF'},
+  {n:'BSF — Border Security Force',m:170,f:157,sc:5,st:5,rr:5,ico:'🛡️',desc:'Paramilitary BSF'},
+  {n:'CISF Constable',m:170,f:157,sc:5,st:5,rr:5,ico:'🛡️',desc:'Paramilitary CISF'},
+  {n:'ITBP Constable',m:167,f:157,sc:5,st:5,rr:5,ico:'🏔️',desc:'Paramilitary ITBP'},
+  {n:'SSB (Sashastra Seema Bal)',m:167,f:157,sc:5,st:5,rr:5,ico:'🛡️',desc:'Paramilitary SSB'},
+  {n:'CAPF ASI / Head Constable',m:165,f:157,sc:5,st:5,rr:5,ico:'🎖️',desc:'CAPF Forces'},
+  {n:'RPF Constable (Railway)',m:165,f:157,sc:5,st:5,rr:0,ico:'🚂',desc:'Railway Protection Force'},
+  {n:'Delhi Police Constable',m:170,f:157,sc:5,st:5,rr:0,ico:'👮',desc:'State Police Delhi'},
+  {n:'UP Police Constable',m:168,f:152,sc:5,st:5,rr:0,ico:'👮',desc:'State Police UP'},
+  {n:'Bihar Police Constable',m:165,f:155,sc:3,st:5,rr:0,ico:'👮',desc:'State Police Bihar'},
+  {n:'MP Police Constable',m:167,f:152,sc:5,st:5,rr:0,ico:'👮',desc:'State Police MP'},
+  {n:'Rajasthan Police Constable',m:168,f:152,sc:5,st:5,rr:0,ico:'👮',desc:'State Police Rajasthan'},
+  {n:'Forest Guard / Van Rakshak',m:163,f:150,sc:5,st:5,rr:3,ico:'🌲',desc:'Forest Department'},
+  {n:'Excise / Home Guard',m:160,f:148,sc:3,st:5,rr:0,ico:'🏛️',desc:'State Services'},
+  {n:'Haryana Police Constable',m:170,f:158,sc:5,st:5,rr:0,ico:'👮',desc:'State Police Haryana'},
+  {n:'Punjab Police Constable',m:165,f:155,sc:5,st:5,rr:0,ico:'👮',desc:'State Police Punjab'},
+  {n:'Maharashtra Police Constable',m:165,f:155,sc:5,st:5,rr:0,ico:'👮',desc:'State Police Maharashtra'},
+];
+
+function checkHeight(){
+  const gender=getR('gender');
+  const heightVal=parseFloat(document.getElementById('height').value);
+  const cat=document.getElementById('category').value;
+  const region=document.getElementById('region').value;
+
+  if(!heightVal||heightVal<100||heightVal>250){alert('Please enter a valid height between 100 and 250 cm.');return}
+
+  const isM=gender==='male';
+  let eligible=[],near=[],notElig=[];
+
+  EXAMS.forEach(ex=>{
+    let req=isM?ex.m:ex.f;
+    // Apply relaxation
+    if(cat==='sc')req-=ex.sc;
+    if(cat==='st')req-=ex.st;
+    if(region!=='general')req-=ex.rr;
+    req=Math.max(req,130); // floor
+    const diff=heightVal-req;
+    const entry={...ex,req,diff,height:heightVal};
+    if(diff>=0)eligible.push(entry);
+    else if(diff>=-4)near.push(entry);
+    else notElig.push(entry);
+  });
+
+  /* Stats */
+  document.getElementById('statsRow').innerHTML=`
+    <div class="stat-box eligible"><div class="stat-num g">${eligible.length}</div><div class="stat-lbl">✅ Eligible Exams</div></div>
+    <div class="stat-box near"><div class="stat-num a">${near.length}</div><div class="stat-lbl">⚠️ Very Close (≤4cm)</div></div>
+    <div class="stat-box notelig"><div class="stat-num r">${notElig.length}</div><div class="stat-lbl">❌ Not Eligible</div></div>
+  `;
+
+  /* Visual bars — show top 8 eligible + all near */
+  const vizItems=[...eligible.slice(0,5),...near.slice(0,4)];
+  const maxH=Math.max(...vizItems.map(e=>e.req),heightVal)+10;
+  document.getElementById('hvBars').innerHTML=vizItems.map(e=>{
+    const pct=Math.min((e.req/maxH)*100,100).toFixed(1);
+    const myPct=Math.min((heightVal/maxH)*100,100).toFixed(1);
+    const ok=e.diff>=0;
+    return `
+      <div class="hv-bar-row">
+        <div class="hv-exam-name">${e.ico} ${e.n.split(' ')[0]}${e.n.split(' ')[1]?' '+e.n.split(' ')[1]:''}</div>
+        <div class="hv-bar-track">
+          <div class="hv-bar-fill ${ok?'ok':'no'}" style="width:${pct}%">${e.req}cm</div>
+          <div style="position:absolute;top:0;bottom:0;left:${myPct}%;width:2px;background:rgba(0,0,0,.25)"></div>
+        </div>
+        <div class="hv-bar-status ${ok?'ok':'no'}">${ok?'✅':Math.abs(e.diff)+'cm short'}</div>
+      </div>
+    `;
+  }).join('');
+
+  /* Exam cards */
+  function makeCards(arr,title,cls){
+    if(!arr.length)return'';
+    const cards=arr.map((e,i)=>`
+      <div class="exam-card" style="animation-delay:${i*0.05}s">
+        <div class="ec-top">
+          <div class="ec-name">${e.ico} ${e.n}</div>
+          <div class="ec-badge ${e.diff>=0?'ok':e.diff>=-4?'close':'no'}">${e.diff>=0?'✅ Eligible':e.diff>=-4?'⚠️ Very Close':'❌ Not Eligible'}</div>
+        </div>
+        <div class="ec-detail">Required: <strong>${e.req} cm</strong> &nbsp;·&nbsp; Your height: <strong>${heightVal} cm</strong></div>
+        <div class="ec-gap" style="color:${e.diff>=0?'var(--green)':e.diff>=-4?'var(--amber)':'var(--red)'}">${e.diff>=0?'+'+e.diff+' cm above requirement':Math.abs(e.diff)+' cm below requirement'}</div>
+        <div class="ec-detail" style="font-size:11px">${e.desc}</div>
+      </div>
+    `).join('');
+    return`<div class="exam-section"><div class="es-title ${cls}">${title} (${arr.length} exams)</div><div class="exam-grid">${cards}</div></div>`;
+  }
+
+  document.getElementById('eligSection').innerHTML=makeCards(eligible,'✅ Eligible Exams','elig');
+  document.getElementById('nearSection').innerHTML=near.length?makeCards(near,'⚠️ Very Close — Within 4 cm','near'):'';
+  document.getElementById('notEligSection').innerHTML=notElig.length?makeCards(notElig,'❌ Not Eligible Currently','noelig'):'';
+
+  const ra=document.getElementById('resultArea');
+  ra.style.display='block';
+  ra.style.animation='none';ra.offsetHeight;
+  ra.style.animation='resultIn .45s var(--ease) both';
+  setTimeout(()=>ra.scrollIntoView({behavior:'smooth',block:'nearest'}),120);
+}
+</script>
+</body>
+</html>
