@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Army Eligibility Checker 2026 – Agniveer GD, Clerk, Technical & Tradesman Eligibility | RajDailyTools</title>
+<meta name="description" content="Check Indian Army eligibility for 2026 including Agniveer GD, Clerk, Technical, Tradesman. Enter age, height, category, and region (Assam, Gorkha, North East) to get instant results.">
+<meta name="keywords" content="army eligibility checker 2026, agniveer gd eligibility, army clerk eligibility, agniveer technical, army height criteria, army age limit 2026">
+<meta name="robots" content="index, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ══════════════════════════════════════
+   DESIGN TOKENS
+══════════════════════════════════════ */
+:root{
+  --blue:#2563eb;--blue-d:#1d4ed8;--blue-xl:#eff6ff;--blue-s:#dbeafe;
+  --amber:#f59e0b;--green:#10b981;--red:#ef4444;--purple:#8b5cf6;
+  --teal:#14b8a6;--orange:#f97316;
+  --green-xl:#f0fdf4;--green-s:#bbf7d0;
+  --red-xl:#fef2f2;--red-s:#fecaca;
+  --amber-xl:#fffbeb;--amber-s:#fde68a;
+  --purple-xl:#faf5ff;--purple-s:#ddd6fe;
+  --ink:#0f172a;--ink2:#334155;--ink3:#64748b;--ink4:#94a3b8;
+  --line:#e2e8f0;--surf:#f8fafc;--white:#fff;
+  --s1:0 1px 3px rgba(15,23,42,.06),0 1px 2px rgba(15,23,42,.04);
+  --s2:0 4px 16px rgba(15,23,42,.08),0 2px 6px rgba(15,23,42,.04);
+  --s3:0 12px 40px rgba(15,23,42,.11),0 3px 10px rgba(15,23,42,.06);
+  --s4:0 24px 64px rgba(15,23,42,.13),0 6px 20px rgba(15,23,42,.07);
+  --sb:0 8px 32px rgba(37,99,235,.20);
+  --fd:'Sora',sans-serif;--fb:'DM Sans',sans-serif;
+  --ease:cubic-bezier(.4,0,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);color:var(--ink);background:var(--white);overflow-x:hidden;-webkit-font-smoothing:antialiased;line-height:1.6}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+button{cursor:pointer;border:none;background:none;font-family:var(--fb)}
+.w{max-width:1180px;margin:0 auto;padding:0 24px}
+.wa{max-width:880px;margin:0 auto;padding:0 24px}
+select,input{appearance:none;-webkit-appearance:none}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+@keyframes resultIn{from{opacity:0;transform:translateY(18px) scale(.97)}to{opacity:1;transform:none}}
+@keyframes cardIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@keyframes shimmer{0%,100%{opacity:.6}50%{opacity:1}}
+.rev{opacity:0;transform:translateY(22px);transition:opacity .55s var(--ease),transform .55s var(--ease)}
+.rev.in{opacity:1;transform:none}
+
+/* ══ HEADER ══ */
+.hdr{position:sticky;top:0;z-index:999;background:rgba(255,255,255,.96);backdrop-filter:blur(20px);border-bottom:1px solid var(--line);box-shadow:var(--s1)}
+.hdi{display:flex;align-items:center;justify-content:space-between;height:66px}
+.logo{display:flex;align-items:center;gap:10px}
+.lb{width:36px;height:36px;background:var(--blue);border-radius:9px;display:flex;align-items:center;justify-content:center;box-shadow:var(--sb);flex-shrink:0}
+.lb svg{width:18px;height:18px;fill:#fff}
+.ln{font-family:var(--fd);font-size:19px;font-weight:800;color:var(--ink);line-height:1}
+.ln span{color:var(--blue)}
+.ls{font-size:10px;color:var(--ink4);letter-spacing:.04em}
+nav.dn{display:flex;align-items:center;gap:2px}
+nav.dn a{font-size:13.5px;font-weight:500;color:var(--ink2);padding:7px 13px;border-radius:8px;transition:.2s}
+nav.dn a:hover{color:var(--blue);background:var(--blue-xl)}
+.hcta{background:var(--blue);color:#fff;font-family:var(--fd);font-weight:600;font-size:13px;padding:8px 18px;border-radius:8px;box-shadow:var(--sb);transition:.2s}
+.hcta:hover{background:var(--blue-d);transform:translateY(-1px)}
+.brg{display:none;flex-direction:column;gap:4.5px;padding:8px;border-radius:8px}
+.brg span{display:block;width:20px;height:2px;background:var(--ink);border-radius:2px;transition:.28s}
+.dov{display:none;position:fixed;inset:0;background:rgba(15,23,42,.45);z-index:1040;backdrop-filter:blur(3px)}
+.dov.on{display:block}
+.drw{position:fixed;top:0;right:-100%;width:270px;height:100vh;background:#fff;z-index:1050;padding:22px;box-shadow:var(--s4);transition:right .32s var(--ease);overflow-y:auto}
+.drw.on{right:0}
+.dh{display:flex;align-items:center;justify-content:space-between;margin-bottom:26px}
+.dx{width:33px;height:33px;border-radius:7px;background:var(--surf);display:flex;align-items:center;justify-content:center;color:var(--ink3);font-size:17px}
+nav.mn{display:flex;flex-direction:column;gap:3px}
+nav.mn a{display:block;font-size:14px;font-weight:500;color:var(--ink2);padding:11px 13px;border-radius:8px;transition:.2s}
+nav.mn a:hover{color:var(--blue);background:var(--blue-xl)}
+
+/* ══ HERO ══ */
+.hero{position:relative;overflow:hidden;background:linear-gradient(150deg,#ebf4ff 0%,#fff 46%,#fdf8f0 100%);padding:64px 0 72px}
+.hero::before{content:'';position:absolute;top:-140px;right:-180px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(37,99,235,.08) 0%,transparent 68%);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-80px;left:-100px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(16,185,129,.05) 0%,transparent 68%);pointer-events:none}
+.blob{position:absolute;border-radius:50%;pointer-events:none;animation:float 6s ease-in-out infinite}
+.b1{width:13px;height:13px;background:rgba(37,99,235,.18);top:22%;right:14%;animation-delay:0s}
+.b2{width:9px;height:9px;background:rgba(245,158,11,.22);top:58%;right:26%;animation-delay:2.2s}
+.b3{width:11px;height:11px;background:rgba(16,185,129,.18);top:36%;right:6%;animation-delay:4s}
+.bc{display:flex;align-items:center;gap:7px;font-size:12.5px;color:var(--ink3);margin-bottom:22px;position:relative;z-index:1;flex-wrap:wrap}
+.bc a{color:var(--blue);font-weight:600}
+.pill{display:inline-flex;align-items:center;gap:7px;font-family:var(--fd);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);background:var(--blue-xl);padding:5px 14px;border-radius:100px;margin-bottom:18px}
+.pill::before{content:'';width:6px;height:6px;background:var(--blue);border-radius:50%}
+.hero-inner{position:relative;z-index:1;max-width:740px;animation:fadeUp .5s ease both}
+.hero h1{font-family:var(--fd);font-size:clamp(25px,4.5vw,50px);font-weight:800;line-height:1.1;color:var(--ink);margin-bottom:14px}
+.hero h1 span{color:var(--blue)}
+.hero-sub{font-size:16px;color:var(--ink3);line-height:1.8;margin-bottom:22px;max-width:600px}
+.hero-chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.chip{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;padding:6px 14px;border-radius:100px;background:#fff;border:1.5px solid var(--line);color:var(--ink2);box-shadow:var(--s1);transition:.22s}
+.chip:hover{border-color:var(--blue);color:var(--blue);transform:translateY(-1px)}
+.hero-meta{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:24px}
+.upd{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:700;color:var(--blue);background:var(--blue-xl);padding:6px 14px;border-radius:100px;border:1.5px solid var(--blue-s)}
+.mi{font-size:13px;color:var(--ink3);font-weight:500}
+
+/* Top promo boxes */
+.top-promos{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:22px;position:relative;z-index:1}
+.tp{border-radius:14px;padding:14px 18px;display:flex;align-items:center;gap:13px;transition:.22s;text-decoration:none}
+.tp:hover{transform:translateY(-2px);box-shadow:var(--s3)}
+.tp.blue{background:linear-gradient(135deg,var(--blue-xl),#dbeafe);border:1.5px solid var(--blue-s)}
+.tp.green{background:linear-gradient(135deg,var(--green-xl),#dcfce7);border:1.5px solid var(--green-s)}
+.tp-ico{font-size:24px;flex-shrink:0}
+.tp-txt h4{font-family:var(--fd);font-size:13px;font-weight:800;color:var(--ink);margin-bottom:3px}
+.tp-txt p{font-size:11.5px;color:var(--ink3);line-height:1.5}
+.tp-arr{font-size:18px;color:var(--ink4);margin-left:auto;flex-shrink:0}
+.tp:hover .tp-arr{color:var(--blue)}
+
+/* how to use */
+.howto{background:var(--amber-xl);border:2px solid var(--amber-s);border-radius:16px;padding:22px 26px;max-width:560px;margin-bottom:24px}
+.howto-ttl{display:flex;align-items:center;gap:9px;font-family:var(--fd);font-size:15px;font-weight:800;color:var(--ink);margin-bottom:13px}
+.howto-steps{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.hs{display:flex;align-items:flex-start;gap:10px;font-size:13.5px;color:var(--ink2);line-height:1.6}
+.sn{width:24px;height:24px;background:var(--amber);color:#fff;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex-shrink:0;margin-top:1px}
+
+/* related tools row */
+.rel-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;position:relative;z-index:1}
+.rg-box{border-radius:14px;padding:14px 14px 12px;display:flex;flex-direction:column;gap:8px;transition:.22s;border:1.5px solid}
+.rg-box:hover{transform:translateY(-3px);box-shadow:var(--s3)}
+.rg-box.ht{background:linear-gradient(135deg,var(--green-xl),#dcfce7);border-color:var(--green-s)}
+.rg-box.mp{background:linear-gradient(135deg,#fff7ed,#fed7aa33);border-color:#fed7aa}
+.rg-box.ssc{background:linear-gradient(135deg,var(--amber-xl),#fef3c7);border-color:var(--amber-s)}
+.rg-ico{font-size:22px}
+.rg-txt h4{font-family:var(--fd);font-size:12px;font-weight:800;color:var(--ink);margin-bottom:2px}
+.rg-txt p{font-size:11px;color:var(--ink3);line-height:1.5}
+.btn-xs{display:inline-flex;align-items:center;gap:4px;font-family:var(--fd);font-weight:700;font-size:11px;padding:5px 10px;border-radius:7px;transition:.22s;margin-top:4px}
+.btn-xs.g{background:var(--green);color:#fff}.btn-xs.g:hover{background:#059669}
+.btn-xs.o{background:var(--orange);color:#fff}.btn-xs.o:hover{background:#ea580c}
+.btn-xs.a{background:var(--amber);color:#fff}.btn-xs.a:hover{background:#d97706}
+
+/* ══ TOOL ══ */
+.tool-sec{background:var(--surf);padding:80px 0}
+.tool-wrap{max-width:920px;margin:0 auto}
+.tool-card{background:#fff;border:1.5px solid var(--line);border-radius:28px;overflow:hidden;box-shadow:var(--s4)}
+.tool-hdr{background:linear-gradient(135deg,#1d4ed8 0%,#2563eb 50%,#1e40af 100%);padding:32px 40px;position:relative;overflow:hidden}
+.tool-hdr::before{content:'';position:absolute;top:-60px;right:-60px;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,.07)}
+.tool-hdr::after{content:'';position:absolute;bottom:-40px;left:-40px;width:180px;height:180px;border-radius:50%;background:rgba(255,255,255,.04)}
+/* animated stars */
+.stars{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.star{position:absolute;width:2px;height:2px;background:#fff;border-radius:50%;animation:shimmer 2s ease-in-out infinite}
+.th{position:relative;z-index:1}
+.th h2{font-family:var(--fd);font-size:21px;font-weight:800;color:#fff;margin-bottom:6px}
+.th p{font-size:14px;color:rgba(255,255,255,.82);line-height:1.65}
+.th-badges{display:flex;flex-wrap:wrap;gap:9px;margin-top:14px}
+.thb{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:rgba(255,255,255,.9);background:rgba(255,255,255,.13);padding:5px 12px;border-radius:100px}
+.tool-body{padding:36px 40px}
+
+/* form */
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+.fgrid3{grid-template-columns:1fr 1fr 1fr}
+.fld{display:flex;flex-direction:column;gap:7px}
+.flbl{font-size:13px;font-weight:700;color:var(--ink2)}
+.flbl span{font-size:11px;font-weight:500;color:var(--ink4);margin-left:5px;background:var(--surf);padding:2px 7px;border-radius:5px;border:1px solid var(--line)}
+.finp,.fsel{padding:12px 16px;font-size:14.5px;color:var(--ink);background:#fff;border:1.5px solid var(--line);border-radius:10px;outline:none;transition:.22s;font-family:var(--fb);width:100%}
+.finp:focus,.fsel:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(37,99,235,.10)}
+.fsel{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2364748b' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:40px}
+.hw{display:flex}
+.hw .finp{border-radius:10px 0 0 10px;border-right:none;flex:1}
+.hw-unit{background:var(--surf);border:1.5px solid var(--line);border-left:none;border-radius:0 10px 10px 0;padding:12px 16px;font-size:14px;font-weight:600;color:var(--ink3)}
+.ro-row{display:flex;gap:8px;flex-wrap:wrap}
+.ro{position:relative}
+.ro input{position:absolute;opacity:0;width:0;height:0}
+.ro label{display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:600;color:var(--ink2);padding:10px 18px;border-radius:9px;border:1.5px solid var(--line);background:#fff;cursor:pointer;transition:.22s}
+.ro input:checked+label{border-color:var(--blue);background:var(--blue-xl);color:var(--blue)}
+.ro label:hover{border-color:var(--blue-s);background:var(--blue-xl)}
+.hint-box{display:flex;align-items:flex-start;gap:9px;font-size:13px;color:var(--ink2);background:var(--blue-xl);border:1.5px solid var(--blue-s);border-radius:10px;padding:11px 14px;margin:16px 0;line-height:1.65}
+.hint-box svg{width:16px;height:16px;stroke:var(--blue);fill:none;stroke-width:2;flex-shrink:0;margin-top:2px}
+.chk-btn{width:100%;padding:17px;background:linear-gradient(135deg,var(--blue) 0%,#1e40af 100%);color:#fff;font-family:var(--fd);font-weight:800;font-size:16px;border-radius:12px;box-shadow:var(--sb);transition:all .25s var(--ease);display:flex;align-items:center;justify-content:center;gap:10px}
+.chk-btn:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(37,99,235,.32)}
+.chk-btn:active{transform:translateY(0)}
+
+/* ══ RESULT ══ */
+#resultArea{display:none;margin-top:28px;animation:resultIn .45s var(--ease) both}
+
+/* best role highlight */
+.best-role{background:linear-gradient(135deg,#0f172a,#1e3a8a);border-radius:16px;padding:22px 26px;margin-bottom:20px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;position:relative;overflow:hidden}
+.best-role::before{content:'';position:absolute;top:-50px;right:-50px;width:180px;height:180px;border-radius:50%;background:rgba(255,255,255,.05)}
+.br-left{display:flex;flex-direction:column;gap:4px;z-index:1}
+.br-tag{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#93c5fd;background:rgba(255,255,255,.1);padding:3px 10px;border-radius:100px;display:inline-flex;width:fit-content}
+.br-role{font-family:var(--fd);font-size:22px;font-weight:800;color:#fff;line-height:1.1}
+.br-sub{font-size:13.5px;color:rgba(255,255,255,.72)}
+.br-right{z-index:1;margin-left:auto}
+.br-badge{background:var(--green);color:#fff;font-family:var(--fd);font-weight:800;font-size:14px;padding:10px 20px;border-radius:100px;display:flex;align-items:center;gap:7px}
+
+/* stats row */
+.stats-row{display:grid;grid-template-columns:repeat(3,1fr);gap:13px;margin-bottom:20px}
+.stat-b{border-radius:13px;padding:16px 14px;text-align:center}
+.stat-b.eligible{background:var(--green-xl);border:1.5px solid var(--green-s)}
+.stat-b.not{background:var(--red-xl);border:1.5px solid var(--red-s)}
+.stat-b.near{background:var(--amber-xl);border:1.5px solid var(--amber-s)}
+.stat-num{font-family:var(--fd);font-size:28px;font-weight:800;line-height:1}
+.stat-num.g{color:var(--green)}.stat-num.r{color:var(--red)}.stat-num.a{color:var(--amber)}
+.stat-lbl{font-size:12.5px;color:var(--ink3);font-weight:600;margin-top:3px}
+
+/* role cards grid */
+.roles-title{font-family:var(--fd);font-size:15px;font-weight:800;color:var(--ink);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.roles-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px}
+.role-card{border-radius:14px;padding:16px 18px;border:1.5px solid;animation:cardIn .35s var(--ease) both;transition:transform .22s,box-shadow .22s}
+.role-card:hover{transform:translateY(-2px);box-shadow:var(--s2)}
+.role-card.elig{background:var(--green-xl);border-color:var(--green-s)}
+.role-card.notelig{background:var(--red-xl);border-color:var(--red-s)}
+.rc-top{display:flex;align-items:flex-start;justify-content:space-between;gap:8px;margin-bottom:10px}
+.rc-name{font-family:var(--fd);font-size:14.5px;font-weight:800;color:var(--ink)}
+.rc-badge{font-size:11.5px;font-weight:700;padding:3px 10px;border-radius:100px;flex-shrink:0}
+.rc-badge.e{background:var(--green);color:#fff}
+.rc-badge.n{background:var(--red);color:#fff}
+.rc-row{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:4px}
+.rc-item{font-size:12px;color:var(--ink3);display:flex;align-items:center;gap:4px}
+.rc-item strong{color:var(--ink2);font-weight:700}
+.rc-reason{font-size:12px;color:var(--ink3);font-style:italic;margin-top:5px;line-height:1.6}
+
+/* suggestion box */
+.sugg-box{background:var(--blue-xl);border:1.5px solid var(--blue-s);border-radius:13px;padding:16px 18px;font-size:14px;color:var(--ink2);line-height:1.78}
+.warn-box{background:var(--amber-xl);border:1.5px solid var(--amber-s);border-radius:12px;padding:14px 18px;display:flex;gap:10px;font-size:13.5px;color:var(--ink2);line-height:1.7;margin-top:14px}
+
+/* ══ TABLE ══ */
+.tbl-sec{background:#fff;padding:72px 0}
+.tbl-wr{overflow-x:auto;margin-bottom:24px}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+thead th{background:linear-gradient(135deg,var(--blue) 0%,#1e40af 100%);color:#fff;padding:14px 16px;text-align:left;font-family:var(--fd);font-size:13px;font-weight:700;letter-spacing:.03em}
+tbody tr{border-bottom:1px solid var(--line);transition:.2s}
+tbody tr:hover{background:var(--blue-xl)}
+tbody td{padding:12px 16px;color:var(--ink2);vertical-align:middle}
+.tbadge{display:inline-flex;font-size:11px;font-weight:700;padding:3px 8px;border-radius:100px}
+.tbadge.g{background:var(--green-xl);color:var(--green);border:1px solid var(--green-s)}
+.tbadge.b{background:var(--blue-xl);color:var(--blue);border:1px solid var(--blue-s)}
+.tbadge.a{background:var(--amber-xl);color:#92400e;border:1px solid var(--amber-s)}
+
+/* ══ STORY ══ */
+.story-sec{background:var(--surf);padding:72px 0}
+.story-card{background:#fff;border:1.5px solid var(--line);border-radius:24px;padding:40px;box-shadow:var(--s3);position:relative;overflow:hidden}
+.story-card::before{content:'';position:absolute;top:0;left:0;bottom:0;width:5px;background:linear-gradient(180deg,var(--blue) 0%,var(--green) 100%);border-radius:5px 0 0 5px}
+.sq{font-size:54px;color:var(--blue-s);font-family:Georgia,serif;line-height:1;padding-left:8px}
+.sb{font-size:15.5px;color:var(--ink2);line-height:1.9;padding:0 8px}
+.sauth{display:flex;align-items:center;gap:14px;margin-top:22px;padding-top:20px;border-top:1px solid var(--line)}
+.savt{width:48px;height:48px;background:var(--blue);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+.sname{font-family:var(--fd);font-size:15px;font-weight:700;color:var(--ink)}
+.srole{font-size:12.5px;color:var(--ink3)}
+.founder-msg{background:linear-gradient(135deg,var(--blue-xl),var(--blue-s));border:1.5px solid var(--blue-s);border-radius:14px;padding:20px 22px;margin-top:20px;display:flex;gap:13px}
+.fm-ico{font-size:26px;flex-shrink:0}
+.fm-txt{font-size:14px;color:var(--ink2);line-height:1.75;font-style:italic}
+.fm-txt strong{color:var(--ink);font-weight:700;font-style:normal}
+
+  /* ══ GUIDE ══ */
+.guide-sec{background:#fff;padding:72px 0}
+.guide-body h2{font-family:var(--fd);font-size:21px;font-weight:800;color:var(--ink);margin:28px 0 11px;line-height:1.3}
+.guide-body h2:first-child{margin-top:0}
+.guide-body p{font-size:15px;color:var(--ink3);line-height:1.85;margin-bottom:14px}
+.guide-body ul{display:flex;flex-direction:column;gap:8px;margin:12px 0 16px}
+.guide-body li{display:flex;align-items:flex-start;gap:10px;font-size:14.5px;color:var(--ink3);line-height:1.7}
+.guide-body li::before{content:'✓';width:18px;height:18px;background:var(--blue);color:#fff;border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;flex-shrink:0;margin-top:3px}
+.guide-body strong{color:var(--ink2);font-weight:700}
+.guide-body a{color:var(--blue);font-weight:600}
+.ibox{background:var(--blue-xl);border:1.5px solid var(--blue-s);border-radius:13px;padding:15px 18px;margin:16px 0;display:flex;gap:11px;font-size:14px;color:var(--ink2);line-height:1.7}
+.ibox svg{width:17px;height:17px;stroke:var(--blue);fill:none;stroke-width:2;flex-shrink:0;margin-top:2px}
+.ibox.g{background:var(--green-xl);border-color:var(--green-s)}
+.ibox.g svg{stroke:var(--green)}
+.ibox.a{background:var(--amber-xl);border-color:var(--amber-s)}
+.ibox.a svg{stroke:var(--amber)}
+/* entry type cards */
+.entries-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:14px 0}
+.entry-card{background:var(--surf);border:1.5px solid var(--line);border-radius:13px;padding:18px 16px;text-align:center;transition:.22s}
+.entry-card:hover{transform:translateY(-3px);box-shadow:var(--s2);border-color:var(--blue-s)}
+.ec-ico{font-size:28px;margin-bottom:8px}
+.ec-title{font-family:var(--fd);font-size:13.5px;font-weight:700;color:var(--ink);margin-bottom:4px}
+.ec-val{font-size:12.5px;color:var(--ink3);line-height:1.6}
+/* region cards */
+.region-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:13px;margin:14px 0}
+.reg-card{border-radius:12px;padding:16px;border:1.5px solid}
+.reg-card.b{background:var(--blue-xl);border-color:var(--blue-s)}
+.reg-card.g{background:var(--green-xl);border-color:var(--green-s)}
+.reg-card.a{background:var(--amber-xl);border-color:var(--amber-s)}
+.reg-card.p{background:var(--purple-xl);border-color:var(--purple-s)}
+.reg-title{font-family:var(--fd);font-size:13.5px;font-weight:700;color:var(--ink);margin-bottom:5px;display:flex;align-items:center;gap:7px}
+.reg-desc{font-size:13px;color:var(--ink3);line-height:1.65}
+
+/* ══ FAQ ══ */
+.faq-sec{background:var(--surf);padding:72px 0}
+.fql{max-width:780px;margin:0 auto}
+.fq{background:#fff;border:1.5px solid var(--line);border-radius:13px;margin-bottom:10px;overflow:hidden}
+.fq-q{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;cursor:pointer;gap:14px;transition:.2s}
+.fq-q:hover{background:var(--blue-xl)}
+.fq-t{font-weight:600;font-size:15px;color:var(--ink);line-height:1.4}
+.fq-i{width:28px;height:28px;border-radius:50%;background:var(--blue-xl);color:var(--blue);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;transition:transform .28s,background .2s}
+.fq.open .fq-i{transform:rotate(45deg);background:var(--blue);color:#fff}
+.fq-a{max-height:0;overflow:hidden;transition:max-height .35s var(--ease)}
+.fq-ai{padding:0 22px 18px;font-size:14.5px;color:var(--ink3);line-height:1.78}
+.fq.open .fq-a{max-height:400px}
+
+/* ══ DISC ══ */
+.disc{background:var(--amber-xl);border-top:1px solid var(--amber-s);border-bottom:1px solid var(--amber-s);padding:15px 0}
+.disc-in{display:flex;align-items:flex-start;gap:12px;font-size:13.5px;color:var(--ink2);line-height:1.7}
+
+/* ══ CONTACT ══ */
+.contact-sec{background:#fff;padding:60px 0}
+.contact-card{max-width:580px;margin:0 auto;background:var(--surf);border:1.5px solid var(--line);border-radius:20px;padding:32px;text-align:center;box-shadow:var(--s2)}
+.contact-card h3{font-family:var(--fd);font-size:19px;font-weight:800;color:var(--ink);margin-bottom:10px}
+.contact-card p{font-size:15px;color:var(--ink3);line-height:1.75;margin-bottom:20px}
+.btn-bl{display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:#fff;font-family:var(--fd);font-weight:700;font-size:14.5px;padding:12px 26px;border-radius:8px;box-shadow:var(--sb);transition:.22s}
+.btn-bl:hover{background:var(--blue-d);transform:translateY(-1px)}
+.priv-note{font-size:12px;color:var(--ink4);margin-top:14px}
+
+/* ══ CTA ══ */
+.cta{background:linear-gradient(140deg,#0f172a 0%,#1e3a8a 100%);padding:80px 0;text-align:center;position:relative;overflow:hidden}
+.cta::before{content:'';position:absolute;top:-80px;left:50%;transform:translateX(-50%);width:800px;height:380px;background:radial-gradient(ellipse,rgba(37,99,235,.22) 0%,transparent 68%);pointer-events:none}
+.cta-in{position:relative;z-index:1}
+.cta .pill{color:#93c5fd;background:rgba(255,255,255,.1);margin-bottom:18px}
+.cta .pill::before{background:#93c5fd}
+.cta h2{font-family:var(--fd);font-size:clamp(24px,4vw,42px);font-weight:800;color:#fff;line-height:1.15;margin-bottom:12px}
+.cta h2 em{color:#fbbf24;font-style:normal}
+.cta p{font-size:16px;color:rgba(255,255,255,.72);max-width:480px;margin:0 auto 32px;line-height:1.78}
+.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn-gold{display:inline-flex;align-items:center;gap:8px;background:var(--amber);color:#fff;font-family:var(--fd);font-weight:800;font-size:15px;padding:14px 30px;border-radius:8px;box-shadow:0 8px 28px rgba(245,158,11,.35);transition:.22s}
+.btn-gold:hover{background:#d97706;transform:translateY(-3px)}
+.btn-ghost{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.09);border:1.5px solid rgba(255,255,255,.22);color:#fff;font-family:var(--fd);font-weight:600;font-size:14px;padding:13px 26px;border-radius:8px;transition:.2s}
+.btn-ghost:hover{background:rgba(255,255,255,.16)}
+
+/* ══ FOOTER ══ */
+footer{background:#0f172a;padding:52px 0 0}
+.ft-inner{max-width:1180px;margin:0 auto;padding:0 24px}
+.ft-top{display:grid;grid-template-columns:1.9fr 1fr 1fr 1fr;gap:44px;margin-bottom:44px}
+.ft-brand .ln{color:#fff}.ft-brand .ls{color:#475569}
+.ft-desc{font-size:13.5px;color:#64748b;line-height:1.78;max-width:265px;margin:13px 0 20px}
+.ft-soc{display:flex;gap:9px}
+.fts{width:34px;height:34px;border-radius:7px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;color:#94a3b8;font-size:13px;transition:.2s}
+.fts:hover{background:var(--blue);color:#fff}
+.fc h4{font-family:var(--fd);font-size:12px;font-weight:700;color:#fff;margin-bottom:14px;letter-spacing:.06em;text-transform:uppercase}
+.fc ul{display:flex;flex-direction:column;gap:8px}
+.fc ul a{font-size:13.5px;color:#64748b;transition:.18s}
+.fc ul a:hover{color:#93c5fd}
+.ft-btm{border-top:1px solid rgba(255,255,255,.07);padding:20px 0;text-align:center}
+.ft-cp{font-size:12.5px;color:#475569}
+.ft-cp b{color:#64748b}
+.ft-tag{font-size:12px;color:#334155;margin-top:4px;font-style:italic}
+.btt{position:fixed;bottom:26px;right:26px;z-index:500;width:43px;height:43px;background:var(--blue);color:#fff;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:17px;box-shadow:var(--sb);opacity:0;pointer-events:none;transform:translateY(14px);transition:.28s var(--ease)}
+.btt.on{opacity:1;pointer-events:auto;transform:translateY(0)}
+.btt:hover{transform:translateY(-3px)}
+
+/* RESPONSIVE */
+@media(max-width:1060px){.ft-top{grid-template-columns:1fr 1fr}.rel-grid{grid-template-columns:1fr 1fr}.entries-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:860px){
+  nav.dn,.hcta{display:none}.brg{display:flex}
+  .tool-body{padding:24px 22px}.tool-hdr{padding:24px 22px}
+  .fgrid{grid-template-columns:1fr}.fgrid.fgrid3{grid-template-columns:1fr 1fr}
+  .roles-grid{grid-template-columns:1fr}.howto-steps{grid-template-columns:1fr}
+  .region-grid{grid-template-columns:1fr}.stats-row{grid-template-columns:1fr 1fr}
+  .top-promos{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+  .ft-top{grid-template-columns:1fr}.rel-grid{grid-template-columns:1fr}
+  .fgrid.fgrid3{grid-template-columns:1fr}
+  .entries-grid{grid-template-columns:1fr 1fr}
+  .stats-row{grid-template-columns:1fr}
+  .cta-btns{flex-direction:column;align-items:center}
+  .story-card{padding:26px 20px}
+  .best-role{flex-direction:column;gap:12px}.br-right{margin-left:0}
+}
+</style>
+</head>
+<body>
+  <!-- HEADER -->
+<header class="hdr">
+  <div class="w">
+    <div class="hdi">
+      <a href="/" class="logo">
+        <div class="lb"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+        <div><div class="ln">Raj<span>Daily</span>Tools</div><div class="ls">Smart Tools for Daily Life</div></div>
+      </a>
+      <nav class="dn">
+        <a href="/">Home</a><a href="/categories">Categories</a>
+        <a href="/#popular">Popular</a><a href="/about">About</a><a href="/contact">Contact</a>
+      </nav>
+      <a href="/categories" class="hcta">All Tools →</a>
+      <button class="brg" id="brg"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="dov" id="dov"></div>
+<div class="drw" id="drw">
+  <div class="dh">
+    <div class="logo">
+      <div class="lb" style="width:30px;height:30px;border-radius:7px"><svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#fff"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+      <div class="ln" style="font-size:16px">Raj<span>Daily</span>Tools</div>
+    </div>
+    <button class="dx" id="dx">✕</button>
+  </div>
+  <nav class="mn">
+    <a href="/" onclick="cD()">🏠 Home</a>
+    <a href="/categories" onclick="cD()">🗂️ Categories</a>
+    <a href="/#popular" onclick="cD()">⭐ Popular</a>
+    <a href="/about" onclick="cD()">👤 About</a>
+    <a href="/contact" onclick="cD()">📬 Contact</a>
+  </nav>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+  <div class="w">
+    <div class="bc">
+      <a href="/">Home</a><span style="color:var(--ink4)">›</span>
+      <a href="/categories">Tools</a><span style="color:var(--ink4)">›</span>
+      <span>Army Eligibility Checker</span>
+    </div>
+    <div class="hero-inner">
+      <div class="pill">Defence Exam Tools</div>
+      <h1>Army <span>Eligibility Checker</span> 2026</h1>
+      <p class="hero-sub">Instantly check eligibility for <strong>ALL Indian Army entries</strong> — Agniveer GD, Clerk/SKT, Technical, Tradesman, and Nursing Assistant. Region-wise relaxation for Gorkha, Assam, North East, ST, and Ladakh automatically applied.</p>
+      <div class="hero-chips">
+        <span class="chip">🪖 5 Army Posts Checked</span>
+        <span class="chip">🏔️ Region Relaxation</span>
+        <span class="chip">🎯 Best Role Suggestion</span>
+        <span class="chip">⚡ Instant Result</span>
+        <span class="chip">🆓 100% Free</span>
+      </div>
+      <div class="hero-meta">
+        <div class="upd">📅 Updated: 2026</div>
+        <span class="mi">✅ Official Army criteria</span>
+        <span class="mi">🔒 No data stored</span>
+      </div>
+
+      <!-- Top promo boxes -->
+      <div class="top-promos">
+        <a href="https://rajdailytools.github.io/government-exam-height-eligibility-checker-india.html" target="_blank" rel="noopener" class="tp blue">
+          <div class="tp-ico">📏</div>
+          <div class="tp-txt">
+            <h4>Height Checker — All Govt Exams</h4>
+            <p>Check height eligibility for 20+ government exams</p>
+          </div>
+          <div class="tp-arr">→</div>
+        </a>
+        <a href="https://rajdailytools.github.io/mp-police-eligibility-2026.html" target="_blank" rel="noopener" class="tp green">
+          <div class="tp-ico">👮</div>
+          <div class="tp-txt">
+            <h4>MP Police Eligibility Checker</h4>
+            <p>Check MP Police age, height, chest criteria</p>
+          </div>
+          <div class="tp-arr">→</div>
+        </a>
+      </div>
+
+      <!-- HOW TO USE -->
+      <div class="howto">
+        <div class="howto-ttl">💡 How to Use This Tool</div>
+        <div class="howto-steps">
+          <div class="hs"><span class="sn">1</span>Enter your age, height, and education</div>
+          <div class="hs"><span class="sn">2</span>Select category and region (Assam/Gorkha/NE etc.)</div>
+          <div class="hs"><span class="sn">3</span>Click "Check Army Eligibility"</div>
+          <div class="hs"><span class="sn">4</span>View all eligible Army posts instantly</div>
+        </div>
+      </div>
+
+      <!-- RELATED TOOLS -->
+      <div class="rel-grid">
+        <div class="rg-box ht">
+          <div class="rg-ico">📏</div>
+          <div class="rg-txt">
+            <h4>All Govt Exams Height Checker</h4>
+            <p>Check height for 20+ government exams instantly</p>
+            <a href="https://rajdailytools.github.io/government-exam-height-eligibility-checker-india.html" target="_blank" rel="noopener" class="btn-xs g">Check Now →</a>
+          </div>
+        </div>
+        <div class="rg-box mp">
+          <div class="rg-ico">👮</div>
+          <div class="rg-txt">
+            <h4>MP Police Eligibility</h4>
+            <p>Age, height, chest criteria for MP Police 2026</p>
+            <a href="https://rajdailytools.github.io/mp-police-eligibility-2026.html" target="_blank" rel="noopener" class="btn-xs o">Check Now →</a>
+          </div>
+        </div>
+        <div class="rg-box ssc">
+          <div class="rg-ico">🎖️</div>
+          <div class="rg-txt">
+            <h4>SSC GD Eligibility Checker</h4>
+            <p>Check complete SSC GD eligibility 2026</p>
+            <a href="https://rajdailytools.in/ssc-gd-eligibility-2026.html" target="_blank" rel="noopener" class="btn-xs a">Check Now →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+  <!-- TOOL SECTION -->
+<section class="tool-sec" id="tool">
+  <div class="w">
+    <div class="tool-wrap">
+      <div class="tool-card rev">
+        <div class="tool-hdr">
+          <div class="stars">
+            <div class="star" style="top:20%;left:10%;animation-delay:.5s"></div>
+            <div class="star" style="top:40%;left:80%;animation-delay:1s"></div>
+            <div class="star" style="top:70%;left:30%;animation-delay:1.8s"></div>
+            <div class="star" style="top:15%;left:60%;animation-delay:.3s"></div>
+            <div class="star" style="top:80%;left:70%;animation-delay:2.2s"></div>
+          </div>
+          <div class="th">
+            <h2>🪖 Indian Army Complete Eligibility Checker 2026</h2>
+            <p>Enter your details below. Our engine checks all Army posts — Agniveer GD, Clerk/SKT, Technical, Tradesman, and Nursing Assistant — with region-based relaxations for Gorkha, NE, Assam, ST areas, and Ladakh automatically applied.</p>
+            <div class="th-badges">
+              <span class="thb">✅ 5 Army Posts</span>
+              <span class="thb">🏔️ Region Relaxation</span>
+              <span class="thb">🎯 Best Role Pick</span>
+              <span class="thb">🔒 No Data Stored</span>
+            </div>
+          </div>
+        </div>
+        <div class="tool-body">
+
+          <!-- ROW 1: Gender + Age -->
+          <div class="fgrid">
+            <div class="fld">
+              <label class="flbl">Gender <span>Required</span></label>
+              <div class="ro-row">
+                <div class="ro"><input type="radio" name="gender" id="gm" value="male" checked><label for="gm">👨 Male</label></div>
+                <div class="ro"><input type="radio" name="gender" id="gf" value="female"><label for="gf">👩 Female</label></div>
+              </div>
+            </div>
+            <div class="fld">
+              <label class="flbl" for="age">Your Age (years) <span>Required</span></label>
+              <input class="finp" type="number" id="age" placeholder="e.g. 19" min="14" max="35">
+            </div>
+          </div>
+
+          <!-- ROW 2: Height + Category -->
+          <div class="fgrid">
+            <div class="fld">
+              <label class="flbl">Your Height <span>Required</span></label>
+              <div class="hw">
+                <input class="finp" type="number" id="height" placeholder="e.g. 168" min="100" max="220">
+                <div class="hw-unit">cm</div>
+              </div>
+            </div>
+            <div class="fld">
+              <label class="flbl" for="category">Social Category <span>Required</span></label>
+              <select class="fsel" id="category">
+                <option value="gen">General / EWS / OBC</option>
+                <option value="sc">SC (Scheduled Caste)</option>
+                <option value="st">ST (Scheduled Tribe)</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- ROW 3: Region + Education -->
+          <div class="fgrid">
+            <div class="fld">
+              <label class="flbl" for="region">Region / Special Category <span>Important</span></label>
+              <select class="fsel" id="region">
+                <option value="general">General (All India)</option>
+                <option value="gorkha">Gorkha</option>
+                <option value="ne">North East / Assam</option>
+                <option value="tribal">ST / Tribal Area</option>
+                <option value="ladakh">Ladakh / J&K Region</option>
+              </select>
+            </div>
+            <div class="fld">
+              <label class="flbl" for="edu">Education Qualification <span>Required</span></label>
+              <select class="fsel" id="edu">
+                <option value="8th">8th Pass</option>
+                <option value="10th">10th Pass</option>
+                <option value="12th_arts">12th Pass (Arts / Commerce)</option>
+                <option value="12th_sci">12th Pass (Science / PCM/PCB)</option>
+                <option value="graduate">Graduate &amp; Above</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="hint-box">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            <div>Height criteria automatically adjusts for <strong>Gorkha, NE, Assam (~160 cm), ST/Tribal (~162 cm), and Ladakh</strong> regions. Age bracket for all Agniveer entries is <strong>17.5–21 years</strong> as per the scheme. All results are based on official Army recruitment guidelines.</div>
+          </div>
+
+          <button class="chk-btn" onclick="checkArmy()">🪖 Check Army Eligibility — All Posts</button>
+
+          <!-- RESULT -->
+          <div id="resultArea">
+            <div class="best-role" id="bestRoleBox" style="display:none">
+              <div class="br-left">
+                <div class="br-tag">🎯 Best Suitable Role For You</div>
+                <div class="br-role" id="brRole"></div>
+                <div class="br-sub" id="brSub"></div>
+              </div>
+              <div class="br-right">
+                <div class="br-badge" id="brBadge"></div>
+              </div>
+            </div>
+            <div class="stats-row" id="statsRow"></div>
+            <div class="roles-title">📋 Eligibility for All Army Posts</div>
+            <div class="roles-grid" id="rolesGrid"></div>
+            <div class="sugg-box" id="suggBox"></div>
+            <div class="warn-box">
+              <span style="font-size:20px;flex-shrink:0">⚠️</span>
+              <div style="font-size:13.5px;color:var(--ink2);line-height:1.72"><strong>Important:</strong> This tool provides eligibility prediction based on standard Indian Army criteria. Actual age range, height, and education requirements may vary per official Army notification and recruitment rally. Always verify from official Army recruitment website. <strong>We do not collect or store any personal data. This tool follows Google AdSense content guidelines.</strong></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+  <!-- CRITERIA TABLE -->
+<section class="tbl-sec" id="criteria-table">
+  <div class="w">
+    <div style="max-width:920px;margin:0 auto">
+      <div class="rev" style="text-align:center;margin-bottom:36px">
+        <div class="pill" style="margin-bottom:14px">Official Criteria</div>
+        <h2 style="font-family:var(--fd);font-size:clamp(22px,3.5vw,36px);font-weight:800;color:var(--ink);margin-bottom:10px">Indian Army <span style="color:var(--blue)">Agniveer Eligibility Table 2026</span></h2>
+        <p style="font-size:15px;color:var(--ink3);max-width:520px;margin:0 auto;line-height:1.75">Complete height, age, and education requirements for all Agniveer Army entries.</p>
+      </div>
+      <div class="tbl-wr rev">
+        <table>
+          <thead>
+            <tr>
+              <th>Army Entry / Post</th>
+              <th>Age (Agniveer)</th>
+              <th>Height — General</th>
+              <th>Height — Gorkha / NE</th>
+              <th>Height — ST / Tribal</th>
+              <th>Minimum Education</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>🪖 Agniveer GD</strong> (General Duty)</td><td>17.5–21 years</td><td>170 cm</td><td><span class="tbadge g">160 cm</span></td><td><span class="tbadge a">162 cm</span></td><td>10th Pass</td></tr>
+            <tr><td><strong>📝 Agniveer Clerk / SKT</strong></td><td>17.5–21 years</td><td>162 cm</td><td><span class="tbadge g">160 cm</span></td><td><span class="tbadge a">160 cm</span></td><td>12th Pass (Any)</td></tr>
+            <tr><td><strong>⚙️ Agniveer Technical</strong></td><td>17.5–21 years</td><td>167 cm</td><td><span class="tbadge g">162 cm</span></td><td><span class="tbadge a">162 cm</span></td><td>12th Science (PCM/PCB)</td></tr>
+            <tr><td><strong>🔧 Agniveer Tradesman (8th)</strong></td><td>17.5–21 years</td><td>170 cm</td><td><span class="tbadge g">160 cm</span></td><td><span class="tbadge a">162 cm</span></td><td>8th Pass</td></tr>
+            <tr><td><strong>🔧 Agniveer Tradesman (10th)</strong></td><td>17.5–21 years</td><td>170 cm</td><td><span class="tbadge g">160 cm</span></td><td><span class="tbadge a">162 cm</span></td><td>10th Pass</td></tr>
+            <tr><td><strong>💊 Nursing Assistant</strong></td><td>17.5–21 years</td><td>167 cm</td><td><span class="tbadge g">162 cm</span></td><td><span class="tbadge a">162 cm</span></td><td>12th Science (PCB)</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:12.5px;color:var(--ink4);margin-top:10px;text-align:center">* Height and age criteria may vary by state and specific recruitment rally. Always verify from official Indian Army notification.</p>
+    </div>
+  </div>
+</section>
+
+<!-- STORY -->
+<section class="story-sec">
+  <div class="wa">
+    <div class="rev" style="text-align:center;margin-bottom:36px">
+      <div class="pill" style="margin-bottom:14px">Real Life Story</div>
+      <h2 style="font-family:var(--fd);font-size:clamp(22px,3.4vw,34px);font-weight:800;color:var(--ink);margin-bottom:8px">Why I <span style="color:var(--blue)">Built This Tool</span></h2>
+      <p style="font-size:15px;color:var(--ink3)">Shivam ki kahani — jo galat post ke peeche bhag raha tha.</p>
+    </div>
+    <div class="story-card rev">
+      <div class="sq">"</div>
+      <div class="sb">
+        Mera dost <strong>Shivam gaon se tha</strong>. Uski height 165 cm thi aur wo kafi time se Army GD ke liye tayari kar raha tha — morning runs, PT exercises, sab kuch.<br><br>
+        Ek din woh physical test ke liye gaya aur return karke mujhe call kiya — <strong>"yaar, mujhe height ki wajah se reject kar diya, GD ke liye 170 cm chahiye thi."</strong> Itne months ki mehnat ek pal mein waste ho gayi.<br><br>
+        Jo baat mujhe sabse zyada dukh pahunchi woh ye thi ki <strong>Shivam Agniveer Clerk ke liye easily eligible tha</strong> — sirf 162 cm chahiye thi, aur 12th bhi pass tha uska. Lekin use ye pata hi nahi tha.<br><br>
+        Agar uske paas ye tool hota, toh <strong>woh pehle se sahi post target kar sakta tha, sahi preparation kar sakta tha, aur selection chances badha sakta tha</strong>. Isliye ye tool maine banaya — taki Shivam jaisi situation kisi ke saath dobara na ho. 🙏
+      </div>
+      <div class="sauth">
+        <div class="savt">👨‍💻</div>
+        <div>
+          <div class="sname">Raj Bhai</div>
+          <div class="srole">Founder, RajDailyTools · BSc Physics · COPA ITI Certified</div>
+        </div>
+      </div>
+    </div>
+    <div class="founder-msg rev" style="margin-top:18px">
+      <div class="fm-ico">💡</div>
+      <div class="fm-txt">
+        <strong>Founder's Message:</strong> "Right guidance + right exam selection = right result. RajDailyTools ka goal hai real-life problems ko simple tools se solve karna. Students ko sahi direction milni chahiye — pehle se — taki woh apni full potential use kar sakein."
+        <br><span style="font-size:13px;color:var(--ink3);font-style:normal;margin-top:6px;display:block">— Raj Bhai, Founder, RajDailyTools</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPLETE GUIDE -->
+<section class="guide-sec">
+  <div class="wa">
+    <div class="rev">
+      <div class="pill" style="margin-bottom:14px">Complete Guide</div>
+      <h2 style="font-family:var(--fd);font-size:clamp(22px,3.5vw,36px);font-weight:800;color:var(--ink);margin-bottom:8px">Agniveer Army <span style="color:var(--blue)">Complete Guide 2026</span></h2>
+      <p style="font-size:15px;color:var(--ink3);margin-bottom:32px">Indian Army Agniveer scheme, entry types, aur region-based criteria sab kuch simple Hinglish mein.</p>
+    </div>
+    <div class="guide-body rev">
+      <h2>🔹 Agniveer Scheme Kya Hai?</h2>
+      <p><strong>Agniveer Scheme</strong> — officially "Agnipath" scheme — Indian Army, Navy, aur Air Force mein <strong>4-year short-service recruitment</strong> hai. Is scheme ke tahat selected candidates ko "Agniveer" kaha jaata hai. 4 saal ke baad 25% Agniveers ko regular service mein convert kiya jaata hai, baaki ko service fund aur experience ke saath release kiya jaata hai.</p>
+      <div class="ibox">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        <div>Official Army recruitment ke liye visit karein: <a href="https://joinindianarmy.nic.in/" target="_blank" rel="noopener"><strong>joinindianarmy.nic.in</strong></a> — latest notification aur rally schedule wahan milega.</div>
+      </div>
+
+      <h2>🔹 Army Entry Types — Full Explanation</h2>
+      <div class="entries-grid">
+        <div class="entry-card">
+          <div class="ec-ico">🪖</div>
+          <div class="ec-title">Agniveer GD</div>
+          <div class="ec-val">Height: 170 cm | Age: 17.5–21 | Education: 10th Pass | Most competitive entry</div>
+        </div>
+        <div class="entry-card">
+          <div class="ec-ico">📝</div>
+          <div class="ec-title">Agniveer Clerk / SKT</div>
+          <div class="ec-val">Height: 162 cm | Age: 17.5–21 | Education: 12th Pass (Any) | Computer skills required</div>
+        </div>
+        <div class="entry-card">
+          <div class="ec-ico">⚙️</div>
+          <div class="ec-title">Agniveer Technical</div>
+          <div class="ec-val">Height: 167 cm | Age: 17.5–21 | Education: 12th PCM/PCB | Technical roles in Army</div>
+        </div>
+        <div class="entry-card">
+          <div class="ec-ico">🔧</div>
+          <div class="ec-title">Agniveer Tradesman</div>
+          <div class="ec-val">Height: 170 cm | Age: 17.5–21 | Education: 8th/10th | Cook, Dhobi, Safai waale roles</div>
+        </div>
+        <div class="entry-card">
+          <div class="ec-ico">💊</div>
+          <div class="ec-title">Nursing Assistant</div>
+          <div class="ec-val">Height: 167 cm | Age: 17.5–21 | Education: 12th PCB | Medical support role</div>
+        </div>
+        <div class="entry-card">
+          <div class="ec-ico">🎯</div>
+          <div class="ec-title">Clerk / SKT (Short Course)</div>
+          <div class="ec-val">Minimum 60% in 12th, English + Maths/Accounts required for Clerk/SKT post</div>
+        </div>
+      </div>
+
+      <h2>🔹 Region-Based Height Relaxation</h2>
+      <div class="region-grid">
+        <div class="reg-card g">
+          <div class="reg-title">🏔️ Gorkha</div>
+          <div class="reg-desc">Gorkha candidates (Darjeeling, Sikkim, Nepal-origin) ke liye GD mein height 160 cm hoti hai. Special Gorkha Regiment bhi hoti hai Army mein. Certificate of Gorkha domicile required.</div>
+        </div>
+        <div class="reg-card b">
+          <div class="reg-title">🌿 North East / Assam</div>
+          <div class="reg-desc">Northeast states — Assam, Meghalaya, Manipur, Nagaland, Mizoram, Arunachal, Tripura — ke candidates ke liye height relaxation milti hai. GD: 160 cm. State certificate required.</div>
+        </div>
+        <div class="reg-card a">
+          <div class="reg-title">🌳 ST / Tribal Area</div>
+          <div class="reg-desc">Scheduled Tribe aur tribal area candidates ke liye GD height approximately 162 cm hoti hai. Valid ST certificate required. Recruitment rally mein verify hoti hai.</div>
+        </div>
+        <div class="reg-card p">
+          <div class="reg-title">🏔️ Ladakh / J&K</div>
+          <div class="reg-desc">Ladakh aur J&K region ke candidates ke liye bhi height mein slight variation hoti hai. State-specific norms apply hoti hain. Valid domicile certificate required.</div>
+        </div>
+      </div>
+      <div class="ibox g">
+        <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        <div><strong>Pro Tip:</strong> Agar aap Gorkha ya NE region se hain aur height 160–165 cm ke beech hai — toh GD bhi eligible ho sakta hai jo General candidates ke liye 170 cm required hai. Ye tool automatically detect kar lega aapki eligibility.</div>
+      </div>
+    </div>
+  </div>
+</section>
+  <!-- DISC -->
+<div class="disc">
+  <div class="wa">
+    <div class="disc-in">
+      <span style="font-size:20px;flex-shrink:0">⚠️</span>
+      <div><strong>Disclaimer:</strong> This tool is for educational purposes only. Army eligibility criteria may vary by specific notification, state, and recruitment rally. Always verify details from official Indian Army recruitment notifications at <a href="https://joinindianarmy.nic.in/" target="_blank" rel="noopener" style="color:var(--blue);font-weight:700">joinindianarmy.nic.in</a>. This tool follows Google AdSense content guidelines and provides safe, useful, and original content. <strong>We do not collect or store any personal data.</strong></div>
+    </div>
+  </div>
+</div>
+
+<!-- FAQ -->
+<section class="faq-sec">
+  <div class="w">
+    <div style="text-align:center;margin-bottom:40px" class="rev">
+      <div class="pill" style="margin-bottom:14px">FAQs</div>
+      <h2 style="font-family:var(--fd);font-size:clamp(22px,3.5vw,36px);font-weight:800;color:var(--ink);margin-bottom:10px">Frequently Asked <span style="color:var(--blue)">Questions</span></h2>
+      <p style="font-size:15px;color:var(--ink3);max-width:480px;margin:0 auto">Army eligibility aur Agniveer scheme ke baare mein common sawaal.</p>
+    </div>
+    <div class="fql" id="faqList">
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">Army GD ke liye minimum height kya hai?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">Agniveer GD ke liye <strong>General category: 170 cm minimum</strong>. Gorkha / NE candidates: 160 cm. ST / Tribal area: approximately 162 cm. Assam region: 160 cm. Height measurement recruitment rally mein medical staff dwara ki jaati hai.</div></div></div>
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">Gorkha candidates ke liye Army mein kya relaxation hai?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">Gorkha candidates ko significant height relaxation milti hai — <strong>GD ke liye 160 cm (vs. General 170 cm)</strong>. Clerk/SKT ke liye 160 cm. Technical ke liye 162 cm. Gorkha candidates ke liye special Gorkha regiments (like 11 Gorkha Rifles) bhi hain. Valid Gorkha domicile/community certificate required hai.</div></div></div>
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">Assam aur North East region ke liye height kitni hoti hai?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">Assam aur all Northeast states (Assam, Meghalaya, Manipur, Nagaland, Arunachal Pradesh, Mizoram, Tripura, Sikkim) ke candidates ke liye <strong>height relaxation milti hai — GD ke liye approximately 160 cm</strong>. State domicile certificate required hai. Exact criteria recruitment rally notification mein specify hoti hai.</div></div></div>
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">Agniveer Clerk aur GD mein kya difference hai?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai"><strong>GD (General Duty):</strong> 170 cm height, 10th Pass minimum, combat/field roles. <strong>Clerk/SKT:</strong> 162 cm height (lower!), 12th Pass required with minimum 60% marks, computer/typing skills required, office/administrative roles. <strong>Key difference:</strong> Clerk ke liye height kam chahiye lekin education zyada. Jo candidates GD ke liye height se thode miss ho jaate hain woh Clerk ke liye eligible ho sakte hain.</div></div></div>
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">Agniveer kya hai aur iska future kya hai?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">Agniveer Scheme (Agnipath) ke tahat Indian Army, Navy, aur Air Force mein <strong>4-year short-term service</strong> hoti hai. 4 saal ke baad: <strong>25% Agniveers ko permanent service mein convert</strong> kiya jaata hai. Baaki 75% ko "Seva Nidhi" (approximately ₹11.71 lakh tax-free) milta hai plus skill certificates. Many state governments ne Agniveer ex-candidates ke liye police/government jobs mein preference announce ki hai.</div></div></div>
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">Army ke liye age limit kitni hai?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">Agniveer (GD, Clerk, Technical, Tradesman, Nursing Assistant) ke liye age <strong>17.5 years (17 years 6 months) minimum</strong> aur <strong>21 years maximum</strong> hoti hai as per standard scheme. Government ne kuch cycle mein upper age limit 23 years tak bhi bhadha di thi — latest official notification check karein. Lower age (17.5 se 18 ke beech) ke candidates bhi apply kar sakte hain but joining date par minimum 17.5 complete honi chahiye.</div></div></div>
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">ST / Tribal area ke candidates ko Army mein kya benefit milta hai?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">ST candidates ko <strong>height mein approximately 5–8 cm relaxation</strong> milti hai. GD ke liye ~162 cm (vs 170 general). Written exam mein marks aur cutoff mein relaxation bhi possible hai. Valid ST certificate state government dwara issued hona zaroori hai. Additional quota benefits recruitment rally mein apply hote hain.</div></div></div>
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">Nursing Assistant ke liye kya eligibility chahiye?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">Nursing Assistant (NA) ke liye: <strong>12th Pass with Science (Physics, Chemistry, Biology — PCB)</strong> mandatory. Height: 167 cm (General), 162 cm (Gorkha/NE/ST). Minimum 50% in PCB aur English. Age: 17.5–21 years. NA role Army ke medical corps mein hoti hai — hospitals aur field medical units mein service hoti hai.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-sec">
+  <div class="w">
+    <div class="contact-card rev">
+      <h3>💬 Questions or Suggestions?</h3>
+      <p>Agar koi Army criteria missing lage ya koi error mile, please contact karein. Hum jaldi update karte hain.</p>
+      <a href="/contact" class="btn-bl">📩 Contact Us</a>
+      <p class="priv-note">🔒 We do not collect or store any personal data. All processing is done locally in your browser.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="w">
+    <div class="cta-in">
+      <div class="pill">Explore More Tools</div>
+      <h2>More Smart Tools for <em>Defence Aspirants</em></h2>
+      <p>Army eligibility check ho gayi — RajDailyTools par aur bhi free tools hain jo government job seekers ke liye hain.</p>
+      <div class="cta-btns">
+        <a href="/categories" class="btn-gold">🚀 Explore All Tools</a>
+        <a href="https://rajdailytools.github.io/government-exam-height-eligibility-checker-india.html" target="_blank" class="btn-ghost">📏 All Exams Height Checker</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-inner">
+    <div class="ft-top">
+      <div class="ft-brand">
+        <div class="logo" style="margin-bottom:4px">
+          <div class="lb"><svg viewBox="0 0 24 24" fill="#fff"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+          <div><div class="ln">Raj<span>Daily</span>Tools</div><div class="ls">Smart Tools for Daily Life</div></div>
+        </div>
+        <p class="ft-desc">India's most ambitious free tools platform. Built by Raj Bhai. Solving daily life problems, one tool at a time.</p>
+        <div class="ft-soc">
+          <a href="https://www.facebook.com/share/1Dq3Y1k7mG/" target="_blank" class="fts">f</a>
+          <a href="https://x.com/Educator4ll" target="_blank" class="fts">𝕏</a>
+          <a href="https://youtube.com/@rajdailytools" target="_blank" class="fts">▶</a>
+          <a href="https://www.instagram.com/rajdailytools" target="_blank" class="fts">📷</a>
+        </div>
+      </div>
+      <div class="fc"><h4>Defence Tools</h4><ul>
+        <li><a href="#">Army Eligibility Checker</a></li>
+        <li><a href="https://rajdailytools.github.io/government-exam-height-eligibility-checker-india.html">Height Checker</a></li>
+        <li><a href="https://rajdailytools.in/ssc-gd-eligibility-2026.html">SSC GD Eligibility</a></li>
+        <li><a href="https://rajdailytools.github.io/mp-police-eligibility-2026.html">MP Police Eligibility</a></li>
+      </ul></div>
+      <div class="fc"><h4>Categories</h4><ul>
+        <li><a href="/education-tools">Education Tools</a></li>
+        <li><a href="/finance-tools">Finance Tools</a></li>
+        <li><a href="/calculator-tools">Calculator Tools</a></li>
+        <li><a href="/health-tools">Health Tools</a></li>
+        <li><a href="/text-tools">Text Tools</a></li>
+      </ul></div>
+      <div class="fc"><h4>Company</h4><ul>
+        <li><a href="/about">About Us</a></li>
+        <li><a href="/contact">Contact</a></li>
+        <li><a href="/privacy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
+      </ul></div>
+    </div>
+    <div class="ft-btm">
+      <p class="ft-cp">© 2026 <b>RajDailyTools</b>. All rights reserved. Designed by <b>RajDailyTools</b></p>
+      <p class="ft-tag">Made with ❤️ in India — "Right guidance + right exam selection"</p>
+    </div>
+  </div>
+</footer>
+<button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+/* Drawer */
+const brg=document.getElementById('brg'),drw=document.getElementById('drw'),dov=document.getElementById('dov');
+function oD(){drw.classList.add('on');dov.classList.add('on');document.body.style.overflow='hidden'}
+function cD(){drw.classList.remove('on');dov.classList.remove('on');document.body.style.overflow=''}
+brg.addEventListener('click',oD);document.getElementById('dx').addEventListener('click',cD);dov.addEventListener('click',cD);
+const btt=document.getElementById('btt');
+window.addEventListener('scroll',()=>btt.classList.toggle('on',scrollY>380),{passive:true});
+const rvObs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){const s=[...(e.target.parentElement?.children||[])];e.target.style.transitionDelay=(s.indexOf(e.target)%4)*0.08+'s';e.target.classList.add('in');rvObs.unobserve(e.target);}});
+},{threshold:0.06,rootMargin:'0px 0px -20px 0px'});
+document.querySelectorAll('.rev').forEach(el=>rvObs.observe(el));
+document.getElementById('faqList').addEventListener('click',function(e){
+  const q=e.target.closest('.fq-q');if(!q)return;
+  const item=q.closest('.fq'),open=item.classList.contains('open');
+  document.querySelectorAll('.fq.open').forEach(i=>i.classList.remove('open'));
+  if(!open)item.classList.add('open');
+});
+
+/* ══════════════════════════════════════
+   ARMY ELIGIBILITY CHECKER LOGIC
+══════════════════════════════════════ */
+function getR(name){const el=document.querySelector(`input[name="${name}"]:checked`);return el?el.value:'male'}
+
+/* ARMY POST DATABASE */
+const POSTS=[
+  {id:'gd',   name:'Agniveer GD',            ico:'🪖', ageMin:17.5,ageMax:21,
+    htGen:170,htGorkha:160,htNE:160,htTribal:162,htLadakh:165,
+    eduReq:['10th','12th_arts','12th_sci','graduate'],
+    desc:'General Duty — field & combat role. Most common Army entry.'},
+  {id:'clerk',name:'Agniveer Clerk / SKT',    ico:'📝', ageMin:17.5,ageMax:21,
+    htGen:162,htGorkha:160,htNE:160,htTribal:160,htLadakh:162,
+    eduReq:['12th_arts','12th_sci','graduate'],
+    desc:'Clerical & administrative role. Computer/typing skills needed.'},
+  {id:'tech',  name:'Agniveer Technical',     ico:'⚙️', ageMin:17.5,ageMax:21,
+    htGen:167,htGorkha:162,htNE:162,htTribal:162,htLadakh:165,
+    eduReq:['12th_sci','graduate'],
+    desc:'Technical roles — vehicles, weapons, equipment. PCM/PCB required.'},
+  {id:'trade8',name:'Tradesman (8th Pass)',   ico:'🔧', ageMin:17.5,ageMax:21,
+    htGen:170,htGorkha:160,htNE:160,htTribal:162,htLadakh:165,
+    eduReq:['8th','10th','12th_arts','12th_sci','graduate'],
+    desc:'Support services — cook, washer, barber, safai, gardener etc.'},
+  {id:'trade10',name:'Tradesman (10th Pass)', ico:'🔧', ageMin:17.5,ageMax:21,
+    htGen:170,htGorkha:160,htNE:160,htTribal:162,htLadakh:165,
+    eduReq:['10th','12th_arts','12th_sci','graduate'],
+    desc:'Higher skilled trades — draughtsman, cobbler, carpenter etc.'},
+  {id:'na',   name:'Nursing Assistant',       ico:'💊', ageMin:17.5,ageMax:21,
+    htGen:167,htGorkha:162,htNE:162,htTribal:162,htLadakh:165,
+    eduReq:['12th_sci','graduate'],
+    desc:'Medical support role. 12th PCB mandatory with 50%+ in science.'},
+];
+
+const EDU_LABELS={
+  '8th':'8th Pass','10th':'10th Pass',
+  '12th_arts':'12th (Arts/Commerce)','12th_sci':'12th (Science/PCM/PCB)',
+  'graduate':'Graduate'
+};
+const EDU_ORDER=['8th','10th','12th_arts','12th_sci','graduate'];
+
+function eduLevel(e){return EDU_ORDER.indexOf(e)}
+function meetsEdu(userEdu,post){
+  const ul=eduLevel(userEdu);
+  return post.eduReq.some(r=>eduLevel(r)<=ul);
+}
+function getReqHt(post,region){
+  const m={general:'htGen',gorkha:'htGorkha',ne:'htNE',tribal:'htTribal',ladakh:'htLadakh'};
+  return post[m[region]||'htGen'];
+}
+
+function checkArmy(){
+  const gender=getR('gender');
+  const age=parseFloat(document.getElementById('age').value)||0;
+  const height=parseFloat(document.getElementById('height').value)||0;
+  const cat=document.getElementById('category').value;
+  const region=document.getElementById('region').value;
+  const edu=document.getElementById('edu').value;
+
+  if(!age||age<14){alert('Please enter a valid age.');return}
+  if(!height||height<100){alert('Please enter a valid height in cm.');return}
+
+  const results=[];
+  POSTS.forEach(post=>{
+    const reqHt=getReqHt(post,region);
+    const ageOk=age>=post.ageMin&&age<=post.ageMax;
+    const htOk=height>=reqHt;
+    const eduOk=meetsEdu(edu,post);
+    const eligible=ageOk&&htOk&&eduOk;
+
+    let reasons=[];
+    if(!ageOk){if(age<post.ageMin)reasons.push(`Too young (min ${post.ageMin} yrs)`);else reasons.push(`Age exceeded (max ${post.ageMax} yrs)`);}
+    if(!htOk)reasons.push(`Height ${height}cm < required ${reqHt}cm`);
+    if(!eduOk)reasons.push(`Education: ${EDU_LABELS[post.eduReq[0]]} min needed`);
+
+    const htDiff=(height-reqHt).toFixed(1);
+    results.push({...post,eligible,ageOk,htOk,eduOk,reasons,reqHt,htDiff});
+  });
+
+  const eligList=results.filter(r=>r.eligible);
+  const notList=results.filter(r=>!r.eligible);
+
+  /* Best role */
+  const brBox=document.getElementById('bestRoleBox');
+  if(eligList.length){
+    // Prioritize: GD > Clerk > Technical > NA > Tradesman
+    const priority=['gd','clerk','tech','na','trade10','trade8'];
+    const best=priority.map(id=>eligList.find(r=>r.id===id)).find(Boolean)||eligList[0];
+    document.getElementById('brRole').textContent=`${best.ico} ${best.name}`;
+    document.getElementById('brSub').textContent=best.desc;
+    document.getElementById('brBadge').innerHTML=`✅ Best Match`;
+    brBox.style.display='flex';
+  } else {brBox.style.display='none'}
+
+  /* Stats */
+  document.getElementById('statsRow').innerHTML=`
+    <div class="stat-b eligible"><div class="stat-num g">${eligList.length}</div><div class="stat-lbl">✅ Eligible Posts</div></div>
+    <div class="stat-b not"><div class="stat-num r">${notList.length}</div><div class="stat-lbl">❌ Not Eligible</div></div>
+    <div class="stat-b near"><div class="stat-num a">${results.filter(r=>!r.eligible&&r.htDiff>-6&&r.ageOk&&r.eduOk).length}</div><div class="stat-lbl">⚠️ Very Close</div></div>
+  `;
+
+  /* Role cards */
+  const regionLabel={general:'All India',gorkha:'Gorkha',ne:'NE/Assam',tribal:'ST/Tribal',ladakh:'Ladakh/J&K'};
+  let cardsHTML='';
+  results.forEach((r,i)=>{
+    const cls=r.eligible?'elig':'notelig';
+    const badge=r.eligible?'e':'n';
+    const badgeTxt=r.eligible?'✅ Eligible':'❌ Not Eligible';
+    const close=!r.eligible&&parseFloat(r.htDiff)>-8&&r.ageOk&&r.eduOk;
+    cardsHTML+=`
+      <div class="role-card ${cls}" style="animation-delay:${i*0.06}s">
+        <div class="rc-top">
+          <div class="rc-name">${r.ico} ${r.name}</div>
+          <div class="rc-badge ${badge}">${badgeTxt}</div>
+        </div>
+        <div class="rc-row">
+          <div class="rc-item">Req height: <strong>${r.reqHt}cm</strong></div>
+          <div class="rc-item">Your: <strong style="color:${r.htOk?'var(--green)':'var(--red)'}">${height}cm</strong></div>
+          <div class="rc-item">Age: <strong style="color:${r.ageOk?'var(--green)':'var(--red)'}">${r.ageOk?'✓':'✗'}</strong></div>
+          <div class="rc-item">Edu: <strong style="color:${r.eduOk?'var(--green)':'var(--red)'}">${r.eduOk?'✓':'✗'}</strong></div>
+        </div>
+        ${r.reasons.length?`<div class="rc-reason">⚠️ ${r.reasons.join(' · ')}</div>`:''}
+        ${close?`<div class="rc-reason" style="color:var(--amber);font-style:normal;font-weight:600">📌 Close! Only ${Math.abs(r.htDiff)}cm height gap — check region relaxation</div>`:''}
+      </div>
+    `;
+  });
+  document.getElementById('rolesGrid').innerHTML=cardsHTML;
+
+  /* Smart suggestions */
+  let suggLines=[];
+  if(eligList.length===0){
+    suggLines.push(`<strong>❌ No Army posts currently eligible.</strong> Based on your inputs — check the following:`);
+    if(height<162)suggLines.push(`Your height (${height}cm) is below most Army requirements. If you are from Gorkha/NE region, select that in the region dropdown — criteria is lower (160cm for GD).`);
+    if(age>21)suggLines.push(`Age ${age} years exceeds the 21-year Agniveer upper limit. Consider NDA/CDS officer entries which have different age limits, or other exams.`);
+    if(eduLevel(edu)<EDU_ORDER.indexOf('10th'))suggLines.push(`Education below 10th limits options. Complete 10th to open GD, Tradesman 10th entries.`);
+  } else if(eligList.length<3) {
+    const missed=notList.filter(r=>r.ageOk&&!r.htOk);
+    if(missed.length)suggLines.push(`<strong>You qualify for ${eligList.length} post(s).</strong> For ${missed.map(r=>r.name).join(', ')} — height is the only barrier. Regular running + exercise can help. Also check if your region (Gorkha/NE/Tribal) gives relaxation.`);
+  } else {
+    suggLines.push(`<strong>🎉 Excellent! You qualify for ${eligList.length} Army posts.</strong> Focus on the "${eligList[0]?.name||'best matching'}" post that aligns with your interest and strongest subjects. Physical preparation — running, PT, exercises — should start NOW.`);
+  }
+  if(region==='general'&&height>=160&&height<170)suggLines.push(`💡 <strong>Region tip:</strong> If you belong to Gorkha, NE, Assam, or tribal area — select your correct region. Height requirement could be 160–162 cm, making you eligible for GD.`);
+  
+  document.getElementById('suggBox').innerHTML=`<strong style="display:block;font-family:var(--fd);font-size:14px;margin-bottom:8px">💡 Smart Analysis</strong>${suggLines.map(s=>`<p style="margin-bottom:8px;font-size:14px;color:var(--ink2);line-height:1.72">${s}</p>`).join('')}`;
+
+  const ra=document.getElementById('resultArea');
+  ra.style.display='block';
+  ra.style.animation='none';ra.offsetHeight;
+  ra.style.animation='resultIn .45s var(--ease) both';
+  setTimeout(()=>ra.scrollIntoView({behavior:'smooth',block:'nearest'}),120);
+}
+</script>
+</body>
+</html>
