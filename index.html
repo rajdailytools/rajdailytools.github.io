@@ -1254,6 +1254,9 @@
   menuBtn.addEventListener('click', openDrawer);
   drawerClose.addEventListener('click', closeDrawer);
   drawerOverlay.addEventListener('click', closeDrawer);
+  document.querySelectorAll('.mobile-nav a').forEach(link => {
+  link.addEventListener('click', closeDrawer);
+});
 
   // ── FAQ Accordion ──
   document.getElementById('faqList').addEventListener('click', function(e) {
