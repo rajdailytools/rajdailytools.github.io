@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Patna High Court Technical Assistant Age Calculator 2026 – Check Eligibility | RajDailyTools</title>
+<meta name="description" content="Check age eligibility for Patna High Court Technical Assistant 2026. Category-wise age limits: UR Male 37, Female 40, BC/EBC 40-42, SC/ST 42. Cutoff 01 Jan 2026. Instant result.">
+<meta name="keywords" content="Patna High Court Technical Assistant age calculator 2026, PHC TA age limit, Patna High Court recruitment 2026 eligibility, Bihar court technical assistant age, PHC TA cutoff date">
+<meta name="robots" content="index, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#2563eb;--blue-d:#1d4ed8;--blue-xl:#eff6ff;--blue-s:#dbeafe;
+  --amber:#f59e0b;--green:#10b981;--red:#ef4444;--purple:#8b5cf6;--teal:#14b8a6;
+  --green-xl:#f0fdf4;--green-s:#bbf7d0;
+  --red-xl:#fef2f2;--red-s:#fecaca;
+  --amber-xl:#fffbeb;--amber-s:#fde68a;
+  --purple-xl:#faf5ff;--purple-s:#ddd6fe;
+  --ink:#0f172a;--ink2:#334155;--ink3:#64748b;--ink4:#94a3b8;
+  --line:#e2e8f0;--surf:#f8fafc;--white:#fff;
+  --s1:0 1px 3px rgba(15,23,42,.06),0 1px 2px rgba(15,23,42,.04);
+  --s2:0 4px 16px rgba(15,23,42,.08),0 2px 6px rgba(15,23,42,.04);
+  --s3:0 12px 40px rgba(15,23,42,.11),0 3px 10px rgba(15,23,42,.06);
+  --s4:0 24px 64px rgba(15,23,42,.13),0 6px 20px rgba(15,23,42,.07);
+  --sb:0 8px 32px rgba(37,99,235,.20);
+  --fd:'Sora',sans-serif;--fb:'DM Sans',sans-serif;
+  --ease:cubic-bezier(.4,0,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);color:var(--ink);background:var(--white);overflow-x:hidden;-webkit-font-smoothing:antialiased;line-height:1.6}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+button{cursor:pointer;border:none;background:none;font-family:var(--fb)}
+.w{max-width:1180px;margin:0 auto;padding:0 24px}
+.wa{max-width:880px;margin:0 auto;padding:0 24px}
+select,input{appearance:none;-webkit-appearance:none}
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+@keyframes resultIn{from{opacity:0;transform:translateY(18px) scale(.97)}to{opacity:1;transform:none}}
+@keyframes slideIn{from{opacity:0;transform:translateX(-10px)}to{opacity:1;transform:none}}
+@keyframes barGrow{from{width:0}to{width:var(--tw)}}
+.rev{opacity:0;transform:translateY(22px);transition:opacity .55s var(--ease),transform .55s var(--ease)}
+.rev.in{opacity:1;transform:none}
+
+/* ══ HEADER ══ */
+.hdr{position:sticky;top:0;z-index:999;background:rgba(255,255,255,.96);backdrop-filter:blur(20px);border-bottom:1px solid var(--line);box-shadow:var(--s1)}
+.hdi{display:flex;align-items:center;justify-content:space-between;height:66px}
+.logo{display:flex;align-items:center;gap:10px}
+.lb{width:36px;height:36px;background:var(--blue);border-radius:9px;display:flex;align-items:center;justify-content:center;box-shadow:var(--sb);flex-shrink:0}
+.lb svg{width:18px;height:18px;fill:#fff}
+.ln{font-family:var(--fd);font-size:19px;font-weight:800;color:var(--ink);line-height:1}
+.ln span{color:var(--blue)}
+.ls{font-size:10px;color:var(--ink4);letter-spacing:.04em}
+nav.dn{display:flex;align-items:center;gap:2px}
+nav.dn a{font-size:13.5px;font-weight:500;color:var(--ink2);padding:7px 13px;border-radius:8px;transition:.2s}
+nav.dn a:hover{color:var(--blue);background:var(--blue-xl)}
+.hcta{background:var(--blue);color:#fff;font-family:var(--fd);font-weight:600;font-size:13px;padding:8px 18px;border-radius:8px;box-shadow:var(--sb);transition:.2s}
+.hcta:hover{background:var(--blue-d);transform:translateY(-1px)}
+.brg{display:none;flex-direction:column;gap:4.5px;padding:8px;border-radius:8px}
+.brg span{display:block;width:20px;height:2px;background:var(--ink);border-radius:2px;transition:.28s}
+.dov{display:none;position:fixed;inset:0;background:rgba(15,23,42,.45);z-index:1040;backdrop-filter:blur(3px)}
+.dov.on{display:block}
+.drw{position:fixed;top:0;right:-100%;width:270px;height:100vh;background:#fff;z-index:1050;padding:22px;box-shadow:var(--s4);transition:right .32s var(--ease);overflow-y:auto}
+.drw.on{right:0}
+.dh{display:flex;align-items:center;justify-content:space-between;margin-bottom:26px}
+.dx{width:33px;height:33px;border-radius:7px;background:var(--surf);display:flex;align-items:center;justify-content:center;color:var(--ink3);font-size:17px}
+nav.mn{display:flex;flex-direction:column;gap:3px}
+nav.mn a{display:block;font-size:14px;font-weight:500;color:var(--ink2);padding:11px 13px;border-radius:8px;transition:.2s}
+nav.mn a:hover{color:var(--blue);background:var(--blue-xl)}
+
+/* ══ HERO ══ */
+.hero{position:relative;overflow:hidden;background:linear-gradient(150deg,#ebf4ff 0%,#fff 46%,#fdf2ff 100%);padding:64px 0 72px}
+.hero::before{content:'';position:absolute;top:-140px;right:-180px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(37,99,235,.08) 0%,transparent 68%);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-80px;left:-100px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(139,92,246,.05) 0%,transparent 68%);pointer-events:none}
+.blob{position:absolute;border-radius:50%;pointer-events:none;animation:float 6s ease-in-out infinite}
+.b1{width:13px;height:13px;background:rgba(37,99,235,.18);top:22%;right:14%;animation-delay:0s}
+.b2{width:9px;height:9px;background:rgba(245,158,11,.24);top:58%;right:26%;animation-delay:2.2s}
+.b3{width:11px;height:11px;background:rgba(16,185,129,.20);top:36%;right:6%;animation-delay:4s}
+.bc{display:flex;align-items:center;gap:7px;font-size:12.5px;color:var(--ink3);margin-bottom:22px;position:relative;z-index:1;flex-wrap:wrap}
+.bc a{color:var(--blue);font-weight:600}
+.pill{display:inline-flex;align-items:center;gap:7px;font-family:var(--fd);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);background:var(--blue-xl);padding:5px 14px;border-radius:100px;margin-bottom:18px}
+.pill::before{content:'';width:6px;height:6px;background:var(--blue);border-radius:50%}
+.hero-inner{position:relative;z-index:1;max-width:720px;animation:fadeUp .5s ease both}
+.hero h1{font-family:var(--fd);font-size:clamp(26px,4.5vw,50px);font-weight:800;line-height:1.1;color:var(--ink);margin-bottom:14px}
+.hero h1 span{color:var(--blue)}
+.hero-sub{font-size:16px;color:var(--ink3);line-height:1.8;margin-bottom:22px;max-width:600px}
+.hero-chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.chip{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;padding:6px 14px;border-radius:100px;background:#fff;border:1.5px solid var(--line);color:var(--ink2);box-shadow:var(--s1);transition:.22s}
+.chip:hover{border-color:var(--blue);color:var(--blue);transform:translateY(-1px)}
+.hero-meta{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:24px}
+.upd{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:700;color:var(--blue);background:var(--blue-xl);padding:6px 14px;border-radius:100px;border:1.5px solid var(--blue-s)}
+.mi{font-size:13px;color:var(--ink3);font-weight:500}
+
+/* HOW TO USE */
+.howto{background:var(--amber-xl);border:2px solid var(--amber-s);border-radius:16px;padding:22px 26px;max-width:580px;margin-bottom:24px}
+.howto-ttl{display:flex;align-items:center;gap:9px;font-family:var(--fd);font-size:15px;font-weight:800;color:var(--ink);margin-bottom:13px}
+.howto-steps{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.hs{display:flex;align-items:flex-start;gap:10px;font-size:13.5px;color:var(--ink2);line-height:1.6}
+.sn{width:24px;height:24px;background:var(--amber);color:#fff;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex-shrink:0;margin-top:1px}
+
+/* internal links */
+.link-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;position:relative;z-index:1}
+.lg-box{border-radius:14px;padding:16px 16px 14px;display:flex;flex-direction:column;gap:9px;transition:.22s}
+.lg-box:hover{transform:translateY(-3px);box-shadow:var(--s3)}
+.lg-box.pri{background:linear-gradient(135deg,var(--purple-xl),#ede9fe);border:1.5px solid var(--purple-s)}
+.lg-box.age{background:linear-gradient(135deg,#f0f9ff,var(--blue-xl));border:1.5px solid var(--blue-s)}
+.lg-box.doc{background:linear-gradient(135deg,var(--green-xl),#dcfce7);border:1.5px solid var(--green-s)}
+.lg-ico{font-size:24px}
+.lg-txt h4{font-family:var(--fd);font-size:12.5px;font-weight:800;color:var(--ink);margin-bottom:3px}
+.lg-txt p{font-size:11.5px;color:var(--ink3);line-height:1.5}
+.btn-xs{display:inline-flex;align-items:center;gap:5px;font-family:var(--fd);font-weight:700;font-size:11.5px;padding:6px 12px;border-radius:7px;transition:.22s;margin-top:4px}
+.btn-xs.p{background:var(--purple);color:#fff}.btn-xs.p:hover{background:#7c3aed}
+.btn-xs.b{background:var(--blue);color:#fff}.btn-xs.b:hover{background:var(--blue-d)}
+.btn-xs.g{background:var(--green);color:#fff}.btn-xs.g:hover{background:#059669}
+
+/* ══ TOOL SECTION ══ */
+.tool-sec{background:var(--surf);padding:80px 0}
+.tool-wrap{max-width:920px;margin:0 auto}
+.tool-card{background:#fff;border:1.5px solid var(--line);border-radius:28px;overflow:hidden;box-shadow:var(--s4)}
+.tool-hdr{background:linear-gradient(135deg,#1d4ed8 0%,#2563eb 55%,#3b82f6 100%);padding:32px 40px;position:relative;overflow:hidden}
+.tool-hdr::before{content:'';position:absolute;top:-60px;right:-60px;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,.07)}
+.tool-hdr::after{content:'';position:absolute;bottom:-40px;left:-40px;width:180px;height:180px;border-radius:50%;background:rgba(255,255,255,.04)}
+.th{position:relative;z-index:1}
+.th h2{font-family:var(--fd);font-size:21px;font-weight:800;color:#fff;margin-bottom:6px}
+.th p{font-size:14px;color:rgba(255,255,255,.82);line-height:1.65}
+.th-badges{display:flex;flex-wrap:wrap;gap:9px;margin-top:14px}
+.thb{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:rgba(255,255,255,.9);background:rgba(255,255,255,.13);padding:5px 12px;border-radius:100px}
+.tool-body{padding:36px 40px}
+
+/* form */
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+.fld{display:flex;flex-direction:column;gap:7px}
+.flbl{font-size:13px;font-weight:700;color:var(--ink2)}
+.flbl span{font-size:11px;font-weight:500;color:var(--ink4);margin-left:5px;background:var(--surf);padding:2px 7px;border-radius:5px;border:1px solid var(--line)}
+.finp,.fsel{padding:12px 16px;font-size:14.5px;color:var(--ink);background:#fff;border:1.5px solid var(--line);border-radius:10px;outline:none;transition:.22s;font-family:var(--fb);width:100%}
+.finp:focus,.fsel:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(37,99,235,.10)}
+.fsel{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2364748b' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:40px}
+
+/* age display box */
+.age-result-box{background:var(--surf);border:1.5px solid var(--line);border-radius:10px;padding:12px 16px;font-size:14.5px;color:var(--ink3);min-height:48px;display:flex;align-items:center;transition:.3s}
+.age-result-box.filled{color:var(--ink);font-weight:600;border-color:var(--blue-s);background:var(--blue-xl)}
+
+.hint-box{display:flex;align-items:flex-start;gap:9px;font-size:13px;color:var(--ink2);background:var(--blue-xl);border:1.5px solid var(--blue-s);border-radius:10px;padding:11px 14px;margin:16px 0;line-height:1.65}
+.hint-box svg{width:16px;height:16px;stroke:var(--blue);fill:none;stroke-width:2;flex-shrink:0;margin-top:2px}
+.chk-btn{width:100%;padding:16px;background:linear-gradient(135deg,var(--blue) 0%,#1e40af 100%);color:#fff;font-family:var(--fd);font-weight:800;font-size:16px;border-radius:12px;box-shadow:var(--sb);transition:all .25s var(--ease);display:flex;align-items:center;justify-content:center;gap:10px}
+.chk-btn:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(37,99,235,.32)}
+.chk-btn:active{transform:translateY(0)}
+
+/* ══ RESULT ══ */
+#resultArea{display:none;margin-top:28px;animation:resultIn .45s var(--ease) both}
+
+/* stats row */
+.stats-row{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:20px}
+.stat-box{border-radius:14px;padding:18px 16px;text-align:center}
+.stat-box.eligible{background:var(--green-xl);border:1.5px solid var(--green-s)}
+.stat-box.notelig{background:var(--red-xl);border:1.5px solid var(--red-s)}
+.stat-box.neutral{background:var(--blue-xl);border:1.5px solid var(--blue-s)}
+.stat-num{font-family:var(--fd);font-size:30px;font-weight:800;line-height:1}
+.stat-num.g{color:var(--green)}.stat-num.r{color:var(--red)}.stat-num.b{color:var(--blue)}
+.stat-lbl{font-size:12.5px;color:var(--ink3);font-weight:600;margin-top:4px}
+
+/* eligibility result card */
+.elig-result-card{border-radius:16px;padding:24px 28px;margin-bottom:18px;display:flex;align-items:flex-start;gap:18px}
+.elig-result-card.ok{background:var(--green-xl);border:2px solid var(--green-s)}
+.elig-result-card.no{background:var(--red-xl);border:2px solid var(--red-s)}
+.erc-ico{font-size:40px;flex-shrink:0}
+.erc-body h3{font-family:var(--fd);font-size:18px;font-weight:800;margin-bottom:6px}
+.elig-result-card.ok .erc-body h3{color:#065f46}
+.elig-result-card.no .erc-body h3{color:#991b1b}
+.erc-body p{font-size:14px;line-height:1.7;color:var(--ink2)}
+
+/* age visual bar */
+.age-viz{background:var(--surf);border:1.5px solid var(--line);border-radius:16px;padding:20px 24px;margin-bottom:20px}
+.av-title{font-family:var(--fd);font-size:14px;font-weight:700;color:var(--ink);margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.av-track-wrap{position:relative;height:36px;background:var(--line);border-radius:100px;overflow:hidden;margin-bottom:10px}
+.av-zone{position:absolute;top:0;bottom:0;border-radius:100px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff;transition:width 1s var(--ease)}
+.av-zone.elig{background:linear-gradient(90deg,var(--green),#059669)}
+.av-zone.nelig{background:linear-gradient(90deg,var(--red),#dc2626)}
+.av-marker{position:absolute;top:-4px;bottom:-4px;width:4px;border-radius:4px;background:var(--ink);transition:left 1s var(--ease)}
+.av-labels{display:flex;justify-content:space-between;font-size:11.5px;font-weight:600;color:var(--ink3)}
+.av-legend{display:flex;gap:18px;margin-top:12px;flex-wrap:wrap}
+.av-leg-item{display:flex;align-items:center;gap:7px;font-size:12px;font-weight:600;color:var(--ink2)}
+.av-dot{width:10px;height:10px;border-radius:50%}
+
+/* category cards */
+.cat-cards{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:18px}
+.cat-card{border-radius:12px;padding:14px 16px;border:1.5px solid var(--line);background:#fff;display:flex;flex-direction:column;gap:6px;animation:slideIn .35s var(--ease) both;transition:.22s}
+.cat-card:hover{border-color:var(--blue-s);box-shadow:var(--s2);transform:translateY(-2px)}
+.cc-top{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.cc-name{font-family:var(--fd);font-size:13px;font-weight:800;color:var(--ink)}
+.cc-badge{font-size:11px;font-weight:700;padding:3px 9px;border-radius:100px}
+.cc-badge.ok{background:var(--green-xl);color:var(--green);border:1px solid var(--green-s)}
+.cc-badge.no{background:var(--red-xl);color:var(--red);border:1px solid var(--red-s)}
+.cc-detail{font-size:12px;color:var(--ink3)}
+.cc-detail strong{color:var(--ink2);font-weight:700}
+
+/* warn */
+.res-warn{background:var(--amber-xl);border:1.5px solid var(--amber-s);border-radius:12px;padding:14px 18px;display:flex;gap:10px;font-size:13.5px;color:var(--ink2);line-height:1.7;margin-top:16px}
+
+/* ══ TABLE SECTION ══ */
+.tbl-sec{background:#fff;padding:72px 0}
+.tbl-wr{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+thead th{background:linear-gradient(135deg,var(--blue) 0%,#1e40af 100%);color:#fff;padding:14px 16px;text-align:left;font-family:var(--fd);font-size:13px;font-weight:700;letter-spacing:.03em}
+tbody tr{border-bottom:1px solid var(--line);transition:.2s}
+tbody tr:hover{background:var(--blue-xl)}
+tbody td{padding:12px 16px;color:var(--ink2);vertical-align:middle;font-size:13.5px}
+.tbadge{display:inline-flex;font-size:11px;font-weight:700;padding:3px 8px;border-radius:100px}
+.tbadge.g{background:var(--green-xl);color:var(--green);border:1px solid var(--green-s)}
+.tbadge.b{background:var(--blue-xl);color:var(--blue);border:1px solid var(--blue-s)}
+.tbadge.a{background:var(--amber-xl);color:#92400e;border:1px solid var(--amber-s)}
+
+/* ══ STORY ══ */
+.story-sec{background:var(--surf);padding:72px 0}
+.story-card{background:#fff;border:1.5px solid var(--line);border-radius:24px;padding:40px;box-shadow:var(--s3);position:relative;overflow:hidden}
+.story-card::before{content:'';position:absolute;top:0;left:0;bottom:0;width:5px;background:linear-gradient(180deg,var(--blue) 0%,var(--red) 100%);border-radius:5px 0 0 5px}
+.sq{font-size:54px;color:var(--blue-s);font-family:Georgia,serif;line-height:1;padding-left:8px}
+.sb{font-size:15.5px;color:var(--ink2);line-height:1.9;padding:0 8px}
+.sauth{display:flex;align-items:center;gap:14px;margin-top:22px;padding-top:20px;border-top:1px solid var(--line)}
+.savt{width:48px;height:48px;background:var(--blue);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+.sname{font-family:var(--fd);font-size:15px;font-weight:700;color:var(--ink)}
+.srole{font-size:12.5px;color:var(--ink3)}
+.founder-msg{background:linear-gradient(135deg,var(--blue-xl),var(--blue-s));border:1.5px solid var(--blue-s);border-radius:14px;padding:20px 22px;margin-top:22px;display:flex;gap:13px}
+.fm-ico{font-size:26px;flex-shrink:0}
+.fm-txt{font-size:14px;color:var(--ink2);line-height:1.75;font-style:italic}
+.fm-txt strong{color:var(--ink);font-weight:700;font-style:normal}
+
+/* ══ GUIDE ══ */
+.guide-sec{background:#fff;padding:72px 0}
+.guide-body h2{font-family:var(--fd);font-size:21px;font-weight:800;color:var(--ink);margin:28px 0 11px;line-height:1.3}
+.guide-body h2:first-child{margin-top:0}
+.guide-body h3{font-family:var(--fd);font-size:17px;font-weight:700;color:var(--ink2);margin:20px 0 9px}
+.guide-body p{font-size:15px;color:var(--ink3);line-height:1.85;margin-bottom:14px}
+.guide-body ul{display:flex;flex-direction:column;gap:8px;margin:12px 0 16px}
+.guide-body li{display:flex;align-items:flex-start;gap:10px;font-size:14.5px;color:var(--ink3);line-height:1.7}
+.guide-body li::before{content:'✓';width:18px;height:18px;background:var(--blue);color:#fff;border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;flex-shrink:0;margin-top:3px}
+.guide-body strong{color:var(--ink2);font-weight:700}
+.ibox{background:var(--blue-xl);border:1.5px solid var(--blue-s);border-radius:13px;padding:15px 18px;margin:16px 0;display:flex;gap:11px;font-size:14px;color:var(--ink2);line-height:1.7}
+.ibox svg{width:17px;height:17px;stroke:var(--blue);fill:none;stroke-width:2;flex-shrink:0;margin-top:2px}
+.ibox.g{background:var(--green-xl);border-color:var(--green-s)}
+.ibox.g svg{stroke:var(--green)}
+.ibox.a{background:var(--amber-xl);border-color:var(--amber-s)}
+.ibox.a svg{stroke:var(--amber)}
+.mistakes-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0}
+.mk{background:var(--red-xl);border:1.5px solid var(--red-s);border-radius:12px;padding:16px}
+.mk-head{font-family:var(--fd);font-size:13.5px;font-weight:700;color:#b91c1c;margin-bottom:6px}
+.mk-desc{font-size:13px;color:var(--ink3);line-height:1.65}
+
+/* ══ CATEGORY TABLE ══ */
+.cat-tbl-sec{background:var(--surf);padding:72px 0}
+
+/* ══ FAQ ══ */
+.faq-sec{background:#fff;padding:72px 0}
+.fql{max-width:780px;margin:0 auto}
+.fq{background:var(--surf);border:1.5px solid var(--line);border-radius:13px;margin-bottom:10px;overflow:hidden}
+.fq-q{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;cursor:pointer;gap:14px;transition:.2s}
+.fq-q:hover{background:var(--blue-xl)}
+.fq-t{font-weight:600;font-size:15px;color:var(--ink);line-height:1.4}
+.fq-i{width:28px;height:28px;border-radius:50%;background:var(--blue-xl);color:var(--blue);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;transition:transform .28s,background .2s}
+.fq.open .fq-i{transform:rotate(45deg);background:var(--blue);color:#fff}
+.fq-a{max-height:0;overflow:hidden;transition:max-height .35s var(--ease)}
+.fq-ai{padding:0 22px 18px;font-size:14.5px;color:var(--ink3);line-height:1.78}
+.fq.open .fq-a{max-height:400px}
+
+/* ══ CONTACT ══ */
+.contact-sec{background:var(--surf);padding:60px 0}
+.contact-card{max-width:600px;margin:0 auto;background:#fff;border:1.5px solid var(--line);border-radius:20px;padding:32px;text-align:center;box-shadow:var(--s2)}
+.contact-card h3{font-family:var(--fd);font-size:19px;font-weight:800;color:var(--ink);margin-bottom:10px}
+.contact-card p{font-size:15px;color:var(--ink3);line-height:1.75;margin-bottom:20px}
+.btn-blue{display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:#fff;font-family:var(--fd);font-weight:700;font-size:14.5px;padding:12px 26px;border-radius:8px;box-shadow:var(--sb);transition:.22s}
+.btn-blue:hover{background:var(--blue-d);transform:translateY(-1px)}
+.priv-note{font-size:12px;color:var(--ink4);margin-top:14px}
+
+/* ══ DISC ══ */
+.disc{background:var(--amber-xl);border-top:1px solid var(--amber-s);border-bottom:1px solid var(--amber-s);padding:15px 0}
+.disc-in{display:flex;align-items:flex-start;gap:12px;font-size:13.5px;color:var(--ink2);line-height:1.7}
+
+/* ══ CTA ══ */
+.cta{background:linear-gradient(140deg,#0f172a 0%,#1e3a8a 100%);padding:80px 0;text-align:center;position:relative;overflow:hidden}
+.cta::before{content:'';position:absolute;top:-80px;left:50%;transform:translateX(-50%);width:800px;height:380px;background:radial-gradient(ellipse,rgba(37,99,235,.22) 0%,transparent 68%);pointer-events:none}
+.cta-in{position:relative;z-index:1}
+.cta .pill{color:#93c5fd;background:rgba(255,255,255,.1);margin-bottom:18px}
+.cta .pill::before{background:#93c5fd}
+.cta h2{font-family:var(--fd);font-size:clamp(24px,4vw,42px);font-weight:800;color:#fff;line-height:1.15;margin-bottom:12px}
+.cta h2 em{color:#fbbf24;font-style:normal}
+.cta p{font-size:16px;color:rgba(255,255,255,.72);max-width:480px;margin:0 auto 32px;line-height:1.78}
+.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn-gold{display:inline-flex;align-items:center;gap:8px;background:var(--amber);color:#fff;font-family:var(--fd);font-weight:800;font-size:15px;padding:14px 30px;border-radius:8px;box-shadow:0 8px 28px rgba(245,158,11,.35);transition:.22s}
+.btn-gold:hover{background:#d97706;transform:translateY(-3px)}
+.btn-ghost{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.09);border:1.5px solid rgba(255,255,255,.22);color:#fff;font-family:var(--fd);font-weight:600;font-size:14px;padding:13px 26px;border-radius:8px;transition:.2s}
+.btn-ghost:hover{background:rgba(255,255,255,.16)}
+
+/* ══ FOOTER ══ */
+footer{background:#0f172a;padding:52px 0 0}
+.ft-inner{max-width:1180px;margin:0 auto;padding:0 24px}
+.ft-top{display:grid;grid-template-columns:1.9fr 1fr 1fr 1fr;gap:44px;margin-bottom:44px}
+.ft-brand .ln{color:#fff}.ft-brand .ls{color:#475569}
+.ft-desc{font-size:13.5px;color:#64748b;line-height:1.78;max-width:265px;margin:13px 0 20px}
+.ft-soc{display:flex;gap:9px}
+.fts{width:34px;height:34px;border-radius:7px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;color:#94a3b8;font-size:13px;transition:.2s}
+.fts:hover{background:var(--blue);color:#fff}
+.fc h4{font-family:var(--fd);font-size:12px;font-weight:700;color:#fff;margin-bottom:14px;letter-spacing:.06em;text-transform:uppercase}
+.fc ul{display:flex;flex-direction:column;gap:8px}
+.fc ul a{font-size:13.5px;color:#64748b;transition:.18s}
+.fc ul a:hover{color:#93c5fd}
+.ft-btm{border-top:1px solid rgba(255,255,255,.07);padding:20px 0;text-align:center}
+.ft-cp{font-size:12.5px;color:#475569}
+.ft-cp b{color:#64748b;font-weight:600}
+.ft-tag{font-size:12px;color:#334155;margin-top:4px;font-style:italic}
+.btt{position:fixed;bottom:26px;right:26px;z-index:500;width:43px;height:43px;background:var(--blue);color:#fff;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:17px;box-shadow:var(--sb);opacity:0;pointer-events:none;transform:translateY(14px);transition:.28s var(--ease)}
+.btt.on{opacity:1;pointer-events:auto;transform:translateY(0)}
+.btt:hover{transform:translateY(-3px)}
+
+/* RESPONSIVE */
+@media(max-width:1060px){.ft-top{grid-template-columns:1fr 1fr}.link-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:860px){
+  nav.dn,.hcta{display:none}.brg{display:flex}
+  .tool-body{padding:24px 22px}.tool-hdr{padding:24px 22px}
+  .fgrid{grid-template-columns:1fr}
+  .cat-cards{grid-template-columns:1fr}.howto-steps{grid-template-columns:1fr}
+  .mistakes-grid{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+  .ft-top{grid-template-columns:1fr}.link-grid{grid-template-columns:1fr}
+  .cta-btns{flex-direction:column;align-items:center}
+  .story-card{padding:26px 20px}.stats-row{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="hdr">
+  <div class="w">
+    <div class="hdi">
+      <a href="/" class="logo">
+        <div class="lb"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+        <div><div class="ln">Raj<span>Daily</span>Tools</div><div class="ls">Smart Tools for Daily Life</div></div>
+      </a>
+      <nav class="dn">
+        <a href="/">Home</a><a href="/categories">Categories</a>
+        <a href="/#popular">Popular</a><a href="/about">About</a><a href="/contact">Contact</a>
+      </nav>
+      <a href="/categories" class="hcta">All Tools →</a>
+      <button class="brg" id="brg"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="dov" id="dov"></div>
+<div class="drw" id="drw">
+  <div class="dh">
+    <div class="logo">
+      <div class="lb" style="width:30px;height:30px;border-radius:7px"><svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#fff"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+      <div class="ln" style="font-size:16px">Raj<span>Daily</span>Tools</div>
+    </div>
+    <button class="dx" id="dx">✕</button>
+  </div>
+  <nav class="mn">
+    <a href="/" onclick="cD()">🏠 Home</a>
+    <a href="/categories" onclick="cD()">🗂️ Categories</a>
+    <a href="/#popular" onclick="cD()">⭐ Popular</a>
+    <a href="/about" onclick="cD()">👤 About</a>
+    <a href="/contact" onclick="cD()">📬 Contact</a>
+  </nav>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+  <div class="w">
+    <div class="bc">
+      <a href="/">Home</a><span style="color:var(--ink4)">›</span>
+      <a href="/categories">Tools</a><span style="color:var(--ink4)">›</span>
+      <span>Patna High Court TA Age Calculator 2026</span>
+    </div>
+    <div class="hero-inner">
+      <div class="pill">Bihar Court Exam Tools</div>
+      <h1>Check Your <span>Eligibility</span> – Patna High Court Technical Assistant 2026</h1>
+      <p class="hero-sub">Instantly calculate your exact age as on <strong>01 January 2026</strong> and check eligibility for Patna High Court Technical Assistant recruitment 2026. Category-wise age limits from <strong>37 to 42 years</strong> automatically applied.</p>
+      <div class="hero-chips">
+        <span class="chip">⚖️ Patna HC TA 2026</span>
+        <span class="chip">📅 Cutoff: 01 Jan 2026</span>
+        <span class="chip">📊 53 Posts</span>
+        <span class="chip">🎓 Made for Students</span>
+        <span class="chip">🆓 100% Free Tool</span>
+      </div>
+      <div class="hero-meta">
+        <div class="upd">📅 Updated: 2026</div>
+        <span class="mi">✅ Based on official PHC notification</span>
+        <span class="mi">🔒 No data stored</span>
+      </div>
+      <!-- HOW TO USE -->
+      <div class="howto">
+        <div class="howto-ttl">💡 How to Use This Tool</div>
+        <div class="howto-steps">
+          <div class="hs"><span class="sn">1</span>Enter your Date of Birth (DOB)</div>
+          <div class="hs"><span class="sn">2</span>Select your category (UR / SC / ST / BC / EBC / Female)</div>
+          <div class="hs"><span class="sn">3</span>Click "Check Eligibility"</div>
+          <div class="hs"><span class="sn">4</span>Get your exact age &amp; eligibility result instantly</div>
+        </div>
+      </div>
+      <!-- INTERNAL LINKS -->
+      <div class="link-grid">
+        <div class="lg-box pri">
+          <div class="lg-ico">🎯</div>
+          <div class="lg-txt">
+            <h4>KV Priority Checker</h4>
+            <p>Check KV admission priority and chances</p>
+            <a href="http://rajdailytools.in/kv-priority-category-checker-2026.html" target="_blank" rel="noopener" class="btn-xs p">Check Now →</a>
+          </div>
+        </div>
+        <div class="lg-box age">
+          <div class="lg-ico">📅</div>
+          <div class="lg-txt">
+            <h4>KV Age Calculator</h4>
+            <p>Check KV admission age eligibility</p>
+            <a href="https://rajdailytools.github.io/kv-age-calculator-2026.html" target="_blank" rel="noopener" class="btn-xs b">Calculate →</a>
+          </div>
+        </div>
+        <div class="lg-box doc">
+          <div class="lg-ico">📏</div>
+          <div class="lg-txt">
+            <h4>Govt Exam Height Checker</h4>
+            <p>Check height eligibility for 20+ exams</p>
+            <a href="http://rajdailytools.in" target="_blank" rel="noopener" class="btn-xs g">Check Now →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOOL SECTION -->
+<section class="tool-sec" id="tool">
+  <div class="w">
+    <div class="tool-wrap">
+      <div class="tool-card rev">
+        <div class="tool-hdr">
+          <div class="th">
+            <h2>⚖️ Patna High Court Technical Assistant Age Calculator — 2026</h2>
+            <p>Enter your Date of Birth and category. Our system calculates your exact age as on 01 January 2026 and instantly checks your eligibility based on official Patna High Court TA 2026 recruitment rules.</p>
+            <div class="th-badges">
+              <span class="thb">✅ Cutoff: 01 Jan 2026</span>
+              <span class="thb">📊 53 Vacancies</span>
+              <span class="thb">⚡ Instant Calculation</span>
+              <span class="thb">🔒 No Data Stored</span>
+            </div>
+          </div>
+        </div>
+        <div class="tool-body">
+
+          <!-- ROW 1: DOB + Category -->
+          <div class="fgrid">
+            <div class="fld">
+              <label class="flbl" for="dob">Date of Birth <span>Required</span></label>
+              <input class="finp" type="date" id="dob" max="2008-01-01" min="1975-01-02" onchange="autoCalc()">
+            </div>
+            <div class="fld">
+              <label class="flbl" for="category">Your Category <span>Required</span></label>
+              <select class="fsel" id="category" onchange="autoCalc()">
+                <option value="ur_male">UR / EWS — Male</option>
+                <option value="ur_female">UR / EWS — Female</option>
+                <option value="bc_male">BC — Male</option>
+                <option value="bc_female">BC — Female</option>
+                <option value="ebc_male">EBC — Male</option>
+                <option value="ebc_female">EBC — Female</option>
+                <option value="sc_st">SC / ST (Male &amp; Female)</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- ROW 2: Auto outputs -->
+          <div class="fgrid">
+            <div class="fld">
+              <label class="flbl">Your Age (as on 01 Jan 2026) <span>Auto</span></label>
+              <div class="age-result-box" id="ageDisplay">Will calculate after DOB is entered</div>
+            </div>
+            <div class="fld">
+              <label class="flbl">Age Limit for Your Category <span>Auto</span></label>
+              <div class="age-result-box filled" id="limitDisplay">Min: 18 yrs &nbsp;|&nbsp; Max: 37 yrs (UR/EWS Male)</div>
+            </div>
+          </div>
+
+          <div class="hint-box">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            <div>Age is calculated as on <strong>01 January 2026</strong> (official cutoff date). Age limits: UR/EWS Male — 37 yrs, UR/EWS/BC/EBC Female &amp; BC/EBC Male — 40 yrs, SC/ST — 42 yrs. Minimum age is <strong>18 years</strong> for all categories. Always verify from the <strong>official Patna High Court notification</strong>.</div>
+          </div>
+
+          <button class="chk-btn" onclick="checkEligibility()">⚖️ Check Eligibility — Patna HC TA 2026</button>
+
+          <!-- RESULT AREA -->
+          <div id="resultArea">
+            <div class="stats-row" id="statsRow"></div>
+            <div id="eligCardSection"></div>
+            <div class="age-viz" id="ageViz">
+              <div class="av-title">📊 Your Age vs Eligible Age Range — Visual</div>
+              <div class="av-track-wrap" id="avTrack">
+                <div class="av-zone elig" id="avZone" style="left:0;width:0"></div>
+                <div class="av-marker" id="avMarker" style="left:0"></div>
+              </div>
+              <div class="av-labels"><span>18 yrs (Min)</span><span id="avMax">— yrs (Max)</span></div>
+              <div class="av-legend">
+                <div class="av-leg-item"><div class="av-dot" style="background:var(--green)"></div>Eligible zone</div>
+                <div class="av-leg-item"><div class="av-dot" style="background:var(--ink)"></div>Your age</div>
+              </div>
+            </div>
+            <div style="font-family:var(--fd);font-size:14px;font-weight:700;color:var(--ink);margin:4px 0 10px">📋 Eligibility Across All Categories</div>
+            <div class="cat-cards" id="catCardsSection"></div>
+            <div class="res-warn">
+              <span style="font-size:20px;flex-shrink:0">⚠️</span>
+              <div style="font-size:13.5px;color:var(--ink2);line-height:1.72"><strong>Important Notice:</strong> Always verify details from the <strong>official Patna High Court website</strong> before applying. This tool is for informational purposes only and does not guarantee final eligibility. <strong>We do not collect or store any personal data.</strong></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CRITERIA TABLE -->
+<section class="tbl-sec" id="criteria-table">
+  <div class="w">
+    <div style="max-width:920px;margin:0 auto">
+      <div class="rev" style="text-align:center;margin-bottom:36px">
+        <div class="pill" style="margin-bottom:14px">Official Criteria</div>
+        <h2 style="font-family:var(--fd);font-size:clamp(22px,3.5vw,36px);font-weight:800;color:var(--ink);margin-bottom:10px">Patna HC TA <span style="color:var(--blue)">Eligibility Criteria 2026</span></h2>
+        <p style="font-size:15px;color:var(--ink3);max-width:520px;margin:0 auto;line-height:1.75">Key recruitment details for Patna High Court Technical Assistant 2026.</p>
+      </div>
+      <div class="tbl-wr rev">
+        <table>
+          <thead><tr><th>Criteria</th><th>Details</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Exam Name</strong></td><td>Patna High Court Technical Assistant (TA) 2026</td></tr>
+            <tr><td><strong>Total Posts</strong></td><td><span class="tbadge b">53 Posts</span></td></tr>
+            <tr><td><strong>Minimum Age</strong></td><td><span class="tbadge b">18 Years</span></td></tr>
+            <tr><td><strong>Maximum Age — UR/EWS Male</strong></td><td><span class="tbadge a">37 Years</span></td></tr>
+            <tr><td><strong>Maximum Age — UR/EWS Female &amp; BC/EBC Male &amp; Female</strong></td><td><span class="tbadge a">40 Years</span></td></tr>
+            <tr><td><strong>Maximum Age — SC/ST (Male &amp; Female)</strong></td><td><span class="tbadge g">42 Years</span></td></tr>
+            <tr><td><strong>Age Cut-off Date</strong></td><td><span class="tbadge b">01 January 2026</span></td></tr>
+            <tr><td><strong>Official Website</strong></td><td>patnahighcourt.gov.in</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:12.5px;color:var(--ink4);margin-top:12px;text-align:center">* Always verify from official Patna High Court notification at patnahighcourt.gov.in before applying.</p>
+    </div>
+  </div>
+</section>
+
+<!-- STORY -->
+<section class="story-sec">
+  <div class="wa">
+    <div class="rev" style="text-align:center;margin-bottom:36px">
+      <div class="pill" style="margin-bottom:14px">Personal Story</div>
+      <h2 style="font-family:var(--fd);font-size:clamp(22px,3.4vw,34px);font-weight:800;color:var(--ink);margin-bottom:8px">Why I <span style="color:var(--blue)">Built This Tool</span></h2>
+      <p style="font-size:15px;color:var(--ink3)">Ek dost ki confusion jo ek zaroori tool ban gayi.</p>
+    </div>
+    <div class="story-card rev">
+      <div class="sq">"</div>
+      <div class="sb">
+        Mere ek dost hain — <strong>Ravi</strong> — jo Patna mein rehte hain aur kaafi time se government job ki preparation kar rahe hain. Jab Patna High Court Technical Assistant 2026 ka notification aaya, toh woh bahut excited the. Sirf 53 posts, lekin secure government job thi — unhe lagaa ye unka chance hai.<br><br>
+        Lekin jab unhone form fill karna shuru kiya, toh ek sawaal ne unhe rok diya. <strong>"Mere liye age limit kya hai?"</strong> Woh BC category mein aate hain. Kisi website pe likha tha 37 saal, kisi ne 40 likha, kisi ne general rules follow kiye. Confusion itna tha ki Ravi ne almost decide kar liya ki <strong>woh apply hi nahi karenge — galat information ki wajah se.</strong><br><br>
+        Unhone mujhe call kiya aur puchha. Maine official notification dhundha aur bataya: <strong>BC Male ke liye maximum age 40 saal hai</strong> as on 01 January 2026. Unki DOB thi 15 March 1987 — matlab 01 January 2026 ko woh 38 saal 9 mahine ke the. <strong>Woh fully eligible the!</strong><br><br>
+        Us din mujhe realize hua — thousands of students Ravi jaise hain jo sirf age confusion ki wajah se apna chance gawa dete hain. Usi din maine ye calculator banana shuru kiya — <strong>taki koi bhi ek simple calculation ki wajah se apni opportunity miss na kare.</strong> 🙏
+      </div>
+      <div class="sauth">
+        <div class="savt">👨‍💻</div>
+        <div>
+          <div class="sname">Raj Bhai</div>
+          <div class="srole">Founder, RajDailyTools · BSc Physics · COPA ITI Certified</div>
+        </div>
+      </div>
+    </div>
+    <div class="founder-msg rev" style="margin-top:18px">
+      <div class="fm-ico">💡</div>
+      <div class="fm-txt">
+        <strong>Founder's Message:</strong> "RajDailyTools is built to solve real-life problems through smart tools. Our mission is to simplify important decisions using technology — so no one has to lose their opportunity just because they didn't have the right information at the right time."
+        <br><span style="font-size:13px;color:var(--ink3);font-style:normal;margin-top:6px;display:block">— Raj Bhai, Founder, RajDailyTools</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPLETE GUIDE -->
+<section class="guide-sec">
+  <div class="wa">
+    <div class="rev">
+      <div class="pill" style="margin-bottom:14px">Complete Guide</div>
+      <h2 style="font-family:var(--fd);font-size:clamp(22px,3.5vw,36px);font-weight:800;color:var(--ink);margin-bottom:8px">Patna High Court TA 2026 <span style="color:var(--blue)">Age Eligibility Guide</span></h2>
+      <p style="font-size:15px;color:var(--ink3);margin-bottom:32px">Complete jankari — exam details, category-wise age rules, calculation method, common mistakes aur apply karne ka sahi tarika.</p>
+    </div>
+    <div class="guide-body rev">
+
+      <h2>⚖️ Patna High Court Technical Assistant Exam Kya Hai?</h2>
+      <p>Patna High Court (PHC) Bihar ka sabse bada judicial court hai. Patna High Court Technical Assistant 2026 recruitment ke through <strong>53 technical assistant posts</strong> bharti ki ja rahi hai. Ye posts court ke technical operations, IT systems, aur administrative support ke liye hain — ek prestigious aur secure government position.</p>
+      <p>Bihar ke candidates ke liye ye ek excellent opportunity hai — stable job, good salary, aur government perks. Lekin is exam mein apply karne ke liye pehle <strong>age eligibility confirm karna bahut zaroori hai</strong> — kyunki different categories ke liye alag-alag age limits hain.</p>
+
+      <h2>📅 Age Cutoff Date — 01 January 2026 Kyun?</h2>
+      <p>Official Patna High Court TA 2026 notification ke mutabiq, candidates ki age <strong>01 January 2026 ko reference date maankar</strong> calculate ki jaati hai. Matlab aapki exact age us date par kya thi — wohi eligibility determine karegi.</p>
+      <div class="ibox">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        <div><strong>Example:</strong> DOB: 15 March 1988 → Age on 01 Jan 2026 = 37 years 9 months 17 days. UR Male ke liye max 37 years — NOT eligible (exceeded). BC Male ke liye max 40 — ELIGIBLE. SC/ST ke liye max 42 — ELIGIBLE.</div>
+      </div>
+
+      <h2>📋 Category-Wise Age Limits — Explained</h2>
+      <p>Patna High Court TA 2026 mein age limits category aur gender dono par depend karti hain:</p>
+      <ul>
+        <li><strong>UR/EWS Male:</strong> Minimum 18 — Maximum 37 years as on 01 Jan 2026</li>
+        <li><strong>UR/EWS Female:</strong> Minimum 18 — Maximum 40 years (females ko 3 year extra relaxation)</li>
+        <li><strong>BC Male:</strong> Minimum 18 — Maximum 40 years (BC category ko 3 year relaxation)</li>
+        <li><strong>BC Female:</strong> Minimum 18 — Maximum 40 years</li>
+        <li><strong>EBC Male:</strong> Minimum 18 — Maximum 40 years (EBC ko bhi same relaxation)</li>
+        <li><strong>EBC Female:</strong> Minimum 18 — Maximum 40 years</li>
+        <li><strong>SC/ST (Male &amp; Female):</strong> Minimum 18 — Maximum 42 years (highest relaxation)</li>
+      </ul>
+      <div class="ibox g">
+        <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        <div><strong>Key Insight:</strong> SC/ST candidates ko sabse zyada relaxation milti hai — 5 extra years compared to UR Male. Female candidates ko bhi extra benefit milta hai. Isliye apna correct category aur gender select karna bahut important hai.</div>
+      </div>
+
+      <h2>🔢 Exact Age Calculation — Step by Step</h2>
+      <p>Age calculate karne ke liye ye simple steps follow karein:</p>
+      <ul>
+        <li>Reference date = <strong>01 January 2026</strong></li>
+        <li>Apni Date of Birth se 01 January 2026 tak exact years, months, days count karein</li>
+        <li>Agar 01 January 2026 ko birthday hai — woh din count hota hai</li>
+        <li>Age sirf years mein check hoti hai — 37 years 11 months bhi UR Male ke liye NOT eligible</li>
+        <li>Is tool mein DOB enter karo — automatically sab calculate ho jaata hai</li>
+      </ul>
+
+      <h2>❌ Common Mistakes Jo Candidates Karte Hain</h2>
+      <div class="mistakes-grid">
+        <div class="mk">
+          <div class="mk-head">❌ Galat Cutoff Date Use Karna</div>
+          <div class="mk-desc">Age aaj ki date se calculate karna — WRONG. Patna HC TA 2026 ke liye sirf 01 January 2026 use karein.</div>
+        </div>
+        <div class="mk">
+          <div class="mk-head">❌ Category Relaxation Miss Karna</div>
+          <div class="mk-desc">UR Male ki 37 saal limit dekh ke discourage ho jaana — BC/EBC/Female/SC/ST ke liye zyada limit hai.</div>
+        </div>
+        <div class="mk">
+          <div class="mk-head">❌ Gender Ignore Karna</div>
+          <div class="mk-desc">Female candidates ko 3 extra years milte hain UR category mein bhi — ye advantage claim nahi karte.</div>
+        </div>
+        <div class="mk">
+          <div class="mk-head">❌ Official Notification Nahi Padhna</div>
+          <div class="mk-desc">Third-party websites par sirf depend karna — hamesha patnahighcourt.gov.in se official notification verify karein.</div>
+        </div>
+      </div>
+
+      <h2>🎯 Sarkari Naukri Mein Age Calculation Ki Importance</h2>
+      <p>Government jobs mein age eligibility ek <strong>hard cutoff</strong> hoti hai — koi grace nahi milta, koi rounding off nahi hoti. Agar aap 01 January 2026 ko 37 saal 1 din bhi the aur UR Male hain, toh <strong>directly rejected</strong>.</p>
+      <p>Isliye <strong>age calculate karna pehla step hona chahiye</strong> — form fill karne se bhi pehle. Ye tool exactly ye karta hai — aapko seconds mein bata deta hai ki aap eligible hain ya nahi, aur agar nahi hain toh kis category mein eligible hote.</p>
+
+      <h2>📝 Apply Karne Ka Sahi Tarika</h2>
+      <ul>
+        <li>Pehle is tool se age eligibility confirm karein</li>
+        <li>Official website <strong>patnahighcourt.gov.in</strong> par notification download karein</li>
+        <li>Educational qualification requirements carefully padhe</li>
+        <li>Valid category certificate ready rakhein (SC/ST/BC/EBC ke liye)</li>
+        <li>EWS certificate current financial year ka hona chahiye</li>
+        <li>Online application form carefully fill karein — category sahi select karein</li>
+        <li>Application fee online mode se pay karein</li>
+        <li>Submit karne ke baad confirmation printout zaroor lein</li>
+      </ul>
+
+      <div class="ibox a">
+        <svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        <div><strong>Important Notice:</strong> Always verify all eligibility details from the official Patna High Court website — <strong>patnahighcourt.gov.in</strong> — before submitting your application. Criteria in this tool are based on commonly published recruitment norms and may change per notification cycle.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CATEGORY AGE TABLE -->
+<section class="cat-tbl-sec" id="category-table">
+  <div class="w">
+    <div style="max-width:860px;margin:0 auto">
+      <div class="rev" style="text-align:center;margin-bottom:36px">
+        <div class="pill" style="margin-bottom:14px">Category-Wise Age Limits</div>
+        <h2 style="font-family:var(--fd);font-size:clamp(22px,3.5vw,36px);font-weight:800;color:var(--ink);margin-bottom:10px">Patna HC TA <span style="color:var(--blue)">Age Limit by Category</span></h2>
+      </div>
+      <div class="tbl-wr rev">
+        <table>
+          <thead><tr><th>Category / Gender</th><th>Min Age</th><th>Max Age</th><th>Certificate Required</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td><strong>UR / EWS — Male</strong></td><td>18 yrs</td><td><span class="tbadge a">37 years</span></td><td>EWS income cert (if EWS)</td><td>Lowest max age</td></tr>
+            <tr><td><strong>UR / EWS — Female</strong></td><td>18 yrs</td><td><span class="tbadge g">40 years</span></td><td>EWS income cert (if EWS)</td><td>+3 years for females</td></tr>
+            <tr><td><strong>BC — Male</strong></td><td>18 yrs</td><td><span class="tbadge g">40 years</span></td><td>BC caste certificate</td><td>+3 years relaxation</td></tr>
+            <tr><td><strong>BC — Female</strong></td><td>18 yrs</td><td><span class="tbadge g">40 years</span></td><td>BC caste certificate</td><td>+3 years relaxation</td></tr>
+            <tr><td><strong>EBC — Male</strong></td><td>18 yrs</td><td><span class="tbadge g">40 years</span></td><td>EBC caste certificate</td><td>+3 years relaxation</td></tr>
+            <tr><td><strong>EBC — Female</strong></td><td>18 yrs</td><td><span class="tbadge g">40 years</span></td><td>EBC caste certificate</td><td>+3 years relaxation</td></tr>
+            <tr><td><strong>SC / ST (Male &amp; Female)</strong></td><td>18 yrs</td><td><span class="tbadge g">42 years</span></td><td>SC/ST caste certificate</td><td>Highest relaxation (+5 yrs)</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:12.5px;color:var(--ink4);margin-top:12px;text-align:center">* Age cutoff: 01 January 2026. Verify from official patnahighcourt.gov.in notification.</p>
+    </div>
+  </div>
+</section>
+
+<!-- DISCLAIMER -->
+<div class="disc">
+  <div class="wa">
+    <div class="disc-in">
+      <span style="font-size:20px;flex-shrink:0">⚠️</span>
+      <div><strong>Disclaimer:</strong> Ye tool sirf informational purposes ke liye hai. Age limits vary kar sakti hain specific notification aur exam cycle ke hisaab se. Ye tool Patna High Court ya kisi government body se affiliated nahi hai. Final eligibility sirf official Patna High Court notification se confirm karein — <strong>patnahighcourt.gov.in</strong>. <strong>Hum koi personal data collect ya store nahi karte — aapka data 100% safe hai.</strong></div>
+    </div>
+  </div>
+</div>
+
+<!-- FAQ -->
+<section class="faq-sec">
+  <div class="w">
+    <div style="text-align:center;margin-bottom:40px" class="rev">
+      <div class="pill" style="margin-bottom:14px">FAQs</div>
+      <h2 style="font-family:var(--fd);font-size:clamp(22px,3.5vw,36px);font-weight:800;color:var(--ink);margin-bottom:10px">Frequently Asked <span style="color:var(--blue)">Questions</span></h2>
+      <p style="font-size:15px;color:var(--ink3);max-width:480px;margin:0 auto">Patna High Court TA 2026 age eligibility ke baare mein common sawaal.</p>
+    </div>
+    <div class="fql" id="faqList">
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">Patna High Court Technical Assistant mein minimum age kya hai?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">Patna High Court TA 2026 ke liye <strong>minimum age 18 years</strong> hai — as on 01 January 2026. Ye minimum age limit sabhi categories ke liye same hai — UR, BC, EBC, SC, ST, male, female sab ke liye. Agar 01 January 2026 ko aapki age 18 saal se kam hai, toh aap eligible nahi hain.</div></div></div>
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">Patna High Court TA mein maximum age limit kya hai?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">Maximum age limit category aur gender ke hisaab se vary karti hai: <strong>UR/EWS Male: 37 years, UR/EWS Female / BC/EBC Male &amp; Female: 40 years, SC/ST (All): 42 years</strong> — as on 01 January 2026. UR Male ke liye sabse strict limit hai (37 years), jabki SC/ST candidates ke liye sabse zyada relaxation hai (42 years).</div></div></div>
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">Category-wise age limit kya hai Patna HC TA 2026 mein?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">Category-wise age limits: <strong>UR/EWS Male → 37 yrs, UR/EWS Female → 40 yrs, BC Male → 40 yrs, BC Female → 40 yrs, EBC Male → 40 yrs, EBC Female → 40 yrs, SC/ST (M+F) → 42 yrs.</strong> Minimum age 18 years hai sabhi ke liye. Is tool mein apna category select karein — automatically sahi limit aur eligibility result milega.</div></div></div>
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">Age calculation ke liye cutoff date kya hai — Patna HC TA 2026?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">Patna High Court Technical Assistant 2026 ke liye official age cutoff date <strong>01 January 2026</strong> hai. Matlab aapki age 01 January 2026 ko jo hogi — wohi eligibility decide karegi. Form fill karne ki date ya exam date se koi farak nahi padta — sirf 01 January 2026 reference date hai.</div></div></div>
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">Kya females ko Patna HC TA mein age relaxation milti hai?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">Haan — <strong>female candidates ko age relaxation milti hai</strong>. UR/EWS Female ke liye maximum age 40 years hai, jabki UR/EWS Male ke liye sirf 37 years. Matlab females ko 3 extra years ka benefit milta hai. BC, EBC female candidates ke liye bhi 40 years limit hai. SC/ST females ke liye 42 years maximum age hai.</div></div></div>
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">Kya ye calculator 100% accurate hai?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">Ye tool official Patna High Court TA 2026 notification ke mutabiq published age norms par based hai. Age calculations <strong>mathematically accurate</strong> hain — exact years, months, days calculate hote hain. Lekin hamesha <strong>patnahighcourt.gov.in se official notification se final confirmation zaroor lein</strong> before submitting your application. Ye tool quick reference ke liye hai.</div></div></div>
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">Patna HC TA 2026 mein total kitne posts hain?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">Patna High Court Technical Assistant 2026 recruitment mein <strong>total 53 posts</strong> hain. Ye relatively limited posts hain isliye competition high hoga. Posts ka distribution categories ke hisaab se (UR/EWS/BC/EBC/SC/ST) official notification mein specify kiya gaya hai. Official website patnahighcourt.gov.in par complete details dekh sakte hain.</div></div></div>
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">Patna HC TA ke liye official website kahan check karein?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">Patna High Court Technical Assistant 2026 ke liye official website hai <strong>patnahighcourt.gov.in</strong>. Wahan "Recruitment" ya "Latest Notifications" section mein official notification milegi. Sirf official source se information lein — WhatsApp forwards ya third-party sites par depend mat karein. Apply karne se pehle poora notification download karke padhe.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-sec">
+  <div class="w">
+    <div class="contact-card rev">
+      <h3>💬 Suggestions or Issues?</h3>
+      <p>Agar Patna HC TA calculator mein koi error mile ya koi information update karni ho, please contact karein. Hum jaldi update karte hain.</p>
+      <a href="/contact" class="btn-blue">📩 Contact Us</a>
+      <p class="priv-note">🔒 We do not collect or store any personal data. All processing is done locally in your browser. Safe &amp; Secure.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="w">
+    <div class="cta-in">
+      <div class="pill">Explore More Tools</div>
+      <h2>More Smart Tools for <em>Government Aspirants</em></h2>
+      <p>RajDailyTools pe aur bhi bahut saare free tools hain jo government job aspirants ke daily problems solve karte hain.</p>
+      <div class="cta-btns">
+        <a href="/categories" class="btn-gold">🚀 Explore All Tools</a>
+        <a href="/contact" class="btn-ghost">💡 Suggest a Tool</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-inner">
+    <div class="ft-top">
+      <div class="ft-brand">
+        <div class="logo" style="margin-bottom:4px">
+          <div class="lb"><svg viewBox="0 0 24 24" fill="#fff"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+          <div><div class="ln">Raj<span>Daily</span>Tools</div><div class="ls">Smart Tools for Daily Life</div></div>
+        </div>
+        <p class="ft-desc">India's most ambitious free tools platform. Built by Raj Bhai. Solving daily life problems, one tool at a time.</p>
+        <div class="ft-soc">
+          <a href="https://www.facebook.com/share/1Dq3Y1k7mG/" target="_blank" class="fts">f</a>
+          <a href="https://x.com/Educator4ll" target="_blank" class="fts">𝕏</a>
+          <a href="https://youtube.com/@rajdailytools" target="_blank" class="fts">▶</a>
+          <a href="https://www.instagram.com/rajdailytools" target="_blank" class="fts">📷</a>
+        </div>
+      </div>
+      <div class="fc"><h4>Govt Tools</h4><ul>
+        <li><a href="#">Patna HC TA Age Calculator</a></li>
+        <li><a href="https://rajdailytools.github.io/kv-age-calculator-2026.html">KV Age Calculator</a></li>
+        <li><a href="http://rajdailytools.in/kv-priority-category-checker-2026.html">KV Priority Checker</a></li>
+        <li><a href="http://rajdailytools.in/kv-admission-documents-list-2026.html">KV Documents List</a></li>
+      </ul></div>
+      <div class="fc"><h4>Categories</h4><ul>
+        <li><a href="/education-tools">Education Tools</a></li>
+        <li><a href="/finance-tools">Finance Tools</a></li>
+        <li><a href="/calculator-tools">Calculator Tools</a></li>
+        <li><a href="/health-tools">Health Tools</a></li>
+        <li><a href="/text-tools">Text Tools</a></li>
+      </ul></div>
+      <div class="fc"><h4>Company</h4><ul>
+        <li><a href="/about">About Us</a></li>
+        <li><a href="/contact">Contact</a></li>
+        <li><a href="/privacy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
+      </ul></div>
+    </div>
+    <div class="ft-btm">
+      <p class="ft-cp">Copyright © 2026 <b>RajDailyTools</b>. All rights reserved. Designed by <b>RajDailyTools</b></p>
+      <p class="ft-tag">Made with ❤️ in India — "Solving daily life problems with smart tools"</p>
+    </div>
+  </div>
+</footer>
+<button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+/* ── Drawer ── */
+const brg=document.getElementById('brg'),drw=document.getElementById('drw'),dov=document.getElementById('dov');
+function oD(){drw.classList.add('on');dov.classList.add('on');document.body.style.overflow='hidden'}
+function cD(){drw.classList.remove('on');dov.classList.remove('on');document.body.style.overflow=''}
+brg.addEventListener('click',oD);
+document.getElementById('dx').addEventListener('click',cD);
+dov.addEventListener('click',cD);
+
+/* ── Scroll-to-top ── */
+const btt=document.getElementById('btt');
+window.addEventListener('scroll',()=>btt.classList.toggle('on',scrollY>380),{passive:true});
+
+/* ── Scroll reveal ── */
+const ro=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){
+    const s=[...(e.target.parentElement?.children||[])];
+    e.target.style.transitionDelay=(s.indexOf(e.target)%4)*0.08+'s';
+    e.target.classList.add('in');ro.unobserve(e.target);
+  }});
+},{threshold:0.06,rootMargin:'0px 0px -20px 0px'});
+document.querySelectorAll('.rev').forEach(el=>ro.observe(el));
+
+/* ── FAQ accordion ── */
+document.getElementById('faqList').addEventListener('click',function(e){
+  const q=e.target.closest('.fq-q');if(!q)return;
+  const item=q.closest('.fq'),open=item.classList.contains('open');
+  document.querySelectorAll('.fq.open').forEach(i=>i.classList.remove('open'));
+  if(!open)item.classList.add('open');
+});
+
+/* ══════════════════════════════════════
+   PATNA HC TA AGE CALCULATOR LOGIC
+══════════════════════════════════════ */
+const REF = new Date('2026-01-01');
+const MIN_AGE = 18;
+
+/* Category rules: key → { label, maxAge } */
+const CATS = {
+  ur_male:   { label:'UR/EWS Male',    maxAge:37 },
+  ur_female: { label:'UR/EWS Female',  maxAge:40 },
+  bc_male:   { label:'BC Male',        maxAge:40 },
+  bc_female: { label:'BC Female',      maxAge:40 },
+  ebc_male:  { label:'EBC Male',       maxAge:40 },
+  ebc_female:{ label:'EBC Female',     maxAge:40 },
+  sc_st:     { label:'SC/ST (All)',    maxAge:42 },
+};
+
+function calcAge(dob){
+  let y=REF.getFullYear()-dob.getFullYear();
+  let m=REF.getMonth()-dob.getMonth();
+  let d=REF.getDate()-dob.getDate();
+  if(d<0){m--;const pm=new Date(REF.getFullYear(),REF.getMonth(),0);d+=pm.getDate();}
+  if(m<0){y--;m+=12;}
+  return{years:y,months:m,days:d};
+}
+
+function autoCalc(){
+  const dobVal=document.getElementById('dob').value;
+  const catKey=document.getElementById('category').value;
+  const cat=CATS[catKey];
+  const limBox=document.getElementById('limitDisplay');
+  const ageBox=document.getElementById('ageDisplay');
+
+  limBox.textContent=`Min: 18 yrs  |  Max: ${cat.maxAge} yrs (${cat.label})`;
+  limBox.classList.add('filled');
+
+  if(!dobVal){ageBox.textContent='Will calculate after DOB is entered';ageBox.classList.remove('filled');return;}
+  const age=calcAge(new Date(dobVal));
+  ageBox.textContent=`${age.years} yrs, ${age.months} months, ${age.days} days  (as on 01 Jan 2026)`;
+  ageBox.classList.add('filled');
+}
+
+function checkEligibility(){
+  const dobVal=document.getElementById('dob').value;
+  const catKey=document.getElementById('category').value;
+  if(!dobVal){alert('Please enter your Date of Birth.');return;}
+
+  const dob=new Date(dobVal);
+  const age=calcAge(dob);
+  const cat=CATS[catKey];
+  const maxAge=cat.maxAge;
+
+  const tooYoung=age.years<MIN_AGE;
+  const tooOld=age.years>maxAge||(age.years===maxAge&&(age.months>0||age.days>0));
+  const eligible=!tooYoung&&!tooOld;
+
+  /* ── Stats Row ── */
+  document.getElementById('statsRow').innerHTML=`
+    <div class="stat-box ${eligible?'eligible':'notelig'}">
+      <div class="stat-num ${eligible?'g':'r'}">${age.years}</div>
+      <div class="stat-lbl">Your Age (Years)</div>
+    </div>
+    <div class="stat-box neutral">
+      <div class="stat-num b">${maxAge}</div>
+      <div class="stat-lbl">Max Age (${cat.label})</div>
+    </div>
+    <div class="stat-box ${eligible?'eligible':'notelig'}">
+      <div class="stat-num ${eligible?'g':'r'}">${eligible?'✅':'❌'}</div>
+      <div class="stat-lbl">${eligible?'Eligible':'Not Eligible'}</div>
+    </div>`;
+
+  /* ── Eligibility Card ── */
+  let card='';
+  if(eligible){
+    card=`<div class="elig-result-card ok">
+      <div class="erc-ico">✅</div>
+      <div class="erc-body">
+        <h3>Congratulations! You Are Eligible</h3>
+        <p>Your age as on 01 January 2026 is <strong>${age.years} years, ${age.months} months, ${age.days} days</strong>.<br>
+        Category: <strong>${cat.label}</strong> &nbsp;|&nbsp; Max allowed: <strong>${maxAge} years</strong><br>
+        You meet the age eligibility for <strong>Patna High Court Technical Assistant 2026</strong>. Also verify educational qualification from the official notification before applying.</p>
+      </div>
+    </div>`;
+  }else if(tooYoung){
+    card=`<div class="elig-result-card no">
+      <div class="erc-ico">❌</div>
+      <div class="erc-body">
+        <h3>Not Eligible — Too Young</h3>
+        <p>Your age as on 01 January 2026 is <strong>${age.years} years, ${age.months} months, ${age.days} days</strong>.<br>
+        Minimum age required is <strong>18 years</strong> — you are below the minimum limit.<br>
+        You may qualify in future PHC or other court recruitment cycles.</p>
+      </div>
+    </div>`;
+  }else{
+    const over=age.years-maxAge;
+    card=`<div class="elig-result-card no">
+      <div class="erc-ico">❌</div>
+      <div class="erc-body">
+        <h3>Not Eligible — Age Exceeded</h3>
+        <p>Your age as on 01 January 2026 is <strong>${age.years} years, ${age.months} months, ${age.days} days</strong>.<br>
+        Maximum allowed for <strong>${cat.label}</strong> is <strong>${maxAge} years</strong>.<br>
+        Age exceeded by approx. <strong>${over} year(s)</strong>. Check other categories below — you may be eligible in a different one.</p>
+      </div>
+    </div>`;
+  }
+  document.getElementById('eligCardSection').innerHTML=card;
+
+  /* ── Age Visual Bar ── */
+  const RANGE_MIN=18,RANGE_MAX=44;
+  const range=RANGE_MAX-RANGE_MIN;
+  const eligPct=((maxAge-RANGE_MIN)/range*100).toFixed(1);
+  const myPct=Math.min(Math.max(((age.years-RANGE_MIN)/range*100),0),100).toFixed(1);
+  document.getElementById('avZone').style.width=eligPct+'%';
+  document.getElementById('avMarker').style.left=myPct+'%';
+  document.getElementById('avMax').textContent=maxAge+' yrs (Max for '+cat.label+')';
+
+  /* ── All Category Cards ── */
+  const catList=[
+    {key:'ur_male',icon:'👨'},
+    {key:'ur_female',icon:'👩'},
+    {key:'bc_male',icon:'👨'},
+    {key:'bc_female',icon:'👩'},
+    {key:'ebc_male',icon:'👨'},
+    {key:'sc_st',icon:'📋'},
+  ];
+  const cards=catList.map((c,i)=>{
+    const r=CATS[c.key];
+    const tO=age.years>r.maxAge||(age.years===r.maxAge&&(age.months>0||age.days>0));
+    const el2=!tooYoung&&!tO;
+    return`<div class="cat-card" style="animation-delay:${i*0.06}s">
+      <div class="cc-top">
+        <div class="cc-name">${c.icon} ${r.label}</div>
+        <div class="cc-badge ${el2?'ok':'no'}">${el2?'✅ Eligible':'❌ Not Eligible'}</div>
+      </div>
+      <div class="cc-detail">Max Age: <strong>${r.maxAge} yrs</strong></div>
+    </div>`;
+  }).join('');
+  document.getElementById('catCardsSection').innerHTML=cards;
+
+  const ra=document.getElementById('resultArea');
+  ra.style.display='block';
+  ra.style.animation='none';ra.offsetHeight;
+  ra.style.animation='resultIn .45s var(--ease) both';
+  setTimeout(()=>ra.scrollIntoView({behavior:'smooth',block:'nearest'}),120);
+}
+</script>
+</body>
+</html>
+  
