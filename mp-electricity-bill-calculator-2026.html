@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MP Electricity Bill Calculator 2026 – MPPKVVCL Slab Rate | RajDailyTools</title>
+<meta name="description" content="Calculate your Madhya Pradesh electricity bill instantly using 2026 MPPKVVCL slab rates. Domestic, commercial & agriculture bill calculator for MP. Free, accurate & fast.">
+<meta name="keywords" content="MP electricity bill calculator, Madhya Pradesh bijli bill calculator, MPPKVVCL bill calculator, MP bijli slab rate 2026, madhya pradesh electricity calculator">
+<meta name="robots" content="index, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+:root{
+  --blue:#2563eb;--blue-d:#1d4ed8;--blue-xl:#eff6ff;--blue-s:#dbeafe;
+  --amber:#f59e0b;--green:#10b981;--red:#ef4444;--purple:#8b5cf6;
+  --green-xl:#f0fdf4;--green-s:#bbf7d0;
+  --red-xl:#fef2f2;--red-s:#fecaca;
+  --amber-xl:#fffbeb;--amber-s:#fde68a;
+  --purple-xl:#faf5ff;--purple-s:#ddd6fe;
+  --ink:#0f172a;--ink2:#334155;--ink3:#64748b;--ink4:#94a3b8;
+  --line:#e2e8f0;--surf:#f8fafc;--white:#fff;
+  --s2:0 4px 16px rgba(15,23,42,.08);--s3:0 12px 40px rgba(15,23,42,.11);--s4:0 24px 64px rgba(15,23,42,.13);
+  --sb:0 8px 32px rgba(37,99,235,.20);
+  --fd:'Sora',sans-serif;--fb:'DM Sans',sans-serif;
+  --ease:cubic-bezier(.4,0,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);color:var(--ink);background:#fff;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+button{cursor:pointer;border:none;background:none;font-family:var(--fb)}
+.w{max-width:1180px;margin:0 auto;padding:0 24px}
+.wa{max-width:900px;margin:0 auto;padding:0 24px}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.55;transform:scale(1.3)}}
+@keyframes rIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.rev{opacity:0;transform:translateY(20px);transition:opacity .5s var(--ease),transform .5s var(--ease)}
+.rev.in{opacity:1;transform:none}
+
+/* HEADER */
+.hdr{position:sticky;top:0;z-index:999;background:rgba(255,255,255,.96);backdrop-filter:blur(18px);border-bottom:1px solid var(--line);box-shadow:0 1px 3px rgba(15,23,42,.06)}
+.hdi{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{display:flex;align-items:center;gap:10px}
+.lb{width:35px;height:35px;background:var(--blue);border-radius:9px;display:flex;align-items:center;justify-content:center;box-shadow:var(--sb);flex-shrink:0}
+.lb svg{width:17px;height:17px;fill:#fff}
+.ln{font-family:var(--fd);font-size:18px;font-weight:800;color:var(--ink);line-height:1}
+.ln span{color:var(--blue)}
+.ls{font-size:10px;color:var(--ink4);letter-spacing:.04em}
+nav.dn a{font-size:13px;font-weight:500;color:var(--ink2);padding:7px 12px;border-radius:8px;transition:.2s}
+nav.dn a:hover{color:var(--blue);background:var(--blue-xl)}
+.hcta{background:var(--blue);color:#fff;font-family:var(--fd);font-weight:600;font-size:13px;padding:8px 17px;border-radius:8px;box-shadow:var(--sb);transition:.2s}
+.hcta:hover{background:var(--blue-d);transform:translateY(-1px)}
+.brg{display:none;flex-direction:column;gap:4px;padding:8px;border-radius:8px}
+.brg span{display:block;width:20px;height:2px;background:var(--ink);border-radius:2px}
+.dov{display:none;position:fixed;inset:0;background:rgba(15,23,42,.45);z-index:1040;backdrop-filter:blur(3px)}
+.dov.on{display:block}
+.drw{position:fixed;top:0;right:-100%;width:268px;height:100vh;background:#fff;z-index:1050;padding:22px;box-shadow:var(--s4);transition:right .3s var(--ease);overflow-y:auto}
+.drw.on{right:0}
+.dh{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px}
+.dx{width:32px;height:32px;border-radius:7px;background:var(--surf);display:flex;align-items:center;justify-content:center;color:var(--ink3);font-size:16px}
+.drw nav a{display:block;font-size:14px;font-weight:500;color:var(--ink2);padding:11px 12px;border-radius:8px;transition:.2s}
+.drw nav a:hover{color:var(--blue);background:var(--blue-xl)}
+
+/* ALERT */
+.abar{background:linear-gradient(90deg,#1d4ed8,#2563eb);padding:9px 0;text-align:center;font-size:13px;font-weight:600;color:#fff}
+.abar span{background:rgba(255,255,255,.2);padding:2px 9px;border-radius:100px;margin-right:10px;font-size:11px}
+
+/* HERO */
+.hero{position:relative;overflow:hidden;background:linear-gradient(150deg,#ebf4ff 0%,#fff 48%,#fffbeb 100%);padding:68px 0 78px}
+.hero::before{content:'';position:absolute;top:-140px;right:-180px;width:580px;height:580px;border-radius:50%;background:radial-gradient(circle,rgba(37,99,235,.08) 0%,transparent 68%);pointer-events:none}
+.blob{position:absolute;border-radius:50%;pointer-events:none;animation:float 6s ease-in-out infinite}
+.b1{width:12px;height:12px;background:rgba(37,99,235,.18);top:22%;right:14%;animation-delay:0s}
+.b2{width:8px;height:8px;background:rgba(245,158,11,.22);top:58%;right:26%;animation-delay:2s}
+.bc{display:flex;align-items:center;gap:7px;font-size:12px;color:var(--ink3);margin-bottom:22px;position:relative;z-index:1;flex-wrap:wrap}
+.bc a{color:var(--blue);font-weight:600}
+.pill{display:inline-flex;align-items:center;gap:6px;font-family:var(--fd);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);background:var(--blue-xl);padding:4px 13px;border-radius:100px;margin-bottom:16px}
+.pill::before{content:'';width:5px;height:5px;background:var(--blue);border-radius:50%;animation:pulse 2s infinite}
+.hero-inner{position:relative;z-index:1;max-width:740px;animation:fadeUp .5s ease both}
+.hero h1{font-family:var(--fd);font-size:clamp(26px,4.5vw,50px);font-weight:800;line-height:1.1;color:var(--ink);margin-bottom:14px}
+.hero h1 span{color:var(--blue)}
+.hero-sub{font-size:16px;color:var(--ink3);line-height:1.8;margin-bottom:22px;max-width:580px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:600;padding:5px 13px;border-radius:100px;background:#fff;border:1.5px solid var(--line);color:var(--ink2);box-shadow:0 1px 3px rgba(15,23,42,.05);transition:.2s}
+.chip:hover{border-color:var(--blue);color:var(--blue)}
+
+/* QUICK STATS */
+.qs{background:linear-gradient(135deg,var(--blue),#1e40af);padding:20px 0}
+.qs-inner{display:flex;justify-content:center;gap:44px;flex-wrap:wrap}
+.qs-item{text-align:center;color:#fff}
+.qs-n{font-family:var(--fd);font-size:22px;font-weight:800;line-height:1}
+.qs-l{font-size:11.5px;color:rgba(255,255,255,.75);margin-top:3px}
+
+/* SECTIONS */
+.sh{text-align:center;margin-bottom:42px}
+.sh h2{font-family:var(--fd);font-size:clamp(22px,3.8vw,36px);font-weight:800;color:var(--ink);margin-bottom:9px}
+.sh h2 span{color:var(--blue)}
+.sh p{font-size:15px;color:var(--ink3);max-width:500px;margin:0 auto}
+
+/* SLAB INFO CARDS */
+.slab-sec{background:var(--surf);padding:64px 0}
+.slab-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;max-width:960px;margin:0 auto}
+.slab-card{background:#fff;border:1.5px solid var(--line);border-radius:16px;padding:20px 16px;text-align:center;transition:.25s;position:relative;overflow:hidden}
+.slab-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--sc)}
+.slab-card:hover{transform:translateY(-4px);box-shadow:var(--s3)}
+.slab-range{font-size:11px;font-weight:700;color:var(--ink3);text-transform:uppercase;letter-spacing:.07em;margin-bottom:6px}
+.slab-rate{font-family:var(--fd);font-size:24px;font-weight:800;color:var(--ink);line-height:1;margin-bottom:4px}
+.slab-unit{font-size:11px;color:var(--ink4)}
+.slab-badge{display:inline-flex;font-size:10px;font-weight:700;padding:2px 8px;border-radius:100px;margin-top:8px;background:var(--sb-bg);color:var(--sb-c);border:1px solid var(--sb-bd)}
+
+/* CALCULATOR */
+.calc-sec{background:#fff;padding:72px 0}
+.tcrd{background:#fff;border:1.5px solid var(--line);border-radius:22px;overflow:hidden;box-shadow:var(--s4);margin-bottom:22px;max-width:900px;margin-left:auto;margin-right:auto}
+.th2{padding:26px 36px;position:relative;overflow:hidden}
+.th2::before{content:'';position:absolute;top:-50px;right:-50px;width:200px;height:200px;border-radius:50%;background:rgba(255,255,255,.07)}
+.th2 h3{position:relative;z-index:1;font-family:var(--fd);font-size:18px;font-weight:800;color:#fff;margin-bottom:5px}
+.th2 p{position:relative;z-index:1;font-size:13px;color:rgba(255,255,255,.8)}
+.tb{padding:30px 36px}
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.fld{margin-bottom:0}
+.flbl{font-size:13px;font-weight:700;color:var(--ink2);margin-bottom:6px;display:block}
+.finp,.fsel{width:100%;padding:12px 16px;font-size:14.5px;color:var(--ink);background:#fff;border:1.5px solid var(--line);border-radius:10px;outline:none;transition:.22s;font-family:var(--fb)}
+.finp:focus,.fsel:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(37,99,235,.1)}
+.fsel{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2364748b' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:40px;appearance:none}
+.calc-btn{width:100%;padding:15px;background:linear-gradient(135deg,var(--blue),#1e40af);color:#fff;font-family:var(--fd);font-weight:800;font-size:15.5px;border-radius:11px;box-shadow:var(--sb);transition:.24s;display:flex;align-items:center;justify-content:center;gap:9px;margin-top:18px}
+.calc-btn:hover{transform:translateY(-2px);box-shadow:0 16px 40px rgba(37,99,235,.30)}
+.reset-btn{width:100%;padding:11px;background:var(--surf);color:var(--ink3);font-family:var(--fd);font-weight:600;font-size:13px;border-radius:10px;border:1.5px solid var(--line);transition:.2s;margin-top:9px}
+.reset-btn:hover{background:var(--red-xl);color:var(--red);border-color:var(--red-s)}
+
+/* RESULT */
+.result-box{display:none;margin-top:24px;animation:rIn .4s var(--ease) both}
+.res-header{background:linear-gradient(135deg,var(--green),#059669);border-radius:14px;padding:22px 26px;margin-bottom:16px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px}
+.res-main-label{font-size:13px;font-weight:700;color:rgba(255,255,255,.85);text-transform:uppercase;letter-spacing:.06em;margin-bottom:5px}
+.res-main-val{font-family:var(--fd);font-size:36px;font-weight:800;color:#fff;line-height:1}
+.res-monthly{font-size:13px;color:rgba(255,255,255,.8);margin-top:4px}
+.res-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:16px}
+.res-card{background:var(--surf);border:1.5px solid var(--line);border-radius:12px;padding:15px 16px}
+.res-label{font-size:11px;font-weight:700;color:var(--ink3);text-transform:uppercase;letter-spacing:.05em;margin-bottom:5px}
+.res-val{font-family:var(--fd);font-size:18px;font-weight:800;color:var(--ink)}
+.slab-breakdown{background:var(--blue-xl);border:1.5px solid var(--blue-s);border-radius:13px;padding:16px 20px;margin-bottom:16px}
+.sb-title{font-family:var(--fd);font-size:13px;font-weight:800;color:var(--ink);margin-bottom:12px;display:flex;align-items:center;gap:7px}
+.sb-row{display:flex;justify-content:space-between;align-items:center;font-size:13px;color:var(--ink2);padding:6px 0;border-bottom:1px solid var(--blue-s)}
+.sb-row:last-child{border-bottom:none;font-weight:700;color:var(--ink);padding-top:10px}
+.sb-row span:last-child{font-family:var(--fd);font-weight:700}
+.chart-wrap{background:var(--surf);border:1.5px solid var(--line);border-radius:13px;padding:20px;margin-bottom:16px}
+.chart-title{font-family:var(--fd);font-size:13px;font-weight:700;color:var(--ink);margin-bottom:14px;display:flex;align-items:center;gap:6px}
+.tip-box{background:var(--amber-xl);border:1.5px solid var(--amber-s);border-radius:12px;padding:14px 18px;font-size:13.5px;color:var(--ink2);line-height:1.7}
+
+/* INSTRUCTIONS */
+.instr-sec{background:var(--surf);padding:56px 0}
+.instr{max-width:820px;margin:0 auto;background:var(--amber-xl);border:2px solid var(--amber-s);border-radius:18px;padding:28px 32px}
+.instr-t{display:flex;align-items:center;gap:10px;font-family:var(--fd);font-size:17px;font-weight:800;color:var(--ink);margin-bottom:16px}
+.in-item{display:flex;align-items:flex-start;gap:11px;font-size:14px;color:var(--ink2);line-height:1.65;margin-bottom:10px}
+.in-n{width:23px;height:23px;background:var(--amber);color:#fff;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;flex-shrink:0;margin-top:2px}
+
+/* SLAB TABLE */
+.tbl-sec{background:#fff;padding:64px 0}
+.tbl-wrap{max-width:860px;margin:0 auto;border:1.5px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:var(--s2)}
+table{width:100%;border-collapse:collapse}
+thead{background:linear-gradient(135deg,var(--blue),#1e40af)}
+thead th{padding:14px 20px;text-align:left;font-family:var(--fd);font-size:13px;font-weight:700;color:#fff;letter-spacing:.04em}
+tbody tr:nth-child(even){background:var(--surf)}
+tbody tr:hover{background:var(--blue-xl);transition:.15s}
+tbody td{padding:13px 20px;font-size:14px;color:var(--ink2);border-bottom:1px solid var(--line)}
+tbody tr:last-child td{border-bottom:none}
+tbody td:first-child{font-weight:700;color:var(--ink)}
+.rate-badge{display:inline-flex;align-items:center;font-size:12px;font-weight:700;padding:3px 10px;border-radius:100px}
+
+/* DISCOM SECTION */
+.discom-sec{background:var(--surf);padding:60px 0}
+.discom-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;max-width:880px;margin:0 auto}
+.discom-card{background:#fff;border:1.5px solid var(--line);border-radius:14px;padding:18px 14px;text-align:center;transition:.25s}
+.discom-card:hover{transform:translateY(-4px);box-shadow:var(--s3);border-color:var(--blue-s)}
+.dc-ico{font-size:28px;margin-bottom:9px}
+.dc-name{font-family:var(--fd);font-size:13px;font-weight:800;color:var(--ink);margin-bottom:4px}
+.dc-area{font-size:11.5px;color:var(--ink3);line-height:1.5}
+
+/* STORY */
+.story-sec{background:#fff;padding:68px 0}
+.scrd{background:var(--surf);border:1.5px solid var(--line);border-radius:22px;padding:38px;box-shadow:var(--s3);position:relative;overflow:hidden}
+.scrd::before{content:'';position:absolute;top:0;left:0;bottom:0;width:5px;background:linear-gradient(180deg,var(--blue),var(--amber));border-radius:5px 0 0 5px}
+.sq{font-size:52px;color:var(--blue-s);font-family:Georgia,serif;line-height:1;padding-left:8px}
+.sb2{font-size:15px;color:var(--ink2);line-height:1.88;padding:0 8px}
+.sauth{display:flex;align-items:center;gap:13px;margin-top:20px;padding-top:18px;border-top:1px solid var(--line)}
+.savt{width:46px;height:46px;background:var(--blue);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:21px;flex-shrink:0}
+.sname{font-family:var(--fd);font-size:14.5px;font-weight:700;color:var(--ink)}
+.srole{font-size:12px;color:var(--ink3)}
+
+/* ARTICLE */
+.article-sec{background:var(--surf);padding:72px 0}
+.article{max-width:820px;margin:0 auto}
+.article h3{font-family:var(--fd);font-size:20px;font-weight:800;color:var(--ink);margin:28px 0 11px}
+.article h3:first-child{margin-top:0}
+.article p{font-size:15px;color:var(--ink2);line-height:1.88;margin-bottom:14px}
+.article ul{margin-bottom:14px}
+.article ul li{font-size:15px;color:var(--ink2);line-height:1.75;padding-left:20px;position:relative;margin-bottom:7px}
+.article ul li::before{content:'⚡';position:absolute;left:0;font-size:12px;top:3px}
+.eg-box{background:#fff;border:1.5px solid var(--line);border-radius:14px;padding:22px 24px;margin:18px 0;box-shadow:var(--s2)}
+.eg-title{font-family:var(--fd);font-size:14px;font-weight:800;color:var(--ink);margin-bottom:13px;display:flex;align-items:center;gap:7px}
+.eg-row{display:flex;justify-content:space-between;font-size:13.5px;color:var(--ink2);padding:7px 0;border-bottom:1px solid var(--line)}
+.eg-row:last-child{border-bottom:none;font-weight:700;color:var(--green);font-family:var(--fd);font-size:15px}
+
+/* RELATED */
+.rel-sec{background:#fff;padding:68px 0}
+.rg{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
+.rc{background:#fff;border:1.5px solid var(--line);border-radius:15px;padding:18px 15px;display:flex;flex-direction:column;gap:7px;transition:.25s}
+.rc:hover{transform:translateY(-4px);box-shadow:var(--s3);border-color:var(--blue-s)}
+.rc-ico{font-size:24px}
+.rc-t{font-family:var(--fd);font-size:13.5px;font-weight:700;color:var(--ink)}
+.rc-d{font-size:12.5px;color:var(--ink3);line-height:1.55;flex:1}
+.rc-btn{display:inline-flex;align-items:center;gap:5px;font-family:var(--fd);font-weight:700;font-size:12.5px;color:var(--blue);transition:.18s}
+.rc-btn:hover{gap:9px}
+.rc-btn svg{width:13px;height:13px;stroke:currentColor;fill:none;stroke-width:2.5}
+
+/* FAQ */
+.faq-sec{background:var(--surf);padding:68px 0}
+.fql{max-width:750px;margin:0 auto}
+.fq{background:#fff;border:1.5px solid var(--line);border-radius:12px;margin-bottom:9px;overflow:hidden}
+.fq-q{display:flex;align-items:center;justify-content:space-between;padding:17px 20px;cursor:pointer;gap:13px;transition:.18s}
+.fq-q:hover{background:var(--blue-xl)}
+.fq-t{font-weight:600;font-size:14.5px;color:var(--ink);line-height:1.4}
+.fq-i{width:27px;height:27px;border-radius:50%;background:var(--blue-xl);color:var(--blue);display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0;transition:transform .26s,background .18s}
+.fq.open .fq-i{transform:rotate(45deg);background:var(--blue);color:#fff}
+.fq-a{max-height:0;overflow:hidden;transition:max-height .33s var(--ease)}
+.fq-ai{padding:0 20px 16px;font-size:14px;color:var(--ink3);line-height:1.75}
+.fq.open .fq-a{max-height:320px}
+
+/* CONTACT */
+.contact-sec{background:#fff;padding:68px 0}
+.ctgrd{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:840px;margin:0 auto}
+.ci{display:flex;flex-direction:column;gap:14px}
+.cic{background:#fff;border:1.5px solid var(--line);border-radius:14px;padding:20px;display:flex;gap:13px}
+.ci-ico{width:40px;height:40px;background:var(--blue-xl);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.ci-b h4{font-family:var(--fd);font-size:13.5px;font-weight:700;color:var(--ink);margin-bottom:3px}
+.ci-b p{font-size:13px;color:var(--ink3)}
+.ci-b a{color:var(--blue);font-weight:600}
+.cf{background:#fff;border:1.5px solid var(--line);border-radius:18px;padding:26px;box-shadow:var(--s2)}
+.cf-t{font-family:var(--fd);font-size:16px;font-weight:800;color:var(--ink);margin-bottom:16px}
+.cf-r{margin-bottom:13px}
+.cf-l{font-size:12.5px;font-weight:700;color:var(--ink2);margin-bottom:5px;display:block}
+.cf-i{width:100%;padding:11px 15px;font-size:14px;color:var(--ink);border:1.5px solid var(--line);border-radius:9px;outline:none;transition:.2s;font-family:var(--fb)}
+.cf-i:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(37,99,235,.09)}
+textarea.cf-i{resize:vertical;min-height:85px}
+.cf-btn{width:100%;padding:12px;background:linear-gradient(135deg,var(--blue),#1e40af);color:#fff;font-family:var(--fd);font-weight:700;font-size:14px;border-radius:9px;box-shadow:var(--sb);transition:.22s}
+.cf-btn:hover{transform:translateY(-1px);box-shadow:0 12px 30px rgba(37,99,235,.26)}
+
+/* NOTICE */
+.nb{max-width:820px;margin:32px auto;background:var(--amber-xl);border:2px solid var(--amber-s);border-radius:14px;padding:18px 24px;display:flex;gap:12px;font-size:14px;color:var(--ink2);line-height:1.7}
+.dscbar{background:var(--surf);border-top:1px solid var(--line);padding:13px 0}
+.dsc-in{display:flex;gap:11px;font-size:13px;color:var(--ink2);line-height:1.65}
+
+/* CTA */
+.cta{background:linear-gradient(140deg,#0f172a,#1e3a8a);padding:76px 0;text-align:center;position:relative;overflow:hidden}
+.cta::before{content:'';position:absolute;top:-80px;left:50%;transform:translateX(-50%);width:700px;height:350px;background:radial-gradient(ellipse,rgba(37,99,235,.22),transparent 68%);pointer-events:none}
+.cta-in{position:relative;z-index:1}
+.cta h2{font-family:var(--fd);font-size:clamp(23px,4vw,40px);font-weight:800;color:#fff;line-height:1.15;margin-bottom:11px}
+.cta h2 em{color:#fbbf24;font-style:normal}
+.cta p{font-size:15px;color:rgba(255,255,255,.72);max-width:460px;margin:0 auto 30px;line-height:1.75}
+.cta-btns{display:flex;gap:11px;justify-content:center;flex-wrap:wrap}
+.b-gold{display:inline-flex;align-items:center;gap:7px;background:var(--amber);color:#fff;font-family:var(--fd);font-weight:800;font-size:14.5px;padding:13px 28px;border-radius:8px;box-shadow:0 8px 28px rgba(245,158,11,.35);transition:.22s}
+.b-gold:hover{background:#d97706;transform:translateY(-2px)}
+.b-ghost{display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.09);border:1.5px solid rgba(255,255,255,.22);color:#fff;font-family:var(--fd);font-weight:600;font-size:13.5px;padding:12px 24px;border-radius:8px;transition:.18s}
+.b-ghost:hover{background:rgba(255,255,255,.16)}
+
+/* FOOTER */
+footer{background:#0f172a;padding:50px 0 0}
+.fti{max-width:1180px;margin:0 auto;padding:0 24px}
+.ft{display:grid;grid-template-columns:1.9fr 1fr 1fr 1fr;gap:42px;margin-bottom:42px}
+.ft-brand .ln{color:#fff}.ft-brand .ls{color:#475569}
+.ft-d{font-size:13px;color:#64748b;line-height:1.75;max-width:260px;margin:12px 0 18px}
+.ft-soc{display:flex;gap:8px}
+.fts{width:33px;height:33px;border-radius:7px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;color:#94a3b8;font-size:12.5px;transition:.18s}
+.fts:hover{background:var(--blue);color:#fff}
+.ftc h4{font-family:var(--fd);font-size:11.5px;font-weight:700;color:#fff;margin-bottom:13px;letter-spacing:.06em;text-transform:uppercase}
+.ftc ul{display:flex;flex-direction:column;gap:7px}
+.ftc ul a{font-size:13px;color:#64748b;transition:.16s}
+.ftc ul a:hover{color:#93c5fd}
+.ft-btm{border-top:1px solid rgba(255,255,255,.07);padding:18px 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:11px}
+.ft-cp{font-size:12px;color:#475569}
+.ft-cp b{color:#64748b}
+.ft-ln{display:flex;gap:16px}
+.ft-ln a{font-size:12px;color:#475569;transition:.16s}
+.ft-ln a:hover{color:#93c5fd}
+.btt{position:fixed;bottom:24px;right:24px;z-index:500;width:42px;height:42px;background:var(--blue);color:#fff;border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:17px;box-shadow:var(--sb);opacity:0;pointer-events:none;transform:translateY(12px);transition:.26s var(--ease)}
+.btt.on{opacity:1;pointer-events:auto;transform:translateY(0)}
+.btt:hover{transform:translateY(-2px)}
+
+@media(max-width:1060px){.ft{grid-template-columns:1fr 1fr}.slab-grid{grid-template-columns:repeat(2,1fr)}.discom-grid{grid-template-columns:repeat(2,1fr)}.rg{grid-template-columns:1fr 1fr}}
+@media(max-width:860px){nav.dn,.hcta{display:none!important}.brg{display:flex!important}.ctgrd{grid-template-columns:1fr}.fgrid{grid-template-columns:1fr}.res-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.ft{grid-template-columns:1fr}.rg{grid-template-columns:1fr 1fr}.cta-btns{flex-direction:column;align-items:center}.scrd{padding:24px 18px}.res-grid{grid-template-columns:1fr}.slab-grid{grid-template-columns:1fr 1fr}.qs-inner{gap:22px}}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="hdr">
+  <div class="w">
+    <div class="hdi">
+      <a href="https://rajdailytools.in/" class="logo">
+        <div class="lb"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+        <div><div class="ln">Raj<span>Daily</span>Tools</div><div class="ls">Smart Tools for Daily Life</div></div>
+      </a>
+      <nav class="dn" style="display:flex;align-items:center;gap:2px">
+        <a href="https://rajdailytools.in/">Home</a>
+        <a href="https://rajdailytools.in/categories.html">Categories</a>
+        <a href="https://rajdailytools.in/#popular">Popular</a>
+        <a href="https://rajdailytools.in/#latest">Latest</a>
+        <a href="https://rajdailytools.in/about.html">About</a>
+        <a href="https://rajdailytools.in/contact.html">Contact</a>
+      </nav>
+      <a href="https://rajdailytools.in/categories.html" class="hcta">Explore Tools →</a>
+      <button class="brg" id="brg"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="dov" id="dov"></div>
+<div class="drw" id="drw">
+  <div class="dh">
+    <div class="logo">
+      <div class="lb" style="width:30px;height:30px;border-radius:7px"><svg viewBox="0 0 24 24" style="width:13px;height:13px;fill:#fff"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+      <div class="ln" style="font-size:16px">Raj<span>Daily</span>Tools</div>
+    </div>
+    <button class="dx" id="dx">✕</button>
+  </div>
+  <nav>
+    <a href="https://rajdailytools.in/">🏠 Home</a>
+    <a href="https://rajdailytools.in/categories.html">🗂️ Categories</a>
+    <a href="electricity-bill-calculator-india.html">⚡ Electricity Tools</a>
+    <a href="https://rajdailytools.in/about.html">👤 About</a>
+    <a href="https://rajdailytools.in/contact.html">📬 Contact</a>
+  </nav>
+</div>
+
+<!-- ALERT -->
+<div class="abar"><div class="w"><span>⚡ MP</span>Madhya Pradesh Electricity Bill Calculator 2026 — MPPKVVCL Updated Slab Rates &nbsp;|&nbsp; Free & Instant &nbsp;|&nbsp; 🇮🇳 Made for India</div></div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="blob b1"></div><div class="blob b2"></div>
+  <div class="w">
+    <div class="bc">
+      <a href="https://rajdailytools.in/">Home</a><span style="color:var(--ink4)">›</span>
+      <a href="electricity-bill-calculator-india.html">Electricity Tools</a><span style="color:var(--ink4)">›</span>
+      <span>MP Electricity Bill Calculator</span>
+    </div>
+    <div class="hero-inner">
+      <div class="pill">⚡ Madhya Pradesh 2026</div>
+      <h1>MP Electricity Bill Calculator – <span>MPPKVVCL Slab Rate 2026</span></h1>
+      <p class="hero-sub">Calculate your Madhya Pradesh bijli bill instantly using the latest MPPKVVCL / MPEB slab rates. Domestic, Commercial & Agriculture — sab ke liye. Free aur accurate.</p>
+      <div class="chips">
+        <span class="chip">⚡ MPPKVVCL Rates 2026</span>
+        <span class="chip">🏠 Domestic Calculator</span>
+        <span class="chip">🏪 Commercial Calculator</span>
+        <span class="chip">🌾 Agriculture Calculator</span>
+        <span class="chip">📊 Slab-wise Breakdown</span>
+        <span class="chip">✅ 100% Free</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUICK STATS -->
+<div class="qs">
+  <div class="w">
+    <div class="qs-inner">
+      <div class="qs-item"><div class="qs-n">5 DISCOMs</div><div class="qs-l">Madhya Pradesh</div></div>
+      <div class="qs-item"><div class="qs-n">₹3.00</div><div class="qs-l">Starting Rate / Unit</div></div>
+      <div class="qs-item"><div class="qs-n">4 Slabs</div><div class="qs-l">Domestic Tariff</div></div>
+      <div class="qs-item"><div class="qs-n">₹70–₹130</div><div class="qs-l">Fixed Charges / Month</div></div>
+      <div class="qs-item"><div class="qs-n">100%</div><div class="qs-l">Free to Use</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- SLAB INFO CARDS -->
+<section class="slab-sec">
+  <div class="w">
+    <div class="sh rev">
+      <div class="pill" style="margin-bottom:13px">📊 Slab Rates</div>
+      <h2>MP Domestic <span>Slab Rates 2026</span></h2>
+      <p>MPPKVVCL domestic tariff — jitna jayada bijli use, utna jayada rate per unit.</p>
+    </div>
+    <div class="slab-grid">
+      <div class="slab-card rev" style="--sc:var(--green)">
+        <div class="slab-range">Slab 1 · 0 – 50 Units</div>
+        <div class="slab-rate">₹3.00</div>
+        <div class="slab-unit">per unit (kWh)</div>
+        <div class="slab-badge" style="--sb-bg:var(--green-xl);--sb-c:var(--green);--sb-bd:var(--green-s)">Sabse Sasta</div>
+      </div>
+      <div class="slab-card rev" style="--sc:var(--blue)">
+        <div class="slab-range">Slab 2 · 51 – 150 Units</div>
+        <div class="slab-rate">₹4.50</div>
+        <div class="slab-unit">per unit (kWh)</div>
+        <div class="slab-badge" style="--sb-bg:var(--blue-xl);--sb-c:var(--blue);--sb-bd:var(--blue-s)">Normal Usage</div>
+      </div>
+      <div class="slab-card rev" style="--sc:var(--amber)">
+        <div class="slab-range">Slab 3 · 151 – 300 Units</div>
+        <div class="slab-rate">₹6.00</div>
+        <div class="slab-unit">per unit (kWh)</div>
+        <div class="slab-badge" style="--sb-bg:var(--amber-xl);--sb-c:#92400e;--sb-bd:var(--amber-s)">Medium Usage</div>
+      </div>
+      <div class="slab-card rev" style="--sc:var(--red)">
+        <div class="slab-range">Slab 4 · 300+ Units</div>
+        <div class="slab-rate">₹7.00</div>
+        <div class="slab-unit">per unit (kWh)</div>
+        <div class="slab-badge" style="--sb-bg:var(--red-xl);--sb-c:var(--red);--sb-bd:var(--red-s)">High Usage</div>
+      </div>
+    </div>
+    <div class="rev" style="max-width:860px;margin:16px auto 0;background:#fff;border:1.5px solid var(--line);border-radius:13px;padding:14px 20px;font-size:13.5px;color:var(--ink2);display:flex;flex-wrap:wrap;gap:18px;align-items:center">
+      <span>📌 <strong>Fixed Charge:</strong> ₹70–₹130/month (load ke hisaab se)</span>
+      <span style="color:var(--line)">|</span>
+      <span>📌 <strong>Electricity Duty:</strong> 9% on energy charges</span>
+      <span style="color:var(--line)">|</span>
+      <span>📌 <strong>Fuel Surcharge:</strong> ~₹0.20/unit (quarterly change ho sakta hai)</span>
+    </div>
+  </div>
+</section>
+
+<!-- CALCULATOR -->
+<section class="calc-sec" id="calculator">
+  <div class="w">
+    <div class="sh rev">
+      <div class="pill" style="margin-bottom:13px">🧮 Calculator</div>
+      <h2>MP Bijli Bill <span>Calculator</span></h2>
+      <p>Units daalo aur apna exact bijli bill pata karo — slab-wise breakdown ke saath.</p>
+    </div>
+
+    <div class="tcrd rev">
+      <div class="th2" style="background:linear-gradient(135deg,#1d4ed8,#2563eb,#3b82f6)">
+        <h3>⚡ Madhya Pradesh Electricity Bill Calculator (MPPKVVCL 2026)</h3>
+        <p>Domestic, Commercial & Agriculture — teen categories ke liye accurate bill calculation.</p>
+      </div>
+      <div class="tb">
+        <div class="fgrid" style="gap:14px;margin-bottom:14px">
+          <div class="fld">
+            <label class="flbl" for="units">Units Consumed (kWh)</label>
+            <input class="finp" type="number" id="units" placeholder="e.g. 250" min="0" max="99999">
+          </div>
+          <div class="fld">
+            <label class="flbl" for="category">Consumer Category</label>
+            <select class="fsel" id="category">
+              <option value="domestic">🏠 Domestic (Ghar ke liye)</option>
+              <option value="commercial">🏪 Commercial (Dukaan / Office)</option>
+              <option value="agriculture">🌾 Agriculture (Sinchai / Kheti)</option>
+            </select>
+          </div>
+          <div class="fld">
+            <label class="flbl" for="load">Connected Load (kW)</label>
+            <select class="fsel" id="load">
+              <option value="1">Up to 1 kW</option>
+              <option value="2" selected>1 – 2 kW</option>
+              <option value="5">2 – 5 kW</option>
+              <option value="10">5 – 10 kW</option>
+            </select>
+          </div>
+          <div class="fld">
+            <label class="flbl" for="months">Billing Period</label>
+            <select class="fsel" id="months">
+              <option value="1">1 Month</option>
+              <option value="2">2 Months</option>
+            </select>
+          </div>
+        </div>
+        <button class="calc-btn" onclick="calcMP()">⚡ Calculate MP Bijli Bill</button>
+        <button class="reset-btn" onclick="resetCalc()">🔄 Reset / Clear</button>
+
+        <!-- RESULT -->
+        <div class="result-box" id="resultBox">
+
+          <div class="res-header">
+            <div>
+              <div class="res-main-label">✅ Total Payable Amount</div>
+              <div class="res-main-val" id="r-total">—</div>
+              <div class="res-monthly" id="r-monthly-note"></div>
+            </div>
+            <div style="text-align:right">
+              <div style="font-size:12px;color:rgba(255,255,255,.75);margin-bottom:4px">Effective Rate</div>
+              <div style="font-family:var(--fd);font-size:20px;font-weight:800;color:#fff" id="r-eff">—</div>
+              <div style="font-size:11px;color:rgba(255,255,255,.7)">per unit (avg)</div>
+            </div>
+          </div>
+
+          <div class="res-grid">
+            <div class="res-card">
+              <div class="res-label">⚡ Energy Charges</div>
+              <div class="res-val" id="r-energy">—</div>
+            </div>
+            <div class="res-card">
+              <div class="res-label">🔧 Fixed Charges</div>
+              <div class="res-val" id="r-fixed">—</div>
+            </div>
+            <div class="res-card">
+              <div class="res-label">⛽ Fuel Surcharge</div>
+              <div class="res-val" id="r-fuel">—</div>
+            </div>
+            <div class="res-card">
+              <div class="res-label">🏛️ Electricity Duty (9%)</div>
+              <div class="res-val" id="r-duty">—</div>
+            </div>
+            <div class="res-card">
+              <div class="res-label">📊 Units Used</div>
+              <div class="res-val" id="r-units">—</div>
+            </div>
+            <div class="res-card">
+              <div class="res-label">📅 Billing Period</div>
+              <div class="res-val" id="r-period">—</div>
+            </div>
+          </div>
+
+          <div class="slab-breakdown" id="slabBreakdown"></div>
+
+          <div class="chart-wrap">
+            <div class="chart-title">📊 Bill Component Breakdown</div>
+            <canvas id="billChart" height="90"></canvas>
+          </div>
+
+          <div class="tip-box" id="tipBox"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW TO USE -->
+<section class="instr-sec">
+  <div class="w">
+    <div class="instr rev">
+      <div class="instr-t">📋 Is Calculator Ko Kaise Use Karein</div>
+      <div class="in-item"><span class="in-n">1</span>Apne electricity meter mein current reading aur pichle mahine ki reading dekho. Fark nikalo — yahi hain aapke <strong>units consumed.</strong></div>
+      <div class="in-item"><span class="in-n">2</span>Upar ke calculator mein <strong>units enter karo</strong> aur apni category select karo — Domestic (ghar), Commercial (dukaan/office), ya Agriculture (kheti/sinchai).</div>
+      <div class="in-item"><span class="in-n">3</span>Apna <strong>connected load (kW)</strong> select karo — yeh aapke meter ya electricity bill ke pehle page par likha hota hai.</div>
+      <div class="in-item"><span class="in-n">4</span><strong>"Calculate MP Bijli Bill"</strong> button dabao aur turant apna bill dekho — slab-wise breakdown, fixed charges, duty sab ke saath.</div>
+      <div class="in-item"><span class="in-n">5</span>Agar 2-mahine ka bill aaya hai to <strong>Billing Period: 2 Months</strong> choose karo — calculator accordingly adjust karega.</div>
+    </div>
+  </div>
+</section>
+
+<!-- FULL SLAB RATE TABLE -->
+<section class="tbl-sec">
+  <div class="w">
+    <div class="sh rev">
+      <div class="pill" style="margin-bottom:13px">📋 Tariff Table</div>
+      <h2>MPPKVVCL Complete <span>Tariff Table 2026</span></h2>
+      <p>Domestic, Commercial aur Agriculture — teeno categories ke liye official slab rates.</p>
+    </div>
+
+    <div class="tbl-wrap rev" style="margin-bottom:20px">
+      <table>
+        <thead><tr><th colspan="4" style="text-align:center;font-size:14px">🏠 Domestic (LT-1) Tariff — MPPKVVCL 2026</th></tr>
+        <tr><th>Slab</th><th>Units (kWh)</th><th>Rate / Unit</th><th>Slab Type</th></tr></thead>
+        <tbody>
+          <tr><td>Slab 1</td><td>0 – 50 units</td><td><span class="rate-badge" style="background:var(--green-xl);color:var(--green);border:1px solid var(--green-s)">₹3.00/unit</span></td><td>Poorest consumers ke liye subsidized</td></tr>
+          <tr><td>Slab 2</td><td>51 – 150 units</td><td><span class="rate-badge" style="background:var(--blue-xl);color:var(--blue);border:1px solid var(--blue-s)">₹4.50/unit</span></td><td>Normal domestic usage</td></tr>
+          <tr><td>Slab 3</td><td>151 – 300 units</td><td><span class="rate-badge" style="background:var(--amber-xl);color:#92400e;border:1px solid var(--amber-s)">₹6.00/unit</span></td><td>Medium usage households</td></tr>
+          <tr><td>Slab 4</td><td>Above 300 units</td><td><span class="rate-badge" style="background:var(--red-xl);color:var(--red);border:1px solid var(--red-s)">₹7.00/unit</span></td><td>High consumption</td></tr>
+          <tr><td colspan="2"><strong>Fixed Charges</strong></td><td colspan="2">₹70/month (up to 1 kW) · ₹90/month (1–2 kW) · ₹130/month (2–5 kW)</td></tr>
+          <tr><td colspan="2"><strong>Electricity Duty</strong></td><td colspan="2">9% on energy charges</td></tr>
+          <tr><td colspan="2"><strong>Fuel Surcharge</strong></td><td colspan="2">~₹0.20/unit (subject to quarterly revision)</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="tbl-wrap rev" style="margin-bottom:20px">
+      <table>
+        <thead><tr><th colspan="4" style="text-align:center;font-size:14px">🏪 Commercial (LT-2) Tariff — MPPKVVCL 2026</th></tr>
+        <tr><th>Slab</th><th>Units (kWh)</th><th>Rate / Unit</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td>Slab 1</td><td>0 – 100 units</td><td><span class="rate-badge" style="background:var(--blue-xl);color:var(--blue);border:1px solid var(--blue-s)">₹5.50/unit</span></td><td>Small shops & offices</td></tr>
+          <tr><td>Slab 2</td><td>101 – 300 units</td><td><span class="rate-badge" style="background:var(--amber-xl);color:#92400e;border:1px solid var(--amber-s)">₹7.00/unit</span></td><td>Medium commercial</td></tr>
+          <tr><td>Slab 3</td><td>Above 300 units</td><td><span class="rate-badge" style="background:var(--red-xl);color:var(--red);border:1px solid var(--red-s)">₹8.00/unit</span></td><td>Large commercial</td></tr>
+          <tr><td colspan="2"><strong>Fixed Charges</strong></td><td colspan="2">₹150–₹250/month (load ke anusaar)</td></tr>
+          <tr><td colspan="2"><strong>Electricity Duty</strong></td><td colspan="2">10% on energy charges</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="tbl-wrap rev">
+      <table>
+        <thead><tr><th colspan="4" style="text-align:center;font-size:14px">🌾 Agriculture (LT-7) Tariff — MPPKVVCL 2026</th></tr>
+        <tr><th>Category</th><th>Pump Size</th><th>Rate</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td>Small Farmers</td><td>Up to 5 HP</td><td><span class="rate-badge" style="background:var(--green-xl);color:var(--green);border:1px solid var(--green-s)">₹1.50/unit</span></td><td>Subsidized agriculture rate</td></tr>
+          <tr><td>Medium Farmers</td><td>5 – 10 HP</td><td><span class="rate-badge" style="background:var(--blue-xl);color:var(--blue);border:1px solid var(--blue-s)">₹2.50/unit</span></td><td>Standard agriculture rate</td></tr>
+          <tr><td>Large Farmers</td><td>Above 10 HP</td><td><span class="rate-badge" style="background:var(--amber-xl);color:#92400e;border:1px solid var(--amber-s)">₹3.50/unit</span></td><td>Higher HP connections</td></tr>
+          <tr><td colspan="2"><strong>Fixed Charges</strong></td><td colspan="2">₹50–₹100/month (pump capacity ke anusaar)</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- DISCOM INFO -->
+<section class="discom-sec">
+  <div class="w">
+    <div class="sh rev">
+      <div class="pill" style="margin-bottom:13px">🏢 DISCOMs</div>
+      <h2>MP ke <span>Electricity Distribution Companies</span></h2>
+      <p>Madhya Pradesh mein electricity supply 5 alag DISCOMs karte hain — apna DISCOM janein.</p>
+    </div>
+    <div class="discom-grid">
+      <div class="discom-card rev">
+        <div class="dc-ico">🔵</div>
+        <div class="dc-name">MPPKVVCL</div>
+        <div class="dc-area">Madhya Pradesh Poorva Kshetra Vidyut Vitaran Co. Ltd.<br><strong>Bhopal, Jabalpur, Sagar</strong></div>
+      </div>
+      <div class="discom-card rev">
+        <div class="dc-ico">🟠</div>
+        <div class="dc-name">MPPKVVCL (Madhya)</div>
+        <div class="dc-area">Madhya Kshetra Vidyut Vitaran<br><strong>Gwalior, Chambal, Bundelkhand</strong></div>
+      </div>
+      <div class="discom-card rev">
+        <div class="dc-ico">🟢</div>
+        <div class="dc-name">MPPKVVCL (Paschim)</div>
+        <div class="dc-area">Paschim Kshetra Vidyut Vitaran<br><strong>Indore, Ujjain, Nimar</strong></div>
+      </div>
+      <div class="discom-card rev">
+        <div class="dc-ico">🟡</div>
+        <div class="dc-name">MPEZ</div>
+        <div class="dc-area">MP East Zone Electricity Distribution<br><strong>Rewa, Shahdol, Satna</strong></div>
+      </div>
+    </div>
+    <div class="rev" style="max-width:860px;margin:16px auto 0;background:#fff;border:1.5px solid var(--line);border-radius:13px;padding:15px 22px;font-size:13.5px;color:var(--ink2);display:flex;flex-wrap:wrap;gap:14px;align-items:center">
+      <span>🌐 <strong>Official Website:</strong> <a href="https://www.mpez.co.in/" target="_blank" rel="noopener" style="color:var(--blue);font-weight:700">mpez.co.in</a></span>
+      <span style="color:var(--line)">|</span>
+      <span>📞 <strong>Helpline:</strong> 1912 (Toll Free)</span>
+      <span style="color:var(--line)">|</span>
+      <span>📱 <strong>Bill Payment:</strong> mpseva portal / official app</span>
+    </div>
+  </div>
+</section>
+
+<!-- STORY -->
+<section class="story-sec">
+  <div class="wa">
+    <div class="rev" style="text-align:center;margin-bottom:32px">
+      <div class="pill" style="margin-bottom:13px">💬 Kahani</div>
+      <h2 style="font-family:var(--fd);font-size:clamp(22px,3.4vw,32px);font-weight:800;color:var(--ink)">Yeh Tool Kyun <span style="color:var(--blue)">Banaya Maine</span></h2>
+    </div>
+    <div class="scrd rev">
+      <div class="sq">"</div>
+      <div class="sb2">Mere dost <strong>Prashant</strong> ko ek baar Bhopal mein bahut zyada bijli bill aaya — ₹2,400 ka. Usne socha galat bill aaya hai. Phir woh MPPKVVCL office gaya, ghante bhar wait kiya, tab pata chala ki usne AC raat bhar chalaya tha aur bill 300 units se upar chala gaya tha — jahan slab rate badh jaata hai.<br><br>Tab mujhe ehsaas hua ki agar Prashant pehle se jaanta ki <strong>300 units ke baad rate ₹7/unit ho jaata hai</strong>, to woh apna AC thoda kam chalata. Isliye maine yeh <strong>MP Electricity Bill Calculator</strong> banaya — taaki koi bhi MP ka bijli bill ghar baithe calculate kar sake, aur bill aane se pehle consumption control kar sake. 🙏</div>
+      <div class="sauth">
+        <div class="savt">👨‍💻</div>
+        <div><div class="sname">Raj Bhai</div><div class="srole">Founder, RajDailyTools · Bhopal, Madhya Pradesh 🇮🇳</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SEO ARTICLE -->
+<section class="article-sec">
+  <div class="w">
+    <div class="sh rev">
+      <div class="pill" style="margin-bottom:13px">📖 Guide</div>
+      <h2>MP Bijli Bill <span>Kaise Calculate Hota Hai?</span></h2>
+      <p>Poori jaankari — slab system se lekar tips tak — ek jagah pe.</p>
+    </div>
+    <div class="article rev">
+
+      <h3>Madhya Pradesh Mein Bijli Bill Kaise Banta Hai?</h3>
+      <p>Madhya Pradesh mein bijli bill sirf "Units × Rate" nahi hota. Aapka final bill kai cheezein jodhkar banta hai: energy charges (slabs ke hisaab se), fixed charges (chahe aap ek unit bhi use karo), fuel adjustment charge (FAC), electricity duty (9%), aur kabhi-kabhi meter rent bhi. Isliye aksar log hisaab galat lagate hain.</p>
+
+      <h3>Slab System Kya Hota Hai? (Simple Hindi Mein)</h3>
+      <p>MP mein MPPKVVCL "slab system" use karta hai — matlab alag-alag ranges mein alag rate lagta hai. Jaise:</p>
+      <ul>
+        <li><strong>Pehle 50 units:</strong> ₹3.00/unit — yeh sabse sasta hota hai</li>
+        <li><strong>51 se 150 units:</strong> ₹4.50/unit — normal ghar ke liye</li>
+        <li><strong>151 se 300 units:</strong> ₹6.00/unit — medium usage</li>
+        <li><strong>300 units se zyada:</strong> ₹7.00/unit — sab se mahanga slab</li>
+      </ul>
+      <p><strong>Important:</strong> Slab "cumulative" hota hai, "flat" nahi. Matlab agar aapne 200 units use kiye, to aap ₹6/unit sabke liye nahi doge — sirf 151–200 wale units ke liye. Pehle 50 units ₹3/unit pe aur agle 100 units ₹4.50/unit pe hi rahenge.</p>
+
+      <h3>Real Example — 250 Units Ka Bill (Bhopal, Domestic)</h3>
+      <div class="eg-box">
+        <div class="eg-title">🧾 Calculation — 250 Units, Domestic, 2 kW Load</div>
+        <div class="eg-row"><span>Slab 1 — 50 units × ₹3.00</span><span>₹150.00</span></div>
+        <div class="eg-row"><span>Slab 2 — 100 units × ₹4.50</span><span>₹450.00</span></div>
+        <div class="eg-row"><span>Slab 3 — 100 units × ₹6.00</span><span>₹600.00</span></div>
+        <div class="eg-row"><span>Energy Charges Total</span><span>₹1,200.00</span></div>
+        <div class="eg-row"><span>Fixed Charges (2 kW load)</span><span>₹90.00</span></div>
+        <div class="eg-row"><span>Fuel Surcharge (₹0.20 × 250)</span><span>₹50.00</span></div>
+        <div class="eg-row"><span>Electricity Duty (9% of ₹1,200)</span><span>₹108.00</span></div>
+        <div class="eg-row"><span>✅ Total Payable</span><span>≈ ₹1,448</span></div>
+      </div>
+
+      <h3>MP Mein Bijli Bill Kam Kaise Karein?</h3>
+      <ul>
+        <li><strong>300 units limit dhyan mein rakho</strong> — jaise hi 300 units se upar jaoge, rate ₹6 se ₹7/unit ho jaata hai. AC, geyser control karo.</li>
+        <li><strong>5-star BEE rated AC lagao</strong> — 3-star ke mukable 20–30% bijli bachata hai.</li>
+        <li><strong>LED bulbs use karo</strong> — ek 60W bulb ki jagah 9W LED lagao — 85% bachat.</li>
+        <li><strong>Geyser timer use karo</strong> — geyser sabse zyada bijli khata hai, usse sirf zarurat ke waqt chalao.</li>
+        <li><strong>Refrigerator sun mein mat rakho</strong> — compressor zyada chalta hai aur bill badhta hai.</li>
+        <li><strong>PM Surya Ghar Yojana</strong> — rooftop solar lagao aur 300 units/month FREE pao, MP mein subsidy bhi milti hai.</li>
+      </ul>
+
+      <h3>MP Bijli Bill Online Kaise Bharein?</h3>
+      <ul>
+        <li><strong>mpseva.gov.in</strong> portal par jaake bill bharo — Net Banking, UPI, Debit/Credit Card sab accepted hain.</li>
+        <li><strong>MPEZ / MPPKVVCL official app</strong> download karo — meter reading dene ki suvidha bhi milti hai.</li>
+        <li><strong>PhonePe, GPay, Paytm</strong> se bhi MPPKVVCL ka bill bhara ja sakta hai — CA Number dalo aur pay karo.</li>
+        <li><strong>1912 helpline</strong> par call karo kisi bhi billing complaint ke liye — yeh toll-free hai.</li>
+      </ul>
+
+      <h3>Bijli Bill Mein "Fixed Charges" Kya Hota Hai?</h3>
+      <p>Fixed charges woh monthly amount hai jo aapko chahe ek unit bijli use karo ya zero, dena hi padega. Yeh aapke <strong>connected load (kW)</strong> ke hisaab se hota hai. MP mein domestic consumers ke liye yeh ₹70 se ₹130/month ke beech hota hai. Agar aap ek mahine ghar se bahar gaye aur zero units use ki, tab bhi yeh charge lagega.</p>
+
+    </div>
+  </div>
+</section>
+
+<!-- RELATED TOOLS -->
+<section class="rel-sec">
+  <div class="w">
+    <div class="sh rev"><div class="pill" style="margin-bottom:13px">🔗 Related</div><h2>Aur Free <span>Tools</span></h2></div>
+    <div class="rg">
+      <div class="rc rev"><div class="rc-ico">⚡</div><div class="rc-t">UP Electricity Bill Calculator</div><div class="rc-d">Uttar Pradesh — UPPCL slab rate bill calculator</div><a href="#" class="rc-btn">Use <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a></div>
+      <div class="rc rev"><div class="rc-ico">⚡</div><div class="rc-t">Rajasthan Electricity Bill</div><div class="rc-d">JVVNL slab rate calculator for Rajasthan</div><a href="#" class="rc-btn">Use <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a></div>
+      <div class="rc rev"><div class="rc-ico">⚡</div><div class="rc-t">Maharashtra Electricity Bill</div><div class="rc-d">MSEDCL domestic bill calculator for Maharashtra</div><a href="#" class="rc-btn">Use <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a></div>
+      <div class="rc rev"><div class="rc-ico">⚡</div><div class="rc-t">Delhi Electricity Bill</div><div class="rc-d">BSES / TPDDL bill with Delhi subsidy calculator</div><a href="#" class="rc-btn">Use <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a></div>
+      <div class="rc rev"><div class="rc-ico">☀️</div><div class="rc-t">Solar Savings Calculator</div><div class="rc-d">Rooftop solar se kitni bachat hogi — calculate karo</div><a href="#" class="rc-btn">Use <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a></div>
+      <div class="rc rev"><div class="rc-ico">🔌</div><div class="rc-t">AC Electricity Cost Calculator</div><div class="rc-d">AC chalane ka monthly cost kitna hota hai</div><a href="#" class="rc-btn">Use <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a></div>
+      <div class="rc rev"><div class="rc-ico">💡</div><div class="rc-t">LED vs CFL Savings Calculator</div><div class="rc-d">Bulb badlne se kitni bijli bachegi — janein</div><a href="#" class="rc-btn">Use <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a></div>
+      <div class="rc rev"><div class="rc-ico">📊</div><div class="rc-t">All Electricity Tools</div><div class="rc-d">Sabhi state-wise bijli bill calculators ek jagah</div><a href="electricity-bill-calculator-india.html" class="rc-btn">See All <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-sec">
+  <div class="w">
+    <div class="sh rev"><div class="pill" style="margin-bottom:13px">❓ FAQs</div><h2>Aksar Pooche Jane <span>Waale Sawal</span></h2></div>
+    <div class="fql" id="faqList">
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">MP mein bijli ka rate kya hai 2026 mein?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">MP mein domestic tariff 2026 mein: <strong>0–50 units: ₹3.00/unit | 51–150 units: ₹4.50/unit | 151–300 units: ₹6.00/unit | 300+ units: ₹7.00/unit</strong>. Iske upar fixed charges + electricity duty (9%) + fuel surcharge alag se lagta hai.</div></div></div>
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">MPPKVVCL ka bill online kaise check karein?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">MPPKVVCL ka bill check karne ke liye <strong>mpseva.gov.in</strong> ya mpez.co.in par jaayein. Wahan apna CA Number (Consumer Account Number) enter karein — yeh aapke purane bill par likha hota hai. Aap PhonePe, GPay aur Paytm se bhi bill check aur pay kar sakte hain.</div></div></div>
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">Fixed charge kya hota hai aur yeh kyun lagta hai?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">Fixed charge ek monthly minimum amount hai jo aapko chahe koi bijli use na karo, phir bhi dena padta hai. Yeh grid connection aur infrastructure maintain karne ke liye hota hai. MP mein domestic consumers ke liye yeh connected load ke hisaab se <strong>₹70 se ₹130/month</strong> ke beech hota hai.</div></div></div>
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">Kya yeh calculator accurate hai?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">Haan, yeh calculator MPPKVVCL ke 2026 ke officially published tariff rates par based hai. Yeh domestic, commercial aur agriculture — teeno ke liye accurate estimate deta hai. Lekin aapka exact bill thoda alag ho sakta hai kyunki fuel surcharge quarterly change ho sakta hai. Official bill ke liye mpseva portal check karein.</div></div></div>
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">Kya MP mein BPL consumers ko koi subsidy milti hai?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">Haan, MP sarkar BPL (Below Poverty Line) consumers ko bijli subsidy deti hai. <strong>0–30 units per month</strong> tak BPL consumers ke liye rate aur bhi kam hota hai. Iske liye aapko BPL ration card aur local electricity office mein registration karwana hoga. Yeh scheme state government revise karti rehti hai — latest jankari ke liye local DISCOM office contact karein.</div></div></div>
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">300 units se upar jaane par bill itna kyu badh jaata hai?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">MP ke slab system mein 300 units ke baad rate ₹6.00 se ₹7.00/unit ho jaata hai. Matlab sirf 1 unit zyada hone par aapko us unit ke liye ₹1 extra pay karna padta hai. Agar aap 400 units use karte hain to woh 100 extra units (301–400) ₹7/unit ke hisaab se charge honge. Isliye 300 units limit dhyan mein rakhna bahut zaroori hai.</div></div></div>
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">MP mein bijli complaint kahan karein?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">Bijli complaint ke liye: <strong>📞 Toll Free: 1912</strong> (24/7 available) | <strong>🌐 mpseva.gov.in</strong> par online complaint darz karein | <strong>📱 MPEZ official app</strong> se bhi complaint de sakte hain. Billing galti ho to nearest DISCOM office jaayein aur bill ki photo lekar jaayein.</div></div></div>
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">Agriculture connection ke liye MP mein rate kya hai?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">MP mein agriculture (sinchai) connections ke liye rate bahut kam hota hai — <strong>₹1.50/unit se ₹3.50/unit</strong> tak (pump ki capacity ke hisaab se). Yeh rate regular domestic rate se kaafi kam hai kyunki sarkar kisan ko bijli par subsidy deti hai. Pump connection ke liye apne local DISCOM office mein register karwana padta hai.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-sec">
+  <div class="w">
+    <div class="sh rev"><div class="pill" style="margin-bottom:13px">📬 Sampark</div><h2>Koi Sawaal? <span>Poochein!</span></h2><p>Tariff rate galat lage ya koi suggestion ho — hamen zaroor batayein.</p></div>
+    <div class="ctgrd">
+      <div class="ci rev">
+        <div class="cic"><div class="ci-ico">📧</div><div class="ci-b"><h4>Email Karein</h4><p><a href="mailto:contact@rajdailytools.in">contact@rajdailytools.in</a></p></div></div>
+        <div class="cic"><div class="ci-ico">🌐</div><div class="ci-b"><h4>Website</h4><p><a href="https://rajdailytools.in/" target="_blank" rel="noopener">rajdailytools.in</a></p></div></div>
+        <div class="cic"><div class="ci-ico">⚡</div><div class="ci-b"><h4>MPPKVVCL Helpline</h4><p>1912 (Toll Free · 24/7)</p></div></div>
+        <div class="cic"><div class="ci-ico">🔒</div><div class="ci-b"><h4>Privacy</h4><p>Koi data store nahi hota. Sab calculation aapke browser mein hoti hai.</p></div></div>
+      </div>
+      <div class="cf rev">
+        <div class="cf-t">💬 Message Bhejein</div>
+        <div class="cf-r"><label class="cf-l">Naam</label><input class="cf-i" type="text" placeholder="Aapka naam" id="cfN"></div>
+        <div class="cf-r"><label class="cf-l">Email</label><input class="cf-i" type="email" placeholder="aapka@email.com" id="cfE"></div>
+        <div class="cf-r"><label class="cf-l">Message</label><textarea class="cf-i" placeholder="Koi bhi sawaal ya suggestion..." id="cfM"></textarea></div>
+        <button class="cf-btn" onclick="sendMsg()">📩 Message Bhejein</button>
+        <p style="font-size:12px;color:var(--ink4);margin-top:9px">🔒 Aapki koi bhi information share ya store nahi ki jaati.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="w">
+  <div class="nb rev">
+    <span style="font-size:22px;flex-shrink:0">⚠️</span>
+    <div><strong>Zaroori Suchna:</strong> Bijli ke tariff samay-samay par MPERC (MP Electricity Regulatory Commission) dwara revise hote rehte hain. Yahan diye gaye rates 2026 ke officially published tariff par based hain. Latest rates ke liye hamesha <a href="https://www.mperc.in/" target="_blank" rel="noopener" style="color:var(--blue);font-weight:700">mperc.in</a> ya apne local DISCOM se verify karein.</div>
+  </div>
+</div>
+
+<div class="dscbar"><div class="w"><div class="dsc-in"><span style="font-size:18px;flex-shrink:0">📋</span><div><strong>Disclaimer:</strong> Yeh calculator sirf estimation ke liye hai. RajDailyTools MPPKVVCL ya kisi bhi sarkari bijli vibhaag se affiliated nahi hai. Exact bill ke liye official sources check karein. <strong>Koi bhi personal data store nahi hota.</strong></div></div></div></div>
+
+<section class="cta"><div class="w"><div class="cta-in">
+  <div class="pill" style="color:#93c5fd;background:rgba(255,255,255,.1);margin-bottom:16px">Sabhi Tools</div>
+  <h2>Aur <em>State Electricity Tools</em> Explore Karein</h2>
+  <p>UP, Delhi, Rajasthan, Maharashtra aur 25+ states ke liye free bijli bill calculators.</p>
+  <div class="cta-btns"><a href="electricity-bill-calculator-india.html" class="b-gold">⚡ Sabhi State Tools</a><a href="https://rajdailytools.in/" class="b-ghost">🏠 Homepage</a></div>
+</div></div></section>
+
+<footer>
+  <div class="fti">
+    <div class="ft">
+      <div class="ft-brand">
+        <div class="logo" style="margin-bottom:4px">
+          <div class="lb"><svg viewBox="0 0 24 24" fill="#fff"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+          <div><div class="ln">Raj<span>Daily</span>Tools</div><div class="ls">Smart Tools for Daily Life</div></div>
+        </div>
+        <p class="ft-d">India ka sabse bada free tools platform. Raj Bhai ne banaya. India ke logon ke liye 🇮🇳</p>
+        <div class="ft-soc">
+          <a href="https://www.facebook.com/share/1Dq3Y1k7mG/" target="_blank" class="fts">f</a>
+          <a href="https://x.com/Educator4ll" target="_blank" class="fts">𝕏</a>
+          <a href="https://youtube.com/@rajdailytools" target="_blank" class="fts">▶</a>
+          <a href="https://www.instagram.com/rajdailytools" target="_blank" class="fts">📷</a>
+        </div>
+      </div>
+      <div class="ftc"><h4>MP Electricity</h4><ul>
+        <li><a href="#">MP Domestic Calculator</a></li>
+        <li><a href="#">MP Commercial Calculator</a></li>
+        <li><a href="#">MP Agriculture Calculator</a></li>
+        <li><a href="https://www.mperc.in/" target="_blank">MPERC Official</a></li>
+      </ul></div>
+      <div class="ftc"><h4>Other States</h4><ul>
+        <li><a href="#">UP Electricity Bill</a></li>
+        <li><a href="#">Rajasthan Electricity Bill</a></li>
+        <li><a href="#">Delhi Electricity Bill</a></li>
+        <li><a href="#">Maharashtra Electricity Bill</a></li>
+      </ul></div>
+      <div class="ftc"><h4>Company</h4><ul>
+        <li><a href="https://rajdailytools.in/about.html">About</a></li>
+        <li><a href="https://rajdailytools.in/contact.html">Contact</a></li>
+        <li><a href="https://rajdailytools.in/privacy.html">Privacy</a></li>
+        <li><a href="https://rajdailytools.in/terms.html">Terms</a></li>
+        <li><a href="https://rajdailytools.in/disclaimer.html">Disclaimer</a></li>
+      </ul></div>
+    </div>
+    <div class="ft-btm">
+      <p class="ft-cp">Copyright © 2026 <b>RajDailyTools</b>. All rights reserved. Made with ❤️ in India 🇮🇳</p>
+      <div class="ft-ln"><a href="https://rajdailytools.in/privacy.html">Privacy</a><a href="https://rajdailytools.in/terms.html">Terms</a><a href="https://rajdailytools.in/disclaimer.html">Disclaimer</a><a href="https://rajdailytools.in/sitemap.xml">Sitemap</a></div>
+    </div>
+  </div>
+</footer>
+<button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+// HEADER
+const brg=document.getElementById('brg'),drw=document.getElementById('drw'),dov=document.getElementById('dov');
+function oD(){drw.classList.add('on');dov.classList.add('on');document.body.style.overflow='hidden'}
+function cD(){drw.classList.remove('on');dov.classList.remove('on');document.body.style.overflow=''}
+brg.addEventListener('click',oD);document.getElementById('dx').addEventListener('click',cD);dov.addEventListener('click',cD);
+const btt=document.getElementById('btt');
+window.addEventListener('scroll',()=>btt.classList.toggle('on',scrollY>380),{passive:true});
+const ro=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){const s=[...(x.target.parentElement?.children||[])];x.target.style.transitionDelay=(s.indexOf(x.target)%4)*0.08+'s';x.target.classList.add('in');ro.unobserve(x.target);}});},{threshold:0.06,rootMargin:'0px 0px -20px 0px'});
+document.querySelectorAll('.rev').forEach(el=>ro.observe(el));
+document.getElementById('faqList').addEventListener('click',function(e){
+  const q=e.target.closest('.fq-q');if(!q)return;
+  const item=q.closest('.fq'),open=item.classList.contains('open');
+  document.querySelectorAll('.fq.open').forEach(i=>i.classList.remove('open'));
+  if(!open)item.classList.add('open');
+});
+
+// ₹ formatter
+function inr(n){return '₹'+n.toLocaleString('en-IN',{minimumFractionDigits:2,maximumFractionDigits:2})}
+
+// DOMESTIC slab calc
+function calcDomestic(u){
+  let e=0,breakdown=[];
+  const slabs=[[50,3.00],[100,4.50],[150,6.00],[Infinity,7.00]];
+  const labels=['0–50 units','51–150 units','151–300 units','300+ units'];
+  let prev=0,li=0;
+  for(const[limit,rate]of slabs){
+    if(u<=prev)break;
+    const take=Math.min(u,prev+limit)-prev;
+    const cost=take*rate;
+    e+=cost;
+    breakdown.push({label:labels[li],units:take,rate,cost});
+    prev=prev+limit;li++;
+    if(limit===Infinity)break;
+  }
+  return{e,breakdown};
+}
+
+// COMMERCIAL slab calc
+function calcCommercial(u){
+  let e=0,breakdown=[];
+  const slabs=[[100,5.50],[200,7.00],[Infinity,8.00]];
+  const labels=['0–100 units','101–300 units','300+ units'];
+  let prev=0,li=0;
+  for(const[limit,rate]of slabs){
+    if(u<=prev)break;
+    const take=Math.min(u,prev+limit)-prev;
+    const cost=take*rate;
+    e+=cost;
+    breakdown.push({label:labels[li],units:take,rate,cost});
+    prev=prev+limit;li++;
+    if(limit===Infinity)break;
+  }
+  return{e,breakdown};
+}
+
+// AGRICULTURE slab calc
+function calcAgriculture(u){
+  let e=0,breakdown=[];
+  const slabs=[[Infinity,1.50]];
+  const labels=['All units'];
+  let prev=0,li=0;
+  for(const[limit,rate]of slabs){
+    if(u<=prev)break;
+    const take=Math.min(u,prev+limit)-prev;
+    const cost=take*rate;
+    e+=cost;
+    breakdown.push({label:labels[li],units:take,rate,cost});
+    prev=prev+limit;li++;
+    if(limit===Infinity)break;
+  }
+  return{e,breakdown};
+}
+
+// Fixed charges
+function getFixed(cat,load,months){
+  const loadN=parseFloat(load);
+  let fc=0;
+  if(cat==='domestic'){
+    if(loadN<=1)fc=70;
+    else if(loadN<=2)fc=90;
+    else if(loadN<=5)fc=130;
+    else fc=160;
+  } else if(cat==='commercial'){
+    fc=loadN<=2?150:250;
+  } else {
+    fc=50;
+  }
+  return fc*months;
+}
+
+let chartInst=null;
+
+function calcMP(){
+  const uVal=document.getElementById('units').value;
+  const u=parseFloat(uVal)||0;
+  if(u<=0){alert('Pehle units enter karein (e.g. 250).');return;}
+  const cat=document.getElementById('category').value;
+  const load=document.getElementById('load').value;
+  const months=parseInt(document.getElementById('months').value)||1;
+
+  let result;
+  if(cat==='domestic') result=calcDomestic(u);
+  else if(cat==='commercial') result=calcCommercial(u);
+  else result=calcAgriculture(u);
+
+  const{e,breakdown}=result;
+  const dutyRate=cat==='commercial'?0.10:0.09;
+  const fuel=u*0.20;
+  const fixed=getFixed(cat,load,months);
+  const duty=e*dutyRate;
+  const total=e+fixed+fuel+duty;
+  const effRate=(e/u).toFixed(2);
+
+  // Fill main values
+  document.getElementById('r-total').textContent=inr(total);
+  document.getElementById('r-eff').textContent='₹'+effRate;
+  document.getElementById('r-energy').textContent=inr(e);
+  document.getElementById('r-fixed').textContent=inr(fixed);
+  document.getElementById('r-fuel').textContent=inr(fuel);
+  document.getElementById('r-duty').textContent=inr(duty);
+  document.getElementById('r-units').textContent=u+' kWh';
+  document.getElementById('r-period').textContent=months===1?'1 Mahina':'2 Mahine';
+  document.getElementById('r-monthly-note').textContent=months===2?'(≈ '+inr(total/2)+' per month)':'';
+
+  // Slab breakdown HTML
+  let sbHtml=`<div class="sb-title">📊 Slab-wise Energy Charges Breakdown</div>`;
+  breakdown.forEach(b=>{
+    if(b.units>0) sbHtml+=`<div class="sb-row"><span>⚡ ${b.label} × ₹${b.rate.toFixed(2)}</span><span>${inr(b.cost)}</span></div>`;
+  });
+  sbHtml+=`<div class="sb-row"><span>⛽ Fuel Surcharge</span><span>${inr(fuel)}</span></div>`;
+  sbHtml+=`<div class="sb-row"><span>🔧 Fixed Charges</span><span>${inr(fixed)}</span></div>`;
+  sbHtml+=`<div class="sb-row"><span>🏛️ Electricity Duty (${(dutyRate*100).toFixed(0)}%)</span><span>${inr(duty)}</span></div>`;
+  sbHtml+=`<div class="sb-row"><span>✅ Kul Dena Hoga (Total Payable)</span><span>${inr(total)}</span></div>`;
+  document.getElementById('slabBreakdown').innerHTML=sbHtml;
+
+  // Tips
+  let tip='';
+  if(cat==='domestic'){
+    if(u>300) tip=`⚠️ <strong>Alert:</strong> Aapne 300 units se zyada bijli use ki hai. ${u-300} extra units ₹7.00/unit par charge ho rahe hain. AC ya geyser thoda kam chalake is slab se bahar aana possible hai!`;
+    else if(u>150) tip=`💡 <strong>Tip:</strong> Aap Slab 3 (₹6.00/unit) mein hain. ${300-u} units ka aur space hai. Agar 300 units limit dhyan mein rakha to bill control mein rahega.`;
+    else tip=`✅ <strong>Acha Hai!</strong> Aap kam units use kar rahe hain. LED bulbs aur fan se aur bhi bachat ho sakti hai.`;
+  } else if(cat==='commercial'){
+    tip=`🏪 <strong>Commercial Connection:</strong> Duty rate 10% hai. Apni shop ki timings optimize karke aur energy-efficient equipment lagake bill kam kar sakte hain.`;
+  } else {
+    tip=`🌾 <strong>Agriculture Connection:</strong> Aapko subsidized rate (₹1.50/unit) mil raha hai. PM Kusum Yojana ke under solar pump lagane par aur bhi bachat ho sakti hai.`;
+  }
+  document.getElementById('tipBox').innerHTML=tip;
+
+  // Chart
+  if(chartInst)chartInst.destroy();
+  const ctx=document.getElementById('billChart').getContext('2d');
+  chartInst=new Chart(ctx,{
+    type:'doughnut',
+    data:{
+      labels:['Energy Charges','Fixed Charges','Fuel Surcharge','Electricity Duty'],
+      datasets:[{
+        data:[e,fixed,fuel,duty],
+        backgroundColor:['#3b82f6','#10b981','#f59e0b','#8b5cf6'],
+        borderRadius:4,
+        borderWidth:2,
+        borderColor:'#fff'
+      }]
+    },
+    options:{
+      responsive:true,
+      plugins:{
+        legend:{position:'bottom',labels:{font:{size:12},padding:14}},
+        tooltip:{callbacks:{label:ctx=>`${ctx.label}: ${inr(ctx.raw)} (${((ctx.raw/total)*100).toFixed(1)}%)`}}
+      }
+    }
+  });
+
+  // Show result
+  const rb=document.getElementById('resultBox');
+  rb.style.display='block';rb.style.animation='none';rb.offsetHeight;rb.style.animation='rIn .4s ease both';
+  setTimeout(()=>rb.scrollIntoView({behavior:'smooth',block:'nearest'}),120);
+}
+
+function resetCalc(){
+  document.getElementById('units').value='';
+  document.getElementById('resultBox').style.display='none';
+  if(chartInst){chartInst.destroy();chartInst=null;}
+}
+
+function sendMsg(){
+  const n=document.getElementById('cfN').value.trim(),
+        e=document.getElementById('cfE').value.trim(),
+        m=document.getElementById('cfM').value.trim();
+  if(!n||!e||!m){alert('Kripya sabhi fields bharein.');return;}
+  alert('✅ Message bhej diya! Hum 24–48 ghante mein reply karenge.');
+  ['cfN','cfE','cfM'].forEach(id=>document.getElementById(id).value='');
+}
+</script>
+</body>
+</html>
