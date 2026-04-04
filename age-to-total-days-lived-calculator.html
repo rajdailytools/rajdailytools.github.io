@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Age to Total Days Lived Calculator (2026) – Life Days Calculator Online | RajDailyTools</title>
+<meta name="description" content="Use this free total days lived calculator to find out exactly how many days, months, hours, and minutes you have lived based on your date of birth. Instant, accurate results with leap year support.">
+<meta name="keywords" content="total days lived calculator, age in days calculator, calculate how many days I lived, date of birth to total days, life days calculator online, age calculator in days months years, exact age calculator with days">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://rajdailytools.in/age-to-total-days-lived-calculator">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#2563eb;--blue-d:#1d4ed8;--blue-xl:#eff6ff;--blue-s:#dbeafe;
+  --amber:#f59e0b;--green:#10b981;--red:#ef4444;--purple:#8b5cf6;
+  --orange:#f97316;--teal:#14b8a6;
+  --green-xl:#f0fdf4;--green-s:#bbf7d0;
+  --red-xl:#fef2f2;--red-s:#fecaca;
+  --amber-xl:#fffbeb;--amber-s:#fde68a;
+  --purple-xl:#faf5ff;--purple-s:#ddd6fe;
+  --ink:#0f172a;--ink2:#334155;--ink3:#64748b;--ink4:#94a3b8;
+  --line:#e2e8f0;--surf:#f8fafc;--white:#fff;
+  --s1:0 1px 3px rgba(15,23,42,.06),0 1px 2px rgba(15,23,42,.04);
+  --s2:0 4px 16px rgba(15,23,42,.08),0 2px 6px rgba(15,23,42,.04);
+  --s3:0 12px 40px rgba(15,23,42,.11),0 3px 10px rgba(15,23,42,.06);
+  --s4:0 24px 64px rgba(15,23,42,.13),0 6px 20px rgba(15,23,42,.07);
+  --sb:0 8px 32px rgba(37,99,235,.20);
+  --fd:'Sora',sans-serif;--fb:'DM Sans',sans-serif;
+  --ease:cubic-bezier(.4,0,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);color:var(--ink);background:var(--white);overflow-x:hidden;-webkit-font-smoothing:antialiased;line-height:1.6}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+button{cursor:pointer;border:none;background:none;font-family:var(--fb)}
+.w{max-width:1180px;margin:0 auto;padding:0 24px}
+.wa{max-width:880px;margin:0 auto;padding:0 24px}
+select,input{appearance:none;-webkit-appearance:none}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+@keyframes resultIn{from{opacity:0;transform:translateY(18px) scale(.97)}to{opacity:1;transform:none}}
+@keyframes countUp{from{opacity:0;transform:scale(.85)}to{opacity:1;transform:scale(1)}}
+.rev{opacity:0;transform:translateY(22px);transition:opacity .55s var(--ease),transform .55s var(--ease)}
+.rev.in{opacity:1;transform:none}
+
+/* HEADER */
+.hdr{position:sticky;top:0;z-index:999;background:rgba(255,255,255,.96);backdrop-filter:blur(20px);border-bottom:1px solid var(--line);box-shadow:var(--s1)}
+.hdi{display:flex;align-items:center;justify-content:space-between;height:66px}
+.logo{display:flex;align-items:center;gap:10px}
+.lb{width:36px;height:36px;background:var(--blue);border-radius:9px;display:flex;align-items:center;justify-content:center;box-shadow:var(--sb);flex-shrink:0}
+.lb svg{width:18px;height:18px;fill:#fff}
+.ln{font-family:var(--fd);font-size:19px;font-weight:800;color:var(--ink);line-height:1}
+.ln span{color:var(--blue)}
+.ls{font-size:10px;color:var(--ink4);letter-spacing:.04em}
+nav.dn{display:flex;align-items:center;gap:2px}
+nav.dn a{font-size:13.5px;font-weight:500;color:var(--ink2);padding:7px 13px;border-radius:8px;transition:.2s}
+nav.dn a:hover{color:var(--blue);background:var(--blue-xl)}
+.hcta{background:var(--blue);color:#fff;font-family:var(--fd);font-weight:600;font-size:13px;padding:8px 18px;border-radius:8px;box-shadow:var(--sb);transition:.2s}
+.hcta:hover{background:var(--blue-d);transform:translateY(-1px)}
+.brg{display:none;flex-direction:column;gap:4.5px;padding:8px;border-radius:8px}
+.brg span{display:block;width:20px;height:2px;background:var(--ink);border-radius:2px;transition:.28s}
+.dov{display:none;position:fixed;inset:0;background:rgba(15,23,42,.45);z-index:1040;backdrop-filter:blur(3px)}
+.dov.on{display:block}
+.drw{position:fixed;top:0;right:-100%;width:270px;height:100vh;background:#fff;z-index:1050;padding:22px;box-shadow:var(--s4);transition:right .32s var(--ease);overflow-y:auto}
+.drw.on{right:0}
+.dh{display:flex;align-items:center;justify-content:space-between;margin-bottom:26px}
+.dx{width:33px;height:33px;border-radius:7px;background:var(--surf);display:flex;align-items:center;justify-content:center;color:var(--ink3);font-size:17px}
+nav.mn{display:flex;flex-direction:column;gap:3px}
+nav.mn a{display:block;font-size:14px;font-weight:500;color:var(--ink2);padding:11px 13px;border-radius:8px;transition:.2s}
+nav.mn a:hover{color:var(--blue);background:var(--blue-xl)}
+
+/* HERO */
+.hero{position:relative;overflow:hidden;background:linear-gradient(150deg,#ebf4ff 0%,#fff 46%,#fff7ed 100%);padding:64px 0 72px}
+.hero::before{content:'';position:absolute;top:-140px;right:-180px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(37,99,235,.08) 0%,transparent 68%);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-80px;left:-100px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(249,115,22,.05) 0%,transparent 68%);pointer-events:none}
+.blob{position:absolute;border-radius:50%;pointer-events:none;animation:float 6s ease-in-out infinite}
+.b1{width:13px;height:13px;background:rgba(37,99,235,.18);top:22%;right:14%;animation-delay:0s}
+.b2{width:9px;height:9px;background:rgba(249,115,22,.22);top:58%;right:26%;animation-delay:2.2s}
+.b3{width:11px;height:11px;background:rgba(16,185,129,.18);top:36%;right:6%;animation-delay:4s}
+.bc{display:flex;align-items:center;gap:7px;font-size:12.5px;color:var(--ink3);margin-bottom:22px;position:relative;z-index:1;flex-wrap:wrap}
+.bc a{color:var(--blue);font-weight:600}
+.pill{display:inline-flex;align-items:center;gap:7px;font-family:var(--fd);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);background:var(--blue-xl);padding:5px 14px;border-radius:100px;margin-bottom:18px}
+.pill::before{content:'';width:6px;height:6px;background:var(--blue);border-radius:50%}
+.hero-inner{position:relative;z-index:1;max-width:720px;animation:fadeUp .5s ease both}
+.hero h1{font-family:var(--fd);font-size:clamp(26px,4.5vw,50px);font-weight:800;line-height:1.1;color:var(--ink);margin-bottom:14px}
+.hero h1 span{color:var(--blue)}
+.hero-sub{font-size:16px;color:var(--ink3);line-height:1.8;margin-bottom:22px;max-width:600px}
+.hero-chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.chip{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;padding:6px 14px;border-radius:100px;background:#fff;border:1.5px solid var(--line);color:var(--ink2);box-shadow:var(--s1);transition:.22s}
+.chip:hover{border-color:var(--blue);color:var(--blue);transform:translateY(-1px)}
+.hero-meta{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:24px}
+.upd{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:700;color:var(--blue);background:var(--blue-xl);padding:6px 14px;border-radius:100px;border:1.5px solid var(--blue-s)}
+.mi{font-size:13px;color:var(--ink3);font-weight:500}
+
+/* HOW TO USE */
+.howto{background:var(--amber-xl);border:2px solid var(--amber-s);border-radius:16px;padding:22px 26px;max-width:560px;margin-bottom:24px}
+.howto-ttl{display:flex;align-items:center;gap:9px;font-family:var(--fd);font-size:15px;font-weight:800;color:var(--ink);margin-bottom:13px}
+.howto-steps{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.hs{display:flex;align-items:flex-start;gap:10px;font-size:13.5px;color:var(--ink2);line-height:1.6}
+.sn{width:24px;height:24px;background:var(--amber);color:#fff;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex-shrink:0;margin-top:1px}
+
+/* RELATED TOOLS */
+.rel-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;position:relative;z-index:1}
+.rg-box{border-radius:14px;padding:14px 14px 12px;display:flex;flex-direction:column;gap:8px;transition:.22s;border:1.5px solid}
+.rg-box:hover{transform:translateY(-3px);box-shadow:var(--s3)}
+.rg-box.army{background:linear-gradient(135deg,var(--amber-xl),#fef3c7);border-color:var(--amber-s)}
+.rg-box.ht{background:linear-gradient(135deg,var(--green-xl),#dcfce7);border-color:var(--green-s)}
+.rg-box.ssc{background:linear-gradient(135deg,var(--blue-xl),var(--blue-s));border-color:var(--blue-s)}
+.rg-box.mp{background:linear-gradient(135deg,var(--purple-xl),#ede9fe);border-color:var(--purple-s)}
+.rg-box.tl{background:linear-gradient(135deg,#f0fdfa,#ccfbf1);border-color:#99f6e4}
+.rg-ico{font-size:22px}
+.rg-txt h4{font-family:var(--fd);font-size:12px;font-weight:800;color:var(--ink);margin-bottom:2px}
+.rg-txt p{font-size:11px;color:var(--ink3);line-height:1.5}
+.btn-xs{display:inline-flex;align-items:center;gap:4px;font-family:var(--fd);font-weight:700;font-size:11px;padding:5px 10px;border-radius:7px;transition:.22s;margin-top:4px}
+.btn-xs.a{background:var(--amber);color:#fff}.btn-xs.a:hover{background:#d97706}
+.btn-xs.g{background:var(--green);color:#fff}.btn-xs.g:hover{background:#059669}
+.btn-xs.b{background:var(--blue);color:#fff}.btn-xs.b:hover{background:var(--blue-d)}
+.btn-xs.p{background:var(--purple);color:#fff}.btn-xs.p:hover{background:#7c3aed}
+.btn-xs.t{background:var(--teal);color:#fff}.btn-xs.t:hover{background:#0f9488}
+
+/* TOOL */
+.tool-sec{background:var(--surf);padding:80px 0}
+.tool-wrap{max-width:900px;margin:0 auto}
+.tool-card{background:#fff;border:1.5px solid var(--line);border-radius:28px;overflow:hidden;box-shadow:var(--s4)}
+.tool-hdr{background:linear-gradient(135deg,#1d4ed8 0%,#2563eb 55%,#3b82f6 100%);padding:32px 40px;position:relative;overflow:hidden}
+.tool-hdr::before{content:'';position:absolute;top:-60px;right:-60px;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,.07)}
+.tool-hdr::after{content:'';position:absolute;bottom:-40px;left:-40px;width:180px;height:180px;border-radius:50%;background:rgba(255,255,255,.04)}
+.th{position:relative;z-index:1}
+.th h2{font-family:var(--fd);font-size:21px;font-weight:800;color:#fff;margin-bottom:6px}
+.th p{font-size:14px;color:rgba(255,255,255,.82);line-height:1.65}
+.th-badges{display:flex;flex-wrap:wrap;gap:9px;margin-top:14px}
+.thb{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:rgba(255,255,255,.9);background:rgba(255,255,255,.13);padding:5px 12px;border-radius:100px}
+.tool-body{padding:36px 40px}
+
+/* FORM */
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+.fld{display:flex;flex-direction:column;gap:7px}
+.flbl{font-size:13px;font-weight:700;color:var(--ink2)}
+.flbl span{font-size:11px;font-weight:500;color:var(--ink4);margin-left:5px;background:var(--surf);padding:2px 7px;border-radius:5px;border:1px solid var(--line)}
+.finp,.fsel{padding:12px 16px;font-size:14.5px;color:var(--ink);background:#fff;border:1.5px solid var(--line);border-radius:10px;outline:none;transition:.22s;font-family:var(--fb);width:100%}
+.finp:focus,.fsel:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(37,99,235,.10)}
+.hint-box{display:flex;align-items:flex-start;gap:9px;font-size:13px;color:var(--ink2);background:var(--blue-xl);border:1.5px solid var(--blue-s);border-radius:10px;padding:11px 14px;margin:16px 0;line-height:1.65}
+.hint-box svg{width:16px;height:16px;stroke:var(--blue);fill:none;stroke-width:2;flex-shrink:0;margin-top:2px}
+.chk-btn{width:100%;padding:17px;background:linear-gradient(135deg,var(--blue) 0%,#1e40af 100%);color:#fff;font-family:var(--fd);font-weight:800;font-size:16px;border-radius:12px;box-shadow:var(--sb);transition:all .25s var(--ease);display:flex;align-items:center;justify-content:center;gap:10px}
+.chk-btn:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(37,99,235,.32)}
+.chk-btn:active{transform:translateY(0)}
+
+/* RESULT */
+#resultArea{display:none;margin-top:28px;animation:resultIn .45s var(--ease) both}
+.pay-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-bottom:16px}
+.pay-card{border-radius:16px;padding:22px 20px;position:relative;overflow:hidden;border:2px solid;transition:.25s}
+.pay-card:hover{transform:translateY(-2px);box-shadow:var(--s3)}
+.pay-card.c1{background:linear-gradient(135deg,var(--blue-xl),#e0eeff);border-color:var(--blue-s)}
+.pay-card.c2{background:linear-gradient(135deg,var(--green-xl),#d1fae5);border-color:var(--green-s)}
+.pay-card.c3{background:linear-gradient(135deg,var(--amber-xl),#fef3c7);border-color:var(--amber-s)}
+.pay-card.c4{background:linear-gradient(135deg,var(--purple-xl),#ede9fe);border-color:var(--purple-s)}
+.pay-card.c5{background:linear-gradient(135deg,var(--red-xl),#fee2e2);border-color:var(--red-s);grid-column:1/-1}
+.pay-card::before{content:'';position:absolute;inset:0;opacity:.04;background-image:repeating-linear-gradient(45deg,currentColor 0,currentColor 1px,transparent 0,transparent 50%);background-size:12px 12px;pointer-events:none}
+.pc-lbl{font-size:12px;font-weight:700;color:var(--ink3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px;display:flex;align-items:center;gap:6px}
+.pc-val{font-family:var(--fd);font-size:32px;font-weight:800;color:var(--ink);line-height:1;animation:countUp .5s var(--ease) both}
+.pay-card.c5 .pc-val{font-size:clamp(20px,4vw,36px)}
+.pc-sub{font-size:12.5px;color:var(--ink3);margin-top:5px}
+.pc-ico{font-size:28px;position:absolute;top:16px;right:16px;opacity:.18}
+
+/* PROGRESS BAR */
+.prog-wrap{margin-top:18px;background:var(--surf);border:1.5px solid var(--line);border-radius:14px;padding:18px 20px}
+.prog-lbl{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;font-size:13px;font-weight:700;color:var(--ink2)}
+.prog-bar-bg{background:var(--line);border-radius:100px;height:14px;overflow:hidden}
+.prog-bar-fill{height:100%;border-radius:100px;transition:width 1.4s var(--ease);width:0}
+
+.tips-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.tip-pill{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:600;padding:7px 14px;border-radius:100px;background:var(--green-xl);color:var(--green);border:1.5px solid var(--green-s)}
+.tip-pill.blue{background:var(--blue-xl);color:var(--blue);border-color:var(--blue-s)}
+.tip-pill.amber{background:var(--amber-xl);color:var(--amber);border-color:var(--amber-s)}
+.tip-pill.purple{background:var(--purple-xl);color:var(--purple);border-color:var(--purple-s)}
+.copy-btn{display:inline-flex;align-items:center;gap:6px;font-family:var(--fd);font-size:12px;font-weight:700;padding:7px 14px;border-radius:8px;background:var(--blue);color:#fff;border:none;cursor:pointer;transition:.22s;margin-top:4px}
+.copy-btn:hover{background:var(--blue-d);transform:translateY(-1px)}
+.copy-btn.copied{background:var(--green)}
+.warn-box{background:var(--amber-xl);border:1.5px solid var(--amber-s);border-radius:12px;padding:14px 18px;display:flex;gap:10px;font-size:13.5px;color:var(--ink2);line-height:1.7;margin-top:14px}
+
+/* FEATURES */
+.tips-sec{background:var(--surf);padding:72px 0}
+.tips-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.tip-card{background:#fff;border:1.5px solid var(--line);border-radius:16px;padding:22px 18px;text-align:center;transition:.28s}
+.tip-card:hover{transform:translateY(-4px);box-shadow:var(--s3);border-color:var(--blue-s)}
+.tip-ico{font-size:32px;margin-bottom:11px}
+.tip-title{font-family:var(--fd);font-size:14px;font-weight:800;color:var(--ink);margin-bottom:8px}
+.tip-desc{font-size:13px;color:var(--ink3);line-height:1.7}
+
+/* TABLE */
+.tbl-sec{background:#fff;padding:72px 0}
+.tbl-wr{overflow-x:auto;margin-bottom:24px;border-radius:14px;border:1.5px solid var(--line);box-shadow:var(--s2)}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+thead th{background:linear-gradient(135deg,var(--blue) 0%,#1e40af 100%);color:#fff;padding:14px 16px;text-align:left;font-family:var(--fd);font-size:13px;font-weight:700;letter-spacing:.03em}
+thead th:first-child{border-radius:14px 0 0 0}
+thead th:last-child{border-radius:0 14px 0 0}
+tbody tr{border-bottom:1px solid var(--line);transition:.2s}
+tbody tr:hover{background:var(--blue-xl)}
+tbody td{padding:12px 16px;color:var(--ink2);vertical-align:middle}
+.tbadge{display:inline-flex;font-size:11px;font-weight:700;padding:3px 8px;border-radius:100px}
+.tbadge.g{background:var(--green-xl);color:var(--green);border:1px solid var(--green-s)}
+.tbadge.b{background:var(--blue-xl);color:var(--blue);border:1px solid var(--blue-s)}
+.tbadge.a{background:var(--amber-xl);color:var(--amber);border:1px solid var(--amber-s)}
+.tbadge.r{background:var(--red-xl);color:var(--red);border:1px solid var(--red-s)}
+.tbadge.p{background:var(--purple-xl);color:var(--purple);border:1px solid var(--purple-s)}
+
+/* GRAPH */
+.graph-sec{background:var(--surf);padding:72px 0}
+.graph-card{background:#fff;border:1.5px solid var(--line);border-radius:20px;padding:28px 32px;box-shadow:var(--s3)}
+.graph-hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;flex-wrap:wrap;gap:12px}
+.graph-ttl{font-family:var(--fd);font-size:18px;font-weight:800;color:var(--ink)}
+.graph-legend{display:flex;gap:20px;flex-wrap:wrap;margin-bottom:18px}
+.gl-item{display:flex;align-items:center;gap:7px;font-size:13px;font-weight:600;color:var(--ink2)}
+.gl-dot{width:12px;height:12px;border-radius:50%}
+.chart-wrap{width:100%;overflow-x:auto;position:relative}
+svg.barchart{display:block;overflow:visible}
+.axis-label{font-family:var(--fd);font-size:11px;fill:var(--ink4);font-weight:600}
+.axis-title{font-family:var(--fd);font-size:12px;fill:var(--ink3);font-weight:700}
+.grid-line{stroke:var(--line);stroke-width:1;stroke-dasharray:4 4}
+
+/* STORY */
+.story-sec{background:#fff;padding:72px 0}
+.story-card{background:var(--surf);border:1.5px solid var(--line);border-radius:24px;padding:40px;box-shadow:var(--s3);position:relative;overflow:hidden}
+.story-card::before{content:'';position:absolute;top:0;left:0;bottom:0;width:5px;background:linear-gradient(180deg,var(--blue) 0%,var(--orange) 100%);border-radius:5px 0 0 5px}
+.sq{font-size:54px;color:var(--blue-s);font-family:Georgia,serif;line-height:1;padding-left:8px}
+.sb{font-size:15.5px;color:var(--ink2);line-height:1.9;padding:0 8px}
+.sauth{display:flex;align-items:center;gap:14px;margin-top:22px;padding-top:20px;border-top:1px solid var(--line)}
+.savt{width:48px;height:48px;background:var(--blue);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+.sname{font-family:var(--fd);font-size:15px;font-weight:700;color:var(--ink)}
+.srole{font-size:12.5px;color:var(--ink3)}
+.founder-msg{background:linear-gradient(135deg,var(--blue-xl),var(--blue-s));border:1.5px solid var(--blue-s);border-radius:14px;padding:20px 22px;margin-top:20px;display:flex;gap:13px}
+.fm-ico{font-size:26px;flex-shrink:0}
+.fm-txt{font-size:14px;color:var(--ink2);line-height:1.75;font-style:italic}
+.fm-txt strong{color:var(--ink);font-weight:700;font-style:normal}
+
+/* GUIDE */
+.guide-sec{background:var(--surf);padding:72px 0}
+.guide-body h2{font-family:var(--fd);font-size:21px;font-weight:800;color:var(--ink);margin:28px 0 11px;line-height:1.3}
+.guide-body h2:first-child{margin-top:0}
+.guide-body p{font-size:15px;color:var(--ink3);line-height:1.85;margin-bottom:14px}
+.guide-body ul{display:flex;flex-direction:column;gap:8px;margin:12px 0 16px}
+.guide-body li{display:flex;align-items:flex-start;gap:10px;font-size:14.5px;color:var(--ink3);line-height:1.7}
+.guide-body li::before{content:'✓';width:18px;height:18px;background:var(--blue);color:#fff;border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;flex-shrink:0;margin-top:3px}
+.guide-body strong{color:var(--ink2);font-weight:700}
+.ibox{background:var(--blue-xl);border:1.5px solid var(--blue-s);border-radius:13px;padding:15px 18px;margin:16px 0;display:flex;gap:11px;font-size:14px;color:var(--ink2);line-height:1.7}
+.ibox svg{width:17px;height:17px;stroke:var(--blue);fill:none;stroke-width:2;flex-shrink:0;margin-top:2px}
+.ibox.a{background:var(--amber-xl);border-color:var(--amber-s)}
+.ibox.a svg{stroke:var(--amber)}
+.ibox.g{background:var(--green-xl);border-color:var(--green-s)}
+.ibox.g svg{stroke:var(--green)}
+
+/* FAQ */
+.faq-sec{background:#fff;padding:72px 0}
+.fql{max-width:780px;margin:0 auto}
+.fq{background:var(--surf);border:1.5px solid var(--line);border-radius:13px;margin-bottom:10px;overflow:hidden}
+.fq-q{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;cursor:pointer;gap:14px;transition:.2s}
+.fq-q:hover{background:var(--blue-xl)}
+.fq-t{font-weight:600;font-size:15px;color:var(--ink);line-height:1.4}
+.fq-i{width:28px;height:28px;border-radius:50%;background:var(--blue-xl);color:var(--blue);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;transition:transform .28s,background .2s}
+.fq.open .fq-i{transform:rotate(45deg);background:var(--blue);color:#fff}
+.fq-a{max-height:0;overflow:hidden;transition:max-height .35s var(--ease)}
+.fq-ai{padding:0 22px 18px;font-size:14.5px;color:var(--ink3);line-height:1.78}
+.fq.open .fq-a{max-height:400px}
+
+/* MISC */
+.disc{background:var(--amber-xl);border-top:1px solid var(--amber-s);border-bottom:1px solid var(--amber-s);padding:15px 0}
+.disc-in{display:flex;align-items:flex-start;gap:12px;font-size:13.5px;color:var(--ink2);line-height:1.7}
+.contact-sec{background:var(--surf);padding:60px 0}
+.contact-card{max-width:580px;margin:0 auto;background:#fff;border:1.5px solid var(--line);border-radius:20px;padding:32px;text-align:center;box-shadow:var(--s2)}
+.contact-card h3{font-family:var(--fd);font-size:19px;font-weight:800;color:var(--ink);margin-bottom:10px}
+.contact-card p{font-size:15px;color:var(--ink3);line-height:1.75;margin-bottom:20px}
+.btn-bl{display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:#fff;font-family:var(--fd);font-weight:700;font-size:14.5px;padding:12px 26px;border-radius:8px;box-shadow:var(--sb);transition:.22s}
+.btn-bl:hover{background:var(--blue-d);transform:translateY(-1px)}
+.priv-note{font-size:12px;color:var(--ink4);margin-top:14px}
+.cta{background:linear-gradient(140deg,#0f172a 0%,#1e3a8a 100%);padding:80px 0;text-align:center;position:relative;overflow:hidden}
+.cta::before{content:'';position:absolute;top:-80px;left:50%;transform:translateX(-50%);width:800px;height:380px;background:radial-gradient(ellipse,rgba(37,99,235,.22) 0%,transparent 68%);pointer-events:none}
+.cta-in{position:relative;z-index:1}
+.cta .pill{color:#93c5fd;background:rgba(255,255,255,.1);margin-bottom:18px}
+.cta .pill::before{background:#93c5fd}
+.cta h2{font-family:var(--fd);font-size:clamp(24px,4vw,42px);font-weight:800;color:#fff;line-height:1.15;margin-bottom:12px}
+.cta h2 em{color:#fbbf24;font-style:normal}
+.cta p{font-size:16px;color:rgba(255,255,255,.72);max-width:480px;margin:0 auto 32px;line-height:1.78}
+.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn-gold{display:inline-flex;align-items:center;gap:8px;background:var(--amber);color:#fff;font-family:var(--fd);font-weight:800;font-size:15px;padding:14px 30px;border-radius:8px;box-shadow:0 8px 28px rgba(245,158,11,.35);transition:.22s}
+.btn-gold:hover{background:#d97706;transform:translateY(-3px)}
+.btn-ghost{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.09);border:1.5px solid rgba(255,255,255,.22);color:#fff;font-family:var(--fd);font-weight:600;font-size:14px;padding:13px 26px;border-radius:8px;transition:.2s}
+.btn-ghost:hover{background:rgba(255,255,255,.16)}
+footer{background:#0f172a;padding:52px 0 0}
+.ft-inner{max-width:1180px;margin:0 auto;padding:0 24px}
+.ft-top{display:grid;grid-template-columns:1.9fr 1fr 1fr 1fr;gap:44px;margin-bottom:44px}
+.ft-brand .ln{color:#fff}.ft-brand .ls{color:#475569}
+.ft-desc{font-size:13.5px;color:#64748b;line-height:1.78;max-width:265px;margin:13px 0 20px}
+.ft-soc{display:flex;gap:9px}
+.fts{width:34px;height:34px;border-radius:7px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;color:#94a3b8;font-size:13px;transition:.2s}
+.fts:hover{background:var(--blue);color:#fff}
+.fc h4{font-family:var(--fd);font-size:12px;font-weight:700;color:#fff;margin-bottom:14px;letter-spacing:.06em;text-transform:uppercase}
+.fc ul{display:flex;flex-direction:column;gap:8px}
+.fc ul a{font-size:13.5px;color:#64748b;transition:.18s}
+.fc ul a:hover{color:#93c5fd}
+.ft-btm{border-top:1px solid rgba(255,255,255,.07);padding:20px 0;text-align:center}
+.ft-cp{font-size:12.5px;color:#475569}
+.ft-cp b{color:#64748b}
+.ft-tag{font-size:12px;color:#334155;margin-top:4px;font-style:italic}
+.btt{position:fixed;bottom:26px;right:26px;z-index:500;width:43px;height:43px;background:var(--blue);color:#fff;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:17px;box-shadow:var(--sb);opacity:0;pointer-events:none;transform:translateY(14px);transition:.28s var(--ease)}
+.btt.on{opacity:1;pointer-events:auto;transform:translateY(0)}
+.btt:hover{transform:translateY(-3px)}
+.sec-lbl{display:flex;align-items:center;gap:8px;font-family:var(--fd);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin-bottom:10px}
+.sec-lbl::before{content:'';width:6px;height:6px;background:var(--blue);border-radius:50%}
+.sec-h{font-family:var(--fd);font-size:clamp(22px,3.5vw,34px);font-weight:800;color:var(--ink);line-height:1.15;margin-bottom:10px}
+.sec-sub{font-size:15.5px;color:var(--ink3);line-height:1.78;margin-bottom:40px;max-width:600px}
+
+/* NOTICE BANNER */
+.notice-banner{background:linear-gradient(135deg,#0f172a,#1e3a8a);border-radius:14px;padding:18px 22px;display:flex;align-items:center;gap:14px;margin-top:14px}
+.notice-icon{font-size:26px;flex-shrink:0}
+.notice-text{font-family:var(--fd);font-size:14px;font-weight:700;color:#fbbf24;line-height:1.6}
+.notice-text span{color:#e2e8f0;font-weight:400;font-family:var(--fb)}
+
+@media(max-width:1060px){.ft-top{grid-template-columns:1fr 1fr}.tips-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:860px){
+  nav.dn,.hcta{display:none}.brg{display:flex}
+  .tool-body{padding:24px 22px}.tool-hdr{padding:24px 22px}
+  .fgrid{grid-template-columns:1fr}
+  .howto-steps{grid-template-columns:1fr}
+  .rel-grid{grid-template-columns:1fr 1fr}
+  .pay-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+  .ft-top{grid-template-columns:1fr}.rel-grid{grid-template-columns:1fr}
+  .tips-grid{grid-template-columns:1fr 1fr}
+  .cta-btns{flex-direction:column;align-items:center}
+  .story-card{padding:26px 20px}
+  .pay-grid{grid-template-columns:1fr}
+  .pay-card.c5{grid-column:auto}
+  .graph-card{padding:18px 14px}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="hdr">
+  <div class="w">
+    <div class="hdi">
+      <a href="/" class="logo">
+        <div class="lb"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+        <div><div class="ln">Raj<span>Daily</span>Tools</div><div class="ls">Smart Tools for Daily Life</div></div>
+      </a>
+      <nav class="dn">
+        <a href="/">Home</a><a href="/categories">Categories</a>
+        <a href="/#popular">Popular</a><a href="/about">About</a><a href="/contact">Contact</a>
+      </nav>
+      <a href="/categories" class="hcta">All Tools →</a>
+      <button class="brg" id="brg"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="dov" id="dov"></div>
+<div class="drw" id="drw">
+  <div class="dh">
+    <div class="logo">
+      <div class="lb" style="width:30px;height:30px;border-radius:7px"><svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#fff"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+      <div class="ln" style="font-size:16px">Raj<span>Daily</span>Tools</div>
+    </div>
+    <button class="dx" id="dx">✕</button>
+  </div>
+  <nav class="mn">
+    <a href="/" onclick="cD()">🏠 Home</a>
+    <a href="/categories" onclick="cD()">🗂️ Categories</a>
+    <a href="/#popular" onclick="cD()">⭐ Popular</a>
+    <a href="/about" onclick="cD()">👤 About</a>
+    <a href="/contact" onclick="cD()">📬 Contact</a>
+  </nav>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+  <div class="w">
+    <div class="bc">
+      <a href="/">Home</a><span style="color:var(--ink4)">›</span>
+      <a href="/categories">Tools</a><span style="color:var(--ink4)">›</span>
+      <span>Age to Total Days Lived Calculator</span>
+    </div>
+    <div class="hero-inner">
+      <div class="pill">🎂 Life Days Calculator &nbsp;·&nbsp; 💯 Free Tool</div>
+      <h1>Calculate Your <span>Total Days Lived</span> Instantly 🎂</h1>
+      <p class="hero-sub">Find out exactly how many days, months, hours, and minutes you have lived based on your date of birth. The most accurate life days calculator online — with leap year support.</p>
+      <div class="hero-chips">
+        <span class="chip">📅 Total Days</span>
+        <span class="chip">⏳ Total Hours</span>
+        <span class="chip">⏱ Total Minutes</span>
+        <span class="chip">🔁 Leap Year Aware</span>
+        <span class="chip">🆓 100% Free</span>
+        <span class="chip">🔒 No Data Stored</span>
+      </div>
+      <div class="hero-meta">
+        <div class="upd">🎂 Age in Days Calculator</div>
+        <span class="mi">✅ Exact Age with Days</span>
+        <span class="mi">📊 Years · Months · Days · Hours</span>
+      </div>
+      <!-- HOW TO USE -->
+      <div class="howto">
+        <div class="howto-ttl">💡 How to Use This Tool</div>
+        <div class="howto-steps">
+          <div class="hs"><span class="sn">1</span>Enter your Date of Birth</div>
+          <div class="hs"><span class="sn">2</span>Click on "Calculate Days"</div>
+          <div class="hs"><span class="sn">3</span>Instantly see total days, months &amp; years</div>
+        </div>
+      </div>
+      <!-- RELATED TOOLS -->
+      <div class="rel-grid">
+        <div class="rg-box army">
+          <div class="rg-ico">📅</div>
+          <div class="rg-txt">
+            <h4>Age Calculator</h4>
+            <p>Calculate your exact age</p>
+            <a href="/age-calculator.html" class="btn-xs a">Use Now →</a>
+          </div>
+        </div>
+        <div class="rg-box ht">
+          <div class="rg-ico">📆</div>
+          <div class="rg-txt">
+            <h4>Date Difference Calculator</h4>
+            <p>Days between two dates</p>
+            <a href="/date-difference-calculator.html" class="btn-xs g">Use Now →</a>
+          </div>
+        </div>
+        <div class="rg-box ssc">
+          <div class="rg-ico">⏰</div>
+          <div class="rg-txt">
+            <h4>Time Calculator</h4>
+            <p>Add or subtract time easily</p>
+            <a href="/time-calculator.html" class="btn-xs b">Use Now →</a>
+          </div>
+        </div>
+        <div class="rg-box mp">
+          <div class="rg-ico">❤️</div>
+          <div class="rg-txt">
+            <h4>Life Expectancy Calculator</h4>
+            <p>Estimate remaining lifespan</p>
+            <a href="/life-expectancy-calculator.html" class="btn-xs p">Use Now →</a>
+          </div>
+        </div>
+        <div class="rg-box tl">
+          <div class="rg-ico">🎉</div>
+          <div class="rg-txt">
+            <h4>Birthday Countdown Tool</h4>
+            <p>Days until your next birthday</p>
+            <a href="/birthday-countdown.html" class="btn-xs t">Use Now →</a>
+          </div>
+        </div>
+        <div class="rg-box army">
+          <div class="rg-ico">📊</div>
+          <div class="rg-txt">
+            <h4>Retirement Age Calculator</h4>
+            <p>Plan your retirement date</p>
+            <a href="/retirement-calculator.html" class="btn-xs a">Use Now →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOOL SECTION -->
+<section class="tool-sec" id="tool">
+  <div class="w">
+    <div class="tool-wrap">
+      <div class="tool-card rev">
+        <div class="tool-hdr">
+          <div class="th">
+            <h2>🎂 Age to Total Days Lived Calculator</h2>
+            <p>Enter your date of birth below. We will instantly calculate exactly how many days, months, years, hours, and minutes you have been alive on this planet — with full leap year accuracy.</p>
+            <div class="th-badges">
+              <span class="thb">🎂 Total Days Lived</span>
+              <span class="thb">⏳ Total Hours &amp; Minutes</span>
+              <span class="thb">📊 Visual Chart</span>
+              <span class="thb">🔁 Leap Year Correct</span>
+              <span class="thb">🔒 Private &amp; Secure</span>
+            </div>
+          </div>
+        </div>
+        <div class="tool-body">
+
+          <div class="fgrid" style="grid-template-columns:1fr;max-width:480px">
+            <div class="fld">
+              <label class="flbl" for="dob">🎂 Date of Birth <span>Required</span></label>
+              <input class="finp" type="date" id="dob" max="">
+              <div style="font-size:11.5px;color:var(--ink4);margin-top:4px">Enter your exact date of birth. We support dates from 1900 onwards.</div>
+            </div>
+          </div>
+
+          <div class="hint-box">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            <span><strong>Did you know?</strong> A 30-year-old has lived approximately 10,957 days. That accounts for 7–8 leap years adding extra days. Our total days lived calculator handles every leap year automatically — so your result is always 100% precise.</span>
+          </div>
+
+          <button class="chk-btn" onclick="calculateAge()">
+            🎂 Calculate Days
+          </button>
+
+          <!-- RESULT -->
+          <div id="resultArea">
+            <div class="pay-grid" id="payGrid"></div>
+            <div id="progWrap"></div>
+            <div id="tipsRow" class="tips-row"></div>
+            <button class="copy-btn" id="copyBtn" onclick="copyResult()">📋 Copy Full Report</button>
+            <div class="warn-box">
+              <span style="font-size:20px;flex-shrink:0">⚠️</span>
+              <div style="font-size:13.5px;color:var(--ink2);line-height:1.72"><strong>Disclaimer:</strong> This tool is for informational purposes only. Results are calculated based on the Gregorian calendar. <strong>No personal data is stored or shared.</strong></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GRAPH SECTION -->
+<section class="graph-sec" id="graphSec" style="display:none">
+  <div class="w">
+    <div style="text-align:center;margin-bottom:30px">
+      <div class="sec-lbl" style="justify-content:center">📊 Visual Comparison</div>
+      <div class="sec-h">Your Life in <span style="color:var(--blue)">Numbers — Visualised</span></div>
+      <p class="sec-sub" style="margin:12px auto 0;max-width:560px">See how your years translate into days, hours, and minutes — the real scale of your life experience made visible.</p>
+    </div>
+    <div class="graph-card rev">
+      <div class="graph-hdr">
+        <div class="graph-ttl" id="graphTitle">Your Life Timeline</div>
+      </div>
+      <div class="graph-legend">
+        <div class="gl-item"><div class="gl-dot" style="background:#2563eb"></div>Total Years</div>
+        <div class="gl-item"><div class="gl-dot" style="background:#10b981"></div>Total Months</div>
+        <div class="gl-item"><div class="gl-dot" style="background:#f59e0b"></div>Total Days (÷100)</div>
+      </div>
+      <div class="chart-wrap">
+        <svg id="lifeChart" class="barchart" width="100%" height="320" viewBox="0 0 820 320" preserveAspectRatio="xMidYMid meet"></svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES SECTION -->
+<section class="tips-sec">
+  <div class="w">
+    <div style="text-align:center;margin-bottom:40px">
+      <div class="sec-lbl" style="justify-content:center">✨ Why Use This Tool</div>
+      <div class="sec-h">Premium Features for <span style="color:var(--blue)">Smarter Time Awareness</span></div>
+    </div>
+    <div class="tips-grid">
+      <div class="tip-card rev">
+        <div class="tip-ico">⚡</div>
+        <div class="tip-title">Instant Results</div>
+        <div class="tip-desc">Get your exact total days lived, hours, and minutes in under one second — no signup, no waiting, no complexity.</div>
+      </div>
+      <div class="tip-card rev">
+        <div class="tip-ico">🔁</div>
+        <div class="tip-title">Leap Year Accurate</div>
+        <div class="tip-desc">Every leap year since your birth is correctly counted. Our life days calculator uses real Gregorian calendar logic — never an approximation.</div>
+      </div>
+      <div class="tip-card rev">
+        <div class="tip-ico">📊</div>
+        <div class="tip-title">Visual Life Chart</div>
+        <div class="tip-desc">See your life in years, months, and days as a beautiful visual bar chart — so the full scale of your time becomes crystal clear.</div>
+      </div>
+      <div class="tip-card rev">
+        <div class="tip-ico">🔒</div>
+        <div class="tip-title">100% Private</div>
+        <div class="tip-desc">Your date of birth is never stored, shared, or transmitted. Everything runs entirely in your browser. Your data stays yours.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TABLE SECTION -->
+<section class="tbl-sec">
+  <div class="w">
+    <div style="text-align:center;margin-bottom:36px">
+      <div class="sec-lbl" style="justify-content:center">📋 Results Summary</div>
+      <div class="sec-h">Your Life <span style="color:var(--blue)">Metric Table</span></div>
+      <p class="sec-sub" style="margin:10px auto 0;max-width:560px">A complete breakdown of your total time lived. Calculate once to fill all values below.</p>
+    </div>
+    <div class="tbl-wr">
+      <table>
+        <thead>
+          <tr>
+            <th>📊 Metric</th>
+            <th>🔢 Value</th>
+            <th>📝 Description</th>
+            <th>🏷️ Status</th>
+          </tr>
+        </thead>
+        <tbody id="resultTable">
+          <tr><td colspan="4" style="text-align:center;padding:22px;color:var(--ink4);font-size:14px">⬆️ Enter your date of birth above and click Calculate Days to see your results here.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- STORY SECTION -->
+<section class="story-sec">
+  <div class="w">
+    <div style="max-width:820px;margin:0 auto">
+      <div class="sec-lbl">💡 Why I Built This</div>
+      <div class="sec-h" style="margin-bottom:28px">The Story Behind This <span style="color:var(--blue)">Total Days Calculator</span></div>
+      <div class="story-card rev">
+        <div class="sq">"</div>
+        <div class="sb">
+          One day, I was talking with my friend about life and time. We started wondering how many days we have actually lived. It sounded simple, but when we tried calculating manually, it became confusing and inaccurate. We kept losing track of leap years, months with different lengths, and the exact days. That moment made me realize that people often think about time but rarely measure it. So I decided to build this <strong>Total Days Lived Calculator</strong> — a simple, accurate, and instant tool to help anyone understand the value of their time. Because every single day you live is a day that matters.
+        </div>
+        <div class="sauth">
+          <div class="savt">🛠️</div>
+          <div>
+            <div class="sname">Raj — Founder, RajDailyTools</div>
+            <div class="srole">Building free tools that make everyday life smarter</div>
+          </div>
+        </div>
+        <div class="founder-msg">
+          <div class="fm-ico">💬</div>
+          <div class="fm-txt">"<strong>Your life is made of moments.</strong> Use your time wisely. Knowing how many days you have lived is the first step to appreciating every day ahead of you."</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ARTICLE / GUIDE SECTION -->
+<section class="guide-sec">
+  <div class="wa">
+    <div class="sec-lbl">📖 Complete Guide</div>
+    <div class="sec-h" style="margin-bottom:28px">Everything You Need to Know About <span style="color:var(--blue)">Calculating Total Days Lived</span></div>
+    <div class="guide-body rev">
+
+      <h2>🎯 What is Age Calculation?</h2>
+      <p>Age calculation is the process of finding out exactly how long a person has lived since the moment of their birth. While most people think of age in years — "I am 28 years old" — a more precise approach counts the exact number of days, months, hours, and even minutes that have passed. This is what an <strong>age in days calculator</strong> does: it converts your date of birth into a precise, real-world measurement of the time you have spent on earth.</p>
+      <p>The standard method of counting age in years is simple but imprecise. Years vary in length — a regular year has 365 days, but a leap year has 366. If you are 25 years old, you have not lived exactly 25 × 365 = 9,125 days. You have likely lived 9,131 or 9,132 days, because several of those years were leap years. The difference adds up, which is exactly why a proper <strong>life days calculator online</strong> like this one matters.</p>
+
+      <div class="ibox">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        <div>A person who is exactly 30 years old has lived through approximately 7–8 leap years. That means they have lived around 10,957 days — not 10,950 as a rough estimate would suggest. Our <strong>exact age calculator with days</strong> accounts for every one of those extra leap days.</div>
+      </div>
+
+      <h2>📅 Why Calculating Total Days Matters</h2>
+      <p>Knowing your total days lived is more than a fun number — it is a powerful tool for self-awareness and motivation. When you calculate how many days you have lived, you start to see time differently. Instead of saying "I have been on earth for 30 years," you can say "I have lived 10,957 days." That specific, concrete number tends to create a much stronger emotional response. It makes time feel real and measurable.</p>
+      <p>This kind of <strong>date of birth to total days</strong> awareness is used by coaches, motivational speakers, psychologists, and productivity experts around the world. It is the same principle that drives people to track their habits by days rather than months — because days are specific, countable, and emotionally impactful in a way that years are not.</p>
+
+      <ul>
+        <li>It creates a real, tangible sense of how much time you have already used</li>
+        <li>It motivates you to make the remaining days count</li>
+        <li>It helps you appreciate milestones — like reaching 10,000 days of life</li>
+        <li>It is useful for planning, setting goals, and tracking personal growth</li>
+        <li>It gives a new perspective on what you have accomplished day by day</li>
+      </ul>
+
+      <h2>⏳ Importance of Time Awareness in Modern Life</h2>
+      <p>We live in an age of distractions. Scrolling through social media, binge-watching series, or simply letting weeks pass by in routine — most people rarely stop to think about how many days they have actually lived, or how many are statistically left. Time awareness is the foundation of intentional living. When you use a <strong>total days lived calculator</strong>, you are taking a moment to actually confront time — to see it not as an abstract concept but as a measurable, finite resource.</p>
+      <p>Research in behavioural psychology consistently shows that people who are aware of their mortality and the passing of time tend to make better decisions, set more meaningful goals, and experience higher levels of satisfaction and happiness. Knowing that you have lived 12,000 days, for example, makes you wonder: what did you do with those days? What will you do with the next 12,000?</p>
+
+      <div class="ibox a">
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <div><strong>Real-life example:</strong> Steve Jobs once said, "Remembering that I'll be dead soon is the most important tool I've ever encountered to help me make the big choices in life." Calculating how many days you have lived is a small, practical version of that same powerful reminder.</div>
+      </div>
+
+      <h2>🎓 How This Calculator Helps Students and Professionals</h2>
+      <p>For <strong>students</strong>, knowing your exact age in days can be useful for scholarship applications, academic records, and personal development journaling. Many students use this <strong>age calculator in days months years</strong> to track exactly how old they are on important exam dates, admission deadlines, or milestone celebrations.</p>
+      <p>For <strong>professionals</strong>, it is even more valuable. HR managers, insurance professionals, lawyers, and healthcare providers sometimes need the exact number of days a person has lived — not just their age in years. Doctors may calculate a patient's age in days for clinical records. Lawyers may need it for contract disputes about age verification. Insurance actuaries use precise age-in-days calculations to set premium rates accurately.</p>
+      <p>Even outside of these fields, knowing your total days lived gives entrepreneurs and busy professionals a sharp reminder of urgency — a tool to fight procrastination and prioritize what truly matters.</p>
+
+      <h2>❌ Mistakes People Make in Manual Age Calculation</h2>
+      <p>Calculating your total days lived by hand is surprisingly tricky. Here are the most common errors people make:</p>
+
+      <ul>
+        <li><strong>Ignoring leap years:</strong> The most frequent mistake. Multiplying years by 365 skips all the extra leap year days</li>
+        <li><strong>Wrong month lengths:</strong> Not all months have 30 days. February has 28 or 29, while July and August both have 31</li>
+        <li><strong>Off-by-one errors:</strong> Forgetting whether to include or exclude the birth date itself</li>
+        <li><strong>Rounding errors in hours/minutes:</strong> Converting days to hours requires exact multiplication — rounding leads to big inaccuracies</li>
+        <li><strong>Time zone confusion:</strong> If you were born in one time zone and now live in another, exact minute counts can differ</li>
+      </ul>
+
+      <p>These mistakes explain why manual <strong>calculate how many days I lived</strong> attempts so often produce wrong answers. An online tool eliminates all of these errors instantly.</p>
+
+      <h2>💡 Benefits of Using Online Tools Like This Calculator</h2>
+      <p>An online <strong>life days calculator</strong> offers benefits that manual calculation simply cannot match. Speed is the most obvious — you get the answer in under a second. But accuracy is even more important. Our tool uses the actual Gregorian calendar, counting the exact number of days including every leap year from your birth date to today. There is no approximation, no rounding, and no manual error.</p>
+      <p>Additionally, this tool goes beyond just days. It calculates your total hours lived and your total minutes lived — numbers so large they remind you just how many moments you have experienced. Seeing that you have lived over 26 million minutes, for example, is a deeply humbling and motivating experience.</p>
+
+      <div class="ibox g">
+        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+        <div>This <strong>exact age calculator with days</strong> is completely free, requires no account, stores no data, and works on every device. It is built for everyone — students, professionals, seniors, and curious minds of all ages.</div>
+      </div>
+
+      <h2>❤️ Emotional Connection with Time and Life</h2>
+      <p>There is something deeply moving about seeing your life counted in days rather than years. Years can feel abstract and distant. But days are concrete — they are the unit of everyday experience. Every morning you wake up is another day added to your total. When you calculate how many days you have lived, you are not just doing arithmetic. You are stepping back and looking at your life as a whole, as a collection of moments and experiences that add up to a real, countable number.</p>
+      <p>Many people who use a <strong>total days lived calculator</strong> for the first time report feeling a mix of gratitude and motivation. Gratitude for all the days they have already lived, and motivation to make the days ahead more meaningful. That emotional response is exactly why this tool exists.</p>
+
+      <h2>🌍 Daily Life Use Cases for This Calculator</h2>
+      <p>You might be surprised how often knowing your exact age in days is useful in everyday life. Here are some practical use cases:</p>
+
+      <ul>
+        <li>Planning a special celebration when you reach 10,000, 15,000, or 20,000 days of life</li>
+        <li>Using it as a journaling prompt — "I have lived X days. What have I done with them?"</li>
+        <li>Setting a "days alive" goal post — for example, committing to reading one book every 30 days</li>
+        <li>Sharing your total days on social media for a unique birthday post</li>
+        <li>Helping elderly relatives calculate their exact age for official documents</li>
+        <li>Teaching children about the concept of time in a tangible, engaging way</li>
+        <li>Medical and legal documentation that requires precise age verification</li>
+      </ul>
+
+      <p>Whether you use it for a practical purpose or simply for self-reflection, this <strong>age to total days lived calculator</strong> gives you a number that is uniquely yours — a precise, honest count of the time you have spent on this earth.</p>
+
+    </div>
+  </div>
+</section>
+
+<!-- NOTICE BANNER -->
+<div class="disc">
+  <div class="w">
+    <div style="max-width:820px;margin:0 auto">
+      <div class="notice-banner">
+        <div class="notice-icon">⏳</div>
+        <div class="notice-text">
+          Important Reminder &nbsp;—&nbsp;
+          <span>"Your life is made of moments. Use your time wisely. Every day you live is a day that belongs to you — make it count."</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FAQ SECTION -->
+<section class="faq-sec">
+  <div class="w">
+    <div style="text-align:center;margin-bottom:40px">
+      <div class="sec-lbl" style="justify-content:center">❓ FAQ</div>
+      <div class="sec-h">Frequently Asked <span style="color:var(--blue)">Questions</span></div>
+    </div>
+    <div class="fql">
+      <div class="fq">
+        <div class="fq-q" onclick="tF(this)">
+          <span class="fq-t">How do I calculate my total days lived?</span>
+          <div class="fq-i">+</div>
+        </div>
+        <div class="fq-a"><div class="fq-ai">Simply enter your date of birth in our total days lived calculator above and click "Calculate Days." The tool will instantly count every single day from your birth date to today — including all leap years — and display your total days, months, years, hours, and minutes lived. No manual math required.</div></div>
+      </div>
+      <div class="fq">
+        <div class="fq-q" onclick="tF(this)">
+          <span class="fq-t">Is this age in days calculator accurate?</span>
+          <div class="fq-i">+</div>
+        </div>
+        <div class="fq-a"><div class="fq-ai">Yes, it is highly accurate. Our life days calculator uses the actual Gregorian calendar with precise date difference logic. It counts the exact number of days between your birth date and today's date — no approximations, no rounding. The result is the same as a professional-grade date difference tool.</div></div>
+      </div>
+      <div class="fq">
+        <div class="fq-q" onclick="tF(this)">
+          <span class="fq-t">Does this calculator include leap years?</span>
+          <div class="fq-i">+</div>
+        </div>
+        <div class="fq-a"><div class="fq-ai">Absolutely. This is one of the most important features of our exact age calculator with days. Every leap year between your birth date and today is correctly counted. A leap year occurs every 4 years (with exceptions for century years), and each adds one extra day. Our tool handles all of this automatically so your result is always precise.</div></div>
+      </div>
+      <div class="fq">
+        <div class="fq-q" onclick="tF(this)">
+          <span class="fq-t">Can I use this to calculate days for a future date?</span>
+          <div class="fq-i">+</div>
+        </div>
+        <div class="fq-a"><div class="fq-ai">This calculator is specifically designed to calculate how many days you have lived up to today's date. For future date projections — such as how many days you will have lived by a specific future date — we recommend using our Date Difference Calculator, which supports both past and future date inputs.</div></div>
+      </div>
+      <div class="fq">
+        <div class="fq-q" onclick="tF(this)">
+          <span class="fq-t">Why is my manual calculation of total days lived wrong?</span>
+          <div class="fq-i">+</div>
+        </div>
+        <div class="fq-a"><div class="fq-ai">Manual calculation errors are very common. The most frequent mistakes are forgetting leap years (which add an extra day every 4 years), using 30 days for every month (when months vary from 28 to 31 days), and making off-by-one errors on the start or end date. Our date of birth to total days calculator eliminates all of these errors automatically.</div></div>
+      </div>
+      <div class="fq">
+        <div class="fq-q" onclick="tF(this)">
+          <span class="fq-t">Is this total days lived calculator free to use?</span>
+          <div class="fq-i">+</div>
+        </div>
+        <div class="fq-a"><div class="fq-ai">Yes — 100% free, always. There is no signup, no subscription, no hidden fee, and no limit on how many times you can use it. RajDailyTools is committed to building free, high-quality tools for everyone. Your date of birth is never stored or shared — all calculation happens directly in your browser.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT SECTION -->
+<section class="contact-sec">
+  <div class="w">
+    <div class="contact-card rev">
+      <div style="font-size:40px;margin-bottom:12px">📬</div>
+      <h3>Have a Suggestion or Feedback?</h3>
+      <p>If you have any suggestions, ideas, or feedback about our total days lived calculator or any other tool, we would love to hear from you. Your feedback helps us build better tools for everyone.</p>
+      <a href="/contact" class="btn-bl">✉️ Contact Us</a>
+      <p class="priv-note">🔒 No data stored &nbsp;·&nbsp; 100% safe usage &nbsp;·&nbsp; Your privacy is protected</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="cta-in">
+    <div class="pill">🎂 Life Days Calculator</div>
+    <h2>How Many Days Have <em>You</em> Lived?</h2>
+    <p>Find out your exact total days, hours, and minutes lived — instantly and for free. Because every day of your life deserves to be counted.</p>
+    <div class="cta-btns">
+      <a href="#tool" class="btn-gold">🎂 Calculate My Days Now</a>
+      <a href="/categories" class="btn-ghost">📂 Explore All Tools</a>
+    </div>
+  </div>
+</section>
+
+<!-- DISCLAIMER -->
+<div style="background:#1e293b;padding:14px 0;border-top:1px solid #334155">
+  <div class="w">
+    <p style="font-size:12.5px;color:#64748b;text-align:center;line-height:1.7">⚠️ <strong style="color:#94a3b8">Disclaimer:</strong> This tool is for informational purposes only. Results are based on the Gregorian calendar. No personal data is stored or transmitted. For legal or medical age verification, consult appropriate official documentation.</p>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-inner">
+    <div class="ft-top">
+      <div class="ft-brand">
+        <div class="logo">
+          <div class="lb"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+          <div><div class="ln">Raj<span>Daily</span>Tools</div><div class="ls" style="color:#475569">Smart Tools for Daily Life</div></div>
+        </div>
+        <p class="ft-desc">Free, fast, and accurate online tools for everyday use. No signup. No data stored. Just helpful tools — built for everyone.</p>
+        <div class="ft-soc">
+          <a href="#" class="fts">𝕏</a>
+          <a href="#" class="fts">in</a>
+          <a href="#" class="fts">▶</a>
+        </div>
+      </div>
+      <div class="fc">
+        <h4>Tools</h4>
+        <ul>
+          <li><a href="/age-calculator.html">Age Calculator</a></li>
+          <li><a href="/date-difference-calculator.html">Date Difference</a></li>
+          <li><a href="/time-calculator.html">Time Calculator</a></li>
+          <li><a href="/birthday-countdown.html">Birthday Countdown</a></li>
+          <li><a href="/life-expectancy-calculator.html">Life Expectancy</a></li>
+        </ul>
+      </div>
+      <div class="fc">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/categories">Categories</a></li>
+          <li><a href="/about">About Us</a></li>
+          <li><a href="/contact">Contact</a></li>
+          <li><a href="/sitemap.xml">Sitemap</a></li>
+        </ul>
+      </div>
+      <div class="fc">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="/privacy-policy">Privacy Policy</a></li>
+          <li><a href="/terms">Terms of Use</a></li>
+          <li><a href="/disclaimer">Disclaimer</a></li>
+          <li><a href="/sitemap">Sitemap</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ft-btm">
+      <p class="ft-cp">© 2026 <b>RajDailyTools.in</b> — All Rights Reserved</p>
+      <p class="ft-tag">Free tools built with ❤️ for everyone · No data stored · 100% safe</p>
+    </div>
+  </div>
+</footer>
+
+<button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+/* ── DRAWER ── */
+const brg=document.getElementById('brg'),dov=document.getElementById('dov'),drw=document.getElementById('drw'),dx=document.getElementById('dx');
+function oD(){drw.classList.add('on');dov.classList.add('on')}
+function cD(){drw.classList.remove('on');dov.classList.remove('on')}
+brg.addEventListener('click',oD);dov.addEventListener('click',cD);dx.addEventListener('click',cD);
+
+/* ── BACK TO TOP ── */
+const btt=document.getElementById('btt');
+window.addEventListener('scroll',()=>{btt.classList.toggle('on',window.scrollY>380)});
+
+/* ── SCROLL REVEAL ── */
+const obs=new IntersectionObserver(els=>els.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:.09});
+document.querySelectorAll('.rev').forEach(e=>obs.observe(e));
+
+/* ── FAQ TOGGLE ── */
+function tF(q){const p=q.closest('.fq');const isOpen=p.classList.contains('open');document.querySelectorAll('.fq').forEach(f=>f.classList.remove('open'));if(!isOpen)p.classList.add('open')}
+
+/* ── SET MAX DATE ── */
+(function(){
+  const today=new Date();
+  const y=today.getFullYear();
+  const m=String(today.getMonth()+1).padStart(2,'0');
+  const d=String(today.getDate()).padStart(2,'0');
+  document.getElementById('dob').setAttribute('max',`${y}-${m}-${d}`);
+})();
+
+/* ── LIVE CALCULATION ── */
+document.getElementById('dob').addEventListener('change',()=>{
+  if(document.getElementById('dob').value) calculateAge();
+});
+
+let lastResult=null;
+
+/* ── MAIN CALCULATION ── */
+function calculateAge(){
+  const dobVal=document.getElementById('dob').value;
+  if(!dobVal){alert('Please enter your date of birth.');return;}
+
+  const dob=new Date(dobVal);
+  const today=new Date();
+  today.setHours(0,0,0,0);
+
+  if(dob>today){alert('Date of birth cannot be in the future.');return;}
+
+  // Exact years, months, days
+  let years=today.getFullYear()-dob.getFullYear();
+  let months=today.getMonth()-dob.getMonth();
+  let days=today.getDate()-dob.getDate();
+
+  if(days<0){
+    months--;
+    const prevMonth=new Date(today.getFullYear(),today.getMonth(),0);
+    days+=prevMonth.getDate();
+  }
+  if(months<0){years--;months+=12;}
+
+  // Total days (exact)
+  const msPerDay=1000*60*60*24;
+  const totalDays=Math.floor((today-dob)/msPerDay);
+  const totalMonths=years*12+months;
+  const totalHours=totalDays*24;
+  const totalMinutes=totalHours*60;
+
+  lastResult={dob,today,years,months,days,totalDays,totalMonths,totalHours,totalMinutes,dobVal};
+
+  renderResult(lastResult);
+  renderTable(lastResult);
+  buildLifeChart(lastResult);
+  document.getElementById('graphSec').style.display='block';
+  setTimeout(()=>{document.getElementById('tool').scrollIntoView({behavior:'smooth',block:'start'})},80);
+}
+
+function fmt(n){return n.toLocaleString('en-IN');}
+
+function renderResult(r){
+  document.getElementById('payGrid').innerHTML=`
+    <div class="pay-card c1">
+      <div class="pc-lbl">🎂 Exact Age</div>
+      <div class="pc-val">${r.years} Yrs ${r.months} Mo ${r.days} Days</div>
+      <div class="pc-sub">Born ${new Date(r.dobVal).toLocaleDateString('en-IN',{day:'numeric',month:'long',year:'numeric'})}</div>
+      <div class="pc-ico">🎂</div>
+    </div>
+    <div class="pay-card c2">
+      <div class="pc-lbl">📅 Total Days Lived</div>
+      <div class="pc-val">${fmt(r.totalDays)}</div>
+      <div class="pc-sub">Including all leap year days</div>
+      <div class="pc-ico">📅</div>
+    </div>
+    <div class="pay-card c3">
+      <div class="pc-lbl">⏳ Total Hours Lived</div>
+      <div class="pc-val">${fmt(r.totalHours)}</div>
+      <div class="pc-sub">${fmt(r.totalDays)} days × 24 hours</div>
+      <div class="pc-ico">⏳</div>
+    </div>
+    <div class="pay-card c4">
+      <div class="pc-lbl">⏱ Total Minutes Lived</div>
+      <div class="pc-val">${fmt(r.totalMinutes)}</div>
+      <div class="pc-sub">${fmt(r.totalHours)} hours × 60 minutes</div>
+      <div class="pc-ico">⏱</div>
+    </div>
+    <div class="pay-card c5">
+      <div class="pc-lbl">📊 Complete Life Summary</div>
+      <div class="pc-val">${r.years} Years · ${fmt(r.totalMonths)} Months · ${fmt(r.totalDays)} Days · ${fmt(r.totalHours)} Hours · ${fmt(r.totalMinutes)} Minutes</div>
+      <div class="pc-sub">Calculated with full leap year accuracy · All values are exact as of today</div>
+      <div class="pc-ico">📊</div>
+    </div>
+  `;
+
+  // Progress bar — life journey (using 80 years = reference lifespan)
+  const refLifeDays=80*365+20;// ~80 years
+  const pct=Math.min((r.totalDays/refLifeDays)*100,100);
+  const barCol=pct<=33?'var(--green)':pct<=66?'var(--amber)':'var(--blue)';
+  const barEnd=pct<=33?'#34d399':pct<=66?'#fcd34d':'#60a5fa';
+  document.getElementById('progWrap').innerHTML=`
+    <div class="prog-wrap">
+      <div class="prog-lbl">
+        <span>Life Journey Progress (vs 80-year reference)</span>
+        <span style="color:${barCol}">${pct.toFixed(1)}% of 80 years</span>
+      </div>
+      <div class="prog-bar-bg">
+        <div class="prog-bar-fill" style="width:${pct}%;background:linear-gradient(90deg,${barCol},${barEnd})"></div>
+      </div>
+      <div style="font-size:12px;color:var(--ink3);margin-top:8px">You have lived <strong>${fmt(r.totalDays)} days</strong> out of a reference lifespan of 80 years (${fmt(refLifeDays)} days). Every day ahead is an opportunity.</div>
+    </div>
+  `;
+
+  document.getElementById('tipsRow').innerHTML=`
+    <div class="tip-pill blue">🎂 ${r.years} Years Old</div>
+    <div class="tip-pill amber">📅 ${fmt(r.totalDays)} Days Lived</div>
+    <div class="tip-pill">⏳ ${fmt(r.totalHours)} Hours</div>
+    <div class="tip-pill purple">⏱ ${fmt(r.totalMinutes)} Minutes</div>
+  `;
+
+  document.getElementById('resultArea').style.display='block';
+}
+
+function renderTable(r){
+  document.getElementById('resultTable').innerHTML=`
+    <tr><td>🗓️ Total Years</td><td><strong>${fmt(r.years)}</strong></td><td>Complete calendar years lived</td><td><span class="tbadge b">Age</span></td></tr>
+    <tr><td>📅 Total Months</td><td><strong>${fmt(r.totalMonths)}</strong></td><td>Exact months from birth to today</td><td><span class="tbadge g">Precise</span></td></tr>
+    <tr><td>🗒️ Total Days</td><td><strong>${fmt(r.totalDays)}</strong></td><td>Every day including leap days</td><td><span class="tbadge g">Leap Year ✓</span></td></tr>
+    <tr><td>⏳ Total Hours</td><td><strong>${fmt(r.totalHours)}</strong></td><td>Days × 24 hours per day</td><td><span class="tbadge a">Calculated</span></td></tr>
+    <tr><td>⏱ Total Minutes</td><td><strong>${fmt(r.totalMinutes)}</strong></td><td>Hours × 60 minutes per hour</td><td><span class="tbadge p">Advanced</span></td></tr>
+    <tr><td>📆 Exact Age</td><td><strong>${r.years}y ${r.months}m ${r.days}d</strong></td><td>Years, months, and remaining days</td><td><span class="tbadge b">Exact</span></td></tr>
+  `;
+}
+
+/* ── COPY ── */
+function copyResult(){
+  if(!lastResult) return;
+  const r=lastResult;
+  const txt=`
+🎂 TOTAL DAYS LIVED REPORT
+================================================
+Date of Birth            : ${new Date(r.dobVal).toLocaleDateString('en-IN',{day:'numeric',month:'long',year:'numeric'})}
+Exact Age                : ${r.years} Years ${r.months} Months ${r.days} Days
+
+Total Years Lived        : ${fmt(r.years)} Years
+Total Months Lived       : ${fmt(r.totalMonths)} Months
+Total Days Lived         : ${fmt(r.totalDays)} Days
+Total Hours Lived        : ${fmt(r.totalHours)} Hours
+Total Minutes Lived      : ${fmt(r.totalMinutes)} Minutes
+
+Calculation Method       : Gregorian Calendar with leap year support
+Note                     : All values are calculated as of today's date.
+
+Generated by RajDailyTools.in`.trim();
+  const cb=document.getElementById('copyBtn');
+  const done=()=>{cb.textContent='✅ Copied!';cb.classList.add('copied');setTimeout(()=>{cb.textContent='📋 Copy Full Report';cb.classList.remove('copied');},2200)};
+  navigator.clipboard?navigator.clipboard.writeText(txt).then(done).catch(done):done();
+}
+
+/* ── BAR CHART ── */
+function buildLifeChart(r){
+  const W=820,H=320;
+  const PAD={top:28,right:40,bottom:60,left:100};
+  const cW=W-PAD.left-PAD.right;
+  const cH=H-PAD.top-PAD.bottom;
+
+  const bars=[
+    {label:'Total Years',sublabel:`(${fmt(r.years)} years)`,val:r.years,color:'#2563eb',light:'rgba(37,99,235,.12)'},
+    {label:'Total Months',sublabel:`(${fmt(r.totalMonths)} months)`,val:r.totalMonths,color:'#10b981',light:'rgba(16,185,129,.12)'},
+    {label:'Days ÷ 100',sublabel:`(${fmt(r.totalDays)} days)`,val:Math.floor(r.totalDays/100),color:'#f59e0b',light:'rgba(245,158,11,.12)'},
+  ];
+
+  const maxVal=Math.max(...bars.map(b=>b.val))*1.18;
+  function yPos(v){return PAD.top+cH-(v/maxVal)*cH;}
+
+  const TICKS=5;let gl='',yl='';
+  for(let i=0;i<=TICKS;i++){
+    const v=(maxVal/TICKS)*i;
+    const y=yPos(v);
+    gl+=`<line class="grid-line" x1="${PAD.left}" y1="${y}" x2="${W-PAD.right}" y2="${y}"/>`;
+    yl+=`<text class="axis-label" x="${PAD.left-8}" y="${y+4}" text-anchor="end">${Math.round(v).toLocaleString()}</text>`;
+  }
+
+  const bCount=bars.length;
+  const bW=Math.min(130,(cW/bCount)*0.52);
+  const gap=(cW-(bW*bCount))/(bCount+1);
+
+  let rects='',labels='';
+  bars.forEach((b,i)=>{
+    const x=PAD.left+gap+(bW+gap)*i;
+    const bH=Math.max(4,(b.val/maxVal)*cH);
+    const y=yPos(b.val);
+    rects+=`
+      <rect x="${x}" y="${PAD.top}" width="${bW}" height="${cH}" fill="${b.light}" rx="8"/>
+      <rect x="${x}" y="${y}" width="${bW}" height="${bH}" fill="${b.color}" rx="8" opacity=".9"/>
+      <text class="axis-title" x="${x+bW/2}" y="${y-8}" text-anchor="middle" fill="${b.color}">${b.val.toLocaleString()}</text>
+    `;
+    labels+=`
+      <text class="axis-label" x="${x+bW/2}" y="${H-PAD.bottom+18}" text-anchor="middle">${b.label}</text>
+      <text class="axis-label" x="${x+bW/2}" y="${H-PAD.bottom+33}" text-anchor="middle" style="font-size:10px">${b.sublabel}</text>
+    `;
+  });
+
+  document.getElementById('lifeChart').innerHTML=`${gl}${yl}${rects}${labels}`;
+  document.getElementById('graphTitle').textContent=`${r.years} years · ${fmt(r.totalMonths)} months · ${fmt(r.totalDays)} total days lived`;
+}
+</script>
+</body>
+</html>
