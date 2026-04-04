@@ -1,0 +1,1229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Future Net Worth Predictor – Financial Growth Calculator India & Global | RajDailyTools</title>
+<meta name="description" content="Free future net worth calculator for India and global users. Predict your wealth growth with compound interest, inflation adjustment, and real-value projections. Supports INR, USD, EUR, GBP, AUD, CAD.">
+<meta name="keywords" content="future net worth calculator, net worth predictor India, wealth growth calculator, compound interest calculator, inflation adjusted net worth, financial planning tool, SIP net worth calculator">
+<meta name="robots" content="index, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#2563eb;--blue-d:#1d4ed8;--blue-xl:#eff6ff;--blue-s:#dbeafe;
+  --amber:#f59e0b;--green:#10b981;--red:#ef4444;--purple:#8b5cf6;
+  --orange:#f97316;--teal:#14b8a6;
+  --green-xl:#f0fdf4;--green-s:#bbf7d0;
+  --red-xl:#fef2f2;--red-s:#fecaca;
+  --amber-xl:#fffbeb;--amber-s:#fde68a;
+  --purple-xl:#faf5ff;--purple-s:#ddd6fe;
+  --ink:#0f172a;--ink2:#334155;--ink3:#64748b;--ink4:#94a3b8;
+  --line:#e2e8f0;--surf:#f8fafc;--white:#fff;
+  --s1:0 1px 3px rgba(15,23,42,.06),0 1px 2px rgba(15,23,42,.04);
+  --s2:0 4px 16px rgba(15,23,42,.08),0 2px 6px rgba(15,23,42,.04);
+  --s3:0 12px 40px rgba(15,23,42,.11),0 3px 10px rgba(15,23,42,.06);
+  --s4:0 24px 64px rgba(15,23,42,.13),0 6px 20px rgba(15,23,42,.07);
+  --sb:0 8px 32px rgba(37,99,235,.20);
+  --fd:'Sora',sans-serif;--fb:'DM Sans',sans-serif;
+  --ease:cubic-bezier(.4,0,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);color:var(--ink);background:var(--white);overflow-x:hidden;-webkit-font-smoothing:antialiased;line-height:1.6}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+button{cursor:pointer;border:none;background:none;font-family:var(--fb)}
+.w{max-width:1180px;margin:0 auto;padding:0 24px}
+.wa{max-width:880px;margin:0 auto;padding:0 24px}
+select,input{appearance:none;-webkit-appearance:none}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+@keyframes resultIn{from{opacity:0;transform:translateY(18px) scale(.97)}to{opacity:1;transform:none}}
+.rev{opacity:0;transform:translateY(22px);transition:opacity .55s var(--ease),transform .55s var(--ease)}
+.rev.in{opacity:1;transform:none}
+
+/* HEADER */
+.hdr{position:sticky;top:0;z-index:999;background:rgba(255,255,255,.96);backdrop-filter:blur(20px);border-bottom:1px solid var(--line);box-shadow:var(--s1)}
+.hdi{display:flex;align-items:center;justify-content:space-between;height:66px}
+.logo{display:flex;align-items:center;gap:10px}
+.lb{width:36px;height:36px;background:var(--blue);border-radius:9px;display:flex;align-items:center;justify-content:center;box-shadow:var(--sb);flex-shrink:0}
+.lb svg{width:18px;height:18px;fill:#fff}
+.ln{font-family:var(--fd);font-size:19px;font-weight:800;color:var(--ink);line-height:1}
+.ln span{color:var(--blue)}
+.ls{font-size:10px;color:var(--ink4);letter-spacing:.04em}
+nav.dn{display:flex;align-items:center;gap:2px}
+nav.dn a{font-size:13.5px;font-weight:500;color:var(--ink2);padding:7px 13px;border-radius:8px;transition:.2s}
+nav.dn a:hover{color:var(--blue);background:var(--blue-xl)}
+.hcta{background:var(--blue);color:#fff;font-family:var(--fd);font-weight:600;font-size:13px;padding:8px 18px;border-radius:8px;box-shadow:var(--sb);transition:.2s}
+.hcta:hover{background:var(--blue-d);transform:translateY(-1px)}
+.brg{display:none;flex-direction:column;gap:4.5px;padding:8px;border-radius:8px}
+.brg span{display:block;width:20px;height:2px;background:var(--ink);border-radius:2px;transition:.28s}
+.dov{display:none;position:fixed;inset:0;background:rgba(15,23,42,.45);z-index:1040;backdrop-filter:blur(3px)}
+.dov.on{display:block}
+.drw{position:fixed;top:0;right:-100%;width:270px;height:100vh;background:#fff;z-index:1050;padding:22px;box-shadow:var(--s4);transition:right .32s var(--ease);overflow-y:auto}
+.drw.on{right:0}
+.dh{display:flex;align-items:center;justify-content:space-between;margin-bottom:26px}
+.dx{width:33px;height:33px;border-radius:7px;background:var(--surf);display:flex;align-items:center;justify-content:center;color:var(--ink3);font-size:17px}
+nav.mn{display:flex;flex-direction:column;gap:3px}
+nav.mn a{display:block;font-size:14px;font-weight:500;color:var(--ink2);padding:11px 13px;border-radius:8px;transition:.2s}
+nav.mn a:hover{color:var(--blue);background:var(--blue-xl)}
+
+/* HERO */
+.hero{position:relative;overflow:hidden;background:linear-gradient(150deg,#ebf4ff 0%,#fff 46%,#fff7ed 100%);padding:64px 0 72px}
+.hero::before{content:'';position:absolute;top:-140px;right:-180px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(37,99,235,.08) 0%,transparent 68%);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-80px;left:-100px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(249,115,22,.05) 0%,transparent 68%);pointer-events:none}
+.blob{position:absolute;border-radius:50%;pointer-events:none;animation:float 6s ease-in-out infinite}
+.b1{width:13px;height:13px;background:rgba(37,99,235,.18);top:22%;right:14%;animation-delay:0s}
+.b2{width:9px;height:9px;background:rgba(249,115,22,.22);top:58%;right:26%;animation-delay:2.2s}
+.b3{width:11px;height:11px;background:rgba(16,185,129,.18);top:36%;right:6%;animation-delay:4s}
+.bc{display:flex;align-items:center;gap:7px;font-size:12.5px;color:var(--ink3);margin-bottom:22px;position:relative;z-index:1;flex-wrap:wrap}
+.bc a{color:var(--blue);font-weight:600}
+.pill{display:inline-flex;align-items:center;gap:7px;font-family:var(--fd);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);background:var(--blue-xl);padding:5px 14px;border-radius:100px;margin-bottom:18px}
+.pill::before{content:'';width:6px;height:6px;background:var(--blue);border-radius:50%}
+.hero-inner{position:relative;z-index:1;max-width:720px;animation:fadeUp .5s ease both}
+.hero h1{font-family:var(--fd);font-size:clamp(26px,4.5vw,50px);font-weight:800;line-height:1.1;color:var(--ink);margin-bottom:14px}
+.hero h1 span{color:var(--blue)}
+.hero-sub{font-size:16px;color:var(--ink3);line-height:1.8;margin-bottom:22px;max-width:600px}
+.hero-chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.chip{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;padding:6px 14px;border-radius:100px;background:#fff;border:1.5px solid var(--line);color:var(--ink2);box-shadow:var(--s1);transition:.22s}
+.chip:hover{border-color:var(--blue);color:var(--blue);transform:translateY(-1px)}
+.hero-meta{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:24px}
+.upd{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:700;color:var(--blue);background:var(--blue-xl);padding:6px 14px;border-radius:100px;border:1.5px solid var(--blue-s)}
+.mi{font-size:13px;color:var(--ink3);font-weight:500}
+
+/* HOW TO USE */
+.howto{background:var(--amber-xl);border:2px solid var(--amber-s);border-radius:16px;padding:22px 26px;max-width:560px;margin-bottom:24px}
+.howto-ttl{display:flex;align-items:center;gap:9px;font-family:var(--fd);font-size:15px;font-weight:800;color:var(--ink);margin-bottom:13px}
+.howto-steps{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.hs{display:flex;align-items:flex-start;gap:10px;font-size:13.5px;color:var(--ink2);line-height:1.6}
+.sn{width:24px;height:24px;background:var(--amber);color:#fff;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex-shrink:0;margin-top:1px}
+
+/* RELATED TOOLS */
+.rel-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;position:relative;z-index:1}
+.rg-box{border-radius:14px;padding:14px 14px 12px;display:flex;flex-direction:column;gap:8px;transition:.22s;border:1.5px solid}
+.rg-box:hover{transform:translateY(-3px);box-shadow:var(--s3)}
+.rg-box.army{background:linear-gradient(135deg,var(--amber-xl),#fef3c7);border-color:var(--amber-s)}
+.rg-box.ht{background:linear-gradient(135deg,var(--green-xl),#dcfce7);border-color:var(--green-s)}
+.rg-box.ssc{background:linear-gradient(135deg,var(--blue-xl),var(--blue-s));border-color:var(--blue-s)}
+.rg-box.mp{background:linear-gradient(135deg,var(--purple-xl),#ede9fe);border-color:var(--purple-s)}
+.rg-box.tl{background:linear-gradient(135deg,#f0fdfa,#ccfbf1);border-color:#99f6e4}
+.rg-box.rd{background:linear-gradient(135deg,var(--red-xl),#fee2e2);border-color:var(--red-s)}
+.rg-ico{font-size:22px}
+.rg-txt h4{font-family:var(--fd);font-size:12px;font-weight:800;color:var(--ink);margin-bottom:2px}
+.rg-txt p{font-size:11px;color:var(--ink3);line-height:1.5}
+.btn-xs{display:inline-flex;align-items:center;gap:4px;font-family:var(--fd);font-weight:700;font-size:11px;padding:5px 10px;border-radius:7px;transition:.22s;margin-top:4px}
+.btn-xs.a{background:var(--amber);color:#fff}.btn-xs.a:hover{background:#d97706}
+.btn-xs.g{background:var(--green);color:#fff}.btn-xs.g:hover{background:#059669}
+.btn-xs.b{background:var(--blue);color:#fff}.btn-xs.b:hover{background:var(--blue-d)}
+.btn-xs.p{background:var(--purple);color:#fff}.btn-xs.p:hover{background:#7c3aed}
+.btn-xs.t{background:var(--teal);color:#fff}.btn-xs.t:hover{background:#0f9488}
+.btn-xs.r{background:var(--red);color:#fff}.btn-xs.r:hover{background:#dc2626}
+
+/* TOOL */
+.tool-sec{background:var(--surf);padding:80px 0}
+.tool-wrap{max-width:900px;margin:0 auto}
+.tool-card{background:#fff;border:1.5px solid var(--line);border-radius:28px;overflow:hidden;box-shadow:var(--s4)}
+.tool-hdr{background:linear-gradient(135deg,#1d4ed8 0%,#2563eb 55%,#3b82f6 100%);padding:32px 40px;position:relative;overflow:hidden}
+.tool-hdr::before{content:'';position:absolute;top:-60px;right:-60px;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,.07)}
+.tool-hdr::after{content:'';position:absolute;bottom:-40px;left:-40px;width:180px;height:180px;border-radius:50%;background:rgba(255,255,255,.04)}
+.th{position:relative;z-index:1}
+.th h2{font-family:var(--fd);font-size:21px;font-weight:800;color:#fff;margin-bottom:6px}
+.th p{font-size:14px;color:rgba(255,255,255,.82);line-height:1.65}
+.th-badges{display:flex;flex-wrap:wrap;gap:9px;margin-top:14px}
+.thb{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:rgba(255,255,255,.9);background:rgba(255,255,255,.13);padding:5px 12px;border-radius:100px}
+.tool-body{padding:36px 40px}
+
+/* form */
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+.fgrid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:16px}
+.fld{display:flex;flex-direction:column;gap:7px}
+.flbl{font-size:13px;font-weight:700;color:var(--ink2)}
+.flbl span{font-size:11px;font-weight:500;color:var(--ink4);margin-left:5px;background:var(--surf);padding:2px 7px;border-radius:5px;border:1px solid var(--line)}
+.inp-wrap{position:relative}
+.inp-prefix{position:absolute;left:14px;top:50%;transform:translateY(-50%);font-family:var(--fd);font-size:15px;font-weight:700;color:var(--ink3);pointer-events:none}
+.finp,.fsel{padding:12px 16px;font-size:14.5px;color:var(--ink);background:#fff;border:1.5px solid var(--line);border-radius:10px;outline:none;transition:.22s;font-family:var(--fb);width:100%}
+.finp:focus,.fsel:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(37,99,235,.10)}
+.finp.has-prefix{padding-left:36px}
+.fsel{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2364748b' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:40px}
+.hint-box{display:flex;align-items:flex-start;gap:9px;font-size:13px;color:var(--ink2);background:var(--blue-xl);border:1.5px solid var(--blue-s);border-radius:10px;padding:11px 14px;margin:16px 0;line-height:1.65}
+.hint-box svg{width:16px;height:16px;stroke:var(--blue);fill:none;stroke-width:2;flex-shrink:0;margin-top:2px}
+.chk-btn{width:100%;padding:17px;background:linear-gradient(135deg,var(--blue) 0%,#1e40af 100%);color:#fff;font-family:var(--fd);font-weight:800;font-size:16px;border-radius:12px;box-shadow:var(--sb);transition:all .25s var(--ease);display:flex;align-items:center;justify-content:center;gap:10px}
+.chk-btn:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(37,99,235,.32)}
+.chk-btn:active{transform:translateY(0)}
+
+/* SLIDER */
+.slider-wrap{margin-bottom:16px}
+.slider-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.slider-lbl{font-size:13px;font-weight:700;color:var(--ink2)}
+.slider-val{font-family:var(--fd);font-size:13px;font-weight:700;color:var(--blue);background:var(--blue-xl);padding:3px 10px;border-radius:6px;border:1px solid var(--blue-s)}
+input[type=range]{width:100%;height:6px;border-radius:100px;background:var(--line);outline:none;cursor:pointer;-webkit-appearance:none;appearance:none}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:20px;height:20px;border-radius:50%;background:var(--blue);box-shadow:var(--sb);cursor:pointer;border:2px solid #fff}
+input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;background:var(--blue);box-shadow:var(--sb);cursor:pointer;border:2px solid #fff}
+
+/* RESULT */
+#resultArea{display:none;margin-top:28px;animation:resultIn .45s var(--ease) both}
+.pay-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-bottom:16px}
+.pay-card{border-radius:16px;padding:22px 20px;position:relative;overflow:hidden;border:2px solid}
+.pay-card.c1{background:linear-gradient(135deg,var(--blue-xl),#e0eeff);border-color:var(--blue-s)}
+.pay-card.c2{background:linear-gradient(135deg,var(--green-xl),#d1fae5);border-color:var(--green-s)}
+.pay-card.c3{background:linear-gradient(135deg,var(--amber-xl),#fef3c7);border-color:var(--amber-s)}
+.pay-card.c4{background:linear-gradient(135deg,var(--purple-xl),#ede9fe);border-color:var(--purple-s);grid-column:1/-1}
+.pay-card::before{content:'';position:absolute;inset:0;opacity:.04;background-image:repeating-linear-gradient(45deg,currentColor 0,currentColor 1px,transparent 0,transparent 50%);background-size:12px 12px;pointer-events:none}
+.pc-lbl{font-size:12px;font-weight:700;color:var(--ink3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px;display:flex;align-items:center;gap:6px}
+.pc-val{font-family:var(--fd);font-size:32px;font-weight:800;color:var(--ink);line-height:1}
+.pay-card.c4 .pc-val{font-size:40px}
+.pc-sub{font-size:12.5px;color:var(--ink3);margin-top:5px}
+.pc-ico{font-size:28px;position:absolute;top:16px;right:16px;opacity:.18}
+
+/* TIPS BELOW RESULT */
+.tips-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.tip-pill{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:600;padding:7px 14px;border-radius:100px;background:var(--green-xl);color:var(--green);border:1.5px solid var(--green-s)}
+
+.copy-btn{display:inline-flex;align-items:center;gap:6px;font-family:var(--fd);font-size:12px;font-weight:700;padding:7px 14px;border-radius:8px;background:var(--blue);color:#fff;border:none;cursor:pointer;transition:.22s;margin-top:4px}
+.copy-btn:hover{background:var(--blue-d);transform:translateY(-1px)}
+.copy-btn.copied{background:var(--green)}
+.warn-box{background:var(--amber-xl);border:1.5px solid var(--amber-s);border-radius:12px;padding:14px 18px;display:flex;gap:10px;font-size:13.5px;color:var(--ink2);line-height:1.7;margin-top:14px}
+
+/* TIPS SECTION */
+.tips-sec{background:var(--surf);padding:72px 0}
+.tips-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.tip-card{background:#fff;border:1.5px solid var(--line);border-radius:16px;padding:22px 18px;text-align:center;transition:.28s}
+.tip-card:hover{transform:translateY(-4px);box-shadow:var(--s3);border-color:var(--blue-s)}
+.tip-ico{font-size:32px;margin-bottom:11px}
+.tip-title{font-family:var(--fd);font-size:14px;font-weight:800;color:var(--ink);margin-bottom:8px}
+.tip-desc{font-size:13px;color:var(--ink3);line-height:1.7}
+
+/* TABLE */
+.tbl-sec{background:#fff;padding:72px 0}
+.tbl-wr{overflow-x:auto;margin-bottom:24px;border-radius:14px;border:1.5px solid var(--line);box-shadow:var(--s2)}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+thead th{background:linear-gradient(135deg,var(--blue) 0%,#1e40af 100%);color:#fff;padding:14px 16px;text-align:left;font-family:var(--fd);font-size:13px;font-weight:700;letter-spacing:.03em}
+thead th:first-child{border-radius:14px 0 0 0}
+thead th:last-child{border-radius:0 14px 0 0}
+tbody tr{border-bottom:1px solid var(--line);transition:.2s}
+tbody tr:hover{background:var(--blue-xl)}
+tbody td{padding:12px 16px;color:var(--ink2);vertical-align:middle}
+.tbadge{display:inline-flex;font-size:11px;font-weight:700;padding:3px 8px;border-radius:100px}
+.tbadge.g{background:var(--green-xl);color:var(--green);border:1px solid var(--green-s)}
+.tbadge.b{background:var(--blue-xl);color:var(--blue);border:1px solid var(--blue-s)}
+.tbadge.a{background:var(--amber-xl);color:var(--amber);border:1px solid var(--amber-s)}
+.tbadge.p{background:var(--purple-xl);color:var(--purple);border:1px solid var(--purple-s)}
+
+/* GRAPH */
+.graph-sec{background:var(--surf);padding:72px 0}
+.graph-card{background:#fff;border:1.5px solid var(--line);border-radius:20px;padding:28px 32px;box-shadow:var(--s3)}
+.graph-hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;flex-wrap:wrap;gap:12px}
+.graph-ttl{font-family:var(--fd);font-size:18px;font-weight:800;color:var(--ink)}
+.graph-legend{display:flex;gap:20px;flex-wrap:wrap;margin-bottom:18px}
+.gl-item{display:flex;align-items:center;gap:7px;font-size:13px;font-weight:600;color:var(--ink2)}
+.gl-dot{width:12px;height:12px;border-radius:50%}
+
+/* SVG Chart */
+.chart-wrap{width:100%;overflow-x:auto}
+svg.linechart{display:block;overflow:visible}
+.axis-label{font-family:var(--fd);font-size:11px;fill:var(--ink4);font-weight:600}
+.axis-title{font-family:var(--fd);font-size:12px;fill:var(--ink3);font-weight:700}
+.grid-line{stroke:var(--line);stroke-width:1;stroke-dasharray:4 4}
+.chart-tooltip{position:absolute;background:var(--ink);color:#fff;font-size:12px;font-weight:600;padding:7px 12px;border-radius:8px;pointer-events:none;opacity:0;transition:opacity .2s;white-space:nowrap;font-family:var(--fd);z-index:10}
+
+/* STORY */
+.story-sec{background:#fff;padding:72px 0}
+.story-card{background:var(--surf);border:1.5px solid var(--line);border-radius:24px;padding:40px;box-shadow:var(--s3);position:relative;overflow:hidden}
+.story-card::before{content:'';position:absolute;top:0;left:0;bottom:0;width:5px;background:linear-gradient(180deg,var(--blue) 0%,var(--orange) 100%);border-radius:5px 0 0 5px}
+.sq{font-size:54px;color:var(--blue-s);font-family:Georgia,serif;line-height:1;padding-left:8px}
+.sb{font-size:15.5px;color:var(--ink2);line-height:1.9;padding:0 8px}
+.sauth{display:flex;align-items:center;gap:14px;margin-top:22px;padding-top:20px;border-top:1px solid var(--line)}
+.savt{width:48px;height:48px;background:var(--blue);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+.sname{font-family:var(--fd);font-size:15px;font-weight:700;color:var(--ink)}
+.srole{font-size:12.5px;color:var(--ink3)}
+.founder-msg{background:linear-gradient(135deg,var(--blue-xl),var(--blue-s));border:1.5px solid var(--blue-s);border-radius:14px;padding:20px 22px;margin-top:20px;display:flex;gap:13px}
+.fm-ico{font-size:26px;flex-shrink:0}
+.fm-txt{font-size:14px;color:var(--ink2);line-height:1.75;font-style:italic}
+.fm-txt strong{color:var(--ink);font-weight:700;font-style:normal}
+
+/* GUIDE */
+.guide-sec{background:var(--surf);padding:72px 0}
+.guide-body h2{font-family:var(--fd);font-size:21px;font-weight:800;color:var(--ink);margin:28px 0 11px;line-height:1.3}
+.guide-body h2:first-child{margin-top:0}
+.guide-body p{font-size:15px;color:var(--ink3);line-height:1.85;margin-bottom:14px}
+.guide-body ul{display:flex;flex-direction:column;gap:8px;margin:12px 0 16px}
+.guide-body li{display:flex;align-items:flex-start;gap:10px;font-size:14.5px;color:var(--ink3);line-height:1.7}
+.guide-body li::before{content:'✓';width:18px;height:18px;background:var(--blue);color:#fff;border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;flex-shrink:0;margin-top:3px}
+.guide-body strong{color:var(--ink2);font-weight:700}
+.ibox{background:var(--blue-xl);border:1.5px solid var(--blue-s);border-radius:13px;padding:15px 18px;margin:16px 0;display:flex;gap:11px;font-size:14px;color:var(--ink2);line-height:1.7}
+.ibox svg{width:17px;height:17px;stroke:var(--blue);fill:none;stroke-width:2;flex-shrink:0;margin-top:2px}
+.ibox.a{background:var(--amber-xl);border-color:var(--amber-s)}
+.ibox.a svg{stroke:var(--amber)}
+.ibox.g{background:var(--green-xl);border-color:var(--green-s)}
+.ibox.g svg{stroke:var(--green)}
+
+/* FAQ */
+.faq-sec{background:#fff;padding:72px 0}
+.fql{max-width:780px;margin:0 auto}
+.fq{background:var(--surf);border:1.5px solid var(--line);border-radius:13px;margin-bottom:10px;overflow:hidden}
+.fq-q{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;cursor:pointer;gap:14px;transition:.2s}
+.fq-q:hover{background:var(--blue-xl)}
+.fq-t{font-weight:600;font-size:15px;color:var(--ink);line-height:1.4}
+.fq-i{width:28px;height:28px;border-radius:50%;background:var(--blue-xl);color:var(--blue);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;transition:transform .28s,background .2s}
+.fq.open .fq-i{transform:rotate(45deg);background:var(--blue);color:#fff}
+.fq-a{max-height:0;overflow:hidden;transition:max-height .35s var(--ease)}
+.fq-ai{padding:0 22px 18px;font-size:14.5px;color:var(--ink3);line-height:1.78}
+.fq.open .fq-a{max-height:400px}
+
+/* DISC/CONTACT/CTA/FOOTER */
+.disc{background:var(--amber-xl);border-top:1px solid var(--amber-s);border-bottom:1px solid var(--amber-s);padding:15px 0}
+.disc-in{display:flex;align-items:flex-start;gap:12px;font-size:13.5px;color:var(--ink2);line-height:1.7}
+.contact-sec{background:var(--surf);padding:60px 0}
+.contact-card{max-width:580px;margin:0 auto;background:#fff;border:1.5px solid var(--line);border-radius:20px;padding:32px;text-align:center;box-shadow:var(--s2)}
+.contact-card h3{font-family:var(--fd);font-size:19px;font-weight:800;color:var(--ink);margin-bottom:10px}
+.contact-card p{font-size:15px;color:var(--ink3);line-height:1.75;margin-bottom:20px}
+.btn-bl{display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:#fff;font-family:var(--fd);font-weight:700;font-size:14.5px;padding:12px 26px;border-radius:8px;box-shadow:var(--sb);transition:.22s}
+.btn-bl:hover{background:var(--blue-d);transform:translateY(-1px)}
+.priv-note{font-size:12px;color:var(--ink4);margin-top:14px}
+.cta{background:linear-gradient(140deg,#0f172a 0%,#1e3a8a 100%);padding:80px 0;text-align:center;position:relative;overflow:hidden}
+.cta::before{content:'';position:absolute;top:-80px;left:50%;transform:translateX(-50%);width:800px;height:380px;background:radial-gradient(ellipse,rgba(37,99,235,.22) 0%,transparent 68%);pointer-events:none}
+.cta-in{position:relative;z-index:1}
+.cta .pill{color:#93c5fd;background:rgba(255,255,255,.1);margin-bottom:18px}
+.cta .pill::before{background:#93c5fd}
+.cta h2{font-family:var(--fd);font-size:clamp(24px,4vw,42px);font-weight:800;color:#fff;line-height:1.15;margin-bottom:12px}
+.cta h2 em{color:#fbbf24;font-style:normal}
+.cta p{font-size:16px;color:rgba(255,255,255,.72);max-width:480px;margin:0 auto 32px;line-height:1.78}
+.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn-gold{display:inline-flex;align-items:center;gap:8px;background:var(--amber);color:#fff;font-family:var(--fd);font-weight:800;font-size:15px;padding:14px 30px;border-radius:8px;box-shadow:0 8px 28px rgba(245,158,11,.35);transition:.22s}
+.btn-gold:hover{background:#d97706;transform:translateY(-3px)}
+.btn-ghost{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.09);border:1.5px solid rgba(255,255,255,.22);color:#fff;font-family:var(--fd);font-weight:600;font-size:14px;padding:13px 26px;border-radius:8px;transition:.2s}
+.btn-ghost:hover{background:rgba(255,255,255,.16)}
+footer{background:#0f172a;padding:52px 0 0}
+.ft-inner{max-width:1180px;margin:0 auto;padding:0 24px}
+.ft-top{display:grid;grid-template-columns:1.9fr 1fr 1fr 1fr;gap:44px;margin-bottom:44px}
+.ft-brand .ln{color:#fff}.ft-brand .ls{color:#475569}
+.ft-desc{font-size:13.5px;color:#64748b;line-height:1.78;max-width:265px;margin:13px 0 20px}
+.ft-soc{display:flex;gap:9px}
+.fts{width:34px;height:34px;border-radius:7px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;color:#94a3b8;font-size:13px;transition:.2s}
+.fts:hover{background:var(--blue);color:#fff}
+.fc h4{font-family:var(--fd);font-size:12px;font-weight:700;color:#fff;margin-bottom:14px;letter-spacing:.06em;text-transform:uppercase}
+.fc ul{display:flex;flex-direction:column;gap:8px}
+.fc ul a{font-size:13.5px;color:#64748b;transition:.18s}
+.fc ul a:hover{color:#93c5fd}
+.ft-btm{border-top:1px solid rgba(255,255,255,.07);padding:20px 0;text-align:center}
+.ft-cp{font-size:12.5px;color:#475569}
+.ft-cp b{color:#64748b}
+.ft-tag{font-size:12px;color:#334155;margin-top:4px;font-style:italic}
+.btt{position:fixed;bottom:26px;right:26px;z-index:500;width:43px;height:43px;background:var(--blue);color:#fff;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:17px;box-shadow:var(--sb);opacity:0;pointer-events:none;transform:translateY(14px);transition:.28s var(--ease)}
+.btt.on{opacity:1;pointer-events:auto;transform:translateY(0)}
+.btt:hover{transform:translateY(-3px)}
+
+.sec-lbl{display:flex;align-items:center;gap:8px;font-family:var(--fd);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin-bottom:10px}
+.sec-lbl::before{content:'';width:6px;height:6px;background:var(--blue);border-radius:50%}
+.sec-h{font-family:var(--fd);font-size:clamp(22px,3.5vw,34px);font-weight:800;color:var(--ink);line-height:1.15;margin-bottom:10px}
+.sec-sub{font-size:15.5px;color:var(--ink3);line-height:1.78;margin-bottom:40px;max-width:600px}
+
+/* RESPONSIVE */
+@media(max-width:1060px){.ft-top{grid-template-columns:1fr 1fr}.tips-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:860px){
+  nav.dn,.hcta{display:none}.brg{display:flex}
+  .tool-body{padding:24px 22px}.tool-hdr{padding:24px 22px}
+  .fgrid{grid-template-columns:1fr}.fgrid3{grid-template-columns:1fr 1fr}
+  .howto-steps{grid-template-columns:1fr}
+  .rel-grid{grid-template-columns:1fr 1fr}
+  .pay-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+  .ft-top{grid-template-columns:1fr}.rel-grid{grid-template-columns:1fr}
+  .tips-grid{grid-template-columns:1fr 1fr}
+  .cta-btns{flex-direction:column;align-items:center}
+  .story-card{padding:26px 20px}
+  .pay-grid{grid-template-columns:1fr}
+  .pay-card.c4{grid-column:auto}
+  .fgrid3{grid-template-columns:1fr}
+  .graph-card{padding:18px 14px}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="hdr">
+  <div class="w">
+    <div class="hdi">
+      <a href="/" class="logo">
+        <div class="lb"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+        <div><div class="ln">Raj<span>Daily</span>Tools</div><div class="ls">Smart Tools for Daily Life</div></div>
+      </a>
+      <nav class="dn">
+        <a href="/">Home</a><a href="/categories">Categories</a>
+        <a href="/#popular">Popular</a><a href="/about">About</a><a href="/contact">Contact</a>
+      </nav>
+      <a href="/categories" class="hcta">All Tools →</a>
+      <button class="brg" id="brg"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="dov" id="dov"></div>
+<div class="drw" id="drw">
+  <div class="dh">
+    <div class="logo">
+      <div class="lb" style="width:30px;height:30px;border-radius:7px"><svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#fff"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+      <div class="ln" style="font-size:16px">Raj<span>Daily</span>Tools</div>
+    </div>
+    <button class="dx" id="dx">✕</button>
+  </div>
+  <nav class="mn">
+    <a href="/" onclick="cD()">🏠 Home</a>
+    <a href="/categories" onclick="cD()">🗂️ Categories</a>
+    <a href="/#popular" onclick="cD()">⭐ Popular</a>
+    <a href="/about" onclick="cD()">👤 About</a>
+    <a href="/contact" onclick="cD()">📬 Contact</a>
+  </nav>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+  <div class="w">
+    <div class="bc">
+      <a href="/">Home</a><span style="color:var(--ink4)">›</span>
+      <a href="/categories">Tools</a><span style="color:var(--ink4)">›</span>
+      <span>Future Net Worth Predictor</span>
+    </div>
+    <div class="hero-inner">
+      <div class="pill">Free Finance & Wealth Tools 💰</div>
+      <h1>Predict Your <span>Future Net Worth</span> – Smart Financial Growth Calculator</h1>
+      <p class="hero-sub">Plan your financial future with precision. See how your <strong>savings and investments grow</strong> over time with compound interest and inflation adjustment. Supports India &amp; Global currencies.</p>
+      <div class="hero-chips">
+        <span class="chip">💰 Compound Growth</span>
+        <span class="chip">📉 Inflation Adjusted</span>
+        <span class="chip">🌍 India &amp; Global</span>
+        <span class="chip">📊 Visual Chart</span>
+        <span class="chip">🆓 100% Free</span>
+        <span class="chip">🔒 No Data Stored</span>
+      </div>
+      <div class="hero-meta">
+        <div class="upd">💎 Advanced Wealth Calculator</div>
+        <span class="mi">✅ Inflation-adjusted projections</span>
+        <span class="mi">🌍 Multi-currency support</span>
+      </div>
+      <!-- HOW TO USE -->
+      <div class="howto">
+        <div class="howto-ttl">💡 How to Use This Tool</div>
+        <div class="howto-steps">
+          <div class="hs"><span class="sn">1</span>Enter your current net worth</div>
+          <div class="hs"><span class="sn">2</span>Add monthly income &amp; savings</div>
+          <div class="hs"><span class="sn">3</span>Enter expected return rate (%)</div>
+          <div class="hs"><span class="sn">4</span>Set inflation rate &amp; time period</div>
+          <div class="hs"><span class="sn">5</span>Click Calculate to see projections</div>
+        </div>
+      </div>
+      <!-- RELATED TOOLS -->
+      <div class="rel-grid">
+        <div class="rg-box army">
+          <div class="rg-ico">🏦</div>
+          <div class="rg-txt">
+            <h4>EMI Calculator</h4>
+            <p>Loan &amp; mortgage payments</p>
+            <a href="/emi-calculator.html" class="btn-xs a">Use Now →</a>
+          </div>
+        </div>
+        <div class="rg-box ht">
+          <div class="rg-ico">📈</div>
+          <div class="rg-txt">
+            <h4>SIP Calculator</h4>
+            <p>Systematic investment plan</p>
+            <a href="/sip-calculator.html" class="btn-xs g">Use Now →</a>
+          </div>
+        </div>
+        <div class="rg-box ssc">
+          <div class="rg-ico">🧾</div>
+          <div class="rg-txt">
+            <h4>GST Calculator</h4>
+            <p>GST inclusive &amp; exclusive</p>
+            <a href="/gst-calculator.html" class="btn-xs b">Use Now →</a>
+          </div>
+        </div>
+        <div class="rg-box mp">
+          <div class="rg-ico">💳</div>
+          <div class="rg-txt">
+            <h4>Loan Calculator</h4>
+            <p>Total interest &amp; repayment</p>
+            <a href="/loan-calculator.html" class="btn-xs p">Use Now →</a>
+          </div>
+        </div>
+        <div class="rg-box tl">
+          <div class="rg-ico">🗓️</div>
+          <div class="rg-txt">
+            <h4>Investment Planner</h4>
+            <p>Goal-based wealth planning</p>
+            <a href="/investment-planner.html" class="btn-xs t">Use Now →</a>
+          </div>
+        </div>
+        <div class="rg-box rd">
+          <div class="rg-ico">💵</div>
+          <div class="rg-txt">
+            <h4>Salary Converter</h4>
+            <p>Hourly, monthly &amp; yearly pay</p>
+            <a href="/salary-converter-usa.html" class="btn-xs r">Use Now →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOOL SECTION -->
+<section class="tool-sec" id="tool">
+  <div class="w">
+    <div class="tool-wrap">
+      <div class="tool-card rev">
+        <div class="tool-hdr">
+          <div class="th">
+            <h2>💰 Future Net Worth Predictor (Global &amp; India)</h2>
+            <p>Enter your financial details below. We'll calculate your projected net worth with compound growth and show the real inflation-adjusted value.</p>
+            <div class="th-badges">
+              <span class="thb">📈 Compound Growth</span>
+              <span class="thb">📉 Inflation Adjusted</span>
+              <span class="thb">🌍 6 Currencies</span>
+              <span class="thb">📊 Live Chart</span>
+              <span class="thb">🔒 Private &amp; Secure</span>
+            </div>
+          </div>
+        </div>
+        <div class="tool-body">
+
+          <!-- ROW 1: Currency + Current Net Worth -->
+          <div class="fgrid">
+            <div class="fld">
+              <label class="flbl" for="currency">Currency <span>Select Country</span></label>
+              <select class="fsel" id="currency" onchange="updatePrefix()">
+                <option value="INR">🇮🇳 INR – Indian Rupee (₹)</option>
+                <option value="USD" selected>🇺🇸 USD – US Dollar ($)</option>
+                <option value="EUR">🇪🇺 EUR – Euro (€)</option>
+                <option value="GBP">🇬🇧 GBP – British Pound (£)</option>
+                <option value="AUD">🇦🇺 AUD – Australian Dollar (A$)</option>
+                <option value="CAD">🇨🇦 CAD – Canadian Dollar (C$)</option>
+              </select>
+            </div>
+            <div class="fld">
+              <label class="flbl" for="currentNW">Current Net Worth <span>Required</span></label>
+              <div class="inp-wrap">
+                <span class="inp-prefix" id="pfx1">$</span>
+                <input class="finp has-prefix" type="number" id="currentNW" placeholder="e.g. 50000" min="0" step="any" value="50000">
+              </div>
+            </div>
+          </div>
+
+          <!-- ROW 2: Monthly Income + Monthly Savings -->
+          <div class="fgrid">
+            <div class="fld">
+              <label class="flbl" for="monthlyIncome">Monthly Income <span>Optional</span></label>
+              <div class="inp-wrap">
+                <span class="inp-prefix" id="pfx2">$</span>
+                <input class="finp has-prefix" type="number" id="monthlyIncome" placeholder="e.g. 5000" min="0" step="any" value="5000">
+              </div>
+            </div>
+            <div class="fld">
+              <label class="flbl" for="monthlySavings">Monthly Savings <span>Required</span></label>
+              <div class="inp-wrap">
+                <span class="inp-prefix" id="pfx3">$</span>
+                <input class="finp has-prefix" type="number" id="monthlySavings" placeholder="e.g. 1000" min="0" step="any" value="1000">
+              </div>
+            </div>
+          </div>
+
+          <!-- ROW 3: Return Rate, Inflation, Years -->
+          <div class="fgrid3">
+            <div class="fld">
+              <label class="flbl" for="returnRate">Return Rate <span>% per year</span></label>
+              <div class="slider-wrap" style="margin-bottom:0">
+                <div class="slider-top">
+                  <span class="slider-lbl" style="font-size:12px">📈 Investment Return</span>
+                  <span class="slider-val" id="rrLabel">10%</span>
+                </div>
+                <input type="range" id="returnRate" min="1" max="30" value="10" step="0.5" oninput="document.getElementById('rrLabel').textContent=this.value+'%'">
+                <div style="display:flex;justify-content:space-between;font-size:10px;color:var(--ink4);margin-top:4px"><span>1%</span><span>~8–12% avg</span><span>30%</span></div>
+              </div>
+            </div>
+            <div class="fld">
+              <label class="flbl" for="inflationRate">Inflation Rate <span>% per year</span></label>
+              <div class="slider-wrap" style="margin-bottom:0">
+                <div class="slider-top">
+                  <span class="slider-lbl" style="font-size:12px">📉 Inflation</span>
+                  <span class="slider-val" id="irLabel">6%</span>
+                </div>
+                <input type="range" id="inflationRate" min="0" max="20" value="6" step="0.5" oninput="document.getElementById('irLabel').textContent=this.value+'%'">
+                <div style="display:flex;justify-content:space-between;font-size:10px;color:var(--ink4);margin-top:4px"><span>0%</span><span>~6% India</span><span>20%</span></div>
+              </div>
+            </div>
+            <div class="fld">
+              <label class="flbl" for="timePeriod">Time Period <span>Years</span></label>
+              <div class="slider-wrap" style="margin-bottom:0">
+                <div class="slider-top">
+                  <span class="slider-lbl" style="font-size:12px">⏳ Years</span>
+                  <span class="slider-val" id="tpLabel">20 yrs</span>
+                </div>
+                <input type="range" id="timePeriod" min="1" max="50" value="20" step="1" oninput="document.getElementById('tpLabel').textContent=this.value+' yrs'">
+                <div style="display:flex;justify-content:space-between;font-size:10px;color:var(--ink4);margin-top:4px"><span>1</span><span>20 yrs</span><span>50</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="hint-box">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            <span><strong>India Defaults:</strong> Return Rate ~10–12% (equity mutual funds avg), Inflation ~6% (RBI target). <strong>Global Defaults:</strong> Return ~7–10% (S&amp;P 500 avg), Inflation ~2–4%. Adjust sliders to match your scenario.</span>
+          </div>
+
+          <button class="chk-btn" onclick="calculate()">
+            💰 Calculate Future Net Worth
+          </button>
+
+          <!-- RESULT -->
+          <div id="resultArea">
+            <div class="pay-grid" id="payGrid"></div>
+            <div id="tipsRow" class="tips-row"></div>
+            <button class="copy-btn" id="copyBtn" onclick="copyResult()">📋 Copy Full Report</button>
+            <div class="warn-box">
+              <span style="font-size:20px;flex-shrink:0">ℹ️</span>
+              <div style="font-size:13.5px;color:var(--ink2);line-height:1.72"><strong>Important:</strong> These are projections based on fixed assumptions. Actual returns vary with market conditions. Consult a certified financial advisor before making investment decisions. <strong>No data is stored or shared.</strong></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GRAPH SECTION -->
+<section class="graph-sec" id="graphSec" style="display:none">
+  <div class="w">
+    <div style="text-align:center;margin-bottom:30px">
+      <div class="sec-lbl" style="justify-content:center">Visual Growth Chart</div>
+      <div class="sec-h">Your Wealth Growth <span style="color:var(--blue)">Over Time</span></div>
+      <p class="sec-sub" style="margin:12px auto 0;max-width:560px">Watch how your net worth compounds over the years — and how inflation erodes purchasing power.</p>
+    </div>
+    <div class="graph-card rev">
+      <div class="graph-hdr">
+        <div class="graph-ttl" id="graphTitle">Net Worth Growth Projection</div>
+      </div>
+      <div class="graph-legend">
+        <div class="gl-item"><div class="gl-dot" style="background:#2563eb"></div>Nominal Net Worth</div>
+        <div class="gl-item"><div class="gl-dot" style="background:#10b981"></div>Inflation-Adjusted Value</div>
+      </div>
+      <div class="chart-wrap" style="position:relative">
+        <div class="chart-tooltip" id="chartTip"></div>
+        <svg id="lineChart" class="linechart" width="100%" height="340" viewBox="0 0 820 340" preserveAspectRatio="xMidYMid meet"></svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES / TIPS SECTION -->
+<section class="tips-sec">
+  <div class="w">
+    <div style="text-align:center;margin-bottom:40px">
+      <div class="sec-lbl" style="justify-content:center">Why Use This Tool</div>
+      <div class="sec-h">Smart Features for <span style="color:var(--blue)">Wealth Planning</span></div>
+    </div>
+    <div class="tips-grid">
+      <div class="tip-card rev">
+        <div class="tip-ico">📈</div>
+        <div class="tip-title">Compound Growth Engine</div>
+        <div class="tip-desc">Uses real compound annual growth formula so even small monthly savings snowball dramatically over decades.</div>
+      </div>
+      <div class="tip-card rev">
+        <div class="tip-ico">📉</div>
+        <div class="tip-title">Inflation Adjustment</div>
+        <div class="tip-desc">Shows the real purchasing power of your future wealth — critical for retirement planning in India and globally.</div>
+      </div>
+      <div class="tip-card rev">
+        <div class="tip-ico">🌍</div>
+        <div class="tip-title">Global Currency Support</div>
+        <div class="tip-desc">Supports INR ₹, USD $, EUR €, GBP £, AUD $, CAD $ — one tool for every country.</div>
+      </div>
+      <div class="tip-card rev">
+        <div class="tip-ico">📊</div>
+        <div class="tip-title">Interactive Growth Chart</div>
+        <div class="tip-desc">A visual dual-line chart tracks nominal and real net worth year by year so you can see exactly when wealth accelerates.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TABLE SECTION -->
+<section class="tbl-sec">
+  <div class="w">
+    <div style="text-align:center;margin-bottom:40px">
+      <div class="sec-lbl" style="justify-content:center">Key Factors</div>
+      <div class="sec-h">Factors That Affect Your <span style="color:var(--blue)">Net Worth Growth</span></div>
+      <p class="sec-sub" style="margin:12px auto 0">Understanding these four variables is essential for smart financial planning.</p>
+    </div>
+    <div class="tbl-wr">
+      <table>
+        <thead>
+          <tr>
+            <th>Factor</th>
+            <th>Description</th>
+            <th>India Average</th>
+            <th>Global Average</th>
+            <th>Impact</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Monthly Savings</strong></td>
+            <td>Amount invested every month consistently</td>
+            <td>₹5,000 – ₹50,000</td>
+            <td>$200 – $2,000</td>
+            <td><span class="tbadge g">Very High</span></td>
+          </tr>
+          <tr>
+            <td><strong>Return Rate</strong></td>
+            <td>Expected yearly growth from investments</td>
+            <td>10–14% (equity MF)</td>
+            <td>7–10% (S&amp;P 500)</td>
+            <td><span class="tbadge b">High</span></td>
+          </tr>
+          <tr>
+            <td><strong>Inflation Rate</strong></td>
+            <td>Annual reduction in purchasing power</td>
+            <td>~6% (CPI)</td>
+            <td>~2–3% (Fed target)</td>
+            <td><span class="tbadge a">Medium</span></td>
+          </tr>
+          <tr>
+            <td><strong>Time Period</strong></td>
+            <td>How long you stay invested (compounding)</td>
+            <td>10–30 years</td>
+            <td>20–40 years</td>
+            <td><span class="tbadge p">Extreme</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:12px;color:var(--ink4);text-align:center;margin-top:10px">* Average rates are indicative and change with market conditions. Historical equity returns in India (Sensex CAGR ~14%) and US (S&amp;P 500 CAGR ~10%) are used as benchmarks.</p>
+  </div>
+</section>
+
+<!-- STORY SECTION -->
+<section class="story-sec">
+  <div class="w">
+    <div class="wa">
+      <div class="sec-lbl">Why I Built This</div>
+      <h2 class="sec-h">Why I Built This Tool</h2>
+      <div class="story-card rev">
+        <div class="sq">"</div>
+        <p class="sb">One of my close friends was working hard but always worried about his financial future. He had no idea how his savings would grow over time. That's when I realized most people don't understand their future net worth. So I built this tool to give clarity, confidence, and a clear financial vision.</p>
+        <div class="sauth">
+          <div class="savt">🛠️</div>
+          <div>
+            <div class="sname">Raj — Founder, RajDailyTools</div>
+            <div class="srole">Built for everyone who deserves financial clarity</div>
+          </div>
+        </div>
+        <div class="founder-msg">
+          <div class="fm-ico">💡</div>
+          <div class="fm-txt"><strong>Our mission:</strong> Financial planning shouldn't be reserved for those who can afford expensive advisors. This tool gives every person — student, salaried employee, or entrepreneur — the power to predict and plan their financial future, for free.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GUIDE SECTION -->
+<section class="guide-sec">
+  <div class="w">
+    <div class="wa">
+      <div class="sec-lbl">Complete Guide</div>
+      <h2 class="sec-h">Everything About Future Net Worth</h2>
+      <div class="guide-body">
+
+        <h2>What is Net Worth?</h2>
+        <p>Your <strong>net worth</strong> is the total value of everything you own (assets) minus everything you owe (liabilities). Assets include cash, investments, property, gold, and retirement accounts. Liabilities include loans, credit card debt, and mortgages. Net worth is the single most important number in personal finance because it tells you exactly where you stand financially.</p>
+        <p>For example: If you own a home worth ₹80 lakhs and have a loan of ₹30 lakhs, your net worth from that asset is ₹50 lakhs. Add savings and investments to get your total net worth.</p>
+
+        <div class="ibox">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          <span><strong>Key formula:</strong> Future Net Worth = (Current Net Worth × (1+r)^n) + Monthly Savings × 12 × [(((1+r)^n) – 1) / r], where r = annual return rate and n = years. Then divide by (1+inflation)^n for real value.</span>
+        </div>
+
+        <h2>How to Calculate Future Wealth</h2>
+        <p>Future wealth is calculated using <strong>compound interest</strong> — the process where your returns earn returns over time. This is the most powerful force in personal finance. The key inputs are:</p>
+        <ul>
+          <li>Your current net worth (starting capital)</li>
+          <li>Monthly savings added consistently</li>
+          <li>Annual return rate from investments (equity, FD, real estate)</li>
+          <li>Inflation rate to find the real purchasing value</li>
+          <li>Time period — the longer, the more dramatic the compounding effect</li>
+        </ul>
+
+        <h2>Importance of Investing Early</h2>
+        <p>The single most powerful factor in wealth creation is <strong>time</strong>. Consider this real example: Starting ₹5,000/month SIP at age 25 vs age 35 with 12% annual returns — at age 55, the person who started at 25 has <strong>3× more wealth</strong> despite investing for only 10 extra years. This is the magic of compounding.</p>
+        <p>Every year you delay investing costs you exponentially — not linearly. Starting today, even with a small amount, is always better than waiting to invest a larger amount later.</p>
+
+        <div class="ibox a">
+          <svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          <span><strong>Common Mistake:</strong> Keeping money in savings accounts (3–4% return) instead of equity mutual funds or index funds (10–14% return in India). Over 20 years, this difference is massive — often 3–5× lower final wealth.</span>
+        </div>
+
+        <h2>Indian vs Global Financial Growth</h2>
+        <p>India's equity markets (Nifty 50, Sensex) have delivered an average <strong>CAGR of 12–14%</strong> over the past 30 years — one of the highest in the world. India's nominal GDP growth (~7%) and a young, growing population make it one of the most attractive wealth-building environments globally.</p>
+        <p>Globally, the <strong>S&amp;P 500 (USA)</strong> has returned ~10% annually over the past 50 years. European markets average 6–8%. The key difference: India's higher returns come with higher volatility, while global markets offer more diversification and currency stability.</p>
+
+        <div class="ibox g">
+          <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          <span><strong>Pro Tip:</strong> Indian investors should ideally use 6% as their inflation assumption (RBI's target band is 4–6%). Global investors in developed markets can use 2–3%. Always use inflation-adjusted figures for retirement planning.</span>
+        </div>
+
+        <h2>Real-Life Examples</h2>
+        <p><strong>Example 1 – Priya, India:</strong> Priya starts with ₹5 lakh net worth, saves ₹15,000/month, at 12% return over 25 years. Her future net worth: ~₹4.7 crore nominal, or ~₹1.9 crore in today's value (after 6% inflation). Still an excellent result — 38× her starting position.</p>
+        <p><strong>Example 2 – David, USA:</strong> David has $20,000 net worth, saves $800/month, at 9% return over 30 years. His future net worth: ~$1.6 million nominal, or ~$820,000 in today's value (after 3% inflation). Retirement-ready.</p>
+
+        <h2>Mistakes People Make</h2>
+        <ul>
+          <li>Not accounting for inflation — future ₹1 crore may only be worth ₹23 lakh in today's terms at 6% inflation over 25 years</li>
+          <li>Stopping SIPs during market downturns — this kills the compounding effect at the worst time</li>
+          <li>Ignoring existing liabilities — loans reduce net worth and increase effective cost of investing</li>
+          <li>Overestimating returns — assuming 20–25% returns from equity is unrealistic for long periods</li>
+          <li>Not starting early — even 5 years late can cost 40–60% of final wealth</li>
+        </ul>
+
+        <h2>Benefits of This Tool</h2>
+        <p>Our Future Net Worth Predictor gives you an <strong>honest, complete financial projection</strong> in seconds. Unlike generic calculators, it shows both the nominal future value and the inflation-adjusted real value. The interactive chart lets you visually see how wealth accelerates in the later years of compounding — which is often the most motivating thing for new investors.</p>
+        <p>It works for India (INR), USA (USD), Europe (EUR), UK (GBP), and more — making it a truly global tool. No sign-up, no ads, no data stored. Just honest financial clarity.</p>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ SECTION -->
+<section class="faq-sec">
+  <div class="w">
+    <div class="sec-lbl" style="justify-content:center">FAQ</div>
+    <h2 class="sec-h" style="text-align:center">Frequently Asked Questions</h2>
+    <p class="sec-sub" style="text-align:center;margin:0 auto 40px">Answers to the most common questions about net worth prediction and financial planning.</p>
+    <div class="fql">
+      <div class="fq">
+        <div class="fq-q" onclick="tFQ(this)">
+          <span class="fq-t">How is future net worth calculated?</span>
+          <span class="fq-i">+</span>
+        </div>
+        <div class="fq-a"><div class="fq-ai">Future net worth is calculated using the compound interest formula applied to your current net worth, plus the future value of all monthly savings added over the period. The formula is: FNW = (Current NW × (1+r)^n) + MonthlySavings × 12 × [((1+r)^n – 1) / r], where r is annual return rate and n is years. The inflation-adjusted value divides this by (1+inflation)^n.</div></div>
+      </div>
+      <div class="fq">
+        <div class="fq-q" onclick="tFQ(this)">
+          <span class="fq-t">What is a good return rate to use?</span>
+          <span class="fq-i">+</span>
+        </div>
+        <div class="fq-a"><div class="fq-ai">For India: 10–12% for diversified equity mutual funds, 7–8% for PPF/debt funds, 6–7% for FDs. For USA/Global: 9–10% for S&amp;P 500 index funds, 6–7% for balanced portfolios. We recommend being conservative (use 10% for equity) rather than optimistic to avoid over-projecting your wealth.</div></div>
+      </div>
+      <div class="fq">
+        <div class="fq-q" onclick="tFQ(this)">
+          <span class="fq-t">Does inflation really affect future wealth that much?</span>
+          <span class="fq-i">+</span>
+        </div>
+        <div class="fq-a"><div class="fq-ai">Yes — dramatically. At 6% inflation for 25 years, ₹1 crore in future money is only worth ₹23 lakh in today's terms. This is why the real (inflation-adjusted) value is the most important number in retirement planning. Always ensure your return rate significantly exceeds inflation — this "real return" is your actual wealth creation rate.</div></div>
+      </div>
+      <div class="fq">
+        <div class="fq-q" onclick="tFQ(this)">
+          <span class="fq-t">Is this net worth prediction tool accurate?</span>
+          <span class="fq-i">+</span>
+        </div>
+        <div class="fq-a"><div class="fq-ai">The calculations are mathematically precise based on the inputs you provide. However, actual future net worth depends on variable real-world factors including market performance, changes in savings rate, tax changes, and emergencies. Use this tool for planning and direction — not as a guaranteed forecast. A certified financial planner can give personalized advice.</div></div>
+      </div>
+      <div class="fq">
+        <div class="fq-q" onclick="tFQ(this)">
+          <span class="fq-t">Can I use this tool for global currencies?</span>
+          <span class="fq-i">+</span>
+        </div>
+        <div class="fq-a"><div class="fq-ai">Absolutely. This tool supports INR (India), USD (USA), EUR (Europe), GBP (UK), AUD (Australia), and CAD (Canada). Simply select your currency from the dropdown and all outputs will display with the correct symbol. The math is identical — only the display currency changes.</div></div>
+      </div>
+      <div class="fq">
+        <div class="fq-q" onclick="tFQ(this)">
+          <span class="fq-t">Which country gives better long-term investment returns?</span>
+          <span class="fq-i">+</span>
+        </div>
+        <div class="fq-a"><div class="fq-ai">Historically, India's equity markets (Sensex/Nifty) have delivered 12–14% nominal CAGR over 30 years — among the highest globally. USA's S&amp;P 500 has returned ~10% with lower volatility. However, India's higher nominal returns come with higher inflation (~6%), making the real return comparable: ~6–8% for India vs ~6–7% for USA. Diversifying globally is often the best strategy.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DISCLAIMER -->
+<div class="disc">
+  <div class="w">
+    <div class="disc-in">
+      <span style="font-size:20px;flex-shrink:0">⚠️</span>
+      <div><strong>Disclaimer:</strong> This tool provides estimated financial projections for informational and educational purposes only. Actual results may vary significantly based on market conditions, economic factors, tax laws, and individual circumstances. This is not financial advice. Please consult a SEBI-registered investment advisor (India) or a certified financial planner (global) before making investment decisions.</div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<section class="contact-sec">
+  <div class="w">
+    <div class="contact-card rev">
+      <h3>📬 Suggestions or Improvements?</h3>
+      <p>For suggestions, corrections, or tool improvement requests, contact us anytime. We genuinely read every message and continuously improve our tools based on real user feedback.</p>
+      <a href="/contact" class="btn-bl">✉️ Contact Us</a>
+      <p class="priv-note">🔒 We respect your privacy. No data is collected. No spam, ever.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="cta-in">
+    <div class="pill">Explore More Tools</div>
+    <h2>Discover <em>100+ Free Tools</em> on RajDailyTools</h2>
+    <p>From salary calculators to investment planners — all free, fast, and no sign-up required.</p>
+    <div class="cta-btns">
+      <a href="/categories" class="btn-gold">🗂️ Browse All Tools</a>
+      <a href="/#popular" class="btn-ghost">⭐ Popular Tools</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-inner">
+    <div class="ft-top">
+      <div class="ft-brand">
+        <a href="/" class="logo">
+          <div class="lb"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+          <div><div class="ln">Raj<span>Daily</span>Tools</div><div class="ls">Smart Tools for Daily Life</div></div>
+        </a>
+        <div class="ft-desc">Free, fast, and reliable financial tools for everyone. Net worth predictor, SIP calculator, EMI calculator and 100+ more tools — all in one place.</div>
+        <div class="ft-soc">
+          <a class="fts" href="#" title="Twitter">𝕏</a>
+          <a class="fts" href="#" title="Instagram">📸</a>
+          <a class="fts" href="#" title="YouTube">▶</a>
+          <a class="fts" href="#" title="Telegram">✈</a>
+        </div>
+      </div>
+      <div class="fc">
+        <h4>Finance Tools</h4>
+        <ul>
+          <li><a href="/future-net-worth.html">Net Worth Predictor</a></li>
+          <li><a href="/sip-calculator.html">SIP Calculator</a></li>
+          <li><a href="/emi-calculator.html">EMI Calculator</a></li>
+          <li><a href="/salary-converter-usa.html">Salary Converter</a></li>
+          <li><a href="/gst-calculator.html">GST Calculator</a></li>
+        </ul>
+      </div>
+      <div class="fc">
+        <h4>Popular Tools</h4>
+        <ul>
+          <li><a href="/percentage-calculator.html">% Calculator</a></li>
+          <li><a href="/age-calculator.html">Age Calculator</a></li>
+          <li><a href="/unit-converter.html">Unit Converter</a></li>
+          <li><a href="/energy-converter.html">Energy Converter</a></li>
+          <li><a href="/loan-calculator.html">Loan Calculator</a></li>
+        </ul>
+      </div>
+      <div class="fc">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/about">About Us</a></li>
+          <li><a href="/contact">Contact</a></li>
+          <li><a href="/privacy">Privacy Policy</a></li>
+          <li><a href="/disclaimer">Disclaimer</a></li>
+          <li><a href="/sitemap">Sitemap</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ft-btm">
+      <div class="ft-inner">
+        <div class="ft-cp">© 2026 <b>RajDailyTools.in</b> — All rights reserved. | Future Net Worth Predictor | Free Financial Planning Tool</div>
+        <div class="ft-tag">For informational purposes only. Not financial advice. Consult a certified financial advisor before investing.</div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+/* ── MOBILE DRAWER ── */
+const brg=document.getElementById('brg'),dov=document.getElementById('dov'),drw=document.getElementById('drw'),dx=document.getElementById('dx');
+function oD(){drw.classList.add('on');dov.classList.add('on')}
+function cD(){drw.classList.remove('on');dov.classList.remove('on')}
+brg.addEventListener('click',oD);dov.addEventListener('click',cD);dx.addEventListener('click',cD);
+window.addEventListener('scroll',()=>{document.getElementById('btt').classList.toggle('on',window.scrollY>400)});
+
+/* ── SCROLL REVEAL ── */
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target)}})},{threshold:.12});
+document.querySelectorAll('.rev').forEach(el=>obs.observe(el));
+
+/* ── FAQ ── */
+function tFQ(btn){const fq=btn.closest('.fq');const wasOpen=fq.classList.contains('open');document.querySelectorAll('.fq.open').forEach(f=>f.classList.remove('open'));if(!wasOpen)fq.classList.add('open')}
+
+/* ── CURRENCY CONFIG ── */
+const CURRENCIES = {
+  INR: { sym: '₹', locale: 'en-IN', name: 'INR' },
+  USD: { sym: '$',  locale: 'en-US', name: 'USD' },
+  EUR: { sym: '€',  locale: 'de-DE', name: 'EUR' },
+  GBP: { sym: '£',  locale: 'en-GB', name: 'GBP' },
+  AUD: { sym: 'A$', locale: 'en-AU', name: 'AUD' },
+  CAD: { sym: 'C$', locale: 'en-CA', name: 'CAD' }
+};
+
+function getCur() { return CURRENCIES[document.getElementById('currency').value] || CURRENCIES.USD; }
+
+function updatePrefix() {
+  const c = getCur();
+  ['pfx1','pfx2','pfx3'].forEach(id => { document.getElementById(id).textContent = c.sym; });
+}
+
+function fmtCur(val, cur) {
+  const c = cur || getCur();
+  if (Math.abs(val) >= 1e9) return c.sym + (val/1e9).toFixed(2) + 'B';
+  if (Math.abs(val) >= 1e7 && c.name === 'INR') return c.sym + (val/1e7).toFixed(2) + ' Cr';
+  if (Math.abs(val) >= 1e5 && c.name === 'INR') return c.sym + (val/1e5).toFixed(2) + ' L';
+  if (Math.abs(val) >= 1e6) return c.sym + (val/1e6).toFixed(2) + 'M';
+  if (Math.abs(val) >= 1e3) return c.sym + Math.round(val).toLocaleString(c.locale);
+  return c.sym + Math.round(val).toLocaleString(c.locale);
+}
+
+function fmtFull(val, cur) {
+  const c = cur || getCur();
+  return c.sym + Math.round(val).toLocaleString(c.locale);
+}
+
+/* ── STORE LAST RESULT ── */
+let lastRes = null;
+let chartData = null;
+
+/* ── MAIN CALCULATION ── */
+function calculate() {
+  const cur   = getCur();
+  const nw    = parseFloat(document.getElementById('currentNW').value) || 0;
+  const inc   = parseFloat(document.getElementById('monthlyIncome').value) || 0;
+  const sav   = parseFloat(document.getElementById('monthlySavings').value) || 0;
+  const rr    = parseFloat(document.getElementById('returnRate').value) / 100;
+  const ir    = parseFloat(document.getElementById('inflationRate').value) / 100;
+  const yrs   = parseInt(document.getElementById('timePeriod').value) || 10;
+
+  if (sav <= 0 && nw <= 0) { alert('Please enter your current net worth or monthly savings.'); return; }
+
+  // Compound growth of existing net worth
+  const nwFuture = nw * Math.pow(1 + rr, yrs);
+
+  // Future value of monthly savings (annuity formula)
+  // FV = PMT * [((1+r)^n - 1) / r]  where r = monthly rate, n = total months
+  const rMonthly = rr / 12;
+  const nMonths  = yrs * 12;
+  const savFuture = sav > 0
+    ? sav * ((Math.pow(1 + rMonthly, nMonths) - 1) / rMonthly)
+    : 0;
+
+  const totalFutureNW  = nwFuture + savFuture;
+  const totalInvested  = nw + (sav * 12 * yrs);
+  const totalReturns   = totalFutureNW - totalInvested;
+  const realValue      = totalFutureNW / Math.pow(1 + ir, yrs);
+
+  lastRes = { nw, sav, inc, rr, ir, yrs, totalFutureNW, totalInvested, totalReturns, realValue, cur };
+
+  // Result Cards
+  const pg = document.getElementById('payGrid');
+  pg.innerHTML = `
+    <div class="pay-card c1">
+      <div class="pc-ico">💰</div>
+      <div class="pc-lbl">🚀 Future Net Worth</div>
+      <div class="pc-val">${fmtCur(totalFutureNW, cur)}</div>
+      <div class="pc-sub">Nominal value in ${yrs} years at ${(rr*100).toFixed(1)}% return</div>
+    </div>
+    <div class="pay-card c2">
+      <div class="pc-ico">💵</div>
+      <div class="pc-lbl">📥 Total Invested</div>
+      <div class="pc-val">${fmtCur(totalInvested, cur)}</div>
+      <div class="pc-sub">Net worth + monthly savings over ${yrs} yrs</div>
+    </div>
+    <div class="pay-card c3">
+      <div class="pc-ico">📈</div>
+      <div class="pc-lbl">💹 Total Returns Earned</div>
+      <div class="pc-val">${fmtCur(totalReturns, cur)}</div>
+      <div class="pc-sub">Pure interest &amp; growth compounded over ${yrs} years</div>
+    </div>
+    <div class="pay-card c4">
+      <div class="pc-ico">🌡️</div>
+      <div class="pc-lbl">🛡️ Real Value (Inflation-Adjusted)</div>
+      <div class="pc-val">${fmtCur(realValue, cur)}</div>
+      <div class="pc-sub">Actual purchasing power in today's money after ${(ir*100).toFixed(1)}% inflation for ${yrs} years</div>
+    </div>`;
+
+  // Financial Tips
+  const growth = ((totalFutureNW / Math.max(totalInvested, 1)) * 100).toFixed(0);
+  const realGain = realValue > totalInvested;
+  document.getElementById('tipsRow').innerHTML = `
+    <div class="tip-pill">📊 Wealth grows ${growth}% of total invested</div>
+    <div class="tip-pill" style="background:${realGain ? 'var(--green-xl)' : 'var(--amber-xl)'};color:${realGain ? 'var(--green)' : 'var(--amber)'};border-color:${realGain ? 'var(--green-s)' : 'var(--amber-s)'}">
+      ${realGain ? '✅ Real return beats inflation' : '⚠️ Inflation is reducing real value — invest in higher-return assets'}
+    </div>
+    <div class="tip-pill" style="background:var(--blue-xl);color:var(--blue);border-color:var(--blue-s)">⏳ Compounding accelerates after year ${Math.round(yrs * 0.6)}</div>`;
+
+  document.getElementById('resultArea').style.display = 'block';
+  document.getElementById('resultArea').scrollIntoView({behavior:'smooth', block:'nearest'});
+
+  // Reset copy btn
+  const cb = document.getElementById('copyBtn');
+  cb.textContent = '📋 Copy Full Report';
+  cb.classList.remove('copied');
+
+  // Build chart
+  buildChart(nw, sav, rr, ir, yrs, cur);
+
+  // Show graph section
+  document.getElementById('graphSec').style.display = 'block';
+  setTimeout(() => {
+    document.getElementById('graphSec').scrollIntoView({behavior:'smooth', block:'nearest'});
+  }, 600);
+}
+
+/* ── COPY ── */
+function copyResult() {
+  if (!lastRes) return;
+  const r = lastRes;
+  const c = r.cur;
+  const txt = `Future Net Worth Report (RajDailyTools)
+Current Net Worth:     ${fmtFull(r.nw, c)}
+Monthly Savings:       ${fmtFull(r.sav, c)}
+Return Rate:           ${(r.rr*100).toFixed(1)}%
+Inflation Rate:        ${(r.ir*100).toFixed(1)}%
+Time Period:           ${r.yrs} years
+------------------------------------------
+Future Net Worth:      ${fmtFull(r.totalFutureNW, c)}
+Total Invested:        ${fmtFull(r.totalInvested, c)}
+Total Returns Earned:  ${fmtFull(r.totalReturns, c)}
+Real Value (Today ₹):  ${fmtFull(r.realValue, c)}
+------------------------------------------
+Generated by RajDailyTools.in`;
+  const cb = document.getElementById('copyBtn');
+  const done = () => {
+    cb.textContent = '✅ Copied!';
+    cb.classList.add('copied');
+    setTimeout(() => { cb.textContent = '📋 Copy Full Report'; cb.classList.remove('copied'); }, 2200);
+  };
+  navigator.clipboard ? navigator.clipboard.writeText(txt).then(done).catch(done) : done();
+}
+
+/* ── LINE CHART ── */
+function buildChart(initNW, monthlySav, rr, ir, years, cur) {
+  const W = 820, H = 340;
+  const PAD = { top: 24, right: 24, bottom: 56, left: 80 };
+  const cW = W - PAD.left - PAD.right;
+  const cH = H - PAD.top  - PAD.bottom;
+
+  // Build data points year by year
+  const rMonthly = rr / 12;
+  const nomData = [], realData = [];
+
+  for (let y = 0; y <= years; y++) {
+    const nwFuture  = initNW * Math.pow(1 + rr, y);
+    const savFuture = monthlySav > 0 && y > 0
+      ? monthlySav * ((Math.pow(1 + rMonthly, y * 12) - 1) / rMonthly)
+      : 0;
+    const nom  = nwFuture + savFuture;
+    const real = nom / Math.pow(1 + ir, y);
+    nomData.push(nom);
+    realData.push(real);
+  }
+
+  chartData = { nomData, realData, years, cur };
+
+  const allVals = [...nomData, ...realData];
+  const maxVal  = Math.max(...allVals);
+  const minVal  = Math.min(0, ...allVals);
+
+  function xPos(i)   { return PAD.left + (i / years) * cW; }
+  function yPos(val) { return PAD.top + cH - ((val - minVal) / (maxVal - minVal || 1)) * cH; }
+
+  // Grid lines (5 horizontal)
+  const TICKS = 5;
+  let gridLines = '', yLabels = '';
+  for (let i = 0; i <= TICKS; i++) {
+    const val = minVal + (maxVal - minVal) * (i / TICKS);
+    const y   = yPos(val);
+    gridLines += `<line class="grid-line" x1="${PAD.left}" y1="${y}" x2="${W - PAD.right}" y2="${y}"/>`;
+    yLabels   += `<text class="axis-label" x="${PAD.left - 8}" y="${y + 4}" text-anchor="end">${fmtCur(val, cur)}</text>`;
+  }
+
+  // X labels
+  const step = Math.max(1, Math.ceil(years / 8));
+  let xLabels = '';
+  for (let y = 0; y <= years; y += step) {
+    xLabels += `<text class="axis-label" x="${xPos(y)}" y="${H - PAD.bottom + 20}" text-anchor="middle">Yr ${y}</text>`;
+  }
+
+  // Line paths
+  function makePath(data) {
+    return data.map((v, i) => `${i === 0 ? 'M' : 'L'}${xPos(i).toFixed(1)},${yPos(v).toFixed(1)}`).join(' ');
+  }
+  function makeArea(data) {
+    const base = yPos(minVal);
+    const pts  = data.map((v, i) => `${xPos(i).toFixed(1)},${yPos(v).toFixed(1)}`).join(' ');
+    const first = `${xPos(0).toFixed(1)},${base}`;
+    const last  = `${xPos(data.length - 1).toFixed(1)},${base}`;
+    return `M ${first} L ${pts} L ${last} Z`;
+  }
+
+  const nomPath  = makePath(nomData);
+  const realPath = makePath(realData);
+  const nomArea  = makeArea(nomData);
+  const realArea = makeArea(realData);
+
+  const svg = document.getElementById('lineChart');
+  svg.innerHTML = `
+    <defs>
+      <linearGradient id="gNom" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#2563eb" stop-opacity=".22"/>
+        <stop offset="100%" stop-color="#2563eb" stop-opacity=".02"/>
+      </linearGradient>
+      <linearGradient id="gReal" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#10b981" stop-opacity=".18"/>
+        <stop offset="100%" stop-color="#10b981" stop-opacity=".02"/>
+      </linearGradient>
+    </defs>
+    ${gridLines}
+    ${yLabels}
+    ${xLabels}
+    <text class="axis-title" x="${PAD.left - 64}" y="${PAD.top + cH/2}" transform="rotate(-90,${PAD.left-64},${PAD.top+cH/2})" text-anchor="middle">Net Worth (${cur.sym})</text>
+    <text class="axis-title" x="${PAD.left + cW/2}" y="${H - 6}" text-anchor="middle">Years</text>
+    <path d="${nomArea}"  fill="url(#gNom)" />
+    <path d="${realArea}" fill="url(#gReal)" />
+    <path d="${nomPath}"  fill="none" stroke="#2563eb" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+    <path d="${realPath}" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="7 3"/>
+    ${nomData.map((v,i) => i % step === 0 || i === years
+      ? `<circle cx="${xPos(i)}" cy="${yPos(v)}" r="4" fill="#2563eb" stroke="#fff" stroke-width="2" class="chart-dot" data-y="${i}" data-nom="${v}" data-real="${realData[i]}"/>`
+      : '').join('')}
+    ${realData.map((v,i) => i % step === 0 || i === years
+      ? `<circle cx="${xPos(i)}" cy="${yPos(v)}" r="4" fill="#10b981" stroke="#fff" stroke-width="2" class="chart-dot-r" data-y="${i}" data-real="${v}"/>`
+      : '').join('')}
+  `;
+
+  // Hover tooltip
+  const tip = document.getElementById('chartTip');
+  const wrap = svg.parentElement;
+  svg.querySelectorAll('.chart-dot').forEach(dot => {
+    dot.addEventListener('mouseenter', e => {
+      const yr  = dot.getAttribute('data-y');
+      const nom = parseFloat(dot.getAttribute('data-nom'));
+      const rel = parseFloat(dot.getAttribute('data-real'));
+      tip.innerHTML = `Year ${yr}<br>📈 Nominal: ${fmtCur(nom, cur)}<br>🛡️ Real: ${fmtCur(rel, cur)}`;
+      tip.style.opacity = '1';
+    });
+    dot.addEventListener('mousemove', e => {
+      const rect = wrap.getBoundingClientRect();
+      tip.style.left = (e.clientX - rect.left + 12) + 'px';
+      tip.style.top  = (e.clientY - rect.top  - 36) + 'px';
+    });
+    dot.addEventListener('mouseleave', () => { tip.style.opacity = '0'; });
+  });
+
+  document.getElementById('graphTitle').textContent =
+    `Net Worth Projection: ${fmtCur(initNW, cur)} → ${fmtCur(nomData[years], cur)} in ${years} years`;
+}
+</script>
+</body>
+</html>
