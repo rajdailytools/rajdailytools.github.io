@@ -1,0 +1,1420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Advanced SIP Calculator 2026 – Returns, CAGR, Step-Up SIP & Goal Planner | RajDailyTools</title>
+<meta name="description" content="India's most advanced SIP calculator with step-up SIP, goal-based planning, inflation adjustment, tax (LTCG) calculation, year-wise breakdown table, and interactive growth chart. Free for all Indian investors.">
+<meta name="keywords" content="SIP calculator, advanced SIP calculator, step up SIP calculator, SIP return calculator india, SIP goal planner, SIP CAGR calculator, mutual fund SIP calculator 2026">
+<meta name="robots" content="index, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#2563eb;--blue-d:#1d4ed8;--blue-xl:#eff6ff;--blue-s:#dbeafe;
+  --amber:#f59e0b;--green:#10b981;--red:#ef4444;--purple:#8b5cf6;
+  --orange:#f97316;--teal:#14b8a6;
+  --green-xl:#f0fdf4;--green-s:#bbf7d0;
+  --red-xl:#fef2f2;--red-s:#fecaca;
+  --amber-xl:#fffbeb;--amber-s:#fde68a;
+  --purple-xl:#faf5ff;--purple-s:#ddd6fe;
+  --ink:#0f172a;--ink2:#334155;--ink3:#64748b;--ink4:#94a3b8;
+  --line:#e2e8f0;--surf:#f8fafc;--white:#fff;
+  --s1:0 1px 3px rgba(15,23,42,.06),0 1px 2px rgba(15,23,42,.04);
+  --s2:0 4px 16px rgba(15,23,42,.08),0 2px 6px rgba(15,23,42,.04);
+  --s3:0 12px 40px rgba(15,23,42,.11),0 3px 10px rgba(15,23,42,.06);
+  --s4:0 24px 64px rgba(15,23,42,.13),0 6px 20px rgba(15,23,42,.07);
+  --sb:0 8px 32px rgba(37,99,235,.20);
+  --sg:0 8px 32px rgba(16,185,129,.20);
+  --fd:'Sora',sans-serif;--fb:'DM Sans',sans-serif;
+  --ease:cubic-bezier(.4,0,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);color:var(--ink);background:var(--white);overflow-x:hidden;-webkit-font-smoothing:antialiased;line-height:1.6}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+button{cursor:pointer;border:none;background:none;font-family:var(--fb)}
+.w{max-width:1180px;margin:0 auto;padding:0 24px}
+.wa{max-width:880px;margin:0 auto;padding:0 24px}
+select,input{appearance:none;-webkit-appearance:none}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+@keyframes resultIn{from{opacity:0;transform:translateY(18px) scale(.97)}to{opacity:1;transform:none}}
+@keyframes countUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@keyframes shimmer{0%{background-position:-200% 0}100%{background-position:200% 0}}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(16,185,129,.3)}50%{box-shadow:0 0 0 8px rgba(16,185,129,0)}}
+.rev{opacity:0;transform:translateY(22px);transition:opacity .55s var(--ease),transform .55s var(--ease)}
+.rev.in{opacity:1;transform:none}
+
+/* HEADER */
+.hdr{position:sticky;top:0;z-index:999;background:rgba(255,255,255,.96);backdrop-filter:blur(20px);border-bottom:1px solid var(--line);box-shadow:var(--s1)}
+.hdi{display:flex;align-items:center;justify-content:space-between;height:66px}
+.logo{display:flex;align-items:center;gap:10px}
+.lb{width:36px;height:36px;background:var(--blue);border-radius:9px;display:flex;align-items:center;justify-content:center;box-shadow:var(--sb);flex-shrink:0}
+.lb svg{width:18px;height:18px;fill:#fff}
+.ln{font-family:var(--fd);font-size:19px;font-weight:800;color:var(--ink);line-height:1}
+.ln span{color:var(--blue)}
+.ls{font-size:10px;color:var(--ink4);letter-spacing:.04em}
+nav.dn{display:flex;align-items:center;gap:2px}
+nav.dn a{font-size:13.5px;font-weight:500;color:var(--ink2);padding:7px 13px;border-radius:8px;transition:.2s}
+nav.dn a:hover{color:var(--blue);background:var(--blue-xl)}
+.hcta{background:var(--blue);color:#fff;font-family:var(--fd);font-weight:600;font-size:13px;padding:8px 18px;border-radius:8px;box-shadow:var(--sb);transition:.2s}
+.hcta:hover{background:var(--blue-d);transform:translateY(-1px)}
+.brg{display:none;flex-direction:column;gap:4.5px;padding:8px;border-radius:8px}
+.brg span{display:block;width:20px;height:2px;background:var(--ink);border-radius:2px;transition:.28s}
+.dov{display:none;position:fixed;inset:0;background:rgba(15,23,42,.45);z-index:1040;backdrop-filter:blur(3px)}
+.dov.on{display:block}
+.drw{position:fixed;top:0;right:-100%;width:270px;height:100vh;background:#fff;z-index:1050;padding:22px;box-shadow:var(--s4);transition:right .32s var(--ease);overflow-y:auto}
+.drw.on{right:0}
+.dh{display:flex;align-items:center;justify-content:space-between;margin-bottom:26px}
+.dx{width:33px;height:33px;border-radius:7px;background:var(--surf);display:flex;align-items:center;justify-content:justify-content;align-items:center;justify-content:center;color:var(--ink3);font-size:17px}
+nav.mn{display:flex;flex-direction:column;gap:3px}
+nav.mn a{display:block;font-size:14px;font-weight:500;color:var(--ink2);padding:11px 13px;border-radius:8px;transition:.2s}
+nav.mn a:hover{color:var(--blue);background:var(--blue-xl)}
+
+/* HERO */
+.hero{position:relative;overflow:hidden;background:linear-gradient(150deg,#ebf4ff 0%,#fff 46%,#f0fdf4 100%);padding:64px 0 72px}
+.hero::before{content:'';position:absolute;top:-140px;right:-180px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(37,99,235,.08) 0%,transparent 68%);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-80px;left:-100px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(16,185,129,.06) 0%,transparent 68%);pointer-events:none}
+.blob{position:absolute;border-radius:50%;pointer-events:none;animation:float 6s ease-in-out infinite}
+.b1{width:13px;height:13px;background:rgba(37,99,235,.18);top:22%;right:14%;animation-delay:0s}
+.b2{width:9px;height:9px;background:rgba(16,185,129,.22);top:58%;right:26%;animation-delay:2.2s}
+.b3{width:11px;height:11px;background:rgba(245,158,11,.18);top:36%;right:6%;animation-delay:4s}
+.bc{display:flex;align-items:center;gap:7px;font-size:12.5px;color:var(--ink3);margin-bottom:22px;position:relative;z-index:1;flex-wrap:wrap}
+.bc a{color:var(--blue);font-weight:600}
+.pill{display:inline-flex;align-items:center;gap:7px;font-family:var(--fd);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);background:var(--blue-xl);padding:5px 14px;border-radius:100px;margin-bottom:18px}
+.pill::before{content:'';width:6px;height:6px;background:var(--blue);border-radius:50%}
+.hero-inner{position:relative;z-index:1;max-width:720px;animation:fadeUp .5s ease both}
+.hero h1{font-family:var(--fd);font-size:clamp(26px,4.5vw,50px);font-weight:800;line-height:1.1;color:var(--ink);margin-bottom:14px}
+.hero h1 span{color:var(--blue)}
+.hero-sub{font-size:16px;color:var(--ink3);line-height:1.8;margin-bottom:22px;max-width:600px}
+.hero-chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.chip{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;padding:6px 14px;border-radius:100px;background:#fff;border:1.5px solid var(--line);color:var(--ink2);box-shadow:var(--s1);transition:.22s}
+.chip:hover{border-color:var(--blue);color:var(--blue);transform:translateY(-1px)}
+.hero-meta{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:24px}
+.upd{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:700;color:var(--blue);background:var(--blue-xl);padding:6px 14px;border-radius:100px;border:1.5px solid var(--blue-s)}
+.mi{font-size:13px;color:var(--ink3);font-weight:500}
+
+/* HOW TO USE */
+.howto{background:var(--amber-xl);border:2px solid var(--amber-s);border-radius:16px;padding:22px 26px;max-width:560px;margin-bottom:24px}
+.howto-ttl{display:flex;align-items:center;gap:9px;font-family:var(--fd);font-size:15px;font-weight:800;color:var(--ink);margin-bottom:13px}
+.howto-steps{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.hs{display:flex;align-items:flex-start;gap:10px;font-size:13.5px;color:var(--ink2);line-height:1.6}
+.sn{width:24px;height:24px;background:var(--amber);color:#fff;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex-shrink:0;margin-top:1px}
+
+/* RELATED TOOLS */
+.rel-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.rg-box{border-radius:14px;padding:14px 14px 12px;display:flex;flex-direction:column;gap:8px;transition:.22s;border:1.5px solid}
+.rg-box:hover{transform:translateY(-3px);box-shadow:var(--s3)}
+.rg-box.c1{background:linear-gradient(135deg,var(--amber-xl),#fef3c7);border-color:var(--amber-s)}
+.rg-box.c2{background:linear-gradient(135deg,var(--green-xl),#dcfce7);border-color:var(--green-s)}
+.rg-box.c3{background:linear-gradient(135deg,var(--blue-xl),var(--blue-s));border-color:var(--blue-s)}
+.rg-box.c4{background:linear-gradient(135deg,var(--purple-xl),#ede9fe);border-color:var(--purple-s)}
+.rg-ico{font-size:22px}
+.rg-txt h4{font-family:var(--fd);font-size:12px;font-weight:800;color:var(--ink);margin-bottom:2px}
+.rg-txt p{font-size:11px;color:var(--ink3);line-height:1.5}
+.btn-xs{display:inline-flex;align-items:center;gap:4px;font-family:var(--fd);font-weight:700;font-size:11px;padding:5px 10px;border-radius:7px;transition:.22s;margin-top:4px}
+.btn-xs.a{background:var(--amber);color:#fff}.btn-xs.a:hover{background:#d97706}
+.btn-xs.g{background:var(--green);color:#fff}.btn-xs.g:hover{background:#059669}
+.btn-xs.b{background:var(--blue);color:#fff}.btn-xs.b:hover{background:var(--blue-d)}
+.btn-xs.p{background:var(--purple);color:#fff}.btn-xs.p:hover{background:#7c3aed}
+
+/* ══ TOOL SECTION ══ */
+.tool-sec{background:var(--surf);padding:80px 0}
+.tool-wrap{max-width:980px;margin:0 auto}
+.tool-card{background:#fff;border:1.5px solid var(--line);border-radius:28px;overflow:hidden;box-shadow:var(--s4)}
+.tool-hdr{background:linear-gradient(135deg,#064e3b 0%,#065f46 40%,#10b981 100%);padding:32px 40px;position:relative;overflow:hidden}
+.tool-hdr::before{content:'';position:absolute;top:-60px;right:-60px;width:260px;height:260px;border-radius:50%;background:rgba(255,255,255,.07)}
+.tool-hdr::after{content:'';position:absolute;bottom:-50px;left:-40px;width:200px;height:200px;border-radius:50%;background:rgba(255,255,255,.04)}
+.th{position:relative;z-index:1}
+.th h2{font-family:var(--fd);font-size:22px;font-weight:800;color:#fff;margin-bottom:6px}
+.th p{font-size:14px;color:rgba(255,255,255,.82);line-height:1.65}
+.th-badges{display:flex;flex-wrap:wrap;gap:9px;margin-top:14px}
+.thb{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:rgba(255,255,255,.9);background:rgba(255,255,255,.13);padding:5px 12px;border-radius:100px}
+.tool-body{padding:36px 40px}
+
+/* TABS */
+.mode-tabs{display:flex;gap:6px;background:var(--surf);border:1.5px solid var(--line);border-radius:14px;padding:5px;margin-bottom:28px}
+.mtab{flex:1;padding:10px 8px;border-radius:10px;font-family:var(--fd);font-size:13px;font-weight:700;color:var(--ink3);text-align:center;cursor:pointer;transition:.22s;border:none;background:none}
+.mtab.active{background:#fff;color:var(--green);box-shadow:var(--s2);border:1.5px solid var(--green-s)}
+.mtab:hover:not(.active){background:rgba(255,255,255,.6);color:var(--ink)}
+
+/* FORM */
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+.fgrid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:16px}
+.fld{display:flex;flex-direction:column;gap:7px}
+.flbl{font-size:13px;font-weight:700;color:var(--ink2);display:flex;align-items:center;gap:6px}
+.flbl span{font-size:11px;font-weight:500;color:var(--ink4);background:var(--surf);padding:2px 7px;border-radius:5px;border:1px solid var(--line)}
+.flbl .tip{font-size:11px;font-weight:500;color:var(--blue);background:var(--blue-xl);padding:2px 7px;border-radius:5px;border:1px solid var(--blue-s);cursor:help}
+.inp-wrap{position:relative}
+.inp-pfx{position:absolute;left:14px;top:50%;transform:translateY(-50%);font-size:14px;font-weight:700;color:var(--ink3);pointer-events:none;z-index:1}
+.inp-sfx{position:absolute;right:14px;top:50%;transform:translateY(-50%);font-size:13px;font-weight:600;color:var(--ink4);pointer-events:none}
+.finp,.fsel{padding:12px 16px;font-size:14.5px;color:var(--ink);background:#fff;border:1.5px solid var(--line);border-radius:10px;outline:none;transition:.22s;font-family:var(--fb);width:100%}
+.finp:focus,.fsel:focus{border-color:var(--green);box-shadow:0 0 0 3px rgba(16,185,129,.10)}
+.finp.pfx{padding-left:30px}
+.finp.sfx{padding-right:42px}
+.fsel{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2364748b' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:40px}
+
+/* SLIDER */
+.slider-row{display:flex;flex-direction:column;gap:6px}
+.slider-top{display:flex;align-items:center;justify-content:space-between}
+input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:6px;border-radius:3px;background:var(--line);outline:none;cursor:pointer;transition:.2s}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;border-radius:50%;background:var(--green);border:2.5px solid #fff;box-shadow:0 2px 8px rgba(16,185,129,.4);cursor:pointer;transition:.2s}
+input[type=range]:hover::-webkit-slider-thumb{transform:scale(1.15)}
+.slider-val{font-family:var(--fd);font-size:14px;font-weight:800;color:var(--green);background:var(--green-xl);padding:4px 12px;border-radius:7px;border:1.5px solid var(--green-s);min-width:70px;text-align:center}
+
+/* SECTION DIVIDER */
+.sec-div{display:flex;align-items:center;gap:12px;margin:22px 0 18px}
+.sec-div span{font-family:var(--fd);font-size:12px;font-weight:700;color:var(--ink3);text-transform:uppercase;letter-spacing:.1em;white-space:nowrap}
+.sec-div::before,.sec-div::after{content:'';flex:1;height:1px;background:var(--line)}
+
+/* TOGGLE */
+.tog-row{display:flex;gap:8px;flex-wrap:wrap}
+.topt{position:relative}
+.topt input{position:absolute;opacity:0;width:0;height:0}
+.topt label{display:inline-flex;align-items:center;gap:6px;font-size:13.5px;font-weight:600;color:var(--ink2);padding:9px 16px;border-radius:9px;border:1.5px solid var(--line);background:#fff;cursor:pointer;transition:.22s}
+.topt input:checked+label{border-color:var(--green);background:var(--green-xl);color:#065f46}
+.topt label:hover{border-color:var(--green-s);background:var(--green-xl)}
+
+/* CHECKBOX */
+.chk-row{display:flex;align-items:center;gap:10px;padding:12px 16px;background:var(--surf);border:1.5px solid var(--line);border-radius:10px;margin-bottom:12px;cursor:pointer;transition:.2s}
+.chk-row:hover{border-color:var(--green-s);background:var(--green-xl)}
+.chk-row input[type=checkbox]{width:16px;height:16px;accent-color:var(--green);cursor:pointer;flex-shrink:0}
+.chk-row label{font-size:13.5px;font-weight:600;color:var(--ink2);cursor:pointer;flex:1}
+.chk-row .badge{font-size:11px;font-weight:700;color:var(--green);background:var(--green-xl);padding:2px 9px;border-radius:5px;border:1px solid var(--green-s)}
+
+/* HINT */
+.hint-box{display:flex;align-items:flex-start;gap:9px;font-size:13px;color:var(--ink2);background:var(--blue-xl);border:1.5px solid var(--blue-s);border-radius:10px;padding:11px 14px;margin:16px 0;line-height:1.65}
+.hint-box svg{width:16px;height:16px;stroke:var(--blue);fill:none;stroke-width:2;flex-shrink:0;margin-top:2px}
+.hint-box.g{background:var(--green-xl);border-color:var(--green-s)}
+.hint-box.g svg{stroke:var(--green)}
+
+/* CTA BUTTON */
+.chk-btn{width:100%;padding:18px;background:linear-gradient(135deg,#059669 0%,var(--green) 55%,#34d399 100%);color:#fff;font-family:var(--fd);font-weight:800;font-size:17px;border-radius:14px;box-shadow:0 8px 32px rgba(16,185,129,.30);transition:all .25s var(--ease);display:flex;align-items:center;justify-content:center;gap:10px;letter-spacing:.01em}
+.chk-btn:hover{transform:translateY(-2px);box-shadow:0 14px 44px rgba(16,185,129,.42)}
+.chk-btn:active{transform:translateY(0)}
+
+/* ══ RESULT AREA ══ */
+#resultArea{display:none;margin-top:32px;animation:resultIn .45s var(--ease) both}
+
+/* WEALTH BANNER */
+.wealth-banner{border-radius:22px;padding:28px 32px;margin-bottom:24px;background:linear-gradient(135deg,#064e3b 0%,#065f46 50%,#047857 100%);position:relative;overflow:hidden;box-shadow:0 16px 48px rgba(6,78,59,.28)}
+.wealth-banner::before{content:'';position:absolute;top:-80px;right:-80px;width:280px;height:280px;border-radius:50%;background:rgba(255,255,255,.06)}
+.wealth-banner::after{content:'';position:absolute;bottom:-60px;left:-60px;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,.04)}
+.wb-inner{position:relative;z-index:1;display:flex;align-items:center;gap:28px;flex-wrap:wrap}
+.wb-icon{font-size:52px;flex-shrink:0;animation:pulse 2.5s ease-in-out infinite}
+.wb-content{flex:1}
+.wb-title{font-family:var(--fd);font-size:13px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.12em;margin-bottom:4px}
+.wb-value{font-family:var(--fd);font-size:clamp(28px,5vw,46px);font-weight:800;color:#fff;line-height:1;margin-bottom:6px}
+.wb-sub{font-size:13.5px;color:rgba(255,255,255,.72);line-height:1.6}
+.wb-mult{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);border-radius:100px;padding:5px 14px;font-family:var(--fd);font-size:13px;font-weight:700;color:#fff;margin-top:8px}
+
+/* RESULT CARDS */
+.res-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:20px}
+.res-card{border-radius:16px;padding:18px 16px;text-align:center;border:1.5px solid;transition:.22s}
+.res-card:hover{transform:translateY(-3px);box-shadow:var(--s3)}
+.res-card.invested{background:var(--blue-xl);border-color:var(--blue-s)}
+.res-card.returns{background:var(--green-xl);border-color:var(--green-s)}
+.res-card.cagr{background:var(--amber-xl);border-color:var(--amber-s)}
+.res-card.xreturns{background:var(--purple-xl);border-color:var(--purple-s)}
+.rc-ico{font-size:22px;margin-bottom:5px}
+.rc-lbl{font-size:10.5px;font-weight:700;color:var(--ink3);text-transform:uppercase;letter-spacing:.06em;margin-bottom:5px}
+.rc-val{font-family:var(--fd);font-size:20px;font-weight:800;color:var(--ink);line-height:1;margin-bottom:3px}
+.rc-sub{font-size:10.5px;color:var(--ink4);line-height:1.4}
+
+/* ADVANCED METRICS */
+.adv-metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:20px}
+.am-card{background:var(--surf);border:1.5px solid var(--line);border-radius:14px;padding:16px;text-align:center;transition:.22s}
+.am-card:hover{border-color:var(--green-s);background:var(--green-xl)}
+.am-ico{font-size:20px;margin-bottom:5px}
+.am-lbl{font-size:11px;font-weight:700;color:var(--ink3);text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px}
+.am-val{font-family:var(--fd);font-size:16px;font-weight:800;color:var(--ink)}
+.am-sub{font-size:11px;color:var(--ink4);margin-top:2px}
+
+/* BREAKDOWN BAR */
+.breakdown-wrap{background:var(--surf);border:1.5px solid var(--line);border-radius:14px;padding:20px 22px;margin-bottom:18px}
+.breakdown-wrap h3{font-family:var(--fd);font-size:14px;font-weight:700;color:var(--ink);margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.br-bar-track{height:32px;border-radius:100px;overflow:hidden;display:flex;margin-bottom:12px;box-shadow:inset 0 1px 3px rgba(0,0,0,.05)}
+.br-inv{background:linear-gradient(90deg,#2563eb,#1d4ed8);height:100%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff;transition:width 1.2s var(--ease);min-width:36px}
+.br-ret{background:linear-gradient(90deg,#10b981,#059669);height:100%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff;transition:width 1.2s var(--ease)}
+.br-tax{background:linear-gradient(90deg,#ef4444,#dc2626);height:100%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff;transition:width 1.2s var(--ease)}
+.br-legend{display:flex;gap:16px;flex-wrap:wrap}
+.brl{display:flex;align-items:center;gap:7px;font-size:12.5px;color:var(--ink2)}
+.brl-dot{width:11px;height:11px;border-radius:3px;flex-shrink:0}
+.brl-dot.i{background:var(--blue)}
+.brl-dot.r{background:var(--green)}
+.brl-dot.t{background:var(--red)}
+
+/* CHARTS */
+.charts-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:18px}
+.chart-box{background:var(--surf);border:1.5px solid var(--line);border-radius:16px;padding:20px}
+.chart-box h3{font-family:var(--fd);font-size:14px;font-weight:700;color:var(--ink);margin-bottom:16px;display:flex;align-items:center;gap:7px}
+.chart-full{background:var(--surf);border:1.5px solid var(--line);border-radius:16px;padding:20px;margin-bottom:18px}
+.chart-full h3{font-family:var(--fd);font-size:14px;font-weight:700;color:var(--ink);margin-bottom:16px;display:flex;align-items:center;gap:7px}
+canvas{display:block;width:100%}
+
+/* MILESTONES */
+.milestones{background:linear-gradient(135deg,var(--amber-xl),#fef3c7);border:1.5px solid var(--amber-s);border-radius:16px;padding:20px 22px;margin-bottom:18px}
+.milestones h3{font-family:var(--fd);font-size:14px;font-weight:700;color:var(--ink);margin-bottom:14px;display:flex;align-items:center;gap:7px}
+.ms-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.ms-item{background:#fff;border-radius:10px;padding:12px 10px;text-align:center;border:1px solid var(--amber-s);transition:.2s}
+.ms-item:hover{transform:translateY(-2px);box-shadow:var(--s2)}
+.ms-yr{font-family:var(--fd);font-size:11px;font-weight:800;color:var(--amber);margin-bottom:4px;text-transform:uppercase;letter-spacing:.05em}
+.ms-val{font-family:var(--fd);font-size:14px;font-weight:800;color:var(--ink)}
+.ms-sub{font-size:10px;color:var(--ink4);margin-top:2px}
+
+/* YEAR TABLE */
+.ytable-wrap{background:var(--surf);border:1.5px solid var(--line);border-radius:16px;padding:20px;margin-bottom:18px}
+.ytable-wrap h3{font-family:var(--fd);font-size:14px;font-weight:700;color:var(--ink);margin-bottom:14px;display:flex;align-items:center;gap:7px}
+.tbl-scroll{max-height:300px;overflow-y:auto;border-radius:10px;border:1px solid var(--line)}
+.tbl-scroll::-webkit-scrollbar{width:5px}
+.tbl-scroll::-webkit-scrollbar-track{background:var(--surf)}
+.tbl-scroll::-webkit-scrollbar-thumb{background:var(--green-s);border-radius:5px}
+.ytable-wrap table{width:100%;border-collapse:collapse;font-size:13px}
+.ytable-wrap thead th{background:linear-gradient(135deg,#065f46,#059669);color:#fff;padding:11px 14px;text-align:left;font-family:var(--fd);font-size:12px;font-weight:700;letter-spacing:.03em;position:sticky;top:0}
+.ytable-wrap tbody tr{border-bottom:1px solid var(--line);transition:.18s}
+.ytable-wrap tbody tr:hover{background:var(--green-xl)}
+.ytable-wrap tbody td{padding:10px 14px;color:var(--ink2)}
+.ytable-wrap tbody tr:nth-child(even){background:var(--surf)}
+.ytable-wrap tbody tr:nth-child(even):hover{background:var(--green-xl)}
+.yr-badge{display:inline-flex;font-family:var(--fd);font-size:11px;font-weight:800;padding:2px 8px;border-radius:5px;background:var(--green-xl);color:var(--green);border:1px solid var(--green-s)}
+
+/* WARN BOX */
+.warn-box{background:var(--amber-xl);border:1.5px solid var(--amber-s);border-radius:12px;padding:14px 18px;display:flex;gap:10px;font-size:13.5px;color:var(--ink2);line-height:1.7;margin-top:14px}
+
+/* TABLES */
+.tbl-sec{background:#fff;padding:72px 0}
+.tbl-wr{overflow-x:auto;margin-bottom:24px}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+thead th{background:linear-gradient(135deg,#065f46 0%,#059669 100%);color:#fff;padding:14px 16px;text-align:left;font-family:var(--fd);font-size:13px;font-weight:700;letter-spacing:.03em}
+tbody tr{border-bottom:1px solid var(--line);transition:.2s}
+tbody tr:hover{background:var(--green-xl)}
+tbody td{padding:12px 16px;color:var(--ink2);vertical-align:middle}
+.tbadge{display:inline-flex;font-size:11px;font-weight:700;padding:3px 8px;border-radius:100px}
+.tbadge.g{background:var(--green-xl);color:var(--green);border:1px solid var(--green-s)}
+.tbadge.a{background:var(--amber-xl);color:#92400e;border:1px solid var(--amber-s)}
+.tbadge.b{background:var(--blue-xl);color:var(--blue);border:1px solid var(--blue-s)}
+.tbadge.r{background:var(--red-xl);color:var(--red);border:1px solid var(--red-s)}
+
+/* TIPS */
+.tips-sec{background:var(--surf);padding:72px 0}
+.tips-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.tip-card{background:#fff;border:1.5px solid var(--line);border-radius:16px;padding:22px 18px;text-align:center;transition:.28s}
+.tip-card:hover{transform:translateY(-4px);box-shadow:var(--s3);border-color:var(--green-s)}
+.tip-ico{font-size:32px;margin-bottom:11px}
+.tip-title{font-family:var(--fd);font-size:14px;font-weight:800;color:var(--ink);margin-bottom:8px}
+.tip-desc{font-size:13px;color:var(--ink3);line-height:1.7}
+
+/* STORY */
+.story-sec{background:#fff;padding:72px 0}
+.story-card{background:var(--surf);border:1.5px solid var(--line);border-radius:24px;padding:40px;box-shadow:var(--s3);position:relative;overflow:hidden}
+.story-card::before{content:'';position:absolute;top:0;left:0;bottom:0;width:5px;background:linear-gradient(180deg,var(--blue) 0%,var(--green) 100%);border-radius:5px 0 0 5px}
+.sq{font-size:54px;color:var(--green-s);font-family:Georgia,serif;line-height:1;padding-left:8px}
+.sb{font-size:15.5px;color:var(--ink2);line-height:1.9;padding:0 8px}
+.sauth{display:flex;align-items:center;gap:14px;margin-top:22px;padding-top:20px;border-top:1px solid var(--line)}
+.savt{width:48px;height:48px;background:var(--green);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+.sname{font-family:var(--fd);font-size:15px;font-weight:700;color:var(--ink)}
+.srole{font-size:12.5px;color:var(--ink3)}
+.founder-msg{background:linear-gradient(135deg,var(--green-xl),var(--green-s));border:1.5px solid var(--green-s);border-radius:14px;padding:20px 22px;margin-top:20px;display:flex;gap:13px}
+.fm-ico{font-size:26px;flex-shrink:0}
+.fm-txt{font-size:14px;color:var(--ink2);line-height:1.75;font-style:italic}
+.fm-txt strong{color:var(--ink);font-weight:700;font-style:normal}
+
+/* GUIDE */
+.guide-sec{background:var(--surf);padding:72px 0}
+.guide-body h2{font-family:var(--fd);font-size:21px;font-weight:800;color:var(--ink);margin:28px 0 11px;line-height:1.3}
+.guide-body h2:first-child{margin-top:0}
+.guide-body p{font-size:15px;color:var(--ink3);line-height:1.85;margin-bottom:14px}
+.guide-body ul{display:flex;flex-direction:column;gap:8px;margin:12px 0 16px}
+.guide-body li{display:flex;align-items:flex-start;gap:10px;font-size:14.5px;color:var(--ink3);line-height:1.7}
+.guide-body li::before{content:'✓';width:18px;height:18px;background:var(--green);color:#fff;border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;flex-shrink:0;margin-top:3px}
+.guide-body strong{color:var(--ink2);font-weight:700}
+.ibox{background:var(--blue-xl);border:1.5px solid var(--blue-s);border-radius:13px;padding:15px 18px;margin:16px 0;display:flex;gap:11px;font-size:14px;color:var(--ink2);line-height:1.7}
+.ibox svg{width:17px;height:17px;stroke:var(--blue);fill:none;stroke-width:2;flex-shrink:0;margin-top:2px}
+.ibox.g{background:var(--green-xl);border-color:var(--green-s)}
+.ibox.g svg{stroke:var(--green)}
+.ibox.a{background:var(--amber-xl);border-color:var(--amber-s)}
+.ibox.a svg{stroke:var(--amber)}
+.ibox.r{background:var(--red-xl);border-color:var(--red-s)}
+.ibox.r svg{stroke:var(--red)}
+
+/* FAQ */
+.faq-sec{background:#fff;padding:72px 0}
+.fql{max-width:780px;margin:0 auto}
+.fq{background:var(--surf);border:1.5px solid var(--line);border-radius:13px;margin-bottom:10px;overflow:hidden}
+.fq-q{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;cursor:pointer;gap:14px;transition:.2s}
+.fq-q:hover{background:var(--green-xl)}
+.fq-t{font-weight:600;font-size:15px;color:var(--ink);line-height:1.4}
+.fq-i{width:28px;height:28px;border-radius:50%;background:var(--green-xl);color:var(--green);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;transition:transform .28s,background .2s}
+.fq.open .fq-i{transform:rotate(45deg);background:var(--green);color:#fff}
+.fq-a{max-height:0;overflow:hidden;transition:max-height .35s var(--ease)}
+.fq-ai{padding:0 22px 18px;font-size:14.5px;color:var(--ink3);line-height:1.78}
+.fq.open .fq-a{max-height:500px}
+
+/* DISC / CONTACT / CTA / FOOTER */
+.disc{background:var(--amber-xl);border-top:1px solid var(--amber-s);border-bottom:1px solid var(--amber-s);padding:15px 0}
+.disc-in{display:flex;align-items:flex-start;gap:12px;font-size:13.5px;color:var(--ink2);line-height:1.7}
+.contact-sec{background:var(--surf);padding:60px 0}
+.contact-card{max-width:580px;margin:0 auto;background:#fff;border:1.5px solid var(--line);border-radius:20px;padding:32px;text-align:center;box-shadow:var(--s2)}
+.contact-card h3{font-family:var(--fd);font-size:19px;font-weight:800;color:var(--ink);margin-bottom:10px}
+.contact-card p{font-size:15px;color:var(--ink3);line-height:1.75;margin-bottom:20px}
+.btn-bl{display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:#fff;font-family:var(--fd);font-weight:700;font-size:14.5px;padding:12px 26px;border-radius:8px;box-shadow:var(--sb);transition:.22s}
+.btn-bl:hover{background:var(--blue-d);transform:translateY(-1px)}
+.priv-note{font-size:12px;color:var(--ink4);margin-top:14px}
+.cta{background:linear-gradient(140deg,#0f172a 0%,#064e3b 100%);padding:80px 0;text-align:center;position:relative;overflow:hidden}
+.cta::before{content:'';position:absolute;top:-80px;left:50%;transform:translateX(-50%);width:800px;height:380px;background:radial-gradient(ellipse,rgba(16,185,129,.18) 0%,transparent 68%);pointer-events:none}
+.cta-in{position:relative;z-index:1}
+.cta .pill{color:#6ee7b7;background:rgba(255,255,255,.1);margin-bottom:18px}
+.cta .pill::before{background:#6ee7b7}
+.cta h2{font-family:var(--fd);font-size:clamp(24px,4vw,42px);font-weight:800;color:#fff;line-height:1.15;margin-bottom:12px}
+.cta h2 em{color:#fbbf24;font-style:normal}
+.cta p{font-size:16px;color:rgba(255,255,255,.72);max-width:480px;margin:0 auto 32px;line-height:1.78}
+.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn-gold{display:inline-flex;align-items:center;gap:8px;background:var(--amber);color:#fff;font-family:var(--fd);font-weight:800;font-size:15px;padding:14px 30px;border-radius:8px;box-shadow:0 8px 28px rgba(245,158,11,.35);transition:.22s}
+.btn-gold:hover{background:#d97706;transform:translateY(-3px)}
+.btn-ghost{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.09);border:1.5px solid rgba(255,255,255,.22);color:#fff;font-family:var(--fd);font-weight:600;font-size:14px;padding:13px 26px;border-radius:8px;transition:.2s}
+.btn-ghost:hover{background:rgba(255,255,255,.16)}
+footer{background:#0f172a;padding:52px 0 0}
+.ft-inner{max-width:1180px;margin:0 auto;padding:0 24px}
+.ft-top{display:grid;grid-template-columns:1.9fr 1fr 1fr 1fr;gap:44px;margin-bottom:44px}
+.ft-brand .ln{color:#fff}.ft-brand .ls{color:#475569}
+.ft-desc{font-size:13.5px;color:#64748b;line-height:1.78;max-width:265px;margin:13px 0 20px}
+.ft-soc{display:flex;gap:9px}
+.fts{width:34px;height:34px;border-radius:7px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;color:#94a3b8;font-size:13px;transition:.2s}
+.fts:hover{background:var(--green);color:#fff}
+.fc h4{font-family:var(--fd);font-size:12px;font-weight:700;color:#fff;margin-bottom:14px;letter-spacing:.06em;text-transform:uppercase}
+.fc ul{display:flex;flex-direction:column;gap:8px}
+.fc ul a{font-size:13.5px;color:#64748b;transition:.18s}
+.fc ul a:hover{color:#6ee7b7}
+.ft-btm{border-top:1px solid rgba(255,255,255,.07);padding:20px 0;text-align:center}
+.ft-cp{font-size:12.5px;color:#475569}
+.ft-cp b{color:#64748b}
+.ft-tag{font-size:12px;color:#334155;margin-top:4px;font-style:italic}
+.btt{position:fixed;bottom:26px;right:26px;z-index:500;width:43px;height:43px;background:var(--green);color:#fff;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:17px;box-shadow:var(--sg);opacity:0;pointer-events:none;transform:translateY(14px);transition:.28s var(--ease)}
+.btt.on{opacity:1;pointer-events:auto;transform:translateY(0)}
+.btt:hover{transform:translateY(-3px)}
+
+/* RESPONSIVE */
+@media(max-width:1060px){.ft-top{grid-template-columns:1fr 1fr}.tips-grid{grid-template-columns:1fr 1fr}.charts-grid{grid-template-columns:1fr}}
+@media(max-width:860px){
+  nav.dn,.hcta{display:none}.brg{display:flex}
+  .tool-body{padding:24px 20px}.tool-hdr{padding:24px 22px}
+  .fgrid{grid-template-columns:1fr}.fgrid3{grid-template-columns:1fr 1fr}
+  .howto-steps{grid-template-columns:1fr}.res-cards{grid-template-columns:1fr 1fr}
+  .adv-metrics{grid-template-columns:1fr 1fr}.ms-grid{grid-template-columns:1fr 1fr}
+  .rel-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+  .ft-top{grid-template-columns:1fr}.rel-grid{grid-template-columns:1fr}
+  .tips-grid{grid-template-columns:1fr 1fr}.res-cards{grid-template-columns:1fr 1fr}
+  .adv-metrics{grid-template-columns:1fr}.fgrid3{grid-template-columns:1fr}
+  .cta-btns{flex-direction:column;align-items:center}.story-card{padding:26px 20px}
+  .ms-grid{grid-template-columns:1fr 1fr}.mode-tabs{flex-wrap:wrap}
+  .wb-inner{flex-direction:column;gap:14px}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="hdr">
+  <div class="w">
+    <div class="hdi">
+      <a href="/" class="logo">
+        <div class="lb"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+        <div><div class="ln">Raj<span>Daily</span>Tools</div><div class="ls">Smart Tools for Daily Life</div></div>
+      </a>
+      <nav class="dn">
+        <a href="/">Home</a><a href="/categories">Categories</a>
+        <a href="/#popular">Popular</a><a href="/about">About</a><a href="/contact">Contact</a>
+      </nav>
+      <a href="/categories" class="hcta">All Tools →</a>
+      <button class="brg" id="brg"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="dov" id="dov"></div>
+<div class="drw" id="drw">
+  <div class="dh">
+    <div class="logo">
+      <div class="lb" style="width:30px;height:30px;border-radius:7px"><svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#fff"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+      <div class="ln" style="font-size:16px">Raj<span>Daily</span>Tools</div>
+    </div>
+    <button class="dx" id="dx">✕</button>
+  </div>
+  <nav class="mn">
+    <a href="/" onclick="cD()">🏠 Home</a>
+    <a href="/categories" onclick="cD()">🗂️ Categories</a>
+    <a href="/#popular" onclick="cD()">⭐ Popular</a>
+    <a href="/about" onclick="cD()">👤 About</a>
+    <a href="/contact" onclick="cD()">📬 Contact</a>
+  </nav>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+  <div class="w">
+    <div class="bc">
+      <a href="/">Home</a><span style="color:var(--ink4)">›</span>
+      <a href="/categories">Tools</a><span style="color:var(--ink4)">›</span>
+      <span>Advanced SIP Calculator</span>
+    </div>
+    <div class="hero-inner">
+      <div class="pill">India's Most Advanced SIP Tool 🇮🇳</div>
+      <h1>Advanced SIP Calculator – <span>Returns, Step-Up & Goal Planner</span></h1>
+      <p class="hero-sub">India ka sabse advanced SIP calculator. <strong>Step-Up SIP, inflation-adjusted returns, LTCG tax, goal-based planning, year-wise breakdown table</strong>, and interactive growth chart — sab ek jagah. 🇮🇳 100% Free.</p>
+      <div class="hero-chips">
+        <span class="chip">📈 Step-Up SIP</span>
+        <span class="chip">🎯 Goal Planner</span>
+        <span class="chip">💰 LTCG Tax Calc</span>
+        <span class="chip">📊 Year-wise Table</span>
+        <span class="chip">🔄 Inflation Adjusted</span>
+        <span class="chip">🆓 100% Free</span>
+        <span class="chip">🇮🇳 Made for India</span>
+      </div>
+      <div class="hero-meta">
+        <div class="upd">📅 Updated 2026</div>
+        <span class="mi">✅ SIP + Lump Sum + Step-Up</span>
+        <span class="mi">🔒 No data stored</span>
+      </div>
+
+      <!-- HOW TO USE -->
+      <div class="howto">
+        <div class="howto-ttl">💡 How to Use This Calculator</div>
+        <div class="howto-steps">
+          <div class="hs"><span class="sn">1</span>Choose mode: Regular SIP, Step-Up SIP, or Goal Planner</div>
+          <div class="hs"><span class="sn">2</span>Enter monthly SIP & lump sum amount (₹)</div>
+          <div class="hs"><span class="sn">3</span>Set expected return rate & duration</div>
+          <div class="hs"><span class="sn">4</span>Enable Step-Up % if you increase SIP yearly</div>
+          <div class="hs"><span class="sn">5</span>Toggle inflation & LTCG tax adjustments</div>
+          <div class="hs"><span class="sn">6</span>Click Calculate — see full wealth projection</div>
+        </div>
+      </div>
+
+      <!-- RELATED TOOLS -->
+      <div class="rel-grid">
+        <div class="rg-box c1">
+          <div class="rg-ico">📈</div>
+          <div class="rg-txt"><h4>ETF Return Calculator</h4><p>CAGR & compound growth on ETFs</p><a href="/etf-return-calculator" class="btn-xs a">Calculate →</a></div>
+        </div>
+        <div class="rg-box c2">
+          <div class="rg-ico">💳</div>
+          <div class="rg-txt"><h4>EMI Calculator</h4><p>Monthly loan EMI calculator</p><a href="/emi-calculator" class="btn-xs g">Calculate →</a></div>
+        </div>
+        <div class="rg-box c3">
+          <div class="rg-ico">📊</div>
+          <div class="rg-txt"><h4>Compound Interest</h4><p>Visualise compounding power</p><a href="/compound-interest-calculator" class="btn-xs b">Calculate →</a></div>
+        </div>
+        <div class="rg-box c4">
+          <div class="rg-ico">💸</div>
+          <div class="rg-txt"><h4>Loan Calculator</h4><p>Home, car & personal loan planner</p><a href="/loan-calculator" class="btn-xs p">Calculate →</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOOL SECTION -->
+<section class="tool-sec" id="tool">
+  <div class="w">
+    <div class="tool-wrap">
+      <div class="tool-card rev">
+        <div class="tool-hdr">
+          <div class="th">
+            <h2>🚀 Advanced SIP Calculator — Step-Up, Goal Planner & LTCG Tax</h2>
+            <p>India's most feature-rich SIP calculator. Calculate regular SIP, step-up (increasing) SIP, or reverse-plan your goal corpus. Includes CAGR, inflation adjustment, LTCG tax, year-wise growth table, and dynamic multi-series chart.</p>
+            <div class="th-badges">
+              <span class="thb">📈 Step-Up SIP</span>
+              <span class="thb">🎯 Goal Planner</span>
+              <span class="thb">💰 LTCG Tax</span>
+              <span class="thb">📊 Year-wise Table</span>
+              <span class="thb">🔒 No Data Stored</span>
+              <span class="thb">🇮🇳 Made for India</span>
+            </div>
+          </div>
+        </div>
+        <div class="tool-body">
+
+          <!-- MODE TABS -->
+          <div class="mode-tabs" id="modeTabs">
+            <button class="mtab active" onclick="setMode('regular',this)">📅 Regular SIP</button>
+            <button class="mtab" onclick="setMode('stepup',this)">📈 Step-Up SIP</button>
+            <button class="mtab" onclick="setMode('lumpsum',this)">💵 Lump Sum + SIP</button>
+            <button class="mtab" onclick="setMode('goal',this)">🎯 Goal Planner</button>
+          </div>
+
+          <!-- CORE INPUTS -->
+          <div class="fgrid" id="coreInputs">
+            <div class="fld" id="sipField">
+              <label class="flbl" for="sipAmt">Monthly SIP Amount <span>Required</span></label>
+              <div class="inp-wrap">
+                <span class="inp-pfx">₹</span>
+                <input class="finp pfx" type="number" id="sipAmt" placeholder="e.g. 5000" min="100" step="100">
+              </div>
+            </div>
+            <div class="fld" id="goalField" style="display:none">
+              <label class="flbl" for="goalAmt">Target Goal Amount <span>₹</span></label>
+              <div class="inp-wrap">
+                <span class="inp-pfx">₹</span>
+                <input class="finp pfx" type="number" id="goalAmt" placeholder="e.g. 10000000" min="10000">
+              </div>
+            </div>
+            <div class="fld">
+              <label class="flbl" for="returnRate">Expected Annual Return <span>% p.a.</span></label>
+              <div class="slider-row">
+                <div class="slider-top">
+                  <span style="font-size:12px;color:var(--ink4)">1%</span>
+                  <div class="slider-val" id="returnDisplay">12%</div>
+                  <span style="font-size:12px;color:var(--ink4)">30%</span>
+                </div>
+                <input type="range" id="returnRate" min="1" max="30" step="0.5" value="12" oninput="document.getElementById('returnDisplay').textContent=this.value+'%'">
+              </div>
+            </div>
+          </div>
+
+          <div class="fgrid">
+            <div class="fld">
+              <label class="flbl" for="duration">Investment Duration <span>Years</span></label>
+              <div class="slider-row">
+                <div class="slider-top">
+                  <span style="font-size:12px;color:var(--ink4)">1 yr</span>
+                  <div class="slider-val" id="durDisplay">10 yr</div>
+                  <span style="font-size:12px;color:var(--ink4)">40 yr</span>
+                </div>
+                <input type="range" id="duration" min="1" max="40" step="1" value="10" oninput="document.getElementById('durDisplay').textContent=this.value+' yr'">
+              </div>
+            </div>
+            <div class="fld" id="lumpsumField" style="display:none">
+              <label class="flbl" for="lumpAmt">Lump Sum (One-Time) <span>Optional</span></label>
+              <div class="inp-wrap">
+                <span class="inp-pfx">₹</span>
+                <input class="finp pfx" type="number" id="lumpAmt" placeholder="e.g. 100000" min="0">
+              </div>
+            </div>
+            <div class="fld" id="stepupField" style="display:none">
+              <label class="flbl" for="stepupPct">Annual Step-Up Rate <span title="% increase in SIP every year" class="tip">What is this?</span></label>
+              <div class="slider-row">
+                <div class="slider-top">
+                  <span style="font-size:12px;color:var(--ink4)">0%</span>
+                  <div class="slider-val" id="stepupDisplay" style="color:var(--amber);border-color:var(--amber-s);background:var(--amber-xl)">10%</div>
+                  <span style="font-size:12px;color:var(--ink4)">50%</span>
+                </div>
+                <input type="range" id="stepupPct" min="0" max="50" step="1" value="10" oninput="document.getElementById('stepupDisplay').textContent=this.value+'%'">
+              </div>
+            </div>
+          </div>
+
+          <div class="sec-div"><span>⚙️ Advanced Options</span></div>
+
+          <!-- ADVANCED OPTIONS -->
+          <div class="fgrid" style="margin-bottom:12px">
+            <div class="chk-row">
+              <input type="checkbox" id="doInflation">
+              <label for="doInflation">📉 Inflation-adjusted real returns <span class="badge">6% inflation</span></label>
+            </div>
+            <div class="chk-row">
+              <input type="checkbox" id="doLTCG">
+              <label for="doLTCG">💰 Calculate LTCG Tax on returns <span class="badge">12.5% LTCG</span></label>
+            </div>
+          </div>
+
+          <div class="hint-box g">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            <div><strong>Step-Up SIP:</strong> If you increase your SIP by 10% every year, ₹5,000/month SIP becomes ₹5,500 in year 2, ₹6,050 in year 3, and so on. This dramatically increases your final corpus — often by 50–80% more than regular SIP. Try it! | <strong>LTCG Tax (2024):</strong> 12.5% on equity mutual fund gains above ₹1.25 lakh per year.</div>
+          </div>
+
+          <button class="chk-btn" onclick="calculateSIP()">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            Calculate My SIP Returns
+          </button>
+
+          <!-- ══ RESULT AREA ══ -->
+          <div id="resultArea">
+
+            <!-- WEALTH BANNER -->
+            <div class="wealth-banner">
+              <div class="wb-inner">
+                <div class="wb-icon">🏆</div>
+                <div class="wb-content">
+                  <div class="wb-title">Your Total Corpus at End of Investment</div>
+                  <div class="wb-value" id="wbValue">₹ —</div>
+                  <div class="wb-sub" id="wbSub">Calculating your wealth…</div>
+                  <div class="wb-mult" id="wbMult">📈 — × growth on your investment</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- RESULT CARDS -->
+            <div class="res-cards">
+              <div class="res-card invested">
+                <div class="rc-ico">💰</div>
+                <div class="rc-lbl">Total Invested</div>
+                <div class="rc-val" id="rcInv">—</div>
+                <div class="rc-sub">Your capital outflow</div>
+              </div>
+              <div class="res-card returns">
+                <div class="rc-ico">📈</div>
+                <div class="rc-lbl">Wealth Gained</div>
+                <div class="rc-val" id="rcGain">—</div>
+                <div class="rc-sub">Returns earned</div>
+              </div>
+              <div class="res-card cagr">
+                <div class="rc-ico">📊</div>
+                <div class="rc-lbl">CAGR</div>
+                <div class="rc-val" id="rcCAGR">—</div>
+                <div class="rc-sub">Annual growth rate</div>
+              </div>
+              <div class="res-card xreturns">
+                <div class="rc-ico">🚀</div>
+                <div class="rc-lbl">Wealth Multiple</div>
+                <div class="rc-val" id="rcMult">—</div>
+                <div class="rc-sub">Times your investment</div>
+              </div>
+            </div>
+
+            <!-- ADVANCED METRICS -->
+            <div class="adv-metrics" id="advMetrics">
+              <div class="am-card">
+                <div class="am-ico">📉</div>
+                <div class="am-lbl">Inflation-Adj. Value</div>
+                <div class="am-val" id="amInfl">—</div>
+                <div class="am-sub">Real purchasing power today</div>
+              </div>
+              <div class="am-card">
+                <div class="am-ico">💰</div>
+                <div class="am-lbl">Post-LTCG Value</div>
+                <div class="am-val" id="amLTCG">—</div>
+                <div class="am-sub">After 12.5% LTCG tax</div>
+              </div>
+              <div class="am-card">
+                <div class="am-ico">⏳</div>
+                <div class="am-lbl">Doubling Time</div>
+                <div class="am-val" id="amDouble">—</div>
+                <div class="am-sub">Rule of 72 estimate</div>
+              </div>
+            </div>
+
+            <!-- BREAKDOWN BAR -->
+            <div class="breakdown-wrap">
+              <h3>📊 Invested vs Returns Breakdown</h3>
+              <div class="br-bar-track">
+                <div class="br-inv" id="brInv" style="width:50%">50%</div>
+                <div class="br-ret" id="brRet" style="width:50%">50%</div>
+                <div class="br-tax" id="brTax" style="width:0%"></div>
+              </div>
+              <div class="br-legend">
+                <div class="brl"><div class="brl-dot i"></div><strong id="lgInv">Invested: —</strong></div>
+                <div class="brl"><div class="brl-dot r"></div><strong id="lgRet">Returns: —</strong></div>
+                <div class="brl" id="lgTaxRow" style="display:none"><div class="brl-dot t"></div><strong id="lgTax">LTCG Tax: —</strong></div>
+              </div>
+            </div>
+
+            <!-- CHARTS GRID -->
+            <div class="charts-grid">
+              <div class="chart-box">
+                <h3>📈 Growth Curve</h3>
+                <canvas id="growthChart" height="200"></canvas>
+              </div>
+              <div class="chart-box">
+                <h3>🥧 Corpus Breakdown</h3>
+                <canvas id="pieChart" height="200"></canvas>
+              </div>
+            </div>
+
+            <!-- GOAL RESULT (hidden by default) -->
+            <div id="goalResult" style="display:none;background:linear-gradient(135deg,var(--green-xl),#d1fae5);border:1.5px solid var(--green-s);border-radius:16px;padding:22px 24px;margin-bottom:18px">
+              <h3 style="font-family:var(--fd);font-size:15px;font-weight:800;color:var(--ink);margin-bottom:14px">🎯 Goal Planning Result</h3>
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px" id="goalResultGrid"></div>
+            </div>
+
+            <!-- MILESTONES -->
+            <div class="milestones">
+              <h3>🏆 Wealth Milestones</h3>
+              <div class="ms-grid" id="msGrid"></div>
+            </div>
+
+            <!-- YEAR-WISE TABLE -->
+            <div class="ytable-wrap">
+              <h3>📋 Year-wise Investment Breakdown</h3>
+              <div class="tbl-scroll">
+                <table id="yearTable">
+                  <thead>
+                    <tr>
+                      <th>Year</th>
+                      <th>SIP Amt/mo</th>
+                      <th>Invested (Yr)</th>
+                      <th>Total Invested</th>
+                      <th>Portfolio Value</th>
+                      <th>Returns</th>
+                      <th>Growth</th>
+                    </tr>
+                  </thead>
+                  <tbody id="yearTableBody"></tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="warn-box">
+              <span style="font-size:20px;flex-shrink:0">⚠️</span>
+              <div><strong>Important Notice:</strong> Returns shown are estimates based on inputs. Actual SIP returns depend on market conditions and NAV fluctuations. Mutual fund investments are subject to market risks. LTCG tax calculation is based on current Finance Act 2024 rules. <strong>Please consult a SEBI-registered financial advisor before investing. We do not store any data.</strong></div>
+            </div>
+
+          </div><!-- end resultArea -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TABLE SECTION -->
+<section class="tbl-sec">
+  <div class="w">
+    <div style="max-width:960px;margin:0 auto">
+      <div class="rev" style="text-align:center;margin-bottom:36px">
+        <div class="pill" style="margin-bottom:14px">Tool Features</div>
+        <h2 style="font-family:var(--fd);font-size:clamp(22px,3.5vw,36px);font-weight:800;color:var(--ink);margin-bottom:10px">SIP Calculator <span style="color:var(--green)">Features — Advanced Comparison</span></h2>
+        <p style="font-size:15px;color:var(--ink3);max-width:520px;margin:0 auto;line-height:1.75">RajDailyTools SIP Calculator vs basic calculators — what makes this different.</p>
+      </div>
+      <div class="tbl-wr rev">
+        <table>
+          <thead><tr><th>Feature</th><th>RajDailyTools SIP</th><th>Basic Calculators</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Regular SIP</strong></td><td><span class="tbadge g">✅ Yes</span></td><td><span class="tbadge g">✅ Yes</span></td></tr>
+            <tr><td><strong>Step-Up SIP (Annual increase)</strong></td><td><span class="tbadge g">✅ Yes</span></td><td><span class="tbadge r">❌ No</span></td></tr>
+            <tr><td><strong>Lump Sum + SIP Combined</strong></td><td><span class="tbadge g">✅ Yes</span></td><td><span class="tbadge r">❌ No</span></td></tr>
+            <tr><td><strong>Goal-Based Planning (Reverse)</strong></td><td><span class="tbadge g">✅ Yes</span></td><td><span class="tbadge r">❌ No</span></td></tr>
+            <tr><td><strong>Inflation-Adjusted Real Returns</strong></td><td><span class="tbadge g">✅ Yes (6%)</span></td><td><span class="tbadge r">❌ No</span></td></tr>
+            <tr><td><strong>LTCG Tax Calculation</strong></td><td><span class="tbadge g">✅ Yes (12.5%)</span></td><td><span class="tbadge r">❌ No</span></td></tr>
+            <tr><td><strong>Year-wise Breakdown Table</strong></td><td><span class="tbadge g">✅ Yes</span></td><td><span class="tbadge r">❌ No</span></td></tr>
+            <tr><td><strong>Interactive Growth Chart</strong></td><td><span class="tbadge g">✅ Multi-series</span></td><td><span class="tbadge a">⚠️ Basic</span></td></tr>
+            <tr><td><strong>Wealth Milestones</strong></td><td><span class="tbadge g">✅ Yes</span></td><td><span class="tbadge r">❌ No</span></td></tr>
+            <tr><td><strong>Rule of 72 (Doubling Time)</strong></td><td><span class="tbadge g">✅ Yes</span></td><td><span class="tbadge r">❌ No</span></td></tr>
+            <tr><td><strong>Corpus Pie Chart</strong></td><td><span class="tbadge g">✅ Yes</span></td><td><span class="tbadge r">❌ No</span></td></tr>
+            <tr><td><strong>Data Privacy</strong></td><td><span class="tbadge g">✅ Zero Data Stored</span></td><td><span class="tbadge a">⚠️ Unknown</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TIPS -->
+<section class="tips-sec">
+  <div class="w">
+    <div style="text-align:center;margin-bottom:36px" class="rev">
+      <div class="pill" style="margin-bottom:14px">Expert Tips</div>
+      <h2 style="font-family:var(--fd);font-size:clamp(22px,3.5vw,36px);font-weight:800;color:var(--ink);margin-bottom:10px">SIP Wealth-Building <span style="color:var(--green)">Strategies</span></h2>
+    </div>
+    <div class="tips-grid rev">
+      <div class="tip-card">
+        <div class="tip-ico">⏳</div>
+        <div class="tip-title">Power of Early Start</div>
+        <div class="tip-desc">Starting SIP at age 22 vs 32 makes a 3–5x difference in final corpus due to compounding. ₹5,000/month from 22 to 60 at 12% = ₹5.8 Cr. Same from 32 = ₹1.5 Cr. Start TODAY.</div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-ico">📈</div>
+        <div class="tip-title">Step-Up Every Year</div>
+        <div class="tip-desc">Increase your SIP by 10–15% each year with salary hikes. A ₹5,000 SIP with 10% step-up over 20 years gives 2× more corpus than a flat ₹5,000 SIP. Use the Step-Up tab above to verify.</div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-ico">🔄</div>
+        <div class="tip-title">Never Stop During Dips</div>
+        <div class="tip-desc">Market falls are SIP's best friend — you buy more units at lower NAV. Pausing SIP during a crash is the #1 mistake investors make. Stay invested, stay systematic.</div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-ico">🎯</div>
+        <div class="tip-title">Goal-Based SIP</div>
+        <div class="tip-desc">Don't invest randomly — have a goal (child's education = ₹50L, retirement = ₹5Cr). Use the Goal Planner tab to calculate exactly how much SIP you need for each goal.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STORY -->
+<section class="story-sec">
+  <div class="wa">
+    <div class="rev" style="text-align:center;margin-bottom:36px">
+      <div class="pill" style="margin-bottom:14px">Why I Built This</div>
+      <h2 style="font-family:var(--fd);font-size:clamp(22px,3.4vw,34px);font-weight:800;color:var(--ink);margin-bottom:8px">Why I Built India's Most <span style="color:var(--green)">Advanced SIP Calculator</span></h2>
+    </div>
+    <div class="story-card rev">
+      <div class="sq">"</div>
+      <div class="sb">
+        Mere ek dost ne mujhse poocha — <em>"Yaar, agar main ₹5,000 ka SIP shuru karoon aur har saal 10% badhata rahe, toh 20 saal mein kitna banega?"</em> Maine Google kiya — <strong>koi bhi calculator step-up SIP calculate nahi kar raha tha</strong>. Sab sirf basic monthly SIP calculate karte the.<br><br>
+        Phir usne poocha — <em>"Inflation ke baad real value kya hogi? LTCG tax ke baad kitna milega?"</em> Koi tool ye sab ek jagah nahi deta tha. Log 3–4 alag tools use karte the, phir manually add karte the — aur tab bhi galat niklata tha.<br><br>
+        <strong>Isliye maine ye banaya — India ka pehla aur sabse advanced SIP calculator jo Step-Up SIP, Goal Planner, LTCG Tax, Inflation Adjustment, Year-wise Table, aur visual chart — sab ek jagah deta hai.</strong> Isse ek aam Indian investor bhi bank jitna accurate aur detailed analysis kar sakta hai — without paying a financial advisor. Knowledge sabka haq hai. 🇮🇳🙏
+      </div>
+      <div class="sauth">
+        <div class="savt">👨‍💻</div>
+        <div>
+          <div class="sname">Raj Bhai</div>
+          <div class="srole">Founder, RajDailyTools · BSc Physics · COPA ITI Certified</div>
+        </div>
+      </div>
+    </div>
+    <div class="founder-msg rev" style="margin-top:18px">
+      <div class="fm-ico">💡</div>
+      <div class="fm-txt">
+        <strong>Founder's Message:</strong> "RajDailyTools ka mission hai — har Indian investor ke paas professional-level financial tools ho, bilkul free mein. Step-Up SIP ek cheez hai jo zyaadatar log jaante hi nahi — agar yeh tool aapko sirf yeh ek concept sikha de, toh aapki zindagi badal sakti hai."
+        <br><span style="font-size:13px;color:var(--ink3);font-style:normal;margin-top:6px;display:block">— Raj Bhai, Founder, RajDailyTools</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GUIDE -->
+<section class="guide-sec">
+  <div class="wa">
+    <div class="rev">
+      <div class="pill" style="margin-bottom:14px">Complete Guide</div>
+      <h2 style="font-family:var(--fd);font-size:clamp(22px,3.5vw,36px);font-weight:800;color:var(--ink);margin-bottom:8px">SIP Complete Guide <span style="color:var(--green)">2026 — Beginner to Advanced</span></h2>
+      <p style="font-size:15px;color:var(--ink3);margin-bottom:32px">SIP kya hai, Step-Up kya hota hai, LTCG tax, real-life examples, aur long-term wealth strategy — sab yahan.</p>
+    </div>
+    <div class="guide-body rev">
+
+      <h2>What is SIP (Systematic Investment Plan)?</h2>
+      <p>SIP stands for <strong>Systematic Investment Plan</strong>. It is a method of investing a fixed amount in a mutual fund at regular intervals — typically monthly. When you set up a SIP, a fixed amount is automatically debited from your bank account every month and invested into your chosen mutual fund scheme at the current NAV (Net Asset Value).</p>
+      <p>SIP is the most popular and disciplined way to invest in mutual funds. It removes the need to time the market and works on the principle of <strong>rupee cost averaging</strong> — buying more units when markets are low and fewer when markets are high, automatically averaging out your purchase cost over time.</p>
+
+      <h2>What is Step-Up SIP?</h2>
+      <p>A <strong>Step-Up SIP</strong> (also called Top-Up SIP) allows you to automatically increase your SIP amount by a fixed percentage every year. For example, if you start with ₹5,000/month and choose a 10% annual step-up, your SIP becomes:</p>
+      <ul>
+        <li>Year 1: ₹5,000/month</li>
+        <li>Year 2: ₹5,500/month</li>
+        <li>Year 3: ₹6,050/month</li>
+        <li>Year 5: ₹7,321/month</li>
+        <li>Year 10: ₹11,789/month</li>
+        <li>Year 20: ₹30,577/month</li>
+      </ul>
+      <div class="ibox g">
+        <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        <div><strong>Step-Up SIP Power Example:</strong> ₹5,000/month flat SIP for 20 years at 12% = <strong>₹49.96 lakh</strong>. Same ₹5,000 with 10% annual step-up for 20 years at 12% = <strong>₹1.27 Cr</strong> — that's <strong>2.5× more wealth</strong> by just increasing your SIP with your salary!</div>
+      </div>
+
+      <h2>How SIP Returns are Calculated</h2>
+      <p>SIP returns use the <strong>Future Value of Annuity formula</strong>: FV = P × [((1+r)^n – 1) / r] × (1+r), where P = monthly SIP amount, r = monthly return rate (annual rate ÷ 12), n = total months. For Step-Up SIP, each year's SIP amount is calculated separately and summed across years accounting for compound growth on each instalment.</p>
+
+      <h2>LTCG Tax on Mutual Fund SIP (2024–25)</h2>
+      <p>As per the Finance Act 2024, <strong>Long Term Capital Gains (LTCG) on equity mutual funds</strong> are taxed at <strong>12.5%</strong> (changed from 10% in Budget 2024) on gains exceeding ₹1.25 lakh per year (exemption limit unchanged at ₹1 lakh for FY25). Holding period for LTCG qualification is more than 12 months. Short-term gains (STCG) are taxed at 20%.</p>
+      <ul>
+        <li>LTCG rate: <strong>12.5%</strong> on equity mutual fund gains above ₹1.25 lakh/year</li>
+        <li>STCG rate: 20% for equity funds held less than 12 months</li>
+        <li>Debt mutual funds: Taxed as per income tax slab (no LTCG benefit)</li>
+        <li>ELSS funds: 3-year lock-in, LTCG applies after lock-in period</li>
+      </ul>
+
+      <h2>Real-Life SIP Examples — ₹1,000/month</h2>
+      <p>See the incredible power of even a small ₹1,000 monthly SIP across different time horizons at 12% CAGR:</p>
+      <ul>
+        <li><strong>5 years:</strong> Invested ₹60,000 → Corpus ₹81,670 → Gain: ₹21,670 (36%)</li>
+        <li><strong>10 years:</strong> Invested ₹1,20,000 → Corpus ₹2,32,339 → Gain: ₹1,12,339 (94%)</li>
+        <li><strong>15 years:</strong> Invested ₹1,80,000 → Corpus ₹5,02,575 → Gain: ₹3,22,575 (179%)</li>
+        <li><strong>20 years:</strong> Invested ₹2,40,000 → Corpus ₹9,99,148 → Gain: ₹7,59,148 (316%)</li>
+        <li><strong>30 years:</strong> Invested ₹3,60,000 → Corpus ₹35,29,464 → Gain: ₹31,69,464 (880%)</li>
+      </ul>
+      <p>₹1,000/month for 30 years at 12% = nearly <strong>₹35 lakh</strong>. That's the pure power of compounding and patience.</p>
+
+      <div class="ibox a">
+        <svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        <div><strong>Inflation Warning:</strong> ₹35 lakh in 30 years at 6% inflation has a real purchasing power of only ₹6.1 lakh in today's money. This is why long-term investors should target 14–15% returns to significantly beat inflation, or increase SIP amounts aggressively over time.</div>
+      </div>
+
+      <h2>Common SIP Mistakes to Avoid</h2>
+      <ul>
+        <li>Stopping SIP during market downturns — this locks in your losses and you miss the recovery upswing</li>
+        <li>Investing in too many funds — 3–5 well-chosen funds are better than 20 random ones</li>
+        <li>Choosing funds based only on last 1-year returns — always check 5 and 10-year rolling returns</li>
+        <li>Not reviewing portfolio once a year — rebalance if any asset class drifts more than 10% from target</li>
+        <li>Redeeming SIP for short-term needs — keep a separate emergency fund so SIP is never disturbed</li>
+        <li>Not accounting for LTCG tax in goal planning — your post-tax corpus is what you actually receive</li>
+      </ul>
+
+      <h2>Long-Term Wealth Strategy — The 3-Fund Approach</h2>
+      <p>For most Indian retail investors, a simple <strong>3-fund portfolio</strong> with monthly SIP works best: <strong>Nifty 50 index fund (50%), Nifty Next 50 / Midcap 150 index fund (30%), and a Debt/Short-Term fund (20%)</strong>. Low expense ratio, diversified, and rebalanced annually. With a 10% step-up SIP on this portfolio, building ₹1 Cr+ corpus in 12–15 years on a ₹10,000/month SIP is very achievable.</p>
+    </div>
+  </div>
+</section>
+
+<!-- DISC -->
+<div class="disc">
+  <div class="wa">
+    <div class="disc-in">
+      <span style="font-size:20px;flex-shrink:0">⚠️</span>
+      <div><strong>Disclaimer:</strong> This tool is for educational purposes only. Mutual fund investments are subject to market risks. Returns shown are projections based on inputs — actual returns may vary. LTCG tax rates are as per Finance Act 2024 and may change. Please consult a SEBI-registered financial advisor before investing. <strong>We do not collect or store any personal data.</strong></div>
+    </div>
+  </div>
+</div>
+
+<!-- FAQ -->
+<section class="faq-sec">
+  <div class="w">
+    <div style="text-align:center;margin-bottom:40px" class="rev">
+      <div class="pill" style="margin-bottom:14px">FAQs</div>
+      <h2 style="font-family:var(--fd);font-size:clamp(22px,3.5vw,36px);font-weight:800;color:var(--ink);margin-bottom:10px">Frequently Asked <span style="color:var(--green)">Questions</span></h2>
+      <p style="font-size:15px;color:var(--ink3);max-width:480px;margin:0 auto">SIP investment ke baare mein sabse common sawaal.</p>
+    </div>
+    <div class="fql" id="faqList">
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">What is SIP and how does it work?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">SIP (Systematic Investment Plan) is a method where a fixed amount is automatically invested in a mutual fund every month. The fund manager allocates units based on the current NAV. Over time, you accumulate units and benefit from <strong>rupee cost averaging</strong> (buying more units when NAV is low, fewer when high) and <strong>compounding</strong> (earning returns on returns). It's the most disciplined and proven way to build wealth in India.</div></div></div>
+
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">What is Step-Up SIP and why is it better?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">Step-Up SIP means increasing your monthly SIP amount by a fixed % every year (typically 10–15%). As your income grows, your investment grows too. <strong>It dramatically increases your final corpus</strong> — often 2–3× more than a flat SIP — because you're contributing more during middle and later years when compounding is at its strongest. Most AMCs offer automatic step-up SIP options. This calculator lets you model and visualize this exact scenario.</div></div></div>
+
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">How accurate is this SIP calculator?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">This calculator uses <strong>industry-standard formulas</strong>: Future Value of Annuity for regular SIP, compounded future value with annual SIP escalation for Step-Up SIP, and reverse FV calculation for Goal Planner. Results are mathematically precise given the inputs. However, <strong>actual mutual fund returns depend on market performance</strong> and will differ from projections. Use conservative return estimates (10–12% for equity) for realistic planning.</div></div></div>
+
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">What return rate should I use for SIP planning?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai"><strong>Conservative estimate: 10–11%</strong> (suitable for 5–7 year planning). <strong>Moderate: 12%</strong> (long-term Nifty 50 historical CAGR). <strong>Optimistic: 14–15%</strong> (midcap/smallcap historical CAGR, but with higher volatility). <strong>Never use above 18%</strong> for serious planning — it leads to grossly unrealistic expectations. For debt fund SIP, use 6–7%. Remember: even Nifty 50 has had periods with near-zero returns over 5 years during bear markets.</div></div></div>
+
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">What is LTCG tax and how does it affect my SIP?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">LTCG (Long Term Capital Gains) tax of <strong>12.5% applies to equity mutual fund gains above ₹1.25 lakh per year</strong> (as per Finance Act 2024). For a large corpus built through SIP, this tax can significantly reduce your take-home returns. For example, if your SIP earns ₹20 lakh in gains, approximately ₹2.34 lakh may go toward LTCG tax. This calculator estimates your post-LTCG value — toggle it on in Advanced Options. Note: Each SIP instalment starts its own 12-month holding period clock.</div></div></div>
+
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">Can I use the Goal Planner to calculate required SIP?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">Yes! The <strong>Goal Planner mode</strong> works in reverse — you enter your target corpus amount (e.g., ₹1 Cr for retirement), expected return rate, and time available. The calculator tells you exactly how much monthly SIP you need to reach that goal. This is called <strong>reverse SIP calculation</strong> and is extremely useful for goal-based financial planning (child's education, marriage, home down payment, retirement corpus).</div></div></div>
+
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">Is SIP safe? What if markets crash?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">SIP in equity mutual funds is <strong>market-linked and not risk-free</strong> — your portfolio value will fall during market crashes. However, SIP's rupee cost averaging benefit actually works best during crashes — you accumulate more units at lower prices. Historically, every major market crash (2008, 2020, etc.) recovered within 2–4 years for Nifty 50. Investors who continued SIP through these crashes saw exceptional returns. <strong>The key is to stay invested for 7+ years and never stop SIP during downturns.</strong></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-sec">
+  <div class="w">
+    <div class="contact-card rev">
+      <h3>💬 Suggestions or Improvements?</h3>
+      <p>For any suggestions, feature requests, or improvements to this SIP calculator, contact us anytime. We regularly update our tools.</p>
+      <a href="/contact" class="btn-bl">📩 Contact Us</a>
+      <p class="priv-note">🔒 Privacy: No data is collected or stored. All calculations happen locally in your browser. Zero data sent to any server.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="w">
+    <div class="cta-in">
+      <div class="pill">More Investment Tools</div>
+      <h2>Also Try <em>ETF Return Calculator</em></h2>
+      <p>Done planning your SIP? Calculate ETF investment returns with CAGR, compounding growth, and year-by-year projections on our advanced ETF calculator.</p>
+      <div class="cta-btns">
+        <a href="/etf-return-calculator" class="btn-gold">📈 ETF Calculator</a>
+        <a href="/categories" class="btn-ghost">🚀 All Tools</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-inner">
+    <div class="ft-top">
+      <div class="ft-brand">
+        <div class="logo" style="margin-bottom:4px">
+          <div class="lb"><svg viewBox="0 0 24 24" fill="#fff"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+          <div><div class="ln">Raj<span>Daily</span>Tools</div><div class="ls">Smart Tools for Daily Life</div></div>
+        </div>
+        <p class="ft-desc">India's most ambitious free tools platform. Built by Raj Bhai. Solving daily life problems, one tool at a time.</p>
+        <div class="ft-soc">
+          <a href="https://www.facebook.com/share/1Dq3Y1k7mG/" target="_blank" class="fts">f</a>
+          <a href="https://x.com/Educator4ll" target="_blank" class="fts">𝕏</a>
+          <a href="https://youtube.com/@rajdailytools" target="_blank" class="fts">▶</a>
+          <a href="https://www.instagram.com/rajdailytools" target="_blank" class="fts">📷</a>
+        </div>
+      </div>
+      <div class="fc"><h4>Finance Tools</h4><ul>
+        <li><a href="#">Advanced SIP Calculator</a></li>
+        <li><a href="/etf-return-calculator">ETF Return Calculator</a></li>
+        <li><a href="/emi-calculator">EMI Calculator</a></li>
+        <li><a href="/compound-interest-calculator">Compound Interest</a></li>
+        <li><a href="/percentage-calculator">Percentage Calculator</a></li>
+      </ul></div>
+      <div class="fc"><h4>Categories</h4><ul>
+        <li><a href="/education-tools">Education Tools</a></li>
+        <li><a href="/finance-tools">Finance Tools</a></li>
+        <li><a href="/calculator-tools">Calculator Tools</a></li>
+        <li><a href="/health-tools">Health Tools</a></li>
+        <li><a href="/text-tools">Text Tools</a></li>
+      </ul></div>
+      <div class="fc"><h4>Company</h4><ul>
+        <li><a href="/about">About Us</a></li>
+        <li><a href="/contact">Contact</a></li>
+        <li><a href="/privacy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
+        <li><a href="/sitemap.xml">Sitemap</a></li>
+      </ul></div>
+    </div>
+    <div class="ft-btm">
+      <p class="ft-cp">Copyright © 2026 <b>RajDailyTools</b>. All rights reserved. Designed by <b>RajDailyTools</b></p>
+      <p class="ft-tag">Made with ❤️ in India — "Solving daily life problems with smart tools"</p>
+    </div>
+  </div>
+</footer>
+<button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<!-- ══════════════════════════════════════
+     JAVASCRIPT — Full Engine
+══════════════════════════════════════ -->
+<script>
+/* ── UI Boilerplate ── */
+const brg=document.getElementById('brg'),drwEl=document.getElementById('drw'),dovEl=document.getElementById('dov');
+function oD(){drwEl.classList.add('on');dovEl.classList.add('on');document.body.style.overflow='hidden'}
+function cD(){drwEl.classList.remove('on');dovEl.classList.remove('on');document.body.style.overflow=''}
+brg.addEventListener('click',oD);document.getElementById('dx').addEventListener('click',cD);dovEl.addEventListener('click',cD);
+const bttEl=document.getElementById('btt');
+window.addEventListener('scroll',()=>bttEl.classList.toggle('on',scrollY>380),{passive:true});
+const rvObs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){const s=[...(e.target.parentElement?.children||[])];e.target.style.transitionDelay=(s.indexOf(e.target)%4)*0.08+'s';e.target.classList.add('in');rvObs.unobserve(e.target);}});
+},{threshold:0.06,rootMargin:'0px 0px -20px 0px'});
+document.querySelectorAll('.rev').forEach(el=>rvObs.observe(el));
+document.getElementById('faqList').addEventListener('click',function(e){
+  const q=e.target.closest('.fq-q');if(!q)return;
+  const item=q.closest('.fq'),open=item.classList.contains('open');
+  document.querySelectorAll('.fq.open').forEach(i=>i.classList.remove('open'));
+  if(!open)item.classList.add('open');
+});
+
+/* ── MODE LOGIC ── */
+let currentMode='regular';
+function setMode(mode,btn){
+  currentMode=mode;
+  document.querySelectorAll('.mtab').forEach(t=>t.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('sipField').style.display    = mode==='goal'?'none':'';
+  document.getElementById('goalField').style.display   = mode==='goal'?'':'none';
+  document.getElementById('lumpsumField').style.display= mode==='lumpsum'?'':'none';
+  document.getElementById('stepupField').style.display = mode==='stepup'?'':'none';
+  document.getElementById('goalResult').style.display  = 'none';
+}
+
+/* ── FORMATTERS ── */
+function fmt(n){
+  if(n>=10000000) return '₹'+(n/10000000).toFixed(2)+' Cr';
+  if(n>=100000)   return '₹'+(n/100000).toFixed(2)+' L';
+  if(n>=1000)     return '₹'+(n/1000).toFixed(1)+' K';
+  return '₹'+Math.round(n).toLocaleString('en-IN');
+}
+function fmtAx(n){
+  if(n>=10000000) return (n/10000000).toFixed(1)+'Cr';
+  if(n>=100000)   return (n/100000).toFixed(1)+'L';
+  if(n>=1000)     return (n/1000).toFixed(0)+'K';
+  return Math.round(n).toString();
+}
+function fmtPct(n){return n.toFixed(1)+'%'}
+
+/* ── CORE CALCULATION ENGINE ── */
+function calcRegularSIP(sip, r, n){
+  // r = monthly rate, n = months
+  if(r===0) return sip*n;
+  return sip * ((Math.pow(1+r,n)-1)/r) * (1+r);
+}
+
+function calcStepUpSIP(sipStart, stepupPct, r12, years){
+  // Build year-by-year. Each year's SIP amount is sipStart*(1+stepupPct)^year
+  let total = 0;
+  for(let y=0;y<years;y++){
+    const sipY = sipStart * Math.pow(1+stepupPct, y);
+    const monthsRemaining = (years-y)*12;
+    if(r12===0){
+      total += sipY * 12;
+    } else {
+      // FV of this year's SIPs run for remaining months
+      // First calc FV at end of this year's SIPs (12 months)
+      const fvThisYr = sipY * ((Math.pow(1+r12,12)-1)/r12) * (1+r12);
+      // Then compound that FV for the remaining years
+      total += fvThisYr * Math.pow(1+r12, monthsRemaining-12);
+    }
+  }
+  return total;
+}
+
+function yearDataRegular(sip, lump, r12, years, stepup=0){
+  const rows=[];
+  let totalInv=lump, portfolioVal=lump;
+  for(let y=1;y<=years;y++){
+    const sipY = stepup>0 ? sip*Math.pow(1+stepup,y-1) : sip;
+    const yearlyInv = sipY*12;
+    // Compound portfolio for 12 months with monthly SIP
+    for(let m=0;m<12;m++){
+      portfolioVal = portfolioVal*(1+r12) + sipY;
+    }
+    totalInv += yearlyInv;
+    const gains = portfolioVal - totalInv;
+    rows.push({year:y, sipAmt:sipY, yearlyInv, totalInv, portfolio:portfolioVal, gains});
+  }
+  return rows;
+}
+
+/* ── GOAL PLANNER ── */
+function calcGoalSIP(goal, r12, months){
+  // Required SIP = Goal * r / ((1+r)^n - 1) / (1+r)
+  if(r12===0) return goal/months;
+  return goal * r12 / (((Math.pow(1+r12,months)-1)) * (1+r12));
+}
+
+/* ── LTCG CALC ── */
+function calcLTCG(gains){
+  const exemption = 125000;
+  const taxable = Math.max(0, gains - exemption);
+  return taxable * 0.125;
+}
+
+/* ── MAIN CALCULATE ── */
+function calculateSIP(){
+  const rate  = parseFloat(document.getElementById('returnRate').value)||12;
+  const years = parseInt(document.getElementById('duration').value)||10;
+  const r12   = rate/(100*12);
+  const doInflation = document.getElementById('doInflation').checked;
+  const doLTCG      = document.getElementById('doLTCG').checked;
+
+  let sip=0, lump=0, totalInvested=0, finalValue=0, yearRows=[];
+
+  if(currentMode==='goal'){
+    const goal = parseFloat(document.getElementById('goalAmt').value);
+    if(!goal||goal<=0){alert('Please enter your target goal amount.');return}
+    const reqSIP = calcGoalSIP(goal, r12, years*12);
+    sip = reqSIP;
+    finalValue = goal;
+    totalInvested = reqSIP*12*years;
+    yearRows = yearDataRegular(reqSIP, 0, r12, years, 0);
+    // Show goal result box
+    document.getElementById('goalResult').style.display='block';
+    document.getElementById('goalResultGrid').innerHTML=`
+      <div style="background:#fff;border:1.5px solid var(--green-s);border-radius:12px;padding:14px;text-align:center">
+        <div style="font-size:11px;font-weight:700;color:var(--ink3);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px">Required Monthly SIP</div>
+        <div style="font-family:var(--fd);font-size:24px;font-weight:800;color:var(--green)">${fmt(reqSIP)}</div>
+        <div style="font-size:11.5px;color:var(--ink4);margin-top:4px">per month for ${years} years at ${rate}% p.a.</div>
+      </div>
+      <div style="background:#fff;border:1.5px solid var(--blue-s);border-radius:12px;padding:14px;text-align:center">
+        <div style="font-size:11px;font-weight:700;color:var(--ink3);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px">Total You Will Invest</div>
+        <div style="font-family:var(--fd);font-size:24px;font-weight:800;color:var(--blue)">${fmt(totalInvested)}</div>
+        <div style="font-size:11.5px;color:var(--ink4);margin-top:4px">to achieve ${fmt(goal)} corpus</div>
+      </div>`;
+  } else {
+    sip = parseFloat(document.getElementById('sipAmt').value)||0;
+    lump = (currentMode==='lumpsum') ? (parseFloat(document.getElementById('lumpAmt').value)||0) : 0;
+    const stepup = (currentMode==='stepup') ? (parseFloat(document.getElementById('stepupPct').value)||0)/100 : 0;
+
+    if(sip<=0&&lump<=0){alert('Please enter a SIP amount or lump sum.');return}
+
+    if(currentMode==='stepup'){
+      const sipFV = calcStepUpSIP(sip, stepup, r12, years);
+      const lumpFV = lump * Math.pow(1+r12, years*12);
+      finalValue = sipFV + lumpFV;
+      // Total invested with step-up
+      let tinv = lump;
+      for(let y=0;y<years;y++) tinv += sip*Math.pow(1+stepup,y)*12;
+      totalInvested = tinv;
+      yearRows = yearDataRegular(sip, lump, r12, years, stepup);
+    } else {
+      const sipFV = calcRegularSIP(sip, r12, years*12);
+      const lumpFV = lump * Math.pow(1+r12, years*12);
+      finalValue = sipFV + lumpFV;
+      totalInvested = sip*12*years + lump;
+      yearRows = yearDataRegular(sip, lump, r12, years, 0);
+    }
+  }
+
+  const gains = Math.max(0, finalValue - totalInvested);
+  const ltcgTax = doLTCG ? calcLTCG(gains) : 0;
+  const postLTCG = finalValue - ltcgTax;
+  const realValue = finalValue / Math.pow(1.06, years);
+  const cagr = totalInvested>0 ? (Math.pow(finalValue/totalInvested,1/years)-1)*100 : rate;
+  const xMultiple = totalInvested>0 ? (finalValue/totalInvested).toFixed(2) : 1;
+  const doublingYrs = (Math.log(2)/Math.log(1+(rate/100))).toFixed(1);
+
+  /* ── Wealth Banner ── */
+  document.getElementById('wbValue').textContent = fmt(finalValue);
+  document.getElementById('wbSub').textContent =
+    `₹${(totalInvested/100000).toFixed(1)}L invested over ${years} years at ${rate}% p.a.` +
+    (currentMode==='stepup' ? ` with ${document.getElementById('stepupPct').value}% annual step-up`:'');
+  document.getElementById('wbMult').textContent = `📈 ${xMultiple}× growth on your investment`;
+
+  /* ── Cards ── */
+  document.getElementById('rcInv').textContent   = fmt(totalInvested);
+  document.getElementById('rcGain').textContent  = fmt(gains);
+  document.getElementById('rcCAGR').textContent  = fmtPct(cagr);
+  document.getElementById('rcMult').textContent  = xMultiple+'×';
+
+  /* ── Advanced Metrics ── */
+  document.getElementById('amInfl').textContent   = doInflation ? fmt(realValue) : '—';
+  document.querySelector('#advMetrics .am-card:nth-child(1) .am-sub').textContent =
+    doInflation ? `Real value at 6% inflation` : 'Enable in Advanced Options';
+  document.getElementById('amLTCG').textContent   = doLTCG ? fmt(postLTCG) : '—';
+  document.querySelector('#advMetrics .am-card:nth-child(2) .am-sub').textContent =
+    doLTCG ? `Tax: ${fmt(ltcgTax)} | 12.5% LTCG` : 'Enable in Advanced Options';
+  document.getElementById('amDouble').textContent  = doublingYrs+' yrs';
+
+  /* ── Breakdown Bar ── */
+  const totalForBar = doLTCG ? (totalInvested+gains) : finalValue;
+  const invW  = Math.max(5,(totalInvested/totalForBar)*100);
+  const taxW  = doLTCG ? Math.max(0,(ltcgTax/totalForBar)*100) : 0;
+  const retW  = 100-invW-taxW;
+  setTimeout(()=>{
+    document.getElementById('brInv').style.width = invW.toFixed(1)+'%';
+    document.getElementById('brInv').textContent = invW.toFixed(0)+'%';
+    document.getElementById('brRet').style.width = retW.toFixed(1)+'%';
+    document.getElementById('brRet').textContent = retW.toFixed(0)+'%';
+    document.getElementById('brTax').style.width = taxW.toFixed(1)+'%';
+    document.getElementById('brTax').textContent = taxW>3 ? taxW.toFixed(0)+'%' : '';
+  },300);
+  document.getElementById('lgInv').textContent  = `Invested: ${fmt(totalInvested)} (${invW.toFixed(0)}%)`;
+  document.getElementById('lgRet').textContent  = `Returns: ${fmt(gains)} (${retW.toFixed(0)}%)`;
+  if(doLTCG){
+    document.getElementById('lgTaxRow').style.display='flex';
+    document.getElementById('lgTax').textContent = `LTCG Tax: ${fmt(ltcgTax)} (${taxW.toFixed(0)}%)`;
+  } else {
+    document.getElementById('lgTaxRow').style.display='none';
+  }
+
+  /* ── Charts ── */
+  drawGrowthChart(yearRows, finalValue);
+  drawPieChart(totalInvested, gains, ltcgTax);
+
+  /* ── Milestones ── */
+  const milestones=[1e5,5e5,1e6,5e6,1e7,5e7,1e8].filter(m=>m<=finalValue*1.5);
+  const msDisplay = milestones.slice(-4);
+  if(msDisplay.length<4){
+    const checkpoints=[0.25,0.5,0.75,1].map(f=>({yr:Math.round(f*years),val:yearRows[Math.round(f*years)-1]?.portfolio||0}));
+    document.getElementById('msGrid').innerHTML = checkpoints.map(cp=>`
+      <div class="ms-item">
+        <div class="ms-yr">Year ${cp.yr}</div>
+        <div class="ms-val">${fmt(cp.val)}</div>
+        <div class="ms-sub">Portfolio value</div>
+      </div>`).join('');
+  } else {
+    document.getElementById('msGrid').innerHTML = msDisplay.map(m=>{
+      const yr = yearRows.findIndex(r=>r.portfolio>=m)+1;
+      return `<div class="ms-item">
+        <div class="ms-yr">🏆 ${fmt(m)}</div>
+        <div class="ms-val">Year ${yr>0?yr:'?'}</div>
+        <div class="ms-sub">Projected milestone</div>
+      </div>`;
+    }).join('');
+  }
+
+  /* ── Year Table ── */
+  document.getElementById('yearTableBody').innerHTML = yearRows.map(r=>`
+    <tr>
+      <td><span class="yr-badge">Yr ${r.year}</span></td>
+      <td>₹${Math.round(r.sipAmt).toLocaleString('en-IN')}</td>
+      <td>₹${Math.round(r.yearlyInv).toLocaleString('en-IN')}</td>
+      <td>₹${Math.round(r.totalInv).toLocaleString('en-IN')}</td>
+      <td style="font-weight:700;color:var(--green)">₹${Math.round(r.portfolio).toLocaleString('en-IN')}</td>
+      <td style="color:var(--green)">+₹${Math.round(r.gains).toLocaleString('en-IN')}</td>
+      <td style="font-weight:700;color:var(--blue)">${r.totalInv>0?(r.portfolio/r.totalInv).toFixed(2):1}×</td>
+    </tr>`).join('');
+
+  /* ── Show ── */
+  const ra=document.getElementById('resultArea');
+  ra.style.display='block';
+  ra.style.animation='none';ra.offsetHeight;
+  ra.style.animation='resultIn .45s cubic-bezier(.4,0,.2,1) both';
+  setTimeout(()=>ra.scrollIntoView({behavior:'smooth',block:'nearest'}),120);
+}
+
+/* ── GROWTH CHART ── */
+function drawGrowthChart(rows, finalVal){
+  const canvas=document.getElementById('growthChart');
+  const dpr=window.devicePixelRatio||1;
+  const W=canvas.offsetWidth||canvas.parentElement.clientWidth||400;
+  const H=200;
+  canvas.width=W*dpr;canvas.height=H*dpr;
+  canvas.style.width=W+'px';canvas.style.height=H+'px';
+  const ctx=canvas.getContext('2d');ctx.scale(dpr,dpr);
+  ctx.clearRect(0,0,W,H);
+
+  const pad={t:12,r:12,b:38,l:56};
+  const cw=W-pad.l-pad.r,ch=H-pad.t-pad.b;
+  const maxV=Math.max(...rows.map(r=>r.portfolio))*1.05;
+  const n=rows.length;
+
+  function xP(i){return pad.l+(i/(n-1||1))*cw}
+  function yP(v){return pad.t+ch*(1-v/maxV)}
+
+  // Grid
+  ctx.strokeStyle='#e2e8f0';ctx.lineWidth=1;
+  for(let i=0;i<=4;i++){
+    const y=pad.t+ch*(i/4);
+    ctx.beginPath();ctx.moveTo(pad.l,y);ctx.lineTo(pad.l+cw,y);ctx.stroke();
+    ctx.fillStyle='#94a3b8';ctx.font='500 10px DM Sans,sans-serif';ctx.textAlign='right';
+    ctx.fillText(fmtAx(maxV*(1-i/4)),pad.l-6,y+4);
+  }
+  // X labels
+  const step=Math.max(1,Math.ceil(n/6));
+  for(let i=0;i<n;i+=step){
+    ctx.fillStyle='#94a3b8';ctx.font='500 10px DM Sans,sans-serif';ctx.textAlign='center';
+    ctx.fillText('Y'+rows[i].year,xP(i),H-pad.b+14);
+  }
+
+  // Invested area
+  ctx.beginPath();ctx.moveTo(xP(0),yP(rows[0].totalInv));
+  rows.forEach((r,i)=>ctx.lineTo(xP(i),yP(r.totalInv)));
+  ctx.lineTo(xP(n-1),H-pad.b);ctx.lineTo(xP(0),H-pad.b);ctx.closePath();
+  ctx.fillStyle='rgba(37,99,235,0.10)';ctx.fill();
+  ctx.beginPath();ctx.moveTo(xP(0),yP(rows[0].totalInv));
+  rows.forEach((r,i)=>ctx.lineTo(xP(i),yP(r.totalInv)));
+  ctx.strokeStyle='#2563eb';ctx.lineWidth=1.8;ctx.setLineDash([4,3]);ctx.stroke();ctx.setLineDash([]);
+
+  // Growth area
+  ctx.beginPath();ctx.moveTo(xP(0),yP(rows[0].portfolio));
+  rows.forEach((r,i)=>ctx.lineTo(xP(i),yP(r.portfolio)));
+  ctx.lineTo(xP(n-1),H-pad.b);ctx.lineTo(xP(0),H-pad.b);ctx.closePath();
+  const g=ctx.createLinearGradient(0,pad.t,0,H-pad.b);
+  g.addColorStop(0,'rgba(16,185,129,.25)');g.addColorStop(1,'rgba(16,185,129,.02)');
+  ctx.fillStyle=g;ctx.fill();
+  ctx.beginPath();ctx.moveTo(xP(0),yP(rows[0].portfolio));
+  rows.forEach((r,i)=>ctx.lineTo(xP(i),yP(r.portfolio)));
+  ctx.strokeStyle='#10b981';ctx.lineWidth=2.2;ctx.stroke();
+
+  // End dot
+  ctx.beginPath();ctx.arc(xP(n-1),yP(rows[n-1].portfolio),5,0,Math.PI*2);
+  ctx.fillStyle='#10b981';ctx.fill();ctx.strokeStyle='#fff';ctx.lineWidth=2;ctx.stroke();
+}
+
+/* ── PIE CHART ── */
+function drawPieChart(inv, gains, tax){
+  const canvas=document.getElementById('pieChart');
+  const dpr=window.devicePixelRatio||1;
+  const W=canvas.offsetWidth||canvas.parentElement.clientWidth||400;
+  const H=200;
+  canvas.width=W*dpr;canvas.height=H*dpr;
+  canvas.style.width=W+'px';canvas.style.height=H+'px';
+  const ctx=canvas.getContext('2d');ctx.scale(dpr,dpr);
+  ctx.clearRect(0,0,W,H);
+
+  const total=inv+gains+tax;
+  const slices=[
+    {val:inv,  color:'#2563eb',label:'Invested'},
+    {val:gains,color:'#10b981',label:'Returns'},
+  ];
+  if(tax>0) slices.push({val:tax,color:'#ef4444',label:'LTCG Tax'});
+
+  const cx=W*0.38, cy=H/2, r=Math.min(cx,cy)-14;
+  let angle=-Math.PI/2;
+  slices.forEach(s=>{
+    const sweep=(s.val/total)*Math.PI*2;
+    ctx.beginPath();ctx.moveTo(cx,cy);
+    ctx.arc(cx,cy,r,angle,angle+sweep);
+    ctx.closePath();ctx.fillStyle=s.color;ctx.fill();
+    ctx.strokeStyle='#fff';ctx.lineWidth=2.5;ctx.stroke();
+    angle+=sweep;
+  });
+
+  // Legend
+  const lx=W*0.65, ly=cy-slices.length*14;
+  slices.forEach((s,i)=>{
+    const y=ly+i*32;
+    ctx.fillStyle=s.color;ctx.fillRect(lx,y,13,13);
+    ctx.fillStyle='#334155';ctx.font='600 11px DM Sans,sans-serif';ctx.textAlign='left';
+    ctx.fillText(s.label,lx+17,y+10);
+    ctx.fillStyle='#64748b';ctx.font='500 10px DM Sans,sans-serif';
+    ctx.fillText(((s.val/total)*100).toFixed(1)+'%',lx+17,y+22);
+  });
+}
+
+/* Enter key */
+['sipAmt','goalAmt','lumpAmt'].forEach(id=>{
+  const el=document.getElementById(id);
+  if(el) el.addEventListener('keydown',e=>{if(e.key==='Enter')calculateSIP();});
+});
+</script>
+</body>
+</html>
