@@ -1,0 +1,1239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calories to Weight Gain Converter (Advanced Tool) – RajDailyTools</title>
+<meta name="description" content="Free calories to weight gain calculator. Find out how many calories you need daily to gain weight based on your BMR, age, height, and activity level. Scientific formula.">
+<meta name="keywords" content="calories to weight gain converter, weight gain calculator, calorie surplus calculator, BMR calculator, how many calories to gain weight, weight gain tool India">
+<meta name="robots" content="index, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#2563eb;--blue-d:#1d4ed8;--blue-xl:#eff6ff;--blue-s:#dbeafe;
+  --amber:#f59e0b;--green:#10b981;--red:#ef4444;--purple:#8b5cf6;
+  --orange:#f97316;--teal:#14b8a6;
+  --green-xl:#f0fdf4;--green-s:#bbf7d0;
+  --red-xl:#fef2f2;--red-s:#fecaca;
+  --amber-xl:#fffbeb;--amber-s:#fde68a;
+  --purple-xl:#faf5ff;--purple-s:#ddd6fe;
+  --ink:#0f172a;--ink2:#334155;--ink3:#64748b;--ink4:#94a3b8;
+  --line:#e2e8f0;--surf:#f8fafc;--white:#fff;
+  --s1:0 1px 3px rgba(15,23,42,.06),0 1px 2px rgba(15,23,42,.04);
+  --s2:0 4px 16px rgba(15,23,42,.08),0 2px 6px rgba(15,23,42,.04);
+  --s3:0 12px 40px rgba(15,23,42,.11),0 3px 10px rgba(15,23,42,.06);
+  --s4:0 24px 64px rgba(15,23,42,.13),0 6px 20px rgba(15,23,42,.07);
+  --sb:0 8px 32px rgba(37,99,235,.20);
+  --fd:'Sora',sans-serif;--fb:'DM Sans',sans-serif;
+  --ease:cubic-bezier(.4,0,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);color:var(--ink);background:var(--white);overflow-x:hidden;-webkit-font-smoothing:antialiased;line-height:1.6}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+button{cursor:pointer;border:none;background:none;font-family:var(--fb)}
+.w{max-width:1180px;margin:0 auto;padding:0 24px}
+.wa{max-width:880px;margin:0 auto;padding:0 24px}
+select,input{appearance:none;-webkit-appearance:none}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+@keyframes resultIn{from{opacity:0;transform:translateY(18px) scale(.97)}to{opacity:1;transform:none}}
+.rev{opacity:0;transform:translateY(22px);transition:opacity .55s var(--ease),transform .55s var(--ease)}
+.rev.in{opacity:1;transform:none}
+
+/* HEADER */
+.hdr{position:sticky;top:0;z-index:999;background:rgba(255,255,255,.96);backdrop-filter:blur(20px);border-bottom:1px solid var(--line);box-shadow:var(--s1)}
+.hdi{display:flex;align-items:center;justify-content:space-between;height:66px}
+.logo{display:flex;align-items:center;gap:10px}
+.lb{width:36px;height:36px;background:var(--blue);border-radius:9px;display:flex;align-items:center;justify-content:center;box-shadow:var(--sb);flex-shrink:0}
+.lb svg{width:18px;height:18px;fill:#fff}
+.ln{font-family:var(--fd);font-size:19px;font-weight:800;color:var(--ink);line-height:1}
+.ln span{color:var(--blue)}
+.ls{font-size:10px;color:var(--ink4);letter-spacing:.04em}
+nav.dn{display:flex;align-items:center;gap:2px}
+nav.dn a{font-size:13.5px;font-weight:500;color:var(--ink2);padding:7px 13px;border-radius:8px;transition:.2s}
+nav.dn a:hover{color:var(--blue);background:var(--blue-xl)}
+.hcta{background:var(--blue);color:#fff;font-family:var(--fd);font-weight:600;font-size:13px;padding:8px 18px;border-radius:8px;box-shadow:var(--sb);transition:.2s}
+.hcta:hover{background:var(--blue-d);transform:translateY(-1px)}
+.brg{display:none;flex-direction:column;gap:4.5px;padding:8px;border-radius:8px}
+.brg span{display:block;width:20px;height:2px;background:var(--ink);border-radius:2px;transition:.28s}
+.dov{display:none;position:fixed;inset:0;background:rgba(15,23,42,.45);z-index:1040;backdrop-filter:blur(3px)}
+.dov.on{display:block}
+.drw{position:fixed;top:0;right:-100%;width:270px;height:100vh;background:#fff;z-index:1050;padding:22px;box-shadow:var(--s4);transition:right .32s var(--ease);overflow-y:auto}
+.drw.on{right:0}
+.dh{display:flex;align-items:center;justify-content:space-between;margin-bottom:26px}
+.dx{width:33px;height:33px;border-radius:7px;background:var(--surf);display:flex;align-items:center;justify-content:center;color:var(--ink3);font-size:17px}
+nav.mn{display:flex;flex-direction:column;gap:3px}
+nav.mn a{display:block;font-size:14px;font-weight:500;color:var(--ink2);padding:11px 13px;border-radius:8px;transition:.2s}
+nav.mn a:hover{color:var(--blue);background:var(--blue-xl)}
+
+/* HERO */
+.hero{position:relative;overflow:hidden;background:linear-gradient(150deg,#ebf4ff 0%,#fff 46%,#fff7ed 100%);padding:64px 0 72px}
+.hero::before{content:'';position:absolute;top:-140px;right:-180px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(37,99,235,.08) 0%,transparent 68%);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-80px;left:-100px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(249,115,22,.05) 0%,transparent 68%);pointer-events:none}
+.blob{position:absolute;border-radius:50%;pointer-events:none;animation:float 6s ease-in-out infinite}
+.b1{width:13px;height:13px;background:rgba(37,99,235,.18);top:22%;right:14%;animation-delay:0s}
+.b2{width:9px;height:9px;background:rgba(249,115,22,.22);top:58%;right:26%;animation-delay:2.2s}
+.b3{width:11px;height:11px;background:rgba(16,185,129,.18);top:36%;right:6%;animation-delay:4s}
+.bc{display:flex;align-items:center;gap:7px;font-size:12.5px;color:var(--ink3);margin-bottom:22px;position:relative;z-index:1;flex-wrap:wrap}
+.bc a{color:var(--blue);font-weight:600}
+.pill{display:inline-flex;align-items:center;gap:7px;font-family:var(--fd);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);background:var(--blue-xl);padding:5px 14px;border-radius:100px;margin-bottom:18px}
+.pill::before{content:'';width:6px;height:6px;background:var(--blue);border-radius:50%}
+.hero-inner{position:relative;z-index:1;max-width:720px;animation:fadeUp .5s ease both}
+.hero h1{font-family:var(--fd);font-size:clamp(26px,4.5vw,50px);font-weight:800;line-height:1.1;color:var(--ink);margin-bottom:14px}
+.hero h1 span{color:var(--blue)}
+.hero-sub{font-size:16px;color:var(--ink3);line-height:1.8;margin-bottom:22px;max-width:600px}
+.hero-chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.chip{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;padding:6px 14px;border-radius:100px;background:#fff;border:1.5px solid var(--line);color:var(--ink2);box-shadow:var(--s1);transition:.22s}
+.chip:hover{border-color:var(--blue);color:var(--blue);transform:translateY(-1px)}
+.hero-meta{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:24px}
+.upd{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:700;color:var(--blue);background:var(--blue-xl);padding:6px 14px;border-radius:100px;border:1.5px solid var(--blue-s)}
+.mi{font-size:13px;color:var(--ink3);font-weight:500}
+
+/* HOW TO USE */
+.howto{background:var(--amber-xl);border:2px solid var(--amber-s);border-radius:16px;padding:22px 26px;max-width:560px;margin-bottom:24px}
+.howto-ttl{display:flex;align-items:center;gap:9px;font-family:var(--fd);font-size:15px;font-weight:800;color:var(--ink);margin-bottom:13px}
+.howto-steps{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.hs{display:flex;align-items:flex-start;gap:10px;font-size:13.5px;color:var(--ink2);line-height:1.6}
+.sn{width:24px;height:24px;background:var(--amber);color:#fff;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex-shrink:0;margin-top:1px}
+
+/* RELATED TOOLS */
+.rel-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;position:relative;z-index:1}
+.rg-box{border-radius:14px;padding:14px 14px 12px;display:flex;flex-direction:column;gap:8px;transition:.22s;border:1.5px solid}
+.rg-box:hover{transform:translateY(-3px);box-shadow:var(--s3)}
+.rg-box.army{background:linear-gradient(135deg,var(--amber-xl),#fef3c7);border-color:var(--amber-s)}
+.rg-box.ht{background:linear-gradient(135deg,var(--green-xl),#dcfce7);border-color:var(--green-s)}
+.rg-box.ssc{background:linear-gradient(135deg,var(--blue-xl),var(--blue-s));border-color:var(--blue-s)}
+.rg-box.mp{background:linear-gradient(135deg,var(--purple-xl),#ede9fe);border-color:var(--purple-s)}
+.rg-box.tl{background:linear-gradient(135deg,#f0fdfa,#ccfbf1);border-color:#99f6e4}
+.rg-box.rd{background:linear-gradient(135deg,var(--red-xl),#fee2e2);border-color:var(--red-s)}
+.rg-ico{font-size:22px}
+.rg-txt h4{font-family:var(--fd);font-size:12px;font-weight:800;color:var(--ink);margin-bottom:2px}
+.rg-txt p{font-size:11px;color:var(--ink3);line-height:1.5}
+.btn-xs{display:inline-flex;align-items:center;gap:4px;font-family:var(--fd);font-weight:700;font-size:11px;padding:5px 10px;border-radius:7px;transition:.22s;margin-top:4px}
+.btn-xs.a{background:var(--amber);color:#fff}.btn-xs.a:hover{background:#d97706}
+.btn-xs.g{background:var(--green);color:#fff}.btn-xs.g:hover{background:#059669}
+.btn-xs.b{background:var(--blue);color:#fff}.btn-xs.b:hover{background:var(--blue-d)}
+.btn-xs.p{background:var(--purple);color:#fff}.btn-xs.p:hover{background:#7c3aed}
+.btn-xs.t{background:var(--teal);color:#fff}.btn-xs.t:hover{background:#0f9488}
+.btn-xs.r{background:var(--red);color:#fff}.btn-xs.r:hover{background:#dc2626}
+
+/* TOOL */
+.tool-sec{background:var(--surf);padding:80px 0}
+.tool-wrap{max-width:900px;margin:0 auto}
+.tool-card{background:#fff;border:1.5px solid var(--line);border-radius:28px;overflow:hidden;box-shadow:var(--s4)}
+.tool-hdr{background:linear-gradient(135deg,#1d4ed8 0%,#2563eb 55%,#3b82f6 100%);padding:32px 40px;position:relative;overflow:hidden}
+.tool-hdr::before{content:'';position:absolute;top:-60px;right:-60px;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,.07)}
+.tool-hdr::after{content:'';position:absolute;bottom:-40px;left:-40px;width:180px;height:180px;border-radius:50%;background:rgba(255,255,255,.04)}
+.th{position:relative;z-index:1}
+.th h2{font-family:var(--fd);font-size:21px;font-weight:800;color:#fff;margin-bottom:6px}
+.th p{font-size:14px;color:rgba(255,255,255,.82);line-height:1.65}
+.th-badges{display:flex;flex-wrap:wrap;gap:9px;margin-top:14px}
+.thb{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:rgba(255,255,255,.9);background:rgba(255,255,255,.13);padding:5px 12px;border-radius:100px}
+.tool-body{padding:36px 40px}
+
+/* form */
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+.fgrid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:16px}
+.fld{display:flex;flex-direction:column;gap:7px}
+.flbl{font-size:13px;font-weight:700;color:var(--ink2)}
+.flbl span{font-size:11px;font-weight:500;color:var(--ink4);margin-left:5px;background:var(--surf);padding:2px 7px;border-radius:5px;border:1px solid var(--line)}
+.inp-wrap{position:relative}
+.inp-prefix{position:absolute;left:14px;top:50%;transform:translateY(-50%);font-family:var(--fd);font-size:15px;font-weight:700;color:var(--ink3);pointer-events:none}
+.finp,.fsel{padding:12px 16px;font-size:14.5px;color:var(--ink);background:#fff;border:1.5px solid var(--line);border-radius:10px;outline:none;transition:.22s;font-family:var(--fb);width:100%}
+.finp:focus,.fsel:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(37,99,235,.10)}
+.finp.has-prefix{padding-left:36px}
+.fsel{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2364748b' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:40px}
+.hint-box{display:flex;align-items:flex-start;gap:9px;font-size:13px;color:var(--ink2);background:var(--blue-xl);border:1.5px solid var(--blue-s);border-radius:10px;padding:11px 14px;margin:16px 0;line-height:1.65}
+.hint-box svg{width:16px;height:16px;stroke:var(--blue);fill:none;stroke-width:2;flex-shrink:0;margin-top:2px}
+.chk-btn{width:100%;padding:17px;background:linear-gradient(135deg,var(--blue) 0%,#1e40af 100%);color:#fff;font-family:var(--fd);font-weight:800;font-size:16px;border-radius:12px;box-shadow:var(--sb);transition:all .25s var(--ease);display:flex;align-items:center;justify-content:center;gap:10px}
+.chk-btn:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(37,99,235,.32)}
+.chk-btn:active{transform:translateY(0)}
+
+/* RESULT */
+#resultArea{display:none;margin-top:28px;animation:resultIn .45s var(--ease) both}
+.pay-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-bottom:16px}
+.pay-card{border-radius:16px;padding:22px 20px;position:relative;overflow:hidden;border:2px solid}
+.pay-card.c1{background:linear-gradient(135deg,var(--blue-xl),#e0eeff);border-color:var(--blue-s)}
+.pay-card.c2{background:linear-gradient(135deg,var(--green-xl),#d1fae5);border-color:var(--green-s)}
+.pay-card.c3{background:linear-gradient(135deg,var(--amber-xl),#fef3c7);border-color:var(--amber-s)}
+.pay-card.c4{background:linear-gradient(135deg,var(--purple-xl),#ede9fe);border-color:var(--purple-s);grid-column:1/-1}
+.pay-card::before{content:'';position:absolute;inset:0;opacity:.04;background-image:repeating-linear-gradient(45deg,currentColor 0,currentColor 1px,transparent 0,transparent 50%);background-size:12px 12px;pointer-events:none}
+.pc-lbl{font-size:12px;font-weight:700;color:var(--ink3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px;display:flex;align-items:center;gap:6px}
+.pc-val{font-family:var(--fd);font-size:32px;font-weight:800;color:var(--ink);line-height:1}
+.pay-card.c4 .pc-val{font-size:40px}
+.pc-sub{font-size:12.5px;color:var(--ink3);margin-top:5px}
+.pc-ico{font-size:28px;position:absolute;top:16px;right:16px;opacity:.18}
+
+.tips-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.tip-pill{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:600;padding:7px 14px;border-radius:100px;background:var(--green-xl);color:var(--green);border:1.5px solid var(--green-s)}
+.copy-btn{display:inline-flex;align-items:center;gap:6px;font-family:var(--fd);font-size:12px;font-weight:700;padding:7px 14px;border-radius:8px;background:var(--blue);color:#fff;border:none;cursor:pointer;transition:.22s;margin-top:4px}
+.copy-btn:hover{background:var(--blue-d);transform:translateY(-1px)}
+.copy-btn.copied{background:var(--green)}
+.warn-box{background:var(--amber-xl);border:1.5px solid var(--amber-s);border-radius:12px;padding:14px 18px;display:flex;gap:10px;font-size:13.5px;color:var(--ink2);line-height:1.7;margin-top:14px}
+
+/* WEEKLY TABLE inside result */
+.weekly-table-wrap{overflow-x:auto;border-radius:12px;border:1.5px solid var(--line);box-shadow:var(--s1);margin-top:18px}
+.weekly-table-wrap table{width:100%;border-collapse:collapse;font-size:13px}
+.weekly-table-wrap thead th{background:linear-gradient(135deg,var(--green) 0%,#059669 100%);color:#fff;padding:11px 14px;text-align:left;font-family:var(--fd);font-size:12px;font-weight:700}
+.weekly-table-wrap thead th:first-child{border-radius:12px 0 0 0}
+.weekly-table-wrap thead th:last-child{border-radius:0 12px 0 0}
+.weekly-table-wrap tbody tr{border-bottom:1px solid var(--line);transition:.2s}
+.weekly-table-wrap tbody tr:hover{background:var(--green-xl)}
+.weekly-table-wrap tbody td{padding:10px 14px;color:var(--ink2)}
+
+/* FEATURES / TIPS SECTION */
+.tips-sec{background:var(--surf);padding:72px 0}
+.tips-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.tip-card{background:#fff;border:1.5px solid var(--line);border-radius:16px;padding:22px 18px;text-align:center;transition:.28s}
+.tip-card:hover{transform:translateY(-4px);box-shadow:var(--s3);border-color:var(--blue-s)}
+.tip-ico{font-size:32px;margin-bottom:11px}
+.tip-title{font-family:var(--fd);font-size:14px;font-weight:800;color:var(--ink);margin-bottom:8px}
+.tip-desc{font-size:13px;color:var(--ink3);line-height:1.7}
+
+/* TABLE */
+.tbl-sec{background:#fff;padding:72px 0}
+.tbl-wr{overflow-x:auto;margin-bottom:24px;border-radius:14px;border:1.5px solid var(--line);box-shadow:var(--s2)}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+thead th{background:linear-gradient(135deg,var(--blue) 0%,#1e40af 100%);color:#fff;padding:14px 16px;text-align:left;font-family:var(--fd);font-size:13px;font-weight:700;letter-spacing:.03em}
+thead th:first-child{border-radius:14px 0 0 0}
+thead th:last-child{border-radius:0 14px 0 0}
+tbody tr{border-bottom:1px solid var(--line);transition:.2s}
+tbody tr:hover{background:var(--blue-xl)}
+tbody td{padding:12px 16px;color:var(--ink2);vertical-align:middle}
+.tbadge{display:inline-flex;font-size:11px;font-weight:700;padding:3px 8px;border-radius:100px}
+.tbadge.g{background:var(--green-xl);color:var(--green);border:1px solid var(--green-s)}
+.tbadge.b{background:var(--blue-xl);color:var(--blue);border:1px solid var(--blue-s)}
+.tbadge.a{background:var(--amber-xl);color:var(--amber);border:1px solid var(--amber-s)}
+.tbadge.p{background:var(--purple-xl);color:var(--purple);border:1px solid var(--purple-s)}
+
+/* GRAPH */
+.graph-sec{background:var(--surf);padding:72px 0}
+.graph-card{background:#fff;border:1.5px solid var(--line);border-radius:20px;padding:28px 32px;box-shadow:var(--s3)}
+.graph-hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;flex-wrap:wrap;gap:12px}
+.graph-ttl{font-family:var(--fd);font-size:18px;font-weight:800;color:var(--ink)}
+.graph-legend{display:flex;gap:20px;flex-wrap:wrap;margin-bottom:18px}
+.gl-item{display:flex;align-items:center;gap:7px;font-size:13px;font-weight:600;color:var(--ink2)}
+.gl-dot{width:12px;height:12px;border-radius:50%}
+.chart-wrap{width:100%;overflow-x:auto;position:relative}
+svg.linechart{display:block;overflow:visible}
+.axis-label{font-family:var(--fd);font-size:11px;fill:var(--ink4);font-weight:600}
+.axis-title{font-family:var(--fd);font-size:12px;fill:var(--ink3);font-weight:700}
+.grid-line{stroke:var(--line);stroke-width:1;stroke-dasharray:4 4}
+.chart-tooltip{position:absolute;background:var(--ink);color:#fff;font-size:12px;font-weight:600;padding:7px 12px;border-radius:8px;pointer-events:none;opacity:0;transition:opacity .2s;white-space:nowrap;font-family:var(--fd);z-index:10}
+
+/* STORY */
+.story-sec{background:#fff;padding:72px 0}
+.story-card{background:var(--surf);border:1.5px solid var(--line);border-radius:24px;padding:40px;box-shadow:var(--s3);position:relative;overflow:hidden}
+.story-card::before{content:'';position:absolute;top:0;left:0;bottom:0;width:5px;background:linear-gradient(180deg,var(--blue) 0%,var(--orange) 100%);border-radius:5px 0 0 5px}
+.sq{font-size:54px;color:var(--blue-s);font-family:Georgia,serif;line-height:1;padding-left:8px}
+.sb{font-size:15.5px;color:var(--ink2);line-height:1.9;padding:0 8px}
+.sauth{display:flex;align-items:center;gap:14px;margin-top:22px;padding-top:20px;border-top:1px solid var(--line)}
+.savt{width:48px;height:48px;background:var(--blue);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+.sname{font-family:var(--fd);font-size:15px;font-weight:700;color:var(--ink)}
+.srole{font-size:12.5px;color:var(--ink3)}
+.founder-msg{background:linear-gradient(135deg,var(--blue-xl),var(--blue-s));border:1.5px solid var(--blue-s);border-radius:14px;padding:20px 22px;margin-top:20px;display:flex;gap:13px}
+.fm-ico{font-size:26px;flex-shrink:0}
+.fm-txt{font-size:14px;color:var(--ink2);line-height:1.75;font-style:italic}
+.fm-txt strong{color:var(--ink);font-weight:700;font-style:normal}
+
+/* GUIDE */
+.guide-sec{background:var(--surf);padding:72px 0}
+.guide-body h2{font-family:var(--fd);font-size:21px;font-weight:800;color:var(--ink);margin:28px 0 11px;line-height:1.3}
+.guide-body h2:first-child{margin-top:0}
+.guide-body p{font-size:15px;color:var(--ink3);line-height:1.85;margin-bottom:14px}
+.guide-body ul{display:flex;flex-direction:column;gap:8px;margin:12px 0 16px}
+.guide-body li{display:flex;align-items:flex-start;gap:10px;font-size:14.5px;color:var(--ink3);line-height:1.7}
+.guide-body li::before{content:'✓';width:18px;height:18px;background:var(--blue);color:#fff;border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;flex-shrink:0;margin-top:3px}
+.guide-body strong{color:var(--ink2);font-weight:700}
+.ibox{background:var(--blue-xl);border:1.5px solid var(--blue-s);border-radius:13px;padding:15px 18px;margin:16px 0;display:flex;gap:11px;font-size:14px;color:var(--ink2);line-height:1.7}
+.ibox svg{width:17px;height:17px;stroke:var(--blue);fill:none;stroke-width:2;flex-shrink:0;margin-top:2px}
+.ibox.a{background:var(--amber-xl);border-color:var(--amber-s)}
+.ibox.a svg{stroke:var(--amber)}
+.ibox.g{background:var(--green-xl);border-color:var(--green-s)}
+.ibox.g svg{stroke:var(--green)}
+
+/* FAQ */
+.faq-sec{background:#fff;padding:72px 0}
+.fql{max-width:780px;margin:0 auto}
+.fq{background:var(--surf);border:1.5px solid var(--line);border-radius:13px;margin-bottom:10px;overflow:hidden}
+.fq-q{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;cursor:pointer;gap:14px;transition:.2s}
+.fq-q:hover{background:var(--blue-xl)}
+.fq-t{font-weight:600;font-size:15px;color:var(--ink);line-height:1.4}
+.fq-i{width:28px;height:28px;border-radius:50%;background:var(--blue-xl);color:var(--blue);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;transition:transform .28s,background .2s}
+.fq.open .fq-i{transform:rotate(45deg);background:var(--blue);color:#fff}
+.fq-a{max-height:0;overflow:hidden;transition:max-height .35s var(--ease)}
+.fq-ai{padding:0 22px 18px;font-size:14.5px;color:var(--ink3);line-height:1.78}
+.fq.open .fq-a{max-height:400px}
+
+/* DISC/CONTACT/CTA/FOOTER */
+.disc{background:var(--amber-xl);border-top:1px solid var(--amber-s);border-bottom:1px solid var(--amber-s);padding:15px 0}
+.disc-in{display:flex;align-items:flex-start;gap:12px;font-size:13.5px;color:var(--ink2);line-height:1.7}
+.contact-sec{background:var(--surf);padding:60px 0}
+.contact-card{max-width:580px;margin:0 auto;background:#fff;border:1.5px solid var(--line);border-radius:20px;padding:32px;text-align:center;box-shadow:var(--s2)}
+.contact-card h3{font-family:var(--fd);font-size:19px;font-weight:800;color:var(--ink);margin-bottom:10px}
+.contact-card p{font-size:15px;color:var(--ink3);line-height:1.75;margin-bottom:20px}
+.btn-bl{display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:#fff;font-family:var(--fd);font-weight:700;font-size:14.5px;padding:12px 26px;border-radius:8px;box-shadow:var(--sb);transition:.22s}
+.btn-bl:hover{background:var(--blue-d);transform:translateY(-1px)}
+.priv-note{font-size:12px;color:var(--ink4);margin-top:14px}
+.cta{background:linear-gradient(140deg,#0f172a 0%,#1e3a8a 100%);padding:80px 0;text-align:center;position:relative;overflow:hidden}
+.cta::before{content:'';position:absolute;top:-80px;left:50%;transform:translateX(-50%);width:800px;height:380px;background:radial-gradient(ellipse,rgba(37,99,235,.22) 0%,transparent 68%);pointer-events:none}
+.cta-in{position:relative;z-index:1}
+.cta .pill{color:#93c5fd;background:rgba(255,255,255,.1);margin-bottom:18px}
+.cta .pill::before{background:#93c5fd}
+.cta h2{font-family:var(--fd);font-size:clamp(24px,4vw,42px);font-weight:800;color:#fff;line-height:1.15;margin-bottom:12px}
+.cta h2 em{color:#fbbf24;font-style:normal}
+.cta p{font-size:16px;color:rgba(255,255,255,.72);max-width:480px;margin:0 auto 32px;line-height:1.78}
+.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn-gold{display:inline-flex;align-items:center;gap:8px;background:var(--amber);color:#fff;font-family:var(--fd);font-weight:800;font-size:15px;padding:14px 30px;border-radius:8px;box-shadow:0 8px 28px rgba(245,158,11,.35);transition:.22s}
+.btn-gold:hover{background:#d97706;transform:translateY(-3px)}
+.btn-ghost{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.09);border:1.5px solid rgba(255,255,255,.22);color:#fff;font-family:var(--fd);font-weight:600;font-size:14px;padding:13px 26px;border-radius:8px;transition:.2s}
+.btn-ghost:hover{background:rgba(255,255,255,.16)}
+footer{background:#0f172a;padding:52px 0 0}
+.ft-inner{max-width:1180px;margin:0 auto;padding:0 24px}
+.ft-top{display:grid;grid-template-columns:1.9fr 1fr 1fr 1fr;gap:44px;margin-bottom:44px}
+.ft-brand .ln{color:#fff}.ft-brand .ls{color:#475569}
+.ft-desc{font-size:13.5px;color:#64748b;line-height:1.78;max-width:265px;margin:13px 0 20px}
+.ft-soc{display:flex;gap:9px}
+.fts{width:34px;height:34px;border-radius:7px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;color:#94a3b8;font-size:13px;transition:.2s}
+.fts:hover{background:var(--blue);color:#fff}
+.fc h4{font-family:var(--fd);font-size:12px;font-weight:700;color:#fff;margin-bottom:14px;letter-spacing:.06em;text-transform:uppercase}
+.fc ul{display:flex;flex-direction:column;gap:8px}
+.fc ul a{font-size:13.5px;color:#64748b;transition:.18s}
+.fc ul a:hover{color:#93c5fd}
+.ft-btm{border-top:1px solid rgba(255,255,255,.07);padding:20px 0;text-align:center}
+.ft-cp{font-size:12.5px;color:#475569}
+.ft-cp b{color:#64748b}
+.ft-tag{font-size:12px;color:#334155;margin-top:4px;font-style:italic}
+.btt{position:fixed;bottom:26px;right:26px;z-index:500;width:43px;height:43px;background:var(--blue);color:#fff;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:17px;box-shadow:var(--sb);opacity:0;pointer-events:none;transform:translateY(14px);transition:.28s var(--ease)}
+.btt.on{opacity:1;pointer-events:auto;transform:translateY(0)}
+.btt:hover{transform:translateY(-3px)}
+.sec-lbl{display:flex;align-items:center;gap:8px;font-family:var(--fd);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin-bottom:10px}
+.sec-lbl::before{content:'';width:6px;height:6px;background:var(--blue);border-radius:50%}
+.sec-h{font-family:var(--fd);font-size:clamp(22px,3.5vw,34px);font-weight:800;color:var(--ink);line-height:1.15;margin-bottom:10px}
+.sec-sub{font-size:15.5px;color:var(--ink3);line-height:1.78;margin-bottom:40px;max-width:600px}
+
+/* RESPONSIVE */
+@media(max-width:1060px){.ft-top{grid-template-columns:1fr 1fr}.tips-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:860px){
+  nav.dn,.hcta{display:none}.brg{display:flex}
+  .tool-body{padding:24px 22px}.tool-hdr{padding:24px 22px}
+  .fgrid{grid-template-columns:1fr}.fgrid3{grid-template-columns:1fr 1fr}
+  .howto-steps{grid-template-columns:1fr}
+  .rel-grid{grid-template-columns:1fr 1fr}
+  .pay-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+  .ft-top{grid-template-columns:1fr}.rel-grid{grid-template-columns:1fr}
+  .tips-grid{grid-template-columns:1fr 1fr}
+  .cta-btns{flex-direction:column;align-items:center}
+  .story-card{padding:26px 20px}
+  .pay-grid{grid-template-columns:1fr}
+  .pay-card.c4{grid-column:auto}
+  .fgrid3{grid-template-columns:1fr}
+  .graph-card{padding:18px 14px}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="hdr">
+  <div class="w">
+    <div class="hdi">
+      <a href="/" class="logo">
+        <div class="lb"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+        <div><div class="ln">Raj<span>Daily</span>Tools</div><div class="ls">Smart Tools for Daily Life</div></div>
+      </a>
+      <nav class="dn">
+        <a href="/">Home</a><a href="/categories">Categories</a>
+        <a href="/#popular">Popular</a><a href="/about">About</a><a href="/contact">Contact</a>
+      </nav>
+      <a href="/categories" class="hcta">All Tools →</a>
+      <button class="brg" id="brg"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="dov" id="dov"></div>
+<div class="drw" id="drw">
+  <div class="dh">
+    <div class="logo">
+      <div class="lb" style="width:30px;height:30px;border-radius:7px"><svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#fff"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+      <div class="ln" style="font-size:16px">Raj<span>Daily</span>Tools</div>
+    </div>
+    <button class="dx" id="dx">✕</button>
+  </div>
+  <nav class="mn">
+    <a href="/" onclick="cD()">🏠 Home</a>
+    <a href="/categories" onclick="cD()">🗂️ Categories</a>
+    <a href="/#popular" onclick="cD()">⭐ Popular</a>
+    <a href="/about" onclick="cD()">👤 About</a>
+    <a href="/contact" onclick="cD()">📬 Contact</a>
+  </nav>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+  <div class="w">
+    <div class="bc">
+      <a href="/">Home</a><span style="color:var(--ink4)">›</span>
+      <a href="/categories">Tools</a><span style="color:var(--ink4)">›</span>
+      <span>Calories to Weight Gain Converter</span>
+    </div>
+    <div class="hero-inner">
+      <div class="pill">Free Health & Nutrition Tools 🥗</div>
+      <h1>Convert <span>Calories into Weight Gain</span> Instantly</h1>
+      <p class="hero-sub">Find out how many calories you need to gain weight effectively based on your body profile. Get a personalized, scientific weight gain plan — powered by the Mifflin-St Jeor BMR formula.</p>
+      <div class="hero-chips">
+        <span class="chip">🔥 BMR Formula</span>
+        <span class="chip">📊 Visual Timeline</span>
+        <span class="chip">🎯 Personalized Plan</span>
+        <span class="chip">⚖️ 7700 kcal = 1kg</span>
+        <span class="chip">🆓 100% Free</span>
+        <span class="chip">🔒 No Data Stored</span>
+      </div>
+      <div class="hero-meta">
+        <div class="upd">💪 Advanced Weight Gain Tool</div>
+        <span class="mi">✅ Mifflin-St Jeor BMR</span>
+        <span class="mi">📈 Weekly Gain Plan</span>
+      </div>
+
+      <!-- HOW TO USE -->
+      <div class="howto">
+        <div class="howto-ttl">💡 How to Use This Tool</div>
+        <div class="howto-steps">
+          <div class="hs"><span class="sn">1</span>Enter your current weight</div>
+          <div class="hs"><span class="sn">2</span>Enter your target weight</div>
+          <div class="hs"><span class="sn">3</span>Fill your age, height &amp; activity level</div>
+          <div class="hs"><span class="sn">4</span>Select your gender</div>
+          <div class="hs"><span class="sn">5</span>Click Calculate Weight Gain Plan</div>
+        </div>
+      </div>
+
+      <!-- RELATED TOOLS -->
+      <div class="rel-grid">
+        <div class="rg-box army">
+          <div class="rg-ico">⚖️</div>
+          <div class="rg-txt">
+            <h4>BMI Calculator</h4>
+            <p>Check your Body Mass Index</p>
+            <a href="/bmi-calculator.html" class="btn-xs a">Use Now →</a>
+          </div>
+        </div>
+        <div class="rg-box ht">
+          <div class="rg-ico">🔥</div>
+          <div class="rg-txt">
+            <h4>Daily Calorie Calculator</h4>
+            <p>Find your maintenance calories</p>
+            <a href="/calorie-calculator.html" class="btn-xs g">Use Now →</a>
+          </div>
+        </div>
+        <div class="rg-box ssc">
+          <div class="rg-ico">🥩</div>
+          <div class="rg-txt">
+            <h4>Protein Intake Calculator</h4>
+            <p>Daily protein requirements</p>
+            <a href="/protein-calculator.html" class="btn-xs b">Use Now →</a>
+          </div>
+        </div>
+        <div class="rg-box mp">
+          <div class="rg-ico">💧</div>
+          <div class="rg-txt">
+            <h4>Water Intake Calculator</h4>
+            <p>Daily hydration needs</p>
+            <a href="/water-calculator.html" class="btn-xs p">Use Now →</a>
+          </div>
+        </div>
+        <div class="rg-box tl">
+          <div class="rg-ico">🎂</div>
+          <div class="rg-txt">
+            <h4>Age Calculator</h4>
+            <p>Calculate your exact age</p>
+            <a href="/age-calculator.html" class="btn-xs t">Use Now →</a>
+          </div>
+        </div>
+        <div class="rg-box rd">
+          <div class="rg-ico">📏</div>
+          <div class="rg-txt">
+            <h4>Ideal Weight Calculator</h4>
+            <p>Find your ideal body weight</p>
+            <a href="/ideal-weight-calculator.html" class="btn-xs r">Use Now →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOOL SECTION -->
+<section class="tool-sec" id="tool">
+  <div class="w">
+    <div class="tool-wrap">
+      <div class="tool-card rev">
+        <div class="tool-hdr">
+          <div class="th">
+            <h2>🍽️ Calories to Weight Gain Converter (Advanced)</h2>
+            <p>Enter your body details below. We'll calculate your BMR, daily calorie needs, surplus required, and how long it will take to reach your target weight.</p>
+            <div class="th-badges">
+              <span class="thb">🔬 BMR Formula</span>
+              <span class="thb">📊 Weekly Plan</span>
+              <span class="thb">⚖️ 7700 kcal/kg</span>
+              <span class="thb">🎯 Personalized</span>
+              <span class="thb">🔒 Private &amp; Secure</span>
+            </div>
+          </div>
+        </div>
+        <div class="tool-body">
+
+          <!-- ROW 1: Current Weight + Target Weight -->
+          <div class="fgrid">
+            <div class="fld">
+              <label class="flbl" for="currentWeight">Current Weight <span>kg</span></label>
+              <div class="inp-wrap">
+                <span class="inp-prefix">kg</span>
+                <input class="finp has-prefix" type="number" id="currentWeight" placeholder="e.g. 55" min="20" max="300" step="0.1" value="55" style="padding-left:46px">
+              </div>
+            </div>
+            <div class="fld">
+              <label class="flbl" for="targetWeight">Target Weight <span>kg</span></label>
+              <div class="inp-wrap">
+                <span class="inp-prefix">kg</span>
+                <input class="finp has-prefix" type="number" id="targetWeight" placeholder="e.g. 65" min="20" max="300" step="0.1" value="65" style="padding-left:46px">
+              </div>
+            </div>
+          </div>
+
+          <!-- ROW 2: Height + Age -->
+          <div class="fgrid">
+            <div class="fld">
+              <label class="flbl" for="height">Height <span>cm</span></label>
+              <div class="inp-wrap">
+                <span class="inp-prefix">cm</span>
+                <input class="finp has-prefix" type="number" id="height" placeholder="e.g. 170" min="100" max="250" step="1" value="170" style="padding-left:46px">
+              </div>
+            </div>
+            <div class="fld">
+              <label class="flbl" for="age">Age <span>years</span></label>
+              <div class="inp-wrap">
+                <span class="inp-prefix">yr</span>
+                <input class="finp has-prefix" type="number" id="age" placeholder="e.g. 22" min="10" max="100" step="1" value="22" style="padding-left:46px">
+              </div>
+            </div>
+          </div>
+
+          <!-- ROW 3: Gender + Activity -->
+          <div class="fgrid">
+            <div class="fld">
+              <label class="flbl" for="gender">Gender <span>Required</span></label>
+              <select class="fsel" id="gender">
+                <option value="male">👨 Male</option>
+                <option value="female">👩 Female</option>
+              </select>
+            </div>
+            <div class="fld">
+              <label class="flbl" for="activity">Activity Level <span>Select</span></label>
+              <select class="fsel" id="activity">
+                <option value="1.2">🛋️ Sedentary (little or no exercise)</option>
+                <option value="1.375">🚶 Lightly Active (1–3 days/week)</option>
+                <option value="1.55" selected>🏃 Moderate (3–5 days/week)</option>
+                <option value="1.725">💪 Active (6–7 days/week)</option>
+                <option value="1.9">🔥 Very Active (hard exercise daily)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="hint-box">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            <span><strong>How it works:</strong> We calculate your BMR using the Mifflin-St Jeor formula, multiply by your activity factor, then add a 300–500 kcal daily surplus. Since 1 kg of body weight ≈ 7700 kcal, we estimate your safe weight gain timeline.</span>
+          </div>
+
+          <button class="chk-btn" onclick="calculate()">
+            💪 Calculate Weight Gain Plan
+          </button>
+
+          <!-- RESULT -->
+          <div id="resultArea">
+            <div class="pay-grid" id="payGrid"></div>
+            <div id="tipsRow" class="tips-row"></div>
+            <div id="weeklyWrap"></div>
+            <button class="copy-btn" id="copyBtn" onclick="copyResult()">📋 Copy Full Report</button>
+            <div class="warn-box">
+              <span style="font-size:20px;flex-shrink:0">⚠️</span>
+              <div style="font-size:13.5px;color:var(--ink2);line-height:1.72"><strong>Health Disclaimer:</strong> Always consult a nutritionist or doctor before starting any weight gain program. These are scientific estimates — individual results vary based on metabolism, genetics, and adherence. <strong>No data is stored or shared.</strong></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GRAPH SECTION -->
+<section class="graph-sec" id="graphSec" style="display:none">
+  <div class="w">
+    <div style="text-align:center;margin-bottom:30px">
+      <div class="sec-lbl" style="justify-content:center">Visual Growth Chart</div>
+      <div class="sec-h">Your Weight Gain <span style="color:var(--blue)">Over Time</span></div>
+      <p class="sec-sub" style="margin:12px auto 0;max-width:560px">Watch how your weight progresses day by day toward your target — with a clear milestone marker when you reach your goal.</p>
+    </div>
+    <div class="graph-card rev">
+      <div class="graph-hdr">
+        <div class="graph-ttl" id="graphTitle">Weight Gain Timeline</div>
+      </div>
+      <div class="graph-legend">
+        <div class="gl-item"><div class="gl-dot" style="background:#2563eb"></div>Weight Progression (kg)</div>
+        <div class="gl-item"><div class="gl-dot" style="background:#10b981"></div>Target Weight</div>
+      </div>
+      <div class="chart-wrap">
+        <div class="chart-tooltip" id="chartTip"></div>
+        <svg id="lineChart" class="linechart" width="100%" height="340" viewBox="0 0 820 340" preserveAspectRatio="xMidYMid meet"></svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES SECTION -->
+<section class="tips-sec">
+  <div class="w">
+    <div style="text-align:center;margin-bottom:40px">
+      <div class="sec-lbl" style="justify-content:center">Why Use This Tool</div>
+      <div class="sec-h">Smart Features for <span style="color:var(--blue)">Weight Gain Planning</span></div>
+    </div>
+    <div class="tips-grid">
+      <div class="tip-card rev">
+        <div class="tip-ico">🔬</div>
+        <div class="tip-title">Mifflin-St Jeor BMR</div>
+        <div class="tip-desc">Uses the most clinically accurate BMR formula recommended by dietitians worldwide — not a rough guess.</div>
+      </div>
+      <div class="tip-card rev">
+        <div class="tip-ico">📈</div>
+        <div class="tip-title">Personalized Surplus</div>
+        <div class="tip-desc">Adds a scientifically safe 300–500 kcal daily surplus above your TDEE for steady, healthy weight gain.</div>
+      </div>
+      <div class="tip-card rev">
+        <div class="tip-ico">📅</div>
+        <div class="tip-title">Weekly Gain Plan</div>
+        <div class="tip-desc">Shows a detailed week-by-week breakdown of your weight gain journey so you always know where you stand.</div>
+      </div>
+      <div class="tip-card rev">
+        <div class="tip-ico">📊</div>
+        <div class="tip-title">Visual Timeline Chart</div>
+        <div class="tip-desc">An interactive chart plots your exact weight progression from start to target — day by day.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TABLE SECTION -->
+<section class="tbl-sec">
+  <div class="w">
+    <div style="text-align:center;margin-bottom:40px">
+      <div class="sec-lbl" style="justify-content:center">Key Factors</div>
+      <div class="sec-h">Weight Gain <span style="color:var(--blue)">Science Table</span></div>
+      <p class="sec-sub" style="margin:12px auto 0">The science behind calorie-based weight gain — at a glance.</p>
+    </div>
+    <div class="tbl-wr">
+      <table>
+        <thead>
+          <tr>
+            <th>Factor</th>
+            <th>Value</th>
+            <th>Details</th>
+            <th>Impact</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>1 kg Weight Gain</strong></td>
+            <td>~7700 Calories</td>
+            <td>Scientific caloric equivalent of 1 kg of body fat/muscle tissue</td>
+            <td><span class="tbadge b">Core Formula</span></td>
+          </tr>
+          <tr>
+            <td><strong>Safe Weekly Gain</strong></td>
+            <td>0.25 – 0.5 kg</td>
+            <td>Recommended by nutritionists for lean muscle gain without excess fat</td>
+            <td><span class="tbadge g">Safe Range</span></td>
+          </tr>
+          <tr>
+            <td><strong>Daily Surplus</strong></td>
+            <td>300 – 500 kcal</td>
+            <td>Extra calories above your TDEE required each day to gain weight</td>
+            <td><span class="tbadge a">Key Driver</span></td>
+          </tr>
+          <tr>
+            <td><strong>Method Used</strong></td>
+            <td>Mifflin-St Jeor BMR</td>
+            <td>Most accurate resting metabolic rate formula for all body types</td>
+            <td><span class="tbadge p">Scientific</span></td>
+          </tr>
+          <tr>
+            <td><strong>Activity Multiplier</strong></td>
+            <td>1.2 – 1.9×</td>
+            <td>TDEE = BMR × Activity Factor (Sedentary to Very Active)</td>
+            <td><span class="tbadge g">Personalized</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:12px;color:var(--ink4);text-align:center;margin-top:10px">* 7700 kcal/kg is a widely accepted estimate. Actual values vary slightly by individual body composition, muscle-to-fat ratio, and metabolic adaptations.</p>
+  </div>
+</section>
+
+<!-- STORY SECTION -->
+<section class="story-sec">
+  <div class="w">
+    <div class="wa">
+      <div class="sec-lbl">Why This Tool Exists</div>
+      <h2 class="sec-h">Why This Tool Exists</h2>
+      <div class="story-card rev">
+        <div class="sq">"</div>
+        <p class="sb">My friend Prashant was very skinny and wanted to gain weight. He tried eating more but didn't know how many calories he actually needed. Sometimes he ate too little, sometimes too much without results. He was frustrated — putting in effort but seeing zero progress on the scale. That's when I realized many people struggle with this exact problem. They don't lack willpower; they lack a clear, scientific plan. So I created this Calories to Weight Gain Converter to make weight gain simple, scientific, and achievable for everyone — not just those who can afford personal nutritionists.</p>
+        <div class="sauth">
+          <div class="savt">🛠️</div>
+          <div>
+            <div class="sname">Raj — Founder, RajDailyTools</div>
+            <div class="srole">Built for everyone who deserves a healthy body</div>
+          </div>
+        </div>
+        <div class="founder-msg">
+          <div class="fm-ico">💡</div>
+          <div class="fm-txt"><strong>Our mission:</strong> Health and nutrition science shouldn't be locked behind expensive gym memberships or dietitian fees. This tool gives every person — student, working professional, or fitness beginner — the power to understand exactly what their body needs to grow, for free.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GUIDE / SEO ARTICLE SECTION -->
+<section class="guide-sec">
+  <div class="w">
+    <div class="wa">
+      <div class="sec-lbl">📖 Complete Guide</div>
+      <h2 class="sec-h">The Complete Science of <span style="color:var(--blue)">Calorie-Based Weight Gain</span></h2>
+      <div class="guide-body">
+
+        <h2>🔥 What Is a Calorie Surplus?</h2>
+        <p>A <strong>calorie surplus</strong> means consuming more calories than your body burns in a day. Your body uses a baseline amount of energy just to stay alive (Basal Metabolic Rate or BMR), plus additional energy for all physical activity. The total is called your <strong>TDEE — Total Daily Energy Expenditure</strong>.</p>
+        <p>When you consistently eat above your TDEE, your body stores the extra energy — primarily as muscle (when combined with training) or as fat. A surplus of 300–500 kcal per day is widely considered the "sweet spot" for gaining weight efficiently without excessive fat accumulation.</p>
+
+        <div class="ibox">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          <span><strong>Quick Formula:</strong> TDEE = BMR × Activity Factor. Eat 300–500 kcal above TDEE daily = 0.25–0.5 kg gain per week. Since 1 kg ≈ 7700 kcal, a 500 kcal daily surplus = ~1 kg gain every 15 days.</span>
+        </div>
+
+        <h2>🧬 How Weight Gain Works Scientifically</h2>
+        <p>Weight gain is fundamentally a matter of <strong>energy balance</strong>. Your body operates like a meticulous accountant — every calorie in and every calorie out is tracked. When you create a sustained surplus, the body has two main options for storing the extra energy: converting it to glycogen (stored in muscles and liver) or converting it to adipose tissue (body fat), or building muscle protein (if resistance training is involved).</p>
+        <p>The <strong>Mifflin-St Jeor BMR formula</strong> used in this tool is the most clinically validated method for calculating how many calories your body needs at rest. It accounts for height, weight, age, and gender — four key variables that significantly affect metabolism.</p>
+        <ul>
+          <li>Men tend to have higher BMRs due to greater lean muscle mass on average</li>
+          <li>Taller individuals burn more calories at rest (larger body surface area)</li>
+          <li>Younger people generally have faster metabolisms than older adults</li>
+          <li>Activity level can multiply calorie needs by 1.2× to 1.9× above BMR</li>
+        </ul>
+
+        <h2>❌ Mistakes People Make When Trying to Gain Weight</h2>
+        <p>Gaining weight sounds simple — just eat more. But most people fail because of common, avoidable mistakes:</p>
+        <ul>
+          <li>Eating randomly without tracking calories — some days 1500 kcal, others 3500 kcal, averaging out below TDEE</li>
+          <li>Eating high-volume, low-calorie foods like salads and soups which fill the stomach without enough energy</li>
+          <li>Overestimating how much they eat ("I eat a lot!" — but when tracked, it's often well below TDEE)</li>
+          <li>Skipping resistance training — without exercise, surplus calories are stored primarily as fat, not muscle</li>
+          <li>Inconsistency — gaining for a week, then slipping back to old habits negates progress</li>
+          <li>Drinking water or tea before meals, reducing appetite and calorie intake</li>
+          <li>Fear of "getting fat" which leads them to eat just barely above maintenance — not enough surplus for measurable gain</li>
+        </ul>
+
+        <div class="ibox a">
+          <svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          <span><strong>Most Common Mistake:</strong> People think they're eating a lot, but without tracking, most underestimate calorie intake by 30–50%. Using a tool like this to calculate your actual daily target gives you a concrete number to hit every single day.</span>
+        </div>
+
+        <h2>🍔 Why Eating Random Food Fails</h2>
+        <p>Many skinny people attempt to gain weight by eating "whatever they want" — chips, fast food, sugary drinks. While this does create a calorie surplus, it comes with serious downsides: <strong>nutrient deficiencies, excessive visceral fat gain, poor gut health, and inflammation</strong>. The body needs not just calories but protein for muscle synthesis, micronutrients for hormonal function, and healthy fats for cellular health.</p>
+        <p>A <strong>structured calorie surplus from nutritious foods</strong> — whole grains, legumes, dairy, eggs, lean meats, nuts, and healthy oils — results in better body composition, sustained energy, and long-term health. Random eating might give you a number on the scale, but it won't give you the healthy, strong body you're aiming for.</p>
+
+        <h2>📊 Why Tracking Calories Is Critical</h2>
+        <p>Tracking your calorie intake — even for just 2–4 weeks — is one of the most powerful things you can do for weight gain success. Most people dramatically underestimate their intake. Tracking reveals:</p>
+        <ul>
+          <li>Your true daily calorie average (often 300–800 kcal less than perceived)</li>
+          <li>Which meals are calorie-dense vs. which are "empty" in terms of energy</li>
+          <li>Where easy calorie additions can be made (adding nuts, cheese, olive oil, peanut butter)</li>
+          <li>Whether your protein intake is adequate for muscle growth (1.6–2.2g per kg of body weight)</li>
+        </ul>
+
+        <div class="ibox g">
+          <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          <span><strong>Pro Tip:</strong> Use a food diary app (like MyFitnessPal) alongside this calculator. Enter this tool's calorie target as your daily goal. In 4–6 weeks, you'll have enough data to see if you need to increase or adjust your surplus.</span>
+        </div>
+
+        <h2>🏋️ Real-Life Examples</h2>
+        <p><strong>Example 1 – Prashant, 22, Male:</strong> Current weight 55 kg, target 65 kg, height 172 cm, moderate activity. BMR ≈ 1640 kcal. TDEE ≈ 2540 kcal. With a 400 kcal surplus, he needs ~2940 kcal/day. To gain 10 kg at 0.4 kg/week, he'll reach his goal in approximately 25 weeks. A completely achievable, sustainable goal.</p>
+        <p><strong>Example 2 – Sunita, 28, Female:</strong> Current weight 48 kg, target 55 kg, height 160 cm, lightly active. BMR ≈ 1310 kcal. TDEE ≈ 1800 kcal. With a 350 kcal surplus, she needs ~2150 kcal/day. To gain 7 kg at 0.3 kg/week, she'll reach her target in about 23 weeks. Gradual, healthy, and realistic.</p>
+
+        <h2>🥗 Diet Tips for Healthy Weight Gain</h2>
+        <ul>
+          <li>Add calorie-dense foods: peanut butter, avocado, full-fat dairy, nuts, olive oil, whole eggs</li>
+          <li>Eat 4–6 smaller meals instead of 2–3 large ones to avoid feeling too full</li>
+          <li>Have a protein shake or banana before bed to supply overnight recovery nutrients</li>
+          <li>Prioritize protein at 1.6–2.2g per kg bodyweight to support muscle growth</li>
+          <li>Don't fill up on water before meals — drink after eating to preserve appetite</li>
+          <li>Cook with ghee or olive oil to easily add 100–200 kcal per meal</li>
+          <li>Snack on calorie-dense foods: trail mix, cheese, whole milk, dark chocolate</li>
+          <li>Combine resistance training (weightlifting) 3–5× per week with your surplus to build muscle, not just fat</li>
+        </ul>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ SECTION -->
+<section class="faq-sec">
+  <div class="w">
+    <div class="sec-lbl" style="justify-content:center">FAQ</div>
+    <h2 class="sec-h" style="text-align:center">Frequently Asked <span style="color:var(--blue)">Questions</span></h2>
+    <p class="sec-sub" style="text-align:center;margin:0 auto 40px">Answers to the most common questions about calorie-based weight gain and this tool.</p>
+    <div class="fql">
+      <div class="fq">
+        <div class="fq-q" onclick="tFQ(this)">
+          <span class="fq-t">How many calories does it take to gain 1 kg?</span>
+          <span class="fq-i">+</span>
+        </div>
+        <div class="fq-a"><div class="fq-ai">It takes approximately <strong>7700 calories</strong> to gain 1 kg of body weight. This is a well-established scientific estimate based on the energy density of human tissue. In practice, to gain 1 kg per week you would need a ~1100 kcal daily surplus — which is too fast and unsustainable. A safer approach is 300–500 kcal surplus daily, yielding 0.25–0.5 kg per week.</div></div>
+      </div>
+      <div class="fq">
+        <div class="fq-q" onclick="tFQ(this)">
+          <span class="fq-t">Is a 300 kcal surplus enough to gain weight?</span>
+          <span class="fq-i">+</span>
+        </div>
+        <div class="fq-a"><div class="fq-ai">Yes — a 300 kcal daily surplus is sufficient to gain approximately 0.25 kg per week (about 1 kg per month). While slower, this approach is highly recommended for maintaining good body composition — you gain more muscle and less fat. For faster results, a 500 kcal surplus yields ~0.5 kg per week, but requires careful nutrition to minimize fat gain.</div></div>
+      </div>
+      <div class="fq">
+        <div class="fq-q" onclick="tFQ(this)">
+          <span class="fq-t">Can I gain weight fast without getting fat?</span>
+          <span class="fq-i">+</span>
+        </div>
+        <div class="fq-a"><div class="fq-ai">The fastest healthy weight gain without excessive fat is about 0.5 kg per week for most people — requiring ~500 kcal surplus daily. Beyond that, your body stores more as fat than muscle. A "lean bulk" — moderate calorie surplus + resistance training + high protein — is the best way to gain weight while keeping fat gain minimal. Patience is key: 4–6 months of consistent effort yields excellent results.</div></div>
+      </div>
+      <div class="fq">
+        <div class="fq-q" onclick="tFQ(this)">
+          <span class="fq-t">Does gym/exercise help with weight gain?</span>
+          <span class="fq-i">+</span>
+        </div>
+        <div class="fq-a"><div class="fq-ai">Absolutely. Resistance training (weightlifting, bodyweight exercises) is essential for directing surplus calories into muscle tissue rather than fat storage. Without exercise, a calorie surplus primarily adds fat. With 3–5 gym sessions per week targeting all major muscle groups, the same surplus builds lean muscle — improving strength, aesthetics, and overall health. Cardio should be kept minimal during a weight gain phase.</div></div>
+      </div>
+      <div class="fq">
+        <div class="fq-q" onclick="tFQ(this)">
+          <span class="fq-t">Is this tool accurate? How is it calculated?</span>
+          <span class="fq-i">+</span>
+        </div>
+        <div class="fq-a"><div class="fq-ai">This tool uses the <strong>Mifflin-St Jeor formula</strong>, the most widely validated BMR equation in clinical nutrition research (published in 1990, validated in multiple studies). It's more accurate than the older Harris-Benedict formula. However, all formulas are estimates — individual metabolism can vary by ±10–15%. Use this as a starting point, track your weight weekly, and adjust calories ±200 kcal if progress is faster or slower than expected.</div></div>
+      </div>
+      <div class="fq">
+        <div class="fq-q" onclick="tFQ(this)">
+          <span class="fq-t">Can I use this tool daily?</span>
+          <span class="fq-i">+</span>
+        </div>
+        <div class="fq-a"><div class="fq-ai">Yes! This tool is completely free and there's no limit on usage. We recommend recalculating every 4–6 weeks as your weight changes — because as you gain weight, your BMR increases too, meaning you'll need slightly more calories to continue progressing. Recalculating ensures your calorie target stays accurate throughout your journey.</div></div>
+      </div>
+      <div class="fq">
+        <div class="fq-q" onclick="tFQ(this)">
+          <span class="fq-t">What foods should I eat to gain weight healthily?</span>
+          <span class="fq-i">+</span>
+        </div>
+        <div class="fq-a"><div class="fq-ai">Focus on calorie-dense, nutrient-rich foods: whole eggs, full-fat dairy (milk, paneer, cheese), peanut butter, almonds, walnuts, avocados, olive oil, brown rice, oats, lentils, chicken, fish, and sweet potatoes. Avoid relying on junk food — it gives empty calories, disrupts gut health, and causes hormonal imbalances. A diet high in whole foods combined with your calculated calorie surplus will give you the best results.</div></div>
+      </div>
+      <div class="fq">
+        <div class="fq-q" onclick="tFQ(this)">
+          <span class="fq-t">Does this tool store my health data?</span>
+          <span class="fq-i">+</span>
+        </div>
+        <div class="fq-a"><div class="fq-ai">No. This tool runs entirely in your browser using JavaScript. <strong>No data is collected, stored, transmitted, or shared</strong> — not your weight, age, height, gender, or anything else. Your health information stays completely private. We don't even use cookies for this tool. You can use it with complete peace of mind.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DISCLAIMER -->
+<div class="disc">
+  <div class="w">
+    <div class="disc-in">
+      <span style="font-size:20px;flex-shrink:0">⚠️</span>
+      <div><strong>Health Disclaimer:</strong> This tool provides estimated calorie and weight gain projections for informational and educational purposes only. Results are based on scientific formulas and may vary significantly between individuals due to genetics, hormonal factors, gut health, and metabolic adaptations. This is not medical or nutritional advice. Always consult a registered dietitian, nutritionist, or qualified physician before making significant changes to your diet or starting a weight gain program.</div>
+    </div>
+  </div>
+</div>
+
+<!-- PRIVACY NOTE -->
+<div style="background:var(--blue-xl);border-top:1px solid var(--blue-s);border-bottom:1px solid var(--blue-s);padding:13px 0">
+  <div class="w">
+    <div style="display:flex;align-items:flex-start;gap:12px;font-size:13px;color:var(--ink2);line-height:1.7">
+      <span style="font-size:18px;flex-shrink:0">🔒</span>
+      <div><strong>Privacy:</strong> This tool is 100% client-side. No data you enter is ever sent to our servers, stored in a database, or shared with any third party. Your body measurements remain private on your device. Safe usage guaranteed.</div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<section class="contact-sec">
+  <div class="w">
+    <div class="contact-card rev">
+      <h3>📬 For Any Queries or Corrections</h3>
+      <p>For any queries, corrections, feedback, or tool improvement requests, contact us anytime. We genuinely read every message and continuously improve our tools based on real user feedback.</p>
+      <a href="/contact" class="btn-bl">✉️ Contact Us</a>
+      <p class="priv-note">🔒 We respect your privacy. No data is collected. No spam, ever.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="cta-in">
+    <div class="pill">Explore More Tools</div>
+    <h2>Discover <em>100+ Free Tools</em> on RajDailyTools</h2>
+    <p>From calorie calculators to financial planners — all free, fast, and no sign-up required.</p>
+    <div class="cta-btns">
+      <a href="/categories" class="btn-gold">🗂️ Browse All Tools</a>
+      <a href="/#popular" class="btn-ghost">⭐ Popular Tools</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-inner">
+    <div class="ft-top">
+      <div class="ft-brand">
+        <a href="/" class="logo">
+          <div class="lb"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+          <div><div class="ln">Raj<span>Daily</span>Tools</div><div class="ls">Smart Tools for Daily Life</div></div>
+        </a>
+        <div class="ft-desc">Free, fast, and reliable health &amp; finance tools for everyone. Calorie calculators, BMI, net worth predictors and 100+ more tools — all in one place.</div>
+        <div class="ft-soc">
+          <a class="fts" href="#" title="Twitter">𝕏</a>
+          <a class="fts" href="#" title="Instagram">📸</a>
+          <a class="fts" href="#" title="YouTube">▶</a>
+        </div>
+      </div>
+      <div class="fc">
+        <h4>Health Tools</h4>
+        <ul>
+          <li><a href="/bmi-calculator.html">BMI Calculator</a></li>
+          <li><a href="/calorie-calculator.html">Calorie Calculator</a></li>
+          <li><a href="/protein-calculator.html">Protein Calculator</a></li>
+          <li><a href="/water-calculator.html">Water Intake</a></li>
+          <li><a href="/ideal-weight-calculator.html">Ideal Weight</a></li>
+        </ul>
+      </div>
+      <div class="fc">
+        <h4>Finance Tools</h4>
+        <ul>
+          <li><a href="/net-worth-predictor.html">Net Worth Predictor</a></li>
+          <li><a href="/sip-calculator.html">SIP Calculator</a></li>
+          <li><a href="/emi-calculator.html">EMI Calculator</a></li>
+          <li><a href="/gst-calculator.html">GST Calculator</a></li>
+          <li><a href="/salary-converter.html">Salary Converter</a></li>
+        </ul>
+      </div>
+      <div class="fc">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/about">About Us</a></li>
+          <li><a href="/contact">Contact</a></li>
+          <li><a href="/privacy">Privacy Policy</a></li>
+          <li><a href="/disclaimer">Disclaimer</a></li>
+          <li><a href="/categories">All Tools</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ft-btm">
+      <div class="ft-cp">© 2025 <b>RajDailyTools.in</b> — All rights reserved. Made with ❤️ in India.</div>
+      <div class="ft-tag">Free tools, no sign-up, no ads, no data stored.</div>
+    </div>
+  </div>
+</footer>
+
+<!-- BACK TO TOP -->
+<button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+/* ── DRAWER ── */
+const brg=document.getElementById('brg'),dov=document.getElementById('dov'),drw=document.getElementById('drw'),dx=document.getElementById('dx');
+function oD(){drw.classList.add('on');dov.classList.add('on');document.body.style.overflow='hidden'}
+function cD(){drw.classList.remove('on');dov.classList.remove('on');document.body.style.overflow=''}
+brg.addEventListener('click',oD);dov.addEventListener('click',cD);dx.addEventListener('click',cD);
+
+/* ── BACK TO TOP ── */
+const btt=document.getElementById('btt');
+window.addEventListener('scroll',()=>{btt.classList.toggle('on',window.scrollY>380)});
+
+/* ── SCROLL REVEAL ── */
+const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:.12});
+document.querySelectorAll('.rev').forEach(el=>obs.observe(el));
+
+/* ── FAQ ── */
+function tFQ(el){
+  const fq=el.closest('.fq');
+  document.querySelectorAll('.fq.open').forEach(f=>{if(f!==fq)f.classList.remove('open')});
+  fq.classList.toggle('open');
+}
+
+/* ── CALCULATOR ── */
+let lastResult = {};
+
+function calculate(){
+  const cw  = parseFloat(document.getElementById('currentWeight').value);
+  const tw  = parseFloat(document.getElementById('targetWeight').value);
+  const ht  = parseFloat(document.getElementById('height').value);
+  const age = parseFloat(document.getElementById('age').value);
+  const gen = document.getElementById('gender').value;
+  const act = parseFloat(document.getElementById('activity').value);
+
+  // Validation
+  if(!cw||!tw||!ht||!age||cw<20||tw<20||ht<100||age<10){
+    alert('⚠️ Please fill all fields with valid values.');return;
+  }
+  if(tw <= cw){
+    alert('⚠️ Target weight must be greater than current weight.');return;
+  }
+  if(tw - cw > 50){
+    alert('⚠️ Please set a realistic target. Max 50 kg difference recommended.');return;
+  }
+
+  // Mifflin-St Jeor BMR
+  let bmr;
+  if(gen === 'male'){
+    bmr = 10*cw + 6.25*ht - 5*age + 5;
+  } else {
+    bmr = 10*cw + 6.25*ht - 5*age - 161;
+  }
+
+  const tdee    = Math.round(bmr * act);
+  const surplus = tdee < 2000 ? 300 : 400; // lower surplus for smaller people
+  const dailyCal = tdee + surplus;
+
+  // Weight to gain
+  const toGain = tw - cw;
+  const totalCal = toGain * 7700;
+
+  // At surplus, days needed
+  const daysNeeded = Math.round(totalCal / surplus);
+  const weeksNeeded = Math.round(daysNeeded / 7);
+  const monthsNeeded = (daysNeeded / 30).toFixed(1);
+
+  // Weekly gain (0.25–0.5 kg)
+  const weeklyGain = (surplus * 7 / 7700).toFixed(2);
+
+  lastResult = {cw, tw, ht, age, gen, act, bmr: Math.round(bmr), tdee, surplus, dailyCal, toGain, daysNeeded, weeksNeeded, monthsNeeded, weeklyGain};
+
+  // Render result cards
+  const grid = document.getElementById('payGrid');
+  grid.innerHTML = `
+    <div class="pay-card c1">
+      <div class="pc-ico">🔥</div>
+      <div class="pc-lbl">🧬 Your BMR</div>
+      <div class="pc-val">${Math.round(bmr)}</div>
+      <div class="pc-sub">kcal/day at complete rest (Mifflin-St Jeor)</div>
+    </div>
+    <div class="pay-card c2">
+      <div class="pc-ico">⚡</div>
+      <div class="pc-lbl">🏃 TDEE (Maintenance)</div>
+      <div class="pc-val">${tdee}</div>
+      <div class="pc-sub">kcal/day with your activity level</div>
+    </div>
+    <div class="pay-card c3">
+      <div class="pc-ico">➕</div>
+      <div class="pc-lbl">📈 Surplus Calories</div>
+      <div class="pc-val">+${surplus}</div>
+      <div class="pc-sub">kcal/day added above maintenance</div>
+    </div>
+    <div class="pay-card c4">
+      <div class="pc-ico">🍽️</div>
+      <div class="pc-lbl">🎯 Daily Calories Needed</div>
+      <div class="pc-val">${dailyCal} kcal/day</div>
+      <div class="pc-sub">You need approx <strong>${dailyCal} kcal/day</strong> to gain weight steadily from ${cw} kg → ${tw} kg. Total gain: ${toGain} kg over ~${weeksNeeded} weeks (${monthsNeeded} months). Weekly gain rate: ${weeklyGain} kg/week.</div>
+    </div>
+  `;
+
+  // Tips
+  const tips = document.getElementById('tipsRow');
+  tips.innerHTML = `
+    <span class="tip-pill">⏳ Est. Time: ${weeksNeeded} weeks</span>
+    <span class="tip-pill">📅 ~${monthsNeeded} months</span>
+    <span class="tip-pill">⚖️ Weekly Gain: ${weeklyGain} kg</span>
+    <span class="tip-pill">🔥 Total Surplus: ${(toGain*7700).toLocaleString()} kcal</span>
+  `;
+
+  // Weekly plan table
+  buildWeeklyTable(cw, tw, parseFloat(weeklyGain), weeksNeeded);
+
+  // Show result
+  document.getElementById('resultArea').style.display='block';
+
+  // Build chart
+  document.getElementById('graphSec').style.display='block';
+  buildChart(cw, tw, daysNeeded, parseFloat(weeklyGain));
+
+  // Scroll to result
+  setTimeout(()=>document.getElementById('resultArea').scrollIntoView({behavior:'smooth',block:'start'}),120);
+}
+
+function buildWeeklyTable(cw, tw, weeklyGain, totalWeeks){
+  const showWeeks = Math.min(totalWeeks, 16); // max 16 rows
+  let rows = '';
+  for(let w=1; w<=showWeeks; w++){
+    const wt = Math.min(cw + w * weeklyGain, tw).toFixed(2);
+    const gained = (w * weeklyGain).toFixed(2);
+    const pct = Math.min(Math.round((w/totalWeeks)*100), 100);
+    rows += `<tr>
+      <td><strong>Week ${w}</strong></td>
+      <td>${wt} kg</td>
+      <td>+${gained} kg gained</td>
+      <td><span style="display:inline-block;width:${pct}%;min-width:24px;background:var(--green);color:#fff;font-size:11px;font-weight:700;padding:2px 6px;border-radius:5px;text-align:center">${pct}%</span></td>
+    </tr>`;
+  }
+  const more = totalWeeks > 16 ? `<tr><td colspan="4" style="text-align:center;color:var(--ink4);font-size:12px;padding:12px">... and ${totalWeeks-16} more weeks to reach ${tw} kg</td></tr>` : '';
+
+  document.getElementById('weeklyWrap').innerHTML = `
+    <div style="margin-top:6px;margin-bottom:4px">
+      <div style="font-family:var(--fd);font-size:15px;font-weight:800;color:var(--ink);margin-bottom:8px">📅 Weekly Weight Gain Plan</div>
+    </div>
+    <div class="weekly-table-wrap">
+      <table>
+        <thead><tr><th>Week</th><th>Est. Weight</th><th>Total Gained</th><th>Progress</th></tr></thead>
+        <tbody>${rows}${more}</tbody>
+      </table>
+    </div>
+  `;
+}
+
+function copyResult(){
+  const r = lastResult;
+  if(!r.dailyCal){return;}
+  const txt = `
+WEIGHT GAIN PLAN — RajDailyTools
+====================================
+Current Weight  : ${r.cw} kg
+Target Weight   : ${r.tw} kg
+Height          : ${r.ht} cm
+Age             : ${r.age} years
+Gender          : ${r.gen}
+
+BMR (Mifflin-St Jeor) : ${r.bmr} kcal/day
+TDEE (Maintenance)    : ${r.tdee} kcal/day
+Daily Surplus         : +${r.surplus} kcal/day
+Daily Calories Needed : ${r.dailyCal} kcal/day
+
+Weight to Gain   : ${r.toGain} kg
+Weekly Gain Rate : ${r.weeklyGain} kg/week
+Estimated Time   : ${r.weeksNeeded} weeks (~${r.monthsNeeded} months)
+Total Calorie Surplus Needed : ${(r.toGain*7700).toLocaleString()} kcal
+
+Formula: Mifflin-St Jeor BMR × Activity Factor + ${r.surplus} kcal surplus
+1 kg weight gain ≈ 7700 calories
+
+Generated by RajDailyTools.in`.trim();
+  const cb = document.getElementById('copyBtn');
+  const done = () => {
+    cb.textContent = '✅ Copied!';cb.classList.add('copied');
+    setTimeout(()=>{cb.textContent='📋 Copy Full Report';cb.classList.remove('copied');},2200);
+  };
+  navigator.clipboard ? navigator.clipboard.writeText(txt).then(done).catch(done) : done();
+}
+
+/* ── CHART ── */
+function buildChart(cw, tw, totalDays, weeklyGain){
+  const W=820, H=340;
+  const PAD={top:24,right:24,bottom:56,left:72};
+  const cW=W-PAD.left-PAD.right;
+  const cH=H-PAD.top-PAD.bottom;
+
+  // Build data points — sample every 7 days
+  const step = Math.max(1, Math.floor(totalDays/60));
+  const pts=[];
+  for(let d=0;d<=totalDays;d+=step){
+    const wt = Math.min(cw + (d/7)*weeklyGain, tw);
+    pts.push({d, wt});
+  }
+  // ensure last point is exactly target
+  if(pts[pts.length-1].wt < tw) pts.push({d:totalDays, wt:tw});
+
+  const minW = cw;
+  const maxW = tw + (tw-cw)*0.05;
+
+  function xP(d){return PAD.left + (d/totalDays)*cW;}
+  function yP(w){return PAD.top + cH - ((w-minW)/(maxW-minW||1))*cH;}
+
+  // Grid
+  const TICKS=5; let gl='',yl='';
+  for(let i=0;i<=TICKS;i++){
+    const v=minW+(maxW-minW)*(i/TICKS);
+    const y=yP(v);
+    gl+=`<line class="grid-line" x1="${PAD.left}" y1="${y}" x2="${W-PAD.right}" y2="${y}"/>`;
+    yl+=`<text class="axis-label" x="${PAD.left-8}" y="${y+4}" text-anchor="end">${v.toFixed(1)}</text>`;
+  }
+
+  // X labels (show ~8 labels)
+  const xStep=Math.max(7,Math.floor(totalDays/8/7)*7);
+  let xl='';
+  for(let d=0;d<=totalDays;d+=xStep){
+    xl+=`<text class="axis-label" x="${xP(d)}" y="${H-PAD.bottom+20}" text-anchor="middle">Day ${d}</text>`;
+  }
+
+  // Target line
+  const tyPos=yP(tw);
+  const targetLine=`<line x1="${PAD.left}" y1="${tyPos}" x2="${W-PAD.right}" y2="${tyPos}" stroke="#10b981" stroke-width="2" stroke-dasharray="8 4" opacity=".7"/>`;
+
+  // Path
+  const path=pts.map((p,i)=>`${i===0?'M':'L'}${xP(p.d).toFixed(1)},${yP(p.wt).toFixed(1)}`).join(' ');
+  const base=yP(minW);
+  const area=`M ${xP(0)},${base} ${pts.map(p=>`${xP(p.d).toFixed(1)},${yP(p.wt).toFixed(1)}`).join(' ')} L ${xP(totalDays)},${base} Z`;
+
+  // Target dot
+  const tdot=`<circle cx="${xP(totalDays)}" cy="${yP(tw)}" r="7" fill="#10b981" stroke="#fff" stroke-width="3"/>`;
+
+  const svg=document.getElementById('lineChart');
+  svg.innerHTML=`
+    <defs>
+      <linearGradient id="gWt" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#2563eb" stop-opacity=".2"/>
+        <stop offset="100%" stop-color="#2563eb" stop-opacity=".02"/>
+      </linearGradient>
+    </defs>
+    ${gl}${yl}${xl}
+    <text class="axis-title" x="${PAD.left-56}" y="${PAD.top+cH/2}" transform="rotate(-90,${PAD.left-56},${PAD.top+cH/2})" text-anchor="middle">Weight (kg)</text>
+    <text class="axis-title" x="${PAD.left+cW/2}" y="${H-6}" text-anchor="middle">Days</text>
+    ${targetLine}
+    <path d="${area}" fill="url(#gWt)"/>
+    <path d="${path}" fill="none" stroke="#2563eb" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+    ${pts.filter((_,i)=>i%Math.max(1,Math.floor(pts.length/10))===0||i===pts.length-1).map(p=>`<circle cx="${xP(p.d)}" cy="${yP(p.wt)}" r="4" fill="#2563eb" stroke="#fff" stroke-width="2" class="chart-dot" data-d="${p.d}" data-wt="${p.wt.toFixed(2)}"/>`).join('')}
+    ${tdot}
+    <text x="${xP(totalDays)-8}" y="${yP(tw)-12}" class="axis-title" fill="#10b981" text-anchor="end">🎯 ${tw}kg</text>
+  `;
+
+  document.getElementById('graphTitle').textContent=`Weight Gain Timeline: ${cw}kg → ${tw}kg in ~${Math.round(totalDays/7)} weeks`;
+
+  const tip=document.getElementById('chartTip');
+  const wrap=svg.parentElement;
+  svg.querySelectorAll('.chart-dot').forEach(dot=>{
+    dot.addEventListener('mouseenter',e=>{
+      tip.innerHTML=`Day ${dot.getAttribute('data-d')}<br>⚖️ Weight: ${dot.getAttribute('data-wt')} kg`;
+      tip.style.opacity='1';
+    });
+    dot.addEventListener('mousemove',e=>{
+      const rect=wrap.getBoundingClientRect();
+      tip.style.left=(e.clientX-rect.left+12)+'px';
+      tip.style.top=(e.clientY-rect.top-36)+'px';
+    });
+    dot.addEventListener('mouseleave',()=>{tip.style.opacity='0';});
+  });
+}
+</script>
+</body>
+</html>
