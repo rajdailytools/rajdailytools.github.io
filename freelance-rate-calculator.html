@@ -1,0 +1,1251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Freelance Rate Calculator – Hourly, Daily & Project Pricing Tool – RajDailyTools</title>
+<meta name="description" content="Free freelance rate calculator. Find out exactly how much to charge per hour, per day, and per project based on your income goals, expenses, and working hours. Used worldwide.">
+<meta name="keywords" content="freelance rate calculator, how to calculate freelance rate, hourly rate calculator freelancer, freelance pricing calculator, how much should I charge as a freelancer, freelance hourly rate formula, freelance income calculator">
+<meta name="robots" content="index, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#2563eb;--blue-d:#1d4ed8;--blue-xl:#eff6ff;--blue-s:#dbeafe;
+  --amber:#f59e0b;--green:#10b981;--red:#ef4444;--purple:#8b5cf6;
+  --orange:#f97316;--teal:#14b8a6;
+  --green-xl:#f0fdf4;--green-s:#bbf7d0;
+  --red-xl:#fef2f2;--red-s:#fecaca;
+  --amber-xl:#fffbeb;--amber-s:#fde68a;
+  --purple-xl:#faf5ff;--purple-s:#ddd6fe;
+  --ink:#0f172a;--ink2:#334155;--ink3:#64748b;--ink4:#94a3b8;
+  --line:#e2e8f0;--surf:#f8fafc;--white:#fff;
+  --s1:0 1px 3px rgba(15,23,42,.06),0 1px 2px rgba(15,23,42,.04);
+  --s2:0 4px 16px rgba(15,23,42,.08),0 2px 6px rgba(15,23,42,.04);
+  --s3:0 12px 40px rgba(15,23,42,.11),0 3px 10px rgba(15,23,42,.06);
+  --s4:0 24px 64px rgba(15,23,42,.13),0 6px 20px rgba(15,23,42,.07);
+  --sb:0 8px 32px rgba(37,99,235,.20);
+  --fd:'Sora',sans-serif;--fb:'DM Sans',sans-serif;
+  --ease:cubic-bezier(.4,0,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);color:var(--ink);background:var(--white);overflow-x:hidden;-webkit-font-smoothing:antialiased;line-height:1.6}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+button{cursor:pointer;border:none;background:none;font-family:var(--fb)}
+.w{max-width:1180px;margin:0 auto;padding:0 24px}
+.wa{max-width:880px;margin:0 auto;padding:0 24px}
+select,input{appearance:none;-webkit-appearance:none}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+@keyframes resultIn{from{opacity:0;transform:translateY(18px) scale(.97)}to{opacity:1;transform:none}}
+@keyframes progressFill{from{width:0}to{width:var(--pw)}}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}
+.rev{opacity:0;transform:translateY(22px);transition:opacity .55s var(--ease),transform .55s var(--ease)}
+.rev.in{opacity:1;transform:none}
+
+/* HEADER */
+.hdr{position:sticky;top:0;z-index:999;background:rgba(255,255,255,.96);backdrop-filter:blur(20px);border-bottom:1px solid var(--line);box-shadow:var(--s1)}
+.hdi{display:flex;align-items:center;justify-content:space-between;height:66px}
+.logo{display:flex;align-items:center;gap:10px}
+.lb{width:36px;height:36px;background:var(--blue);border-radius:9px;display:flex;align-items:center;justify-content:center;box-shadow:var(--sb);flex-shrink:0}
+.lb svg{width:18px;height:18px;fill:#fff}
+.ln{font-family:var(--fd);font-size:19px;font-weight:800;color:var(--ink);line-height:1}
+.ln span{color:var(--blue)}
+.ls{font-size:10px;color:var(--ink4);letter-spacing:.04em}
+nav.dn{display:flex;align-items:center;gap:2px}
+nav.dn a{font-size:13.5px;font-weight:500;color:var(--ink2);padding:7px 13px;border-radius:8px;transition:.2s}
+nav.dn a:hover{color:var(--blue);background:var(--blue-xl)}
+.hcta{background:var(--blue);color:#fff;font-family:var(--fd);font-weight:600;font-size:13px;padding:8px 18px;border-radius:8px;box-shadow:var(--sb);transition:.2s}
+.hcta:hover{background:var(--blue-d);transform:translateY(-1px)}
+.brg{display:none;flex-direction:column;gap:4.5px;padding:8px;border-radius:8px}
+.brg span{display:block;width:20px;height:2px;background:var(--ink);border-radius:2px;transition:.28s}
+.dov{display:none;position:fixed;inset:0;background:rgba(15,23,42,.45);z-index:1040;backdrop-filter:blur(3px)}
+.dov.on{display:block}
+.drw{position:fixed;top:0;right:-100%;width:270px;height:100vh;background:#fff;z-index:1050;padding:22px;box-shadow:var(--s4);transition:right .32s var(--ease);overflow-y:auto}
+.drw.on{right:0}
+.dh{display:flex;align-items:center;justify-content:space-between;margin-bottom:26px}
+.dx{width:33px;height:33px;border-radius:7px;background:var(--surf);display:flex;align-items:center;justify-content:center;color:var(--ink3);font-size:17px}
+nav.mn{display:flex;flex-direction:column;gap:3px}
+nav.mn a{display:block;font-size:14px;font-weight:500;color:var(--ink2);padding:11px 13px;border-radius:8px;transition:.2s}
+nav.mn a:hover{color:var(--blue);background:var(--blue-xl)}
+
+/* HERO */
+.hero{position:relative;overflow:hidden;background:linear-gradient(150deg,#ebf4ff 0%,#fff 46%,#fff7ed 100%);padding:64px 0 72px}
+.hero::before{content:'';position:absolute;top:-140px;right:-180px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(37,99,235,.08) 0%,transparent 68%);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-80px;left:-100px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(249,115,22,.05) 0%,transparent 68%);pointer-events:none}
+.blob{position:absolute;border-radius:50%;pointer-events:none;animation:float 6s ease-in-out infinite}
+.b1{width:13px;height:13px;background:rgba(37,99,235,.18);top:22%;right:14%;animation-delay:0s}
+.b2{width:9px;height:9px;background:rgba(249,115,22,.22);top:58%;right:26%;animation-delay:2.2s}
+.b3{width:11px;height:11px;background:rgba(16,185,129,.18);top:36%;right:6%;animation-delay:4s}
+.bc{display:flex;align-items:center;gap:7px;font-size:12.5px;color:var(--ink3);margin-bottom:22px;position:relative;z-index:1;flex-wrap:wrap}
+.bc a{color:var(--blue);font-weight:600}
+.pill{display:inline-flex;align-items:center;gap:7px;font-family:var(--fd);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);background:var(--blue-xl);padding:5px 14px;border-radius:100px;margin-bottom:18px}
+.pill::before{content:'';width:6px;height:6px;background:var(--blue);border-radius:50%}
+.hero-inner{position:relative;z-index:1;max-width:720px;animation:fadeUp .5s ease both}
+.hero h1{font-family:var(--fd);font-size:clamp(26px,4.5vw,50px);font-weight:800;line-height:1.1;color:var(--ink);margin-bottom:14px}
+.hero h1 span{color:var(--blue)}
+.hero-sub{font-size:16px;color:var(--ink3);line-height:1.8;margin-bottom:22px;max-width:600px}
+.hero-chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.chip{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;padding:6px 14px;border-radius:100px;background:#fff;border:1.5px solid var(--line);color:var(--ink2);box-shadow:var(--s1);transition:.22s}
+.chip:hover{border-color:var(--blue);color:var(--blue);transform:translateY(-1px)}
+.hero-meta{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:24px}
+.upd{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:700;color:var(--blue);background:var(--blue-xl);padding:6px 14px;border-radius:100px;border:1.5px solid var(--blue-s)}
+.mi{font-size:13px;color:var(--ink3);font-weight:500}
+
+/* HOW TO USE */
+.howto{background:var(--amber-xl);border:2px solid var(--amber-s);border-radius:16px;padding:22px 26px;max-width:560px;margin-bottom:24px}
+.howto-ttl{display:flex;align-items:center;gap:9px;font-family:var(--fd);font-size:15px;font-weight:800;color:var(--ink);margin-bottom:13px}
+.howto-steps{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.hs{display:flex;align-items:flex-start;gap:10px;font-size:13.5px;color:var(--ink2);line-height:1.6}
+.sn{width:24px;height:24px;background:var(--amber);color:#fff;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex-shrink:0;margin-top:1px}
+
+/* RELATED TOOLS */
+.rel-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;position:relative;z-index:1}
+.rg-box{border-radius:14px;padding:14px 14px 12px;display:flex;flex-direction:column;gap:8px;transition:.22s;border:1.5px solid}
+.rg-box:hover{transform:translateY(-3px);box-shadow:var(--s3)}
+.rg-box.army{background:linear-gradient(135deg,var(--amber-xl),#fef3c7);border-color:var(--amber-s)}
+.rg-box.ht{background:linear-gradient(135deg,var(--green-xl),#dcfce7);border-color:var(--green-s)}
+.rg-box.ssc{background:linear-gradient(135deg,var(--blue-xl),var(--blue-s));border-color:var(--blue-s)}
+.rg-box.mp{background:linear-gradient(135deg,var(--purple-xl),#ede9fe);border-color:var(--purple-s)}
+.rg-box.tl{background:linear-gradient(135deg,#f0fdfa,#ccfbf1);border-color:#99f6e4}
+.rg-box.rd{background:linear-gradient(135deg,var(--red-xl),#fee2e2);border-color:var(--red-s)}
+.rg-ico{font-size:22px}
+.rg-txt h4{font-family:var(--fd);font-size:12px;font-weight:800;color:var(--ink);margin-bottom:2px}
+.rg-txt p{font-size:11px;color:var(--ink3);line-height:1.5}
+.btn-xs{display:inline-flex;align-items:center;gap:4px;font-family:var(--fd);font-weight:700;font-size:11px;padding:5px 10px;border-radius:7px;transition:.22s;margin-top:4px}
+.btn-xs.a{background:var(--amber);color:#fff}.btn-xs.a:hover{background:#d97706}
+.btn-xs.g{background:var(--green);color:#fff}.btn-xs.g:hover{background:#059669}
+.btn-xs.b{background:var(--blue);color:#fff}.btn-xs.b:hover{background:var(--blue-d)}
+.btn-xs.p{background:var(--purple);color:#fff}.btn-xs.p:hover{background:#7c3aed}
+.btn-xs.t{background:var(--teal);color:#fff}.btn-xs.t:hover{background:#0f9488}
+.btn-xs.r{background:var(--red);color:#fff}.btn-xs.r:hover{background:#dc2626}
+
+/* TOOL */
+.tool-sec{background:var(--surf);padding:80px 0}
+.tool-wrap{max-width:900px;margin:0 auto}
+.tool-card{background:#fff;border:1.5px solid var(--line);border-radius:28px;overflow:hidden;box-shadow:var(--s4)}
+.tool-hdr{background:linear-gradient(135deg,#1d4ed8 0%,#2563eb 55%,#3b82f6 100%);padding:32px 40px;position:relative;overflow:hidden}
+.tool-hdr::before{content:'';position:absolute;top:-60px;right:-60px;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,.07)}
+.tool-hdr::after{content:'';position:absolute;bottom:-40px;left:-40px;width:180px;height:180px;border-radius:50%;background:rgba(255,255,255,.04)}
+.th{position:relative;z-index:1}
+.th h2{font-family:var(--fd);font-size:21px;font-weight:800;color:#fff;margin-bottom:6px}
+.th p{font-size:14px;color:rgba(255,255,255,.82);line-height:1.65}
+.th-badges{display:flex;flex-wrap:wrap;gap:9px;margin-top:14px}
+.thb{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:rgba(255,255,255,.9);background:rgba(255,255,255,.13);padding:5px 12px;border-radius:100px}
+.tool-body{padding:36px 40px}
+
+/* FORM */
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+.fgrid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:16px}
+.fld{display:flex;flex-direction:column;gap:7px}
+.flbl{font-size:13px;font-weight:700;color:var(--ink2)}
+.flbl span{font-size:11px;font-weight:500;color:var(--ink4);margin-left:5px;background:var(--surf);padding:2px 7px;border-radius:5px;border:1px solid var(--line)}
+.inp-row{display:flex;gap:8px}
+.finp,.fsel{padding:12px 16px;font-size:14.5px;color:var(--ink);background:#fff;border:1.5px solid var(--line);border-radius:10px;outline:none;transition:.22s;font-family:var(--fb);width:100%}
+.finp:focus,.fsel:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(37,99,235,.10)}
+.finp-sm{flex:1}
+.fsel-sm{width:110px;flex-shrink:0}
+.fsel{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2364748b' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:40px}
+.hint-box{display:flex;align-items:flex-start;gap:9px;font-size:13px;color:var(--ink2);background:var(--blue-xl);border:1.5px solid var(--blue-s);border-radius:10px;padding:11px 14px;margin:16px 0;line-height:1.65}
+.hint-box svg{width:16px;height:16px;stroke:var(--blue);fill:none;stroke-width:2;flex-shrink:0;margin-top:2px}
+.chk-btn{width:100%;padding:17px;background:linear-gradient(135deg,var(--blue) 0%,#1e40af 100%);color:#fff;font-family:var(--fd);font-weight:800;font-size:16px;border-radius:12px;box-shadow:var(--sb);transition:all .25s var(--ease);display:flex;align-items:center;justify-content:center;gap:10px}
+.chk-btn:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(37,99,235,.32)}
+.chk-btn:active{transform:translateY(0)}
+
+/* RESULT */
+#resultArea{display:none;margin-top:28px;animation:resultIn .45s var(--ease) both}
+.pay-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-bottom:16px}
+.pay-card{border-radius:16px;padding:22px 20px;position:relative;overflow:hidden;border:2px solid}
+.pay-card.c1{background:linear-gradient(135deg,var(--blue-xl),#e0eeff);border-color:var(--blue-s)}
+.pay-card.c2{background:linear-gradient(135deg,var(--green-xl),#d1fae5);border-color:var(--green-s)}
+.pay-card.c3{background:linear-gradient(135deg,var(--amber-xl),#fef3c7);border-color:var(--amber-s)}
+.pay-card.c4{background:linear-gradient(135deg,var(--purple-xl),#ede9fe);border-color:var(--purple-s);grid-column:1/-1}
+.pay-card::before{content:'';position:absolute;inset:0;opacity:.04;background-image:repeating-linear-gradient(45deg,currentColor 0,currentColor 1px,transparent 0,transparent 50%);background-size:12px 12px;pointer-events:none}
+.pc-lbl{font-size:12px;font-weight:700;color:var(--ink3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px;display:flex;align-items:center;gap:6px}
+.pc-val{font-family:var(--fd);font-size:32px;font-weight:800;color:var(--ink);line-height:1}
+.pay-card.c4 .pc-val{font-size:clamp(20px,4vw,38px)}
+.pc-sub{font-size:12.5px;color:var(--ink3);margin-top:5px}
+.pc-ico{font-size:28px;position:absolute;top:16px;right:16px;opacity:.18}
+
+/* PROGRESS BAR */
+.prog-wrap{margin-top:18px;background:var(--surf);border:1.5px solid var(--line);border-radius:14px;padding:18px 20px}
+.prog-lbl{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;font-size:13px;font-weight:700;color:var(--ink2)}
+.prog-bar-bg{background:var(--line);border-radius:100px;height:14px;overflow:hidden}
+.prog-bar-fill{height:100%;border-radius:100px;background:linear-gradient(90deg,var(--blue),#3b82f6);transition:width 1.2s var(--ease);width:0}
+
+.tips-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.tip-pill{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:600;padding:7px 14px;border-radius:100px;background:var(--green-xl);color:var(--green);border:1.5px solid var(--green-s)}
+.copy-btn{display:inline-flex;align-items:center;gap:6px;font-family:var(--fd);font-size:12px;font-weight:700;padding:7px 14px;border-radius:8px;background:var(--blue);color:#fff;border:none;cursor:pointer;transition:.22s;margin-top:4px}
+.copy-btn:hover{background:var(--blue-d);transform:translateY(-1px)}
+.copy-btn.copied{background:var(--green)}
+.warn-box{background:var(--amber-xl);border:1.5px solid var(--amber-s);border-radius:12px;padding:14px 18px;display:flex;gap:10px;font-size:13.5px;color:var(--ink2);line-height:1.7;margin-top:14px}
+
+/* FEATURES */
+.tips-sec{background:var(--surf);padding:72px 0}
+.tips-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.tip-card{background:#fff;border:1.5px solid var(--line);border-radius:16px;padding:22px 18px;text-align:center;transition:.28s}
+.tip-card:hover{transform:translateY(-4px);box-shadow:var(--s3);border-color:var(--blue-s)}
+.tip-ico{font-size:32px;margin-bottom:11px}
+.tip-title{font-family:var(--fd);font-size:14px;font-weight:800;color:var(--ink);margin-bottom:8px}
+.tip-desc{font-size:13px;color:var(--ink3);line-height:1.7}
+
+/* TABLE */
+.tbl-sec{background:#fff;padding:72px 0}
+.tbl-wr{overflow-x:auto;margin-bottom:24px;border-radius:14px;border:1.5px solid var(--line);box-shadow:var(--s2)}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+thead th{background:linear-gradient(135deg,var(--blue) 0%,#1e40af 100%);color:#fff;padding:14px 16px;text-align:left;font-family:var(--fd);font-size:13px;font-weight:700;letter-spacing:.03em}
+thead th:first-child{border-radius:14px 0 0 0}
+thead th:last-child{border-radius:0 14px 0 0}
+tbody tr{border-bottom:1px solid var(--line);transition:.2s}
+tbody tr:hover{background:var(--blue-xl)}
+tbody td{padding:12px 16px;color:var(--ink2);vertical-align:middle}
+.tbadge{display:inline-flex;font-size:11px;font-weight:700;padding:3px 8px;border-radius:100px}
+.tbadge.g{background:var(--green-xl);color:var(--green);border:1px solid var(--green-s)}
+.tbadge.b{background:var(--blue-xl);color:var(--blue);border:1px solid var(--blue-s)}
+.tbadge.a{background:var(--amber-xl);color:var(--amber);border:1px solid var(--amber-s)}
+.tbadge.r{background:var(--red-xl);color:var(--red);border:1px solid var(--red-s)}
+.tbadge.p{background:var(--purple-xl);color:var(--purple);border:1px solid var(--purple-s)}
+
+/* GRAPH */
+.graph-sec{background:var(--surf);padding:72px 0}
+.graph-card{background:#fff;border:1.5px solid var(--line);border-radius:20px;padding:28px 32px;box-shadow:var(--s3)}
+.graph-hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;flex-wrap:wrap;gap:12px}
+.graph-ttl{font-family:var(--fd);font-size:18px;font-weight:800;color:var(--ink)}
+.graph-legend{display:flex;gap:20px;flex-wrap:wrap;margin-bottom:18px}
+.gl-item{display:flex;align-items:center;gap:7px;font-size:13px;font-weight:600;color:var(--ink2)}
+.gl-dot{width:12px;height:12px;border-radius:50%}
+.chart-wrap{width:100%;overflow-x:auto;position:relative}
+svg.linechart{display:block;overflow:visible}
+.axis-label{font-family:var(--fd);font-size:11px;fill:var(--ink4);font-weight:600}
+.axis-title{font-family:var(--fd);font-size:12px;fill:var(--ink3);font-weight:700}
+.grid-line{stroke:var(--line);stroke-width:1;stroke-dasharray:4 4}
+.chart-tooltip{position:absolute;background:var(--ink);color:#fff;font-size:12px;font-weight:600;padding:7px 12px;border-radius:8px;pointer-events:none;opacity:0;transition:opacity .2s;white-space:nowrap;font-family:var(--fd);z-index:10}
+
+/* STORY */
+.story-sec{background:#fff;padding:72px 0}
+.story-card{background:var(--surf);border:1.5px solid var(--line);border-radius:24px;padding:40px;box-shadow:var(--s3);position:relative;overflow:hidden}
+.story-card::before{content:'';position:absolute;top:0;left:0;bottom:0;width:5px;background:linear-gradient(180deg,var(--blue) 0%,var(--orange) 100%);border-radius:5px 0 0 5px}
+.sq{font-size:54px;color:var(--blue-s);font-family:Georgia,serif;line-height:1;padding-left:8px}
+.sb{font-size:15.5px;color:var(--ink2);line-height:1.9;padding:0 8px}
+.sauth{display:flex;align-items:center;gap:14px;margin-top:22px;padding-top:20px;border-top:1px solid var(--line)}
+.savt{width:48px;height:48px;background:var(--blue);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+.sname{font-family:var(--fd);font-size:15px;font-weight:700;color:var(--ink)}
+.srole{font-size:12.5px;color:var(--ink3)}
+.founder-msg{background:linear-gradient(135deg,var(--blue-xl),var(--blue-s));border:1.5px solid var(--blue-s);border-radius:14px;padding:20px 22px;margin-top:20px;display:flex;gap:13px}
+.fm-ico{font-size:26px;flex-shrink:0}
+.fm-txt{font-size:14px;color:var(--ink2);line-height:1.75;font-style:italic}
+.fm-txt strong{color:var(--ink);font-weight:700;font-style:normal}
+
+/* GUIDE */
+.guide-sec{background:var(--surf);padding:72px 0}
+.guide-body h2{font-family:var(--fd);font-size:21px;font-weight:800;color:var(--ink);margin:28px 0 11px;line-height:1.3}
+.guide-body h2:first-child{margin-top:0}
+.guide-body p{font-size:15px;color:var(--ink3);line-height:1.85;margin-bottom:14px}
+.guide-body ul{display:flex;flex-direction:column;gap:8px;margin:12px 0 16px}
+.guide-body li{display:flex;align-items:flex-start;gap:10px;font-size:14.5px;color:var(--ink3);line-height:1.7}
+.guide-body li::before{content:'✓';width:18px;height:18px;background:var(--blue);color:#fff;border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;flex-shrink:0;margin-top:3px}
+.guide-body strong{color:var(--ink2);font-weight:700}
+.ibox{background:var(--blue-xl);border:1.5px solid var(--blue-s);border-radius:13px;padding:15px 18px;margin:16px 0;display:flex;gap:11px;font-size:14px;color:var(--ink2);line-height:1.7}
+.ibox svg{width:17px;height:17px;stroke:var(--blue);fill:none;stroke-width:2;flex-shrink:0;margin-top:2px}
+.ibox.a{background:var(--amber-xl);border-color:var(--amber-s)}
+.ibox.a svg{stroke:var(--amber)}
+.ibox.g{background:var(--green-xl);border-color:var(--green-s)}
+.ibox.g svg{stroke:var(--green)}
+
+/* FAQ */
+.faq-sec{background:#fff;padding:72px 0}
+.fql{max-width:780px;margin:0 auto}
+.fq{background:var(--surf);border:1.5px solid var(--line);border-radius:13px;margin-bottom:10px;overflow:hidden}
+.fq-q{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;cursor:pointer;gap:14px;transition:.2s}
+.fq-q:hover{background:var(--blue-xl)}
+.fq-t{font-weight:600;font-size:15px;color:var(--ink);line-height:1.4}
+.fq-i{width:28px;height:28px;border-radius:50%;background:var(--blue-xl);color:var(--blue);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;transition:transform .28s,background .2s}
+.fq.open .fq-i{transform:rotate(45deg);background:var(--blue);color:#fff}
+.fq-a{max-height:0;overflow:hidden;transition:max-height .35s var(--ease)}
+.fq-ai{padding:0 22px 18px;font-size:14.5px;color:var(--ink3);line-height:1.78}
+.fq.open .fq-a{max-height:400px}
+
+/* DISC/CONTACT/CTA/FOOTER */
+.disc{background:var(--amber-xl);border-top:1px solid var(--amber-s);border-bottom:1px solid var(--amber-s);padding:15px 0}
+.disc-in{display:flex;align-items:flex-start;gap:12px;font-size:13.5px;color:var(--ink2);line-height:1.7}
+.contact-sec{background:var(--surf);padding:60px 0}
+.contact-card{max-width:580px;margin:0 auto;background:#fff;border:1.5px solid var(--line);border-radius:20px;padding:32px;text-align:center;box-shadow:var(--s2)}
+.contact-card h3{font-family:var(--fd);font-size:19px;font-weight:800;color:var(--ink);margin-bottom:10px}
+.contact-card p{font-size:15px;color:var(--ink3);line-height:1.75;margin-bottom:20px}
+.btn-bl{display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:#fff;font-family:var(--fd);font-weight:700;font-size:14.5px;padding:12px 26px;border-radius:8px;box-shadow:var(--sb);transition:.22s}
+.btn-bl:hover{background:var(--blue-d);transform:translateY(-1px)}
+.priv-note{font-size:12px;color:var(--ink4);margin-top:14px}
+.cta{background:linear-gradient(140deg,#0f172a 0%,#1e3a8a 100%);padding:80px 0;text-align:center;position:relative;overflow:hidden}
+.cta::before{content:'';position:absolute;top:-80px;left:50%;transform:translateX(-50%);width:800px;height:380px;background:radial-gradient(ellipse,rgba(37,99,235,.22) 0%,transparent 68%);pointer-events:none}
+.cta-in{position:relative;z-index:1}
+.cta .pill{color:#93c5fd;background:rgba(255,255,255,.1);margin-bottom:18px}
+.cta .pill::before{background:#93c5fd}
+.cta h2{font-family:var(--fd);font-size:clamp(24px,4vw,42px);font-weight:800;color:#fff;line-height:1.15;margin-bottom:12px}
+.cta h2 em{color:#fbbf24;font-style:normal}
+.cta p{font-size:16px;color:rgba(255,255,255,.72);max-width:480px;margin:0 auto 32px;line-height:1.78}
+.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn-gold{display:inline-flex;align-items:center;gap:8px;background:var(--amber);color:#fff;font-family:var(--fd);font-weight:800;font-size:15px;padding:14px 30px;border-radius:8px;box-shadow:0 8px 28px rgba(245,158,11,.35);transition:.22s}
+.btn-gold:hover{background:#d97706;transform:translateY(-3px)}
+.btn-ghost{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.09);border:1.5px solid rgba(255,255,255,.22);color:#fff;font-family:var(--fd);font-weight:600;font-size:14px;padding:13px 26px;border-radius:8px;transition:.2s}
+.btn-ghost:hover{background:rgba(255,255,255,.16)}
+footer{background:#0f172a;padding:52px 0 0}
+.ft-inner{max-width:1180px;margin:0 auto;padding:0 24px}
+.ft-top{display:grid;grid-template-columns:1.9fr 1fr 1fr 1fr;gap:44px;margin-bottom:44px}
+.ft-brand .ln{color:#fff}.ft-brand .ls{color:#475569}
+.ft-desc{font-size:13.5px;color:#64748b;line-height:1.78;max-width:265px;margin:13px 0 20px}
+.ft-soc{display:flex;gap:9px}
+.fts{width:34px;height:34px;border-radius:7px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;color:#94a3b8;font-size:13px;transition:.2s}
+.fts:hover{background:var(--blue);color:#fff}
+.fc h4{font-family:var(--fd);font-size:12px;font-weight:700;color:#fff;margin-bottom:14px;letter-spacing:.06em;text-transform:uppercase}
+.fc ul{display:flex;flex-direction:column;gap:8px}
+.fc ul a{font-size:13.5px;color:#64748b;transition:.18s}
+.fc ul a:hover{color:#93c5fd}
+.ft-btm{border-top:1px solid rgba(255,255,255,.07);padding:20px 0;text-align:center}
+.ft-cp{font-size:12.5px;color:#475569}
+.ft-cp b{color:#64748b}
+.ft-tag{font-size:12px;color:#334155;margin-top:4px;font-style:italic}
+.btt{position:fixed;bottom:26px;right:26px;z-index:500;width:43px;height:43px;background:var(--blue);color:#fff;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:17px;box-shadow:var(--sb);opacity:0;pointer-events:none;transform:translateY(14px);transition:.28s var(--ease)}
+.btt.on{opacity:1;pointer-events:auto;transform:translateY(0)}
+.btt:hover{transform:translateY(-3px)}
+.sec-lbl{display:flex;align-items:center;gap:8px;font-family:var(--fd);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin-bottom:10px}
+.sec-lbl::before{content:'';width:6px;height:6px;background:var(--blue);border-radius:50%}
+.sec-h{font-family:var(--fd);font-size:clamp(22px,3.5vw,34px);font-weight:800;color:var(--ink);line-height:1.15;margin-bottom:10px}
+.sec-sub{font-size:15.5px;color:var(--ink3);line-height:1.78;margin-bottom:40px;max-width:600px}
+
+/* SPEED METER reused for rate bands */
+.meter-wrap{margin-top:14px;background:var(--surf);border:1.5px solid var(--line);border-radius:14px;padding:18px 20px}
+.meter-ttl{font-size:13px;font-weight:700;color:var(--ink2);margin-bottom:12px;display:flex;align-items:center;gap:7px}
+.speed-bands{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.sb-item{border-radius:10px;padding:12px 10px;text-align:center;border:1.5px solid}
+.sb-item.dim{opacity:.35}
+.sb-item.active-band{opacity:1;box-shadow:var(--s2)}
+.sb-item.slow{background:var(--red-xl);border-color:var(--red-s)}
+.sb-item.med{background:var(--amber-xl);border-color:var(--amber-s)}
+.sb-item.fast{background:var(--green-xl);border-color:var(--green-s)}
+.sb-item.ultra{background:var(--blue-xl);border-color:var(--blue-s)}
+.sb-ico{font-size:20px;margin-bottom:4px}
+.sb-name{font-family:var(--fd);font-size:11px;font-weight:800;color:var(--ink);margin-bottom:2px}
+.sb-range{font-size:10px;color:var(--ink3)}
+
+/* RESPONSIVE */
+@media(max-width:1060px){.ft-top{grid-template-columns:1fr 1fr}.tips-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:860px){
+  nav.dn,.hcta{display:none}.brg{display:flex}
+  .tool-body{padding:24px 22px}.tool-hdr{padding:24px 22px}
+  .fgrid{grid-template-columns:1fr}.fgrid3{grid-template-columns:1fr 1fr}
+  .howto-steps{grid-template-columns:1fr}
+  .rel-grid{grid-template-columns:1fr 1fr}
+  .pay-grid{grid-template-columns:1fr 1fr}
+  .speed-bands{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+  .ft-top{grid-template-columns:1fr}.rel-grid{grid-template-columns:1fr}
+  .tips-grid{grid-template-columns:1fr 1fr}
+  .cta-btns{flex-direction:column;align-items:center}
+  .story-card{padding:26px 20px}
+  .pay-grid{grid-template-columns:1fr}
+  .pay-card.c4{grid-column:auto}
+  .fgrid3{grid-template-columns:1fr}
+  .graph-card{padding:18px 14px}
+  .speed-bands{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="hdr">
+  <div class="w">
+    <div class="hdi">
+      <a href="/" class="logo">
+        <div class="lb"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+        <div><div class="ln">Raj<span>Daily</span>Tools</div><div class="ls">Smart Tools for Daily Life</div></div>
+      </a>
+      <nav class="dn">
+        <a href="/">Home</a><a href="/categories">Categories</a>
+        <a href="/#popular">Popular</a><a href="/about">About</a><a href="/contact">Contact</a>
+      </nav>
+      <a href="/categories" class="hcta">All Tools →</a>
+      <button class="brg" id="brg"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="dov" id="dov"></div>
+<div class="drw" id="drw">
+  <div class="dh">
+    <div class="logo">
+      <div class="lb" style="width:30px;height:30px;border-radius:7px"><svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#fff"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+      <div class="ln" style="font-size:16px">Raj<span>Daily</span>Tools</div>
+    </div>
+    <button class="dx" id="dx">✕</button>
+  </div>
+  <nav class="mn">
+    <a href="/" onclick="cD()">🏠 Home</a>
+    <a href="/categories" onclick="cD()">🗂️ Categories</a>
+    <a href="/#popular" onclick="cD()">⭐ Popular</a>
+    <a href="/about" onclick="cD()">👤 About</a>
+    <a href="/contact" onclick="cD()">📬 Contact</a>
+  </nav>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+  <div class="w">
+    <div class="bc">
+      <a href="/">Home</a><span style="color:var(--ink4)">›</span>
+      <a href="/categories">Tools</a><span style="color:var(--ink4)">›</span>
+      <span>Freelance Rate Calculator</span>
+    </div>
+    <div class="hero-inner">
+      <div class="pill">Free Finance &amp; Freelance Tools 💼</div>
+      <h1>Freelance Rate Calculator – <span>Know Exactly What You Should Charge</span></h1>
+      <p class="hero-sub">Calculate your hourly, daily, and project rates based on your income goals, monthly expenses, and working hours. Stop guessing — start earning what you deserve.</p>
+      <div class="hero-chips">
+        <span class="chip">💰 Hourly Rate</span>
+        <span class="chip">📅 Daily Rate</span>
+        <span class="chip">📦 Project Rate</span>
+        <span class="chip">🌍 Works Worldwide</span>
+        <span class="chip">🆓 100% Free Tool</span>
+        <span class="chip">🔒 No Login Required</span>
+      </div>
+      <div class="hero-meta">
+        <div class="upd">✅ Trusted by Freelancers</div>
+        <span class="mi">⚡ Instant Calculation</span>
+        <span class="mi">🌐 Used Worldwide</span>
+      </div>
+
+      <!-- HOW TO USE -->
+      <div class="howto">
+        <div class="howto-ttl">💡 How to Use This Tool</div>
+        <div class="howto-steps">
+          <div class="hs"><span class="sn">1</span>Enter your monthly income goal</div>
+          <div class="hs"><span class="sn">2</span>Add your monthly expenses</div>
+          <div class="hs"><span class="sn">3</span>Input working days &amp; hours per day</div>
+          <div class="hs"><span class="sn">4</span>Set estimated project hours</div>
+          <div class="hs"><span class="sn">5</span>Click "Calculate My Rate" instantly</div>
+        </div>
+      </div>
+
+      <!-- RELATED TOOLS HERO -->
+      <div class="rel-grid">
+        <div class="rg-box army">
+          <div class="rg-ico">🏦</div>
+          <div class="rg-txt">
+            <h4>EMI Calculator</h4>
+            <p>Calculate loan EMI instantly</p>
+            <a href="/emi-calculator.html" class="btn-xs a">Use Now →</a>
+          </div>
+        </div>
+        <div class="rg-box ht">
+          <div class="rg-ico">📊</div>
+          <div class="rg-txt">
+            <h4>Profit Margin Calculator</h4>
+            <p>Find your profit margin fast</p>
+            <a href="/profit-margin-calculator.html" class="btn-xs g">Use Now →</a>
+          </div>
+        </div>
+        <div class="rg-box ssc">
+          <div class="rg-ico">🧮</div>
+          <div class="rg-txt">
+            <h4>Percentage Calculator</h4>
+            <p>Quick percentage calculations</p>
+            <a href="/percentage-calculator.html" class="btn-xs b">Use Now →</a>
+          </div>
+        </div>
+        <div class="rg-box mp">
+          <div class="rg-ico">🧾</div>
+          <div class="rg-txt">
+            <h4>GST Calculator</h4>
+            <p>Calculate GST in seconds</p>
+            <a href="/gst-calculator.html" class="btn-xs p">Use Now →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOOL SECTION -->
+<section class="tool-sec" id="tool">
+  <div class="w">
+    <div class="tool-wrap">
+      <div class="tool-card rev">
+        <div class="tool-hdr">
+          <div class="th">
+            <h2>💼 Freelance Rate Calculator</h2>
+            <p>Enter your income goal, expenses, and working schedule below. We'll instantly calculate your ideal hourly rate, daily rate, and project pricing — based on real numbers, not guesswork.</p>
+            <div class="th-badges">
+              <span class="thb">💰 Hourly Rate</span>
+              <span class="thb">📅 Daily Rate</span>
+              <span class="thb">📦 Project Rate</span>
+              <span class="thb">⚡ Instant Result</span>
+              <span class="thb">🔒 Private &amp; Secure</span>
+            </div>
+          </div>
+        </div>
+        <div class="tool-body">
+
+          <!-- ROW 1: Income Goal + Expenses -->
+          <div class="fgrid">
+            <div class="fld">
+              <label class="flbl" for="incomeGoal">💵 Monthly Income Goal <span>Required</span></label>
+              <div class="inp-row">
+                <select class="fsel fsel-sm" id="currency" style="width:80px">
+                  <option value="$">$ USD</option>
+                  <option value="£">£ GBP</option>
+                  <option value="€">€ EUR</option>
+                  <option value="₹">₹ INR</option>
+                  <option value="A$">A$ AUD</option>
+                  <option value="C$">C$ CAD</option>
+                </select>
+                <input class="finp finp-sm" type="number" id="incomeGoal" placeholder="e.g. 5000" min="0" step="any" value="" oninput="liveCalc()">
+              </div>
+              <div style="font-size:11.5px;color:var(--ink4);margin-top:4px">How much you want to earn each month after all costs.</div>
+            </div>
+            <div class="fld">
+              <label class="flbl" for="expenses">🧾 Monthly Expenses <span>Required</span></label>
+              <input class="finp" type="number" id="expenses" placeholder="e.g. 1000" min="0" step="any" value="" oninput="liveCalc()">
+              <div style="font-size:11.5px;color:var(--ink4);margin-top:4px">Software, internet, taxes, tools, office, insurance.</div>
+            </div>
+          </div>
+
+          <!-- ROW 2: Working Days + Hours -->
+          <div class="fgrid">
+            <div class="fld">
+              <label class="flbl" for="workDays">📅 Working Days per Month <span>Required</span></label>
+              <input class="finp" type="number" id="workDays" placeholder="e.g. 20" min="1" max="31" step="1" value="20" oninput="liveCalc()">
+              <div style="font-size:11.5px;color:var(--ink4);margin-top:4px">Typical range: 15–22 days. Accounts for weekends &amp; breaks.</div>
+            </div>
+            <div class="fld">
+              <label class="flbl" for="hoursDay">⏰ Working Hours per Day <span>Required</span></label>
+              <input class="finp" type="number" id="hoursDay" placeholder="e.g. 8" min="1" max="24" step="0.5" value="8" oninput="liveCalc()">
+              <div style="font-size:11.5px;color:var(--ink4);margin-top:4px">Billable hours only — exclude breaks and admin time.</div>
+            </div>
+          </div>
+
+          <!-- ROW 3: Project Hours + Buffer -->
+          <div class="fgrid">
+            <div class="fld">
+              <label class="flbl" for="projHours">📦 Estimated Project Hours <span>Optional</span></label>
+              <input class="finp" type="number" id="projHours" placeholder="e.g. 40" min="1" step="1" value="40" oninput="liveCalc()">
+              <div style="font-size:11.5px;color:var(--ink4);margin-top:4px">Total hours you expect to spend on this project.</div>
+            </div>
+            <div class="fld">
+              <label class="flbl" for="buffer">🛡️ Rate Buffer / Profit Margin <span>Optional</span></label>
+              <div class="inp-row">
+                <input class="finp finp-sm" type="number" id="buffer" placeholder="20" min="0" max="100" step="1" value="20" oninput="liveCalc()">
+                <div style="display:flex;align-items:center;padding:0 12px;background:var(--surf);border:1.5px solid var(--line);border-radius:10px;font-weight:700;color:var(--ink3);font-size:15px;flex-shrink:0">%</div>
+              </div>
+              <div style="font-size:11.5px;color:var(--ink4);margin-top:4px">Recommended: 15–30% buffer for taxes, revisions &amp; slow months.</div>
+            </div>
+          </div>
+
+          <div class="hint-box">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            <span><strong>Formula:</strong> Monthly Required = Income Goal + Expenses → Hourly Rate = Monthly Required ÷ (Working Days × Hours/Day) → add buffer % for taxes and unexpected costs. This gives you a <strong>sustainable, profitable</strong> freelance rate.</span>
+          </div>
+
+          <button class="chk-btn" onclick="calculate()">
+            💼 Calculate My Freelance Rate
+          </button>
+
+          <!-- LIVE PREVIEW -->
+          <div id="livePreview" style="display:none;margin-top:14px;background:var(--blue-xl);border:1.5px solid var(--blue-s);border-radius:12px;padding:13px 16px;font-size:14px;color:var(--ink2);line-height:1.7;font-weight:600"></div>
+
+          <!-- FULL RESULT -->
+          <div id="resultArea">
+
+            <div class="pay-grid" id="payGrid"></div>
+            <div id="meterWrap"></div>
+            <div id="tipsRow" class="tips-row"></div>
+            <button class="copy-btn" id="copyBtn" onclick="copyResult()">📋 Copy Full Report</button>
+
+            <div class="warn-box">
+              <span style="font-size:20px;flex-shrink:0">ℹ️</span>
+              <div style="font-size:13.5px;color:var(--ink2);line-height:1.72"><strong>Important Notice:</strong> Always research market rates and client budget before finalizing your freelance price. Actual freelance rates may vary depending on your skills, experience, location, niche, and market demand. <strong>No data is stored or shared.</strong></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GRAPH SECTION -->
+<section class="graph-sec" id="graphSec" style="display:none">
+  <div class="w">
+    <div style="text-align:center;margin-bottom:30px">
+      <div class="sec-lbl" style="justify-content:center">Visual Breakdown</div>
+      <div class="sec-h">Income vs Expenses vs <span style="color:var(--blue)">Your Rate</span></div>
+      <p class="sec-sub" style="margin:12px auto 0;max-width:560px">See exactly how your income goal, expenses, and buffer combine to build your sustainable freelance rate.</p>
+    </div>
+    <div class="graph-card rev">
+      <div class="graph-hdr">
+        <div class="graph-ttl" id="graphTitle">Freelance Rate Breakdown</div>
+      </div>
+      <div class="graph-legend">
+        <div class="gl-item"><div class="gl-dot" style="background:#2563eb"></div>Income Goal</div>
+        <div class="gl-item"><div class="gl-dot" style="background:#ef4444"></div>Monthly Expenses</div>
+        <div class="gl-item"><div class="gl-dot" style="background:#f59e0b"></div>Buffer / Margin</div>
+        <div class="gl-item"><div class="gl-dot" style="background:#10b981"></div>Break-even Point</div>
+      </div>
+      <div class="chart-wrap">
+        <div class="chart-tooltip" id="chartTip"></div>
+        <svg id="barChart" class="linechart" width="100%" height="320" viewBox="0 0 820 320" preserveAspectRatio="xMidYMid meet"></svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES SECTION -->
+<section class="tips-sec">
+  <div class="w">
+    <div style="text-align:center;margin-bottom:40px">
+      <div class="sec-lbl" style="justify-content:center">Why Use This Tool</div>
+      <div class="sec-h">Premium Features for <span style="color:var(--blue)">Accurate Pricing</span></div>
+    </div>
+    <div class="tips-grid">
+      <div class="tip-card rev">
+        <div class="tip-ico">⚡</div>
+        <div class="tip-title">Instant Calculation</div>
+        <div class="tip-desc">Results update live as you type. See your hourly, daily, and project rates change in real time as you adjust your income goals and expenses.</div>
+      </div>
+      <div class="tip-card rev">
+        <div class="tip-ico">🌍</div>
+        <div class="tip-title">Works Worldwide</div>
+        <div class="tip-desc">Supports USD, GBP, EUR, INR, AUD, CAD and more. Whether you're a freelancer in New York, London, Mumbai or Sydney — this tool works for you.</div>
+      </div>
+      <div class="tip-card rev">
+        <div class="tip-ico">🛡️</div>
+        <div class="tip-title">Buffer & Margin Built-In</div>
+        <div class="tip-desc">Adds a configurable profit buffer (15–30% recommended) to account for taxes, slow months, revision cycles, and unexpected business costs.</div>
+      </div>
+      <div class="tip-card rev">
+        <div class="tip-ico">📊</div>
+        <div class="tip-title">Visual Breakdown Chart</div>
+        <div class="tip-desc">See a clear visual breakdown of how your income goal, expenses, and buffer combine to justify your freelance rate to yourself and clients.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TABLE SECTION -->
+<section class="tbl-sec">
+  <div class="w">
+    <div style="text-align:center;margin-bottom:40px">
+      <div class="sec-lbl" style="justify-content:center">Reference Guide</div>
+      <div class="sec-h">Freelance Rate <span style="color:var(--blue)">Input Factors Explained</span></div>
+      <p class="sec-sub" style="margin:12px auto 0">Understanding what each input means and how it affects your final freelance pricing calculation.</p>
+    </div>
+    <div class="tbl-wr">
+      <table>
+        <thead>
+          <tr>
+            <th>Factor</th>
+            <th>Description</th>
+            <th>Typical Range</th>
+            <th>Impact on Rate</th>
+            <th>Importance</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>💵 Income Goal</strong></td><td>Desired monthly take-home earnings after expenses</td><td>$1,000 – $20,000+</td><td>Directly increases rate</td><td><span class="tbadge b">Critical</span></td></tr>
+          <tr><td><strong>🧾 Monthly Expenses</strong></td><td>Business costs: software, tools, internet, tax, office</td><td>$200 – $3,000</td><td>Adds to required revenue</td><td><span class="tbadge b">Critical</span></td></tr>
+          <tr><td><strong>📅 Working Days</strong></td><td>Days per month you're actively billing clients</td><td>15 – 22 days</td><td>Fewer days = higher rate</td><td><span class="tbadge a">High</span></td></tr>
+          <tr><td><strong>⏰ Hours Per Day</strong></td><td>Billable hours — exclude admin, marketing, breaks</td><td>4 – 8 hours</td><td>Fewer hours = higher rate</td><td><span class="tbadge a">High</span></td></tr>
+          <tr><td><strong>📦 Project Hours</strong></td><td>Estimated total hours for one specific project</td><td>5 – 200+ hours</td><td>Determines project price</td><td><span class="tbadge g">Medium</span></td></tr>
+          <tr><td><strong>🛡️ Buffer %</strong></td><td>Margin for taxes, revisions, slow months, growth</td><td>15% – 30%</td><td>Protects sustainable income</td><td><span class="tbadge g">Medium</span></td></tr>
+          <tr><td><strong>✅ Result</strong></td><td>Your accurate, sustainable freelance rate</td><td>Custom per user</td><td>Final output</td><td><span class="tbadge b">Output</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:12px;color:var(--ink4);text-align:center;margin-top:10px">* Rates calculated based on your personal inputs. Always benchmark against market rates in your industry and region before quoting clients.</p>
+  </div>
+</section>
+
+<!-- STORY SECTION -->
+<section class="story-sec">
+  <div class="w">
+    <div class="wa">
+      <div class="sec-lbl">Why I Built This</div>
+      <h2 class="sec-h">Why I Built This Tool</h2>
+      <div class="story-card rev">
+        <div class="sq">"</div>
+        <p class="sb">My friend Raghav recently started freelancing. He was excited about the freedom but immediately ran into a painful problem — he had no idea how much he should charge clients. Sometimes he undercharged and felt frustrated when he realized he was barely covering his expenses. Other times he overestimated and lost clients who found someone cheaper. He was cycling between frustration and self-doubt. Watching him struggle made me realize that thousands of freelancers face this same problem daily — not because they lack talent, but because no one ever teaches us the simple math behind pricing. That's exactly why I built this Freelance Rate Calculator — so anyone can confidently decide their pricing based on real numbers, not guesswork. Enter your goals, and the math does the rest.</p>
+        <div class="sauth">
+          <div class="savt">🛠️</div>
+          <div>
+            <div class="sname">Raj — Founder, RajDailyTools</div>
+            <div class="srole">Built for every freelancer who wants to charge what they're worth</div>
+          </div>
+        </div>
+        <div class="founder-msg">
+          <div class="fm-ico">💡</div>
+          <div class="fm-txt"><strong>Our mission:</strong> Every freelancer — designer, developer, writer, consultant, or marketer — deserves to know their exact worth and charge confidently. This tool is completely free, works instantly, requires zero sign-up, and is used by freelancers in over 50 countries worldwide.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GUIDE / SEO ARTICLE -->
+<section class="guide-sec">
+  <div class="w">
+    <div class="wa">
+      <div class="sec-lbl">📖 Complete Guide</div>
+      <h2 class="sec-h">How to Calculate Your <span style="color:var(--blue)">Freelance Rate</span> — Full Guide</h2>
+      <div class="guide-body">
+
+        <h2>💼 What Is Freelance Pricing and Why Does It Matter?</h2>
+        <p>Freelance pricing is the process of determining how much you charge clients for your time, skills, and expertise. Unlike salaried employees whose pay is set by employers, freelancers must set their own rates — which is both a freedom and a challenge. Your freelance rate directly determines whether your business is sustainable, profitable, and growing — or whether you're overworked and underpaid.</p>
+        <p>Getting your <strong>freelance rate calculator</strong> inputs right is not about being greedy — it's about being realistic. If you set your hourly rate too low, you'll burn out trying to compensate with volume. Too high without matching value perception, and you'll lose clients. The goal is to find the <strong>sweet spot</strong> where your rate covers all your needs, includes a growth buffer, and reflects the real market value of your work.</p>
+
+        <div class="ibox">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          <span><strong>Key Formula:</strong> Hourly Rate = (Monthly Income Goal + Monthly Expenses) ÷ (Working Days × Billable Hours per Day). Always add a 15–30% buffer for taxes, revisions, and slow months on top of this base rate.</span>
+        </div>
+
+        <h2>❌ Why Most Freelancers Undercharge</h2>
+        <p>Undercharging is the most common and costly mistake new — and even experienced — freelancers make. There are several psychological and practical reasons for this:</p>
+        <ul>
+          <li><strong>Imposter syndrome:</strong> "I'm not experienced enough to charge that much" — even when the quality of work is excellent</li>
+          <li><strong>Fear of rejection:</strong> Worrying that clients will say no if the rate seems high, leading to chronic underpricing</li>
+          <li><strong>Not accounting for all expenses:</strong> Most freelancers forget to include taxes, software subscriptions, equipment, marketing, and downtime in their rate calculations</li>
+          <li><strong>Copying competitor rates without context:</strong> Matching rates from a freelancer with zero expenses who lives in a low-cost country doesn't work for everyone</li>
+          <li><strong>Not valuing non-billable time:</strong> Admin, client calls, proposals, revisions, and professional development are all unpaid hours that the hourly rate must absorb</li>
+          <li><strong>No buffer for slow months:</strong> Freelance income fluctuates significantly — a good month can be followed by two slow ones. Your rate must account for this reality</li>
+        </ul>
+
+        <h2>📐 How to Calculate Your Freelance Rate Step-by-Step</h2>
+        <p>The <strong>freelance hourly rate formula</strong> is straightforward once you understand each component. Here's the exact step-by-step process used in this freelance rate calculator:</p>
+        <ul>
+          <li><strong>Step 1 — Set your monthly income goal:</strong> How much do you want to take home after all business costs? This is your desired net income.</li>
+          <li><strong>Step 2 — Calculate your monthly expenses:</strong> List every business cost — software tools, internet, co-working space, accounting fees, equipment depreciation, health insurance, professional courses, and marketing spend.</li>
+          <li><strong>Step 3 — Add income goal + expenses:</strong> This gives you your Monthly Required Revenue — the minimum you must earn to sustain your business.</li>
+          <li><strong>Step 4 — Determine your available billable hours:</strong> Multiply your working days per month by your productive billable hours per day. If you work 20 days × 6 billable hours = 120 billable hours/month.</li>
+          <li><strong>Step 5 — Divide to get base hourly rate:</strong> Monthly Required ÷ Total Billable Hours = Base Hourly Rate.</li>
+          <li><strong>Step 6 — Add a buffer:</strong> Add 15–30% on top of your base rate for taxes, revision cycles, and unexpected slow periods. This is your final sustainable freelance rate.</li>
+        </ul>
+
+        <div class="ibox a">
+          <svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          <span><strong>Important:</strong> Many freelancers only count 50–70% of their working hours as truly billable. The rest goes to emails, proposals, admin, and professional development. Use realistic billable hours — not total working hours — in your freelance pricing calculator.</span>
+        </div>
+
+        <h2>⏱️ Hourly vs Project Pricing — Which Is Better?</h2>
+        <p><strong>Hourly pricing</strong> is transparent, easy to explain, and protects you from scope creep — if the project grows, your income grows with it. It's ideal for ongoing work, consulting, and projects where requirements are unclear upfront. The downside: clients who focus only on hourly rates may compare you directly with cheaper alternatives.</p>
+        <p><strong>Project-based pricing</strong> rewards efficiency — if you complete a 40-hour project in 25 hours due to skill, you earn more per hour. It's better for well-defined projects, design work, content creation, and website builds. Clients often prefer fixed prices because they know exactly what they're paying. The downside: scope creep can significantly reduce your effective hourly rate if you don't have strong contracts.</p>
+        <p>The best approach is <strong>hybrid pricing</strong>: use hourly rates for consulting and undefined work, and project rates (calculated from your hourly rate × estimated hours) for fixed deliverables. Our <strong>how to calculate freelance rate</strong> tool supports both approaches simultaneously.</p>
+
+        <h2>🌍 Real-World Examples — USA, UK, and India Freelancers</h2>
+        <p><strong>Example 1 — US-based Freelance Developer:</strong> Monthly income goal: $8,000. Monthly expenses: $1,500 (software, health insurance, accountant). Working days: 20. Billable hours/day: 6. Monthly required: $9,500. Base hourly rate: $9,500 ÷ 120 = $79/hour. With 20% buffer: $95/hour. Project rate for 40-hour project: $3,800.</p>
+        <p><strong>Example 2 — UK Freelance Designer:</strong> Monthly income goal: £3,500. Monthly expenses: £600. Working days: 18. Billable hours/day: 5. Monthly required: £4,100. Base hourly: £4,100 ÷ 90 = £45.5/hour. With 25% buffer: £57/hour. Day rate: £456. Project rate for 30-hour project: £1,710.</p>
+        <p><strong>Example 3 — Indian Freelance Content Writer:</strong> Monthly income goal: ₹80,000. Monthly expenses: ₹10,000. Working days: 22. Billable hours/day: 5. Monthly required: ₹90,000. Base hourly: ₹90,000 ÷ 110 = ₹818/hour. With 20% buffer: ₹980/hour. Project rate for 20-hour project: ₹19,600.</p>
+
+        <div class="ibox g">
+          <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          <span><strong>Pro Tip:</strong> Use this freelance income calculator as your starting floor — never your ceiling. Research platforms like Upwork, Fiverr, and Toptal for market rate benchmarks in your niche. Your experience, portfolio, and specialization can justify rates 2–5× higher than the calculated base.</span>
+        </div>
+
+        <h2>🚫 Common Beginner Mistakes When Setting Freelance Rates</h2>
+        <ul>
+          <li>Setting rates based on what competitors charge without analyzing your own cost structure</li>
+          <li>Forgetting to include self-employment taxes (25–35% in the US, 20–40% in the UK for higher incomes)</li>
+          <li>Not accounting for paid time off, sick days, and public holidays in the working days calculation</li>
+          <li>Underestimating project hours — always add 20–30% extra for revisions, communication, and testing</li>
+          <li>Agreeing to hourly rates without a minimum hour commitment per project</li>
+          <li>Never raising rates — even annual cost-of-living increases should be reflected in your pricing</li>
+          <li>Offering discounts without reducing scope — always trade price reductions for something in return</li>
+        </ul>
+
+        <h2>📈 How to Increase Your Freelance Rate</h2>
+        <p>Raising your rates is essential for long-term freelance success. Here's a proven roadmap to increase what you charge without losing good clients:</p>
+        <ul>
+          <li><strong>Specialize deeply:</strong> Generalists compete on price; specialists compete on expertise. A "freelance developer" earns less than a "React Native mobile app developer for SaaS startups."</li>
+          <li><strong>Build a results-focused portfolio:</strong> Show outcomes, not just deliverables. "Increased client's conversion rate by 34%" is far more compelling than "designed a landing page."</li>
+          <li><strong>Raise rates with new clients first:</strong> Test higher rates on new projects before applying them to existing relationships.</li>
+          <li><strong>Give existing clients advance notice:</strong> A 30–60 day notice of a rate increase with a clear reason maintains trust and professionalism.</li>
+          <li><strong>Transition to retainers:</strong> Monthly retainers provide predictable income and justify slightly lower hourly rates in exchange for volume and stability.</li>
+          <li><strong>Collect and leverage testimonials:</strong> Social proof is one of the most powerful tools for justifying premium rates to prospective clients.</li>
+        </ul>
+
+        <h2>📅 Freelancing Income Strategies for Long-Term Growth</h2>
+        <p>Beyond just calculating your rate, sustainable freelance income requires a strategic approach to how you structure your business. Consider <strong>income diversification</strong> — combining active client work with passive income sources like digital products, online courses, templates, or affiliate partnerships. This creates a buffer during slow client months and gradually reduces your dependence on any single client or project type.</p>
+        <p><strong>Retainer agreements</strong> are one of the most powerful tools for stabilizing freelance income. When clients pay a fixed monthly fee for a defined scope of ongoing work, both parties benefit — clients get reliability, and you get predictable revenue that makes financial planning far easier.</p>
+        <p>Finally, think of your freelance rate not as a fixed number but as a <strong>living figure that should increase</strong> at least annually. As you gain experience, build case studies, and develop a niche reputation, the market value of your work grows — and your pricing should reflect that growth.</p>
+
+        <h2>💡 Why This Freelance Rate Calculator Is the Right Tool for You</h2>
+        <p>Most free online tools are either too simple (just an hourly rate field with no context) or too complex (requiring accounting knowledge to understand). This <strong>freelance pricing calculator</strong> is designed to be the perfect middle ground — it asks for the right information, applies the correct formula, adds a configurable profit buffer, and delivers three actionable outputs: your hourly rate, daily rate, and project estimate. All in seconds, with no sign-up, completely free, and usable in any currency worldwide.</p>
+        <p>Whether you're a <strong>freelance developer, designer, writer, marketer, consultant, photographer, or translator</strong> — if you sell your time and skills independently, this tool gives you the mathematical foundation you need to price with confidence.</p>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ SECTION -->
+<section class="faq-sec">
+  <div class="w">
+    <div class="sec-lbl" style="justify-content:center">FAQ</div>
+    <h2 class="sec-h" style="text-align:center">Frequently Asked <span style="color:var(--blue)">Questions</span></h2>
+    <p class="sec-sub" style="text-align:center;margin:0 auto 40px">Everything you need to know about calculating your freelance rate and using this tool.</p>
+    <div class="fql">
+      <div class="fq">
+        <div class="fq-q" onclick="tFQ(this)"><span class="fq-t">How do freelancers calculate their hourly rate?</span><span class="fq-i">+</span></div>
+        <div class="fq-a"><div class="fq-ai">The standard freelance hourly rate formula is: <strong>(Monthly Income Goal + Monthly Expenses) ÷ (Working Days × Billable Hours/Day)</strong>. Then add a 15–30% buffer for taxes, revisions, and slow months on top of this base rate. For example, if you need $6,000/month ($5,000 income + $1,000 expenses) and work 20 days × 6 hours = 120 hours, your base rate is $50/hour. With a 20% buffer, your final rate is $60/hour. This tool calculates all of this automatically.</div></div>
+      </div>
+      <div class="fq">
+        <div class="fq-q" onclick="tFQ(this)"><span class="fq-t">What is a good freelance rate for beginners?</span><span class="fq-i">+</span></div>
+        <div class="fq-a"><div class="fq-ai">A "good" freelance rate depends entirely on your income needs, expenses, location, niche, and the value you deliver — not on being a beginner or expert. However, as a general guide: beginner freelancers in the US often start at $25–$50/hour for writing/design and $50–$80/hour for development. UK beginners typically start at £20–£40/hour. Indian freelancers on global platforms often start at $10–$25/hour. Use this <strong>freelance rate calculator</strong> to find YOUR specific rate based on your real costs — then compare to market rates in your niche.</div></div>
+      </div>
+      <div class="fq">
+        <div class="fq-q" onclick="tFQ(this)"><span class="fq-t">Should I charge hourly or per project as a freelancer?</span><span class="fq-i">+</span></div>
+        <div class="fq-a"><div class="fq-ai">Both have advantages. <strong>Hourly rates</strong> protect you from scope creep, are easy to explain, and work well for ongoing work or projects with unclear requirements. <strong>Project rates</strong> reward efficiency, are preferred by many clients who want cost certainty, and can be more profitable if you're fast. The best approach: calculate your project rate from your hourly rate × estimated hours, add a 20% scope buffer, and present it as a fixed project price. This gives you the benefits of both approaches.</div></div>
+      </div>
+      <div class="fq">
+        <div class="fq-q" onclick="tFQ(this)"><span class="fq-t">How much should I charge as a freelancer just starting out?</span><span class="fq-i">+</span></div>
+        <div class="fq-a"><div class="fq-ai">Start by using this <strong>freelance pricing calculator</strong> to find your minimum sustainable rate based on your actual living costs and expenses. Then research market rates on platforms like Upwork, Fiverr Pro, and LinkedIn for your specific skill and region. As a beginner, you may start at market minimum, but never below your cost of living. Build 3–5 strong portfolio pieces, collect testimonials, and raise your rate by 15–25% every 6 months as your experience and evidence of results grow.</div></div>
+      </div>
+      <div class="fq">
+        <div class="fq-q" onclick="tFQ(this)"><span class="fq-t">How do I increase my freelance rate without losing clients?</span><span class="fq-i">+</span></div>
+        <div class="fq-a"><div class="fq-ai">The most effective approach: (1) Test higher rates on new clients first — existing clients don't need to know. (2) Give existing clients 30–60 days advance notice with a clear, confident explanation — frame it around the increased value you deliver, not your costs. (3) Grandfather your best long-term clients at their current rate for 3–6 months as a goodwill gesture. (4) Simultaneously specialize more narrowly — niche specialists can justify significantly higher rates than generalists. Most good clients will respect a professionally communicated rate increase.</div></div>
+      </div>
+      <div class="fq">
+        <div class="fq-q" onclick="tFQ(this)"><span class="fq-t">Is this freelance rate calculator accurate?</span><span class="fq-i">+</span></div>
+        <div class="fq-a"><div class="fq-ai">The calculations are mathematically precise based on your inputs. The formula used — (Income + Expenses) ÷ Billable Hours + Buffer — is the industry-standard approach to sustainable freelance pricing used by financial advisors and freelance coaches worldwide. The accuracy of the result depends entirely on the accuracy of your inputs. Be realistic about your billable hours (only count hours actively working for clients) and include all business expenses. The result gives you a reliable, defensible rate floor — not a ceiling.</div></div>
+      </div>
+      <div class="fq">
+        <div class="fq-q" onclick="tFQ(this)"><span class="fq-t">Can I use this freelance income calculator worldwide?</span><span class="fq-i">+</span></div>
+        <div class="fq-a"><div class="fq-ai">Yes — absolutely. This tool supports USD, GBP, EUR, INR, AUD, CAD, and any currency. The math is currency-agnostic: simply enter your numbers in your local currency and the result will be in the same currency. Whether you're a freelancer in the US, UK, India, Australia, Canada, Germany, or anywhere else — the formula and tool work identically. Just ensure your income goal and expenses are in the same currency for accurate results.</div></div>
+      </div>
+      <div class="fq">
+        <div class="fq-q" onclick="tFQ(this)"><span class="fq-t">What expenses should I include when calculating my freelance rate?</span><span class="fq-i">+</span></div>
+        <div class="fq-a"><div class="fq-ai">Include all business-related monthly costs: software subscriptions (Adobe, Figma, Slack, Notion, etc.), internet and phone bills (pro-rated for business use), co-working space or home office costs, equipment depreciation (laptop, camera, etc.), accounting software and fees, health insurance (if not employer-provided), professional courses and books, marketing and advertising costs, platform fees (Upwork takes 20%), and an estimated tax provision (25–40% of income in most countries). Many freelancers underestimate expenses by 40–60% by forgetting these items.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RELATED TOOLS -->
+<section class="tips-sec">
+  <div class="w">
+    <div style="text-align:center;margin-bottom:30px">
+      <div class="sec-lbl" style="justify-content:center">More Tools</div>
+      <div class="sec-h">Related <span style="color:var(--blue)">Finance Tools</span> You'll Love</div>
+    </div>
+    <div class="rel-grid" style="max-width:780px;margin:0 auto;grid-template-columns:repeat(3,1fr)">
+      <div class="rg-box army">
+        <div class="rg-ico">🏦</div>
+        <div class="rg-txt"><h4>EMI Calculator</h4><p>Calculate loan EMI instantly</p><a href="/emi-calculator.html" class="btn-xs a">Use Now →</a></div>
+      </div>
+      <div class="rg-box ht">
+        <div class="rg-ico">📊</div>
+        <div class="rg-txt"><h4>Profit Margin Calculator</h4><p>Find your profit margin fast</p><a href="/profit-margin-calculator.html" class="btn-xs g">Use Now →</a></div>
+      </div>
+      <div class="rg-box ssc">
+        <div class="rg-ico">🧮</div>
+        <div class="rg-txt"><h4>Percentage Calculator</h4><p>Quick percentage calculations</p><a href="/percentage-calculator.html" class="btn-xs b">Use Now →</a></div>
+      </div>
+      <div class="rg-box mp">
+        <div class="rg-ico">🧾</div>
+        <div class="rg-txt"><h4>GST Calculator</h4><p>Calculate GST in seconds</p><a href="/gst-calculator.html" class="btn-xs p">Use Now →</a></div>
+      </div>
+      <div class="rg-box tl">
+        <div class="rg-ico">💰</div>
+        <div class="rg-txt"><h4>Income Tax Calculator</h4><p>Estimate your tax liability</p><a href="/income-tax-calculator.html" class="btn-xs t">Use Now →</a></div>
+      </div>
+      <div class="rg-box rd">
+        <div class="rg-ico">📋</div>
+        <div class="rg-txt"><h4>Budget Planner</h4><p>Plan your monthly budget</p><a href="/budget-planner.html" class="btn-xs r">Use Now →</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DISCLAIMER -->
+<div class="disc">
+  <div class="w">
+    <div class="disc-in">
+      <span style="font-size:20px;flex-shrink:0">⚠️</span>
+      <div><strong>Disclaimer:</strong> This tool provides estimated freelance rate results for informational purposes only. Actual freelance rates may vary significantly depending on your skills, experience level, geographic location, industry niche, and current market demand. Always research market rates and client budget before finalizing your freelance price. This is not financial or legal advice. Consult a financial advisor for personalized guidance.</div>
+    </div>
+  </div>
+</div>
+
+<!-- PRIVACY NOTE -->
+<div style="background:var(--blue-xl);border-top:1px solid var(--blue-s);border-bottom:1px solid var(--blue-s);padding:13px 0">
+  <div class="w">
+    <div style="display:flex;align-items:flex-start;gap:12px;font-size:13px;color:var(--ink2);line-height:1.7">
+      <span style="font-size:18px;flex-shrink:0">🔒</span>
+      <div><strong>Privacy &amp; Security:</strong> This tool runs entirely in your browser. No data you enter — income goals, expenses, or any inputs — is ever sent to our servers, stored, or shared with any third party. 100% private. 100% safe. Works in browser only. No account required.</div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<section class="contact-sec">
+  <div class="w">
+    <div class="contact-card rev">
+      <h3>📬 Need Help or Have Suggestions?</h3>
+      <p>Need help with this tool or have suggestions for improvement? Contact us anytime — we genuinely read every message and continuously improve based on real user feedback.</p>
+      <a href="/contact" class="btn-bl">✉️ Contact Us</a>
+      <p style="font-size:13px;color:var(--ink3);margin-top:12px">📧 You can also email us at <strong>support@rajdailytools.in</strong> — we respond within 24 hours.</p>
+      <p class="priv-note">🔒 We respect your privacy. No data is collected. No spam, ever.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="cta-in">
+    <div class="pill">Explore More Tools</div>
+    <h2>Discover <em>100+ Free Tools</em> on RajDailyTools</h2>
+    <p>From freelance calculators to financial planners — all free, fast, and no sign-up required.</p>
+    <div class="cta-btns">
+      <a href="/categories" class="btn-gold">🗂️ Browse All Tools</a>
+      <a href="/#popular" class="btn-ghost">⭐ Popular Tools</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-inner">
+    <div class="ft-top">
+      <div class="ft-brand">
+        <a href="/" class="logo">
+          <div class="lb"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+          <div><div class="ln">Raj<span>Daily</span>Tools</div><div class="ls">Smart Tools for Daily Life</div></div>
+        </a>
+        <div class="ft-desc">Free, fast, and reliable tools for everyone. Freelance calculators, finance tools, health calculators and 100+ more — all in one place.</div>
+        <div class="ft-soc">
+          <a class="fts" href="#" title="Twitter">𝕏</a>
+          <a class="fts" href="#" title="Instagram">📸</a>
+          <a class="fts" href="#" title="YouTube">▶</a>
+        </div>
+      </div>
+      <div class="fc">
+        <h4>Finance Tools</h4>
+        <ul>
+          <li><a href="/freelance-rate-calculator.html">Freelance Rate Calculator</a></li>
+          <li><a href="/emi-calculator.html">EMI Calculator</a></li>
+          <li><a href="/gst-calculator.html">GST Calculator</a></li>
+          <li><a href="/income-tax-calculator.html">Income Tax Calculator</a></li>
+          <li><a href="/profit-margin-calculator.html">Profit Margin</a></li>
+        </ul>
+      </div>
+      <div class="fc">
+        <h4>Internet Tools</h4>
+        <ul>
+          <li><a href="/download-time-calculator.html">Download Calculator</a></li>
+          <li><a href="/bandwidth-calculator.html">Bandwidth Calculator</a></li>
+          <li><a href="/data-usage-calculator.html">Data Usage</a></li>
+          <li><a href="/file-size-converter.html">File Size Converter</a></li>
+          <li><a href="/unit-converter.html">Unit Converter</a></li>
+        </ul>
+      </div>
+      <div class="fc">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/categories">All Categories</a></li>
+          <li><a href="/privacy">Privacy Policy</a></li>
+          <li><a href="/terms">Terms of Use</a></li>
+          <li><a href="/disclaimer">Disclaimer</a></li>
+          <li><a href="/sitemap">Sitemap</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ft-btm">
+      <div class="ft-cp">© 2024 <b>RajDailyTools.in</b> — All rights reserved. Free tools for daily life.</div>
+      <div class="ft-tag">Freelance Rate Calculator · Hourly Rate Calculator · Freelance Pricing Tool</div>
+    </div>
+  </div>
+</footer>
+
+<button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+/* ── MOBILE DRAWER ── */
+const brg=document.getElementById('brg');
+const drw=document.getElementById('drw');
+const dov=document.getElementById('dov');
+const dx=document.getElementById('dx');
+function openDrw(){drw.classList.add('on');dov.classList.add('on');document.body.style.overflow='hidden'}
+function closeDrw(){drw.classList.remove('on');dov.classList.remove('on');document.body.style.overflow=''}
+function cD(){closeDrw()}
+brg.addEventListener('click',openDrw);
+dx.addEventListener('click',closeDrw);
+dov.addEventListener('click',closeDrw);
+
+/* ── BACK TO TOP ── */
+const btt=document.getElementById('btt');
+window.addEventListener('scroll',()=>{btt.classList.toggle('on',window.scrollY>400)});
+
+/* ── SCROLL REVEAL ── */
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target)}})},{threshold:.12});
+document.querySelectorAll('.rev').forEach(el=>obs.observe(el));
+
+/* ── FAQ TOGGLE ── */
+function tFQ(btn){
+  const fq=btn.parentElement;
+  const wasOpen=fq.classList.contains('open');
+  document.querySelectorAll('.fq.open').forEach(f=>f.classList.remove('open'));
+  if(!wasOpen)fq.classList.add('open');
+}
+
+/* ── HELPERS ── */
+let lastResult={};
+
+function fmt(n,cur){
+  const c=cur||document.getElementById('currency').value;
+  if(n>=1000000)return c+''+(n/1000000).toFixed(2)+'M';
+  if(n>=1000)return c+''+(n/1000).toFixed(1)+'k';
+  return c+''+n.toFixed(2);
+}
+
+function getRateLabel(hr){
+  if(hr<20)return{band:'starter',label:'Starter Rate',color:'slow'};
+  if(hr<60)return{band:'mid',label:'Mid-Market Rate',color:'med'};
+  if(hr<120)return{band:'pro',label:'Professional Rate',color:'fast'};
+  return{band:'premium',label:'Premium Rate',color:'ultra'};
+}
+
+/* ── LIVE PREVIEW ── */
+function liveCalc(){
+  const ig=parseFloat(document.getElementById('incomeGoal').value)||0;
+  const ex=parseFloat(document.getElementById('expenses').value)||0;
+  const wd=parseFloat(document.getElementById('workDays').value)||20;
+  const hd=parseFloat(document.getElementById('hoursDay').value)||8;
+  const buf=parseFloat(document.getElementById('buffer').value)||0;
+  const cur=document.getElementById('currency').value;
+  if(ig<=0||ex<0)return;
+  const monthly=ig+ex;
+  const billable=wd*hd;
+  if(billable<=0)return;
+  const base=monthly/billable;
+  const withBuf=base*(1+buf/100);
+  document.getElementById('livePreview').style.display='block';
+  document.getElementById('livePreview').innerHTML=
+    `⚡ <strong>Live Preview:</strong> Base hourly rate = ${fmt(base,cur)}/hr &nbsp;|&nbsp; With ${buf}% buffer = <strong>${fmt(withBuf,cur)}/hr</strong> &nbsp;|&nbsp; Daily rate = <strong>${fmt(withBuf*hd,cur)}/day</strong>`;
+}
+
+/* ── MAIN CALCULATE ── */
+function calculate(){
+  const ig=parseFloat(document.getElementById('incomeGoal').value);
+  const ex=parseFloat(document.getElementById('expenses').value)||0;
+  const wd=parseFloat(document.getElementById('workDays').value)||20;
+  const hd=parseFloat(document.getElementById('hoursDay').value)||8;
+  const ph=parseFloat(document.getElementById('projHours').value)||40;
+  const buf=parseFloat(document.getElementById('buffer').value)||20;
+  const cur=document.getElementById('currency').value;
+
+  if(!ig||ig<=0){
+    document.getElementById('incomeGoal').focus();
+    document.getElementById('incomeGoal').style.borderColor='var(--red)';
+    setTimeout(()=>{document.getElementById('incomeGoal').style.borderColor='';},2500);
+    return;
+  }
+
+  const monthly=ig+ex;
+  const billable=wd*hd;
+  const baseHr=monthly/billable;
+  const finalHr=baseHr*(1+buf/100);
+  const finalDay=finalHr*hd;
+  const finalProj=finalHr*ph;
+  const monthlyRev=finalHr*billable;
+  const bufAmount=monthlyRev-monthly;
+
+  const band=getRateLabel(finalHr);
+
+  lastResult={ig,ex,wd,hd,ph,buf,cur,baseHr,finalHr,finalDay,finalProj,monthly,monthlyRev,bufAmount,billable};
+
+  /* PAY CARDS */
+  document.getElementById('payGrid').innerHTML=`
+    <div class="pay-card c1">
+      <div class="pc-ico">⏱️</div>
+      <div class="pc-lbl">⏱️ Hourly Rate</div>
+      <div class="pc-val">${fmt(finalHr,cur)}</div>
+      <div class="pc-sub">per billable hour charged to clients</div>
+    </div>
+    <div class="pay-card c2">
+      <div class="pc-ico">📅</div>
+      <div class="pc-lbl">📅 Daily Rate</div>
+      <div class="pc-val">${fmt(finalDay,cur)}</div>
+      <div class="pc-sub">per full working day (${hd} hrs)</div>
+    </div>
+    <div class="pay-card c3">
+      <div class="pc-ico">📦</div>
+      <div class="pc-lbl">📦 Project Rate</div>
+      <div class="pc-val">${fmt(finalProj,cur)}</div>
+      <div class="pc-sub">for estimated ${ph}-hour project</div>
+    </div>
+    <div class="pay-card c4">
+      <div class="pc-ico">📊</div>
+      <div class="pc-lbl">📊 Required Monthly Revenue to sustain your goals</div>
+      <div class="pc-val">${fmt(monthlyRev,cur)} / month</div>
+      <div class="pc-sub">Income goal ${fmt(ig,cur)} + Expenses ${fmt(ex,cur)} + Buffer ${fmt(bufAmount,cur)} = Total ${fmt(monthlyRev,cur)}</div>
+    </div>
+  `;
+
+  /* BREAKDOWN BAR */
+  document.getElementById('meterWrap').innerHTML=`
+    <div class="prog-wrap">
+      <div class="prog-lbl"><span>📊 Monthly Breakdown</span><span>Required: ${fmt(monthlyRev,cur)}</span></div>
+      <div style="margin-bottom:8px">
+        <div style="display:flex;justify-content:space-between;font-size:12px;color:var(--ink3);margin-bottom:4px"><span>💵 Income Goal (${Math.round(ig/monthlyRev*100)}%)</span><span>${fmt(ig,cur)}</span></div>
+        <div class="prog-bar-bg"><div class="prog-bar-fill" style="--pw:${Math.round(ig/monthlyRev*100)}%;background:linear-gradient(90deg,var(--blue),#3b82f6)"></div></div>
+      </div>
+      <div style="margin-bottom:8px">
+        <div style="display:flex;justify-content:space-between;font-size:12px;color:var(--ink3);margin-bottom:4px"><span>🧾 Expenses (${Math.round(ex/monthlyRev*100)}%)</span><span>${fmt(ex,cur)}</span></div>
+        <div class="prog-bar-bg"><div class="prog-bar-fill" style="--pw:${Math.round(ex/monthlyRev*100)}%;background:linear-gradient(90deg,var(--red),#f87171)"></div></div>
+      </div>
+      <div>
+        <div style="display:flex;justify-content:space-between;font-size:12px;color:var(--ink3);margin-bottom:4px"><span>🛡️ Buffer (${Math.round(bufAmount/monthlyRev*100)}%)</span><span>${fmt(bufAmount,cur)}</span></div>
+        <div class="prog-bar-bg"><div class="prog-bar-fill" style="--pw:${Math.round(bufAmount/monthlyRev*100)}%;background:linear-gradient(90deg,var(--amber),#fbbf24)"></div></div>
+      </div>
+    </div>
+    <div class="meter-wrap">
+      <div class="meter-ttl">💼 Rate Tier Indicator</div>
+      <div class="speed-bands">
+        <div class="sb-item slow ${band.band==='starter'?'active-band':'dim'}"><div class="sb-ico">🌱</div><div class="sb-name">Starter</div><div class="sb-range">${cur}0–${cur}19/hr</div></div>
+        <div class="sb-item med ${band.band==='mid'?'active-band':'dim'}"><div class="sb-ico">💼</div><div class="sb-name">Mid-Market</div><div class="sb-range">${cur}20–${cur}59/hr</div></div>
+        <div class="sb-item fast ${band.band==='pro'?'active-band':'dim'}"><div class="sb-ico">⭐</div><div class="sb-name">Professional</div><div class="sb-range">${cur}60–${cur}119/hr</div></div>
+        <div class="sb-item ultra ${band.band==='premium'?'active-band':'dim'}"><div class="sb-ico">🏆</div><div class="sb-name">Premium</div><div class="sb-range">${cur}120+/hr</div></div>
+      </div>
+    </div>
+  `;
+
+  // Animate progress bars
+  setTimeout(()=>{
+    document.querySelectorAll('.prog-bar-fill').forEach(b=>{
+      const pw=b.style.getPropertyValue('--pw');
+      b.style.width='0';
+      void b.offsetWidth;
+      b.style.width=pw;
+    });
+  },80);
+
+  /* TIPS ROW */
+  document.getElementById('tipsRow').innerHTML=`
+    <span class="tip-pill">⏱️ ${fmt(finalHr,cur)}/hr</span>
+    <span class="tip-pill">📅 ${fmt(finalDay,cur)}/day</span>
+    <span class="tip-pill">📦 ${fmt(finalProj,cur)} project</span>
+    <span class="tip-pill">⏰ ${billable} billable hrs/mo</span>
+  `;
+
+  document.getElementById('resultArea').style.display='block';
+
+  // Build chart
+  document.getElementById('graphSec').style.display='block';
+  buildChart(ig,ex,bufAmount,monthlyRev,cur);
+
+  setTimeout(()=>document.getElementById('resultArea').scrollIntoView({behavior:'smooth',block:'start'}),120);
+}
+
+/* ── COPY ── */
+function copyResult(){
+  const r=lastResult;
+  if(!r.finalHr)return;
+  const txt=`
+FREELANCE RATE REPORT — RajDailyTools
+======================================
+Monthly Income Goal  : ${r.cur}${r.ig.toFixed(2)}
+Monthly Expenses     : ${r.cur}${r.ex.toFixed(2)}
+Working Days/Month   : ${r.wd}
+Working Hours/Day    : ${r.hd}
+Estimated Proj Hours : ${r.ph}
+Buffer %             : ${r.buf}%
+
+Hourly Rate          : ${r.cur}${r.finalHr.toFixed(2)}/hr
+Daily Rate           : ${r.cur}${r.finalDay.toFixed(2)}/day
+Project Rate         : ${r.cur}${r.finalProj.toFixed(2)}
+Monthly Revenue Req  : ${r.cur}${r.monthlyRev.toFixed(2)}
+
+Formula: (Income + Expenses) ÷ Billable Hours × (1 + Buffer%)
+Note: Always verify against market rates in your niche and region.
+
+Generated by RajDailyTools.in`.trim();
+  const cb=document.getElementById('copyBtn');
+  const done=()=>{cb.textContent='✅ Copied!';cb.classList.add('copied');setTimeout(()=>{cb.textContent='📋 Copy Full Report';cb.classList.remove('copied');},2200)};
+  navigator.clipboard?navigator.clipboard.writeText(txt).then(done).catch(done):done();
+}
+
+/* ── BAR CHART ── */
+function buildChart(ig,ex,buf,total,cur){
+  const W=820,H=320;
+  const PAD={top:24,right:24,bottom:60,left:90};
+  const cW=W-PAD.left-PAD.right;
+  const cH=H-PAD.top-PAD.bottom;
+
+  const cats=['Income Goal','Expenses','Buffer/Margin','Total Required'];
+  const vals=[ig,ex,buf,total];
+  const colors=['#2563eb','#ef4444','#f59e0b','#10b981'];
+  const maxV=Math.max(...vals)*1.15;
+  const barW=cW/cats.length*0.55;
+  const gap=cW/cats.length;
+
+  // Grid lines
+  const TICKS=5;let gl='',yl='';
+  for(let i=0;i<=TICKS;i++){
+    const v=maxV*(i/TICKS);
+    const y=PAD.top+cH-((v/maxV)*cH);
+    gl+=`<line class="grid-line" x1="${PAD.left}" y1="${y}" x2="${W-PAD.right}" y2="${y}"/>`;
+    const label=v>=1000?cur+(v/1000).toFixed(1)+'k':cur+v.toFixed(0);
+    yl+=`<text class="axis-label" x="${PAD.left-8}" y="${y+4}" text-anchor="end">${label}</text>`;
+  }
+
+  // Bars
+  let bars='',xlabels='',valLabels='';
+  cats.forEach((cat,i)=>{
+    const x=PAD.left+i*gap+(gap-barW)/2;
+    const barH=(vals[i]/maxV)*cH;
+    const y=PAD.top+cH-barH;
+    bars+=`<rect x="${x}" y="${y}" width="${barW}" height="${barH}" fill="${colors[i]}" rx="6" opacity=".9" class="chart-bar" data-val="${cur}${vals[i].toFixed(2)}" data-cat="${cat}"/>`;
+    // Break-even line on total bar
+    if(i===3){
+      const beY=PAD.top+cH-((ig+ex)/maxV)*cH;
+      bars+=`<line x1="${x-8}" y1="${beY}" x2="${x+barW+8}" y2="${beY}" stroke="#6366f1" stroke-width="2.5" stroke-dasharray="6 3"/>`;
+      bars+=`<text class="axis-title" x="${x+barW+12}" y="${beY+4}" fill="#6366f1">Break-even</text>`;
+    }
+    const vLabel=vals[i]>=1000?cur+(vals[i]/1000).toFixed(1)+'k':cur+vals[i].toFixed(0);
+    valLabels+=`<text class="axis-title" x="${x+barW/2}" y="${y-6}" text-anchor="middle" fill="${colors[i]}">${vLabel}</text>`;
+    xlabels+=`<text class="axis-label" x="${x+barW/2}" y="${H-PAD.bottom+18}" text-anchor="middle">${cat}</text>`;
+  });
+
+  const svg=document.getElementById('barChart');
+  svg.innerHTML=`
+    ${gl}${yl}
+    <text class="axis-title" x="${PAD.left-72}" y="${PAD.top+cH/2}" transform="rotate(-90,${PAD.left-72},${PAD.top+cH/2})" text-anchor="middle">Amount (${cur})</text>
+    ${bars}${valLabels}${xlabels}
+  `;
+
+  // Tooltip
+  const tip=document.getElementById('chartTip');
+  const wrap=svg.parentElement;
+  svg.querySelectorAll('.chart-bar').forEach(bar=>{
+    bar.addEventListener('mouseenter',()=>{
+      tip.innerHTML=`📊 ${bar.getAttribute('data-cat')}<br>💰 ${bar.getAttribute('data-val')}`;
+      tip.style.opacity='1';
+    });
+    bar.addEventListener('mousemove',e=>{
+      const rect=wrap.getBoundingClientRect();
+      tip.style.left=(e.clientX-rect.left+12)+'px';
+      tip.style.top=(e.clientY-rect.top-36)+'px';
+    });
+    bar.addEventListener('mouseleave',()=>{tip.style.opacity='0';});
+  });
+
+  document.getElementById('graphTitle').textContent=`Freelance Rate Breakdown — Monthly Target: ${cur}${total.toFixed(2)}`;
+}
+
+// Initialize live preview
+liveCalc();
+</script>
+</body>
+</html>
