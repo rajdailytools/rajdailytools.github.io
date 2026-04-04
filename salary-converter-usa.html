@@ -1,0 +1,1213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Salary Converter – Hourly to Yearly, Monthly Pay Calculator USA | RajDailyTools</title>
+<meta name="description" content="Free USA salary converter. Convert hourly to yearly salary, monthly to hourly, and more. Includes overtime, tax estimation, and full pay breakdown. Instant and accurate.">
+<meta name="keywords" content="hourly to salary converter USA, salary to hourly calculator USA, yearly salary calculator USA, hourly wage calculator, monthly salary calculator, US salary converter free">
+<meta name="robots" content="index, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#2563eb;--blue-d:#1d4ed8;--blue-xl:#eff6ff;--blue-s:#dbeafe;
+  --amber:#f59e0b;--green:#10b981;--red:#ef4444;--purple:#8b5cf6;
+  --orange:#f97316;--teal:#14b8a6;
+  --green-xl:#f0fdf4;--green-s:#bbf7d0;
+  --red-xl:#fef2f2;--red-s:#fecaca;
+  --amber-xl:#fffbeb;--amber-s:#fde68a;
+  --purple-xl:#faf5ff;--purple-s:#ddd6fe;
+  --ink:#0f172a;--ink2:#334155;--ink3:#64748b;--ink4:#94a3b8;
+  --line:#e2e8f0;--surf:#f8fafc;--white:#fff;
+  --s1:0 1px 3px rgba(15,23,42,.06),0 1px 2px rgba(15,23,42,.04);
+  --s2:0 4px 16px rgba(15,23,42,.08),0 2px 6px rgba(15,23,42,.04);
+  --s3:0 12px 40px rgba(15,23,42,.11),0 3px 10px rgba(15,23,42,.06);
+  --s4:0 24px 64px rgba(15,23,42,.13),0 6px 20px rgba(15,23,42,.07);
+  --sb:0 8px 32px rgba(37,99,235,.20);
+  --fd:'Sora',sans-serif;--fb:'DM Sans',sans-serif;
+  --ease:cubic-bezier(.4,0,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);color:var(--ink);background:var(--white);overflow-x:hidden;-webkit-font-smoothing:antialiased;line-height:1.6}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+button{cursor:pointer;border:none;background:none;font-family:var(--fb)}
+.w{max-width:1180px;margin:0 auto;padding:0 24px}
+.wa{max-width:880px;margin:0 auto;padding:0 24px}
+select,input{appearance:none;-webkit-appearance:none}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+@keyframes resultIn{from{opacity:0;transform:translateY(18px) scale(.97)}to{opacity:1;transform:none}}
+.rev{opacity:0;transform:translateY(22px);transition:opacity .55s var(--ease),transform .55s var(--ease)}
+.rev.in{opacity:1;transform:none}
+
+/* HEADER */
+.hdr{position:sticky;top:0;z-index:999;background:rgba(255,255,255,.96);backdrop-filter:blur(20px);border-bottom:1px solid var(--line);box-shadow:var(--s1)}
+.hdi{display:flex;align-items:center;justify-content:space-between;height:66px}
+.logo{display:flex;align-items:center;gap:10px}
+.lb{width:36px;height:36px;background:var(--blue);border-radius:9px;display:flex;align-items:center;justify-content:center;box-shadow:var(--sb);flex-shrink:0}
+.lb svg{width:18px;height:18px;fill:#fff}
+.ln{font-family:var(--fd);font-size:19px;font-weight:800;color:var(--ink);line-height:1}
+.ln span{color:var(--blue)}
+.ls{font-size:10px;color:var(--ink4);letter-spacing:.04em}
+nav.dn{display:flex;align-items:center;gap:2px}
+nav.dn a{font-size:13.5px;font-weight:500;color:var(--ink2);padding:7px 13px;border-radius:8px;transition:.2s}
+nav.dn a:hover{color:var(--blue);background:var(--blue-xl)}
+.hcta{background:var(--blue);color:#fff;font-family:var(--fd);font-weight:600;font-size:13px;padding:8px 18px;border-radius:8px;box-shadow:var(--sb);transition:.2s}
+.hcta:hover{background:var(--blue-d);transform:translateY(-1px)}
+.brg{display:none;flex-direction:column;gap:4.5px;padding:8px;border-radius:8px}
+.brg span{display:block;width:20px;height:2px;background:var(--ink);border-radius:2px;transition:.28s}
+.dov{display:none;position:fixed;inset:0;background:rgba(15,23,42,.45);z-index:1040;backdrop-filter:blur(3px)}
+.dov.on{display:block}
+.drw{position:fixed;top:0;right:-100%;width:270px;height:100vh;background:#fff;z-index:1050;padding:22px;box-shadow:var(--s4);transition:right .32s var(--ease);overflow-y:auto}
+.drw.on{right:0}
+.dh{display:flex;align-items:center;justify-content:space-between;margin-bottom:26px}
+.dx{width:33px;height:33px;border-radius:7px;background:var(--surf);display:flex;align-items:center;justify-content:center;color:var(--ink3);font-size:17px}
+nav.mn{display:flex;flex-direction:column;gap:3px}
+nav.mn a{display:block;font-size:14px;font-weight:500;color:var(--ink2);padding:11px 13px;border-radius:8px;transition:.2s}
+nav.mn a:hover{color:var(--blue);background:var(--blue-xl)}
+
+/* HERO */
+.hero{position:relative;overflow:hidden;background:linear-gradient(150deg,#ebf4ff 0%,#fff 46%,#fff7ed 100%);padding:64px 0 72px}
+.hero::before{content:'';position:absolute;top:-140px;right:-180px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(37,99,235,.08) 0%,transparent 68%);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-80px;left:-100px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(249,115,22,.05) 0%,transparent 68%);pointer-events:none}
+.blob{position:absolute;border-radius:50%;pointer-events:none;animation:float 6s ease-in-out infinite}
+.b1{width:13px;height:13px;background:rgba(37,99,235,.18);top:22%;right:14%;animation-delay:0s}
+.b2{width:9px;height:9px;background:rgba(249,115,22,.22);top:58%;right:26%;animation-delay:2.2s}
+.b3{width:11px;height:11px;background:rgba(16,185,129,.18);top:36%;right:6%;animation-delay:4s}
+.bc{display:flex;align-items:center;gap:7px;font-size:12.5px;color:var(--ink3);margin-bottom:22px;position:relative;z-index:1;flex-wrap:wrap}
+.bc a{color:var(--blue);font-weight:600}
+.pill{display:inline-flex;align-items:center;gap:7px;font-family:var(--fd);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);background:var(--blue-xl);padding:5px 14px;border-radius:100px;margin-bottom:18px}
+.pill::before{content:'';width:6px;height:6px;background:var(--blue);border-radius:50%}
+.hero-inner{position:relative;z-index:1;max-width:720px;animation:fadeUp .5s ease both}
+.hero h1{font-family:var(--fd);font-size:clamp(26px,4.5vw,50px);font-weight:800;line-height:1.1;color:var(--ink);margin-bottom:14px}
+.hero h1 span{color:var(--blue)}
+.hero-sub{font-size:16px;color:var(--ink3);line-height:1.8;margin-bottom:22px;max-width:600px}
+.hero-chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.chip{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;padding:6px 14px;border-radius:100px;background:#fff;border:1.5px solid var(--line);color:var(--ink2);box-shadow:var(--s1);transition:.22s}
+.chip:hover{border-color:var(--blue);color:var(--blue);transform:translateY(-1px)}
+.hero-meta{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:24px}
+.upd{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:700;color:var(--blue);background:var(--blue-xl);padding:6px 14px;border-radius:100px;border:1.5px solid var(--blue-s)}
+.mi{font-size:13px;color:var(--ink3);font-weight:500}
+
+/* HOW TO USE */
+.howto{background:var(--amber-xl);border:2px solid var(--amber-s);border-radius:16px;padding:22px 26px;max-width:560px;margin-bottom:24px}
+.howto-ttl{display:flex;align-items:center;gap:9px;font-family:var(--fd);font-size:15px;font-weight:800;color:var(--ink);margin-bottom:13px}
+.howto-steps{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.hs{display:flex;align-items:flex-start;gap:10px;font-size:13.5px;color:var(--ink2);line-height:1.6}
+.sn{width:24px;height:24px;background:var(--amber);color:#fff;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex-shrink:0;margin-top:1px}
+
+/* RELATED TOOLS */
+.rel-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;position:relative;z-index:1}
+.rg-box{border-radius:14px;padding:14px 14px 12px;display:flex;flex-direction:column;gap:8px;transition:.22s;border:1.5px solid}
+.rg-box:hover{transform:translateY(-3px);box-shadow:var(--s3)}
+.rg-box.army{background:linear-gradient(135deg,var(--amber-xl),#fef3c7);border-color:var(--amber-s)}
+.rg-box.ht{background:linear-gradient(135deg,var(--green-xl),#dcfce7);border-color:var(--green-s)}
+.rg-box.ssc{background:linear-gradient(135deg,var(--blue-xl),var(--blue-s));border-color:var(--blue-s)}
+.rg-box.mp{background:linear-gradient(135deg,var(--purple-xl),#ede9fe);border-color:var(--purple-s)}
+.rg-box.tl{background:linear-gradient(135deg,#f0fdfa,#ccfbf1);border-color:#99f6e4}
+.rg-box.rd{background:linear-gradient(135deg,var(--red-xl),#fee2e2);border-color:var(--red-s)}
+.rg-ico{font-size:22px}
+.rg-txt h4{font-family:var(--fd);font-size:12px;font-weight:800;color:var(--ink);margin-bottom:2px}
+.rg-txt p{font-size:11px;color:var(--ink3);line-height:1.5}
+.btn-xs{display:inline-flex;align-items:center;gap:4px;font-family:var(--fd);font-weight:700;font-size:11px;padding:5px 10px;border-radius:7px;transition:.22s;margin-top:4px}
+.btn-xs.a{background:var(--amber);color:#fff}.btn-xs.a:hover{background:#d97706}
+.btn-xs.g{background:var(--green);color:#fff}.btn-xs.g:hover{background:#059669}
+.btn-xs.b{background:var(--blue);color:#fff}.btn-xs.b:hover{background:var(--blue-d)}
+.btn-xs.p{background:var(--purple);color:#fff}.btn-xs.p:hover{background:#7c3aed}
+.btn-xs.t{background:var(--teal);color:#fff}.btn-xs.t:hover{background:#0f9488}
+.btn-xs.r{background:var(--red);color:#fff}.btn-xs.r:hover{background:#dc2626}
+
+/* TOOL */
+.tool-sec{background:var(--surf);padding:80px 0}
+.tool-wrap{max-width:860px;margin:0 auto}
+.tool-card{background:#fff;border:1.5px solid var(--line);border-radius:28px;overflow:hidden;box-shadow:var(--s4)}
+.tool-hdr{background:linear-gradient(135deg,#1d4ed8 0%,#2563eb 55%,#3b82f6 100%);padding:32px 40px;position:relative;overflow:hidden}
+.tool-hdr::before{content:'';position:absolute;top:-60px;right:-60px;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,.07)}
+.tool-hdr::after{content:'';position:absolute;bottom:-40px;left:-40px;width:180px;height:180px;border-radius:50%;background:rgba(255,255,255,.04)}
+.th{position:relative;z-index:1}
+.th h2{font-family:var(--fd);font-size:21px;font-weight:800;color:#fff;margin-bottom:6px}
+.th p{font-size:14px;color:rgba(255,255,255,.82);line-height:1.65}
+.th-badges{display:flex;flex-wrap:wrap;gap:9px;margin-top:14px}
+.thb{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:rgba(255,255,255,.9);background:rgba(255,255,255,.13);padding:5px 12px;border-radius:100px}
+.tool-body{padding:36px 40px}
+
+/* MODE TABS */
+.mode-tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:22px;background:var(--surf);border-radius:12px;padding:5px;border:1.5px solid var(--line)}
+.mtab{flex:1;min-width:120px;font-family:var(--fd);font-size:12.5px;font-weight:700;padding:9px 14px;border-radius:8px;color:var(--ink3);transition:.22s;text-align:center}
+.mtab.active{background:var(--blue);color:#fff;box-shadow:var(--sb)}
+.mtab:hover:not(.active){background:var(--blue-xl);color:var(--blue)}
+
+/* form */
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+.fgrid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:16px}
+.fld{display:flex;flex-direction:column;gap:7px}
+.flbl{font-size:13px;font-weight:700;color:var(--ink2)}
+.flbl span{font-size:11px;font-weight:500;color:var(--ink4);margin-left:5px;background:var(--surf);padding:2px 7px;border-radius:5px;border:1px solid var(--line)}
+.inp-wrap{position:relative}
+.inp-prefix{position:absolute;left:14px;top:50%;transform:translateY(-50%);font-family:var(--fd);font-size:15px;font-weight:700;color:var(--ink3);pointer-events:none}
+.finp,.fsel{padding:12px 16px;font-size:14.5px;color:var(--ink);background:#fff;border:1.5px solid var(--line);border-radius:10px;outline:none;transition:.22s;font-family:var(--fb);width:100%}
+.finp:focus,.fsel:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(37,99,235,.10)}
+.finp.has-prefix{padding-left:32px}
+.fsel{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2364748b' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:40px}
+.hint-box{display:flex;align-items:flex-start;gap:9px;font-size:13px;color:var(--ink2);background:var(--blue-xl);border:1.5px solid var(--blue-s);border-radius:10px;padding:11px 14px;margin:16px 0;line-height:1.65}
+.hint-box svg{width:16px;height:16px;stroke:var(--blue);fill:none;stroke-width:2;flex-shrink:0;margin-top:2px}
+.chk-btn{width:100%;padding:17px;background:linear-gradient(135deg,var(--blue) 0%,#1e40af 100%);color:#fff;font-family:var(--fd);font-weight:800;font-size:16px;border-radius:12px;box-shadow:var(--sb);transition:all .25s var(--ease);display:flex;align-items:center;justify-content:center;gap:10px}
+.chk-btn:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(37,99,235,.32)}
+.chk-btn:active{transform:translateY(0)}
+
+/* TOGGLE ROW */
+.toggle-row{display:flex;align-items:center;justify-content:space-between;background:var(--surf);border:1.5px solid var(--line);border-radius:10px;padding:12px 16px;margin-bottom:14px}
+.toggle-lbl{font-size:13.5px;font-weight:600;color:var(--ink2);display:flex;align-items:center;gap:8px}
+.toggle{position:relative;width:42px;height:24px;flex-shrink:0}
+.toggle input{opacity:0;width:0;height:0;position:absolute}
+.tslider{position:absolute;inset:0;background:var(--line);border-radius:100px;cursor:pointer;transition:.28s}
+.tslider::before{content:'';position:absolute;left:3px;top:3px;width:18px;height:18px;background:#fff;border-radius:50%;transition:.28s;box-shadow:var(--s1)}
+.toggle input:checked+.tslider{background:var(--blue)}
+.toggle input:checked+.tslider::before{transform:translateX(18px)}
+
+/* SLIDER */
+.slider-wrap{margin-bottom:16px}
+.slider-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.slider-lbl{font-size:13px;font-weight:700;color:var(--ink2)}
+.slider-val{font-family:var(--fd);font-size:13px;font-weight:700;color:var(--blue);background:var(--blue-xl);padding:3px 10px;border-radius:6px;border:1px solid var(--blue-s)}
+input[type=range]{width:100%;height:6px;border-radius:100px;background:var(--line);outline:none;cursor:pointer;-webkit-appearance:none;appearance:none}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:20px;height:20px;border-radius:50%;background:var(--blue);box-shadow:var(--sb);cursor:pointer;border:2px solid #fff}
+input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;background:var(--blue);box-shadow:var(--sb);cursor:pointer;border:2px solid #fff}
+
+/* RESULT */
+#resultArea{display:none;margin-top:28px;animation:resultIn .45s var(--ease) both}
+.pay-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-bottom:16px}
+.pay-card{border-radius:16px;padding:22px 20px;position:relative;overflow:hidden;border:2px solid}
+.pay-card.hourly{background:linear-gradient(135deg,var(--blue-xl),#e0eeff);border-color:var(--blue-s)}
+.pay-card.weekly{background:linear-gradient(135deg,var(--green-xl),#d1fae5);border-color:var(--green-s)}
+.pay-card.monthly{background:linear-gradient(135deg,var(--amber-xl),#fef3c7);border-color:var(--amber-s)}
+.pay-card.yearly{background:linear-gradient(135deg,var(--purple-xl),#ede9fe);border-color:var(--purple-s);grid-column:1/-1}
+.pay-card::before{content:'';position:absolute;inset:0;opacity:.04;background-image:repeating-linear-gradient(45deg,currentColor 0,currentColor 1px,transparent 0,transparent 50%);background-size:12px 12px;pointer-events:none}
+.pc-lbl{font-size:12px;font-weight:700;color:var(--ink3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px;display:flex;align-items:center;gap:6px}
+.pc-val{font-family:var(--fd);font-size:32px;font-weight:800;color:var(--ink);line-height:1}
+.pay-card.yearly .pc-val{font-size:42px}
+.pc-sub{font-size:12.5px;color:var(--ink3);margin-top:5px}
+.pc-ico{font-size:28px;position:absolute;top:16px;right:16px;opacity:.18}
+
+/* After-tax row */
+.tax-row{background:var(--surf);border:1.5px solid var(--line);border-radius:12px;padding:16px 20px;margin-bottom:14px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.tax-label{font-size:13.5px;font-weight:600;color:var(--ink2)}
+.tax-vals{display:flex;gap:16px;flex-wrap:wrap}
+.tv{display:flex;flex-direction:column;align-items:flex-end}
+.tv-lbl{font-size:11px;color:var(--ink4);font-weight:600}
+.tv-val{font-family:var(--fd);font-size:15px;font-weight:800;color:var(--green)}
+
+/* OT badge */
+.ot-badge{display:inline-flex;align-items:center;gap:6px;font-family:var(--fd);font-size:12px;font-weight:700;padding:5px 12px;border-radius:100px;background:var(--amber-xl);color:var(--amber);border:1.5px solid var(--amber-s);margin-bottom:14px}
+
+.copy-btn{display:inline-flex;align-items:center;gap:6px;font-family:var(--fd);font-size:12px;font-weight:700;padding:7px 14px;border-radius:8px;background:var(--blue);color:#fff;border:none;cursor:pointer;transition:.22s;margin-top:4px}
+.copy-btn:hover{background:var(--blue-d);transform:translateY(-1px)}
+.copy-btn.copied{background:var(--green)}
+.warn-box{background:var(--amber-xl);border:1.5px solid var(--amber-s);border-radius:12px;padding:14px 18px;display:flex;gap:10px;font-size:13.5px;color:var(--ink2);line-height:1.7;margin-top:14px}
+
+/* TIPS */
+.tips-sec{background:var(--surf);padding:72px 0}
+.tips-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.tip-card{background:#fff;border:1.5px solid var(--line);border-radius:16px;padding:22px 18px;text-align:center;transition:.28s}
+.tip-card:hover{transform:translateY(-4px);box-shadow:var(--s3);border-color:var(--blue-s)}
+.tip-ico{font-size:32px;margin-bottom:11px}
+.tip-title{font-family:var(--fd);font-size:14px;font-weight:800;color:var(--ink);margin-bottom:8px}
+.tip-desc{font-size:13px;color:var(--ink3);line-height:1.7}
+
+/* TABLE */
+.tbl-sec{background:#fff;padding:72px 0}
+.tbl-wr{overflow-x:auto;margin-bottom:24px;border-radius:14px;border:1.5px solid var(--line);box-shadow:var(--s2)}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+thead th{background:linear-gradient(135deg,var(--blue) 0%,#1e40af 100%);color:#fff;padding:14px 16px;text-align:left;font-family:var(--fd);font-size:13px;font-weight:700;letter-spacing:.03em}
+thead th:first-child{border-radius:14px 0 0 0}
+thead th:last-child{border-radius:0 14px 0 0}
+tbody tr{border-bottom:1px solid var(--line);transition:.2s}
+tbody tr:hover{background:var(--blue-xl)}
+tbody td{padding:12px 16px;color:var(--ink2);vertical-align:middle}
+.tbadge{display:inline-flex;font-size:11px;font-weight:700;padding:3px 8px;border-radius:100px}
+.tbadge.g{background:var(--green-xl);color:var(--green);border:1px solid var(--green-s)}
+.tbadge.b{background:var(--blue-xl);color:var(--blue);border:1px solid var(--blue-s)}
+.tbadge.a{background:var(--amber-xl);color:var(--amber);border:1px solid var(--amber-s)}
+.tbadge.p{background:var(--purple-xl);color:var(--purple);border:1px solid var(--purple-s)}
+
+/* GRAPH */
+.graph-sec{background:var(--surf);padding:72px 0}
+.graph-card{background:#fff;border:1.5px solid var(--line);border-radius:20px;padding:28px 32px;box-shadow:var(--s3)}
+.graph-hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:22px;flex-wrap:wrap;gap:12px}
+.graph-ttl{font-family:var(--fd);font-size:18px;font-weight:800;color:var(--ink)}
+.graph-tabs{display:flex;gap:6px}
+.gtab{font-family:var(--fd);font-size:12px;font-weight:700;padding:6px 14px;border-radius:8px;border:1.5px solid var(--line);color:var(--ink3);transition:.2s;cursor:pointer;background:#fff}
+.gtab.active{background:var(--blue);border-color:var(--blue);color:#fff}
+.bar-chart{display:flex;flex-direction:column;gap:12px}
+.bar-row{display:grid;grid-template-columns:90px 1fr 120px;align-items:center;gap:12px}
+.bar-lbl{font-size:13px;font-weight:700;color:var(--ink2);text-align:right}
+.bar-track{height:36px;background:var(--surf);border-radius:8px;overflow:hidden;position:relative}
+.bar-fill{height:100%;border-radius:8px;display:flex;align-items:center;padding-left:12px;font-family:var(--fd);font-size:12px;font-weight:700;color:#fff;transition:width .7s var(--ease);white-space:nowrap;min-width:32px}
+.bar-val{font-family:var(--fd);font-size:13px;font-weight:700;color:var(--ink);text-align:right}
+
+/* STORY */
+.story-sec{background:#fff;padding:72px 0}
+.story-card{background:var(--surf);border:1.5px solid var(--line);border-radius:24px;padding:40px;box-shadow:var(--s3);position:relative;overflow:hidden}
+.story-card::before{content:'';position:absolute;top:0;left:0;bottom:0;width:5px;background:linear-gradient(180deg,var(--blue) 0%,var(--orange) 100%);border-radius:5px 0 0 5px}
+.sq{font-size:54px;color:var(--blue-s);font-family:Georgia,serif;line-height:1;padding-left:8px}
+.sb{font-size:15.5px;color:var(--ink2);line-height:1.9;padding:0 8px}
+.sauth{display:flex;align-items:center;gap:14px;margin-top:22px;padding-top:20px;border-top:1px solid var(--line)}
+.savt{width:48px;height:48px;background:var(--blue);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+.sname{font-family:var(--fd);font-size:15px;font-weight:700;color:var(--ink)}
+.srole{font-size:12.5px;color:var(--ink3)}
+.founder-msg{background:linear-gradient(135deg,var(--blue-xl),var(--blue-s));border:1.5px solid var(--blue-s);border-radius:14px;padding:20px 22px;margin-top:20px;display:flex;gap:13px}
+.fm-ico{font-size:26px;flex-shrink:0}
+.fm-txt{font-size:14px;color:var(--ink2);line-height:1.75;font-style:italic}
+.fm-txt strong{color:var(--ink);font-weight:700;font-style:normal}
+
+/* GUIDE */
+.guide-sec{background:var(--surf);padding:72px 0}
+.guide-body h2{font-family:var(--fd);font-size:21px;font-weight:800;color:var(--ink);margin:28px 0 11px;line-height:1.3}
+.guide-body h2:first-child{margin-top:0}
+.guide-body p{font-size:15px;color:var(--ink3);line-height:1.85;margin-bottom:14px}
+.guide-body ul{display:flex;flex-direction:column;gap:8px;margin:12px 0 16px}
+.guide-body li{display:flex;align-items:flex-start;gap:10px;font-size:14.5px;color:var(--ink3);line-height:1.7}
+.guide-body li::before{content:'✓';width:18px;height:18px;background:var(--blue);color:#fff;border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;flex-shrink:0;margin-top:3px}
+.guide-body strong{color:var(--ink2);font-weight:700}
+.ibox{background:var(--blue-xl);border:1.5px solid var(--blue-s);border-radius:13px;padding:15px 18px;margin:16px 0;display:flex;gap:11px;font-size:14px;color:var(--ink2);line-height:1.7}
+.ibox svg{width:17px;height:17px;stroke:var(--blue);fill:none;stroke-width:2;flex-shrink:0;margin-top:2px}
+.ibox.a{background:var(--amber-xl);border-color:var(--amber-s)}
+.ibox.a svg{stroke:var(--amber)}
+.ibox.g{background:var(--green-xl);border-color:var(--green-s)}
+.ibox.g svg{stroke:var(--green)}
+
+/* FAQ */
+.faq-sec{background:#fff;padding:72px 0}
+.fql{max-width:780px;margin:0 auto}
+.fq{background:var(--surf);border:1.5px solid var(--line);border-radius:13px;margin-bottom:10px;overflow:hidden}
+.fq-q{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;cursor:pointer;gap:14px;transition:.2s}
+.fq-q:hover{background:var(--blue-xl)}
+.fq-t{font-weight:600;font-size:15px;color:var(--ink);line-height:1.4}
+.fq-i{width:28px;height:28px;border-radius:50%;background:var(--blue-xl);color:var(--blue);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;transition:transform .28s,background .2s}
+.fq.open .fq-i{transform:rotate(45deg);background:var(--blue);color:#fff}
+.fq-a{max-height:0;overflow:hidden;transition:max-height .35s var(--ease)}
+.fq-ai{padding:0 22px 18px;font-size:14.5px;color:var(--ink3);line-height:1.78}
+.fq.open .fq-a{max-height:400px}
+
+/* DISC/CONTACT/CTA/FOOTER */
+.disc{background:var(--amber-xl);border-top:1px solid var(--amber-s);border-bottom:1px solid var(--amber-s);padding:15px 0}
+.disc-in{display:flex;align-items:flex-start;gap:12px;font-size:13.5px;color:var(--ink2);line-height:1.7}
+.contact-sec{background:var(--surf);padding:60px 0}
+.contact-card{max-width:580px;margin:0 auto;background:#fff;border:1.5px solid var(--line);border-radius:20px;padding:32px;text-align:center;box-shadow:var(--s2)}
+.contact-card h3{font-family:var(--fd);font-size:19px;font-weight:800;color:var(--ink);margin-bottom:10px}
+.contact-card p{font-size:15px;color:var(--ink3);line-height:1.75;margin-bottom:20px}
+.btn-bl{display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:#fff;font-family:var(--fd);font-weight:700;font-size:14.5px;padding:12px 26px;border-radius:8px;box-shadow:var(--sb);transition:.22s}
+.btn-bl:hover{background:var(--blue-d);transform:translateY(-1px)}
+.priv-note{font-size:12px;color:var(--ink4);margin-top:14px}
+.cta{background:linear-gradient(140deg,#0f172a 0%,#1e3a8a 100%);padding:80px 0;text-align:center;position:relative;overflow:hidden}
+.cta::before{content:'';position:absolute;top:-80px;left:50%;transform:translateX(-50%);width:800px;height:380px;background:radial-gradient(ellipse,rgba(37,99,235,.22) 0%,transparent 68%);pointer-events:none}
+.cta-in{position:relative;z-index:1}
+.cta .pill{color:#93c5fd;background:rgba(255,255,255,.1);margin-bottom:18px}
+.cta .pill::before{background:#93c5fd}
+.cta h2{font-family:var(--fd);font-size:clamp(24px,4vw,42px);font-weight:800;color:#fff;line-height:1.15;margin-bottom:12px}
+.cta h2 em{color:#fbbf24;font-style:normal}
+.cta p{font-size:16px;color:rgba(255,255,255,.72);max-width:480px;margin:0 auto 32px;line-height:1.78}
+.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn-gold{display:inline-flex;align-items:center;gap:8px;background:var(--amber);color:#fff;font-family:var(--fd);font-weight:800;font-size:15px;padding:14px 30px;border-radius:8px;box-shadow:0 8px 28px rgba(245,158,11,.35);transition:.22s}
+.btn-gold:hover{background:#d97706;transform:translateY(-3px)}
+.btn-ghost{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.09);border:1.5px solid rgba(255,255,255,.22);color:#fff;font-family:var(--fd);font-weight:600;font-size:14px;padding:13px 26px;border-radius:8px;transition:.2s}
+.btn-ghost:hover{background:rgba(255,255,255,.16)}
+footer{background:#0f172a;padding:52px 0 0}
+.ft-inner{max-width:1180px;margin:0 auto;padding:0 24px}
+.ft-top{display:grid;grid-template-columns:1.9fr 1fr 1fr 1fr;gap:44px;margin-bottom:44px}
+.ft-brand .ln{color:#fff}.ft-brand .ls{color:#475569}
+.ft-desc{font-size:13.5px;color:#64748b;line-height:1.78;max-width:265px;margin:13px 0 20px}
+.ft-soc{display:flex;gap:9px}
+.fts{width:34px;height:34px;border-radius:7px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;color:#94a3b8;font-size:13px;transition:.2s}
+.fts:hover{background:var(--blue);color:#fff}
+.fc h4{font-family:var(--fd);font-size:12px;font-weight:700;color:#fff;margin-bottom:14px;letter-spacing:.06em;text-transform:uppercase}
+.fc ul{display:flex;flex-direction:column;gap:8px}
+.fc ul a{font-size:13.5px;color:#64748b;transition:.18s}
+.fc ul a:hover{color:#93c5fd}
+.ft-btm{border-top:1px solid rgba(255,255,255,.07);padding:20px 0;text-align:center}
+.ft-cp{font-size:12.5px;color:#475569}
+.ft-cp b{color:#64748b}
+.ft-tag{font-size:12px;color:#334155;margin-top:4px;font-style:italic}
+.btt{position:fixed;bottom:26px;right:26px;z-index:500;width:43px;height:43px;background:var(--blue);color:#fff;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:17px;box-shadow:var(--sb);opacity:0;pointer-events:none;transform:translateY(14px);transition:.28s var(--ease)}
+.btt.on{opacity:1;pointer-events:auto;transform:translateY(0)}
+.btt:hover{transform:translateY(-3px)}
+
+/* shared section labels */
+.sec-lbl{display:flex;align-items:center;gap:8px;font-family:var(--fd);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin-bottom:10px}
+.sec-lbl::before{content:'';width:6px;height:6px;background:var(--blue);border-radius:50%}
+.sec-h{font-family:var(--fd);font-size:clamp(22px,3.5vw,34px);font-weight:800;color:var(--ink);line-height:1.15;margin-bottom:10px}
+.sec-sub{font-size:15.5px;color:var(--ink3);line-height:1.78;margin-bottom:40px;max-width:600px}
+
+/* RESPONSIVE */
+@media(max-width:1060px){.ft-top{grid-template-columns:1fr 1fr}.tips-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:860px){
+  nav.dn,.hcta{display:none}.brg{display:flex}
+  .tool-body{padding:24px 22px}.tool-hdr{padding:24px 22px}
+  .fgrid{grid-template-columns:1fr}.fgrid3{grid-template-columns:1fr 1fr}
+  .howto-steps{grid-template-columns:1fr}
+  .rel-grid{grid-template-columns:1fr 1fr}
+  .pay-grid{grid-template-columns:1fr 1fr}
+  .bar-row{grid-template-columns:80px 1fr 100px}
+}
+@media(max-width:600px){
+  .ft-top{grid-template-columns:1fr}.rel-grid{grid-template-columns:1fr}
+  .tips-grid{grid-template-columns:1fr 1fr}
+  .cta-btns{flex-direction:column;align-items:center}
+  .story-card{padding:26px 20px}
+  .pay-grid{grid-template-columns:1fr}
+  .pay-card.yearly{grid-column:auto}
+  .fgrid3{grid-template-columns:1fr}
+  .graph-card{padding:18px 16px}
+  .bar-row{grid-template-columns:70px 1fr 90px}
+  .mode-tabs{flex-direction:column}
+  .mtab{min-width:unset}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="hdr">
+  <div class="w">
+    <div class="hdi">
+      <a href="/" class="logo">
+        <div class="lb"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+        <div><div class="ln">Raj<span>Daily</span>Tools</div><div class="ls">Smart Tools for Daily Life</div></div>
+      </a>
+      <nav class="dn">
+        <a href="/">Home</a><a href="/categories">Categories</a>
+        <a href="/#popular">Popular</a><a href="/about">About</a><a href="/contact">Contact</a>
+      </nav>
+      <a href="/categories" class="hcta">All Tools →</a>
+      <button class="brg" id="brg"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="dov" id="dov"></div>
+<div class="drw" id="drw">
+  <div class="dh">
+    <div class="logo">
+      <div class="lb" style="width:30px;height:30px;border-radius:7px"><svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#fff"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+      <div class="ln" style="font-size:16px">Raj<span>Daily</span>Tools</div>
+    </div>
+    <button class="dx" id="dx">✕</button>
+  </div>
+  <nav class="mn">
+    <a href="/" onclick="cD()">🏠 Home</a>
+    <a href="/categories" onclick="cD()">🗂️ Categories</a>
+    <a href="/#popular" onclick="cD()">⭐ Popular</a>
+    <a href="/about" onclick="cD()">👤 About</a>
+    <a href="/contact" onclick="cD()">📬 Contact</a>
+  </nav>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+  <div class="w">
+    <div class="bc">
+      <a href="/">Home</a><span style="color:var(--ink4)">›</span>
+      <a href="/categories">Tools</a><span style="color:var(--ink4)">›</span>
+      <span>Salary Converter USA</span>
+    </div>
+    <div class="hero-inner">
+      <div class="pill">Free USA Finance Tools 🇺🇸</div>
+      <h1>Convert Your Salary Instantly – <span>Hourly, Monthly &amp; Yearly</span> (USA)</h1>
+      <p class="hero-sub">Calculate your exact salary breakdown in seconds. Perfect for <strong>jobs, freelancing, and US salary comparison</strong>. Convert $20/hr to yearly salary instantly.</p>
+      <div class="hero-chips">
+        <span class="chip">💵 Hourly → Yearly</span>
+        <span class="chip">📅 Monthly Breakdown</span>
+        <span class="chip">⏱️ Overtime (1.5×)</span>
+        <span class="chip">🧮 Tax Estimation</span>
+        <span class="chip">🆓 100% Free Tool</span>
+        <span class="chip">🇺🇸 USA Focused</span>
+      </div>
+      <div class="hero-meta">
+        <div class="upd">💵 High Accuracy Calculator</div>
+        <span class="mi">✅ Overtime &amp; tax included</span>
+        <span class="mi">🔒 No data stored</span>
+      </div>
+      <!-- HOW TO USE -->
+      <div class="howto">
+        <div class="howto-ttl">💡 How to Use This Tool</div>
+        <div class="howto-steps">
+          <div class="hs"><span class="sn">1</span>Enter your hourly pay ($)</div>
+          <div class="hs"><span class="sn">2</span>Set working hours per week</div>
+          <div class="hs"><span class="sn">3</span>Click Calculate</div>
+          <div class="hs"><span class="sn">4</span>See yearly, monthly &amp; weekly salary</div>
+        </div>
+      </div>
+      <!-- RELATED TOOLS -->
+      <div class="rel-grid">
+        <div class="rg-box army">
+          <div class="rg-ico">🏦</div>
+          <div class="rg-txt">
+            <h4>EMI Calculator</h4>
+            <p>Loan &amp; mortgage EMI</p>
+            <a href="/emi-calculator.html" class="btn-xs a">Use Now →</a>
+          </div>
+        </div>
+        <div class="rg-box ht">
+          <div class="rg-ico">%</div>
+          <div class="rg-txt">
+            <h4>Percentage Calculator</h4>
+            <p>% increase, decrease &amp; more</p>
+            <a href="/percentage-calculator.html" class="btn-xs g">Use Now →</a>
+          </div>
+        </div>
+        <div class="rg-box ssc">
+          <div class="rg-ico">🧾</div>
+          <div class="rg-txt">
+            <h4>GST Calculator</h4>
+            <p>GST inclusive &amp; exclusive</p>
+            <a href="/gst-calculator.html" class="btn-xs b">Use Now →</a>
+          </div>
+        </div>
+        <div class="rg-box mp">
+          <div class="rg-ico">🧮</div>
+          <div class="rg-txt">
+            <h4>Income Tax Calculator</h4>
+            <p>Estimate your tax liability</p>
+            <a href="/income-tax.html" class="btn-xs p">Use Now →</a>
+          </div>
+        </div>
+        <div class="rg-box tl">
+          <div class="rg-ico">🔄</div>
+          <div class="rg-txt">
+            <h4>Unit Converter</h4>
+            <p>Length, weight, volume &amp; more</p>
+            <a href="/unit-converter.html" class="btn-xs t">Use Now →</a>
+          </div>
+        </div>
+        <div class="rg-box rd">
+          <div class="rg-ico">⏱️</div>
+          <div class="rg-txt">
+            <h4>Time Duration Calculator</h4>
+            <p>Hours between two times</p>
+            <a href="/time-duration-calculator.html" class="btn-xs r">Use Now →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOOL SECTION -->
+<section class="tool-sec" id="tool">
+  <div class="w">
+    <div class="tool-wrap">
+      <div class="tool-card rev">
+        <div class="tool-hdr">
+          <div class="th">
+            <h2>💵 Salary Converter – Hourly, Monthly &amp; Yearly (USA)</h2>
+            <p>Enter your wage, work hours, and weeks per year. Toggle overtime and adjust tax rate to see your full take-home salary breakdown instantly.</p>
+            <div class="th-badges">
+              <span class="thb">🇺🇸 USA Focused</span>
+              <span class="thb">⏱️ Overtime 1.5×</span>
+              <span class="thb">🧮 Tax Estimate</span>
+              <span class="thb">📊 Full Breakdown</span>
+              <span class="thb">🔒 No Data Stored</span>
+            </div>
+          </div>
+        </div>
+        <div class="tool-body">
+
+          <!-- MODE TABS -->
+          <div class="fld" style="margin-bottom:6px">
+            <label class="flbl">⚡ Conversion Mode</label>
+          </div>
+          <div class="mode-tabs" id="modeTabs">
+            <button class="mtab active" onclick="setMode('hourly',this)">💵 Hourly → Salary</button>
+            <button class="mtab" onclick="setMode('monthly',this)">📅 Monthly → Salary</button>
+            <button class="mtab" onclick="setMode('yearly',this)">📆 Yearly → Hourly</button>
+          </div>
+
+          <!-- HOURLY MODE -->
+          <div id="modeHourly">
+            <div class="fgrid3">
+              <div class="fld">
+                <label class="flbl" for="hourlyWage">Hourly Wage <span>Required</span></label>
+                <div class="inp-wrap">
+                  <span class="inp-prefix">$</span>
+                  <input class="finp has-prefix" type="number" id="hourlyWage" placeholder="e.g. 20" min="0" step="0.01" value="20">
+                </div>
+              </div>
+              <div class="fld">
+                <label class="flbl" for="hoursWeek">Hours / Week <span>Default 40</span></label>
+                <input class="finp" type="number" id="hoursWeek" placeholder="40" min="1" max="168" value="40">
+              </div>
+              <div class="fld">
+                <label class="flbl" for="weeksYear">Weeks / Year <span>Default 52</span></label>
+                <input class="finp" type="number" id="weeksYear" placeholder="52" min="1" max="52" value="52">
+              </div>
+            </div>
+          </div>
+
+          <!-- MONTHLY MODE -->
+          <div id="modeMonthly" style="display:none">
+            <div class="fgrid">
+              <div class="fld">
+                <label class="flbl" for="monthlySal">Monthly Salary <span>Required</span></label>
+                <div class="inp-wrap">
+                  <span class="inp-prefix">$</span>
+                  <input class="finp has-prefix" type="number" id="monthlySal" placeholder="e.g. 5000" min="0" value="5000">
+                </div>
+              </div>
+              <div class="fld">
+                <label class="flbl" for="monthlyHours">Hours / Week <span>Default 40</span></label>
+                <input class="finp" type="number" id="monthlyHours" placeholder="40" min="1" value="40">
+              </div>
+            </div>
+          </div>
+
+          <!-- YEARLY MODE -->
+          <div id="modeYearly" style="display:none">
+            <div class="fgrid">
+              <div class="fld">
+                <label class="flbl" for="yearlySal">Yearly Salary <span>Required</span></label>
+                <div class="inp-wrap">
+                  <span class="inp-prefix">$</span>
+                  <input class="finp has-prefix" type="number" id="yearlySal" placeholder="e.g. 60000" min="0" value="60000">
+                </div>
+              </div>
+              <div class="fld">
+                <label class="flbl" for="yearlyHours">Hours / Week <span>Default 40</span></label>
+                <input class="finp" type="number" id="yearlyHours" placeholder="40" min="1" value="40">
+              </div>
+            </div>
+          </div>
+
+          <!-- OVERTIME TOGGLE -->
+          <div class="toggle-row">
+            <span class="toggle-lbl">⏱️ Include Overtime Pay <span style="font-size:12px;color:var(--ink4);font-weight:500">(hours over 40/week × 1.5 rate)</span></span>
+            <label class="toggle"><input type="checkbox" id="otToggle"><span class="tslider"></span></label>
+          </div>
+
+          <!-- OVERTIME HOURS (shown when OT enabled) -->
+          <div id="otRow" style="display:none;margin-bottom:14px">
+            <div class="fld">
+              <label class="flbl" for="otHours">Overtime Hours / Week <span>Above regular hours</span></label>
+              <input class="finp" type="number" id="otHours" placeholder="e.g. 5" min="0" max="40" value="5">
+            </div>
+          </div>
+
+          <!-- TAX SLIDER -->
+          <div class="slider-wrap">
+            <div class="slider-top">
+              <span class="slider-lbl">🧮 Estimated Tax Rate (Federal + State)</span>
+              <span class="slider-val" id="taxLabel">22%</span>
+            </div>
+            <input type="range" id="taxSlider" min="0" max="45" value="22" step="1" oninput="document.getElementById('taxLabel').textContent=this.value+'%'">
+            <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--ink4);margin-top:5px"><span>0% (No Tax)</span><span>~22% Avg Federal</span><span>45% Max</span></div>
+          </div>
+
+          <div class="hint-box">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            <div>Standard US work year = <strong>52 weeks × 40 hours = 2,080 hours</strong>. Tax estimate is approximate — consult a tax professional for exact figures.</div>
+          </div>
+
+          <button class="chk-btn" onclick="calculate()">
+            <span>💵 Calculate My Salary</span>
+          </button>
+
+          <!-- RESULT -->
+          <div id="resultArea">
+            <div id="otBadgeWrap"></div>
+            <div class="pay-grid" id="payGrid"></div>
+            <div class="tax-row" id="taxRow"></div>
+            <button class="copy-btn" id="copyBtn" onclick="copyResult()">📋 Copy Full Breakdown</button>
+            <div class="warn-box">
+              <span style="font-size:20px;flex-shrink:0">ℹ️</span>
+              <div style="font-size:13.5px;color:var(--ink2);line-height:1.72"><strong>Important Notice:</strong> Always confirm salary details with your employer or official contract. Tax values are estimates only. Actual deductions vary based on filing status, state, and benefits. <strong>We do not collect or store any data.</strong></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TIPS / FEATURES -->
+<section class="tips-sec">
+  <div class="w">
+    <div style="text-align:center;margin-bottom:40px">
+      <div class="sec-lbl" style="justify-content:center">Why Use This Tool</div>
+      <div class="sec-h">Smart Features for <span style="color:var(--blue)">Salary Calculation</span></div>
+    </div>
+    <div class="tips-grid">
+      <div class="tip-card rev">
+        <div class="tip-ico">⚡</div>
+        <div class="tip-title">Instant Breakdown</div>
+        <div class="tip-desc">Get hourly, weekly, monthly and yearly pay instantly — no manual math or spreadsheets needed.</div>
+      </div>
+      <div class="tip-card rev">
+        <div class="tip-ico">⏱️</div>
+        <div class="tip-title">Overtime Included</div>
+        <div class="tip-desc">Toggle overtime on to factor in 1.5× pay for hours above your standard work week — exactly like US labor law.</div>
+      </div>
+      <div class="tip-card rev">
+        <div class="tip-ico">🧮</div>
+        <div class="tip-title">Tax Estimation</div>
+        <div class="tip-desc">Adjust the tax rate slider to estimate take-home pay after federal and state taxes. See both gross and net salary.</div>
+      </div>
+      <div class="tip-card rev">
+        <div class="tip-ico">🔄</div>
+        <div class="tip-title">3-Way Conversion</div>
+        <div class="tip-desc">Convert in any direction — hourly to yearly, monthly to hourly, or yearly back to hourly rate with one click.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TABLE SECTION -->
+<section class="tbl-sec">
+  <div class="w">
+    <div style="text-align:center;margin-bottom:40px">
+      <div class="sec-lbl" style="justify-content:center">Quick Reference</div>
+      <div class="sec-h">Common <span style="color:var(--blue)">Hourly Wage to Salary</span> Reference Table</div>
+      <p class="sec-sub" style="margin:12px auto 0">Based on standard 40 hrs/week × 52 weeks = 2,080 hours/year. Bookmark for quick reference.</p>
+    </div>
+    <div class="tbl-wr">
+      <table>
+        <thead>
+          <tr>
+            <th>Hourly Wage</th>
+            <th>Weekly Pay</th>
+            <th>Monthly Pay</th>
+            <th>Yearly Salary</th>
+            <th>Level</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>$7.25 / hr</strong></td>
+            <td style="font-family:var(--fd);font-weight:700;color:var(--ink3)">$290</td>
+            <td style="font-family:var(--fd);font-weight:700;color:var(--ink3)">$1,257</td>
+            <td style="font-family:var(--fd);font-weight:700;color:var(--blue)">$15,080</td>
+            <td><span class="tbadge a">Federal Min</span></td>
+          </tr>
+          <tr>
+            <td><strong>$15 / hr</strong></td>
+            <td style="font-family:var(--fd);font-weight:700;color:var(--ink2)">$600</td>
+            <td style="font-family:var(--fd);font-weight:700;color:var(--ink2)">$2,600</td>
+            <td style="font-family:var(--fd);font-weight:700;color:var(--blue)">$31,200</td>
+            <td><span class="tbadge b">State Min</span></td>
+          </tr>
+          <tr>
+            <td><strong>$20 / hr</strong></td>
+            <td style="font-family:var(--fd);font-weight:700;color:var(--ink2)">$800</td>
+            <td style="font-family:var(--fd);font-weight:700;color:var(--ink2)">$3,467</td>
+            <td style="font-family:var(--fd);font-weight:700;color:var(--blue)">$41,600</td>
+            <td><span class="tbadge g">Entry Level</span></td>
+          </tr>
+          <tr>
+            <td><strong>$25 / hr</strong></td>
+            <td style="font-family:var(--fd);font-weight:700;color:var(--ink2)">$1,000</td>
+            <td style="font-family:var(--fd);font-weight:700;color:var(--ink2)">$4,333</td>
+            <td style="font-family:var(--fd);font-weight:700;color:var(--blue)">$52,000</td>
+            <td><span class="tbadge g">Mid Level</span></td>
+          </tr>
+          <tr>
+            <td><strong>$35 / hr</strong></td>
+            <td style="font-family:var(--fd);font-weight:700;color:var(--ink2)">$1,400</td>
+            <td style="font-family:var(--fd);font-weight:700;color:var(--ink2)">$6,067</td>
+            <td style="font-family:var(--fd);font-weight:700;color:var(--blue)">$72,800</td>
+            <td><span class="tbadge p">Experienced</span></td>
+          </tr>
+          <tr>
+            <td><strong>$50 / hr</strong></td>
+            <td style="font-family:var(--fd);font-weight:700;color:var(--ink2)">$2,000</td>
+            <td style="font-family:var(--fd);font-weight:700;color:var(--ink2)">$8,667</td>
+            <td style="font-family:var(--fd);font-weight:700;color:var(--blue)">$104,000</td>
+            <td><span class="tbadge p">Senior / Tech</span></td>
+          </tr>
+          <tr>
+            <td><strong>$75 / hr</strong></td>
+            <td style="font-family:var(--fd);font-weight:700;color:var(--ink2)">$3,000</td>
+            <td style="font-family:var(--fd);font-weight:700;color:var(--ink2)">$13,000</td>
+            <td style="font-family:var(--fd);font-weight:700;color:var(--blue)">$156,000</td>
+            <td><span class="tbadge p">Specialist</span></td>
+          </tr>
+          <tr>
+            <td><strong>$100 / hr</strong></td>
+            <td style="font-family:var(--fd);font-weight:700;color:var(--ink2)">$4,000</td>
+            <td style="font-family:var(--fd);font-weight:700;color:var(--ink2)">$17,333</td>
+            <td style="font-family:var(--fd);font-weight:700;color:var(--blue)">$208,000</td>
+            <td><span class="tbadge p">Expert / Lead</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:12px;color:var(--ink4);text-align:center;margin-top:10px">* Based on 40 hrs/week × 52 weeks. Monthly = Annual ÷ 12. Does not include overtime or tax deductions.</p>
+  </div>
+</section>
+
+<!-- GRAPH SECTION -->
+<section class="graph-sec">
+  <div class="w">
+    <div style="text-align:center;margin-bottom:30px">
+      <div class="sec-lbl" style="justify-content:center">Visual Comparison</div>
+      <div class="sec-h">Salary Breakdown <span style="color:var(--blue)">Visual Chart</span></div>
+    </div>
+    <div class="graph-card rev">
+      <div class="graph-hdr">
+        <div>
+          <div class="graph-ttl" id="graphTitle">Salary Breakdown for $20/hr (40 hrs/week)</div>
+          <div style="font-size:13px;color:var(--ink3);margin-top:3px">Visual comparison of weekly, monthly and yearly earnings at different wage levels</div>
+        </div>
+        <div class="graph-tabs">
+          <button class="gtab active" onclick="buildChart(20,this)">$20/hr</button>
+          <button class="gtab" onclick="buildChart(35,this)">$35/hr</button>
+          <button class="gtab" onclick="buildChart(50,this)">$50/hr</button>
+        </div>
+      </div>
+      <div class="bar-chart" id="barChart"></div>
+      <div style="font-size:12px;color:var(--ink4);margin-top:16px;text-align:center">Based on 40 hrs/week × 52 weeks/year. Bar widths are log-scaled for visual clarity.</div>
+    </div>
+  </div>
+</section>
+
+<!-- STORY SECTION -->
+<section class="story-sec">
+  <div class="wa">
+    <div class="sec-lbl">Our Story</div>
+    <div class="sec-h">Why I Built This <span style="color:var(--blue)">Salary Converter</span></div>
+    <div class="story-card">
+      <div class="sq">"</div>
+      <p class="sb">My friend Prashant recently got a job offer in the US. The company offered him an hourly wage, but he was confused about how much he would actually earn yearly. He kept searching online but found complicated tools with too many ads and confusing interfaces. He didn't know if the offer was good or not — because he couldn't picture the yearly number.</p>
+      <p class="sb" style="margin-top:14px">That's when I realized many people — students, freshers, freelancers, and even experienced professionals — struggle with this simple calculation. So I created this clean and accurate <strong>Salary Converter</strong> to help anyone instantly understand their real income, whether they're paid hourly, monthly, or yearly.</p>
+      <div class="sauth">
+        <div class="savt">💵</div>
+        <div>
+          <div class="sname">Raj — Founder, RajDailyTools</div>
+          <div class="srole">Building simple tools for everyday problems</div>
+        </div>
+      </div>
+      <div class="founder-msg">
+        <div class="fm-ico">💬</div>
+        <div class="fm-txt"><strong>Our Promise:</strong> This tool will always be free, clean, and honest. No spam, no misleading results, no data collection. Just simple, accurate salary calculation that actually works.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SEO GUIDE ARTICLE -->
+<section class="guide-sec">
+  <div class="wa">
+    <div class="sec-lbl">Complete Guide</div>
+    <div class="sec-h">Everything About <span style="color:var(--blue)">Hourly &amp; Annual Salary in USA</span></div>
+    <div class="guide-body">
+
+      <h2>What is Hourly Salary in USA?</h2>
+      <p>In the United States, many jobs — especially retail, hospitality, healthcare support, and entry-level tech roles — pay employees by the hour rather than a fixed annual salary. Your <strong>hourly wage</strong> is the amount you earn for each hour worked. The federal minimum wage is $7.25/hour, though many states have set higher minimums like $15/hour in California and New York.</p>
+      <p>To understand your full earning picture, you need to convert your hourly rate into weekly, monthly, and yearly figures. The standard formula in the US is: <strong>Annual Salary = Hourly Rate × 40 hours × 52 weeks = Hourly Rate × 2,080</strong>.</p>
+
+      <div class="ibox">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        <div>The magic number in US salary math is <strong>2,080</strong> — that's 40 hours/week × 52 weeks. So $1/hour = $2,080/year. A $20/hour job = $41,600/year. A $50/hour job = $104,000/year.</div>
+      </div>
+
+      <h2>How Companies Calculate Salary in the USA</h2>
+      <p>US employers calculate compensation in one of three ways depending on the role and contract type:</p>
+      <ul>
+        <li><strong>Hourly Pay:</strong> Common for part-time, retail, gig workers, and some full-time roles. Pay = Hours Worked × Hourly Rate. Eligible for overtime under FLSA.</li>
+        <li><strong>Annual Salary:</strong> Common for office, tech, management, and professional roles. Paid in equal bi-weekly or semi-monthly installments regardless of hours worked.</li>
+        <li><strong>Contract / Freelance Rate:</strong> Charged per hour, per project, or per milestone. No employer benefits — the rate must be higher to account for self-employment taxes and no paid leave.</li>
+      </ul>
+
+      <h2>Difference Between Hourly and Yearly Pay</h2>
+      <p>The core difference goes beyond just the pay structure:</p>
+      <ul>
+        <li><strong>Overtime:</strong> Hourly workers are entitled to 1.5× their rate for hours over 40/week (FLSA). Salaried "exempt" employees typically are not.</li>
+        <li><strong>Predictability:</strong> Salaried employees know their exact paycheck. Hourly workers' pay varies with hours worked.</li>
+        <li><strong>Benefits:</strong> Full-time salaried employees often receive health insurance, 401k, PTO. Many hourly roles offer fewer benefits.</li>
+        <li><strong>Flexibility:</strong> Hourly roles can offer more schedule flexibility. Salaried roles may demand unpaid extra hours.</li>
+      </ul>
+
+      <div class="ibox a">
+        <svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        <div><strong>Real Example:</strong> If you earn $25/hour and work 5 extra hours overtime per week, your weekly pay jumps from $1,000 to $1,187.50 (5 hrs × $37.50 OT rate). Over 52 weeks that's $9,750 extra — nearly 19% more income!</div>
+      </div>
+
+      <h2>Freelancers vs Full-Time Income — What's the Real Difference?</h2>
+      <p>Freelancers need to charge more per hour than salaried employees to earn the same take-home pay. Here's why:</p>
+      <ul>
+        <li><strong>Self-employment tax:</strong> Freelancers pay 15.3% SE tax on top of income tax. Salaried employees only pay the employee half (7.65%).</li>
+        <li><strong>No paid leave:</strong> A salaried employee with 15 days PTO effectively earns salary even when not working. A freelancer earns nothing on holidays.</li>
+        <li><strong>No employer benefits:</strong> Health insurance, 401k match, and other benefits can be worth $10,000–$20,000/year. Freelancers cover all this themselves.</li>
+        <li><strong>Unpaid admin time:</strong> Freelancers spend hours on invoicing, marketing, and client management — none of which is billable.</li>
+      </ul>
+
+      <div class="ibox g">
+        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+        <div><strong>Rule of Thumb:</strong> As a freelancer in the US, multiply your target salaried hourly equivalent by 1.5× to 2× to arrive at a fair freelance rate. If a job pays $40/hr as salary, charge $60–$80/hr as a freelancer to break even after taxes and benefits.</div>
+      </div>
+
+      <h2>Common Mistakes People Make with Salary Calculations</h2>
+      <p>These mistakes are surprisingly common — even among experienced professionals:</p>
+      <ul>
+        <li><strong>Forgetting taxes:</strong> A $50,000 salary doesn't mean $50,000 in hand. After federal, state, and FICA taxes, take-home is typically 65–75% of gross.</li>
+        <li><strong>Ignoring overtime:</strong> Hourly workers who regularly work overtime can earn significantly more than the base calculation suggests. Always factor it in.</li>
+        <li><strong>Not accounting for unpaid weeks:</strong> If you take 2 weeks unpaid leave, your actual annual income is based on 50 weeks, not 52.</li>
+        <li><strong>Comparing hourly vs salary apples to oranges:</strong> A $60,000 salaried role with full benefits may be worth more than a $35/hour contract with no benefits.</li>
+        <li><strong>Using wrong months:</strong> Monthly salary = Annual ÷ 12 (not ÷ 4.3 weeks). Many people multiply weekly pay by 4 and get a lower number.</li>
+      </ul>
+
+      <h2>Why This Tool is Your Best Salary Calculator</h2>
+      <p>Our Salary Converter is purpose-built for US workers, job seekers, and freelancers:</p>
+      <ul>
+        <li>Instantly converts hourly, monthly, and yearly — in all 3 directions</li>
+        <li>Includes realistic overtime calculation at 1.5× rate</li>
+        <li>Tax rate slider gives estimated take-home figures</li>
+        <li>Works for any work schedule — not just standard 40/hr weeks</li>
+        <li>100% free with no login, no ads, no data storage</li>
+        <li>Mobile-friendly and fast on all devices</li>
+      </ul>
+
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-sec">
+  <div class="w">
+    <div style="text-align:center;margin-bottom:40px">
+      <div class="sec-lbl" style="justify-content:center">Frequently Asked Questions</div>
+      <div class="sec-h">Common Questions About <span style="color:var(--blue)">Salary Conversion USA</span></div>
+    </div>
+    <div class="fql">
+      <div class="fq">
+        <div class="fq-q" onclick="togFaq(this)"><span class="fq-t">How do I convert my hourly wage to yearly salary?</span><span class="fq-i">+</span></div>
+        <div class="fq-a"><div class="fq-ai">Multiply your hourly rate by the number of hours you work per week, then by the number of weeks you work per year. The standard US formula is: Hourly Rate × 40 hours × 52 weeks = Annual Salary. Example: $20/hr × 40 × 52 = $41,600/year. Use our tool above to calculate any variation instantly.</div></div>
+      </div>
+      <div class="fq">
+        <div class="fq-q" onclick="togFaq(this)"><span class="fq-t">What is the yearly salary for a 40-hour work week job?</span><span class="fq-i">+</span></div>
+        <div class="fq-a"><div class="fq-ai">For a standard 40-hour week over 52 weeks (2,080 hours/year), the annual salary is simply your hourly rate × 2,080. Some quick examples: $15/hr = $31,200/yr; $20/hr = $41,600/yr; $25/hr = $52,000/yr; $30/hr = $62,400/yr; $50/hr = $104,000/yr.</div></div>
+      </div>
+      <div class="fq">
+        <div class="fq-q" onclick="togFaq(this)"><span class="fq-t">How accurate is this salary calculator?</span><span class="fq-i">+</span></div>
+        <div class="fq-a"><div class="fq-ai">The gross salary calculation (before tax) is 100% accurate using standard formulas. The tax estimation is an approximation based on the percentage you set using the slider. Actual tax depends on your filing status, deductions, state of residence, and other factors. Always consult a tax professional or use the IRS withholding estimator for exact figures.</div></div>
+      </div>
+      <div class="fq">
+        <div class="fq-q" onclick="togFaq(this)"><span class="fq-t">Does this calculator include taxes?</span><span class="fq-i">+</span></div>
+        <div class="fq-a"><div class="fq-ai">Yes — our tool includes an estimated tax deduction via the tax rate slider (0–45%). You can adjust it to match your estimated effective tax rate. The tool shows both gross income and estimated after-tax (net) take-home for all pay periods. Note this is an approximation, not a certified tax calculation.</div></div>
+      </div>
+      <div class="fq">
+        <div class="fq-q" onclick="togFaq(this)"><span class="fq-t">What is the average salary in the USA?</span><span class="fq-i">+</span></div>
+        <div class="fq-a"><div class="fq-ai">According to the US Bureau of Labor Statistics, the median annual wage for full-time workers is approximately $59,000–$63,000 per year (around $28–$30/hour). Tech workers, doctors, lawyers, and engineers typically earn $80,000–$200,000+. Entry-level retail and service jobs typically range from $25,000–$40,000/year.</div></div>
+      </div>
+      <div class="fq">
+        <div class="fq-q" onclick="togFaq(this)"><span class="fq-t">Can freelancers and self-employed workers use this tool?</span><span class="fq-i">+</span></div>
+        <div class="fq-a"><div class="fq-ai">Absolutely. Freelancers can enter their hourly rate and adjust the hours/week and weeks/year fields to match their actual working schedule. Remember to set the tax slider higher (25–35%+) to account for self-employment tax on top of regular income tax. This helps estimate how much to set aside for quarterly tax payments.</div></div>
+      </div>
+      <div class="fq">
+        <div class="fq-q" onclick="togFaq(this)"><span class="fq-t">How does overtime pay work in the USA?</span><span class="fq-i">+</span></div>
+        <div class="fq-a"><div class="fq-ai">Under the US Fair Labor Standards Act (FLSA), non-exempt hourly employees must be paid at least 1.5× their regular rate for hours worked beyond 40 in a workweek. For example, if you earn $20/hour and work 45 hours/week, the 5 overtime hours are paid at $30/hour (1.5× $20). Toggle the overtime option in our tool to include this in your calculation.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DISCLAIMER -->
+<div class="disc">
+  <div class="w">
+    <div class="disc-in">
+      <span style="font-size:20px;flex-shrink:0">⚠️</span>
+      <div><strong>Disclaimer:</strong> This tool provides estimated salary values for informational purposes only. Actual salary, overtime eligibility, and take-home pay may vary based on employer policies, state laws, tax filing status, benefits, and deductions. Always confirm salary details with your employer or official employment contract before making financial decisions.</div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<section class="contact-sec">
+  <div class="w">
+    <div class="contact-card">
+      <h3>📬 Contact Us</h3>
+      <p>If you have suggestions or want more advanced features added to this Salary Converter, contact us anytime. We're happy to help!</p>
+      <a href="mailto:contact@rajdailytools.in" class="btn-bl">✉️ Send Message</a>
+      <div class="priv-note">🔒 Privacy: We do not store any data entered in our tools. Your salary calculations remain completely private.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="cta-in">
+    <div class="pill">More Tools</div>
+    <h2>Explore More <em>Free Daily Tools</em></h2>
+    <p>RajDailyTools offers 50+ free tools for calculations, conversions, eligibility checks, and more — all in one place.</p>
+    <div class="cta-btns">
+      <a href="/categories" class="btn-gold">🗂️ Browse All Tools</a>
+      <a href="/" class="btn-ghost">🏠 Back to Home</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-inner">
+    <div class="ft-top">
+      <div class="ft-brand">
+        <a href="/" class="logo">
+          <div class="lb"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+          <div><div class="ln">Raj<span>Daily</span>Tools</div><div class="ls">Smart Tools for Daily Life</div></div>
+        </a>
+        <div class="ft-desc">Free, fast, and reliable tools for everyday calculations. Salary converter, EMI calculator, GST calculator and 50+ more tools — all in one place.</div>
+        <div class="ft-soc">
+          <a class="fts" href="#" title="Twitter">𝕏</a>
+          <a class="fts" href="#" title="Instagram">📸</a>
+          <a class="fts" href="#" title="YouTube">▶</a>
+          <a class="fts" href="#" title="Telegram">✈</a>
+        </div>
+      </div>
+      <div class="fc">
+        <h4>Finance Tools</h4>
+        <ul>
+          <li><a href="/salary-converter-usa.html">Salary Converter</a></li>
+          <li><a href="/emi-calculator.html">EMI Calculator</a></li>
+          <li><a href="/gst-calculator.html">GST Calculator</a></li>
+          <li><a href="/income-tax.html">Income Tax Calculator</a></li>
+          <li><a href="/sip-calculator.html">SIP Calculator</a></li>
+        </ul>
+      </div>
+      <div class="fc">
+        <h4>Popular Tools</h4>
+        <ul>
+          <li><a href="/global-time-converter.html">Time Converter</a></li>
+          <li><a href="/length-converter.html">Length Converter</a></li>
+          <li><a href="/age-calculator.html">Age Calculator</a></li>
+          <li><a href="/percentage-calculator.html">% Calculator</a></li>
+          <li><a href="/unit-converter.html">Unit Converter</a></li>
+        </ul>
+      </div>
+      <div class="fc">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/about">About Us</a></li>
+          <li><a href="/contact">Contact</a></li>
+          <li><a href="/privacy">Privacy Policy</a></li>
+          <li><a href="/disclaimer">Disclaimer</a></li>
+          <li><a href="/sitemap">Sitemap</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ft-btm">
+      <div class="ft-cp">© 2026 <b>RajDailyTools.in</b> — All rights reserved. | Salary Converter – Hourly, Monthly &amp; Yearly (USA) | Free Online Tool</div>
+      <div class="ft-tag">This tool is for informational use only. Always verify salary details with your employer or official contract.</div>
+    </div>
+  </div>
+</footer>
+
+<button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+/* MOBILE DRAWER */
+const brg=document.getElementById('brg'),dov=document.getElementById('dov'),drw=document.getElementById('drw'),dx=document.getElementById('dx');
+function oD(){drw.classList.add('on');dov.classList.add('on')}
+function cD(){drw.classList.remove('on');dov.classList.remove('on')}
+brg.addEventListener('click',oD);dov.addEventListener('click',cD);dx.addEventListener('click',cD);
+window.addEventListener('scroll',()=>{document.getElementById('btt').classList.toggle('on',window.scrollY>400)});
+const obs=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target)}})},{threshold:.12});
+document.querySelectorAll('.rev').forEach(el=>obs.observe(el));
+function togFaq(el){const fq=el.closest('.fq');const wasOpen=fq.classList.contains('open');document.querySelectorAll('.fq.open').forEach(f=>f.classList.remove('open'));if(!wasOpen)fq.classList.add('open')}
+
+/* MODE */
+let currentMode = 'hourly';
+function setMode(mode, btn) {
+  currentMode = mode;
+  document.querySelectorAll('.mtab').forEach(t=>t.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('modeHourly').style.display  = mode==='hourly'  ? '' : 'none';
+  document.getElementById('modeMonthly').style.display = mode==='monthly' ? '' : 'none';
+  document.getElementById('modeYearly').style.display  = mode==='yearly'  ? '' : 'none';
+  document.getElementById('resultArea').style.display  = 'none';
+}
+
+/* OVERTIME TOGGLE */
+document.getElementById('otToggle').addEventListener('change', function(){
+  document.getElementById('otRow').style.display = this.checked ? '' : 'none';
+});
+
+/* FORMAT CURRENCY */
+function fmt(n){return '$'+n.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2})}
+function fmtShort(n){
+  if(n>=1e6) return '$'+(n/1e6).toFixed(2)+'M';
+  return '$'+Math.round(n).toLocaleString('en-US');
+}
+
+/* LAST RESULT store for copy */
+let lastResult = {};
+
+/* MAIN CALCULATE */
+function calculate() {
+  const taxRate   = parseFloat(document.getElementById('taxSlider').value)/100;
+  const otOn      = document.getElementById('otToggle').checked;
+  const otHoursWk = otOn ? (parseFloat(document.getElementById('otHours').value)||0) : 0;
+
+  let hourly, weekly, monthly, yearly, otWeekly=0;
+
+  if (currentMode === 'hourly') {
+    const hw  = parseFloat(document.getElementById('hourlyWage').value)||0;
+    const hpw = parseFloat(document.getElementById('hoursWeek').value)||40;
+    const wpy = parseFloat(document.getElementById('weeksYear').value)||52;
+    if (!hw) { alert('Please enter your hourly wage.'); return; }
+    hourly  = hw;
+    const otRate = hw * 1.5;
+    otWeekly = otOn ? otHoursWk * otRate : 0;
+    weekly  = (hw * hpw) + otWeekly;
+    yearly  = weekly * wpy;
+    monthly = yearly / 12;
+
+  } else if (currentMode === 'monthly') {
+    const ms  = parseFloat(document.getElementById('monthlySal').value)||0;
+    const hpw = parseFloat(document.getElementById('monthlyHours').value)||40;
+    if (!ms) { alert('Please enter your monthly salary.'); return; }
+    monthly = ms;
+    yearly  = ms * 12;
+    weekly  = yearly / 52;
+    hourly  = weekly / hpw;
+    if (otOn) {
+      const otRate = hourly * 1.5;
+      otWeekly = otHoursWk * otRate;
+      weekly  += otWeekly;
+      yearly   = weekly * 52;
+      monthly  = yearly / 12;
+    }
+
+  } else { // yearly
+    const ys  = parseFloat(document.getElementById('yearlySal').value)||0;
+    const hpw = parseFloat(document.getElementById('yearlyHours').value)||40;
+    if (!ys) { alert('Please enter your yearly salary.'); return; }
+    yearly  = ys;
+    monthly = ys / 12;
+    weekly  = ys / 52;
+    hourly  = weekly / hpw;
+    if (otOn) {
+      const otRate = hourly * 1.5;
+      otWeekly = otHoursWk * otRate;
+    }
+  }
+
+  const netMult = 1 - taxRate;
+  lastResult = {hourly,weekly,monthly,yearly,taxRate,netMult,otWeekly,otOn};
+
+  // OT badge
+  const ob = document.getElementById('otBadgeWrap');
+  ob.innerHTML = otOn
+    ? `<div class="ot-badge">⏱️ Overtime ON — +${fmt(otWeekly)}/week at 1.5× rate</div>`
+    : '';
+
+  // Pay cards
+  const pg = document.getElementById('payGrid');
+  pg.innerHTML = `
+    <div class="pay-card hourly">
+      <div class="pc-ico">💵</div>
+      <div class="pc-lbl">💵 Hourly Pay</div>
+      <div class="pc-val">${fmt(hourly)}</div>
+      <div class="pc-sub">Per hour worked</div>
+    </div>
+    <div class="pay-card weekly">
+      <div class="pc-ico">📆</div>
+      <div class="pc-lbl">📆 Weekly Pay</div>
+      <div class="pc-val">${fmt(weekly)}</div>
+      <div class="pc-sub">Per week${otOn?' (incl. OT)':''}</div>
+    </div>
+    <div class="pay-card monthly">
+      <div class="pc-ico">📅</div>
+      <div class="pc-lbl">📅 Monthly Pay</div>
+      <div class="pc-val">${fmt(monthly)}</div>
+      <div class="pc-sub">Per month (÷12)</div>
+    </div>
+    <div class="pay-card yearly">
+      <div class="pc-ico">🏆</div>
+      <div class="pc-lbl">🏆 Yearly Salary</div>
+      <div class="pc-val">${fmt(yearly)}</div>
+      <div class="pc-sub">Gross annual income${otOn?' (incl. overtime)':''}</div>
+    </div>`;
+
+  // Tax row
+  const tr = document.getElementById('taxRow');
+  const taxPct = Math.round(taxRate*100);
+  tr.innerHTML = `
+    <div class="tax-label">🧮 Estimated Take-Home (After ~${taxPct}% Tax)</div>
+    <div class="tax-vals">
+      <div class="tv"><div class="tv-lbl">Hourly</div><div class="tv-val">${fmt(hourly*netMult)}</div></div>
+      <div class="tv"><div class="tv-lbl">Weekly</div><div class="tv-val">${fmt(weekly*netMult)}</div></div>
+      <div class="tv"><div class="tv-lbl">Monthly</div><div class="tv-val">${fmt(monthly*netMult)}</div></div>
+      <div class="tv"><div class="tv-lbl">Yearly</div><div class="tv-val">${fmt(yearly*netMult)}</div></div>
+    </div>`;
+
+  document.getElementById('resultArea').style.display = 'block';
+  document.getElementById('resultArea').scrollIntoView({behavior:'smooth',block:'nearest'});
+
+  // reset copy
+  const cb = document.getElementById('copyBtn');
+  cb.textContent = '📋 Copy Full Breakdown';
+  cb.classList.remove('copied');
+
+  // update chart to match current hourly
+  buildChart(Math.round(hourly), document.querySelector('.gtab.active'));
+}
+
+/* COPY */
+function copyResult() {
+  const r = lastResult;
+  if (!r.yearly) return;
+  const taxPct = Math.round(r.taxRate*100);
+  const txt = `Salary Breakdown (RajDailyTools)
+Hourly:  ${fmt(r.hourly)}  |  Net: ${fmt(r.hourly*r.netMult)}
+Weekly:  ${fmt(r.weekly)}  |  Net: ${fmt(r.weekly*r.netMult)}
+Monthly: ${fmt(r.monthly)}  |  Net: ${fmt(r.monthly*r.netMult)}
+Yearly:  ${fmt(r.yearly)}  |  Net: ${fmt(r.yearly*r.netMult)}
+Tax Rate: ~${taxPct}%${r.otOn?' | Overtime Included':''}`;
+  const cb = document.getElementById('copyBtn');
+  const done = () => {
+    cb.textContent = '✅ Copied!';
+    cb.classList.add('copied');
+    setTimeout(()=>{cb.textContent='📋 Copy Full Breakdown';cb.classList.remove('copied')},2000);
+  };
+  navigator.clipboard ? navigator.clipboard.writeText(txt).then(done).catch(done) : done();
+}
+
+/* BAR CHART */
+const BAR_COLORS = {
+  Hourly:'#2563eb', Daily:'#10b981', Weekly:'#f59e0b', Monthly:'#8b5cf6', Yearly:'#ef4444'
+};
+function buildChart(rateHr, btn) {
+  if (btn) {
+    document.querySelectorAll('.gtab').forEach(t=>t.classList.remove('active'));
+    btn.classList.add('active');
+  }
+  rateHr = parseFloat(rateHr)||20;
+  const data = [
+    { label:'Hourly',  value: rateHr,               color:'#2563eb' },
+    { label:'Daily',   value: rateHr*8,              color:'#10b981' },
+    { label:'Weekly',  value: rateHr*40,             color:'#f59e0b' },
+    { label:'Monthly', value: rateHr*40*52/12,       color:'#8b5cf6' },
+    { label:'Yearly',  value: rateHr*40*52,          color:'#ef4444' }
+  ];
+  const maxLog = Math.max(...data.map(d=>Math.log10(d.value+1)));
+  document.getElementById('graphTitle').textContent = `Salary Breakdown for $${rateHr}/hr (40 hrs/week)`;
+  document.getElementById('barChart').innerHTML = data.map(d => {
+    const logV = Math.log10(d.value+1);
+    const pct  = maxLog>0 ? Math.max(4,(logV/maxLog)*100) : 50;
+    return `<div class="bar-row">
+      <div class="bar-lbl">${d.label}</div>
+      <div class="bar-track">
+        <div class="bar-fill" style="width:${pct}%;background:${d.color}">${fmtShort(d.value)}</div>
+      </div>
+      <div class="bar-val">${fmtShort(d.value)}</div>
+    </div>`;
+  }).join('');
+}
+
+/* INIT */
+buildChart(20, null);
+</script>
+</body>
+</html>
