@@ -1,0 +1,1194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Introvert vs Extrovert Scale Test (Free Personality Calculator) – RajDailyTools</title>
+<meta name="description" content="Free introvert vs extrovert test online. Take our scientifically designed personality scale calculator to find your personality type instantly — Introvert, Extrovert, or Ambivert.">
+<meta name="keywords" content="introvert vs extrovert test online, am I introvert or extrovert quiz, personality scale calculator introvert extrovert, free introversion test, check personality type online, ambivert test, introvert extrovert quiz free">
+<meta name="robots" content="index, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#2563eb;--blue-d:#1d4ed8;--blue-xl:#eff6ff;--blue-s:#dbeafe;
+  --amber:#f59e0b;--green:#10b981;--red:#ef4444;--purple:#8b5cf6;
+  --orange:#f97316;--teal:#14b8a6;
+  --green-xl:#f0fdf4;--green-s:#bbf7d0;
+  --red-xl:#fef2f2;--red-s:#fecaca;
+  --amber-xl:#fffbeb;--amber-s:#fde68a;
+  --purple-xl:#faf5ff;--purple-s:#ddd6fe;
+  --ink:#0f172a;--ink2:#334155;--ink3:#64748b;--ink4:#94a3b8;
+  --line:#e2e8f0;--surf:#f8fafc;--white:#fff;
+  --s1:0 1px 3px rgba(15,23,42,.06),0 1px 2px rgba(15,23,42,.04);
+  --s2:0 4px 16px rgba(15,23,42,.08),0 2px 6px rgba(15,23,42,.04);
+  --s3:0 12px 40px rgba(15,23,42,.11),0 3px 10px rgba(15,23,42,.06);
+  --s4:0 24px 64px rgba(15,23,42,.13),0 6px 20px rgba(15,23,42,.07);
+  --sb:0 8px 32px rgba(37,99,235,.20);
+  --fd:'Sora',sans-serif;--fb:'DM Sans',sans-serif;
+  --ease:cubic-bezier(.4,0,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);color:var(--ink);background:var(--white);overflow-x:hidden;-webkit-font-smoothing:antialiased;line-height:1.6}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+button{cursor:pointer;border:none;background:none;font-family:var(--fb)}
+.w{max-width:1180px;margin:0 auto;padding:0 24px}
+.wa{max-width:880px;margin:0 auto;padding:0 24px}
+select,input{appearance:none;-webkit-appearance:none}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+@keyframes resultIn{from{opacity:0;transform:translateY(18px) scale(.97)}to{opacity:1;transform:none}}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}
+@keyframes scaleIn{from{opacity:0;transform:scaleX(0)}to{opacity:1;transform:scaleX(1)}}
+.rev{opacity:0;transform:translateY(22px);transition:opacity .55s var(--ease),transform .55s var(--ease)}
+.rev.in{opacity:1;transform:none}
+
+/* HEADER */
+.hdr{position:sticky;top:0;z-index:999;background:rgba(255,255,255,.96);backdrop-filter:blur(20px);border-bottom:1px solid var(--line);box-shadow:var(--s1)}
+.hdi{display:flex;align-items:center;justify-content:space-between;height:66px}
+.logo{display:flex;align-items:center;gap:10px}
+.lb{width:36px;height:36px;background:var(--blue);border-radius:9px;display:flex;align-items:center;justify-content:center;box-shadow:var(--sb);flex-shrink:0}
+.lb svg{width:18px;height:18px;fill:#fff}
+.ln{font-family:var(--fd);font-size:19px;font-weight:800;color:var(--ink);line-height:1}
+.ln span{color:var(--blue)}
+.ls{font-size:10px;color:var(--ink4);letter-spacing:.04em}
+nav.dn{display:flex;align-items:center;gap:2px}
+nav.dn a{font-size:13.5px;font-weight:500;color:var(--ink2);padding:7px 13px;border-radius:8px;transition:.2s}
+nav.dn a:hover{color:var(--blue);background:var(--blue-xl)}
+.hcta{background:var(--blue);color:#fff;font-family:var(--fd);font-weight:600;font-size:13px;padding:8px 18px;border-radius:8px;box-shadow:var(--sb);transition:.2s}
+.hcta:hover{background:var(--blue-d);transform:translateY(-1px)}
+.brg{display:none;flex-direction:column;gap:4.5px;padding:8px;border-radius:8px}
+.brg span{display:block;width:20px;height:2px;background:var(--ink);border-radius:2px;transition:.28s}
+.dov{display:none;position:fixed;inset:0;background:rgba(15,23,42,.45);z-index:1040;backdrop-filter:blur(3px)}
+.dov.on{display:block}
+.drw{position:fixed;top:0;right:-100%;width:270px;height:100vh;background:#fff;z-index:1050;padding:22px;box-shadow:var(--s4);transition:right .32s var(--ease);overflow-y:auto}
+.drw.on{right:0}
+.dh{display:flex;align-items:center;justify-content:space-between;margin-bottom:26px}
+.dx{width:33px;height:33px;border-radius:7px;background:var(--surf);display:flex;align-items:center;justify-content:center;color:var(--ink3);font-size:17px}
+nav.mn{display:flex;flex-direction:column;gap:3px}
+nav.mn a{display:block;font-size:14px;font-weight:500;color:var(--ink2);padding:11px 13px;border-radius:8px;transition:.2s}
+nav.mn a:hover{color:var(--blue);background:var(--blue-xl)}
+
+/* HERO */
+.hero{position:relative;overflow:hidden;background:linear-gradient(150deg,#ebf4ff 0%,#fff 46%,#fff7ed 100%);padding:64px 0 72px}
+.hero::before{content:'';position:absolute;top:-140px;right:-180px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(37,99,235,.08) 0%,transparent 68%);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-80px;left:-100px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(249,115,22,.05) 0%,transparent 68%);pointer-events:none}
+.blob{position:absolute;border-radius:50%;pointer-events:none;animation:float 6s ease-in-out infinite}
+.b1{width:13px;height:13px;background:rgba(37,99,235,.18);top:22%;right:14%;animation-delay:0s}
+.b2{width:9px;height:9px;background:rgba(249,115,22,.22);top:58%;right:26%;animation-delay:2.2s}
+.b3{width:11px;height:11px;background:rgba(16,185,129,.18);top:36%;right:6%;animation-delay:4s}
+.bc{display:flex;align-items:center;gap:7px;font-size:12.5px;color:var(--ink3);margin-bottom:22px;position:relative;z-index:1;flex-wrap:wrap}
+.bc a{color:var(--blue);font-weight:600}
+.pill{display:inline-flex;align-items:center;gap:7px;font-family:var(--fd);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);background:var(--blue-xl);padding:5px 14px;border-radius:100px;margin-bottom:18px}
+.pill::before{content:'';width:6px;height:6px;background:var(--blue);border-radius:50%}
+.hero-inner{position:relative;z-index:1;max-width:720px;animation:fadeUp .5s ease both}
+.hero h1{font-family:var(--fd);font-size:clamp(26px,4.5vw,50px);font-weight:800;line-height:1.1;color:var(--ink);margin-bottom:14px}
+.hero h1 span{color:var(--blue)}
+.hero-sub{font-size:16px;color:var(--ink3);line-height:1.8;margin-bottom:22px;max-width:600px}
+.hero-chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.chip{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;padding:6px 14px;border-radius:100px;background:#fff;border:1.5px solid var(--line);color:var(--ink2);box-shadow:var(--s1);transition:.22s}
+.chip:hover{border-color:var(--blue);color:var(--blue);transform:translateY(-1px)}
+.hero-meta{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:24px}
+.upd{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:700;color:var(--blue);background:var(--blue-xl);padding:6px 14px;border-radius:100px;border:1.5px solid var(--blue-s)}
+.mi{font-size:13px;color:var(--ink3);font-weight:500}
+
+/* HOW TO USE */
+.howto{background:var(--amber-xl);border:2px solid var(--amber-s);border-radius:16px;padding:22px 26px;max-width:560px;margin-bottom:24px}
+.howto-ttl{display:flex;align-items:center;gap:9px;font-family:var(--fd);font-size:15px;font-weight:800;color:var(--ink);margin-bottom:13px}
+.howto-steps{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.hs{display:flex;align-items:flex-start;gap:10px;font-size:13.5px;color:var(--ink2);line-height:1.6}
+.sn{width:24px;height:24px;background:var(--amber);color:#fff;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex-shrink:0;margin-top:1px}
+
+/* RELATED TOOLS */
+.rel-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;position:relative;z-index:1}
+.rg-box{border-radius:14px;padding:14px 14px 12px;display:flex;flex-direction:column;gap:8px;transition:.22s;border:1.5px solid}
+.rg-box:hover{transform:translateY(-3px);box-shadow:var(--s3)}
+.rg-box.army{background:linear-gradient(135deg,var(--amber-xl),#fef3c7);border-color:var(--amber-s)}
+.rg-box.ht{background:linear-gradient(135deg,var(--green-xl),#dcfce7);border-color:var(--green-s)}
+.rg-box.ssc{background:linear-gradient(135deg,var(--blue-xl),var(--blue-s));border-color:var(--blue-s)}
+.rg-box.mp{background:linear-gradient(135deg,var(--purple-xl),#ede9fe);border-color:var(--purple-s)}
+.rg-box.tl{background:linear-gradient(135deg,#f0fdfa,#ccfbf1);border-color:#99f6e4}
+.rg-box.rd{background:linear-gradient(135deg,var(--red-xl),#fee2e2);border-color:var(--red-s)}
+.rg-ico{font-size:22px}
+.rg-txt h4{font-family:var(--fd);font-size:12px;font-weight:800;color:var(--ink);margin-bottom:2px}
+.rg-txt p{font-size:11px;color:var(--ink3);line-height:1.5}
+.btn-xs{display:inline-flex;align-items:center;gap:4px;font-family:var(--fd);font-weight:700;font-size:11px;padding:5px 10px;border-radius:7px;transition:.22s;margin-top:4px}
+.btn-xs.a{background:var(--amber);color:#fff}.btn-xs.a:hover{background:#d97706}
+.btn-xs.g{background:var(--green);color:#fff}.btn-xs.g:hover{background:#059669}
+.btn-xs.b{background:var(--blue);color:#fff}.btn-xs.b:hover{background:var(--blue-d)}
+.btn-xs.p{background:var(--purple);color:#fff}.btn-xs.p:hover{background:#7c3aed}
+.btn-xs.t{background:var(--teal);color:#fff}.btn-xs.t:hover{background:#0f9488}
+.btn-xs.r{background:var(--red);color:#fff}.btn-xs.r:hover{background:#dc2626}
+
+/* TOOL */
+.tool-sec{background:var(--surf);padding:80px 0}
+.tool-wrap{max-width:900px;margin:0 auto}
+.tool-card{background:#fff;border:1.5px solid var(--line);border-radius:28px;overflow:hidden;box-shadow:var(--s4)}
+.tool-hdr{background:linear-gradient(135deg,#1d4ed8 0%,#2563eb 55%,#3b82f6 100%);padding:32px 40px;position:relative;overflow:hidden}
+.tool-hdr::before{content:'';position:absolute;top:-60px;right:-60px;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,.07)}
+.tool-hdr::after{content:'';position:absolute;bottom:-40px;left:-40px;width:180px;height:180px;border-radius:50%;background:rgba(255,255,255,.04)}
+.th{position:relative;z-index:1}
+.th h2{font-family:var(--fd);font-size:21px;font-weight:800;color:#fff;margin-bottom:6px}
+.th p{font-size:14px;color:rgba(255,255,255,.82);line-height:1.65}
+.th-badges{display:flex;flex-wrap:wrap;gap:9px;margin-top:14px}
+.thb{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:rgba(255,255,255,.9);background:rgba(255,255,255,.13);padding:5px 12px;border-radius:100px}
+.tool-body{padding:36px 40px}
+
+/* QUIZ */
+.q-item{background:var(--surf);border:1.5px solid var(--line);border-radius:16px;padding:22px 24px;margin-bottom:14px;transition:.22s}
+.q-item:hover{border-color:var(--blue-s);box-shadow:var(--s2)}
+.q-num{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;background:var(--blue);color:#fff;border-radius:8px;font-family:var(--fd);font-size:12px;font-weight:800;margin-bottom:10px}
+.q-text{font-family:var(--fd);font-size:15px;font-weight:700;color:var(--ink);margin-bottom:14px;line-height:1.45}
+.q-opts{display:flex;gap:8px;flex-wrap:wrap}
+.q-opt{display:flex;align-items:center;gap:8px;padding:9px 16px;border-radius:10px;border:1.5px solid var(--line);background:#fff;font-size:13.5px;font-weight:600;color:var(--ink2);cursor:pointer;transition:.22s;user-select:none}
+.q-opt:hover{border-color:var(--blue);color:var(--blue);background:var(--blue-xl)}
+.q-opt.selected{border-color:var(--blue);color:var(--blue);background:var(--blue-xl);box-shadow:0 0 0 3px rgba(37,99,235,.10)}
+.q-opt input{display:none}
+
+.chk-btn{width:100%;padding:17px;background:linear-gradient(135deg,var(--blue) 0%,#1e40af 100%);color:#fff;font-family:var(--fd);font-weight:800;font-size:16px;border-radius:12px;box-shadow:var(--sb);transition:all .25s var(--ease);display:flex;align-items:center;justify-content:center;gap:10px}
+.chk-btn:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(37,99,235,.32)}
+.chk-btn:active{transform:translateY(0)}
+
+/* RESULT */
+#resultArea{display:none;margin-top:28px;animation:resultIn .45s var(--ease) both}
+.res-hero{border-radius:20px;padding:32px;text-align:center;margin-bottom:16px;border:2px solid}
+.res-hero.introvert{background:linear-gradient(135deg,var(--purple-xl),#ede9fe);border-color:var(--purple-s)}
+.res-hero.extrovert{background:linear-gradient(135deg,var(--amber-xl),#fef3c7);border-color:var(--amber-s)}
+.res-hero.ambivert{background:linear-gradient(135deg,var(--green-xl),#d1fae5);border-color:var(--green-s)}
+.res-emoji{font-size:54px;display:block;margin-bottom:12px}
+.res-type{font-family:var(--fd);font-size:clamp(26px,5vw,42px);font-weight:800;color:var(--ink);margin-bottom:8px}
+.res-desc{font-size:15px;color:var(--ink2);line-height:1.8;max-width:520px;margin:0 auto 18px}
+.res-score-row{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin-top:14px}
+.res-score-pill{display:inline-flex;align-items:center;gap:7px;font-family:var(--fd);font-size:13px;font-weight:700;padding:8px 18px;border-radius:100px;background:#fff;border:1.5px solid var(--line);color:var(--ink2);box-shadow:var(--s1)}
+
+/* SCALE BAR */
+.scale-wrap{margin:18px 0;background:var(--surf);border:1.5px solid var(--line);border-radius:16px;padding:22px 24px}
+.scale-ttl{font-family:var(--fd);font-size:14px;font-weight:800;color:var(--ink);margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.scale-labels{display:flex;justify-content:space-between;font-size:12.5px;font-weight:700;color:var(--ink3);margin-bottom:8px}
+.scale-bar-bg{height:22px;border-radius:100px;background:linear-gradient(90deg,#8b5cf6 0%,#10b981 50%,#f59e0b 100%);position:relative;overflow:visible}
+.scale-marker{position:absolute;top:50%;transform:translate(-50%,-50%);width:28px;height:28px;background:#fff;border:3px solid var(--blue);border-radius:50%;box-shadow:var(--s2);transition:left 1s var(--ease);z-index:2}
+.scale-marker-label{position:absolute;top:32px;transform:translateX(-50%);font-family:var(--fd);font-size:11px;font-weight:800;color:var(--blue);white-space:nowrap}
+.scale-ends{display:flex;justify-content:space-between;margin-top:30px;font-size:11.5px;font-weight:700;color:var(--ink3)}
+
+/* FEATURES */
+.tips-sec{background:var(--surf);padding:72px 0}
+.tips-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.tip-card{background:#fff;border:1.5px solid var(--line);border-radius:16px;padding:22px 18px;text-align:center;transition:.28s}
+.tip-card:hover{transform:translateY(-4px);box-shadow:var(--s3);border-color:var(--blue-s)}
+.tip-ico{font-size:32px;margin-bottom:11px}
+.tip-title{font-family:var(--fd);font-size:14px;font-weight:800;color:var(--ink);margin-bottom:8px}
+.tip-desc{font-size:13px;color:var(--ink3);line-height:1.7}
+
+/* TABLE */
+.tbl-sec{background:#fff;padding:72px 0}
+.tbl-wr{overflow-x:auto;margin-bottom:24px;border-radius:14px;border:1.5px solid var(--line);box-shadow:var(--s2)}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+thead th{background:linear-gradient(135deg,var(--blue) 0%,#1e40af 100%);color:#fff;padding:14px 16px;text-align:left;font-family:var(--fd);font-size:13px;font-weight:700;letter-spacing:.03em}
+thead th:first-child{border-radius:14px 0 0 0}
+thead th:last-child{border-radius:0 14px 0 0}
+tbody tr{border-bottom:1px solid var(--line);transition:.2s}
+tbody tr:hover{background:var(--blue-xl)}
+tbody td{padding:12px 16px;color:var(--ink2);vertical-align:middle}
+.tbadge{display:inline-flex;font-size:11px;font-weight:700;padding:3px 8px;border-radius:100px}
+.tbadge.g{background:var(--green-xl);color:var(--green);border:1px solid var(--green-s)}
+.tbadge.b{background:var(--blue-xl);color:var(--blue);border:1px solid var(--blue-s)}
+.tbadge.a{background:var(--amber-xl);color:var(--amber);border:1px solid var(--amber-s)}
+.tbadge.r{background:var(--red-xl);color:var(--red);border:1px solid var(--red-s)}
+.tbadge.p{background:var(--purple-xl);color:var(--purple);border:1px solid var(--purple-s)}
+
+/* GRAPH/SCALE VIZ */
+.graph-sec{background:var(--surf);padding:72px 0}
+.graph-card{background:#fff;border:1.5px solid var(--line);border-radius:20px;padding:28px 32px;box-shadow:var(--s3)}
+.graph-ttl{font-family:var(--fd);font-size:18px;font-weight:800;color:var(--ink);margin-bottom:18px}
+
+/* STORY */
+.story-sec{background:#fff;padding:72px 0}
+.story-card{background:var(--surf);border:1.5px solid var(--line);border-radius:24px;padding:40px;box-shadow:var(--s3);position:relative;overflow:hidden}
+.story-card::before{content:'';position:absolute;top:0;left:0;bottom:0;width:5px;background:linear-gradient(180deg,var(--blue) 0%,var(--orange) 100%);border-radius:5px 0 0 5px}
+.sq{font-size:54px;color:var(--blue-s);font-family:Georgia,serif;line-height:1;padding-left:8px}
+.sb{font-size:15.5px;color:var(--ink2);line-height:1.9;padding:0 8px}
+.sauth{display:flex;align-items:center;gap:14px;margin-top:22px;padding-top:20px;border-top:1px solid var(--line)}
+.savt{width:48px;height:48px;background:var(--blue);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+.sname{font-family:var(--fd);font-size:15px;font-weight:700;color:var(--ink)}
+.srole{font-size:12.5px;color:var(--ink3)}
+.founder-msg{background:linear-gradient(135deg,var(--blue-xl),var(--blue-s));border:1.5px solid var(--blue-s);border-radius:14px;padding:20px 22px;margin-top:20px;display:flex;gap:13px}
+.fm-ico{font-size:26px;flex-shrink:0}
+.fm-txt{font-size:14px;color:var(--ink2);line-height:1.75;font-style:italic}
+.fm-txt strong{color:var(--ink);font-weight:700;font-style:normal}
+
+/* GUIDE */
+.guide-sec{background:var(--surf);padding:72px 0}
+.guide-body h2{font-family:var(--fd);font-size:21px;font-weight:800;color:var(--ink);margin:28px 0 11px;line-height:1.3}
+.guide-body h2:first-child{margin-top:0}
+.guide-body p{font-size:15px;color:var(--ink3);line-height:1.85;margin-bottom:14px}
+.guide-body ul{display:flex;flex-direction:column;gap:8px;margin:12px 0 16px}
+.guide-body li{display:flex;align-items:flex-start;gap:10px;font-size:14.5px;color:var(--ink3);line-height:1.7}
+.guide-body li::before{content:'✓';width:18px;height:18px;background:var(--blue);color:#fff;border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;flex-shrink:0;margin-top:3px}
+.guide-body strong{color:var(--ink2);font-weight:700}
+.ibox{background:var(--blue-xl);border:1.5px solid var(--blue-s);border-radius:13px;padding:15px 18px;margin:16px 0;display:flex;gap:11px;font-size:14px;color:var(--ink2);line-height:1.7}
+.ibox svg{width:17px;height:17px;stroke:var(--blue);fill:none;stroke-width:2;flex-shrink:0;margin-top:2px}
+.ibox.a{background:var(--amber-xl);border-color:var(--amber-s)}
+.ibox.a svg{stroke:var(--amber)}
+.ibox.g{background:var(--green-xl);border-color:var(--green-s)}
+.ibox.g svg{stroke:var(--green)}
+
+/* FAQ */
+.faq-sec{background:#fff;padding:72px 0}
+.fql{max-width:780px;margin:0 auto}
+.fq{background:var(--surf);border:1.5px solid var(--line);border-radius:13px;margin-bottom:10px;overflow:hidden}
+.fq-q{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;cursor:pointer;gap:14px;transition:.2s}
+.fq-q:hover{background:var(--blue-xl)}
+.fq-t{font-weight:600;font-size:15px;color:var(--ink);line-height:1.4}
+.fq-i{width:28px;height:28px;border-radius:50%;background:var(--blue-xl);color:var(--blue);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;transition:transform .28s,background .2s}
+.fq.open .fq-i{transform:rotate(45deg);background:var(--blue);color:#fff}
+.fq-a{max-height:0;overflow:hidden;transition:max-height .35s var(--ease)}
+.fq-ai{padding:0 22px 18px;font-size:14.5px;color:var(--ink3);line-height:1.78}
+.fq.open .fq-a{max-height:400px}
+
+/* DISC/CONTACT/CTA/FOOTER */
+.disc{background:var(--amber-xl);border-top:1px solid var(--amber-s);border-bottom:1px solid var(--amber-s);padding:15px 0}
+.disc-in{display:flex;align-items:flex-start;gap:12px;font-size:13.5px;color:var(--ink2);line-height:1.7}
+.contact-sec{background:var(--surf);padding:60px 0}
+.contact-card{max-width:580px;margin:0 auto;background:#fff;border:1.5px solid var(--line);border-radius:20px;padding:32px;text-align:center;box-shadow:var(--s2)}
+.contact-card h3{font-family:var(--fd);font-size:19px;font-weight:800;color:var(--ink);margin-bottom:10px}
+.contact-card p{font-size:15px;color:var(--ink3);line-height:1.75;margin-bottom:20px}
+.btn-bl{display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:#fff;font-family:var(--fd);font-weight:700;font-size:14.5px;padding:12px 26px;border-radius:8px;box-shadow:var(--sb);transition:.22s}
+.btn-bl:hover{background:var(--blue-d);transform:translateY(-1px)}
+.priv-note{font-size:12px;color:var(--ink4);margin-top:14px}
+.cta{background:linear-gradient(140deg,#0f172a 0%,#1e3a8a 100%);padding:80px 0;text-align:center;position:relative;overflow:hidden}
+.cta::before{content:'';position:absolute;top:-80px;left:50%;transform:translateX(-50%);width:800px;height:380px;background:radial-gradient(ellipse,rgba(37,99,235,.22) 0%,transparent 68%);pointer-events:none}
+.cta-in{position:relative;z-index:1}
+.cta .pill{color:#93c5fd;background:rgba(255,255,255,.1);margin-bottom:18px}
+.cta .pill::before{background:#93c5fd}
+.cta h2{font-family:var(--fd);font-size:clamp(24px,4vw,42px);font-weight:800;color:#fff;line-height:1.15;margin-bottom:12px}
+.cta h2 em{color:#fbbf24;font-style:normal}
+.cta p{font-size:16px;color:rgba(255,255,255,.72);max-width:480px;margin:0 auto 32px;line-height:1.78}
+.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn-gold{display:inline-flex;align-items:center;gap:8px;background:var(--amber);color:#fff;font-family:var(--fd);font-weight:800;font-size:15px;padding:14px 30px;border-radius:8px;box-shadow:0 8px 28px rgba(245,158,11,.35);transition:.22s}
+.btn-gold:hover{background:#d97706;transform:translateY(-3px)}
+.btn-ghost{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.09);border:1.5px solid rgba(255,255,255,.22);color:#fff;font-family:var(--fd);font-weight:600;font-size:14px;padding:13px 26px;border-radius:8px;transition:.2s}
+.btn-ghost:hover{background:rgba(255,255,255,.16)}
+footer{background:#0f172a;padding:52px 0 0}
+.ft-inner{max-width:1180px;margin:0 auto;padding:0 24px}
+.ft-top{display:grid;grid-template-columns:1.9fr 1fr 1fr 1fr;gap:44px;margin-bottom:44px}
+.ft-brand .ln{color:#fff}.ft-brand .ls{color:#475569}
+.ft-desc{font-size:13.5px;color:#64748b;line-height:1.78;max-width:265px;margin:13px 0 20px}
+.ft-soc{display:flex;gap:9px}
+.fts{width:34px;height:34px;border-radius:7px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;color:#94a3b8;font-size:13px;transition:.2s}
+.fts:hover{background:var(--blue);color:#fff}
+.fc h4{font-family:var(--fd);font-size:12px;font-weight:700;color:#fff;margin-bottom:14px;letter-spacing:.06em;text-transform:uppercase}
+.fc ul{display:flex;flex-direction:column;gap:8px}
+.fc ul a{font-size:13.5px;color:#64748b;transition:.18s}
+.fc ul a:hover{color:#93c5fd}
+.ft-btm{border-top:1px solid rgba(255,255,255,.07);padding:20px 0;text-align:center}
+.ft-cp{font-size:12.5px;color:#475569}
+.ft-cp b{color:#64748b}
+.ft-tag{font-size:12px;color:#334155;margin-top:4px;font-style:italic}
+.btt{position:fixed;bottom:26px;right:26px;z-index:500;width:43px;height:43px;background:var(--blue);color:#fff;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:17px;box-shadow:var(--sb);opacity:0;pointer-events:none;transform:translateY(14px);transition:.28s var(--ease)}
+.btt.on{opacity:1;pointer-events:auto;transform:translateY(0)}
+.btt:hover{transform:translateY(-3px)}
+.sec-lbl{display:flex;align-items:center;gap:8px;font-family:var(--fd);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin-bottom:10px}
+.sec-lbl::before{content:'';width:6px;height:6px;background:var(--blue);border-radius:50%}
+.sec-h{font-family:var(--fd);font-size:clamp(22px,3.5vw,34px);font-weight:800;color:var(--ink);line-height:1.15;margin-bottom:10px}
+.sec-sub{font-size:15.5px;color:var(--ink3);line-height:1.78;margin-bottom:40px;max-width:600px}
+
+/* WARN BOX */
+.warn-box{background:var(--amber-xl);border:1.5px solid var(--amber-s);border-radius:12px;padding:14px 18px;display:flex;gap:10px;font-size:13.5px;color:var(--ink2);line-height:1.7;margin-top:14px}
+
+/* HINT BOX */
+.hint-box{display:flex;align-items:flex-start;gap:9px;font-size:13px;color:var(--ink2);background:var(--blue-xl);border:1.5px solid var(--blue-s);border-radius:10px;padding:11px 14px;margin:16px 0;line-height:1.65}
+.hint-box svg{width:16px;height:16px;stroke:var(--blue);fill:none;stroke-width:2;flex-shrink:0;margin-top:2px}
+
+/* PROGRESS INDICATOR */
+.quiz-progress{margin-bottom:22px}
+.qp-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.qp-label{font-family:var(--fd);font-size:13px;font-weight:700;color:var(--ink2)}
+.qp-count{font-size:12px;font-weight:700;color:var(--blue)}
+.qp-bar{height:6px;background:var(--line);border-radius:100px;overflow:hidden}
+.qp-fill{height:100%;background:linear-gradient(90deg,var(--blue),#3b82f6);border-radius:100px;transition:width .4s var(--ease);width:0%}
+
+/* RESET BUTTON */
+.reset-btn{display:inline-flex;align-items:center;gap:6px;font-family:var(--fd);font-size:12px;font-weight:700;padding:7px 14px;border-radius:8px;background:var(--surf);color:var(--ink3);border:1.5px solid var(--line);cursor:pointer;transition:.22s;margin-top:14px}
+.reset-btn:hover{background:var(--red-xl);color:var(--red);border-color:var(--red-s)}
+
+/* RESPONSIVE */
+@media(max-width:1060px){.ft-top{grid-template-columns:1fr 1fr}.tips-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:860px){
+  nav.dn,.hcta{display:none}.brg{display:flex}
+  .tool-body{padding:24px 22px}.tool-hdr{padding:24px 22px}
+  .howto-steps{grid-template-columns:1fr}
+  .rel-grid{grid-template-columns:1fr 1fr}
+  .q-opts{flex-direction:column}
+}
+@media(max-width:600px){
+  .ft-top{grid-template-columns:1fr}.rel-grid{grid-template-columns:1fr}
+  .tips-grid{grid-template-columns:1fr 1fr}
+  .cta-btns{flex-direction:column;align-items:center}
+  .story-card{padding:26px 20px}
+  .graph-card{padding:18px 14px}
+  .res-score-row{flex-direction:column;align-items:center}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="hdr">
+  <div class="w">
+    <div class="hdi">
+      <a href="/" class="logo">
+        <div class="lb"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+        <div><div class="ln">Raj<span>Daily</span>Tools</div><div class="ls">Smart Tools for Daily Life</div></div>
+      </a>
+      <nav class="dn">
+        <a href="/">Home</a><a href="/categories">Categories</a>
+        <a href="/#popular">Popular</a><a href="/about">About</a><a href="/contact">Contact</a>
+      </nav>
+      <a href="/categories" class="hcta">All Tools →</a>
+      <button class="brg" id="brg"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="dov" id="dov"></div>
+<div class="drw" id="drw">
+  <div class="dh">
+    <div class="logo">
+      <div class="lb"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+      <div><div class="ln">Raj<span>Daily</span>Tools</div></div>
+    </div>
+    <button class="dx" id="dx">✕</button>
+  </div>
+  <nav class="mn">
+    <a href="/">🏠 Home</a>
+    <a href="/categories">🗂️ All Tools</a>
+    <a href="/#popular">⭐ Popular</a>
+    <a href="/about">ℹ️ About</a>
+    <a href="/contact">📬 Contact</a>
+  </nav>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+  <div class="w">
+    <div class="hero-inner">
+      <div class="bc"><a href="/">Home</a> › <a href="/categories">Personality Tools</a> › Introvert vs Extrovert Test</div>
+      <div class="pill">Free Personality Calculator</div>
+      <h1>Are You an <span>Introvert</span> or Extrovert? Take This Free Personality Test</h1>
+      <p class="hero-sub">Instantly find your personality type with our scientifically designed introvert vs extrovert scale calculator. 100% free, no sign-up, instant results.</p>
+      <div class="hero-chips">
+        <span class="chip">🧠 Introvert Test</span>
+        <span class="chip">⚡ Extrovert Test</span>
+        <span class="chip">🔄 Ambivert Check</span>
+        <span class="chip">📊 Visual Scale</span>
+        <span class="chip">🔒 No Data Stored</span>
+      </div>
+      <div class="hero-meta">
+        <span class="upd">✅ Updated 2024</span>
+        <span class="mi">⏱️ Takes ~2 minutes</span>
+        <span class="mi">👥 Trusted by thousands</span>
+      </div>
+
+      <div class="howto">
+        <div class="howto-ttl">💡 How To Use This Tool</div>
+        <div class="howto-steps">
+          <div class="hs"><div class="sn">1</div><div>Answer all questions honestly</div></div>
+          <div class="hs"><div class="sn">2</div><div>Click on "Get Result" button</div></div>
+          <div class="hs"><div class="sn">3</div><div>View your personality type instantly</div></div>
+          <div class="hs"><div class="sn">4</div><div>Read your detailed personality profile</div></div>
+        </div>
+      </div>
+
+      <a href="#tool" class="btn-gold" style="font-size:15px;padding:14px 30px;display:inline-flex;align-items:center;gap:9px;border-radius:9px">🧠 Start Test →</a>
+    </div>
+
+    <!-- RELATED TOOLS SIDEBAR -->
+    <div style="position:absolute;top:64px;right:24px;width:230px;display:none" id="heroRel">
+      <div class="rel-grid" style="grid-template-columns:1fr">
+        <div class="rg-box army">
+          <div class="rg-ico">🎂</div>
+          <div class="rg-txt"><h4>Age Calculator</h4><p>Calculate your exact age</p><a href="/age-calculator.html" class="btn-xs a">Use Now →</a></div>
+        </div>
+        <div class="rg-box ht">
+          <div class="rg-ico">⚖️</div>
+          <div class="rg-txt"><h4>BMI Calculator</h4><p>Check your body mass index</p><a href="/bmi-calculator.html" class="btn-xs g">Use Now →</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOOL SECTION -->
+<section class="tool-sec" id="tool">
+  <div class="w">
+    <div class="tool-wrap">
+      <div class="tool-card rev">
+        <div class="tool-hdr">
+          <div class="th">
+            <h2>🧠 Introvert vs Extrovert Scale Test</h2>
+            <p>Answer 10 honest questions about your daily habits, social behavior, and energy levels. We'll calculate your exact position on the personality scale — instantly.</p>
+            <div class="th-badges">
+              <span class="thb">🧠 10 Questions</span>
+              <span class="thb">⚡ Instant Result</span>
+              <span class="thb">📊 Visual Scale</span>
+              <span class="thb">🔄 Ambivert Detection</span>
+              <span class="thb">🔒 Private & Secure</span>
+            </div>
+          </div>
+        </div>
+        <div class="tool-body">
+
+          <!-- PROGRESS BAR -->
+          <div class="quiz-progress">
+            <div class="qp-top">
+              <span class="qp-label">📋 Quiz Progress</span>
+              <span class="qp-count" id="qpCount">0 / 10 answered</span>
+            </div>
+            <div class="qp-bar"><div class="qp-fill" id="qpFill"></div></div>
+          </div>
+
+          <!-- QUESTIONS -->
+          <div id="quizForm">
+
+            <div class="q-item">
+              <div class="q-num">1</div>
+              <div class="q-text">Do you enjoy spending time at social gatherings and parties?</div>
+              <div class="q-opts" data-q="1">
+                <label class="q-opt"><input type="radio" name="q1" value="3"> Yes, I love it! 🎉</label>
+                <label class="q-opt"><input type="radio" name="q1" value="2"> Sometimes 🤷</label>
+                <label class="q-opt"><input type="radio" name="q1" value="1"> No, I prefer quiet 🏠</label>
+              </div>
+            </div>
+
+            <div class="q-item">
+              <div class="q-num">2</div>
+              <div class="q-text">After spending time with a large group of people, do you feel energized or drained?</div>
+              <div class="q-opts" data-q="2">
+                <label class="q-opt"><input type="radio" name="q2" value="3"> Energized — I love it ⚡</label>
+                <label class="q-opt"><input type="radio" name="q2" value="2"> Depends on the situation 🔄</label>
+                <label class="q-opt"><input type="radio" name="q2" value="1"> Drained — I need alone time 🛋️</label>
+              </div>
+            </div>
+
+            <div class="q-item">
+              <div class="q-num">3</div>
+              <div class="q-text">Do you prefer spending a free weekend alone or with friends?</div>
+              <div class="q-opts" data-q="3">
+                <label class="q-opt"><input type="radio" name="q3" value="3"> With friends every time 👫</label>
+                <label class="q-opt"><input type="radio" name="q3" value="2"> Mix of both 🔄</label>
+                <label class="q-opt"><input type="radio" name="q3" value="1"> Alone, definitely 📚</label>
+              </div>
+            </div>
+
+            <div class="q-item">
+              <div class="q-num">4</div>
+              <div class="q-text">When facing a problem, do you prefer to talk it out with others or think it through alone?</div>
+              <div class="q-opts" data-q="4">
+                <label class="q-opt"><input type="radio" name="q4" value="3"> Talk it out immediately 🗣️</label>
+                <label class="q-opt"><input type="radio" name="q4" value="2"> Sometimes both 🤔</label>
+                <label class="q-opt"><input type="radio" name="q4" value="1"> Think alone first 🧘</label>
+              </div>
+            </div>
+
+            <div class="q-item">
+              <div class="q-num">5</div>
+              <div class="q-text">How do you feel about meeting new people at an event?</div>
+              <div class="q-opts" data-q="5">
+                <label class="q-opt"><input type="radio" name="q5" value="3"> I love making new friends 😄</label>
+                <label class="q-opt"><input type="radio" name="q5" value="2"> It depends on my mood 😐</label>
+                <label class="q-opt"><input type="radio" name="q5" value="1"> I feel awkward or nervous 😟</label>
+              </div>
+            </div>
+
+            <div class="q-item">
+              <div class="q-num">6</div>
+              <div class="q-text">Do you prefer working in a team or independently?</div>
+              <div class="q-opts" data-q="6">
+                <label class="q-opt"><input type="radio" name="q6" value="3"> Team always — collaboration rocks 🤝</label>
+                <label class="q-opt"><input type="radio" name="q6" value="2"> Both work for me equally ⚖️</label>
+                <label class="q-opt"><input type="radio" name="q6" value="1"> Independently — I focus better 💻</label>
+              </div>
+            </div>
+
+            <div class="q-item">
+              <div class="q-num">7</div>
+              <div class="q-text">How often do you initiate conversations with strangers?</div>
+              <div class="q-opts" data-q="7">
+                <label class="q-opt"><input type="radio" name="q7" value="3"> Often — I'm naturally talkative 🙋</label>
+                <label class="q-opt"><input type="radio" name="q7" value="2"> Sometimes, when I feel comfortable 😊</label>
+                <label class="q-opt"><input type="radio" name="q7" value="1"> Rarely — I wait for others 🤐</label>
+              </div>
+            </div>
+
+            <div class="q-item">
+              <div class="q-num">8</div>
+              <div class="q-text">When you're bored, what do you naturally reach for?</div>
+              <div class="q-opts" data-q="8">
+                <label class="q-opt"><input type="radio" name="q8" value="3"> Call a friend or go out 📞</label>
+                <label class="q-opt"><input type="radio" name="q8" value="2"> Could be either, depending on the day 🎲</label>
+                <label class="q-opt"><input type="radio" name="q8" value="1"> Read, write, or do something solo 📖</label>
+              </div>
+            </div>
+
+            <div class="q-item">
+              <div class="q-num">9</div>
+              <div class="q-text">In a group discussion, how do you usually participate?</div>
+              <div class="q-opts" data-q="9">
+                <label class="q-opt"><input type="radio" name="q9" value="3"> I speak up frequently and confidently 🎤</label>
+                <label class="q-opt"><input type="radio" name="q9" value="2"> I speak when I have something important to say 🗨️</label>
+                <label class="q-opt"><input type="radio" name="q9" value="1"> I mostly listen and observe 👁️</label>
+              </div>
+            </div>
+
+            <div class="q-item">
+              <div class="q-num">10</div>
+              <div class="q-text">How do you prefer to recharge after a long, tiring day?</div>
+              <div class="q-opts" data-q="10">
+                <label class="q-opt"><input type="radio" name="q10" value="3"> Hang out with friends or go out 🎭</label>
+                <label class="q-opt"><input type="radio" name="q10" value="2"> Sometimes social, sometimes solo 🔄</label>
+                <label class="q-opt"><input type="radio" name="q10" value="1"> Stay home, enjoy my own space 🛌</label>
+              </div>
+            </div>
+
+          </div><!-- /quizForm -->
+
+          <div class="hint-box" style="margin-top:18px">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            <span><strong>Tip:</strong> Answer based on how you <em>naturally</em> feel — not how you think you should feel. There are no right or wrong answers. Honesty gives the most accurate result.</span>
+          </div>
+
+          <button class="chk-btn" onclick="getResult()" style="margin-top:8px">
+            🧠 Get My Personality Result
+          </button>
+
+          <!-- RESULT -->
+          <div id="resultArea">
+
+            <div id="resHero" class="res-hero introvert" style="margin-top:28px">
+              <span class="res-emoji" id="resEmoji">🧠</span>
+              <div class="res-type" id="resType">Introvert</div>
+              <div class="res-desc" id="resDesc">You are a reflective, deep thinker who draws energy from within. You value meaningful conversations over small talk and prefer quality over quantity in relationships.</div>
+              <div class="res-score-row">
+                <span class="res-score-pill" id="resScore">📊 Score: 0/30</span>
+                <span class="res-score-pill" id="resPercent">📈 0% Extrovert</span>
+              </div>
+            </div>
+
+            <!-- VISUAL SCALE -->
+            <div class="scale-wrap">
+              <div class="scale-ttl">📊 Your Position on the Personality Scale</div>
+              <div class="scale-labels"><span>🧠 Introvert</span><span>🔄 Ambivert</span><span>⚡ Extrovert</span></div>
+              <div class="scale-bar-bg" id="scaleBar">
+                <div class="scale-marker" id="scaleMarker" style="left:0%">
+                  <span class="scale-marker-label" id="scaleLabel">You</span>
+                </div>
+              </div>
+              <div class="scale-ends">
+                <span>Deeply Introverted</span>
+                <span>Balanced Ambivert</span>
+                <span>Highly Extroverted</span>
+              </div>
+            </div>
+
+            <div class="warn-box">
+              <span style="font-size:20px;flex-shrink:0">ℹ️</span>
+              <div style="font-size:13.5px;color:var(--ink2);line-height:1.72"><strong>Important Notice:</strong> Results are for informational purposes only. Personality may vary in different situations and can change over time. This is not a clinical diagnosis. <strong>No data is stored or shared.</strong></div>
+            </div>
+
+            <button class="reset-btn" onclick="resetQuiz()">🔄 Retake Test</button>
+
+          </div><!-- /resultArea -->
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES SECTION -->
+<section class="tips-sec">
+  <div class="w">
+    <div style="text-align:center;margin-bottom:40px">
+      <div class="sec-lbl" style="justify-content:center">Why Use This Tool</div>
+      <div class="sec-h">What Makes This <span style="color:var(--blue)">Personality Test Different</span></div>
+    </div>
+    <div class="tips-grid">
+      <div class="tip-card rev">
+        <div class="tip-ico">⚡</div>
+        <div class="tip-title">Instant Results</div>
+        <div class="tip-desc">Get your complete personality profile in under 2 minutes. No waiting, no email required, no account needed. Just 10 questions and your result is ready.</div>
+      </div>
+      <div class="tip-card rev">
+        <div class="tip-ico">📊</div>
+        <div class="tip-title">Visual Scale Display</div>
+        <div class="tip-desc">See exactly where you fall on the Introvert ↔ Extrovert spectrum with our interactive visual scale — not just a label, but a precise position.</div>
+      </div>
+      <div class="tip-card rev">
+        <div class="tip-ico">🔄</div>
+        <div class="tip-title">Ambivert Detection</div>
+        <div class="tip-desc">Most tests only show Introvert or Extrovert. Ours also identifies Ambivert — the often overlooked middle ground that many people actually fall into.</div>
+      </div>
+      <div class="tip-card rev">
+        <div class="tip-ico">🔒</div>
+        <div class="tip-title">100% Private</div>
+        <div class="tip-desc">Your answers never leave your device. All calculations happen in your browser. No data is stored, logged, or shared with anyone — ever.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TABLE SECTION -->
+<section class="tbl-sec">
+  <div class="w">
+    <div style="text-align:center;margin-bottom:40px">
+      <div class="sec-lbl" style="justify-content:center">Personality Overview</div>
+      <div class="sec-h">Introvert vs Extrovert vs <span style="color:var(--blue)">Ambivert</span></div>
+      <p class="sec-sub" style="margin:12px auto 0">A quick comparison of traits, strengths, and characteristics across all three personality types.</p>
+    </div>
+    <div class="tbl-wr">
+      <table>
+        <thead>
+          <tr>
+            <th>Personality Type</th>
+            <th>Key Traits</th>
+            <th>Social Energy</th>
+            <th>Work Style</th>
+            <th>Type</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>🧠 Introvert</strong></td><td>Quiet, deep thinker, reflective, observant</td><td>Recharges alone</td><td>Prefers solo work or small teams</td><td><span class="tbadge p">Introvert</span></td></tr>
+          <tr><td><strong>⚡ Extrovert</strong></td><td>Social, energetic, talkative, expressive</td><td>Energized by people</td><td>Thrives in collaborative environments</td><td><span class="tbadge a">Extrovert</span></td></tr>
+          <tr><td><strong>🔄 Ambivert</strong></td><td>Balanced, adaptable, flexible, situational</td><td>Context-dependent</td><td>Adapts to any work style</td><td><span class="tbadge g">Ambivert</span></td></tr>
+          <tr><td><strong>🧠 Introvert</strong></td><td>Prefers meaningful 1-on-1 conversations</td><td>Small groups preferred</td><td>Excellent focus, deep concentration</td><td><span class="tbadge p">Introvert</span></td></tr>
+          <tr><td><strong>⚡ Extrovert</strong></td><td>Comfortable speaking to large audiences</td><td>Loves large gatherings</td><td>Natural team leader, great communicator</td><td><span class="tbadge a">Extrovert</span></td></tr>
+          <tr><td><strong>🔄 Ambivert</strong></td><td>Can enjoy both social events and alone time</td><td>Flexible social needs</td><td>Can lead or follow based on situation</td><td><span class="tbadge g">Ambivert</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:12px;color:var(--ink4);text-align:center;margin-top:10px">* Personality types exist on a spectrum. Most people show traits from multiple types depending on context and circumstance.</p>
+  </div>
+</section>
+
+<!-- VISUAL SCALE SECTION -->
+<section class="graph-sec">
+  <div class="w">
+    <div style="text-align:center;margin-bottom:30px">
+      <div class="sec-lbl" style="justify-content:center">Personality Spectrum</div>
+      <div class="sec-h">The <span style="color:var(--blue)">Introvert ↔ Extrovert</span> Scale Explained</div>
+      <p class="sec-sub" style="margin:12px auto 0;max-width:560px">Personality is not binary — it's a continuous spectrum. Most people fall somewhere between the two extremes, in the Ambivert zone.</p>
+    </div>
+    <div class="graph-card rev">
+      <div class="graph-ttl">🔬 Understanding the Full Personality Spectrum</div>
+      <!-- Static visual scale -->
+      <div style="padding:10px 0 24px">
+        <div style="display:flex;justify-content:space-between;font-family:var(--fd);font-size:13px;font-weight:700;color:var(--ink2);margin-bottom:10px">
+          <span>🧠 Deep Introvert</span><span>🔄 Ambivert Zone</span><span>⚡ Pure Extrovert</span>
+        </div>
+        <div style="height:40px;border-radius:100px;background:linear-gradient(90deg,#8b5cf6 0%,#6366f1 20%,#10b981 45%,#10b981 55%,#f59e0b 80%,#ef4444 100%);position:relative;box-shadow:var(--s2)">
+          <div style="position:absolute;top:50%;left:20%;transform:translate(-50%,-50%);width:3px;height:100%;background:rgba(255,255,255,.4)"></div>
+          <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:3px;height:100%;background:rgba(255,255,255,.6)"></div>
+          <div style="position:absolute;top:50%;left:80%;transform:translate(-50%,-50%);width:3px;height:100%;background:rgba(255,255,255,.4)"></div>
+        </div>
+        <div style="display:flex;justify-content:space-between;margin-top:10px;gap:8px">
+          <div style="background:var(--purple-xl);border:1.5px solid var(--purple-s);border-radius:10px;padding:12px 16px;flex:1;text-align:center">
+            <div style="font-size:20px;margin-bottom:4px">🧠</div>
+            <div style="font-family:var(--fd);font-size:12px;font-weight:800;color:var(--purple)">Introvert</div>
+            <div style="font-size:11px;color:var(--ink3)">Score: 10–16</div>
+          </div>
+          <div style="background:var(--green-xl);border:1.5px solid var(--green-s);border-radius:10px;padding:12px 16px;flex:1;text-align:center">
+            <div style="font-size:20px;margin-bottom:4px">🔄</div>
+            <div style="font-family:var(--fd);font-size:12px;font-weight:800;color:var(--green)">Ambivert</div>
+            <div style="font-size:11px;color:var(--ink3)">Score: 17–23</div>
+          </div>
+          <div style="background:var(--amber-xl);border:1.5px solid var(--amber-s);border-radius:10px;padding:12px 16px;flex:1;text-align:center">
+            <div style="font-size:20px;margin-bottom:4px">⚡</div>
+            <div style="font-family:var(--fd);font-size:12px;font-weight:800;color:var(--amber)">Extrovert</div>
+            <div style="font-size:11px;color:var(--ink3)">Score: 24–30</div>
+          </div>
+        </div>
+        <div style="margin-top:18px;background:var(--blue-xl);border:1.5px solid var(--blue-s);border-radius:12px;padding:14px 18px;font-size:13.5px;color:var(--ink2);line-height:1.7">
+          <strong>💡 Key Insight:</strong> Research by psychologist Carl Jung suggests that <em>pure</em> introverts and extroverts are rare. Most people — estimated at 68% of the population — are actually Ambiverts who adapt their behavior based on context, situation, and energy levels.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STORY SECTION -->
+<section class="story-sec">
+  <div class="w">
+    <div class="wa">
+      <div class="sec-lbl">Why I Built This</div>
+      <h2 class="sec-h">Why I Built This Tool</h2>
+      <div class="story-card rev">
+        <div class="sq">"</div>
+        <p class="sb">My friend Prashant was always confused about his personality. Sometimes he felt like an introvert, and other times like an extrovert. He searched online but found complicated tests with too many questions, confusing language, and no clear answers. He would take a test and still not understand what his result actually meant. That made me realize many people face this same confusion daily. They want to understand themselves better, but the available tools are either too academic, too long, or too vague. So I created this simple and accurate Introvert vs Extrovert Scale Tool to help people understand themselves better in just seconds — with a clear result, a visual scale, and a meaningful explanation.</p>
+        <div class="sauth">
+          <div class="savt">🛠️</div>
+          <div>
+            <div class="sname">Raj — Founder, RajDailyTools</div>
+            <div class="srole">Built for everyone who wants to understand themselves better</div>
+          </div>
+        </div>
+        <div class="founder-msg">
+          <div class="fm-ico">💡</div>
+          <div class="fm-txt"><strong>Our mission:</strong> Every person deserves to understand their own personality without complicated psychology jargon. This tool is completely free, works instantly, gives a visual result you can actually understand, and requires zero sign-up. Because self-awareness is a superpower — and everyone deserves access to it.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESULT EXPLANATION SECTION -->
+<section class="tbl-sec" style="background:var(--surf)">
+  <div class="w">
+    <div style="text-align:center;margin-bottom:40px">
+      <div class="sec-lbl" style="justify-content:center">Personality Profiles</div>
+      <div class="sec-h">Understanding Your <span style="color:var(--blue)">Personality Type</span></div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px">
+      <div style="background:#fff;border:1.5px solid var(--purple-s);border-radius:20px;padding:28px;box-shadow:var(--s2)">
+        <div style="font-size:40px;margin-bottom:12px">🧠</div>
+        <div style="font-family:var(--fd);font-size:18px;font-weight:800;color:var(--ink);margin-bottom:10px">What is an Introvert?</div>
+        <p style="font-size:14px;color:var(--ink3);line-height:1.78;margin-bottom:14px">An introvert is someone who feels most energized by spending time alone and finds social interactions draining over time. They are reflective, thoughtful, and prefer deep, meaningful relationships over a wide social circle.</p>
+        <div style="background:var(--purple-xl);border-radius:10px;padding:12px 14px">
+          <div style="font-family:var(--fd);font-size:12px;font-weight:800;color:var(--purple);margin-bottom:6px">Key Traits</div>
+          <div style="font-size:13px;color:var(--ink2);line-height:1.7">Quiet · Deep thinker · Observer · Independent · Empathetic · Creative · Focused</div>
+        </div>
+      </div>
+      <div style="background:#fff;border:1.5px solid var(--amber-s);border-radius:20px;padding:28px;box-shadow:var(--s2)">
+        <div style="font-size:40px;margin-bottom:12px">⚡</div>
+        <div style="font-family:var(--fd);font-size:18px;font-weight:800;color:var(--ink);margin-bottom:10px">What is an Extrovert?</div>
+        <p style="font-size:14px;color:var(--ink3);line-height:1.78;margin-bottom:14px">An extrovert gains energy from social interaction and external stimulation. They enjoy being around people, thrive in group settings, and often feel restless when alone for too long. They are naturally expressive and outgoing.</p>
+        <div style="background:var(--amber-xl);border-radius:10px;padding:12px 14px">
+          <div style="font-family:var(--fd);font-size:12px;font-weight:800;color:var(--amber);margin-bottom:6px">Key Traits</div>
+          <div style="font-size:13px;color:var(--ink2);line-height:1.7">Social · Energetic · Talkative · Enthusiastic · Action-oriented · Confident · Outgoing</div>
+        </div>
+      </div>
+      <div style="background:#fff;border:1.5px solid var(--green-s);border-radius:20px;padding:28px;box-shadow:var(--s2)">
+        <div style="font-size:40px;margin-bottom:12px">🔄</div>
+        <div style="font-family:var(--fd);font-size:18px;font-weight:800;color:var(--ink);margin-bottom:10px">What is an Ambivert?</div>
+        <p style="font-size:14px;color:var(--ink3);line-height:1.78;margin-bottom:14px">An ambivert sits in the middle of the introvert-extrovert spectrum, displaying qualities of both. They can be social when needed and enjoy alone time equally. They adapt their behavior based on the situation and are often highly empathetic.</p>
+        <div style="background:var(--green-xl);border-radius:10px;padding:12px 14px">
+          <div style="font-family:var(--fd);font-size:12px;font-weight:800;color:var(--green);margin-bottom:6px">Key Traits</div>
+          <div style="font-size:13px;color:var(--ink2);line-height:1.7">Adaptable · Balanced · Flexible · Empathetic · Versatile · Context-sensitive · Intuitive</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GUIDE / SEO ARTICLE -->
+<section class="guide-sec">
+  <div class="w">
+    <div class="wa">
+      <div class="sec-lbl">📖 Complete Guide</div>
+      <h2 class="sec-h">Everything About <span style="color:var(--blue)">Introvert vs Extrovert</span> Personalities</h2>
+      <div class="guide-body">
+
+        <h2>🧠 What is Introversion vs Extroversion?</h2>
+        <p>Introversion and extroversion are two fundamental dimensions of human personality first described by Swiss psychiatrist <strong>Carl Jung</strong> in the 1920s. These terms describe how people gain and lose energy — specifically, whether they are energized by external social interaction (extroverts) or by internal reflection and alone time (introverts).</p>
+        <p>It's important to understand that introversion and extroversion are <strong>not about shyness or confidence</strong> — they're about where you direct your energy and attention. A person can be an outgoing introvert who loves social events but needs quiet time to recharge afterward. Similarly, a shy extrovert might feel nervous in new situations but still draw energy from social connection.</p>
+
+        <div class="ibox">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          <span><strong>Key Insight:</strong> Carl Jung himself said that an absolutely pure introvert or extrovert "would be in the lunatic asylum." The reality is that everyone shows traits from both types — it's a spectrum, not a binary choice.</span>
+        </div>
+
+        <h2>🔬 The Psychology Behind Personality Types</h2>
+        <p>Modern personality psychology, particularly the <strong>Big Five personality model</strong> (also called OCEAN), identifies extroversion as one of the five core dimensions of personality. High extroversion is characterized by assertiveness, positive emotions, sociability, and talkativeness. Low extroversion (introversion) is marked by reserved behavior, independence, and a preference for solitary activities.</p>
+        <p>Research by psychologist Hans Eysenck proposed a biological basis for introversion-extroversion differences, suggesting that introverts have a higher baseline level of cortical arousal, making them more sensitive to external stimulation. Extroverts, having lower arousal, actively seek external stimulation to reach their optimal level.</p>
+        <p>More recent neuroscience research has shown differences in <strong>dopamine sensitivity</strong> between introverts and extroverts. Extroverts tend to have a more reactive dopamine system, making them more drawn to novelty, rewards, and social situations. Introverts are more responsive to acetylcholine, a neurotransmitter linked to focused attention and inner reflection.</p>
+
+        <h2>🌍 Real-Life Examples of Introvert and Extrovert Behavior</h2>
+        <p><strong>Example 1 — Riya (Introvert):</strong> After a full day of office meetings, Riya feels exhausted and needs to spend her evening alone to recharge. She prefers texting over calling, loves reading, and has 3–4 very close friends rather than a large social circle. She does her best thinking when alone and often needs time to process her thoughts before speaking.</p>
+        <p><strong>Example 2 — Rohan (Extrovert):</strong> Rohan gets energized by meetings, loves brainstorming with colleagues, and volunteers for presentations. He thinks out loud, makes friends quickly, and feels restless when home alone for too long. He recharges by going out, calling friends, and being around people.</p>
+        <p><strong>Example 3 — Priya (Ambivert):</strong> Priya enjoys social gatherings but also needs occasional solitude. She can easily switch between being the life of the party and spending a quiet evening with a book. She's comfortable in both leadership and independent roles, adapting based on the situation.</p>
+
+        <div class="ibox a">
+          <svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          <span><strong>Common Myth:</strong> "Introverts are anti-social and extroverts are always happy." The truth is introverts enjoy socializing — they just need balance. And extroverts can feel lonely and anxious too. Personality type doesn't determine your happiness or social skills.</span>
+        </div>
+
+        <h2>❌ Myths vs Reality About Personality Types</h2>
+        <ul>
+          <li><strong>Myth:</strong> "Introverts are shy." <strong>Reality:</strong> Shyness is about fear of social judgment. Introversion is about energy preference. Many introverts are confident public speakers and great communicators.</li>
+          <li><strong>Myth:</strong> "Extroverts are always happy." <strong>Reality:</strong> Extroversion describes social orientation, not emotional positivity. Extroverts can struggle with loneliness, anxiety, and emotional challenges just like anyone else.</li>
+          <li><strong>Myth:</strong> "You can't be both." <strong>Reality:</strong> Most people — research suggests 60–70% — are ambiverts who display traits of both depending on the context.</li>
+          <li><strong>Myth:</strong> "Personality is fixed at birth." <strong>Reality:</strong> While personality has genetic components, research shows it can shift over time due to life experiences, age, and intentional effort.</li>
+          <li><strong>Myth:</strong> "Extroverts are better leaders." <strong>Reality:</strong> Studies show introverts often make highly effective leaders, especially with proactive teams. Both types have distinct leadership advantages.</li>
+        </ul>
+
+        <h2>✅ Signs You Are an Introvert</h2>
+        <ul>
+          <li>You feel drained after long social events, even if you enjoyed them</li>
+          <li>You prefer deep, one-on-one conversations over group chats</li>
+          <li>You need time alone to process your thoughts and feelings</li>
+          <li>You think before you speak rather than thinking out loud</li>
+          <li>You have a small circle of close friends you are deeply loyal to</li>
+          <li>You enjoy solo hobbies like reading, writing, art, or coding</li>
+          <li>You are a good listener and observer in social situations</li>
+        </ul>
+
+        <h2>✅ Signs You Are an Extrovert</h2>
+        <ul>
+          <li>You feel energized after social gatherings and events</li>
+          <li>You enjoy meeting new people and making friends easily</li>
+          <li>You think out loud and process ideas by talking through them</li>
+          <li>You get restless or bored when spending too much time alone</li>
+          <li>You are comfortable speaking up in groups and taking initiative</li>
+          <li>You draw energy from collaboration, brainstorming, and teamwork</li>
+          <li>You enjoy being the center of attention and entertaining others</li>
+        </ul>
+
+        <h2>🌟 Benefits of Being an Introvert</h2>
+        <p>Introversion is not a weakness — it comes with powerful strengths. Introverts tend to be exceptional listeners, deep thinkers, and highly focused individuals. They often excel in creative fields, research, writing, programming, and any domain that requires sustained concentration. Famous introverts include <strong>Albert Einstein, J.K. Rowling, Barack Obama, and Bill Gates</strong> — all of whom attributed their success partly to their introspective nature.</p>
+
+        <h2>🌟 Benefits of Being an Extrovert</h2>
+        <p>Extroverts bring energy, enthusiasm, and connection to every environment they enter. They excel in roles that require communication, persuasion, and leadership — sales, management, teaching, public relations, and entrepreneurship. Their ability to build networks, inspire teams, and communicate ideas clearly is an enormous professional asset.</p>
+
+        <div class="ibox g">
+          <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          <span><strong>Pro Tip:</strong> Knowing your personality type helps you design your life for maximum energy, productivity, and fulfillment. Structure your day, work, and social life in alignment with your natural tendencies — not against them.</span>
+        </div>
+
+        <h2>💼 Career Choices Based on Personality Type</h2>
+        <p><strong>Best careers for Introverts:</strong> Writer, researcher, data analyst, software developer, graphic designer, accountant, scientist, librarian, psychologist (therapist), artist, architect, editor, and any role with deep focus work.</p>
+        <p><strong>Best careers for Extroverts:</strong> Sales representative, marketing manager, teacher, politician, public relations manager, event coordinator, journalist, entrepreneur, HR manager, motivational speaker, customer success, and any role involving people and communication.</p>
+        <p><strong>Best careers for Ambiverts:</strong> Project manager, consultant, doctor, nurse, social worker, product manager, UX designer, coach, real estate agent — roles that blend independent work with meaningful human interaction.</p>
+
+        <h2>📅 Daily Life Impact of Your Personality Type</h2>
+        <p>Your personality type influences nearly every aspect of daily life — from how you prefer to communicate (texts vs calls), where you recharge (coffee shops vs quiet rooms), how you handle conflict (direct confrontation vs reflection), and how you make decisions (fast and intuitive vs slow and deliberate).</p>
+        <p>Understanding whether you're an introvert, extrovert, or ambivert allows you to make <strong>smarter choices</strong> about your schedule, relationships, work environment, and self-care. It also helps you communicate your needs more clearly to others, reducing misunderstandings and friction in both personal and professional relationships.</p>
+
+        <h2>🔄 Can Personality Change Over Time?</h2>
+        <p>Yes — personality is not completely fixed. Long-term research shows that people tend to become slightly more introverted as they age, and that significant life events (moving to a new city, having children, major career changes) can shift personality traits. However, the <strong>core orientation</strong> — where you fundamentally draw energy from — tends to remain relatively stable throughout adulthood.</p>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ SECTION -->
+<section class="faq-sec">
+  <div class="w">
+    <div class="sec-lbl" style="justify-content:center">FAQ</div>
+    <h2 class="sec-h" style="text-align:center">Frequently Asked <span style="color:var(--blue)">Questions</span></h2>
+    <p class="sec-sub" style="text-align:center;margin:0 auto 40px">Everything you need to know about this personality test and introversion vs extroversion.</p>
+    <div class="fql">
+      <div class="fq">
+        <div class="fq-q" onclick="tFQ(this)"><span class="fq-t">How accurate is this introvert vs extrovert test?</span><span class="fq-i">+</span></div>
+        <div class="fq-a"><div class="fq-ai">Our test is designed based on established personality psychology research by Carl Jung and modern Big Five personality models. It provides a reliable indicator of your personality orientation for informational purposes. For highest accuracy, answer based on how you naturally feel — not how you think you should feel. Results are indicative, not clinical diagnoses. Personality tests can vary ±10–20% based on mood and recent experiences.</div></div>
+      </div>
+      <div class="fq">
+        <div class="fq-q" onclick="tFQ(this)"><span class="fq-t">Can someone be both an introvert and extrovert?</span><span class="fq-i">+</span></div>
+        <div class="fq-a"><div class="fq-ai">Yes — and this is actually the most common personality profile! People who show significant traits of both introversion and extroversion are called <strong>Ambiverts</strong>. Research suggests that approximately 60–68% of people fall in the ambivert range rather than at the extremes. Ambiverts can adapt their behavior to fit the situation, making them highly versatile socially and professionally.</div></div>
+      </div>
+      <div class="fq">
+        <div class="fq-q" onclick="tFQ(this)"><span class="fq-t">What is an ambivert?</span><span class="fq-i">+</span></div>
+        <div class="fq-a"><div class="fq-ai">An ambivert is someone who sits in the middle of the introvert-extrovert spectrum, displaying traits from both. Unlike pure introverts who always prefer solitude, or pure extroverts who always seek social interaction, ambiverts adapt based on the context. They can be social when needed, enjoy alone time when desired, and often have excellent empathy because they understand both perspectives. The term was popularized by social psychologist Adam Grant.</div></div>
+      </div>
+      <div class="fq">
+        <div class="fq-q" onclick="tFQ(this)"><span class="fq-t">Is introversion the same as shyness?</span><span class="fq-i">+</span></div>
+        <div class="fq-a"><div class="fq-ai">No — this is one of the most common misconceptions. <strong>Shyness</strong> is a fear of negative social judgment and is an emotional response. <strong>Introversion</strong> is about energy preference — where you draw your energy from. Many introverts are highly confident, comfortable public speakers who simply prefer quiet time to recharge. Similarly, some extroverts can be socially anxious despite craving interaction. They are entirely different traits.</div></div>
+      </div>
+      <div class="fq">
+        <div class="fq-q" onclick="tFQ(this)"><span class="fq-t">Can my personality type change over time?</span><span class="fq-i">+</span></div>
+        <div class="fq-a"><div class="fq-ai">Personality can shift gradually, especially due to major life events, age, and personal growth efforts. Research shows people tend to become slightly more introverted with age. Significant experiences — moving countries, starting a business, becoming a parent — can also influence personality. However, your core energy orientation tends to remain relatively stable. Retaking this test every 6–12 months can give you interesting insights into how you've evolved.</div></div>
+      </div>
+      <div class="fq">
+        <div class="fq-q" onclick="tFQ(this)"><span class="fq-t">Which personality type is better — introvert or extrovert?</span><span class="fq-i">+</span></div>
+        <div class="fq-a"><div class="fq-ai">Neither is better or worse — they are simply different. Society has historically valued extroversion in professional settings, but research increasingly shows that introverts make highly effective leaders, innovators, and contributors. Each type has unique strengths: extroverts excel at communication and networking, while introverts excel at focus, depth, and empathy. The goal is to understand your natural tendencies and build a life that leverages your strengths rather than fighting against your nature.</div></div>
+      </div>
+      <div class="fq">
+        <div class="fq-q" onclick="tFQ(this)"><span class="fq-t">Why does my result feel different from how I normally act?</span><span class="fq-i">+</span></div>
+        <div class="fq-a"><div class="fq-ai">This can happen for several reasons. First, your mood at the time of taking the test can affect your answers. Second, we all have <strong>social masks</strong> — behaviors we've adapted to fit our environment (for example, an introvert in a social job who has learned extroverted skills). Third, personality is contextual — you may be more extroverted at work and introverted at home. For the most accurate result, focus on how you feel in your most comfortable, natural state.</div></div>
+      </div>
+      <div class="fq">
+        <div class="fq-q" onclick="tFQ(this)"><span class="fq-t">Does this tool store my answers or results?</span><span class="fq-i">+</span></div>
+        <div class="fq-a"><div class="fq-ai">Absolutely not. This tool runs entirely in your browser (client-side JavaScript). Your answers, results, and any data you interact with during the test never leave your device. Nothing is sent to our servers, stored in a database, or shared with any third party. Once you close the browser tab, the data is completely gone. This tool is 100% private and safe.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RELATED TOOLS -->
+<section class="tips-sec">
+  <div class="w">
+    <div style="text-align:center;margin-bottom:30px">
+      <div class="sec-lbl" style="justify-content:center">More Tools</div>
+      <div class="sec-h">Related <span style="color:var(--blue)">Free Tools</span> You'll Love</div>
+    </div>
+    <div class="rel-grid" style="max-width:700px;margin:0 auto;grid-template-columns:repeat(3,1fr)">
+      <div class="rg-box army">
+        <div class="rg-ico">🎂</div>
+        <div class="rg-txt"><h4>Age Calculator</h4><p>Find your exact age in seconds</p><a href="/age-calculator.html" class="btn-xs a">Use Now →</a></div>
+      </div>
+      <div class="rg-box ht">
+        <div class="rg-ico">⚖️</div>
+        <div class="rg-txt"><h4>BMI Calculator</h4><p>Check your body mass index</p><a href="/bmi-calculator.html" class="btn-xs g">Use Now →</a></div>
+      </div>
+      <div class="rg-box ssc">
+        <div class="rg-ico">🧩</div>
+        <div class="rg-txt"><h4>Personality Tools</h4><p>Explore more personality tests</p><a href="/personality-tools.html" class="btn-xs b">Explore →</a></div>
+      </div>
+      <div class="rg-box mp">
+        <div class="rg-ico">📚</div>
+        <div class="rg-txt"><h4>Student Tools</h4><p>Tools designed for students</p><a href="/student-tools.html" class="btn-xs p">Use Now →</a></div>
+      </div>
+      <div class="rg-box tl">
+        <div class="rg-ico">🏠</div>
+        <div class="rg-txt"><h4>Daily Life Tools</h4><p>Solve everyday problems fast</p><a href="/daily-tools.html" class="btn-xs t">Use Now →</a></div>
+      </div>
+      <div class="rg-box rd">
+        <div class="rg-ico">⏱️</div>
+        <div class="rg-txt"><h4>Download Calculator</h4><p>Estimate file download time</p><a href="/download-time-calculator.html" class="btn-xs r">Use Now →</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DISCLAIMER -->
+<div class="disc">
+  <div class="w">
+    <div class="disc-in">
+      <span style="font-size:20px;flex-shrink:0">⚠️</span>
+      <div><strong>Disclaimer:</strong> This introvert vs extrovert test is for informational and educational purposes only. Results are not a clinical diagnosis and should not replace professional psychological evaluation. Personality is complex, multi-dimensional, and can vary based on context, mood, and life stage. Results may vary in different situations. For professional mental health support, please consult a qualified psychologist or therapist.</div>
+    </div>
+  </div>
+</div>
+
+<!-- PRIVACY NOTE -->
+<div style="background:var(--blue-xl);border-top:1px solid var(--blue-s);border-bottom:1px solid var(--blue-s);padding:13px 0">
+  <div class="w">
+    <div style="display:flex;align-items:flex-start;gap:12px;font-size:13px;color:var(--ink2);line-height:1.7">
+      <span style="font-size:18px;flex-shrink:0">🔒</span>
+      <div><strong>Privacy & Security:</strong> This tool runs entirely in your browser. No answers, scores, or personal data are ever sent to our servers, stored, or shared with anyone. 100% private. 100% safe. No account required. For educational purposes only.</div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<section class="contact-sec">
+  <div class="w">
+    <div class="contact-card rev">
+      <h3>📬 Have Feedback or Suggestions?</h3>
+      <p>For feedback, suggestions, or corrections about this personality test — we genuinely read every message and continuously improve based on real user feedback. Your input makes this tool better for everyone.</p>
+      <a href="/contact" class="btn-bl">✉️ Contact Us</a>
+      <p class="priv-note">🔒 We respect your privacy. No data is collected. No spam, ever.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="cta-in">
+    <div class="pill">Explore More Tools</div>
+    <h2>Discover <em>100+ Free Tools</em> on RajDailyTools</h2>
+    <p>From personality tests to financial calculators — all free, fast, and no sign-up required.</p>
+    <div class="cta-btns">
+      <a href="/categories" class="btn-gold">🗂️ Browse All Tools</a>
+      <a href="/#popular" class="btn-ghost">⭐ Popular Tools</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-inner">
+    <div class="ft-top">
+      <div class="ft-brand">
+        <a href="/" class="logo">
+          <div class="lb"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+          <div><div class="ln">Raj<span>Daily</span>Tools</div><div class="ls">Smart Tools for Daily Life</div></div>
+        </a>
+        <div class="ft-desc">Free, fast, and reliable tools for everyone. Personality tests, health & finance calculators, and 100+ more — all in one place.</div>
+        <div class="ft-soc">
+          <a class="fts" href="#" title="Twitter">𝕏</a>
+          <a class="fts" href="#" title="Instagram">📸</a>
+          <a class="fts" href="#" title="YouTube">▶</a>
+        </div>
+      </div>
+      <div class="fc">
+        <h4>Personality Tools</h4>
+        <ul>
+          <li><a href="/introvert-extrovert-test.html">Introvert vs Extrovert</a></li>
+          <li><a href="/personality-type-test.html">Personality Type Test</a></li>
+          <li><a href="/stress-level-test.html">Stress Level Test</a></li>
+          <li><a href="/emotional-intelligence-test.html">EQ Test</a></li>
+          <li><a href="/confidence-test.html">Confidence Test</a></li>
+        </ul>
+      </div>
+      <div class="fc">
+        <h4>Health Tools</h4>
+        <ul>
+          <li><a href="/bmi-calculator.html">BMI Calculator</a></li>
+          <li><a href="/age-calculator.html">Age Calculator</a></li>
+          <li><a href="/calorie-calculator.html">Calorie Calculator</a></li>
+          <li><a href="/water-intake-calculator.html">Water Intake</a></li>
+          <li><a href="/sleep-calculator.html">Sleep Calculator</a></li>
+        </ul>
+      </div>
+      <div class="fc">
+        <h4>Popular Tools</h4>
+        <ul>
+          <li><a href="/download-time-calculator.html">Download Calculator</a></li>
+          <li><a href="/percentage-calculator.html">Percentage Calculator</a></li>
+          <li><a href="/gst-calculator.html">GST Calculator</a></li>
+          <li><a href="/emi-calculator.html">EMI Calculator</a></li>
+          <li><a href="/unit-converter.html">Unit Converter</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ft-btm">
+      <div class="ft-cp">© 2024 <b>RajDailyTools.in</b> — All rights reserved. Free tools for daily life.</div>
+      <div class="ft-tag">Introvert vs Extrovert Test · Personality Calculator · Free Online Quiz</div>
+    </div>
+  </div>
+</footer>
+
+<button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+// MOBILE DRAWER
+const brg=document.getElementById('brg');
+const drw=document.getElementById('drw');
+const dov=document.getElementById('dov');
+const dx=document.getElementById('dx');
+function openDrw(){drw.classList.add('on');dov.classList.add('on');document.body.style.overflow='hidden'}
+function closeDrw(){drw.classList.remove('on');dov.classList.remove('on');document.body.style.overflow=''}
+brg.addEventListener('click',openDrw);
+dx.addEventListener('click',closeDrw);
+dov.addEventListener('click',closeDrw);
+
+// BACK TO TOP
+const btt=document.getElementById('btt');
+window.addEventListener('scroll',()=>{btt.classList.toggle('on',window.scrollY>400)});
+
+// SCROLL REVEAL
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target)}})},{threshold:.12});
+document.querySelectorAll('.rev').forEach(el=>obs.observe(el));
+
+// FAQ TOGGLE
+function tFQ(btn){
+  const fq=btn.parentElement;
+  const wasOpen=fq.classList.contains('open');
+  document.querySelectorAll('.fq.open').forEach(f=>f.classList.remove('open'));
+  if(!wasOpen)fq.classList.add('open');
+}
+
+// QUIZ LOGIC
+const questions=10;
+let answered=new Set();
+
+// Track selections and update progress
+document.querySelectorAll('.q-opts').forEach(opts=>{
+  opts.querySelectorAll('.q-opt').forEach(opt=>{
+    opt.addEventListener('click',()=>{
+      const q=opts.getAttribute('data-q');
+      // Deselect all in this group
+      opts.querySelectorAll('.q-opt').forEach(o=>o.classList.remove('selected'));
+      opt.classList.add('selected');
+      opt.querySelector('input').checked=true;
+      answered.add(q);
+      updateProgress();
+    });
+  });
+});
+
+function updateProgress(){
+  const count=answered.size;
+  const pct=Math.round((count/questions)*100);
+  document.getElementById('qpFill').style.width=pct+'%';
+  document.getElementById('qpCount').textContent=count+' / '+questions+' answered';
+}
+
+function getResult(){
+  // Collect answers
+  let total=0;
+  let missing=[];
+  for(let i=1;i<=questions;i++){
+    const sel=document.querySelector(`input[name="q${i}"]:checked`);
+    if(!sel){missing.push(i);}
+    else{total+=parseInt(sel.value);}
+  }
+
+  if(missing.length>0){
+    alert('⚠️ Please answer all '+questions+' questions before getting your result.\n\nMissing: Q'+missing.join(', Q'));
+    // Highlight unanswered
+    missing.forEach(q=>{
+      const item=document.querySelectorAll('.q-item')[q-1];
+      item.style.border='2px solid #ef4444';
+      item.style.background='#fef2f2';
+      setTimeout(()=>{item.style.border='';item.style.background='';},3000);
+    });
+    return;
+  }
+
+  // Score range: 10 (all "1") to 30 (all "3")
+  // Introvert: 10–16 | Ambivert: 17–23 | Extrovert: 24–30
+  let type,emoji,desc,heroClass,pct;
+  const pctExtrovert=Math.round(((total-10)/20)*100);
+
+  if(total<=16){
+    type='Introvert';
+    emoji='🧠';
+    desc='You are a reflective, deep thinker who draws energy from within. You value meaningful conversations over small talk and prefer quality over quantity in relationships. Your introspective nature is your greatest strength — use it to think deeply, create powerfully, and connect authentically.';
+    heroClass='introvert';
+  } else if(total<=23){
+    type='Ambivert';
+    emoji='🔄';
+    desc='You are a balanced, adaptable person who displays traits of both introversion and extroversion. You enjoy social interaction but also value your alone time. Your flexibility is a superpower — you can thrive in both social and independent environments, making you highly versatile.';
+    heroClass='ambivert';
+  } else {
+    type='Extrovert';
+    emoji='⚡';
+    desc='You are a social, energetic person who draws strength from interaction with others. You thrive in collaborative environments, enjoy meeting new people, and light up any room you enter. Your enthusiasm and communication skills are natural gifts that open doors others can only imagine.';
+    heroClass='extrovert';
+  }
+
+  // Update result UI
+  document.getElementById('resEmoji').textContent=emoji;
+  document.getElementById('resType').textContent=type;
+  document.getElementById('resDesc').textContent=desc;
+  document.getElementById('resScore').textContent='📊 Score: '+total+'/30';
+  document.getElementById('resPercent').textContent='📈 '+pctExtrovert+'% Extrovert Tendency';
+
+  const hero=document.getElementById('resHero');
+  hero.className='res-hero '+heroClass;
+
+  // Update scale marker
+  // Position: 0% = full introvert (10pts), 100% = full extrovert (30pts)
+  const markerPct=Math.round(((total-10)/20)*100);
+  const clampedPct=Math.max(4,Math.min(96,markerPct));
+  const marker=document.getElementById('scaleMarker');
+  marker.style.left=clampedPct+'%';
+
+  // Show result
+  const resultArea=document.getElementById('resultArea');
+  resultArea.style.display='block';
+  resultArea.style.animation='none';
+  void resultArea.offsetWidth;
+  resultArea.style.animation='resultIn .45s cubic-bezier(.4,0,.2,1) both';
+
+  setTimeout(()=>resultArea.scrollIntoView({behavior:'smooth',block:'start'}),120);
+}
+
+function resetQuiz(){
+  // Reset all radio buttons and styling
+  document.querySelectorAll('.q-opt').forEach(o=>o.classList.remove('selected'));
+  document.querySelectorAll('input[type="radio"]').forEach(r=>r.checked=false);
+  answered.clear();
+  updateProgress();
+  document.getElementById('resultArea').style.display='none';
+  document.getElementById('scaleMarker').style.left='0%';
+  // Scroll to tool
+  document.getElementById('tool').scrollIntoView({behavior:'smooth',block:'start'});
+}
+</script>
+</body>
+</html>
