@@ -1,0 +1,1217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IRA Calculator USA 2026 – Roth & Traditional IRA Retirement Planner | RajDailyTools</title>
+<meta name="description" content="Free IRA Calculator USA 2026. Calculate Roth IRA and Traditional IRA retirement savings with compound interest. Year-wise breakdown, growth chart, and personalized retirement plan. 100% free.">
+<meta name="keywords" content="IRA Calculator USA, Roth IRA Calculator, Traditional IRA Calculator, Retirement Calculator USA, IRA contribution calculator, retirement savings calculator USA, Roth vs Traditional IRA calculator, how to calculate IRA returns">
+<meta name="robots" content="index, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#2563eb;--blue-d:#1d4ed8;--blue-xl:#eff6ff;--blue-s:#dbeafe;
+  --amber:#f59e0b;--green:#10b981;--red:#ef4444;--purple:#8b5cf6;
+  --orange:#f97316;--teal:#14b8a6;
+  --green-xl:#f0fdf4;--green-s:#bbf7d0;
+  --red-xl:#fef2f2;--red-s:#fecaca;
+  --amber-xl:#fffbeb;--amber-s:#fde68a;
+  --purple-xl:#faf5ff;--purple-s:#ddd6fe;
+  --ink:#0f172a;--ink2:#334155;--ink3:#64748b;--ink4:#94a3b8;
+  --line:#e2e8f0;--surf:#f8fafc;--white:#fff;
+  --s1:0 1px 3px rgba(15,23,42,.06),0 1px 2px rgba(15,23,42,.04);
+  --s2:0 4px 16px rgba(15,23,42,.08),0 2px 6px rgba(15,23,42,.04);
+  --s3:0 12px 40px rgba(15,23,42,.11),0 3px 10px rgba(15,23,42,.06);
+  --s4:0 24px 64px rgba(15,23,42,.13),0 6px 20px rgba(15,23,42,.07);
+  --sb:0 8px 32px rgba(37,99,235,.20);
+  --fd:'Sora',sans-serif;--fb:'DM Sans',sans-serif;
+  --ease:cubic-bezier(.4,0,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);color:var(--ink);background:var(--white);overflow-x:hidden;-webkit-font-smoothing:antialiased;line-height:1.6}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+button{cursor:pointer;border:none;background:none;font-family:var(--fb)}
+.w{max-width:1180px;margin:0 auto;padding:0 24px}
+.wa{max-width:880px;margin:0 auto;padding:0 24px}
+select,input{appearance:none;-webkit-appearance:none}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+@keyframes resultIn{from{opacity:0;transform:translateY(18px) scale(.97)}to{opacity:1;transform:none}}
+.rev{opacity:0;transform:translateY(22px);transition:opacity .55s var(--ease),transform .55s var(--ease)}
+.rev.in{opacity:1;transform:none}
+
+/* HEADER */
+.hdr{position:sticky;top:0;z-index:999;background:rgba(255,255,255,.96);backdrop-filter:blur(20px);border-bottom:1px solid var(--line);box-shadow:var(--s1)}
+.hdi{display:flex;align-items:center;justify-content:space-between;height:66px}
+.logo{display:flex;align-items:center;gap:10px}
+.lb{width:36px;height:36px;background:var(--blue);border-radius:9px;display:flex;align-items:center;justify-content:center;box-shadow:var(--sb);flex-shrink:0}
+.lb svg{width:18px;height:18px;fill:#fff}
+.ln{font-family:var(--fd);font-size:19px;font-weight:800;color:var(--ink);line-height:1}
+.ln span{color:var(--blue)}
+.ls{font-size:10px;color:var(--ink4);letter-spacing:.04em}
+nav.dn{display:flex;align-items:center;gap:2px}
+nav.dn a{font-size:13.5px;font-weight:500;color:var(--ink2);padding:7px 13px;border-radius:8px;transition:.2s}
+nav.dn a:hover{color:var(--blue);background:var(--blue-xl)}
+.hcta{background:var(--blue);color:#fff;font-family:var(--fd);font-weight:600;font-size:13px;padding:8px 18px;border-radius:8px;box-shadow:var(--sb);transition:.2s}
+.hcta:hover{background:var(--blue-d);transform:translateY(-1px)}
+.brg{display:none;flex-direction:column;gap:4.5px;padding:8px;border-radius:8px}
+.brg span{display:block;width:20px;height:2px;background:var(--ink);border-radius:2px;transition:.28s}
+.dov{display:none;position:fixed;inset:0;background:rgba(15,23,42,.45);z-index:1040;backdrop-filter:blur(3px)}
+.dov.on{display:block}
+.drw{position:fixed;top:0;right:-100%;width:270px;height:100vh;background:#fff;z-index:1050;padding:22px;box-shadow:var(--s4);transition:right .32s var(--ease);overflow-y:auto}
+.drw.on{right:0}
+.dh{display:flex;align-items:center;justify-content:space-between;margin-bottom:26px}
+.dx{width:33px;height:33px;border-radius:7px;background:var(--surf);display:flex;align-items:center;justify-content:center;color:var(--ink3);font-size:17px}
+nav.mn{display:flex;flex-direction:column;gap:3px}
+nav.mn a{display:block;font-size:14px;font-weight:500;color:var(--ink2);padding:11px 13px;border-radius:8px;transition:.2s}
+nav.mn a:hover{color:var(--blue);background:var(--blue-xl)}
+
+/* HERO */
+.hero{position:relative;overflow:hidden;background:linear-gradient(150deg,#ebf4ff 0%,#fff 46%,#fff7ed 100%);padding:64px 0 72px}
+.hero::before{content:'';position:absolute;top:-140px;right:-180px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(37,99,235,.08) 0%,transparent 68%);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-80px;left:-100px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(249,115,22,.05) 0%,transparent 68%);pointer-events:none}
+.blob{position:absolute;border-radius:50%;pointer-events:none;animation:float 6s ease-in-out infinite}
+.b1{width:13px;height:13px;background:rgba(37,99,235,.18);top:22%;right:14%;animation-delay:0s}
+.b2{width:9px;height:9px;background:rgba(249,115,22,.22);top:58%;right:26%;animation-delay:2.2s}
+.b3{width:11px;height:11px;background:rgba(16,185,129,.18);top:36%;right:6%;animation-delay:4s}
+.bc{display:flex;align-items:center;gap:7px;font-size:12.5px;color:var(--ink3);margin-bottom:22px;position:relative;z-index:1;flex-wrap:wrap}
+.bc a{color:var(--blue);font-weight:600}
+.pill{display:inline-flex;align-items:center;gap:7px;font-family:var(--fd);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);background:var(--blue-xl);padding:5px 14px;border-radius:100px;margin-bottom:18px}
+.pill::before{content:'';width:6px;height:6px;background:var(--blue);border-radius:50%}
+.hero-inner{position:relative;z-index:1;max-width:720px;animation:fadeUp .5s ease both}
+.hero h1{font-family:var(--fd);font-size:clamp(26px,4.5vw,50px);font-weight:800;line-height:1.1;color:var(--ink);margin-bottom:14px}
+.hero h1 span{color:var(--blue)}
+.hero-sub{font-size:16px;color:var(--ink3);line-height:1.8;margin-bottom:22px;max-width:600px}
+.hero-chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.chip{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;padding:6px 14px;border-radius:100px;background:#fff;border:1.5px solid var(--line);color:var(--ink2);box-shadow:var(--s1);transition:.22s}
+.chip:hover{border-color:var(--blue);color:var(--blue);transform:translateY(-1px)}
+.hero-meta{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:24px}
+.upd{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:700;color:var(--blue);background:var(--blue-xl);padding:6px 14px;border-radius:100px;border:1.5px solid var(--blue-s)}
+.mi{font-size:13px;color:var(--ink3);font-weight:500}
+
+/* HOW TO USE */
+.howto{background:var(--amber-xl);border:2px solid var(--amber-s);border-radius:16px;padding:22px 26px;max-width:560px;margin-bottom:24px}
+.howto-ttl{display:flex;align-items:center;gap:9px;font-family:var(--fd);font-size:15px;font-weight:800;color:var(--ink);margin-bottom:13px}
+.howto-steps{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.hs{display:flex;align-items:flex-start;gap:10px;font-size:13.5px;color:var(--ink2);line-height:1.6}
+.sn{width:24px;height:24px;background:var(--amber);color:#fff;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex-shrink:0;margin-top:1px}
+
+/* RELATED TOOLS */
+.rel-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;position:relative;z-index:1}
+.rg-box{border-radius:14px;padding:14px 14px 12px;display:flex;flex-direction:column;gap:8px;transition:.22s;border:1.5px solid}
+.rg-box:hover{transform:translateY(-3px);box-shadow:var(--s3)}
+.rg-box.army{background:linear-gradient(135deg,var(--amber-xl),#fef3c7);border-color:var(--amber-s)}
+.rg-box.ht{background:linear-gradient(135deg,var(--green-xl),#dcfce7);border-color:var(--green-s)}
+.rg-box.ssc{background:linear-gradient(135deg,var(--blue-xl),var(--blue-s));border-color:var(--blue-s)}
+.rg-box.mp{background:linear-gradient(135deg,var(--purple-xl),#ede9fe);border-color:var(--purple-s)}
+.rg-box.tl{background:linear-gradient(135deg,#f0fdfa,#ccfbf1);border-color:#99f6e4}
+.rg-ico{font-size:22px}
+.rg-txt h4{font-family:var(--fd);font-size:12px;font-weight:800;color:var(--ink);margin-bottom:2px}
+.rg-txt p{font-size:11px;color:var(--ink3);line-height:1.5}
+.btn-xs{display:inline-flex;align-items:center;gap:4px;font-family:var(--fd);font-weight:700;font-size:11px;padding:5px 10px;border-radius:7px;transition:.22s;margin-top:4px}
+.btn-xs.a{background:var(--amber);color:#fff}.btn-xs.a:hover{background:#d97706}
+.btn-xs.g{background:var(--green);color:#fff}.btn-xs.g:hover{background:#059669}
+.btn-xs.b{background:var(--blue);color:#fff}.btn-xs.b:hover{background:var(--blue-d)}
+.btn-xs.p{background:var(--purple);color:#fff}.btn-xs.p:hover{background:#7c3aed}
+.btn-xs.t{background:var(--teal);color:#fff}.btn-xs.t:hover{background:#0f9488}
+
+/* TOOL */
+.tool-sec{background:var(--surf);padding:80px 0}
+.tool-wrap{max-width:900px;margin:0 auto}
+.tool-card{background:#fff;border:1.5px solid var(--line);border-radius:28px;overflow:hidden;box-shadow:var(--s4)}
+.tool-hdr{background:linear-gradient(135deg,#1d4ed8 0%,#2563eb 55%,#3b82f6 100%);padding:32px 40px;position:relative;overflow:hidden}
+.tool-hdr::before{content:'';position:absolute;top:-60px;right:-60px;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,.07)}
+.tool-hdr::after{content:'';position:absolute;bottom:-40px;left:-40px;width:180px;height:180px;border-radius:50%;background:rgba(255,255,255,.04)}
+.th{position:relative;z-index:1}
+.th h2{font-family:var(--fd);font-size:21px;font-weight:800;color:#fff;margin-bottom:6px}
+.th p{font-size:14px;color:rgba(255,255,255,.82);line-height:1.65}
+.th-badges{display:flex;flex-wrap:wrap;gap:9px;margin-top:14px}
+.thb{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:rgba(255,255,255,.9);background:rgba(255,255,255,.13);padding:5px 12px;border-radius:100px}
+.tool-body{padding:36px 40px}
+
+/* FORM */
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+.fgrid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:16px}
+.fld{display:flex;flex-direction:column;gap:7px}
+.flbl{font-size:13px;font-weight:700;color:var(--ink2)}
+.flbl span{font-size:11px;font-weight:500;color:var(--ink4);margin-left:5px;background:var(--surf);padding:2px 7px;border-radius:5px;border:1px solid var(--line)}
+.inp-wrap{position:relative}
+.inp-prefix{position:absolute;left:14px;top:50%;transform:translateY(-50%);font-family:var(--fd);font-size:15px;font-weight:700;color:var(--ink3);pointer-events:none}
+.inp-suffix{position:absolute;right:14px;top:50%;transform:translateY(-50%);font-family:var(--fd);font-size:13px;font-weight:700;color:var(--ink3);pointer-events:none}
+.finp,.fsel{padding:12px 16px;font-size:14.5px;color:var(--ink);background:#fff;border:1.5px solid var(--line);border-radius:10px;outline:none;transition:.22s;font-family:var(--fb);width:100%}
+.finp:focus,.fsel:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(37,99,235,.10)}
+.finp.has-prefix{padding-left:36px}
+.finp.has-suffix{padding-right:42px}
+.fsel{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2364748b' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:40px}
+.hint-box{display:flex;align-items:flex-start;gap:9px;font-size:13px;color:var(--ink2);background:var(--blue-xl);border:1.5px solid var(--blue-s);border-radius:10px;padding:11px 14px;margin:16px 0;line-height:1.65}
+.hint-box svg{width:16px;height:16px;stroke:var(--blue);fill:none;stroke-width:2;flex-shrink:0;margin-top:2px}
+.chk-btn{width:100%;padding:17px;background:linear-gradient(135deg,var(--blue) 0%,#1e40af 100%);color:#fff;font-family:var(--fd);font-weight:800;font-size:16px;border-radius:12px;box-shadow:var(--sb);transition:all .25s var(--ease);display:flex;align-items:center;justify-content:center;gap:10px}
+.chk-btn:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(37,99,235,.32)}
+.chk-btn:active{transform:translateY(0)}
+
+/* IRA TYPE TOGGLE */
+.ira-toggle{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1.5px solid var(--line);border-radius:12px;overflow:hidden;margin-bottom:16px}
+.ira-btn{padding:13px 16px;font-family:var(--fd);font-size:14px;font-weight:700;color:var(--ink3);background:#fff;border:none;cursor:pointer;transition:.22s;text-align:center;border-right:1px solid var(--line)}
+.ira-btn:last-child{border-right:none}
+.ira-btn.active{background:linear-gradient(135deg,var(--blue),var(--blue-d));color:#fff;box-shadow:inset 0 2px 6px rgba(0,0,0,.1)}
+.ira-btn:hover:not(.active){background:var(--blue-xl);color:var(--blue)}
+
+/* RESULT */
+#resultArea{display:none;margin-top:28px;animation:resultIn .45s var(--ease) both}
+.pay-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-bottom:16px}
+.pay-card{border-radius:16px;padding:22px 20px;position:relative;overflow:hidden;border:2px solid}
+.pay-card.c1{background:linear-gradient(135deg,var(--blue-xl),#e0eeff);border-color:var(--blue-s)}
+.pay-card.c2{background:linear-gradient(135deg,var(--green-xl),#d1fae5);border-color:var(--green-s)}
+.pay-card.c3{background:linear-gradient(135deg,var(--amber-xl),#fef3c7);border-color:var(--amber-s)}
+.pay-card.c4{background:linear-gradient(135deg,var(--purple-xl),#ede9fe);border-color:var(--purple-s);grid-column:1/-1}
+.pay-card::before{content:'';position:absolute;inset:0;opacity:.04;background-image:repeating-linear-gradient(45deg,currentColor 0,currentColor 1px,transparent 0,transparent 50%);background-size:12px 12px;pointer-events:none}
+.pc-lbl{font-size:12px;font-weight:700;color:var(--ink3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px;display:flex;align-items:center;gap:6px}
+.pc-val{font-family:var(--fd);font-size:32px;font-weight:800;color:var(--ink);line-height:1}
+.pay-card.c4 .pc-val{font-size:clamp(22px,4vw,40px)}
+.pc-sub{font-size:12.5px;color:var(--ink3);margin-top:5px}
+.pc-ico{font-size:28px;position:absolute;top:16px;right:16px;opacity:.18}
+
+/* YEAR TABLE inside result */
+.yr-table-wrap{overflow-x:auto;border-radius:14px;border:1.5px solid var(--line);box-shadow:var(--s1);margin-top:18px}
+.yr-table-wrap table{width:100%;border-collapse:collapse;font-size:13px}
+.yr-table-wrap thead th{background:linear-gradient(135deg,var(--blue) 0%,#1e40af 100%);color:#fff;padding:11px 14px;text-align:left;font-family:var(--fd);font-size:12px;font-weight:700}
+.yr-table-wrap thead th:first-child{border-radius:14px 0 0 0}
+.yr-table-wrap thead th:last-child{border-radius:0 14px 0 0}
+.yr-table-wrap tbody tr{border-bottom:1px solid var(--line);transition:.18s}
+.yr-table-wrap tbody tr:hover{background:var(--blue-xl)}
+.yr-table-wrap tbody td{padding:9px 14px;color:var(--ink2)}
+.yr-table-wrap tbody tr.highlight-row{background:linear-gradient(135deg,var(--blue-xl),#e0eeff);font-weight:700}
+
+.tips-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.tip-pill{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:600;padding:7px 14px;border-radius:100px;background:var(--green-xl);color:var(--green);border:1.5px solid var(--green-s)}
+.copy-btn{display:inline-flex;align-items:center;gap:6px;font-family:var(--fd);font-size:12px;font-weight:700;padding:7px 14px;border-radius:8px;background:var(--blue);color:#fff;border:none;cursor:pointer;transition:.22s;margin-top:4px}
+.copy-btn:hover{background:var(--blue-d);transform:translateY(-1px)}
+.copy-btn.copied{background:var(--green)}
+.warn-box{background:var(--amber-xl);border:1.5px solid var(--amber-s);border-radius:12px;padding:14px 18px;display:flex;gap:10px;font-size:13.5px;color:var(--ink2);line-height:1.7;margin-top:14px}
+
+/* FEATURES */
+.tips-sec{background:var(--surf);padding:72px 0}
+.tips-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.tip-card{background:#fff;border:1.5px solid var(--line);border-radius:16px;padding:22px 18px;text-align:center;transition:.28s}
+.tip-card:hover{transform:translateY(-4px);box-shadow:var(--s3);border-color:var(--blue-s)}
+.tip-ico{font-size:32px;margin-bottom:11px}
+.tip-title{font-family:var(--fd);font-size:14px;font-weight:800;color:var(--ink);margin-bottom:8px}
+.tip-desc{font-size:13px;color:var(--ink3);line-height:1.7}
+
+/* TABLE */
+.tbl-sec{background:#fff;padding:72px 0}
+.tbl-wr{overflow-x:auto;margin-bottom:24px;border-radius:14px;border:1.5px solid var(--line);box-shadow:var(--s2)}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+thead th{background:linear-gradient(135deg,var(--blue) 0%,#1e40af 100%);color:#fff;padding:14px 16px;text-align:left;font-family:var(--fd);font-size:13px;font-weight:700;letter-spacing:.03em}
+thead th:first-child{border-radius:14px 0 0 0}
+thead th:last-child{border-radius:0 14px 0 0}
+tbody tr{border-bottom:1px solid var(--line);transition:.2s}
+tbody tr:hover{background:var(--blue-xl)}
+tbody td{padding:12px 16px;color:var(--ink2);vertical-align:middle}
+.tbadge{display:inline-flex;font-size:11px;font-weight:700;padding:3px 8px;border-radius:100px}
+.tbadge.g{background:var(--green-xl);color:var(--green);border:1px solid var(--green-s)}
+.tbadge.b{background:var(--blue-xl);color:var(--blue);border:1px solid var(--blue-s)}
+.tbadge.a{background:var(--amber-xl);color:var(--amber);border:1px solid var(--amber-s)}
+.tbadge.p{background:var(--purple-xl);color:var(--purple);border:1px solid var(--purple-s)}
+
+/* GRAPH */
+.graph-sec{background:var(--surf);padding:72px 0}
+.graph-card{background:#fff;border:1.5px solid var(--line);border-radius:20px;padding:28px 32px;box-shadow:var(--s3)}
+.graph-hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;flex-wrap:wrap;gap:12px}
+.graph-ttl{font-family:var(--fd);font-size:18px;font-weight:800;color:var(--ink)}
+.graph-legend{display:flex;gap:20px;flex-wrap:wrap;margin-bottom:18px}
+.gl-item{display:flex;align-items:center;gap:7px;font-size:13px;font-weight:600;color:var(--ink2)}
+.gl-dot{width:12px;height:12px;border-radius:50%}
+.chart-wrap{width:100%;overflow-x:auto;position:relative}
+svg.linechart{display:block;overflow:visible}
+.axis-label{font-family:var(--fd);font-size:11px;fill:var(--ink4);font-weight:600}
+.axis-title{font-family:var(--fd);font-size:12px;fill:var(--ink3);font-weight:700}
+.grid-line{stroke:var(--line);stroke-width:1;stroke-dasharray:4 4}
+.chart-tooltip{position:absolute;background:var(--ink);color:#fff;font-size:12px;font-weight:600;padding:7px 12px;border-radius:8px;pointer-events:none;opacity:0;transition:opacity .2s;white-space:nowrap;font-family:var(--fd);z-index:10}
+
+/* STORY */
+.story-sec{background:#fff;padding:72px 0}
+.story-card{background:var(--surf);border:1.5px solid var(--line);border-radius:24px;padding:40px;box-shadow:var(--s3);position:relative;overflow:hidden}
+.story-card::before{content:'';position:absolute;top:0;left:0;bottom:0;width:5px;background:linear-gradient(180deg,var(--blue) 0%,var(--orange) 100%);border-radius:5px 0 0 5px}
+.sq{font-size:54px;color:var(--blue-s);font-family:Georgia,serif;line-height:1;padding-left:8px}
+.sb{font-size:15.5px;color:var(--ink2);line-height:1.9;padding:0 8px}
+.sauth{display:flex;align-items:center;gap:14px;margin-top:22px;padding-top:20px;border-top:1px solid var(--line)}
+.savt{width:48px;height:48px;background:var(--blue);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+.sname{font-family:var(--fd);font-size:15px;font-weight:700;color:var(--ink)}
+.srole{font-size:12.5px;color:var(--ink3)}
+.founder-msg{background:linear-gradient(135deg,var(--blue-xl),var(--blue-s));border:1.5px solid var(--blue-s);border-radius:14px;padding:20px 22px;margin-top:20px;display:flex;gap:13px}
+.fm-ico{font-size:26px;flex-shrink:0}
+.fm-txt{font-size:14px;color:var(--ink2);line-height:1.75;font-style:italic}
+.fm-txt strong{color:var(--ink);font-weight:700;font-style:normal}
+
+/* GUIDE */
+.guide-sec{background:var(--surf);padding:72px 0}
+.guide-body h2{font-family:var(--fd);font-size:21px;font-weight:800;color:var(--ink);margin:28px 0 11px;line-height:1.3}
+.guide-body h2:first-child{margin-top:0}
+.guide-body p{font-size:15px;color:var(--ink3);line-height:1.85;margin-bottom:14px}
+.guide-body ul{display:flex;flex-direction:column;gap:8px;margin:12px 0 16px}
+.guide-body li{display:flex;align-items:flex-start;gap:10px;font-size:14.5px;color:var(--ink3);line-height:1.7}
+.guide-body li::before{content:'✓';width:18px;height:18px;background:var(--blue);color:#fff;border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;flex-shrink:0;margin-top:3px}
+.guide-body strong{color:var(--ink2);font-weight:700}
+.ibox{background:var(--blue-xl);border:1.5px solid var(--blue-s);border-radius:13px;padding:15px 18px;margin:16px 0;display:flex;gap:11px;font-size:14px;color:var(--ink2);line-height:1.7}
+.ibox svg{width:17px;height:17px;stroke:var(--blue);fill:none;stroke-width:2;flex-shrink:0;margin-top:2px}
+.ibox.a{background:var(--amber-xl);border-color:var(--amber-s)}
+.ibox.a svg{stroke:var(--amber)}
+.ibox.g{background:var(--green-xl);border-color:var(--green-s)}
+.ibox.g svg{stroke:var(--green)}
+
+/* FAQ */
+.faq-sec{background:#fff;padding:72px 0}
+.fql{max-width:780px;margin:0 auto}
+.fq{background:var(--surf);border:1.5px solid var(--line);border-radius:13px;margin-bottom:10px;overflow:hidden}
+.fq-q{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;cursor:pointer;gap:14px;transition:.2s}
+.fq-q:hover{background:var(--blue-xl)}
+.fq-t{font-weight:600;font-size:15px;color:var(--ink);line-height:1.4}
+.fq-i{width:28px;height:28px;border-radius:50%;background:var(--blue-xl);color:var(--blue);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;transition:transform .28s,background .2s}
+.fq.open .fq-i{transform:rotate(45deg);background:var(--blue);color:#fff}
+.fq-a{max-height:0;overflow:hidden;transition:max-height .35s var(--ease)}
+.fq-ai{padding:0 22px 18px;font-size:14.5px;color:var(--ink3);line-height:1.78}
+.fq.open .fq-a{max-height:500px}
+
+/* DISC/CONTACT/CTA/FOOTER */
+.disc{background:var(--amber-xl);border-top:1px solid var(--amber-s);border-bottom:1px solid var(--amber-s);padding:15px 0}
+.disc-in{display:flex;align-items:flex-start;gap:12px;font-size:13.5px;color:var(--ink2);line-height:1.7}
+.contact-sec{background:var(--surf);padding:60px 0}
+.contact-card{max-width:580px;margin:0 auto;background:#fff;border:1.5px solid var(--line);border-radius:20px;padding:32px;text-align:center;box-shadow:var(--s2)}
+.contact-card h3{font-family:var(--fd);font-size:19px;font-weight:800;color:var(--ink);margin-bottom:10px}
+.contact-card p{font-size:15px;color:var(--ink3);line-height:1.75;margin-bottom:20px}
+.btn-bl{display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:#fff;font-family:var(--fd);font-weight:700;font-size:14.5px;padding:12px 26px;border-radius:8px;box-shadow:var(--sb);transition:.22s}
+.btn-bl:hover{background:var(--blue-d);transform:translateY(-1px)}
+.priv-note{font-size:12px;color:var(--ink4);margin-top:14px}
+.cta{background:linear-gradient(140deg,#0f172a 0%,#1e3a8a 100%);padding:80px 0;text-align:center;position:relative;overflow:hidden}
+.cta::before{content:'';position:absolute;top:-80px;left:50%;transform:translateX(-50%);width:800px;height:380px;background:radial-gradient(ellipse,rgba(37,99,235,.22) 0%,transparent 68%);pointer-events:none}
+.cta-in{position:relative;z-index:1}
+.cta .pill{color:#93c5fd;background:rgba(255,255,255,.1);margin-bottom:18px}
+.cta .pill::before{background:#93c5fd}
+.cta h2{font-family:var(--fd);font-size:clamp(24px,4vw,42px);font-weight:800;color:#fff;line-height:1.15;margin-bottom:12px}
+.cta h2 em{color:#fbbf24;font-style:normal}
+.cta p{font-size:16px;color:rgba(255,255,255,.72);max-width:480px;margin:0 auto 32px;line-height:1.78}
+.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn-gold{display:inline-flex;align-items:center;gap:8px;background:var(--amber);color:#fff;font-family:var(--fd);font-weight:800;font-size:15px;padding:14px 30px;border-radius:8px;box-shadow:0 8px 28px rgba(245,158,11,.35);transition:.22s}
+.btn-gold:hover{background:#d97706;transform:translateY(-3px)}
+.btn-ghost{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.09);border:1.5px solid rgba(255,255,255,.22);color:#fff;font-family:var(--fd);font-weight:600;font-size:14px;padding:13px 26px;border-radius:8px;transition:.2s}
+.btn-ghost:hover{background:rgba(255,255,255,.16)}
+footer{background:#0f172a;padding:52px 0 0}
+.ft-inner{max-width:1180px;margin:0 auto;padding:0 24px}
+.ft-top{display:grid;grid-template-columns:1.9fr 1fr 1fr 1fr;gap:44px;margin-bottom:44px}
+.ft-brand .ln{color:#fff}.ft-brand .ls{color:#475569}
+.ft-desc{font-size:13.5px;color:#64748b;line-height:1.78;max-width:265px;margin:13px 0 20px}
+.ft-soc{display:flex;gap:9px}
+.fts{width:34px;height:34px;border-radius:7px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;color:#94a3b8;font-size:13px;transition:.2s}
+.fts:hover{background:var(--blue);color:#fff}
+.fc h4{font-family:var(--fd);font-size:12px;font-weight:700;color:#fff;margin-bottom:14px;letter-spacing:.06em;text-transform:uppercase}
+.fc ul{display:flex;flex-direction:column;gap:8px}
+.fc ul a{font-size:13.5px;color:#64748b;transition:.18s}
+.fc ul a:hover{color:#93c5fd}
+.ft-btm{border-top:1px solid rgba(255,255,255,.07);padding:20px 0;text-align:center}
+.ft-cp{font-size:12.5px;color:#475569}
+.ft-cp b{color:#64748b}
+.ft-tag{font-size:12px;color:#334155;margin-top:4px;font-style:italic}
+.btt{position:fixed;bottom:26px;right:26px;z-index:500;width:43px;height:43px;background:var(--blue);color:#fff;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:17px;box-shadow:var(--sb);opacity:0;pointer-events:none;transform:translateY(14px);transition:.28s var(--ease)}
+.btt.on{opacity:1;pointer-events:auto;transform:translateY(0)}
+.btt:hover{transform:translateY(-3px)}
+.sec-lbl{display:flex;align-items:center;gap:8px;font-family:var(--fd);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin-bottom:10px}
+.sec-lbl::before{content:'';width:6px;height:6px;background:var(--blue);border-radius:50%}
+.sec-h{font-family:var(--fd);font-size:clamp(22px,3.5vw,34px);font-weight:800;color:var(--ink);line-height:1.15;margin-bottom:10px}
+.sec-sub{font-size:15.5px;color:var(--ink3);line-height:1.78;margin-bottom:40px;max-width:600px}
+
+/* SLIDER */
+.slider-wrap{margin-bottom:16px}
+.slider-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.slider-lbl{font-size:13px;font-weight:700;color:var(--ink2)}
+.slider-val{font-family:var(--fd);font-size:13px;font-weight:700;color:var(--blue);background:var(--blue-xl);padding:3px 10px;border-radius:6px;border:1px solid var(--blue-s)}
+input[type=range]{width:100%;height:6px;border-radius:100px;background:var(--line);outline:none;cursor:pointer;-webkit-appearance:none;appearance:none}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:20px;height:20px;border-radius:50%;background:var(--blue);box-shadow:var(--sb);cursor:pointer;border:2px solid #fff}
+input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;background:var(--blue);box-shadow:var(--sb);cursor:pointer;border:2px solid #fff}
+
+@media(max-width:1060px){.ft-top{grid-template-columns:1fr 1fr}.tips-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:860px){
+  nav.dn,.hcta{display:none}.brg{display:flex}
+  .tool-body{padding:24px 22px}.tool-hdr{padding:24px 22px}
+  .fgrid{grid-template-columns:1fr}.fgrid3{grid-template-columns:1fr 1fr}
+  .howto-steps{grid-template-columns:1fr}
+  .rel-grid{grid-template-columns:1fr 1fr}
+  .pay-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+  .ft-top{grid-template-columns:1fr}.rel-grid{grid-template-columns:1fr}
+  .tips-grid{grid-template-columns:1fr 1fr}
+  .cta-btns{flex-direction:column;align-items:center}
+  .story-card{padding:26px 20px}
+  .pay-grid{grid-template-columns:1fr}
+  .pay-card.c4{grid-column:auto}
+  .fgrid3{grid-template-columns:1fr}
+  .graph-card{padding:18px 14px}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="hdr">
+  <div class="w">
+    <div class="hdi">
+      <a href="/" class="logo">
+        <div class="lb"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+        <div><div class="ln">Raj<span>Daily</span>Tools</div><div class="ls">Smart Tools for Daily Life</div></div>
+      </a>
+      <nav class="dn">
+        <a href="/">Home</a><a href="/categories">Categories</a>
+        <a href="/#popular">Popular</a><a href="/about">About</a><a href="/contact">Contact</a>
+      </nav>
+      <a href="/categories" class="hcta">All Tools →</a>
+      <button class="brg" id="brg"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="dov" id="dov"></div>
+<div class="drw" id="drw">
+  <div class="dh">
+    <div class="logo">
+      <div class="lb" style="width:30px;height:30px;border-radius:7px"><svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#fff"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+      <div class="ln" style="font-size:16px">Raj<span>Daily</span>Tools</div>
+    </div>
+    <button class="dx" id="dx">✕</button>
+  </div>
+  <nav class="mn">
+    <a href="/" onclick="cD()">🏠 Home</a>
+    <a href="/categories" onclick="cD()">🗂️ Categories</a>
+    <a href="/#popular" onclick="cD()">⭐ Popular</a>
+    <a href="/about" onclick="cD()">👤 About</a>
+    <a href="/contact" onclick="cD()">📬 Contact</a>
+  </nav>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+  <div class="w">
+    <div class="bc">
+      <a href="/">Home</a><span style="color:var(--ink4)">›</span>
+      <a href="/categories">Tools</a><span style="color:var(--ink4)">›</span>
+      <span>IRA Calculator USA</span>
+    </div>
+    <div class="hero-inner">
+      <div class="pill">Free USA Retirement Finance Tools 🇺🇸</div>
+      <h1>IRA Calculator (USA) – <span>Plan Your Retirement</span> Smartly</h1>
+      <p class="hero-sub">Estimate your future retirement savings with our advanced IRA Calculator for 2026. Supports both <strong>Roth IRA</strong> and <strong>Traditional IRA</strong> with compound interest, year-wise breakdown, and visual growth chart.</p>
+      <div class="hero-chips">
+        <span class="chip">🏦 Roth &amp; Traditional IRA</span>
+        <span class="chip">📈 Compound Interest</span>
+        <span class="chip">📊 Year-Wise Chart</span>
+        <span class="chip">🇺🇸 USA 2026</span>
+        <span class="chip">🆓 100% Free</span>
+        <span class="chip">🔒 No Data Stored</span>
+      </div>
+      <div class="hero-meta">
+        <div class="upd">💰 Advanced IRA Retirement Planner</div>
+        <span class="mi">✅ IRS-aligned contribution limits</span>
+        <span class="mi">📊 Monthly simulation</span>
+      </div>
+
+      <!-- HOW TO USE -->
+      <div class="howto">
+        <div class="howto-ttl">💡 How to Use This Tool</div>
+        <div class="howto-steps">
+          <div class="hs"><span class="sn">1</span>Enter your current age</div>
+          <div class="hs"><span class="sn">2</span>Select your retirement age</div>
+          <div class="hs"><span class="sn">3</span>Add yearly IRA contribution ($)</div>
+          <div class="hs"><span class="sn">4</span>Choose IRA type (Roth / Traditional)</div>
+          <div class="hs"><span class="sn">5</span>Click Calculate Retirement Savings</div>
+        </div>
+      </div>
+
+      <!-- RELATED TOOLS -->
+      <div class="rel-grid">
+        <div class="rg-box army">
+          <div class="rg-ico">📈</div>
+          <div class="rg-txt">
+            <h4>Compound Interest Calculator</h4>
+            <p>Calculate any compound growth</p>
+            <a href="/compound-interest-calculator.html" class="btn-xs a">Use Now →</a>
+          </div>
+        </div>
+        <div class="rg-box ht">
+          <div class="rg-ico">🏖️</div>
+          <div class="rg-txt">
+            <h4>Retirement Calculator</h4>
+            <p>Full retirement income planner</p>
+            <a href="/retirement-calculator.html" class="btn-xs g">Use Now →</a>
+          </div>
+        </div>
+        <div class="rg-box ssc">
+          <div class="rg-ico">📊</div>
+          <div class="rg-txt">
+            <h4>SIP Calculator</h4>
+            <p>Systematic investment plan returns</p>
+            <a href="/sip-calculator.html" class="btn-xs b">Use Now →</a>
+          </div>
+        </div>
+        <div class="rg-box mp">
+          <div class="rg-ico">💹</div>
+          <div class="rg-txt">
+            <h4>Investment Return Calculator</h4>
+            <p>Project any investment growth</p>
+            <a href="/investment-return-calculator.html" class="btn-xs p">Use Now →</a>
+          </div>
+        </div>
+        <div class="rg-box tl">
+          <div class="rg-ico">🏦</div>
+          <div class="rg-txt">
+            <h4>Savings Calculator</h4>
+            <p>Future value of regular savings</p>
+            <a href="/savings-calculator.html" class="btn-xs t">Use Now →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOOL SECTION -->
+<section class="tool-sec" id="tool">
+  <div class="w">
+    <div class="tool-wrap">
+      <div class="tool-card rev">
+        <div class="tool-hdr">
+          <div class="th">
+            <h2>🏦 IRA Calculator (USA) 2026 – Roth &amp; Traditional</h2>
+            <p>Enter your retirement details below. We'll calculate your total IRA balance at retirement using compound interest, with a full year-by-year breakdown and growth chart.</p>
+            <div class="th-badges">
+              <span class="thb">🏦 Roth IRA</span>
+              <span class="thb">📋 Traditional IRA</span>
+              <span class="thb">📈 Compound Growth</span>
+              <span class="thb">📅 Year Breakdown</span>
+              <span class="thb">🔒 Private &amp; Secure</span>
+            </div>
+          </div>
+        </div>
+        <div class="tool-body">
+
+          <!-- IRA TYPE TOGGLE -->
+          <div style="margin-bottom:16px">
+            <div class="flbl" style="margin-bottom:8px">🏦 IRA Type <span style="font-size:11px;font-weight:500;color:var(--ink4);margin-left:5px;background:var(--surf);padding:2px 7px;border-radius:5px;border:1px solid var(--line)">Select One</span></div>
+            <div class="ira-toggle">
+              <button class="ira-btn active" id="btnRoth" onclick="setIRA('roth')">🌱 Roth IRA<br><span style="font-size:11px;font-weight:500;opacity:.8">Tax-free withdrawals</span></button>
+              <button class="ira-btn" id="btnTrad" onclick="setIRA('traditional')">🏛️ Traditional IRA<br><span style="font-size:11px;font-weight:500;opacity:.8">Tax-deferred growth</span></button>
+            </div>
+          </div>
+
+          <!-- Age Row -->
+          <div class="fgrid">
+            <div class="fld">
+              <label class="flbl" for="currentAge">👤 Current Age <span>Years</span></label>
+              <div class="inp-wrap">
+                <input class="finp has-suffix" type="number" id="currentAge" placeholder="e.g. 30" min="18" max="70" value="30">
+                <span class="inp-suffix">yrs</span>
+              </div>
+            </div>
+            <div class="fld">
+              <label class="flbl" for="retireAge">🏖️ Retirement Age <span>Years</span></label>
+              <div class="inp-wrap">
+                <input class="finp has-suffix" type="number" id="retireAge" placeholder="e.g. 65" min="50" max="80" value="65">
+                <span class="inp-suffix">yrs</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contribution + Return Rate -->
+          <div class="fgrid">
+            <div class="fld">
+              <label class="flbl" for="annualContrib">💵 Annual Contribution <span>USD</span></label>
+              <div class="inp-wrap">
+                <span class="inp-prefix">$</span>
+                <input class="finp has-prefix" type="number" id="annualContrib" placeholder="e.g. 7000" min="1" max="100000" value="7000">
+              </div>
+              <div style="font-size:11.5px;color:var(--ink4);margin-top:4px">2025 IRS limit: $7,000/yr ($8,000 if age 50+). <a href="https://www.irs.gov/retirement-plans/ira-deduction-limits" target="_blank" style="color:var(--blue);font-weight:600">IRS source ↗</a></div>
+            </div>
+            <div class="fld">
+              <label class="flbl" for="returnRate">📈 Expected Annual Return <span>%</span></label>
+              <div class="slider-wrap" style="margin-bottom:0">
+                <div class="slider-top">
+                  <span class="slider-lbl" style="font-size:12px">📈 Return Rate</span>
+                  <span class="slider-val" id="rrLabel">7%</span>
+                </div>
+                <input type="range" id="returnRate" min="1" max="15" value="7" step="0.5"
+                  oninput="document.getElementById('rrLabel').textContent=this.value+'%'">
+                <div style="display:flex;justify-content:space-between;font-size:10px;color:var(--ink4);margin-top:4px">
+                  <span>1%</span><span>~7% S&amp;P avg</span><span>15%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Filing Status -->
+          <div class="fgrid">
+            <div class="fld">
+              <label class="flbl" for="filingStatus">📝 Filing Status <span>For Roth limits</span></label>
+              <select class="fsel" id="filingStatus">
+                <option value="single">👤 Single</option>
+                <option value="married" selected>👫 Married Filing Jointly</option>
+                <option value="mfs">📋 Married Filing Separately</option>
+              </select>
+            </div>
+            <div class="fld">
+              <label class="flbl" for="currentSavings">🏦 Existing IRA Balance <span>Optional</span></label>
+              <div class="inp-wrap">
+                <span class="inp-prefix">$</span>
+                <input class="finp has-prefix" type="number" id="currentSavings" placeholder="e.g. 0" min="0" value="0">
+              </div>
+            </div>
+          </div>
+
+          <div class="hint-box">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            <span><strong>2026 IRS Guidelines:</strong> The contribution limit for both Roth and Traditional IRAs is <strong>$7,000/year</strong> ($8,000 if age 50+). Roth IRA income phase-out begins at $146,000 (single) / $230,000 (married). Contributions are not tax-deductible for Roth; Traditional IRA contributions may be tax-deductible depending on income and employer plan participation.</span>
+          </div>
+
+          <button class="chk-btn" onclick="calculate()">
+            💰 Calculate Retirement Savings
+          </button>
+
+          <div id="resultArea">
+            <div class="pay-grid" id="payGrid"></div>
+            <div id="tipsRow" class="tips-row"></div>
+            <div id="yearTableWrap"></div>
+            <button class="copy-btn" id="copyBtn" onclick="copyResult()">📋 Copy IRA Report</button>
+            <div class="warn-box">
+              <span style="font-size:20px;flex-shrink:0">⚠️</span>
+              <div style="font-size:13.5px;color:var(--ink2);line-height:1.72"><strong>Important:</strong> Always verify contribution limits and current rules from the official <a href="https://www.irs.gov" target="_blank" style="color:var(--blue);font-weight:700">IRS website (irs.gov)</a>. These projections assume fixed return rate and annual contributions. <strong>No data is stored or shared.</strong></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GRAPH SECTION -->
+<section class="graph-sec" id="graphSec" style="display:none">
+  <div class="w">
+    <div style="text-align:center;margin-bottom:30px">
+      <div class="sec-lbl" style="justify-content:center">Visual Growth Chart</div>
+      <div class="sec-h">Your IRA Balance <span style="color:var(--blue)">Growth Over Time</span></div>
+      <p class="sec-sub" style="margin:12px auto 0;max-width:560px">See the power of compound interest — how your contributions snowball into retirement wealth year by year.</p>
+    </div>
+    <div class="graph-card rev">
+      <div class="graph-hdr">
+        <div class="graph-ttl" id="graphTitle">IRA Savings Growth Projection</div>
+      </div>
+      <div class="graph-legend">
+        <div class="gl-item"><div class="gl-dot" style="background:#2563eb"></div>Total IRA Balance</div>
+        <div class="gl-item"><div class="gl-dot" style="background:#10b981"></div>Total Contributions</div>
+        <div class="gl-item"><div class="gl-dot" style="background:#8b5cf6"></div>Investment Returns</div>
+      </div>
+      <div class="chart-wrap">
+        <div class="chart-tooltip" id="chartTip"></div>
+        <svg id="lineChart" class="linechart" width="100%" height="340" viewBox="0 0 820 340" preserveAspectRatio="xMidYMid meet"></svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES SECTION -->
+<section class="tips-sec">
+  <div class="w">
+    <div style="text-align:center;margin-bottom:40px">
+      <div class="sec-lbl" style="justify-content:center">Why Use This Tool</div>
+      <div class="sec-h">Powerful Features for <span style="color:var(--blue)">Retirement Planning</span></div>
+    </div>
+    <div class="tips-grid">
+      <div class="tip-card rev">
+        <div class="tip-ico">📈</div>
+        <div class="tip-title">Compound Interest Engine</div>
+        <div class="tip-desc">Uses accurate annual compound interest formula with monthly simulation to show how small contributions snowball dramatically over decades.</div>
+      </div>
+      <div class="tip-card rev">
+        <div class="tip-ico">🏦</div>
+        <div class="tip-title">Roth vs Traditional</div>
+        <div class="tip-desc">Toggle between Roth IRA (tax-free withdrawals) and Traditional IRA (tax-deferred growth) to compare outcomes and choose the best strategy for your situation.</div>
+      </div>
+      <div class="tip-card rev">
+        <div class="tip-ico">📅</div>
+        <div class="tip-title">Year-Wise Breakdown</div>
+        <div class="tip-desc">See a detailed table showing your IRA balance, total contributions, and investment returns for every single year until retirement.</div>
+      </div>
+      <div class="tip-card rev">
+        <div class="tip-ico">📊</div>
+        <div class="tip-title">Visual Growth Chart</div>
+        <div class="tip-desc">An interactive SVG chart shows total balance, contributions, and returns separately — making the compounding effect visually unmistakable.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TABLE SECTION -->
+<section class="tbl-sec">
+  <div class="w">
+    <div style="text-align:center;margin-bottom:40px">
+      <div class="sec-lbl" style="justify-content:center">Quick Reference</div>
+      <div class="sec-h">IRA <span style="color:var(--blue)">Feature Comparison</span></div>
+      <p class="sec-sub" style="margin:12px auto 0">Key features of IRA accounts at a glance — for quick reference.</p>
+    </div>
+    <div class="tbl-wr">
+      <table>
+        <thead>
+          <tr><th>Feature</th><th>Roth IRA</th><th>Traditional IRA</th><th>Details</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>2025 Contribution Limit</strong></td><td>$7,000/yr</td><td>$7,000/yr</td><td><span class="tbadge b">IRS 2025</span></td></tr>
+          <tr><td><strong>Catch-Up (Age 50+)</strong></td><td>$8,000/yr</td><td>$8,000/yr</td><td><span class="tbadge g">Extra $1,000</span></td></tr>
+          <tr><td><strong>Tax on Contributions</strong></td><td>After-tax (no deduction)</td><td>Pre-tax (may be deductible)</td><td><span class="tbadge a">Key Difference</span></td></tr>
+          <tr><td><strong>Tax on Withdrawals</strong></td><td>Tax-free (qualified)</td><td>Taxed as ordinary income</td><td><span class="tbadge b">Important</span></td></tr>
+          <tr><td><strong>Required Min. Distributions</strong></td><td>None during owner's life</td><td>Age 73 (SECURE Act 2.0)</td><td><span class="tbadge g">Roth advantage</span></td></tr>
+          <tr><td><strong>Income Limits (2025)</strong></td><td>$161k single / $240k married</td><td>No income limit to contribute</td><td><span class="tbadge p">Phase-out</span></td></tr>
+          <tr><td><strong>Growth Type</strong></td><td colspan="2" style="text-align:center">Compound Interest (tax-sheltered)</td><td><span class="tbadge g">Both</span></td></tr>
+          <tr><td><strong>Early Withdrawal Penalty</strong></td><td>10% + taxes (before 59½)</td><td>10% + taxes (before 59½)</td><td><span class="tbadge a">Exceptions exist</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:12px;color:var(--ink4);text-align:center;margin-top:10px">* Contribution limits and income thresholds are indexed for inflation and may change annually. Always verify at <a href="https://www.irs.gov" target="_blank" style="color:var(--blue)">irs.gov</a>.</p>
+  </div>
+</section>
+
+<!-- STORY SECTION -->
+<section class="story-sec">
+  <div class="w">
+    <div class="wa">
+      <div class="sec-lbl">Why I Built This</div>
+      <h2 class="sec-h">Why I Built This Tool</h2>
+      <div class="story-card rev">
+        <div class="sq">"</div>
+        <p class="sb">My friend Peter George wanted to invest in a Roth IRA but was completely confused about how much money he would actually have at retirement. He tried multiple calculators online but none gave clear, visual results — they were either too complicated or didn't explain the difference between Roth and Traditional IRA. Peter ended up delaying his IRA contributions for two full years because he couldn't make sense of the numbers. Those two years cost him thousands in compound growth he'll never recover. That frustrating experience inspired me to build this simple yet powerful IRA Calculator — so that anyone, regardless of their financial background, can clearly see their retirement future and start planning today.</p>
+        <div class="sauth">
+          <div class="savt">🛠️</div>
+          <div>
+            <div class="sname">Raj — Founder, RajDailyTools</div>
+            <div class="srole">Built for everyone who deserves financial clarity</div>
+          </div>
+        </div>
+        <div class="founder-msg">
+          <div class="fm-ico">💡</div>
+          <div class="fm-txt"><strong>Our mission:</strong> Retirement planning shouldn't require a financial advisor to understand. Every American — young professional, gig worker, or small business owner — deserves free access to clear, accurate tools to secure their financial future. That's exactly what this IRA Calculator delivers.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GUIDE / SEO ARTICLE -->
+<section class="guide-sec">
+  <div class="w">
+    <div class="wa">
+      <div class="sec-lbl">📖 Complete Guide</div>
+      <h2 class="sec-h">The Complete Guide to <span style="color:var(--blue)">IRA Retirement Planning</span> (USA 2026)</h2>
+      <div class="guide-body">
+
+        <h2>🏦 What Is an IRA?</h2>
+        <p>An <strong>Individual Retirement Account (IRA)</strong> is a tax-advantaged savings account available to Americans that allows you to invest money for retirement with significant tax benefits. IRAs were established by Congress through the Employee Retirement Income Security Act (ERISA) of 1974 to encourage workers — particularly those without employer-sponsored pension plans — to save independently for retirement.</p>
+        <p>Unlike a standard brokerage account where capital gains and dividends are taxed annually, money inside an IRA grows <strong>tax-sheltered</strong>, meaning you don't pay taxes on growth each year. Depending on the type of IRA, you either pay taxes now (Roth) or later at retirement (Traditional). This seemingly simple difference has enormous financial implications over a multi-decade investment horizon.</p>
+
+        <div class="ibox">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          <span><strong>2025 IRA Facts:</strong> Contribution limit: $7,000/yr ($8,000 if 50+). There are no income limits to open or contribute to a Traditional IRA, but tax-deductibility depends on income and whether you have a workplace plan. Roth IRA has income limits for direct contributions ($161K single / $240K married for 2025).</span>
+        </div>
+
+        <h2>⚖️ Roth IRA vs Traditional IRA — The Key Differences</h2>
+        <p>The two most common IRA types differ primarily in <strong>when you pay taxes</strong>. This one decision — made at account opening — has cascading effects on your lifetime tax burden and retirement income.</p>
+        <p><strong>Traditional IRA:</strong> Contributions may be tax-deductible (reducing your taxable income today), the money grows tax-deferred, and withdrawals in retirement are taxed as ordinary income. This makes it advantageous for people who expect to be in a lower tax bracket in retirement than they are today.</p>
+        <p><strong>Roth IRA:</strong> Contributions are made with after-tax dollars (no upfront deduction), but qualified withdrawals in retirement — including all growth — are completely tax-free. No Required Minimum Distributions (RMDs) during the owner's lifetime. Best for those who expect to be in a higher tax bracket at retirement, or who want maximum flexibility.</p>
+        <ul>
+          <li>Young professionals in early career (low tax bracket now) → <strong>Roth IRA often optimal</strong></li>
+          <li>High earners near peak earning years → <strong>Traditional IRA deduction more valuable now</strong></li>
+          <li>Those who want tax-free inheritance for heirs → <strong>Roth IRA superior</strong></li>
+          <li>Those who want to reduce RMD burden at 73+ → <strong>Roth IRA has no RMDs</strong></li>
+        </ul>
+
+        <h2>📈 How Compound Interest Makes IRA the Most Powerful Retirement Tool</h2>
+        <p>The true power of an IRA isn't just the tax savings — it's compound interest over decades. <strong>Compounding</strong> means your investment returns generate their own returns, creating exponential growth that accelerates dramatically in the later years of a long investment horizon.</p>
+        <p>Consider this: Contributing $7,000/year to a Roth IRA starting at age 25, earning a 7% average annual return, gives you approximately <strong>$1.37 million</strong> by age 65 — from just $280,000 in total contributions. The remaining ~$1.09 million is pure investment return. This is the compounding effect in action — and it's why starting early is the single most important IRA decision you can make.</p>
+
+        <div class="ibox g">
+          <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          <span><strong>The 10-Year Rule:</strong> Starting IRA contributions just 10 years earlier can more than double your final retirement balance, even with identical annual contributions. Time is the most powerful variable in the IRA equation — more powerful than the return rate itself.</span>
+        </div>
+
+        <h2>💰 Benefits of an IRA</h2>
+        <ul>
+          <li>Tax-free growth (Roth) or tax-deferred growth (Traditional) — both superior to taxable investing</li>
+          <li>Wide investment flexibility: stocks, ETFs, mutual funds, bonds, REITs, and more</li>
+          <li>No employer required — anyone with earned income can contribute</li>
+          <li>Roth IRA contributions (not earnings) can be withdrawn anytime without penalty</li>
+          <li>Estate planning advantages — Roth IRAs pass to heirs tax-free</li>
+          <li>Backdoor Roth IRA strategy available for high earners above income limits</li>
+          <li>Protection from creditors in many states under federal bankruptcy law</li>
+        </ul>
+
+        <h2>📚 Real-Life IRA Examples</h2>
+        <p><strong>Example 1 – Peter, Age 30 (Early Starter):</strong> Opens a Roth IRA, contributes $7,000/year, earns 7% average return. By age 65, his balance is approximately $1,005,000 from $245,000 in contributions. All withdrawals are tax-free. Effective return: 4.1× his money, tax-free.</p>
+        <p><strong>Example 2 – Sarah, Age 40 (Late Starter):</strong> Opens a Traditional IRA, contributes $7,000/year, earns 7%. By age 65, she has approximately $472,000 from $175,000 in contributions. She saves ~$15,750 in taxes during contribution years (assuming 22% bracket). Withdrawals taxed in retirement.</p>
+        <p><strong>Example 3 – James, Age 50 (Catch-Up Strategy):</strong> Uses the $8,000/year catch-up limit on a Roth IRA at 7% return. By age 65, he accumulates ~$198,000 from $120,000 in contributions. A solid late-start retirement boost — all tax-free at withdrawal.</p>
+
+        <h2>❌ Mistakes People Make with IRAs</h2>
+        <ul>
+          <li>Not starting early — every year of delay costs exponential future growth</li>
+          <li>Contributing less than the annual limit when they have the means to contribute fully</li>
+          <li>Investing in low-yield instruments inside the IRA (keeping it in a savings account instead of invested in equities)</li>
+          <li>Taking early withdrawals (before 59½) and paying the 10% penalty plus income taxes</li>
+          <li>Not considering the Backdoor Roth strategy when income exceeds Roth IRA limits</li>
+          <li>Forgetting about spousal IRA contributions for non-working spouses</li>
+          <li>Failing to name or update beneficiaries — critical for estate planning</li>
+          <li>Missing the annual contribution deadline (April 15 of the following tax year)</li>
+        </ul>
+
+        <div class="ibox a">
+          <svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          <span><strong>Biggest Mistake:</strong> Treating the IRA as a savings account and leaving it uninvested in cash earns essentially nothing. Max-contributing your IRA but holding it in a money market account at 4.5% vs. investing in an S&amp;P 500 index fund at ~10% over 30 years creates a difference of hundreds of thousands of dollars.</span>
+        </div>
+
+        <h2>💵 How Much Should You Invest in Your IRA?</h2>
+        <p>The ideal answer is: <strong>the maximum allowed by the IRS each year</strong>. For 2025, that's $7,000/year ($583/month) for those under 50, and $8,000/year ($667/month) for those 50 and older. If you can't max out immediately, start with what you can — even $100/month is meaningful when started early.</p>
+        <p>A common rule of thumb for total retirement savings is to save 15% of your pre-tax income including employer matches. Your IRA contribution should be part of that 15% target. Many financial planners recommend: (1) Contribute enough to 401(k) to get full employer match, (2) Max out IRA, (3) Return to 401(k) for additional contributions.</p>
+
+        <h2>🌱 Retirement Planning Tips</h2>
+        <ul>
+          <li>Open your IRA the moment you have earned income — even a part-time job in college qualifies</li>
+          <li>Automate monthly contributions so you never have to remember or decide each year</li>
+          <li>Invest in low-cost index funds (e.g., S&amp;P 500 ETFs with 0.03–0.20% expense ratios)</li>
+          <li>Rebalance your IRA portfolio annually to maintain your target asset allocation</li>
+          <li>Use tax-efficient fund placement — REITs and bond funds do well inside IRAs</li>
+          <li>Consider a Roth conversion ladder if you retire early before 59½</li>
+          <li>Don't raid your IRA for short-term needs — the compounding loss is permanent</li>
+          <li>Review your IRA beneficiaries every few years, especially after major life events</li>
+        </ul>
+
+        <h2>🧮 Why Use This IRA Calculator?</h2>
+        <p>Most IRA calculators give you a single final number without context. This calculator provides a <strong>complete retirement picture</strong>: total contributions you made, total investment returns generated, final balance at retirement, and a year-by-year breakdown so you can see exactly how your wealth compounds over time. The visual chart makes the compounding effect tangible and motivating.</p>
+        <p>Whether you're comparing Roth vs Traditional, deciding how much to contribute, or simply curious about your retirement outlook, this tool gives you instant, accurate answers — completely free, with no sign-up, and no data stored anywhere.</p>
+
+        <h2>🌟 The Importance of Financial Planning</h2>
+        <p>Social Security alone will not provide a comfortable retirement for most Americans. The Social Security Administration itself states that benefits are designed to replace only about 40% of pre-retirement income for average earners. Combined with increasing life expectancy (Americans now live into their 80s and 90s on average), the need for personal retirement savings has never been greater.</p>
+        <p>An IRA is one of the most powerful, accessible, and tax-efficient retirement tools available to Americans of all income levels. Starting early, contributing consistently, and investing wisely inside your IRA can be the difference between retiring with financial independence and struggling financially in your later years. This calculator is your first step toward that clarity.</p>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ SECTION -->
+<section class="faq-sec">
+  <div class="w">
+    <div class="sec-lbl" style="justify-content:center">FAQ</div>
+    <h2 class="sec-h" style="text-align:center">Frequently Asked <span style="color:var(--blue)">Questions</span></h2>
+    <p class="sec-sub" style="text-align:center;margin:0 auto 40px">Everything you need to know about IRAs and retirement planning in the USA.</p>
+    <div class="fql">
+      <div class="fq">
+        <div class="fq-q" onclick="tFQ(this)"><span class="fq-t">What is an IRA (Individual Retirement Account)?</span><span class="fq-i">+</span></div>
+        <div class="fq-a"><div class="fq-ai">An IRA (Individual Retirement Account) is a tax-advantaged investment account available to Americans with earned income. It allows you to save for retirement with significant tax benefits — either tax-deferred growth (Traditional IRA) or tax-free growth and withdrawals (Roth IRA). IRAs are offered by banks, brokerage firms, and credit unions, and can hold stocks, bonds, mutual funds, ETFs, and more. The 2025 annual contribution limit is $7,000 ($8,000 for age 50+).</div></div>
+      </div>
+      <div class="fq">
+        <div class="fq-q" onclick="tFQ(this)"><span class="fq-t">What is a Roth IRA and how does it work?</span><span class="fq-i">+</span></div>
+        <div class="fq-a"><div class="fq-ai">A Roth IRA is a retirement account where you contribute after-tax dollars (no upfront tax deduction). In exchange, your money grows tax-free and qualified withdrawals in retirement are completely tax-free — including all investment gains. There are no Required Minimum Distributions (RMDs) during the owner's lifetime, making it excellent for estate planning. There are income limits for direct Roth contributions: $161,000 (single) and $240,000 (married, 2025). High earners can use the "Backdoor Roth" strategy to contribute indirectly.</div></div>
+      </div>
+      <div class="fq">
+        <div class="fq-q" onclick="tFQ(this)"><span class="fq-t">What is the difference between Roth IRA and Traditional IRA?</span><span class="fq-i">+</span></div>
+        <div class="fq-a"><div class="fq-ai">The fundamental difference is <em>when</em> you pay taxes. Traditional IRA: contributions may be tax-deductible (lower taxes now), growth is tax-deferred, withdrawals in retirement are taxed as ordinary income. Roth IRA: contributions use after-tax dollars (no deduction), growth is tax-free, qualified withdrawals are tax-free. Choose Traditional if you expect lower tax rates in retirement; choose Roth if you expect higher rates or want tax-free income. Roth also has no RMDs, which is a significant flexibility advantage.</div></div>
+      </div>
+      <div class="fq">
+        <div class="fq-q" onclick="tFQ(this)"><span class="fq-t">How much can I contribute to an IRA in 2025?</span><span class="fq-i">+</span></div>
+        <div class="fq-a"><div class="fq-ai">For 2025, the IRA contribution limit is <strong>$7,000/year</strong> for those under age 50, and <strong>$8,000/year</strong> for those age 50 and older (the extra $1,000 is the "catch-up contribution"). This limit applies across all your IRA accounts combined — you can have multiple IRAs, but your total contributions cannot exceed the annual limit. Contributions must be made from earned income (wages, self-employment income). The deadline to contribute for a tax year is April 15 of the following year.</div></div>
+      </div>
+      <div class="fq">
+        <div class="fq-q" onclick="tFQ(this)"><span class="fq-t">Is this IRA calculator accurate?</span><span class="fq-i">+</span></div>
+        <div class="fq-a"><div class="fq-ai">This calculator uses the standard compound interest formula with annual compounding and fixed return rate assumptions. The math is precise given the inputs provided. However, actual results depend on variable real-world factors: market returns fluctuate year to year (the S&amp;P 500 has averaged ~10% but individual years range from -38% to +38%), contribution limits may increase with inflation, and tax laws may change. Use this as a planning guide and directional estimate. For personalized financial advice, consult a fee-only certified financial planner (CFP).</div></div>
+      </div>
+      <div class="fq">
+        <div class="fq-q" onclick="tFQ(this)"><span class="fq-t">What is the best retirement age to withdraw from an IRA?</span><span class="fq-i">+</span></div>
+        <div class="fq-a"><div class="fq-ai">You can begin taking penalty-free withdrawals from your IRA at <strong>age 59½</strong>. For Traditional IRAs, you must begin Required Minimum Distributions (RMDs) at age 73 (per the SECURE 2.0 Act). Roth IRAs have no RMDs during the owner's lifetime. The optimal withdrawal age depends on your other income sources, tax bracket, Social Security timing strategy, and healthcare needs. Many planners recommend a Roth conversion strategy between ages 60–70 to minimize lifetime taxes.</div></div>
+      </div>
+      <div class="fq">
+        <div class="fq-q" onclick="tFQ(this)"><span class="fq-t">Can I withdraw from my IRA early (before 59½)?</span><span class="fq-i">+</span></div>
+        <div class="fq-a"><div class="fq-ai">Generally yes, but early withdrawals from a Traditional IRA before age 59½ incur a <strong>10% early withdrawal penalty</strong> plus ordinary income taxes on the full amount. For a Roth IRA, you can always withdraw your original <em>contributions</em> (not earnings) tax-free and penalty-free at any age. Earnings withdrawn before 59½ are subject to the 10% penalty plus taxes. Exceptions to the penalty include: first-time home purchase (up to $10,000), higher education expenses, disability, substantially equal periodic payments (SEPP), and certain medical expenses.</div></div>
+      </div>
+      <div class="fq">
+        <div class="fq-q" onclick="tFQ(this)"><span class="fq-t">Is a Roth IRA tax-free? What about Traditional IRA?</span><span class="fq-i">+</span></div>
+        <div class="fq-a"><div class="fq-ai">A Roth IRA provides <strong>tax-free growth and tax-free qualified withdrawals</strong> in retirement — but contributions are made with after-tax dollars (no deduction). It's not "tax-free" at contribution time, but it's fully tax-free when the money comes out. A Traditional IRA provides <strong>tax-deferred growth</strong> — you may get a deduction when you contribute, but all withdrawals in retirement are taxed as ordinary income. Neither type is completely "tax-free" for everyone, but each provides powerful tax advantages depending on your financial situation and tax bracket trajectory.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DISCLAIMER -->
+<div class="disc">
+  <div class="w">
+    <div class="disc-in">
+      <span style="font-size:20px;flex-shrink:0">⚠️</span>
+      <div><strong>Financial Disclaimer:</strong> This IRA calculator is for educational and illustrative purposes only. It does not constitute financial, tax, or investment advice. Results are projections based on fixed assumptions and may differ significantly from actual outcomes due to variable market returns, changing tax laws, and individual circumstances. Always verify current IRA contribution limits and rules at <a href="https://www.irs.gov" target="_blank" style="color:var(--blue);font-weight:700">IRS.gov</a>. Consult a qualified financial advisor or CFP before making retirement planning decisions.</div>
+    </div>
+  </div>
+</div>
+
+<!-- PRIVACY NOTE -->
+<div style="background:var(--blue-xl);border-top:1px solid var(--blue-s);border-bottom:1px solid var(--blue-s);padding:13px 0">
+  <div class="w">
+    <div style="display:flex;align-items:flex-start;gap:12px;font-size:13px;color:var(--ink2);line-height:1.7">
+      <span style="font-size:18px;flex-shrink:0">🔒</span>
+      <div><strong>Privacy:</strong> This tool runs entirely in your browser. No data you enter is ever sent to our servers, stored, or shared. Your financial information stays completely private on your device.</div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<section class="contact-sec">
+  <div class="w">
+    <div class="contact-card rev">
+      <h3>📬 Questions or Suggestions?</h3>
+      <p>For any questions, corrections, or tool improvement requests — we genuinely read every message and improve based on real user feedback. Contact us anytime.</p>
+      <a href="/contact" class="btn-bl">✉️ Contact Us</a>
+      <p class="priv-note">🔒 We respect your privacy. No data is collected. No spam, ever.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="cta-in">
+    <div class="pill">Explore More Tools</div>
+    <h2>Discover <em>100+ Free Tools</em> on RajDailyTools</h2>
+    <p>From IRA calculators to health tools — all free, fast, and no sign-up required.</p>
+    <div class="cta-btns">
+      <a href="/categories" class="btn-gold">🗂️ Browse All Tools</a>
+      <a href="/#popular" class="btn-ghost">⭐ Popular Tools</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-inner">
+    <div class="ft-top">
+      <div class="ft-brand">
+        <a href="/" class="logo">
+          <div class="lb"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+          <div><div class="ln">Raj<span>Daily</span>Tools</div><div class="ls">Smart Tools for Daily Life</div></div>
+        </a>
+        <div class="ft-desc">Free, fast, and reliable finance &amp; retirement tools for everyone. IRA calculators, net worth predictors, SIP tools and 100+ more — all in one place.</div>
+        <div class="ft-soc">
+          <a class="fts" href="#" title="Twitter">𝕏</a>
+          <a class="fts" href="#" title="Instagram">📸</a>
+          <a class="fts" href="#" title="YouTube">▶</a>
+        </div>
+      </div>
+      <div class="fc">
+        <h4>Finance Tools</h4>
+        <ul>
+          <li><a href="/ira-calculator.html">IRA Calculator</a></li>
+          <li><a href="/retirement-calculator.html">Retirement Calculator</a></li>
+          <li><a href="/compound-interest-calculator.html">Compound Interest</a></li>
+          <li><a href="/sip-calculator.html">SIP Calculator</a></li>
+          <li><a href="/net-worth-predictor.html">Net Worth Predictor</a></li>
+        </ul>
+      </div>
+      <div class="fc">
+        <h4>More Tools</h4>
+        <ul>
+          <li><a href="/emi-calculator.html">EMI Calculator</a></li>
+          <li><a href="/savings-calculator.html">Savings Calculator</a></li>
+          <li><a href="/investment-return-calculator.html">Investment Return</a></li>
+          <li><a href="/bmi-calculator.html">BMI Calculator</a></li>
+          <li><a href="/calorie-calculator.html">Calorie Calculator</a></li>
+        </ul>
+      </div>
+      <div class="fc">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/about">About Us</a></li>
+          <li><a href="/contact">Contact</a></li>
+          <li><a href="/privacy">Privacy Policy</a></li>
+          <li><a href="/disclaimer">Disclaimer</a></li>
+          <li><a href="/sitemap.xml">Sitemap</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ft-btm">
+      <div class="ft-cp">© 2026 <b>RajDailyTools.in</b> — All rights reserved. Made with ❤️ in India. &nbsp;|&nbsp; <a href="/privacy" style="color:#64748b">Privacy</a> &nbsp;|&nbsp; <a href="/terms" style="color:#64748b">Terms</a> &nbsp;|&nbsp; <a href="/disclaimer" style="color:#64748b">Disclaimer</a> &nbsp;|&nbsp; <a href="/sitemap.xml" style="color:#64748b">Sitemap</a></div>
+      <div class="ft-tag">Free tools, no sign-up, no ads, no data stored. Not affiliated with the IRS.</div>
+    </div>
+  </div>
+</footer>
+
+<button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+/* ── DRAWER ── */
+const brg=document.getElementById('brg'),dov=document.getElementById('dov'),drw=document.getElementById('drw'),dx=document.getElementById('dx');
+function oD(){drw.classList.add('on');dov.classList.add('on');document.body.style.overflow='hidden'}
+function cD(){drw.classList.remove('on');dov.classList.remove('on');document.body.style.overflow=''}
+brg.addEventListener('click',oD);dov.addEventListener('click',cD);dx.addEventListener('click',cD);
+
+/* ── BACK TO TOP ── */
+const bttBtn=document.getElementById('btt');
+window.addEventListener('scroll',()=>{bttBtn.classList.toggle('on',window.scrollY>380)});
+
+/* ── SCROLL REVEAL ── */
+const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:.12});
+document.querySelectorAll('.rev').forEach(el=>obs.observe(el));
+
+/* ── FAQ ── */
+function tFQ(el){
+  const fq=el.closest('.fq');
+  document.querySelectorAll('.fq.open').forEach(f=>{if(f!==fq)f.classList.remove('open')});
+  fq.classList.toggle('open');
+}
+
+/* ── IRA TYPE ── */
+let iraType='roth';
+function setIRA(t){
+  iraType=t;
+  document.getElementById('btnRoth').classList.toggle('active',t==='roth');
+  document.getElementById('btnTrad').classList.toggle('active',t==='traditional');
+}
+
+/* ── FORMAT ── */
+function fmt(n){
+  if(n>=1e9) return '$'+(n/1e9).toFixed(2)+'B';
+  if(n>=1e6) return '$'+(n/1e6).toFixed(2)+'M';
+  if(n>=1e3) return '$'+n.toLocaleString('en-US',{maximumFractionDigits:0});
+  return '$'+n.toFixed(0);
+}
+
+/* ── CALCULATE ── */
+let lastResult={};
+
+function calculate(){
+  const curAge=parseInt(document.getElementById('currentAge').value)||30;
+  const retAge=parseInt(document.getElementById('retireAge').value)||65;
+  const annContrib=parseFloat(document.getElementById('annualContrib').value)||7000;
+  const rateRaw=parseFloat(document.getElementById('returnRate').value)||7;
+  const initBal=parseFloat(document.getElementById('currentSavings').value)||0;
+  const rate=rateRaw/100;
+
+  if(retAge<=curAge){alert('⚠️ Retirement age must be greater than current age.');return;}
+  if(annContrib<=0){alert('⚠️ Please enter a valid annual contribution.');return;}
+
+  const years=retAge-curAge;
+  const yearData=[];
+  let balance=initBal;
+  let totalContrib=initBal;
+
+  for(let y=1;y<=years;y++){
+    balance=(balance+annContrib)*(1+rate);
+    totalContrib+=annContrib;
+    const returns=balance-totalContrib;
+    yearData.push({
+      year:curAge+y,
+      age:curAge+y,
+      contribution:totalContrib,
+      returns:Math.max(returns,0),
+      balance
+    });
+  }
+
+  const finalBal=yearData[yearData.length-1].balance;
+  const totalInvested=totalContrib;
+  const totalReturns=finalBal-totalInvested;
+
+  lastResult={curAge,retAge,annContrib,rate:rateRaw,years,finalBal,totalInvested,totalReturns,iraType,yearData,initBal};
+
+  // Result cards
+  const typeLabel=iraType==='roth'?'Roth IRA':'Traditional IRA';
+  document.getElementById('payGrid').innerHTML=`
+    <div class="pay-card c1">
+      <div class="pc-ico">💵</div>
+      <div class="pc-lbl">💵 Total Contributions</div>
+      <div class="pc-val">${fmt(totalInvested)}</div>
+      <div class="pc-sub">${fmt(annContrib)}/yr × ${years} years${initBal>0?' + '+fmt(initBal)+' existing':''}</div>
+    </div>
+    <div class="pay-card c2">
+      <div class="pc-ico">📈</div>
+      <div class="pc-lbl">📈 Investment Returns</div>
+      <div class="pc-val">${fmt(totalReturns)}</div>
+      <div class="pc-sub">At ${rateRaw}% avg annual return — ${Math.round(totalReturns/totalInvested*100)}% ROI</div>
+    </div>
+    <div class="pay-card c3">
+      <div class="pc-ico">⏳</div>
+      <div class="pc-lbl">⏳ Investment Period</div>
+      <div class="pc-val">${years} years</div>
+      <div class="pc-sub">Age ${curAge} → Age ${retAge} · ${typeLabel}</div>
+    </div>
+    <div class="pay-card c4">
+      <div class="pc-ico">🏦</div>
+      <div class="pc-lbl">🎯 Final ${typeLabel} Balance at Age ${retAge}</div>
+      <div class="pc-val">${fmt(finalBal)}</div>
+      <div class="pc-sub">
+        ${iraType==='roth'?'✅ All withdrawals are <strong>tax-free</strong> (qualified Roth distributions)':'📋 Withdrawals taxed as ordinary income (Traditional IRA)'}
+        &nbsp;·&nbsp; Returns are ${Math.round(totalReturns/finalBal*100)}% of final balance
+      </div>
+    </div>
+  `;
+
+  // Tips row
+  document.getElementById('tipsRow').innerHTML=`
+    <span class="tip-pill">🏦 ${typeLabel}</span>
+    <span class="tip-pill">📈 ${rateRaw}% annual return</span>
+    <span class="tip-pill">💰 ${fmt(annContrib)}/yr contributed</span>
+    <span class="tip-pill">✕ ${Math.round(finalBal/totalInvested*10)/10}× your money</span>
+  `;
+
+  // Year table (show all years, max 40)
+  const showRows=Math.min(years,40);
+  const step=Math.ceil(years/showRows);
+  const dispYears=[];
+  for(let i=step-1;i<yearData.length;i+=step) dispYears.push(yearData[i]);
+  if(dispYears[dispYears.length-1]!==yearData[yearData.length-1]) dispYears.push(yearData[yearData.length-1]);
+
+  const rows=dispYears.map(d=>{
+    const isLast=d===yearData[yearData.length-1];
+    return `<tr${isLast?' class="highlight-row"':''}>
+      <td>${isLast?'🎯':''} <strong>Age ${d.age}</strong></td>
+      <td>${fmt(d.contribution)}</td>
+      <td>${fmt(d.returns)}</td>
+      <td><strong>${fmt(d.balance)}</strong></td>
+    </tr>`;
+  }).join('');
+
+  document.getElementById('yearTableWrap').innerHTML=`
+    <div style="margin:20px 0 8px;font-family:var(--fd);font-size:15px;font-weight:800;color:var(--ink)">📅 Year-Wise IRA Breakdown</div>
+    <div class="yr-table-wrap">
+      <table>
+        <thead><tr><th>Age</th><th>Total Contributed</th><th>Investment Returns</th><th>IRA Balance</th></tr></thead>
+        <tbody>${rows}</tbody>
+      </table>
+    </div>
+  `;
+
+  document.getElementById('resultArea').style.display='block';
+  document.getElementById('graphSec').style.display='block';
+  buildChart(yearData,curAge,retAge,iraType);
+  setTimeout(()=>document.getElementById('payGrid').scrollIntoView({behavior:'smooth',block:'start'}),120);
+}
+
+function copyResult(){
+  const r=lastResult;
+  if(!r.finalBal) return;
+  const txt=`
+IRA RETIREMENT REPORT — RajDailyTools
+=======================================
+IRA Type         : ${r.iraType==='roth'?'Roth IRA':'Traditional IRA'}
+Current Age      : ${r.curAge}
+Retirement Age   : ${r.retAge}
+Years of Growth  : ${r.years}
+Annual Contrib.  : $${r.annContrib.toLocaleString()}
+Return Rate      : ${r.rate}%
+Starting Balance : $${r.initBal.toLocaleString()}
+
+Total Invested   : ${fmt(r.totalInvested)}
+Investment Returns: ${fmt(r.totalReturns)}
+Final IRA Balance: ${fmt(r.finalBal)}
+Return Multiple  : ${Math.round(r.finalBal/r.totalInvested*10)/10}×
+
+${r.iraType==='roth'?'Roth IRA: All qualified withdrawals are tax-free.':'Traditional IRA: Withdrawals taxed as ordinary income.'}
+
+Always verify IRS limits at irs.gov. Consult a CFP for personalized advice.
+Generated by RajDailyTools.in`.trim();
+  const cb=document.getElementById('copyBtn');
+  const done=()=>{cb.textContent='✅ Copied!';cb.classList.add('copied');setTimeout(()=>{cb.textContent='📋 Copy IRA Report';cb.classList.remove('copied');},2200)};
+  navigator.clipboard?navigator.clipboard.writeText(txt).then(done).catch(done):done();
+}
+
+/* ── CHART ── */
+function buildChart(yearData,curAge,retAge,iraType){
+  const W=820,H=340;
+  const PAD={top:24,right:24,bottom:56,left:88};
+  const cW=W-PAD.left-PAD.right;
+  const cH=H-PAD.top-PAD.bottom;
+  const years=yearData.length;
+
+  const maxVal=Math.max(...yearData.map(d=>d.balance));
+  function xP(i){return PAD.left+(i/(years-1))*cW;}
+  function yP(v){return PAD.top+cH-(v/maxVal)*cH;}
+
+  // Grid
+  const TICKS=5;let gl='',yl='';
+  for(let i=0;i<=TICKS;i++){
+    const v=maxVal*(i/TICKS);const y=yP(v);
+    gl+=`<line class="grid-line" x1="${PAD.left}" y1="${y}" x2="${W-PAD.right}" y2="${y}"/>`;
+    yl+=`<text class="axis-label" x="${PAD.left-8}" y="${y+4}" text-anchor="end">${fmt(v)}</text>`;
+  }
+
+  // X labels
+  const xStep=Math.max(1,Math.floor(years/8));
+  let xl='';
+  yearData.forEach((d,i)=>{
+    if(i%xStep===0||i===years-1)
+      xl+=`<text class="axis-label" x="${xP(i)}" y="${H-PAD.bottom+20}" text-anchor="middle">${d.age}</text>`;
+  });
+
+  // Paths
+  function mkPath(key){
+    return yearData.map((d,i)=>`${i===0?'M':'L'}${xP(i).toFixed(1)},${yP(d[key]).toFixed(1)}`).join(' ');
+  }
+  function mkArea(key,base){
+    const bY=yP(base||0);
+    return `M ${xP(0)},${bY} ${yearData.map((d,i)=>`${xP(i).toFixed(1)},${yP(d[key]).toFixed(1)}`).join(' ')} L ${xP(years-1)},${bY} Z`;
+  }
+
+  const balPath=mkPath('balance');
+  const conPath=mkPath('contribution');
+  const balArea=mkArea('balance');
+  const conArea=mkArea('contribution');
+
+  // Sample dots
+  const dotStep=Math.max(1,Math.floor(years/10));
+  const dots=yearData.filter((_,i)=>i%dotStep===0||i===years-1)
+    .map(d=>`<circle cx="${xP(yearData.indexOf(d))}" cy="${yP(d.balance)}" r="4" fill="#2563eb" stroke="#fff" stroke-width="2" class="chart-dot" data-age="${d.age}" data-bal="${d.balance.toFixed(0)}" data-con="${d.contribution.toFixed(0)}" data-ret="${d.returns.toFixed(0)}"/>`).join('');
+
+  const svg=document.getElementById('lineChart');
+  svg.innerHTML=`
+    <defs>
+      <linearGradient id="gBal" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#2563eb" stop-opacity=".18"/>
+        <stop offset="100%" stop-color="#2563eb" stop-opacity=".02"/>
+      </linearGradient>
+      <linearGradient id="gCon" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#10b981" stop-opacity=".22"/>
+        <stop offset="100%" stop-color="#10b981" stop-opacity=".03"/>
+      </linearGradient>
+    </defs>
+    ${gl}${yl}${xl}
+    <text class="axis-title" x="${PAD.left-72}" y="${PAD.top+cH/2}" transform="rotate(-90,${PAD.left-72},${PAD.top+cH/2})" text-anchor="middle">IRA Balance (USD)</text>
+    <text class="axis-title" x="${PAD.left+cW/2}" y="${H-6}" text-anchor="middle">Age</text>
+    <path d="${balArea}" fill="url(#gBal)"/>
+    <path d="${conArea}" fill="url(#gCon)"/>
+    <path d="${conPath}" fill="none" stroke="#10b981" stroke-width="2" stroke-dasharray="6 3" stroke-linejoin="round"/>
+    <path d="${balPath}" fill="none" stroke="#2563eb" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+    ${dots}
+    <text x="${xP(years-1)-8}" y="${yP(yearData[years-1].balance)-14}" class="axis-title" fill="#2563eb" text-anchor="end">🎯 ${fmt(yearData[years-1].balance)}</text>
+  `;
+  document.getElementById('graphTitle').textContent=`${iraType==='roth'?'Roth':'Traditional'} IRA Growth: Age ${curAge} → ${retAge} | Final Balance: ${fmt(yearData[years-1].balance)}`;
+
+  const tip=document.getElementById('chartTip');
+  const wrap=svg.parentElement;
+  svg.querySelectorAll('.chart-dot').forEach(dot=>{
+    dot.addEventListener('mouseenter',()=>{
+      tip.innerHTML=`Age ${dot.getAttribute('data-age')}<br>💰 Balance: ${fmt(parseFloat(dot.getAttribute('data-bal')))}<br>💵 Contributed: ${fmt(parseFloat(dot.getAttribute('data-con')))}<br>📈 Returns: ${fmt(parseFloat(dot.getAttribute('data-ret')))}`;
+      tip.style.opacity='1';
+    });
+    dot.addEventListener('mousemove',e=>{
+      const rect=wrap.getBoundingClientRect();
+      tip.style.left=(e.clientX-rect.left+12)+'px';
+      tip.style.top=(e.clientY-rect.top-36)+'px';
+    });
+    dot.addEventListener('mouseleave',()=>{tip.style.opacity='0';});
+  });
+}
+</script>
+</body>
+</html>
