@@ -1,0 +1,1154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Advanced Text Sorter Tool – Sort Lines A-Z, Z-A, Remove Duplicates 2026 | RajDailyTools</title>
+<meta name="description" content="Free advanced text sorter online 2026. Sort text alphabetically A-Z or Z-A, remove duplicates, sort by length, reverse lines & more. Fast, private, no login required.">
+<meta name="keywords" content="text sorter online free, sort text alphabetically, sort lines online, word sorter tool, alphabetical order generator, sort list online tool, text organizer tool free, arrange words alphabetically">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://rajdailytools.in/text-sorter-tool">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#2563eb;--blue-d:#1d4ed8;--blue-xl:#eff6ff;--blue-s:#dbeafe;
+  --amber:#f59e0b;--green:#10b981;--red:#ef4444;--purple:#8b5cf6;
+  --orange:#f97316;--teal:#14b8a6;
+  --green-xl:#f0fdf4;--green-s:#bbf7d0;
+  --red-xl:#fef2f2;--red-s:#fecaca;
+  --amber-xl:#fffbeb;--amber-s:#fde68a;
+  --purple-xl:#faf5ff;--purple-s:#ddd6fe;
+  --ink:#0f172a;--ink2:#334155;--ink3:#64748b;--ink4:#94a3b8;
+  --line:#e2e8f0;--surf:#f8fafc;--white:#fff;
+  --s1:0 1px 3px rgba(15,23,42,.06),0 1px 2px rgba(15,23,42,.04);
+  --s2:0 4px 16px rgba(15,23,42,.08),0 2px 6px rgba(15,23,42,.04);
+  --s3:0 12px 40px rgba(15,23,42,.11),0 3px 10px rgba(15,23,42,.06);
+  --s4:0 24px 64px rgba(15,23,42,.13),0 6px 20px rgba(15,23,42,.07);
+  --sb:0 8px 32px rgba(37,99,235,.20);
+  --fd:'Sora',sans-serif;--fb:'DM Sans',sans-serif;
+  --ease:cubic-bezier(.4,0,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);color:var(--ink);background:var(--white);overflow-x:hidden;-webkit-font-smoothing:antialiased;line-height:1.6}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+button{cursor:pointer;border:none;background:none;font-family:var(--fb)}
+.w{max-width:1180px;margin:0 auto;padding:0 24px}
+.wa{max-width:880px;margin:0 auto;padding:0 24px}
+textarea{appearance:none;-webkit-appearance:none}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+@keyframes resultIn{from{opacity:0;transform:translateY(18px) scale(.97)}to{opacity:1;transform:none}}
+.rev{opacity:0;transform:translateY(22px);transition:opacity .55s var(--ease),transform .55s var(--ease)}
+.rev.in{opacity:1;transform:none}
+
+/* HEADER */
+.hdr{position:sticky;top:0;z-index:999;background:rgba(255,255,255,.96);backdrop-filter:blur(20px);border-bottom:1px solid var(--line);box-shadow:var(--s1)}
+.hdi{display:flex;align-items:center;justify-content:space-between;height:66px}
+.logo{display:flex;align-items:center;gap:10px}
+.lb{width:36px;height:36px;background:var(--blue);border-radius:9px;display:flex;align-items:center;justify-content:center;box-shadow:var(--sb);flex-shrink:0}
+.lb svg{width:18px;height:18px;fill:#fff}
+.ln{font-family:var(--fd);font-size:19px;font-weight:800;color:var(--ink);line-height:1}
+.ln span{color:var(--blue)}
+.ls{font-size:10px;color:var(--ink4);letter-spacing:.04em}
+nav.dn{display:flex;align-items:center;gap:2px}
+nav.dn a{font-size:13.5px;font-weight:500;color:var(--ink2);padding:7px 13px;border-radius:8px;transition:.2s}
+nav.dn a:hover{color:var(--blue);background:var(--blue-xl)}
+.hcta{background:var(--blue);color:#fff;font-family:var(--fd);font-weight:600;font-size:13px;padding:8px 18px;border-radius:8px;box-shadow:var(--sb);transition:.2s}
+.hcta:hover{background:var(--blue-d);transform:translateY(-1px)}
+.brg{display:none;flex-direction:column;gap:4.5px;padding:8px;border-radius:8px}
+.brg span{display:block;width:20px;height:2px;background:var(--ink);border-radius:2px;transition:.28s}
+.dov{display:none;position:fixed;inset:0;background:rgba(15,23,42,.45);z-index:1040;backdrop-filter:blur(3px)}
+.dov.on{display:block}
+.drw{position:fixed;top:0;right:-100%;width:270px;height:100vh;background:#fff;z-index:1050;padding:22px;box-shadow:var(--s4);transition:right .32s var(--ease);overflow-y:auto}
+.drw.on{right:0}
+.dh{display:flex;align-items:center;justify-content:space-between;margin-bottom:26px}
+.dx{width:33px;height:33px;border-radius:7px;background:var(--surf);display:flex;align-items:center;justify-content:center;color:var(--ink3);font-size:17px}
+nav.mn{display:flex;flex-direction:column;gap:3px}
+nav.mn a{display:block;font-size:14px;font-weight:500;color:var(--ink2);padding:11px 13px;border-radius:8px;transition:.2s}
+nav.mn a:hover{color:var(--blue);background:var(--blue-xl)}
+
+/* HERO */
+.hero{position:relative;overflow:hidden;background:linear-gradient(150deg,#ebf4ff 0%,#fff 46%,#fdf4ff 100%);padding:64px 0 72px}
+.hero::before{content:'';position:absolute;top:-140px;right:-180px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(37,99,235,.08) 0%,transparent 68%);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-80px;left:-100px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(139,92,246,.05) 0%,transparent 68%);pointer-events:none}
+.blob{position:absolute;border-radius:50%;pointer-events:none;animation:float 6s ease-in-out infinite}
+.b1{width:13px;height:13px;background:rgba(37,99,235,.18);top:22%;right:14%;animation-delay:0s}
+.b2{width:9px;height:9px;background:rgba(139,92,246,.22);top:58%;right:26%;animation-delay:2.2s}
+.b3{width:11px;height:11px;background:rgba(16,185,129,.18);top:36%;right:6%;animation-delay:4s}
+.bc{display:flex;align-items:center;gap:7px;font-size:12.5px;color:var(--ink3);margin-bottom:22px;position:relative;z-index:1;flex-wrap:wrap}
+.bc a{color:var(--blue);font-weight:600}
+.pill{display:inline-flex;align-items:center;gap:7px;font-family:var(--fd);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);background:var(--blue-xl);padding:5px 14px;border-radius:100px;margin-bottom:18px}
+.pill::before{content:'';width:6px;height:6px;background:var(--blue);border-radius:50%}
+.hero-inner{position:relative;z-index:1;max-width:720px;animation:fadeUp .5s ease both}
+.hero h1{font-family:var(--fd);font-size:clamp(26px,4.5vw,50px);font-weight:800;line-height:1.1;color:var(--ink);margin-bottom:14px}
+.hero h1 span{color:var(--blue)}
+.hero-sub{font-size:16px;color:var(--ink3);line-height:1.8;margin-bottom:22px;max-width:600px}
+.hero-chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.chip{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;padding:6px 14px;border-radius:100px;background:#fff;border:1.5px solid var(--line);color:var(--ink2);box-shadow:var(--s1);transition:.22s}
+.chip:hover{border-color:var(--blue);color:var(--blue);transform:translateY(-1px)}
+.hero-meta{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:24px}
+.upd{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:700;color:var(--blue);background:var(--blue-xl);padding:6px 14px;border-radius:100px;border:1.5px solid var(--blue-s)}
+.mi{font-size:13px;color:var(--ink3);font-weight:500}
+
+/* HOW TO USE */
+.howto{background:var(--amber-xl);border:2px solid var(--amber-s);border-radius:16px;padding:22px 26px;max-width:560px;margin-bottom:24px}
+.howto-ttl{display:flex;align-items:center;gap:9px;font-family:var(--fd);font-size:15px;font-weight:800;color:var(--ink);margin-bottom:13px}
+.howto-steps{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.hs{display:flex;align-items:flex-start;gap:10px;font-size:13.5px;color:var(--ink2);line-height:1.6}
+.sn{width:24px;height:24px;background:var(--amber);color:#fff;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex-shrink:0;margin-top:1px}
+
+/* RELATED */
+.rel-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;position:relative;z-index:1}
+.rg-box{border-radius:14px;padding:14px 14px 12px;display:flex;flex-direction:column;gap:8px;transition:.22s;border:1.5px solid}
+.rg-box:hover{transform:translateY(-3px);box-shadow:var(--s3)}
+.rg-box.army{background:linear-gradient(135deg,var(--amber-xl),#fef3c7);border-color:var(--amber-s)}
+.rg-box.ht{background:linear-gradient(135deg,var(--green-xl),#dcfce7);border-color:var(--green-s)}
+.rg-box.ssc{background:linear-gradient(135deg,var(--blue-xl),var(--blue-s));border-color:var(--blue-s)}
+.rg-box.mp{background:linear-gradient(135deg,var(--purple-xl),#ede9fe);border-color:var(--purple-s)}
+.rg-box.tl{background:linear-gradient(135deg,#f0fdfa,#ccfbf1);border-color:#99f6e4}
+.rg-ico{font-size:22px}
+.rg-txt h4{font-family:var(--fd);font-size:12px;font-weight:800;color:var(--ink);margin-bottom:2px}
+.rg-txt p{font-size:11px;color:var(--ink3);line-height:1.5}
+.btn-xs{display:inline-flex;align-items:center;gap:4px;font-family:var(--fd);font-weight:700;font-size:11px;padding:5px 10px;border-radius:7px;transition:.22s;margin-top:4px}
+.btn-xs.a{background:var(--amber);color:#fff}.btn-xs.a:hover{background:#d97706}
+.btn-xs.g{background:var(--green);color:#fff}.btn-xs.g:hover{background:#059669}
+.btn-xs.b{background:var(--blue);color:#fff}.btn-xs.b:hover{background:var(--blue-d)}
+.btn-xs.p{background:var(--purple);color:#fff}.btn-xs.p:hover{background:#7c3aed}
+.btn-xs.t{background:var(--teal);color:#fff}.btn-xs.t:hover{background:#0f9488}
+
+/* TOOL */
+.tool-sec{background:var(--surf);padding:80px 0}
+.tool-wrap{max-width:1000px;margin:0 auto}
+.tool-card{background:#fff;border:1.5px solid var(--line);border-radius:28px;overflow:hidden;box-shadow:var(--s4)}
+.tool-hdr{background:linear-gradient(135deg,#1d4ed8 0%,#2563eb 55%,#7c3aed 100%);padding:32px 40px;position:relative;overflow:hidden}
+.tool-hdr::before{content:'';position:absolute;top:-60px;right:-60px;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,.07)}
+.tool-hdr::after{content:'';position:absolute;bottom:-40px;left:-40px;width:180px;height:180px;border-radius:50%;background:rgba(255,255,255,.04)}
+.th{position:relative;z-index:1}
+.th h2{font-family:var(--fd);font-size:21px;font-weight:800;color:#fff;margin-bottom:6px}
+.th p{font-size:14px;color:rgba(255,255,255,.82);line-height:1.65}
+.th-badges{display:flex;flex-wrap:wrap;gap:9px;margin-top:14px}
+.thb{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:rgba(255,255,255,.9);background:rgba(255,255,255,.13);padding:5px 12px;border-radius:100px}
+.tool-body{padding:36px 40px}
+
+/* OPTIONS GRID */
+.opt-label{font-family:var(--fd);font-size:12px;font-weight:700;color:var(--ink3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px}
+.options-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:22px}
+.opt-btn{padding:10px 8px;border:1.5px solid var(--line);border-radius:11px;background:var(--surf);font-family:var(--fd);font-size:12.5px;font-weight:700;color:var(--ink2);display:flex;flex-direction:column;align-items:center;gap:5px;transition:.22s;text-align:center}
+.opt-btn:hover{border-color:var(--blue);color:var(--blue);background:var(--blue-xl)}
+.opt-btn.active{border-color:var(--blue);background:var(--blue);color:#fff;box-shadow:var(--sb)}
+.opt-btn .oi{font-size:18px}
+.opt-btn .ol{font-size:11px;font-weight:600;opacity:.85}
+
+/* CHECKBOXES */
+.chk-row{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:22px}
+.chk-item{display:flex;align-items:center;gap:8px;cursor:pointer;user-select:none}
+.chk-item input{width:16px;height:16px;accent-color:var(--blue);cursor:pointer}
+.chk-item span{font-size:13.5px;font-weight:600;color:var(--ink2)}
+
+/* TEXTAREA */
+.tool-cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px}
+.col-label{font-family:var(--fd);font-size:12px;font-weight:700;color:var(--ink3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px;display:flex;align-items:center;gap:6px}
+.col-label .clbadge{font-size:10px;padding:2px 8px;border-radius:100px;font-weight:700}
+.clbadge.in{background:var(--blue-xl);color:var(--blue);border:1px solid var(--blue-s)}
+.clbadge.out{background:var(--green-xl);color:var(--green);border:1px solid var(--green-s)}
+.col-ta{position:relative}
+.col-ta textarea{width:100%;min-height:240px;padding:14px 16px;font-size:14px;color:var(--ink);background:#fff;border:1.5px solid var(--line);border-radius:14px;outline:none;transition:.22s;font-family:var(--fb);resize:vertical;line-height:1.75}
+.col-ta textarea:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(37,99,235,.10)}
+.col-ta textarea:read-only{background:var(--green-xl);border-color:var(--green-s);color:var(--ink2)}
+.ta-counter{position:absolute;bottom:10px;right:12px;font-size:11px;color:var(--ink4);font-family:var(--fd);font-weight:600;background:#fff;padding:2px 8px;border-radius:6px;border:1px solid var(--line)}
+
+/* ACTION BUTTONS */
+.txt-actions{display:flex;gap:10px;margin-bottom:20px;flex-wrap:wrap}
+.btn-sm{display:inline-flex;align-items:center;gap:7px;font-family:var(--fd);font-weight:700;font-size:13px;padding:9px 18px;border-radius:9px;transition:.22s}
+.btn-sm.clr{background:var(--red-xl);color:var(--red);border:1.5px solid var(--red-s)}
+.btn-sm.clr:hover{background:var(--red);color:#fff}
+.btn-sm.smp{background:var(--blue-xl);color:var(--blue);border:1.5px solid var(--blue-s)}
+.btn-sm.smp:hover{background:var(--blue);color:#fff}
+
+/* MAIN BUTTONS */
+.btn-row{display:flex;gap:12px;margin-top:4px}
+.chk-btn{flex:1;padding:17px;background:linear-gradient(135deg,var(--blue) 0%,#7c3aed 100%);color:#fff;font-family:var(--fd);font-weight:800;font-size:16px;border-radius:12px;box-shadow:0 8px 32px rgba(37,99,235,.25);transition:all .25s var(--ease);display:flex;align-items:center;justify-content:center;gap:10px}
+.chk-btn:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(37,99,235,.35)}
+.chk-btn:active{transform:translateY(0)}
+.rst-btn{padding:17px 22px;background:var(--surf);color:var(--ink2);font-family:var(--fd);font-weight:700;font-size:14px;border-radius:12px;border:1.5px solid var(--line);transition:.22s}
+.rst-btn:hover{background:var(--red-xl);color:var(--red);border-color:var(--red-s)}
+.cpy-btn{padding:17px 22px;background:var(--green-xl);color:var(--green);font-family:var(--fd);font-weight:700;font-size:14px;border-radius:12px;border:1.5px solid var(--green-s);transition:.22s}
+.cpy-btn:hover{background:var(--green);color:#fff}
+.cpy-btn.done{background:var(--green);color:#fff}
+
+/* ERR / HINT */
+.hint-box{display:flex;align-items:flex-start;gap:9px;font-size:13px;color:var(--ink2);background:var(--blue-xl);border:1.5px solid var(--blue-s);border-radius:10px;padding:11px 14px;margin-bottom:16px;line-height:1.65}
+.hint-box svg{width:16px;height:16px;stroke:var(--blue);fill:none;stroke-width:2;flex-shrink:0;margin-top:2px}
+.err-box{background:var(--red-xl);border:1.5px solid var(--red-s);border-radius:10px;padding:11px 14px;font-size:13px;color:var(--red);font-weight:600;margin-bottom:12px;display:none}
+
+/* STAT PILLS after sort */
+.stat-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+.stat-pill{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;padding:7px 14px;border-radius:100px}
+.stat-pill.g{background:var(--green-xl);color:var(--green);border:1.5px solid var(--green-s)}
+.stat-pill.b{background:var(--blue-xl);color:var(--blue);border:1.5px solid var(--blue-s)}
+.stat-pill.p{background:var(--purple-xl);color:var(--purple);border:1.5px solid var(--purple-s)}
+.stat-pill.a{background:var(--amber-xl);color:var(--amber);border:1.5px solid var(--amber-s)}
+
+/* BEFORE/AFTER VISUAL */
+.visual-sec{background:#fff;padding:72px 0}
+.baf-wrap{display:grid;grid-template-columns:1fr auto 1fr;gap:20px;align-items:center;max-width:740px;margin:0 auto}
+.baf-card{border-radius:16px;padding:22px 20px;border:2px solid}
+.baf-card.before{background:var(--red-xl);border-color:var(--red-s)}
+.baf-card.after{background:var(--green-xl);border-color:var(--green-s)}
+.baf-title{font-family:var(--fd);font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;margin-bottom:12px;display:flex;align-items:center;gap:6px}
+.baf-card.before .baf-title{color:var(--red)}
+.baf-card.after .baf-title{color:var(--green)}
+.baf-line{font-size:14px;padding:5px 0;border-bottom:1px solid rgba(0,0,0,.06);line-height:1.5}
+.baf-card.before .baf-line{color:#b91c1c}
+.baf-card.after .baf-line{color:#065f46;font-weight:600}
+.baf-arrow{font-size:36px;color:var(--blue);opacity:.6;text-align:center}
+
+/* FEATURES */
+.tips-sec{background:var(--surf);padding:72px 0}
+.tips-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.tip-card{background:#fff;border:1.5px solid var(--line);border-radius:16px;padding:22px 18px;text-align:center;transition:.28s}
+.tip-card:hover{transform:translateY(-4px);box-shadow:var(--s3);border-color:var(--blue-s)}
+.tip-ico{font-size:32px;margin-bottom:11px}
+.tip-title{font-family:var(--fd);font-size:14px;font-weight:800;color:var(--ink);margin-bottom:8px}
+.tip-desc{font-size:13px;color:var(--ink3);line-height:1.7}
+
+/* TABLE */
+.tbl-sec{background:#fff;padding:72px 0}
+.tbl-wr{overflow-x:auto;margin-bottom:24px;border-radius:14px;border:1.5px solid var(--line);box-shadow:var(--s2)}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+thead th{background:linear-gradient(135deg,#1d4ed8 0%,#7c3aed 100%);color:#fff;padding:14px 16px;text-align:left;font-family:var(--fd);font-size:13px;font-weight:700;letter-spacing:.03em}
+thead th:first-child{border-radius:14px 0 0 0}
+thead th:last-child{border-radius:0 14px 0 0}
+tbody tr{border-bottom:1px solid var(--line);transition:.2s}
+tbody tr:hover{background:var(--blue-xl)}
+tbody td{padding:12px 16px;color:var(--ink2);vertical-align:middle}
+.tbadge{display:inline-flex;font-size:11px;font-weight:700;padding:3px 8px;border-radius:100px}
+.tbadge.g{background:var(--green-xl);color:var(--green);border:1px solid var(--green-s)}
+.tbadge.b{background:var(--blue-xl);color:var(--blue);border:1px solid var(--blue-s)}
+.tbadge.a{background:var(--amber-xl);color:var(--amber);border:1px solid var(--amber-s)}
+.tbadge.p{background:var(--purple-xl);color:var(--purple);border:1px solid var(--purple-s)}
+.notice-banner{background:linear-gradient(135deg,#0f172a,#2e1065);border-radius:14px;padding:18px 22px;display:flex;align-items:center;gap:14px;margin-top:14px}
+.notice-icon{font-size:26px;flex-shrink:0}
+.notice-text{font-family:var(--fd);font-size:14px;font-weight:700;color:#c4b5fd;line-height:1.6}
+.notice-text span{color:#e2e8f0;font-weight:400;font-family:var(--fb)}
+
+/* STORY */
+.story-sec{background:var(--surf);padding:72px 0}
+.story-card{background:#fff;border:1.5px solid var(--line);border-radius:24px;padding:40px;box-shadow:var(--s3);position:relative;overflow:hidden}
+.story-card::before{content:'';position:absolute;top:0;left:0;bottom:0;width:5px;background:linear-gradient(180deg,var(--blue) 0%,var(--purple) 100%);border-radius:5px 0 0 5px}
+.sq{font-size:54px;color:var(--purple-s);font-family:Georgia,serif;line-height:1;padding-left:8px}
+.sb{font-size:15.5px;color:var(--ink2);line-height:1.9;padding:0 8px}
+.sauth{display:flex;align-items:center;gap:14px;margin-top:22px;padding-top:20px;border-top:1px solid var(--line)}
+.savt{width:48px;height:48px;background:linear-gradient(135deg,var(--blue),var(--purple));border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+.sname{font-family:var(--fd);font-size:15px;font-weight:700;color:var(--ink)}
+.srole{font-size:12.5px;color:var(--ink3)}
+.founder-msg{background:linear-gradient(135deg,var(--purple-xl),#ede9fe);border:1.5px solid var(--purple-s);border-radius:14px;padding:20px 22px;margin-top:20px;display:flex;gap:13px}
+.fm-ico{font-size:26px;flex-shrink:0}
+.fm-txt{font-size:14px;color:var(--ink2);line-height:1.75;font-style:italic}
+.fm-txt strong{color:var(--ink);font-weight:700;font-style:normal}
+
+/* GUIDE */
+.guide-sec{background:#fff;padding:72px 0}
+.guide-body h2{font-family:var(--fd);font-size:21px;font-weight:800;color:var(--ink);margin:28px 0 11px;line-height:1.3}
+.guide-body h2:first-child{margin-top:0}
+.guide-body h3{font-family:var(--fd);font-size:16px;font-weight:700;color:var(--ink2);margin:20px 0 8px}
+.guide-body p{font-size:15px;color:var(--ink3);line-height:1.85;margin-bottom:14px}
+.guide-body ul{display:flex;flex-direction:column;gap:8px;margin:12px 0 16px}
+.guide-body li{display:flex;align-items:flex-start;gap:10px;font-size:14.5px;color:var(--ink3);line-height:1.7}
+.guide-body li::before{content:'✓';width:18px;height:18px;background:var(--purple);color:#fff;border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;flex-shrink:0;margin-top:3px}
+.guide-body strong{color:var(--ink2);font-weight:700}
+.ibox{background:var(--blue-xl);border:1.5px solid var(--blue-s);border-radius:13px;padding:15px 18px;margin:16px 0;display:flex;gap:11px;font-size:14px;color:var(--ink2);line-height:1.7}
+.ibox svg{width:17px;height:17px;stroke:var(--blue);fill:none;stroke-width:2;flex-shrink:0;margin-top:2px}
+.ibox.g{background:var(--green-xl);border-color:var(--green-s)}.ibox.g svg{stroke:var(--green)}
+.ibox.a{background:var(--amber-xl);border-color:var(--amber-s)}.ibox.a svg{stroke:var(--amber)}
+.example-box{background:linear-gradient(135deg,#0f172a,#2e1065);border-radius:16px;padding:24px 26px;margin:20px 0}
+.example-box h4{font-family:var(--fd);font-size:14px;font-weight:700;color:#c4b5fd;margin-bottom:14px;letter-spacing:.05em}
+.ex-row{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.07);flex-wrap:wrap;gap:8px}
+.ex-row:last-child{border-bottom:none}
+.ex-label{font-size:13px;color:rgba(255,255,255,.65);font-weight:500}
+.ex-val{font-family:var(--fd);font-size:13px;font-weight:700;color:#fff;word-break:break-all}
+.ex-val.hi{color:#6ee7b7}
+
+/* FAQ */
+.faq-sec{background:var(--surf);padding:72px 0}
+.fq{background:#fff;border:1.5px solid var(--line);border-radius:13px;margin-bottom:10px;overflow:hidden}
+.fq-q{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;cursor:pointer;gap:14px;transition:.2s}
+.fq-q:hover{background:var(--blue-xl)}
+.fq-t{font-weight:600;font-size:15px;color:var(--ink);line-height:1.4}
+.fq-i{width:28px;height:28px;border-radius:50%;background:var(--blue-xl);color:var(--blue);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;transition:transform .28s,background .2s}
+.fq.open .fq-i{transform:rotate(45deg);background:var(--blue);color:#fff}
+.fq-a{max-height:0;overflow:hidden;transition:max-height .35s var(--ease)}
+.fq-ai{padding:0 22px 18px;font-size:14.5px;color:var(--ink3);line-height:1.78}
+.fq.open .fq-a{max-height:400px}
+
+/* MISC */
+.disc{background:var(--amber-xl);border-top:1px solid var(--amber-s);border-bottom:1px solid var(--amber-s);padding:15px 0}
+.contact-sec{background:#fff;padding:60px 0}
+.contact-card{max-width:580px;margin:0 auto;background:var(--surf);border:1.5px solid var(--line);border-radius:20px;padding:32px;text-align:center;box-shadow:var(--s2)}
+.contact-card h3{font-family:var(--fd);font-size:19px;font-weight:800;color:var(--ink);margin-bottom:10px}
+.contact-card p{font-size:15px;color:var(--ink3);line-height:1.75;margin-bottom:20px}
+.btn-bl{display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:#fff;font-family:var(--fd);font-weight:700;font-size:14.5px;padding:12px 26px;border-radius:8px;box-shadow:var(--sb);transition:.22s}
+.btn-bl:hover{background:var(--blue-d);transform:translateY(-1px)}
+.priv-note{font-size:12px;color:var(--ink4);margin-top:14px}
+.cta{background:linear-gradient(140deg,#0f172a 0%,#2e1065 100%);padding:80px 0;text-align:center;position:relative;overflow:hidden}
+.cta::before{content:'';position:absolute;top:-80px;left:50%;transform:translateX(-50%);width:800px;height:380px;background:radial-gradient(ellipse,rgba(139,92,246,.2) 0%,transparent 68%);pointer-events:none}
+.cta-in{position:relative;z-index:1}
+.cta .pill{color:#c4b5fd;background:rgba(255,255,255,.1);margin-bottom:18px}
+.cta .pill::before{background:#c4b5fd}
+.cta h2{font-family:var(--fd);font-size:clamp(24px,4vw,42px);font-weight:800;color:#fff;line-height:1.15;margin-bottom:12px}
+.cta h2 em{color:#fbbf24;font-style:normal}
+.cta p{font-size:16px;color:rgba(255,255,255,.72);max-width:480px;margin:0 auto 32px;line-height:1.78}
+.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn-gold{display:inline-flex;align-items:center;gap:8px;background:var(--purple);color:#fff;font-family:var(--fd);font-weight:800;font-size:15px;padding:14px 30px;border-radius:8px;box-shadow:0 8px 28px rgba(139,92,246,.35);transition:.22s}
+.btn-gold:hover{background:#7c3aed;transform:translateY(-3px)}
+.btn-ghost{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.09);border:1.5px solid rgba(255,255,255,.22);color:#fff;font-family:var(--fd);font-weight:600;font-size:14px;padding:13px 26px;border-radius:8px;transition:.2s}
+.btn-ghost:hover{background:rgba(255,255,255,.16)}
+footer{background:#0f172a;padding:52px 0 0}
+.ft-inner{max-width:1180px;margin:0 auto;padding:0 24px}
+.ft-top{display:grid;grid-template-columns:1.9fr 1fr 1fr 1fr;gap:44px;margin-bottom:44px}
+.ft-brand .ln{color:#fff}.ft-brand .ls{color:#475569}
+.ft-desc{font-size:13.5px;color:#64748b;line-height:1.78;max-width:265px;margin:13px 0 20px}
+.ft-soc{display:flex;gap:9px}
+.fts{width:34px;height:34px;border-radius:7px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;color:#94a3b8;font-size:13px;transition:.2s}
+.fts:hover{background:var(--blue);color:#fff}
+.fc h4{font-family:var(--fd);font-size:12px;font-weight:700;color:#fff;margin-bottom:14px;letter-spacing:.06em;text-transform:uppercase}
+.fc ul{display:flex;flex-direction:column;gap:8px}
+.fc ul a{font-size:13.5px;color:#64748b;transition:.18s}
+.fc ul a:hover{color:#93c5fd}
+.ft-btm{border-top:1px solid rgba(255,255,255,.07);padding:20px 0;text-align:center}
+.ft-cp{font-size:12.5px;color:#475569}
+.ft-cp b{color:#64748b}
+.ft-tag{font-size:12px;color:#334155;margin-top:4px;font-style:italic}
+.btt{position:fixed;bottom:26px;right:26px;z-index:500;width:43px;height:43px;background:var(--purple);color:#fff;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:17px;box-shadow:0 8px 32px rgba(139,92,246,.35);opacity:0;pointer-events:none;transform:translateY(14px);transition:.28s var(--ease)}
+.btt.on{opacity:1;pointer-events:auto;transform:translateY(0)}
+.btt:hover{transform:translateY(-3px)}
+.sec-lbl{display:flex;align-items:center;gap:8px;font-family:var(--fd);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--purple);margin-bottom:10px}
+.sec-lbl::before{content:'';width:6px;height:6px;background:var(--purple);border-radius:50%}
+.sec-h{font-family:var(--fd);font-size:clamp(22px,3.5vw,34px);font-weight:800;color:var(--ink);line-height:1.15;margin-bottom:10px}
+.sec-sub{font-size:15.5px;color:var(--ink3);line-height:1.78;margin-bottom:40px;max-width:600px}
+
+@media(max-width:1060px){.ft-top{grid-template-columns:1fr 1fr}.tips-grid{grid-template-columns:1fr 1fr}.options-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:860px){
+  nav.dn,.hcta{display:none}.brg{display:flex}
+  .tool-body{padding:24px 20px}.tool-hdr{padding:24px 22px}
+  .howto-steps{grid-template-columns:1fr}
+  .rel-grid{grid-template-columns:1fr 1fr}
+  .tool-cols{grid-template-columns:1fr}
+  .btn-row{flex-direction:column}
+  .baf-wrap{grid-template-columns:1fr;text-align:center}
+  .baf-arrow{transform:rotate(90deg)}
+}
+@media(max-width:600px){
+  .ft-top{grid-template-columns:1fr}.rel-grid{grid-template-columns:1fr}
+  .tips-grid{grid-template-columns:1fr}.options-grid{grid-template-columns:1fr 1fr}
+  .cta-btns{flex-direction:column;align-items:center}
+  .story-card{padding:26px 20px}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="hdr">
+  <div class="w">
+    <div class="hdi">
+      <a href="/" class="logo">
+        <div class="lb"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+        <div><div class="ln">Raj<span>Daily</span>Tools</div><div class="ls">Smart Tools for Daily Life</div></div>
+      </a>
+      <nav class="dn">
+        <a href="/">Home</a><a href="/categories">Categories</a>
+        <a href="/#popular">Popular</a><a href="/about">About</a><a href="/contact">Contact</a>
+      </nav>
+      <a href="/categories" class="hcta">All Tools →</a>
+      <button class="brg" id="brg"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="dov" id="dov"></div>
+<div class="drw" id="drw">
+  <div class="dh">
+    <div class="logo">
+      <div class="lb" style="width:30px;height:30px;border-radius:7px"><svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#fff"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+      <div class="ln" style="font-size:16px">Raj<span>Daily</span>Tools</div>
+    </div>
+    <button class="dx" id="dx">✕</button>
+  </div>
+  <nav class="mn">
+    <a href="/" onclick="cD()">🏠 Home</a>
+    <a href="/categories" onclick="cD()">🗂️ Categories</a>
+    <a href="/#popular" onclick="cD()">⭐ Popular</a>
+    <a href="/about" onclick="cD()">👤 About</a>
+    <a href="/contact" onclick="cD()">📬 Contact</a>
+  </nav>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+  <div class="w">
+    <div class="bc">
+      <a href="/">Home</a><span style="color:var(--ink4)">›</span>
+      <a href="/categories">Tools</a><span style="color:var(--ink4)">›</span>
+      <span>Text Sorter Tool</span>
+    </div>
+    <div class="hero-inner">
+      <div class="pill">🔤 Text Sorter &nbsp;·&nbsp; ⚡ 100% Free Tool</div>
+      <h1>Sort Your Text <span>Instantly</span> – Advanced Text Sorter Tool 🔢</h1>
+      <p class="hero-sub">Organize, arrange, and clean your text in seconds. Sort lines A-Z or Z-A, remove duplicates, sort by length, and more — perfect for students, developers, and content creators.</p>
+      <div class="hero-chips">
+        <span class="chip">🔤 A-Z / Z-A Sort</span>
+        <span class="chip">🗑️ Remove Duplicates</span>
+        <span class="chip">📏 Sort by Length</span>
+        <span class="chip">🔒 No Data Stored</span>
+        <span class="chip">📱 Mobile Ready</span>
+        <span class="chip">🆓 100% Free</span>
+      </div>
+      <div class="hero-meta">
+        <div class="upd">🔤 Text Sorter 2026</div>
+        <span class="mi">✅ Fast &amp; Secure</span>
+        <span class="mi">✍️ Students · Developers · SEO Pros</span>
+      </div>
+
+      <!-- HOW TO USE – YELLOW BOX -->
+      <div class="howto">
+        <div class="howto-ttl">💡 How to Use This Tool</div>
+        <div class="howto-steps">
+          <div class="hs"><span class="sn">1</span>Paste your text in the input box</div>
+          <div class="hs"><span class="sn">2</span>Select your sorting option</div>
+          <div class="hs"><span class="sn">3</span>Click "Sort Text" button</div>
+          <div class="hs"><span class="sn">4</span>Copy your sorted result instantly</div>
+        </div>
+      </div>
+
+      <!-- RELATED TOOLS -->
+      <div class="rel-grid">
+        <div class="rg-box army">
+          <div class="rg-ico">📝</div>
+          <div class="rg-txt">
+            <h4>Word Counter Tool</h4>
+            <p>Count words, characters &amp; lines</p>
+            <a href="/word-counter-tool.html" class="btn-xs a">Use Now →</a>
+          </div>
+        </div>
+        <div class="rg-box ht">
+          <div class="rg-ico">🔡</div>
+          <div class="rg-txt">
+            <h4>Text Case Converter</h4>
+            <p>UPPER, lower, Title Case instantly</p>
+            <a href="/text-case-converter.html" class="btn-xs g">Use Now →</a>
+          </div>
+        </div>
+        <div class="rg-box ssc">
+          <div class="rg-ico">✂️</div>
+          <div class="rg-txt">
+            <h4>Remove Duplicate Lines</h4>
+            <p>Clean repeated lines from any text</p>
+            <a href="/remove-duplicate-lines.html" class="btn-xs b">Use Now →</a>
+          </div>
+        </div>
+        <div class="rg-box mp">
+          <div class="rg-ico">🧹</div>
+          <div class="rg-txt">
+            <h4>JSON Formatter</h4>
+            <p>Beautify &amp; validate JSON instantly</p>
+            <a href="/json-formatter.html" class="btn-xs p">Use Now →</a>
+          </div>
+        </div>
+        <div class="rg-box tl">
+          <div class="rg-ico">🔍</div>
+          <div class="rg-txt">
+            <h4>Keyword Density Checker</h4>
+            <p>Analyze keyword frequency for SEO</p>
+            <a href="/keyword-density-tool.html" class="btn-xs t">Use Now →</a>
+          </div>
+        </div>
+        <div class="rg-box army">
+          <div class="rg-ico">🛡️</div>
+          <div class="rg-txt">
+            <h4>Plagiarism Checker</h4>
+            <p>Detect duplicate &amp; copied content</p>
+            <a href="/plagiarism-checker-tool.html" class="btn-xs a">Use Now →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOOL SECTION -->
+<section class="tool-sec" id="tool">
+  <div class="w">
+    <div class="tool-wrap">
+      <div class="tool-card rev">
+        <div class="tool-hdr">
+          <div class="th">
+            <h2>🔤 Advanced Text Sorter – Sort Lines, Words & Lists Instantly 2026</h2>
+            <p>Paste your text below, pick a sorting mode, configure your options, and click Sort Text. Your organized output appears instantly on the right — ready to copy.</p>
+            <div class="th-badges">
+              <span class="thb">✔ 100% Free Tool</span>
+              <span class="thb">✔ 7 Sorting Modes</span>
+              <span class="thb">✔ Duplicate Removal</span>
+              <span class="thb">⚡ Instant Results</span>
+              <span class="thb">🔒 Zero Data Stored</span>
+            </div>
+          </div>
+        </div>
+        <div class="tool-body">
+
+          <!-- SORT MODE BUTTONS -->
+          <div class="opt-label">🔧 Select Sorting Mode</div>
+          <div class="options-grid" id="optGrid">
+            <button class="opt-btn active" data-mode="az" onclick="setMode(this)">
+              <span class="oi">🔼</span><span>A → Z</span><span class="ol">Alphabetical</span>
+            </button>
+            <button class="opt-btn" data-mode="za" onclick="setMode(this)">
+              <span class="oi">🔽</span><span>Z → A</span><span class="ol">Reverse Alpha</span>
+            </button>
+            <button class="opt-btn" data-mode="len-asc" onclick="setMode(this)">
+              <span class="oi">📏</span><span>Short → Long</span><span class="ol">By Length</span>
+            </button>
+            <button class="opt-btn" data-mode="len-desc" onclick="setMode(this)">
+              <span class="oi">📐</span><span>Long → Short</span><span class="ol">By Length</span>
+            </button>
+            <button class="opt-btn" data-mode="reverse" onclick="setMode(this)">
+              <span class="oi">🔁</span><span>Reverse</span><span class="ol">Flip Lines</span>
+            </button>
+            <button class="opt-btn" data-mode="shuffle" onclick="setMode(this)">
+              <span class="oi">🎲</span><span>Shuffle</span><span class="ol">Randomize</span>
+            </button>
+            <button class="opt-btn" data-mode="word-az" onclick="setMode(this)">
+              <span class="oi">📝</span><span>Word Sort</span><span class="ol">A-Z Per Line</span>
+            </button>
+            <button class="opt-btn" data-mode="num" onclick="setMode(this)">
+              <span class="oi">🔢</span><span>Numeric</span><span class="ol">Number Order</span>
+            </button>
+          </div>
+
+          <!-- EXTRA OPTIONS -->
+          <div class="opt-label" style="margin-top:6px">⚙️ Extra Options</div>
+          <div class="chk-row">
+            <label class="chk-item"><input type="checkbox" id="chkDup"><span>🗑️ Remove Duplicates</span></label>
+            <label class="chk-item"><input type="checkbox" id="chkCase"><span>🔡 Ignore Case</span></label>
+            <label class="chk-item"><input type="checkbox" id="chkTrim"><span>✂️ Trim Spaces</span></label>
+            <label class="chk-item"><input type="checkbox" id="chkEmpty"><span>🚫 Remove Empty Lines</span></label>
+          </div>
+
+          <!-- SIDE-BY-SIDE TEXT COLUMNS -->
+          <div class="tool-cols">
+            <div>
+              <div class="col-label">📥 Input Text <span class="clbadge in">Input</span></div>
+              <div class="col-ta">
+                <textarea id="inputText" placeholder="Paste your text here — one item or line per row works best…&#10;&#10;e.g.&#10;Zebra&#10;Apple&#10;Mango&#10;Banana" oninput="updateInputCount()"></textarea>
+                <div class="ta-counter" id="inputCount">0 lines</div>
+              </div>
+            </div>
+            <div>
+              <div class="col-label">📤 Sorted Output <span class="clbadge out">Output</span></div>
+              <div class="col-ta">
+                <textarea id="outputText" readonly placeholder="Your sorted result will appear here…"></textarea>
+                <div class="ta-counter" id="outputCount">0 lines</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- QUICK ACTIONS -->
+          <div class="txt-actions">
+            <button class="btn-sm clr" onclick="clearAll()">🗑️ Clear All</button>
+            <button class="btn-sm smp" onclick="loadSample()">📄 Load Sample</button>
+          </div>
+
+          <!-- HINT -->
+          <div class="hint-box">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            <span><strong>Tip:</strong> Each line is treated as one item. For best results with lists, keywords, or names — put each entry on its own line. Use "Remove Duplicates" to clean repeated entries automatically.</span>
+          </div>
+
+          <!-- ERROR -->
+          <div class="err-box" id="errBox">⚠️ Please paste some text before sorting.</div>
+
+          <!-- MAIN BUTTONS -->
+          <div class="btn-row">
+            <button class="chk-btn" onclick="sortText()">🔤 Sort Text</button>
+            <button class="cpy-btn" id="cpyBtn" onclick="copyOutput()">📋 Copy Output</button>
+            <button class="rst-btn" onclick="clearAll()">✕ Reset</button>
+          </div>
+
+          <!-- STATS -->
+          <div class="stat-row" id="statRow" style="display:none">
+            <span class="stat-pill g" id="stLines">✅ 0 lines sorted</span>
+            <span class="stat-pill b" id="stRemoved">🗑️ 0 duplicates removed</span>
+            <span class="stat-pill p" id="stMode">🔤 Mode: A → Z</span>
+            <span class="stat-pill a">🔒 No data stored</span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BEFORE / AFTER VISUAL -->
+<section class="visual-sec">
+  <div class="w">
+    <div style="text-align:center;margin-bottom:36px">
+      <div class="sec-lbl" style="justify-content:center">📊 Visual Comparison</div>
+      <h2 class="sec-h">Before Sorting vs After Sorting</h2>
+      <p class="sec-sub" style="margin:0 auto">See the difference a sort makes — messy input becomes a perfectly ordered list in one click.</p>
+    </div>
+    <div class="baf-wrap rev">
+      <div class="baf-card before">
+        <div class="baf-title">❌ Before Sorting</div>
+        <div class="baf-line">Zebra</div>
+        <div class="baf-line">Apple</div>
+        <div class="baf-line">Mango</div>
+        <div class="baf-line">Banana</div>
+        <div class="baf-line">Cherry</div>
+        <div class="baf-line">Apple</div>
+        <div class="baf-line">Kiwi</div>
+      </div>
+      <div class="baf-arrow">→</div>
+      <div class="baf-card after">
+        <div class="baf-title">✅ After Sorting (A-Z + Dedup)</div>
+        <div class="baf-line">Apple</div>
+        <div class="baf-line">Banana</div>
+        <div class="baf-line">Cherry</div>
+        <div class="baf-line">Kiwi</div>
+        <div class="baf-line">Mango</div>
+        <div class="baf-line">Zebra</div>
+        <div class="baf-line" style="opacity:.35;font-style:italic;font-size:12px">↑ duplicate removed</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES SECTION (moved above table per instructions) -->
+<section class="tips-sec">
+  <div class="w">
+    <div style="text-align:center;margin-bottom:40px">
+      <div class="sec-lbl" style="justify-content:center">⚙️ Tool Capabilities</div>
+      <h2 class="sec-h">Features of This Text Sorter</h2>
+      <p class="sec-sub" style="margin:0 auto">Everything packed into one clean, fast, browser-based tool — no installs, no sign-ups.</p>
+    </div>
+    <div class="tips-grid">
+      <div class="tip-card rev">
+        <div class="tip-ico">⚡</div>
+        <div class="tip-title">Lightning Fast Sorting</div>
+        <div class="tip-desc">Sorts thousands of lines in milliseconds — all processing happens in your browser with zero server lag.</div>
+      </div>
+      <div class="tip-card rev">
+        <div class="tip-ico">🔒</div>
+        <div class="tip-title">Privacy Safe — No Data Stored</div>
+        <div class="tip-desc">Your text never leaves your device. There are no servers, no databases, and no logs — your data stays 100% private.</div>
+      </div>
+      <div class="tip-card rev">
+        <div class="tip-ico">📱</div>
+        <div class="tip-title">Works on Mobile & Desktop</div>
+        <div class="tip-desc">Fully responsive layout that adapts perfectly from a 4-inch phone screen to a 27-inch monitor.</div>
+      </div>
+      <div class="tip-card rev">
+        <div class="tip-ico">📄</div>
+        <div class="tip-title">Supports Large Text Input</div>
+        <div class="tip-desc">Handles lists of hundreds or thousands of lines with ease — no character limits, no paywalls.</div>
+      </div>
+      <div class="tip-card rev">
+        <div class="tip-ico">🎛️</div>
+        <div class="tip-title">Multiple Sorting Modes</div>
+        <div class="tip-desc">Choose from 8 modes: A-Z, Z-A, Short-to-Long, Long-to-Short, Reverse, Shuffle, Word Sort, and Numeric.</div>
+      </div>
+      <div class="tip-card rev">
+        <div class="tip-ico">🗑️</div>
+        <div class="tip-title">Smart Duplicate Removal</div>
+        <div class="tip-desc">Optionally strip repeated lines — with or without case sensitivity — to produce a clean, unique list instantly.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TABLE SECTION -->
+<section class="tbl-sec">
+  <div class="w">
+    <div style="text-align:center;margin-bottom:40px">
+      <div class="sec-lbl" style="justify-content:center">📋 Sorting Modes</div>
+      <h2 class="sec-h">All Sorting Options Explained</h2>
+    </div>
+    <div class="tbl-wr">
+      <table>
+        <thead>
+          <tr><th>🔧 Sort Mode</th><th>📝 What It Does</th><th>💡 Best For</th><th>⭐ Status</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>🔼 A → Z Sort</strong></td><td>Arranges lines in ascending alphabetical order</td><td>Keywords, names, vocabulary lists</td><td><span class="tbadge g">Popular</span></td></tr>
+          <tr><td><strong>🔽 Z → A Sort</strong></td><td>Arranges lines in reverse alphabetical order</td><td>Reverse directories, inverted indexes</td><td><span class="tbadge b">Available</span></td></tr>
+          <tr><td><strong>🗑️ Duplicate Removal</strong></td><td>Removes identical repeated lines from the list</td><td>Cleaning email lists, keyword lists</td><td><span class="tbadge g">Popular</span></td></tr>
+          <tr><td><strong>🔡 Ignore Case</strong></td><td>Treats "Apple" and "apple" as the same during sort</td><td>Mixed-case data, user inputs</td><td><span class="tbadge a">Option</span></td></tr>
+          <tr><td><strong>📏 Sort by Length</strong></td><td>Orders lines from shortest to longest (or reverse)</td><td>Formatting, UI copy, tag clouds</td><td><span class="tbadge b">Available</span></td></tr>
+          <tr><td><strong>🔁 Reverse Lines</strong></td><td>Flips the order of all lines top-to-bottom</td><td>Reversing timelines, log files</td><td><span class="tbadge b">Available</span></td></tr>
+          <tr><td><strong>✂️ Trim Spaces</strong></td><td>Removes leading and trailing whitespace per line</td><td>Cleaning pasted data from spreadsheets</td><td><span class="tbadge a">Option</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="notice-banner">
+      <div class="notice-icon">💡</div>
+      <div class="notice-text">Pro Tip: <span>Combine "Ignore Case" + "Remove Duplicates" + "Trim Spaces" for the cleanest possible output — ideal for preparing keyword lists for SEO campaigns or data cleaning workflows.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- STORY SECTION (placed after tool per instructions) -->
+<section class="story-sec">
+  <div class="w">
+    <div style="max-width:780px;margin:0 auto">
+      <div class="sec-lbl">💜 Why This Tool Exists</div>
+      <h2 class="sec-h">The Story Behind This Text Sorter</h2>
+      <div class="story-card rev">
+        <div class="sq">"</div>
+        <div class="sb">One day I was working on a long list of keywords and names, and it was completely messy. I had scraped hundreds of terms from different sources — some were duplicated, some had extra spaces, and the order was all over the place. My friend suggested sorting it manually in Excel, but that was taking forever and kept introducing new errors.<br><br>Then I stepped back and thought: thousands of students, developers, and SEO professionals face this exact same problem every single day. Whether it's sorting a vocabulary list for a class, cleaning a keyword spreadsheet for a campaign, or organizing a config file — everyone needs a fast, reliable sorter that just works without complexity.<br><br>That's when I built this Advanced Text Sorter Tool — to make sorting instant, accurate, and effortless for everyone. No spreadsheet required. No formulas to write. Just paste, click, and copy.</div>
+        <div class="sauth">
+          <div class="savt">🧑‍💻</div>
+          <div>
+            <div class="sname">Raj – Founder, RajDailyTools</div>
+            <div class="srole">Web Developer & Content Tools Builder · India</div>
+          </div>
+        </div>
+        <div class="founder-msg">
+          <div class="fm-ico">🎯</div>
+          <div class="fm-txt"><strong>Our Mission:</strong> Build tools that solve real daily problems in seconds — no unnecessary complexity, no paywalls, no friction. If it takes more than three clicks, we redesign it.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SEO ARTICLE -->
+<section class="guide-sec">
+  <div class="wa">
+    <div class="sec-lbl">📚 Complete Guide</div>
+    <h2 class="sec-h">The Complete Guide to Text Sorting — Why It Matters in 2026</h2>
+    <div class="guide-body">
+
+      <h2>📖 What Is Text Sorting?</h2>
+      <p>Text sorting is the process of arranging a collection of words, lines, or items in a specific, logical order — most commonly alphabetical (A-Z or Z-A), numerical, or by some other measurable property like character length. At its core, it is one of the most fundamental operations in information management, and yet it is something that trips people up constantly in real workflows.</p>
+      <p>When we talk about sorting text online, we mean taking an unordered or randomly arranged list and transforming it into a structured sequence that is easier to read, search, compare, or use downstream. Whether you're sorting a list of keywords for an SEO campaign, organizing student names in a register, or cleaning a messy dataset before importing it into a database — text sorting is an essential skill and tool.</p>
+
+      <div class="ibox">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        <span><strong>Did You Know?</strong> Sorting is one of the most studied problems in computer science. Efficient sorting algorithms like QuickSort and MergeSort power everything from search engines to database queries. But for everyday text tasks, you don't need any of that complexity — this free tool handles it all instantly.</span>
+      </div>
+
+      <h2>📈 Why Sorting Text Is Important</h2>
+      <p>Organized text is more useful text — in almost every context. Here's why taking the time to properly sort your lists and data pays off:</p>
+      <ul>
+        <li><strong>Faster scanning:</strong> A sorted list is dramatically faster to scan visually. Research consistently shows that humans find alphabetically sorted lists 30–50% faster than unsorted ones.</li>
+        <li><strong>Easier duplicate detection:</strong> Duplicates become immediately obvious when items are sorted — identical entries land right next to each other.</li>
+        <li><strong>Better data quality:</strong> Sorted, trimmed, and deduplicated lists are cleaner inputs for any downstream tool — spreadsheets, CRMs, email platforms, or databases.</li>
+        <li><strong>Professional presentation:</strong> Whether it's a student's reference sheet or a developer's config file, sorted content simply looks more polished and intentional.</li>
+        <li><strong>Time savings at scale:</strong> Manually sorting even 50 lines takes several frustrating minutes. A tool like this handles 5,000 lines in under a second.</li>
+      </ul>
+
+      <h2>🎓 Use Case: Students Organizing Notes</h2>
+      <p>Students are among the most frequent users of text sorting tools — often without realizing there's a dedicated tool that can help. Here's how sorting applies to student work:</p>
+      <ul>
+        <li>Sorting vocabulary lists alphabetically for language study — making flashcard creation far easier.</li>
+        <li>Organizing bibliography references in A-Z order before submitting a research paper or thesis.</li>
+        <li>Cleaning notes scraped from multiple sources — removing duplicate bullet points before creating a final study guide.</li>
+        <li>Sorting exam topics by length to identify which ones need the most detail when writing study notes.</li>
+        <li>Alphabetically ordering the names of sources, authors, or historical figures for quick cross-referencing.</li>
+      </ul>
+
+      <div class="ibox g">
+        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+        <span><strong>Student Tip:</strong> Before your next exam, paste all your key terms into this text sorter, sort them A-Z, and remove duplicates. You'll instantly have a clean, organized study glossary ready to review.</span>
+      </div>
+
+      <h2>💻 Use Case: Developers Cleaning Code Lists</h2>
+      <p>Developers work with lists constantly — dependency lists, environment variable names, API endpoint collections, configuration keys, and more. Manual sorting is error-prone and slow. Here's how this text sorter tool helps developers specifically:</p>
+      <ul>
+        <li>Sorting import statements or require() lists alphabetically — a common code style requirement in JavaScript, Python, and Go projects.</li>
+        <li>Organizing CSS class names or utility classes alphabetically — especially useful in Tailwind CSS projects where class order matters for readability.</li>
+        <li>Deduplicating log file entries to identify unique error types quickly without wading through thousands of repeated lines.</li>
+        <li>Sorting JSON keys or YAML configuration keys alphabetically before committing to a shared repository — reducing confusing diff noise in code reviews.</li>
+        <li>Cleaning scraped API data that arrives in unpredictable order before feeding it into a database or data processing pipeline.</li>
+      </ul>
+
+      <h2>🔍 Use Case: SEO Experts Managing Keywords</h2>
+      <p>For anyone doing keyword research, the ability to quickly sort text alphabetically online is a workflow superpower. Here's how SEO professionals use text sorting daily:</p>
+      <ul>
+        <li>Alphabetically ordering a keyword research export from Ahrefs, SEMrush, or Google Keyword Planner before review — making pattern-spotting much faster.</li>
+        <li>Removing duplicate keyword entries that appear when merging multiple keyword sources into a single master list.</li>
+        <li>Sorting keywords by length to quickly identify long-tail opportunities (longer = more specific intent) versus shorter head terms.</li>
+        <li>Organizing meta tags, alt text suggestions, or page title drafts in alphabetical order during a site-wide SEO audit.</li>
+        <li>Cleaning scraped competitor keyword lists before importing them into tracking tools — removing duplicates and trimming whitespace artifacts.</li>
+      </ul>
+
+      <div class="example-box">
+        <h4>📊 Keyword List Cleaning — Real SEO Example</h4>
+        <div class="ex-row">
+          <span class="ex-label">Raw (messy) input</span>
+          <span class="ex-val">text sorter online free, Sort text, sort text online, TEXT SORTER, sort text online free</span>
+        </div>
+        <div class="ex-row">
+          <span class="ex-label">After: Ignore Case + Dedup + A-Z</span>
+          <span class="ex-val hi">sort text, sort text online, sort text online free, text sorter, text sorter online free</span>
+        </div>
+      </div>
+
+      <h2>🧹 Use Case: Data Cleaning & Processing</h2>
+      <p>Whether you're a data analyst, a virtual assistant, a content manager, or a business owner managing spreadsheets — you will regularly encounter messy lists that need cleaning before they can be used. Common data cleaning scenarios where this tool excels:</p>
+      <ul>
+        <li>Cleaning exported email subscriber lists — deduplicating entries before importing into Mailchimp, ConvertKit, or any email platform.</li>
+        <li>Sorting product names or SKU codes alphabetically before updating an e-commerce catalog.</li>
+        <li>Organizing city or country names in alphabetical order for forms, dropdowns, or reports.</li>
+        <li>Removing blank lines and trimming extra spaces from data pasted out of PDF tables or web pages.</li>
+        <li>Sorting survey responses or form submissions before analyzing patterns — grouping similar answers together.</li>
+      </ul>
+
+      <h2>⚠️ Common Mistakes in Manual Sorting</h2>
+      <p>People who sort text manually — by hand or with drag-and-drop in word processors — make these mistakes regularly. This is exactly why an automated tool makes such a big difference:</p>
+      <ul>
+        <li><strong>Sorting case-incorrectly:</strong> Manual sorters often mix uppercase and lowercase items, placing "Zebra" before "apple" because uppercase letters sort before lowercase in ASCII order. Our Ignore Case option fixes this.</li>
+        <li><strong>Missing duplicates:</strong> When a list has 200 items, duplicate entries in the middle are nearly invisible to the eye. The tool catches every single one.</li>
+        <li><strong>Leaving trailing spaces:</strong> Pasted text often has invisible trailing spaces. "Apple " and "Apple" look identical but sort differently and won't be detected as duplicates without trimming.</li>
+        <li><strong>Forgetting to re-sort after edits:</strong> Manually sorted lists immediately become unsorted as soon as you add a new item. With a tool, re-sorting takes one click.</li>
+        <li><strong>Human error at scale:</strong> Even the most careful person will make mistakes sorting a 500-item list manually. Automated sorting is 100% consistent and accurate every time.</li>
+      </ul>
+
+      <h2>🚀 Why This Tool Is Better Than Manual Methods</h2>
+      <p>Compared to sorting in Excel, Google Sheets, or by hand, this dedicated text sorter tool offers several concrete advantages:</p>
+      <ul>
+        <li><strong>No spreadsheet required:</strong> Just paste and sort. No need to open Excel, import data, select a column, find the Sort button, then copy back out.</li>
+        <li><strong>Faster for plain text:</strong> For plain lists of words or lines, this tool is significantly faster than any spreadsheet workflow — especially on mobile.</li>
+        <li><strong>Combined operations in one click:</strong> Sort + deduplicate + trim + remove empties — all in a single operation. In Excel, each step requires a separate formula or action.</li>
+        <li><strong>Privacy by design:</strong> Spreadsheet tools like Google Sheets transmit your data to Google's servers. This tool processes everything locally in your browser — your data never goes anywhere.</li>
+        <li><strong>Works offline:</strong> Once the page is loaded, sorting works even without an active internet connection, because all logic runs client-side in JavaScript.</li>
+      </ul>
+
+      <div class="ibox a">
+        <svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        <span><strong>Important:</strong> This tool sorts text line by line. Each line is treated as one item. If you want to sort individual words within a single paragraph, use the "Word Sort" mode which sorts each word on each line alphabetically.</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FAQ (at bottom per instructions) -->
+<section class="faq-sec">
+  <div class="w">
+    <div style="max-width:780px;margin:0 auto">
+      <div class="sec-lbl">❓ Common Questions</div>
+      <h2 class="sec-h" style="margin-bottom:32px">Frequently Asked Questions</h2>
+      <div class="fql">
+        <div class="fq">
+          <div class="fq-q" onclick="tFaq(this)"><span class="fq-t">How do I sort text alphabetically online?</span><span class="fq-i">+</span></div>
+          <div class="fq-a"><div class="fq-ai">Using this free text sorter tool, sorting alphabetically takes three steps: (1) Paste your text into the input box — one item per line works best. (2) Make sure the "A → Z" mode is selected (it's the default). (3) Click "Sort Text" and your alphabetically ordered result appears instantly on the right. You can then copy it with one click. The tool handles any language that uses standard alphabetical characters.</div></div>
+        </div>
+        <div class="fq">
+          <div class="fq-q" onclick="tFaq(this)"><span class="fq-t">Can I remove duplicate lines while sorting?</span><span class="fq-i">+</span></div>
+          <div class="fq-a"><div class="fq-ai">Yes — simply check the "Remove Duplicates" checkbox before clicking Sort Text. The tool will identify and remove every repeated line, keeping only the first occurrence. For case-insensitive duplicate detection (so "Apple" and "apple" count as duplicates), also check "Ignore Case". This is especially useful for cleaning keyword lists, email lists, or any data that has been merged from multiple sources.</div></div>
+        </div>
+        <div class="fq">
+          <div class="fq-q" onclick="tFaq(this)"><span class="fq-t">Is this text sorter tool completely free?</span><span class="fq-i">+</span></div>
+          <div class="fq-a"><div class="fq-ai">Yes, 100% free — forever. There are no word limits, no line limits, no daily usage caps, no premium features locked behind a paywall, and no account or credit card required. RajDailyTools is built with the belief that essential productivity tools should be freely accessible to every student, developer, and professional — regardless of budget.</div></div>
+        </div>
+        <div class="fq">
+          <div class="fq-q" onclick="tFaq(this)"><span class="fq-t">Does this tool store or share my text data?</span><span class="fq-i">+</span></div>
+          <div class="fq-a"><div class="fq-ai">Absolutely not. All sorting operations happen entirely within your browser using JavaScript — your text is never sent to any server, never stored in any database, and never shared with any third party. Once you close or refresh the page, your text is gone. You can safely sort confidential content like client data, internal lists, or sensitive business information.</div></div>
+        </div>
+        <div class="fq">
+          <div class="fq-q" onclick="tFaq(this)"><span class="fq-t">Can I sort very large amounts of text?</span><span class="fq-i">+</span></div>
+          <div class="fq-a"><div class="fq-ai">Yes. The tool handles large inputs well — thousands of lines can be sorted in well under a second on any modern device. There is no hard character limit imposed by the tool itself. The practical limit is your browser's memory, which on most devices supports several megabytes of text without any issue. For very large datasets (hundreds of thousands of lines), a command-line tool may be more appropriate.</div></div>
+        </div>
+        <div class="fq">
+          <div class="fq-q" onclick="tFaq(this)"><span class="fq-t">How accurate is the sorting — are there any edge cases?</span><span class="fq-i">+</span></div>
+          <div class="fq-a"><div class="fq-ai">The tool uses JavaScript's native sort functions, which are highly accurate for standard alphabetical and numeric sorting. A few edge cases to be aware of: (1) For truly numeric sorting (1, 2, 10 vs 1, 10, 2), use the "Numeric" mode rather than A-Z — this ensures numbers sort by value, not character. (2) Lines with special characters (!, @, #) sort before letters in standard ASCII order. (3) For mixed-language lists, sort order follows Unicode standards. The "Ignore Case" option ensures consistent results regardless of capitalization.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-sec">
+  <div class="w">
+    <div class="contact-card rev">
+      <div style="font-size:38px;margin-bottom:12px">📬</div>
+      <h3>Suggestions or Feedback? We'd Love to Hear</h3>
+      <p>For suggestions, feedback, or requests for new tools, contact us anytime. We personally read every message and improve our tools based on what you need.</p>
+      <a href="mailto:edurajkhushit@gmail.com" class="btn-bl">✉️ edurajkhushit@gmail.com</a>
+      <div class="priv-note">🔒 Privacy: No text data is stored or transmitted. Browser-only processing. · This tool is for general use only.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="w">
+    <div class="cta-in">
+      <div class="pill">✨ Explore More Free Tools</div>
+      <h2>Discover All <em>RajDailyTools</em> — 100% Free</h2>
+      <p>Text sorters, word counters, slug generators, plagiarism checkers — everything you need, at zero cost.</p>
+      <div class="cta-btns">
+        <a href="/categories" class="btn-gold">🗂️ Browse All Tools</a>
+        <a href="/" class="btn-ghost">🏠 Go to Homepage</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DISCLAIMER -->
+<div class="disc">
+  <div class="w" style="text-align:center;font-size:13px;color:var(--ink3)">
+    <strong>Disclaimer:</strong> This tool is for general use only. Results depend on the input text provided. · <strong>Privacy:</strong> No text data is stored, transmitted, or shared. All processing is performed locally in your browser.
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-inner">
+    <div class="ft-top">
+      <div class="ft-brand">
+        <div class="logo">
+          <div class="lb"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+          <div><div class="ln">Raj<span>Daily</span>Tools</div><div class="ls">Smart Tools for Daily Life</div></div>
+        </div>
+        <div class="ft-desc">Free, fast, and reliable web tools for Indian students, exam aspirants, and everyday users. No sign-up. No cost. Just results.</div>
+        <div class="ft-soc">
+          <a href="#" class="fts">𝕏</a><a href="#" class="fts">in</a><a href="#" class="fts">📘</a><a href="#" class="fts">▶</a>
+        </div>
+      </div>
+      <div class="fc">
+        <h4>Text Tools</h4>
+        <ul>
+          <li><a href="/text-sorter-tool.html">Text Sorter</a></li>
+          <li><a href="/plagiarism-checker-tool.html">Plagiarism Checker</a></li>
+          <li><a href="/word-counter-tool.html">Word Counter</a></li>
+          <li><a href="/text-case-converter.html">Text Case Converter</a></li>
+          <li><a href="/text-to-slug-converter.html">Slug Generator</a></li>
+        </ul>
+      </div>
+      <div class="fc">
+        <h4>Dev Tools</h4>
+        <ul>
+          <li><a href="/json-formatter.html">JSON Formatter</a></li>
+          <li><a href="/remove-duplicate-lines.html">Remove Duplicates</a></li>
+          <li><a href="/keyword-density-tool.html">Keyword Density</a></li>
+          <li><a href="/meta-tag-generator.html">Meta Tag Generator</a></li>
+          <li><a href="/text-reverse-tool.html">Text Reverse Tool</a></li>
+        </ul>
+      </div>
+      <div class="fc">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/about">About Us</a></li>
+          <li><a href="/contact">Contact</a></li>
+          <li><a href="/privacy">Privacy Policy</a></li>
+          <li><a href="/disclaimer">Disclaimer</a></li>
+          <li><a href="/sitemap">Sitemap</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ft-btm">
+      <div class="ft-cp">© 2026 <b>RajDailyTools</b> · rajdailytools.in · All Rights Reserved</div>
+      <div class="ft-tag">Free tools for students, bloggers &amp; professionals across India 🇮🇳</div>
+    </div>
+  </div>
+</footer>
+
+<button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+/* ── MOBILE NAV ── */
+const brg=document.getElementById('brg'),drw=document.getElementById('drw'),dov=document.getElementById('dov');
+function oD(){drw.classList.add('on');dov.classList.add('on')}
+function cD(){drw.classList.remove('on');dov.classList.remove('on')}
+brg.addEventListener('click',oD);dov.addEventListener('click',cD);
+document.getElementById('dx').addEventListener('click',cD);
+
+/* ── SCROLL REVEAL ── */
+const obs=new IntersectionObserver(en=>{en.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target)}})},{threshold:.12});
+document.querySelectorAll('.rev').forEach(el=>obs.observe(el));
+
+/* ── BACK TO TOP ── */
+const bttEl=document.getElementById('btt');
+window.addEventListener('scroll',()=>bttEl.classList.toggle('on',window.scrollY>400));
+
+/* ── ACTIVE MODE ── */
+let currentMode='az';
+function setMode(btn){
+  document.querySelectorAll('.opt-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  currentMode=btn.dataset.mode;
+}
+
+/* ── LIVE COUNT ── */
+function updateInputCount(){
+  const lines=document.getElementById('inputText').value.split('\n').filter(l=>l.trim().length>0);
+  document.getElementById('inputCount').textContent=lines.length+' lines';
+}
+
+/* ── LOAD SAMPLE ── */
+function loadSample(){
+  document.getElementById('inputText').value=`Zebra\nApple\nMango\nBanana\nCherry\nApple\nKiwi\nPineapple\nGrape\nBanana\nOrange\nPapaya`;
+  updateInputCount();
+}
+
+/* ── CLEAR ── */
+function clearAll(){
+  document.getElementById('inputText').value='';
+  document.getElementById('outputText').value='';
+  document.getElementById('inputCount').textContent='0 lines';
+  document.getElementById('outputCount').textContent='0 lines';
+  document.getElementById('statRow').style.display='none';
+  document.getElementById('errBox').style.display='none';
+  const btn=document.getElementById('cpyBtn');
+  btn.textContent='📋 Copy Output';btn.classList.remove('done');
+}
+
+/* ── SORT LOGIC ── */
+function sortText(){
+  const raw=document.getElementById('inputText').value;
+  const errBox=document.getElementById('errBox');
+
+  if(!raw.trim()){
+    errBox.style.display='block';
+    setTimeout(()=>errBox.style.display='none',3000);
+    return;
+  }
+  errBox.style.display='none';
+
+  const doTrim=document.getElementById('chkTrim').checked;
+  const doDedup=document.getElementById('chkDup').checked;
+  const doCase=document.getElementById('chkCase').checked;
+  const doEmpty=document.getElementById('chkEmpty').checked;
+
+  // Split into lines
+  let lines=raw.split('\n');
+
+  // Trim
+  if(doTrim) lines=lines.map(l=>l.trim());
+
+  // Remove empty
+  if(doEmpty) lines=lines.filter(l=>l.trim().length>0);
+
+  // Deduplicate
+  let removedCount=0;
+  if(doDedup){
+    const seen=new Set();
+    const deduped=[];
+    for(const l of lines){
+      const key=doCase?l.toLowerCase():l;
+      if(!seen.has(key)){seen.add(key);deduped.push(l);}
+      else removedCount++;
+    }
+    lines=deduped;
+  }
+
+  // SORT
+  const modeLabelMap={
+    'az':'A → Z','za':'Z → A','len-asc':'Short → Long',
+    'len-desc':'Long → Short','reverse':'Reverse','shuffle':'Shuffle',
+    'word-az':'Word Sort','num':'Numeric'
+  };
+
+  switch(currentMode){
+    case 'az':
+      lines.sort((a,b)=>{
+        const ka=doCase?a.toLowerCase():a;
+        const kb=doCase?b.toLowerCase():b;
+        return ka.localeCompare(kb);
+      });
+      break;
+    case 'za':
+      lines.sort((a,b)=>{
+        const ka=doCase?a.toLowerCase():a;
+        const kb=doCase?b.toLowerCase():b;
+        return kb.localeCompare(ka);
+      });
+      break;
+    case 'len-asc':
+      lines.sort((a,b)=>a.length-b.length);
+      break;
+    case 'len-desc':
+      lines.sort((a,b)=>b.length-a.length);
+      break;
+    case 'reverse':
+      lines.reverse();
+      break;
+    case 'shuffle':
+      for(let i=lines.length-1;i>0;i--){
+        const j=Math.floor(Math.random()*(i+1));
+        [lines[i],lines[j]]=[lines[j],lines[i]];
+      }
+      break;
+    case 'word-az':
+      lines=lines.map(l=>{
+        const words=l.split(/\s+/);
+        words.sort((a,b)=>{
+          const ka=doCase?a.toLowerCase():a;
+          const kb=doCase?b.toLowerCase():b;
+          return ka.localeCompare(kb);
+        });
+        return words.join(' ');
+      });
+      break;
+    case 'num':
+      lines.sort((a,b)=>{
+        const na=parseFloat(a)||0;
+        const nb=parseFloat(b)||0;
+        return na-nb;
+      });
+      break;
+  }
+
+  const result=lines.join('\n');
+  document.getElementById('outputText').value=result;
+  document.getElementById('outputCount').textContent=lines.length+' lines';
+
+  // Stats
+  document.getElementById('stLines').textContent='✅ '+lines.length+' lines sorted';
+  document.getElementById('stRemoved').textContent='🗑️ '+removedCount+' duplicate'+(removedCount!==1?'s':'')+' removed';
+  document.getElementById('stMode').textContent='🔤 Mode: '+(modeLabelMap[currentMode]||currentMode);
+  document.getElementById('statRow').style.display='flex';
+
+  // Reset copy btn
+  const btn=document.getElementById('cpyBtn');
+  btn.textContent='📋 Copy Output';btn.classList.remove('done');
+
+  // Scroll to output
+  document.getElementById('outputText').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+/* ── COPY OUTPUT ── */
+function copyOutput(){
+  const out=document.getElementById('outputText').value;
+  if(!out) return;
+  navigator.clipboard.writeText(out).then(()=>{
+    const btn=document.getElementById('cpyBtn');
+    btn.textContent='✅ Copied!';btn.classList.add('done');
+    setTimeout(()=>{btn.textContent='📋 Copy Output';btn.classList.remove('done');},2200);
+  }).catch(()=>{
+    const ta=document.createElement('textarea');
+    ta.value=out;ta.style.position='fixed';ta.style.opacity='0';
+    document.body.appendChild(ta);ta.select();document.execCommand('copy');
+    document.body.removeChild(ta);
+    const btn=document.getElementById('cpyBtn');
+    btn.textContent='✅ Copied!';btn.classList.add('done');
+    setTimeout(()=>{btn.textContent='📋 Copy Output';btn.classList.remove('done');},2200);
+  });
+}
+
+/* ── FAQ ── */
+function tFaq(el){
+  const fq=el.closest('.fq');
+  const isOpen=fq.classList.contains('open');
+  document.querySelectorAll('.fq.open').forEach(f=>f.classList.remove('open'));
+  if(!isOpen) fq.classList.add('open');
+}
+</script>
+</body>
+</html>
