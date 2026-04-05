@@ -1,0 +1,1097 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stock Profit Calculator 2026 – Calculate Share Profit, Loss & Returns | RajDailyTools</title>
+<meta name="description" content="Free stock profit calculator 2026. Calculate share profit, loss, percentage return and net profit after brokerage and tax instantly. Supports intraday and long term stock calculation. 100% free.">
+<meta name="keywords" content="stock profit calculator, share profit calculator, stock return calculator India, intraday profit calculator, long term stock calculator, how to calculate stock profit, stock profit formula">
+<meta name="robots" content="index, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#2563eb;--blue-d:#1d4ed8;--blue-xl:#eff6ff;--blue-s:#dbeafe;
+  --amber:#f59e0b;--green:#10b981;--red:#ef4444;--purple:#8b5cf6;
+  --orange:#f97316;--teal:#14b8a6;
+  --green-xl:#f0fdf4;--green-s:#bbf7d0;
+  --red-xl:#fef2f2;--red-s:#fecaca;
+  --amber-xl:#fffbeb;--amber-s:#fde68a;
+  --purple-xl:#faf5ff;--purple-s:#ddd6fe;
+  --ink:#0f172a;--ink2:#334155;--ink3:#64748b;--ink4:#94a3b8;
+  --line:#e2e8f0;--surf:#f8fafc;--white:#fff;
+  --s1:0 1px 3px rgba(15,23,42,.06),0 1px 2px rgba(15,23,42,.04);
+  --s2:0 4px 16px rgba(15,23,42,.08),0 2px 6px rgba(15,23,42,.04);
+  --s3:0 12px 40px rgba(15,23,42,.11),0 3px 10px rgba(15,23,42,.06);
+  --s4:0 24px 64px rgba(15,23,42,.13),0 6px 20px rgba(15,23,42,.07);
+  --sb:0 8px 32px rgba(37,99,235,.20);
+  --fd:'Sora',sans-serif;--fb:'DM Sans',sans-serif;
+  --ease:cubic-bezier(.4,0,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);color:var(--ink);background:var(--white);overflow-x:hidden;-webkit-font-smoothing:antialiased;line-height:1.6}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+button{cursor:pointer;border:none;background:none;font-family:var(--fb)}
+.w{max-width:1180px;margin:0 auto;padding:0 24px}
+.wa{max-width:880px;margin:0 auto;padding:0 24px}
+select,input{appearance:none;-webkit-appearance:none}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+@keyframes resultIn{from{opacity:0;transform:translateY(18px) scale(.97)}to{opacity:1;transform:none}}
+@keyframes countUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.rev{opacity:0;transform:translateY(22px);transition:opacity .55s var(--ease),transform .55s var(--ease)}
+.rev.in{opacity:1;transform:none}
+
+/* HEADER */
+.hdr{position:sticky;top:0;z-index:999;background:rgba(255,255,255,.96);backdrop-filter:blur(20px);border-bottom:1px solid var(--line);box-shadow:var(--s1)}
+.hdi{display:flex;align-items:center;justify-content:space-between;height:66px}
+.logo{display:flex;align-items:center;gap:10px}
+.lb{width:36px;height:36px;background:var(--blue);border-radius:9px;display:flex;align-items:center;justify-content:center;box-shadow:var(--sb);flex-shrink:0}
+.lb svg{width:18px;height:18px;fill:#fff}
+.ln{font-family:var(--fd);font-size:19px;font-weight:800;color:var(--ink);line-height:1}
+.ln span{color:var(--blue)}
+.ls{font-size:10px;color:var(--ink4);letter-spacing:.04em}
+nav.dn{display:flex;align-items:center;gap:2px}
+nav.dn a{font-size:13.5px;font-weight:500;color:var(--ink2);padding:7px 13px;border-radius:8px;transition:.2s}
+nav.dn a:hover{color:var(--blue);background:var(--blue-xl)}
+.hcta{background:var(--blue);color:#fff;font-family:var(--fd);font-weight:600;font-size:13px;padding:8px 18px;border-radius:8px;box-shadow:var(--sb);transition:.2s}
+.hcta:hover{background:var(--blue-d);transform:translateY(-1px)}
+.brg{display:none;flex-direction:column;gap:4.5px;padding:8px;border-radius:8px}
+.brg span{display:block;width:20px;height:2px;background:var(--ink);border-radius:2px;transition:.28s}
+.dov{display:none;position:fixed;inset:0;background:rgba(15,23,42,.45);z-index:1040;backdrop-filter:blur(3px)}
+.dov.on{display:block}
+.drw{position:fixed;top:0;right:-100%;width:270px;height:100vh;background:#fff;z-index:1050;padding:22px;box-shadow:var(--s4);transition:right .32s var(--ease);overflow-y:auto}
+.drw.on{right:0}
+.dh{display:flex;align-items:center;justify-content:space-between;margin-bottom:26px}
+.dx{width:33px;height:33px;border-radius:7px;background:var(--surf);display:flex;align-items:center;justify-content:center;color:var(--ink3);font-size:17px}
+nav.mn{display:flex;flex-direction:column;gap:3px}
+nav.mn a{display:block;font-size:14px;font-weight:500;color:var(--ink2);padding:11px 13px;border-radius:8px;transition:.2s}
+nav.mn a:hover{color:var(--blue);background:var(--blue-xl)}
+
+/* HERO */
+.hero{position:relative;overflow:hidden;background:linear-gradient(150deg,#ebf4ff 0%,#fff 46%,#fff7ed 100%);padding:64px 0 72px}
+.hero::before{content:'';position:absolute;top:-140px;right:-180px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(37,99,235,.08) 0%,transparent 68%);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-80px;left:-100px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(249,115,22,.05) 0%,transparent 68%);pointer-events:none}
+.blob{position:absolute;border-radius:50%;pointer-events:none;animation:float 6s ease-in-out infinite}
+.b1{width:13px;height:13px;background:rgba(37,99,235,.18);top:22%;right:14%;animation-delay:0s}
+.b2{width:9px;height:9px;background:rgba(249,115,22,.22);top:58%;right:26%;animation-delay:2.2s}
+.b3{width:11px;height:11px;background:rgba(16,185,129,.18);top:36%;right:6%;animation-delay:4s}
+.bc{display:flex;align-items:center;gap:7px;font-size:12.5px;color:var(--ink3);margin-bottom:22px;position:relative;z-index:1;flex-wrap:wrap}
+.bc a{color:var(--blue);font-weight:600}
+.pill{display:inline-flex;align-items:center;gap:7px;font-family:var(--fd);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);background:var(--blue-xl);padding:5px 14px;border-radius:100px;margin-bottom:18px}
+.pill::before{content:'';width:6px;height:6px;background:var(--blue);border-radius:50%}
+.hero-inner{position:relative;z-index:1;max-width:720px;animation:fadeUp .5s ease both}
+.hero h1{font-family:var(--fd);font-size:clamp(26px,4.5vw,50px);font-weight:800;line-height:1.1;color:var(--ink);margin-bottom:14px}
+.hero h1 span{color:var(--blue)}
+.hero-sub{font-size:16px;color:var(--ink3);line-height:1.8;margin-bottom:22px;max-width:600px}
+.hero-chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.chip{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;padding:6px 14px;border-radius:100px;background:#fff;border:1.5px solid var(--line);color:var(--ink2);box-shadow:var(--s1);transition:.22s}
+.chip:hover{border-color:var(--blue);color:var(--blue);transform:translateY(-1px)}
+.hero-meta{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:24px}
+.upd{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:700;color:var(--blue);background:var(--blue-xl);padding:6px 14px;border-radius:100px;border:1.5px solid var(--blue-s)}
+.mi{font-size:13px;color:var(--ink3);font-weight:500}
+
+/* HOW TO USE */
+.howto{background:var(--amber-xl);border:2px solid var(--amber-s);border-radius:16px;padding:22px 26px;max-width:560px;margin-bottom:24px}
+.howto-ttl{display:flex;align-items:center;gap:9px;font-family:var(--fd);font-size:15px;font-weight:800;color:var(--ink);margin-bottom:13px}
+.howto-steps{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.hs{display:flex;align-items:flex-start;gap:10px;font-size:13.5px;color:var(--ink2);line-height:1.6}
+.sn{width:24px;height:24px;background:var(--amber);color:#fff;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex-shrink:0;margin-top:1px}
+
+/* RELATED TOOLS */
+.rel-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;position:relative;z-index:1}
+.rg-box{border-radius:14px;padding:14px 14px 12px;display:flex;flex-direction:column;gap:8px;transition:.22s;border:1.5px solid}
+.rg-box:hover{transform:translateY(-3px);box-shadow:var(--s3)}
+.rg-box.army{background:linear-gradient(135deg,var(--amber-xl),#fef3c7);border-color:var(--amber-s)}
+.rg-box.ht{background:linear-gradient(135deg,var(--green-xl),#dcfce7);border-color:var(--green-s)}
+.rg-box.ssc{background:linear-gradient(135deg,var(--blue-xl),var(--blue-s));border-color:var(--blue-s)}
+.rg-box.mp{background:linear-gradient(135deg,var(--purple-xl),#ede9fe);border-color:var(--purple-s)}
+.rg-box.tl{background:linear-gradient(135deg,#f0fdfa,#ccfbf1);border-color:#99f6e4}
+.rg-ico{font-size:22px}
+.rg-txt h4{font-family:var(--fd);font-size:12px;font-weight:800;color:var(--ink);margin-bottom:2px}
+.rg-txt p{font-size:11px;color:var(--ink3);line-height:1.5}
+.btn-xs{display:inline-flex;align-items:center;gap:4px;font-family:var(--fd);font-weight:700;font-size:11px;padding:5px 10px;border-radius:7px;transition:.22s;margin-top:4px}
+.btn-xs.a{background:var(--amber);color:#fff}.btn-xs.a:hover{background:#d97706}
+.btn-xs.g{background:var(--green);color:#fff}.btn-xs.g:hover{background:#059669}
+.btn-xs.b{background:var(--blue);color:#fff}.btn-xs.b:hover{background:var(--blue-d)}
+.btn-xs.p{background:var(--purple);color:#fff}.btn-xs.p:hover{background:#7c3aed}
+.btn-xs.t{background:var(--teal);color:#fff}.btn-xs.t:hover{background:#0f9488}
+
+/* TOOL */
+.tool-sec{background:var(--surf);padding:80px 0}
+.tool-wrap{max-width:900px;margin:0 auto}
+.tool-card{background:#fff;border:1.5px solid var(--line);border-radius:28px;overflow:hidden;box-shadow:var(--s4)}
+.tool-hdr{background:linear-gradient(135deg,#1d4ed8 0%,#2563eb 55%,#3b82f6 100%);padding:32px 40px;position:relative;overflow:hidden}
+.tool-hdr::before{content:'';position:absolute;top:-60px;right:-60px;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,.07)}
+.tool-hdr::after{content:'';position:absolute;bottom:-40px;left:-40px;width:180px;height:180px;border-radius:50%;background:rgba(255,255,255,.04)}
+.th{position:relative;z-index:1}
+.th h2{font-family:var(--fd);font-size:21px;font-weight:800;color:#fff;margin-bottom:6px}
+.th p{font-size:14px;color:rgba(255,255,255,.82);line-height:1.65}
+.th-badges{display:flex;flex-wrap:wrap;gap:9px;margin-top:14px}
+.thb{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:rgba(255,255,255,.9);background:rgba(255,255,255,.13);padding:5px 12px;border-radius:100px}
+.tool-body{padding:36px 40px}
+
+/* FORM */
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+.fgrid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:16px}
+.fld{display:flex;flex-direction:column;gap:7px}
+.flbl{font-size:13px;font-weight:700;color:var(--ink2)}
+.flbl span{font-size:11px;font-weight:500;color:var(--ink4);margin-left:5px;background:var(--surf);padding:2px 7px;border-radius:5px;border:1px solid var(--line)}
+.inp-wrap{position:relative}
+.inp-prefix{position:absolute;left:14px;top:50%;transform:translateY(-50%);font-family:var(--fd);font-size:15px;font-weight:700;color:var(--ink3);pointer-events:none}
+.inp-suffix{position:absolute;right:14px;top:50%;transform:translateY(-50%);font-family:var(--fd);font-size:13px;font-weight:700;color:var(--ink3);pointer-events:none}
+.finp,.fsel{padding:12px 16px;font-size:14.5px;color:var(--ink);background:#fff;border:1.5px solid var(--line);border-radius:10px;outline:none;transition:.22s;font-family:var(--fb);width:100%}
+.finp:focus,.fsel:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(37,99,235,.10)}
+.finp.has-prefix{padding-left:36px}
+.finp.has-suffix{padding-right:44px}
+.fsel{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2364748b' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:40px}
+.hint-box{display:flex;align-items:flex-start;gap:9px;font-size:13px;color:var(--ink2);background:var(--blue-xl);border:1.5px solid var(--blue-s);border-radius:10px;padding:11px 14px;margin:16px 0;line-height:1.65}
+.hint-box svg{width:16px;height:16px;stroke:var(--blue);fill:none;stroke-width:2;flex-shrink:0;margin-top:2px}
+.chk-btn{width:100%;padding:17px;background:linear-gradient(135deg,var(--blue) 0%,#1e40af 100%);color:#fff;font-family:var(--fd);font-weight:800;font-size:16px;border-radius:12px;box-shadow:var(--sb);transition:all .25s var(--ease);display:flex;align-items:center;justify-content:center;gap:10px}
+.chk-btn:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(37,99,235,.32)}
+.chk-btn:active{transform:translateY(0)}
+
+/* RESULT CARDS */
+#resultArea{display:none;margin-top:28px;animation:resultIn .45s var(--ease) both}
+.pay-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-bottom:16px}
+.pay-card{border-radius:16px;padding:22px 20px;position:relative;overflow:hidden;border:2px solid;transition:.3s}
+.pay-card.c1{background:linear-gradient(135deg,var(--blue-xl),#e0eeff);border-color:var(--blue-s)}
+.pay-card.c2{background:linear-gradient(135deg,var(--green-xl),#d1fae5);border-color:var(--green-s)}
+.pay-card.c2.loss{background:linear-gradient(135deg,var(--red-xl),#fee2e2);border-color:var(--red-s)}
+.pay-card.c3{background:linear-gradient(135deg,var(--amber-xl),#fef3c7);border-color:var(--amber-s)}
+.pay-card.c4{background:linear-gradient(135deg,var(--purple-xl),#ede9fe);border-color:var(--purple-s)}
+.pay-card.c5{background:linear-gradient(135deg,#f0fdfa,#ccfbf1);border-color:#99f6e4;grid-column:1/-1}
+.pay-card::before{content:'';position:absolute;inset:0;opacity:.04;background-image:repeating-linear-gradient(45deg,currentColor 0,currentColor 1px,transparent 0,transparent 50%);background-size:12px 12px;pointer-events:none}
+.pc-lbl{font-size:12px;font-weight:700;color:var(--ink3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px;display:flex;align-items:center;gap:6px}
+.pc-val{font-family:var(--fd);font-size:32px;font-weight:800;color:var(--ink);line-height:1}
+.pc-val.profit-val{color:var(--green)}
+.pc-val.loss-val{color:var(--red)}
+.pay-card.c5 .pc-val{font-size:clamp(22px,4vw,38px)}
+.pc-sub{font-size:12.5px;color:var(--ink3);margin-top:5px}
+.pc-ico{font-size:28px;position:absolute;top:16px;right:16px;opacity:.18}
+
+/* FORMULA BOX */
+.formula-box{background:linear-gradient(135deg,#0f172a,#1e3a8a);border-radius:16px;padding:24px 28px;margin:20px 0}
+.formula-box h4{font-family:var(--fd);font-size:14px;font-weight:800;color:#93c5fd;margin-bottom:14px;letter-spacing:.06em;text-transform:uppercase}
+.formula-line{font-family:'Courier New',monospace;font-size:14px;color:#e2e8f0;background:rgba(255,255,255,.06);border-left:3px solid var(--blue);padding:10px 16px;border-radius:0 8px 8px 0;margin-bottom:10px;line-height:1.6}
+.formula-line:last-child{margin-bottom:0}
+.formula-line strong{color:#fbbf24}
+
+/* WARN + COPY */
+.copy-btn{display:inline-flex;align-items:center;gap:6px;font-family:var(--fd);font-size:12px;font-weight:700;padding:7px 14px;border-radius:8px;background:var(--blue);color:#fff;border:none;cursor:pointer;transition:.22s;margin-top:4px}
+.copy-btn:hover{background:var(--blue-d);transform:translateY(-1px)}
+.copy-btn.copied{background:var(--green)}
+.warn-box{background:var(--amber-xl);border:1.5px solid var(--amber-s);border-radius:12px;padding:14px 18px;display:flex;gap:10px;font-size:13.5px;color:var(--ink2);line-height:1.7;margin-top:14px}
+
+/* FEATURES */
+.tips-sec{background:var(--surf);padding:72px 0}
+.tips-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.tip-card{background:#fff;border:1.5px solid var(--line);border-radius:16px;padding:22px 18px;text-align:center;transition:.28s}
+.tip-card:hover{transform:translateY(-4px);box-shadow:var(--s3);border-color:var(--blue-s)}
+.tip-ico{font-size:32px;margin-bottom:11px}
+.tip-title{font-family:var(--fd);font-size:14px;font-weight:800;color:var(--ink);margin-bottom:8px}
+.tip-desc{font-size:13px;color:var(--ink3);line-height:1.7}
+
+/* TABLE */
+.tbl-sec{background:#fff;padding:72px 0}
+.tbl-wr{overflow-x:auto;margin-bottom:24px;border-radius:14px;border:1.5px solid var(--line);box-shadow:var(--s2)}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+thead th{background:linear-gradient(135deg,var(--blue) 0%,#1e40af 100%);color:#fff;padding:14px 16px;text-align:left;font-family:var(--fd);font-size:13px;font-weight:700;letter-spacing:.03em}
+thead th:first-child{border-radius:14px 0 0 0}
+thead th:last-child{border-radius:0 14px 0 0}
+tbody tr{border-bottom:1px solid var(--line);transition:.2s}
+tbody tr:hover{background:var(--blue-xl)}
+tbody td{padding:12px 16px;color:var(--ink2);vertical-align:middle}
+.tbadge{display:inline-flex;font-size:11px;font-weight:700;padding:3px 8px;border-radius:100px}
+.tbadge.g{background:var(--green-xl);color:var(--green);border:1px solid var(--green-s)}
+.tbadge.b{background:var(--blue-xl);color:var(--blue);border:1px solid var(--blue-s)}
+.tbadge.a{background:var(--amber-xl);color:var(--amber);border:1px solid var(--amber-s)}
+.tbadge.p{background:var(--purple-xl);color:var(--purple);border:1px solid var(--purple-s)}
+
+/* GRAPH */
+.graph-sec{background:var(--surf);padding:72px 0}
+.graph-card{background:#fff;border:1.5px solid var(--line);border-radius:20px;padding:28px 32px;box-shadow:var(--s3)}
+.graph-hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;flex-wrap:wrap;gap:12px}
+.graph-ttl{font-family:var(--fd);font-size:18px;font-weight:800;color:var(--ink)}
+.graph-legend{display:flex;gap:20px;flex-wrap:wrap;margin-bottom:18px}
+.gl-item{display:flex;align-items:center;gap:7px;font-size:13px;font-weight:600;color:var(--ink2)}
+.gl-dot{width:12px;height:12px;border-radius:50%}
+
+/* Bar chart */
+.bar-group{display:flex;flex-direction:column;gap:18px;padding:8px 0}
+.bar-row{display:flex;align-items:center;gap:16px}
+.bar-label{font-family:var(--fd);font-size:13px;font-weight:700;color:var(--ink2);width:140px;flex-shrink:0;text-align:right}
+.bar-track{flex:1;background:var(--surf);border-radius:100px;height:36px;overflow:hidden;position:relative;border:1px solid var(--line)}
+.bar-fill{height:100%;border-radius:100px;display:flex;align-items:center;padding-left:14px;transition:width .8s var(--ease)}
+.bar-fill-amt{font-family:var(--fd);font-size:13px;font-weight:700;color:#fff;white-space:nowrap}
+.bar-pct-lbl{font-family:var(--fd);font-size:12px;font-weight:600;color:var(--ink4);margin-left:12px;flex-shrink:0}
+.vs-note{text-align:center;font-family:var(--fd);font-size:13px;color:var(--ink3);margin-top:14px;padding:10px;background:var(--surf);border-radius:10px;border:1px solid var(--line)}
+
+/* STORY */
+.story-sec{background:#fff;padding:72px 0}
+.story-card{background:var(--surf);border:1.5px solid var(--line);border-radius:24px;padding:40px;box-shadow:var(--s3);position:relative;overflow:hidden}
+.story-card::before{content:'';position:absolute;top:0;left:0;bottom:0;width:5px;background:linear-gradient(180deg,var(--blue) 0%,var(--orange) 100%);border-radius:5px 0 0 5px}
+.sq{font-size:54px;color:var(--blue-s);font-family:Georgia,serif;line-height:1;padding-left:8px}
+.sb{font-size:15.5px;color:var(--ink2);line-height:1.9;padding:0 8px}
+.sauth{display:flex;align-items:center;gap:14px;margin-top:22px;padding-top:20px;border-top:1px solid var(--line)}
+.savt{width:48px;height:48px;background:var(--blue);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+.sname{font-family:var(--fd);font-size:15px;font-weight:700;color:var(--ink)}
+.srole{font-size:12.5px;color:var(--ink3)}
+.founder-msg{background:linear-gradient(135deg,var(--blue-xl),var(--blue-s));border:1.5px solid var(--blue-s);border-radius:14px;padding:20px 22px;margin-top:20px;display:flex;gap:13px}
+.fm-ico{font-size:26px;flex-shrink:0}
+.fm-txt{font-size:14px;color:var(--ink2);line-height:1.75;font-style:italic}
+.fm-txt strong{color:var(--ink);font-weight:700;font-style:normal}
+
+/* GUIDE */
+.guide-sec{background:var(--surf);padding:72px 0}
+.guide-body h2{font-family:var(--fd);font-size:21px;font-weight:800;color:var(--ink);margin:28px 0 11px;line-height:1.3}
+.guide-body h2:first-child{margin-top:0}
+.guide-body h3{font-family:var(--fd);font-size:17px;font-weight:700;color:var(--ink2);margin:20px 0 8px}
+.guide-body p{font-size:15px;color:var(--ink3);line-height:1.85;margin-bottom:14px}
+.guide-body ul{display:flex;flex-direction:column;gap:8px;margin:12px 0 16px}
+.guide-body li{display:flex;align-items:flex-start;gap:10px;font-size:14.5px;color:var(--ink3);line-height:1.7}
+.guide-body li::before{content:'✓';width:18px;height:18px;background:var(--blue);color:#fff;border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;flex-shrink:0;margin-top:3px}
+.guide-body strong{color:var(--ink2);font-weight:700}
+.ibox{background:var(--blue-xl);border:1.5px solid var(--blue-s);border-radius:13px;padding:15px 18px;margin:16px 0;display:flex;gap:11px;font-size:14px;color:var(--ink2);line-height:1.7}
+.ibox svg{width:17px;height:17px;stroke:var(--blue);fill:none;stroke-width:2;flex-shrink:0;margin-top:2px}
+.ibox.a{background:var(--amber-xl);border-color:var(--amber-s)}
+.ibox.a svg{stroke:var(--amber)}
+.ibox.g{background:var(--green-xl);border-color:var(--green-s)}
+.ibox.g svg{stroke:var(--green)}
+.ibox.r{background:var(--red-xl);border-color:var(--red-s)}
+.ibox.r svg{stroke:var(--red)}
+
+/* FAQ */
+.faq-sec{background:#fff;padding:72px 0}
+.fql{max-width:780px;margin:0 auto}
+.fq{background:var(--surf);border:1.5px solid var(--line);border-radius:13px;margin-bottom:10px;overflow:hidden}
+.fq-q{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;cursor:pointer;gap:14px;transition:.2s}
+.fq-q:hover{background:var(--blue-xl)}
+.fq-t{font-weight:600;font-size:15px;color:var(--ink);line-height:1.4}
+.fq-i{width:28px;height:28px;border-radius:50%;background:var(--blue-xl);color:var(--blue);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;transition:transform .28s,background .2s}
+.fq.open .fq-i{transform:rotate(45deg);background:var(--blue);color:#fff}
+.fq-a{max-height:0;overflow:hidden;transition:max-height .35s var(--ease)}
+.fq-ai{padding:0 22px 18px;font-size:14.5px;color:var(--ink3);line-height:1.78}
+.fq.open .fq-a{max-height:500px}
+
+/* DISC/CONTACT/CTA/FOOTER */
+.disc{background:var(--amber-xl);border-top:1px solid var(--amber-s);border-bottom:1px solid var(--amber-s);padding:15px 0}
+.disc-in{display:flex;align-items:flex-start;gap:12px;font-size:13.5px;color:var(--ink2);line-height:1.7}
+.contact-sec{background:var(--surf);padding:60px 0}
+.contact-card{max-width:580px;margin:0 auto;background:#fff;border:1.5px solid var(--line);border-radius:20px;padding:32px;text-align:center;box-shadow:var(--s2)}
+.contact-card h3{font-family:var(--fd);font-size:19px;font-weight:800;color:var(--ink);margin-bottom:10px}
+.contact-card p{font-size:15px;color:var(--ink3);line-height:1.75;margin-bottom:20px}
+.btn-bl{display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:#fff;font-family:var(--fd);font-weight:700;font-size:14.5px;padding:12px 26px;border-radius:8px;box-shadow:var(--sb);transition:.22s}
+.btn-bl:hover{background:var(--blue-d);transform:translateY(-1px)}
+.priv-note{font-size:12px;color:var(--ink4);margin-top:14px}
+.cta{background:linear-gradient(140deg,#0f172a 0%,#1e3a8a 100%);padding:80px 0;text-align:center;position:relative;overflow:hidden}
+.cta::before{content:'';position:absolute;top:-80px;left:50%;transform:translateX(-50%);width:800px;height:380px;background:radial-gradient(ellipse,rgba(37,99,235,.22) 0%,transparent 68%);pointer-events:none}
+.cta-in{position:relative;z-index:1}
+.cta .pill{color:#93c5fd;background:rgba(255,255,255,.1);margin-bottom:18px}
+.cta .pill::before{background:#93c5fd}
+.cta h2{font-family:var(--fd);font-size:clamp(24px,4vw,42px);font-weight:800;color:#fff;line-height:1.15;margin-bottom:12px}
+.cta h2 em{color:#fbbf24;font-style:normal}
+.cta p{font-size:16px;color:rgba(255,255,255,.72);max-width:480px;margin:0 auto 32px;line-height:1.78}
+.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn-gold{display:inline-flex;align-items:center;gap:8px;background:var(--amber);color:#fff;font-family:var(--fd);font-weight:800;font-size:15px;padding:14px 30px;border-radius:8px;box-shadow:0 8px 28px rgba(245,158,11,.35);transition:.22s}
+.btn-gold:hover{background:#d97706;transform:translateY(-3px)}
+.btn-ghost{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.09);border:1.5px solid rgba(255,255,255,.22);color:#fff;font-family:var(--fd);font-weight:600;font-size:14px;padding:13px 26px;border-radius:8px;transition:.2s}
+.btn-ghost:hover{background:rgba(255,255,255,.16)}
+footer{background:#0f172a;padding:52px 0 0}
+.ft-inner{max-width:1180px;margin:0 auto;padding:0 24px}
+.ft-top{display:grid;grid-template-columns:1.9fr 1fr 1fr 1fr;gap:44px;margin-bottom:44px}
+.ft-brand .ln{color:#fff}.ft-brand .ls{color:#475569}
+.ft-desc{font-size:13.5px;color:#64748b;line-height:1.78;max-width:265px;margin:13px 0 20px}
+.ft-soc{display:flex;gap:9px}
+.fts{width:34px;height:34px;border-radius:7px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;color:#94a3b8;font-size:13px;transition:.2s}
+.fts:hover{background:var(--blue);color:#fff}
+.fc h4{font-family:var(--fd);font-size:12px;font-weight:700;color:#fff;margin-bottom:14px;letter-spacing:.06em;text-transform:uppercase}
+.fc ul{display:flex;flex-direction:column;gap:8px}
+.fc ul a{font-size:13.5px;color:#64748b;transition:.18s}
+.fc ul a:hover{color:#93c5fd}
+.ft-btm{border-top:1px solid rgba(255,255,255,.07);padding:20px 0;text-align:center}
+.ft-cp{font-size:12.5px;color:#475569}
+.ft-cp b{color:#64748b}
+.ft-tag{font-size:12px;color:#334155;margin-top:4px;font-style:italic}
+.btt{position:fixed;bottom:26px;right:26px;z-index:500;width:43px;height:43px;background:var(--blue);color:#fff;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:17px;box-shadow:var(--sb);opacity:0;pointer-events:none;transform:translateY(14px);transition:.28s var(--ease)}
+.btt.on{opacity:1;pointer-events:auto;transform:translateY(0)}
+.btt:hover{transform:translateY(-3px)}
+.sec-lbl{display:flex;align-items:center;gap:8px;font-family:var(--fd);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin-bottom:10px}
+.sec-lbl::before{content:'';width:6px;height:6px;background:var(--blue);border-radius:50%}
+.sec-h{font-family:var(--fd);font-size:clamp(22px,3.5vw,34px);font-weight:800;color:var(--ink);line-height:1.15;margin-bottom:10px}
+.sec-sub{font-size:15.5px;color:var(--ink3);line-height:1.78;margin-bottom:40px;max-width:600px}
+
+/* LIVE BADGE */
+.live-badge{display:inline-flex;align-items:center;gap:6px;font-family:var(--fd);font-size:11px;font-weight:700;color:var(--green);background:var(--green-xl);border:1.5px solid var(--green-s);padding:4px 12px;border-radius:100px;margin-bottom:14px}
+.live-dot{width:7px;height:7px;background:var(--green);border-radius:50%;animation:float 1.5s ease-in-out infinite}
+
+@media(max-width:1060px){.ft-top{grid-template-columns:1fr 1fr}.tips-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:860px){
+  nav.dn,.hcta{display:none}.brg{display:flex}
+  .tool-body{padding:24px 22px}.tool-hdr{padding:24px 22px}
+  .fgrid{grid-template-columns:1fr}.fgrid3{grid-template-columns:1fr 1fr}
+  .howto-steps{grid-template-columns:1fr}
+  .rel-grid{grid-template-columns:1fr 1fr}
+  .pay-grid{grid-template-columns:1fr 1fr}
+  .bar-label{width:90px;font-size:12px}
+}
+@media(max-width:600px){
+  .ft-top{grid-template-columns:1fr}.rel-grid{grid-template-columns:1fr}
+  .tips-grid{grid-template-columns:1fr 1fr}
+  .cta-btns{flex-direction:column;align-items:center}
+  .story-card{padding:26px 20px}
+  .pay-grid{grid-template-columns:1fr}
+  .pay-card.c5{grid-column:auto}
+  .fgrid3{grid-template-columns:1fr}
+  .graph-card{padding:18px 14px}
+  .bar-label{width:72px;font-size:11px}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="hdr">
+  <div class="w">
+    <div class="hdi">
+      <a href="/" class="logo">
+        <div class="lb"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+        <div><div class="ln">Raj<span>Daily</span>Tools</div><div class="ls">Smart Tools for Daily Life</div></div>
+      </a>
+      <nav class="dn">
+        <a href="/">Home</a><a href="/categories">Categories</a>
+        <a href="/#popular">Popular</a><a href="/about">About</a><a href="/contact">Contact</a>
+      </nav>
+      <a href="/categories" class="hcta">All Tools →</a>
+      <button class="brg" id="brg"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="dov" id="dov"></div>
+<div class="drw" id="drw">
+  <div class="dh">
+    <div class="logo">
+      <div class="lb" style="width:30px;height:30px;border-radius:7px"><svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#fff"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+      <div class="ln" style="font-size:16px">Raj<span>Daily</span>Tools</div>
+    </div>
+    <button class="dx" id="dx">✕</button>
+  </div>
+  <nav class="mn">
+    <a href="/" onclick="cD()">🏠 Home</a>
+    <a href="/categories" onclick="cD()">🗂️ Categories</a>
+    <a href="/#popular" onclick="cD()">⭐ Popular</a>
+    <a href="/about" onclick="cD()">👤 About</a>
+    <a href="/contact" onclick="cD()">📬 Contact</a>
+  </nav>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+  <div class="w">
+    <div class="bc">
+      <a href="/">Home</a><span style="color:var(--ink4)">›</span>
+      <a href="/categories">Tools</a><span style="color:var(--ink4)">›</span>
+      <span>Stock Profit Calculator</span>
+    </div>
+    <div class="hero-inner">
+      <div class="pill">📈 Free Stock Market Tools 2026</div>
+      <h1>Stock Profit Calculator – <span>Instantly Calculate</span> Your Investment Returns</h1>
+      <p class="hero-sub">Calculate profit, loss, percentage return and total value of your stock investment in seconds. Supports brokerage, tax deductions, intraday and long-term scenarios — 100% free.</p>
+      <div class="hero-chips">
+        <span class="chip">📊 Profit &amp; Loss</span>
+        <span class="chip">📈 Return %</span>
+        <span class="chip">💰 Net After Charges</span>
+        <span class="chip">⚡ Real-Time Calc</span>
+        <span class="chip">🆓 100% Free</span>
+        <span class="chip">👨‍💼 Made for Investors</span>
+      </div>
+      <div class="hero-meta">
+        <div class="upd">📅 Updated April 2026</div>
+        <span class="mi">✅ Brokerage &amp; Tax included</span>
+        <span class="mi">📊 Instant visualization</span>
+      </div>
+
+      <!-- HOW TO USE -->
+      <div class="howto">
+        <div class="howto-ttl">💡 How to Use This Tool</div>
+        <div class="howto-steps">
+          <div class="hs"><span class="sn">1</span>Enter Buy Price per share</div>
+          <div class="hs"><span class="sn">2</span>Enter Sell Price per share</div>
+          <div class="hs"><span class="sn">3</span>Enter Quantity of shares</div>
+          <div class="hs"><span class="sn">4</span>Add brokerage &amp; tax % (optional)</div>
+          <div class="hs"><span class="sn">5</span>Click Calculate or see instant result</div>
+        </div>
+      </div>
+
+      <!-- RELATED TOOLS -->
+      <div class="rel-grid">
+        <div class="rg-box army">
+          <div class="rg-ico">%</div>
+          <div class="rg-txt">
+            <h4>Percentage Calculator</h4>
+            <p>Quick percentage &amp; ratio calculations</p>
+            <a href="/percentage-calculator.html" class="btn-xs a">Use Now →</a>
+          </div>
+        </div>
+        <div class="rg-box ht">
+          <div class="rg-ico">🧾</div>
+          <div class="rg-txt">
+            <h4>GST Calculator</h4>
+            <p>Calculate GST on sales &amp; purchases</p>
+            <a href="/gst-calculator.html" class="btn-xs g">Use Now →</a>
+          </div>
+        </div>
+        <div class="rg-box ssc">
+          <div class="rg-ico">📊</div>
+          <div class="rg-txt">
+            <h4>Profit Margin Calculator</h4>
+            <p>Find your net profit margin easily</p>
+            <a href="/profit-margin-calculator.html" class="btn-xs b">Use Now →</a>
+          </div>
+        </div>
+        <div class="rg-box mp">
+          <div class="rg-ico">💹</div>
+          <div class="rg-txt">
+            <h4>Investment Calculator</h4>
+            <p>Project future value of investments</p>
+            <a href="/investment-calculator.html" class="btn-xs p">Use Now →</a>
+          </div>
+        </div>
+        <div class="rg-box tl">
+          <div class="rg-ico">📈</div>
+          <div class="rg-txt">
+            <h4>Compound Interest Calculator</h4>
+            <p>Calculate compound growth over time</p>
+            <a href="/compound-interest-calculator.html" class="btn-xs t">Use Now →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOOL SECTION -->
+<section class="tool-sec" id="tool">
+  <div class="w">
+    <div class="tool-wrap">
+      <div class="tool-card rev">
+        <div class="tool-hdr">
+          <div class="th">
+            <h2>📈 Stock Profit Calculator – 2026 (India &amp; Global)</h2>
+            <p>Enter your trade details below. Get instant profit/loss, return percentage, and net profit after brokerage and tax — with a real-time visual chart.</p>
+            <div class="th-badges">
+              <span class="thb">💰 Profit &amp; Loss</span>
+              <span class="thb">📊 Return %</span>
+              <span class="thb">🏦 Brokerage Adjusted</span>
+              <span class="thb">🧾 Tax Deducted</span>
+              <span class="thb">🔒 Private &amp; Secure</span>
+            </div>
+          </div>
+        </div>
+        <div class="tool-body">
+
+          <div class="live-badge"><span class="live-dot"></span> Real-Time Calculation</div>
+
+          <!-- ROW 1: Buy / Sell / Qty -->
+          <div class="fgrid3">
+            <div class="fld">
+              <label class="flbl" for="buyPrice">📥 Buy Price <span>Per Share ₹</span></label>
+              <div class="inp-wrap">
+                <span class="inp-prefix">₹</span>
+                <input class="finp has-prefix" type="number" id="buyPrice" placeholder="e.g. 1500" min="0" step="0.01" oninput="calcInstant()">
+              </div>
+            </div>
+            <div class="fld">
+              <label class="flbl" for="sellPrice">📤 Sell Price <span>Per Share ₹</span></label>
+              <div class="inp-wrap">
+                <span class="inp-prefix">₹</span>
+                <input class="finp has-prefix" type="number" id="sellPrice" placeholder="e.g. 1850" min="0" step="0.01" oninput="calcInstant()">
+              </div>
+            </div>
+            <div class="fld">
+              <label class="flbl" for="quantity">🔢 Quantity <span>Shares</span></label>
+              <input class="finp" type="number" id="quantity" placeholder="e.g. 100" min="1" oninput="calcInstant()">
+            </div>
+          </div>
+
+          <!-- ROW 2: Brokerage + Tax -->
+          <div class="fgrid">
+            <div class="fld">
+              <label class="flbl" for="brokerage">🏦 Brokerage <span>% Optional</span></label>
+              <div class="inp-wrap">
+                <input class="finp has-suffix" type="number" id="brokerage" placeholder="e.g. 0.5" min="0" max="100" step="0.01" value="0" oninput="calcInstant()">
+                <span class="inp-suffix">%</span>
+              </div>
+              <div style="font-size:11.5px;color:var(--ink4);margin-top:4px">Zerodha flat ₹20/order | Angel ~0.25% | Upstox ~0.05%</div>
+            </div>
+            <div class="fld">
+              <label class="flbl" for="taxRate">🧾 Tax / STT <span>% Optional</span></label>
+              <div class="inp-wrap">
+                <input class="finp has-suffix" type="number" id="taxRate" placeholder="e.g. 0.1" min="0" max="100" step="0.01" value="0" oninput="calcInstant()">
+                <span class="inp-suffix">%</span>
+              </div>
+              <div style="font-size:11.5px;color:var(--ink4);margin-top:4px">STT India: 0.1% on delivery | 0.025% on intraday sell</div>
+            </div>
+          </div>
+
+          <div class="hint-box">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            <span><strong>Tip:</strong> Results update automatically as you type. Brokerage is applied on both buy &amp; sell turnover. Tax/STT is applied on sell value. Leave both at 0 for a clean gross profit calculation using the standard <strong>stock profit formula</strong>.</span>
+          </div>
+
+          <button class="chk-btn" onclick="calculate()">
+            📊 Calculate Stock Profit / Loss
+          </button>
+
+          <!-- FORMULA BOX (always visible) -->
+          <div class="formula-box" style="margin-top:22px">
+            <h4>📐 Stock Profit Formula</h4>
+            <div class="formula-line"><strong>Gross Profit</strong> = (Sell Price − Buy Price) × Quantity</div>
+            <div class="formula-line"><strong>Profit %</strong> = (Gross Profit ÷ Total Investment) × 100</div>
+            <div class="formula-line"><strong>Brokerage Cost</strong> = (Buy Value + Sell Value) × Brokerage %</div>
+            <div class="formula-line"><strong>Tax / STT</strong> = Sell Value × Tax %</div>
+            <div class="formula-line"><strong>Net Profit</strong> = Gross Profit − Brokerage Cost − Tax</div>
+          </div>
+
+          <!-- RESULTS -->
+          <div id="resultArea">
+            <div class="pay-grid" id="payGrid"></div>
+            <div style="margin-top:6px;display:flex;flex-wrap:wrap;gap:8px;align-items:center">
+              <button class="copy-btn" id="copyBtn" onclick="copyResult()">📋 Copy Result Report</button>
+            </div>
+            <div class="warn-box" style="margin-top:14px">
+              <span style="font-size:20px;flex-shrink:0">⚠️</span>
+              <div><strong>Important:</strong> Stock market involves risk. Always verify calculations and consult a financial advisor if needed. This tool is for educational and estimation purposes only. <strong>No data is stored or shared.</strong></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GRAPH SECTION -->
+<section class="graph-sec" id="graphSec" style="display:none">
+  <div class="w">
+    <div style="text-align:center;margin-bottom:30px">
+      <div class="sec-lbl" style="justify-content:center">📊 Visual Breakdown</div>
+      <div class="sec-h">Investment vs <span style="color:var(--blue)">Returns Chart</span></div>
+      <p class="sec-sub" style="margin:12px auto 0;max-width:560px">See your investment, sell value, gross profit, and net profit side by side in a clear visual bar chart.</p>
+    </div>
+    <div class="graph-card rev">
+      <div class="graph-hdr">
+        <div class="graph-ttl" id="graphTitle">Stock Trade Profit Visualization</div>
+      </div>
+      <div class="graph-legend" id="graphLegend"></div>
+      <div class="bar-group" id="barGroup"></div>
+      <div class="vs-note" id="vsNote"></div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES SECTION -->
+<section class="tips-sec">
+  <div class="w">
+    <div style="text-align:center;margin-bottom:40px">
+      <div class="sec-lbl" style="justify-content:center">Why Use This Tool</div>
+      <div class="sec-h">Built for <span style="color:var(--blue)">Serious Investors</span></div>
+    </div>
+    <div class="tips-grid">
+      <div class="tip-card rev">
+        <div class="tip-ico">⚡</div>
+        <div class="tip-title">Real-Time Calculation</div>
+        <div class="tip-desc">Results update instantly as you type — no need to click a button. See your profit and loss change dynamically with every keystroke.</div>
+      </div>
+      <div class="tip-card rev">
+        <div class="tip-ico">🏦</div>
+        <div class="tip-title">Brokerage Adjusted</div>
+        <div class="tip-desc">Know your true profit after deducting broker charges. Works with Zerodha, Angel One, Upstox, Groww, ICICI Direct, and all brokers.</div>
+      </div>
+      <div class="tip-card rev">
+        <div class="tip-ico">📊</div>
+        <div class="tip-title">Visual Profit Chart</div>
+        <div class="tip-desc">A clean bar chart shows investment vs. sell value vs. profit — making complex numbers easy to grasp at a glance.</div>
+      </div>
+      <div class="tip-card rev">
+        <div class="tip-ico">🎯</div>
+        <div class="tip-title">Intraday &amp; Long-Term</div>
+        <div class="tip-desc">Works perfectly as both an intraday profit calculator and a long term stock calculator. Use the appropriate STT rate for each trade type.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TABLE SECTION -->
+<section class="tbl-sec">
+  <div class="w">
+    <div style="text-align:center;margin-bottom:40px">
+      <div class="sec-lbl" style="justify-content:center">Quick Reference</div>
+      <div class="sec-h">Calculator <span style="color:var(--blue)">Parameters Explained</span></div>
+      <p class="sec-sub" style="margin:12px auto 0">Understand what each input means and how it affects your stock profit calculation.</p>
+    </div>
+    <div class="tbl-wr">
+      <table>
+        <thead>
+          <tr><th>Parameter</th><th>Description</th><th>Example (India)</th><th>Type</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>📥 Buy Price</strong></td><td>Price per share at which you purchased the stock</td><td>₹1,500 (Reliance)</td><td><span class="tbadge b">Required</span></td></tr>
+          <tr><td><strong>📤 Sell Price</strong></td><td>Price per share at which you sold the stock</td><td>₹1,850 (After rally)</td><td><span class="tbadge b">Required</span></td></tr>
+          <tr><td><strong>🔢 Quantity</strong></td><td>Number of shares bought and sold</td><td>100 shares</td><td><span class="tbadge b">Required</span></td></tr>
+          <tr><td><strong>🏦 Brokerage</strong></td><td>Broker charges on buy + sell turnover</td><td>0.5% or ₹20 flat</td><td><span class="tbadge a">Optional</span></td></tr>
+          <tr><td><strong>🧾 Tax / STT</strong></td><td>Securities Transaction Tax on sell value</td><td>0.1% delivery / 0.025% intraday</td><td><span class="tbadge a">Optional</span></td></tr>
+          <tr><td><strong>💰 Total Investment</strong></td><td>Buy Price × Quantity = total capital deployed</td><td>₹1,500 × 100 = ₹1,50,000</td><td><span class="tbadge g">Output</span></td></tr>
+          <tr><td><strong>💵 Net Profit</strong></td><td>Gross Profit minus all brokerage and tax charges</td><td>₹35,000 − ₹1,125 = ₹33,875</td><td><span class="tbadge g">Output</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- STORY SECTION -->
+<section class="story-sec">
+  <div class="w">
+    <div class="wa">
+      <div class="sec-lbl">Why I Built This</div>
+      <h2 class="sec-h">Why I Built This Tool</h2>
+      <div class="story-card rev">
+        <div class="sq">"</div>
+        <p class="sb">One of my friends started investing in stocks — excited about the bull run in Indian markets in 2024 and 2025. He would make a trade, check the price difference and feel great about his profits. But when he checked his actual account balance, the numbers were always slightly off. He didn't account for brokerage charges on both buy and sell, Securities Transaction Tax, or SEBI turnover fees. Sometimes he thought he was in profit but was actually at a slight loss after all charges. Seeing this confusion, I decided to build this advanced <strong>stock profit calculator</strong> so that any investor — beginner or experienced — can instantly know their real, net returns without doing complex manual calculations.</p>
+        <div class="sauth">
+          <div class="savt">📈</div>
+          <div>
+            <div class="sname">RajDailyTools Team</div>
+            <div class="srole">Building free financial tools for every Indian investor</div>
+          </div>
+        </div>
+        <div class="founder-msg">
+          <div class="fm-ico">💡</div>
+          <div class="fm-txt"><strong>Our Goal:</strong> Every investor deserves to know their exact, real profit — not just the headline number. Brokerage and tax can silently eat 10–30% of your small-trade gains. This tool makes that completely transparent.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SEO ARTICLE -->
+<section class="guide-sec">
+  <div class="w">
+    <div class="wa">
+      <div class="sec-lbl">Complete Guide</div>
+      <h2 class="sec-h">The Complete Guide to <span style="color:var(--blue)">Stock Profit Calculation</span></h2>
+      <div class="guide-body">
+
+        <h2>📋 What is Stock Profit?</h2>
+        <p>Stock profit is the financial gain you make when the selling price of a share is higher than the buying price. It is one of the two ways to earn from the stock market — the other being dividends. Understanding how to calculate stock profit accurately is the most fundamental skill for any investor, whether you are trading on NSE, BSE, or any global exchange.</p>
+        <p>The basic <strong>stock profit formula</strong> is deceptively simple: <strong>Profit = (Sell Price − Buy Price) × Quantity</strong>. However, the real-world calculation is more nuanced — brokerage fees, Securities Transaction Tax (STT), SEBI charges, GST on brokerage, and stamp duty all reduce your actual take-home profit.</p>
+
+        <div class="ibox">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          <div>Example: You buy 100 shares of Tata Motors at ₹850 and sell at ₹970. Your gross profit is ₹12,000. But after 0.5% brokerage (₹910) and 0.1% STT (₹97), your net profit is approximately ₹10,993 — nearly ₹1,000 less than the headline number.</div>
+        </div>
+
+        <h2>📈 How Stock Profit Works in India (2026)</h2>
+        <p>The Indian stock market — primarily NSE and BSE — saw significant activity in 2025 and early 2026, with Nifty 50 and Sensex reaching new highs. Understanding your real returns through a proper <strong>share profit calculator</strong> is more important than ever as more retail investors participate in the market.</p>
+        <p>When you execute a trade in India, the following charges apply:</p>
+        <ul>
+          <li>Brokerage: 0.01%–0.5% depending on broker and trade type</li>
+          <li>STT (Securities Transaction Tax): 0.1% on delivery buy+sell, 0.025% on intraday sell side only</li>
+          <li>Exchange Transaction Charges: ~0.00345% (NSE) or ~0.00375% (BSE)</li>
+          <li>SEBI Turnover Fees: ₹10 per crore of turnover</li>
+          <li>GST: 18% on brokerage and exchange charges</li>
+          <li>Stamp Duty: 0.015% on buy side for delivery, 0.003% for intraday</li>
+        </ul>
+
+        <h2>⚡ Intraday vs Long-Term Stock Calculation</h2>
+        <h3>Intraday Trading</h3>
+        <p>An <strong>intraday profit calculator</strong> must account for the fact that positions are opened and closed on the same trading day. Intraday STT in India is only 0.025% on the sell side (not both sides). However, intraday gains are taxed as business income — meaning they attract your income tax slab rate, not the 15% STCG rate. Risk management is critical as leverage amplifies both gains and losses.</p>
+
+        <h3>Long-Term Investment</h3>
+        <p>A <strong>long term stock calculator</strong> must factor in a different tax structure. For delivery trades held over 12 months, gains above ₹1 lakh per year attract Long-Term Capital Gains (LTCG) tax at 10% (as of April 2026). Held under 12 months, gains attract Short-Term Capital Gains (STCG) at 15%. STT is 0.1% on both buy and sell for delivery trades.</p>
+
+        <div class="ibox a">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <div><strong>Tax Note 2026:</strong> The Union Budget 2024 revised LTCG rates. Always verify current STT, LTCG, and STCG rates with SEBI or your broker as these are subject to change with each budget announcement.</div>
+        </div>
+
+        <h2>🏦 How Brokerage Affects Your Actual Profit</h2>
+        <p>This is the most underappreciated aspect of trading. With traditional brokers charging 0.3%–0.5%, brokerage alone can consume 30–50% of your profit on a small trade. Consider this real example from April 2026:</p>
+        <ul>
+          <li>Buy 50 shares of Infosys at ₹1,800 (Investment: ₹90,000)</li>
+          <li>Sell at ₹1,920 (Gross Profit: ₹6,000)</li>
+          <li>Brokerage at 0.5% on both legs: ₹450 + ₹480 = ₹930</li>
+          <li>STT at 0.1%: ₹96</li>
+          <li>Net Profit: approximately ₹4,974 — 17% less than the gross figure</li>
+        </ul>
+        <p>This is exactly why using a <strong>stock return calculator India</strong> that includes all charges is essential for accurate decision-making.</p>
+
+        <h2>💡 Real-Life Examples of How to Calculate Stock Profit</h2>
+        <p>Understanding <strong>how to calculate stock profit</strong> with real examples makes the concept much clearer. Here are two common scenarios Indian retail investors face in 2026:</p>
+        <ul>
+          <li><strong>Scenario A (Intraday):</strong> Buy 200 shares of HDFC Bank at ₹1,650, sell same day at ₹1,680. Gross profit: ₹6,000. After Zerodha flat ₹20 brokerage on each leg (₹40) and STT ₹840 on sell side, net profit ≈ ₹5,120.</li>
+          <li><strong>Scenario B (Delivery):</strong> Buy 30 shares of Asian Paints at ₹3,200 and hold for 8 months, sell at ₹3,750. Gross profit: ₹16,500. After brokerage ₹0 (Zerodha delivery free) and STT 0.1% ≈ ₹112.5, taxable STCG ≈ ₹16,388 (taxed at 15% = ₹2,458). True net return ≈ ₹13,930.</li>
+        </ul>
+
+        <div class="ibox g">
+          <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          <div><strong>Pro Tip:</strong> Use our <strong>stock profit calculator</strong> to compare scenarios before entering a trade. Knowing your break-even price (accounting for all charges) is crucial for setting realistic profit targets.</div>
+        </div>
+
+        <h2>❌ Common Mistakes Investors Make</h2>
+        <ul>
+          <li>Calculating profit without deducting brokerage — overstating actual returns</li>
+          <li>Ignoring STT on delivery trades — 0.1% on large positions adds up significantly</li>
+          <li>Confusing gross profit % with net return % — always use net figures for decisions</li>
+          <li>Not accounting for GST on brokerage, which adds 18% to your brokerage cost</li>
+          <li>Applying long-term tax rates on short-term trades held less than 12 months</li>
+          <li>Forgetting to include stamp duty, which varies by state and instrument</li>
+        </ul>
+
+        <h2>⚖️ Why Stock Profit Calculation is Important</h2>
+        <p>Accurate profit calculation is the backbone of disciplined investing. Without it, you cannot assess which stocks are actually performing well in your portfolio, set proper stop-loss and target levels, compare returns against benchmarks like Nifty 50, or make informed decisions about position sizing and rebalancing.</p>
+
+        <h2>🎯 Benefits of Using This Free Stock Profit Calculator</h2>
+        <ul>
+          <li>Instantly computes gross profit, net profit, and return % without manual math</li>
+          <li>Accounts for brokerage on both buy and sell legs of the trade</li>
+          <li>Supports custom tax percentage — works for STT, LTCG, STCG scenarios</li>
+          <li>Real-time updating means you can model "what-if" scenarios by changing inputs</li>
+          <li>Works for Indian markets (NSE/BSE) and global markets (NYSE, NASDAQ)</li>
+          <li>No login, no signup, no data collection — completely private and free</li>
+        </ul>
+
+        <h2>📉 How to Reduce Losses in Stock Market</h2>
+        <p>While this tool helps you calculate profit, understanding how to minimize losses is equally important. Use stop-loss orders to cap downside risk on every trade. Diversify across sectors to reduce concentration risk. Avoid leveraged positions unless you are an experienced trader. Track brokerage costs actively — frequent small trades can be eroded significantly by charges even if individually profitable. Always calculate your break-even price before entering any position.</p>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ SECTION -->
+<section class="faq-sec">
+  <div class="w">
+    <div class="sec-lbl" style="justify-content:center">FAQ</div>
+    <h2 class="sec-h" style="text-align:center">Frequently Asked <span style="color:var(--blue)">Questions</span></h2>
+    <p class="sec-sub" style="text-align:center;margin:0 auto 40px">Everything you need to know about stock profit calculation and this tool.</p>
+    <div class="fql">
+      <div class="fq">
+        <div class="fq-q" onclick="tFQ(this)"><span class="fq-t">How to calculate stock profit?</span><span class="fq-i">+</span></div>
+        <div class="fq-a"><div class="fq-ai">The basic stock profit formula is: <strong>Profit = (Sell Price − Buy Price) × Quantity</strong>. For the real net profit, you subtract brokerage charges (applied on buy + sell turnover) and STT/taxes (applied on sell value). Our calculator does all of this automatically. Simply enter your buy price, sell price, quantity, and optional brokerage/tax percentages, and the result appears instantly.</div></div>
+      </div>
+      <div class="fq">
+        <div class="fq-q" onclick="tFQ(this)"><span class="fq-t">What is profit percentage in stock trading?</span><span class="fq-i">+</span></div>
+        <div class="fq-a"><div class="fq-ai">Profit percentage = (Gross Profit ÷ Total Investment) × 100. For example, if you invested ₹1,00,000 and earned ₹12,000 in profit, your profit percentage is 12%. This figure helps you compare returns across different trades and benchmark them against Nifty, FD rates, or other investments. Our <strong>share profit calculator</strong> shows this figure automatically alongside absolute profit/loss.</div></div>
+      </div>
+      <div class="fq">
+        <div class="fq-q" onclick="tFQ(this)"><span class="fq-t">Does brokerage really affect my profit that much?</span><span class="fq-i">+</span></div>
+        <div class="fq-a"><div class="fq-ai">Yes — significantly, especially on smaller trades. If your gross profit is ₹2,000 on a trade and brokerage costs ₹600 (0.3% on ₹2,00,000 turnover), that's 30% of your profit gone. Flat-fee brokers like Zerodha (₹20/order) are more cost-efficient for larger trades, while percentage brokers are better for very small trades. Always use a <strong>stock profit calculator</strong> with brokerage factored in to see your true returns.</div></div>
+      </div>
+      <div class="fq">
+        <div class="fq-q" onclick="tFQ(this)"><span class="fq-t">What is intraday profit and how is it different?</span><span class="fq-i">+</span></div>
+        <div class="fq-a"><div class="fq-ai">Intraday profit comes from buying and selling a stock within the same trading session (same day). Key differences from delivery trading: STT is only 0.025% on the sell side (vs 0.1% on both sides for delivery), no stamp duty on buy, and gains are taxed as business income at your income tax slab rate (not STCG at 15%). Our <strong>intraday profit calculator</strong> works by entering the intraday STT rate (0.025%) in the tax field and adjusting brokerage accordingly.</div></div>
+      </div>
+      <div class="fq">
+        <div class="fq-q" onclick="tFQ(this)"><span class="fq-t">Is this stock profit calculator accurate?</span><span class="fq-i">+</span></div>
+        <div class="fq-a"><div class="fq-ai">The mathematical calculations are 100% accurate based on the inputs you provide. The tool applies the standard stock profit formula precisely. However, actual brokerage charges may differ slightly by broker as they also apply GST (18%) on brokerage, SEBI fees, and exchange transaction charges separately. For an exact figure, check your broker's contract note. This tool provides a very close estimate that is reliable for planning and decision-making purposes.</div></div>
+      </div>
+      <div class="fq">
+        <div class="fq-q" onclick="tFQ(this)"><span class="fq-t">Can I use this for long-term investing calculations?</span><span class="fq-i">+</span></div>
+        <div class="fq-a"><div class="fq-ai">Absolutely. As a <strong>long term stock calculator</strong>, this tool works perfectly. Enter your original buy price (even from years ago), your current or target sell price, and quantity. Use 0.1% in the tax field for STT on delivery trades. For LTCG (Long-Term Capital Gains) on holdings over 12 months, gains above ₹1 lakh are taxed at 10% — you can factor this into the tax field as well to see your post-tax returns.</div></div>
+      </div>
+      <div class="fq">
+        <div class="fq-q" onclick="tFQ(this)"><span class="fq-t">How can I reduce losses in stock trading?</span><span class="fq-i">+</span></div>
+        <div class="fq-a"><div class="fq-ai">The key strategies to reduce stock market losses are: (1) Always use a stop-loss order — decide your maximum acceptable loss before entering a trade. (2) Diversify across 8–15 stocks across different sectors. (3) Avoid trading with borrowed money or excessive leverage. (4) Choose low-cost brokers to minimize brokerage impact. (5) Focus on liquid, high-quality stocks. (6) Keep emotions out of decisions — use data and tools like this <strong>stock return calculator India</strong> to make objective assessments.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DISCLAIMER -->
+<div class="disc">
+  <div class="w">
+    <div class="disc-in">
+      <span style="font-size:20px;flex-shrink:0">⚠️</span>
+      <div><strong>Important Notice:</strong> Stock market involves risk. Past performance does not guarantee future results. This stock profit calculator is for educational and informational purposes only — it does not constitute financial, investment, or tax advice. Always verify calculations and consult a qualified financial advisor or SEBI-registered investment advisor before making investment decisions. Actual charges may vary by broker.</div>
+    </div>
+  </div>
+</div>
+
+<!-- PRIVACY NOTE -->
+<div style="background:var(--blue-xl);border-top:1px solid var(--blue-s);border-bottom:1px solid var(--blue-s);padding:13px 0">
+  <div class="w">
+    <div style="display:flex;align-items:flex-start;gap:12px;font-size:13px;color:var(--ink2);line-height:1.7">
+      <span style="font-size:18px;flex-shrink:0">🔒</span>
+      <div><strong>Privacy Guaranteed:</strong> This tool runs entirely in your browser. No trade data you enter is ever sent to our servers, stored, or shared with any third party. Your financial information stays completely private on your device.</div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<section class="contact-sec">
+  <div class="w">
+    <div class="contact-card rev">
+      <h3>📬 Questions or Suggestions?</h3>
+      <p>For any issues, corrections, or tool improvement suggestions — we read every message and update our tools based on real user feedback. Contact us anytime.</p>
+      <a href="/contact" class="btn-bl">✉️ Contact Us</a>
+      <p class="priv-note">🔒 We respect your privacy. No data is collected. No spam, ever.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="cta-in">
+    <div class="pill">Explore More Tools</div>
+    <h2>Discover <em>100+ Free Tools</em> on RajDailyTools</h2>
+    <p>From stock calculators to health tools — all free, fast, and no sign-up required.</p>
+    <div class="cta-btns">
+      <a href="/categories" class="btn-gold">🗂️ Browse All Tools</a>
+      <a href="/#popular" class="btn-ghost">⭐ Popular Tools</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-inner">
+    <div class="ft-top">
+      <div class="ft-brand">
+        <a href="/" class="logo">
+          <div class="lb"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+          <div><div class="ln">Raj<span>Daily</span>Tools</div><div class="ls">Smart Tools for Daily Life</div></div>
+        </a>
+        <div class="ft-desc">Free, fast, and reliable finance &amp; investment tools for everyone. Stock calculators, expense trackers, and 100+ more — all in one place.</div>
+        <div class="ft-soc">
+          <a class="fts" href="#" title="Twitter">𝕏</a>
+          <a class="fts" href="#" title="Instagram">📸</a>
+          <a class="fts" href="#" title="YouTube">▶</a>
+        </div>
+      </div>
+      <div class="fc">
+        <h4>Finance Tools</h4>
+        <ul>
+          <li><a href="/stock-profit-calculator.html">Stock Profit Calculator</a></li>
+          <li><a href="/sip-calculator.html">SIP Calculator</a></li>
+          <li><a href="/emi-calculator.html">EMI Calculator</a></li>
+          <li><a href="/compound-interest-calculator.html">Compound Interest</a></li>
+          <li><a href="/profit-margin-calculator.html">Profit Margin</a></li>
+        </ul>
+      </div>
+      <div class="fc">
+        <h4>More Tools</h4>
+        <ul>
+          <li><a href="/gst-calculator.html">GST Calculator</a></li>
+          <li><a href="/percentage-calculator.html">Percentage Calculator</a></li>
+          <li><a href="/business-expense-tracker.html">Expense Tracker</a></li>
+          <li><a href="/bmi-calculator.html">BMI Calculator</a></li>
+          <li><a href="/unit-converter.html">Unit Converter</a></li>
+        </ul>
+      </div>
+      <div class="fc">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/about">About Us</a></li>
+          <li><a href="/contact">Contact</a></li>
+          <li><a href="/privacy">Privacy Policy</a></li>
+          <li><a href="/disclaimer">Disclaimer</a></li>
+          <li><a href="/sitemap.xml">Sitemap</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ft-btm">
+      <div class="ft-cp">© 2026 <b>RajDailyTools.in</b> — All rights reserved. Made with ❤️ in India. &nbsp;|&nbsp; <a href="/privacy" style="color:#64748b">Privacy</a> &nbsp;|&nbsp; <a href="/terms" style="color:#64748b">Terms</a> &nbsp;|&nbsp; <a href="/disclaimer" style="color:#64748b">Disclaimer</a> &nbsp;|&nbsp; <a href="/sitemap.xml" style="color:#64748b">Sitemap</a></div>
+      <div class="ft-tag">Free tools, no sign-up, no ads, no data stored. Not affiliated with SEBI or any broker.</div>
+    </div>
+  </div>
+</footer>
+
+<button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+/* ── DRAWER ── */
+const brg=document.getElementById('brg'),dov=document.getElementById('dov'),drw=document.getElementById('drw'),dx=document.getElementById('dx');
+function oD(){drw.classList.add('on');dov.classList.add('on');document.body.style.overflow='hidden'}
+function cD(){drw.classList.remove('on');dov.classList.remove('on');document.body.style.overflow=''}
+brg.addEventListener('click',oD);dov.addEventListener('click',cD);dx.addEventListener('click',cD);
+
+/* ── BACK TO TOP ── */
+const bttBtn=document.getElementById('btt');
+window.addEventListener('scroll',()=>{bttBtn.classList.toggle('on',window.scrollY>380)});
+
+/* ── SCROLL REVEAL ── */
+const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:.12});
+document.querySelectorAll('.rev').forEach(el=>obs.observe(el));
+
+/* ── FAQ ── */
+function tFQ(el){
+  const fq=el.closest('.fq');
+  document.querySelectorAll('.fq.open').forEach(f=>{if(f!==fq)f.classList.remove('open')});
+  fq.classList.toggle('open');
+}
+
+/* ── FORMAT ── */
+function fmt(n,sign=false){
+  const prefix=sign?(n>=0?'+':'-'):'';
+  const abs=Math.abs(n);
+  if(abs>=1e7) return prefix+'₹'+(abs/1e7).toFixed(2)+'Cr';
+  if(abs>=1e5) return prefix+'₹'+(abs/1e5).toFixed(2)+'L';
+  if(abs>=1e3) return prefix+'₹'+abs.toLocaleString('en-IN',{maximumFractionDigits:2});
+  return prefix+'₹'+abs.toFixed(2);
+}
+function fmtPct(n){return (n>=0?'+':'')+n.toFixed(2)+'%'}
+
+/* ── CALCULATE ── */
+let lastResult={};
+
+function getVals(){
+  return {
+    buyP:parseFloat(document.getElementById('buyPrice').value)||0,
+    sellP:parseFloat(document.getElementById('sellPrice').value)||0,
+    qty:parseFloat(document.getElementById('quantity').value)||0,
+    brok:parseFloat(document.getElementById('brokerage').value)||0,
+    tax:parseFloat(document.getElementById('taxRate').value)||0,
+  };
+}
+
+function calcInstant(){
+  const {buyP,sellP,qty,brok,tax}=getVals();
+  if(!buyP||!sellP||!qty) return;
+  renderResults(buyP,sellP,qty,brok,tax);
+}
+
+function calculate(){
+  const {buyP,sellP,qty,brok,tax}=getVals();
+  if(!buyP){alert('Please enter Buy Price.');document.getElementById('buyPrice').focus();return;}
+  if(!sellP){alert('Please enter Sell Price.');document.getElementById('sellPrice').focus();return;}
+  if(!qty){alert('Please enter Quantity.');document.getElementById('quantity').focus();return;}
+  renderResults(buyP,sellP,qty,brok,tax);
+  setTimeout(()=>document.getElementById('resultArea').scrollIntoView({behavior:'smooth',block:'start'}),100);
+}
+
+function renderResults(buyP,sellP,qty,brok,tax){
+  const investment=buyP*qty;
+  const sellValue=sellP*qty;
+  const grossProfit=sellValue-investment;
+  const brokerageCost=(investment+sellValue)*(brok/100);
+  const taxCost=sellValue*(tax/100);
+  const totalCharges=brokerageCost+taxCost;
+  const netProfit=grossProfit-totalCharges;
+  const grossPct=(grossProfit/investment)*100;
+  const netPct=(netProfit/investment)*100;
+  const isProfit=netProfit>=0;
+  const isGrossProfit=grossProfit>=0;
+
+  lastResult={buyP,sellP,qty,brok,tax,investment,sellValue,grossProfit,brokerageCost,taxCost,netProfit,grossPct,netPct};
+
+  document.getElementById('payGrid').innerHTML=`
+    <div class="pay-card c1">
+      <div class="pc-ico">💰</div>
+      <div class="pc-lbl">💰 Total Investment</div>
+      <div class="pc-val">${fmt(investment)}</div>
+      <div class="pc-sub">${qty.toLocaleString()} shares × ${fmt(buyP)}</div>
+    </div>
+    <div class="pay-card c3">
+      <div class="pc-ico">💵</div>
+      <div class="pc-lbl">💵 Total Selling Value</div>
+      <div class="pc-val">${fmt(sellValue)}</div>
+      <div class="pc-sub">${qty.toLocaleString()} shares × ${fmt(sellP)}</div>
+    </div>
+    <div class="pay-card c2${!isGrossProfit?' loss':''}">
+      <div class="pc-ico">${isGrossProfit?'📈':'📉'}</div>
+      <div class="pc-lbl">${isGrossProfit?'📈 Gross Profit':'📉 Gross Loss'}</div>
+      <div class="pc-val ${isGrossProfit?'profit-val':'loss-val'}">${fmt(grossProfit,true)}</div>
+      <div class="pc-sub">Return: ${fmtPct(grossPct)}</div>
+    </div>
+    <div class="pay-card c4">
+      <div class="pc-ico">🧾</div>
+      <div class="pc-lbl">🧾 Total Charges</div>
+      <div class="pc-val" style="font-size:clamp(18px,3vw,28px)">${fmt(totalCharges)}</div>
+      <div class="pc-sub">Brokerage ${fmt(brokerageCost)} + Tax ${fmt(taxCost)}</div>
+    </div>
+    <div class="pay-card c5">
+      <div class="pc-ico">${isProfit?'🎯':'⚠️'}</div>
+      <div class="pc-lbl">${isProfit?'🎯 Net Profit (After All Charges)':'⚠️ Net Loss (After All Charges)'}</div>
+      <div class="pc-val ${isProfit?'profit-val':'loss-val'}">${fmt(netProfit,true)}</div>
+      <div class="pc-sub">Net Return: <strong>${fmtPct(netPct)}</strong> &nbsp;|&nbsp; Charges reduced profit by: ${fmt(totalCharges)} (${totalCharges>0?((totalCharges/Math.abs(grossProfit))*100).toFixed(1)+'%':'0%'})</div>
+    </div>
+  `;
+
+  document.getElementById('resultArea').style.display='block';
+  document.getElementById('graphSec').style.display='block';
+  renderChart(investment,sellValue,grossProfit,netProfit);
+}
+
+function renderChart(investment,sellValue,grossProfit,netProfit){
+  const bars=[
+    {label:'💰 Investment',value:investment,color:'#2563eb'},
+    {label:'💵 Sell Value',value:sellValue,color:'#8b5cf6'},
+    {label:(grossProfit>=0?'📈 Gross Profit':'📉 Gross Loss'),value:Math.abs(grossProfit),color:grossProfit>=0?'#10b981':'#ef4444'},
+    {label:(netProfit>=0?'🎯 Net Profit':'⚠️ Net Loss'),value:Math.abs(netProfit),color:netProfit>=0?'#14b8a6':'#f97316'},
+  ];
+
+  const maxVal=Math.max(...bars.map(b=>b.value));
+
+  document.getElementById('graphLegend').innerHTML=bars.map(b=>`
+    <div class="gl-item">
+      <div class="gl-dot" style="background:${b.color}"></div>
+      ${b.label}
+    </div>
+  `).join('');
+
+  document.getElementById('graphTitle').textContent=`Trade Visualization — Buy ${fmt(investment)} → Sell ${fmt(sellValue)} → Net ${fmt(netProfit,true)}`;
+
+  document.getElementById('barGroup').innerHTML=bars.map(b=>{
+    const pct=((b.value/maxVal)*100).toFixed(1);
+    return `
+      <div class="bar-row">
+        <div class="bar-label">${b.label}</div>
+        <div class="bar-track">
+          <div class="bar-fill" style="width:${pct}%;background:${b.color}">
+            <span class="bar-fill-amt">${fmt(b.value)}</span>
+          </div>
+        </div>
+        <div class="bar-pct-lbl">${pct}%</div>
+      </div>
+    `;
+  }).join('');
+
+  const roi=((netProfit/investment)*100).toFixed(2);
+  const multiple=(sellValue/investment).toFixed(3);
+  document.getElementById('vsNote').innerHTML=`📊 Return on Investment (ROI): <strong style="color:${netProfit>=0?'var(--green)':'var(--red)'}">${roi}%</strong> &nbsp;|&nbsp; Money Multiplier: <strong>${multiple}×</strong>`;
+}
+
+function copyResult(){
+  const r=lastResult;
+  if(!r.investment) return;
+  const txt=`
+STOCK PROFIT REPORT — RajDailyTools
+=====================================
+Buy Price        : ${fmt(r.buyP)} per share
+Sell Price       : ${fmt(r.sellP)} per share
+Quantity         : ${r.qty} shares
+Brokerage Rate   : ${r.brok}%
+Tax / STT Rate   : ${r.tax}%
+
+Total Investment : ${fmt(r.investment)}
+Total Sell Value : ${fmt(r.sellValue)}
+Gross Profit/Loss: ${fmt(r.grossProfit,true)} (${r.grossPct.toFixed(2)}%)
+Brokerage Cost   : ${fmt(r.brokerageCost)}
+Tax / STT Cost   : ${fmt(r.taxCost)}
+NET PROFIT/LOSS  : ${fmt(r.netProfit,true)} (${r.netPct.toFixed(2)}%)
+
+Stock market involves risk. This is for educational purposes only.
+Generated by RajDailyTools.in`.trim();
+
+  const cb=document.getElementById('copyBtn');
+  const done=()=>{cb.textContent='✅ Copied!';cb.classList.add('copied');setTimeout(()=>{cb.textContent='📋 Copy Result Report';cb.classList.remove('copied');},2500)};
+  navigator.clipboard?navigator.clipboard.writeText(txt).then(done).catch(done):done();
+}
+</script>
+</body>
+</html>
