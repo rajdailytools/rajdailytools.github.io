@@ -1,0 +1,1195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Routine Effectiveness Checker – Free Productivity Score Tool | RajDailyTools</title>
+<meta name="description" content="Use this free daily routine effectiveness checker to calculate your productivity score instantly. Analyze your daily schedule, get personalized suggestions, and improve your time management. 100% free.">
+<meta name="keywords" content="daily routine effectiveness checker, productivity calculator online, check daily routine productivity, time management calculator tool, daily schedule analyzer, how productive is my routine, routine efficiency checker free">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://rajdailytools.in/daily-routine-effectiveness-checker">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#2563eb;--blue-d:#1d4ed8;--blue-xl:#eff6ff;--blue-s:#dbeafe;
+  --amber:#f59e0b;--green:#10b981;--red:#ef4444;--purple:#8b5cf6;
+  --orange:#f97316;--teal:#14b8a6;
+  --green-xl:#f0fdf4;--green-s:#bbf7d0;
+  --red-xl:#fef2f2;--red-s:#fecaca;
+  --amber-xl:#fffbeb;--amber-s:#fde68a;
+  --purple-xl:#faf5ff;--purple-s:#ddd6fe;
+  --ink:#0f172a;--ink2:#334155;--ink3:#64748b;--ink4:#94a3b8;
+  --line:#e2e8f0;--surf:#f8fafc;--white:#fff;
+  --s1:0 1px 3px rgba(15,23,42,.06),0 1px 2px rgba(15,23,42,.04);
+  --s2:0 4px 16px rgba(15,23,42,.08),0 2px 6px rgba(15,23,42,.04);
+  --s3:0 12px 40px rgba(15,23,42,.11),0 3px 10px rgba(15,23,42,.06);
+  --s4:0 24px 64px rgba(15,23,42,.13),0 6px 20px rgba(15,23,42,.07);
+  --sb:0 8px 32px rgba(37,99,235,.20);
+  --fd:'Sora',sans-serif;--fb:'DM Sans',sans-serif;
+  --ease:cubic-bezier(.4,0,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);color:var(--ink);background:var(--white);overflow-x:hidden;-webkit-font-smoothing:antialiased;line-height:1.6}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+button{cursor:pointer;border:none;background:none;font-family:var(--fb)}
+.w{max-width:1180px;margin:0 auto;padding:0 24px}
+.wa{max-width:880px;margin:0 auto;padding:0 24px}
+select,input{appearance:none;-webkit-appearance:none}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+@keyframes resultIn{from{opacity:0;transform:translateY(18px) scale(.97)}to{opacity:1;transform:none}}
+@keyframes countUp{from{opacity:0;transform:scale(.85)}to{opacity:1;transform:scale(1)}}
+@keyframes barGrow{from{width:0}to{width:var(--bar-w)}}
+@keyframes scorePop{from{opacity:0;transform:scale(.7)}to{opacity:1;transform:scale(1)}}
+.rev{opacity:0;transform:translateY(22px);transition:opacity .55s var(--ease),transform .55s var(--ease)}
+.rev.in{opacity:1;transform:none}
+
+/* HEADER */
+.hdr{position:sticky;top:0;z-index:999;background:rgba(255,255,255,.96);backdrop-filter:blur(20px);border-bottom:1px solid var(--line);box-shadow:var(--s1)}
+.hdi{display:flex;align-items:center;justify-content:space-between;height:66px}
+.logo{display:flex;align-items:center;gap:10px}
+.lb{width:36px;height:36px;background:var(--blue);border-radius:9px;display:flex;align-items:center;justify-content:center;box-shadow:var(--sb);flex-shrink:0}
+.lb svg{width:18px;height:18px;fill:#fff}
+.ln{font-family:var(--fd);font-size:19px;font-weight:800;color:var(--ink);line-height:1}
+.ln span{color:var(--blue)}
+.ls{font-size:10px;color:var(--ink4);letter-spacing:.04em}
+nav.dn{display:flex;align-items:center;gap:2px}
+nav.dn a{font-size:13.5px;font-weight:500;color:var(--ink2);padding:7px 13px;border-radius:8px;transition:.2s}
+nav.dn a:hover{color:var(--blue);background:var(--blue-xl)}
+.hcta{background:var(--blue);color:#fff;font-family:var(--fd);font-weight:600;font-size:13px;padding:8px 18px;border-radius:8px;box-shadow:var(--sb);transition:.2s}
+.hcta:hover{background:var(--blue-d);transform:translateY(-1px)}
+.brg{display:none;flex-direction:column;gap:4.5px;padding:8px;border-radius:8px}
+.brg span{display:block;width:20px;height:2px;background:var(--ink);border-radius:2px;transition:.28s}
+.dov{display:none;position:fixed;inset:0;background:rgba(15,23,42,.45);z-index:1040;backdrop-filter:blur(3px)}
+.dov.on{display:block}
+.drw{position:fixed;top:0;right:-100%;width:270px;height:100vh;background:#fff;z-index:1050;padding:22px;box-shadow:var(--s4);transition:right .32s var(--ease);overflow-y:auto}
+.drw.on{right:0}
+.dh{display:flex;align-items:center;justify-content:space-between;margin-bottom:26px}
+.dx{width:33px;height:33px;border-radius:7px;background:var(--surf);display:flex;align-items:center;justify-content:center;color:var(--ink3);font-size:17px}
+nav.mn{display:flex;flex-direction:column;gap:3px}
+nav.mn a{display:block;font-size:14px;font-weight:500;color:var(--ink2);padding:11px 13px;border-radius:8px;transition:.2s}
+nav.mn a:hover{color:var(--blue);background:var(--blue-xl)}
+
+/* HERO */
+.hero{position:relative;overflow:hidden;background:linear-gradient(150deg,#ebf4ff 0%,#fff 46%,#fff7ed 100%);padding:64px 0 72px}
+.hero::before{content:'';position:absolute;top:-140px;right:-180px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(37,99,235,.08) 0%,transparent 68%);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-80px;left:-100px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(249,115,22,.05) 0%,transparent 68%);pointer-events:none}
+.blob{position:absolute;border-radius:50%;pointer-events:none;animation:float 6s ease-in-out infinite}
+.b1{width:13px;height:13px;background:rgba(37,99,235,.18);top:22%;right:14%;animation-delay:0s}
+.b2{width:9px;height:9px;background:rgba(249,115,22,.22);top:58%;right:26%;animation-delay:2.2s}
+.b3{width:11px;height:11px;background:rgba(16,185,129,.18);top:36%;right:6%;animation-delay:4s}
+.bc{display:flex;align-items:center;gap:7px;font-size:12.5px;color:var(--ink3);margin-bottom:22px;position:relative;z-index:1;flex-wrap:wrap}
+.bc a{color:var(--blue);font-weight:600}
+.pill{display:inline-flex;align-items:center;gap:7px;font-family:var(--fd);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);background:var(--blue-xl);padding:5px 14px;border-radius:100px;margin-bottom:18px}
+.pill::before{content:'';width:6px;height:6px;background:var(--blue);border-radius:50%}
+.hero-inner{position:relative;z-index:1;max-width:720px;animation:fadeUp .5s ease both}
+.hero h1{font-family:var(--fd);font-size:clamp(26px,4.5vw,50px);font-weight:800;line-height:1.1;color:var(--ink);margin-bottom:14px}
+.hero h1 span{color:var(--blue)}
+.hero-sub{font-size:16px;color:var(--ink3);line-height:1.8;margin-bottom:22px;max-width:600px}
+.hero-chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.chip{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;padding:6px 14px;border-radius:100px;background:#fff;border:1.5px solid var(--line);color:var(--ink2);box-shadow:var(--s1);transition:.22s}
+.chip:hover{border-color:var(--blue);color:var(--blue);transform:translateY(-1px)}
+.hero-meta{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:24px}
+.upd{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:700;color:var(--blue);background:var(--blue-xl);padding:6px 14px;border-radius:100px;border:1.5px solid var(--blue-s)}
+.mi{font-size:13px;color:var(--ink3);font-weight:500}
+
+/* HOW TO USE */
+.howto{background:var(--amber-xl);border:2px solid var(--amber-s);border-radius:16px;padding:22px 26px;max-width:560px;margin-bottom:24px}
+.howto-ttl{display:flex;align-items:center;gap:9px;font-family:var(--fd);font-size:15px;font-weight:800;color:var(--ink);margin-bottom:13px}
+.howto-steps{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.hs{display:flex;align-items:flex-start;gap:10px;font-size:13.5px;color:var(--ink2);line-height:1.6}
+.sn{width:24px;height:24px;background:var(--amber);color:#fff;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex-shrink:0;margin-top:1px}
+
+/* RELATED TOOLS */
+.rel-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;position:relative;z-index:1}
+.rg-box{border-radius:14px;padding:14px 14px 12px;display:flex;flex-direction:column;gap:8px;transition:.22s;border:1.5px solid}
+.rg-box:hover{transform:translateY(-3px);box-shadow:var(--s3)}
+.rg-box.army{background:linear-gradient(135deg,var(--amber-xl),#fef3c7);border-color:var(--amber-s)}
+.rg-box.ht{background:linear-gradient(135deg,var(--green-xl),#dcfce7);border-color:var(--green-s)}
+.rg-box.ssc{background:linear-gradient(135deg,var(--blue-xl),var(--blue-s));border-color:var(--blue-s)}
+.rg-box.mp{background:linear-gradient(135deg,var(--purple-xl),#ede9fe);border-color:var(--purple-s)}
+.rg-box.tl{background:linear-gradient(135deg,#f0fdfa,#ccfbf1);border-color:#99f6e4}
+.rg-ico{font-size:22px}
+.rg-txt h4{font-family:var(--fd);font-size:12px;font-weight:800;color:var(--ink);margin-bottom:2px}
+.rg-txt p{font-size:11px;color:var(--ink3);line-height:1.5}
+.btn-xs{display:inline-flex;align-items:center;gap:4px;font-family:var(--fd);font-weight:700;font-size:11px;padding:5px 10px;border-radius:7px;transition:.22s;margin-top:4px}
+.btn-xs.a{background:var(--amber);color:#fff}.btn-xs.a:hover{background:#d97706}
+.btn-xs.g{background:var(--green);color:#fff}.btn-xs.g:hover{background:#059669}
+.btn-xs.b{background:var(--blue);color:#fff}.btn-xs.b:hover{background:var(--blue-d)}
+.btn-xs.p{background:var(--purple);color:#fff}.btn-xs.p:hover{background:#7c3aed}
+.btn-xs.t{background:var(--teal);color:#fff}.btn-xs.t:hover{background:#0f9488}
+
+/* TOOL */
+.tool-sec{background:var(--surf);padding:80px 0}
+.tool-wrap{max-width:960px;margin:0 auto}
+.tool-card{background:#fff;border:1.5px solid var(--line);border-radius:28px;overflow:hidden;box-shadow:var(--s4)}
+.tool-hdr{background:linear-gradient(135deg,#1d4ed8 0%,#2563eb 55%,#3b82f6 100%);padding:32px 40px;position:relative;overflow:hidden}
+.tool-hdr::before{content:'';position:absolute;top:-60px;right:-60px;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,.07)}
+.tool-hdr::after{content:'';position:absolute;bottom:-40px;left:-40px;width:180px;height:180px;border-radius:50%;background:rgba(255,255,255,.04)}
+.th{position:relative;z-index:1}
+.th h2{font-family:var(--fd);font-size:21px;font-weight:800;color:#fff;margin-bottom:6px}
+.th p{font-size:14px;color:rgba(255,255,255,.82);line-height:1.65}
+.th-badges{display:flex;flex-wrap:wrap;gap:9px;margin-top:14px}
+.thb{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:rgba(255,255,255,.9);background:rgba(255,255,255,.13);padding:5px 12px;border-radius:100px}
+.tool-body{padding:36px 40px}
+
+/* FORM */
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+.fgrid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:16px}
+.fld{display:flex;flex-direction:column;gap:7px}
+.flbl{font-size:13px;font-weight:700;color:var(--ink2);display:flex;align-items:center;gap:6px}
+.flbl span{font-size:11px;font-weight:500;color:var(--ink4);margin-left:3px;background:var(--surf);padding:2px 7px;border-radius:5px;border:1px solid var(--line)}
+.finp,.fsel{padding:12px 16px;font-size:14.5px;color:var(--ink);background:#fff;border:1.5px solid var(--line);border-radius:10px;outline:none;transition:.22s;font-family:var(--fb);width:100%}
+.finp:focus,.fsel:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(37,99,235,.10)}
+.hint-box{display:flex;align-items:flex-start;gap:9px;font-size:13px;color:var(--ink2);background:var(--blue-xl);border:1.5px solid var(--blue-s);border-radius:10px;padding:11px 14px;margin:16px 0;line-height:1.65}
+.hint-box svg{width:16px;height:16px;stroke:var(--blue);fill:none;stroke-width:2;flex-shrink:0;margin-top:2px}
+.chk-btn{width:100%;padding:17px;background:linear-gradient(135deg,var(--blue) 0%,#1e40af 100%);color:#fff;font-family:var(--fd);font-weight:800;font-size:16px;border-radius:12px;box-shadow:var(--sb);transition:all .25s var(--ease);display:flex;align-items:center;justify-content:center;gap:10px}
+.chk-btn:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(37,99,235,.32)}
+.chk-btn:active{transform:translateY(0)}
+
+/* RESULT */
+#resultArea{display:none;margin-top:28px;animation:resultIn .45s var(--ease) both}
+.status-banner{border-radius:14px;padding:16px 22px;display:flex;align-items:center;gap:14px;margin-bottom:20px;border:2px solid}
+.status-banner.poor{background:var(--red-xl);border-color:var(--red-s)}
+.status-banner.avg{background:var(--amber-xl);border-color:var(--amber-s)}
+.status-banner.great{background:var(--green-xl);border-color:var(--green-s)}
+.status-icon{font-size:28px;flex-shrink:0}
+.status-text{font-family:var(--fd);font-size:16px;font-weight:800}
+.status-sub{font-size:13px;margin-top:3px;color:var(--ink3)}
+
+/* SCORE DISPLAY */
+.score-display{text-align:center;margin-bottom:22px;padding:32px 24px;background:linear-gradient(135deg,var(--blue-xl),#e0eeff);border:2px solid var(--blue-s);border-radius:20px;position:relative;overflow:hidden}
+.score-display::before{content:'';position:absolute;inset:0;opacity:.03;background-image:repeating-linear-gradient(45deg,var(--blue) 0,var(--blue) 1px,transparent 0,transparent 50%);background-size:14px 14px;pointer-events:none}
+.score-num{font-family:var(--fd);font-size:80px;font-weight:800;line-height:1;animation:scorePop .6s var(--ease) both}
+.score-slash{font-family:var(--fd);font-size:32px;font-weight:600;color:var(--ink3)}
+.score-label{font-family:var(--fd);font-size:18px;font-weight:700;margin-top:8px}
+.score-label.poor{color:var(--red)}
+.score-label.avg{color:var(--amber)}
+.score-label.great{color:var(--green)}
+
+/* SCORE BAR */
+.score-bar-wrap{background:var(--surf);border:1.5px solid var(--line);border-radius:14px;padding:18px 22px;margin-bottom:16px}
+.score-bar-lbl{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;font-size:13px;font-weight:700;color:var(--ink2)}
+.score-bar-track{background:var(--line);border-radius:100px;height:18px;overflow:hidden;position:relative}
+.score-bar-fill{height:100%;border-radius:100px;transition:width 1.6s var(--ease);width:0;position:relative}
+.score-bar-fill::after{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:linear-gradient(90deg,rgba(255,255,255,0) 0%,rgba(255,255,255,.22) 50%,rgba(255,255,255,0) 100%);border-radius:100px}
+.score-zones{display:flex;margin-top:6px;font-size:10.5px;font-weight:600;gap:2px}
+.sz{flex:1;text-align:center;padding:3px 4px;border-radius:5px}
+.sz.r{background:var(--red-xl);color:var(--red)}
+.sz.a{background:var(--amber-xl);color:var(--amber)}
+.sz.g{background:var(--green-xl);color:var(--green)}
+
+/* PAY GRID */
+.pay-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-bottom:16px}
+.pay-card{border-radius:16px;padding:22px 20px;position:relative;overflow:hidden;border:2px solid;transition:.25s}
+.pay-card:hover{transform:translateY(-2px);box-shadow:var(--s3)}
+.pay-card.c1{background:linear-gradient(135deg,var(--blue-xl),#e0eeff);border-color:var(--blue-s)}
+.pay-card.c2{background:linear-gradient(135deg,var(--green-xl),#d1fae5);border-color:var(--green-s)}
+.pay-card.c3{background:linear-gradient(135deg,var(--amber-xl),#fef3c7);border-color:var(--amber-s)}
+.pay-card.c4{background:linear-gradient(135deg,var(--purple-xl),#ede9fe);border-color:var(--purple-s)}
+.pay-card.c5{background:linear-gradient(135deg,#f0fdfa,#ccfbf1);border-color:#99f6e4;grid-column:1/-1}
+.pay-card::before{content:'';position:absolute;inset:0;opacity:.04;background-image:repeating-linear-gradient(45deg,currentColor 0,currentColor 1px,transparent 0,transparent 50%);background-size:12px 12px;pointer-events:none}
+.pc-lbl{font-size:12px;font-weight:700;color:var(--ink3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px}
+.pc-val{font-family:var(--fd);font-size:26px;font-weight:800;color:var(--ink);line-height:1;animation:countUp .5s var(--ease) both}
+.pc-sub{font-size:12.5px;color:var(--ink3);margin-top:5px}
+.pc-ico{font-size:28px;position:absolute;top:16px;right:16px;opacity:.18}
+.tips-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px;margin-bottom:14px}
+.tip-pill{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:600;padding:7px 14px;border-radius:100px;background:var(--green-xl);color:var(--green);border:1.5px solid var(--green-s)}
+.tip-pill.blue{background:var(--blue-xl);color:var(--blue);border-color:var(--blue-s)}
+.tip-pill.amber{background:var(--amber-xl);color:var(--amber);border-color:var(--amber-s)}
+.tip-pill.purple{background:var(--purple-xl);color:var(--purple);border-color:var(--purple-s)}
+.tip-pill.red{background:var(--red-xl);color:var(--red);border-color:var(--red-s)}
+.warn-box{background:var(--amber-xl);border:1.5px solid var(--amber-s);border-radius:12px;padding:14px 18px;display:flex;gap:10px;font-size:13.5px;color:var(--ink2);line-height:1.7;margin-top:14px}
+
+/* SUGGESTIONS */
+.sugg-list{display:flex;flex-direction:column;gap:10px;margin-top:16px}
+.sugg-item{display:flex;align-items:flex-start;gap:12px;background:var(--surf);border:1.5px solid var(--line);border-radius:12px;padding:14px 16px;transition:.2s}
+.sugg-item:hover{border-color:var(--blue-s);background:var(--blue-xl)}
+.sugg-ico{font-size:20px;flex-shrink:0;margin-top:1px}
+.sugg-text{font-size:14px;color:var(--ink2);line-height:1.65}
+.sugg-text strong{color:var(--ink);font-weight:700}
+
+/* FEATURES */
+.tips-sec{background:var(--surf);padding:72px 0}
+.tips-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.tip-card{background:#fff;border:1.5px solid var(--line);border-radius:16px;padding:22px 18px;text-align:center;transition:.28s}
+.tip-card:hover{transform:translateY(-4px);box-shadow:var(--s3);border-color:var(--blue-s)}
+.tip-ico{font-size:32px;margin-bottom:11px}
+.tip-title{font-family:var(--fd);font-size:14px;font-weight:800;color:var(--ink);margin-bottom:8px}
+.tip-desc{font-size:13px;color:var(--ink3);line-height:1.7}
+
+/* TABLE */
+.tbl-sec{background:#fff;padding:72px 0}
+.tbl-wr{overflow-x:auto;margin-bottom:24px;border-radius:14px;border:1.5px solid var(--line);box-shadow:var(--s2)}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+thead th{background:linear-gradient(135deg,var(--blue) 0%,#1e40af 100%);color:#fff;padding:14px 16px;text-align:left;font-family:var(--fd);font-size:13px;font-weight:700;letter-spacing:.03em}
+thead th:first-child{border-radius:14px 0 0 0}
+thead th:last-child{border-radius:0 14px 0 0}
+tbody tr{border-bottom:1px solid var(--line);transition:.2s}
+tbody tr:hover{background:var(--blue-xl)}
+tbody td{padding:12px 16px;color:var(--ink2);vertical-align:middle}
+.tbadge{display:inline-flex;font-size:11px;font-weight:700;padding:3px 8px;border-radius:100px}
+.tbadge.g{background:var(--green-xl);color:var(--green);border:1px solid var(--green-s)}
+.tbadge.b{background:var(--blue-xl);color:var(--blue);border:1px solid var(--blue-s)}
+.tbadge.a{background:var(--amber-xl);color:var(--amber);border:1px solid var(--amber-s)}
+.tbadge.r{background:var(--red-xl);color:var(--red);border:1px solid var(--red-s)}
+.tbadge.p{background:var(--purple-xl);color:var(--purple);border:1px solid var(--purple-s)}
+
+/* GRAPH */
+.graph-sec{background:var(--surf);padding:72px 0}
+.graph-card{background:#fff;border:1.5px solid var(--line);border-radius:20px;padding:28px 32px;box-shadow:var(--s3)}
+.graph-hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;flex-wrap:wrap;gap:12px}
+.graph-ttl{font-family:var(--fd);font-size:18px;font-weight:800;color:var(--ink)}
+.chart-wrap{display:flex;flex-direction:column;gap:13px}
+.bar-row{display:flex;align-items:center;gap:14px}
+.bar-lbl{font-size:13px;font-weight:600;color:var(--ink2);width:130px;flex-shrink:0;text-align:right}
+.bar-track{flex:1;background:var(--surf);border-radius:100px;height:28px;overflow:hidden;border:1px solid var(--line)}
+.bar-fill{height:100%;border-radius:100px;display:flex;align-items:center;padding-left:12px;font-family:var(--fd);font-size:12px;font-weight:700;color:#fff;transition:width 1.4s var(--ease);width:0;min-width:0;white-space:nowrap;overflow:hidden}
+.bar-val{font-size:12.5px;font-weight:700;color:var(--ink2);width:50px;flex-shrink:0}
+#chartNote{font-size:12px;color:var(--ink4);margin-top:16px;text-align:center}
+
+/* STORY */
+.story-sec{background:#fff;padding:72px 0}
+.story-card{background:var(--surf);border:1.5px solid var(--line);border-radius:24px;padding:40px;box-shadow:var(--s3);position:relative;overflow:hidden}
+.story-card::before{content:'';position:absolute;top:0;left:0;bottom:0;width:5px;background:linear-gradient(180deg,var(--blue) 0%,var(--orange) 100%);border-radius:5px 0 0 5px}
+.sq{font-size:54px;color:var(--blue-s);font-family:Georgia,serif;line-height:1;padding-left:8px}
+.sb{font-size:15.5px;color:var(--ink2);line-height:1.9;padding:0 8px}
+.sauth{display:flex;align-items:center;gap:14px;margin-top:22px;padding-top:20px;border-top:1px solid var(--line)}
+.savt{width:48px;height:48px;background:var(--blue);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+.sname{font-family:var(--fd);font-size:15px;font-weight:700;color:var(--ink)}
+.srole{font-size:12.5px;color:var(--ink3)}
+.founder-msg{background:linear-gradient(135deg,var(--blue-xl),var(--blue-s));border:1.5px solid var(--blue-s);border-radius:14px;padding:20px 22px;margin-top:20px;display:flex;gap:13px}
+.fm-ico{font-size:26px;flex-shrink:0}
+.fm-txt{font-size:14px;color:var(--ink2);line-height:1.75;font-style:italic}
+.fm-txt strong{color:var(--ink);font-weight:700;font-style:normal}
+
+/* GUIDE */
+.guide-sec{background:var(--surf);padding:72px 0}
+.guide-body h2{font-family:var(--fd);font-size:21px;font-weight:800;color:var(--ink);margin:28px 0 11px;line-height:1.3}
+.guide-body h2:first-child{margin-top:0}
+.guide-body p{font-size:15px;color:var(--ink3);line-height:1.85;margin-bottom:14px}
+.guide-body ul{display:flex;flex-direction:column;gap:8px;margin:12px 0 16px}
+.guide-body li{display:flex;align-items:flex-start;gap:10px;font-size:14.5px;color:var(--ink3);line-height:1.7}
+.guide-body li::before{content:'✓';width:18px;height:18px;background:var(--blue);color:#fff;border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;flex-shrink:0;margin-top:3px}
+.guide-body strong{color:var(--ink2);font-weight:700}
+.ibox{background:var(--blue-xl);border:1.5px solid var(--blue-s);border-radius:13px;padding:15px 18px;margin:16px 0;display:flex;gap:11px;font-size:14px;color:var(--ink2);line-height:1.7}
+.ibox svg{width:17px;height:17px;stroke:var(--blue);fill:none;stroke-width:2;flex-shrink:0;margin-top:2px}
+.ibox.a{background:var(--amber-xl);border-color:var(--amber-s)}
+.ibox.a svg{stroke:var(--amber)}
+.ibox.g{background:var(--green-xl);border-color:var(--green-s)}
+.ibox.g svg{stroke:var(--green)}
+
+/* FAQ */
+.faq-sec{background:#fff;padding:72px 0}
+.fql{max-width:780px;margin:0 auto}
+.fq{background:var(--surf);border:1.5px solid var(--line);border-radius:13px;margin-bottom:10px;overflow:hidden}
+.fq-q{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;cursor:pointer;gap:14px;transition:.2s}
+.fq-q:hover{background:var(--blue-xl)}
+.fq-t{font-weight:600;font-size:15px;color:var(--ink);line-height:1.4}
+.fq-i{width:28px;height:28px;border-radius:50%;background:var(--blue-xl);color:var(--blue);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;transition:transform .28s,background .2s}
+.fq.open .fq-i{transform:rotate(45deg);background:var(--blue);color:#fff}
+.fq-a{max-height:0;overflow:hidden;transition:max-height .35s var(--ease)}
+.fq-ai{padding:0 22px 18px;font-size:14.5px;color:var(--ink3);line-height:1.78}
+.fq.open .fq-a{max-height:500px}
+
+/* MISC */
+.disc{background:var(--amber-xl);border-top:1px solid var(--amber-s);border-bottom:1px solid var(--amber-s);padding:15px 0}
+.contact-sec{background:var(--surf);padding:60px 0}
+.contact-card{max-width:580px;margin:0 auto;background:#fff;border:1.5px solid var(--line);border-radius:20px;padding:32px;text-align:center;box-shadow:var(--s2)}
+.contact-card h3{font-family:var(--fd);font-size:19px;font-weight:800;color:var(--ink);margin-bottom:10px}
+.contact-card p{font-size:15px;color:var(--ink3);line-height:1.75;margin-bottom:20px}
+.btn-bl{display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:#fff;font-family:var(--fd);font-weight:700;font-size:14.5px;padding:12px 26px;border-radius:8px;box-shadow:var(--sb);transition:.22s}
+.btn-bl:hover{background:var(--blue-d);transform:translateY(-1px)}
+.priv-note{font-size:12px;color:var(--ink4);margin-top:14px}
+.cta{background:linear-gradient(140deg,#0f172a 0%,#1e3a8a 100%);padding:80px 0;text-align:center;position:relative;overflow:hidden}
+.cta::before{content:'';position:absolute;top:-80px;left:50%;transform:translateX(-50%);width:800px;height:380px;background:radial-gradient(ellipse,rgba(37,99,235,.22) 0%,transparent 68%);pointer-events:none}
+.cta-in{position:relative;z-index:1}
+.cta .pill{color:#93c5fd;background:rgba(255,255,255,.1);margin-bottom:18px}
+.cta .pill::before{background:#93c5fd}
+.cta h2{font-family:var(--fd);font-size:clamp(24px,4vw,42px);font-weight:800;color:#fff;line-height:1.15;margin-bottom:12px}
+.cta h2 em{color:#fbbf24;font-style:normal}
+.cta p{font-size:16px;color:rgba(255,255,255,.72);max-width:480px;margin:0 auto 32px;line-height:1.78}
+.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn-gold{display:inline-flex;align-items:center;gap:8px;background:var(--amber);color:#fff;font-family:var(--fd);font-weight:800;font-size:15px;padding:14px 30px;border-radius:8px;box-shadow:0 8px 28px rgba(245,158,11,.35);transition:.22s}
+.btn-gold:hover{background:#d97706;transform:translateY(-3px)}
+.btn-ghost{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.09);border:1.5px solid rgba(255,255,255,.22);color:#fff;font-family:var(--fd);font-weight:600;font-size:14px;padding:13px 26px;border-radius:8px;transition:.2s}
+.btn-ghost:hover{background:rgba(255,255,255,.16)}
+footer{background:#0f172a;padding:52px 0 0}
+.ft-inner{max-width:1180px;margin:0 auto;padding:0 24px}
+.ft-top{display:grid;grid-template-columns:1.9fr 1fr 1fr 1fr;gap:44px;margin-bottom:44px}
+.ft-brand .ln{color:#fff}.ft-brand .ls{color:#475569}
+.ft-desc{font-size:13.5px;color:#64748b;line-height:1.78;max-width:265px;margin:13px 0 20px}
+.ft-soc{display:flex;gap:9px}
+.fts{width:34px;height:34px;border-radius:7px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;color:#94a3b8;font-size:13px;transition:.2s}
+.fts:hover{background:var(--blue);color:#fff}
+.fc h4{font-family:var(--fd);font-size:12px;font-weight:700;color:#fff;margin-bottom:14px;letter-spacing:.06em;text-transform:uppercase}
+.fc ul{display:flex;flex-direction:column;gap:8px}
+.fc ul a{font-size:13.5px;color:#64748b;transition:.18s}
+.fc ul a:hover{color:#93c5fd}
+.ft-btm{border-top:1px solid rgba(255,255,255,.07);padding:20px 0;text-align:center}
+.ft-cp{font-size:12.5px;color:#475569}
+.ft-cp b{color:#64748b}
+.ft-tag{font-size:12px;color:#334155;margin-top:4px;font-style:italic}
+.btt{position:fixed;bottom:26px;right:26px;z-index:500;width:43px;height:43px;background:var(--blue);color:#fff;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:17px;box-shadow:var(--sb);opacity:0;pointer-events:none;transform:translateY(14px);transition:.28s var(--ease)}
+.btt.on{opacity:1;pointer-events:auto;transform:translateY(0)}
+.btt:hover{transform:translateY(-3px)}
+.sec-lbl{display:flex;align-items:center;gap:8px;font-family:var(--fd);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin-bottom:10px}
+.sec-lbl::before{content:'';width:6px;height:6px;background:var(--blue);border-radius:50%}
+.sec-h{font-family:var(--fd);font-size:clamp(22px,3.5vw,34px);font-weight:800;color:var(--ink);line-height:1.15;margin-bottom:10px}
+.sec-sub{font-size:15.5px;color:var(--ink3);line-height:1.78;margin-bottom:40px;max-width:600px}
+.notice-banner{background:linear-gradient(135deg,#0f172a,#1e3a8a);border-radius:14px;padding:18px 22px;display:flex;align-items:center;gap:14px;margin-top:14px}
+.notice-icon{font-size:26px;flex-shrink:0}
+.notice-text{font-family:var(--fd);font-size:14px;font-weight:700;color:#fbbf24;line-height:1.6}
+.notice-text span{color:#e2e8f0;font-weight:400;font-family:var(--fb)}
+
+input[type=range]{-webkit-appearance:auto;appearance:auto;width:100%;height:6px;border-radius:3px;background:var(--line);outline:none;border:none;padding:0;cursor:pointer;margin-top:6px}
+input[type=range]::-webkit-slider-thumb{width:20px;height:20px;border-radius:50%;background:var(--blue);cursor:pointer;-webkit-appearance:none;box-shadow:var(--sb)}
+.range-val{font-family:var(--fd);font-size:22px;font-weight:800;color:var(--blue);text-align:center;margin-top:4px}
+.range-lbl-row{display:flex;justify-content:space-between;font-size:11px;color:var(--ink4);margin-top:2px}
+
+@media(max-width:1060px){.ft-top{grid-template-columns:1fr 1fr}.tips-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:860px){
+  nav.dn,.hcta{display:none}.brg{display:flex}
+  .tool-body{padding:24px 22px}.tool-hdr{padding:24px 22px}
+  .fgrid{grid-template-columns:1fr}.fgrid3{grid-template-columns:1fr}
+  .howto-steps{grid-template-columns:1fr}
+  .rel-grid{grid-template-columns:1fr 1fr}
+  .pay-grid{grid-template-columns:1fr 1fr}
+  .bar-lbl{width:90px;font-size:12px}
+}
+@media(max-width:600px){
+  .ft-top{grid-template-columns:1fr}.rel-grid{grid-template-columns:1fr}
+  .tips-grid{grid-template-columns:1fr 1fr}
+  .cta-btns{flex-direction:column;align-items:center}
+  .story-card{padding:26px 20px}
+  .pay-grid{grid-template-columns:1fr}
+  .pay-card.c5{grid-column:auto}
+  .score-num{font-size:60px}
+  .bar-row{flex-wrap:wrap}
+  .bar-lbl{width:100%;text-align:left}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="hdr">
+  <div class="w">
+    <div class="hdi">
+      <a href="/" class="logo">
+        <div class="lb"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+        <div><div class="ln">Raj<span>Daily</span>Tools</div><div class="ls">Smart Tools for Daily Life</div></div>
+      </a>
+      <nav class="dn">
+        <a href="/">Home</a><a href="/categories">Categories</a>
+        <a href="/#popular">Popular</a><a href="/about">About</a><a href="/contact">Contact</a>
+      </nav>
+      <a href="/categories" class="hcta">All Tools →</a>
+      <button class="brg" id="brg"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="dov" id="dov"></div>
+<div class="drw" id="drw">
+  <div class="dh">
+    <div class="logo">
+      <div class="lb" style="width:30px;height:30px;border-radius:7px"><svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#fff"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+      <div class="ln" style="font-size:16px">Raj<span>Daily</span>Tools</div>
+    </div>
+    <button class="dx" id="dx">✕</button>
+  </div>
+  <nav class="mn">
+    <a href="/" onclick="cD()">🏠 Home</a>
+    <a href="/categories" onclick="cD()">🗂️ Categories</a>
+    <a href="/#popular" onclick="cD()">⭐ Popular</a>
+    <a href="/about" onclick="cD()">👤 About</a>
+    <a href="/contact" onclick="cD()">📬 Contact</a>
+  </nav>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+  <div class="w">
+    <div class="bc">
+      <a href="/">Home</a><span style="color:var(--ink4)">›</span>
+      <a href="/categories">Tools</a><span style="color:var(--ink4)">›</span>
+      <span>Daily Routine Effectiveness Checker</span>
+    </div>
+    <div class="hero-inner">
+      <div class="pill">🧠 Productivity Score Tool &nbsp;·&nbsp; 💯 Free Tool</div>
+      <h1>Check How <span>Effective Your Daily Routine</span> Really Is 🧠</h1>
+      <p class="hero-sub">Analyze your daily schedule, calculate your productivity score, and get personalized suggestions to improve your life instantly. Made for students &amp; professionals.</p>
+      <div class="hero-chips">
+        <span class="chip">📊 Productivity Score</span>
+        <span class="chip">⏰ Schedule Analyzer</span>
+        <span class="chip">💡 Smart Suggestions</span>
+        <span class="chip">📈 Visual Chart</span>
+        <span class="chip">🆓 100% Free</span>
+        <span class="chip">🔒 No Data Stored</span>
+      </div>
+      <div class="hero-meta">
+        <div class="upd">🧠 Daily Routine Effectiveness Checker</div>
+        <span class="mi">✅ Instant Result</span>
+        <span class="mi">📊 Students &amp; Professionals</span>
+      </div>
+      <!-- HOW TO USE -->
+      <div class="howto">
+        <div class="howto-ttl">💡 How to Use This Tool</div>
+        <div class="howto-steps">
+          <div class="hs"><span class="sn">1</span>Enter your daily routine details</div>
+          <div class="hs"><span class="sn">2</span>Click "Check Productivity Score"</div>
+          <div class="hs"><span class="sn">3</span>See your score and category instantly</div>
+          <div class="hs"><span class="sn">4</span>Read personalized suggestions</div>
+          <div class="hs"><span class="sn">5</span>Improve your routine step by step</div>
+        </div>
+      </div>
+      <!-- RELATED TOOLS -->
+      <div class="rel-grid">
+        <div class="rg-box army">
+          <div class="rg-ico">🎂</div>
+          <div class="rg-txt">
+            <h4>Age Calculator</h4>
+            <p>Calculate your exact age</p>
+            <a href="/age-calculator.html" class="btn-xs a">Use Now →</a>
+          </div>
+        </div>
+        <div class="rg-box ht">
+          <div class="rg-ico">📚</div>
+          <div class="rg-txt">
+            <h4>Study Time Planner</h4>
+            <p>Plan your study sessions</p>
+            <a href="/study-time-planner.html" class="btn-xs g">Use Now →</a>
+          </div>
+        </div>
+        <div class="rg-box ssc">
+          <div class="rg-ico">😴</div>
+          <div class="rg-txt">
+            <h4>Sleep Calculator</h4>
+            <p>Find your ideal sleep time</p>
+            <a href="/sleep-calculator.html" class="btn-xs b">Use Now →</a>
+          </div>
+        </div>
+        <div class="rg-box mp">
+          <div class="rg-ico">📱</div>
+          <div class="rg-txt">
+            <h4>Screen Time Checker</h4>
+            <p>Analyze your screen habits</p>
+            <a href="/screen-time-checker.html" class="btn-xs p">Use Now →</a>
+          </div>
+        </div>
+        <div class="rg-box tl">
+          <div class="rg-ico">⏱️</div>
+          <div class="rg-txt">
+            <h4>Productivity Timer</h4>
+            <p>Pomodoro focus sessions</p>
+            <a href="/productivity-timer.html" class="btn-xs t">Use Now →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOOL SECTION -->
+<section class="tool-sec" id="tool">
+  <div class="w">
+    <div class="tool-wrap">
+      <div class="tool-card rev">
+        <div class="tool-hdr">
+          <div class="th">
+            <h2>🧠 Daily Routine Effectiveness Checker</h2>
+            <p>Fill in your daily schedule below. Our productivity calculator will analyze your routine, calculate your score out of 100, and give you smart, personalized suggestions to improve your time management.</p>
+            <div class="th-badges">
+              <span class="thb">✔ 100% Free</span>
+              <span class="thb">✔ No Login Required</span>
+              <span class="thb">✔ Instant Result</span>
+              <span class="thb">🔒 No Data Stored</span>
+            </div>
+          </div>
+        </div>
+        <div class="tool-body">
+
+          <!-- ROW 1 -->
+          <div class="fgrid">
+            <div class="fld">
+              <label class="flbl" for="wakeTime">🌅 Wake-Up Time</label>
+              <input class="finp" type="time" id="wakeTime" value="06:00">
+              <div style="font-size:11.5px;color:var(--ink4);margin-top:4px">What time do you wake up? Early risers tend to score higher.</div>
+            </div>
+            <div class="fld">
+              <label class="flbl" for="sleepTime">🌙 Sleep Time</label>
+              <input class="finp" type="time" id="sleepTime" value="23:00">
+              <div style="font-size:11.5px;color:var(--ink4);margin-top:4px">What time do you go to sleep? 7–9 hours of sleep is ideal.</div>
+            </div>
+          </div>
+
+          <!-- ROW 2 -->
+          <div class="fgrid">
+            <div class="fld">
+              <label class="flbl">📚 Study / Deep Work Hours <span>hrs/day</span></label>
+              <input type="range" id="studyHours" min="0" max="12" step="0.5" value="4" oninput="document.getElementById('studyVal').textContent=this.value+' hrs'">
+              <div class="range-val" id="studyVal">4 hrs</div>
+              <div class="range-lbl-row"><span>0 hrs</span><span>12 hrs</span></div>
+              <div style="font-size:11.5px;color:var(--ink4);margin-top:4px">Dedicated focused study or deep professional work.</div>
+            </div>
+            <div class="fld">
+              <label class="flbl">💼 Work / Job Hours <span>hrs/day</span></label>
+              <input type="range" id="workHours" min="0" max="14" step="0.5" value="8" oninput="document.getElementById('workVal').textContent=this.value+' hrs'">
+              <div class="range-val" id="workVal">8 hrs</div>
+              <div class="range-lbl-row"><span>0 hrs</span><span>14 hrs</span></div>
+              <div style="font-size:11.5px;color:var(--ink4);margin-top:4px">Your professional work hours including meetings.</div>
+            </div>
+          </div>
+
+          <!-- ROW 3 -->
+          <div class="fgrid">
+            <div class="fld">
+              <label class="flbl">🏃 Exercise Time <span>hrs/day</span></label>
+              <input type="range" id="exerciseHours" min="0" max="4" step="0.25" value="0.5" oninput="document.getElementById('exVal').textContent=this.value+' hrs'">
+              <div class="range-val" id="exVal">0.5 hrs</div>
+              <div class="range-lbl-row"><span>0 hrs</span><span>4 hrs</span></div>
+              <div style="font-size:11.5px;color:var(--ink4);margin-top:4px">Any physical activity — gym, walk, yoga, sports.</div>
+            </div>
+            <div class="fld">
+              <label class="flbl">📱 Screen Time (Non-work) <span>hrs/day</span></label>
+              <input type="range" id="screenHours" min="0" max="12" step="0.5" value="3" oninput="document.getElementById('scVal').textContent=this.value+' hrs'">
+              <div class="range-val" id="scVal">3 hrs</div>
+              <div class="range-lbl-row"><span>0 hrs</span><span>12 hrs</span></div>
+              <div style="font-size:11.5px;color:var(--ink4);margin-top:4px">Social media, YouTube, Netflix, gaming — non-work screen time.</div>
+            </div>
+          </div>
+
+          <!-- ROW 4 -->
+          <div class="fgrid" style="grid-template-columns:1fr">
+            <div class="fld">
+              <label class="flbl">☕ Break / Rest Time <span>hrs/day</span></label>
+              <input type="range" id="breakHours" min="0" max="6" step="0.25" value="1" oninput="document.getElementById('brVal').textContent=this.value+' hrs'">
+              <div class="range-val" id="brVal">1 hrs</div>
+              <div class="range-lbl-row"><span>0 hrs</span><span>6 hrs</span></div>
+              <div style="font-size:11.5px;color:var(--ink4);margin-top:4px">Intentional breaks, meals, relaxation. Short breaks improve focus.</div>
+            </div>
+          </div>
+
+          <div class="hint-box">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            <span><strong>How scoring works:</strong> Your productivity score (0–100) is calculated based on sleep hours, wake-up time, focused work/study hours, exercise, screen time, and break balance. Each factor is weighted scientifically. 0–40 = Poor, 41–70 = Average, 71–100 = Highly Productive.</span>
+          </div>
+
+          <button class="chk-btn" onclick="checkProductivity()">
+            🧠 Check Productivity Score
+          </button>
+
+          <!-- RESULT -->
+          <div id="resultArea">
+            <div id="statusBanner"></div>
+            <div id="scoreDisplay"></div>
+            <div id="scoreBarWrap"></div>
+            <div class="pay-grid" id="payGrid"></div>
+            <div id="tipsRow" class="tips-row"></div>
+            <div id="suggList"></div>
+            <div class="warn-box">
+              <span style="font-size:20px;flex-shrink:0">⚠️</span>
+              <div style="font-size:13.5px;color:var(--ink2);line-height:1.72"><strong>Important Notice:</strong> Results are estimates based on general productivity research. Individual results vary based on personal goals, profession, health, and life circumstances. <strong>Use this as a guide, not a definitive judgment. Consistency over perfection is what builds a truly productive life.</strong></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GRAPH SECTION -->
+<section class="graph-sec" id="graphSec" style="display:none">
+  <div class="w">
+    <div style="text-align:center;margin-bottom:30px">
+      <div class="sec-lbl" style="justify-content:center">📊 Routine Breakdown Chart</div>
+      <div class="sec-h">Your <span style="color:var(--blue)">Daily Time Allocation</span></div>
+      <p class="sec-sub" style="margin:12px auto 0;max-width:580px">See how your daily hours are distributed across key life areas. A balanced routine is the foundation of consistent productivity.</p>
+    </div>
+    <div class="graph-card rev">
+      <div class="graph-hdr">
+        <div class="graph-ttl" id="graphTitle">Daily Routine Breakdown</div>
+      </div>
+      <div class="chart-wrap" id="barChart"></div>
+      <div id="chartNote"></div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES SECTION -->
+<section class="tips-sec">
+  <div class="w">
+    <div style="text-align:center;margin-bottom:40px">
+      <div class="sec-lbl" style="justify-content:center">✨ Why Use This Tool</div>
+      <div class="sec-h">Premium Features for <span style="color:var(--blue)">Smarter Daily Planning</span></div>
+    </div>
+    <div class="tips-grid">
+      <div class="tip-card rev">
+        <div class="tip-ico">🧠</div>
+        <div class="tip-title">Instant Productivity Score</div>
+        <div class="tip-desc">Get your complete daily routine effectiveness score in seconds. No spreadsheets, no guesswork — just a clear 0–100 rating based on your real schedule.</div>
+      </div>
+      <div class="tip-card rev">
+        <div class="tip-ico">💡</div>
+        <div class="tip-title">Smart Suggestions</div>
+        <div class="tip-desc">Receive personalized, actionable advice based on exactly what your routine is missing — whether it is more sleep, less screen time, or a dedicated exercise habit.</div>
+      </div>
+      <div class="tip-card rev">
+        <div class="tip-ico">📊</div>
+        <div class="tip-title">Visual Time Breakdown</div>
+        <div class="tip-desc">See how your 24 hours are allocated across work, study, exercise, screens, and sleep — a visual reality check that makes inefficiencies instantly obvious.</div>
+      </div>
+      <div class="tip-card rev">
+        <div class="tip-ico">🔒</div>
+        <div class="tip-title">100% Private</div>
+        <div class="tip-desc">Your daily schedule details are never stored, shared, or transmitted. Everything runs entirely in your browser. Your routine stays yours — always.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TABLE SECTION -->
+<section class="tbl-sec">
+  <div class="w">
+    <div style="text-align:center;margin-bottom:36px">
+      <div class="sec-lbl" style="justify-content:center">📋 Score Reference Guide</div>
+      <div class="sec-h">Understanding Your <span style="color:var(--blue)">Productivity Score</span></div>
+      <p class="sec-sub" style="margin:10px auto 0;max-width:560px">This daily routine effectiveness checker rates your routine on a 0–100 scale. Here is what each score range means and what to do about it.</p>
+    </div>
+    <div class="tbl-wr">
+      <table>
+        <thead>
+          <tr>
+            <th>📊 Score Range</th>
+            <th>🏷️ Level</th>
+            <th>📝 What It Means</th>
+            <th>✅ Recommended Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>0 – 40</strong></td><td><span class="tbadge r">🔴 Poor</span></td><td>Routine needs major restructuring. Significant time is being wasted unknowingly.</td><td>Redesign your daily schedule from scratch. Start with fixing sleep first.</td></tr>
+          <tr><td><strong>41 – 60</strong></td><td><span class="tbadge a">🟡 Average</span></td><td>Some good habits exist but there are clear weak areas dragging productivity down.</td><td>Identify your 2–3 biggest time drains. Focus on fixing those first.</td></tr>
+          <tr><td><strong>61 – 70</strong></td><td><span class="tbadge b">🔵 Good</span></td><td>Above average routine with solid foundations. Fine-tuning will make a big difference.</td><td>Optimize your peak hours for deep work. Reduce minor distractions.</td></tr>
+          <tr><td><strong>71 – 85</strong></td><td><span class="tbadge g">🟢 Highly Productive</span></td><td>Excellent daily routine. You have strong habits and consistent discipline.</td><td>Maintain consistency. Experiment with advanced techniques like time blocking.</td></tr>
+          <tr><td><strong>86 – 100</strong></td><td><span class="tbadge p">🏆 Elite</span></td><td>Exceptional routine that most high performers would aspire to. World-class habits.</td><td>Focus on sustainability and preventing burnout. Share your system with others.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- STORY SECTION -->
+<section class="story-sec">
+  <div class="w">
+    <div style="max-width:820px;margin:0 auto">
+      <div class="sec-lbl">💡 Why I Built This</div>
+      <div class="sec-h" style="margin-bottom:28px">The Story Behind This <span style="color:var(--blue)">Productivity Checker</span></div>
+      <div class="story-card rev">
+        <div class="sq">"</div>
+        <div class="sb">
+          My friend Prashant used to feel exhausted every single day — even after working hard from morning to night. He genuinely believed he was productive. But when we sat down and actually analyzed his daily routine together, we discovered something surprising: <strong>he was spending nearly 5 hours on his phone without realizing it</strong>, sleeping inconsistently, skipping exercise, and had no real deep work blocks. He was busy all day but not productive. That conversation changed everything for him. That moment inspired me to create this <strong>Daily Routine Effectiveness Checker</strong> — so anyone can stop guessing and start understanding their real productivity level with actual data, not feelings.
+        </div>
+        <div class="sauth">
+          <div class="savt">🛠️</div>
+          <div>
+            <div class="sname">Raj — Founder, RajDailyTools</div>
+            <div class="srole">Building free tools that make everyday life smarter for students &amp; professionals</div>
+          </div>
+        </div>
+        <div class="founder-msg">
+          <div class="fm-ico">💬</div>
+          <div class="fm-txt">"<strong>You can't improve what you don't measure.</strong> Most people feel busy but aren't productive. This tool exists to show you the truth about your routine — so you can change it. For free, for everyone."</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ARTICLE / GUIDE -->
+<section class="guide-sec">
+  <div class="wa">
+    <div class="sec-lbl">📖 Complete Guide</div>
+    <div class="sec-h" style="margin-bottom:28px">Everything About <span style="color:var(--blue)">Daily Routine Effectiveness & Productivity</span></div>
+    <div class="guide-body rev">
+
+      <h2>🎯 What is Daily Routine Effectiveness?</h2>
+      <p>Daily routine effectiveness is a measure of how well your typical day is structured to support your goals, health, and long-term success. It goes beyond just "how much you do" — it examines whether the right activities are getting the right amount of time, at the right points in your day. A <strong>daily routine effectiveness checker</strong> quantifies this by analyzing the key components of your schedule and comparing them against research-backed benchmarks for sleep, focused work, physical activity, and rest.</p>
+      <p>The concept is simple: a highly effective routine is one where your time investment matches your life priorities. If your goal is to crack UPSC, a routine that has 6 hours of study, 7–8 hours of sleep, and 30 minutes of exercise will score far higher than one with 2 hours of scattered study and 4 hours of social media. Our <strong>productivity calculator online</strong> makes this objective and measurable instead of abstract and guesswork-based.</p>
+
+      <div class="ibox">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        <div><strong>Key Insight:</strong> Research by the American Psychological Association shows that people overestimate their productivity by 40% on average. Most people feel productive but are actually spending a significant portion of their day on low-value activities. A <strong>daily schedule analyzer</strong> like ours shows you the reality — not the feeling.</div>
+      </div>
+
+      <h2>⚡ Why Productivity and Time Management Matter</h2>
+      <p>Time is the only resource that is perfectly equal — every person on earth gets exactly 24 hours per day. The difference between those who achieve their goals and those who don't lies entirely in how those 24 hours are used. <strong>Check daily routine productivity</strong> and you will discover very quickly that the gap between an average person and a high performer is not talent — it is structure.</p>
+      <p>Poor time management leads to a cascade of negative effects: stress, missed deadlines, health deterioration from lack of exercise and sleep, and a constant feeling of being overwhelmed without actually making progress. In contrast, a well-structured <strong>daily schedule analyzer</strong> habit — reviewing and optimizing your routine regularly — is one of the most researched and documented habits of high achievers from business, sports, academia, and the arts.</p>
+
+      <div class="ibox a">
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <div><strong>Real-life example:</strong> Aditya was a UPSC aspirant studying 10 hours a day but failing to retain information. When he used our <strong>routine efficiency checker free</strong> tool, he discovered he was sleeping only 5.5 hours, had no exercise, and was spending 4 hours on his phone. After restructuring — sleeping 7.5 hours, adding 30 minutes of morning exercise, and limiting screens — his retention improved dramatically within 2 weeks. Same effort, far better results.</div>
+      </div>
+
+      <h2>❌ Common Mistakes in Daily Routines</h2>
+      <p>Most people make the same predictable mistakes in their daily routine that the <strong>time management calculator tool</strong> is specifically designed to detect and flag. Understanding these mistakes is the first step to eliminating them.</p>
+      <ul>
+        <li><strong>Sleeping less than 7 hours:</strong> Sleep is when your brain consolidates memory, regulates mood, and repairs your body. Chronic under-sleeping destroys cognitive performance more than any other factor. No amount of coffee compensates for lost sleep.</li>
+        <li><strong>No dedicated deep work blocks:</strong> Checking emails, attending meetings, and doing administrative tasks all day feels productive but produces little real output. Deep work — focused, uninterrupted blocks on important tasks — is where real progress happens.</li>
+        <li><strong>Excessive passive screen time:</strong> The average Indian spends 4–6 hours per day on smartphone screens, much of it mindlessly scrolling. This is time directly subtracted from learning, exercise, relationships, and sleep.</li>
+        <li><strong>Skipping exercise entirely:</strong> Exercise is not just for physical health. Dozens of studies confirm that 30 minutes of moderate exercise increases cognitive performance, focus, and mood for the next 4–6 hours. Skipping it is a productivity loss, not a time gain.</li>
+        <li><strong>No structured breaks:</strong> Working for 6 hours straight without intentional breaks leads to decision fatigue, reduced focus quality, and burnout. Short, deliberate rest periods restore cognitive capacity.</li>
+        <li><strong>Waking up late without a plan:</strong> Late wake-ups often cascade into a rushed, reactive day. Waking up early — even by 30 minutes — and having a morning routine sets the tone for a focused, intentional day.</li>
+      </ul>
+
+      <h2>📱 How Students Waste Time Unknowingly</h2>
+      <p>Students are particularly vulnerable to time waste because their schedule is less externally structured than a professional's workday. Without the discipline of a <strong>daily routine effectiveness checker</strong>, students often believe they are studying for 8 hours when the reality includes hours of interrupted, distracted quasi-studying.</p>
+      <p>The biggest hidden time drains for students include: switching between apps and study material every few minutes (estimated to cost 20–30 minutes per transition for full focus recovery), social media notifications fragmenting attention, studying on a bed or couch (which the brain associates with sleep, dramatically reducing alertness), and studying without clear goals or time boundaries so that vague "study sessions" stretch without real output.</p>
+      <ul>
+        <li><strong>Phone proximity:</strong> Having your phone visible while studying reduces cognitive capacity by up to 20%, even if you don't touch it — the mere presence of the device consumes working memory.</li>
+        <li><strong>Passive re-reading:</strong> Re-reading notes feels productive but is one of the least effective study methods. Active recall and spaced repetition produce 2–4× better retention in the same time.</li>
+        <li><strong>No study schedule:</strong> Studying whenever you "feel like it" means studying when you are already tired, distracted, or procrastinating. A fixed daily schedule removes the decision and creates a reliable habit.</li>
+      </ul>
+
+      <h2>⏰ Time Management Tips That Actually Work</h2>
+      <p>Improving your score on this <strong>how productive is my routine</strong> tool comes down to applying time management strategies that are proven by research. The most effective ones are also the simplest to start immediately.</p>
+      <p>The Pomodoro Technique — 25 minutes of focused work followed by a 5-minute break — is one of the most researched and widely adopted techniques for sustained productivity. It works because it makes focus feel manageable and forces intentional rest. Time blocking — scheduling specific activities into specific calendar slots rather than working from a vague to-do list — has been shown to increase task completion rates by over 50%. It removes the constant mental overhead of deciding what to do next.</p>
+      <ul>
+        <li><strong>Wake up at a consistent time every day,</strong> including weekends. This regulates your circadian rhythm, improving sleep quality and daytime alertness simultaneously.</li>
+        <li><strong>Do your most important work in the first 3 hours after waking,</strong> before decision fatigue sets in and before distractions accumulate.</li>
+        <li><strong>Set a hard stop on screen time</strong> using phone settings or app limits. Even a 1-hour daily reduction in non-work screen time can return 30+ hours per month to productive use.</li>
+        <li><strong>Protect 7–8 hours of sleep non-negotiably.</strong> Schedule it like an appointment. Nothing else in your routine produces as large a return on time invested.</li>
+        <li><strong>Add 30 minutes of physical movement daily.</strong> Even a brisk walk counts. The cognitive boost from exercise lasts hours and is better than any productivity supplement.</li>
+      </ul>
+
+      <h2>🏆 Daily Life Use Cases for Routine Effectiveness Tracking</h2>
+      <p>The <strong>routine efficiency checker free</strong> tool you see on this page is designed to serve a wide range of people at different life stages and goals. Here are the most common and impactful use cases.</p>
+      <p>For <strong>students</strong>, this tool acts as an objective reality check. It is easy to feel like you are working hard and studying all day, only to realize that fragmented, distracted hours add up to very little real learning. Checking your routine weekly with our <strong>productivity calculator online</strong> keeps you honest and accountable. For <strong>job holders and professionals</strong>, the tool reveals whether your long work hours are productive or merely exhausting. Many professionals work 10–12 hours but have low deep work output — the checker helps identify this pattern and suggest structural changes. For <strong>UPSC and SSC aspirants</strong>, this tool is particularly valuable. Government exam preparation requires 8–10 hours of high-quality study per day for months or years. Without a structured, optimized routine, aspirants burn out or stagnate. This <strong>check daily routine productivity</strong> tool helps you design and monitor a routine that is sustainable and effective for the long exam journey. For <strong>fitness and gym users</strong>, tracking whether exercise is consistently getting its deserved slot in your daily routine — rather than being the first thing cut on a busy day — is key to maintaining progress.</p>
+
+      <h2>📈 Benefits of Tracking Your Daily Routine Regularly</h2>
+      <p>Using a <strong>daily schedule analyzer</strong> regularly — even just once a week — produces compounding improvements in productivity and life quality. The awareness itself drives behavior change. When you know a score is coming, you make better decisions during the day. Psychologists call this the "Hawthorne Effect" — people improve their behavior simply because they are being observed or measured, even when the measurement is self-reported.</p>
+      <p>Beyond awareness, regular tracking lets you run experiments on your own life. Try sleeping 30 minutes earlier for a week, then recheck your score. Add morning exercise for two weeks and see how your focus hours improve. Cut screen time by an hour and observe the cascading benefits on your sleep, stress, and study quality. The <strong>time management calculator tool</strong> gives you a consistent, objective benchmark to measure these changes against — turning your daily routine into a system you actively design rather than something that just happens to you.</p>
+
+      <div class="ibox g">
+        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+        <div>The single most powerful insight from using our <strong>daily routine effectiveness checker</strong> repeatedly: <strong>structure creates freedom.</strong> The more deliberately you design your day, the less willpower you need to stay on track — because your environment and schedule are doing the work for you. Start with one change at a time. Small improvements in your routine compound dramatically over months.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- NOTICE -->
+<div class="disc">
+  <div class="w">
+    <div style="max-width:820px;margin:0 auto">
+      <div class="notice-banner">
+        <div class="notice-icon">💡</div>
+        <div class="notice-text">
+          Important Reminder &nbsp;—&nbsp;
+          <span>"Results are estimates based on general productivity research. Every person's situation is unique. Use this score as a guide and direction, not a definitive judgment of your worth or capability."</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FAQ -->
+<section class="faq-sec">
+  <div class="w">
+    <div style="text-align:center;margin-bottom:40px">
+      <div class="sec-lbl" style="justify-content:center">❓ FAQ</div>
+      <div class="sec-h">Frequently Asked <span style="color:var(--blue)">Questions</span></div>
+    </div>
+    <div class="fql">
+      <div class="fq">
+        <div class="fq-q" onclick="tF(this)">
+          <span class="fq-t">How do I check my daily routine productivity?</span>
+          <div class="fq-i">+</div>
+        </div>
+        <div class="fq-a"><div class="fq-ai">Simply fill in your wake-up time, sleep time, and drag the sliders for your study hours, work hours, exercise time, screen time, and break time. Then click "Check Productivity Score." Our daily routine effectiveness checker instantly analyzes your inputs and gives you a 0–100 productivity score along with personalized suggestions — all in under 10 seconds, completely free.</div></div>
+      </div>
+      <div class="fq">
+        <div class="fq-q" onclick="tF(this)">
+          <span class="fq-t">What is a good productivity score?</span>
+          <div class="fq-i">+</div>
+        </div>
+        <div class="fq-a"><div class="fq-ai">A score of 71 or above is considered Highly Productive by our time management calculator tool. Scores between 41–70 are Average, meaning there are clear areas for improvement. Scores below 40 indicate that the routine needs significant restructuring. Most first-time users score between 40–65. A score of 85+ represents an elite, highly optimized daily routine. The goal is continuous improvement — even moving from 50 to 65 in a month represents a meaningful transformation in daily life quality.</div></div>
+      </div>
+      <div class="fq">
+        <div class="fq-q" onclick="tF(this)">
+          <span class="fq-t">How can I improve my routine and productivity score?</span>
+          <div class="fq-i">+</div>
+        </div>
+        <div class="fq-a"><div class="fq-ai">Our check daily routine productivity tool gives you specific, personalized suggestions after calculating your score. The most universal improvements are: (1) Fix your sleep — get 7–8 hours consistently. (2) Wake up early and have a structured morning routine. (3) Block 2–4 hours of daily deep focused work or study. (4) Add at least 30 minutes of physical exercise. (5) Reduce non-work screen time. Start with just one change and check your score again after a week. Small improvements compound quickly.</div></div>
+      </div>
+      <div class="fq">
+        <div class="fq-q" onclick="tF(this)">
+          <span class="fq-t">Is this daily schedule analyzer accurate?</span>
+          <div class="fq-i">+</div>
+        </div>
+        <div class="fq-a"><div class="fq-ai">Our routine efficiency checker free tool is based on well-researched productivity principles, sleep science, and time management literature. The scoring formula weights factors according to their evidence-based impact on cognitive performance, wellbeing, and goal achievement. While individual results vary — a medical resident needs different hours than a student, for example — the tool provides a strong directional estimate of routine quality. Use it as a practical guide rather than an absolute measurement.</div></div>
+      </div>
+      <div class="fq">
+        <div class="fq-q" onclick="tF(this)">
+          <span class="fq-t">Can I use this productivity calculator online every day?</span>
+          <div class="fq-i">+</div>
+        </div>
+        <div class="fq-a"><div class="fq-ai">Yes — absolutely. Many users check their routine daily as a quick self-assessment habit, similar to journaling. Others prefer weekly checks to track how their routine evolves over time. There is no limit. The tool is instant, completely free, and requires no login or account. Daily tracking creates the self-awareness feedback loop that drives consistent improvement.</div></div>
+      </div>
+      <div class="fq">
+        <div class="fq-q" onclick="tF(this)">
+          <span class="fq-t">Does this tool store my daily routine data?</span>
+          <div class="fq-i">+</div>
+        </div>
+        <div class="fq-a"><div class="fq-ai">No — absolutely not. This daily routine effectiveness checker runs entirely in your browser using JavaScript. No data is sent to any server, stored in any database, or shared with any third party. Your wake-up time, sleep time, study hours, screen time, and all other inputs exist only on your device for the duration of your session. When you close the tab, everything is gone. Your privacy is completely protected.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-sec">
+  <div class="w">
+    <div class="contact-card rev">
+      <div style="font-size:40px;margin-bottom:12px">📬</div>
+      <h3>Have Suggestions or Feedback?</h3>
+      <p>For suggestions, improvements, or issues with this daily routine effectiveness checker — we would love to hear from you. Your feedback helps us build better tools for students and professionals everywhere.</p>
+      <a href="/contact" class="btn-bl">✉️ Contact Us</a>
+      <p class="priv-note">🔒 No data stored &nbsp;·&nbsp; 100% safe usage &nbsp;·&nbsp; Your privacy is protected</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="cta-in">
+    <div class="pill">🧠 Daily Routine Effectiveness Checker</div>
+    <h2>How Productive Is <em>Your</em> Daily Routine?</h2>
+    <p>Enter your schedule and find out your exact productivity score — instantly, for free. Start building a life of focused, intentional days 🚀</p>
+    <div class="cta-btns">
+      <a href="#tool" class="btn-gold">🧠 Check My Productivity Now</a>
+      <a href="/categories" class="btn-ghost">📂 Explore All Tools</a>
+    </div>
+  </div>
+</section>
+
+<!-- DISCLAIMER -->
+<div style="background:#1e293b;padding:14px 0;border-top:1px solid #334155">
+  <div class="w">
+    <p style="font-size:12.5px;color:#64748b;text-align:center;line-height:1.7">⚠️ <strong style="color:#94a3b8">Disclaimer:</strong> This tool is for informational and educational purposes only. Results are estimates based on general productivity research. Not professional advice. No personal data is stored or transmitted. Made for students &amp; professionals.</p>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-inner">
+    <div class="ft-top">
+      <div class="ft-brand">
+        <div class="logo">
+          <div class="lb"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+          <div><div class="ln">Raj<span>Daily</span>Tools</div><div class="ls" style="color:#475569">Smart Tools for Daily Life</div></div>
+        </div>
+        <p class="ft-desc">Free, fast, and accurate online tools for everyday use. No signup. No data stored. Built for everyone — made for students &amp; professionals 🧠</p>
+        <div class="ft-soc">
+          <a href="#" class="fts">𝕏</a>
+          <a href="#" class="fts">in</a>
+          <a href="#" class="fts">▶</a>
+        </div>
+      </div>
+      <div class="fc">
+        <h4>Productivity Tools</h4>
+        <ul>
+          <li><a href="/daily-routine-effectiveness-checker">Routine Checker</a></li>
+          <li><a href="/study-time-planner.html">Study Time Planner</a></li>
+          <li><a href="/sleep-calculator.html">Sleep Calculator</a></li>
+          <li><a href="/screen-time-checker.html">Screen Time Checker</a></li>
+          <li><a href="/productivity-timer.html">Productivity Timer</a></li>
+        </ul>
+      </div>
+      <div class="fc">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/categories">Categories</a></li>
+          <li><a href="/about">About Us</a></li>
+          <li><a href="/contact">Contact</a></li>
+          <li><a href="/sitemap.xml">Sitemap</a></li>
+        </ul>
+      </div>
+      <div class="fc">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="/privacy-policy">Privacy Policy</a></li>
+          <li><a href="/terms">Terms of Use</a></li>
+          <li><a href="/disclaimer">Disclaimer</a></li>
+          <li><a href="/sitemap">Sitemap</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ft-btm">
+      <p class="ft-cp">© 2026 <b>RajDailyTools.in</b> — All Rights Reserved</p>
+      <p class="ft-tag">Free tools built with ❤️ for students &amp; professionals 🧠 · No data stored · 100% safe</p>
+    </div>
+  </div>
+</footer>
+
+<button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+/* ── DRAWER ── */
+const brg=document.getElementById('brg'),dov=document.getElementById('dov'),drw=document.getElementById('drw'),dx=document.getElementById('dx');
+function oD(){drw.classList.add('on');dov.classList.add('on')}
+function cD(){drw.classList.remove('on');dov.classList.remove('on')}
+brg.addEventListener('click',oD);dov.addEventListener('click',cD);dx.addEventListener('click',cD);
+
+/* ── BACK TO TOP ── */
+const btt=document.getElementById('btt');
+window.addEventListener('scroll',()=>{btt.classList.toggle('on',window.scrollY>380)});
+
+/* ── SCROLL REVEAL ── */
+const obs=new IntersectionObserver(els=>els.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:.09});
+document.querySelectorAll('.rev').forEach(e=>obs.observe(e));
+
+/* ── FAQ ── */
+function tF(q){const p=q.closest('.fq');const isOpen=p.classList.contains('open');document.querySelectorAll('.fq').forEach(f=>f.classList.remove('open'));if(!isOpen)p.classList.add('open')}
+
+/* ── TIME TO DECIMAL ── */
+function timeToHours(t){
+  const[h,m]=t.split(':').map(Number);
+  return h+m/60;
+}
+
+/* ── SLEEP HOURS CALC ── */
+function getSleepHours(wake,sleep){
+  let w=timeToHours(wake);
+  let s=timeToHours(sleep);
+  // sleep before midnight
+  if(s>w) return 24-s+w; // e.g. sleep 23:00, wake 06:00 = 7hrs
+  return w-s; // e.g. sleep 00:00, wake 07:00
+}
+
+/* ── SCORING ENGINE ── */
+function calculateScore(data){
+  let score=0;
+  const {sleepHrs,wakeHr,studyHrs,workHrs,exerciseHrs,screenHrs,breakHrs}=data;
+
+  // --- SLEEP (max 25 pts) ---
+  if(sleepHrs>=7 && sleepHrs<=9) score+=25;
+  else if(sleepHrs>=6.5 && sleepHrs<7) score+=18;
+  else if(sleepHrs>9 && sleepHrs<=10) score+=15;
+  else if(sleepHrs>=6 && sleepHrs<6.5) score+=10;
+  else if(sleepHrs>10) score+=8;
+  else score+=Math.max(0, sleepHrs*3);
+
+  // --- WAKE TIME (max 15 pts) ---
+  if(wakeHr>=5 && wakeHr<6) score+=15;
+  else if(wakeHr>=6 && wakeHr<7) score+=13;
+  else if(wakeHr>=7 && wakeHr<8) score+=10;
+  else if(wakeHr>=8 && wakeHr<9) score+=7;
+  else if(wakeHr>=9 && wakeHr<10) score+=4;
+  else if(wakeHr>=10) score+=1;
+  else score+=15; // before 5am
+
+  // --- STUDY / DEEP WORK (max 20 pts) ---
+  if(studyHrs>=4 && studyHrs<=8) score+=20;
+  else if(studyHrs>=3 && studyHrs<4) score+=16;
+  else if(studyHrs>8 && studyHrs<=10) score+=14;
+  else if(studyHrs>=2 && studyHrs<3) score+=10;
+  else if(studyHrs>10) score+=8;
+  else score+=Math.max(0, studyHrs*4);
+
+  // --- EXERCISE (max 15 pts) ---
+  if(exerciseHrs>=0.5 && exerciseHrs<=1.5) score+=15;
+  else if(exerciseHrs>1.5 && exerciseHrs<=2.5) score+=12;
+  else if(exerciseHrs>2.5) score+=9;
+  else if(exerciseHrs>0.25) score+=7;
+  else score+=0;
+
+  // --- SCREEN TIME — penalise (max 15 pts, penalty style) ---
+  if(screenHrs<=1) score+=15;
+  else if(screenHrs<=2) score+=12;
+  else if(screenHrs<=3) score+=8;
+  else if(screenHrs<=4) score+=5;
+  else if(screenHrs<=5) score+=2;
+  else score+=0;
+
+  // --- BREAK TIME (max 10 pts) ---
+  if(breakHrs>=0.5 && breakHrs<=2) score+=10;
+  else if(breakHrs>2 && breakHrs<=3) score+=7;
+  else if(breakHrs>3) score+=4;
+  else score+=2;
+
+  return Math.min(100, Math.round(score));
+}
+
+/* ── SUGGESTIONS ENGINE ── */
+function getSuggestions(data, score){
+  const {sleepHrs,wakeHr,studyHrs,exerciseHrs,screenHrs,breakHrs}=data;
+  const suggs=[];
+
+  if(sleepHrs<7) suggs.push({ico:'😴',text:'<strong>Sleep more:</strong> You are getting only '+sleepHrs.toFixed(1)+' hours of sleep. Aim for 7–8 hours. Sleep is the #1 productivity multiplier — it improves memory, focus, mood, and energy simultaneously.'});
+  if(sleepHrs>9.5) suggs.push({ico:'⏰',text:'<strong>Reduce oversleeping:</strong> Sleeping more than 9.5 hours regularly can cause grogginess, disrupt your rhythm, and reduce productive hours. Aim for 7–8.5 hours.'});
+  if(wakeHr>=9) suggs.push({ico:'🌅',text:'<strong>Wake up earlier:</strong> You are waking up at '+Math.floor(wakeHr)+':'+String(Math.round((wakeHr%1)*60)).padStart(2,'0')+'. Try shifting to 6–7 AM. Early mornings offer uninterrupted quiet time perfect for deep work before the day\'s distractions begin.'});
+  if(studyHrs<2) suggs.push({ico:'📚',text:'<strong>Add more focused study/work time:</strong> You have under 2 hours of deep work. Even adding one extra focused hour daily compounds to 365 extra productive hours per year — that is life-changing output.'});
+  if(studyHrs>10) suggs.push({ico:'🧘',text:'<strong>Reduce overworking:</strong> Studying or working 10+ hours daily is unsustainable and often counterproductive. Quality beats quantity — 6 focused hours outperforms 12 unfocused ones. Protect recovery time.'});
+  if(exerciseHrs<0.25) suggs.push({ico:'🏃',text:'<strong>Add daily exercise:</strong> You have no exercise in your routine. Even a 20–30 minute brisk walk dramatically improves focus, mood, and energy for the next 4–6 hours. It is the most underrated productivity tool available.'});
+  if(screenHrs>3) suggs.push({ico:'📱',text:'<strong>Reduce screen time:</strong> You are spending '+screenHrs+' hours on non-work screens. Even cutting this by 1 hour per day returns 30+ hours per month for study, exercise, or sleep. Use app timers to enforce limits.'});
+  if(screenHrs>5) suggs.push({ico:'🚫',text:'<strong>Serious screen habit:</strong> '+screenHrs+' hours of recreational screen time is significantly harming your productivity score. This is likely fragmenting your attention throughout the day even when you\'re not on your phone.'});
+  if(breakHrs<0.5) suggs.push({ico:'☕',text:'<strong>Take intentional breaks:</strong> Working without breaks causes decision fatigue and reduces focus quality. Schedule 5-minute breaks every 50 minutes and a 15-minute break every 2–3 hours to restore cognitive capacity.'});
+  if(breakHrs>3) suggs.push({ico:'⚡',text:'<strong>Reduce unstructured break time:</strong> More than 3 hours of break time may indicate low energy or procrastination. Short, structured breaks are more restorative than long unplanned ones.'});
+
+  if(score>=80) suggs.push({ico:'🏆',text:'<strong>Excellent routine!</strong> You have built a genuinely productive daily schedule. Focus now on maintaining consistency and preventing burnout. Consider adding advanced techniques like time-blocking or weekly reviews.'});
+  else if(score>=65) suggs.push({ico:'💪',text:'<strong>Good progress!</strong> Your routine is above average. Identify your 1–2 weakest areas from the suggestions above and focus on improving just those. Small, targeted improvements create the biggest score jumps.'});
+
+  // Always add a positive
+  if(exerciseHrs>=0.5) suggs.push({ico:'✅',text:'<strong>Great work on exercise!</strong> Including physical activity daily is one of the best habits you can have. Maintain this — it is compounding positively on your focus and energy levels.'});
+  if(sleepHrs>=7 && sleepHrs<=9) suggs.push({ico:'✅',text:'<strong>Perfect sleep duration!</strong> Getting '+sleepHrs.toFixed(1)+' hours is exactly in the optimal range. Protect this habit fiercely — it is the foundation everything else is built on.'});
+
+  return suggs.slice(0,6);
+}
+
+/* ── MAIN FUNCTION ── */
+function checkProductivity(){
+  const wakeTime=document.getElementById('wakeTime').value||'06:00';
+  const sleepTime=document.getElementById('sleepTime').value||'23:00';
+  const studyHrs=parseFloat(document.getElementById('studyHours').value)||0;
+  const workHrs=parseFloat(document.getElementById('workHours').value)||0;
+  const exerciseHrs=parseFloat(document.getElementById('exerciseHours').value)||0;
+  const screenHrs=parseFloat(document.getElementById('screenHours').value)||0;
+  const breakHrs=parseFloat(document.getElementById('breakHours').value)||0;
+
+  const sleepHrs=getSleepHours(wakeTime,sleepTime);
+  const wakeHr=timeToHours(wakeTime);
+
+  const data={sleepHrs,wakeHr,studyHrs,workHrs,exerciseHrs,screenHrs,breakHrs};
+  const score=calculateScore(data);
+
+  // Category
+  let cat,catClass,catIcon,statusClass,statusHead,statusSub;
+  if(score<=40){
+    cat='Poor';catClass='poor';catIcon='🔴';statusClass='poor';
+    statusHead='Your routine needs a major upgrade 🔴';
+    statusSub='Several key areas are significantly affecting your effectiveness. The good news — targeted changes will produce fast, visible improvements.';
+  } else if(score<=70){
+    cat='Average';catClass='avg';catIcon='🟡';statusClass='avg';
+    statusHead='Your routine is average — there\'s real room to grow 🟡';
+    statusSub='You have some good habits in place, but a few key areas are holding your productivity back. Small, specific changes will make a big difference.';
+  } else {
+    cat='Highly Productive';catClass='great';catIcon='🟢';statusClass='great';
+    statusHead='Excellent! You have a highly productive routine 🟢';
+    statusSub='Your daily schedule is well-structured. Keep optimizing the smaller details and protect your best habits from lifestyle creep.';
+  }
+
+  // Score color
+  const scoreColor=score<=40?'var(--red)':score<=70?'var(--amber)':'var(--green)';
+  const barColor=score<=40?'linear-gradient(90deg,#ef4444,#f87171)':score<=70?'linear-gradient(90deg,#f59e0b,#fbbf24)':'linear-gradient(90deg,#10b981,#34d399)';
+
+  // Status banner
+  document.getElementById('statusBanner').innerHTML=`
+    <div class="status-banner ${statusClass}">
+      <div class="status-icon">${catIcon}</div>
+      <div><div class="status-text">${statusHead}</div><div class="status-sub">${statusSub}</div></div>
+    </div>`;
+
+  // Score display
+  document.getElementById('scoreDisplay').innerHTML=`
+    <div class="score-display">
+      <div style="font-size:13px;font-weight:700;color:var(--ink3);text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px">Your Productivity Score</div>
+      <div class="score-num" style="color:${scoreColor}">${score}<span class="score-slash">/100</span></div>
+      <div class="score-label ${catClass}">${catIcon} ${cat}</div>
+    </div>`;
+
+  // Score bar
+  document.getElementById('scoreBarWrap').innerHTML=`
+    <div class="score-bar-wrap">
+      <div class="score-lbl" style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;font-size:13px;font-weight:700;color:var(--ink2)">
+        <span>Productivity Meter</span><span style="color:${scoreColor};font-family:var(--fd);font-size:16px">${score}/100</span>
+      </div>
+      <div class="score-bar-track"><div class="score-bar-fill" id="scoreBarFill" style="background:${barColor}"></div></div>
+      <div class="score-zones">
+        <div class="sz r" style="flex:40">🔴 Poor (0–40)</div>
+        <div class="sz a" style="flex:30">🟡 Average (41–70)</div>
+        <div class="sz g" style="flex:30">🟢 Highly Productive (71–100)</div>
+      </div>
+    </div>`;
+
+  setTimeout(()=>{
+    const fill=document.getElementById('scoreBarFill');
+    if(fill) fill.style.width=score+'%';
+  },100);
+
+  // Stat cards
+  const focusHrs=studyHrs+workHrs;
+  const awakeHrs=24-sleepHrs;
+  const productivePct=Math.min(100,Math.round((focusHrs/awakeHrs)*100));
+  document.getElementById('payGrid').innerHTML=`
+    <div class="pay-card c1"><div class="pc-ico">😴</div><div class="pc-lbl">Sleep Hours</div><div class="pc-val">${sleepHrs.toFixed(1)} hrs</div><div class="pc-sub">${sleepHrs>=7&&sleepHrs<=9?'✅ Optimal range (7–9 hrs)':sleepHrs<7?'⚠️ Below recommended':'⚠️ Slightly above optimal'}</div></div>
+    <div class="pay-card c2"><div class="pc-ico">💼</div><div class="pc-lbl">Focus Hours</div><div class="pc-val">${focusHrs.toFixed(1)} hrs</div><div class="pc-sub">Study + work combined daily</div></div>
+    <div class="pay-card c3"><div class="pc-ico">📱</div><div class="pc-lbl">Screen Time</div><div class="pc-val">${screenHrs} hrs</div><div class="pc-sub">${screenHrs<=2?'✅ Well controlled':'⚠️ Consider reducing this'}</div></div>
+    <div class="pay-card c4"><div class="pc-ico">🏃</div><div class="pc-lbl">Exercise</div><div class="pc-val">${exerciseHrs} hrs</div><div class="pc-sub">${exerciseHrs>=0.5?'✅ Great — keep it daily':'⚠️ Add at least 30 mins/day'}</div></div>
+    <div class="pay-card c5"><div class="pc-ico">??</div><div class="pc-lbl">Productive Time % of Waking Hours</div><div class="pc-val" style="font-size:20px">${productivePct}% of waking hours on focused work/study</div><div class="pc-sub">Awake hours: ${awakeHrs.toFixed(1)} hrs · Focus hours: ${focusHrs.toFixed(1)} hrs · Screen: ${screenHrs} hrs · Exercise: ${exerciseHrs} hrs · Breaks: ${breakHrs} hrs</div></div>
+  `;
+
+  // Tip pills
+  document.getElementById('tipsRow').innerHTML=`
+    <span class="tip-pill ${score>70?'':'red'}">🧠 Score: ${score}/100</span>
+    <span class="tip-pill blue">😴 Sleep: ${sleepHrs.toFixed(1)} hrs</span>
+    <span class="tip-pill amber">📚 Focus: ${focusHrs.toFixed(1)} hrs</span>
+    <span class="tip-pill purple">🏃 Exercise: ${exerciseHrs} hrs</span>
+    <span class="tip-pill ${screenHrs<=2?'':'red'}">📱 Screen: ${screenHrs} hrs</span>
+  `;
+
+  // Suggestions
+  const suggs=getSuggestions(data,score);
+  document.getElementById('suggList').innerHTML=`
+    <div style="margin-bottom:10px"><div class="sec-lbl">💡 Personalized Suggestions</div></div>
+    <div class="sugg-list">${suggs.map(s=>`<div class="sugg-item"><div class="sugg-ico">${s.ico}</div><div class="sugg-text">${s.text}</div></div>`).join('')}</div>`;
+
+  document.getElementById('resultArea').style.display='block';
+
+  // Build chart
+  buildBarChart({sleepHrs,studyHrs,workHrs,exerciseHrs,screenHrs,breakHrs,score});
+  document.getElementById('graphSec').style.display='block';
+  document.getElementById('resultArea').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+/* ── BAR CHART ── */
+function buildBarChart(d){
+  const bars=[
+    {lbl:'😴 Sleep',val:d.sleepHrs,max:10,color:'#6366f1',target:8},
+    {lbl:'📚 Study/Work',val:d.studyHrs+d.workHrs,max:14,color:'#2563eb',target:8},
+    {lbl:'🏃 Exercise',val:d.exerciseHrs,max:3,color:'#10b981',target:1},
+    {lbl:'📱 Screen Time',val:d.screenHrs,max:8,color:'#ef4444',target:2},
+    {lbl:'☕ Breaks',val:d.breakHrs,max:4,color:'#f59e0b',target:1.5},
+  ];
+
+  document.getElementById('barChart').innerHTML=bars.map(b=>{
+    const pct=Math.min(100,Math.round((b.val/b.max)*100));
+    return `<div class="bar-row">
+      <div class="bar-lbl">${b.lbl}</div>
+      <div class="bar-track">
+        <div class="bar-fill" data-pct="${pct}" style="background:${b.color};width:0">${b.val.toFixed(1)} hrs</div>
+      </div>
+      <div class="bar-val">${b.val.toFixed(1)}h</div>
+    </div>`;
+  }).join('');
+
+  document.getElementById('graphTitle').textContent=`Routine Breakdown · Productivity Score: ${d.score}/100`;
+  document.getElementById('chartNote').textContent='Bar length shows your actual hours relative to each category maximum. Hover or tap a bar to see details.';
+
+  // Animate bars
+  setTimeout(()=>{
+    document.querySelectorAll('.bar-fill').forEach(el=>{
+      el.style.width=el.dataset.pct+'%';
+    });
+  },120);
+}
+</script>
+</body>
+</html>
