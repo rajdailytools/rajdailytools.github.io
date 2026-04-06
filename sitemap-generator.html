@@ -1,0 +1,1204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sitemap Generator Tool (Advanced) – XML Sitemap Creator for SEO 2026 | RajDailyTools</title>
+<meta name="description" content="Free XML sitemap generator tool for SEO 2026. Create Google-ready XML sitemaps instantly for any website. No login required. Download and submit to Google Search Console.">
+<meta name="keywords" content="sitemap generator tool, xml sitemap generator, seo sitemap tool, google sitemap creator, free sitemap generator 2026, xml sitemap creator, website sitemap generator">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://rajdailytools.in/sitemap-generator">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#2563eb;--blue-d:#1d4ed8;--blue-xl:#eff6ff;--blue-s:#dbeafe;
+  --amber:#f59e0b;--green:#10b981;--red:#ef4444;--purple:#8b5cf6;
+  --orange:#f97316;--teal:#14b8a6;
+  --green-xl:#f0fdf4;--green-s:#bbf7d0;
+  --red-xl:#fef2f2;--red-s:#fecaca;
+  --amber-xl:#fffbeb;--amber-s:#fde68a;
+  --purple-xl:#faf5ff;--purple-s:#ddd6fe;
+  --ink:#0f172a;--ink2:#334155;--ink3:#64748b;--ink4:#94a3b8;
+  --line:#e2e8f0;--surf:#f8fafc;--white:#fff;
+  --s1:0 1px 3px rgba(15,23,42,.06),0 1px 2px rgba(15,23,42,.04);
+  --s2:0 4px 16px rgba(15,23,42,.08),0 2px 6px rgba(15,23,42,.04);
+  --s3:0 12px 40px rgba(15,23,42,.11),0 3px 10px rgba(15,23,42,.06);
+  --s4:0 24px 64px rgba(15,23,42,.13),0 6px 20px rgba(15,23,42,.07);
+  --sb:0 8px 32px rgba(37,99,235,.20);
+  --fd:'Sora',sans-serif;--fb:'DM Sans',sans-serif;
+  --ease:cubic-bezier(.4,0,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);color:var(--ink);background:var(--white);overflow-x:hidden;-webkit-font-smoothing:antialiased;line-height:1.6}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+button{cursor:pointer;border:none;background:none;font-family:var(--fb)}
+.w{max-width:1180px;margin:0 auto;padding:0 24px}
+.wa{max-width:880px;margin:0 auto;padding:0 24px}
+select,input,textarea{appearance:none;-webkit-appearance:none}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+@keyframes resultIn{from{opacity:0;transform:translateY(18px) scale(.97)}to{opacity:1;transform:none}}
+@keyframes barGrow{from{width:0}to{width:var(--bw)}}
+.rev{opacity:0;transform:translateY(22px);transition:opacity .55s var(--ease),transform .55s var(--ease)}
+.rev.in{opacity:1;transform:none}
+
+/* ── HEADER ── */
+.hdr{position:sticky;top:0;z-index:999;background:rgba(255,255,255,.96);backdrop-filter:blur(20px);border-bottom:1px solid var(--line);box-shadow:var(--s1)}
+.hdi{display:flex;align-items:center;justify-content:space-between;height:66px}
+.logo{display:flex;align-items:center;gap:10px}
+.lb{width:36px;height:36px;background:var(--blue);border-radius:9px;display:flex;align-items:center;justify-content:center;box-shadow:var(--sb);flex-shrink:0}
+.lb svg{width:18px;height:18px;fill:#fff}
+.ln{font-family:var(--fd);font-size:19px;font-weight:800;color:var(--ink);line-height:1}
+.ln span{color:var(--blue)}
+.ls{font-size:10px;color:var(--ink4);letter-spacing:.04em}
+nav.dn{display:flex;align-items:center;gap:2px}
+nav.dn a{font-size:13.5px;font-weight:500;color:var(--ink2);padding:7px 13px;border-radius:8px;transition:.2s}
+nav.dn a:hover{color:var(--blue);background:var(--blue-xl)}
+.hcta{background:var(--blue);color:#fff;font-family:var(--fd);font-weight:600;font-size:13px;padding:8px 18px;border-radius:8px;box-shadow:var(--sb);transition:.2s}
+.hcta:hover{background:var(--blue-d);transform:translateY(-1px)}
+.brg{display:none;flex-direction:column;gap:4.5px;padding:8px;border-radius:8px}
+.brg span{display:block;width:20px;height:2px;background:var(--ink);border-radius:2px;transition:.28s}
+.dov{display:none;position:fixed;inset:0;background:rgba(15,23,42,.45);z-index:1040;backdrop-filter:blur(3px)}
+.dov.on{display:block}
+.drw{position:fixed;top:0;right:-100%;width:270px;height:100vh;background:#fff;z-index:1050;padding:22px;box-shadow:var(--s4);transition:right .32s var(--ease);overflow-y:auto}
+.drw.on{right:0}
+.dh{display:flex;align-items:center;justify-content:space-between;margin-bottom:26px}
+.dx{width:33px;height:33px;border-radius:7px;background:var(--surf);display:flex;align-items:center;justify-content:center;color:var(--ink3);font-size:17px}
+nav.mn{display:flex;flex-direction:column;gap:3px}
+nav.mn a{display:block;font-size:14px;font-weight:500;color:var(--ink2);padding:11px 13px;border-radius:8px;transition:.2s}
+nav.mn a:hover{color:var(--blue);background:var(--blue-xl)}
+
+/* ── HERO ── */
+.hero{position:relative;overflow:hidden;background:linear-gradient(150deg,#ebf4ff 0%,#fff 46%,#fff7ed 100%);padding:64px 0 72px}
+.hero::before{content:'';position:absolute;top:-140px;right:-180px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(37,99,235,.08) 0%,transparent 68%);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-80px;left:-100px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(249,115,22,.05) 0%,transparent 68%);pointer-events:none}
+.blob{position:absolute;border-radius:50%;pointer-events:none;animation:float 6s ease-in-out infinite}
+.b1{width:13px;height:13px;background:rgba(37,99,235,.18);top:22%;right:14%;animation-delay:0s}
+.b2{width:9px;height:9px;background:rgba(249,115,22,.22);top:58%;right:26%;animation-delay:2.2s}
+.b3{width:11px;height:11px;background:rgba(16,185,129,.18);top:36%;right:6%;animation-delay:4s}
+.bc{display:flex;align-items:center;gap:7px;font-size:12.5px;color:var(--ink3);margin-bottom:22px;position:relative;z-index:1;flex-wrap:wrap}
+.bc a{color:var(--blue);font-weight:600}
+.pill{display:inline-flex;align-items:center;gap:7px;font-family:var(--fd);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);background:var(--blue-xl);padding:5px 14px;border-radius:100px;margin-bottom:18px}
+.pill::before{content:'';width:6px;height:6px;background:var(--blue);border-radius:50%}
+.hero-inner{position:relative;z-index:1;max-width:720px;animation:fadeUp .5s ease both}
+.hero h1{font-family:var(--fd);font-size:clamp(26px,4.5vw,50px);font-weight:800;line-height:1.1;color:var(--ink);margin-bottom:14px}
+.hero h1 span{color:var(--blue)}
+.hero-sub{font-size:16px;color:var(--ink3);line-height:1.8;margin-bottom:22px;max-width:600px}
+.hero-chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.chip{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;padding:6px 14px;border-radius:100px;background:#fff;border:1.5px solid var(--line);color:var(--ink2);box-shadow:var(--s1);transition:.22s}
+.chip:hover{border-color:var(--blue);color:var(--blue);transform:translateY(-1px)}
+.hero-meta{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:24px}
+.upd{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:700;color:var(--blue);background:var(--blue-xl);padding:6px 14px;border-radius:100px;border:1.5px solid var(--blue-s)}
+.mi{font-size:13px;color:var(--ink3);font-weight:500}
+
+/* HOW TO USE */
+.howto{background:var(--amber-xl);border:2px solid var(--amber-s);border-radius:16px;padding:22px 26px;max-width:560px;margin-bottom:24px}
+.howto-ttl{display:flex;align-items:center;gap:9px;font-family:var(--fd);font-size:15px;font-weight:800;color:var(--ink);margin-bottom:13px}
+.howto-steps{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.hs{display:flex;align-items:flex-start;gap:10px;font-size:13.5px;color:var(--ink2);line-height:1.6}
+.sn{width:24px;height:24px;background:var(--amber);color:#fff;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex-shrink:0;margin-top:1px}
+
+/* RELATED TOOLS (hero area) */
+.rel-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;position:relative;z-index:1}
+.rg-box{border-radius:14px;padding:14px 14px 12px;display:flex;flex-direction:column;gap:8px;transition:.22s;border:1.5px solid}
+.rg-box:hover{transform:translateY(-3px);box-shadow:var(--s3)}
+.rg-box.army{background:linear-gradient(135deg,var(--amber-xl),#fef3c7);border-color:var(--amber-s)}
+.rg-box.ht{background:linear-gradient(135deg,var(--green-xl),#dcfce7);border-color:var(--green-s)}
+.rg-box.ssc{background:linear-gradient(135deg,var(--blue-xl),var(--blue-s));border-color:var(--blue-s)}
+.rg-box.mp{background:linear-gradient(135deg,var(--purple-xl),#ede9fe);border-color:var(--purple-s)}
+.rg-box.tl{background:linear-gradient(135deg,#f0fdfa,#ccfbf1);border-color:#99f6e4}
+.rg-ico{font-size:22px}
+.rg-txt h4{font-family:var(--fd);font-size:12px;font-weight:800;color:var(--ink);margin-bottom:2px}
+.rg-txt p{font-size:11px;color:var(--ink3);line-height:1.5}
+.btn-xs{display:inline-flex;align-items:center;gap:4px;font-family:var(--fd);font-weight:700;font-size:11px;padding:5px 10px;border-radius:7px;transition:.22s;margin-top:4px}
+.btn-xs.a{background:var(--amber);color:#fff}.btn-xs.a:hover{background:#d97706}
+.btn-xs.g{background:var(--green);color:#fff}.btn-xs.g:hover{background:#059669}
+.btn-xs.b{background:var(--blue);color:#fff}.btn-xs.b:hover{background:var(--blue-d)}
+.btn-xs.p{background:var(--purple);color:#fff}.btn-xs.p:hover{background:#7c3aed}
+.btn-xs.t{background:var(--teal);color:#fff}.btn-xs.t:hover{background:#0f9488}
+
+/* ── TOOL ── */
+.tool-sec{background:var(--surf);padding:80px 0}
+.tool-wrap{max-width:980px;margin:0 auto}
+.tool-card{background:#fff;border:1.5px solid var(--line);border-radius:28px;overflow:hidden;box-shadow:var(--s4)}
+.tool-hdr{background:linear-gradient(135deg,#1d4ed8 0%,#2563eb 55%,#3b82f6 100%);padding:32px 40px;position:relative;overflow:hidden}
+.tool-hdr::before{content:'';position:absolute;top:-60px;right:-60px;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,.07)}
+.tool-hdr::after{content:'';position:absolute;bottom:-40px;left:-40px;width:180px;height:180px;border-radius:50%;background:rgba(255,255,255,.04)}
+.th{position:relative;z-index:1}
+.th h2{font-family:var(--fd);font-size:21px;font-weight:800;color:#fff;margin-bottom:6px}
+.th p{font-size:14px;color:rgba(255,255,255,.82);line-height:1.65}
+.th-badges{display:flex;flex-wrap:wrap;gap:9px;margin-top:14px}
+.thb{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:rgba(255,255,255,.9);background:rgba(255,255,255,.13);padding:5px 12px;border-radius:100px}
+.tool-body{padding:36px 40px}
+
+/* FORM */
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+.fgrid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:16px}
+.fld{display:flex;flex-direction:column;gap:7px}
+.flbl{font-size:13px;font-weight:700;color:var(--ink2)}
+.flbl span{font-size:11px;font-weight:500;color:var(--ink4);margin-left:5px;background:var(--surf);padding:2px 7px;border-radius:5px;border:1px solid var(--line)}
+.finp,.fsel,.ftxt{padding:12px 16px;font-size:14.5px;color:var(--ink);background:#fff;border:1.5px solid var(--line);border-radius:10px;outline:none;transition:.22s;font-family:var(--fb);width:100%}
+.finp:focus,.fsel:focus,.ftxt:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(37,99,235,.10)}
+.ftxt{resize:vertical;min-height:72px;line-height:1.6;font-family:'Courier New',monospace;font-size:13px}
+.fsel{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2364748b' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:40px}
+.hint-box{display:flex;align-items:flex-start;gap:9px;font-size:13px;color:var(--ink2);background:var(--blue-xl);border:1.5px solid var(--blue-s);border-radius:10px;padding:11px 14px;margin:16px 0;line-height:1.65}
+.hint-box svg{width:16px;height:16px;stroke:var(--blue);fill:none;stroke-width:2;flex-shrink:0;margin-top:2px}
+.hint-box.g{background:var(--green-xl);border-color:var(--green-s)}
+.hint-box.g svg{stroke:var(--green)}
+.chk-btn{width:100%;padding:17px;background:linear-gradient(135deg,var(--blue) 0%,#1e40af 100%);color:#fff;font-family:var(--fd);font-weight:800;font-size:16px;border-radius:12px;box-shadow:var(--sb);transition:all .25s var(--ease);display:flex;align-items:center;justify-content:center;gap:10px}
+.chk-btn:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(37,99,235,.32)}
+.chk-btn:active{transform:translateY(0)}
+
+/* URL ROWS */
+.url-rows{display:flex;flex-direction:column;gap:10px;margin-bottom:16px}
+.url-row{display:grid;grid-template-columns:1fr 140px 100px 36px;gap:8px;align-items:center}
+.url-row-hdr{display:grid;grid-template-columns:1fr 140px 100px 36px;gap:8px;margin-bottom:6px}
+.url-row-hdr span{font-size:11.5px;font-weight:700;color:var(--ink3);padding:0 4px}
+.rm-btn{width:36px;height:36px;border-radius:8px;background:var(--red-xl);color:var(--red);border:1.5px solid var(--red-s);display:flex;align-items:center;justify-content:center;font-size:16px;cursor:pointer;transition:.2s;flex-shrink:0}
+.rm-btn:hover{background:var(--red);color:#fff}
+.add-url-btn{display:inline-flex;align-items:center;gap:7px;font-family:var(--fd);font-size:13px;font-weight:700;padding:9px 18px;border-radius:9px;background:var(--green-xl);color:var(--green);border:1.5px solid var(--green-s);transition:.22s;cursor:pointer;margin-bottom:16px}
+.add-url-btn:hover{background:var(--green);color:#fff}
+
+/* RESULT */
+#resultArea{display:none;margin-top:28px;animation:resultIn .45s var(--ease) both}
+.result-hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;flex-wrap:wrap;gap:10px}
+.result-ttl{font-family:var(--fd);font-size:15px;font-weight:800;color:var(--ink)}
+.result-acts{display:flex;gap:8px;flex-wrap:wrap}
+.copy-btn{display:inline-flex;align-items:center;gap:6px;font-family:var(--fd);font-size:12px;font-weight:700;padding:7px 14px;border-radius:8px;background:var(--blue);color:#fff;border:none;cursor:pointer;transition:.22s}
+.copy-btn:hover{background:var(--blue-d);transform:translateY(-1px)}
+.copy-btn.copied{background:var(--green)}
+.dl-btn{display:inline-flex;align-items:center;gap:6px;font-family:var(--fd);font-size:12px;font-weight:700;padding:7px 14px;border-radius:8px;background:var(--green);color:#fff;border:none;cursor:pointer;transition:.22s}
+.dl-btn:hover{background:#059669;transform:translateY(-1px)}
+.code-block{background:#0f172a;border-radius:14px;padding:24px;overflow-x:auto}
+.code-block pre{font-family:'Courier New',monospace;font-size:12.5px;color:#e2e8f0;line-height:1.8;white-space:pre;tab-size:2}
+.tips-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.tip-pill{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:600;padding:7px 14px;border-radius:100px;background:var(--green-xl);color:var(--green);border:1.5px solid var(--green-s)}
+.tip-pill.blue{background:var(--blue-xl);color:var(--blue);border-color:var(--blue-s)}
+.tip-pill.amber{background:var(--amber-xl);color:var(--amber);border-color:var(--amber-s)}
+.warn-box{background:var(--amber-xl);border:1.5px solid var(--amber-s);border-radius:12px;padding:14px 18px;display:flex;gap:10px;font-size:13.5px;color:var(--ink2);line-height:1.7;margin-top:14px}
+
+/* ── FEATURES ── */
+.tips-sec{background:var(--surf);padding:72px 0}
+.tips-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.tip-card{background:#fff;border:1.5px solid var(--line);border-radius:16px;padding:22px 18px;text-align:center;transition:.28s}
+.tip-card:hover{transform:translateY(-4px);box-shadow:var(--s3);border-color:var(--blue-s)}
+.tip-ico{font-size:32px;margin-bottom:11px}
+.tip-title{font-family:var(--fd);font-size:14px;font-weight:800;color:var(--ink);margin-bottom:8px}
+.tip-desc{font-size:13px;color:var(--ink3);line-height:1.7}
+
+/* ── TABLE ── */
+.tbl-sec{background:#fff;padding:72px 0}
+.tbl-wr{overflow-x:auto;margin-bottom:24px;border-radius:14px;border:1.5px solid var(--line);box-shadow:var(--s2)}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+thead th{background:linear-gradient(135deg,var(--blue) 0%,#1e40af 100%);color:#fff;padding:14px 16px;text-align:left;font-family:var(--fd);font-size:13px;font-weight:700;letter-spacing:.03em}
+thead th:first-child{border-radius:14px 0 0 0}
+thead th:last-child{border-radius:0 14px 0 0}
+tbody tr{border-bottom:1px solid var(--line);transition:.2s}
+tbody tr:hover{background:var(--blue-xl)}
+tbody td{padding:12px 16px;color:var(--ink2);vertical-align:middle}
+.tbadge{display:inline-flex;font-size:11px;font-weight:700;padding:3px 8px;border-radius:100px}
+.tbadge.g{background:var(--green-xl);color:var(--green);border:1px solid var(--green-s)}
+.tbadge.b{background:var(--blue-xl);color:var(--blue);border:1px solid var(--blue-s)}
+.tbadge.a{background:var(--amber-xl);color:var(--amber);border:1px solid var(--amber-s)}
+.tbadge.r{background:var(--red-xl);color:var(--red);border:1px solid var(--red-s)}
+.tbadge.p{background:var(--purple-xl);color:var(--purple);border:1px solid var(--purple-s)}
+
+/* ── VISUAL / GRAPH ── */
+.graph-sec{background:var(--surf);padding:72px 0}
+.graph-card{background:#fff;border:1.5px solid var(--line);border-radius:20px;padding:28px 32px;box-shadow:var(--s3)}
+.graph-hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:22px;flex-wrap:wrap;gap:12px}
+.graph-ttl{font-family:var(--fd);font-size:18px;font-weight:800;color:var(--ink)}
+.vs-grid{display:grid;grid-template-columns:1fr auto 1fr;gap:20px;align-items:start}
+.vs-col h4{font-family:var(--fd);font-size:13px;font-weight:800;margin-bottom:14px;display:flex;align-items:center;gap:7px}
+.vs-col h4.red{color:var(--red)}
+.vs-col h4.grn{color:var(--green)}
+.vs-bar-row{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.vs-bar-lbl{font-size:12px;color:var(--ink3);width:80px;flex-shrink:0}
+.vs-bar-track{flex:1;height:14px;background:var(--line);border-radius:100px;overflow:hidden}
+.vs-bar-fill{height:100%;border-radius:100px;transition:width 1.4s var(--ease)}
+.vs-val{font-family:var(--fd);font-size:12px;font-weight:700;width:36px;flex-shrink:0}
+.vs-arrow{font-size:32px;color:var(--blue);align-self:center;text-align:center;font-weight:900}
+
+/* ── STORY ── */
+.story-sec{background:#fff;padding:72px 0}
+.story-card{background:var(--surf);border:1.5px solid var(--line);border-radius:24px;padding:40px;box-shadow:var(--s3);position:relative;overflow:hidden}
+.story-card::before{content:'';position:absolute;top:0;left:0;bottom:0;width:5px;background:linear-gradient(180deg,var(--blue) 0%,var(--orange) 100%);border-radius:5px 0 0 5px}
+.sq{font-size:54px;color:var(--blue-s);font-family:Georgia,serif;line-height:1;padding-left:8px}
+.sb{font-size:15.5px;color:var(--ink2);line-height:1.9;padding:0 8px}
+.sauth{display:flex;align-items:center;gap:14px;margin-top:22px;padding-top:20px;border-top:1px solid var(--line)}
+.savt{width:48px;height:48px;background:var(--blue);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+.sname{font-family:var(--fd);font-size:15px;font-weight:700;color:var(--ink)}
+.srole{font-size:12.5px;color:var(--ink3)}
+.founder-msg{background:linear-gradient(135deg,var(--blue-xl),var(--blue-s));border:1.5px solid var(--blue-s);border-radius:14px;padding:20px 22px;margin-top:20px;display:flex;gap:13px}
+.fm-ico{font-size:26px;flex-shrink:0}
+.fm-txt{font-size:14px;color:var(--ink2);line-height:1.75;font-style:italic}
+.fm-txt strong{color:var(--ink);font-weight:700;font-style:normal}
+
+/* ── GUIDE ── */
+.guide-sec{background:var(--surf);padding:72px 0}
+.guide-body h2{font-family:var(--fd);font-size:21px;font-weight:800;color:var(--ink);margin:28px 0 11px;line-height:1.3}
+.guide-body h2:first-child{margin-top:0}
+.guide-body p{font-size:15px;color:var(--ink3);line-height:1.85;margin-bottom:14px}
+.guide-body ul{display:flex;flex-direction:column;gap:8px;margin:12px 0 16px}
+.guide-body li{display:flex;align-items:flex-start;gap:10px;font-size:14.5px;color:var(--ink3);line-height:1.7}
+.guide-body li::before{content:'✓';width:18px;height:18px;background:var(--blue);color:#fff;border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;flex-shrink:0;margin-top:3px}
+.guide-body strong{color:var(--ink2);font-weight:700}
+.ibox{background:var(--blue-xl);border:1.5px solid var(--blue-s);border-radius:13px;padding:15px 18px;margin:16px 0;display:flex;gap:11px;font-size:14px;color:var(--ink2);line-height:1.7}
+.ibox svg{width:17px;height:17px;stroke:var(--blue);fill:none;stroke-width:2;flex-shrink:0;margin-top:2px}
+.ibox.a{background:var(--amber-xl);border-color:var(--amber-s)}
+.ibox.a svg{stroke:var(--amber)}
+.ibox.g{background:var(--green-xl);border-color:var(--green-s)}
+.ibox.g svg{stroke:var(--green)}
+.code-eg{background:#0f172a;border-radius:10px;padding:16px 18px;margin:14px 0;font-family:'Courier New',monospace;font-size:12.5px;color:#e2e8f0;line-height:1.7;overflow-x:auto;white-space:pre}
+
+/* ── FAQ ── */
+.faq-sec{background:#fff;padding:72px 0}
+.fql{max-width:780px;margin:0 auto}
+.fq{background:var(--surf);border:1.5px solid var(--line);border-radius:13px;margin-bottom:10px;overflow:hidden}
+.fq-q{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;cursor:pointer;gap:14px;transition:.2s}
+.fq-q:hover{background:var(--blue-xl)}
+.fq-t{font-weight:600;font-size:15px;color:var(--ink);line-height:1.4}
+.fq-i{width:28px;height:28px;border-radius:50%;background:var(--blue-xl);color:var(--blue);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;transition:transform .28s,background .2s}
+.fq.open .fq-i{transform:rotate(45deg);background:var(--blue);color:#fff}
+.fq-a{max-height:0;overflow:hidden;transition:max-height .35s var(--ease)}
+.fq-ai{padding:0 22px 18px;font-size:14.5px;color:var(--ink3);line-height:1.78}
+.fq.open .fq-a{max-height:400px}
+
+/* ── MISC ── */
+.disc{background:var(--amber-xl);border-top:1px solid var(--amber-s);border-bottom:1px solid var(--amber-s);padding:15px 0}
+.disc-in{display:flex;align-items:flex-start;gap:12px;font-size:13.5px;color:var(--ink2);line-height:1.7}
+.contact-sec{background:var(--surf);padding:60px 0}
+.contact-card{max-width:580px;margin:0 auto;background:#fff;border:1.5px solid var(--line);border-radius:20px;padding:32px;text-align:center;box-shadow:var(--s2)}
+.contact-card h3{font-family:var(--fd);font-size:19px;font-weight:800;color:var(--ink);margin-bottom:10px}
+.contact-card p{font-size:15px;color:var(--ink3);line-height:1.75;margin-bottom:20px}
+.btn-bl{display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:#fff;font-family:var(--fd);font-weight:700;font-size:14.5px;padding:12px 26px;border-radius:8px;box-shadow:var(--sb);transition:.22s}
+.btn-bl:hover{background:var(--blue-d);transform:translateY(-1px)}
+.priv-note{font-size:12px;color:var(--ink4);margin-top:14px}
+.cta{background:linear-gradient(140deg,#0f172a 0%,#1e3a8a 100%);padding:80px 0;text-align:center;position:relative;overflow:hidden}
+.cta::before{content:'';position:absolute;top:-80px;left:50%;transform:translateX(-50%);width:800px;height:380px;background:radial-gradient(ellipse,rgba(37,99,235,.22) 0%,transparent 68%);pointer-events:none}
+.cta-in{position:relative;z-index:1}
+.cta .pill{color:#93c5fd;background:rgba(255,255,255,.1);margin-bottom:18px}
+.cta .pill::before{background:#93c5fd}
+.cta h2{font-family:var(--fd);font-size:clamp(24px,4vw,42px);font-weight:800;color:#fff;line-height:1.15;margin-bottom:12px}
+.cta h2 em{color:#fbbf24;font-style:normal}
+.cta p{font-size:16px;color:rgba(255,255,255,.72);max-width:480px;margin:0 auto 32px;line-height:1.78}
+.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn-gold{display:inline-flex;align-items:center;gap:8px;background:var(--amber);color:#fff;font-family:var(--fd);font-weight:800;font-size:15px;padding:14px 30px;border-radius:8px;box-shadow:0 8px 28px rgba(245,158,11,.35);transition:.22s}
+.btn-gold:hover{background:#d97706;transform:translateY(-3px)}
+.btn-ghost{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.09);border:1.5px solid rgba(255,255,255,.22);color:#fff;font-family:var(--fd);font-weight:600;font-size:14px;padding:13px 26px;border-radius:8px;transition:.2s}
+.btn-ghost:hover{background:rgba(255,255,255,.16)}
+footer{background:#0f172a;padding:52px 0 0}
+.ft-inner{max-width:1180px;margin:0 auto;padding:0 24px}
+.ft-top{display:grid;grid-template-columns:1.9fr 1fr 1fr 1fr;gap:44px;margin-bottom:44px}
+.ft-brand .ln{color:#fff}.ft-brand .ls{color:#475569}
+.ft-desc{font-size:13.5px;color:#64748b;line-height:1.78;max-width:265px;margin:13px 0 20px}
+.ft-soc{display:flex;gap:9px}
+.fts{width:34px;height:34px;border-radius:7px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;color:#94a3b8;font-size:13px;transition:.2s}
+.fts:hover{background:var(--blue);color:#fff}
+.fc h4{font-family:var(--fd);font-size:12px;font-weight:700;color:#fff;margin-bottom:14px;letter-spacing:.06em;text-transform:uppercase}
+.fc ul{display:flex;flex-direction:column;gap:8px}
+.fc ul a{font-size:13.5px;color:#64748b;transition:.18s}
+.fc ul a:hover{color:#93c5fd}
+.ft-btm{border-top:1px solid rgba(255,255,255,.07);padding:20px 0;text-align:center}
+.ft-cp{font-size:12.5px;color:#475569}
+.ft-cp b{color:#64748b}
+.ft-tag{font-size:12px;color:#334155;margin-top:4px;font-style:italic}
+.btt{position:fixed;bottom:26px;right:26px;z-index:500;width:43px;height:43px;background:var(--blue);color:#fff;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:17px;box-shadow:var(--sb);opacity:0;pointer-events:none;transform:translateY(14px);transition:.28s var(--ease)}
+.btt.on{opacity:1;pointer-events:auto;transform:translateY(0)}
+.btt:hover{transform:translateY(-3px)}
+.sec-lbl{display:flex;align-items:center;gap:8px;font-family:var(--fd);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin-bottom:10px}
+.sec-lbl::before{content:'';width:6px;height:6px;background:var(--blue);border-radius:50%}
+.sec-h{font-family:var(--fd);font-size:clamp(22px,3.5vw,34px);font-weight:800;color:var(--ink);line-height:1.15;margin-bottom:10px}
+.sec-sub{font-size:15.5px;color:var(--ink3);line-height:1.78;margin-bottom:40px;max-width:600px}
+
+@media(max-width:1060px){.ft-top{grid-template-columns:1fr 1fr}.tips-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:860px){
+  nav.dn,.hcta{display:none}.brg{display:flex}
+  .tool-body{padding:24px 22px}.tool-hdr{padding:24px 22px}
+  .fgrid{grid-template-columns:1fr}.fgrid3{grid-template-columns:1fr}
+  .howto-steps{grid-template-columns:1fr}
+  .rel-grid{grid-template-columns:1fr 1fr}
+  .url-row{grid-template-columns:1fr 36px}
+  .url-row .fsel,.url-row .fsel:last-of-type{display:none}
+  .url-row-hdr{display:none}
+  .vs-grid{grid-template-columns:1fr;gap:16px}
+  .vs-arrow{transform:rotate(90deg)}
+}
+@media(max-width:600px){
+  .ft-top{grid-template-columns:1fr}.rel-grid{grid-template-columns:1fr}
+  .tips-grid{grid-template-columns:1fr 1fr}
+  .cta-btns{flex-direction:column;align-items:center}
+  .story-card{padding:26px 20px}
+  .result-acts{width:100%}
+  .result-acts .copy-btn,.result-acts .dl-btn{flex:1;justify-content:center}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="hdr">
+  <div class="w">
+    <div class="hdi">
+      <a href="/" class="logo">
+        <div class="lb"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+        <div><div class="ln">Raj<span>Daily</span>Tools</div><div class="ls">Smart Tools for Daily Life</div></div>
+      </a>
+      <nav class="dn">
+        <a href="/">Home</a><a href="/categories">Categories</a>
+        <a href="/#popular">Popular</a><a href="/about">About</a><a href="/contact">Contact</a>
+      </nav>
+      <a href="/categories" class="hcta">All Tools →</a>
+      <button class="brg" id="brg"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="dov" id="dov"></div>
+<div class="drw" id="drw">
+  <div class="dh">
+    <div class="logo">
+      <div class="lb" style="width:30px;height:30px;border-radius:7px"><svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#fff"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+      <div class="ln" style="font-size:16px">Raj<span>Daily</span>Tools</div>
+    </div>
+    <button class="dx" id="dx">✕</button>
+  </div>
+  <nav class="mn">
+    <a href="/" onclick="cD()">🏠 Home</a>
+    <a href="/categories" onclick="cD()">🗂️ Categories</a>
+    <a href="/#popular" onclick="cD()">⭐ Popular</a>
+    <a href="/about" onclick="cD()">👤 About</a>
+    <a href="/contact" onclick="cD()">📬 Contact</a>
+  </nav>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+  <div class="w">
+    <div class="bc">
+      <a href="/">Home</a><span style="color:var(--ink4)">›</span>
+      <a href="/categories">Tools</a><span style="color:var(--ink4)">›</span>
+      <span>Sitemap Generator</span>
+    </div>
+    <div class="hero-inner">
+      <div class="pill">🗺️ 100% Free SEO Tool &nbsp;·&nbsp; No Login Required &nbsp;·&nbsp; 2026 Updated</div>
+      <h1>Create <span>SEO-Optimized XML Sitemap</span> in Seconds</h1>
+      <p class="hero-sub">Generate a complete, Google-ready XML sitemap for your website to improve indexing speed and search visibility. Add unlimited URLs — no login required.</p>
+      <div class="hero-chips">
+        <span class="chip">🗺️ XML Sitemap</span>
+        <span class="chip">⚡ Instant Generation</span>
+        <span class="chip">📥 Download Ready</span>
+        <span class="chip">🔗 Unlimited URLs</span>
+        <span class="chip">🆓 100% Free</span>
+        <span class="chip">🔒 No Data Stored</span>
+      </div>
+      <div class="hero-meta">
+        <div class="upd">🗺️ Advanced Sitemap Generator Tool</div>
+        <span class="mi">✅ Google-Ready XML Format</span>
+        <span class="mi">📥 One-Click Download</span>
+      </div>
+      <!-- HOW TO USE -->
+      <div class="howto">
+        <div class="howto-ttl">💡 How to Use This Tool</div>
+        <div class="howto-steps">
+          <div class="hs"><span class="sn">1</span>Enter your website URL</div>
+          <div class="hs"><span class="sn">2</span>Add all your page URLs</div>
+          <div class="hs"><span class="sn">3</span>Set frequency &amp; priority</div>
+          <div class="hs"><span class="sn">4</span>Click Generate Sitemap</div>
+          <div class="hs"><span class="sn">5</span>Download &amp; upload to your server</div>
+        </div>
+      </div>
+      <!-- RELATED TOOLS -->
+      <div class="rel-grid">
+        <div class="rg-box army">
+          <div class="rg-ico">🏷️</div>
+          <div class="rg-txt">
+            <h4>Meta Tag Generator</h4>
+            <p>Generate SEO meta tags instantly</p>
+            <a href="/meta-tag-generator.html" class="btn-xs a">Use Now →</a>
+          </div>
+        </div>
+        <div class="rg-box ht">
+          <div class="rg-ico">🤖</div>
+          <div class="rg-txt">
+            <h4>Robots.txt Generator</h4>
+            <p>Create your robots.txt file</p>
+            <a href="/robots-txt-generator.html" class="btn-xs g">Use Now →</a>
+          </div>
+        </div>
+        <div class="rg-box ssc">
+          <div class="rg-ico">🔍</div>
+          <div class="rg-txt">
+            <h4>Keyword Density Checker</h4>
+            <p>Analyze keyword frequency</p>
+            <a href="/keyword-density-checker.html" class="btn-xs b">Use Now →</a>
+          </div>
+        </div>
+        <div class="rg-box mp">
+          <div class="rg-ico">🔗</div>
+          <div class="rg-txt">
+            <h4>URL Extractor Tool</h4>
+            <p>Extract all links from any page</p>
+            <a href="/url-extractor.html" class="btn-xs p">Use Now →</a>
+          </div>
+        </div>
+        <div class="rg-box tl">
+          <div class="rg-ico">🔄</div>
+          <div class="rg-txt">
+            <h4>XML to JSON Converter</h4>
+            <p>Convert XML data to JSON fast</p>
+            <a href="/xml-to-json.html" class="btn-xs t">Use Now →</a>
+          </div>
+        </div>
+        <div class="rg-box army">
+          <div class="rg-ico">📝</div>
+          <div class="rg-txt">
+            <h4>Word Counter Tool</h4>
+            <p>Count words &amp; characters</p>
+            <a href="/word-counter.html" class="btn-xs a">Use Now →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOOL SECTION -->
+<section class="tool-sec" id="tool">
+  <div class="w">
+    <div class="tool-wrap">
+      <div class="tool-card rev">
+        <div class="tool-hdr">
+          <div class="th">
+            <h2>🗺️ XML Sitemap Generator Tool (Advanced)</h2>
+            <p>Enter your website URL, add all your pages below, set crawl frequency and priority for each, then click Generate Sitemap to get a perfectly formatted XML file ready for Google Search Console.</p>
+            <div class="th-badges">
+              <span class="thb">🗺️ XML Format</span>
+              <span class="thb">📅 Frequency Control</span>
+              <span class="thb">⭐ Priority Control</span>
+              <span class="thb">📥 Download XML</span>
+              <span class="thb">🔒 Private &amp; Secure</span>
+            </div>
+          </div>
+        </div>
+        <div class="tool-body">
+
+          <!-- Global Settings -->
+          <div class="fgrid3">
+            <div class="fld">
+              <label class="flbl" for="siteUrl">🌐 Website Base URL <span>Required</span></label>
+              <input class="finp" type="url" id="siteUrl" placeholder="https://yourdomain.com" value="https://">
+              <div style="font-size:11.5px;color:var(--ink4);margin-top:4px">Your homepage URL. All relative paths will be appended to this.</div>
+            </div>
+            <div class="fld">
+              <label class="flbl" for="gFreq">📅 Default Frequency <span>Global</span></label>
+              <select class="fsel" id="gFreq">
+                <option value="daily">Daily</option>
+                <option value="weekly" selected>Weekly</option>
+                <option value="monthly">Monthly</option>
+                <option value="yearly">Yearly</option>
+                <option value="always">Always</option>
+                <option value="never">Never</option>
+              </select>
+            </div>
+            <div class="fld">
+              <label class="flbl" for="gPriority">⭐ Default Priority <span>0.1 – 1.0</span></label>
+              <select class="fsel" id="gPriority">
+                <option value="1.0">1.0 — Homepage</option>
+                <option value="0.9">0.9 — Very High</option>
+                <option value="0.8" selected>0.8 — High</option>
+                <option value="0.7">0.7 — Medium-High</option>
+                <option value="0.6">0.6 — Medium</option>
+                <option value="0.5">0.5 — Normal</option>
+                <option value="0.4">0.4 — Low</option>
+                <option value="0.3">0.3 — Very Low</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="hint-box">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            <span><strong>Tip:</strong> Add one URL per row. You can enter full URLs (https://yourdomain.com/about) or just paths (/about, /contact). The tool will auto-complete partial paths using your base URL. Set homepage priority to 1.0 and inner pages to 0.5–0.8 for best results.</span>
+          </div>
+
+          <!-- URL Rows -->
+          <div style="font-family:var(--fd);font-size:12px;font-weight:700;color:var(--blue);letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px">📋 Your Pages (Add All URLs)</div>
+          <div class="url-row-hdr">
+            <span>Page URL</span>
+            <span>Change Frequency</span>
+            <span>Priority</span>
+            <span></span>
+          </div>
+          <div class="url-rows" id="urlRows"></div>
+
+          <button class="add-url-btn" onclick="addRow()">
+            ＋ Add Another URL
+          </button>
+
+          <button class="chk-btn" onclick="generateSitemap()">
+            🗺️ Generate Sitemap
+          </button>
+
+          <!-- RESULT -->
+          <div id="resultArea">
+            <div class="result-hdr">
+              <div class="result-ttl">✅ Your XML Sitemap</div>
+              <div class="result-acts">
+                <button class="copy-btn" id="copyBtn" onclick="copyXML()">📋 Copy XML</button>
+                <button class="dl-btn" onclick="downloadXML()">📥 Download sitemap.xml</button>
+              </div>
+            </div>
+            <div class="code-block">
+              <pre id="xmlOutput"></pre>
+            </div>
+            <div class="tips-row" id="tipsRow"></div>
+            <div class="warn-box">
+              <span style="font-size:20px;flex-shrink:0">⚠️</span>
+              <div style="font-size:13.5px;color:var(--ink2);line-height:1.72"><strong>Important Notice:</strong> Always submit your sitemap in Google Search Console after generating. Upload the sitemap.xml file to your website's root directory (e.g. yourdomain.com/sitemap.xml), then add the URL in Google Search Console → Sitemaps. <strong>No data is stored. Safe and secure tool.</strong></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INDEXING VISUAL SECTION -->
+<section class="graph-sec">
+  <div class="w">
+    <div style="text-align:center;margin-bottom:30px">
+      <div class="sec-lbl" style="justify-content:center">Indexing Growth Visual</div>
+      <div class="sec-h">Before Sitemap vs <span style="color:var(--green)">After Sitemap</span></div>
+      <p class="sec-sub" style="margin:12px auto 0;max-width:560px">A sitemap is the roadmap that tells Google every page on your site. See how it impacts indexing speed, crawl coverage, and search visibility.</p>
+    </div>
+    <div class="graph-card rev">
+      <div class="graph-hdr">
+        <div class="graph-ttl">📊 Indexing Impact: Without vs With XML Sitemap</div>
+      </div>
+      <div class="vs-grid">
+        <!-- BEFORE -->
+        <div class="vs-col">
+          <h4 class="red">❌ Without Sitemap</h4>
+          <div class="vs-bar-row">
+            <div class="vs-bar-lbl">Pages Found</div>
+            <div class="vs-bar-track"><div class="vs-bar-fill" style="--bw:22%;width:0;background:linear-gradient(90deg,#ef4444,#f87171)" data-w="22%"></div></div>
+            <div class="vs-val" style="color:var(--red)">22%</div>
+          </div>
+          <div class="vs-bar-row">
+            <div class="vs-bar-lbl">Index Speed</div>
+            <div class="vs-bar-track"><div class="vs-bar-fill" style="--bw:18%;width:0;background:linear-gradient(90deg,#ef4444,#f87171)" data-w="18%"></div></div>
+            <div class="vs-val" style="color:var(--red)">Slow</div>
+          </div>
+          <div class="vs-bar-row">
+            <div class="vs-bar-lbl">Crawl Coverage</div>
+            <div class="vs-bar-track"><div class="vs-bar-fill" style="--bw:30%;width:0;background:linear-gradient(90deg,#ef4444,#f87171)" data-w="30%"></div></div>
+            <div class="vs-val" style="color:var(--red)">30%</div>
+          </div>
+          <div class="vs-bar-row">
+            <div class="vs-bar-lbl">Visibility</div>
+            <div class="vs-bar-track"><div class="vs-bar-fill" style="--bw:25%;width:0;background:linear-gradient(90deg,#ef4444,#f87171)" data-w="25%"></div></div>
+            <div class="vs-val" style="color:var(--red)">Low</div>
+          </div>
+        </div>
+        <!-- ARROW -->
+        <div class="vs-arrow">→</div>
+        <!-- AFTER -->
+        <div class="vs-col">
+          <h4 class="grn">✅ With XML Sitemap</h4>
+          <div class="vs-bar-row">
+            <div class="vs-bar-lbl">Pages Found</div>
+            <div class="vs-bar-track"><div class="vs-bar-fill" style="--bw:95%;width:0;background:linear-gradient(90deg,#10b981,#34d399)" data-w="95%"></div></div>
+            <div class="vs-val" style="color:var(--green)">95%</div>
+          </div>
+          <div class="vs-bar-row">
+            <div class="vs-bar-lbl">Index Speed</div>
+            <div class="vs-bar-track"><div class="vs-bar-fill" style="--bw:88%;width:0;background:linear-gradient(90deg,#10b981,#34d399)" data-w="88%"></div></div>
+            <div class="vs-val" style="color:var(--green)">Fast</div>
+          </div>
+          <div class="vs-bar-row">
+            <div class="vs-bar-lbl">Crawl Coverage</div>
+            <div class="vs-bar-track"><div class="vs-bar-fill" style="--bw:97%;width:0;background:linear-gradient(90deg,#10b981,#34d399)" data-w="97%"></div></div>
+            <div class="vs-val" style="color:var(--green)">97%</div>
+          </div>
+          <div class="vs-bar-row">
+            <div class="vs-bar-lbl">Visibility</div>
+            <div class="vs-bar-track"><div class="vs-bar-fill" style="--bw:90%;width:0;background:linear-gradient(90deg,#10b981,#34d399)" data-w="90%"></div></div>
+            <div class="vs-val" style="color:var(--green)">High</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES SECTION -->
+<section class="tips-sec">
+  <div class="w">
+    <div style="text-align:center;margin-bottom:40px">
+      <div class="sec-lbl" style="justify-content:center">Why Use This Tool</div>
+      <div class="sec-h">Premium Features of This <span style="color:var(--blue)">Free Sitemap Generator</span></div>
+    </div>
+    <div class="tips-grid">
+      <div class="tip-card rev">
+        <div class="tip-ico">⚡</div>
+        <div class="tip-title">Instant Generation</div>
+        <div class="tip-desc">Generate a perfectly structured XML sitemap in under one second — no account, no waiting, no technical knowledge needed.</div>
+      </div>
+      <div class="tip-card rev">
+        <div class="tip-ico">🔗</div>
+        <div class="tip-title">Unlimited URLs</div>
+        <div class="tip-desc">Add as many pages as you need. No URL limits, no premium plan required. Works for small blogs to large websites with hundreds of pages.</div>
+      </div>
+      <div class="tip-card rev">
+        <div class="tip-ico">📥</div>
+        <div class="tip-title">One-Click Download</div>
+        <div class="tip-desc">Download your sitemap.xml file instantly and upload it directly to your website root — ready to submit to Google Search Console immediately.</div>
+      </div>
+      <div class="tip-card rev">
+        <div class="tip-ico">🌍</div>
+        <div class="tip-title">Google-Ready Format</div>
+        <div class="tip-desc">Output follows the official sitemap.org XML protocol — fully compatible with Google, Bing, Yahoo, and all major search engine crawlers.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TABLE SECTION -->
+<section class="tbl-sec">
+  <div class="w">
+    <div style="text-align:center;margin-bottom:40px">
+      <div class="sec-lbl" style="justify-content:center">Tool Specs</div>
+      <div class="sec-h">Sitemap Generator <span style="color:var(--blue)">Tool Details</span></div>
+      <p class="sec-sub" style="margin:12px auto 0;max-width:560px">Everything you need to know about this free sitemap generator tool and what it produces.</p>
+    </div>
+    <div class="tbl-wr">
+      <table>
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Details</th>
+            <th>Standard</th>
+            <th>Compatibility</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>🏷️ Tool Type</strong></td>
+            <td>XML Sitemap Generator</td>
+            <td>sitemap.org protocol</td>
+            <td>All search engines</td>
+            <td><span class="tbadge g">Active</span></td>
+          </tr>
+          <tr>
+            <td><strong>📄 Output Format</strong></td>
+            <td>XML (Extensible Markup Language)</td>
+            <td>UTF-8 encoded</td>
+            <td>Google, Bing, Yahoo</td>
+            <td><span class="tbadge b">Standard</span></td>
+          </tr>
+          <tr>
+            <td><strong>🔍 SEO Support</strong></td>
+            <td>Full — priority + frequency tags</td>
+            <td>Yes</td>
+            <td>Google Search Console</td>
+            <td><span class="tbadge g">Yes</span></td>
+          </tr>
+          <tr>
+            <td><strong>🔗 URL Limit</strong></td>
+            <td>Unlimited (tool handles any count)</td>
+            <td>Up to 50,000 per file</td>
+            <td>All platforms</td>
+            <td><span class="tbadge g">Unlimited</span></td>
+          </tr>
+          <tr>
+            <td><strong>📅 Changefreq Tag</strong></td>
+            <td>Always / Daily / Weekly / Monthly / Yearly / Never</td>
+            <td>Optional but recommended</td>
+            <td>Google, Bing</td>
+            <td><span class="tbadge b">Included</span></td>
+          </tr>
+          <tr>
+            <td><strong>⭐ Priority Tag</strong></td>
+            <td>0.1 to 1.0 per URL</td>
+            <td>0.5 default</td>
+            <td>Google</td>
+            <td><span class="tbadge b">Included</span></td>
+          </tr>
+          <tr>
+            <td><strong>💰 Cost</strong></td>
+            <td>100% Free — No signup needed</td>
+            <td>—</td>
+            <td>—</td>
+            <td><span class="tbadge g">Free</span></td>
+          </tr>
+          <tr>
+            <td><strong>🔒 Data Privacy</strong></td>
+            <td>No data stored or transmitted</td>
+            <td>Client-side only</td>
+            <td>All browsers</td>
+            <td><span class="tbadge g">Safe</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- STORY SECTION -->
+<section class="story-sec">
+  <div class="w">
+    <div class="wa">
+      <div class="sec-lbl">Why This Tool Was Built</div>
+      <h2 class="sec-h">The Story Behind This Sitemap Generator</h2>
+      <div class="story-card rev">
+        <div class="sq">"</div>
+        <div class="sb">When I started building my tools website, I struggled with getting my pages indexed on Google. I would publish new tools and wait days — sometimes weeks — before they appeared in search results. My friend suggested using a sitemap, but most tools were either confusing, filled with ads, or locked behind paid plans. The few free ones were outdated and didn't support priority or frequency settings. That's when I decided to build this simple and powerful sitemap generator to help creators like me improve their SEO without any hassle, without paying anything, and without needing a developer to set it up. Today, my pages get indexed within hours of publishing — and this tool is the reason why.</div>
+        <div class="sauth">
+          <div class="savt">🗺️</div>
+          <div>
+            <div class="sname">RajDailyTools Team</div>
+            <div class="srole">Free SEO &amp; Utility Tools for Everyone</div>
+          </div>
+        </div>
+        <div class="founder-msg">
+          <div class="fm-ico">💡</div>
+          <div class="fm-txt"><strong>Our promise:</strong> Build tools that make technical SEO accessible to every creator, blogger, and business owner — completely free, always up to date with Google's latest guidelines.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IMPORTANT NOTICE -->
+<div class="disc">
+  <div class="w">
+    <div class="disc-in">
+      <span style="font-size:20px;flex-shrink:0">⚠️</span>
+      <div><strong>Important Notice:</strong> Always submit your sitemap in Google Search Console after generating. Upload sitemap.xml to your website root, then go to Google Search Console → Sitemaps → Enter URL → Submit. This is how Google officially discovers and crawls your pages. <strong>No data is stored. Safe and secure tool.</strong></div>
+    </div>
+  </div>
+</div>
+
+<!-- GUIDE / ARTICLE SECTION -->
+<section class="guide-sec">
+  <div class="w">
+    <div class="wa">
+      <div class="sec-lbl">Complete Guide</div>
+      <h2 class="sec-h">The Complete Guide to <span style="color:var(--blue)">XML Sitemaps &amp; SEO (2026)</span></h2>
+      <div class="guide-body">
+
+        <h2>🗺️ What Is a Sitemap in SEO?</h2>
+        <p>A sitemap is a file that lists all the important pages on your website and provides metadata about each one — including when it was last updated, how often it changes, and its relative importance. It acts as a roadmap for search engine crawlers like Googlebot, telling them exactly which pages exist on your site and which ones deserve priority attention. A sitemap generator tool automates the creation of this file so you don't have to write XML manually.</p>
+        <p>Without a sitemap, search engines must discover your pages entirely through link-following — crawling from one link to the next across your site. This is slow, incomplete, and particularly problematic for new websites with few backlinks. With a sitemap submitted in Google Search Console, you hand Google a complete, authoritative list of every page you want indexed — dramatically accelerating the discovery and indexing process.</p>
+
+        <h2>📄 Types of Sitemaps — XML vs HTML</h2>
+        <p>There are two main types of sitemaps, serving different audiences and purposes:</p>
+        <ul>
+          <li><strong>XML Sitemap</strong> — Designed for search engines. Written in Extensible Markup Language (XML), it contains structured data about your pages including URLs, last modified dates, change frequency, and priority scores. This is what this free sitemap generator 2026 tool creates, and it's what you submit to Google Search Console.</li>
+          <li><strong>HTML Sitemap</strong> — Designed for human visitors. A human-readable page on your website that lists all your pages with clickable links, organized by category. It helps users find content and also provides internal linking value for SEO, but it is not submitted to Google Search Console.</li>
+          <li><strong>Image Sitemap</strong> — A specialized XML sitemap extension for listing images on your site, helping Google discover and index your images for Google Images search.</li>
+          <li><strong>Video Sitemap</strong> — Similar to image sitemaps but for video content, used by platforms like YouTube and news sites to ensure video content is properly indexed.</li>
+          <li><strong>News Sitemap</strong> — Used by news publishers to help Google News discover and feature recent articles, with time-sensitive indexing requirements.</li>
+        </ul>
+
+        <div class="ibox g">
+          <svg viewBox="0 0 24 24"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+          <span><strong>2026 Best Practice:</strong> Submit both an XML sitemap (for Google) and maintain a clean HTML sitemap (for users). Use this seo sitemap tool to handle the XML side instantly — then link your HTML sitemap from your footer for added user experience and internal linking value.</span>
+        </div>
+
+        <h2>🤖 How Google Uses Your Sitemap</h2>
+        <p>When you submit a sitemap to Google Search Console, Google's crawlers read the file and add all listed URLs to their crawl queue. This doesn't guarantee immediate indexing — Google still evaluates each page for quality and relevance — but it does ensure that Google knows every page exists and has a priority signal to help allocate its crawl budget efficiently.</p>
+        <p>Google specifically uses two sitemap signals: the <code style="background:var(--surf);padding:2px 6px;border-radius:4px;font-size:13px">&lt;lastmod&gt;</code> tag (when the page was last updated) to decide whether to re-crawl a page, and the <code style="background:var(--surf);padding:2px 6px;border-radius:4px;font-size:13px">&lt;priority&gt;</code> tag as a hint about which pages are most important relative to others on your site. The google sitemap creator format this tool produces includes both tags, giving Googlebot the maximum amount of useful information.</p>
+
+        <div class="code-eg">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"&gt;
+  &lt;url&gt;
+    &lt;loc&gt;https://yourdomain.com/&lt;/loc&gt;
+    &lt;lastmod&gt;2026-01-15&lt;/lastmod&gt;
+    &lt;changefreq&gt;weekly&lt;/changefreq&gt;
+    &lt;priority&gt;1.0&lt;/priority&gt;
+  &lt;/url&gt;
+&lt;/urlset&gt;</div>
+
+        <h2>📈 Real-Life Example — How a Sitemap Changed a Blog's Traffic</h2>
+        <p>Consider a practical example: a food blog with 120 articles published over two years. Without a sitemap, Google had only indexed 47 of the 120 pages — the rest were simply not being crawled because they had few internal links pointing to them. After creating an XML sitemap using a free sitemap generator 2026 and submitting it to Google Search Console, all 120 pages were indexed within 8 days. Organic search traffic increased by 64% within 30 days as previously invisible articles started appearing in search results.</p>
+        <p>This scenario is not unusual — it's the standard outcome when website owners properly implement sitemaps. New pages, deep pages, and pages with few internal links are the biggest beneficiaries. The xml sitemap generator essentially bridges the gap between what you've created and what Google has discovered.</p>
+
+        <h2>⚠️ Common Sitemap Mistakes to Avoid</h2>
+        <ul>
+          <li><strong>Including noindex pages in your sitemap</strong> — If a page has a noindex meta tag, don't include it in your sitemap. This sends conflicting signals to Google</li>
+          <li><strong>Including redirected URLs</strong> — Only list canonical, final destination URLs. Redirect chains in sitemaps waste crawl budget</li>
+          <li><strong>Not updating after publishing new pages</strong> — Your sitemap should be regenerated or updated every time you publish new content</li>
+          <li><strong>Setting all priorities to 1.0</strong> — This defeats the purpose. Use 1.0 only for your homepage, 0.8–0.9 for category pages, and 0.5–0.7 for individual posts</li>
+          <li><strong>Forgetting to submit in Search Console</strong> — Generating the sitemap is step one. Uploading it to your server root AND submitting it in Google Search Console are both required</li>
+          <li><strong>Exceeding the 50,000 URL limit</strong> — A single XML sitemap file should not exceed 50,000 URLs or 50MB. Use a sitemap index file for larger sites</li>
+          <li><strong>Using wrong date formats in lastmod</strong> — Google requires W3C Datetime format: YYYY-MM-DD or YYYY-MM-DDThh:mm:ss+TZ</li>
+        </ul>
+
+        <h2>🏆 Pro SEO Tips for Sitemaps in 2026</h2>
+        <ul>
+          <li><strong>Regenerate your sitemap weekly</strong> — Keep it fresh by updating lastmod dates as you update content</li>
+          <li><strong>Use dynamic sitemaps if possible</strong> — WordPress and other CMS platforms have plugins (Yoast, RankMath) that auto-generate and update sitemaps</li>
+          <li><strong>Reference your sitemap in robots.txt</strong> — Add <code style="background:var(--surf);padding:2px 6px;border-radius:4px;font-size:13px">Sitemap: https://yourdomain.com/sitemap.xml</code> to your robots.txt for extra discovery</li>
+          <li><strong>Monitor sitemap errors in Search Console</strong> — Google will report any URLs it couldn't crawl or index so you can fix them</li>
+          <li><strong>Prioritize new content with higher changefreq</strong> — Set recently published pages to "daily" temporarily to encourage faster crawling</li>
+          <li><strong>Use this google sitemap creator for static sites</strong> — If you have a static website or Blogger/GitHub Pages site with no CMS, this tool is your best option for generating clean, standard-compliant sitemaps</li>
+        </ul>
+
+        <h2>🛠️ Why Use This Sitemap Generator Tool?</h2>
+        <p>Most website owners are not XML developers. Writing a valid XML sitemap by hand is error-prone and tedious. This advanced seo sitemap tool eliminates all of that friction — you enter your URLs, set your preferences, and get a standards-compliant XML file in seconds. The output follows the official sitemap.org XML schema (the same protocol used by Google, Bing, and Yahoo), so you can be confident it will be accepted by every major search engine's Search Console.</p>
+        <p>Unlike many free sitemap generator 2026 tools that are cluttered with ads or require email signups, this tool is completely client-side — meaning all processing happens in your browser, no data is sent to any server, and there is zero privacy risk. It's truly the simplest and most private way to create a professional-grade XML sitemap for any website, blog, or online store.</p>
+
+        <h2>🌱 Why Sitemaps Still Matter in 2026</h2>
+        <p>Some SEOs have argued that sitemaps are less important now that Google is smarter at discovering pages. This is partially true for large, well-established websites with strong internal linking. But for new websites, niche blogs, e-commerce stores, and any site that regularly publishes fresh content, sitemaps remain one of the highest-ROI technical SEO tasks available. The effort is minimal — generating and submitting a sitemap takes less than 10 minutes with this tool — and the potential upside (faster indexing, better crawl coverage, improved visibility) is substantial.</p>
+        <p>In 2026, with Google rolling out more AI-driven search features and more competition for organic visibility, ensuring that every single page on your site is properly indexed is more critical than ever. Don't leave indexing to chance. Use this xml sitemap generator, submit to Search Console, and take control of how Google sees your website.</p>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ SECTION -->
+<section class="faq-sec">
+  <div class="w">
+    <div style="text-align:center;margin-bottom:40px">
+      <div class="sec-lbl" style="justify-content:center">FAQs</div>
+      <div class="sec-h">Frequently Asked <span style="color:var(--blue)">Questions</span></div>
+    </div>
+    <div class="fql">
+
+      <div class="fq rev">
+        <div class="fq-q" onclick="togFaq(this)">
+          <span class="fq-t">🗺️ What is a sitemap and why does my website need one?</span>
+          <span class="fq-i">+</span>
+        </div>
+        <div class="fq-a"><div class="fq-ai">A sitemap is a file — typically in XML format — that lists all the important pages on your website and provides metadata about each one (last updated, change frequency, priority). Search engines like Google use it as a roadmap to discover, crawl, and index your pages. Without a sitemap, Google must find your pages by following links, which is slower and often incomplete — especially for new or large websites. Every website benefits from having a sitemap, regardless of size.</div></div>
+      </div>
+
+      <div class="fq rev">
+        <div class="fq-q" onclick="togFaq(this)">
+          <span class="fq-t">📈 Why is a sitemap important for SEO?</span>
+          <span class="fq-i">+</span>
+        </div>
+        <div class="fq-a"><div class="fq-ai">A sitemap directly improves your SEO by ensuring Google knows about every page you want indexed. Pages that aren't indexed can't rank in search results — so if Google hasn't found your page, it doesn't matter how well-written or optimized it is. By submitting a sitemap through Google Search Console, you accelerate discovery of new content, ensure deep pages with few internal links get crawled, improve crawl efficiency for large sites, and provide priority and frequency hints that help Google allocate crawl budget intelligently. Most SEO experts consider submitting a sitemap one of the first technical SEO tasks to complete for any website.</div></div>
+      </div>
+
+      <div class="fq rev">
+        <div class="fq-q" onclick="togFaq(this)">
+          <span class="fq-t">💰 Is this sitemap generator tool completely free?</span>
+          <span class="fq-i">+</span>
+        </div>
+        <div class="fq-a"><div class="fq-ai">Yes — this is a 100% free sitemap generator with no hidden costs, no premium plans, and no signup or email required. The tool runs entirely in your browser (client-side JavaScript), which means no data is sent to any server and there are no usage limits. You can generate as many sitemaps as you need, add unlimited URLs, and download the XML file as many times as you like — all completely free, forever.</div></div>
+      </div>
+
+      <div class="fq rev">
+        <div class="fq-q" onclick="togFaq(this)">
+          <span class="fq-t">📬 How do I submit my sitemap to Google?</span>
+          <span class="fq-i">+</span>
+        </div>
+        <div class="fq-a"><div class="fq-ai">Follow these steps after generating your sitemap: (1) Download the sitemap.xml file from this tool. (2) Upload it to the root directory of your website — so it's accessible at yourdomain.com/sitemap.xml. (3) Go to Google Search Console (search.google.com/search-console). (4) Select your property (website). (5) Click "Sitemaps" in the left sidebar. (6) Enter "sitemap.xml" in the Add a new sitemap field and click Submit. Google will then crawl it and confirm how many URLs were indexed. Also add Sitemap: https://yourdomain.com/sitemap.xml to your robots.txt file as a bonus discovery signal.</div></div>
+      </div>
+
+      <div class="fq rev">
+        <div class="fq-q" onclick="togFaq(this)">
+          <span class="fq-t">🖥️ Does this sitemap generator work for WordPress and Blogger?</span>
+          <span class="fq-i">+</span>
+        </div>
+        <div class="fq-a"><div class="fq-ai">Yes — this xml sitemap generator works for any website regardless of platform. For WordPress, you can use this tool to create a manual sitemap for specific pages, or use it alongside plugins like Yoast SEO or RankMath. For Blogger (Blogspot) sites, this is especially useful since Blogger's built-in sitemap is limited to recent posts. Simply enter all your Blogger post and page URLs here, generate, download, and submit the XML file to Google Search Console for complete coverage. It also works for static HTML sites, GitHub Pages, Wix, Squarespace, custom-coded sites, and any other web platform.</div></div>
+      </div>
+
+      <div class="fq rev">
+        <div class="fq-q" onclick="togFaq(this)">
+          <span class="fq-t">🔗 How many URLs can I add to this sitemap tool?</span>
+          <span class="fq-i">+</span>
+        </div>
+        <div class="fq-a"><div class="fq-ai">This tool supports unlimited URLs — there is no artificial limit imposed by the tool itself. You can add as many pages as your website has. Note that the official XML sitemap standard specifies a maximum of 50,000 URLs per sitemap file (and 50MB file size). If your website has more than 50,000 pages, you should use a sitemap index file that references multiple sitemap files. For the vast majority of websites — blogs, tools sites, small businesses, portfolios — a single sitemap file with this tool will cover all your needs perfectly.</div></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT SECTION -->
+<section class="contact-sec">
+  <div class="w">
+    <div class="contact-card rev">
+      <div style="font-size:36px;margin-bottom:10px">💬</div>
+      <h3>Need Help or Have Suggestions?</h3>
+      <p>Need help? Contact us anytime for support or suggestions. We're constantly improving our tools based on user feedback and the latest SEO guidelines.</p>
+      <a href="/contact" class="btn-bl">📬 Contact Us</a>
+      <div class="priv-note">🔒 Privacy: No data is stored. Safe and secure tool. All processing happens in your browser — nothing is sent to any server.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA SECTION -->
+<section class="cta">
+  <div class="cta-in">
+    <div class="pill">🔥 100+ Free SEO &amp; Utility Tools</div>
+    <h2>Get Your Website <em>Indexed Faster</em> Today</h2>
+    <p>Generate your sitemap, submit to Google Search Console, and start getting discovered. Explore all our free SEO tools to complete your optimization.</p>
+    <div class="cta-btns">
+      <a href="/categories" class="btn-gold">🛠️ Explore All Tools</a>
+      <a href="/meta-tag-generator.html" class="btn-ghost">🏷️ Meta Tag Generator</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-inner">
+    <div class="ft-top">
+      <div class="ft-brand">
+        <a href="/" class="logo">
+          <div class="lb"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+          <div><div class="ln">Raj<span>Daily</span>Tools</div><div class="ls">Smart Tools for Daily Life</div></div>
+        </a>
+        <div class="ft-desc">Free, fast, and reliable SEO and utility tools for creators, bloggers, and developers. Sitemap generator, meta tags, calculators and 100+ more — all free.</div>
+        <div class="ft-soc">
+          <a class="fts" href="#" title="Twitter">𝕏</a>
+          <a class="fts" href="#" title="Instagram">📸</a>
+          <a class="fts" href="#" title="YouTube">▶</a>
+          <a class="fts" href="#" title="Telegram">✈</a>
+        </div>
+      </div>
+      <div class="fc">
+        <h4>SEO Tools</h4>
+        <ul>
+          <li><a href="/sitemap-generator.html">Sitemap Generator</a></li>
+          <li><a href="/meta-tag-generator.html">Meta Tag Generator</a></li>
+          <li><a href="/robots-txt-generator.html">Robots.txt Generator</a></li>
+          <li><a href="/keyword-density-checker.html">Keyword Density</a></li>
+          <li><a href="/word-counter.html">Word Counter</a></li>
+        </ul>
+      </div>
+      <div class="fc">
+        <h4>Finance Tools</h4>
+        <ul>
+          <li><a href="/how-poor-will-inflation-make-me-calculator.html">Inflation Calculator</a></li>
+          <li><a href="/sip-calculator.html">SIP Calculator</a></li>
+          <li><a href="/emi-calculator.html">EMI Calculator</a></li>
+          <li><a href="/gst-calculator.html">GST Calculator</a></li>
+          <li><a href="/budget-planner.html">Budget Planner</a></li>
+        </ul>
+      </div>
+      <div class="fc">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/about">About Us</a></li>
+          <li><a href="/contact">Contact</a></li>
+          <li><a href="/privacy">Privacy Policy</a></li>
+          <li><a href="/terms">Terms of Use</a></li>
+          <li><a href="/disclaimer">Disclaimer</a></li>
+          <li><a href="/sitemap">Sitemap</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ft-btm">
+      <div class="ft-inner">
+        <div class="ft-cp">© 2026 <b>RajDailyTools.in</b> — All rights reserved. | Sitemap Generator Tool | Free XML Sitemap Creator for SEO 2026</div>
+        <div class="ft-tag">For educational and SEO assistance purposes only. Always verify with Google Search Console for indexing status.</div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+/* ── MOBILE DRAWER ── */
+const brg=document.getElementById('brg'),dov=document.getElementById('dov'),drw=document.getElementById('drw'),dx=document.getElementById('dx');
+function oD(){drw.classList.add('on');dov.classList.add('on')}
+function cD(){drw.classList.remove('on');dov.classList.remove('on')}
+brg.addEventListener('click',oD);dov.addEventListener('click',cD);dx.addEventListener('click',cD);
+window.addEventListener('scroll',()=>{document.getElementById('btt').classList.toggle('on',window.scrollY>400)});
+
+/* ── SCROLL REVEAL ── */
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target)}})},{threshold:.12});
+document.querySelectorAll('.rev').forEach(el=>obs.observe(el));
+
+/* ── FAQ ── */
+function togFaq(el){const fq=el.closest('.fq');const wasOpen=fq.classList.contains('open');document.querySelectorAll('.fq.open').forEach(f=>f.classList.remove('open'));if(!wasOpen)fq.classList.add('open')}
+
+/* ── BAR ANIMATION ── */
+const barObs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.querySelectorAll('.vs-bar-fill').forEach(f=>{
+        const w=f.getAttribute('data-w');
+        f.style.transition='none';f.style.width='0';
+        requestAnimationFrame(()=>requestAnimationFrame(()=>{
+          f.style.transition='width 1.4s cubic-bezier(.4,0,.2,1)';
+          f.style.width=w;
+        }));
+      });
+      barObs.unobserve(e.target);
+    }
+  });
+},{threshold:.3});
+const graphCard=document.querySelector('.graph-card');
+if(graphCard)barObs.observe(graphCard);
+
+/* ── FREQ / PRIORITY OPTIONS ── */
+const freqOpts=`
+  <option value="always">Always</option>
+  <option value="daily">Daily</option>
+  <option value="weekly" selected>Weekly</option>
+  <option value="monthly">Monthly</option>
+  <option value="yearly">Yearly</option>
+  <option value="never">Never</option>`;
+const prioOpts=`
+  <option value="1.0">1.0</option>
+  <option value="0.9">0.9</option>
+  <option value="0.8" selected>0.8</option>
+  <option value="0.7">0.7</option>
+  <option value="0.6">0.6</option>
+  <option value="0.5">0.5</option>
+  <option value="0.4">0.4</option>
+  <option value="0.3">0.3</option>
+  <option value="0.2">0.2</option>
+  <option value="0.1">0.1</option>`;
+
+let rowCount=0;
+
+function addRow(url='',freq='',prio=''){
+  rowCount++;
+  const id=rowCount;
+  const div=document.createElement('div');
+  div.className='url-row';
+  div.id=`row${id}`;
+  div.innerHTML=`
+    <input class="finp" type="url" placeholder="https://yourdomain.com/page  or  /page-slug" value="${url}" style="font-size:13.5px">
+    <select class="fsel" style="font-size:13px">${freqOpts.replace('selected','').replace(`value="${freq||'weekly'}"`,`value="${freq||'weekly'}" selected`)}</select>
+    <select class="fsel" style="font-size:13px">${prioOpts.replace('selected','').replace(`value="${prio||'0.8'}"`,`value="${prio||'0.8'}" selected`)}</select>
+    <button class="rm-btn" onclick="removeRow(${id})" title="Remove">✕</button>`;
+  document.getElementById('urlRows').appendChild(div);
+}
+
+function removeRow(id){
+  const el=document.getElementById(`row${id}`);
+  if(el)el.remove();
+}
+
+/* ── INITIAL ROWS ── */
+(function(){
+  addRow('','weekly','1.0'); // homepage placeholder
+  addRow('','weekly','0.8');
+  addRow('','monthly','0.6');
+  // Set first row placeholder to homepage
+  const firstInput=document.querySelector('#urlRows .url-row input');
+  if(firstInput){firstInput.placeholder='https://yourdomain.com  (Homepage)'}
+  const firstPrio=document.querySelector('#urlRows .url-row select:nth-child(3)');
+  if(firstPrio){firstPrio.value='1.0';}
+})();
+
+/* ── HELPERS ── */
+let generatedXML='';
+
+function getToday(){
+  const d=new Date();
+  return d.toISOString().split('T')[0];
+}
+
+function normaliseUrl(url,base){
+  url=url.trim();
+  if(!url)return null;
+  if(url.startsWith('http://') || url.startsWith('https://'))return url;
+  // relative path
+  const b=base.replace(/\/+$/,'');
+  return b+(url.startsWith('/')?url:'/'+url);
+}
+
+function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
+
+/* ── GENERATE ── */
+function generateSitemap(){
+  const base=document.getElementById('siteUrl').value.trim().replace(/\/+$/,'');
+  if(!base || base==='https://'){
+    alert('Please enter your website base URL (e.g. https://yourdomain.com).');return;
+  }
+  if(!base.startsWith('http')){
+    alert('Please enter a valid URL starting with https:// or http://');return;
+  }
+
+  const rows=document.querySelectorAll('#urlRows .url-row');
+  const entries=[];
+  let skipped=0;
+  rows.forEach(row=>{
+    const inp=row.querySelector('input');
+    const sels=row.querySelectorAll('select');
+    if(!inp)return;
+    const rawUrl=inp.value.trim();
+    if(!rawUrl){skipped++;return;}
+    const url=normaliseUrl(rawUrl,base);
+    if(!url){skipped++;return;}
+    const freq=sels[0]?sels[0].value:'weekly';
+    const prio=sels[1]?sels[1].value:'0.8';
+    entries.push({url,freq,prio});
+  });
+
+  if(entries.length===0){
+    alert('Please add at least one URL to generate a sitemap.');return;
+  }
+
+  const today=getToday();
+  let xml=`<?xml version="1.0" encoding="UTF-8"?>\n`;
+  xml+=`<!-- Generated by RajDailyTools.in – Free Sitemap Generator 2026 -->\n`;
+  xml+=`<!-- Submit this file to Google Search Console after uploading to your server root -->\n`;
+  xml+=`<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"\n`;
+  xml+=`        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"\n`;
+  xml+=`        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9\n`;
+  xml+=`        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">\n\n`;
+
+  entries.forEach(e=>{
+    xml+=`  <url>\n`;
+    xml+=`    <loc>${esc(e.url)}</loc>\n`;
+    xml+=`    <lastmod>${today}</lastmod>\n`;
+    xml+=`    <changefreq>${e.freq}</changefreq>\n`;
+    xml+=`    <priority>${e.prio}</priority>\n`;
+    xml+=`  </url>\n\n`;
+  });
+  xml+=`</urlset>`;
+
+  generatedXML=xml;
+  document.getElementById('xmlOutput').textContent=xml;
+
+  // pills
+  const pills=[];
+  pills.push(`<div class="tip-pill">✅ ${entries.length} URL${entries.length!==1?'s':''} Generated</div>`);
+  if(skipped) pills.push(`<div class="tip-pill amber">⚠️ ${skipped} Empty Row${skipped!==1?'s':''} Skipped</div>`);
+  pills.push(`<div class="tip-pill blue">📅 Last Modified: ${today}</div>`);
+  pills.push(`<div class="tip-pill blue">🌐 Base URL: ${base}</div>`);
+  document.getElementById('tipsRow').innerHTML=pills.join('');
+
+  document.getElementById('resultArea').style.display='block';
+  setTimeout(()=>{document.getElementById('tool').scrollIntoView({behavior:'smooth',block:'start'})},80);
+}
+
+/* ── COPY ── */
+function copyXML(){
+  if(!generatedXML)return;
+  const cb=document.getElementById('copyBtn');
+  const done=()=>{cb.textContent='✅ Copied!';cb.classList.add('copied');setTimeout(()=>{cb.textContent='📋 Copy XML';cb.classList.remove('copied');},2200)};
+  navigator.clipboard?navigator.clipboard.writeText(generatedXML).then(done).catch(done):done();
+}
+
+/* ── DOWNLOAD ── */
+function downloadXML(){
+  if(!generatedXML){alert('Please generate the sitemap first.');return;}
+  const blob=new Blob([generatedXML],{type:'application/xml'});
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(blob);
+  a.download='sitemap.xml';
+  a.click();
+  URL.revokeObjectURL(a.href);
+}
+</script>
+</body>
+</html>
