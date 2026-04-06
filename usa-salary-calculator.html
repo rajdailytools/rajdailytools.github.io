@@ -1,0 +1,1108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>USA Salary Calculator 2026 – Monthly, Weekly, Hourly Income Calculator | RajDailyTools</title>
+<meta name="description" content="Free USA salary calculator 2026. Convert annual salary to monthly, weekly, hourly & after-tax income. Includes federal + state tax estimate, gross vs net comparison, and salary breakdown chart.">
+<meta name="keywords" content="USA salary calculator, salary to hourly USA, monthly salary calculator USA, yearly to monthly salary USA, after tax salary USA calculator, US income calculator 2026, annual salary breakdown, take home pay calculator USA, federal tax calculator 2026, salary converter USA">
+<meta name="robots" content="index, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#2563eb;--blue-d:#1d4ed8;--blue-xl:#eff6ff;--blue-s:#dbeafe;
+  --amber:#f59e0b;--green:#10b981;--red:#ef4444;--purple:#8b5cf6;
+  --orange:#f97316;--teal:#14b8a6;
+  --green-xl:#f0fdf4;--green-s:#bbf7d0;
+  --red-xl:#fef2f2;--red-s:#fecaca;
+  --amber-xl:#fffbeb;--amber-s:#fde68a;
+  --purple-xl:#faf5ff;--purple-s:#ddd6fe;
+  --ink:#0f172a;--ink2:#334155;--ink3:#64748b;--ink4:#94a3b8;
+  --line:#e2e8f0;--surf:#f8fafc;--white:#fff;
+  --s1:0 1px 3px rgba(15,23,42,.06),0 1px 2px rgba(15,23,42,.04);
+  --s2:0 4px 16px rgba(15,23,42,.08),0 2px 6px rgba(15,23,42,.04);
+  --s3:0 12px 40px rgba(15,23,42,.11),0 3px 10px rgba(15,23,42,.06);
+  --s4:0 24px 64px rgba(15,23,42,.13),0 6px 20px rgba(15,23,42,.07);
+  --sb:0 8px 32px rgba(37,99,235,.20);
+  --fd:'Sora',sans-serif;--fb:'DM Sans',sans-serif;
+  --ease:cubic-bezier(.4,0,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);color:var(--ink);background:var(--white);overflow-x:hidden;-webkit-font-smoothing:antialiased;line-height:1.6}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+button{cursor:pointer;border:none;background:none;font-family:var(--fb)}
+.w{max-width:1180px;margin:0 auto;padding:0 24px}
+.wa{max-width:880px;margin:0 auto;padding:0 24px}
+select,input{appearance:none;-webkit-appearance:none}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+@keyframes resultIn{from{opacity:0;transform:translateY(18px) scale(.97)}to{opacity:1;transform:none}}
+.rev{opacity:0;transform:translateY(22px);transition:opacity .55s var(--ease),transform .55s var(--ease)}
+.rev.in{opacity:1;transform:none}
+
+/* HEADER */
+.hdr{position:sticky;top:0;z-index:999;background:rgba(255,255,255,.96);backdrop-filter:blur(20px);border-bottom:1px solid var(--line);box-shadow:var(--s1)}
+.hdi{display:flex;align-items:center;justify-content:space-between;height:66px}
+.logo{display:flex;align-items:center;gap:10px}
+.lb{width:36px;height:36px;background:var(--blue);border-radius:9px;display:flex;align-items:center;justify-content:center;box-shadow:var(--sb);flex-shrink:0}
+.lb svg{width:18px;height:18px;fill:#fff}
+.ln{font-family:var(--fd);font-size:19px;font-weight:800;color:var(--ink);line-height:1}
+.ln span{color:var(--blue)}
+.ls{font-size:10px;color:var(--ink4);letter-spacing:.04em}
+nav.dn{display:flex;align-items:center;gap:2px}
+nav.dn a{font-size:13.5px;font-weight:500;color:var(--ink2);padding:7px 13px;border-radius:8px;transition:.2s}
+nav.dn a:hover{color:var(--blue);background:var(--blue-xl)}
+.hcta{background:var(--blue);color:#fff;font-family:var(--fd);font-weight:600;font-size:13px;padding:8px 18px;border-radius:8px;box-shadow:var(--sb);transition:.2s}
+.hcta:hover{background:var(--blue-d);transform:translateY(-1px)}
+.brg{display:none;flex-direction:column;gap:4.5px;padding:8px;border-radius:8px}
+.brg span{display:block;width:20px;height:2px;background:var(--ink);border-radius:2px;transition:.28s}
+.dov{display:none;position:fixed;inset:0;background:rgba(15,23,42,.45);z-index:1040;backdrop-filter:blur(3px)}
+.dov.on{display:block}
+.drw{position:fixed;top:0;right:-100%;width:270px;height:100vh;background:#fff;z-index:1050;padding:22px;box-shadow:var(--s4);transition:right .32s var(--ease);overflow-y:auto}
+.drw.on{right:0}
+.dh{display:flex;align-items:center;justify-content:space-between;margin-bottom:26px}
+.dx{width:33px;height:33px;border-radius:7px;background:var(--surf);display:flex;align-items:center;justify-content:center;color:var(--ink3);font-size:17px}
+nav.mn{display:flex;flex-direction:column;gap:3px}
+nav.mn a{display:block;font-size:14px;font-weight:500;color:var(--ink2);padding:11px 13px;border-radius:8px;transition:.2s}
+nav.mn a:hover{color:var(--blue);background:var(--blue-xl)}
+
+/* HERO */
+.hero{position:relative;overflow:hidden;background:linear-gradient(150deg,#eff6ff 0%,#fff 46%,#faf5ff 100%);padding:64px 0 72px}
+.hero::before{content:'';position:absolute;top:-140px;right:-180px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(37,99,235,.07) 0%,transparent 68%);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-80px;left:-100px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(139,92,246,.05) 0%,transparent 68%);pointer-events:none}
+.blob{position:absolute;border-radius:50%;pointer-events:none;animation:float 6s ease-in-out infinite}
+.b1{width:13px;height:13px;background:rgba(37,99,235,.22);top:22%;right:14%;animation-delay:0s}
+.b2{width:9px;height:9px;background:rgba(139,92,246,.18);top:58%;right:26%;animation-delay:2.2s}
+.b3{width:11px;height:11px;background:rgba(245,158,11,.18);top:36%;right:6%;animation-delay:4s}
+.bc{display:flex;align-items:center;gap:7px;font-size:12.5px;color:var(--ink3);margin-bottom:22px;position:relative;z-index:1;flex-wrap:wrap}
+.bc a{color:var(--blue);font-weight:600}
+.pill{display:inline-flex;align-items:center;gap:7px;font-family:var(--fd);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);background:var(--blue-xl);padding:5px 14px;border-radius:100px;margin-bottom:18px;border:1.5px solid var(--blue-s)}
+.pill::before{content:'';width:6px;height:6px;background:var(--blue);border-radius:50%}
+.hero-inner{position:relative;z-index:1;max-width:720px;animation:fadeUp .5s ease both}
+.hero h1{font-family:var(--fd);font-size:clamp(26px,4.5vw,50px);font-weight:800;line-height:1.1;color:var(--ink);margin-bottom:14px}
+.hero h1 span{color:var(--blue)}
+.hero-sub{font-size:16px;color:var(--ink3);line-height:1.8;margin-bottom:22px;max-width:600px}
+.hero-chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.chip{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;padding:6px 14px;border-radius:100px;background:#fff;border:1.5px solid var(--line);color:var(--ink2);box-shadow:var(--s1);transition:.22s}
+.chip:hover{border-color:var(--blue);color:var(--blue);transform:translateY(-1px)}
+.hero-meta{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:24px}
+.upd{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:700;color:var(--blue);background:var(--blue-xl);padding:6px 14px;border-radius:100px;border:1.5px solid var(--blue-s)}
+.mi{font-size:13px;color:var(--ink3);font-weight:500}
+
+/* HOW TO USE */
+.howto{background:var(--amber-xl);border:2px solid var(--amber-s);border-radius:16px;padding:22px 26px;max-width:560px;margin-bottom:24px}
+.howto-ttl{display:flex;align-items:center;gap:9px;font-family:var(--fd);font-size:15px;font-weight:800;color:var(--ink);margin-bottom:13px}
+.howto-steps{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.hs{display:flex;align-items:flex-start;gap:10px;font-size:13.5px;color:var(--ink2);line-height:1.6}
+.sn{width:24px;height:24px;background:var(--amber);color:#fff;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex-shrink:0;margin-top:1px}
+
+/* RELATED TOOLS */
+.rel-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;position:relative;z-index:1}
+.rg-box{border-radius:14px;padding:14px 14px 12px;display:flex;flex-direction:column;gap:8px;transition:.22s;border:1.5px solid}
+.rg-box:hover{transform:translateY(-3px);box-shadow:var(--s3)}
+.rg-box.army{background:linear-gradient(135deg,var(--amber-xl),#fef3c7);border-color:var(--amber-s)}
+.rg-box.ht{background:linear-gradient(135deg,var(--green-xl),#dcfce7);border-color:var(--green-s)}
+.rg-box.ssc{background:linear-gradient(135deg,var(--blue-xl),var(--blue-s));border-color:var(--blue-s)}
+.rg-box.mp{background:linear-gradient(135deg,var(--purple-xl),#ede9fe);border-color:var(--purple-s)}
+.rg-box.tl{background:linear-gradient(135deg,#f0fdfa,#ccfbf1);border-color:#99f6e4}
+.rg-box.or{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fed7aa}
+.rg-ico{font-size:22px}
+.rg-txt h4{font-family:var(--fd);font-size:12px;font-weight:800;color:var(--ink);margin-bottom:2px}
+.rg-txt p{font-size:11px;color:var(--ink3);line-height:1.5}
+.btn-xs{display:inline-flex;align-items:center;gap:4px;font-family:var(--fd);font-weight:700;font-size:11px;padding:5px 10px;border-radius:7px;transition:.22s;margin-top:4px}
+.btn-xs.a{background:var(--amber);color:#fff}.btn-xs.a:hover{background:#d97706}
+.btn-xs.g{background:var(--green);color:#fff}.btn-xs.g:hover{background:#059669}
+.btn-xs.b{background:var(--blue);color:#fff}.btn-xs.b:hover{background:var(--blue-d)}
+.btn-xs.p{background:var(--purple);color:#fff}.btn-xs.p:hover{background:#7c3aed}
+.btn-xs.t{background:var(--teal);color:#fff}.btn-xs.t:hover{background:#0f9488}
+.btn-xs.o{background:var(--orange);color:#fff}.btn-xs.o:hover{background:#ea6f08}
+
+/* TOOL */
+.tool-sec{background:var(--surf);padding:80px 0}
+.tool-wrap{max-width:900px;margin:0 auto}
+.tool-card{background:#fff;border:1.5px solid var(--line);border-radius:28px;overflow:hidden;box-shadow:var(--s4)}
+.tool-hdr{background:linear-gradient(135deg,#1e3a8a 0%,#2563eb 55%,#3b82f6 100%);padding:32px 40px;position:relative;overflow:hidden}
+.tool-hdr::before{content:'';position:absolute;top:-60px;right:-60px;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,.07)}
+.tool-hdr::after{content:'';position:absolute;bottom:-40px;left:-40px;width:180px;height:180px;border-radius:50%;background:rgba(255,255,255,.04)}
+.th{position:relative;z-index:1}
+.th h2{font-family:var(--fd);font-size:21px;font-weight:800;color:#fff;margin-bottom:6px}
+.th p{font-size:14px;color:rgba(255,255,255,.82);line-height:1.65}
+.th-badges{display:flex;flex-wrap:wrap;gap:9px;margin-top:14px}
+.thb{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:rgba(255,255,255,.9);background:rgba(255,255,255,.13);padding:5px 12px;border-radius:100px}
+.tool-body{padding:36px 40px}
+
+/* FORM */
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+.fgrid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:16px}
+.fld{display:flex;flex-direction:column;gap:7px}
+.flbl{font-size:13px;font-weight:700;color:var(--ink2)}
+.flbl span{font-size:11px;font-weight:500;color:var(--ink4);margin-left:5px;background:var(--surf);padding:2px 7px;border-radius:5px;border:1px solid var(--line)}
+.inp-wrap{position:relative}
+.inp-prefix{position:absolute;left:14px;top:50%;transform:translateY(-50%);font-family:var(--fd);font-size:14px;font-weight:700;color:var(--ink3);pointer-events:none}
+.inp-suffix{position:absolute;right:14px;top:50%;transform:translateY(-50%);font-family:var(--fd);font-size:13px;font-weight:700;color:var(--ink3);pointer-events:none}
+.finp,.fsel{padding:12px 16px;font-size:14.5px;color:var(--ink);background:#fff;border:1.5px solid var(--line);border-radius:10px;outline:none;transition:.22s;font-family:var(--fb);width:100%}
+.finp:focus,.fsel:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(37,99,235,.10)}
+.finp.has-prefix{padding-left:30px}
+.finp.has-suffix{padding-right:55px}
+.fsel{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2364748b' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:40px}
+.hint-box{display:flex;align-items:flex-start;gap:9px;font-size:13px;color:var(--ink2);background:var(--blue-xl);border:1.5px solid var(--blue-s);border-radius:10px;padding:11px 14px;margin:16px 0;line-height:1.65}
+.hint-box svg{width:16px;height:16px;stroke:var(--blue);fill:none;stroke-width:2;flex-shrink:0;margin-top:2px}
+.chk-btn{width:100%;padding:17px;background:linear-gradient(135deg,#1d4ed8 0%,#1e3a8a 100%);color:#fff;font-family:var(--fd);font-weight:800;font-size:16px;border-radius:12px;box-shadow:0 8px 32px rgba(37,99,235,.28);transition:all .25s var(--ease);display:flex;align-items:center;justify-content:center;gap:10px}
+.chk-btn:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(37,99,235,.38)}
+.chk-btn:active{transform:translateY(0)}
+.rst-btn{width:100%;padding:12px;background:var(--surf);color:var(--ink3);font-family:var(--fd);font-weight:700;font-size:14px;border-radius:12px;border:1.5px solid var(--line);transition:.22s;margin-top:10px}
+.rst-btn:hover{background:var(--line);color:var(--ink2)}
+
+/* RESULT */
+#resultArea{display:none;margin-top:28px;animation:resultIn .45s var(--ease) both}
+.pay-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:16px}
+.pay-card{border-radius:16px;padding:22px 20px;position:relative;overflow:hidden;border:2px solid}
+.pay-card.c1{background:linear-gradient(135deg,var(--blue-xl),#e0eeff);border-color:var(--blue-s)}
+.pay-card.c2{background:linear-gradient(135deg,var(--green-xl),#d1fae5);border-color:var(--green-s)}
+.pay-card.c3{background:linear-gradient(135deg,var(--amber-xl),#fef3c7);border-color:var(--amber-s)}
+.pay-card.c4{background:linear-gradient(135deg,var(--purple-xl),#ede9fe);border-color:var(--purple-s)}
+.pay-card.c5{background:linear-gradient(135deg,var(--red-xl),#fecaca);border-color:var(--red-s)}
+.pay-card.c6{background:linear-gradient(135deg,#f0fdfa,#ccfbf1);border-color:#99f6e4}
+.pay-card.wide{grid-column:1/-1}
+.pay-card::before{content:'';position:absolute;inset:0;opacity:.04;background-image:repeating-linear-gradient(45deg,currentColor 0,currentColor 1px,transparent 0,transparent 50%);background-size:12px 12px;pointer-events:none}
+.pc-lbl{font-size:12px;font-weight:700;color:var(--ink3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px}
+.pc-val{font-family:var(--fd);font-size:28px;font-weight:800;color:var(--ink);line-height:1}
+.pc-sub{font-size:12.5px;color:var(--ink3);margin-top:5px}
+.pc-ico{font-size:28px;position:absolute;top:16px;right:16px;opacity:.18}
+
+/* COMPARE ROW */
+.cmp-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px}
+.cmp-card{border-radius:14px;padding:20px 18px;border:2px solid}
+.cmp-card.gross{background:linear-gradient(135deg,var(--blue-xl),#e0eeff);border-color:var(--blue-s)}
+.cmp-card.net{background:linear-gradient(135deg,var(--green-xl),#d1fae5);border-color:var(--green-s)}
+.cmp-ico{font-size:26px;margin-bottom:8px}
+.cmp-lbl{font-family:var(--fd);font-size:11px;font-weight:700;color:var(--ink3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px}
+.cmp-val{font-family:var(--fd);font-size:26px;font-weight:800;color:var(--ink);line-height:1}
+.cmp-diff{font-size:12px;color:var(--ink3);margin-top:5px;line-height:1.5}
+
+/* TIPS ROW */
+.tips-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.tip-pill{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:600;padding:7px 14px;border-radius:100px;background:var(--blue-xl);color:var(--blue);border:1.5px solid var(--blue-s)}
+.tip-pill.green{background:var(--green-xl);color:var(--green);border-color:var(--green-s)}
+.tip-pill.amber{background:var(--amber-xl);color:var(--amber);border-color:var(--amber-s)}
+.tip-pill.purple{background:var(--purple-xl);color:var(--purple);border-color:var(--purple-s)}
+.tip-pill.red{background:var(--red-xl);color:var(--red);border-color:var(--red-s)}
+.warn-box{background:var(--amber-xl);border:1.5px solid var(--amber-s);border-radius:12px;padding:14px 18px;display:flex;gap:10px;font-size:13.5px;color:var(--ink2);line-height:1.7;margin-top:14px}
+
+/* GRAPH */
+.graph-sec{background:var(--surf);padding:72px 0}
+.graph-card{background:#fff;border:1.5px solid var(--line);border-radius:20px;padding:28px 32px;box-shadow:var(--s3)}
+.graph-hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;flex-wrap:wrap;gap:12px}
+.graph-ttl{font-family:var(--fd);font-size:18px;font-weight:800;color:var(--ink)}
+.bar-chart{display:flex;flex-direction:column;gap:14px}
+.bar-row{display:flex;align-items:center;gap:14px}
+.bar-lbl{font-family:var(--fd);font-size:13px;font-weight:700;color:var(--ink2);width:80px;flex-shrink:0;text-align:right}
+.bar-track{flex:1;height:36px;background:var(--line);border-radius:100px;overflow:hidden;position:relative}
+.bar-fill{height:100%;border-radius:100px;display:flex;align-items:center;padding-left:14px;font-family:var(--fd);font-size:12px;font-weight:800;color:#fff;white-space:nowrap;transition:width .8s var(--ease)}
+.bar-fill.bf-blue{background:linear-gradient(90deg,#2563eb,#60a5fa)}
+.bar-fill.bf-green{background:linear-gradient(90deg,#059669,#34d399)}
+.bar-fill.bf-amber{background:linear-gradient(90deg,#f59e0b,#fbbf24)}
+.bar-fill.bf-red{background:linear-gradient(90deg,#ef4444,#f87171)}
+.bar-val{font-family:var(--fd);font-size:13px;font-weight:800;color:var(--ink2);width:110px;flex-shrink:0}
+
+/* TABLE */
+.tbl-sec{background:#fff;padding:72px 0}
+.tbl-wr{overflow-x:auto;margin-bottom:24px;border-radius:14px;border:1.5px solid var(--line);box-shadow:var(--s2)}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+thead th{background:linear-gradient(135deg,#1e3a8a 0%,#2563eb 100%);color:#fff;padding:14px 16px;text-align:left;font-family:var(--fd);font-size:13px;font-weight:700;letter-spacing:.03em}
+thead th:first-child{border-radius:14px 0 0 0}
+thead th:last-child{border-radius:0 14px 0 0}
+tbody tr{border-bottom:1px solid var(--line);transition:.2s}
+tbody tr:hover{background:var(--blue-xl)}
+tbody td{padding:12px 16px;color:var(--ink2);vertical-align:middle}
+.tbadge{display:inline-flex;font-size:11px;font-weight:700;padding:3px 8px;border-radius:100px}
+.tbadge.g{background:var(--green-xl);color:var(--green);border:1px solid var(--green-s)}
+.tbadge.b{background:var(--blue-xl);color:var(--blue);border:1px solid var(--blue-s)}
+.tbadge.a{background:var(--amber-xl);color:var(--amber);border:1px solid var(--amber-s)}
+.tbadge.r{background:var(--red-xl);color:var(--red);border:1px solid var(--red-s)}
+.tbadge.p{background:var(--purple-xl);color:var(--purple);border:1px solid var(--purple-s)}
+
+/* STORY */
+.story-sec{background:var(--surf);padding:72px 0}
+.story-card{background:#fff;border:1.5px solid var(--line);border-radius:24px;padding:40px;box-shadow:var(--s3);position:relative;overflow:hidden}
+.story-card::before{content:'';position:absolute;top:0;left:0;bottom:0;width:5px;background:linear-gradient(180deg,var(--blue) 0%,var(--purple) 100%);border-radius:5px 0 0 5px}
+.sq{font-size:54px;color:var(--blue-s);font-family:Georgia,serif;line-height:1;padding-left:8px}
+.sb{font-size:15.5px;color:var(--ink2);line-height:1.9;padding:0 8px}
+.sauth{display:flex;align-items:center;gap:14px;margin-top:22px;padding-top:20px;border-top:1px solid var(--line)}
+.sav{width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,#1e3a8a,#2563eb);display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+.san{font-family:var(--fd);font-size:14px;font-weight:800;color:var(--ink);margin-bottom:2px}
+.sat{font-size:12px;color:var(--ink4)}
+
+/* PLAN SECTION */
+.plan-sec{background:#fff;padding:72px 0}
+.plan-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:36px}
+.plan-card{background:var(--surf);border:1.5px solid var(--line);border-radius:18px;padding:26px 22px;transition:.28s}
+.plan-card:hover{transform:translateY(-4px);box-shadow:var(--s3);border-color:var(--blue-s)}
+.plan-ico{font-size:32px;margin-bottom:14px}
+.plan-title{font-family:var(--fd);font-size:15px;font-weight:800;color:var(--ink);margin-bottom:10px}
+.plan-list{display:flex;flex-direction:column;gap:7px}
+.plan-item{display:flex;align-items:flex-start;gap:8px;font-size:13.5px;color:var(--ink3);line-height:1.6}
+.plan-item::before{content:'→';color:var(--blue);font-weight:700;flex-shrink:0;font-size:13px;margin-top:1px}
+
+/* ARTICLE */
+.art-sec{background:var(--surf);padding:72px 0}
+.art-card{background:#fff;border:1.5px solid var(--line);border-radius:24px;padding:48px;box-shadow:var(--s3)}
+.art-card h2{font-family:var(--fd);font-size:clamp(20px,3vw,30px);font-weight:800;color:var(--ink);margin-bottom:16px;margin-top:36px}
+.art-card h2:first-child{margin-top:0}
+.art-card h3{font-family:var(--fd);font-size:18px;font-weight:700;color:var(--ink2);margin-bottom:12px;margin-top:24px}
+.art-card p{font-size:15px;color:var(--ink2);line-height:1.9;margin-bottom:16px}
+.art-card ul{padding-left:20px;margin-bottom:16px}
+.art-card ul li{font-size:15px;color:var(--ink2);line-height:1.9;margin-bottom:6px;list-style:disc}
+.art-card strong{color:var(--ink);font-weight:700}
+.art-hl{background:linear-gradient(135deg,var(--blue-xl),#e0eeff);border:1.5px solid var(--blue-s);border-radius:14px;padding:20px 24px;margin:24px 0}
+.art-hl p{margin-bottom:0;color:var(--ink2)}
+
+/* FAQ */
+.faq-sec{background:#fff;padding:72px 0}
+.fq{border:1.5px solid var(--line);border-radius:14px;overflow:hidden;margin-bottom:10px;transition:.28s}
+.fq:hover{border-color:var(--blue-s)}
+.fq.open{border-color:var(--blue);box-shadow:var(--s2)}
+.fq-q{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;cursor:pointer;font-family:var(--fd);font-size:15px;font-weight:700;color:var(--ink);gap:12px}
+.fq-ico{width:28px;height:28px;border-radius:7px;background:var(--surf);display:flex;align-items:center;justify-content:center;font-size:13px;transition:.28s;flex-shrink:0}
+.fq.open .fq-ico{background:var(--blue);color:#fff;transform:rotate(45deg)}
+.fq-a{max-height:0;overflow:hidden;transition:max-height .38s var(--ease)}
+.fq.open .fq-a{max-height:300px}
+.fq-ac{padding:0 22px 18px;font-size:14px;color:var(--ink3);line-height:1.8;border-top:1px solid var(--line);padding-top:14px}
+
+/* NOTICE */
+.notice-sec{background:var(--blue-xl);padding:32px 0;border-top:1.5px solid var(--blue-s);border-bottom:1.5px solid var(--blue-s)}
+.notice-inner{display:flex;align-items:flex-start;gap:14px;max-width:880px;margin:0 auto}
+.notice-ico{font-size:24px;flex-shrink:0}
+.notice-txt{font-size:14px;color:var(--ink2);line-height:1.8}
+.notice-txt strong{font-family:var(--fd);font-size:15px;color:var(--ink);display:block;margin-bottom:4px}
+
+/* PRIVACY */
+.priv-bar{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:20px;padding:28px 24px;background:var(--surf);border-top:1px solid var(--line)}
+.priv-item{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:var(--ink3)}
+.priv-dot{width:8px;height:8px;border-radius:50%;background:var(--green)}
+
+/* CONTACT */
+.contact-sec{background:#fff;padding:48px 0;border-top:1px solid var(--line)}
+.contact-card{max-width:600px;margin:0 auto;text-align:center;background:linear-gradient(135deg,var(--blue-xl),#faf5ff);border:1.5px solid var(--blue-s);border-radius:24px;padding:40px}
+.contact-card h3{font-family:var(--fd);font-size:22px;font-weight:800;color:var(--ink);margin-bottom:10px}
+.contact-card p{font-size:15px;color:var(--ink3);line-height:1.8;margin-bottom:20px}
+.contact-cta{display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:#fff;font-family:var(--fd);font-weight:700;font-size:14px;padding:12px 24px;border-radius:10px;transition:.22s;box-shadow:var(--sb)}
+.contact-cta:hover{background:var(--blue-d);transform:translateY(-2px)}
+
+/* SEC HEADER */
+.sec-hd{text-align:center;margin-bottom:44px}
+.sec-tag{display:inline-flex;align-items:center;gap:7px;font-family:var(--fd);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);background:var(--blue-xl);padding:5px 14px;border-radius:100px;margin-bottom:14px;border:1.5px solid var(--blue-s)}
+.sec-tag::before{content:'';width:5px;height:5px;background:var(--blue);border-radius:50%}
+.sec-ttl{font-family:var(--fd);font-size:clamp(22px,3.5vw,36px);font-weight:800;color:var(--ink);margin-bottom:12px;line-height:1.2}
+.sec-ttl span{color:var(--blue)}
+.sec-sub{font-size:15.5px;color:var(--ink3);max-width:560px;margin:0 auto;line-height:1.8}
+
+/* FOOTER */
+.ftr{background:#0f172a;color:rgba(255,255,255,.7);padding:48px 0 24px}
+.ftr-top{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:32px;margin-bottom:36px}
+.ftr-logo{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.ftr-logo .lb{background:var(--blue)}
+.ftr-logo .ln{color:#fff}
+.ftr-logo .ln span{color:#60a5fa}
+.ftr-desc{font-size:13.5px;line-height:1.8;color:rgba(255,255,255,.55)}
+.ftr-ht{font-family:var(--fd);font-size:13px;font-weight:700;color:#fff;margin-bottom:14px;letter-spacing:.04em}
+.ftr-lnk{display:flex;flex-direction:column;gap:9px}
+.ftr-lnk a{font-size:13px;color:rgba(255,255,255,.55);transition:.2s}
+.ftr-lnk a:hover{color:#60a5fa}
+.ftr-bot{border-top:1px solid rgba(255,255,255,.09);padding-top:22px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:12.5px;color:rgba(255,255,255,.4)}
+.btt{position:fixed;bottom:24px;right:24px;width:44px;height:44px;background:var(--blue);color:#fff;border-radius:12px;display:none;align-items:center;justify-content:center;font-size:16px;box-shadow:var(--sb);transition:.22s;z-index:900}
+.btt:hover{background:var(--blue-d);transform:translateY(-2px)}
+.btt.show{display:flex}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .fgrid,.fgrid3{grid-template-columns:1fr}
+  .pay-grid{grid-template-columns:1fr 1fr}
+  .plan-grid{grid-template-columns:1fr}
+  .cmp-row{grid-template-columns:1fr}
+  .ftr-top{grid-template-columns:1fr 1fr}
+  .tool-body{padding:24px}
+  .tool-hdr{padding:24px}
+  .art-card{padding:28px}
+}
+@media(max-width:640px){
+  nav.dn,.hcta{display:none}
+  .brg{display:flex}
+  .pay-grid{grid-template-columns:1fr}
+  .howto-steps{grid-template-columns:1fr}
+  .rel-grid{grid-template-columns:1fr}
+  .ftr-top{grid-template-columns:1fr}
+  .formula-vars{grid-template-columns:1fr 1fr}
+  .bar-lbl{width:56px;font-size:11px}
+  .bar-val{width:80px;font-size:11px}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="hdr">
+  <div class="w">
+    <div class="hdi">
+      <a href="/" class="logo">
+        <div class="lb"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+        <div><div class="ln">Raj<span>Daily</span>Tools</div><div class="ls">Smart Tools for Daily Life</div></div>
+      </a>
+      <nav class="dn">
+        <a href="/">Home</a>
+        <a href="/calculators.html">Calculators</a>
+        <a href="/converters.html">Converters</a>
+        <a href="/finance.html">Finance</a>
+        <a href="/health.html">Health</a>
+      </nav>
+      <a href="#tool" class="hcta">Use Tool →</a>
+      <button class="brg" onclick="toggleDrawer()" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- MOBILE DRAWER -->
+<div class="dov" onclick="toggleDrawer()"></div>
+<div class="drw">
+  <div class="dh">
+    <div class="ln">Raj<span style="color:var(--blue)">Daily</span>Tools</div>
+    <button class="dx" onclick="toggleDrawer()">✕</button>
+  </div>
+  <nav class="mn">
+    <a href="/">🏠 Home</a>
+    <a href="/calculators.html">🧮 Calculators</a>
+    <a href="/converters.html">🔄 Converters</a>
+    <a href="/finance.html">💰 Finance Tools</a>
+    <a href="/health.html">🏥 Health Tools</a>
+  </nav>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+  <div class="w">
+    <div class="hero-inner">
+      <div class="bc"><a href="/">Home</a> › <a href="/calculators.html">Calculators</a> › USA Salary Calculator</div>
+      <div class="pill">🇺🇸 2026 Updated</div>
+      <h1>USA Salary Calculator 2026 – <span>Calculate Your Real Income</span> Instantly</h1>
+      <p class="hero-sub">Convert your annual salary into monthly, weekly, hourly and after-tax income in seconds. Includes federal + state tax estimates, gross vs net comparison, and visual salary breakdown.</p>
+      <div class="hero-chips">
+        <span class="chip">🇺🇸 All 50 US States</span>
+        <span class="chip">✅ 100% Free</span>
+        <span class="chip">🔒 No Login Required</span>
+        <span class="chip">📊 Tax Estimate Included</span>
+        <span class="chip">⚡ Instant Results</span>
+      </div>
+      <div class="hero-meta">
+        <span class="upd">🗓️ Updated 2026</span>
+        <span class="mi">💼 Gross & Net Breakdown</span>
+        <span class="mi">🔒 No data stored</span>
+      </div>
+
+      <!-- HOW TO USE -->
+      <div class="howto">
+        <div class="howto-ttl">💡 How to Use This Calculator</div>
+        <div class="howto-steps">
+          <div class="hs"><span class="sn">1</span>Enter your yearly salary</div>
+          <div class="hs"><span class="sn">2</span>Select your US state</div>
+          <div class="hs"><span class="sn">3</span>Choose filing status</div>
+          <div class="hs"><span class="sn">4</span>Set your weekly working hours</div>
+          <div class="hs"><span class="sn">5</span>Click Calculate &amp; view salary breakdown</div>
+        </div>
+      </div>
+
+      <!-- RELATED TOOLS -->
+      <div class="rel-grid">
+        <div class="rg-box army">
+          <div class="rg-ico">🏦</div>
+          <div class="rg-txt">
+            <h4>EMI Calculator</h4>
+            <p>Calculate monthly loan installments</p>
+            <a href="/emi-calculator.html" class="btn-xs a">Use Now →</a>
+          </div>
+        </div>
+        <div class="rg-box ssc">
+          <div class="rg-ico">🔢</div>
+          <div class="rg-txt">
+            <h4>Percentage Calculator</h4>
+            <p>Find percent values instantly</p>
+            <a href="/percentage-calculator.html" class="btn-xs b">Use Now →</a>
+          </div>
+        </div>
+        <div class="rg-box tl">
+          <div class="rg-ico">🧾</div>
+          <div class="rg-txt">
+            <h4>GST Calculator</h4>
+            <p>Instant GST tax amount breakdown</p>
+            <a href="/gst-calculator.html" class="btn-xs t">Use Now →</a>
+          </div>
+        </div>
+        <div class="rg-box ht">
+          <div class="rg-ico">🔄</div>
+          <div class="rg-txt">
+            <h4>Unit Converter</h4>
+            <p>Convert between any units</p>
+            <a href="/unit-converter.html" class="btn-xs g">Use Now →</a>
+          </div>
+        </div>
+        <div class="rg-box mp">
+          <div class="rg-ico">🎂</div>
+          <div class="rg-txt">
+            <h4>Age Calculator</h4>
+            <p>Calculate exact age in seconds</p>
+            <a href="/age-calculator.html" class="btn-xs p">Use Now →</a>
+          </div>
+        </div>
+        <div class="rg-box or">
+          <div class="rg-ico">📈</div>
+          <div class="rg-txt">
+            <h4>Compound Interest</h4>
+            <p>Calculate CI with growth chart</p>
+            <a href="/compound-interest-calculator.html" class="btn-xs o">Use Now →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOOL SECTION -->
+<section class="tool-sec" id="tool">
+  <div class="w">
+    <div class="tool-wrap">
+      <div class="tool-card rev">
+        <div class="tool-hdr">
+          <div class="th">
+            <h2>💼 USA Salary Calculator 2026</h2>
+            <p>Enter your salary details below to get a full income breakdown — monthly, weekly, daily, hourly, and after-tax take-home pay.</p>
+            <div class="th-badges">
+              <span class="thb">🇺🇸 All 50 States</span>
+              <span class="thb">📊 Tax Estimate</span>
+              <span class="thb">⚡ Instant Results</span>
+              <span class="thb">🔒 No Data Stored</span>
+            </div>
+          </div>
+        </div>
+        <div class="tool-body">
+          <div class="fgrid">
+            <div class="fld">
+              <label class="flbl">Annual Salary <span>USD</span></label>
+              <div class="inp-wrap">
+                <span class="inp-prefix">$</span>
+                <input type="number" id="annualSalary" class="finp has-prefix" placeholder="e.g. 75000" min="0" max="10000000">
+              </div>
+            </div>
+            <div class="fld">
+              <label class="flbl">State <span>All 50 + DC</span></label>
+              <select id="stateSelect" class="fsel">
+                <option value="AL,5.0">Alabama (5.0%)</option>
+                <option value="AK,0">Alaska (0%)</option>
+                <option value="AZ,2.5">Arizona (2.5%)</option>
+                <option value="AR,4.9">Arkansas (4.9%)</option>
+                <option value="CA,9.3">California (9.3%)</option>
+                <option value="CO,4.4">Colorado (4.4%)</option>
+                <option value="CT,5.0">Connecticut (5.0%)</option>
+                <option value="DE,6.6">Delaware (6.6%)</option>
+                <option value="DC,8.5">DC (8.5%)</option>
+                <option value="FL,0">Florida (0%)</option>
+                <option value="GA,5.49">Georgia (5.49%)</option>
+                <option value="HI,11.0">Hawaii (11.0%)</option>
+                <option value="ID,5.8">Idaho (5.8%)</option>
+                <option value="IL,4.95">Illinois (4.95%)</option>
+                <option value="IN,3.15">Indiana (3.15%)</option>
+                <option value="IA,6.0">Iowa (6.0%)</option>
+                <option value="KS,5.7">Kansas (5.7%)</option>
+                <option value="KY,4.0">Kentucky (4.0%)</option>
+                <option value="LA,4.25">Louisiana (4.25%)</option>
+                <option value="ME,7.15">Maine (7.15%)</option>
+                <option value="MD,5.75">Maryland (5.75%)</option>
+                <option value="MA,5.0">Massachusetts (5.0%)</option>
+                <option value="MI,4.25">Michigan (4.25%)</option>
+                <option value="MN,9.85">Minnesota (9.85%)</option>
+                <option value="MS,5.0">Mississippi (5.0%)</option>
+                <option value="MO,5.3">Missouri (5.3%)</option>
+                <option value="MT,6.75">Montana (6.75%)</option>
+                <option value="NE,6.84">Nebraska (6.84%)</option>
+                <option value="NV,0">Nevada (0%)</option>
+                <option value="NH,0">New Hampshire (0%)</option>
+                <option value="NJ,10.75">New Jersey (10.75%)</option>
+                <option value="NM,5.9">New Mexico (5.9%)</option>
+                <option value="NY,10.9">New York (10.9%)</option>
+                <option value="NC,4.5">North Carolina (4.5%)</option>
+                <option value="ND,2.5">North Dakota (2.5%)</option>
+                <option value="OH,3.99">Ohio (3.99%)</option>
+                <option value="OK,4.75">Oklahoma (4.75%)</option>
+                <option value="OR,9.9">Oregon (9.9%)</option>
+                <option value="PA,3.07">Pennsylvania (3.07%)</option>
+                <option value="RI,5.99">Rhode Island (5.99%)</option>
+                <option value="SC,6.5">South Carolina (6.5%)</option>
+                <option value="SD,0">South Dakota (0%)</option>
+                <option value="TN,0">Tennessee (0%)</option>
+                <option value="TX,0" selected>Texas (0%)</option>
+                <option value="UT,4.85">Utah (4.85%)</option>
+                <option value="VT,8.75">Vermont (8.75%)</option>
+                <option value="VA,5.75">Virginia (5.75%)</option>
+                <option value="WA,0">Washington (0%)</option>
+                <option value="WV,6.5">West Virginia (6.5%)</option>
+                <option value="WI,7.65">Wisconsin (7.65%)</option>
+                <option value="WY,0">Wyoming (0%)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="fgrid3">
+            <div class="fld">
+              <label class="flbl">Filing Status</label>
+              <select id="filingStatus" class="fsel">
+                <option value="single">Single</option>
+                <option value="married">Married Filing Jointly</option>
+              </select>
+            </div>
+            <div class="fld">
+              <label class="flbl">Weekly Hours <span>hrs/week</span></label>
+              <div class="inp-wrap">
+                <input type="number" id="weeklyHours" class="finp has-suffix" placeholder="40" value="40" min="1" max="168">
+                <span class="inp-suffix">hrs</span>
+              </div>
+            </div>
+            <div class="fld">
+              <label class="flbl">Tax Rate Override <span>optional</span></label>
+              <div class="inp-wrap">
+                <input type="number" id="taxOverride" class="finp has-suffix" placeholder="Auto" min="0" max="60" step="0.1">
+                <span class="inp-suffix">%</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hint-box">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            Tax estimate includes federal income tax + FICA (7.65%) + state tax. Leave "Tax Rate Override" blank for automatic estimate. For accurate filing, always consult an IRS professional.
+          </div>
+
+          <button class="chk-btn" onclick="calculateSalary()">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            Calculate My Salary Breakdown
+          </button>
+          <button class="rst-btn" onclick="resetCalc()">↺ Reset Calculator</button>
+
+          <!-- RESULTS -->
+          <div id="resultArea">
+            <div style="text-align:center;margin-bottom:22px;padding:14px;background:var(--blue-xl);border-radius:12px;border:1.5px solid var(--blue-s)">
+              <span id="resultHeading" style="font-family:var(--fd);font-size:15px;font-weight:800;color:var(--blue)"></span>
+            </div>
+
+            <div class="pay-grid" id="payGrid"></div>
+
+            <div class="cmp-row" id="cmpRow"></div>
+
+            <div id="warnBox" class="warn-box">
+              ⚠️ <span id="warnText"></span>
+            </div>
+
+            <div class="tips-row" id="tipsPills"></div>
+
+            <!-- BREAKDOWN TABLE -->
+            <div style="margin-top:24px">
+              <div style="font-family:var(--fd);font-size:16px;font-weight:800;color:var(--ink);margin-bottom:14px">📋 Full Salary Breakdown</div>
+              <div id="breakdownTable" class="tbl-wr"></div>
+            </div>
+
+            <!-- BAR CHART -->
+            <div style="margin-top:28px;background:var(--surf);border-radius:16px;padding:24px;border:1.5px solid var(--line)">
+              <div class="graph-hdr">
+                <div class="graph-ttl" id="chartTitle">📊 Income Breakdown Chart</div>
+              </div>
+              <div id="salaryBars" class="bar-chart"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STORY SECTION -->
+<section class="story-sec rev">
+  <div class="wa">
+    <div class="story-card">
+      <div class="sq">"</div>
+      <p class="sb">While researching global salaries, I noticed that many people struggle to convert their yearly income into actual monthly or hourly earnings. My friend who recently moved to the USA was confused about taxes and real take-home salary — he was offered $72,000 a year but had no idea what that meant per month after taxes. That's when I decided to build this USA Salary Calculator to make income calculations simple and transparent for everyone.</p>
+      <div class="sauth">
+        <div class="sav">👨‍💻</div>
+        <div>
+          <div class="san">Raj — Creator, RajDailyTools</div>
+          <div class="sat">Building free tools for everyday people since 2022</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PLAN / INSIGHTS SECTION -->
+<section class="plan-sec rev">
+  <div class="w">
+    <div class="sec-hd">
+      <div class="sec-tag">💡 Salary Insights</div>
+      <h2 class="sec-ttl">Understand Your <span>Real Earnings</span></h2>
+      <p class="sec-sub">Breaking down salary into smaller time periods helps you plan better, compare job offers, and manage your finances with clarity.</p>
+    </div>
+    <div class="plan-grid">
+      <div class="plan-card">
+        <div class="plan-ico">🏛️</div>
+        <div class="plan-title">Federal Tax Basics</div>
+        <div class="plan-list">
+          <div class="plan-item">2026 brackets: 10% to 37%</div>
+          <div class="plan-item">Standard deduction: $14,600 (single) / $29,200 (married)</div>
+          <div class="plan-item">FICA: 6.2% Social Security + 1.45% Medicare</div>
+          <div class="plan-item">Most earners fall in 22–24% bracket</div>
+        </div>
+      </div>
+      <div class="plan-card">
+        <div class="plan-ico">🗺️</div>
+        <div class="plan-title">State Tax Matters</div>
+        <div class="plan-list">
+          <div class="plan-item">9 states have no income tax (TX, FL, WA…)</div>
+          <div class="plan-item">CA, NY, NJ have highest state taxes</div>
+          <div class="plan-item">State tax can add 2–11% to your burden</div>
+          <div class="plan-item">Consider state when comparing job offers</div>
+        </div>
+      </div>
+      <div class="plan-card">
+        <div class="plan-ico">💰</div>
+        <div class="plan-title">Salary Planning Tips</div>
+        <div class="plan-list">
+          <div class="plan-item">Always negotiate based on net, not gross</div>
+          <div class="plan-item">Max out 401(k) to lower taxable income</div>
+          <div class="plan-item">HSA contributions are tax-free</div>
+          <div class="plan-item">Freelancers pay self-employment tax (15.3%)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ARTICLE SECTION -->
+<section class="art-sec rev">
+  <div class="wa">
+    <div class="art-card">
+      <h2>USA Salary Calculator 2026 – Complete Guide to Understanding Your Income</h2>
+      <p>Whether you just received a job offer, are negotiating a raise, or simply want to understand how much money you actually take home each month, the <strong>USA Salary Calculator 2026</strong> is your go-to tool. Understanding American salary structures can be complex — between federal taxes, state taxes, FICA contributions, and various deductions, your gross salary and net (take-home) salary can look very different. This comprehensive guide will walk you through everything you need to know.</p>
+
+      <div class="art-hl">
+        <p>💡 <strong>Quick Fact:</strong> The median household income in the USA as of 2026 is approximately <strong>$80,000–$82,000 per year</strong>, which translates to roughly $5,300–$5,500 per month after taxes for a single filer in a no-income-tax state like Texas or Florida.</p>
+      </div>
+
+      <h2>How Does Salary Work in the USA?</h2>
+      <p>In the United States, most salaried employees receive a <strong>gross annual salary</strong>, which is the total amount before any deductions. From this amount, several layers of deductions are applied before you receive your paycheck. Understanding these layers is essential for financial planning:</p>
+      <ul>
+        <li><strong>Federal Income Tax:</strong> A progressive tax based on your income bracket, ranging from 10% to 37% in 2026.</li>
+        <li><strong>FICA Taxes:</strong> 6.2% for Social Security (on income up to $168,600) and 1.45% for Medicare — totaling 7.65% for most employees.</li>
+        <li><strong>State Income Tax:</strong> Varies widely by state, from 0% (Texas, Florida) to over 13% in some California income brackets.</li>
+        <li><strong>Pre-tax Deductions:</strong> Contributions to 401(k), health insurance premiums, HSA, and FSA reduce your taxable income.</li>
+        <li><strong>Post-tax Deductions:</strong> Items like Roth IRA contributions, life insurance, or garnishments that don't reduce your tax burden.</li>
+      </ul>
+
+      <h2>Federal vs State Taxes: What's the Difference?</h2>
+      <p>One of the most common points of confusion for people new to US employment is the distinction between federal and state taxes. <strong>Federal taxes</strong> are collected by the IRS and apply to everyone in the country regardless of where they live. These funds support national programs like Social Security, Medicare, the military, and federal infrastructure.</p>
+      <p><strong>State income taxes</strong>, on the other hand, are collected by individual states and fund local programs such as public schools, state roads, and local law enforcement. As of 2026, nine states have no state income tax at all: Alaska, Florida, Nevada, New Hampshire, South Dakota, Tennessee, Texas, Washington, and Wyoming. Living in one of these states can significantly improve your take-home pay compared to high-tax states like California or New York.</p>
+
+      <h3>2026 Federal Income Tax Brackets (Single Filers)</h3>
+      <div class="tbl-wr" style="margin-bottom:0">
+        <table>
+          <thead><tr><th>Taxable Income</th><th>Tax Rate</th><th>Tax Owed</th></tr></thead>
+          <tbody>
+            <tr><td>$0 – $11,925</td><td><span class="tbadge g">10%</span></td><td>$0 + 10% of income</td></tr>
+            <tr><td>$11,926 – $48,475</td><td><span class="tbadge b">12%</span></td><td>$1,192.50 + 12% over $11,925</td></tr>
+            <tr><td>$48,476 – $103,350</td><td><span class="tbadge a">22%</span></td><td>$5,578.50 + 22% over $48,475</td></tr>
+            <tr><td>$103,351 – $197,300</td><td><span class="tbadge p">24%</span></td><td>$17,651.50 + 24% over $103,350</td></tr>
+            <tr><td>$197,301 – $250,525</td><td><span class="tbadge r">32%</span></td><td>$40,199.50 + 32% over $197,300</td></tr>
+            <tr><td>$250,526 – $626,350</td><td><span class="tbadge r">35%</span></td><td>$57,231.50 + 35% over $250,525</td></tr>
+            <tr><td>$626,351+</td><td><span class="tbadge r">37%</span></td><td>$188,769.75 + 37% over $626,350</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:12.5px;color:var(--ink4);margin-top:8px">* These are 2026 estimates. Always verify with the official IRS website for exact rates and brackets.</p>
+
+      <h2>How to Calculate Your Take-Home Salary</h2>
+      <p>Calculating your exact take-home pay involves several steps. Here's a simplified process that our <strong>US income calculator 2026</strong> automates for you:</p>
+      <ul>
+        <li><strong>Step 1:</strong> Start with your gross annual salary.</li>
+        <li><strong>Step 2:</strong> Subtract the standard deduction ($14,600 for single, $29,200 for married filing jointly in 2026).</li>
+        <li><strong>Step 3:</strong> Apply the federal tax bracket to your taxable income.</li>
+        <li><strong>Step 4:</strong> Add FICA taxes (7.65% of gross, up to SS cap).</li>
+        <li><strong>Step 5:</strong> Add your state's income tax rate.</li>
+        <li><strong>Step 6:</strong> Subtract total taxes from gross salary to get net/take-home pay.</li>
+      </ul>
+
+      <h2>How to Convert Annual Salary to Hourly Rate</h2>
+      <p>The standard formula for converting a yearly salary to an hourly wage is:</p>
+      <div class="art-hl">
+        <p>📐 <strong>Hourly Rate = Annual Salary ÷ (Weekly Hours × 52 weeks)</strong></p>
+        <p style="margin-top:8px">Example: $75,000 ÷ (40 hours × 52 weeks) = <strong>$36.06/hour</strong></p>
+      </div>
+      <p>This is your gross hourly rate. Your net (after-tax) hourly rate will be lower depending on your total effective tax rate. Many people are surprised to discover their real hourly value — it puts salary negotiations and job comparisons into much sharper perspective.</p>
+
+      <h2>Common Salary Mistakes Americans Make</h2>
+      <p>Financial awareness starts with knowing what pitfalls to avoid. Here are the most common mistakes people make when thinking about their salary:</p>
+      <ul>
+        <li><strong>Confusing gross and net income.</strong> Many people budget based on their annual gross salary and are caught off guard when their actual paycheck is 25–35% lower.</li>
+        <li><strong>Ignoring state tax differences.</strong> Moving from California to Texas on the same salary can effectively give you a $5,000–$10,000 raise with no negotiation needed.</li>
+        <li><strong>Overlooking FICA contributions.</strong> At 7.65%, FICA is a significant deduction that most people forget to factor into their net salary calculations.</li>
+        <li><strong>Not maximizing pre-tax contributions.</strong> Contributing to a 401(k) or HSA reduces your taxable income, meaning you pay less tax and keep more money.</li>
+        <li><strong>Comparing salaries without cost-of-living context.</strong> A $90,000 salary in Austin, TX stretches far further than $90,000 in San Francisco or NYC.</li>
+      </ul>
+
+      <h2>Real-Life Salary Examples (2026)</h2>
+      <p>Here are three real-world examples to illustrate how different salaries look after taxes:</p>
+      <ul>
+        <li><strong>$50,000/year in Texas (no state tax, single):</strong> ~$39,000 net/year → ~$3,250/month → ~$18.75/hr gross</li>
+        <li><strong>$85,000/year in California (9.3% state, single):</strong> ~$61,000 net/year → ~$5,083/month → ~$40.87/hr gross</li>
+        <li><strong>$120,000/year in New York (10.9% state, married):</strong> ~$82,500 net/year → ~$6,875/month → ~$57.69/hr gross</li>
+      </ul>
+      <p>These examples illustrate just how dramatically taxes can affect your real income. The $85,000 earner in California actually takes home less than someone earning $70,000 in Texas after accounting for state taxes and cost-of-living-adjusted purchasing power.</p>
+
+      <h2>Salary Planning Tips for Financial Success</h2>
+      <p>Once you know your actual take-home pay, you can build a realistic financial plan. Here are actionable tips:</p>
+      <ul>
+        <li>Follow the <strong>50/30/20 rule</strong>: 50% needs, 30% wants, 20% savings/investments — based on your NET income.</li>
+        <li>Contribute at least enough to your <strong>401(k)</strong> to get full employer matching — it's free money.</li>
+        <li>Open an <strong>HSA</strong> if you have a high-deductible health plan. Contributions are triple tax-advantaged.</li>
+        <li>Consider your <strong>effective tax rate</strong> (not marginal) when evaluating raises or job offers.</li>
+        <li>Use this <strong>salary to hourly USA calculator</strong> to evaluate whether overtime, freelance work, or part-time gigs are truly worth your time.</li>
+      </ul>
+
+      <h2>Why This USA Salary Calculator Is Useful</h2>
+      <p>There are dozens of salary calculators online, but most are either outdated, too complex, or don't account for state-specific taxes. Our <strong>monthly salary calculator USA</strong> is designed to be fast, accurate, and visual. With a single click, you get a complete breakdown including gross income, estimated federal tax, FICA, state tax, and net take-home — displayed in easy-to-read cards and a visual bar chart so you can see exactly where your money goes.</p>
+      <p>Whether you're a recent graduate comparing job offers, a professional negotiating a raise, or a newcomer to the United States figuring out your real take-home pay, this tool gives you the clarity and confidence to make smart financial decisions in 2026.</p>
+
+      <h2>The Importance of Financial Awareness</h2>
+      <p>Financial literacy is one of the most powerful skills you can develop. Understanding your salary — not just the headline number but the actual dollars that hit your bank account — is the foundation of every sound financial decision. When you know your real hourly rate, your monthly budget becomes easier to build. When you understand your effective tax rate, you can plan strategies to reduce it legally. And when you can quickly compare job offers on a net-income basis, you negotiate from a position of strength.</p>
+      <p>Tools like this <strong>after tax salary USA calculator</strong> exist to make this knowledge accessible to everyone — for free, instantly, and without any login required. Financial clarity should not be a luxury. Use this tool regularly as your salary changes, when evaluating job offers, or when planning major life events like buying a home or starting a family.</p>
+    </div>
+  </div>
+</section>
+
+<!-- NOTICE -->
+<div class="notice-sec">
+  <div class="w">
+    <div class="notice-inner">
+      <span class="notice-ico">⚠️</span>
+      <div class="notice-txt">
+        <strong>Important Disclaimer</strong>
+        Always verify tax details from the official <a href="https://www.irs.gov" target="_blank" rel="noopener" style="color:var(--blue);font-weight:700">IRS website (irs.gov)</a> or a qualified financial advisor. This calculator provides estimates based on 2026 standard rates and may not reflect individual circumstances, pre-tax deductions, credits, or local taxes.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FAQ SECTION -->
+<section class="faq-sec rev">
+  <div class="wa">
+    <div class="sec-hd">
+      <div class="sec-tag">❓ FAQ</div>
+      <h2 class="sec-ttl">Frequently Asked <span>Questions</span></h2>
+      <p class="sec-sub">Got questions about US salary calculations? We've got clear answers.</p>
+    </div>
+
+    <div class="fq">
+      <div class="fq-q" onclick="toggleFAQ(this)">How do I calculate my salary in the USA? <span class="fq-ico">+</span></div>
+      <div class="fq-a"><div class="fq-ac">Divide your annual salary by 12 for monthly pay, by 52 for weekly pay, and by (hours/week × 52) for hourly. For after-tax calculations, subtract federal tax, FICA (7.65%), and state income tax from your gross salary. Our calculator does all of this automatically in one click.</div></div>
+    </div>
+
+    <div class="fq">
+      <div class="fq-q" onclick="toggleFAQ(this)">What is after-tax (net) salary? <span class="fq-ico">+</span></div>
+      <div class="fq-a"><div class="fq-ac">After-tax salary — also called net or take-home pay — is what you actually receive in your bank account after all deductions. This includes federal income tax, FICA (Social Security + Medicare), state income tax, and any other withholdings. It is always lower than your gross salary.</div></div>
+    </div>
+
+    <div class="fq">
+      <div class="fq-q" onclick="toggleFAQ(this)">How accurate is this calculator? <span class="fq-ico">+</span></div>
+      <div class="fq-a"><div class="fq-ac">This calculator uses 2026 standard federal tax brackets, the standard deduction, FICA rates, and state income tax rates for all 50 states + DC. It provides a solid estimate for most W-2 employees. It does not account for pre-tax deductions (401k, HSA), tax credits, local taxes, or self-employment tax. For exact figures, consult an accountant or IRS resources.</div></div>
+    </div>
+
+    <div class="fq">
+      <div class="fq-q" onclick="toggleFAQ(this)">Does the state I live in affect my salary? <span class="fq-ico">+</span></div>
+      <div class="fq-a"><div class="fq-ac">Absolutely. Nine states — Alaska, Florida, Nevada, New Hampshire, South Dakota, Tennessee, Texas, Washington, and Wyoming — have no state income tax, meaning your take-home pay is significantly higher. States like California, New York, and New Jersey have some of the highest state tax rates (9–11%), which can cost you thousands of dollars per year.</div></div>
+    </div>
+
+    <div class="fq">
+      <div class="fq-q" onclick="toggleFAQ(this)">How do I convert my annual salary to an hourly rate? <span class="fq-ico">+</span></div>
+      <div class="fq-a"><div class="fq-ac">Use this formula: Hourly Rate = Annual Salary ÷ (Weekly Hours × 52). For example, $80,000 ÷ (40 × 52) = $38.46/hour gross. Enter your weekly hours in our calculator and it will display both gross and net (after-tax) hourly rates automatically.</div></div>
+    </div>
+
+    <div class="fq">
+      <div class="fq-q" onclick="toggleFAQ(this)">What is the average salary in the USA in 2026? <span class="fq-ico">+</span></div>
+      <div class="fq-a"><div class="fq-ac">The median annual household income in the United States is approximately $80,000–$82,000 as of 2026. The average individual salary is around $65,000–$70,000. However, this varies significantly by state, industry, education level, and experience. Tech workers in California average over $130,000, while service workers in southern states may average closer to $35,000–$45,000.</div></div>
+    </div>
+
+    <div class="fq">
+      <div class="fq-q" onclick="toggleFAQ(this)">Can I use this tool to compare two job offers? <span class="fq-ico">+</span></div>
+      <div class="fq-a"><div class="fq-ac">Yes! That's one of the best use cases. Enter the first job's salary with its state and calculate the net income. Then do the same for the second offer. Comparing net monthly income gives you a much more realistic picture than just comparing gross salaries — especially if the jobs are in different states with very different tax rates.</div></div>
+    </div>
+
+    <div class="fq">
+      <div class="fq-q" onclick="toggleFAQ(this)">Is this tool completely free? <span class="fq-ico">+</span></div>
+      <div class="fq-a"><div class="fq-ac">100% free, no registration, no login, and no hidden charges. RajDailyTools is committed to building accessible financial tools for everyday people. Your data is never stored or shared. Simply enter your details, calculate, and use the results however you wish.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT SECTION -->
+<section class="contact-sec">
+  <div class="w">
+    <div class="contact-card">
+      <h3>💬 Have Questions?</h3>
+      <p>Have questions, suggestions, or found an error? Contact us anytime. We're always happy to hear from our users and continuously improve our tools based on your feedback.</p>
+      <a href="mailto:contact@rajdailytools.com" class="contact-cta">✉️ Contact Us</a>
+    </div>
+  </div>
+</section>
+
+<!-- PRIVACY BAR -->
+<div class="priv-bar">
+  <div class="priv-item"><span class="priv-dot"></span> No data stored on our servers</div>
+  <div class="priv-item"><span class="priv-dot"></span> Safe &amp; secure — runs in your browser</div>
+  <div class="priv-item"><span class="priv-dot"></span> For informational purposes only</div>
+  <div class="priv-item"><span class="priv-dot"></span> No cookies, no tracking</div>
+</div>
+
+<!-- FOOTER -->
+<footer class="ftr">
+  <div class="w">
+    <div class="ftr-top">
+      <div>
+        <div class="ftr-logo">
+          <div class="lb"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+          <div><div class="ln">Raj<span>Daily</span>Tools</div><div class="ls">Smart Tools for Daily Life</div></div>
+        </div>
+        <p class="ftr-desc">Free, accurate online tools for finance, health, and everyday calculations. No login. No ads. Just results.</p>
+      </div>
+      <div>
+        <div class="ftr-ht">Calculators</div>
+        <div class="ftr-lnk">
+          <a href="/compound-interest-calculator.html">Compound Interest</a>
+          <a href="/emi-calculator.html">EMI Calculator</a>
+          <a href="/percentage-calculator.html">Percentage</a>
+          <a href="/age-calculator.html">Age Calculator</a>
+        </div>
+      </div>
+      <div>
+        <div class="ftr-ht">Finance Tools</div>
+        <div class="ftr-lnk">
+          <a href="/gst-calculator.html">GST Calculator</a>
+          <a href="/usa-salary-calculator.html">USA Salary</a>
+          <a href="/loan-calculator.html">Loan Calculator</a>
+          <a href="/discount-calculator.html">Discount</a>
+        </div>
+      </div>
+      <div>
+        <div class="ftr-ht">More Tools</div>
+        <div class="ftr-lnk">
+          <a href="/unit-converter.html">Unit Converter</a>
+          <a href="/bmi-calculator.html">BMI Calculator</a>
+          <a href="/word-counter.html">Word Counter</a>
+          <a href="/about.html">About Us</a>
+        </div>
+      </div>
+    </div>
+    <div class="ftr-bot">
+      <span>© 2026 RajDailyTools. All rights reserved.</span>
+      <span>Built with ❤️ for everyday users</span>
+    </div>
+  </div>
+</footer>
+
+<button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+/* ─ TAX CALCULATION ENGINE ─ */
+function calcFederalTax(taxable, filing) {
+  const brackets = filing === 'married'
+    ? [[23850,0.10],[96950,0.12],[206700,0.22],[394600,0.24],[501050,0.32],[751600,0.35],[Infinity,0.37]]
+    : [[11925,0.10],[48475,0.12],[103350,0.22],[197300,0.24],[250525,0.32],[626350,0.35],[Infinity,0.37]];
+  let prev = 0, tax = 0;
+  for (const [limit, rate] of brackets) {
+    if (taxable <= 0) break;
+    const chunk = Math.min(taxable, limit - prev);
+    tax += chunk * rate;
+    taxable -= chunk;
+    prev = limit;
+  }
+  return tax;
+}
+
+function fmt(n) {
+  return '$' + Math.round(n).toLocaleString('en-US');
+}
+function fmtD(n) {
+  return '$' + n.toLocaleString('en-US', {minimumFractionDigits:2, maximumFractionDigits:2});
+}
+
+function calculateSalary() {
+  const gross = parseFloat(document.getElementById('annualSalary').value);
+  if (!gross || gross <= 0) { alert('Please enter a valid annual salary.'); return; }
+
+  const stateVal = document.getElementById('stateSelect').value.split(',');
+  const stateName = stateVal[0];
+  const stateRate = parseFloat(stateVal[1]) / 100;
+  const filing = document.getElementById('filingStatus').value;
+  const weeklyHrs = parseFloat(document.getElementById('weeklyHours').value) || 40;
+  const taxOverride = document.getElementById('taxOverride').value;
+
+  // Standard deductions 2026
+  const stdDeduction = filing === 'married' ? 29200 : 14600;
+  const taxableIncome = Math.max(0, gross - stdDeduction);
+
+  let federalTax, ficaTax, stateTax, totalTax;
+
+  if (taxOverride && !isNaN(parseFloat(taxOverride))) {
+    // Manual override
+    const overrideRate = parseFloat(taxOverride) / 100;
+    totalTax = gross * overrideRate;
+    federalTax = totalTax * 0.55;
+    ficaTax = gross * 0.0765;
+    stateTax = totalTax * 0.20;
+  } else {
+    // Auto estimate
+    federalTax = calcFederalTax(taxableIncome, filing);
+    ficaTax = Math.min(gross, 168600) * 0.062 + gross * 0.0145; // SS cap + Medicare
+    stateTax = gross * stateRate;
+    totalTax = federalTax + ficaTax + stateTax;
+  }
+
+  const netAnnual = gross - totalTax;
+  const netMonthly = netAnnual / 12;
+  const netWeekly = netAnnual / 52;
+  const netDaily = netAnnual / 260;
+  const netHourly = netAnnual / (weeklyHrs * 52);
+
+  const grossMonthly = gross / 12;
+  const grossWeekly = gross / 52;
+  const grossDaily = gross / 260;
+  const grossHourly = gross / (weeklyHrs * 52);
+  const effectiveRate = (totalTax / gross * 100).toFixed(1);
+
+  // Heading
+  document.getElementById('resultHeading').textContent =
+    `Results for ${fmt(gross)} annual salary in ${stateName} — Effective Tax Rate: ${effectiveRate}%`;
+
+  // Pay cards
+  document.getElementById('payGrid').innerHTML = `
+    <div class="pay-card c1"><span class="pc-ico">📅</span><div class="pc-lbl">Monthly Salary</div><div class="pc-val">${fmt(netMonthly)}</div><div class="pc-sub">Take-home / month</div></div>
+    <div class="pay-card c2"><span class="pc-ico">📆</span><div class="pc-lbl">Weekly Salary</div><div class="pc-val">${fmt(netWeekly)}</div><div class="pc-sub">Take-home / week</div></div>
+    <div class="pay-card c3"><span class="pc-ico">🕐</span><div class="pc-lbl">Hourly Rate</div><div class="pc-val">${fmtD(netHourly)}</div><div class="pc-sub">At ${weeklyHrs} hrs/week</div></div>
+    <div class="pay-card c4"><span class="pc-ico">📋</span><div class="pc-lbl">Daily Rate</div><div class="pc-val">${fmtD(netDaily)}</div><div class="pc-sub">Based on 5-day week</div></div>
+    <div class="pay-card c5"><span class="pc-ico">🏛️</span><div class="pc-lbl">Total Tax/Year</div><div class="pc-val">${fmt(totalTax)}</div><div class="pc-sub">Effective rate: ${effectiveRate}%</div></div>
+    <div class="pay-card c6"><span class="pc-ico">💵</span><div class="pc-lbl">Net Annual</div><div class="pc-val">${fmt(netAnnual)}</div><div class="pc-sub">Total take-home/year</div></div>
+  `;
+
+  // Compare row
+  document.getElementById('cmpRow').innerHTML = `
+    <div class="cmp-card gross">
+      <div class="cmp-ico">💼</div>
+      <div class="cmp-lbl">Gross Income</div>
+      <div class="cmp-val">${fmt(grossMonthly)}<span style="font-size:14px;font-weight:500">/mo</span></div>
+      <div class="cmp-diff">Before taxes • ${fmt(gross)}/year<br>${fmtD(grossHourly)}/hr • ${fmt(grossWeekly)}/week</div>
+    </div>
+    <div class="cmp-card net">
+      <div class="cmp-ico">🏠</div>
+      <div class="cmp-lbl">Net (Take-Home)</div>
+      <div class="cmp-val">${fmt(netMonthly)}<span style="font-size:14px;font-weight:500">/mo</span></div>
+      <div class="cmp-diff">After all taxes • ${fmt(netAnnual)}/year<br>${fmtD(netHourly)}/hr • ${fmt(netWeekly)}/week</div>
+    </div>
+  `;
+
+  // Warning box
+  document.getElementById('warnText').textContent =
+    `Tax estimate includes Federal ($${Math.round(federalTax).toLocaleString()}), FICA ($${Math.round(ficaTax).toLocaleString()}), and ${stateName} State Tax ($${Math.round(stateTax).toLocaleString()}). Does not include local taxes, 401(k) deductions, or other credits.`;
+
+  // Tip pills
+  document.getElementById('tipsPills').innerHTML = `
+    <span class="tip-pill">💼 Gross: ${fmt(gross)}/yr</span>
+    <span class="tip-pill green">🏠 Net: ${fmt(netAnnual)}/yr</span>
+    <span class="tip-pill amber">📊 Tax: ${effectiveRate}%</span>
+    <span class="tip-pill purple">⏱ ${fmtD(grossHourly)}/hr gross</span>
+    <span class="tip-pill red">🏛️ Tax: ${fmt(totalTax)}/yr</span>
+  `;
+
+  // Breakdown table
+  document.getElementById('breakdownTable').innerHTML = `
+    <table>
+      <thead><tr><th>Salary Type</th><th>Gross Amount</th><th>Net (After Tax)</th><th>Badge</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Annual Salary</strong></td><td>${fmt(gross)}</td><td>${fmt(netAnnual)}</td><td><span class="tbadge b">Yearly</span></td></tr>
+        <tr><td><strong>Monthly Salary</strong></td><td>${fmt(grossMonthly)}</td><td>${fmt(netMonthly)}</td><td><span class="tbadge g">Monthly</span></td></tr>
+        <tr><td><strong>Weekly Salary</strong></td><td>${fmt(grossWeekly)}</td><td>${fmt(netWeekly)}</td><td><span class="tbadge a">Weekly</span></td></tr>
+        <tr><td><strong>Daily Rate</strong></td><td>${fmtD(grossDaily)}</td><td>${fmtD(netDaily)}</td><td><span class="tbadge p">Daily</span></td></tr>
+        <tr><td><strong>Hourly Rate</strong></td><td>${fmtD(grossHourly)}</td><td>${fmtD(netHourly)}</td><td><span class="tbadge b">Hourly</span></td></tr>
+        <tr><td><strong>Federal Tax</strong></td><td colspan="2">${fmt(federalTax)}/year (${(federalTax/gross*100).toFixed(1)}%)</td><td><span class="tbadge r">Federal</span></td></tr>
+        <tr><td><strong>FICA Tax</strong></td><td colspan="2">${fmt(ficaTax)}/year (${(ficaTax/gross*100).toFixed(1)}%)</td><td><span class="tbadge r">FICA</span></td></tr>
+        <tr><td><strong>${stateName} State Tax</strong></td><td colspan="2">${fmt(stateTax)}/year (${(stateRate*100).toFixed(2)}%)</td><td><span class="tbadge a">State</span></td></tr>
+      </tbody>
+    </table>
+  `;
+
+  // Bar chart
+  const maxBar = gross * 1.05;
+  const bars = [
+    {lbl:'Gross/yr', val:gross, cls:'bf-blue'},
+    {lbl:'Net/yr', val:netAnnual, cls:'bf-green'},
+    {lbl:'Taxes/yr', val:totalTax, cls:'bf-red'},
+    {lbl:'Federal', val:federalTax, cls:'bf-amber'},
+    {lbl:'FICA', val:ficaTax, cls:'bf-amber'},
+    {lbl:'State', val:stateTax, cls:'bf-amber'},
+  ];
+  let barsHTML = '';
+  bars.forEach(b => {
+    const pct = Math.max(3, Math.min(96, (b.val/maxBar)*100)).toFixed(1);
+    barsHTML += `
+      <div class="bar-row">
+        <div class="bar-lbl">${b.lbl}</div>
+        <div class="bar-track"><div class="bar-fill ${b.cls}" style="width:${pct}%">${fmt(b.val)}</div></div>
+        <div class="bar-val">${fmtD(b.val/12)}/mo</div>
+      </div>`;
+  });
+  document.getElementById('salaryBars').innerHTML = barsHTML;
+  document.getElementById('chartTitle').textContent = `📊 Income Breakdown — ${fmt(gross)}/yr in ${stateName}`;
+
+  document.getElementById('resultArea').style.display = 'block';
+  setTimeout(() => document.getElementById('resultArea').scrollIntoView({behavior:'smooth',block:'start'}), 120);
+}
+
+function resetCalc() {
+  document.getElementById('annualSalary').value = '';
+  document.getElementById('weeklyHours').value = '40';
+  document.getElementById('taxOverride').value = '';
+  document.getElementById('filingStatus').value = 'single';
+  document.getElementById('resultArea').style.display = 'none';
+}
+
+/* ─ FAQ TOGGLE ─ */
+function toggleFAQ(el) {
+  const fq = el.parentElement;
+  document.querySelectorAll('.fq.open').forEach(o => { if (o !== fq) o.classList.remove('open'); });
+  fq.classList.toggle('open');
+}
+
+/* ─ MOBILE DRAWER ─ */
+function toggleDrawer() {
+  document.querySelector('.drw').classList.toggle('on');
+  document.querySelector('.dov').classList.toggle('on');
+}
+
+/* ─ SCROLL REVEAL ─ */
+const revObs = new IntersectionObserver(e => {
+  e.forEach(x => { if (x.isIntersecting) x.target.classList.add('in'); });
+}, { threshold: 0.12 });
+document.querySelectorAll('.rev').forEach(el => revObs.observe(el));
+
+/* ─ BACK TO TOP ─ */
+window.addEventListener('scroll', () => {
+  document.getElementById('btt').classList.toggle('show', window.scrollY > 400);
+});
+</script>
+</body>
+</html>
