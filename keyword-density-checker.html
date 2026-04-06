@@ -1,0 +1,1266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Keyword Density Checker – Advanced SEO Analyzer 2026 | RajDailyTools</title>
+<meta name="description" content="Free keyword density checker tool online 2026. Check keyword density, analyze SEO keyword usage, detect keyword stuffing, get content SEO score instantly — no login required.">
+<meta name="keywords" content="keyword density checker, SEO keyword tool, keyword analyzer online, check keyword density free, content SEO optimization tool, keyword density 2026">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://rajdailytools.in/keyword-density-checker">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#2563eb;--blue-d:#1d4ed8;--blue-xl:#eff6ff;--blue-s:#dbeafe;
+  --amber:#f59e0b;--green:#10b981;--red:#ef4444;--purple:#8b5cf6;
+  --orange:#f97316;--teal:#14b8a6;
+  --green-xl:#f0fdf4;--green-s:#bbf7d0;
+  --red-xl:#fef2f2;--red-s:#fecaca;
+  --amber-xl:#fffbeb;--amber-s:#fde68a;
+  --purple-xl:#faf5ff;--purple-s:#ddd6fe;
+  --ink:#0f172a;--ink2:#334155;--ink3:#64748b;--ink4:#94a3b8;
+  --line:#e2e8f0;--surf:#f8fafc;--white:#fff;
+  --s1:0 1px 3px rgba(15,23,42,.06),0 1px 2px rgba(15,23,42,.04);
+  --s2:0 4px 16px rgba(15,23,42,.08),0 2px 6px rgba(15,23,42,.04);
+  --s3:0 12px 40px rgba(15,23,42,.11),0 3px 10px rgba(15,23,42,.06);
+  --s4:0 24px 64px rgba(15,23,42,.13),0 6px 20px rgba(15,23,42,.07);
+  --sb:0 8px 32px rgba(37,99,235,.20);
+  --fd:'Sora',sans-serif;--fb:'DM Sans',sans-serif;
+  --ease:cubic-bezier(.4,0,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);color:var(--ink);background:var(--white);overflow-x:hidden;-webkit-font-smoothing:antialiased;line-height:1.6}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+button{cursor:pointer;border:none;background:none;font-family:var(--fb)}
+.w{max-width:1180px;margin:0 auto;padding:0 24px}
+.wa{max-width:880px;margin:0 auto;padding:0 24px}
+textarea,input{appearance:none;-webkit-appearance:none}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+@keyframes resultIn{from{opacity:0;transform:translateY(18px) scale(.97)}to{opacity:1;transform:none}}
+@keyframes countUp{from{opacity:0;transform:scale(.85)}to{opacity:1;transform:scale(1)}}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.rev{opacity:0;transform:translateY(22px);transition:opacity .55s var(--ease),transform .55s var(--ease)}
+.rev.in{opacity:1;transform:none}
+
+/* ─── HEADER ─── */
+.hdr{position:sticky;top:0;z-index:999;background:rgba(255,255,255,.96);backdrop-filter:blur(20px);border-bottom:1px solid var(--line);box-shadow:var(--s1)}
+.hdi{display:flex;align-items:center;justify-content:space-between;height:66px}
+.logo{display:flex;align-items:center;gap:10px}
+.lb{width:36px;height:36px;background:var(--blue);border-radius:9px;display:flex;align-items:center;justify-content:center;box-shadow:var(--sb);flex-shrink:0}
+.lb svg{width:18px;height:18px;fill:#fff}
+.ln{font-family:var(--fd);font-size:19px;font-weight:800;color:var(--ink);line-height:1}
+.ln span{color:var(--blue)}
+.ls{font-size:10px;color:var(--ink4);letter-spacing:.04em}
+nav.dn{display:flex;align-items:center;gap:2px}
+nav.dn a{font-size:13.5px;font-weight:500;color:var(--ink2);padding:7px 13px;border-radius:8px;transition:.2s}
+nav.dn a:hover{color:var(--blue);background:var(--blue-xl)}
+.hcta{background:var(--blue);color:#fff;font-family:var(--fd);font-weight:600;font-size:13px;padding:8px 18px;border-radius:8px;box-shadow:var(--sb);transition:.2s}
+.hcta:hover{background:var(--blue-d);transform:translateY(-1px)}
+.brg{display:none;flex-direction:column;gap:4.5px;padding:8px;border-radius:8px}
+.brg span{display:block;width:20px;height:2px;background:var(--ink);border-radius:2px;transition:.28s}
+.dov{display:none;position:fixed;inset:0;background:rgba(15,23,42,.45);z-index:1040;backdrop-filter:blur(3px)}
+.dov.on{display:block}
+.drw{position:fixed;top:0;right:-100%;width:270px;height:100vh;background:#fff;z-index:1050;padding:22px;box-shadow:var(--s4);transition:right .32s var(--ease);overflow-y:auto}
+.drw.on{right:0}
+.dh{display:flex;align-items:center;justify-content:space-between;margin-bottom:26px}
+.dx{width:33px;height:33px;border-radius:7px;background:var(--surf);display:flex;align-items:center;justify-content:center;color:var(--ink3);font-size:17px}
+nav.mn{display:flex;flex-direction:column;gap:3px}
+nav.mn a{display:block;font-size:14px;font-weight:500;color:var(--ink2);padding:11px 13px;border-radius:8px;transition:.2s}
+nav.mn a:hover{color:var(--blue);background:var(--blue-xl)}
+
+/* ─── HERO ─── */
+.hero{position:relative;overflow:hidden;background:linear-gradient(150deg,#ebf4ff 0%,#fff 46%,#fdf4ff 100%);padding:64px 0 72px}
+.hero::before{content:'';position:absolute;top:-140px;right:-180px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(37,99,235,.08) 0%,transparent 68%);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-80px;left:-100px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(139,92,246,.05) 0%,transparent 68%);pointer-events:none}
+.blob{position:absolute;border-radius:50%;pointer-events:none;animation:float 6s ease-in-out infinite}
+.b1{width:13px;height:13px;background:rgba(37,99,235,.18);top:22%;right:14%;animation-delay:0s}
+.b2{width:9px;height:9px;background:rgba(139,92,246,.22);top:58%;right:26%;animation-delay:2.2s}
+.b3{width:11px;height:11px;background:rgba(16,185,129,.18);top:36%;right:6%;animation-delay:4s}
+.bc{display:flex;align-items:center;gap:7px;font-size:12.5px;color:var(--ink3);margin-bottom:22px;position:relative;z-index:1;flex-wrap:wrap}
+.bc a{color:var(--blue);font-weight:600}
+.pill{display:inline-flex;align-items:center;gap:7px;font-family:var(--fd);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);background:var(--blue-xl);padding:5px 14px;border-radius:100px;margin-bottom:18px}
+.pill::before{content:'';width:6px;height:6px;background:var(--blue);border-radius:50%}
+.hero-inner{position:relative;z-index:1;max-width:720px;animation:fadeUp .5s ease both}
+.hero h1{font-family:var(--fd);font-size:clamp(26px,4.5vw,50px);font-weight:800;line-height:1.1;color:var(--ink);margin-bottom:14px}
+.hero h1 span{color:var(--blue)}
+.hero-sub{font-size:16px;color:var(--ink3);line-height:1.8;margin-bottom:22px;max-width:600px}
+.hero-chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.chip{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;padding:6px 14px;border-radius:100px;background:#fff;border:1.5px solid var(--line);color:var(--ink2);box-shadow:var(--s1);transition:.22s}
+.chip:hover{border-color:var(--blue);color:var(--blue);transform:translateY(-1px)}
+.hero-meta{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:24px}
+.upd{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:700;color:var(--blue);background:var(--blue-xl);padding:6px 14px;border-radius:100px;border:1.5px solid var(--blue-s)}
+.mi{font-size:13px;color:var(--ink3);font-weight:500}
+
+/* HOW TO USE */
+.howto{background:var(--amber-xl);border:2px solid var(--amber-s);border-radius:16px;padding:22px 26px;max-width:560px;margin-bottom:24px}
+.howto-ttl{display:flex;align-items:center;gap:9px;font-family:var(--fd);font-size:15px;font-weight:800;color:var(--ink);margin-bottom:13px}
+.howto-steps{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.hs{display:flex;align-items:flex-start;gap:10px;font-size:13.5px;color:var(--ink2);line-height:1.6}
+.sn{width:24px;height:24px;background:var(--amber);color:#fff;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex-shrink:0;margin-top:1px}
+
+/* RELATED */
+.rel-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;position:relative;z-index:1}
+.rg-box{border-radius:14px;padding:14px 14px 12px;display:flex;flex-direction:column;gap:8px;transition:.22s;border:1.5px solid}
+.rg-box:hover{transform:translateY(-3px);box-shadow:var(--s3)}
+.rg-box.army{background:linear-gradient(135deg,var(--amber-xl),#fef3c7);border-color:var(--amber-s)}
+.rg-box.ht{background:linear-gradient(135deg,var(--green-xl),#dcfce7);border-color:var(--green-s)}
+.rg-box.ssc{background:linear-gradient(135deg,var(--blue-xl),var(--blue-s));border-color:var(--blue-s)}
+.rg-box.mp{background:linear-gradient(135deg,var(--purple-xl),#ede9fe);border-color:var(--purple-s)}
+.rg-box.tl{background:linear-gradient(135deg,#f0fdfa,#ccfbf1);border-color:#99f6e4}
+.rg-ico{font-size:22px}
+.rg-txt h4{font-family:var(--fd);font-size:12px;font-weight:800;color:var(--ink);margin-bottom:2px}
+.rg-txt p{font-size:11px;color:var(--ink3);line-height:1.5}
+.btn-xs{display:inline-flex;align-items:center;gap:4px;font-family:var(--fd);font-weight:700;font-size:11px;padding:5px 10px;border-radius:7px;transition:.22s;margin-top:4px}
+.btn-xs.a{background:var(--amber);color:#fff}.btn-xs.a:hover{background:#d97706}
+.btn-xs.g{background:var(--green);color:#fff}.btn-xs.g:hover{background:#059669}
+.btn-xs.b{background:var(--blue);color:#fff}.btn-xs.b:hover{background:var(--blue-d)}
+.btn-xs.p{background:var(--purple);color:#fff}.btn-xs.p:hover{background:#7c3aed}
+.btn-xs.t{background:var(--teal);color:#fff}.btn-xs.t:hover{background:#0f9488}
+
+/* ─── TOOL ─── */
+.tool-sec{background:var(--surf);padding:80px 0}
+.tool-wrap{max-width:1040px;margin:0 auto}
+.tool-card{background:#fff;border:1.5px solid var(--line);border-radius:28px;overflow:hidden;box-shadow:var(--s4)}
+.tool-hdr{background:linear-gradient(135deg,#1d4ed8 0%,#2563eb 55%,#7c3aed 100%);padding:32px 40px;position:relative;overflow:hidden}
+.tool-hdr::before{content:'';position:absolute;top:-60px;right:-60px;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,.07)}
+.tool-hdr::after{content:'';position:absolute;bottom:-40px;left:-40px;width:180px;height:180px;border-radius:50%;background:rgba(255,255,255,.04)}
+.th{position:relative;z-index:1}
+.th h2{font-family:var(--fd);font-size:21px;font-weight:800;color:#fff;margin-bottom:6px}
+.th p{font-size:14px;color:rgba(255,255,255,.82);line-height:1.65}
+.th-badges{display:flex;flex-wrap:wrap;gap:9px;margin-top:14px}
+.thb{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:rgba(255,255,255,.9);background:rgba(255,255,255,.13);padding:5px 12px;border-radius:100px}
+.tool-body{padding:36px 40px}
+
+/* TEXTAREA & KEYWORD INPUT */
+.txt-area-wrap{position:relative;margin-bottom:16px}
+.txt-area-wrap textarea{width:100%;min-height:190px;padding:16px 18px;font-size:15px;color:var(--ink);background:#fff;border:1.5px solid var(--line);border-radius:14px;outline:none;transition:.22s;font-family:var(--fb);resize:vertical;line-height:1.75}
+.txt-area-wrap textarea:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(37,99,235,.10)}
+.kw-input-wrap{display:flex;gap:12px;margin-bottom:20px;align-items:center;flex-wrap:wrap}
+.kw-input-wrap input{flex:1;min-width:200px;padding:12px 18px;font-size:14.5px;color:var(--ink);background:#fff;border:1.5px solid var(--line);border-radius:12px;outline:none;transition:.22s;font-family:var(--fb)}
+.kw-input-wrap input:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(37,99,235,.10)}
+.kw-input-wrap input::placeholder{color:var(--ink4)}
+.btn-analyze{display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:#fff;font-family:var(--fd);font-weight:700;font-size:14px;padding:12px 24px;border-radius:10px;box-shadow:var(--sb);transition:.22s}
+.btn-analyze:hover{background:var(--blue-d);transform:translateY(-2px)}
+.btn-reset{display:inline-flex;align-items:center;gap:8px;background:var(--red-xl);color:var(--red);border:1.5px solid var(--red-s);font-family:var(--fd);font-weight:700;font-size:14px;padding:12px 22px;border-radius:10px;transition:.22s}
+.btn-reset:hover{background:var(--red);color:#fff}
+.ta-corner{position:absolute;bottom:12px;right:14px;font-size:11px;color:var(--ink4);font-family:var(--fd);font-weight:600;background:#fff;padding:2px 8px;border-radius:6px;border:1px solid var(--line)}
+
+/* STATS GRID */
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:20px}
+.stat-card{background:var(--surf);border:1.5px solid var(--line);border-radius:16px;padding:18px 16px;text-align:center;transition:.25s;position:relative;overflow:hidden}
+.stat-card:hover{transform:translateY(-2px);box-shadow:var(--s2);border-color:var(--blue-s)}
+.stat-card.c1{background:linear-gradient(135deg,var(--blue-xl),#e0eeff);border-color:var(--blue-s)}
+.stat-card.c2{background:linear-gradient(135deg,var(--green-xl),#d1fae5);border-color:var(--green-s)}
+.stat-card.c3{background:linear-gradient(135deg,var(--purple-xl),#ede9fe);border-color:var(--purple-s)}
+.stat-card.c4{background:linear-gradient(135deg,var(--amber-xl),#fef3c7);border-color:var(--amber-s)}
+.stat-ico{font-size:22px;margin-bottom:6px}
+.stat-lbl{font-size:11px;font-weight:700;color:var(--ink3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px}
+.stat-val{font-family:var(--fd);font-size:26px;font-weight:800;line-height:1;animation:countUp .4s var(--ease) both}
+.stat-val.blue{color:var(--blue)}
+.stat-val.green{color:var(--green)}
+.stat-val.purple{color:var(--purple)}
+.stat-val.amber{color:var(--amber)}
+.stat-sub{font-size:11.5px;color:var(--ink4);margin-top:3px}
+
+/* SEO SCORE */
+.seo-score-wrap{background:var(--surf);border:1.5px solid var(--line);border-radius:16px;padding:18px 20px;margin-bottom:20px}
+.seo-score-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;flex-wrap:wrap;gap:10px}
+.seo-score-title{font-family:var(--fd);font-size:13px;font-weight:800;color:var(--ink)}
+.seo-badge{font-family:var(--fd);font-size:13px;font-weight:800;padding:5px 16px;border-radius:100px}
+.seo-badge.good{background:var(--green-xl);color:var(--green);border:1.5px solid var(--green-s)}
+.seo-badge.overused{background:var(--red-xl);color:var(--red);border:1.5px solid var(--red-s)}
+.seo-badge.low{background:var(--amber-xl);color:var(--amber);border:1.5px solid var(--amber-s)}
+.seo-badge.neutral{background:var(--surf);color:var(--ink3);border:1.5px solid var(--line)}
+.score-track{background:var(--line);border-radius:100px;height:10px;overflow:hidden;margin-bottom:8px}
+.score-fill{height:10px;border-radius:100px;transition:width .6s var(--ease)}
+.score-hints{display:flex;flex-wrap:wrap;gap:8px}
+.score-hint{font-size:12px;padding:4px 10px;border-radius:100px;font-weight:600}
+
+/* DENSITY VISUAL BAR */
+.density-vis{margin-bottom:20px}
+.density-vis-title{font-family:var(--fd);font-size:13px;font-weight:800;color:var(--ink);margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.density-bar-wrap{position:relative;background:var(--line);border-radius:100px;height:22px;overflow:hidden;margin-bottom:10px}
+.density-bar-fill{height:22px;border-radius:100px;transition:width .7s var(--ease);position:relative;min-width:3px}
+.density-bar-fill span{position:absolute;right:10px;top:50%;transform:translateY(-50%);font-size:11px;font-weight:700;color:#fff;font-family:var(--fd)}
+.density-zones{display:flex;gap:12px;flex-wrap:wrap}
+.dz{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--ink3)}
+.dz-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+
+/* TOP KEYWORDS TABLE */
+.kw-sec{margin-top:4px;margin-bottom:20px}
+.kw-title{font-family:var(--fd);font-size:13px;font-weight:800;color:var(--ink);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.kw-list{display:flex;flex-direction:column;gap:8px;max-height:280px;overflow-y:auto;padding-right:2px}
+.kw-list::-webkit-scrollbar{width:4px}
+.kw-list::-webkit-scrollbar-track{background:var(--surf);border-radius:4px}
+.kw-list::-webkit-scrollbar-thumb{background:var(--line);border-radius:4px}
+.kw-row{display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:10px;background:var(--surf);border:1.5px solid var(--line);transition:.2s}
+.kw-row:hover{border-color:var(--blue-s);background:var(--blue-xl)}
+.kw-row.stuffed{border-color:var(--red-s);background:var(--red-xl)}
+.kw-row.target{border-color:var(--green-s);background:var(--green-xl)}
+.kw-rank{font-family:var(--fd);font-size:11px;font-weight:700;color:var(--ink4);width:20px;flex-shrink:0}
+.kw-word{font-family:var(--fd);font-size:13px;font-weight:700;color:var(--ink);flex:1;word-break:break-word}
+.kw-bar-mini{flex:1;background:var(--line);border-radius:100px;height:6px;overflow:hidden;max-width:120px}
+.kw-bar-mini-fill{height:6px;border-radius:100px;transition:width .4s}
+.kw-cnt{font-size:12px;font-weight:700;color:var(--blue);background:var(--blue-xl);padding:2px 8px;border-radius:100px;border:1px solid var(--blue-s);flex-shrink:0}
+.kw-pct{font-size:12px;font-weight:700;flex-shrink:0;min-width:42px;text-align:right}
+.kw-flag{font-size:10px;font-weight:700;padding:2px 7px;border-radius:100px;flex-shrink:0}
+.kw-flag.red{background:var(--red-xl);color:var(--red);border:1px solid var(--red-s)}
+.kw-flag.green{background:var(--green-xl);color:var(--green);border:1px solid var(--green-s)}
+.kw-flag.ok{background:var(--amber-xl);color:var(--amber);border:1px solid var(--amber-s)}
+.kw-empty{font-size:13px;color:var(--ink4);font-style:italic;padding:16px;text-align:center;background:var(--surf);border-radius:10px;border:1.5px solid var(--line)}
+
+/* KEYWORD-SPECIFIC RESULT */
+.kw-result-box{background:linear-gradient(135deg,var(--blue-xl),#e0eeff);border:1.5px solid var(--blue-s);border-radius:14px;padding:18px 20px;margin-bottom:20px;display:none}
+.kw-result-box.show{display:block}
+.kw-result-box h4{font-family:var(--fd);font-size:13px;font-weight:800;color:var(--ink);margin-bottom:12px}
+.kw-result-stats{display:flex;gap:16px;flex-wrap:wrap}
+.krs{display:flex;flex-direction:column;gap:3px}
+.krs-lbl{font-size:11px;font-weight:700;color:var(--ink4);text-transform:uppercase;letter-spacing:.06em}
+.krs-val{font-family:var(--fd);font-size:22px;font-weight:800;color:var(--blue)}
+
+/* SEO INSIGHT BOX */
+.insight-sec{background:#fff;padding:72px 0}
+.insight-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.insight-card{background:var(--surf);border:1.5px solid var(--line);border-radius:16px;padding:22px 18px;transition:.28s;position:relative;overflow:hidden}
+.insight-card:hover{transform:translateY(-4px);box-shadow:var(--s3)}
+.insight-card::before{content:'';position:absolute;top:0;left:0;width:100%;height:3px}
+.insight-card.quality::before{background:linear-gradient(90deg,var(--blue),var(--purple))}
+.insight-card.balance::before{background:linear-gradient(90deg,var(--green),var(--teal))}
+.insight-card.readability::before{background:linear-gradient(90deg,var(--amber),var(--orange))}
+.insight-ico{font-size:32px;margin-bottom:11px}
+.insight-title{font-family:var(--fd);font-size:14px;font-weight:800;color:var(--ink);margin-bottom:8px}
+.insight-val{font-family:var(--fd);font-size:22px;font-weight:800;color:var(--blue);margin-bottom:6px}
+.insight-desc{font-size:13px;color:var(--ink3);line-height:1.7}
+
+/* HINT BOX */
+.hint-box{display:flex;align-items:flex-start;gap:9px;font-size:13px;color:var(--ink2);background:var(--blue-xl);border:1.5px solid var(--blue-s);border-radius:10px;padding:11px 14px;margin-bottom:16px;line-height:1.65}
+.hint-box svg{width:16px;height:16px;stroke:var(--blue);fill:none;stroke-width:2;flex-shrink:0;margin-top:2px}
+
+/* FEATURES */
+.tips-sec{background:var(--surf);padding:72px 0}
+.tips-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.tip-card{background:#fff;border:1.5px solid var(--line);border-radius:16px;padding:22px 18px;text-align:center;transition:.28s}
+.tip-card:hover{transform:translateY(-4px);box-shadow:var(--s3);border-color:var(--blue-s)}
+.tip-ico{font-size:32px;margin-bottom:11px}
+.tip-title{font-family:var(--fd);font-size:14px;font-weight:800;color:var(--ink);margin-bottom:8px}
+.tip-desc{font-size:13px;color:var(--ink3);line-height:1.7}
+
+/* TABLE */
+.tbl-sec{background:#fff;padding:72px 0}
+.tbl-wr{overflow-x:auto;margin-bottom:24px;border-radius:14px;border:1.5px solid var(--line);box-shadow:var(--s2)}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+thead th{background:linear-gradient(135deg,#1d4ed8 0%,#7c3aed 100%);color:#fff;padding:14px 16px;text-align:left;font-family:var(--fd);font-size:13px;font-weight:700;letter-spacing:.03em}
+thead th:first-child{border-radius:14px 0 0 0}
+thead th:last-child{border-radius:0 14px 0 0}
+tbody tr{border-bottom:1px solid var(--line);transition:.2s}
+tbody tr:hover{background:var(--blue-xl)}
+tbody td{padding:12px 16px;color:var(--ink2);vertical-align:middle}
+.tbadge{display:inline-flex;font-size:11px;font-weight:700;padding:3px 8px;border-radius:100px}
+.tbadge.g{background:var(--green-xl);color:var(--green);border:1px solid var(--green-s)}
+.tbadge.b{background:var(--blue-xl);color:var(--blue);border:1px solid var(--blue-s)}
+.tbadge.a{background:var(--amber-xl);color:var(--amber);border:1px solid var(--amber-s)}
+.tbadge.p{background:var(--purple-xl);color:var(--purple);border:1px solid var(--purple-s)}
+.tbadge.r{background:var(--red-xl);color:var(--red);border:1px solid var(--red-s)}
+.notice-banner{background:linear-gradient(135deg,#0f172a,#2e1065);border-radius:14px;padding:18px 22px;display:flex;align-items:center;gap:14px;margin-top:14px}
+.notice-icon{font-size:26px;flex-shrink:0}
+.notice-text{font-family:var(--fd);font-size:14px;font-weight:700;color:#c4b5fd;line-height:1.6}
+.notice-text span{color:#e2e8f0;font-weight:400;font-family:var(--fb)}
+
+/* STORY */
+.story-sec{background:var(--surf);padding:72px 0}
+.story-card{background:#fff;border:1.5px solid var(--line);border-radius:24px;padding:40px;box-shadow:var(--s3);position:relative;overflow:hidden}
+.story-card::before{content:'';position:absolute;top:0;left:0;bottom:0;width:5px;background:linear-gradient(180deg,var(--blue) 0%,var(--purple) 100%);border-radius:5px 0 0 5px}
+.sq{font-size:54px;color:var(--purple-s);font-family:Georgia,serif;line-height:1;padding-left:8px}
+.sb{font-size:15.5px;color:var(--ink2);line-height:1.9;padding:0 8px}
+.sauth{display:flex;align-items:center;gap:14px;margin-top:22px;padding-top:20px;border-top:1px solid var(--line)}
+.savt{width:48px;height:48px;background:linear-gradient(135deg,var(--blue),var(--purple));border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+.sname{font-family:var(--fd);font-size:15px;font-weight:700;color:var(--ink)}
+.srole{font-size:12.5px;color:var(--ink3)}
+.founder-msg{background:linear-gradient(135deg,var(--purple-xl),#ede9fe);border:1.5px solid var(--purple-s);border-radius:14px;padding:20px 22px;margin-top:20px;display:flex;gap:13px}
+.fm-ico{font-size:26px;flex-shrink:0}
+.fm-txt{font-size:14px;color:var(--ink2);line-height:1.75;font-style:italic}
+.fm-txt strong{color:var(--ink);font-weight:700;font-style:normal}
+
+/* GUIDE */
+.guide-sec{background:#fff;padding:72px 0}
+.guide-body h2{font-family:var(--fd);font-size:21px;font-weight:800;color:var(--ink);margin:28px 0 11px;line-height:1.3}
+.guide-body h2:first-child{margin-top:0}
+.guide-body h3{font-family:var(--fd);font-size:16px;font-weight:700;color:var(--ink2);margin:20px 0 8px}
+.guide-body p{font-size:15px;color:var(--ink3);line-height:1.85;margin-bottom:14px}
+.guide-body ul{display:flex;flex-direction:column;gap:8px;margin:12px 0 16px}
+.guide-body li{display:flex;align-items:flex-start;gap:10px;font-size:14.5px;color:var(--ink3);line-height:1.7}
+.guide-body li::before{content:'✓';width:18px;height:18px;background:var(--purple);color:#fff;border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;flex-shrink:0;margin-top:3px}
+.guide-body strong{color:var(--ink2);font-weight:700}
+.ibox{background:var(--blue-xl);border:1.5px solid var(--blue-s);border-radius:13px;padding:15px 18px;margin:16px 0;display:flex;gap:11px;font-size:14px;color:var(--ink2);line-height:1.7}
+.ibox svg{width:17px;height:17px;stroke:var(--blue);fill:none;stroke-width:2;flex-shrink:0;margin-top:2px}
+.ibox.g{background:var(--green-xl);border-color:var(--green-s)}.ibox.g svg{stroke:var(--green)}
+.ibox.a{background:var(--amber-xl);border-color:var(--amber-s)}.ibox.a svg{stroke:var(--amber)}
+.ibox.r{background:var(--red-xl);border-color:var(--red-s)}.ibox.r svg{stroke:var(--red)}
+.example-box{background:linear-gradient(135deg,#0f172a,#2e1065);border-radius:16px;padding:24px 26px;margin:20px 0}
+.example-box h4{font-family:var(--fd);font-size:14px;font-weight:700;color:#c4b5fd;margin-bottom:14px;letter-spacing:.05em}
+.ex-row{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.07);flex-wrap:wrap;gap:8px}
+.ex-row:last-child{border-bottom:none}
+.ex-label{font-size:13px;color:rgba(255,255,255,.65);font-weight:500}
+.ex-val{font-family:var(--fd);font-size:14px;font-weight:700;color:#fff}
+.ex-val.hi{color:#6ee7b7}
+
+/* FAQ */
+.faq-sec{background:var(--surf);padding:72px 0}
+.fq{background:#fff;border:1.5px solid var(--line);border-radius:13px;margin-bottom:10px;overflow:hidden}
+.fq-q{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;cursor:pointer;gap:14px;transition:.2s}
+.fq-q:hover{background:var(--blue-xl)}
+.fq-t{font-weight:600;font-size:15px;color:var(--ink);line-height:1.4}
+.fq-i{width:28px;height:28px;border-radius:50%;background:var(--blue-xl);color:var(--blue);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;transition:transform .28s,background .2s}
+.fq.open .fq-i{transform:rotate(45deg);background:var(--blue);color:#fff}
+.fq-a{max-height:0;overflow:hidden;transition:max-height .35s var(--ease)}
+.fq-ai{padding:0 22px 18px;font-size:14.5px;color:var(--ink3);line-height:1.78}
+.fq.open .fq-a{max-height:400px}
+
+/* MISC */
+.disc{background:var(--amber-xl);border-top:1px solid var(--amber-s);border-bottom:1px solid var(--amber-s);padding:15px 0}
+.contact-sec{background:var(--surf);padding:60px 0}
+.contact-card{max-width:580px;margin:0 auto;background:#fff;border:1.5px solid var(--line);border-radius:20px;padding:32px;text-align:center;box-shadow:var(--s2)}
+.contact-card h3{font-family:var(--fd);font-size:19px;font-weight:800;color:var(--ink);margin-bottom:10px}
+.contact-card p{font-size:15px;color:var(--ink3);line-height:1.75;margin-bottom:20px}
+.btn-bl{display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:#fff;font-family:var(--fd);font-weight:700;font-size:14.5px;padding:12px 26px;border-radius:8px;box-shadow:var(--sb);transition:.22s}
+.btn-bl:hover{background:var(--blue-d);transform:translateY(-1px)}
+.priv-note{font-size:12px;color:var(--ink4);margin-top:14px}
+.cta{background:linear-gradient(140deg,#0f172a 0%,#2e1065 100%);padding:80px 0;text-align:center;position:relative;overflow:hidden}
+.cta::before{content:'';position:absolute;top:-80px;left:50%;transform:translateX(-50%);width:800px;height:380px;background:radial-gradient(ellipse,rgba(139,92,246,.2) 0%,transparent 68%);pointer-events:none}
+.cta-in{position:relative;z-index:1}
+.cta .pill{color:#c4b5fd;background:rgba(255,255,255,.1);margin-bottom:18px}
+.cta .pill::before{background:#c4b5fd}
+.cta h2{font-family:var(--fd);font-size:clamp(24px,4vw,42px);font-weight:800;color:#fff;line-height:1.15;margin-bottom:12px}
+.cta h2 em{color:#fbbf24;font-style:normal}
+.cta p{font-size:16px;color:rgba(255,255,255,.72);max-width:480px;margin:0 auto 32px;line-height:1.78}
+.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn-gold{display:inline-flex;align-items:center;gap:8px;background:var(--purple);color:#fff;font-family:var(--fd);font-weight:800;font-size:15px;padding:14px 30px;border-radius:8px;box-shadow:0 8px 28px rgba(139,92,246,.35);transition:.22s}
+.btn-gold:hover{background:#7c3aed;transform:translateY(-3px)}
+.btn-ghost{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.09);border:1.5px solid rgba(255,255,255,.22);color:#fff;font-family:var(--fd);font-weight:600;font-size:14px;padding:13px 26px;border-radius:8px;transition:.2s}
+.btn-ghost:hover{background:rgba(255,255,255,.16)}
+footer{background:#0f172a;padding:52px 0 0}
+.ft-inner{max-width:1180px;margin:0 auto;padding:0 24px}
+.ft-top{display:grid;grid-template-columns:1.9fr 1fr 1fr 1fr;gap:44px;margin-bottom:44px}
+.ft-brand .ln{color:#fff}.ft-brand .ls{color:#475569}
+.ft-desc{font-size:13.5px;color:#64748b;line-height:1.78;max-width:265px;margin:13px 0 20px}
+.ft-soc{display:flex;gap:9px}
+.fts{width:34px;height:34px;border-radius:7px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;color:#94a3b8;font-size:13px;transition:.2s}
+.fts:hover{background:var(--blue);color:#fff}
+.fc h4{font-family:var(--fd);font-size:12px;font-weight:700;color:#fff;margin-bottom:14px;letter-spacing:.06em;text-transform:uppercase}
+.fc ul{display:flex;flex-direction:column;gap:8px}
+.fc ul a{font-size:13.5px;color:#64748b;transition:.18s}
+.fc ul a:hover{color:#93c5fd}
+.ft-btm{border-top:1px solid rgba(255,255,255,.07);padding:20px 0;text-align:center}
+.ft-cp{font-size:12.5px;color:#475569}
+.ft-cp b{color:#64748b}
+.ft-tag{font-size:12px;color:#334155;margin-top:4px;font-style:italic}
+.btt{position:fixed;bottom:26px;right:26px;z-index:500;width:43px;height:43px;background:var(--purple);color:#fff;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:17px;box-shadow:0 8px 32px rgba(139,92,246,.35);opacity:0;pointer-events:none;transform:translateY(14px);transition:.28s var(--ease)}
+.btt.on{opacity:1;pointer-events:auto;transform:translateY(0)}
+.btt:hover{transform:translateY(-3px)}
+.sec-lbl{display:flex;align-items:center;gap:8px;font-family:var(--fd);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--purple);margin-bottom:10px}
+.sec-lbl::before{content:'';width:6px;height:6px;background:var(--purple);border-radius:50%}
+.sec-h{font-family:var(--fd);font-size:clamp(22px,3.5vw,34px);font-weight:800;color:var(--ink);line-height:1.15;margin-bottom:10px}
+.sec-sub{font-size:15.5px;color:var(--ink3);line-height:1.78;margin-bottom:40px;max-width:600px}
+.adv-label{font-family:var(--fd);font-size:12px;font-weight:700;color:var(--ink3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;margin-top:4px}
+.adv-row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px}
+.adv-btn{display:inline-flex;align-items:center;gap:7px;font-family:var(--fd);font-weight:700;font-size:12.5px;padding:9px 16px;border-radius:9px;transition:.22s}
+.adv-btn.smp{background:var(--ink);color:#fff;border:1.5px solid var(--ink)}
+.adv-btn.smp:hover{background:var(--ink2)}
+.adv-btn.clr{background:var(--red-xl);color:var(--red);border:1.5px solid var(--red-s)}
+.adv-btn.clr:hover{background:var(--red);color:#fff}
+
+@media(max-width:1060px){.ft-top{grid-template-columns:1fr 1fr}.tips-grid{grid-template-columns:1fr 1fr}.stats-grid{grid-template-columns:repeat(2,1fr)}.insight-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:860px){
+  nav.dn,.hcta{display:none}.brg{display:flex}
+  .tool-body{padding:24px 20px}.tool-hdr{padding:24px 22px}
+  .howto-steps{grid-template-columns:1fr}
+  .rel-grid{grid-template-columns:1fr 1fr}
+  .stats-grid{grid-template-columns:repeat(2,1fr)}
+  .kw-input-wrap{flex-direction:column;align-items:stretch}
+  .kw-input-wrap input{width:100%}
+}
+@media(max-width:600px){
+  .ft-top{grid-template-columns:1fr}.rel-grid{grid-template-columns:1fr}
+  .tips-grid{grid-template-columns:1fr}.stats-grid{grid-template-columns:repeat(2,1fr)}
+  .cta-btns{flex-direction:column;align-items:center}
+  .story-card{padding:26px 20px}
+  .adv-row{gap:8px}
+  .insight-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="hdr">
+  <div class="w">
+    <div class="hdi">
+      <a href="/" class="logo">
+        <div class="lb"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+        <div><div class="ln">Raj<span>Daily</span>Tools</div><div class="ls">Smart Tools for Daily Life</div></div>
+      </a>
+      <nav class="dn">
+        <a href="/">Home</a><a href="/categories">Categories</a>
+        <a href="/#popular">Popular</a><a href="/about">About</a><a href="/contact">Contact</a>
+      </nav>
+      <a href="/categories" class="hcta">All Tools →</a>
+      <button class="brg" id="brg"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="dov" id="dov"></div>
+<div class="drw" id="drw">
+  <div class="dh">
+    <div class="logo">
+      <div class="lb" style="width:30px;height:30px;border-radius:7px"><svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#fff"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+      <div class="ln" style="font-size:16px">Raj<span>Daily</span>Tools</div>
+    </div>
+    <button class="dx" id="dx">✕</button>
+  </div>
+  <nav class="mn">
+    <a href="/" onclick="cD()">🏠 Home</a>
+    <a href="/categories" onclick="cD()">🗂️ Categories</a>
+    <a href="/#popular" onclick="cD()">⭐ Popular</a>
+    <a href="/about" onclick="cD()">👤 About</a>
+    <a href="/contact" onclick="cD()">📬 Contact</a>
+  </nav>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+  <div class="w">
+    <div class="bc">
+      <a href="/">Home</a><span style="color:var(--ink4)">›</span>
+      <a href="/categories">Tools</a><span style="color:var(--ink4)">›</span>
+      <span>Keyword Density Checker</span>
+    </div>
+    <div class="hero-inner">
+      <div class="pill">🔍 Keyword Density &nbsp;·&nbsp; 📊 Advanced SEO Analyzer 2026</div>
+      <h1>Check <span>Keyword Density</span> Instantly – Advanced SEO Analyzer 2026 🎯</h1>
+      <p class="hero-sub">Analyze keyword usage, density percentage, and SEO optimization in seconds. Detect keyword stuffing, find top keywords, and improve your content rankings.</p>
+      <div class="hero-chips">
+        <span class="chip">🔍 Keyword Density %</span>
+        <span class="chip">📊 Top 10 Keywords</span>
+        <span class="chip">⚠️ Stuffing Detector</span>
+        <span class="chip">🎯 SEO Score</span>
+        <span class="chip">🔒 No Data Stored</span>
+        <span class="chip">🆓 100% Free</span>
+      </div>
+      <div class="hero-meta">
+        <div class="upd">🚀 SEO Tool 2026</div>
+        <span class="mi">✅ Instant Results</span>
+        <span class="mi">✍️ Bloggers · Writers · SEO Pros</span>
+      </div>
+
+      <!-- HOW TO USE -->
+      <div class="howto">
+        <div class="howto-ttl">💡 How to Use This Tool</div>
+        <div class="howto-steps">
+          <div class="hs"><span class="sn">1</span>Paste your content in the text area</div>
+          <div class="hs"><span class="sn">2</span>Enter a target keyword (optional)</div>
+          <div class="hs"><span class="sn">3</span>Click Analyze to check density</div>
+          <div class="hs"><span class="sn">4</span>Get instant SEO insights & score</div>
+        </div>
+      </div>
+
+      <!-- RELATED TOOLS -->
+      <div class="rel-grid">
+        <div class="rg-box army">
+          <div class="rg-ico">📝</div>
+          <div class="rg-txt">
+            <h4>Word Counter Tool</h4>
+            <p>Count words, chars &amp; reading time</p>
+            <a href="/word-counter-tool.html" class="btn-xs a">Use Now →</a>
+          </div>
+        </div>
+        <div class="rg-box ht">
+          <div class="rg-ico">🔡</div>
+          <div class="rg-txt">
+            <h4>Text Case Converter</h4>
+            <p>UPPER, lower, Title Case instantly</p>
+            <a href="/text-case-converter.html" class="btn-xs g">Use Now →</a>
+          </div>
+        </div>
+        <div class="rg-box ssc">
+          <div class="rg-ico">🏷️</div>
+          <div class="rg-txt">
+            <h4>SEO Meta Tag Generator</h4>
+            <p>Generate perfect meta tags fast</p>
+            <a href="/meta-tag-generator.html" class="btn-xs b">Use Now →</a>
+          </div>
+        </div>
+        <div class="rg-box mp">
+          <div class="rg-ico">🛡️</div>
+          <div class="rg-txt">
+            <h4>Plagiarism Checker</h4>
+            <p>Detect duplicate &amp; copied content</p>
+            <a href="/plagiarism-checker-tool.html" class="btn-xs p">Use Now →</a>
+          </div>
+        </div>
+        <div class="rg-box tl">
+          <div class="rg-ico">🔎</div>
+          <div class="rg-txt">
+            <h4>Text Analyzer Tool</h4>
+            <p>Deep analysis of your content</p>
+            <a href="/text-analyzer-tool.html" class="btn-xs t">Use Now →</a>
+          </div>
+        </div>
+        <div class="rg-box army">
+          <div class="rg-ico">🔡</div>
+          <div class="rg-txt">
+            <h4>Character Counter</h4>
+            <p>Count characters, words &amp; more</p>
+            <a href="/character-counter-tool.html" class="btn-xs a">Use Now →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOOL SECTION -->
+<section class="tool-sec" id="tool">
+  <div class="w">
+    <div class="tool-wrap">
+      <div class="tool-card rev">
+        <div class="tool-hdr">
+          <div class="th">
+            <h2>🔍 Keyword Density Checker (Advanced SEO Tool 2026)</h2>
+            <p>Paste your content below, enter an optional target keyword, and click Analyze to get your full SEO keyword density report instantly.</p>
+            <div class="th-badges">
+              <span class="thb">✔ 100% Free Tool</span>
+              <span class="thb">✔ SEO Optimized Tool</span>
+              <span class="thb">✔ Instant Results</span>
+              <span class="thb">⚠️ Stuffing Detector</span>
+              <span class="thb">🔒 Zero Data Stored</span>
+            </div>
+          </div>
+        </div>
+        <div class="tool-body">
+
+          <!-- TEXTAREA -->
+          <div class="txt-area-wrap">
+            <textarea id="mainText" placeholder="Paste your blog post, article, or any content here to analyze keyword density and SEO optimization…" oninput="updateCorner()"></textarea>
+            <div class="ta-corner" id="taCorner">0 words</div>
+          </div>
+
+          <!-- KEYWORD INPUT + BUTTONS -->
+          <div class="kw-input-wrap">
+            <input type="text" id="kwInput" placeholder="🔑 Enter target keyword (optional, e.g. SEO tool)" />
+            <button class="btn-analyze" onclick="analyzeContent()">🔍 Analyze</button>
+            <button class="btn-reset" onclick="resetTool()">🔄 Reset</button>
+          </div>
+
+          <!-- QUICK ACTIONS -->
+          <div class="adv-label">⚡ Quick Actions</div>
+          <div class="adv-row">
+            <button class="adv-btn smp" onclick="loadSample()">📄 Load Sample</button>
+            <button class="adv-btn clr" onclick="resetTool()">🗑️ Clear All</button>
+          </div>
+
+          <!-- HINT BOX -->
+          <div class="hint-box">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            <span><strong>How it works:</strong> Click Analyze to see your keyword density report. Top 10 keywords are shown automatically. Enter a specific keyword to check its exact density and SEO score.</span>
+          </div>
+
+          <!-- STATS GRID (shown after analysis) -->
+          <div class="stats-grid" id="statsGrid" style="display:none">
+            <div class="stat-card c1">
+              <div class="stat-ico">📝</div>
+              <div class="stat-lbl">Total Words</div>
+              <div class="stat-val blue" id="sWords">0</div>
+              <div class="stat-sub">in your content</div>
+            </div>
+            <div class="stat-card c2">
+              <div class="stat-ico">🔑</div>
+              <div class="stat-lbl">Keyword Count</div>
+              <div class="stat-val green" id="sKwCount">—</div>
+              <div class="stat-sub">occurrences found</div>
+            </div>
+            <div class="stat-card c3">
+              <div class="stat-ico">📊</div>
+              <div class="stat-lbl">Density %</div>
+              <div class="stat-val purple" id="sDensity">—</div>
+              <div class="stat-sub">keyword frequency</div>
+            </div>
+            <div class="stat-card c4">
+              <div class="stat-ico">🎯</div>
+              <div class="stat-lbl">SEO Score</div>
+              <div class="stat-val amber" id="sSeoScore">—</div>
+              <div class="stat-sub" id="sSeoLabel">analyze to see</div>
+            </div>
+          </div>
+
+          <!-- KEYWORD-SPECIFIC RESULT BOX -->
+          <div class="kw-result-box" id="kwResultBox">
+            <h4>📌 Target Keyword Analysis: "<span id="kwResultWord"></span>"</h4>
+            <div class="kw-result-stats">
+              <div class="krs"><div class="krs-lbl">Occurrences</div><div class="krs-val" id="krCount">0</div></div>
+              <div class="krs"><div class="krs-lbl">Density</div><div class="krs-val" id="krDensity">0%</div></div>
+              <div class="krs"><div class="krs-lbl">Total Words</div><div class="krs-val" id="krTotal">0</div></div>
+              <div class="krs"><div class="krs-lbl">SEO Status</div><div class="krs-val" id="krStatus" style="font-size:14px;padding-top:6px">—</div></div>
+            </div>
+          </div>
+
+          <!-- SEO SCORE BAR -->
+          <div class="seo-score-wrap" id="seoScoreWrap" style="display:none">
+            <div class="seo-score-top">
+              <div class="seo-score-title">🎯 Keyword Density SEO Score</div>
+              <div class="seo-badge neutral" id="seoBadge">— Analyze first</div>
+            </div>
+            <div class="score-track"><div class="score-fill" id="seoDensityFill" style="width:0%;background:var(--line)"></div></div>
+            <div class="score-hints" id="seoHints">
+              <span class="score-hint" style="background:var(--surf);color:var(--ink4);border:1px solid var(--line)">Paste content and click Analyze to see your SEO score…</span>
+            </div>
+          </div>
+
+          <!-- DENSITY VISUAL BAR -->
+          <div class="density-vis" id="densityVis" style="display:none">
+            <div class="density-vis-title">📊 Keyword Density Visualizer</div>
+            <div class="density-bar-wrap">
+              <div class="density-bar-fill" id="densityBarFill" style="width:0%;background:var(--green)">
+                <span id="densityBarLabel">0%</span>
+              </div>
+            </div>
+            <div class="density-zones">
+              <div class="dz"><div class="dz-dot" style="background:var(--amber)"></div>Low (below 1%)</div>
+              <div class="dz"><div class="dz-dot" style="background:var(--green)"></div>Ideal (1% – 2.5%)</div>
+              <div class="dz"><div class="dz-dot" style="background:var(--red)"></div>Overused (above 2.5%)</div>
+            </div>
+          </div>
+
+          <!-- TOP 10 KEYWORDS -->
+          <div class="kw-sec">
+            <div class="kw-title">🔍 Top 10 Keywords <span style="font-size:11px;font-weight:500;color:var(--ink4)">(auto-detected · sorted by frequency)</span></div>
+            <div class="kw-list" id="kwList">
+              <div class="kw-empty">Paste your content and click Analyze to see keyword density breakdown…</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REAL-TIME SEO INSIGHT BOX -->
+<section class="insight-sec">
+  <div class="w">
+    <div style="text-align:center;margin-bottom:40px">
+      <div class="sec-lbl" style="justify-content:center">💡 Real-Time SEO Insight Box</div>
+      <h2 class="sec-h">Understand Your Content's SEO Health</h2>
+      <p class="sec-sub" style="margin:0 auto">After analyzing, this section shows your live content quality, keyword balance, and readability hint — the three pillars of on-page SEO.</p>
+    </div>
+    <div class="insight-grid">
+      <div class="insight-card quality rev">
+        <div class="insight-ico">🏆</div>
+        <div class="insight-title">Content Quality Level</div>
+        <div class="insight-val" id="insightQuality">—</div>
+        <div class="insight-desc" id="insightQDesc">Paste content and click Analyze to see your content quality level based on word count and structure.</div>
+      </div>
+      <div class="insight-card balance rev">
+        <div class="insight-ico">⚖️</div>
+        <div class="insight-title">Keyword Balance</div>
+        <div class="insight-val" id="insightBalance">—</div>
+        <div class="insight-desc" id="insightBDesc">Keyword balance checks if your content uses keywords naturally — not too much, not too little.</div>
+      </div>
+      <div class="insight-card readability rev">
+        <div class="insight-ico">📖</div>
+        <div class="insight-title">Readability Hint</div>
+        <div class="insight-val" id="insightRead">—</div>
+        <div class="insight-desc" id="insightRDesc">Readability is estimated based on average words per sentence and content length.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES SECTION -->
+<section class="tips-sec">
+  <div class="w">
+    <div style="text-align:center;margin-bottom:40px">
+      <div class="sec-lbl" style="justify-content:center">⚙️ Advanced Features</div>
+      <h2 class="sec-h">Everything This SEO Keyword Tool Does</h2>
+      <p class="sec-sub" style="margin:0 auto">From basic density checking to advanced stuffing detection — this free keyword analyzer online covers all your content SEO needs.</p>
+    </div>
+    <div class="tips-grid">
+      <div class="tip-card rev">
+        <div class="tip-ico">📊</div>
+        <div class="tip-title">Top 10 Keywords Auto-Detected</div>
+        <div class="tip-desc">Automatically finds and ranks the top 10 most frequently used keywords in your content — no manual input needed.</div>
+      </div>
+      <div class="tip-card rev">
+        <div class="tip-ico">🎯</div>
+        <div class="tip-title">Target Keyword Analysis</div>
+        <div class="tip-desc">Enter any specific keyword to check its exact count, density percentage, and SEO score — Good, Low, or Overused.</div>
+      </div>
+      <div class="tip-card rev">
+        <div class="tip-ico">⚠️</div>
+        <div class="tip-title">Keyword Stuffing Detector</div>
+        <div class="tip-desc">Instantly flags keywords used above the safe threshold (2.5%). Over-optimization warnings help protect your Google ranking.</div>
+      </div>
+      <div class="tip-card rev">
+        <div class="tip-ico">✅</div>
+        <div class="tip-title">Ideal Density Range Guide</div>
+        <div class="tip-desc">Visual bar shows exactly where your keyword density falls — yellow (low), green (ideal 1–2.5%), or red (overused).</div>
+      </div>
+      <div class="tip-card rev">
+        <div class="tip-ico">🔒</div>
+        <div class="tip-title">100% Private & Secure</div>
+        <div class="tip-desc">Your content never leaves your browser. No servers, no storage, no data logging. Safe for confidential articles.</div>
+      </div>
+      <div class="tip-card rev">
+        <div class="tip-ico">⚡</div>
+        <div class="tip-title">Instant One-Click Results</div>
+        <div class="tip-desc">Click Analyze and get your full SEO keyword density report in under a second. No loading, no waiting.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TABLE SECTION -->
+<section class="tbl-sec">
+  <div class="w">
+    <div style="text-align:center;margin-bottom:40px">
+      <div class="sec-lbl" style="justify-content:center">📋 SEO Reference Guide</div>
+      <h2 class="sec-h">Keyword Density Metrics at a Glance</h2>
+    </div>
+    <div class="tbl-wr">
+      <table>
+        <thead>
+          <tr><th>📌 Metric</th><th>✅ Ideal Value</th><th>⚠️ Warning Zone</th><th>🔖 Status</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>📊 Keyword Density</strong></td><td>1% – 2.5%</td><td>Below 1% or Above 2.5%</td><td><span class="tbadge g">Ideal</span></td></tr>
+          <tr><td><strong>📝 Content Length</strong></td><td>1000+ words</td><td>Below 500 words</td><td><span class="tbadge b">Important</span></td></tr>
+          <tr><td><strong>🔑 Keyword Usage</strong></td><td>Natural flow</td><td>Forced/Repetitive</td><td><span class="tbadge g">Natural</span></td></tr>
+          <tr><td><strong>🎯 SEO Score</strong></td><td>Balanced (Good)</td><td>Overused or Very Low</td><td><span class="tbadge b">Balanced</span></td></tr>
+          <tr><td><strong>⚠️ Keyword Stuffing</strong></td><td>0 flags detected</td><td>3+ stuffed keywords</td><td><span class="tbadge r">Avoid</span></td></tr>
+          <tr><td><strong>🔍 Unique Keywords</strong></td><td>High variety</td><td>Very low variety</td><td><span class="tbadge a">Variety</span></td></tr>
+          <tr><td><strong>📖 Readability</strong></td><td>8–20 words/sentence</td><td>Over 25 words/sentence</td><td><span class="tbadge g">Easy</span></td></tr>
+          <tr><td><strong>🏷️ Title Keyword</strong></td><td>Once, naturally placed</td><td>Missing or repeated</td><td><span class="tbadge p">Required</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="notice-banner">
+      <div class="notice-icon">⚠️</div>
+      <div class="notice-text">Important Notice: <span>Always focus on quality content instead of only keyword density. Google's 2026 algorithm rewards helpful, natural-sounding content — not keyword-stuffed articles.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- STORY SECTION -->
+<section class="story-sec">
+  <div class="w">
+    <div style="max-width:780px;margin:0 auto">
+      <div class="sec-lbl">💜 The Story Behind This Tool</div>
+      <h2 class="sec-h">Why I Built This Keyword Density Checker</h2>
+      <div class="story-card rev">
+        <div class="sq">"</div>
+        <div class="sb">My friend Prashant was writing blog articles for months but his posts were not ranking on Google. He was consistent, he was passionate, and his content was genuinely helpful — but something was missing. When I looked at his articles, I realized he didn't know whether he was overusing keywords or missing them entirely. Some articles had keywords crammed in every second sentence. Others barely mentioned the topic keyword at all.<br><br>That's when I realized most beginners and even intermediate bloggers struggle with keyword density. They either heard "keywords are important for SEO" and went overboard stuffing every paragraph — or they ignored keywords completely and wondered why their articles never ranked. Neither extreme works.<br><br>So I built this advanced keyword density checker to help content creators — bloggers like Prashant, freelance writers, digital marketing students, and SEO beginners — optimize their articles with confidence. Now Prashant checks his density before publishing every post. His rankings improved significantly once he started hitting that natural 1–2.5% sweet spot.</div>
+        <div class="sauth">
+          <div class="savt">🧑‍💻</div>
+          <div>
+            <div class="sname">Raj – Founder, RajDailyTools</div>
+            <div class="srole">Web Developer & Content Tools Builder · India</div>
+          </div>
+        </div>
+        <div class="founder-msg">
+          <div class="fm-ico">🎯</div>
+          <div class="fm-txt"><strong>Design Philosophy:</strong> SEO tools should be simple enough for a beginner but powerful enough for a professional. This keyword density checker was built with that exact balance in mind — no bloat, no confusion, just instant SEO clarity.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SEO ARTICLE -->
+<section class="guide-sec">
+  <div class="wa">
+    <div class="sec-lbl">📚 Complete SEO Guide</div>
+    <h2 class="sec-h">Keyword Density in SEO: The Complete 2026 Guide</h2>
+    <div class="guide-body">
+
+      <h2>🔍 What Is Keyword Density?</h2>
+      <p>Keyword density refers to how often a specific keyword or phrase appears in a piece of content relative to the total number of words. It is expressed as a percentage and calculated using a simple formula: (Number of times keyword appears ÷ Total word count) × 100. For example, if your 1,000-word article mentions the phrase "content SEO optimization tool" 15 times, the keyword density would be 1.5%.</p>
+      <p>This metric has been a cornerstone of on-page SEO since the early days of search engine optimization. Understanding your keyword density helps you write content that is relevant to your topic — visible enough to search engines without crossing into the territory of keyword stuffing, which can actively harm your rankings.</p>
+
+      <div class="ibox">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        <span><strong>Quick Formula:</strong> Keyword Density (%) = (Keyword Count ÷ Total Words) × 100. A 1,000-word article mentioning "SEO" 15 times = 1.5% density. This falls in the ideal range of 1%–2.5%.</span>
+      </div>
+
+      <h2>📈 Why Keyword Density Matters in SEO</h2>
+      <p>Search engines use keyword signals to understand what a page is about. When Google's crawlers scan your article, they look for relevance signals — and keyword presence is one of the oldest and most reliable ones. If your article is about "keyword analyzer online tools" but never actually uses those words, Google has no clear signal to rank it for those searches.</p>
+      <p>However, keyword density matters in both directions. Too little keyword usage leaves your content without a clear topical signal. Too much — known as keyword stuffing — makes your content look spammy, unnatural, and manipulative to search engine algorithms. Both extremes hurt your rankings. The sweet spot is natural, conversational keyword usage that lands between 1% and 2.5% for most topics.</p>
+      <ul>
+        <li><strong>Signal relevance to Google:</strong> Regular, natural keyword usage tells search engines exactly what topic your content covers.</li>
+        <li><strong>Improve click-through rates:</strong> Well-placed keywords in titles, headings, and early paragraphs boost CTR from search results.</li>
+        <li><strong>Avoid penalties:</strong> Staying within the ideal density range protects you from Google's spam detection algorithms.</li>
+        <li><strong>Support semantic SEO:</strong> Balanced keyword usage combined with related terms creates a stronger topical authority signal.</li>
+      </ul>
+
+      <h2>🤖 Google Algorithm Basics — 2026 Update Explained</h2>
+      <p>Google's search algorithm has evolved dramatically through the years, and the 2026 version is more sophisticated than ever before. Early search engines ranked pages almost purely based on keyword frequency — the more times a word appeared, the higher the ranking. This led to the widespread abuse of keyword stuffing in the early 2000s.</p>
+      <p>Modern Google uses a combination of natural language understanding (NLU), E-E-A-T signals (Experience, Expertise, Authoritativeness, Trustworthiness), user engagement metrics, and semantic analysis to rank content. Keywords are still important, but they are evaluated in context — not just counted. A 2026 Google update specifically targeted "helpful content" — rewarding articles that genuinely inform and engage readers, regardless of how precisely they manipulate keyword counts.</p>
+
+      <div class="ibox g">
+        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+        <span><strong>2026 SEO Best Practice:</strong> Focus on covering your topic completely and naturally. Use your main keyword in the title, first paragraph, and a few subheadings. Then use related terms and synonyms throughout. Google's NLU understands semantic relationships — diversity of language signals depth of knowledge.</span>
+      </div>
+
+      <h2>✅ What Is Ideal Keyword Usage?</h2>
+      <p>The widely accepted ideal keyword density range is 1% to 2.5% for most content types. This means for every 100 words, your target keyword should appear once to two and a half times. In practical terms, a 1,000-word article should contain your primary keyword approximately 10 to 25 times — but distributed naturally throughout the content, not front-loaded into the first few paragraphs.</p>
+
+      <div class="example-box">
+        <h4>📊 Keyword Density Reference by Content Type — 2026</h4>
+        <div class="ex-row"><span class="ex-label">📝 Blog Post (1000–2000 words)</span><span class="ex-val hi">1% – 2%</span></div>
+        <div class="ex-row"><span class="ex-label">📄 Long-Form Guide (3000+ words)</span><span class="ex-val hi">0.8% – 1.5%</span></div>
+        <div class="ex-row"><span class="ex-label">🛒 Product Page</span><span class="ex-val hi">1.5% – 2.5%</span></div>
+        <div class="ex-row"><span class="ex-label">📰 News Article</span><span class="ex-val hi">0.5% – 1.5%</span></div>
+        <div class="ex-row"><span class="ex-label">🏠 Landing Page</span><span class="ex-val hi">2% – 3%</span></div>
+        <div class="ex-row"><span class="ex-label">⛔ Keyword Stuffing (avoid)</span><span class="ex-val" style="color:#f87171">Above 5%</span></div>
+      </div>
+
+      <h2>🚨 Keyword Stuffing: Why It Is Dangerous</h2>
+      <p>Keyword stuffing means forcing your target keyword into content unnaturally and excessively — beyond what a normal reader would consider natural. This practice was common in the early days of SEO when algorithms were simple enough to be fooled by raw keyword frequency. Today, it is one of the fastest ways to damage your website's rankings or even trigger a manual penalty from Google.</p>
+      <p>Stuffed content is obvious to both readers and algorithms. Sentences become awkward and repetitive. The reading experience suffers. Trust in your brand erodes. And Google's spam detection systems — which have been continuously refined over decades — will flag and demote overly optimized content.</p>
+      <ul>
+        <li><strong>Search ranking drops:</strong> Google will detect and penalize keyword-stuffed content, pushing it out of top results.</li>
+        <li><strong>High bounce rates:</strong> Readers who encounter unnatural, repetitive text leave immediately — signaling poor quality to Google.</li>
+        <li><strong>Manual penalties:</strong> Severe cases of stuffing can result in a manual action from Google's spam team, removing your page from search entirely.</li>
+        <li><strong>Brand damage:</strong> Content that reads like spam reflects poorly on your authority and expertise as a creator.</li>
+      </ul>
+
+      <div class="ibox r">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+        <span><strong>Red Flag Warning:</strong> If any single keyword appears at a density above 3–4% in your content, use this keyword analyzer online tool to check it immediately and redistribute the keyword more naturally throughout your article.</span>
+      </div>
+
+      <h2>🌍 Real-Life Blogging Examples</h2>
+      <p>Understanding keyword density becomes much clearer with real-world blogging examples. Consider two bloggers writing about the same topic — "how to start a food blog."</p>
+      <p><strong>Blogger A (Stuffed, 5.8% density):</strong> "If you want to start a food blog, you need to know how to start a food blog correctly. Starting a food blog is easy if you follow these food blog starting tips. Every food blog starter should…" — This reads unnaturally, triggers spam detection, and drives readers away.</p>
+      <p><strong>Blogger B (Natural, 1.8% density):</strong> "Starting a food blog is one of the most rewarding creative projects you can take on. Begin by choosing a niche — baking, vegan cooking, or street food — then pick a memorable domain name. Your first posts don't need to be perfect…" — This reads naturally, covers the topic well, and earns trust from both readers and Google.</p>
+
+      <h2>🛠️ On-Page SEO Tips for Keyword Optimization</h2>
+      <p>Effective on-page SEO is about more than hitting a keyword density number. Here are the key placement strategies that maximize your keyword's SEO impact while keeping content natural:</p>
+      <ul>
+        <li><strong>Title tag:</strong> Include your primary keyword once in your page title — ideally near the beginning for maximum click-through impact.</li>
+        <li><strong>First paragraph:</strong> Mention your keyword naturally within the first 100 words of your content to establish topical relevance early.</li>
+        <li><strong>Subheadings (H2/H3):</strong> Use your keyword or a close variant in at least one subheading to reinforce topic signals for search engines.</li>
+        <li><strong>Image alt text:</strong> Include your keyword in image alt attributes where contextually appropriate — this helps with both accessibility and SEO.</li>
+        <li><strong>Meta description:</strong> While not a direct ranking factor, including your keyword in the meta description improves click-through rates from search results.</li>
+        <li><strong>LSI (Latent Semantic Indexing) keywords:</strong> Use related terms and synonyms throughout your content. If your keyword is "check keyword density free," related terms might include "SEO content analysis," "keyword frequency," and "text optimization."</li>
+      </ul>
+
+      <h2>💡 How This Keyword Density Checker Helps You</h2>
+      <p>This free keyword density checker is designed to solve the exact problems that content creators, bloggers, and SEO professionals face every day. Here's what makes it genuinely useful for optimizing your content:</p>
+      <ul>
+        <li>Paste any content and instantly see which keywords dominate your text — no guesswork, no manual counting.</li>
+        <li>Enter a specific target keyword to check its exact density with a precise percentage — and see immediately whether it falls in the ideal, low, or overused zone.</li>
+        <li>The visual density bar makes it easy to see at a glance where your keyword stands — green for ideal, yellow for low, red for overused.</li>
+        <li>The stuffing detector automatically flags keywords that appear too frequently, giving you a clear warning before you publish.</li>
+        <li>The SEO Insight Box shows your content quality level, keyword balance status, and readability hint — giving you a complete on-page SEO picture in one view.</li>
+        <li>Everything runs privately in your browser — your content is never sent to a server or stored anywhere.</li>
+      </ul>
+
+      <div class="ibox g">
+        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+        <span><strong>Pro Tip:</strong> After running your keyword density analysis, always read your content aloud. If it sounds repetitive or unnatural, that's your best signal to revise — regardless of what the percentage number says. Natural language is the ultimate SEO test.</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FAQ SECTION -->
+<section class="faq-sec">
+  <div class="w">
+    <div style="text-align:center;margin-bottom:40px">
+      <div class="sec-lbl" style="justify-content:center">❓ Frequently Asked Questions</div>
+      <h2 class="sec-h">All Your Keyword Density Questions Answered</h2>
+    </div>
+    <div style="max-width:760px;margin:0 auto">
+      <div class="fq">
+        <div class="fq-q" onclick="tFq(this)"><span class="fq-t">🔍 What is keyword density?</span><div class="fq-i">+</div></div>
+        <div class="fq-a"><div class="fq-ai">Keyword density is the percentage of times a target keyword appears in your content compared to the total number of words. It is calculated as: (Keyword count ÷ Total words) × 100. For example, if a keyword appears 15 times in a 1,000-word article, the density is 1.5%. This metric helps SEO writers ensure their keywords appear naturally and frequently enough to signal relevance to search engines — without over-repeating.</div></div>
+      </div>
+      <div class="fq">
+        <div class="fq-q" onclick="tFq(this)"><span class="fq-t">📊 What is the ideal keyword density percentage?</span><div class="fq-i">+</div></div>
+        <div class="fq-a"><div class="fq-ai">The widely accepted ideal keyword density range is 1% to 2.5% for most content types. This means your primary keyword should appear naturally once or twice for every 100 words you write. Going below 1% may mean your keyword isn't prominent enough for search engines to pick up strong relevance signals. Going above 2.5%–3% risks triggering keyword stuffing detection. For long-form guides (3,000+ words), you can go slightly lower (0.8%–1.5%) since the sheer content volume provides context.</div></div>
+      </div>
+      <div class="fq">
+        <div class="fq-q" onclick="tFq(this)"><span class="fq-t">📈 Does keyword density directly affect Google rankings?</span><div class="fq-i">+</div></div>
+        <div class="fq-a"><div class="fq-ai">Keyword density is not a direct ranking factor in the way that backlinks or page speed are — but it has a significant indirect impact. Google uses keyword presence to understand what your page is about and whether it is relevant to a given search query. Naturally balanced keyword usage signals relevance and topical authority. However, Google's 2026 algorithm prioritizes helpful content, user experience, and semantic richness far more than raw keyword frequency. Think of keyword density as one signal among many, not the whole strategy.</div></div>
+      </div>
+      <div class="fq">
+        <div class="fq-q" onclick="tFq(this)"><span class="fq-t">⚠️ Is keyword stuffing really harmful to SEO?</span><div class="fq-i">+</div></div>
+        <div class="fq-a"><div class="fq-ai">Yes, absolutely. Keyword stuffing is one of the most harmful practices in SEO and can seriously damage your rankings. Google's algorithms have been specifically trained to detect unnaturally high keyword repetition, and pages flagged for stuffing are actively demoted in search results. In severe cases, Google may issue a manual action that removes your page from search entirely. Beyond algorithmic penalties, stuffed content delivers a poor user experience — readers notice unnatural repetition and leave quickly, which signals low quality to Google through behavioral metrics.</div></div>
+      </div>
+      <div class="fq">
+        <div class="fq-q" onclick="tFq(this)"><span class="fq-t">🎯 How accurate is this keyword density tool?</span><div class="fq-i">+</div></div>
+        <div class="fq-a"><div class="fq-ai">This keyword density checker provides highly accurate calculations based on standard SEO methodology. It counts every occurrence of your exact keyword (case-insensitive), divides by the total word count, and multiplies by 100 to give the precise density percentage. The top keyword analysis filters out common stop words to show meaningful keyword data. The SEO scoring follows established best practices for the 1%–2.5% ideal range. Note that no automated tool replaces your judgment — always read your content naturally to confirm it feels balanced.</div></div>
+      </div>
+      <div class="fq">
+        <div class="fq-q" onclick="tFq(this)"><span class="fq-t">🆓 Is this keyword analyzer online tool completely free?</span><div class="fq-i">+</div></div>
+        <div class="fq-a"><div class="fq-ai">Yes, this keyword density checker is 100% free with no limits, no sign-up required, and no payment ever. You can analyze as many articles as you want — there are no daily limits or premium tiers. The tool also runs entirely in your browser, meaning your content is never sent to any server and is never stored or logged. RajDailyTools is built on the belief that powerful SEO tools should be accessible to everyone, from beginners writing their first blog post to professionals managing enterprise content.</div></div>
+      </div>
+      <div class="fq">
+        <div class="fq-q" onclick="tFq(this)"><span class="fq-t">🔒 Is my content safe? Is any data stored?</span><div class="fq-i">+</div></div>
+        <div class="fq-a"><div class="fq-ai">Your content is completely safe. This tool performs all analysis directly in your browser using JavaScript — no data is ever transmitted to a server, stored in a database, or logged in any way. When you close the browser tab, your content is gone permanently. This makes it safe to use even for confidential drafts, client work, proprietary research, and unpublished articles. We have no access to anything you type or paste into this tool.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DISCLAIMER -->
+<div class="disc">
+  <div class="w">
+    <p style="font-size:13px;color:var(--ink3);display:flex;align-items:center;gap:8px"><span>⚠️</span><span><strong>Disclaimer:</strong> This tool provides estimated SEO insights based on keyword density calculations. Actual Google rankings depend on many additional factors. Always combine data from this tool with your own editorial judgment and broader SEO strategy.</span></p>
+  </div>
+</div>
+
+<!-- CONTACT SECTION -->
+<section class="contact-sec">
+  <div class="w">
+    <div class="contact-card rev">
+      <div style="font-size:38px;margin-bottom:14px">📬</div>
+      <h3>Have a Suggestion or Feedback?</h3>
+      <p>For suggestions, improvements, or tool requests, contact us anytime. We read every message and love hearing from content creators like you.</p>
+      <a href="mailto:contact@rajdailytools.in" class="btn-bl">📧 Contact Us</a>
+      <div class="priv-note">🔒 No data stored &nbsp;·&nbsp; ✅ 100% Safe &nbsp;·&nbsp; 🆓 Always Free</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA SECTION -->
+<section class="cta">
+  <div class="cta-in">
+    <div class="pill">🚀 RajDailyTools</div>
+    <h2>Explore <em>More Free</em> SEO Tools</h2>
+    <p>Word Counter, Text Case Converter, Meta Tag Generator, Plagiarism Checker — all free, all instant, all in one place.</p>
+    <div class="cta-btns">
+      <a href="/categories" class="btn-gold">🗂️ Browse All Tools</a>
+      <a href="/" class="btn-ghost">🏠 Back to Home</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-inner">
+    <div class="ft-top">
+      <div class="ft-brand">
+        <div class="logo" style="margin-bottom:0">
+          <div class="lb" style="background:rgba(255,255,255,.09);box-shadow:none"><svg viewBox="0 0 24 24" style="fill:#fff"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+          <div><div class="ln">Raj<span>Daily</span>Tools</div><div class="ls">Smart Tools for Daily Life</div></div>
+        </div>
+        <div class="ft-desc">Free online tools for writers, bloggers, students, and SEO professionals. Fast, accurate, and 100% private — always.</div>
+        <div class="ft-soc">
+          <a href="#" class="fts">𝕏</a>
+          <a href="#" class="fts">in</a>
+          <a href="#" class="fts">▶</a>
+          <a href="#" class="fts">📧</a>
+        </div>
+      </div>
+      <div class="fc">
+        <h4>SEO Tools</h4>
+        <ul>
+          <li><a href="/keyword-density-checker.html">Keyword Density Checker</a></li>
+          <li><a href="/meta-tag-generator.html">Meta Tag Generator</a></li>
+          <li><a href="/plagiarism-checker-tool.html">Plagiarism Checker</a></li>
+          <li><a href="/text-analyzer-tool.html">Text Analyzer</a></li>
+        </ul>
+      </div>
+      <div class="fc">
+        <h4>Text Tools</h4>
+        <ul>
+          <li><a href="/character-counter-tool.html">Character Counter</a></li>
+          <li><a href="/word-counter-tool.html">Word Counter</a></li>
+          <li><a href="/text-case-converter.html">Text Case Converter</a></li>
+          <li><a href="/sentence-rewriter.html">Sentence Rewriter</a></li>
+        </ul>
+      </div>
+      <div class="fc">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/about">About Us</a></li>
+          <li><a href="/contact">Contact</a></li>
+          <li><a href="/privacy-policy">Privacy Policy</a></li>
+          <li><a href="/disclaimer">Disclaimer</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="ft-btm">
+    <div class="ft-inner">
+      <div class="ft-cp">© 2026 <b>RajDailyTools</b> · All rights reserved · Built with ❤️ in India</div>
+      <div class="ft-tag">Free keyword density checker · SEO keyword tool · Content optimization · No login required</div>
+    </div>
+  </div>
+</footer>
+
+<button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+/* ── STOP WORDS ── */
+const STOP=new Set(['this','that','with','from','have','been','they','will','your','were','would','could','should','there','their','which','about','when','into','more','also','just','than','then','some','what','each','made','used','help','using','make','does','most','only','like','very','over','such','both','after','other','many','same','well','need','good','even','know','here','take','much','being','these','those','them','its','our','can','all','but','for','are','not','any','has','was','had','him','his','her','she','him','who','one','two','and','the','you','how','get','got']);
+
+let analyzed = false;
+
+/* ── WORD COUNT CORNER ── */
+function updateCorner(){
+  const txt=document.getElementById('mainText').value.trim();
+  const words=txt?txt.split(/\s+/).filter(w=>w).length:0;
+  document.getElementById('taCorner').textContent=words+' words';
+}
+
+/* ── MAIN ANALYSIS ── */
+function analyzeContent(){
+  const txt=document.getElementById('mainText').value.trim();
+  if(!txt){alert('Please paste some content to analyze.');return;}
+
+  const kw=document.getElementById('kwInput').value.trim().toLowerCase();
+  const wordsArr=txt.split(/\s+/).filter(w=>w);
+  const totalWords=wordsArr.length;
+
+  // Show stats grid
+  document.getElementById('statsGrid').style.display='grid';
+  document.getElementById('sWords').textContent=totalWords.toLocaleString();
+  document.getElementById('seoScoreWrap').style.display='block';
+  document.getElementById('densityVis').style.display='block';
+
+  // Target keyword analysis
+  let kwCount=0,kwDensity=0;
+  if(kw){
+    const kwWords=kw.split(/\s+/);
+    const textLower=txt.toLowerCase();
+    // Phrase search
+    let pos=0,cnt=0;
+    while((pos=textLower.indexOf(kw,pos))!==-1){cnt++;pos+=kw.length;}
+    kwCount=cnt;
+    kwDensity=totalWords>0?((kwCount/totalWords)*100):0;
+
+    document.getElementById('sKwCount').textContent=kwCount;
+    document.getElementById('sDensity').textContent=kwDensity.toFixed(2)+'%';
+
+    // SEO Score for keyword
+    let scoreLabel,scoreClass;
+    if(kwDensity>=1&&kwDensity<=2.5){scoreLabel='Good ✅';scoreClass='good';}
+    else if(kwDensity>2.5){scoreLabel='Overused ⚠️';scoreClass='overused';}
+    else if(kwCount===0){scoreLabel='Not Found ❌';scoreClass='neutral';}
+    else{scoreLabel='Low 📉';scoreClass='low';}
+
+    document.getElementById('sSeoScore').textContent=scoreLabel.split(' ')[0];
+    document.getElementById('sSeoLabel').textContent=scoreLabel;
+
+    // Keyword result box
+    document.getElementById('kwResultBox').className='kw-result-box show';
+    document.getElementById('kwResultWord').textContent=kw;
+    document.getElementById('krCount').textContent=kwCount;
+    document.getElementById('krDensity').textContent=kwDensity.toFixed(2)+'%';
+    document.getElementById('krTotal').textContent=totalWords.toLocaleString();
+    document.getElementById('krStatus').innerHTML=`<span class="seo-badge ${scoreClass}">${scoreLabel}</span>`;
+
+    // Density bar
+    const pct=Math.min(kwDensity,10);
+    const barPct=(pct/10)*100;
+    let barColor;
+    if(kwDensity>=1&&kwDensity<=2.5){barColor='linear-gradient(90deg,#10b981,#34d399)';}
+    else if(kwDensity>2.5){barColor='linear-gradient(90deg,#ef4444,#f87171)';}
+    else{barColor='linear-gradient(90deg,#f59e0b,#fbbf24)';}
+    document.getElementById('densityBarFill').style.width=Math.max(barPct,2)+'%';
+    document.getElementById('densityBarFill').style.background=barColor;
+    document.getElementById('densityBarLabel').textContent=kwDensity.toFixed(2)+'%';
+
+    // SEO badge and bar
+    const badge=document.getElementById('seoBadge');
+    badge.textContent=scoreLabel;
+    badge.className='seo-badge '+scoreClass;
+    document.getElementById('seoDensityFill').style.width=Math.min(barPct*2,100)+'%';
+    document.getElementById('seoDensityFill').style.background=barColor;
+
+    // Hints
+    const hints=[];
+    if(kwDensity>=1&&kwDensity<=2.5){
+      hints.push({t:'✅ Ideal keyword density (1%–2.5%)',c:'background:var(--green-xl);color:var(--green);border:1px solid var(--green-s)'});
+      hints.push({t:'✅ Good SEO optimization',c:'background:var(--green-xl);color:var(--green);border:1px solid var(--green-s)'});
+    } else if(kwDensity>2.5){
+      hints.push({t:'⚠️ Keyword overused — reduce frequency',c:'background:var(--red-xl);color:var(--red);border:1px solid var(--red-s)'});
+      hints.push({t:'⚠️ Risk of keyword stuffing penalty',c:'background:var(--red-xl);color:var(--red);border:1px solid var(--red-s)'});
+    } else if(kwCount===0){
+      hints.push({t:'❌ Keyword not found in content',c:'background:var(--amber-xl);color:var(--amber);border:1px solid var(--amber-s)'});
+    } else {
+      hints.push({t:'📉 Keyword density too low — add more naturally',c:'background:var(--amber-xl);color:var(--amber);border:1px solid var(--amber-s)'});
+    }
+    if(totalWords>=1000){hints.push({t:'✅ Good content length (1000+ words)',c:'background:var(--green-xl);color:var(--green);border:1px solid var(--green-s)'});}
+    else{hints.push({t:'📝 Add more content for better SEO',c:'background:var(--amber-xl);color:var(--amber);border:1px solid var(--amber-s)'});}
+    document.getElementById('seoHints').innerHTML=hints.map(h=>`<span class="score-hint" style="${h.c}">${h.t}</span>`).join('');
+  } else {
+    document.getElementById('sKwCount').textContent='—';
+    document.getElementById('sDensity').textContent='—';
+    document.getElementById('sSeoScore').textContent='—';
+    document.getElementById('sSeoLabel').textContent='enter keyword';
+    document.getElementById('kwResultBox').className='kw-result-box';
+    document.getElementById('densityBarFill').style.width='0%';
+    document.getElementById('densityBarLabel').textContent='0%';
+    document.getElementById('seoBadge').textContent='Enter a keyword above';
+    document.getElementById('seoBadge').className='seo-badge neutral';
+    document.getElementById('seoDensityFill').style.width='0%';
+    document.getElementById('seoHints').innerHTML='<span class="score-hint" style="background:var(--surf);color:var(--ink4);border:1px solid var(--line)">Enter a target keyword in the field above for detailed density analysis…</span>';
+  }
+
+  // Top 10 keywords
+  calcTopKeywords(txt,totalWords,kw);
+
+  // SEO Insights
+  calcInsights(txt,totalWords,kw,kwDensity,kwCount);
+
+  analyzed=true;
+}
+
+/* ── TOP 10 KEYWORDS ── */
+function calcTopKeywords(txt,totalWords,targetKw){
+  const raw=txt.toLowerCase().replace(/[^a-z\s]/g,' ').split(/\s+/).filter(w=>w.length>=4&&!STOP.has(w));
+  const freq={};
+  raw.forEach(w=>{freq[w]=(freq[w]||0)+1;});
+  const sorted=Object.entries(freq).sort((a,b)=>b[1]-a[1]).slice(0,10);
+
+  if(sorted.length===0){
+    document.getElementById('kwList').innerHTML='<div class="kw-empty">No significant keywords found. Try longer content with meaningful words.</div>';
+    return;
+  }
+
+  const maxCount=sorted[0][1];
+  document.getElementById('kwList').innerHTML=sorted.map(([w,c],i)=>{
+    const pct=totalWords>0?((c/totalWords)*100):0;
+    const isTarget=targetKw&&w===targetKw.toLowerCase();
+    const isStuffed=pct>2.5;
+    const barW=Math.round((c/maxCount)*100);
+
+    let barColor,flagHtml,pctColor;
+    if(isStuffed){barColor='var(--red)';flagHtml='<span class="kw-flag red">⚠️ Stuffed</span>';pctColor='var(--red)';}
+    else if(pct>=1&&pct<=2.5){barColor='var(--green)';flagHtml='<span class="kw-flag green">✅ Ideal</span>';pctColor='var(--green)';}
+    else{barColor='var(--amber)';flagHtml='<span class="kw-flag ok">📉 Low</span>';pctColor='var(--amber)';}
+
+    const rowClass=isStuffed?'kw-row stuffed':isTarget?'kw-row target':'kw-row';
+
+    return `<div class="${rowClass}">
+      <span class="kw-rank">#${i+1}</span>
+      <span class="kw-word">${w}${isTarget?' 🎯':''}</span>
+      <div class="kw-bar-mini"><div class="kw-bar-mini-fill" style="width:${barW}%;background:${barColor}"></div></div>
+      <span class="kw-cnt">${c}×</span>
+      <span class="kw-pct" style="color:${pctColor}">${pct.toFixed(2)}%</span>
+      ${flagHtml}
+    </div>`;
+  }).join('');
+}
+
+/* ── SEO INSIGHTS ── */
+function calcInsights(txt,totalWords,kw,kwDensity,kwCount){
+  // Content Quality
+  let qualLabel,qualDesc,qualColor;
+  if(totalWords>=1500){qualLabel='Excellent 🏆';qualColor='var(--green)';qualDesc='Your content is long-form and comprehensive — excellent for SEO and reader value.';}
+  else if(totalWords>=800){qualLabel='Good ✅';qualColor='var(--blue)';qualDesc='Good content length. Add more depth and examples to further boost your SEO authority.';}
+  else if(totalWords>=300){qualLabel='Average ⚡';qualColor='var(--amber)';qualDesc='Content is a bit short for competitive SEO. Aim for 800+ words for stronger ranking signals.';}
+  else{qualLabel='Needs Work 📝';qualColor='var(--red)';qualDesc='Too short for effective SEO. Expand your content significantly to rank for competitive keywords.';}
+
+  const qi=document.getElementById('insightQuality');
+  qi.textContent=qualLabel;
+  qi.style.color=qualColor;
+  document.getElementById('insightQDesc').textContent=qualDesc;
+
+  // Keyword Balance
+  let balLabel,balDesc,balColor;
+  if(!kw){balLabel='Enter Keyword';balColor='var(--ink4)';balDesc='Enter a target keyword above and click Analyze to see your keyword balance score.';}
+  else if(kwDensity>=1&&kwDensity<=2.5){balLabel='Balanced ⚖️';balColor='var(--green)';balDesc='Your keyword balance is ideal. The keyword appears naturally at the right frequency for SEO.';}
+  else if(kwDensity>2.5){balLabel='Overused 🚨';balColor='var(--red)';balDesc='Keyword appears too frequently. Reduce usage and replace some instances with synonyms or related terms.';}
+  else if(kwCount===0){balLabel='Not Found ❌';balColor='var(--amber)';balDesc='Target keyword was not found in your content. Add it naturally in headings, intro, and body paragraphs.';}
+  else{balLabel='Underused 📉';balColor='var(--amber)';balDesc='Keyword density is below 1%. Add your keyword more naturally throughout the content to boost relevance.';}
+
+  const bi=document.getElementById('insightBalance');
+  bi.textContent=balLabel;
+  bi.style.color=balColor;
+  document.getElementById('insightBDesc').textContent=balDesc;
+
+  // Readability
+  const sents=txt.split(/[.!?]+/).filter(s=>s.trim().length>0).length;
+  const avgWps=sents>0?totalWords/sents:totalWords;
+  let readLabel,readDesc,readColor;
+  if(avgWps<=20){readLabel='Easy to Read ✅';readColor='var(--green)';readDesc='Short, clear sentences. Excellent readability — your readers will stay engaged throughout.';}
+  else if(avgWps<=30){readLabel='Readable 📖';readColor='var(--blue)';readDesc='Moderate sentence length. Readability is good. Break up longer sentences occasionally for better flow.';}
+  else{readLabel='Dense 📚';readColor='var(--amber)';readDesc='Sentences are quite long on average. Break them up into shorter statements to improve readability and SEO.';}
+
+  const ri=document.getElementById('insightRead');
+  ri.textContent=readLabel;
+  ri.style.color=readColor;
+  document.getElementById('insightRDesc').textContent=readDesc;
+}
+
+/* ── LOAD SAMPLE ── */
+function loadSample(){
+  document.getElementById('mainText').value=`Keyword density is one of the most important concepts in SEO content writing. When you write a blog post or article for search engine optimization, understanding keyword density helps you balance your content effectively.
+
+Keyword density refers to how often a target keyword appears in your content relative to the total word count. For example, if you are writing about keyword density and the phrase appears 15 times in a 1,000-word article, your keyword density is 1.5%. This falls perfectly within the ideal SEO range.
+
+The ideal keyword density for most content types is between 1% and 2.5%. Staying within this range ensures your content is relevant enough for search engines to understand your topic without triggering keyword stuffing penalties. Keyword stuffing happens when writers force their target keyword into content unnaturally and excessively.
+
+Google's algorithm in 2026 is sophisticated enough to detect keyword stuffing and will penalize pages that abuse keyword frequency. Instead of chasing keyword density numbers, focus on writing natural, helpful content that genuinely answers your reader's questions.
+
+To check keyword density accurately, use a keyword analyzer online tool like this one. Paste your content, enter your target keyword, and instantly see whether your density is ideal, too low, or overused. This content SEO optimization tool also shows you the top 10 keywords in your article automatically.
+
+Remember that keyword density is just one part of on-page SEO. Quality content, good readability, and comprehensive topic coverage matter far more to Google in 2026 than hitting a precise keyword percentage.`;
+  document.getElementById('kwInput').value='keyword density';
+  updateCorner();
+  analyzeContent();
+}
+
+/* ── RESET ── */
+function resetTool(){
+  document.getElementById('mainText').value='';
+  document.getElementById('kwInput').value='';
+  document.getElementById('taCorner').textContent='0 words';
+  document.getElementById('statsGrid').style.display='none';
+  document.getElementById('seoScoreWrap').style.display='none';
+  document.getElementById('densityVis').style.display='none';
+  document.getElementById('kwResultBox').className='kw-result-box';
+  document.getElementById('kwList').innerHTML='<div class="kw-empty">Paste your content and click Analyze to see keyword density breakdown…</div>';
+  // Reset insights
+  ['insightQuality','insightBalance','insightRead'].forEach(id=>{const el=document.getElementById(id);el.textContent='—';el.style.color='var(--ink)'});
+  document.getElementById('insightQDesc').textContent='Paste content and click Analyze to see your content quality level based on word count and structure.';
+  document.getElementById('insightBDesc').textContent='Keyword balance checks if your content uses keywords naturally — not too much, not too little.';
+  document.getElementById('insightRDesc').textContent='Readability is estimated based on average words per sentence and content length.';
+  analyzed=false;
+}
+
+/* ── FAQ TOGGLE ── */
+function tFq(btn){
+  const fq=btn.parentElement;
+  const wasOpen=fq.classList.contains('open');
+  document.querySelectorAll('.fq').forEach(f=>f.classList.remove('open'));
+  if(!wasOpen)fq.classList.add('open');
+}
+
+/* ── DRAWER ── */
+function cD(){document.getElementById('drw').classList.remove('on');document.getElementById('dov').classList.remove('on');}
+document.getElementById('brg').onclick=()=>{document.getElementById('drw').classList.add('on');document.getElementById('dov').classList.add('on');}
+document.getElementById('dx').onclick=cD;
+document.getElementById('dov').onclick=cD;
+
+/* ── BACK TO TOP ── */
+window.addEventListener('scroll',()=>{
+  document.getElementById('btt').classList.toggle('on',window.scrollY>500);
+});
+
+/* ── SCROLL REVEAL ── */
+const ro=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');ro.unobserve(e.target);}});},{threshold:.08});
+document.querySelectorAll('.rev').forEach(el=>ro.observe(el));
+</script>
+</body>
+</html>
