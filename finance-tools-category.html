@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Finance Tools – India & Global Calculators | RajDailyTools</title>
+<meta name="description" content="All finance tools in one place. EMI calculator, salary calculator, tax calculator, crypto converter, SIP calculator and more for India, USA, UK, and global users. 100% free, no login.">
+<meta name="keywords" content="finance tools India, salary calculator USA, EMI calculator, SIP calculator, crypto converter, UK salary calculator, GST calculator, global finance tools free">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://rajdailytools.in/finance-tools">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#2563eb;--blue-d:#1d4ed8;--blue-xl:#eff6ff;--blue-s:#dbeafe;
+  --amber:#f59e0b;--green:#10b981;--red:#ef4444;--purple:#8b5cf6;
+  --orange:#f97316;--teal:#14b8a6;
+  --green-xl:#f0fdf4;--green-s:#bbf7d0;
+  --red-xl:#fef2f2;--red-s:#fecaca;
+  --amber-xl:#fffbeb;--amber-s:#fde68a;
+  --purple-xl:#faf5ff;--purple-s:#ddd6fe;
+  --ink:#0f172a;--ink2:#334155;--ink3:#64748b;--ink4:#94a3b8;
+  --line:#e2e8f0;--surf:#f8fafc;--white:#fff;
+  --s1:0 1px 3px rgba(15,23,42,.06),0 1px 2px rgba(15,23,42,.04);
+  --s2:0 4px 16px rgba(15,23,42,.08),0 2px 6px rgba(15,23,42,.04);
+  --s3:0 12px 40px rgba(15,23,42,.11),0 3px 10px rgba(15,23,42,.06);
+  --s4:0 24px 64px rgba(15,23,42,.13),0 6px 20px rgba(15,23,42,.07);
+  --sb:0 8px 32px rgba(37,99,235,.20);
+  --fd:'Sora',sans-serif;--fb:'DM Sans',sans-serif;
+  --ease:cubic-bezier(.4,0,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);color:var(--ink);background:var(--white);overflow-x:hidden;-webkit-font-smoothing:antialiased;line-height:1.6}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+button{cursor:pointer;border:none;background:none;font-family:var(--fb)}
+.w{max-width:1180px;margin:0 auto;padding:0 24px}
+.wa{max-width:880px;margin:0 auto;padding:0 24px}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+.rev{opacity:0;transform:translateY(22px);transition:opacity .55s var(--ease),transform .55s var(--ease)}
+.rev.in{opacity:1;transform:none}
+
+/* ── HEADER ── */
+.hdr{position:sticky;top:0;z-index:999;background:rgba(255,255,255,.96);backdrop-filter:blur(20px);border-bottom:1px solid var(--line);box-shadow:var(--s1)}
+.hdi{display:flex;align-items:center;justify-content:space-between;height:66px}
+.logo{display:flex;align-items:center;gap:10px}
+.lb{width:36px;height:36px;background:var(--blue);border-radius:9px;display:flex;align-items:center;justify-content:center;box-shadow:var(--sb);flex-shrink:0}
+.lb svg{width:18px;height:18px;fill:#fff}
+.ln{font-family:var(--fd);font-size:19px;font-weight:800;color:var(--ink);line-height:1}
+.ln span{color:var(--blue)}
+.ls{font-size:10px;color:var(--ink4);letter-spacing:.04em}
+nav.dn{display:flex;align-items:center;gap:2px}
+nav.dn a{font-size:13.5px;font-weight:500;color:var(--ink2);padding:7px 13px;border-radius:8px;transition:.2s}
+nav.dn a:hover{color:var(--blue);background:var(--blue-xl)}
+.hcta{background:var(--blue);color:#fff;font-family:var(--fd);font-weight:600;font-size:13px;padding:8px 18px;border-radius:8px;box-shadow:var(--sb);transition:.2s}
+.hcta:hover{background:var(--blue-d);transform:translateY(-1px)}
+.brg{display:none;flex-direction:column;gap:4.5px;padding:8px;border-radius:8px}
+.brg span{display:block;width:20px;height:2px;background:var(--ink);border-radius:2px;transition:.28s}
+.dov{display:none;position:fixed;inset:0;background:rgba(15,23,42,.45);z-index:1040;backdrop-filter:blur(3px)}
+.dov.on{display:block}
+.drw{position:fixed;top:0;right:-100%;width:270px;height:100vh;background:#fff;z-index:1050;padding:22px;box-shadow:var(--s4);transition:right .32s var(--ease);overflow-y:auto}
+.drw.on{right:0}
+.dh{display:flex;align-items:center;justify-content:space-between;margin-bottom:26px}
+.dx{width:33px;height:33px;border-radius:7px;background:var(--surf);display:flex;align-items:center;justify-content:center;color:var(--ink3);font-size:17px}
+nav.mn{display:flex;flex-direction:column;gap:3px}
+nav.mn a{display:block;font-size:14px;font-weight:500;color:var(--ink2);padding:11px 13px;border-radius:8px;transition:.2s}
+nav.mn a:hover{color:var(--blue);background:var(--blue-xl)}
+
+/* ── HERO ── */
+.hero{position:relative;overflow:hidden;background:linear-gradient(150deg,#ebf4ff 0%,#fff 46%,#fff7ed 100%);padding:64px 0 72px}
+.hero::before{content:'';position:absolute;top:-140px;right:-180px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(37,99,235,.08) 0%,transparent 68%);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-80px;left:-100px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(249,115,22,.05) 0%,transparent 68%);pointer-events:none}
+.blob{position:absolute;border-radius:50%;pointer-events:none;animation:float 6s ease-in-out infinite}
+.b1{width:13px;height:13px;background:rgba(37,99,235,.18);top:22%;right:14%;animation-delay:0s}
+.b2{width:9px;height:9px;background:rgba(249,115,22,.22);top:58%;right:26%;animation-delay:2.2s}
+.b3{width:11px;height:11px;background:rgba(16,185,129,.18);top:36%;right:6%;animation-delay:4s}
+.bc{display:flex;align-items:center;gap:7px;font-size:12.5px;color:var(--ink3);margin-bottom:22px;position:relative;z-index:1;flex-wrap:wrap}
+.bc a{color:var(--blue);font-weight:600}
+.pill{display:inline-flex;align-items:center;gap:7px;font-family:var(--fd);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);background:var(--blue-xl);padding:5px 14px;border-radius:100px;margin-bottom:18px}
+.pill::before{content:'';width:6px;height:6px;background:var(--blue);border-radius:50%}
+.hero-inner{position:relative;z-index:1;max-width:720px;animation:fadeUp .5s ease both}
+.hero h1{font-family:var(--fd);font-size:clamp(26px,4.5vw,50px);font-weight:800;line-height:1.1;color:var(--ink);margin-bottom:14px}
+.hero h1 span{color:var(--blue)}
+.hero-sub{font-size:16px;color:var(--ink3);line-height:1.8;margin-bottom:22px;max-width:600px}
+.hero-chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.chip{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;padding:6px 14px;border-radius:100px;background:#fff;border:1.5px solid var(--line);color:var(--ink2);box-shadow:var(--s1);transition:.22s}
+.chip:hover{border-color:var(--blue);color:var(--blue);transform:translateY(-1px)}
+.hero-meta{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:24px}
+.upd{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:700;color:var(--blue);background:var(--blue-xl);padding:6px 14px;border-radius:100px;border:1.5px solid var(--blue-s)}
+.mi{font-size:13px;color:var(--ink3);font-weight:500}
+
+/* ── HOW TO USE ── */
+.howto{background:var(--amber-xl);border:2px solid var(--amber-s);border-radius:16px;padding:22px 26px;max-width:560px;margin-bottom:24px}
+.howto-ttl{display:flex;align-items:center;gap:9px;font-family:var(--fd);font-size:15px;font-weight:800;color:var(--ink);margin-bottom:13px}
+.howto-steps{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.hs{display:flex;align-items:flex-start;gap:10px;font-size:13.5px;color:var(--ink2);line-height:1.6}
+.sn{width:24px;height:24px;background:var(--amber);color:#fff;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex-shrink:0;margin-top:1px}
+
+/* ── SECTION SHARED ── */
+.sec-lbl{display:flex;align-items:center;gap:8px;font-family:var(--fd);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin-bottom:10px}
+.sec-lbl::before{content:'';width:6px;height:6px;background:var(--blue);border-radius:50%}
+.sec-h{font-family:var(--fd);font-size:clamp(22px,3.5vw,34px);font-weight:800;color:var(--ink);line-height:1.15;margin-bottom:10px}
+.sec-sub{font-size:15.5px;color:var(--ink3);line-height:1.78;margin-bottom:36px;max-width:600px}
+
+/* ── VISION BANNER ── */
+.vision-banner{background:linear-gradient(135deg,#0f172a,#1e3a8a);border-radius:20px;padding:28px 32px;display:flex;align-items:center;gap:24px;margin-bottom:52px;flex-wrap:wrap}
+.vb-ico{font-size:44px;flex-shrink:0}
+.vb-body h3{font-family:var(--fd);font-size:20px;font-weight:800;color:#fff;margin-bottom:6px}
+.vb-body p{font-size:14px;color:rgba(255,255,255,.7);line-height:1.7}
+.vb-chips{display:flex;gap:10px;margin-left:auto;flex-wrap:wrap;align-items:center}
+.vb-chip{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:700;padding:6px 14px;border-radius:100px;background:rgba(255,255,255,.1);color:#93c5fd;border:1px solid rgba(255,255,255,.15)}
+
+/* ── TOOL CARD GRID ── */
+.tools-sec{padding:72px 0}
+.tools-sec.alt{background:var(--surf)}
+.tools-sec.white{background:#fff}
+.section-block{margin-bottom:60px}
+.section-block:last-child{margin-bottom:0}
+.cat-header{display:flex;align-items:center;gap:14px;margin-bottom:22px;padding-bottom:16px;border-bottom:2px solid var(--line)}
+.cat-ico-big{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0}
+.cat-ico-big.orange{background:var(--amber-xl);border:1.5px solid var(--amber-s)}
+.cat-ico-big.blue{background:var(--blue-xl);border:1.5px solid var(--blue-s)}
+.cat-ico-big.green{background:var(--green-xl);border:1.5px solid var(--green-s)}
+.cat-ico-big.purple{background:var(--purple-xl);border:1.5px solid var(--purple-s)}
+.cat-ico-big.teal{background:linear-gradient(135deg,#f0fdfa,#ccfbf1);border:1.5px solid #99f6e4}
+.cat-ico-big.red{background:var(--red-xl);border:1.5px solid var(--red-s)}
+.cat-hd{font-family:var(--fd);font-size:20px;font-weight:800;color:var(--ink)}
+.cat-sub{font-size:13px;color:var(--ink3);margin-top:2px}
+.cat-badge{margin-left:auto;display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;padding:4px 12px;border-radius:100px;white-space:nowrap}
+.cat-badge.live{background:var(--green-xl);color:var(--green);border:1px solid var(--green-s)}
+.cat-badge.soon{background:var(--amber-xl);color:var(--amber);border:1px solid var(--amber-s)}
+
+.tool-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.tool-card{background:#fff;border:1.5px solid var(--line);border-radius:16px;padding:20px 18px;transition:.28s;display:flex;flex-direction:column;gap:10px;position:relative;overflow:hidden}
+.tool-card:hover{transform:translateY(-4px);box-shadow:var(--s3);border-color:var(--blue-s)}
+.tool-card::before{content:'';position:absolute;inset:0;opacity:.03;background-image:repeating-linear-gradient(45deg,var(--blue) 0,var(--blue) 1px,transparent 0,transparent 50%);background-size:12px 12px;pointer-events:none}
+.tc-ico{font-size:28px;margin-bottom:2px}
+.tc-name{font-family:var(--fd);font-size:13.5px;font-weight:800;color:var(--ink);line-height:1.3}
+.tc-desc{font-size:12px;color:var(--ink3);line-height:1.6;flex:1}
+.tc-tag{display:inline-flex;align-items:center;font-size:10px;font-weight:700;padding:2px 8px;border-radius:100px;width:fit-content}
+.tc-tag.live{background:var(--green-xl);color:var(--green);border:1px solid var(--green-s)}
+.tc-tag.soon{background:var(--amber-xl);color:var(--amber);border:1px solid var(--amber-s)}
+.tc-btn{display:inline-flex;align-items:center;gap:5px;font-family:var(--fd);font-size:11.5px;font-weight:700;padding:7px 14px;border-radius:8px;transition:.22s;margin-top:auto;align-self:flex-start;white-space:nowrap}
+.tc-btn.blue{background:var(--blue);color:#fff}.tc-btn.blue:hover{background:var(--blue-d)}
+.tc-btn.green{background:var(--green);color:#fff}.tc-btn.green:hover{background:#059669}
+.tc-btn.amber{background:var(--amber);color:#fff}.tc-btn.amber:hover{background:#d97706}
+.tc-btn.purple{background:var(--purple);color:#fff}.tc-btn.purple:hover{background:#7c3aed}
+.tc-btn.teal{background:var(--teal);color:#fff}.tc-btn.teal:hover{background:#0f9488}
+.tc-btn.grey{background:var(--surf);color:var(--ink4);border:1.5px solid var(--line);cursor:default}
+
+/* ── COUNTRY CARDS (BIG) ── */
+.country-sec{background:#fff;padding:72px 0}
+.country-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-bottom:28px}
+.country-card{border-radius:20px;padding:28px 26px;border:2px solid;transition:.28s;position:relative;overflow:hidden}
+.country-card:hover{transform:translateY(-4px);box-shadow:var(--s3)}
+.country-card.usa{background:linear-gradient(135deg,#eff6ff,#dbeafe);border-color:var(--blue-s)}
+.country-card.uk{background:linear-gradient(135deg,#fef2f2,#fecaca);border-color:var(--red-s)}
+.country-card.aus{background:linear-gradient(135deg,#f0fdf4,#bbf7d0);border-color:var(--green-s)}
+.country-card.global{background:linear-gradient(135deg,var(--purple-xl),#ede9fe);border-color:var(--purple-s)}
+.country-card.coming{background:var(--surf);border:2px dashed var(--line)}
+.cc-top{display:flex;align-items:center;gap:14px;margin-bottom:18px}
+.cc-flag{font-size:36px;line-height:1}
+.cc-info h3{font-family:var(--fd);font-size:18px;font-weight:800;color:var(--ink);margin-bottom:3px}
+.cc-info p{font-size:12.5px;color:var(--ink3)}
+.cc-badge{margin-left:auto;font-family:var(--fd);font-size:11px;font-weight:700;padding:4px 12px;border-radius:100px}
+.cc-badge.live{background:var(--green-xl);color:var(--green);border:1px solid var(--green-s)}
+.cc-badge.soon{background:var(--amber-xl);color:var(--amber);border:1px solid var(--amber-s)}
+.cc-tools{display:flex;flex-direction:column;gap:9px}
+.cc-tool{display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:11px;background:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.8);transition:.2s;text-decoration:none}
+.cc-tool:hover{background:#fff;box-shadow:var(--s2);transform:translateX(4px)}
+.cc-tool-ico{font-size:18px;flex-shrink:0}
+.cc-tool-name{font-family:var(--fd);font-size:13px;font-weight:700;color:var(--ink);flex:1}
+.cc-tool-arrow{font-size:12px;color:var(--ink4);transition:.2s}
+.cc-tool:hover .cc-tool-arrow{color:var(--blue);transform:translateX(2px)}
+.cc-tool-soon{display:flex;align-items:center;gap:8px;padding:9px 14px;border-radius:11px;background:rgba(255,255,255,.4);border:1px dashed var(--line);font-size:12.5px;font-weight:600;color:var(--ink4)}
+
+/* coming soon grid */
+.coming-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:28px}
+.coming-card{background:var(--surf);border:1.5px dashed var(--line);border-radius:14px;padding:18px 14px;text-align:center;transition:.2s}
+.coming-card:hover{border-color:var(--blue-s);background:var(--blue-xl)}
+.coming-flag{font-size:28px;margin-bottom:8px}
+.coming-name{font-family:var(--fd);font-size:12px;font-weight:700;color:var(--ink);margin-bottom:4px}
+.coming-tag{font-size:10.5px;font-weight:600;color:var(--amber);background:var(--amber-xl);padding:2px 8px;border-radius:100px;border:1px solid var(--amber-s);display:inline-block}
+
+/* ── TABLE ── */
+.tbl-sec{background:var(--surf);padding:72px 0}
+.tbl-wr{overflow-x:auto;border-radius:14px;border:1.5px solid var(--line);box-shadow:var(--s2)}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+thead th{background:linear-gradient(135deg,var(--blue) 0%,#1e40af 100%);color:#fff;padding:14px 16px;text-align:left;font-family:var(--fd);font-size:13px;font-weight:700;letter-spacing:.03em}
+thead th:first-child{border-radius:14px 0 0 0}
+thead th:last-child{border-radius:0 14px 0 0}
+tbody tr{border-bottom:1px solid var(--line);transition:.2s}
+tbody tr:hover{background:var(--blue-xl)}
+tbody td{padding:13px 16px;color:var(--ink2);vertical-align:middle}
+.tbadge{display:inline-flex;font-size:11px;font-weight:700;padding:3px 8px;border-radius:100px}
+.tbadge.g{background:var(--green-xl);color:var(--green);border:1px solid var(--green-s)}
+.tbadge.b{background:var(--blue-xl);color:var(--blue);border:1px solid var(--blue-s)}
+.tbadge.a{background:var(--amber-xl);color:var(--amber);border:1px solid var(--amber-s)}
+.tbadge.r{background:var(--red-xl);color:var(--red);border:1px solid var(--red-s)}
+.tbadge.p{background:var(--purple-xl);color:var(--purple);border:1px solid var(--purple-s)}
+
+/* ── STORY ── */
+.story-sec{background:#fff;padding:72px 0}
+.story-card{background:var(--surf);border:1.5px solid var(--line);border-radius:24px;padding:40px;box-shadow:var(--s3);position:relative;overflow:hidden}
+.story-card::before{content:'';position:absolute;top:0;left:0;bottom:0;width:5px;background:linear-gradient(180deg,var(--blue) 0%,var(--orange) 100%);border-radius:5px 0 0 5px}
+.sq{font-size:54px;color:var(--blue-s);font-family:Georgia,serif;line-height:1;padding-left:8px}
+.sb{font-size:15.5px;color:var(--ink2);line-height:1.9;padding:0 8px}
+.sauth{display:flex;align-items:center;gap:14px;margin-top:22px;padding-top:20px;border-top:1px solid var(--line)}
+.savt{width:48px;height:48px;background:var(--blue);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+.sname{font-family:var(--fd);font-size:15px;font-weight:700;color:var(--ink)}
+.srole{font-size:12.5px;color:var(--ink3)}
+.founder-msg{background:linear-gradient(135deg,var(--blue-xl),var(--blue-s));border:1.5px solid var(--blue-s);border-radius:14px;padding:20px 22px;margin-top:20px;display:flex;gap:13px}
+.fm-ico{font-size:26px;flex-shrink:0}
+.fm-txt{font-size:14px;color:var(--ink2);line-height:1.75;font-style:italic}
+.fm-txt strong{color:var(--ink);font-weight:700;font-style:normal}
+
+/* ── FAQ ── */
+.faq-sec{background:var(--surf);padding:72px 0}
+.fql{max-width:780px;margin:0 auto}
+.fq{background:#fff;border:1.5px solid var(--line);border-radius:13px;margin-bottom:10px;overflow:hidden}
+.fq-q{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;cursor:pointer;gap:14px;transition:.2s}
+.fq-q:hover{background:var(--blue-xl)}
+.fq-t{font-weight:600;font-size:15px;color:var(--ink);line-height:1.4}
+.fq-i{width:28px;height:28px;border-radius:50%;background:var(--blue-xl);color:var(--blue);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;transition:transform .28s,background .2s}
+.fq.open .fq-i{transform:rotate(45deg);background:var(--blue);color:#fff}
+.fq-a{max-height:0;overflow:hidden;transition:max-height .35s var(--ease)}
+.fq-ai{padding:0 22px 18px;font-size:14.5px;color:var(--ink3);line-height:1.78}
+.fq.open .fq-a{max-height:400px}
+
+/* ── RELATED / QUICK ACCESS ── */
+.related-sec{background:#fff;padding:72px 0}
+.rel-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.rel-card{background:var(--surf);border:1.5px solid var(--line);border-radius:16px;padding:18px 16px;transition:.25s;display:flex;align-items:center;gap:12px}
+.rel-card:hover{transform:translateY(-3px);box-shadow:var(--s3);border-color:var(--blue-s);background:#fff}
+.rc-ico{font-size:24px;flex-shrink:0}
+.rc-body{flex:1;min-width:0}
+.rc-name{font-family:var(--fd);font-size:12.5px;font-weight:800;color:var(--ink);margin-bottom:2px;line-height:1.3}
+.rc-desc{font-size:11px;color:var(--ink3)}
+.rc-btn{font-family:var(--fd);font-size:10.5px;font-weight:700;padding:4px 10px;border-radius:6px;transition:.2s;flex-shrink:0;white-space:nowrap;display:inline-flex;align-items:center}
+.rc-btn.b{background:var(--blue);color:#fff}.rc-btn.b:hover{background:var(--blue-d)}
+.rc-btn.g{background:var(--green);color:#fff}.rc-btn.g:hover{background:#059669}
+.rc-btn.a{background:var(--amber);color:#fff}.rc-btn.a:hover{background:#d97706}
+.rc-btn.p{background:var(--purple);color:#fff}.rc-btn.p:hover{background:#7c3aed}
+.rc-btn.t{background:var(--teal);color:#fff}.rc-btn.t:hover{background:#0f9488}
+
+/* ── MISC ── */
+.disc{background:var(--amber-xl);border-top:1px solid var(--amber-s);border-bottom:1px solid var(--amber-s);padding:15px 0}
+.contact-sec{background:var(--surf);padding:60px 0}
+.contact-card{max-width:580px;margin:0 auto;background:#fff;border:1.5px solid var(--line);border-radius:20px;padding:32px;text-align:center;box-shadow:var(--s2)}
+.contact-card h3{font-family:var(--fd);font-size:19px;font-weight:800;color:var(--ink);margin-bottom:10px}
+.contact-card p{font-size:15px;color:var(--ink3);line-height:1.75;margin-bottom:20px}
+.btn-bl{display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:#fff;font-family:var(--fd);font-weight:700;font-size:14.5px;padding:12px 26px;border-radius:8px;box-shadow:var(--sb);transition:.22s}
+.btn-bl:hover{background:var(--blue-d);transform:translateY(-1px)}
+.priv-note{font-size:12px;color:var(--ink4);margin-top:14px}
+.cta{background:linear-gradient(140deg,#0f172a 0%,#1e3a8a 100%);padding:80px 0;text-align:center;position:relative;overflow:hidden}
+.cta::before{content:'';position:absolute;top:-80px;left:50%;transform:translateX(-50%);width:800px;height:380px;background:radial-gradient(ellipse,rgba(37,99,235,.22) 0%,transparent 68%);pointer-events:none}
+.cta-in{position:relative;z-index:1}
+.cta .pill{color:#93c5fd;background:rgba(255,255,255,.1);margin-bottom:18px}
+.cta .pill::before{background:#93c5fd}
+.cta h2{font-family:var(--fd);font-size:clamp(24px,4vw,42px);font-weight:800;color:#fff;line-height:1.15;margin-bottom:12px}
+.cta h2 em{color:#fbbf24;font-style:normal}
+.cta p{font-size:16px;color:rgba(255,255,255,.72);max-width:480px;margin:0 auto 32px;line-height:1.78}
+.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn-gold{display:inline-flex;align-items:center;gap:8px;background:var(--amber);color:#fff;font-family:var(--fd);font-weight:800;font-size:15px;padding:14px 30px;border-radius:8px;box-shadow:0 8px 28px rgba(245,158,11,.35);transition:.22s}
+.btn-gold:hover{background:#d97706;transform:translateY(-3px)}
+.btn-ghost{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.09);border:1.5px solid rgba(255,255,255,.22);color:#fff;font-family:var(--fd);font-weight:600;font-size:14px;padding:13px 26px;border-radius:8px;transition:.2s}
+.btn-ghost:hover{background:rgba(255,255,255,.16)}
+footer{background:#0f172a;padding:52px 0 0}
+.ft-inner{max-width:1180px;margin:0 auto;padding:0 24px}
+.ft-top{display:grid;grid-template-columns:1.9fr 1fr 1fr 1fr;gap:44px;margin-bottom:44px}
+.ft-brand .ln{color:#fff}.ft-brand .ls{color:#475569}
+.ft-desc{font-size:13.5px;color:#64748b;line-height:1.78;max-width:265px;margin:13px 0 20px}
+.ft-soc{display:flex;gap:9px}
+.fts{width:34px;height:34px;border-radius:7px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;color:#94a3b8;font-size:13px;transition:.2s}
+.fts:hover{background:var(--blue);color:#fff}
+.fc h4{font-family:var(--fd);font-size:12px;font-weight:700;color:#fff;margin-bottom:14px;letter-spacing:.06em;text-transform:uppercase}
+.fc ul{display:flex;flex-direction:column;gap:8px}
+.fc ul a{font-size:13.5px;color:#64748b;transition:.18s}
+.fc ul a:hover{color:#93c5fd}
+.ft-btm{border-top:1px solid rgba(255,255,255,.07);padding:20px 0;text-align:center}
+.ft-cp{font-size:12.5px;color:#475569}
+.ft-cp b{color:#64748b}
+.ft-tag{font-size:12px;color:#334155;margin-top:4px;font-style:italic}
+.btt{position:fixed;bottom:26px;right:26px;z-index:500;width:43px;height:43px;background:var(--blue);color:#fff;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:17px;box-shadow:var(--sb);opacity:0;pointer-events:none;transform:translateY(14px);transition:.28s var(--ease)}
+.btt.on{opacity:1;pointer-events:auto;transform:translateY(0)}
+.btt:hover{transform:translateY(-3px)}
+.notice-banner{background:linear-gradient(135deg,#0f172a,#1e3a8a);border-radius:14px;padding:18px 22px;display:flex;align-items:center;gap:14px;margin-top:14px}
+.notice-icon{font-size:26px;flex-shrink:0}
+.notice-text{font-family:var(--fd);font-size:14px;font-weight:700;color:#fbbf24;line-height:1.6}
+.notice-text span{color:#e2e8f0;font-weight:400;font-family:var(--fb)}
+
+@media(max-width:1060px){
+  .ft-top{grid-template-columns:1fr 1fr}
+  .tool-grid{grid-template-columns:repeat(2,1fr)}
+  .coming-grid{grid-template-columns:repeat(3,1fr)}
+  .rel-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:860px){
+  nav.dn,.hcta{display:none}.brg{display:flex}
+  .tool-grid{grid-template-columns:repeat(2,1fr)}
+  .country-grid{grid-template-columns:1fr}
+  .howto-steps{grid-template-columns:1fr}
+  .vision-banner{flex-direction:column;text-align:center}
+  .vb-chips{margin-left:0;justify-content:center}
+  .coming-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:600px){
+  .ft-top{grid-template-columns:1fr}
+  .tool-grid{grid-template-columns:1fr}
+  .cta-btns{flex-direction:column;align-items:center}
+  .story-card{padding:26px 20px}
+  .rel-grid{grid-template-columns:1fr}
+  .coming-grid{grid-template-columns:repeat(2,1fr)}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="hdr">
+  <div class="w">
+    <div class="hdi">
+      <a href="/" class="logo">
+        <div class="lb"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+        <div><div class="ln">Raj<span>Daily</span>Tools</div><div class="ls">Smart Tools for Daily Life</div></div>
+      </a>
+      <nav class="dn">
+        <a href="/">Home</a><a href="/categories">Categories</a>
+        <a href="/#popular">Popular</a><a href="/about">About</a><a href="/contact">Contact</a>
+      </nav>
+      <a href="/categories" class="hcta">All Tools →</a>
+      <button class="brg" id="brg"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="dov" id="dov"></div>
+<div class="drw" id="drw">
+  <div class="dh">
+    <div class="logo">
+      <div class="lb" style="width:30px;height:30px;border-radius:7px"><svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#fff"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+      <div class="ln" style="font-size:16px">Raj<span>Daily</span>Tools</div>
+    </div>
+    <button class="dx" id="dx">✕</button>
+  </div>
+  <nav class="mn">
+    <a href="/" onclick="cD()">🏠 Home</a>
+    <a href="/categories" onclick="cD()">🗂️ Categories</a>
+    <a href="/#popular" onclick="cD()">⭐ Popular</a>
+    <a href="/about" onclick="cD()">👤 About</a>
+    <a href="/contact" onclick="cD()">📬 Contact</a>
+  </nav>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+  <div class="w">
+    <div class="bc">
+      <a href="/">Home</a><span style="color:var(--ink4)">›</span>
+      <a href="/categories">Categories</a><span style="color:var(--ink4)">›</span>
+      <span>Finance Tools</span>
+    </div>
+    <div class="hero-inner">
+      <div class="pill">💹 Finance Tools Hub &nbsp;·&nbsp; India &amp; Global</div>
+      <h1><span>Smart Finance Tools</span> for India &amp; Global Users 🌍</h1>
+      <p class="hero-sub">Calculate EMI, salary, taxes, investments, crypto, and more — for every country. 20+ live tools, more coming every week. 100% Free · No Login · Global Access.</p>
+      <div class="hero-chips">
+        <span class="chip">🇮🇳 Indian Tools</span>
+        <span class="chip">🇺🇸 USA Tools</span>
+        <span class="chip">🇬🇧 UK Tools</span>
+        <span class="chip">🌍 Global Tools</span>
+        <span class="chip">🆓 100% Free</span>
+        <span class="chip">🔒 No Login</span>
+        <span class="chip">📱 Mobile Ready</span>
+      </div>
+      <div class="hero-meta">
+        <div class="upd">💹 Finance Tools – India &amp; Global · 2026</div>
+        <span class="mi">✅ 20+ Live Tools</span>
+        <span class="mi">🌍 1,000+ Tools Vision</span>
+      </div>
+      <!-- HOW TO USE -->
+      <div class="howto">
+        <div class="howto-ttl">💡 How to Use This Hub</div>
+        <div class="howto-steps">
+          <div class="hs"><span class="sn">1</span>Choose your country or category</div>
+          <div class="hs"><span class="sn">2</span>Select the finance tool you need</div>
+          <div class="hs"><span class="sn">3</span>Enter your details in the tool</div>
+          <div class="hs"><span class="sn">4</span>Get your instant result — free!</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 1: INDIAN FINANCE TOOLS -->
+<section class="tools-sec alt" id="india">
+  <div class="w">
+    <!-- VISION BANNER -->
+    <div class="vision-banner rev">
+      <div class="vb-ico">🚀</div>
+      <div class="vb-body">
+        <h3>1,000+ Tools Vision — India's Biggest Free Finance Hub</h3>
+        <p>We are building free, accurate finance tools for every Indian and global user. EMI, tax, salary, crypto, SIP — all in one place. No login. No fees. Always free.</p>
+      </div>
+      <div class="vb-chips">
+        <span class="vb-chip">✔ 100% Free</span>
+        <span class="vb-chip">✔ No Login Required</span>
+        <span class="vb-chip">✔ Instant Results</span>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-bottom:36px">
+      <div class="sec-lbl" style="justify-content:center">🇮🇳 Section 1</div>
+      <div class="sec-h">Indian Finance <span style="color:var(--blue)">Tools</span></div>
+      <p class="sec-sub" style="margin:10px auto 0">EMI, tax, SIP, GST, credit cards, compound interest — all calculators built for Indian users with INR support and India-specific rules.</p>
+    </div>
+
+    <div class="section-block">
+      <div class="cat-header">
+        <div class="cat-ico-big orange">🇮🇳</div>
+        <div>
+          <div class="cat-hd">Core Indian Finance Tools</div>
+          <div class="cat-sub">EMI · Tax · SIP · GST · Credit Card · Investment</div>
+        </div>
+        <span class="cat-badge live">● 8 Live</span>
+      </div>
+      <div class="tool-grid">
+        <div class="tool-card rev">
+          <span class="tc-tag live">● Live</span>
+          <div class="tc-ico">🏦</div>
+          <div class="tc-name">Advanced EMI Calculator</div>
+          <div class="tc-desc">Calculate loan EMI for home, car, personal loans with amortisation schedule and total interest paid.</div>
+          <a class="tc-btn blue" href="https://rajdailytools.in/advanced-emi-calculator-global.html" target="_blank" rel="noopener">Use Now →</a>
+        </div>
+        <div class="tool-card rev">
+          <span class="tc-tag live">● Live</span>
+          <div class="tc-ico">💼</div>
+          <div class="tc-name">Bonus Tax Calculator India</div>
+          <div class="tc-desc">Calculate exact tax on your annual or performance bonus under Indian income tax slabs — 2026 updated.</div>
+          <a class="tc-btn blue" href="https://rajdailytools.in/bonus-tax-calculator-india.html" target="_blank" rel="noopener">Use Now →</a>
+        </div>
+        <div class="tool-card rev">
+          <span class="tc-tag live">● Live</span>
+          <div class="tc-ico">📈</div>
+          <div class="tc-name">Compound Interest Calculator</div>
+          <div class="tc-desc">See how your money grows with the power of compounding. Monthly, quarterly, or annual compounding.</div>
+          <a class="tc-btn blue" href="https://rajdailytools.in/compound-interest-calculator.html" target="_blank" rel="noopener">Use Now →</a>
+        </div>
+        <div class="tool-card rev">
+          <span class="tc-tag live">● Live</span>
+          <div class="tc-ico">💳</div>
+          <div class="tc-name">Credit Card Interest Calculator</div>
+          <div class="tc-desc">Calculate how much interest your credit card balance is costing you monthly and annually.</div>
+          <a class="tc-btn blue" href="https://rajdailytools.in/credit-card-interest-calculator.html" target="_blank" rel="noopener">Use Now →</a>
+        </div>
+        <div class="tool-card rev">
+          <span class="tc-tag live">● Live</span>
+          <div class="tc-ico">📊</div>
+          <div class="tc-name">SIP Calculator (Advanced)</div>
+          <div class="tc-desc">Plan your Systematic Investment Plan — project wealth at maturity with step-up SIP and inflation adjustments.</div>
+          <a class="tc-btn blue" href="https://rajdailytools.in/sip-calculator-advanced.html" target="_blank" rel="noopener">Use Now →</a>
+        </div>
+        <div class="tool-card rev">
+          <span class="tc-tag live">● Live</span>
+          <div class="tc-ico">??</div>
+          <div class="tc-name">GST Calculator (Global)</div>
+          <div class="tc-desc">Calculate GST on any amount — add or remove GST at 5%, 12%, 18%, 28% slabs for India and global rates.</div>
+          <a class="tc-btn blue" href="https://rajdailytools.in/global-gst-tax-calculator-1.html" target="_blank" rel="noopener">Use Now →</a>
+        </div>
+        <div class="tool-card rev">
+          <span class="tc-tag live">● Live</span>
+          <div class="tc-ico">💹</div>
+          <div class="tc-name">Profit Margin Calculator</div>
+          <div class="tc-desc">Calculate profit amount, profit margin %, and markup % instantly. Used by 10,000+ business owners.</div>
+          <a class="tc-btn blue" href="https://rajdailytools.in/profit-margin-calculator.html" target="_blank" rel="noopener">Use Now →</a>
+        </div>
+        <div class="tool-card rev">
+          <span class="tc-tag live">● Live</span>
+          <div class="tc-ico">📉</div>
+          <div class="tc-name">Stock Profit Calculator</div>
+          <div class="tc-desc">Calculate profit or loss on stock trades including brokerage, STT, and other charges for Indian markets.</div>
+          <a class="tc-btn blue" href="https://rajdailytools.in/stock-profit-calculator.html" target="_blank" rel="noopener">Use Now →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 2: GLOBAL FINANCE TOOLS -->
+<section class="tools-sec white" id="global">
+  <div class="w">
+    <div style="text-align:center;margin-bottom:36px">
+      <div class="sec-lbl" style="justify-content:center">🌍 Section 2</div>
+      <div class="sec-h">Global Finance <span style="color:var(--blue)">Tools</span></div>
+      <p class="sec-sub" style="margin:10px auto 0">Crypto, currency, ETF, FIRE, net worth, budget, and financial freedom tools — designed for users worldwide with multi-currency support.</p>
+    </div>
+
+    <div class="section-block">
+      <div class="cat-header">
+        <div class="cat-ico-big blue">🌐</div>
+        <div>
+          <div class="cat-hd">Global & Multi-Currency Tools</div>
+          <div class="cat-sub">Crypto · Currency · ETF · FIRE · Net Worth · Budget · Freelance</div>
+        </div>
+        <span class="cat-badge live">● 8 Live</span>
+      </div>
+      <div class="tool-grid">
+        <div class="tool-card rev">
+          <span class="tc-tag live">● Live</span>
+          <div class="tc-ico">₿</div>
+          <div class="tc-name">Crypto Converter</div>
+          <div class="tc-desc">Convert BTC, ETH, USDT, BNB to USD, INR, EUR instantly with April 2026 reference rates.</div>
+          <a class="tc-btn amber" href="https://rajdailytools.in/crypto-converter.html" target="_blank" rel="noopener">Use Now →</a>
+        </div>
+        <div class="tool-card rev">
+          <span class="tc-tag live">● Live</span>
+          <div class="tc-ico">💱</div>
+          <div class="tc-name">Currency Converter (Live)</div>
+          <div class="tc-desc">Convert USD to INR and 50+ currencies with live reference rates — fast, clean, no ads.</div>
+          <a class="tc-btn amber" href="https://rajdailytools.in/currency-converter-live-usd-to-inr-1.html" target="_blank" rel="noopener">Use Now →</a>
+        </div>
+        <div class="tool-card rev">
+          <span class="tc-tag live">● Live</span>
+          <div class="tc-ico">📊</div>
+          <div class="tc-name">ETF Return Calculator</div>
+          <div class="tc-desc">Calculate projected returns on ETF investments with expense ratio, CAGR, and dividend reinvestment.</div>
+          <a class="tc-btn amber" href="https://rajdailytools.in/etf-return-calculator.html" target="_blank" rel="noopener">Use Now →</a>
+        </div>
+        <div class="tool-card rev">
+          <span class="tc-tag live">● Live</span>
+          <div class="tc-ico">🔥</div>
+          <div class="tc-name">FIRE Calculator</div>
+          <div class="tc-desc">Calculate your Financial Independence Retire Early number — how much do you need, and when can you retire?</div>
+          <a class="tc-btn amber" href="https://rajdailytools.in/fire-calculator.html" target="_blank" rel="noopener">Use Now →</a>
+        </div>
+        <div class="tool-card rev">
+          <span class="tc-tag live">● Live</span>
+          <div class="tc-ico">📋</div>
+          <div class="tc-name">Net Worth Tracker</div>
+          <div class="tc-desc">Track your total net worth — assets minus liabilities — and watch your wealth grow over time.</div>
+          <a class="tc-btn amber" href="https://rajdailytools.in/net-worth-tracker-rajdailytools.html" target="_blank" rel="noopener">Use Now →</a>
+        </div>
+        <div class="tool-card rev">
+          <span class="tc-tag live">● Live</span>
+          <div class="tc-ico">🔮</div>
+          <div class="tc-name">Future Net Worth Predictor</div>
+          <div class="tc-desc">Predict your net worth 5, 10, 20 years into the future based on current savings and investment rate.</div>
+          <a class="tc-btn amber" href="https://rajdailytools.in/future-net-worth-predictor.html" target="_blank" rel="noopener">Use Now →</a>
+        </div>
+        <div class="tool-card rev">
+          <span class="tc-tag live">● Live</span>
+          <div class="tc-ico">💸</div>
+          <div class="tc-name">Monthly Survival Budget Calculator</div>
+          <div class="tc-desc">Find the minimum monthly budget you need to cover essential expenses — rent, food, transport, bills.</div>
+          <a class="tc-btn amber" href="https://rajdailytools.in/monthly-survival-budget-calculator.html" target="_blank" rel="noopener">Use Now →</a>
+        </div>
+        <div class="tool-card rev">
+          <span class="tc-tag live">● Live</span>
+          <div class="tc-ico">⏰</div>
+          <div class="tc-name">Early Retirement Penalty Calculator</div>
+          <div class="tc-desc">Calculate the true cost of withdrawing from retirement funds early — penalties, taxes, and lost growth.</div>
+          <a class="tc-btn amber" href="https://rajdailytools.in/early-retirement-penalty-calculator.html" target="_blank" rel="noopener">Use Now →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 3: COUNTRY-WISE TOOLS -->
+<section class="country-sec" id="countries">
+  <div class="w">
+    <div style="text-align:center;margin-bottom:36px">
+      <div class="sec-lbl" style="justify-content:center">🗺️ Section 3</div>
+      <div class="sec-h">Country-Wise Finance <span style="color:var(--blue)">Tools</span></div>
+      <p class="sec-sub" style="margin:10px auto 0;max-width:620px">Premium finance calculators built specifically for each country — using local tax laws, salary structures, and currency. Select your country to find your tools.</p>
+    </div>
+
+    <div class="country-grid rev">
+
+      <!-- USA -->
+      <div class="country-card usa">
+        <div class="cc-top">
+          <div class="cc-flag">🇺🇸</div>
+          <div class="cc-info">
+            <h3>United States</h3>
+            <p>Federal taxes · Social Security · IRA · W-2 salary</p>
+          </div>
+          <span class="cc-badge live">● 3 Live</span>
+        </div>
+        <div class="cc-tools">
+          <a class="cc-tool" href="https://rajdailytools.in/usa-salary-calculator.html" target="_blank" rel="noopener">
+            <span class="cc-tool-ico">💵</span>
+            <span class="cc-tool-name">USA Salary Calculator 2026</span>
+            <span class="cc-tool-arrow">→</span>
+          </a>
+          <a class="cc-tool" href="https://rajdailytools.in/ira-calculator-usa.html" target="_blank" rel="noopener">
+            <span class="cc-tool-ico">🏦</span>
+            <span class="cc-tool-name">IRA Calculator USA</span>
+            <span class="cc-tool-arrow">→</span>
+          </a>
+          <a class="cc-tool" href="https://rajdailytools.in/salary-converter-usa.html" target="_blank" rel="noopener">
+            <span class="cc-tool-ico">💱</span>
+            <span class="cc-tool-name">Salary Converter USA</span>
+            <span class="cc-tool-arrow">→</span>
+          </a>
+          <div class="cc-tool-soon">🔜 USA Tax Withholding Calculator — Coming Soon</div>
+        </div>
+      </div>
+
+      <!-- UK -->
+      <div class="country-card uk">
+        <div class="cc-top">
+          <div class="cc-flag">🇬🇧</div>
+          <div class="cc-info">
+            <h3>United Kingdom</h3>
+            <p>PAYE · National Insurance · Tax Bands · Pension</p>
+          </div>
+          <span class="cc-badge live">● 1 Live</span>
+        </div>
+        <div class="cc-tools">
+          <a class="cc-tool" href="https://rajdailytools.in/uk-salary-calculator.html" target="_blank" rel="noopener">
+            <span class="cc-tool-ico">💷</span>
+            <span class="cc-tool-name">UK Salary Calculator 2026</span>
+            <span class="cc-tool-arrow">→</span>
+          </a>
+          <div class="cc-tool-soon">🔜 UK Income Tax Calculator — Coming Soon</div>
+          <div class="cc-tool-soon">🔜 UK Stamp Duty Calculator — Coming Soon</div>
+          <div class="cc-tool-soon">🔜 UK Self-Assessment Tax — Coming Soon</div>
+        </div>
+      </div>
+
+      <!-- AUSTRALIA -->
+      <div class="country-card aus">
+        <div class="cc-top">
+          <div class="cc-flag">🇦🇺</div>
+          <div class="cc-info">
+            <h3>Australia</h3>
+            <p>ATO tax · Superannuation · Medicare levy · HECS</p>
+          </div>
+          <span class="cc-badge soon">⏳ Coming Soon</span>
+        </div>
+        <div class="cc-tools">
+          <div class="cc-tool-soon">🔜 Australia Salary Calculator — Coming Soon</div>
+          <div class="cc-tool-soon">🔜 Superannuation Calculator — Coming Soon</div>
+          <div class="cc-tool-soon">🔜 HECS Repayment Calculator — Coming Soon</div>
+          <div class="cc-tool-soon">🔜 AUS Capital Gains Tax Calc — Coming Soon</div>
+        </div>
+      </div>
+
+      <!-- GLOBAL FREELANCE & BUDGET -->
+      <div class="country-card global">
+        <div class="cc-top">
+          <div class="cc-flag">🌍</div>
+          <div class="cc-info">
+            <h3>Global Tools</h3>
+            <p>Freelance · Budget · Multi-currency · Remote work</p>
+          </div>
+          <span class="cc-badge live">● 2 Live</span>
+        </div>
+        <div class="cc-tools">
+          <a class="cc-tool" href="https://rajdailytools.in/freelance-rate-calculator.html" target="_blank" rel="noopener">
+            <span class="cc-tool-ico">💻</span>
+            <span class="cc-tool-name">Freelance Rate Calculator</span>
+            <span class="cc-tool-arrow">→</span>
+          </a>
+          <a class="cc-tool" href="https://rajdailytools.in/monthly-survival-budget-calculator.html" target="_blank" rel="noopener">
+            <span class="cc-tool-ico">📋</span>
+            <span class="cc-tool-name">Monthly Survival Budget Calculator</span>
+            <span class="cc-tool-arrow">→</span>
+          </a>
+          <div class="cc-tool-soon">🔜 Remote Work Tax Calculator — Coming Soon</div>
+          <div class="cc-tool-soon">🔜 Digital Nomad Budget Tool — Coming Soon</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- COMING SOON COUNTRIES -->
+    <div style="margin-top:16px">
+      <div style="text-align:center;margin-bottom:20px">
+        <div class="sec-lbl" style="justify-content:center;color:var(--amber)">⏳ Future Countries</div>
+        <div style="font-family:var(--fd);font-size:20px;font-weight:800;color:var(--ink);margin-bottom:6px">More Countries <span style="color:var(--blue)">Coming Soon</span></div>
+        <p style="font-size:14px;color:var(--ink3)">Tools for these countries are actively being developed. Bookmark this page and check back soon.</p>
+      </div>
+      <div class="coming-grid">
+        <div class="coming-card">
+          <div class="coming-flag">🇨🇦</div>
+          <div class="coming-name">Canada</div>
+          <span class="coming-tag">Coming Soon</span>
+        </div>
+        <div class="coming-card">
+          <div class="coming-flag">🇩🇪</div>
+          <div class="coming-name">Germany</div>
+          <span class="coming-tag">Coming Soon</span>
+        </div>
+        <div class="coming-card">
+          <div class="coming-flag">🇫🇷</div>
+          <div class="coming-name">France</div>
+          <span class="coming-tag">Coming Soon</span>
+        </div>
+        <div class="coming-card">
+          <div class="coming-flag">🇦🇪</div>
+          <div class="coming-name">UAE</div>
+          <span class="coming-tag">Coming Soon</span>
+        </div>
+        <div class="coming-card">
+          <div class="coming-flag">🇸🇬</div>
+          <div class="coming-name">Singapore</div>
+          <span class="coming-tag">Coming Soon</span>
+        </div>
+        <div class="coming-card">
+          <div class="coming-flag">🇯🇵</div>
+          <div class="coming-name">Japan</div>
+          <span class="coming-tag">Coming Soon</span>
+        </div>
+        <div class="coming-card">
+          <div class="coming-flag">🇨🇳</div>
+          <div class="coming-name">China</div>
+          <span class="coming-tag">Coming Soon</span>
+        </div>
+        <div class="coming-card">
+          <div class="coming-flag">🇰🇷</div>
+          <div class="coming-name">South Korea</div>
+          <span class="coming-tag">Coming Soon</span>
+        </div>
+        <div class="coming-card">
+          <div class="coming-flag">🇸🇦</div>
+          <div class="coming-name">Saudi Arabia</div>
+          <span class="coming-tag">Coming Soon</span>
+        </div>
+        <div class="coming-card">
+          <div class="coming-flag">🇪🇺</div>
+          <div class="coming-name">Europe</div>
+          <span class="coming-tag">Coming Soon</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STORY SECTION -->
+<section class="story-sec">
+  <div class="w">
+    <div style="max-width:820px;margin:0 auto">
+      <div class="sec-lbl">💡 Why I Built This</div>
+      <div class="sec-h" style="margin-bottom:28px">The Story Behind <span style="color:var(--blue)">This Global Finance Hub</span></div>
+      <div class="story-card rev">
+        <div class="sq">"</div>
+        <div class="sb">
+          Many users from different countries were struggling to find accurate finance calculators for their specific region. A professional in the UK couldn't find a clean take-home salary calculator that accounted for NI and pension correctly. A freelancer in India had no single tool to plan their monthly budget and calculate their optimal rate. Someone in the US needed an IRA projection tool that wasn't buried under 10 ads. <strong>Every person was solving the same problem on five different websites.</strong> That's when I decided to build a global finance system — where every country gets its own set of accurate, clean, and completely free tools. One platform for the world. That vision drives everything you see on this page.
+        </div>
+        <div class="sauth">
+          <div class="savt">🛠️</div>
+          <div>
+            <div class="sname">Raj — Founder, RajDailyTools</div>
+            <div class="srole">Building free finance tools for India and global users</div>
+          </div>
+        </div>
+        <div class="founder-msg">
+          <div class="fm-ico">🌍</div>
+          <div class="fm-txt">"<strong>The vision is 1,000+ finance tools covering every country on earth.</strong> EMI in Mumbai. Salary in New York. Tax in London. Budget in Dubai. One hub, completely free, forever. This page is just the beginning."</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TABLE SECTION -->
+<section class="tbl-sec">
+  <div class="w">
+    <div style="text-align:center;margin-bottom:36px">
+      <div class="sec-lbl" style="justify-content:center">📊 Tools Overview</div>
+      <div class="sec-h">Finance Tools by <span style="color:var(--blue)">Region & Category</span></div>
+      <p class="sec-sub" style="margin:10px auto 0;max-width:560px">A quick overview of available and upcoming tools across all regions and categories in this finance hub.</p>
+    </div>
+    <div class="tbl-wr">
+      <table>
+        <thead>
+          <tr>
+            <th>🌍 Region / Category</th>
+            <th>🔧 Live Tools</th>
+            <th>📋 Tool Names</th>
+            <th>🔜 Coming Soon</th>
+            <th>🏷️ Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>🇮🇳 India</strong></td><td>8 Tools</td><td>EMI, Bonus Tax, Compound Interest, Credit Card, SIP, GST, Profit Margin, Stock Profit</td><td>PPF Calculator, NPS Calc</td><td><span class="tbadge g">Live</span></td></tr>
+          <tr><td><strong>🌐 Global</strong></td><td>8 Tools</td><td>Crypto, Currency, ETF, FIRE, Net Worth, Future NW, Budget, Early Retirement</td><td>Business Expense Tracker</td><td><span class="tbadge g">Live</span></td></tr>
+          <tr><td><strong>🇺🇸 USA</strong></td><td>3 Tools</td><td>Salary Calculator, IRA Calculator, Salary Converter</td><td>Tax Withholding, 401k</td><td><span class="tbadge g">Live</span></td></tr>
+          <tr><td><strong>🇬🇧 UK</strong></td><td>1 Tool</td><td>Salary Calculator (PAYE + NI)</td><td>Income Tax, Stamp Duty</td><td><span class="tbadge b">Growing</span></td></tr>
+          <tr><td><strong>🇦🇺 Australia</strong></td><td>0 Tools</td><td>—</td><td>Salary, Super, HECS</td><td><span class="tbadge a">In Dev</span></td></tr>
+          <tr><td><strong>🌍 Freelance / Budget</strong></td><td>2 Tools</td><td>Freelance Rate Calc, Survival Budget Calc</td><td>Digital Nomad, Remote Tax</td><td><span class="tbadge g">Live</span></td></tr>
+          <tr><td><strong>🌐 10 More Countries</strong></td><td>0 Tools</td><td>—</td><td>Canada, Germany, UAE, SG, JP...</td><td><span class="tbadge a">Coming</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- NOTICE -->
+<div class="disc">
+  <div class="w">
+    <div style="max-width:820px;margin:0 auto">
+      <div class="notice-banner">
+        <div class="notice-icon">⚠️</div>
+        <div class="notice-text">
+          Important Disclaimer &nbsp;—&nbsp;
+          <span>"This tool collection is for informational purposes only. Always verify financial data — salary figures, tax rates, investment projections — from official government or regulated financial sources before making any financial decision."</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FAQ -->
+<section class="faq-sec">
+  <div class="w">
+    <div style="text-align:center;margin-bottom:40px">
+      <div class="sec-lbl" style="justify-content:center">❓ FAQ</div>
+      <div class="sec-h">Frequently Asked <span style="color:var(--blue)">Questions</span></div>
+    </div>
+    <div class="fql">
+      <div class="fq">
+        <div class="fq-q" onclick="tF(this)"><span class="fq-t">Are these finance tools country-specific?</span><div class="fq-i">+</div></div>
+        <div class="fq-a"><div class="fq-ai">Yes — tools are organised by country and category. Indian tools use INR, Indian tax slabs, and India-specific rules. UK tools use GBP, PAYE, and National Insurance calculations. USA tools use USD, federal tax rates, and IRA/401k rules. Global tools work in multiple currencies. Each tool is built specifically for its target region to ensure accuracy.</div></div>
+      </div>
+      <div class="fq">
+        <div class="fq-q" onclick="tF(this)"><span class="fq-t">Are these financial tools accurate?</span><div class="fq-i">+</div></div>
+        <div class="fq-a"><div class="fq-ai">Yes — all tools use the latest rules, tax bands, and thresholds for their respective regions (2026 updated). Results are highly accurate for standard scenarios. However, individual circumstances like special tax codes, employer benefits, additional allowances, or unusual deductions may affect actual figures. Always use these tools as a reliable estimate and verify final numbers with official sources or a qualified financial advisor.</div></div>
+      </div>
+      <div class="fq">
+        <div class="fq-q" onclick="tF(this)"><span class="fq-t">Can I use these tools from any country?</span><div class="fq-i">+</div></div>
+        <div class="fq-a"><div class="fq-ai">Absolutely. The platform is globally accessible with no geographic restrictions. You can use the Indian SIP calculator from the UK, or the UK salary calculator from India. The tools work entirely in your browser — there is no server restriction on location. Global tools like the Crypto Converter and Currency Converter work equally well for any user anywhere in the world.</div></div>
+      </div>
+      <div class="fq">
+        <div class="fq-q" onclick="tF(this)"><span class="fq-t">Is my financial data saved or stored?</span><div class="fq-i">+</div></div>
+        <div class="fq-a"><div class="fq-ai">No — never. Every tool on this hub runs entirely in your browser using JavaScript. Your salary, tax, investment, or any other financial inputs are never sent to any server, stored in any database, or shared with any third party. When you close the tab, everything is gone. Your financial privacy is completely protected. This is intentional — free tools should never monetize your personal data.</div></div>
+      </div>
+      <div class="fq">
+        <div class="fq-q" onclick="tF(this)"><span class="fq-t">Are all finance tools on this hub free?</span><div class="fq-i">+</div></div>
+        <div class="fq-a"><div class="fq-ai">Yes — 100% free, forever. No subscription, no premium tier, no registration, no hidden fee. All 20+ currently live tools are completely free to use as many times as you need. The 1,000+ tools we are building will also remain free. RajDailyTools is committed to keeping every tool free for every user — this is a core, non-negotiable principle of our platform.</div></div>
+      </div>
+      <div class="fq">
+        <div class="fq-q" onclick="tF(this)"><span class="fq-t">How often are the tools updated?</span><div class="fq-i">+</div></div>
+        <div class="fq-a"><div class="fq-ai">Tools are updated whenever there are changes to tax rates, contribution limits, salary thresholds, or other official rules in their respective countries. For example, when the UK changes NI rates or when India announces new income tax slabs, the relevant tools are updated promptly. If you notice any outdated information, use the contact form below to report it — corrections are made quickly based on user reports.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RELATED / QUICK ACCESS -->
+<section class="related-sec">
+  <div class="w">
+    <div style="text-align:center;margin-bottom:36px">
+      <div class="sec-lbl" style="justify-content:center">🔗 Quick Access</div>
+      <div class="sec-h">All <span style="color:var(--blue)">Finance Tools</span> — Quick Links</div>
+      <p class="sec-sub" style="margin:10px auto 0;max-width:560px">Fast access to every live tool. Bookmark this section for instant navigation.</p>
+    </div>
+    <div class="rel-grid">
+      <div class="rel-card rev">
+        <div class="rc-ico">🏦</div>
+        <div class="rc-body"><div class="rc-name">Advanced EMI Calculator</div><div class="rc-desc">India · Loan EMI</div></div>
+        <a class="rc-btn b" href="https://rajdailytools.in/advanced-emi-calculator-global.html" target="_blank">Open →</a>
+      </div>
+      <div class="rel-card rev">
+        <div class="rc-ico">💼</div>
+        <div class="rc-body"><div class="rc-name">Bonus Tax Calculator India</div><div class="rc-desc">India · Tax</div></div>
+        <a class="rc-btn b" href="https://rajdailytools.in/bonus-tax-calculator-india.html" target="_blank">Open →</a>
+      </div>
+      <div class="rel-card rev">
+        <div class="rc-ico">📈</div>
+        <div class="rc-body"><div class="rc-name">Compound Interest Calculator</div><div class="rc-desc">India · Investment</div></div>
+        <a class="rc-btn b" href="https://rajdailytools.in/compound-interest-calculator.html" target="_blank">Open →</a>
+      </div>
+      <div class="rel-card rev">
+        <div class="rc-ico">💳</div>
+        <div class="rc-body"><div class="rc-name">Credit Card Interest Calc</div><div class="rc-desc">India · Finance</div></div>
+        <a class="rc-btn b" href="https://rajdailytools.in/credit-card-interest-calculator.html" target="_blank">Open →</a>
+      </div>
+      <div class="rel-card rev">
+        <div class="rc-ico">📊</div>
+        <div class="rc-body"><div class="rc-name">SIP Calculator Advanced</div><div class="rc-desc">India · Investment</div></div>
+        <a class="rc-btn b" href="https://rajdailytools.in/sip-calculator-advanced.html" target="_blank">Open →</a>
+      </div>
+      <div class="rel-card rev">
+        <div class="rc-ico">🧾</div>
+        <div class="rc-body"><div class="rc-name">GST Calculator Global</div><div class="rc-desc">India · Tax</div></div>
+        <a class="rc-btn b" href="https://rajdailytools.in/global-gst-tax-calculator-1.html" target="_blank">Open →</a>
+      </div>
+      <div class="rel-card rev">
+        <div class="rc-ico">💹</div>
+        <div class="rc-body"><div class="rc-name">Profit Margin Calculator</div><div class="rc-desc">India · Business</div></div>
+        <a class="rc-btn b" href="https://rajdailytools.in/profit-margin-calculator.html" target="_blank">Open →</a>
+      </div>
+      <div class="rel-card rev">
+        <div class="rc-ico">📉</div>
+        <div class="rc-body"><div class="rc-name">Stock Profit Calculator</div><div class="rc-desc">India · Stocks</div></div>
+        <a class="rc-btn b" href="https://rajdailytools.in/stock-profit-calculator.html" target="_blank">Open →</a>
+      </div>
+      <div class="rel-card rev">
+        <div class="rc-ico">₿</div>
+        <div class="rc-body"><div class="rc-name">Crypto Converter</div><div class="rc-desc">Global · BTC/ETH</div></div>
+        <a class="rc-btn a" href="https://rajdailytools.in/crypto-converter.html" target="_blank">Open →</a>
+      </div>
+      <div class="rel-card rev">
+        <div class="rc-ico">💱</div>
+        <div class="rc-body"><div class="rc-name">Currency Converter Live</div><div class="rc-desc">Global · USD/INR</div></div>
+        <a class="rc-btn a" href="https://rajdailytools.in/currency-converter-live-usd-to-inr-1.html" target="_blank">Open →</a>
+      </div>
+      <div class="rel-card rev">
+        <div class="rc-ico">📊</div>
+        <div class="rc-body"><div class="rc-name">ETF Return Calculator</div><div class="rc-desc">Global · ETF</div></div>
+        <a class="rc-btn a" href="https://rajdailytools.in/etf-return-calculator.html" target="_blank">Open →</a>
+      </div>
+      <div class="rel-card rev">
+        <div class="rc-ico">🔥</div>
+        <div class="rc-body"><div class="rc-name">FIRE Calculator</div><div class="rc-desc">Global · Retirement</div></div>
+        <a class="rc-btn a" href="https://rajdailytools.in/fire-calculator.html" target="_blank">Open →</a>
+      </div>
+      <div class="rel-card rev">
+        <div class="rc-ico">📋</div>
+        <div class="rc-body"><div class="rc-name">Net Worth Tracker</div><div class="rc-desc">Global · Wealth</div></div>
+        <a class="rc-btn a" href="https://rajdailytools.in/net-worth-tracker-rajdailytools.html" target="_blank">Open →</a>
+      </div>
+      <div class="rel-card rev">
+        <div class="rc-ico">🔮</div>
+        <div class="rc-body"><div class="rc-name">Future Net Worth Predictor</div><div class="rc-desc">Global · Wealth</div></div>
+        <a class="rc-btn a" href="https://rajdailytools.in/future-net-worth-predictor.html" target="_blank">Open →</a>
+      </div>
+      <div class="rel-card rev">
+        <div class="rc-ico">💸</div>
+        <div class="rc-body"><div class="rc-name">Survival Budget Calculator</div><div class="rc-desc">Global · Budget</div></div>
+        <a class="rc-btn a" href="https://rajdailytools.in/monthly-survival-budget-calculator.html" target="_blank">Open →</a>
+      </div>
+      <div class="rel-card rev">
+        <div class="rc-ico">⏰</div>
+        <div class="rc-body"><div class="rc-name">Early Retirement Penalty</div><div class="rc-desc">Global · Retirement</div></div>
+        <a class="rc-btn a" href="https://rajdailytools.in/early-retirement-penalty-calculator.html" target="_blank">Open →</a>
+      </div>
+      <div class="rel-card rev">
+        <div class="rc-ico">💵</div>
+        <div class="rc-body"><div class="rc-name">USA Salary Calculator</div><div class="rc-desc">🇺🇸 USA</div></div>
+        <a class="rc-btn g" href="https://rajdailytools.in/usa-salary-calculator.html" target="_blank">Open →</a>
+      </div>
+      <div class="rel-card rev">
+        <div class="rc-ico">🏦</div>
+        <div class="rc-body"><div class="rc-name">IRA Calculator USA</div><div class="rc-desc">🇺🇸 USA · Retirement</div></div>
+        <a class="rc-btn g" href="https://rajdailytools.in/ira-calculator-usa.html" target="_blank">Open →</a>
+      </div>
+      <div class="rel-card rev">
+        <div class="rc-ico">💱</div>
+        <div class="rc-body"><div class="rc-name">Salary Converter USA</div><div class="rc-desc">🇺🇸 USA · Salary</div></div>
+        <a class="rc-btn g" href="https://rajdailytools.in/salary-converter-usa.html" target="_blank">Open →</a>
+      </div>
+      <div class="rel-card rev">
+        <div class="rc-ico">💷</div>
+        <div class="rc-body"><div class="rc-name">UK Salary Calculator</div><div class="rc-desc">🇬🇧 UK · PAYE</div></div>
+        <a class="rc-btn p" href="https://rajdailytools.in/uk-salary-calculator.html" target="_blank">Open →</a>
+      </div>
+      <div class="rel-card rev">
+        <div class="rc-ico">💻</div>
+        <div class="rc-body"><div class="rc-name">Freelance Rate Calculator</div><div class="rc-desc">🌍 Global · Freelance</div></div>
+        <a class="rc-btn t" href="https://rajdailytools.in/freelance-rate-calculator.html" target="_blank">Open →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-sec">
+  <div class="w">
+    <div class="contact-card rev">
+      <div style="font-size:40px;margin-bottom:12px">📬</div>
+      <h3>Have Suggestions or Corrections?</h3>
+      <p>For suggestions, outdated rates, new tool requests, or corrections — contact us anytime. We build tools that users actually need, and your feedback shapes our roadmap.</p>
+      <a href="/contact" class="btn-bl">✉️ Contact Us</a>
+      <p class="priv-note">🔒 No data stored &nbsp;·&nbsp; 100% safe &nbsp;·&nbsp; For informational purposes only</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="cta-in">
+    <div class="pill">💹 Finance Tools – India &amp; Global</div>
+    <h2>Your Money. <em>Your Country.</em> Your Tool.</h2>
+    <p>20+ live finance tools for India, USA, UK, and global users — all free, all instant, all in one place 🌍</p>
+    <div class="cta-btns">
+      <a href="#india" class="btn-gold">🇮🇳 Explore Indian Tools</a>
+      <a href="#countries" class="btn-ghost">🌍 Browse by Country</a>
+    </div>
+  </div>
+</section>
+
+<!-- DISCLAIMER -->
+<div style="background:#1e293b;padding:14px 0;border-top:1px solid #334155">
+  <div class="w">
+    <p style="font-size:12.5px;color:#64748b;text-align:center;line-height:1.7">⚠️ <strong style="color:#94a3b8">Disclaimer:</strong> All finance tools on this page are for informational and estimation purposes only. Not professional financial advice. Always verify results from official government or regulated financial sources before making financial decisions. No personal data is stored or transmitted. 🌍</p>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-inner">
+    <div class="ft-top">
+      <div class="ft-brand">
+        <div class="logo">
+          <div class="lb"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+          <div><div class="ln">Raj<span>Daily</span>Tools</div><div class="ls" style="color:#475569">Smart Tools for Daily Life</div></div>
+        </div>
+        <p class="ft-desc">Free, fast, and accurate finance tools for India and global users. No signup. No data stored. 1,000+ Tools Vision 🌍</p>
+        <div class="ft-soc">
+          <a href="#" class="fts">𝕏</a><a href="#" class="fts">in</a><a href="#" class="fts">▶</a>
+        </div>
+      </div>
+      <div class="fc">
+        <h4>Indian Tools</h4>
+        <ul>
+          <li><a href="https://rajdailytools.in/advanced-emi-calculator-global.html" target="_blank">EMI Calculator</a></li>
+          <li><a href="https://rajdailytools.in/sip-calculator-advanced.html" target="_blank">SIP Calculator</a></li>
+          <li><a href="https://rajdailytools.in/bonus-tax-calculator-india.html" target="_blank">Bonus Tax Calc</a></li>
+          <li><a href="https://rajdailytools.in/profit-margin-calculator.html" target="_blank">Profit Margin Calc</a></li>
+          <li><a href="https://rajdailytools.in/global-gst-tax-calculator-1.html" target="_blank">GST Calculator</a></li>
+        </ul>
+      </div>
+      <div class="fc">
+        <h4>Global Tools</h4>
+        <ul>
+          <li><a href="https://rajdailytools.in/crypto-converter.html" target="_blank">Crypto Converter</a></li>
+          <li><a href="https://rajdailytools.in/fire-calculator.html" target="_blank">FIRE Calculator</a></li>
+          <li><a href="https://rajdailytools.in/usa-salary-calculator.html" target="_blank">USA Salary Calc</a></li>
+          <li><a href="https://rajdailytools.in/uk-salary-calculator.html" target="_blank">UK Salary Calc</a></li>
+          <li><a href="https://rajdailytools.in/freelance-rate-calculator.html" target="_blank">Freelance Rate Calc</a></li>
+        </ul>
+      </div>
+      <div class="fc">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/categories">All Categories</a></li>
+          <li><a href="/about">About Us</a></li>
+          <li><a href="/contact">Contact</a></li>
+          <li><a href="/privacy-policy">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ft-btm">
+      <p class="ft-cp">© 2026 <b>RajDailyTools.in</b> — All Rights Reserved</p>
+      <p class="ft-tag">100% Free Finance Tools 💹 · India &amp; Global · No data stored · 1,000+ Tools Vision</p>
+    </div>
+  </div>
+</footer>
+
+<button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+const brg=document.getElementById('brg'),dov=document.getElementById('dov'),drw=document.getElementById('drw'),dx=document.getElementById('dx');
+function oD(){drw.classList.add('on');dov.classList.add('on')}
+function cD(){drw.classList.remove('on');dov.classList.remove('on')}
+brg.addEventListener('click',oD);dov.addEventListener('click',cD);dx.addEventListener('click',cD);
+window.addEventListener('scroll',()=>{document.getElementById('btt').classList.toggle('on',window.scrollY>380)});
+const obs=new IntersectionObserver(els=>els.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:.08});
+document.querySelectorAll('.rev').forEach(e=>obs.observe(e));
+function tF(q){const p=q.closest('.fq');const isOpen=p.classList.contains('open');document.querySelectorAll('.fq').forEach(f=>f.classList.remove('open'));if(!isOpen)p.classList.add('open')}
+</script>
+</body>
+</html>
