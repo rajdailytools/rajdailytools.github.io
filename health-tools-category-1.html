@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Health Tools – Fitness, BMI, Calories & Body Calculators | RajDailyTools</title>
+<meta name="description" content="Free online health tools — BMI calculator, TDEE calculator, steps to fat burn, calories to weight gain converter and more. Instant results. No login. 100% free.">
+<meta name="keywords" content="health tools online free, BMI calculator, TDEE calculator, steps to fat burn calculator, calories to weight gain converter, fitness calculators, body measurement tools, nutrition tools 2026">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://rajdailytools.in/health-tools">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#2563eb;--blue-d:#1d4ed8;--blue-xl:#eff6ff;--blue-s:#dbeafe;
+  --amber:#f59e0b;--green:#10b981;--red:#ef4444;--purple:#8b5cf6;
+  --orange:#f97316;--teal:#14b8a6;
+  --green-xl:#f0fdf4;--green-s:#bbf7d0;
+  --red-xl:#fef2f2;--red-s:#fecaca;
+  --amber-xl:#fffbeb;--amber-s:#fde68a;
+  --purple-xl:#faf5ff;--purple-s:#ddd6fe;
+  --ink:#0f172a;--ink2:#334155;--ink3:#64748b;--ink4:#94a3b8;
+  --line:#e2e8f0;--surf:#f8fafc;--white:#fff;
+  --s1:0 1px 3px rgba(15,23,42,.06),0 1px 2px rgba(15,23,42,.04);
+  --s2:0 4px 16px rgba(15,23,42,.08),0 2px 6px rgba(15,23,42,.04);
+  --s3:0 12px 40px rgba(15,23,42,.11),0 3px 10px rgba(15,23,42,.06);
+  --s4:0 24px 64px rgba(15,23,42,.13),0 6px 20px rgba(15,23,42,.07);
+  --sb:0 8px 32px rgba(37,99,235,.20);
+  --fd:'Sora',sans-serif;--fb:'DM Sans',sans-serif;
+  --ease:cubic-bezier(.4,0,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);color:var(--ink);background:var(--white);overflow-x:hidden;-webkit-font-smoothing:antialiased;line-height:1.6}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+button{cursor:pointer;border:none;background:none;font-family:var(--fb)}
+.w{max-width:1180px;margin:0 auto;padding:0 24px}
+.wa{max-width:880px;margin:0 auto;padding:0 24px}
+select,input{appearance:none;-webkit-appearance:none}
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+@keyframes searchPop{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+.rev{opacity:0;transform:translateY(22px);transition:opacity .55s var(--ease),transform .55s var(--ease)}
+.rev.in{opacity:1;transform:none}
+
+/* HEADER */
+.hdr{position:sticky;top:0;z-index:999;background:rgba(255,255,255,.96);backdrop-filter:blur(20px);border-bottom:1px solid var(--line);box-shadow:var(--s1)}
+.hdi{display:flex;align-items:center;justify-content:space-between;height:66px}
+.logo{display:flex;align-items:center;gap:10px}
+.lb{width:36px;height:36px;background:var(--blue);border-radius:9px;display:flex;align-items:center;justify-content:center;box-shadow:var(--sb);flex-shrink:0}
+.lb svg{width:18px;height:18px;fill:#fff}
+.ln{font-family:var(--fd);font-size:19px;font-weight:800;color:var(--ink);line-height:1}
+.ln span{color:var(--blue)}
+.ls{font-size:10px;color:var(--ink4);letter-spacing:.04em}
+nav.dn{display:flex;align-items:center;gap:2px}
+nav.dn a{font-size:13.5px;font-weight:500;color:var(--ink2);padding:7px 13px;border-radius:8px;transition:.2s}
+nav.dn a:hover{color:var(--blue);background:var(--blue-xl)}
+.hcta{background:var(--blue);color:#fff;font-family:var(--fd);font-weight:600;font-size:13px;padding:8px 18px;border-radius:8px;box-shadow:var(--sb);transition:.2s}
+.hcta:hover{background:var(--blue-d);transform:translateY(-1px)}
+.brg{display:none;flex-direction:column;gap:4.5px;padding:8px;border-radius:8px}
+.brg span{display:block;width:20px;height:2px;background:var(--ink);border-radius:2px}
+.dov{display:none;position:fixed;inset:0;background:rgba(15,23,42,.45);z-index:1040;backdrop-filter:blur(3px)}
+.dov.on{display:block}
+.drw{position:fixed;top:0;right:-100%;width:270px;height:100vh;background:#fff;z-index:1050;padding:22px;box-shadow:var(--s4);transition:right .32s var(--ease);overflow-y:auto}
+.drw.on{right:0}
+.dh{display:flex;align-items:center;justify-content:space-between;margin-bottom:26px}
+.dx{width:33px;height:33px;border-radius:7px;background:var(--surf);display:flex;align-items:center;justify-content:center;color:var(--ink3);font-size:17px}
+nav.mn{display:flex;flex-direction:column;gap:3px}
+nav.mn a{display:block;font-size:14px;font-weight:500;color:var(--ink2);padding:11px 13px;border-radius:8px;transition:.2s}
+nav.mn a:hover{color:var(--blue);background:var(--blue-xl)}
+
+/* HERO */
+.hero{position:relative;overflow:hidden;background:linear-gradient(150deg,#ebf4ff 0%,#fff 46%,#fff7ed 100%);padding:64px 0 72px}
+.hero::before{content:'';position:absolute;top:-140px;right:-180px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(37,99,235,.08) 0%,transparent 68%);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-80px;left:-100px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(249,115,22,.05) 0%,transparent 68%);pointer-events:none}
+.blob{position:absolute;border-radius:50%;pointer-events:none;animation:float 6s ease-in-out infinite}
+.b1{width:13px;height:13px;background:rgba(37,99,235,.18);top:22%;right:14%;animation-delay:0s}
+.b2{width:9px;height:9px;background:rgba(249,115,22,.22);top:58%;right:26%;animation-delay:2.2s}
+.b3{width:11px;height:11px;background:rgba(16,185,129,.18);top:36%;right:6%;animation-delay:4s}
+.bc{display:flex;align-items:center;gap:7px;font-size:12.5px;color:var(--ink3);margin-bottom:22px;position:relative;z-index:1;flex-wrap:wrap}
+.bc a{color:var(--blue);font-weight:600}
+.pill{display:inline-flex;align-items:center;gap:7px;font-family:var(--fd);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);background:var(--blue-xl);padding:5px 14px;border-radius:100px;margin-bottom:18px}
+.pill::before{content:'';width:6px;height:6px;background:var(--blue);border-radius:50%}
+.hero-inner{position:relative;z-index:1;max-width:760px;animation:fadeUp .5s ease both}
+.hero h1{font-family:var(--fd);font-size:clamp(26px,4.5vw,50px);font-weight:800;line-height:1.1;color:var(--ink);margin-bottom:14px}
+.hero h1 span{color:var(--blue)}
+.hero-sub{font-size:16px;color:var(--ink3);line-height:1.8;margin-bottom:28px;max-width:600px}
+.hero-chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.chip{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;padding:6px 14px;border-radius:100px;background:#fff;border:1.5px solid var(--line);color:var(--ink2);box-shadow:var(--s1);transition:.22s}
+.chip:hover{border-color:var(--blue);color:var(--blue);transform:translateY(-1px)}
+.hero-meta{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:28px}
+.upd{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:700;color:var(--blue);background:var(--blue-xl);padding:6px 14px;border-radius:100px;border:1.5px solid var(--blue-s)}
+.mi{font-size:13px;color:var(--ink3);font-weight:500}
+
+/* SEARCH */
+.search-wrap{position:relative;max-width:640px;margin-bottom:24px}
+.search-box{display:flex;align-items:center;background:#fff;border:2px solid var(--line);border-radius:14px;box-shadow:var(--s3);overflow:hidden;transition:.25s}
+.search-box:focus-within{border-color:var(--blue);box-shadow:0 0 0 4px rgba(37,99,235,.10),var(--s3)}
+.search-ico{padding:0 16px;font-size:18px;flex-shrink:0;color:var(--ink4)}
+.search-inp{flex:1;padding:15px 0;font-size:15px;font-family:var(--fb);color:var(--ink);background:none;border:none;outline:none}
+.search-inp::placeholder{color:var(--ink4)}
+.search-btn{padding:12px 22px;background:var(--blue);color:#fff;font-family:var(--fd);font-size:13.5px;font-weight:700;border-radius:10px;margin:4px;transition:.2s;white-space:nowrap;cursor:pointer}
+.search-btn:hover{background:var(--blue-d)}
+.search-results{position:absolute;top:calc(100% + 8px);left:0;right:0;background:#fff;border:1.5px solid var(--line);border-radius:14px;box-shadow:var(--s4);z-index:200;max-height:360px;overflow-y:auto;display:none;animation:searchPop .2s var(--ease)}
+.search-results.open{display:block}
+.sr-count{padding:8px 16px;font-size:11.5px;font-weight:600;color:var(--ink4);border-bottom:1px solid var(--line);background:var(--surf);border-radius:13px 13px 0 0}
+.sr-item{display:flex;align-items:center;gap:12px;padding:13px 16px;cursor:pointer;transition:.15s;border-bottom:1px solid var(--line)}
+.sr-item:last-child{border-bottom:none}
+.sr-item:hover{background:var(--blue-xl)}
+.sr-ico{font-size:22px;flex-shrink:0}
+.sr-name{font-family:var(--fd);font-size:13.5px;font-weight:700;color:var(--ink)}
+.sr-cat{font-size:11.5px;color:var(--ink4);margin-top:1px}
+.sr-arrow{margin-left:auto;font-size:13px;color:var(--ink4);flex-shrink:0}
+.sr-item:hover .sr-arrow{color:var(--blue)}
+.sr-empty{padding:22px 16px;text-align:center;color:var(--ink4);font-size:14px}
+
+/* HOW TO USE */
+.howto{background:var(--amber-xl);border:2px solid var(--amber-s);border-radius:16px;padding:22px 26px;max-width:560px;margin-bottom:24px}
+.howto-ttl{display:flex;align-items:center;gap:9px;font-family:var(--fd);font-size:15px;font-weight:800;color:var(--ink);margin-bottom:13px}
+.howto-steps{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.hs{display:flex;align-items:flex-start;gap:10px;font-size:13.5px;color:var(--ink2);line-height:1.6}
+.sn{width:24px;height:24px;background:var(--amber);color:#fff;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex-shrink:0;margin-top:1px}
+
+/* SEARCH RESULTS FULL PAGE */
+#searchResultsSection{display:none;padding:44px 0;background:var(--surf)}
+#searchResultsSection.show{display:block}
+.sr-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;flex-wrap:wrap;gap:12px}
+.sr-title{font-family:var(--fd);font-size:20px;font-weight:800;color:var(--ink)}
+.sr-title em{color:var(--blue);font-style:normal}
+.sr-clear{font-family:var(--fd);font-size:13px;font-weight:700;color:var(--ink3);padding:7px 14px;border-radius:8px;background:#fff;border:1.5px solid var(--line);cursor:pointer;transition:.2s}
+.sr-clear:hover{color:var(--red);border-color:var(--red-s);background:var(--red-xl)}
+#searchResultsGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.no-results{display:none;text-align:center;padding:48px 24px;background:#fff;border:1.5px solid var(--line);border-radius:16px}
+.no-results.show{display:block}
+.no-results-ico{font-size:48px;margin-bottom:12px}
+.no-results h3{font-family:var(--fd);font-size:18px;font-weight:800;color:var(--ink);margin-bottom:8px}
+.no-results p{font-size:14px;color:var(--ink3)}
+
+/* SECTIONS */
+.tools-sec{padding:72px 0}
+.tools-sec.alt{background:var(--surf)}
+.tools-sec.white{background:#fff}
+.sec-lbl{display:flex;align-items:center;gap:8px;font-family:var(--fd);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin-bottom:10px}
+.sec-lbl::before{content:'';width:6px;height:6px;background:var(--blue);border-radius:50%}
+.sec-h{font-family:var(--fd);font-size:clamp(22px,3.5vw,34px);font-weight:800;color:var(--ink);line-height:1.15;margin-bottom:10px}
+.sec-sub{font-size:15.5px;color:var(--ink3);line-height:1.78;margin-bottom:36px;max-width:620px}
+.cat-header{display:flex;align-items:center;gap:14px;margin-bottom:22px;padding-bottom:16px;border-bottom:2px solid var(--line)}
+.cat-ico-big{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0}
+.cat-ico-big.blue{background:var(--blue-xl);border:1.5px solid var(--blue-s)}
+.cat-ico-big.orange{background:var(--amber-xl);border:1.5px solid var(--amber-s)}
+.cat-ico-big.green{background:var(--green-xl);border:1.5px solid var(--green-s)}
+.cat-hd{font-family:var(--fd);font-size:20px;font-weight:800;color:var(--ink)}
+.cat-sub{font-size:13px;color:var(--ink3);margin-top:2px}
+.cat-badge{margin-left:auto;display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;padding:4px 12px;border-radius:100px;white-space:nowrap}
+.cat-badge.live{background:var(--green-xl);color:var(--green);border:1px solid var(--green-s)}
+.cat-badge.soon{background:var(--amber-xl);color:var(--amber);border:1px solid var(--amber-s)}
+
+/* TOOL CARDS */
+.tool-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.tool-card{background:#fff;border:1.5px solid var(--line);border-radius:16px;padding:22px 18px;transition:.28s;display:flex;flex-direction:column;gap:10px}
+.tool-card:hover{transform:translateY(-4px);box-shadow:var(--s3);border-color:var(--blue-s)}
+.tools-sec.alt .tool-card{background:#fff}
+.tc-ico{font-size:30px;margin-bottom:2px}
+.tc-tag{display:inline-flex;align-items:center;font-size:10px;font-weight:700;padding:2px 8px;border-radius:100px;width:fit-content}
+.tc-tag.live{background:var(--green-xl);color:var(--green);border:1px solid var(--green-s)}
+.tc-tag.soon{background:var(--amber-xl);color:var(--amber);border:1px solid var(--amber-s)}
+.tc-name{font-family:var(--fd);font-size:13.5px;font-weight:800;color:var(--ink);line-height:1.3}
+.tc-desc{font-size:12.5px;color:var(--ink3);line-height:1.6;flex:1}
+.tc-btn{display:inline-flex;align-items:center;gap:5px;font-family:var(--fd);font-size:12px;font-weight:700;padding:8px 16px;border-radius:9px;transition:.22s;margin-top:auto;align-self:flex-start}
+.tc-btn.blue{background:var(--blue);color:#fff}.tc-btn.blue:hover{background:var(--blue-d)}
+.tc-btn.green{background:var(--green);color:#fff}.tc-btn.green:hover{background:#059669}
+.tc-btn.amber{background:var(--amber);color:#fff}.tc-btn.amber:hover{background:#d97706}
+.tc-btn.grey{background:var(--surf);color:var(--ink4);border:1.5px solid var(--line);cursor:default}
+
+/* TABLE */
+.tbl-wrap{overflow-x:auto;margin:24px 0}
+table{width:100%;border-collapse:collapse;font-size:14.5px}
+thead th{background:var(--blue);color:#fff;font-family:var(--fd);font-weight:700;padding:12px 18px;text-align:left}
+tbody tr{border-bottom:1px solid var(--line)}
+tbody tr:nth-child(even){background:var(--surf)}
+tbody td{padding:12px 18px;color:var(--ink2);line-height:1.6}
+tbody td:first-child{font-weight:600;color:var(--ink)}
+
+/* FEATURES */
+.feat-sec{background:#fff;padding:72px 0}
+.feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.feat-card{background:var(--surf);border:1.5px solid var(--line);border-radius:20px;padding:32px 26px;text-align:center;transition:.28s}
+.feat-card:hover{transform:translateY(-4px);box-shadow:var(--s3);border-color:var(--blue-s);background:#fff}
+.feat-ico{font-size:40px;margin-bottom:14px}
+.feat-title{font-family:var(--fd);font-size:17px;font-weight:800;color:var(--ink);margin-bottom:10px}
+.feat-desc{font-size:14px;color:var(--ink3);line-height:1.75}
+
+/* GUIDE */
+.guide-sec{background:var(--surf);padding:72px 0}
+.guide-body h2{font-family:var(--fd);font-size:21px;font-weight:800;color:var(--ink);margin:28px 0 11px;line-height:1.3}
+.guide-body h2:first-child{margin-top:0}
+.guide-body p{font-size:15px;color:var(--ink3);line-height:1.85;margin-bottom:14px}
+.guide-body ul{display:flex;flex-direction:column;gap:8px;margin:12px 0 16px}
+.guide-body li{display:flex;align-items:flex-start;gap:10px;font-size:14.5px;color:var(--ink3);line-height:1.7}
+.guide-body li::before{content:'✓';width:18px;height:18px;background:var(--blue);color:#fff;border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;flex-shrink:0;margin-top:3px}
+.guide-body strong{color:var(--ink2);font-weight:700}
+.ibox{background:var(--blue-xl);border:1.5px solid var(--blue-s);border-radius:13px;padding:15px 18px;margin:16px 0;display:flex;gap:11px;font-size:14px;color:var(--ink2);line-height:1.7}
+.ibox svg{width:17px;height:17px;stroke:var(--blue);fill:none;stroke-width:2;flex-shrink:0;margin-top:2px}
+.ibox.g{background:var(--green-xl);border-color:var(--green-s)}
+.ibox.g svg{stroke:var(--green)}
+
+/* STORY */
+.story-sec{background:#fff;padding:72px 0}
+.story-card{background:linear-gradient(135deg,var(--blue-xl) 0%,#fff 100%);border:1.5px solid var(--blue-s);border-radius:20px;padding:36px;max-width:760px;margin:0 auto}
+.story-card h3{font-family:var(--fd);font-size:22px;font-weight:800;color:var(--ink);margin-bottom:16px}
+.story-card p{font-size:15.5px;color:var(--ink2);line-height:1.9}
+.story-ico{font-size:44px;margin-bottom:14px}
+
+/* FAQ */
+.faq-sec{background:#fff;padding:72px 0}
+.fql{max-width:780px;margin:0 auto}
+.fq{background:var(--surf);border:1.5px solid var(--line);border-radius:13px;margin-bottom:10px;overflow:hidden}
+.fq-q{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;cursor:pointer;gap:14px;transition:.2s}
+.fq-q:hover{background:var(--blue-xl)}
+.fq-t{font-weight:600;font-size:15px;color:var(--ink);line-height:1.4}
+.fq-i{width:28px;height:28px;border-radius:50%;background:var(--blue-xl);color:var(--blue);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;transition:transform .28s,background .2s}
+.fq.open .fq-i{transform:rotate(45deg);background:var(--blue);color:#fff}
+.fq-a{max-height:0;overflow:hidden;transition:max-height .35s var(--ease)}
+.fq-ai{padding:0 22px 18px;font-size:14.5px;color:var(--ink3);line-height:1.78}
+.fq.open .fq-a{max-height:400px}
+
+/* RELATED */
+.related-sec{background:var(--surf);padding:72px 0}
+.rel-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.rel-card{background:#fff;border:1.5px solid var(--line);border-radius:14px;padding:18px 14px;text-align:center;transition:.25s;display:flex;flex-direction:column;gap:8px;align-items:center}
+.rel-card:hover{transform:translateY(-3px);box-shadow:var(--s3);border-color:var(--blue-s)}
+.rc-ico{font-size:28px}
+.rc-name{font-family:var(--fd);font-size:12.5px;font-weight:800;color:var(--ink);line-height:1.3}
+.rc-desc{font-size:11px;color:var(--ink3);line-height:1.5;flex:1}
+.rc-btn{font-family:var(--fd);font-size:11px;font-weight:700;padding:6px 14px;border-radius:8px;background:var(--blue);color:#fff;transition:.2s}
+.rc-btn:hover{background:var(--blue-d)}
+.rc-btn.grey{background:var(--surf);color:var(--ink4);border:1.5px solid var(--line);cursor:default}
+
+/* MISC */
+.disc{background:var(--amber-xl);border-top:1px solid var(--amber-s);border-bottom:1px solid var(--amber-s);padding:15px 0}
+.contact-sec{background:#fff;padding:60px 0}
+.contact-card{max-width:580px;margin:0 auto;background:var(--surf);border:1.5px solid var(--line);border-radius:20px;padding:32px;text-align:center;box-shadow:var(--s2)}
+.contact-card h3{font-family:var(--fd);font-size:19px;font-weight:800;color:var(--ink);margin-bottom:10px}
+.contact-card p{font-size:15px;color:var(--ink3);line-height:1.75;margin-bottom:20px}
+.btn-bl{display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:#fff;font-family:var(--fd);font-weight:700;font-size:14.5px;padding:12px 26px;border-radius:8px;box-shadow:var(--sb);transition:.22s}
+.btn-bl:hover{background:var(--blue-d);transform:translateY(-1px)}
+.priv-note{font-size:12px;color:var(--ink4);margin-top:14px}
+.cta{background:linear-gradient(140deg,#0f172a 0%,#1e3a8a 100%);padding:80px 0;text-align:center;position:relative;overflow:hidden}
+.cta::before{content:'';position:absolute;top:-80px;left:50%;transform:translateX(-50%);width:800px;height:380px;background:radial-gradient(ellipse,rgba(37,99,235,.22) 0%,transparent 68%);pointer-events:none}
+.cta-in{position:relative;z-index:1}
+.cta .pill{color:#93c5fd;background:rgba(255,255,255,.1);margin-bottom:18px}
+.cta .pill::before{background:#93c5fd}
+.cta h2{font-family:var(--fd);font-size:clamp(24px,4vw,42px);font-weight:800;color:#fff;line-height:1.15;margin-bottom:12px}
+.cta h2 em{color:#fbbf24;font-style:normal}
+.cta p{font-size:16px;color:rgba(255,255,255,.72);max-width:480px;margin:0 auto 32px;line-height:1.78}
+.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn-gold{display:inline-flex;align-items:center;gap:8px;background:var(--amber);color:#fff;font-family:var(--fd);font-weight:800;font-size:15px;padding:14px 30px;border-radius:8px;box-shadow:0 8px 28px rgba(245,158,11,.35);transition:.22s}
+.btn-gold:hover{background:#d97706;transform:translateY(-3px)}
+.btn-ghost{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.09);border:1.5px solid rgba(255,255,255,.22);color:#fff;font-family:var(--fd);font-weight:600;font-size:14px;padding:13px 26px;border-radius:8px;transition:.2s}
+.btn-ghost:hover{background:rgba(255,255,255,.16)}
+footer{background:#0f172a;padding:52px 0 0}
+.ft-inner{max-width:1180px;margin:0 auto;padding:0 24px}
+.ft-top{display:grid;grid-template-columns:1.9fr 1fr 1fr 1fr;gap:44px;margin-bottom:44px}
+.ft-brand .ln{color:#fff}.ft-brand .ls{color:#475569}
+.ft-desc{font-size:13.5px;color:#64748b;line-height:1.78;max-width:265px;margin:13px 0 20px}
+.ft-soc{display:flex;gap:9px}
+.fts{width:34px;height:34px;border-radius:7px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;color:#94a3b8;font-size:13px;transition:.2s}
+.fts:hover{background:var(--blue);color:#fff}
+.fc h4{font-family:var(--fd);font-size:12px;font-weight:700;color:#fff;margin-bottom:14px;letter-spacing:.06em;text-transform:uppercase}
+.fc ul{display:flex;flex-direction:column;gap:8px}
+.fc ul a{font-size:13.5px;color:#64748b;transition:.18s}
+.fc ul a:hover{color:#93c5fd}
+.ft-btm{border-top:1px solid rgba(255,255,255,.07);padding:20px 0;text-align:center}
+.ft-cp{font-size:12.5px;color:#475569}
+.ft-cp b{color:#64748b}
+.ft-tag{font-size:12px;color:#334155;margin-top:4px;font-style:italic}
+.btt{position:fixed;bottom:26px;right:26px;z-index:500;width:43px;height:43px;background:var(--blue);color:#fff;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:17px;box-shadow:var(--sb);opacity:0;pointer-events:none;transform:translateY(14px);transition:.28s var(--ease)}
+.btt.on{opacity:1;pointer-events:auto;transform:translateY(0)}
+.btt:hover{transform:translateY(-3px)}
+.notice-banner{background:linear-gradient(135deg,#0f172a,#1e3a8a);border-radius:14px;padding:18px 22px;display:flex;align-items:center;gap:14px}
+.notice-icon{font-size:26px;flex-shrink:0}
+.notice-text{font-family:var(--fd);font-size:14px;font-weight:700;color:#fbbf24;line-height:1.6}
+.notice-text span{color:#e2e8f0;font-weight:400;font-family:var(--fb)}
+
+@media(max-width:1060px){
+  .ft-top{grid-template-columns:1fr 1fr}
+  .tool-grid{grid-template-columns:repeat(2,1fr)}
+  .feat-grid{grid-template-columns:1fr 1fr}
+  .rel-grid{grid-template-columns:repeat(3,1fr)}
+  #searchResultsGrid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:860px){
+  nav.dn,.hcta{display:none}.brg{display:flex}
+  .tool-grid{grid-template-columns:repeat(2,1fr)}
+  .howto-steps{grid-template-columns:1fr}
+  .feat-grid{grid-template-columns:1fr}
+  .rel-grid{grid-template-columns:repeat(2,1fr)}
+  #searchResultsGrid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:600px){
+  .ft-top{grid-template-columns:1fr}
+  .tool-grid{grid-template-columns:1fr}
+  .cta-btns{flex-direction:column;align-items:center}
+  .rel-grid{grid-template-columns:repeat(2,1fr)}
+  #searchResultsGrid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="hdr">
+  <div class="w">
+    <div class="hdi">
+      <a href="/" class="logo">
+        <div class="lb"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+        <div><div class="ln">Raj<span>Daily</span>Tools</div><div class="ls">Smart Tools for Daily Life</div></div>
+      </a>
+      <nav class="dn">
+        <a href="/">Home</a><a href="/categories">Categories</a>
+        <a href="/#popular">Popular</a><a href="/latest">Latest</a>
+        <a href="/about">About</a><a href="/faq">FAQ</a><a href="/contact">Contact</a>
+      </nav>
+      <a href="/categories" class="hcta">All Tools →</a>
+      <button class="brg" id="brg"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="dov" id="dov"></div>
+<div class="drw" id="drw">
+  <div class="dh">
+    <div class="logo">
+      <div class="lb" style="width:30px;height:30px;border-radius:7px"><svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#fff"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+      <div class="ln" style="font-size:16px">Raj<span>Daily</span>Tools</div>
+    </div>
+    <button class="dx" id="dx">✕</button>
+  </div>
+  <nav class="mn">
+    <a href="/" onclick="cD()">🏠 Home</a>
+    <a href="/categories" onclick="cD()">🗂️ Categories</a>
+    <a href="/#popular" onclick="cD()">⭐ Popular</a>
+    <a href="/latest" onclick="cD()">🆕 Latest</a>
+    <a href="/about" onclick="cD()">👤 About</a>
+    <a href="/faq" onclick="cD()">❓ FAQ</a>
+    <a href="/contact" onclick="cD()">📬 Contact</a>
+  </nav>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+  <div class="w">
+    <div class="bc">
+      <a href="/">Home</a><span style="color:var(--ink4)">›</span>
+      <a href="/categories">Categories</a><span style="color:var(--ink4)">›</span>
+      <span>Health Tools</span>
+    </div>
+    <div class="hero-inner">
+      <div class="pill">💪 Health Tools Hub &nbsp;·&nbsp; 100% Free</div>
+      <h1>Track Your <span>Health & Fitness</span> Instantly 💪</h1>
+      <p class="hero-sub">Use powerful tools to calculate BMI, calories, fat burn, and daily energy needs. Built for fitness beginners, gym-goers, students, and health-conscious users worldwide.</p>
+
+      <!-- LIVE SEARCH BAR -->
+      <div class="search-wrap">
+        <div class="search-box">
+          <span class="search-ico">🔍</span>
+          <input class="search-inp" type="text" id="searchInput"
+            placeholder="Search health tools... (e.g. BMI Calculator, TDEE Calculator)"
+            autocomplete="off" spellcheck="false">
+          <button class="search-btn" onclick="runSearch()">Search</button>
+        </div>
+        <div class="search-results" id="searchDropdown"></div>
+      </div>
+
+      <div class="hero-chips">
+        <span class="chip">⚖️ BMI Calculator</span>
+        <span class="chip">🔥 Fat Burn Calculator</span>
+        <span class="chip">⚡ TDEE Calculator</span>
+        <span class="chip">🍎 Calories Converter</span>
+        <span class="chip">🆓 Free Forever</span>
+        <span class="chip">🔒 No Login</span>
+      </div>
+      <div class="hero-meta">
+        <div class="upd">💪 Health Tools – 2026</div>
+        <span class="mi">✅ 4 Live Tools</span>
+        <span class="mi">🌍 Fitness · Nutrition · Body</span>
+      </div>
+
+      <div class="howto">
+        <div class="howto-ttl">💡 How to Use This Hub</div>
+        <div class="howto-steps">
+          <div class="hs"><span class="sn">1</span>Search your health tool above</div>
+          <div class="hs"><span class="sn">2</span>Or browse categories below</div>
+          <div class="hs"><span class="sn">3</span>Enter your details in the tool</div>
+          <div class="hs"><span class="sn">4</span>Get instant result — no login</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SEARCH RESULTS (shown dynamically) -->
+<section id="searchResultsSection">
+  <div class="w">
+    <div class="sr-header">
+      <div class="sr-title">Results for: <em id="searchTermDisplay"></em></div>
+      <button class="sr-clear" onclick="clearSearch()">✕ Clear Search</button>
+    </div>
+    <div id="searchResultsGrid"></div>
+    <div class="no-results" id="noResultsBox">
+      <div class="no-results-ico">🔍</div>
+      <h3>No tools found</h3>
+      <p>Try a different keyword — e.g. "BMI", "calories", "TDEE", "fat burn", "weight", "fitness".</p>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 1: FITNESS TOOLS -->
+<section class="tools-sec alt" id="fitness">
+  <div class="w">
+    <div style="text-align:center;margin-bottom:36px">
+      <div class="sec-lbl" style="justify-content:center">🏃 Section 1</div>
+      <div class="sec-h">Fitness <span style="color:var(--blue)">Tools</span></div>
+      <p class="sec-sub" style="margin:10px auto 0">Track steps, burn fat, and calculate your daily energy needs. Essential tools for gym-goers, runners, and fitness beginners.</p>
+    </div>
+    <div class="cat-header">
+      <div class="cat-ico-big blue">🏃</div>
+      <div><div class="cat-hd">Fitness & Activity Tools</div><div class="cat-sub">Steps · Fat burn · Daily calorie needs · Energy tracking</div></div>
+      <span class="cat-badge live">● 2 Live</span>
+    </div>
+    <div class="tool-grid">
+      <div class="tool-card rev">
+        <span class="tc-tag live">● Live</span>
+        <div class="tc-ico">🔥</div>
+        <div class="tc-name">Steps to Fat Burn Calculator</div>
+        <div class="tc-desc">Convert your daily steps into fat burned (in grams or calories). Perfect for walkers, runners, and anyone tracking their weight loss through physical activity.</div>
+        <a class="tc-btn blue" href="https://rajdailytools.in/steps-to-fat-burn-calculator.html" target="_blank" rel="noopener">Use Tool →</a>
+      </div>
+      <div class="tool-card rev">
+        <span class="tc-tag live">● Live</span>
+        <div class="tc-ico">⚡</div>
+        <div class="tc-name">TDEE Calculator</div>
+        <div class="tc-desc">Calculate your Total Daily Energy Expenditure — the total calories your body burns in a day based on your weight, height, age, and activity level. Essential for weight goals.</div>
+        <a class="tc-btn blue" href="https://rajdailytools.in/tdee-calculator.html" target="_blank" rel="noopener">Use Tool →</a>
+      </div>
+      <div class="tool-card rev" style="opacity:.65">
+        <span class="tc-tag soon">⏳ Soon</span>
+        <div class="tc-ico">🏋️</div>
+        <div class="tc-name">Workout Calorie Burner</div>
+        <div class="tc-desc">Calculate calories burned for different workouts — running, cycling, swimming, weightlifting — based on your body weight and duration.</div>
+        <span class="tc-btn grey">Coming Soon</span>
+      </div>
+      <div class="tool-card rev" style="opacity:.65">
+        <span class="tc-tag soon">⏳ Soon</span>
+        <div class="tc-ico">❤️</div>
+        <div class="tc-name">Heart Rate Calculator</div>
+        <div class="tc-desc">Find your target heart rate zones for fat burning, cardio, and peak performance based on age and fitness level.</div>
+        <span class="tc-btn grey">Coming Soon</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 2: BODY MEASUREMENT TOOLS -->
+<section class="tools-sec white" id="body">
+  <div class="w">
+    <div style="text-align:center;margin-bottom:36px">
+      <div class="sec-lbl" style="justify-content:center">⚖️ Section 2</div>
+      <div class="sec-h">Body Measurement <span style="color:var(--blue)">Tools</span></div>
+      <p class="sec-sub" style="margin:10px auto 0">Understand your body — calculate your BMI, ideal weight, and body fat percentage. Know where you stand and set realistic fitness goals.</p>
+    </div>
+    <div class="cat-header">
+      <div class="cat-ico-big orange">⚖️</div>
+      <div><div class="cat-hd">Body Measurement & Analysis Tools</div><div class="cat-sub">BMI · Ideal weight · Body fat · Health range</div></div>
+      <span class="cat-badge live">● 1 Live · 3 Coming</span>
+    </div>
+    <div class="tool-grid">
+      <div class="tool-card rev">
+        <span class="tc-tag live">● Live</span>
+        <div class="tc-ico">⚖️</div>
+        <div class="tc-name">BMI Calculator</div>
+        <div class="tc-desc">Calculate your Body Mass Index instantly using your height and weight. Know if you are underweight, normal, overweight, or obese — with category breakdown and health tips.</div>
+        <a class="tc-btn amber" href="https://rajdailytools.in/bmi-calculator.html" target="_blank" rel="noopener">Use Tool →</a>
+      </div>
+      <div class="tool-card rev" style="opacity:.65">
+        <span class="tc-tag soon">⏳ Soon</span>
+        <div class="tc-ico">📏</div>
+        <div class="tc-name">Ideal Weight Calculator</div>
+        <div class="tc-desc">Find your ideal body weight range based on your height, gender, and body frame size. Multiple formulas including Robinson, Miller, and Hamwi.</div>
+        <span class="tc-btn grey">Coming Soon</span>
+      </div>
+      <div class="tool-card rev" style="opacity:.65">
+        <span class="tc-tag soon">⏳ Soon</span>
+        <div class="tc-ico">📊</div>
+        <div class="tc-name">Body Fat % Calculator</div>
+        <div class="tc-desc">Estimate your body fat percentage using the US Navy method or BMI method — with fitness category ratings for men and women.</div>
+        <span class="tc-btn grey">Coming Soon</span>
+      </div>
+      <div class="tool-card rev" style="opacity:.65">
+        <span class="tc-tag soon">⏳ Soon</span>
+        <div class="tc-ico">🩺</div>
+        <div class="tc-name">Waist-to-Height Ratio</div>
+        <div class="tc-desc">Measure central obesity risk with your waist-to-height ratio — a simple but powerful indicator of metabolic health and cardiovascular risk.</div>
+        <span class="tc-btn grey">Coming Soon</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 3: NUTRITION TOOLS -->
+<section class="tools-sec alt" id="nutrition">
+  <div class="w">
+    <div style="text-align:center;margin-bottom:36px">
+      <div class="sec-lbl" style="justify-content:center">🍎 Section 3</div>
+      <div class="sec-h">Nutrition <span style="color:var(--blue)">Tools</span></div>
+      <p class="sec-sub" style="margin:10px auto 0">Plan your diet smartly — convert calories to weight changes, calculate water intake, and plan meals for your fitness goals.</p>
+    </div>
+    <div class="cat-header">
+      <div class="cat-ico-big green">🍎</div>
+      <div><div class="cat-hd">Nutrition & Diet Tools</div><div class="cat-sub">Calorie tracking · Weight gain/loss · Water intake · Meal planning</div></div>
+      <span class="cat-badge live">● 1 Live · 3 Coming</span>
+    </div>
+    <div class="tool-grid">
+      <div class="tool-card rev">
+        <span class="tc-tag live">● Live</span>
+        <div class="tc-ico">🍎</div>
+        <div class="tc-name">Calories to Weight Gain Converter</div>
+        <div class="tc-desc">Find out how many calories you need to consume (or cut) to gain or lose a specific amount of weight. Essential for anyone on a bulking or cutting diet plan.</div>
+        <a class="tc-btn green" href="https://rajdailytools.in/calories-to-weight-gain-converter.html" target="_blank" rel="noopener">Use Tool →</a>
+      </div>
+      <div class="tool-card rev" style="opacity:.65">
+        <span class="tc-tag soon">⏳ Soon</span>
+        <div class="tc-ico">💧</div>
+        <div class="tc-name">Water Intake Calculator</div>
+        <div class="tc-desc">Calculate your daily water intake needs based on your body weight, activity level, and climate. Stay hydrated and support your fitness goals.</div>
+        <span class="tc-btn grey">Coming Soon</span>
+      </div>
+      <div class="tool-card rev" style="opacity:.65">
+        <span class="tc-tag soon">⏳ Soon</span>
+        <div class="tc-ico">🥗</div>
+        <div class="tc-name">Macro Nutrient Calculator</div>
+        <div class="tc-desc">Calculate your daily protein, carbohydrate, and fat requirements based on your goals — weight loss, muscle gain, or maintenance.</div>
+        <span class="tc-btn grey">Coming Soon</span>
+      </div>
+      <div class="tool-card rev" style="opacity:.65">
+        <span class="tc-tag soon">⏳ Soon</span>
+        <div class="tc-ico">😴</div>
+        <div class="tc-name">Sleep Tracker Tool</div>
+        <div class="tc-desc">Calculate your ideal sleep schedule and sleep cycles based on your target wake-up time. Optimize your rest for better fitness recovery.</div>
+        <span class="tc-btn grey">Coming Soon</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="feat-sec">
+  <div class="w">
+    <div style="text-align:center;margin-bottom:40px">
+      <div class="sec-lbl" style="justify-content:center">✨ Why Choose Us</div>
+      <div class="sec-h">Built for <span style="color:var(--blue)">Your Health Journey</span></div>
+    </div>
+    <div class="feat-grid rev">
+      <div class="feat-card">
+        <div class="feat-ico">💪</div>
+        <div class="feat-title">Fitness Tracking</div>
+        <div class="feat-desc">From steps to fat burn, BMI to TDEE — every metric you need to track your fitness progress in one place. No apps, no subscriptions, no data stored.</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-ico">⚡</div>
+        <div class="feat-title">Instant Results</div>
+        <div class="feat-desc">Every calculator delivers results in milliseconds. No server wait, no loading screens — just enter your details and get your answer instantly in your browser.</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-ico">🔒</div>
+        <div class="feat-title">Safe & Private</div>
+        <div class="feat-desc">Every tool runs entirely in your browser. No health data is sent to servers, no cookies tracked, no account needed. Your personal health information stays with you.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TABLE SECTION -->
+<section style="background:var(--surf);padding:72px 0">
+  <div class="wa">
+    <div class="sec-lbl">📋 Quick Reference</div>
+    <div class="sec-h" style="margin-bottom:20px">Health Tools — <span style="color:var(--blue)">At a Glance</span></div>
+    <div class="tbl-wrap rev">
+      <table>
+        <thead>
+          <tr><th>Tool</th><th>Purpose</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>BMI Calculator</td><td>Check your Body Mass Index and know if you are in a healthy weight range based on your height and weight.</td></tr>
+          <tr><td>TDEE Calculator</td><td>Find your Total Daily Energy Expenditure — how many calories your body burns per day including all activity.</td></tr>
+          <tr><td>Steps to Fat Burn Calculator</td><td>Convert your daily step count into fat burned in grams or calories — ideal for weight loss tracking.</td></tr>
+          <tr><td>Calories to Weight Gain Converter</td><td>Calculate how many extra (or fewer) calories lead to specific weight gain or loss over time.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- STORY SECTION -->
+<section class="story-sec">
+  <div class="wa">
+    <div style="text-align:center;margin-bottom:36px">
+      <div class="sec-lbl" style="justify-content:center">💬 Our Story</div>
+      <div class="sec-h">Why I Built These <span style="color:var(--blue)">Health Tools</span></div>
+    </div>
+    <div class="story-card rev">
+      <div class="story-ico">🌱</div>
+      <h3>A Simple Problem, A Powerful Solution</h3>
+      <p>I noticed many of my friends were confused about their fitness goals. My friend was trying to lose weight but didn't know how many calories to burn or how to calculate BMI properly. He would spend hours searching different websites, dealing with ads and confusing interfaces, only to get a number with no context.</p>
+      <p style="margin-top:14px">That's when I realized people need simple, clean tools to track their health — without the noise. So I built these easy-to-use health calculators to help everyone stay fit and informed. Whether you are a student, a gym beginner, or someone just trying to make healthier choices, these tools are for you. Free, fast, private — always.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SEO GUIDE -->
+<section class="guide-sec">
+  <div class="wa">
+    <div class="sec-lbl">📖 Complete Guide</div>
+    <div class="sec-h" style="margin-bottom:28px">Why <span style="color:var(--blue)">Health Tracking Matters</span> Every Day</div>
+    <div class="guide-body rev">
+
+      <h2>🏥 The Importance of Tracking Your Health</h2>
+      <p>Health tracking is no longer just for athletes or medical professionals. In today's fast-paced world, understanding basic metrics like your BMI, daily calorie needs, and fat burn can make the difference between achieving your fitness goals and feeling lost. When you have clear numbers to work with, you can make smarter decisions about what you eat, how much you exercise, and what changes your body actually needs.</p>
+      <p>The RajDailyTools Health Hub brings together the most commonly needed health calculators in one fast, clean, and ad-free interface. No confusing dashboards, no premium plans — just the numbers you need, instantly.</p>
+
+      <div class="ibox">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        <div><strong>Key insight:</strong> Studies show that people who track their calorie intake and physical activity are significantly more likely to achieve and maintain their weight loss goals compared to those who rely on guesswork alone.</div>
+      </div>
+
+      <h2>⚖️ Understanding BMI — What It Means and Why It Matters</h2>
+      <p>Body Mass Index (BMI) is one of the most widely used health screening tools in the world. It is calculated by dividing your weight in kilograms by your height in meters squared. The result tells you which weight category you fall into: underweight (below 18.5), normal weight (18.5–24.9), overweight (25–29.9), or obese (30 and above). While BMI is not a perfect measure of body fat or health on its own, it provides a quick and meaningful snapshot that healthcare professionals and individuals use as a starting point for understanding health risks.</p>
+      <p>For <strong>students</strong>, knowing your BMI helps you understand where you stand relative to healthy guidelines. For <strong>gym users</strong>, it serves as a baseline metric to track changes over months of training. For <strong>anyone starting a fitness journey</strong>, it is simply the best first number to know.</p>
+
+      <h2>🔥 Calories, Metabolism & Fat Burning Explained</h2>
+      <p>Your body burns calories constantly — even at rest. Your Basal Metabolic Rate (BMR) is the number of calories your body needs just to maintain basic functions like breathing and circulation. Your TDEE (Total Daily Energy Expenditure) adds physical activity on top of that. When you eat fewer calories than your TDEE, your body taps into fat stores for energy — which is the foundation of weight loss.</p>
+      <p>The <strong>Steps to Fat Burn Calculator</strong> makes this concrete: every 2,000 steps you walk burns roughly 100 calories, and every 3,500 calories burned equals approximately 0.45 kg (1 lb) of fat lost. The <strong>Calories to Weight Gain Converter</strong> works the same way in reverse — it shows exactly how a calorie surplus translates to weight gain over time.</p>
+
+      <h2>🎓 Who These Tools Are Built For</h2>
+      <ul>
+        <li><strong>Fitness Beginners:</strong> Start with the BMI Calculator and TDEE Calculator to understand your baseline. These two numbers alone give you a complete picture of where you are and what your daily calorie target should be.</li>
+        <li><strong>Students:</strong> Health class projects, biology assignments, and personal wellness goals are all served by these free, accurate, browser-based calculators — no app installation needed.</li>
+        <li><strong>Gym Users & Athletes:</strong> Track fat burned through steps, calculate your calorie surplus for muscle gain, and monitor your TDEE as your fitness level changes over months of training.</li>
+        <li><strong>People Trying to Lose Weight:</strong> The fat burn calculator and calorie converter together form a complete weight management system — understand how every step and every meal contributes to your goal.</li>
+        <li><strong>Health-Conscious Professionals:</strong> Quick reference tools for checking BMI and daily calorie needs without downloading an app or signing up for a service.</li>
+        <li><strong>Parents & Families:</strong> Monitor healthy weight ranges for growing children and teenagers, or simply use these tools as an educational resource about nutrition and fitness.</li>
+      </ul>
+
+      <h2>💡 How to Use These Tools for Real Results</h2>
+      <p>The best approach is to start with the <strong>BMI Calculator</strong> to understand your current weight status. Then use the <strong>TDEE Calculator</strong> to find your daily calorie target for your goal — whether that is weight loss, muscle gain, or maintenance. Track your daily steps with the <strong>Steps to Fat Burn Calculator</strong> to see how your activity contributes to your goal. And use the <strong>Calories to Weight Gain Converter</strong> to understand how your current diet translates into long-term weight changes.</p>
+      <p>Together, these four tools give you everything you need to set realistic, data-driven fitness goals — and actually achieve them.</p>
+
+      <div class="ibox g">
+        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+        <div><strong>Why RajDailyTools Health Hub is the best choice:</strong> Every tool is completely free, has no ads blocking results, requires no login or registration, stores no personal health data, and works on every device. Open, enter your details, get your result. That is the entire experience.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- NOTICE -->
+<div class="disc">
+  <div class="w">
+    <div style="max-width:820px;margin:0 auto">
+      <div class="notice-banner">
+        <div class="notice-icon">⚠️</div>
+        <div class="notice-text">
+          Important Notice &nbsp;—&nbsp;
+          <span>"These health tools are for general guidance and informational purposes only. Results are estimates based on standard formulas. Always consult a qualified healthcare professional or doctor before making decisions about your diet, exercise, or health based on these calculators."</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FAQ -->
+<section class="faq-sec">
+  <div class="w">
+    <div style="text-align:center;margin-bottom:40px">
+      <div class="sec-lbl" style="justify-content:center">❓ FAQ</div>
+      <div class="sec-h">Frequently Asked <span style="color:var(--blue)">Questions</span></div>
+    </div>
+    <div class="fql">
+      <div class="fq"><div class="fq-q" onclick="tF(this)"><span class="fq-t">What is BMI and how is it calculated?</span><div class="fq-i">+</div></div><div class="fq-a"><div class="fq-ai">BMI stands for Body Mass Index. It is calculated by dividing your weight in kilograms by the square of your height in metres (kg/m²). The result classifies you as underweight (below 18.5), normal weight (18.5–24.9), overweight (25–29.9), or obese (30 and above). Our BMI Calculator does this instantly — just enter your height and weight and get your result with a full category breakdown.</div></div></div>
+      <div class="fq"><div class="fq-q" onclick="tF(this)"><span class="fq-t">What is TDEE and why does it matter?</span><div class="fq-i">+</div></div><div class="fq-a"><div class="fq-ai">TDEE stands for Total Daily Energy Expenditure — the total number of calories your body burns in a day, including your resting metabolism plus all physical activity. Knowing your TDEE is essential for weight management: eat less than your TDEE to lose weight, eat more to gain weight, and match it to maintain your current weight. Our TDEE Calculator factors in your age, height, weight, gender, and activity level for an accurate daily calorie target.</div></div></div>
+      <div class="fq"><div class="fq-q" onclick="tF(this)"><span class="fq-t">How many calories do I need per day?</span><div class="fq-i">+</div></div><div class="fq-a"><div class="fq-ai">The number of calories you need daily depends on your age, gender, height, weight, and activity level. A sedentary adult woman typically needs around 1,600–2,000 calories per day, while a sedentary adult man needs around 2,000–2,500 calories. Active individuals need significantly more. Use our TDEE Calculator to get your precise personalised calorie target based on your specific details and fitness goal.</div></div></div>
+      <div class="fq"><div class="fq-q" onclick="tF(this)"><span class="fq-t">Are these health tools accurate?</span><div class="fq-i">+</div></div><div class="fq-a"><div class="fq-ai">Yes — all health calculators on this hub use well-established, scientifically validated formulas. The BMI Calculator uses the standard WHO formula. The TDEE Calculator uses the Mifflin-St Jeor equation, which is widely considered the most accurate for general use. The Steps to Fat Burn Calculator is based on average calorie expenditure per step. Results are reliable estimates for general guidance — for clinical decisions, always consult a healthcare professional.</div></div></div>
+      <div class="fq"><div class="fq-q" onclick="tF(this)"><span class="fq-t">Can beginners use these health tools?</span><div class="fq-i">+</div></div><div class="fq-a"><div class="fq-ai">Absolutely — these tools are designed with simplicity in mind. No health or fitness background is required. Each tool asks for basic inputs (your height, weight, age, activity level) and delivers a clear result with plain-language explanations. Whether you are just starting your fitness journey or reviewing your progress, these calculators are accessible to everyone.</div></div></div>
+      <div class="fq"><div class="fq-q" onclick="tF(this)"><span class="fq-t">Is my health data stored or shared?</span><div class="fq-i">+</div></div><div class="fq-a"><div class="fq-ai">No — never. Every health tool on this hub runs entirely in your browser using JavaScript. No data you enter — your weight, height, age, step count, or calorie numbers — is sent to any server, stored in any database, or shared with any third party. When you close the tab, all your data is gone. Your personal health information is 100% private and stays only on your device.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- RELATED TOOLS -->
+<section class="related-sec">
+  <div class="w">
+    <div style="text-align:center;margin-bottom:36px">
+      <div class="sec-lbl" style="justify-content:center">🔗 Quick Access</div>
+      <div class="sec-h">All Health Tools — <span style="color:var(--blue)">Quick Links</span></div>
+      <p class="sec-sub" style="margin:10px auto 0;max-width:560px">Fast links to every live health tool on this hub, plus related tools from across RajDailyTools.</p>
+    </div>
+    <div class="rel-grid">
+      <div class="rel-card rev"><div class="rc-ico">⚖️</div><div class="rc-name">BMI Calculator</div><div class="rc-desc">Body Mass Index</div><a class="rc-btn" href="https://rajdailytools.in/bmi-calculator.html" target="_blank">Open →</a></div>
+      <div class="rel-card rev"><div class="rc-ico">⚡</div><div class="rc-name">TDEE Calculator</div><div class="rc-desc">Daily calorie needs</div><a class="rc-btn" href="https://rajdailytools.in/tdee-calculator.html" target="_blank">Open →</a></div>
+      <div class="rel-card rev"><div class="rc-ico">🔥</div><div class="rc-name">Steps to Fat Burn</div><div class="rc-desc">Steps → calories burned</div><a class="rc-btn" href="https://rajdailytools.in/steps-to-fat-burn-calculator.html" target="_blank">Open →</a></div>
+      <div class="rel-card rev"><div class="rc-ico">🍎</div><div class="rc-name">Calories Converter</div><div class="rc-desc">Calories → weight change</div><a class="rc-btn" href="https://rajdailytools.in/calories-to-weight-gain-converter.html" target="_blank">Open →</a></div>
+      <div class="rel-card rev"><div class="rc-ico">💧</div><div class="rc-name">Water Intake Calc</div><div class="rc-desc">Daily hydration needs</div><span class="rc-btn grey">Soon</span></div>
+      <div class="rel-card rev"><div class="rc-ico">🧮</div><div class="rc-name">Age Calculator</div><div class="rc-desc">Your exact age in days</div><span class="rc-btn grey">Soon</span></div>
+      <div class="rel-card rev"><div class="rc-ico">😴</div><div class="rc-name">Sleep Tracker</div><div class="rc-desc">Optimize sleep cycles</div><span class="rc-btn grey">Soon</span></div>
+      <div class="rel-card rev"><div class="rc-ico">❤️</div><div class="rc-name">Heart Rate Calc</div><div class="rc-desc">Target HR zones</div><span class="rc-btn grey">Soon</span></div>
+      <div class="rel-card rev"><div class="rc-ico">📏</div><div class="rc-name">Ideal Weight Calc</div><div class="rc-desc">Healthy weight range</div><span class="rc-btn grey">Soon</span></div>
+      <div class="rel-card rev"><div class="rc-ico">📐</div><div class="rc-name">Unit Converter</div><div class="rc-desc">kg, lb, cm, inches</div><a class="rc-btn" href="https://rajdailytools.in/unit-converter.html" target="_blank">Open →</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-sec">
+  <div class="w">
+    <div class="contact-card rev">
+      <div style="font-size:40px;margin-bottom:12px">📬</div>
+      <h3>Have a Tool Request or Suggestion?</h3>
+      <p>For suggestions, tool requests, corrections, or any issue with a health calculator — contact us anytime. Every request is read and considered for the next update.</p>
+      <a href="/contact" class="btn-bl">✉️ Contact Us</a>
+      <p class="priv-note">🔒 No data stored &nbsp;·&nbsp; 100% safe &nbsp;·&nbsp; For informational use only</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="cta-in">
+    <div class="pill">💪 Health Tools Hub</div>
+    <h2>Can't Find Your <em>Health Tool?</em></h2>
+    <p>Search above or browse all categories — everything you need to track your health, instantly and for free 💪</p>
+    <div class="cta-btns">
+      <a href="#" onclick="document.getElementById('searchInput').focus();window.scrollTo({top:0,behavior:'smooth'});return false;" class="btn-gold">🔍 Search a Tool</a>
+      <a href="/categories" class="btn-ghost">📂 All Categories</a>
+    </div>
+  </div>
+</section>
+
+<!-- DISCLAIMER -->
+<div style="background:#1e293b;padding:14px 0;border-top:1px solid #334155">
+  <div class="w">
+    <p style="font-size:12.5px;color:#64748b;text-align:center;line-height:1.7">⚠️ <strong style="color:#94a3b8">Disclaimer:</strong> All health tools are for informational use only. Not medical advice. No personal data is stored or transmitted. Always consult a healthcare professional. 🔒</p>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-inner">
+    <div class="ft-top">
+      <div class="ft-brand">
+        <div class="logo">
+          <div class="lb"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+          <div><div class="ln">Raj<span>Daily</span>Tools</div><div class="ls" style="color:#475569">Smart Tools for Daily Life</div></div>
+        </div>
+        <p class="ft-desc">Free, fast, and accurate health calculators for everyone. No signup. No data stored. Global access 🌍</p>
+        <div class="ft-soc"><a href="#" class="fts">𝕏</a><a href="#" class="fts">in</a><a href="#" class="fts">▶</a></div>
+      </div>
+      <div class="fc">
+        <h4>Health Tools</h4>
+        <ul>
+          <li><a href="https://rajdailytools.in/bmi-calculator.html" target="_blank">BMI Calculator</a></li>
+          <li><a href="https://rajdailytools.in/tdee-calculator.html" target="_blank">TDEE Calculator</a></li>
+          <li><a href="https://rajdailytools.in/steps-to-fat-burn-calculator.html" target="_blank">Steps to Fat Burn</a></li>
+          <li><a href="https://rajdailytools.in/calories-to-weight-gain-converter.html" target="_blank">Calories Converter</a></li>
+          <li><a href="/health-tools">All Health Tools</a></li>
+        </ul>
+      </div>
+      <div class="fc">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/categories">Categories</a></li>
+          <li><a href="/about">About Us</a></li>
+          <li><a href="/contact">Contact</a></li>
+          <li><a href="/sitemap.xml">Sitemap</a></li>
+        </ul>
+      </div>
+      <div class="fc">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="/privacy-policy">Privacy Policy</a></li>
+          <li><a href="/terms">Terms of Use</a></li>
+          <li><a href="/disclaimer">Disclaimer</a></li>
+          <li><a href="/faq">FAQ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ft-btm">
+      <p class="ft-cp">© 2026 <b>RajDailyTools.in</b> — All Rights Reserved</p>
+      <p class="ft-tag">Free Health Tools 💪 · No data stored · 100% free forever</p>
+    </div>
+  </div>
+</footer>
+
+<button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+/* ── DRAWER ── */
+const brg=document.getElementById('brg'),dov=document.getElementById('dov'),drw=document.getElementById('drw'),dx=document.getElementById('dx');
+function oD(){drw.classList.add('on');dov.classList.add('on')}
+function cD(){drw.classList.remove('on');dov.classList.remove('on')}
+brg.addEventListener('click',oD);dov.addEventListener('click',cD);dx.addEventListener('click',cD);
+window.addEventListener('scroll',()=>{document.getElementById('btt').classList.toggle('on',window.scrollY>380)});
+const obs=new IntersectionObserver(els=>els.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:.08});
+document.querySelectorAll('.rev').forEach(e=>obs.observe(e));
+function tF(q){const p=q.closest('.fq');const isOpen=p.classList.contains('open');document.querySelectorAll('.fq').forEach(f=>f.classList.remove('open'));if(!isOpen)p.classList.add('open')}
+
+/* ── TOOL DATABASE ── */
+const TOOLS=[
+  {name:'Steps to Fat Burn Calculator', cat:'Fitness',    ico:'🔥',desc:'Convert daily steps into fat burned in grams or calories.',          tags:'steps fat burn calories walk run weight loss', href:'https://rajdailytools.in/steps-to-fat-burn-calculator.html',         live:true},
+  {name:'TDEE Calculator',              cat:'Fitness',    ico:'⚡',desc:'Calculate your Total Daily Energy Expenditure — calories burned per day.',tags:'TDEE calories daily energy expenditure bmr',  href:'https://rajdailytools.in/tdee-calculator.html',                      live:true},
+  {name:'Workout Calorie Burner',       cat:'Fitness',    ico:'🏋️',desc:'Calories burned for different workouts based on body weight.',          tags:'workout calorie burn gym running cycling',     href:'#404',                                                               live:false},
+  {name:'Heart Rate Calculator',        cat:'Fitness',    ico:'❤️',desc:'Find your target heart rate zones for fat burning and cardio.',          tags:'heart rate cardio fat burn zone fitness',     href:'#404',                                                               live:false},
+  {name:'BMI Calculator',               cat:'Body',       ico:'⚖️',desc:'Calculate your Body Mass Index and check your healthy weight range.',    tags:'BMI body mass index weight height health',    href:'https://rajdailytools.in/bmi-calculator.html',                       live:true},
+  {name:'Ideal Weight Calculator',      cat:'Body',       ico:'📏',desc:'Find your ideal body weight range based on height and gender.',           tags:'ideal weight height body frame healthy',      href:'#404',                                                               live:false},
+  {name:'Body Fat % Calculator',        cat:'Body',       ico:'📊',desc:'Estimate your body fat percentage using the US Navy method.',             tags:'body fat percentage navy method fitness',     href:'#404',                                                               live:false},
+  {name:'Waist-to-Height Ratio',        cat:'Body',       ico:'🩺',desc:'Measure central obesity risk with your waist-to-height ratio.',           tags:'waist height ratio obesity metabolic health', href:'#404',                                                               live:false},
+  {name:'Calories to Weight Gain Converter',cat:'Nutrition',ico:'🍎',desc:'Find how many calories lead to weight gain or loss over time.',         tags:'calories weight gain loss diet bulking cut',  href:'https://rajdailytools.in/calories-to-weight-gain-converter.html',    live:true},
+  {name:'Water Intake Calculator',      cat:'Nutrition',  ico:'💧',desc:'Calculate daily water intake needs based on weight and activity.',        tags:'water intake hydration daily drink health',   href:'#404',                                                               live:false},
+  {name:'Macro Nutrient Calculator',    cat:'Nutrition',  ico:'🥗',desc:'Calculate your daily protein, carbs, and fat requirements.',              tags:'macro protein carb fat diet nutrition goal',  href:'#404',                                                               live:false},
+  {name:'Sleep Tracker Tool',           cat:'Nutrition',  ico:'😴',desc:'Calculate ideal sleep schedule and sleep cycles for your wake-up time.',  tags:'sleep tracker cycle schedule rest wake up',   href:'#404',                                                               live:false},
+];
+
+/* ── ELEMENTS ── */
+const searchInput=document.getElementById('searchInput');
+const searchDropdown=document.getElementById('searchDropdown');
+const searchResultsSection=document.getElementById('searchResultsSection');
+const searchResultsGrid=document.getElementById('searchResultsGrid');
+const noResultsBox=document.getElementById('noResultsBox');
+const searchTermDisplay=document.getElementById('searchTermDisplay');
+
+function matchTool(t,q){
+  q=q.toLowerCase().trim();
+  return t.name.toLowerCase().includes(q)||t.cat.toLowerCase().includes(q)||t.tags.toLowerCase().includes(q)||t.desc.toLowerCase().includes(q);
+}
+
+/* Build a full tool card */
+function makeCard(t){
+  const d=document.createElement('div');
+  d.className='tool-card';
+  d.innerHTML=`
+    <span class="tc-tag ${t.live?'live':'soon'}">${t.live?'● Live':'⏳ Soon'}</span>
+    <div class="tc-ico">${t.ico}</div>
+    <div class="tc-name">${t.name}</div>
+    <div class="tc-desc">${t.desc}</div>
+    ${t.live&&t.href!=='#404'?`<a class="tc-btn blue" href="${t.href}" target="_blank" rel="noopener">Use Tool →</a>`:`<span class="tc-btn grey">Coming Soon</span>`}`;
+  return d;
+}
+
+/* Build a dropdown item */
+function makeDropItem(t){
+  const d=document.createElement('div');
+  d.className='sr-item';
+  d.innerHTML=`<div class="sr-ico">${t.ico}</div><div><div class="sr-name">${t.name}</div><div class="sr-cat">${t.cat} · ${t.live?'✅ Live':'⏳ Coming Soon'}</div></div><div class="sr-arrow">→</div>`;
+  d.addEventListener('click',()=>{
+    if(t.live&&t.href!=='#404') window.open(t.href,'_blank','noopener');
+    else showFull(searchInput.value);
+    closeDrop();
+  });
+  return d;
+}
+
+function showDrop(q){
+  if(!q.trim()){closeDrop();return;}
+  const m=TOOLS.filter(t=>matchTool(t,q));
+  searchDropdown.innerHTML='';
+  if(!m.length){
+    searchDropdown.innerHTML='<div class="sr-empty">No tools found. Try "BMI", "TDEE", "calories", "fat burn".</div>';
+  } else {
+    const c=document.createElement('div');
+    c.className='sr-count';c.textContent=`${m.length} tool${m.length===1?'':'s'} found`;
+    searchDropdown.appendChild(c);
+    m.slice(0,8).forEach(t=>searchDropdown.appendChild(makeDropItem(t)));
+  }
+  searchDropdown.classList.add('open');
+}
+
+function closeDrop(){searchDropdown.classList.remove('open');}
+
+function showFull(q){
+  q=q.trim();if(!q)return;
+  const m=TOOLS.filter(t=>matchTool(t,q));
+  searchTermDisplay.textContent=`"${q}"`;
+  searchResultsGrid.innerHTML='';
+  m.forEach(t=>searchResultsGrid.appendChild(makeCard(t)));
+  noResultsBox.classList.toggle('show',m.length===0);
+  searchResultsSection.classList.add('show');
+  searchResultsSection.scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+function runSearch(){
+  closeDrop();
+  showFull(searchInput.value);
+}
+
+function clearSearch(){
+  searchInput.value='';
+  closeDrop();
+  searchResultsSection.classList.remove('show');
+  searchResultsGrid.innerHTML='';
+  noResultsBox.classList.remove('show');
+}
+
+/* Real-time debounced search */
+let dt;
+searchInput.addEventListener('input',()=>{
+  clearTimeout(dt);
+  dt=setTimeout(()=>showDrop(searchInput.value),180);
+});
+searchInput.addEventListener('keydown',e=>{
+  if(e.key==='Enter')runSearch();
+  if(e.key==='Escape')closeDrop();
+});
+document.addEventListener('click',e=>{
+  if(!e.target.closest('.search-wrap'))closeDrop();
+});
+</script>
+</body>
+</html>
