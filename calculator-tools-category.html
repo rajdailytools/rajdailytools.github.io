@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculator Tools – Free Online Daily & Advanced Calculators | RajDailyTools</title>
+<meta name="description" content="Free online calculator tools — courier charges calculator, download time calculator, early retirement penalty calculator and more. Instant results. No login. 100% free.">
+<meta name="keywords" content="calculator tools online free, courier charges calculator, download time calculator, early retirement penalty calculator, EMI calculator, GST calculator, financial calculator 2026">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://rajdailytools.in/calculator-tools">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#2563eb;--blue-d:#1d4ed8;--blue-xl:#eff6ff;--blue-s:#dbeafe;
+  --amber:#f59e0b;--green:#10b981;--red:#ef4444;--purple:#8b5cf6;
+  --orange:#f97316;--teal:#14b8a6;
+  --green-xl:#f0fdf4;--green-s:#bbf7d0;
+  --red-xl:#fef2f2;--red-s:#fecaca;
+  --amber-xl:#fffbeb;--amber-s:#fde68a;
+  --purple-xl:#faf5ff;--purple-s:#ddd6fe;
+  --ink:#0f172a;--ink2:#334155;--ink3:#64748b;--ink4:#94a3b8;
+  --line:#e2e8f0;--surf:#f8fafc;--white:#fff;
+  --s1:0 1px 3px rgba(15,23,42,.06),0 1px 2px rgba(15,23,42,.04);
+  --s2:0 4px 16px rgba(15,23,42,.08),0 2px 6px rgba(15,23,42,.04);
+  --s3:0 12px 40px rgba(15,23,42,.11),0 3px 10px rgba(15,23,42,.06);
+  --s4:0 24px 64px rgba(15,23,42,.13),0 6px 20px rgba(15,23,42,.07);
+  --sb:0 8px 32px rgba(37,99,235,.20);
+  --fd:'Sora',sans-serif;--fb:'DM Sans',sans-serif;
+  --ease:cubic-bezier(.4,0,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);color:var(--ink);background:var(--white);overflow-x:hidden;-webkit-font-smoothing:antialiased;line-height:1.6}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+button{cursor:pointer;border:none;background:none;font-family:var(--fb)}
+.w{max-width:1180px;margin:0 auto;padding:0 24px}
+.wa{max-width:880px;margin:0 auto;padding:0 24px}
+select,input{appearance:none;-webkit-appearance:none}
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+@keyframes searchPop{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+.rev{opacity:0;transform:translateY(22px);transition:opacity .55s var(--ease),transform .55s var(--ease)}
+.rev.in{opacity:1;transform:none}
+
+/* HEADER */
+.hdr{position:sticky;top:0;z-index:999;background:rgba(255,255,255,.96);backdrop-filter:blur(20px);border-bottom:1px solid var(--line);box-shadow:var(--s1)}
+.hdi{display:flex;align-items:center;justify-content:space-between;height:66px}
+.logo{display:flex;align-items:center;gap:10px}
+.lb{width:36px;height:36px;background:var(--blue);border-radius:9px;display:flex;align-items:center;justify-content:center;box-shadow:var(--sb);flex-shrink:0}
+.lb svg{width:18px;height:18px;fill:#fff}
+.ln{font-family:var(--fd);font-size:19px;font-weight:800;color:var(--ink);line-height:1}
+.ln span{color:var(--blue)}
+.ls{font-size:10px;color:var(--ink4);letter-spacing:.04em}
+nav.dn{display:flex;align-items:center;gap:2px}
+nav.dn a{font-size:13.5px;font-weight:500;color:var(--ink2);padding:7px 13px;border-radius:8px;transition:.2s}
+nav.dn a:hover{color:var(--blue);background:var(--blue-xl)}
+.hcta{background:var(--blue);color:#fff;font-family:var(--fd);font-weight:600;font-size:13px;padding:8px 18px;border-radius:8px;box-shadow:var(--sb);transition:.2s}
+.hcta:hover{background:var(--blue-d);transform:translateY(-1px)}
+.brg{display:none;flex-direction:column;gap:4.5px;padding:8px;border-radius:8px}
+.brg span{display:block;width:20px;height:2px;background:var(--ink);border-radius:2px}
+.dov{display:none;position:fixed;inset:0;background:rgba(15,23,42,.45);z-index:1040;backdrop-filter:blur(3px)}
+.dov.on{display:block}
+.drw{position:fixed;top:0;right:-100%;width:270px;height:100vh;background:#fff;z-index:1050;padding:22px;box-shadow:var(--s4);transition:right .32s var(--ease);overflow-y:auto}
+.drw.on{right:0}
+.dh{display:flex;align-items:center;justify-content:space-between;margin-bottom:26px}
+.dx{width:33px;height:33px;border-radius:7px;background:var(--surf);display:flex;align-items:center;justify-content:center;color:var(--ink3);font-size:17px}
+nav.mn{display:flex;flex-direction:column;gap:3px}
+nav.mn a{display:block;font-size:14px;font-weight:500;color:var(--ink2);padding:11px 13px;border-radius:8px;transition:.2s}
+nav.mn a:hover{color:var(--blue);background:var(--blue-xl)}
+
+/* HERO */
+.hero{position:relative;overflow:hidden;background:linear-gradient(150deg,#ebf4ff 0%,#fff 46%,#fff7ed 100%);padding:64px 0 72px}
+.hero::before{content:'';position:absolute;top:-140px;right:-180px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(37,99,235,.08) 0%,transparent 68%);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-80px;left:-100px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(249,115,22,.05) 0%,transparent 68%);pointer-events:none}
+.blob{position:absolute;border-radius:50%;pointer-events:none;animation:float 6s ease-in-out infinite}
+.b1{width:13px;height:13px;background:rgba(37,99,235,.18);top:22%;right:14%;animation-delay:0s}
+.b2{width:9px;height:9px;background:rgba(249,115,22,.22);top:58%;right:26%;animation-delay:2.2s}
+.b3{width:11px;height:11px;background:rgba(16,185,129,.18);top:36%;right:6%;animation-delay:4s}
+.bc{display:flex;align-items:center;gap:7px;font-size:12.5px;color:var(--ink3);margin-bottom:22px;position:relative;z-index:1;flex-wrap:wrap}
+.bc a{color:var(--blue);font-weight:600}
+.pill{display:inline-flex;align-items:center;gap:7px;font-family:var(--fd);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);background:var(--blue-xl);padding:5px 14px;border-radius:100px;margin-bottom:18px}
+.pill::before{content:'';width:6px;height:6px;background:var(--blue);border-radius:50%}
+.hero-inner{position:relative;z-index:1;max-width:760px;animation:fadeUp .5s ease both}
+.hero h1{font-family:var(--fd);font-size:clamp(26px,4.5vw,50px);font-weight:800;line-height:1.1;color:var(--ink);margin-bottom:14px}
+.hero h1 span{color:var(--blue)}
+.hero-sub{font-size:16px;color:var(--ink3);line-height:1.8;margin-bottom:28px;max-width:600px}
+.hero-chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.chip{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;padding:6px 14px;border-radius:100px;background:#fff;border:1.5px solid var(--line);color:var(--ink2);box-shadow:var(--s1);transition:.22s}
+.chip:hover{border-color:var(--blue);color:var(--blue);transform:translateY(-1px)}
+.hero-meta{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:28px}
+.upd{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:700;color:var(--blue);background:var(--blue-xl);padding:6px 14px;border-radius:100px;border:1.5px solid var(--blue-s)}
+.mi{font-size:13px;color:var(--ink3);font-weight:500}
+
+/* SEARCH */
+.search-wrap{position:relative;max-width:640px;margin-bottom:24px}
+.search-box{display:flex;align-items:center;background:#fff;border:2px solid var(--line);border-radius:14px;box-shadow:var(--s3);overflow:hidden;transition:.25s}
+.search-box:focus-within{border-color:var(--blue);box-shadow:0 0 0 4px rgba(37,99,235,.10),var(--s3)}
+.search-ico{padding:0 16px;font-size:18px;flex-shrink:0;color:var(--ink4)}
+.search-inp{flex:1;padding:15px 0;font-size:15px;font-family:var(--fb);color:var(--ink);background:none;border:none;outline:none}
+.search-inp::placeholder{color:var(--ink4)}
+.search-btn{padding:12px 22px;background:var(--blue);color:#fff;font-family:var(--fd);font-size:13.5px;font-weight:700;border-radius:10px;margin:4px;transition:.2s;white-space:nowrap;cursor:pointer}
+.search-btn:hover{background:var(--blue-d)}
+.search-results{position:absolute;top:calc(100% + 8px);left:0;right:0;background:#fff;border:1.5px solid var(--line);border-radius:14px;box-shadow:var(--s4);z-index:200;max-height:360px;overflow-y:auto;display:none;animation:searchPop .2s var(--ease)}
+.search-results.open{display:block}
+.sr-count{padding:8px 16px;font-size:11.5px;font-weight:600;color:var(--ink4);border-bottom:1px solid var(--line);background:var(--surf);border-radius:13px 13px 0 0}
+.sr-item{display:flex;align-items:center;gap:12px;padding:13px 16px;cursor:pointer;transition:.15s;border-bottom:1px solid var(--line)}
+.sr-item:last-child{border-bottom:none}
+.sr-item:hover{background:var(--blue-xl)}
+.sr-ico{font-size:22px;flex-shrink:0}
+.sr-name{font-family:var(--fd);font-size:13.5px;font-weight:700;color:var(--ink)}
+.sr-cat{font-size:11.5px;color:var(--ink4);margin-top:1px}
+.sr-arrow{margin-left:auto;font-size:13px;color:var(--ink4);flex-shrink:0}
+.sr-item:hover .sr-arrow{color:var(--blue)}
+.sr-empty{padding:22px 16px;text-align:center;color:var(--ink4);font-size:14px}
+
+/* HOW TO USE */
+.howto{background:var(--amber-xl);border:2px solid var(--amber-s);border-radius:16px;padding:22px 26px;max-width:560px;margin-bottom:24px}
+.howto-ttl{display:flex;align-items:center;gap:9px;font-family:var(--fd);font-size:15px;font-weight:800;color:var(--ink);margin-bottom:13px}
+.howto-steps{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.hs{display:flex;align-items:flex-start;gap:10px;font-size:13.5px;color:var(--ink2);line-height:1.6}
+.sn{width:24px;height:24px;background:var(--amber);color:#fff;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex-shrink:0;margin-top:1px}
+
+/* SEARCH RESULTS FULL PAGE */
+#searchResultsSection{display:none;padding:44px 0;background:var(--surf)}
+#searchResultsSection.show{display:block}
+.sr-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;flex-wrap:wrap;gap:12px}
+.sr-title{font-family:var(--fd);font-size:20px;font-weight:800;color:var(--ink)}
+.sr-title em{color:var(--blue);font-style:normal}
+.sr-clear{font-family:var(--fd);font-size:13px;font-weight:700;color:var(--ink3);padding:7px 14px;border-radius:8px;background:#fff;border:1.5px solid var(--line);cursor:pointer;transition:.2s}
+.sr-clear:hover{color:var(--red);border-color:var(--red-s);background:var(--red-xl)}
+#searchResultsGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.no-results{display:none;text-align:center;padding:48px 24px;background:#fff;border:1.5px solid var(--line);border-radius:16px}
+.no-results.show{display:block}
+.no-results-ico{font-size:48px;margin-bottom:12px}
+.no-results h3{font-family:var(--fd);font-size:18px;font-weight:800;color:var(--ink);margin-bottom:8px}
+.no-results p{font-size:14px;color:var(--ink3)}
+
+/* SECTIONS */
+.tools-sec{padding:72px 0}
+.tools-sec.alt{background:var(--surf)}
+.tools-sec.white{background:#fff}
+.sec-lbl{display:flex;align-items:center;gap:8px;font-family:var(--fd);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin-bottom:10px}
+.sec-lbl::before{content:'';width:6px;height:6px;background:var(--blue);border-radius:50%}
+.sec-h{font-family:var(--fd);font-size:clamp(22px,3.5vw,34px);font-weight:800;color:var(--ink);line-height:1.15;margin-bottom:10px}
+.sec-sub{font-size:15.5px;color:var(--ink3);line-height:1.78;margin-bottom:36px;max-width:620px}
+.cat-header{display:flex;align-items:center;gap:14px;margin-bottom:22px;padding-bottom:16px;border-bottom:2px solid var(--line)}
+.cat-ico-big{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0}
+.cat-ico-big.blue{background:var(--blue-xl);border:1.5px solid var(--blue-s)}
+.cat-ico-big.orange{background:var(--amber-xl);border:1.5px solid var(--amber-s)}
+.cat-ico-big.green{background:var(--green-xl);border:1.5px solid var(--green-s)}
+.cat-hd{font-family:var(--fd);font-size:20px;font-weight:800;color:var(--ink)}
+.cat-sub{font-size:13px;color:var(--ink3);margin-top:2px}
+.cat-badge{margin-left:auto;display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;padding:4px 12px;border-radius:100px;white-space:nowrap}
+.cat-badge.live{background:var(--green-xl);color:var(--green);border:1px solid var(--green-s)}
+.cat-badge.soon{background:var(--amber-xl);color:var(--amber);border:1px solid var(--amber-s)}
+
+/* TOOL CARDS */
+.tool-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.tool-card{background:#fff;border:1.5px solid var(--line);border-radius:16px;padding:22px 18px;transition:.28s;display:flex;flex-direction:column;gap:10px}
+.tool-card:hover{transform:translateY(-4px);box-shadow:var(--s3);border-color:var(--blue-s)}
+.tools-sec.alt .tool-card{background:#fff}
+.tc-ico{font-size:30px;margin-bottom:2px}
+.tc-tag{display:inline-flex;align-items:center;font-size:10px;font-weight:700;padding:2px 8px;border-radius:100px;width:fit-content}
+.tc-tag.live{background:var(--green-xl);color:var(--green);border:1px solid var(--green-s)}
+.tc-tag.soon{background:var(--amber-xl);color:var(--amber);border:1px solid var(--amber-s)}
+.tc-name{font-family:var(--fd);font-size:13.5px;font-weight:800;color:var(--ink);line-height:1.3}
+.tc-desc{font-size:12.5px;color:var(--ink3);line-height:1.6;flex:1}
+.tc-btn{display:inline-flex;align-items:center;gap:5px;font-family:var(--fd);font-size:12px;font-weight:700;padding:8px 16px;border-radius:9px;transition:.22s;margin-top:auto;align-self:flex-start}
+.tc-btn.blue{background:var(--blue);color:#fff}.tc-btn.blue:hover{background:var(--blue-d)}
+.tc-btn.green{background:var(--green);color:#fff}.tc-btn.green:hover{background:#059669}
+.tc-btn.amber{background:var(--amber);color:#fff}.tc-btn.amber:hover{background:#d97706}
+.tc-btn.grey{background:var(--surf);color:var(--ink4);border:1.5px solid var(--line);cursor:default}
+
+/* TABLE */
+.tbl-wrap{overflow-x:auto;margin:24px 0}
+table{width:100%;border-collapse:collapse;font-size:14.5px}
+thead th{background:var(--blue);color:#fff;font-family:var(--fd);font-weight:700;padding:12px 18px;text-align:left}
+tbody tr{border-bottom:1px solid var(--line)}
+tbody tr:nth-child(even){background:var(--surf)}
+tbody td{padding:12px 18px;color:var(--ink2);line-height:1.6}
+tbody td:first-child{font-weight:600;color:var(--ink)}
+
+/* FEATURES */
+.feat-sec{background:#fff;padding:72px 0}
+.feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.feat-card{background:var(--surf);border:1.5px solid var(--line);border-radius:20px;padding:32px 26px;text-align:center;transition:.28s}
+.feat-card:hover{transform:translateY(-4px);box-shadow:var(--s3);border-color:var(--blue-s);background:#fff}
+.feat-ico{font-size:40px;margin-bottom:14px}
+.feat-title{font-family:var(--fd);font-size:17px;font-weight:800;color:var(--ink);margin-bottom:10px}
+.feat-desc{font-size:14px;color:var(--ink3);line-height:1.75}
+
+/* GUIDE */
+.guide-sec{background:var(--surf);padding:72px 0}
+.guide-body h2{font-family:var(--fd);font-size:21px;font-weight:800;color:var(--ink);margin:28px 0 11px;line-height:1.3}
+.guide-body h2:first-child{margin-top:0}
+.guide-body p{font-size:15px;color:var(--ink3);line-height:1.85;margin-bottom:14px}
+.guide-body ul{display:flex;flex-direction:column;gap:8px;margin:12px 0 16px}
+.guide-body li{display:flex;align-items:flex-start;gap:10px;font-size:14.5px;color:var(--ink3);line-height:1.7}
+.guide-body li::before{content:'✓';width:18px;height:18px;background:var(--blue);color:#fff;border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;flex-shrink:0;margin-top:3px}
+.guide-body strong{color:var(--ink2);font-weight:700}
+.ibox{background:var(--blue-xl);border:1.5px solid var(--blue-s);border-radius:13px;padding:15px 18px;margin:16px 0;display:flex;gap:11px;font-size:14px;color:var(--ink2);line-height:1.7}
+.ibox svg{width:17px;height:17px;stroke:var(--blue);fill:none;stroke-width:2;flex-shrink:0;margin-top:2px}
+.ibox.g{background:var(--green-xl);border-color:var(--green-s)}
+.ibox.g svg{stroke:var(--green)}
+
+/* STORY */
+.story-sec{background:#fff;padding:72px 0}
+.story-card{background:linear-gradient(135deg,var(--blue-xl) 0%,#fff 100%);border:1.5px solid var(--blue-s);border-radius:20px;padding:36px;max-width:760px;margin:0 auto}
+.story-card h3{font-family:var(--fd);font-size:22px;font-weight:800;color:var(--ink);margin-bottom:16px}
+.story-card p{font-size:15.5px;color:var(--ink2);line-height:1.9}
+.story-ico{font-size:44px;margin-bottom:14px}
+
+/* FAQ */
+.faq-sec{background:#fff;padding:72px 0}
+.fql{max-width:780px;margin:0 auto}
+.fq{background:var(--surf);border:1.5px solid var(--line);border-radius:13px;margin-bottom:10px;overflow:hidden}
+.fq-q{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;cursor:pointer;gap:14px;transition:.2s}
+.fq-q:hover{background:var(--blue-xl)}
+.fq-t{font-weight:600;font-size:15px;color:var(--ink);line-height:1.4}
+.fq-i{width:28px;height:28px;border-radius:50%;background:var(--blue-xl);color:var(--blue);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;transition:transform .28s,background .2s}
+.fq.open .fq-i{transform:rotate(45deg);background:var(--blue);color:#fff}
+.fq-a{max-height:0;overflow:hidden;transition:max-height .35s var(--ease)}
+.fq-ai{padding:0 22px 18px;font-size:14.5px;color:var(--ink3);line-height:1.78}
+.fq.open .fq-a{max-height:400px}
+
+/* RELATED */
+.related-sec{background:var(--surf);padding:72px 0}
+.rel-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.rel-card{background:#fff;border:1.5px solid var(--line);border-radius:14px;padding:18px 14px;text-align:center;transition:.25s;display:flex;flex-direction:column;gap:8px;align-items:center}
+.rel-card:hover{transform:translateY(-3px);box-shadow:var(--s3);border-color:var(--blue-s)}
+.rc-ico{font-size:28px}
+.rc-name{font-family:var(--fd);font-size:12.5px;font-weight:800;color:var(--ink);line-height:1.3}
+.rc-desc{font-size:11px;color:var(--ink3);line-height:1.5;flex:1}
+.rc-btn{font-family:var(--fd);font-size:11px;font-weight:700;padding:6px 14px;border-radius:8px;background:var(--blue);color:#fff;transition:.2s}
+.rc-btn:hover{background:var(--blue-d)}
+.rc-btn.grey{background:var(--surf);color:var(--ink4);border:1.5px solid var(--line);cursor:default}
+
+/* MISC */
+.disc{background:var(--amber-xl);border-top:1px solid var(--amber-s);border-bottom:1px solid var(--amber-s);padding:15px 0}
+.contact-sec{background:#fff;padding:60px 0}
+.contact-card{max-width:580px;margin:0 auto;background:var(--surf);border:1.5px solid var(--line);border-radius:20px;padding:32px;text-align:center;box-shadow:var(--s2)}
+.contact-card h3{font-family:var(--fd);font-size:19px;font-weight:800;color:var(--ink);margin-bottom:10px}
+.contact-card p{font-size:15px;color:var(--ink3);line-height:1.75;margin-bottom:20px}
+.btn-bl{display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:#fff;font-family:var(--fd);font-weight:700;font-size:14.5px;padding:12px 26px;border-radius:8px;box-shadow:var(--sb);transition:.22s}
+.btn-bl:hover{background:var(--blue-d);transform:translateY(-1px)}
+.priv-note{font-size:12px;color:var(--ink4);margin-top:14px}
+.cta{background:linear-gradient(140deg,#0f172a 0%,#1e3a8a 100%);padding:80px 0;text-align:center;position:relative;overflow:hidden}
+.cta::before{content:'';position:absolute;top:-80px;left:50%;transform:translateX(-50%);width:800px;height:380px;background:radial-gradient(ellipse,rgba(37,99,235,.22) 0%,transparent 68%);pointer-events:none}
+.cta-in{position:relative;z-index:1}
+.cta .pill{color:#93c5fd;background:rgba(255,255,255,.1);margin-bottom:18px}
+.cta .pill::before{background:#93c5fd}
+.cta h2{font-family:var(--fd);font-size:clamp(24px,4vw,42px);font-weight:800;color:#fff;line-height:1.15;margin-bottom:12px}
+.cta h2 em{color:#fbbf24;font-style:normal}
+.cta p{font-size:16px;color:rgba(255,255,255,.72);max-width:480px;margin:0 auto 32px;line-height:1.78}
+.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn-gold{display:inline-flex;align-items:center;gap:8px;background:var(--amber);color:#fff;font-family:var(--fd);font-weight:800;font-size:15px;padding:14px 30px;border-radius:8px;box-shadow:0 8px 28px rgba(245,158,11,.35);transition:.22s}
+.btn-gold:hover{background:#d97706;transform:translateY(-3px)}
+.btn-ghost{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.09);border:1.5px solid rgba(255,255,255,.22);color:#fff;font-family:var(--fd);font-weight:600;font-size:14px;padding:13px 26px;border-radius:8px;transition:.2s}
+.btn-ghost:hover{background:rgba(255,255,255,.16)}
+footer{background:#0f172a;padding:52px 0 0}
+.ft-inner{max-width:1180px;margin:0 auto;padding:0 24px}
+.ft-top{display:grid;grid-template-columns:1.9fr 1fr 1fr 1fr;gap:44px;margin-bottom:44px}
+.ft-brand .ln{color:#fff}.ft-brand .ls{color:#475569}
+.ft-desc{font-size:13.5px;color:#64748b;line-height:1.78;max-width:265px;margin:13px 0 20px}
+.ft-soc{display:flex;gap:9px}
+.fts{width:34px;height:34px;border-radius:7px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;color:#94a3b8;font-size:13px;transition:.2s}
+.fts:hover{background:var(--blue);color:#fff}
+.fc h4{font-family:var(--fd);font-size:12px;font-weight:700;color:#fff;margin-bottom:14px;letter-spacing:.06em;text-transform:uppercase}
+.fc ul{display:flex;flex-direction:column;gap:8px}
+.fc ul a{font-size:13.5px;color:#64748b;transition:.18s}
+.fc ul a:hover{color:#93c5fd}
+.ft-btm{border-top:1px solid rgba(255,255,255,.07);padding:20px 0;text-align:center}
+.ft-cp{font-size:12.5px;color:#475569}
+.ft-cp b{color:#64748b}
+.ft-tag{font-size:12px;color:#334155;margin-top:4px;font-style:italic}
+.btt{position:fixed;bottom:26px;right:26px;z-index:500;width:43px;height:43px;background:var(--blue);color:#fff;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:17px;box-shadow:var(--sb);opacity:0;pointer-events:none;transform:translateY(14px);transition:.28s var(--ease)}
+.btt.on{opacity:1;pointer-events:auto;transform:translateY(0)}
+.btt:hover{transform:translateY(-3px)}
+.notice-banner{background:linear-gradient(135deg,#0f172a,#1e3a8a);border-radius:14px;padding:18px 22px;display:flex;align-items:center;gap:14px}
+.notice-icon{font-size:26px;flex-shrink:0}
+.notice-text{font-family:var(--fd);font-size:14px;font-weight:700;color:#fbbf24;line-height:1.6}
+.notice-text span{color:#e2e8f0;font-weight:400;font-family:var(--fb)}
+
+@media(max-width:1060px){
+  .ft-top{grid-template-columns:1fr 1fr}
+  .tool-grid{grid-template-columns:repeat(2,1fr)}
+  .feat-grid{grid-template-columns:1fr 1fr}
+  .rel-grid{grid-template-columns:repeat(3,1fr)}
+  #searchResultsGrid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:860px){
+  nav.dn,.hcta{display:none}.brg{display:flex}
+  .tool-grid{grid-template-columns:repeat(2,1fr)}
+  .howto-steps{grid-template-columns:1fr}
+  .feat-grid{grid-template-columns:1fr}
+  .rel-grid{grid-template-columns:repeat(2,1fr)}
+  #searchResultsGrid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:600px){
+  .ft-top{grid-template-columns:1fr}
+  .tool-grid{grid-template-columns:1fr}
+  .cta-btns{flex-direction:column;align-items:center}
+  .rel-grid{grid-template-columns:repeat(2,1fr)}
+  #searchResultsGrid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="hdr">
+  <div class="w">
+    <div class="hdi">
+      <a href="/" class="logo">
+        <div class="lb"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+        <div><div class="ln">Raj<span>Daily</span>Tools</div><div class="ls">Smart Tools for Daily Life</div></div>
+      </a>
+      <nav class="dn">
+        <a href="/">Home</a><a href="/categories">Categories</a>
+        <a href="/#popular">Popular</a><a href="/latest">Latest</a>
+        <a href="/about">About</a><a href="/faq">FAQ</a><a href="/contact">Contact</a>
+      </nav>
+      <a href="/categories" class="hcta">All Tools →</a>
+      <button class="brg" id="brg"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="dov" id="dov"></div>
+<div class="drw" id="drw">
+  <div class="dh">
+    <div class="logo">
+      <div class="lb" style="width:30px;height:30px;border-radius:7px"><svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#fff"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+      <div class="ln" style="font-size:16px">Raj<span>Daily</span>Tools</div>
+    </div>
+    <button class="dx" id="dx">✕</button>
+  </div>
+  <nav class="mn">
+    <a href="/" onclick="cD()">🏠 Home</a>
+    <a href="/categories" onclick="cD()">🗂️ Categories</a>
+    <a href="/#popular" onclick="cD()">⭐ Popular</a>
+    <a href="/latest" onclick="cD()">🆕 Latest</a>
+    <a href="/about" onclick="cD()">👤 About</a>
+    <a href="/faq" onclick="cD()">❓ FAQ</a>
+    <a href="/contact" onclick="cD()">📬 Contact</a>
+  </nav>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+  <div class="w">
+    <div class="bc">
+      <a href="/">Home</a><span style="color:var(--ink4)">›</span>
+      <a href="/categories">Categories</a><span style="color:var(--ink4)">›</span>
+      <span>Calculator Tools</span>
+    </div>
+    <div class="hero-inner">
+      <div class="pill">🧮 Calculator Tools Hub &nbsp;·&nbsp; 100% Free</div>
+      <h1>Smart Calculators for <span>Daily Life & Advanced Needs</span> 🧮</h1>
+      <p class="hero-sub">Calculate anything instantly — from courier charges to retirement planning with powerful online tools. No login, no fees, instant results every time.</p>
+
+      <!-- LIVE SEARCH BAR -->
+      <div class="search-wrap">
+        <div class="search-box">
+          <span class="search-ico">🔍</span>
+          <input class="search-inp" type="text" id="searchInput"
+            placeholder="Search calculators... (e.g. EMI, Download Time, Courier Charges)"
+            autocomplete="off" spellcheck="false">
+          <button class="search-btn" onclick="runSearch()">Search</button>
+        </div>
+        <div class="search-results" id="searchDropdown"></div>
+      </div>
+
+      <div class="hero-chips">
+        <span class="chip">📦 Courier Charges</span>
+        <span class="chip">⬇️ Download Time</span>
+        <span class="chip">🏖️ Retirement Calc</span>
+        <span class="chip">💳 EMI Calculator</span>
+        <span class="chip">🆓 Free Forever</span>
+        <span class="chip">🔒 No Login</span>
+      </div>
+      <div class="hero-meta">
+        <div class="upd">🧮 Calculator Tools – 2026</div>
+        <span class="mi">✅ 3 Live Calculators</span>
+        <span class="mi">📦 Utility · Finance · Advanced</span>
+      </div>
+
+      <div class="howto">
+        <div class="howto-ttl">💡 How to Use This Hub</div>
+        <div class="howto-steps">
+          <div class="hs"><span class="sn">1</span>Search or select a calculator</div>
+          <div class="hs"><span class="sn">2</span>Enter your required values</div>
+          <div class="hs"><span class="sn">3</span>Click calculate instantly</div>
+          <div class="hs"><span class="sn">4</span>Get your result — no login</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SEARCH RESULTS (shown dynamically) -->
+<section id="searchResultsSection">
+  <div class="w">
+    <div class="sr-header">
+      <div class="sr-title">Results for: <em id="searchTermDisplay"></em></div>
+      <button class="sr-clear" onclick="clearSearch()">✕ Clear Search</button>
+    </div>
+    <div id="searchResultsGrid"></div>
+    <div class="no-results" id="noResultsBox">
+      <div class="no-results-ico">🔍</div>
+      <h3>No calculators found</h3>
+      <p>Try a different keyword — e.g. "courier", "download", "retirement", "EMI", "GST", "interest".</p>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 1: DAILY UTILITY CALCULATORS -->
+<section class="tools-sec alt" id="utility">
+  <div class="w">
+    <div style="text-align:center;margin-bottom:36px">
+      <div class="sec-lbl" style="justify-content:center">📦 Section 1</div>
+      <div class="sec-h">Daily Utility <span style="color:var(--blue)">Calculators</span></div>
+      <p class="sec-sub" style="margin:10px auto 0">Quick, practical calculators for everyday needs — estimate delivery costs before shipping, or calculate exactly how long a large file will take to download on your connection.</p>
+    </div>
+    <div class="cat-header">
+      <div class="cat-ico-big blue">📦</div>
+      <div><div class="cat-hd">Daily Utility Calculators</div><div class="cat-sub">Courier charges · Download time · Everyday quick calculations</div></div>
+      <span class="cat-badge live">● 2 Live</span>
+    </div>
+    <div class="tool-grid">
+      <div class="tool-card rev">
+        <span class="tc-tag live">● Live</span>
+        <div class="tc-ico">📦</div>
+        <div class="tc-name">Courier Charges Calculator</div>
+        <div class="tc-desc">Estimate the courier or shipping cost for any parcel based on weight, dimensions, and destination. Plan delivery budgets accurately before you ship — no surprises at the counter.</div>
+        <a class="tc-btn blue" href="https://rajdailytools.in/courier-charges-calculator.html" target="_blank" rel="noopener">Use Calculator →</a>
+      </div>
+      <div class="tool-card rev">
+        <span class="tc-tag live">● Live</span>
+        <div class="tc-ico">⬇️</div>
+        <div class="tc-name">Download Time Calculator</div>
+        <div class="tc-desc">Calculate exactly how long any file will take to download at your internet connection speed. Enter your file size and connection speed in Mbps — get the precise download time instantly.</div>
+        <a class="tc-btn blue" href="https://rajdailytools.in/download-time-calculator.html" target="_blank" rel="noopener">Use Calculator →</a>
+      </div>
+      <div class="tool-card rev" style="opacity:.65">
+        <span class="tc-tag soon">⏳ Soon</span>
+        <div class="tc-ico">🚗</div>
+        <div class="tc-name">Fuel Cost Calculator</div>
+        <div class="tc-desc">Calculate the fuel cost for any road trip or daily commute — enter distance, fuel efficiency, and price per litre to get an instant travel cost estimate.</div>
+        <span class="tc-btn grey">Coming Soon</span>
+      </div>
+      <div class="tool-card rev" style="opacity:.65">
+        <span class="tc-tag soon">⏳ Soon</span>
+        <div class="tc-ico">💡</div>
+        <div class="tc-name">Electricity Bill Calculator</div>
+        <div class="tc-desc">Estimate your monthly electricity bill by entering your appliances, usage hours, and electricity rate per unit. Identify your biggest power consumers instantly.</div>
+        <span class="tc-btn grey">Coming Soon</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 2: FINANCIAL CALCULATORS -->
+<section class="tools-sec white" id="financial">
+  <div class="w">
+    <div style="text-align:center;margin-bottom:36px">
+      <div class="sec-lbl" style="justify-content:center">💰 Section 2</div>
+      <div class="sec-h">Financial <span style="color:var(--blue)">Calculators</span></div>
+      <p class="sec-sub" style="margin:10px auto 0">Make smarter financial decisions — calculate retirement penalties, plan your savings goals, and understand the real cost of major financial choices before you commit.</p>
+    </div>
+    <div class="cat-header">
+      <div class="cat-ico-big orange">💰</div>
+      <div><div class="cat-hd">Financial Planning Calculators</div><div class="cat-sub">Retirement · Savings · Penalties · Long-term financial planning</div></div>
+      <span class="cat-badge live">● 1 Live · 3 Coming</span>
+    </div>
+    <div class="tool-grid">
+      <div class="tool-card rev">
+        <span class="tc-tag live">● Live</span>
+        <div class="tc-ico">🏖️</div>
+        <div class="tc-name">Early Retirement Penalty Calculator</div>
+        <div class="tc-desc">Calculate the penalty and tax implications of withdrawing from your retirement fund or pension plan before the official retirement age. Know the true cost before making an early withdrawal decision.</div>
+        <a class="tc-btn amber" href="https://rajdailytools.in/early-retirement-penalty-calculator.html" target="_blank" rel="noopener">Use Calculator →</a>
+      </div>
+      <div class="tool-card rev" style="opacity:.65">
+        <span class="tc-tag soon">⏳ Soon</span>
+        <div class="tc-ico">💳</div>
+        <div class="tc-name">EMI Calculator</div>
+        <div class="tc-desc">Calculate your Equated Monthly Instalment for any loan — home, car, personal, or education. Enter the principal, interest rate, and tenure to get your exact EMI amount.</div>
+        <span class="tc-btn grey">Coming Soon</span>
+      </div>
+      <div class="tool-card rev" style="opacity:.65">
+        <span class="tc-tag soon">⏳ Soon</span>
+        <div class="tc-ico">🧾</div>
+        <div class="tc-name">GST Calculator</div>
+        <div class="tc-desc">Add or remove GST at any slab — 5%, 12%, 18%, or 28% — on any amount. Get the exact GST amount and the inclusive or exclusive total price instantly.</div>
+        <span class="tc-btn grey">Coming Soon</span>
+      </div>
+      <div class="tool-card rev" style="opacity:.65">
+        <span class="tc-tag soon">⏳ Soon</span>
+        <div class="tc-ico">📈</div>
+        <div class="tc-name">Simple & Compound Interest Calculator</div>
+        <div class="tc-desc">Calculate simple or compound interest on any principal amount over any time period. See how your savings or debt grows with different interest rates and compounding frequencies.</div>
+        <span class="tc-btn grey">Coming Soon</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 3: ADVANCED CALCULATORS -->
+<section class="tools-sec alt" id="advanced">
+  <div class="w">
+    <div style="text-align:center;margin-bottom:36px">
+      <div class="sec-lbl" style="justify-content:center">⚡ Section 3</div>
+      <div class="sec-h">Advanced <span style="color:var(--blue)">Calculators</span></div>
+      <p class="sec-sub" style="margin:10px auto 0">Professional-grade calculators for complex needs — tax planning, investment projections, currency breakdowns, and more. Built for users who need precise, detailed results.</p>
+    </div>
+    <div class="cat-header">
+      <div class="cat-ico-big green">⚡</div>
+      <div><div class="cat-hd">Advanced & Specialty Calculators</div><div class="cat-sub">Tax · Investment · Currency · Complex financial scenarios</div></div>
+      <span class="cat-badge soon">⏳ Coming Soon</span>
+    </div>
+    <div class="tool-grid">
+      <div class="tool-card rev" style="opacity:.65">
+        <span class="tc-tag soon">⏳ Soon</span>
+        <div class="tc-ico">📊</div>
+        <div class="tc-name">SIP Returns Calculator</div>
+        <div class="tc-desc">Calculate the future value of your Systematic Investment Plan — enter your monthly SIP amount, expected return rate, and investment period to see your projected corpus.</div>
+        <span class="tc-btn grey">Coming Soon</span>
+      </div>
+      <div class="tool-card rev" style="opacity:.65">
+        <span class="tc-tag soon">⏳ Soon</span>
+        <div class="tc-ico">🏠</div>
+        <div class="tc-name">Home Loan Eligibility Calculator</div>
+        <div class="tc-desc">Find out how much home loan you are eligible for based on your monthly income, existing obligations, age, and credit profile — before approaching a bank.</div>
+        <span class="tc-btn grey">Coming Soon</span>
+      </div>
+      <div class="tool-card rev" style="opacity:.65">
+        <span class="tc-tag soon">⏳ Soon</span>
+        <div class="tc-ico">🧮</div>
+        <div class="tc-name">Income Tax Calculator</div>
+        <div class="tc-desc">Calculate your Indian income tax liability under both the old and new tax regime — with a side-by-side comparison to help you choose the most tax-efficient option.</div>
+        <span class="tc-btn grey">Coming Soon</span>
+      </div>
+      <div class="tool-card rev" style="opacity:.65">
+        <span class="tc-tag soon">⏳ Soon</span>
+        <div class="tc-ico">💹</div>
+        <div class="tc-name">Salary Hike Calculator</div>
+        <div class="tc-desc">Calculate your new salary after any percentage hike — including the revised CTC breakdown, take-home change, and monthly difference so you know exactly what you are gaining.</div>
+        <span class="tc-btn grey">Coming Soon</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="feat-sec">
+  <div class="w">
+    <div style="text-align:center;margin-bottom:40px">
+      <div class="sec-lbl" style="justify-content:center">✨ Why Choose Us</div>
+      <div class="sec-h">Built for <span style="color:var(--blue)">Speed, Accuracy & Simplicity</span></div>
+    </div>
+    <div class="feat-grid rev">
+      <div class="feat-card">
+        <div class="feat-ico">⚡</div>
+        <div class="feat-title">Instant Calculations</div>
+        <div class="feat-desc">Every calculator delivers results in milliseconds, directly in your browser. No server round trips, no loading screens — enter your values and your answer appears instantly.</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-ico">📊</div>
+        <div class="feat-title">Accurate Results</div>
+        <div class="feat-desc">All calculators use validated formulas and real-world data. Whether it's courier pricing logic, internet speed math, or retirement penalty rules — every result is reliable and trustworthy.</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-ico">🔒</div>
+        <div class="feat-title">Safe & Private</div>
+        <div class="feat-desc">Every calculator runs entirely in your browser. No numbers you enter — financial figures, speeds, weights — are sent to any server or stored anywhere. Your data is always 100% private.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TABLE SECTION -->
+<section style="background:var(--surf);padding:72px 0">
+  <div class="wa">
+    <div class="sec-lbl">📋 Quick Reference</div>
+    <div class="sec-h" style="margin-bottom:20px">Calculator Tools — <span style="color:var(--blue)">At a Glance</span></div>
+    <div class="tbl-wrap rev">
+      <table>
+        <thead>
+          <tr><th>Calculator</th><th>Purpose</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Courier Charges Calculator</td><td>Estimate delivery and shipping costs based on parcel weight, dimensions, and destination before you ship.</td></tr>
+          <tr><td>Download Time Calculator</td><td>Calculate how long any file will take to download at a given internet connection speed in Mbps.</td></tr>
+          <tr><td>Early Retirement Penalty Calculator</td><td>Calculate the penalty and tax cost of withdrawing retirement funds before the official retirement age.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- STORY SECTION -->
+<section class="story-sec">
+  <div class="wa">
+    <div style="text-align:center;margin-bottom:36px">
+      <div class="sec-lbl" style="justify-content:center">💬 Our Story</div>
+      <div class="sec-h">Why I Built These <span style="color:var(--blue)">Calculators</span></div>
+    </div>
+    <div class="story-card rev">
+      <div class="story-ico">🧮</div>
+      <h3>Born From Real Daily Frustrations</h3>
+      <p>In daily life, I often needed quick calculations — whether checking delivery costs before sending a parcel, estimating how long a large file would take to download on my connection, or trying to understand the financial penalty of touching my retirement savings early. Every time, I found myself either doing rough mental math or digging through complicated websites with too many ads and too little clarity.</p>
+      <p style="margin-top:14px">I realized many people face the same problem. So I started building simple and powerful calculators to make everyday decisions faster and easier. No sign-up, no clutter, no hidden results behind paywalls — just enter your numbers, click once, and get your answer. That is the entire promise of this hub.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SEO GUIDE -->
+<section class="guide-sec">
+  <div class="wa">
+    <div class="sec-lbl">📖 Complete Guide</div>
+    <div class="sec-h" style="margin-bottom:28px">Why <span style="color:var(--blue)">Online Calculators</span> Save Time Every Day</div>
+    <div class="guide-body rev">
+
+      <h2>🧮 What Are Online Calculators and Who Needs Them?</h2>
+      <p>Online calculators are free, browser-based tools that perform specific calculations instantly — without requiring a spreadsheet, a manual formula, or a professional consultation. From the simplest daily utility question ("how long will this 4GB file take to download on my 50 Mbps connection?") to complex financial scenarios ("what penalty will I pay if I withdraw my PF early?"), the right calculator gives you a precise answer in seconds.</p>
+      <p>The RajDailyTools Calculator Hub covers three categories: daily utility calculators for practical everyday needs, financial calculators for smarter money decisions, and advanced calculators for more complex planning scenarios. Every calculator is completely free, works on any device, and requires no account or login.</p>
+
+      <div class="ibox">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        <div><strong>Key insight:</strong> The average person encounters at least 3–5 calculation needs per week that they either skip entirely or estimate incorrectly due to lack of a quick tool. Over a month, these small errors in delivery cost estimates, download time guesses, and financial projections add up to significant wasted money and time.</div>
+      </div>
+
+      <h2>📦 Daily Life Calculations — Practical and Immediate</h2>
+      <p>The <strong>Courier Charges Calculator</strong> solves one of the most common daily frustrations for individuals and small business owners alike — not knowing the delivery cost until you are standing at the courier counter. By entering the parcel's weight, dimensions, and destination, you get an accurate estimate before you leave home. This is especially valuable for e-commerce sellers, freelancers shipping client deliveries, and anyone sending gifts or documents across India or internationally.</p>
+      <p>The <strong>Download Time Calculator</strong> addresses a deceptively common need. A 10 GB software update, a 4K movie download, a large design file from a client — the time these take varies enormously depending on your connection speed. With this calculator, you enter the file size (in MB or GB) and your connection speed (in Mbps), and get the exact download time in hours, minutes, and seconds. This helps you plan — whether to start a download before bed, before a meeting, or to know it simply won't be ready in time.</p>
+
+      <h2>💰 Financial Planning — Understanding the Real Numbers</h2>
+      <p>Financial decisions made without calculation are often costly decisions. The <strong>Early Retirement Penalty Calculator</strong> is a critical tool for anyone considering withdrawing from their Provident Fund, PPF, NPS, or other retirement corpus before the standard retirement age. Early withdrawal typically triggers both a penalty (often 10%) and immediate taxation on the withdrawn amount — a combined cost that many people underestimate significantly. This calculator makes the true cost of early withdrawal concrete and visible, helping you make a more informed decision.</p>
+      <ul>
+        <li><strong>Salaried Professionals:</strong> Use the EMI Calculator (coming soon) to understand exactly how much a home loan or car loan will cost per month before signing any agreement — so the monthly outflow never comes as a surprise.</li>
+        <li><strong>Small Business Owners:</strong> The GST Calculator (coming soon) makes adding or removing GST from any invoice amount instant — no more manual slab calculations or formula errors in client quotes.</li>
+        <li><strong>Investors & Savers:</strong> The Compound Interest and SIP Calculators (coming soon) show the true long-term power of regular saving — numbers that are almost always more motivating than people expect.</li>
+        <li><strong>Anyone Planning a Major Purchase:</strong> Knowing your loan eligibility, EMI, and total interest outflow before approaching a bank puts you in a far stronger negotiating position.</li>
+      </ul>
+
+      <h2>⚡ Internet & Technology Calculations — Often Overlooked</h2>
+      <p>In an increasingly digital world, internet speed calculations have become a genuine daily need. Remote workers downloading large design files, video editors uploading finished projects, gamers downloading large game updates, and students submitting large assignment files — all face the same question: how long will this actually take? The Download Time Calculator gives a precise answer by applying the simple but often miscalculated relationship between file size (in gigabytes) and connection speed (in megabits per second, noting that 8 megabits = 1 megabyte in data transfer terms).</p>
+
+      <div class="ibox g">
+        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+        <div><strong>Why RajDailyTools Calculator Hub is the right choice:</strong> Every calculator is completely free, has no ads blocking your results, requires no login, stores none of your financial or personal data, and works on every device. Enter your numbers, get your result — that is the complete experience.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- NOTICE -->
+<div class="disc">
+  <div class="w">
+    <div style="max-width:820px;margin:0 auto">
+      <div class="notice-banner">
+        <div class="notice-icon">⚠️</div>
+        <div class="notice-text">
+          Important Notice &nbsp;—&nbsp;
+          <span>"Results provided by these calculators are estimates based on standard formulas and your inputs. Always verify important financial calculations — especially retirement penalties, loan amounts, and tax figures — with a qualified financial advisor or official source before making major financial decisions."</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FAQ -->
+<section class="faq-sec">
+  <div class="w">
+    <div style="text-align:center;margin-bottom:40px">
+      <div class="sec-lbl" style="justify-content:center">❓ FAQ</div>
+      <div class="sec-h">Frequently Asked <span style="color:var(--blue)">Questions</span></div>
+    </div>
+    <div class="fql">
+      <div class="fq"><div class="fq-q" onclick="tF(this)"><span class="fq-t">What are online calculators?</span><div class="fq-i">+</div></div><div class="fq-a"><div class="fq-ai">Online calculators are free, browser-based tools that perform specific calculations instantly — without requiring a spreadsheet, manual formula, or professional consultation. They cover a wide range of needs: estimating courier charges before shipping a parcel, calculating how long a file will take to download at a given internet speed, understanding financial penalties for early retirement withdrawal, and much more. Every calculator on this hub works instantly in your browser with no download or signup required.</div></div></div>
+      <div class="fq"><div class="fq-q" onclick="tF(this)"><span class="fq-t">Are these calculators accurate?</span><div class="fq-i">+</div></div><div class="fq-a"><div class="fq-ai">Yes — all calculators use validated, standard formulas. The Download Time Calculator uses the precise relationship between file size in bytes and connection speed in bits per second (accounting for the 8-to-1 conversion between megabits and megabytes). The Courier Charges Calculator uses established weight and dimensional pricing logic. The Early Retirement Penalty Calculator uses standard penalty rate formulas. Results are highly accurate estimates — for critical financial decisions, always verify with official sources or a qualified advisor.</div></div></div>
+      <div class="fq"><div class="fq-q" onclick="tF(this)"><span class="fq-t">Can I use these for financial planning?</span><div class="fq-i">+</div></div><div class="fq-a"><div class="fq-ai">Yes — the financial calculators on this hub are specifically designed to support smarter financial planning decisions. The Early Retirement Penalty Calculator helps you understand the true cost of early fund withdrawal before you commit to it. The upcoming EMI, GST, and interest calculators will support loan planning, invoice calculations, and savings projections respectively. Always use these results as a starting point and verify with a certified financial planner for major long-term decisions.</div></div></div>
+      <div class="fq"><div class="fq-q" onclick="tF(this)"><span class="fq-t">Are all these calculators completely free?</span><div class="fq-i">+</div></div><div class="fq-a"><div class="fq-ai">Yes — 100% free, with no hidden charges, no premium tier, no subscription, and no trial period. Every calculator on this hub is free to use as many times as you need. No account creation is required and no payment is ever asked. RajDailyTools is committed to keeping all tools free forever for everyone, everywhere.</div></div></div>
+      <div class="fq"><div class="fq-q" onclick="tF(this)"><span class="fq-t">Is my data safe when I use these calculators?</span><div class="fq-i">+</div></div><div class="fq-a"><div class="fq-ai">Absolutely. Every calculator on this hub runs entirely in your browser using JavaScript. No numbers you enter — financial figures, parcel weights, connection speeds, retirement amounts — are sent to any server, stored in any database, logged, or shared with any third party. When you close the browser tab, all your input data disappears completely. Your financial and personal information is always 100% private.</div></div></div>
+      <div class="fq"><div class="fq-q" onclick="tF(this)"><span class="fq-t">Do these calculators store my data?</span><div class="fq-i">+</div></div><div class="fq-a"><div class="fq-ai">No — never. RajDailyTools does not store, log, analyze, or share any data you enter into any calculator on this hub. All calculations happen locally in your browser and the data is never transmitted to any server. No cookies are used to track your inputs, and no analytics are attached to the numbers you enter. Close the tab and everything you entered is gone — complete privacy by design.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- RELATED TOOLS -->
+<section class="related-sec">
+  <div class="w">
+    <div style="text-align:center;margin-bottom:36px">
+      <div class="sec-lbl" style="justify-content:center">🔗 Quick Access</div>
+      <div class="sec-h">All Calculators — <span style="color:var(--blue)">Quick Links</span></div>
+      <p class="sec-sub" style="margin:10px auto 0;max-width:560px">Fast links to every live calculator, plus related tool categories from across RajDailyTools.</p>
+    </div>
+    <div class="rel-grid">
+      <div class="rel-card rev"><div class="rc-ico">📦</div><div class="rc-name">Courier Charges</div><div class="rc-desc">Estimate shipping cost</div><a class="rc-btn" href="https://rajdailytools.in/courier-charges-calculator.html" target="_blank">Open →</a></div>
+      <div class="rel-card rev"><div class="rc-ico">⬇️</div><div class="rc-name">Download Time</div><div class="rc-desc">File download duration</div><a class="rc-btn" href="https://rajdailytools.in/download-time-calculator.html" target="_blank">Open →</a></div>
+      <div class="rel-card rev"><div class="rc-ico">🏖️</div><div class="rc-name">Retirement Penalty</div><div class="rc-desc">Early withdrawal cost</div><a class="rc-btn" href="https://rajdailytools.in/early-retirement-penalty-calculator.html" target="_blank">Open →</a></div>
+      <div class="rel-card rev"><div class="rc-ico">💳</div><div class="rc-name">EMI Calculator</div><div class="rc-desc">Loan monthly payment</div><span class="rc-btn grey">Soon</span></div>
+      <div class="rel-card rev"><div class="rc-ico">🧾</div><div class="rc-name">GST Calculator</div><div class="rc-desc">Add or remove GST</div><span class="rc-btn grey">Soon</span></div>
+      <div class="rel-card rev"><div class="rc-ico">📈</div><div class="rc-name">Interest Calculator</div><div class="rc-desc">Simple & compound</div><span class="rc-btn grey">Soon</span></div>
+      <div class="rel-card rev"><div class="rc-ico">💪</div><div class="rc-name">Health Tools</div><div class="rc-desc">BMI, TDEE & more</div><a class="rc-btn" href="/health-tools">Open →</a></div>
+      <div class="rel-card rev"><div class="rc-ico">🔄</div><div class="rc-name">Converter Tools</div><div class="rc-desc">Unit, time & more</div><a class="rc-btn" href="/converter-tools">Open →</a></div>
+      <div class="rel-card rev"><div class="rc-ico">✍️</div><div class="rc-name">Text Tools</div><div class="rc-desc">Writing & SEO</div><a class="rc-btn" href="/text-tools">Open →</a></div>
+      <div class="rel-card rev"><div class="rc-ico">🌟</div><div class="rc-name">Useful Tools</div><div class="rc-desc">Life & astrology</div><a class="rc-btn" href="/useful-tools">Open →</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-sec">
+  <div class="w">
+    <div class="contact-card rev">
+      <div style="font-size:40px;margin-bottom:12px">📬</div>
+      <h3>Suggestions, Requests or Issues?</h3>
+      <p>For suggestions, calculator requests, corrections, or any issue — contact us anytime. Every message is read and considered for future updates and new calculator additions.</p>
+      <a href="/contact" class="btn-bl">✉️ Contact Us</a>
+      <p class="priv-note">🔒 No data stored &nbsp;·&nbsp; 100% safe &nbsp;·&nbsp; For informational use only</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="cta-in">
+    <div class="pill">🧮 Calculator Tools Hub</div>
+    <h2>Can't Find Your <em>Calculator?</em></h2>
+    <p>Search above or browse all categories — every calculator you need for daily life and financial planning, free and instant 🧮</p>
+    <div class="cta-btns">
+      <a href="#" onclick="document.getElementById('searchInput').focus();window.scrollTo({top:0,behavior:'smooth'});return false;" class="btn-gold">🔍 Search a Calculator</a>
+      <a href="/categories" class="btn-ghost">📂 All Categories</a>
+    </div>
+  </div>
+</section>
+
+<!-- DISCLAIMER -->
+<div style="background:#1e293b;padding:14px 0;border-top:1px solid #334155">
+  <div class="w">
+    <p style="font-size:12.5px;color:#64748b;text-align:center;line-height:1.7">⚠️ <strong style="color:#94a3b8">Disclaimer:</strong> All calculators are for informational use only. Results are estimates. No data is stored or transmitted. Always verify important financial figures with a qualified advisor. 🔒</p>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-inner">
+    <div class="ft-top">
+      <div class="ft-brand">
+        <div class="logo">
+          <div class="lb"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+          <div><div class="ln">Raj<span>Daily</span>Tools</div><div class="ls" style="color:#475569">Smart Tools for Daily Life</div></div>
+        </div>
+        <p class="ft-desc">Free, fast, and accurate calculators for everyone. No signup. No data stored. Global access 🌍</p>
+        <div class="ft-soc"><a href="#" class="fts">𝕏</a><a href="#" class="fts">in</a><a href="#" class="fts">▶</a></div>
+      </div>
+      <div class="fc">
+        <h4>Calculators</h4>
+        <ul>
+          <li><a href="https://rajdailytools.in/courier-charges-calculator.html" target="_blank">Courier Charges</a></li>
+          <li><a href="https://rajdailytools.in/download-time-calculator.html" target="_blank">Download Time</a></li>
+          <li><a href="https://rajdailytools.in/early-retirement-penalty-calculator.html" target="_blank">Retirement Penalty</a></li>
+          <li><a href="/calculator-tools">All Calculators</a></li>
+        </ul>
+      </div>
+      <div class="fc">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/categories">Categories</a></li>
+          <li><a href="/about">About Us</a></li>
+          <li><a href="/contact">Contact</a></li>
+          <li><a href="/sitemap.xml">Sitemap</a></li>
+        </ul>
+      </div>
+      <div class="fc">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="/privacy-policy">Privacy Policy</a></li>
+          <li><a href="/terms">Terms of Use</a></li>
+          <li><a href="/disclaimer">Disclaimer</a></li>
+          <li><a href="/faq">FAQ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ft-btm">
+      <p class="ft-cp">© 2026 <b>RajDailyTools.in</b> — All Rights Reserved</p>
+      <p class="ft-tag">Free Calculator Tools 🧮 · No data stored · 100% free forever</p>
+    </div>
+  </div>
+</footer>
+
+<button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+/* ── DRAWER ── */
+const brg=document.getElementById('brg'),dov=document.getElementById('dov'),drw=document.getElementById('drw'),dx=document.getElementById('dx');
+function oD(){drw.classList.add('on');dov.classList.add('on')}
+function cD(){drw.classList.remove('on');dov.classList.remove('on')}
+brg.addEventListener('click',oD);dov.addEventListener('click',cD);dx.addEventListener('click',cD);
+window.addEventListener('scroll',()=>{document.getElementById('btt').classList.toggle('on',window.scrollY>380)});
+const obs=new IntersectionObserver(els=>els.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:.08});
+document.querySelectorAll('.rev').forEach(e=>obs.observe(e));
+function tF(q){const p=q.closest('.fq');const isOpen=p.classList.contains('open');document.querySelectorAll('.fq').forEach(f=>f.classList.remove('open'));if(!isOpen)p.classList.add('open')}
+
+/* ── TOOL DATABASE ── */
+const TOOLS=[
+  {name:'Courier Charges Calculator',         cat:'Utility',   ico:'📦', desc:'Estimate courier and shipping costs based on parcel weight, size, and destination.',   tags:'courier charges shipping delivery parcel cost estimate',           href:'https://rajdailytools.in/courier-charges-calculator.html',          live:true},
+  {name:'Download Time Calculator',           cat:'Utility',   ico:'⬇️', desc:'Calculate how long any file will take to download at your internet speed.',           tags:'download time calculator file internet speed mbps duration',       href:'https://rajdailytools.in/download-time-calculator.html',            live:true},
+  {name:'Fuel Cost Calculator',               cat:'Utility',   ico:'🚗', desc:'Calculate the fuel cost for any road trip based on distance and fuel efficiency.',     tags:'fuel cost trip petrol diesel commute travel km litre',             href:'#404',                                                              live:false},
+  {name:'Electricity Bill Calculator',        cat:'Utility',   ico:'💡', desc:'Estimate your monthly electricity bill by appliance usage and rate per unit.',         tags:'electricity bill calculator units appliance power monthly',        href:'#404',                                                              live:false},
+  {name:'Early Retirement Penalty Calculator',cat:'Financial', ico:'🏖️', desc:'Calculate penalties and tax for early retirement fund withdrawal.',                   tags:'early retirement penalty calculator fund withdrawal tax PF NPS',   href:'https://rajdailytools.in/early-retirement-penalty-calculator.html', live:true},
+  {name:'EMI Calculator',                     cat:'Financial', ico:'💳', desc:'Calculate your Equated Monthly Instalment for any loan amount and tenure.',            tags:'EMI calculator loan home car personal education monthly payment',  href:'#404',                                                              live:false},
+  {name:'GST Calculator',                     cat:'Financial', ico:'🧾', desc:'Add or remove GST at any slab — 5%, 12%, 18%, or 28% — on any amount.',                tags:'GST calculator tax slab 18 percent inclusive exclusive amount',    href:'#404',                                                              live:false},
+  {name:'Simple & Compound Interest Calc',    cat:'Financial', ico:'📈', desc:'Calculate simple or compound interest on any principal over any period.',              tags:'interest calculator simple compound principal rate savings',       href:'#404',                                                              live:false},
+  {name:'SIP Returns Calculator',             cat:'Advanced',  ico:'📊', desc:'Calculate the future value of your monthly SIP investment at any return rate.',        tags:'SIP returns calculator systematic investment plan mutual fund',    href:'#404',                                                              live:false},
+  {name:'Home Loan Eligibility Calculator',   cat:'Advanced',  ico:'🏠', desc:'Find out how much home loan you are eligible for based on income and profile.',        tags:'home loan eligibility calculator income bank mortgage housing',    href:'#404',                                                              live:false},
+  {name:'Income Tax Calculator',              cat:'Advanced',  ico:'🧮', desc:'Calculate income tax under old and new regime with side-by-side comparison.',          tags:'income tax calculator old new regime slab India comparison',       href:'#404',                                                              live:false},
+  {name:'Salary Hike Calculator',             cat:'Advanced',  ico:'💹', desc:'Calculate your new salary and take-home after any percentage hike.',                   tags:'salary hike calculator CTC increment percentage new take home',    href:'#404',                                                              live:false},
+];
+
+/* ── ELEMENTS ── */
+const searchInput=document.getElementById('searchInput');
+const searchDropdown=document.getElementById('searchDropdown');
+const searchResultsSection=document.getElementById('searchResultsSection');
+const searchResultsGrid=document.getElementById('searchResultsGrid');
+const noResultsBox=document.getElementById('noResultsBox');
+const searchTermDisplay=document.getElementById('searchTermDisplay');
+
+function matchTool(t,q){
+  q=q.toLowerCase().trim();
+  return t.name.toLowerCase().includes(q)||t.cat.toLowerCase().includes(q)||t.tags.toLowerCase().includes(q)||t.desc.toLowerCase().includes(q);
+}
+
+function makeCard(t){
+  const d=document.createElement('div');
+  d.className='tool-card';
+  d.innerHTML=`
+    <span class="tc-tag ${t.live?'live':'soon'}">${t.live?'● Live':'⏳ Soon'}</span>
+    <div class="tc-ico">${t.ico}</div>
+    <div class="tc-name">${t.name}</div>
+    <div class="tc-desc">${t.desc}</div>
+    ${t.live&&t.href!=='#404'?`<a class="tc-btn blue" href="${t.href}" target="_blank" rel="noopener">Use Calculator →</a>`:`<span class="tc-btn grey">Coming Soon</span>`}`;
+  return d;
+}
+
+function makeDropItem(t){
+  const d=document.createElement('div');
+  d.className='sr-item';
+  d.innerHTML=`<div class="sr-ico">${t.ico}</div><div><div class="sr-name">${t.name}</div><div class="sr-cat">${t.cat} · ${t.live?'✅ Live':'⏳ Coming Soon'}</div></div><div class="sr-arrow">→</div>`;
+  d.addEventListener('click',()=>{
+    if(t.live&&t.href!=='#404') window.open(t.href,'_blank','noopener');
+    else showFull(searchInput.value);
+    closeDrop();
+  });
+  return d;
+}
+
+function showDrop(q){
+  if(!q.trim()){closeDrop();return;}
+  const m=TOOLS.filter(t=>matchTool(t,q));
+  searchDropdown.innerHTML='';
+  if(!m.length){
+    searchDropdown.innerHTML='<div class="sr-empty">No calculators found. Try "courier", "download", "retirement", "EMI", "GST".</div>';
+  } else {
+    const c=document.createElement('div');
+    c.className='sr-count';c.textContent=`${m.length} calculator${m.length===1?'':'s'} found`;
+    searchDropdown.appendChild(c);
+    m.slice(0,8).forEach(t=>searchDropdown.appendChild(makeDropItem(t)));
+  }
+  searchDropdown.classList.add('open');
+}
+
+function closeDrop(){searchDropdown.classList.remove('open');}
+
+function showFull(q){
+  q=q.trim();if(!q)return;
+  const m=TOOLS.filter(t=>matchTool(t,q));
+  searchTermDisplay.textContent=`"${q}"`;
+  searchResultsGrid.innerHTML='';
+  m.forEach(t=>searchResultsGrid.appendChild(makeCard(t)));
+  noResultsBox.classList.toggle('show',m.length===0);
+  searchResultsSection.classList.add('show');
+  searchResultsSection.scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+function runSearch(){
+  closeDrop();
+  showFull(searchInput.value);
+}
+
+function clearSearch(){
+  searchInput.value='';
+  closeDrop();
+  searchResultsSection.classList.remove('show');
+  searchResultsGrid.innerHTML='';
+  noResultsBox.classList.remove('show');
+}
+
+let dt;
+searchInput.addEventListener('input',()=>{
+  clearTimeout(dt);
+  dt=setTimeout(()=>showDrop(searchInput.value),180);
+});
+searchInput.addEventListener('keydown',e=>{
+  if(e.key==='Enter')runSearch();
+  if(e.key==='Escape')closeDrop();
+});
+document.addEventListener('click',e=>{
+  if(!e.target.closest('.search-wrap'))closeDrop();
+});
+</script>
+</body>
+</html>
