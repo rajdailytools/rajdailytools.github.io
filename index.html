@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google Analytics -->
-<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-7G3B1WLTC3"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-7G3B1WLTC3');
 </script>
 <meta charset="UTF-8">
@@ -47,9 +44,7 @@
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
   html { scroll-behavior: smooth; font-size: 16px; }
-
   body {
     font-family: var(--font-body);
     color: var(--text);
@@ -58,7 +53,6 @@
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
   }
-
   a { text-decoration: none; color: inherit; }
   img { max-width: 100%; display: block; }
   ul { list-style: none; }
@@ -82,9 +76,7 @@
     font-weight: 700; color: var(--text); line-height: 1.2; margin-bottom: 14px;
   }
   .section-heading span { color: var(--blue); }
-  .section-sub {
-    font-size: 17px; color: var(--text-3); max-width: 560px; line-height: 1.7;
-  }
+  .section-sub { font-size: 17px; color: var(--text-3); max-width: 560px; line-height: 1.7; }
   .section-header { margin-bottom: 48px; }
   .section-header.center { text-align: center; }
   .section-header.center .section-sub { margin: 0 auto; }
@@ -135,36 +127,46 @@
   .hamburger {
     display: none; flex-direction: column; gap: 5px;
     padding: 8px; border-radius: var(--radius-sm);
-    cursor: pointer;
+    cursor: pointer; background: none; border: none;
   }
   .hamburger span {
     display: block; width: 22px; height: 2px; background: var(--text);
     border-radius: 2px; transition: all 0.3s;
   }
 
-  .mobile-drawer {
-    display: none; position: fixed; top: 0; right: -100%; width: 280px; height: 100vh;
-    background: white; z-index: 1100; padding: 24px;
-    box-shadow: var(--shadow-lg); transition: right 0.35s cubic-bezier(0.4,0,0.2,1);
-    overflow-y: auto;
-  }
-  .mobile-drawer.open { right: 0; }
+  /* ============ MOBILE DRAWER ============ */
   .drawer-overlay {
-    display: none; position: fixed; inset: 0; background: rgba(15,23,42,0.4);
+    display: none; position: fixed; inset: 0;
+    background: rgba(15,23,42,0.5);
     z-index: 1050; backdrop-filter: blur(2px);
   }
   .drawer-overlay.open { display: block; }
-  .drawer-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 32px; }
+
+  .mobile-drawer {
+    position: fixed; top: 0; right: -100%; width: 300px; height: 100vh;
+    background: white; z-index: 1100; padding: 24px;
+    box-shadow: var(--shadow-lg); transition: right 0.35s cubic-bezier(0.4,0,0.2,1);
+    overflow-y: auto; display: flex; flex-direction: column;
+  }
+  .mobile-drawer.open { right: 0; }
+
+  .drawer-head {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-bottom: 32px;
+  }
   .drawer-close {
     width: 36px; height: 36px; border-radius: 8px;
     display: flex; align-items: center; justify-content: center;
-    color: var(--text-3); font-size: 22px; background: var(--surface);
+    color: var(--text-3); font-size: 20px; background: var(--surface);
+    cursor: pointer; border: none; flex-shrink: 0;
   }
+  .drawer-close:hover { background: #fee2e2; color: #ef4444; }
+
   .mobile-nav { display: flex; flex-direction: column; gap: 4px; }
   .mobile-nav a {
     font-size: 15px; font-weight: 500; color: var(--text-2);
-    padding: 12px 16px; border-radius: var(--radius-sm);
-    transition: all 0.2s;
+    padding: 13px 16px; border-radius: var(--radius-sm);
+    transition: all 0.2s; display: block;
   }
   .mobile-nav a:hover { color: var(--blue); background: var(--blue-xlight); }
 
@@ -215,26 +217,47 @@
     font-size: 16px; color: var(--text-3); line-height: 1.75; margin-bottom: 36px; max-width: 480px;
   }
   .hero-search {
-    display: flex; align-items: center; gap: 0;
+    display: flex; align-items: center;
     background: white; border: 1.5px solid var(--border);
     border-radius: var(--radius); overflow: hidden;
     box-shadow: var(--shadow-md); max-width: 500px; margin-bottom: 32px;
     transition: border-color 0.2s, box-shadow 0.2s;
   }
   .hero-search:focus-within { border-color: var(--blue); box-shadow: 0 0 0 4px rgba(37,99,235,0.1), var(--shadow-md); }
-  .hero-search-icon { padding: 0 14px 0 18px; color: var(--text-4); }
-  .hero-search-icon svg { width: 18px; height: 18px; stroke: currentColor; fill: none; stroke-width: 2; }
+  .hero-search-icon { padding: 0 14px 0 18px; color: var(--text-4); flex-shrink: 0; }
+  .hero-search-icon svg { width: 18px; height: 18px; stroke: currentColor; fill: none; stroke-width: 2; display: block; }
   .hero-search input {
     flex: 1; padding: 15px 8px; font-size: 15px; color: var(--text);
-    background: none; border: none; outline: none; font-family: var(--font-body);
+    background: none; border: none; outline: none; font-family: var(--font-body); min-width: 0;
   }
   .hero-search input::placeholder { color: var(--text-4); }
   .hero-search-btn {
     background: var(--blue); color: white; font-weight: 600; font-size: 14px;
     padding: 12px 22px; border-radius: 0 12px 12px 0; margin: 3px;
-    transition: background 0.2s; white-space: nowrap;
+    transition: background 0.2s; white-space: nowrap; cursor: pointer; border: none;
   }
   .hero-search-btn:hover { background: var(--blue-dark); }
+
+  /* Search Results Dropdown */
+  .search-results-wrap { position: relative; max-width: 500px; }
+  .search-dropdown {
+    display: none; position: absolute; top: calc(100% + 6px); left: 0; right: 0;
+    background: white; border: 1.5px solid var(--border); border-radius: var(--radius);
+    box-shadow: var(--shadow-lg); z-index: 200; max-height: 320px; overflow-y: auto;
+  }
+  .search-dropdown.open { display: block; }
+  .search-result-item {
+    display: flex; align-items: center; gap: 12px;
+    padding: 12px 16px; cursor: pointer; transition: background 0.15s;
+    border-bottom: 1px solid var(--border);
+  }
+  .search-result-item:last-child { border-bottom: none; }
+  .search-result-item:hover { background: var(--blue-xlight); }
+  .sri-icon { font-size: 18px; flex-shrink: 0; }
+  .sri-info { display: flex; flex-direction: column; }
+  .sri-name { font-size: 14px; font-weight: 600; color: var(--text); }
+  .sri-cat { font-size: 12px; color: var(--text-3); }
+  .search-no-result { padding: 20px; text-align: center; color: var(--text-3); font-size: 14px; }
 
   .hero-actions { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
   .btn-primary {
@@ -257,7 +280,7 @@
   .stat-num span { color: var(--blue); }
   .stat-label { font-size: 13px; color: var(--text-3); font-weight: 500; }
 
-  /* Hero Visual */
+  /* Hero Visual / Dashboard */
   .hero-visual { position: relative; }
   .hero-dashboard {
     background: white; border-radius: var(--radius-xl);
@@ -266,27 +289,61 @@
   }
   .hd-topbar { display: flex; align-items: center; gap: 6px; margin-bottom: 20px; }
   .hd-dot { width: 11px; height: 11px; border-radius: 50%; }
-  .hd-dot.r { background: #ff5f57; } .hd-dot.y { background: #ffbd2e; } .hd-dot.g { background: #28c840; }
+  .hd-dot.r { background: #ff5f57; }
+  .hd-dot.y { background: #ffbd2e; }
+  .hd-dot.g { background: #28c840; }
   .hd-title { margin-left: 10px; font-size: 13px; font-weight: 600; color: var(--text-3); }
+
+  /* Dashboard search */
+  .hd-search-wrap { position: relative; margin-bottom: 14px; }
+  .hd-search {
+    display: flex; align-items: center; gap: 8px;
+    background: var(--surface); border-radius: 8px;
+    padding: 10px 14px; border: 1.5px solid var(--border); cursor: text;
+    transition: border-color 0.2s;
+  }
+  .hd-search:focus-within { border-color: var(--blue); background: white; }
+  .hd-search input {
+    border: none; background: none; outline: none; font-size: 12px;
+    color: var(--text); width: 100%; font-family: var(--font-body);
+  }
+  .hd-search input::placeholder { color: var(--text-4); }
+  .hd-search-submit {
+    background: var(--blue); color: white; border: none; border-radius: 6px;
+    padding: 5px 10px; font-size: 11px; font-weight: 600; cursor: pointer;
+    white-space: nowrap;
+  }
+  .hd-search-submit:hover { background: var(--blue-dark); }
+  .hd-search-dropdown {
+    display: none; position: absolute; top: 100%; left: 0; right: 0;
+    background: white; border: 1.5px solid var(--border); border-radius: 10px;
+    box-shadow: var(--shadow-md); z-index: 50; max-height: 200px; overflow-y: auto;
+    margin-top: 4px;
+  }
+  .hd-search-dropdown.open { display: block; }
+  .hd-sd-item {
+    display: flex; align-items: center; gap: 8px;
+    padding: 9px 12px; cursor: pointer; font-size: 12px;
+    color: var(--text-2); transition: background 0.15s;
+    border-bottom: 1px solid var(--border);
+  }
+  .hd-sd-item:last-child { border-bottom: none; }
+  .hd-sd-item:hover { background: var(--blue-xlight); color: var(--blue); }
 
   .hd-tools { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-bottom: 16px; }
   .hd-tool {
     background: var(--surface); border-radius: 10px; padding: 14px 10px;
     display: flex; flex-direction: column; align-items: center; gap: 6px;
     transition: all 0.2s; cursor: pointer; border: 1px solid var(--border);
+    text-decoration: none;
   }
-  .hd-tool:hover { background: var(--blue-xlight); border-color: var(--blue-subtle); }
+  .hd-tool:hover { background: var(--blue-xlight); border-color: var(--blue-subtle); transform: translateY(-2px); }
   .hd-tool-icon { font-size: 22px; }
   .hd-tool-name { font-size: 10px; font-weight: 600; color: var(--text-2); text-align: center; }
 
-  .hd-search {
-    display: flex; align-items: center; gap: 8px;
-    background: var(--surface); border-radius: 8px;
-    padding: 10px 14px; border: 1px solid var(--border); margin-bottom: 14px;
-  }
-  .hd-search span { font-size: 12px; color: var(--text-4); }
   .hd-bar { height: 8px; background: var(--blue-subtle); border-radius: 4px; margin-bottom: 8px; }
-  .hd-bar.w80 { width: 80%; } .hd-bar.w60 { width: 60%; background: #fef3c7; }
+  .hd-bar.w80 { width: 80%; }
+  .hd-bar.w60 { width: 60%; background: #fef3c7; }
   .hd-bar.w70 { width: 70%; background: #d1fae5; }
 
   .hero-float-card {
@@ -295,26 +352,27 @@
     border: 1px solid var(--border);
     display: flex; align-items: center; gap: 10px;
   }
-  .hero-float-card.top { top: -20px; right: -30px; font-size: 13px; }
-  .hero-float-card.bottom { bottom: -20px; left: -30px; font-size: 13px; }
+  .hero-float-card.top { top: -20px; right: -30px; }
+  .hero-float-card.bottom { bottom: -20px; left: -30px; }
   .float-icon { font-size: 22px; }
   .float-text { display: flex; flex-direction: column; }
   .float-label { font-weight: 600; font-size: 13px; color: var(--text); }
   .float-sub { font-size: 11px; color: var(--text-3); }
 
   /* ============ TICKER ============ */
-  .ticker {
-    background: var(--blue); padding: 12px 0; overflow: hidden;
-  }
-  .ticker-inner {
+  .ticker { background: var(--blue); padding: 12px 0; overflow: hidden; }
+  .ticker-track {
     display: flex; align-items: center; white-space: nowrap;
-    animation: ticker 30s linear infinite;
+    animation: ticker 40s linear infinite;
   }
-  .ticker-inner span {
+  .ticker-track:hover { animation-play-state: paused; }
+  .ticker-track span {
     font-size: 13px; font-weight: 500; color: rgba(255,255,255,0.9);
-    padding: 0 32px;
+    padding: 0 24px; cursor: pointer; transition: color 0.2s;
+    text-decoration: none; display: inline-block;
   }
-  .ticker-sep { color: rgba(255,255,255,0.4); }
+  .ticker-track span:hover { color: white; text-decoration: underline; }
+  .ticker-sep { color: rgba(255,255,255,0.4) !important; cursor: default !important; }
   @keyframes ticker { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
 
   /* ============ CATEGORIES ============ */
@@ -392,12 +450,9 @@
   .latest-card-desc { font-size: 13px; color: var(--text-3); line-height: 1.6; margin-bottom: 16px; }
   .latest-card-footer { display: flex; align-items: center; justify-content: space-between; }
   .latest-date { font-size: 12px; color: var(--text-4); font-weight: 500; }
-  .latest-use {
-    font-size: 13px; font-weight: 600; color: var(--blue);
-    display: flex; align-items: center; gap: 4px;
-  }
+  .latest-use { font-size: 13px; font-weight: 600; color: var(--blue); display: flex; align-items: center; gap: 4px; }
 
-  /* ============ PROBLEMS SECTION ============ */
+  /* ============ PROBLEMS ============ */
   .problems { background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%); }
   .problems .section-label { background: rgba(255,255,255,0.1); color: #93c5fd; }
   .problems .section-heading { color: white; }
@@ -405,8 +460,7 @@
   .problems-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
   .problem-card {
     background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
-    border-radius: var(--radius-lg); padding: 28px 24px;
-    transition: all 0.25s;
+    border-radius: var(--radius-lg); padding: 28px 24px; transition: all 0.25s;
   }
   .problem-card:hover { background: rgba(255,255,255,0.1); transform: translateY(-4px); }
   .problem-icon { font-size: 32px; margin-bottom: 16px; }
@@ -442,7 +496,6 @@
     padding: 10px 16px; font-size: 13px; color: rgba(255,255,255,0.9); font-weight: 500;
     display: flex; align-items: center; gap: 8px;
   }
-
   .founder-content .section-label { margin-bottom: 14px; }
   .founder-content h2 { font-family: var(--font-display); font-size: 34px; font-weight: 800; line-height: 1.2; color: var(--text); margin-bottom: 16px; }
   .founder-content h2 span { color: var(--blue); }
@@ -480,8 +533,7 @@
   }
   .faq-q {
     display: flex; align-items: center; justify-content: space-between;
-    padding: 20px 24px; cursor: pointer; gap: 16px;
-    transition: background 0.2s;
+    padding: 20px 24px; cursor: pointer; gap: 16px; transition: background 0.2s;
   }
   .faq-q:hover { background: var(--blue-xlight); }
   .faq-q-text { font-weight: 600; font-size: 16px; color: var(--text); }
@@ -493,14 +545,11 @@
     font-weight: 300;
   }
   .faq-item.open .faq-icon { transform: rotate(45deg); background: var(--blue); color: white; }
-  .faq-a {
-    max-height: 0; overflow: hidden;
-    transition: max-height 0.35s cubic-bezier(0.4,0,0.2,1), padding 0.35s;
-  }
+  .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.35s cubic-bezier(0.4,0,0.2,1); }
   .faq-a-inner { padding: 0 24px 20px; font-size: 15px; color: var(--text-3); line-height: 1.75; }
   .faq-item.open .faq-a { max-height: 300px; }
 
-    /* ============ CONTACT ============ */
+  /* ============ CONTACT ============ */
   .contact { background: white; }
   .contact-inner {
     display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
@@ -512,8 +561,7 @@
   .contact-email-item {
     display: flex; align-items: center; gap: 14px;
     background: var(--surface); border: 1.5px solid var(--border);
-    border-radius: var(--radius); padding: 14px 18px;
-    transition: border-color 0.2s;
+    border-radius: var(--radius); padding: 14px 18px; transition: border-color 0.2s;
   }
   .contact-email-item:hover { border-color: var(--blue); }
   .email-icon {
@@ -522,7 +570,6 @@
   }
   .email-label { font-size: 11px; color: var(--text-4); font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; }
   .email-addr { font-size: 15px; font-weight: 600; color: var(--blue); }
-
   .contact-card {
     background: linear-gradient(135deg, var(--blue) 0%, #1e40af 100%);
     border-radius: var(--radius-xl); padding: 44px 36px;
@@ -537,10 +584,9 @@
     transition: all 0.2s; display: inline-block; box-shadow: var(--shadow);
   }
   .btn-white:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
-   ============ FOOTER ============ */
-  .site-footer {
-    background: #0f172a; padding: 72px 0 0;
-  }
+
+  /* ============ FOOTER ============ */
+  .site-footer { background: #0f172a; padding: 72px 0 0; }
   .footer-top {
     display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 56px;
   }
@@ -555,7 +601,6 @@
     color: #94a3b8; font-size: 16px; transition: all 0.2s;
   }
   .social-btn:hover { background: var(--blue); color: white; }
-
   .footer-col h4 {
     font-family: var(--font-display); font-size: 14px; font-weight: 700;
     color: white; margin-bottom: 18px; letter-spacing: 0.04em;
@@ -563,7 +608,6 @@
   .footer-col ul { display: flex; flex-direction: column; gap: 10px; }
   .footer-col ul a { font-size: 14px; color: #64748b; transition: color 0.2s; }
   .footer-col ul a:hover { color: #93c5fd; }
-
   .footer-bottom {
     border-top: 1px solid rgba(255,255,255,0.07);
     padding: 24px 0;
@@ -583,7 +627,7 @@
     border-radius: 12px; display: flex; align-items: center; justify-content: center;
     box-shadow: var(--shadow-blue); cursor: pointer; font-size: 18px;
     transition: all 0.3s; opacity: 0; pointer-events: none;
-    transform: translateY(16px);
+    transform: translateY(16px); border: none;
   }
   .back-to-top.visible { opacity: 1; pointer-events: auto; transform: translateY(0); }
   .back-to-top:hover { transform: translateY(-3px); box-shadow: 0 12px 36px rgba(37,99,235,0.35); }
@@ -617,11 +661,39 @@
 </style>
 </head>
 <body>
-  <!-- HEADER -->
+
+<!-- DRAWER OVERLAY -->
+<div class="drawer-overlay" id="drawerOverlay"></div>
+
+<!-- MOBILE DRAWER -->
+<div class="mobile-drawer" id="mobileDrawer">
+  <div class="drawer-head">
+    <div class="logo">
+      <div class="logo-icon">
+        <svg viewBox="0 0 24 24" fill="white"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+      </div>
+      <div class="logo-text">
+        <span class="logo-name">Raj<span>Daily</span>Tools</span>
+      </div>
+    </div>
+    <button class="drawer-close" id="drawerClose" aria-label="Close menu">✕</button>
+  </div>
+  <nav class="mobile-nav">
+    <a href="index.html">🏠 Home</a>
+    <a href="categories.html">📂 Categories</a>
+    <a href="popular.html">⭐ Popular</a>
+    <a href="latest.html">🆕 Latest</a>
+    <a href="about.html">👤 About</a>
+    <a href="faq.html">❓ FAQ</a>
+    <a href="contact.html">📬 Contact</a>
+  </nav>
+</div>
+
+<!-- HEADER -->
 <header class="site-header">
   <div class="container">
     <div class="header-inner">
-      <a href="#" class="logo">
+      <a href="index.html" class="logo">
         <div class="logo-icon">
           <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
         </div>
@@ -631,60 +703,21 @@
         </div>
       </a>
       <nav class="desktop-nav">
-
-<a href="index.html">Home</a>
-
-<a href="categories.html">Categories</a>
-
-<a href="popular.html">Popular</a>
-
-<a href="latest.html">Latest</a>
-
-<a href="about.html">About</a>
-
-<a href="faq.html">FAQ</a>
-
-<a href="contact.html">Contact</a>
-
-</nav>
+        <a href="index.html">Home</a>
+        <a href="categories.html">Categories</a>
+        <a href="popular.html">Popular</a>
+        <a href="latest.html">Latest</a>
+        <a href="about.html">About</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html">Contact</a>
+      </nav>
       <a href="categories.html" class="header-cta">Explore Tools →</a>
-      <button class="hamburger" id="menuBtn" aria-label="Menu" onclick="openDrawer()">
+      <button class="hamburger" id="menuBtn" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
     </div>
   </div>
 </header>
-
-<!-- MOBILE DRAWER -->
-<div class="drawer-overlay" id="drawerOverlay"></div>
-<div class="mobile-drawer" id="mobileDrawer">
-  <div class="drawer-head">
-    <div class="logo">
-      <div class="logo-icon">
-        <svg viewBox="0 0 24 24" fill="white"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
-      </div>
-      <div class="logo-text"><span class="logo-name">Raj<span>Daily</span>Tools</span></div>
-    </div>
-    <button class="drawer-close" id="drawerClose">✕</button>
-  </div>
-  <nav class="mobile-nav">
-
-<a href="index.html" onclick="closeDrawer()">🏠 Home</a>
-
-<a href="categories.html" onclick="closeDrawer()">📂 Categories</a>
-
-<a href="popular.html" onclick="closeDrawer()">⭐ Popular</a>
-
-<a href="latest.html" onclick="closeDrawer()">🆕 Latest</a>
-
-<a href="about.html" onclick="closeDrawer()">👤 About</a>
-
-<a href="faq.html" onclick="closeDrawer()">❓ FAQ</a>
-
-<a href="contact.html" onclick="closeDrawer()">📬 Contact</a>
-
-  </nav>
-</div>
 
 <!-- HERO -->
 <section class="hero">
@@ -699,12 +732,17 @@
         <p class="hero-tagline">Smart Tools for Daily Life Challenges</p>
         <p class="hero-desc">RajDailyTools is India's most ambitious free online tools platform. Built for students, professionals, and everyday problem-solvers. Fast, accurate, and completely free.</p>
 
-        <div class="hero-search">
-          <div class="hero-search-icon">
-            <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <div class="search-results-wrap">
+          <div class="hero-search">
+            <div class="hero-search-icon">
+              <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            </div>
+            <input type="text" id="heroSearchInput" placeholder="Search tools… e.g. EMI Calculator" autocomplete="off">
+            <button class="hero-search-btn" id="heroSearchBtn">Search</button>
           </div>
-          <input type="text" id="searchInput" placeholder="Search 30,000+ tools… e.g. EMI Calculator">
-          <button class="hero-search-btn" onclick="handleSearch()">Search</button>
+          <div class="search-dropdown" id="heroSearchDropdown">
+            <!-- filled by JS -->
+          </div>
         </div>
 
         <div class="hero-actions">
@@ -719,26 +757,60 @@
         </div>
       </div>
 
+      <!-- DASHBOARD VISUAL -->
       <div class="hero-visual">
         <div class="hero-dashboard">
           <div class="hd-topbar">
-            <div class="hd-dot r"></div><div class="hd-dot y"></div><div class="hd-dot g"></div>
+            <div class="hd-dot r"></div>
+            <div class="hd-dot y"></div>
+            <div class="hd-dot g"></div>
             <span class="hd-title">RajDailyTools Dashboard</span>
           </div>
-          <div class="hd-search">
-            <span style="font-size:16px">🔍</span>
-            <span>Search tools…</span>
+          <div class="hd-search-wrap">
+            <div class="hd-search">
+              <span style="font-size:15px">🔍</span>
+              <input type="text" id="dashSearchInput" placeholder="Search tools…" autocomplete="off">
+              <button class="hd-search-submit" id="dashSearchBtn">Search</button>
+            </div>
+            <div class="hd-search-dropdown" id="dashSearchDropdown"></div>
           </div>
           <div class="hd-tools">
-            <div class="hd-tool"><div class="hd-tool-icon">🧮</div><div class="hd-tool-name">EMI Calc</div></div>
-            <div class="hd-tool"><div class="hd-tool-icon">📊</div><div class="hd-tool-name">% Calc</div></div>
-            <div class="hd-tool"><div class="hd-tool-icon">🎂</div><div class="hd-tool-name">Age Calc</div></div>
-            <div class="hd-tool"><div class="hd-tool-icon">📝</div><div class="hd-tool-name">Word Count</div></div>
-            <div class="hd-tool"><div class="hd-tool-icon">💧</div><div class="hd-tool-name">Water Intake</div></div>
-            <div class="hd-tool"><div class="hd-tool-icon">🔄</div><div class="hd-tool-name">Converter</div></div>
-            <div class="hd-tool"><div class="hd-tool-icon">📄</div><div class="hd-tool-name">PDF Tools</div></div>
-            <div class="hd-tool"><div class="hd-tool-icon">🎓</div><div class="hd-tool-name">GPA Calc</div></div>
-            <div class="hd-tool"><div class="hd-tool-icon">❤️</div><div class="hd-tool-name">BMI Calc</div></div>
+            <a href="https://rajdailytools.in/advanced-emi-calculator-global.html" class="hd-tool" target="_blank">
+              <div class="hd-tool-icon">🧮</div>
+              <div class="hd-tool-name">EMI Calc</div>
+            </a>
+            <a href="https://rajdailytools.in/bmi-calculator.html" class="hd-tool" target="_blank">
+              <div class="hd-tool-icon">❤️</div>
+              <div class="hd-tool-name">BMI Calc</div>
+            </a>
+            <a href="https://rajdailytools.in/word-counter-tool.html" class="hd-tool" target="_blank">
+              <div class="hd-tool-icon">📝</div>
+              <div class="hd-tool-name">Word Count</div>
+            </a>
+            <a href="https://rajdailytools.in/global-time-converter.html" class="hd-tool" target="_blank">
+              <div class="hd-tool-icon">💧</div>
+              <div class="hd-tool-name">Time Conv</div>
+            </a>
+            <a href="https://rajdailytools.in/energy-converter.html" class="hd-tool" target="_blank">
+              <div class="hd-tool-icon">🔄</div>
+              <div class="hd-tool-name">Converter</div>
+            </a>
+            <a href="https://rajdailytools.in/compound-interest-calculator.html" class="hd-tool" target="_blank">
+              <div class="hd-tool-icon">📄</div>
+              <div class="hd-tool-name">Compound</div>
+            </a>
+            <a href="https://rajdailytools.in/sip-calculator-advanced.html" class="hd-tool" target="_blank">
+              <div class="hd-tool-icon">🎓</div>
+              <div class="hd-tool-name">SIP Calc</div>
+            </a>
+            <a href="https://rajdailytools.in/tdee-calculator.html" class="hd-tool" target="_blank">
+              <div class="hd-tool-icon">📊</div>
+              <div class="hd-tool-name">TDEE Calc</div>
+            </a>
+            <a href="https://rajdailytools.in/currency-converter-live-usd-to-inr-1.html" class="hd-tool" target="_blank">
+              <div class="hd-tool-icon">💱</div>
+              <div class="hd-tool-name">Currency</div>
+            </a>
           </div>
           <div class="hd-bar w80"></div>
           <div class="hd-bar w60"></div>
@@ -755,7 +827,7 @@
           <div class="float-icon">🇮🇳</div>
           <div class="float-text">
             <span class="float-label">Made in India</span>
-            <span class="float-sub">For India & World</span>
+            <span class="float-sub">For India &amp; World</span>
           </div>
         </div>
       </div>
@@ -765,29 +837,67 @@
 
 <!-- TICKER -->
 <div class="ticker">
-  <div class="ticker-inner" id="tickerInner">
-    <span>🧮 EMI Calculator</span><span class="ticker-sep">•</span>
-    <span>📊 Percentage Calculator</span><span class="ticker-sep">•</span>
-    <span>🎂 Age Calculator</span><span class="ticker-sep">•</span>
-    <span>📝 Word Counter</span><span class="ticker-sep">•</span>
-    <span>💧 Water Intake Tracker</span><span class="ticker-sep">•</span>
-    <span>🔄 Unit Converter</span><span class="ticker-sep">•</span>
-    <span>🎓 GPA Calculator</span><span class="ticker-sep">•</span>
-    <span>📄 PDF to Image</span><span class="ticker-sep">•</span>
-    <span>❤️ BMI Calculator</span><span class="ticker-sep">•</span>
-    <span>💰 SIP Calculator</span><span class="ticker-sep">•</span>
-    <span>📐 Area Calculator</span><span class="ticker-sep">•</span>
-    <span>🌡️ Temperature Converter</span><span class="ticker-sep">•</span>
-    <span>🧮 EMI Calculator</span><span class="ticker-sep">•</span>
-    <span>📊 Percentage Calculator</span><span class="ticker-sep">•</span>
-    <span>🎂 Age Calculator</span><span class="ticker-sep">•</span>
-    <span>📝 Word Counter</span><span class="ticker-sep">•</span>
-    <span>💧 Water Intake Tracker</span><span class="ticker-sep">•</span>
-    <span>🔄 Unit Converter</span><span class="ticker-sep">•</span>
-    <span>🎓 GPA Calculator</span><span class="ticker-sep">•</span>
-    <span>📄 PDF to Image</span><span class="ticker-sep">•</span>
-    <span>❤️ BMI Calculator</span><span class="ticker-sep">•</span>
-    <span>💰 SIP Calculator</span><span class="ticker-sep">•</span>
+  <div class="ticker-track" id="tickerTrack">
+    <a href="https://rajdailytools.in/advanced-emi-calculator-global.html" target="_blank" style="color:rgba(255,255,255,0.9);font-size:13px;font-weight:500;padding:0 24px;white-space:nowrap;">🧮 EMI Calculator</a>
+    <span class="ticker-sep" style="color:rgba(255,255,255,0.4);padding:0 8px;">•</span>
+    <a href="https://rajdailytools.in/bmi-calculator.html" target="_blank" style="color:rgba(255,255,255,0.9);font-size:13px;font-weight:500;padding:0 24px;white-space:nowrap;">❤️ BMI Calculator</a>
+    <span class="ticker-sep" style="color:rgba(255,255,255,0.4);padding:0 8px;">•</span>
+    <a href="https://rajdailytools.in/word-counter-tool.html" target="_blank" style="color:rgba(255,255,255,0.9);font-size:13px;font-weight:500;padding:0 24px;white-space:nowrap;">📝 Word Counter</a>
+    <span class="ticker-sep" style="color:rgba(255,255,255,0.4);padding:0 8px;">•</span>
+    <a href="https://rajdailytools.in/sip-calculator-advanced.html" target="_blank" style="color:rgba(255,255,255,0.9);font-size:13px;font-weight:500;padding:0 24px;white-space:nowrap;">💰 SIP Calculator</a>
+    <span class="ticker-sep" style="color:rgba(255,255,255,0.4);padding:0 8px;">•</span>
+    <a href="https://rajdailytools.in/tdee-calculator.html" target="_blank" style="color:rgba(255,255,255,0.9);font-size:13px;font-weight:500;padding:0 24px;white-space:nowrap;">🏃 TDEE Calculator</a>
+    <span class="ticker-sep" style="color:rgba(255,255,255,0.4);padding:0 8px;">•</span>
+    <a href="https://rajdailytools.in/currency-converter-live-usd-to-inr-1.html" target="_blank" style="color:rgba(255,255,255,0.9);font-size:13px;font-weight:500;padding:0 24px;white-space:nowrap;">💱 Currency Converter</a>
+    <span class="ticker-sep" style="color:rgba(255,255,255,0.4);padding:0 8px;">•</span>
+    <a href="https://rajdailytools.in/compound-interest-calculator.html" target="_blank" style="color:rgba(255,255,255,0.9);font-size:13px;font-weight:500;padding:0 24px;white-space:nowrap;">📈 Compound Interest</a>
+    <span class="ticker-sep" style="color:rgba(255,255,255,0.4);padding:0 8px;">•</span>
+    <a href="https://rajdailytools.in/steps-to-fat-burn-calculator.html" target="_blank" style="color:rgba(255,255,255,0.9);font-size:13px;font-weight:500;padding:0 24px;white-space:nowrap;">🔥 Fat Burn Calculator</a>
+    <span class="ticker-sep" style="color:rgba(255,255,255,0.4);padding:0 8px;">•</span>
+    <a href="https://rajdailytools.in/calories-to-weight-gain-converter.html" target="_blank" style="color:rgba(255,255,255,0.9);font-size:13px;font-weight:500;padding:0 24px;white-space:nowrap;">🥗 Calorie Calculator</a>
+    <span class="ticker-sep" style="color:rgba(255,255,255,0.4);padding:0 8px;">•</span>
+    <a href="https://rajdailytools.in/plagiarism-checker-tool.html" target="_blank" style="color:rgba(255,255,255,0.9);font-size:13px;font-weight:500;padding:0 24px;white-space:nowrap;">🔍 Plagiarism Checker</a>
+    <span class="ticker-sep" style="color:rgba(255,255,255,0.4);padding:0 8px;">•</span>
+    <a href="https://rajdailytools.in/profit-margin-calculator.html" target="_blank" style="color:rgba(255,255,255,0.9);font-size:13px;font-weight:500;padding:0 24px;white-space:nowrap;">💹 Profit Margin Calc</a>
+    <span class="ticker-sep" style="color:rgba(255,255,255,0.4);padding:0 8px;">•</span>
+    <a href="https://rajdailytools.in/free-janam-kundli-online-maker.html" target="_blank" style="color:rgba(255,255,255,0.9);font-size:13px;font-weight:500;padding:0 24px;white-space:nowrap;">🌙 Kundli Maker</a>
+    <span class="ticker-sep" style="color:rgba(255,255,255,0.4);padding:0 8px;">•</span>
+    <a href="https://rajdailytools.in/net-worth-tracker-rajdailytools.html" target="_blank" style="color:rgba(255,255,255,0.9);font-size:13px;font-weight:500;padding:0 24px;white-space:nowrap;">💎 Net Worth Tracker</a>
+    <span class="ticker-sep" style="color:rgba(255,255,255,0.4);padding:0 8px;">•</span>
+    <a href="https://rajdailytools.in/usa-salary-calculator.html" target="_blank" style="color:rgba(255,255,255,0.9);font-size:13px;font-weight:500;padding:0 24px;white-space:nowrap;">🇺🇸 USA Salary Calc</a>
+    <span class="ticker-sep" style="color:rgba(255,255,255,0.4);padding:0 8px;">•</span>
+    <a href="https://rajdailytools.in/uk-salary-calculator.html" target="_blank" style="color:rgba(255,255,255,0.9);font-size:13px;font-weight:500;padding:0 24px;white-space:nowrap;">🇬🇧 UK Salary Calc</a>
+    <span class="ticker-sep" style="color:rgba(255,255,255,0.4);padding:0 8px;">•</span>
+    <!-- Duplicate for seamless loop -->
+    <a href="https://rajdailytools.in/advanced-emi-calculator-global.html" target="_blank" style="color:rgba(255,255,255,0.9);font-size:13px;font-weight:500;padding:0 24px;white-space:nowrap;">🧮 EMI Calculator</a>
+    <span class="ticker-sep" style="color:rgba(255,255,255,0.4);padding:0 8px;">•</span>
+    <a href="https://rajdailytools.in/bmi-calculator.html" target="_blank" style="color:rgba(255,255,255,0.9);font-size:13px;font-weight:500;padding:0 24px;white-space:nowrap;">❤️ BMI Calculator</a>
+    <span class="ticker-sep" style="color:rgba(255,255,255,0.4);padding:0 8px;">•</span>
+    <a href="https://rajdailytools.in/word-counter-tool.html" target="_blank" style="color:rgba(255,255,255,0.9);font-size:13px;font-weight:500;padding:0 24px;white-space:nowrap;">📝 Word Counter</a>
+    <span class="ticker-sep" style="color:rgba(255,255,255,0.4);padding:0 8px;">•</span>
+    <a href="https://rajdailytools.in/sip-calculator-advanced.html" target="_blank" style="color:rgba(255,255,255,0.9);font-size:13px;font-weight:500;padding:0 24px;white-space:nowrap;">💰 SIP Calculator</a>
+    <span class="ticker-sep" style="color:rgba(255,255,255,0.4);padding:0 8px;">•</span>
+    <a href="https://rajdailytools.in/tdee-calculator.html" target="_blank" style="color:rgba(255,255,255,0.9);font-size:13px;font-weight:500;padding:0 24px;white-space:nowrap;">🏃 TDEE Calculator</a>
+    <span class="ticker-sep" style="color:rgba(255,255,255,0.4);padding:0 8px;">•</span>
+    <a href="https://rajdailytools.in/currency-converter-live-usd-to-inr-1.html" target="_blank" style="color:rgba(255,255,255,0.9);font-size:13px;font-weight:500;padding:0 24px;white-space:nowrap;">💱 Currency Converter</a>
+    <span class="ticker-sep" style="color:rgba(255,255,255,0.4);padding:0 8px;">•</span>
+    <a href="https://rajdailytools.in/compound-interest-calculator.html" target="_blank" style="color:rgba(255,255,255,0.9);font-size:13px;font-weight:500;padding:0 24px;white-space:nowrap;">📈 Compound Interest</a>
+    <span class="ticker-sep" style="color:rgba(255,255,255,0.4);padding:0 8px;">•</span>
+    <a href="https://rajdailytools.in/steps-to-fat-burn-calculator.html" target="_blank" style="color:rgba(255,255,255,0.9);font-size:13px;font-weight:500;padding:0 24px;white-space:nowrap;">🔥 Fat Burn Calculator</a>
+    <span class="ticker-sep" style="color:rgba(255,255,255,0.4);padding:0 8px;">•</span>
+    <a href="https://rajdailytools.in/calories-to-weight-gain-converter.html" target="_blank" style="color:rgba(255,255,255,0.9);font-size:13px;font-weight:500;padding:0 24px;white-space:nowrap;">🥗 Calorie Calculator</a>
+    <span class="ticker-sep" style="color:rgba(255,255,255,0.4);padding:0 8px;">•</span>
+    <a href="https://rajdailytools.in/plagiarism-checker-tool.html" target="_blank" style="color:rgba(255,255,255,0.9);font-size:13px;font-weight:500;padding:0 24px;white-space:nowrap;">🔍 Plagiarism Checker</a>
+    <span class="ticker-sep" style="color:rgba(255,255,255,0.4);padding:0 8px;">•</span>
+    <a href="https://rajdailytools.in/profit-margin-calculator.html" target="_blank" style="color:rgba(255,255,255,0.9);font-size:13px;font-weight:500;padding:0 24px;white-space:nowrap;">💹 Profit Margin Calc</a>
+    <span class="ticker-sep" style="color:rgba(255,255,255,0.4);padding:0 8px;">•</span>
+    <a href="https://rajdailytools.in/free-janam-kundli-online-maker.html" target="_blank" style="color:rgba(255,255,255,0.9);font-size:13px;font-weight:500;padding:0 24px;white-space:nowrap;">🌙 Kundli Maker</a>
+    <span class="ticker-sep" style="color:rgba(255,255,255,0.4);padding:0 8px;">•</span>
+    <a href="https://rajdailytools.in/net-worth-tracker-rajdailytools.html" target="_blank" style="color:rgba(255,255,255,0.9);font-size:13px;font-weight:500;padding:0 24px;white-space:nowrap;">💎 Net Worth Tracker</a>
+    <span class="ticker-sep" style="color:rgba(255,255,255,0.4);padding:0 8px;">•</span>
+    <a href="https://rajdailytools.in/usa-salary-calculator.html" target="_blank" style="color:rgba(255,255,255,0.9);font-size:13px;font-weight:500;padding:0 24px;white-space:nowrap;">🇺🇸 USA Salary Calc</a>
+    <span class="ticker-sep" style="color:rgba(255,255,255,0.4);padding:0 8px;">•</span>
+    <a href="https://rajdailytools.in/uk-salary-calculator.html" target="_blank" style="color:rgba(255,255,255,0.9);font-size:13px;font-weight:500;padding:0 24px;white-space:nowrap;">🇬🇧 UK Salary Calc</a>
   </div>
 </div>
 
@@ -861,53 +971,53 @@
       <p class="section-sub">The tools millions of users rely on every single day to solve real problems.</p>
     </div>
     <div class="tools-grid">
-      <a href="/emi-calculator" class="tool-card">
+      <a href="https://rajdailytools.in/advanced-emi-calculator-global.html" class="tool-card" target="_blank">
         <div class="tool-card-icon">🧮</div>
         <div class="tool-card-title">EMI Calculator</div>
         <div class="tool-card-desc">Calculate your monthly EMI for home, car, or personal loans instantly.</div>
         <div class="tool-card-meta"><span class="tool-tag">Finance</span><span class="tool-arrow">→</span></div>
       </a>
-      <a href="/percentage-calculator" class="tool-card">
-        <div class="tool-card-icon">📊</div>
-        <div class="tool-card-title">Percentage Calculator</div>
-        <div class="tool-card-desc">Find percentages, discounts, increase/decrease values in seconds.</div>
-        <div class="tool-card-meta"><span class="tool-tag">Calculator</span><span class="tool-arrow">→</span></div>
+      <a href="https://rajdailytools.in/sip-calculator-advanced.html" class="tool-card" target="_blank">
+        <div class="tool-card-icon">📈</div>
+        <div class="tool-card-title">SIP Calculator</div>
+        <div class="tool-card-desc">Plan mutual fund investments and see projected returns over time.</div>
+        <div class="tool-card-meta"><span class="tool-tag">Finance</span><span class="tool-arrow">→</span></div>
       </a>
-      <a href="/age-calculator" class="tool-card">
-        <div class="tool-card-icon">🎂</div>
-        <div class="tool-card-title">Age Calculator</div>
-        <div class="tool-card-desc">Calculate exact age in years, months, days, hours from any birth date.</div>
-        <div class="tool-card-meta"><span class="tool-tag">Utility</span><span class="tool-arrow">→</span></div>
+      <a href="https://rajdailytools.in/bmi-calculator.html" class="tool-card" target="_blank">
+        <div class="tool-card-icon">❤️</div>
+        <div class="tool-card-title">BMI Calculator</div>
+        <div class="tool-card-desc">Calculate Body Mass Index and get personalized health status instantly.</div>
+        <div class="tool-card-meta"><span class="tool-tag">Health</span><span class="tool-arrow">→</span></div>
       </a>
-      <a href="/unit-converter" class="tool-card">
-        <div class="tool-card-icon">🔄</div>
-        <div class="tool-card-title">Unit Converter</div>
-        <div class="tool-card-desc">Convert length, weight, temperature, area, speed, and 50+ unit types.</div>
-        <div class="tool-card-meta"><span class="tool-tag">Converter</span><span class="tool-arrow">→</span></div>
-      </a>
-      <a href="/gpa-calculator" class="tool-card">
-        <div class="tool-card-icon">🎓</div>
-        <div class="tool-card-title">GPA Calculator</div>
-        <div class="tool-card-desc">Calculate your semester and cumulative GPA with custom grading scales.</div>
-        <div class="tool-card-meta"><span class="tool-tag">Education</span><span class="tool-arrow">→</span></div>
-      </a>
-      <a href="/word-counter" class="tool-card">
+      <a href="https://rajdailytools.in/word-counter-tool.html" class="tool-card" target="_blank">
         <div class="tool-card-icon">📝</div>
         <div class="tool-card-title">Word Counter</div>
         <div class="tool-card-desc">Count words, characters, sentences, and reading time for any text.</div>
         <div class="tool-card-meta"><span class="tool-tag">Text</span><span class="tool-arrow">→</span></div>
       </a>
-      <a href="/pdf-to-image" class="tool-card">
-        <div class="tool-card-icon">📄</div>
-        <div class="tool-card-title">PDF to Image</div>
-        <div class="tool-card-desc">Convert PDF pages into high-quality PNG or JPG images instantly.</div>
-        <div class="tool-card-meta"><span class="tool-tag">PDF</span><span class="tool-arrow">→</span></div>
+      <a href="https://rajdailytools.in/currency-converter-live-usd-to-inr-1.html" class="tool-card" target="_blank">
+        <div class="tool-card-icon">💱</div>
+        <div class="tool-card-title">Currency Converter</div>
+        <div class="tool-card-desc">Live USD to INR and global currency conversions in real-time.</div>
+        <div class="tool-card-meta"><span class="tool-tag">Converter</span><span class="tool-arrow">→</span></div>
       </a>
-      <a href="/water-intake-calculator" class="tool-card">
-        <div class="tool-card-icon">💧</div>
-        <div class="tool-card-title">Water Intake Calculator</div>
-        <div class="tool-card-desc">Find your daily water requirement based on weight, activity & climate.</div>
+      <a href="https://rajdailytools.in/tdee-calculator.html" class="tool-card" target="_blank">
+        <div class="tool-card-icon">🏃</div>
+        <div class="tool-card-title">TDEE Calculator</div>
+        <div class="tool-card-desc">Calculate your Total Daily Energy Expenditure for weight management.</div>
         <div class="tool-card-meta"><span class="tool-tag">Health</span><span class="tool-arrow">→</span></div>
+      </a>
+      <a href="https://rajdailytools.in/compound-interest-calculator.html" class="tool-card" target="_blank">
+        <div class="tool-card-icon">📊</div>
+        <div class="tool-card-title">Compound Interest</div>
+        <div class="tool-card-desc">Calculate compound interest and grow your savings projections.</div>
+        <div class="tool-card-meta"><span class="tool-tag">Finance</span><span class="tool-arrow">→</span></div>
+      </a>
+      <a href="https://rajdailytools.in/plagiarism-checker-tool.html" class="tool-card" target="_blank">
+        <div class="tool-card-icon">🔍</div>
+        <div class="tool-card-title">Plagiarism Checker</div>
+        <div class="tool-card-desc">Check your content for plagiarism and ensure originality instantly.</div>
+        <div class="tool-card-meta"><span class="tool-tag">Text</span><span class="tool-arrow">→</span></div>
       </a>
     </div>
   </div>
@@ -922,63 +1032,63 @@
       <p class="section-sub">Freshly built and just launched — be the first to use these new tools.</p>
     </div>
     <div class="latest-grid">
-      <a href="/sip-calculator" class="latest-card">
+      <a href="https://rajdailytools.in/net-worth-tracker-rajdailytools.html" class="latest-card" target="_blank">
         <span class="new-badge">NEW</span>
-        <div class="latest-card-icon">📈</div>
-        <div class="latest-card-title">SIP Calculator</div>
-        <div class="latest-card-desc">Plan your mutual fund investments and see projected returns over time with our advanced SIP tool.</div>
+        <div class="latest-card-icon">💎</div>
+        <div class="latest-card-title">Net Worth Tracker</div>
+        <div class="latest-card-desc">Track your total net worth by adding assets and liabilities with a full financial snapshot.</div>
         <div class="latest-card-footer">
-          <span class="latest-date">March 2025</span>
+          <span class="latest-date">2025</span>
           <span class="latest-use">Use Now →</span>
         </div>
       </a>
-      <a href="/bmi-calculator" class="latest-card">
+      <a href="https://rajdailytools.in/future-net-worth-predictor.html" class="latest-card" target="_blank">
         <span class="new-badge">NEW</span>
-        <div class="latest-card-icon">⚖️</div>
-        <div class="latest-card-title">BMI Calculator</div>
-        <div class="latest-card-desc">Calculate your Body Mass Index and get personalized health status with Indian BMI standards.</div>
+        <div class="latest-card-icon">🔭</div>
+        <div class="latest-card-title">Future Net Worth Predictor</div>
+        <div class="latest-card-desc">Predict your financial future with our smart net worth growth calculator.</div>
         <div class="latest-card-footer">
-          <span class="latest-date">March 2025</span>
+          <span class="latest-date">2025</span>
           <span class="latest-use">Use Now →</span>
         </div>
       </a>
-      <a href="/qr-generator" class="latest-card">
+      <a href="https://rajdailytools.in/ira-calculator-usa.html" class="latest-card" target="_blank">
         <span class="new-badge">NEW</span>
-        <div class="latest-card-icon">📱</div>
-        <div class="latest-card-title">QR Code Generator</div>
-        <div class="latest-card-desc">Generate custom QR codes for URLs, text, contact cards, WiFi, and more in seconds.</div>
+        <div class="latest-card-icon">🇺🇸</div>
+        <div class="latest-card-title">IRA Calculator USA</div>
+        <div class="latest-card-desc">Plan your Individual Retirement Account contributions and growth projections for USA.</div>
         <div class="latest-card-footer">
-          <span class="latest-date">Feb 2025</span>
+          <span class="latest-date">2025</span>
           <span class="latest-use">Use Now →</span>
         </div>
       </a>
-      <a href="/password-generator" class="latest-card">
+      <a href="https://rajdailytools.in/mangal-dosha-calculator.html" class="latest-card" target="_blank">
         <span class="new-badge">NEW</span>
-        <div class="latest-card-icon">🔐</div>
-        <div class="latest-card-title">Password Generator</div>
-        <div class="latest-card-desc">Generate strong, random passwords with custom length and character options instantly.</div>
+        <div class="latest-card-icon">🌙</div>
+        <div class="latest-card-title">Mangal Dosha Calculator</div>
+        <div class="latest-card-desc">Check your Mangal Dosha status with our accurate Vedic astrology calculator.</div>
         <div class="latest-card-footer">
-          <span class="latest-date">Feb 2025</span>
+          <span class="latest-date">2025</span>
           <span class="latest-use">Use Now →</span>
         </div>
       </a>
-      <a href="/tax-calculator" class="latest-card">
+      <a href="https://rajdailytools.in/introvert-extrovert-test.html" class="latest-card" target="_blank">
         <span class="new-badge">NEW</span>
-        <div class="latest-card-icon">🧾</div>
-        <div class="latest-card-title">Income Tax Calculator</div>
-        <div class="latest-card-desc">Calculate your income tax for FY 2024-25 under both old and new tax regimes easily.</div>
+        <div class="latest-card-icon">🧠</div>
+        <div class="latest-card-title">Introvert Extrovert Test</div>
+        <div class="latest-card-desc">Discover your personality type with our interactive introvert-extrovert quiz.</div>
         <div class="latest-card-footer">
-          <span class="latest-date">Jan 2025</span>
+          <span class="latest-date">2025</span>
           <span class="latest-use">Use Now →</span>
         </div>
       </a>
-      <a href="/color-picker" class="latest-card">
+      <a href="https://rajdailytools.in/monthly-survival-budget-calculator.html" class="latest-card" target="_blank">
         <span class="new-badge">NEW</span>
-        <div class="latest-card-icon">🎨</div>
-        <div class="latest-card-title">Color Picker & Converter</div>
-        <div class="latest-card-desc">Pick any color and convert between HEX, RGB, HSL, CMYK formats with live preview.</div>
+        <div class="latest-card-icon">📋</div>
+        <div class="latest-card-title">Survival Budget Calculator</div>
+        <div class="latest-card-desc">Calculate your minimum monthly survival budget and manage expenses smartly.</div>
         <div class="latest-card-footer">
-          <span class="latest-date">Jan 2025</span>
+          <span class="latest-date">2025</span>
           <span class="latest-use">Use Now →</span>
         </div>
       </a>
@@ -1036,7 +1146,7 @@
       <div class="founder-visual">
         <div class="founder-avatar">👨‍💻</div>
         <div class="founder-name">Raj Bhai</div>
-        <div class="founder-role">Founder & Visionary, RajDailyTools</div>
+        <div class="founder-role">Founder &amp; Visionary, RajDailyTools</div>
         <div class="founder-badges">
           <div class="founder-badge">🎓 BSc Physics Graduate</div>
           <div class="founder-badge">💻 COPA ITI Certified</div>
@@ -1188,29 +1298,29 @@
       <div class="footer-col">
         <h4>Categories</h4>
         <ul>
-          <li><a href="/education-tools">Education Tools</a></li>
-          <li><a href="/finance-tools">Finance Tools</a></li>
-          <li><a href="/converter-tools">Converter Tools</a></li>
-          <li><a href="/calculator-tools">Calculator Tools</a></li>
-          <li><a href="/health-tools">Health Tools</a></li>
-          <li><a href="/text-tools">Text Tools</a></li>
+          <li><a href="/education-tools-category.html">Education Tools</a></li>
+          <li><a href="/finance-tools-category.html">Finance Tools</a></li>
+          <li><a href="/converter-tools-category.html">Converter Tools</a></li>
+          <li><a href="/calculator-tools-category.html">Calculator Tools</a></li>
+          <li><a href="/health-tools-category.html">Health Tools</a></li>
+          <li><a href="/text-tools-category.html">Text Tools</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>Popular Tools</h4>
         <ul>
-          <li><a href="/emi-calculator">EMI Calculator</a></li>
-          <li><a href="/percentage-calculator">Percentage Calculator</a></li>
-          <li><a href="/age-calculator">Age Calculator</a></li>
-          <li><a href="/unit-converter">Unit Converter</a></li>
-          <li><a href="/gpa-calculator">GPA Calculator</a></li>
-          <li><a href="/word-counter">Word Counter</a></li>
+          <li><a href="https://rajdailytools.in/advanced-emi-calculator-global.html">EMI Calculator</a></li>
+          <li><a href="https://rajdailytools.in/sip-calculator-advanced.html">SIP Calculator</a></li>
+          <li><a href="https://rajdailytools.in/bmi-calculator.html">BMI Calculator</a></li>
+          <li><a href="https://rajdailytools.in/word-counter-tool.html">Word Counter</a></li>
+          <li><a href="https://rajdailytools.in/currency-converter-live-usd-to-inr-1.html">Currency Converter</a></li>
+          <li><a href="https://rajdailytools.in/tdee-calculator.html">TDEE Calculator</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>Company</h4>
         <ul>
-          <li><a href="about.html">About Us</a>
+          <li><a href="about.html">About Us</a></li>
           <li><a href="/blog">Blog</a></li>
           <li><a href="#contact">Contact</a></li>
           <li><a href="/privacy-policy">Privacy Policy</a></li>
@@ -1232,15 +1342,169 @@
 </footer>
 
 <!-- BACK TO TOP -->
-<button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">↑</button>
+<button class="back-to-top" id="backToTop" title="Back to top">↑</button>
 
 <script>
+// ============ ALL TOOLS DATA ============
+const ALL_TOOLS = [
+  // Calculator Tools
+  { name: 'Courier Charges Calculator', url: 'https://rajdailytools.in/courier-charges-calculator.html', icon: '📦', cat: 'Calculator' },
+  { name: 'Download Time Calculator', url: 'https://rajdailytools.in/download-time-calculator.html', icon: '⬇️', cat: 'Calculator' },
+  { name: 'Early Retirement Penalty Calculator', url: 'https://rajdailytools.in/early-retirement-penalty-calculator.html', icon: '⏰', cat: 'Calculator' },
+
+  // Health Tools
+  { name: 'Steps to Fat Burn Calculator', url: 'https://rajdailytools.in/steps-to-fat-burn-calculator.html', icon: '🔥', cat: 'Health' },
+  { name: 'BMI Calculator', url: 'https://rajdailytools.in/bmi-calculator.html', icon: '❤️', cat: 'Health' },
+  { name: 'Calories to Weight Gain Converter', url: 'https://rajdailytools.in/calories-to-weight-gain-converter.html', icon: '🥗', cat: 'Health' },
+  { name: 'TDEE Calculator', url: 'https://rajdailytools.in/tdee-calculator.html', icon: '🏃', cat: 'Health' },
+
+  // Converter Tools
+  { name: 'Energy Converter', url: 'https://rajdailytools.in/energy-converter.html', icon: '⚡', cat: 'Converter' },
+  { name: 'Global Time Converter', url: 'https://rajdailytools.in/global-time-converter.html', icon: '🌍', cat: 'Converter' },
+  { name: 'Text to Slug Converter', url: 'https://rajdailytools.in/text-to-slug-converter.html', icon: '🔗', cat: 'Converter' },
+  { name: 'Meta Tag Generator', url: 'https://rajdailytools.in/meta-tag-generator.html', icon: '🏷️', cat: 'Converter' },
+
+  // Text Tools
+  { name: 'Text Sorter Tool', url: 'https://rajdailytools.in/text-sorter-tool-1.html', icon: '🔤', cat: 'Text' },
+  { name: 'Word Counter Tool', url: 'https://rajdailytools.in/word-counter-tool.html', icon: '📝', cat: 'Text' },
+  { name: 'Plagiarism Checker', url: 'https://rajdailytools.in/plagiarism-checker-tool.html', icon: '🔍', cat: 'Text' },
+  { name: 'Remove Extra Spaces Tool', url: 'https://rajdailytools.in/remove-extra-spaces-tool.html', icon: '✂️', cat: 'Text' },
+
+  // Finance Tools
+  { name: 'Bonus Tax Calculator India', url: 'https://rajdailytools.in/bonus-tax-calculator-india.html', icon: '💸', cat: 'Finance' },
+  { name: 'Advanced EMI Calculator', url: 'https://rajdailytools.in/advanced-emi-calculator-global.html', icon: '🧮', cat: 'Finance' },
+  { name: 'Compound Interest Calculator', url: 'https://rajdailytools.in/compound-interest-calculator.html', icon: '📈', cat: 'Finance' },
+  { name: 'Credit Card Interest Calculator', url: 'https://rajdailytools.in/credit-card-interest-calculator.html', icon: '💳', cat: 'Finance' },
+  { name: 'Crypto Converter', url: 'https://rajdailytools.in/crypto-converter.html', icon: '₿', cat: 'Finance' },
+  { name: 'Currency Converter Live USD to INR', url: 'https://rajdailytools.in/currency-converter-live-usd-to-inr-1.html', icon: '💱', cat: 'Finance' },
+  { name: 'Freelance Rate Calculator', url: 'https://rajdailytools.in/freelance-rate-calculator.html', icon: '💼', cat: 'Finance' },
+  { name: 'ETF Return Calculator', url: 'https://rajdailytools.in/etf-return-calculator.html', icon: '📊', cat: 'Finance' },
+  { name: 'FIRE Calculator', url: 'https://rajdailytools.in/fire-calculator.html', icon: '🔥', cat: 'Finance' },
+  { name: 'USA Salary Calculator', url: 'https://rajdailytools.in/usa-salary-calculator.html', icon: '🇺🇸', cat: 'Finance' },
+  { name: 'UK Salary Calculator', url: 'https://rajdailytools.in/uk-salary-calculator.html', icon: '🇬🇧', cat: 'Finance' },
+  { name: 'Profit Margin Calculator', url: 'https://rajdailytools.in/profit-margin-calculator.html', icon: '💹', cat: 'Finance' },
+  { name: 'Stock Profit Calculator', url: 'https://rajdailytools.in/stock-profit-calculator.html', icon: '📉', cat: 'Finance' },
+  { name: 'Monthly Survival Budget Calculator', url: 'https://rajdailytools.in/monthly-survival-budget-calculator.html', icon: '📋', cat: 'Finance' },
+  { name: 'SIP Calculator Advanced', url: 'https://rajdailytools.in/sip-calculator-advanced.html', icon: '💰', cat: 'Finance' },
+  { name: 'Future Net Worth Predictor', url: 'https://rajdailytools.in/future-net-worth-predictor.html', icon: '🔭', cat: 'Finance' },
+  { name: 'Salary Converter USA', url: 'https://rajdailytools.in/salary-converter-usa.html', icon: '💵', cat: 'Finance' },
+  { name: 'IRA Calculator USA', url: 'https://rajdailytools.in/ira-calculator-usa.html', icon: '🏦', cat: 'Finance' },
+  { name: 'Net Worth Tracker', url: 'https://rajdailytools.in/net-worth-tracker-rajdailytools.html', icon: '💎', cat: 'Finance' },
+
+  // Other Useful Tools
+  { name: 'Should I Stay or Leave Relationship Tool', url: 'https://rajdailytools.in/should-i-stay-or-leave-relationship-tool.html', icon: '💔', cat: 'Other' },
+  { name: 'Daily Routine Effectiveness Checker', url: 'https://rajdailytools.in/daily-routine-effectiveness-checker.html', icon: '📅', cat: 'Other' },
+  { name: 'Free Janam Kundli Online Maker', url: 'https://rajdailytools.in/free-janam-kundli-online-maker.html', icon: '🌙', cat: 'Other' },
+  { name: 'How Poor Will Inflation Make Me Calculator', url: 'https://rajdailytools.in/how-poor-will-inflation-make-me-calculator.html', icon: '📉', cat: 'Other' },
+  { name: 'Introvert Extrovert Test', url: 'https://rajdailytools.in/introvert-extrovert-test.html', icon: '🧠', cat: 'Other' },
+  { name: 'Mangal Dosha Calculator', url: 'https://rajdailytools.in/mangal-dosha-calculator.html', icon: '🪐', cat: 'Other' },
+  { name: 'Mangal Dosha Marriage Compatibility', url: 'https://rajdailytools.in/mangal-dosha-marriage-compatibility.html', icon: '💍', cat: 'Other' },
+];
+
+// ============ SEARCH FUNCTION ============
+function searchTools(query) {
+  if (!query || query.length < 2) return [];
+  const q = query.toLowerCase();
+  return ALL_TOOLS.filter(t =>
+    t.name.toLowerCase().includes(q) || t.cat.toLowerCase().includes(q)
+  ).slice(0, 8);
+}
+
+function renderDropdown(results, container, inputEl) {
+  if (results.length === 0) {
+    container.innerHTML = '<div class="search-no-result">No tools found. Try different keywords.</div>';
+  } else {
+    container.innerHTML = results.map(t =>
+      `<div class="search-result-item" onclick="window.open('${t.url}','_blank');document.getElementById('${container.id}').classList.remove('open')">
+        <span class="sri-icon">${t.icon}</span>
+        <div class="sri-info">
+          <span class="sri-name">${t.name}</span>
+          <span class="sri-cat">${t.cat}</span>
+        </div>
+      </div>`
+    ).join('');
+  }
+  container.classList.add('open');
+}
+
+// Hero Search
+const heroInput = document.getElementById('heroSearchInput');
+const heroDropdown = document.getElementById('heroSearchDropdown');
+const heroBtn = document.getElementById('heroSearchBtn');
+
+heroInput.addEventListener('input', function() {
+  const val = this.value.trim();
+  if (val.length < 2) { heroDropdown.classList.remove('open'); return; }
+  renderDropdown(searchTools(val), heroDropdown, heroInput);
+});
+
+heroInput.addEventListener('keydown', function(e) {
+  if (e.key === 'Enter') {
+    const results = searchTools(this.value.trim());
+    if (results.length > 0) window.open(results[0].url, '_blank');
+    else renderDropdown([], heroDropdown, heroInput);
+  }
+  if (e.key === 'Escape') heroDropdown.classList.remove('open');
+});
+
+heroBtn.addEventListener('click', function() {
+  const val = heroInput.value.trim();
+  if (!val) return;
+  const results = searchTools(val);
+  if (results.length > 0) { renderDropdown(results, heroDropdown, heroInput); }
+  else renderDropdown([], heroDropdown, heroInput);
+});
+
+document.addEventListener('click', function(e) {
+  if (!e.target.closest('.search-results-wrap')) heroDropdown.classList.remove('open');
+});
+
+// Dashboard Search
+const dashInput = document.getElementById('dashSearchInput');
+const dashDropdown = document.getElementById('dashSearchDropdown');
+const dashBtn = document.getElementById('dashSearchBtn');
+
+dashInput.addEventListener('input', function() {
+  const val = this.value.trim();
+  if (val.length < 2) { dashDropdown.classList.remove('open'); return; }
+  const results = searchTools(val);
+  if (results.length === 0) {
+    dashDropdown.innerHTML = '<div class="hd-sd-item">No results found</div>';
+    dashDropdown.classList.add('open'); return;
+  }
+  dashDropdown.innerHTML = results.map(t =>
+    `<div class="hd-sd-item" onclick="window.open('${t.url}','_blank');dashDropdown.classList.remove('open')">
+      <span>${t.icon}</span><span>${t.name}</span>
+    </div>`
+  ).join('');
+  dashDropdown.classList.add('open');
+});
+
+dashBtn.addEventListener('click', function() {
+  const val = dashInput.value.trim();
+  if (!val) return;
+  const results = searchTools(val);
+  if (results.length > 0) window.open(results[0].url, '_blank');
+});
+
+dashInput.addEventListener('keydown', function(e) {
+  if (e.key === 'Enter') {
+    const results = searchTools(this.value.trim());
+    if (results.length > 0) window.open(results[0].url, '_blank');
+  }
+  if (e.key === 'Escape') dashDropdown.classList.remove('open');
+});
+
+document.addEventListener('click', function(e) {
+  if (!e.target.closest('.hd-search-wrap')) dashDropdown.classList.remove('open');
+});
+
+// ============ MOBILE DRAWER ============
 const menuBtn = document.getElementById('menuBtn');
 const mobileDrawer = document.getElementById('mobileDrawer');
 const drawerOverlay = document.getElementById('drawerOverlay');
 const drawerClose = document.getElementById('drawerClose');
 
-// Mobile Drawer
 function openDrawer() {
   mobileDrawer.classList.add('open');
   drawerOverlay.classList.add('open');
@@ -1257,70 +1521,45 @@ menuBtn.addEventListener('click', openDrawer);
 drawerClose.addEventListener('click', closeDrawer);
 drawerOverlay.addEventListener('click', closeDrawer);
 
-  // ── FAQ Accordion ──
-  document.getElementById('faqList').addEventListener('click', function(e) {
-    const q = e.target.closest('.faq-q');
-    if (!q) return;
-    const item = q.closest('.faq-item');
-    const isOpen = item.classList.contains('open');
-    document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
-    if (!isOpen) item.classList.add('open');
-  });
+// Close drawer links
+document.querySelectorAll('.mobile-nav a').forEach(link => {
+  link.addEventListener('click', closeDrawer);
+});
 
-  // ── Back to Top ──
-  const backToTop = document.getElementById('backToTop');
-  window.addEventListener('scroll', function() {
-    if (window.scrollY > 400) backToTop.classList.add('visible');
-    else backToTop.classList.remove('visible');
-  }, { passive: true });
+// ============ FAQ ACCORDION ============
+document.getElementById('faqList').addEventListener('click', function(e) {
+  const q = e.target.closest('.faq-q');
+  if (!q) return;
+  const item = q.closest('.faq-item');
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+});
 
-  // ── Search ──
-  function handleSearch() {
-    const q = document.getElementById('searchInput').value.trim();
-    if (q) {
-      alert('🔍 Searching for: "' + q + '"\n\nThis feature will redirect to search results in the live platform.');
+// ============ BACK TO TOP ============
+const backToTop = document.getElementById('backToTop');
+backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+window.addEventListener('scroll', function() {
+  backToTop.classList.toggle('visible', window.scrollY > 400);
+}, { passive: true });
+
+// ============ SCROLL REVEAL ============
+const observer = new IntersectionObserver(function(entries) {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = '1';
+      entry.target.style.transform = 'translateY(0)';
+      observer.unobserve(entry.target);
     }
-  }
-  document.getElementById('searchInput').addEventListener('keydown', function(e) {
-    if (e.key === 'Enter') handleSearch();
   });
+}, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
 
-  // ── Smooth reveal on scroll ──
-  const observer = new IntersectionObserver(function(entries) {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.style.opacity = '1';
-        entry.target.style.transform = 'translateY(0)';
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
-
-  document.querySelectorAll('.cat-card, .tool-card, .latest-card, .problem-card, .mvp-card, .faq-item').forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(22px)';
-    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-    observer.observe(el);
-  });
-
-  // ── Active nav link highlight ──
-  const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('.desktop-nav a');
-  window.addEventListener('scroll', function() {
-    let current = '';
-    sections.forEach(sec => {
-      if (window.scrollY >= sec.offsetTop - 100) current = sec.getAttribute('id');
-    });
-    navLinks.forEach(a => {
-      a.style.color = '';
-      a.style.background = '';
-      if (a.getAttribute('href') === '#' + current) {
-        a.style.color = 'var(--blue)';
-        a.style.background = 'var(--blue-xlight)';
-      }
-    });
-  }, { passive: true });
+document.querySelectorAll('.cat-card, .tool-card, .latest-card, .problem-card, .mvp-card, .faq-item').forEach(el => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(22px)';
+  el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+  observer.observe(el);
+});
 </script>
 </body>
 </html>
-  
