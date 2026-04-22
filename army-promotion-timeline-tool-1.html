@@ -1,0 +1,1353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Army Rank Promotion Timeline Tool — GD to Officer Growth Chart 2026 | RajDailyTools</title>
+<meta name="description" content="Free Army Promotion Timeline Tool 2026. Check your career growth from GD to Havaldar, JCO & Officer step-by-step. Army promotion calculator, rank chart, fast track promotion guide for Agniveer GD, Clerk & Tradesman.">
+<meta name="keywords" content="army promotion timeline tool, army promotion timeline gd to officer, army me promotion kitne saal me hota hai, indian army rank promotion chart, army gd to havaldar promotion time, army promotion system india full guide, army career growth chart, army rank progression timeline, indian army promotion rules, army gd promotion kaise hota hai, army me havaldar banne me kitna time lagta hai, army me naik kab bante hai, army promotion eligibility criteria, army officer banne ka promotion route, army internal promotion exam details, army rank wise salary and promotion, army promotion calculator, army rank timeline tool, army career growth calculator, army rank progression calculator, army career planner tool, army promotion checker online, army me subedar kab bante hai, army me jco kaise bane, army rank hierarchy with timeline">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Army Rank Promotion Timeline Tool — GD to Officer Growth Chart 2026">
+<meta property="og:description" content="Check your complete army career promotion path from GD to JCO & Officer. Interactive timeline calculator with years, exams, and fast track options.">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://rajdailytools.github.io/army-promotion-timeline-tool.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#2563eb;--blue-d:#1d4ed8;--blue-l:#3b82f6;
+  --blue-xl:#eff6ff;--blue-s:#dbeafe;
+  --amber:#f59e0b;--green:#10b981;--red:#ef4444;
+  --purple:#8b5cf6;--teal:#14b8a6;--orange:#f97316;
+  --green-xl:#f0fdf4;--green-s:#bbf7d0;
+  --red-xl:#fef2f2;--red-s:#fecaca;
+  --amber-xl:#fffbeb;--amber-s:#fde68a;
+  --purple-xl:#faf5ff;--purple-s:#ddd6fe;
+  --ink:#0f172a;--ink2:#334155;--ink3:#64748b;--ink4:#94a3b8;
+  --line:#e2e8f0;--surf:#f8fafc;--white:#fff;
+  --s1:0 1px 3px rgba(15,23,42,.06),0 1px 2px rgba(15,23,42,.04);
+  --s2:0 4px 16px rgba(15,23,42,.08),0 2px 6px rgba(15,23,42,.04);
+  --s3:0 12px 40px rgba(15,23,42,.11),0 3px 10px rgba(15,23,42,.06);
+  --s4:0 24px 64px rgba(15,23,42,.13),0 6px 20px rgba(15,23,42,.07);
+  --sb:0 8px 32px rgba(37,99,235,.20);
+  --fd:'Sora',sans-serif;--fb:'DM Sans',sans-serif;
+  --ease:cubic-bezier(.4,0,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);color:var(--ink);background:var(--white);overflow-x:hidden;-webkit-font-smoothing:antialiased;line-height:1.6}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+button{cursor:pointer;border:none;background:none;font-family:var(--fb)}
+.w{max-width:1180px;margin:0 auto;padding:0 24px}
+.wa{max-width:860px;margin:0 auto;padding:0 24px}
+select,input{appearance:none;-webkit-appearance:none}
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+@keyframes resultIn{from{opacity:0;transform:translateY(18px) scale(.97)}to{opacity:1;transform:none}}
+@keyframes rankSlide{from{opacity:0;transform:translateX(-18px)}to{opacity:1;transform:none}}
+@keyframes barGrow{from{width:0}to{width:var(--bw)}}
+.rev{opacity:0;transform:translateY(22px);transition:opacity .55s var(--ease),transform .55s var(--ease)}
+.rev.in{opacity:1;transform:none}
+
+/* HEADER */
+.hdr{position:sticky;top:0;z-index:999;background:rgba(255,255,255,.96);backdrop-filter:blur(20px);border-bottom:1px solid var(--line);box-shadow:var(--s1)}
+.hdi{display:flex;align-items:center;justify-content:space-between;height:66px}
+.logo{display:flex;align-items:center;gap:10px}
+.lb{width:36px;height:36px;background:var(--blue);border-radius:9px;display:flex;align-items:center;justify-content:center;box-shadow:var(--sb);flex-shrink:0}
+.lb svg{width:18px;height:18px;fill:#fff}
+.ln{font-family:var(--fd);font-size:19px;font-weight:800;color:var(--ink);line-height:1}
+.ln span{color:var(--blue)}
+.ls{font-size:10px;color:var(--ink4);letter-spacing:.04em}
+nav.dn{display:flex;align-items:center;gap:2px}
+nav.dn a{font-size:13.5px;font-weight:500;color:var(--ink2);padding:7px 13px;border-radius:8px;transition:.2s}
+nav.dn a:hover{color:var(--blue);background:var(--blue-xl)}
+.hcta{background:var(--blue);color:#fff;font-family:var(--fd);font-weight:600;font-size:13px;padding:8px 18px;border-radius:8px;box-shadow:var(--sb);transition:.2s}
+.hcta:hover{background:var(--blue-d);transform:translateY(-1px)}
+.brg{display:none;flex-direction:column;gap:4.5px;padding:8px;border-radius:8px}
+.brg span{display:block;width:20px;height:2px;background:var(--ink);border-radius:2px;transition:.28s}
+.dov{display:none;position:fixed;inset:0;background:rgba(15,23,42,.45);z-index:1040;backdrop-filter:blur(3px)}
+.dov.on{display:block}
+.drw{position:fixed;top:0;right:-100%;width:270px;height:100vh;background:#fff;z-index:1050;padding:22px;box-shadow:var(--s4);transition:right .32s var(--ease);overflow-y:auto}
+.drw.on{right:0}
+.dh{display:flex;align-items:center;justify-content:space-between;margin-bottom:26px}
+.dx{width:33px;height:33px;border-radius:7px;background:var(--surf);display:flex;align-items:center;justify-content:center;color:var(--ink3);font-size:17px}
+nav.mn{display:flex;flex-direction:column;gap:3px}
+nav.mn a{display:block;font-size:14px;font-weight:500;color:var(--ink2);padding:11px 13px;border-radius:8px;transition:.2s}
+nav.mn a:hover{color:var(--blue);background:var(--blue-xl)}
+
+/* HERO */
+.hero{position:relative;overflow:hidden;background:linear-gradient(150deg,#ebf4ff 0%,#fff 46%,#f0fdf4 100%);padding:68px 0 80px}
+.hero::before{content:'';position:absolute;top:-140px;right:-180px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(37,99,235,.08) 0%,transparent 68%);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-80px;left:-100px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(16,185,129,.05) 0%,transparent 68%);pointer-events:none}
+.blob{position:absolute;border-radius:50%;pointer-events:none;animation:float 6s ease-in-out infinite}
+.b1{width:13px;height:13px;background:rgba(37,99,235,.18);top:22%;right:14%;animation-delay:0s}
+.b2{width:9px;height:9px;background:rgba(16,185,129,.22);top:58%;right:26%;animation-delay:2.2s}
+.b3{width:11px;height:11px;background:rgba(245,158,11,.18);top:36%;right:6%;animation-delay:4s}
+.bc{display:flex;align-items:center;gap:7px;font-size:12.5px;color:var(--ink3);margin-bottom:24px;position:relative;z-index:1;flex-wrap:wrap}
+.bc a{color:var(--blue);font-weight:600}
+.pill{display:inline-flex;align-items:center;gap:7px;font-family:var(--fd);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);background:var(--blue-xl);padding:5px 14px;border-radius:100px;margin-bottom:18px}
+.pill::before{content:'';width:6px;height:6px;background:var(--blue);border-radius:50%}
+.hero-inner{position:relative;z-index:1;max-width:700px;animation:fadeUp .5s ease both}
+.hero h1{font-family:var(--fd);font-size:clamp(26px,4.5vw,50px);font-weight:800;line-height:1.1;color:var(--ink);margin-bottom:14px}
+.hero h1 span{color:var(--blue)}
+.hero-sub{font-size:16px;color:var(--ink3);line-height:1.8;margin-bottom:22px;max-width:560px}
+.hero-chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.chip{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;padding:6px 14px;border-radius:100px;background:#fff;border:1.5px solid var(--line);color:var(--ink2);box-shadow:var(--s1);transition:.22s}
+.chip:hover{border-color:var(--blue);color:var(--blue);transform:translateY(-1px)}
+.hero-meta{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.upd{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:700;color:var(--blue);background:var(--blue-xl);padding:6px 14px;border-radius:100px;border:1.5px solid var(--blue-s)}
+.hmi{font-size:13px;color:var(--ink3);font-weight:500}
+
+/* TOOL */
+.tool-sec{background:var(--surf);padding:80px 0}
+.tool-wrap{max-width:860px;margin:0 auto}
+.tool-card{background:#fff;border:1.5px solid var(--line);border-radius:28px;overflow:hidden;box-shadow:var(--s4)}
+.tool-hdr{background:linear-gradient(135deg,#1d4ed8 0%,#2563eb 55%,#3b82f6 100%);padding:32px 40px;position:relative;overflow:hidden}
+.tool-hdr::before{content:'';position:absolute;top:-60px;right:-60px;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,.07)}
+.tool-hdr::after{content:'';position:absolute;bottom:-40px;left:-40px;width:180px;height:180px;border-radius:50%;background:rgba(255,255,255,.04)}
+.th{position:relative;z-index:1}
+.th h2{font-family:var(--fd);font-size:21px;font-weight:800;color:#fff;margin-bottom:6px}
+.th p{font-size:14px;color:rgba(255,255,255,.82);line-height:1.65}
+.th-badges{display:flex;flex-wrap:wrap;gap:9px;margin-top:14px}
+.thb{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:rgba(255,255,255,.9);background:rgba(255,255,255,.13);padding:5px 12px;border-radius:100px}
+.tool-body{padding:36px 40px}
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:18px}
+.fgrid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:18px}
+.fld{display:flex;flex-direction:column;gap:8px}
+.flbl{font-size:13px;font-weight:700;color:var(--ink2)}
+.flbl span{font-size:11px;font-weight:500;color:var(--ink4);margin-left:5px;background:var(--surf);padding:2px 7px;border-radius:5px;border:1px solid var(--line)}
+.finp,.fsel{padding:13px 16px;font-size:15px;color:var(--ink);background:#fff;border:1.5px solid var(--line);border-radius:10px;outline:none;transition:.22s;font-family:var(--fb);width:100%}
+.finp:focus,.fsel:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(37,99,235,.10)}
+.fsel{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2364748b' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:42px}
+.hint-box{display:flex;align-items:flex-start;gap:9px;font-size:13px;color:var(--ink2);background:var(--blue-xl);border:1.5px solid var(--blue-s);border-radius:10px;padding:11px 14px;margin-bottom:18px;line-height:1.65}
+.hint-box svg{width:16px;height:16px;stroke:var(--blue);fill:none;stroke-width:2;flex-shrink:0;margin-top:2px}
+.btn-row{display:flex;gap:12px}
+.cvt-btn{flex:1;padding:15px;background:linear-gradient(135deg,var(--blue) 0%,#1e40af 100%);color:#fff;font-family:var(--fd);font-weight:800;font-size:15px;border-radius:11px;box-shadow:var(--sb);transition:all .25s var(--ease);display:flex;align-items:center;justify-content:center;gap:9px}
+.cvt-btn:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(37,99,235,.30)}
+.cvt-btn:active{transform:translateY(0)}
+.rst-btn{padding:15px 22px;background:var(--surf);color:var(--ink2);font-family:var(--fd);font-weight:700;font-size:14px;border-radius:11px;border:1.5px solid var(--line);transition:.22s;display:flex;align-items:center;gap:7px}
+.rst-btn:hover{border-color:var(--blue);color:var(--blue);background:var(--blue-xl)}
+
+/* RESULT AREA */
+#resultArea{display:none;margin-top:26px;animation:resultIn .42s var(--ease) both}
+
+/* SUMMARY BANNER */
+.summary-banner{border-radius:18px;padding:22px 26px;margin-bottom:18px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;background:linear-gradient(135deg,var(--blue-xl),#e0f2fe);border:2px solid var(--blue-s)}
+.sb-tag{font-family:var(--fd);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:3px 10px;border-radius:100px;display:inline-flex;width:fit-content;margin-bottom:6px;background:var(--blue);color:#fff}
+.sb-title{font-family:var(--fd);font-size:16px;font-weight:800;color:var(--ink)}
+.sb-sub{font-size:13px;color:var(--ink3);margin-top:4px;line-height:1.6}
+.sb-score{text-align:right;flex-shrink:0}
+.sb-num{font-family:var(--fd);font-size:42px;font-weight:800;color:var(--blue);line-height:1}
+.sb-denom{font-size:13px;font-weight:600;color:var(--ink3)}
+
+/* TIMELINE CARDS */
+.timeline-wrap{display:flex;flex-direction:column;gap:0;position:relative;margin-bottom:20px}
+.timeline-wrap::before{content:'';position:absolute;left:30px;top:0;bottom:0;width:2px;background:linear-gradient(180deg,var(--blue) 0%,var(--green) 100%);z-index:0}
+.rank-card{display:flex;align-items:flex-start;gap:16px;padding:14px 16px;border-radius:14px;border:1.5px solid var(--line);background:var(--surf);margin-bottom:10px;position:relative;z-index:1;transition:.22s;animation:rankSlide .4s var(--ease) both}
+.rank-card:hover{border-color:var(--blue-s);background:var(--blue-xl);transform:translateX(4px)}
+.rank-card.highlight{border-color:var(--green-s);background:var(--green-xl)}
+.rank-card.jco{border-color:var(--amber-s);background:var(--amber-xl)}
+.rank-card.officer{border-color:var(--purple-s);background:var(--purple-xl)}
+.rank-icon{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;background:#fff;border:1.5px solid var(--line);box-shadow:var(--s1)}
+.rank-body{flex:1}
+.rank-name{font-family:var(--fd);font-size:15px;font-weight:800;color:var(--ink);display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.rank-badge{font-size:10px;font-weight:700;padding:2px 8px;border-radius:100px;letter-spacing:.04em}
+.rank-badge.soldier{background:var(--blue-xl);color:var(--blue);border:1px solid var(--blue-s)}
+.rank-badge.jco{background:var(--amber-xl);color:#92400e;border:1px solid var(--amber-s)}
+.rank-badge.officer{background:var(--purple-xl);color:var(--purple);border:1px solid var(--purple-s)}
+.rank-badge.current{background:var(--green-xl);color:var(--green);border:1px solid var(--green-s)}
+.rank-meta{font-size:13px;color:var(--ink3);margin-top:3px;line-height:1.55}
+.rank-year{font-family:var(--fd);font-size:13px;font-weight:700;color:var(--blue);background:var(--blue-xl);padding:4px 10px;border-radius:8px;white-space:nowrap;flex-shrink:0;border:1px solid var(--blue-s)}
+.rank-year.achieved{background:var(--green-xl);color:var(--green);border-color:var(--green-s)}
+.rank-year.future{background:var(--amber-xl);color:#92400e;border-color:var(--amber-s)}
+
+/* PROGRESS METER */
+.progress-wrap{background:var(--surf);border:1.5px solid var(--line);border-radius:12px;padding:16px 20px;margin-bottom:16px}
+.prog-lbl{font-family:var(--fd);font-size:13px;font-weight:700;color:var(--ink);margin-bottom:10px;display:flex;align-items:center;justify-content:space-between}
+.prog-track{height:16px;background:var(--line);border-radius:100px;overflow:hidden}
+.prog-fill{height:100%;border-radius:100px;background:linear-gradient(90deg,var(--blue),#60a5fa);transition:width 1s var(--ease)}
+
+/* ACTION ROW */
+.action-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+.copy-btn{flex:1;min-width:140px;padding:11px;background:var(--green-xl);color:var(--green);border:1.5px solid var(--green-s);font-family:var(--fd);font-weight:700;font-size:13.5px;border-radius:9px;display:flex;align-items:center;justify-content:center;gap:7px;transition:.22s}
+.copy-btn:hover{background:var(--green);color:#fff}
+.copy-btn.copied{background:var(--green);color:#fff}
+.reset-all-btn{padding:11px 18px;background:var(--blue-xl);color:var(--blue);border:1.5px solid var(--blue-s);font-family:var(--fd);font-weight:700;font-size:13px;border-radius:9px;display:flex;align-items:center;gap:6px;transition:.22s}
+.reset-all-btn:hover{background:var(--blue);color:#fff}
+
+/* RANK FLOW */
+.flow-sec{background:var(--white);padding:72px 0}
+.flow-wrap{max-width:820px;margin:0 auto}
+.flow-row{display:flex;align-items:center;gap:0;flex-wrap:wrap;justify-content:center;gap:4px}
+.flow-step{display:flex;flex-direction:column;align-items:center;gap:6px}
+.flow-box{background:#fff;border:2px solid var(--blue-s);border-radius:12px;padding:10px 14px;text-align:center;min-width:96px;box-shadow:var(--s1);transition:.22s;cursor:default}
+.flow-box:hover{border-color:var(--blue);background:var(--blue-xl);transform:translateY(-3px);box-shadow:var(--s3)}
+.flow-icon{font-size:22px;margin-bottom:4px}
+.flow-rank{font-family:var(--fd);font-size:12px;font-weight:800;color:var(--ink);line-height:1.2}
+.flow-yrs{font-size:10.5px;color:var(--ink3);font-weight:600;margin-top:2px}
+.flow-box.jco{border-color:var(--amber-s);background:var(--amber-xl)}
+.flow-box.jco:hover{border-color:var(--amber);background:#fef3c7}
+.flow-box.officer{border-color:var(--purple-s);background:var(--purple-xl)}
+.flow-box.officer:hover{border-color:var(--purple);background:#f3e8ff}
+.flow-arrow{font-size:18px;color:var(--ink4);padding:0 2px;flex-shrink:0;align-self:flex-start;margin-top:22px}
+
+/* STORY */
+.story-sec{background:var(--white);padding:72px 0}
+.story-card{max-width:760px;margin:0 auto;background:linear-gradient(135deg,var(--blue-xl),#f0fdf4);border:1.5px solid var(--blue-s);border-radius:24px;padding:36px;box-shadow:var(--s3)}
+.story-ico{font-size:44px;margin-bottom:16px;display:block}
+.story-card h3{font-family:var(--fd);font-size:20px;font-weight:800;color:var(--ink);margin-bottom:14px}
+.story-card p{font-size:15px;color:var(--ink2);line-height:1.85}
+.story-card p+p{margin-top:11px}
+.story-highlight{display:inline-flex;align-items:center;gap:7px;background:var(--blue);color:#fff;font-family:var(--fd);font-size:13px;font-weight:700;padding:6px 14px;border-radius:100px;margin-top:14px}
+
+/* HOWTO */
+.howto-sec{background:var(--surf);padding:72px 0}
+.howto-box{background:var(--amber-xl);border:2px solid var(--amber-s);border-radius:20px;padding:32px 36px;max-width:680px;margin:0 auto}
+.howto-title{display:flex;align-items:center;gap:10px;font-family:var(--fd);font-size:19px;font-weight:800;color:var(--ink);margin-bottom:18px}
+.howto-steps{display:flex;flex-direction:column;gap:11px}
+.hw-step{display:flex;align-items:flex-start;gap:12px;font-size:14px;color:var(--ink2);line-height:1.65}
+.sn{width:26px;height:26px;background:var(--amber);color:#fff;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex-shrink:0;margin-top:1px}
+
+/* GRAPH */
+.graph-sec{background:var(--surf);padding:72px 0}
+.graph-wrap{max-width:820px;margin:0 auto}
+.graph-card{background:#fff;border:1.5px solid var(--line);border-radius:20px;padding:28px 30px;box-shadow:var(--s2);margin-bottom:20px}
+.gc-title{font-family:var(--fd);font-size:15px;font-weight:800;color:var(--ink);margin-bottom:20px;display:flex;align-items:center;gap:8px}
+.bar-chart{display:flex;flex-direction:column;gap:12px}
+.bc-row{display:flex;align-items:center;gap:12px}
+.bc-label{font-size:12.5px;font-weight:700;color:var(--ink2);width:180px;flex-shrink:0}
+.bc-track{flex:1;height:32px;background:var(--surf);border-radius:8px;overflow:hidden}
+.bc-fill{height:100%;border-radius:8px;display:flex;align-items:center;padding:0 12px;font-size:12px;font-weight:700;color:#fff;width:0;transition:width 1.2s var(--ease)}
+.bc-range{font-size:12.5px;font-weight:800;color:var(--ink3);width:60px;text-align:right;flex-shrink:0}
+
+/* TABLE */
+.tbl-sec{background:var(--white);padding:72px 0}
+.tbl-wr{overflow-x:auto;border-radius:14px;border:1.5px solid var(--line);box-shadow:var(--s2);margin-bottom:16px}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+thead th{background:linear-gradient(135deg,var(--blue) 0%,#1e40af 100%);color:#fff;padding:14px 16px;text-align:left;font-family:var(--fd);font-size:13px;font-weight:700;letter-spacing:.03em}
+thead th:first-child{border-radius:14px 0 0 0}
+thead th:last-child{border-radius:0 14px 0 0}
+tbody tr{border-bottom:1px solid var(--line);transition:.2s}
+tbody tr:hover{background:var(--blue-xl)}
+tbody td{padding:12px 16px;color:var(--ink2);vertical-align:middle}
+.tbadge{display:inline-flex;font-size:11px;font-weight:700;padding:3px 8px;border-radius:100px}
+.tbadge.g{background:var(--green-xl);color:var(--green);border:1px solid var(--green-s)}
+.tbadge.b{background:var(--blue-xl);color:var(--blue);border:1px solid var(--blue-s)}
+.tbadge.a{background:var(--amber-xl);color:#92400e;border:1px solid var(--amber-s)}
+.tbadge.r{background:var(--red-xl);color:var(--red);border:1px solid var(--red-s)}
+.tbadge.p{background:var(--purple-xl);color:var(--purple);border:1px solid var(--purple-s)}
+
+/* ARTICLE */
+.art-sec{background:var(--surf);padding:72px 0}
+.art-body h2{font-family:var(--fd);font-size:20px;font-weight:800;color:var(--ink);margin:26px 0 10px;line-height:1.3}
+.art-body h2:first-child{margin-top:0}
+.art-body p{font-size:15px;color:var(--ink3);line-height:1.85;margin-bottom:13px}
+.art-body ul{display:flex;flex-direction:column;gap:8px;margin:10px 0 14px}
+.art-body li{display:flex;align-items:flex-start;gap:10px;font-size:14.5px;color:var(--ink3);line-height:1.7}
+.art-body li::before{content:'✓';width:18px;height:18px;background:var(--blue);color:#fff;border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;flex-shrink:0;margin-top:3px}
+.art-body strong{color:var(--ink2);font-weight:700}
+.ibox{background:var(--blue-xl);border:1.5px solid var(--blue-s);border-radius:13px;padding:14px 18px;margin:14px 0;display:flex;gap:10px;font-size:14px;color:var(--ink2);line-height:1.7}
+.ibox svg{width:16px;height:16px;stroke:var(--blue);fill:none;stroke-width:2;flex-shrink:0;margin-top:2px}
+.ibox.g{background:var(--green-xl);border-color:var(--green-s)}.ibox.g svg{stroke:var(--green)}
+.ibox.a{background:var(--amber-xl);border-color:var(--amber-s)}.ibox.a svg{stroke:var(--amber)}
+
+/* SEC HEADERS */
+.sec-hd{text-align:center;margin-bottom:44px}
+.sec-h{font-family:var(--fd);font-size:clamp(22px,3.8vw,38px);font-weight:800;color:var(--ink);line-height:1.18;margin-bottom:10px}
+.sec-h span{color:var(--blue)}
+.sec-sub{font-size:15.5px;color:var(--ink3);line-height:1.75;max-width:500px;margin:0 auto}
+
+/* FAQ */
+.faq-sec{background:var(--white);padding:72px 0}
+.fql{max-width:760px;margin:0 auto}
+.fq{background:var(--surf);border:1.5px solid var(--line);border-radius:13px;margin-bottom:10px;overflow:hidden}
+.fq-q{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;cursor:pointer;gap:14px;transition:.2s}
+.fq-q:hover{background:var(--blue-xl)}
+.fq-t{font-weight:600;font-size:15px;color:var(--ink);line-height:1.4}
+.fq-i{width:28px;height:28px;border-radius:50%;background:var(--blue-xl);color:var(--blue);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;transition:transform .28s,background .2s}
+.fq.open .fq-i{transform:rotate(45deg);background:var(--blue);color:#fff}
+.fq-a{max-height:0;overflow:hidden;transition:max-height .35s var(--ease)}
+.fq-ai{padding:0 22px 18px;font-size:14.5px;color:var(--ink3);line-height:1.78}
+.fq.open .fq-a{max-height:500px}
+
+/* REL TOOLS */
+.rel-sec{background:var(--surf);padding:72px 0}
+.rel-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.rel-card{background:#fff;border:1.5px solid var(--line);border-radius:16px;padding:20px 18px;display:flex;flex-direction:column;gap:9px;transition:.28s}
+.rel-card:hover{transform:translateY(-5px);box-shadow:var(--s3);border-color:var(--blue-s)}
+.rel-ico{font-size:26px}
+.rel-title{font-family:var(--fd);font-size:14px;font-weight:700;color:var(--ink)}
+.rel-desc{font-size:13px;color:var(--ink3);line-height:1.6;flex:1}
+.rel-btn{display:inline-flex;align-items:center;gap:6px;font-family:var(--fd);font-weight:700;font-size:13px;color:var(--blue);transition:.2s}
+.rel-btn:hover{gap:10px}
+.rel-btn svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2.5}
+
+/* CONTACT + DISC + CTA + FOOTER */
+.disc{background:var(--amber-xl);border-top:1px solid var(--amber-s);border-bottom:1px solid var(--amber-s);padding:14px 0}
+.disc-in{display:flex;align-items:flex-start;gap:12px;font-size:13.5px;color:var(--ink2);line-height:1.7}
+.contact-sec{background:var(--surf);padding:60px 0}
+.contact-card{max-width:560px;margin:0 auto;background:#fff;border:1.5px solid var(--line);border-radius:20px;padding:32px;text-align:center;box-shadow:var(--s2)}
+.contact-card h3{font-family:var(--fd);font-size:20px;font-weight:800;color:var(--ink);margin-bottom:10px}
+.contact-card p{font-size:15px;color:var(--ink3);line-height:1.75;margin-bottom:20px}
+.btn-bl{display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:#fff;font-family:var(--fd);font-weight:700;font-size:14.5px;padding:12px 26px;border-radius:8px;box-shadow:var(--sb);transition:.22s}
+.btn-bl:hover{background:var(--blue-d);transform:translateY(-1px)}
+.priv-note{font-size:12px;color:var(--ink4);margin-top:14px}
+.cta{background:linear-gradient(140deg,#0f172a 0%,#1e3a8a 100%);padding:80px 0;text-align:center;position:relative;overflow:hidden}
+.cta::before{content:'';position:absolute;top:-80px;left:50%;transform:translateX(-50%);width:800px;height:380px;background:radial-gradient(ellipse,rgba(37,99,235,.22) 0%,transparent 68%);pointer-events:none}
+.cta-in{position:relative;z-index:1}
+.cta .pill{color:#93c5fd;background:rgba(255,255,255,.1);margin-bottom:18px}
+.cta .pill::before{background:#93c5fd}
+.cta h2{font-family:var(--fd);font-size:clamp(24px,4vw,42px);font-weight:800;color:#fff;line-height:1.15;margin-bottom:12px}
+.cta h2 em{color:#fbbf24;font-style:normal}
+.cta p{font-size:16px;color:rgba(255,255,255,.72);max-width:480px;margin:0 auto 32px;line-height:1.78}
+.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn-gold{display:inline-flex;align-items:center;gap:8px;background:var(--amber);color:#fff;font-family:var(--fd);font-weight:800;font-size:15px;padding:14px 30px;border-radius:8px;box-shadow:0 8px 28px rgba(245,158,11,.35);transition:.22s}
+.btn-gold:hover{background:#d97706;transform:translateY(-3px)}
+.btn-ghost{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.09);border:1.5px solid rgba(255,255,255,.22);color:#fff;font-family:var(--fd);font-weight:600;font-size:14px;padding:13px 26px;border-radius:8px;transition:.2s}
+.btn-ghost:hover{background:rgba(255,255,255,.16)}
+footer{background:#0f172a;padding:52px 0 0}
+.ft-inner{max-width:1180px;margin:0 auto;padding:0 24px}
+.ft-top{display:grid;grid-template-columns:1.9fr 1fr 1fr 1fr;gap:44px;margin-bottom:44px}
+.ft-brand .ln{color:#fff}.ft-brand .ls{color:#475569}
+.ft-desc{font-size:13.5px;color:#64748b;line-height:1.78;max-width:265px;margin:13px 0 20px}
+.ft-soc{display:flex;gap:9px}
+.fts{width:34px;height:34px;border-radius:7px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;color:#94a3b8;font-size:13px;transition:.2s}
+.fts:hover{background:var(--blue);color:#fff}
+.fc h4{font-family:var(--fd);font-size:12px;font-weight:700;color:#fff;margin-bottom:14px;letter-spacing:.06em;text-transform:uppercase}
+.fc ul{display:flex;flex-direction:column;gap:8px}
+.fc ul a{font-size:13.5px;color:#64748b;transition:.18s}
+.fc ul a:hover{color:#93c5fd}
+.ft-btm{border-top:1px solid rgba(255,255,255,.07);padding:20px 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.ft-cp{font-size:12.5px;color:#475569}.ft-cp b{color:#64748b}
+.ft-lnk{display:flex;gap:18px}
+.ft-lnk a{font-size:12.5px;color:#475569;transition:.18s}
+.ft-lnk a:hover{color:#93c5fd}
+.btt{position:fixed;bottom:26px;right:26px;z-index:500;width:43px;height:43px;background:var(--blue);color:#fff;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:17px;box-shadow:var(--sb);opacity:0;pointer-events:none;transform:translateY(14px);transition:.28s var(--ease)}
+.btt.on{opacity:1;pointer-events:auto;transform:translateY(0)}
+.btt:hover{transform:translateY(-3px)}
+
+@media(max-width:1060px){.ft-top{grid-template-columns:1fr 1fr}.rel-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:860px){nav.dn,.hcta{display:none}.brg{display:flex}.fgrid{grid-template-columns:1fr}.fgrid3{grid-template-columns:1fr 1fr}.tool-body{padding:24px 22px}.tool-hdr{padding:24px 22px}.flow-row{gap:3px}.flow-box{min-width:80px;padding:8px 10px}}
+@media(max-width:600px){.ft-top{grid-template-columns:1fr}.rel-grid{grid-template-columns:1fr}.ft-btm{flex-direction:column;text-align:center}.cta-btns{flex-direction:column;align-items:center}.howto-box{padding:24px 18px}.fgrid3{grid-template-columns:1fr}.bc-label{width:130px;font-size:11.5px}.flow-row{flex-wrap:wrap;justify-content:center}.flow-arrow{display:none}.summary-banner{flex-direction:column}.sb-score{text-align:left}}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="hdr">
+  <div class="w"><div class="hdi">
+    <a href="https://rajdailytools.in/" class="logo">
+      <div class="lb"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+      <div><div class="ln">Raj<span>Daily</span>Tools</div><div class="ls">Smart Tools for Daily Life</div></div>
+    </a>
+    <nav class="dn">
+      <a href="https://rajdailytools.in/">Home</a>
+      <a href="https://rajdailytools.in/categories.html">Categories</a>
+      <a href="https://rajdailytools.in/#popular">Popular</a>
+      <a href="https://rajdailytools.in/about.html">About</a>
+      <a href="https://rajdailytools.in/contact.html">Contact</a>
+    </nav>
+    <a href="https://rajdailytools.in/categories.html" class="hcta">Explore Tools →</a>
+    <button class="brg" id="brg"><span></span><span></span><span></span></button>
+  </div></div>
+</header>
+<div class="dov" id="dov"></div>
+<div class="drw" id="drw">
+  <div class="dh">
+    <div class="logo">
+      <div class="lb" style="width:30px;height:30px;border-radius:7px"><svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#fff"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+      <div class="ln" style="font-size:16px">Raj<span>Daily</span>Tools</div>
+    </div>
+    <button class="dx" id="dx">✕</button>
+  </div>
+  <nav class="mn">
+    <a href="https://rajdailytools.in/" onclick="cD()">🏠 Home</a>
+    <a href="https://rajdailytools.in/categories.html" onclick="cD()">🗂️ Categories</a>
+    <a href="https://rajdailytools.in/#popular" onclick="cD()">⭐ Popular</a>
+    <a href="https://rajdailytools.in/about.html" onclick="cD()">👤 About</a>
+    <a href="https://rajdailytools.in/contact.html" onclick="cD()">📬 Contact</a>
+  </nav>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+  <div class="w">
+    <div class="bc">
+      <a href="https://rajdailytools.in/">Home</a><span style="color:var(--ink4)">›</span>
+      <a href="https://rajdailytools.in/categories.html">Tools</a><span style="color:var(--ink4)">›</span>
+      <span>Army Promotion Timeline Tool</span>
+    </div>
+    <div class="hero-inner">
+      <div class="pill">🪖 Army Career Growth Tool 2026</div>
+      <h1>Indian Army <span>Promotion Timeline</span> Calculator</h1>
+      <p class="hero-sub">Check your career growth from GD to Havaldar, JCO & Officer — step by step. Enter your joining age, entry rank, and promotion type to see your complete army rank progression timeline with exact years.</p>
+      <div class="hero-chips">
+        <span class="chip">🪖 GD Soldier</span>
+        <span class="chip">📝 Clerk / SKT</span>
+        <span class="chip">🔧 Tradesman</span>
+        <span class="chip">⚙️ Sol Technical</span>
+        <span class="chip">🩺 Nursing Asst</span>
+        <span class="chip">🗺️ Cartographer</span>
+        <span class="chip">🎓 Education Hav/Sub</span>
+        <span class="chip">🙏 JCO Pandit</span>
+        <span class="chip">⭐ NDA / CDS Officer</span>
+        <span class="chip">🚀 Fast Track</span>
+      </div>
+      <div class="hero-meta">
+        <div class="upd">✅ Updated 2026</div>
+        <span class="hmi">⚡ Instant Timeline</span>
+        <span class="hmi">🔒 No Data Stored</span>
+        <span class="hmi">📱 Mobile Friendly</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOOL SECTION -->
+<section class="tool-sec" id="promotion-tool">
+  <div class="w"><div class="tool-wrap">
+    <div class="tool-card rev">
+      <div class="tool-hdr">
+        <div class="th">
+          <h2>🪖 Army Rank Promotion Timeline Calculator — 2026</h2>
+          <p>Select your entry rank, enter your joining age, and choose promotion type. Instantly see your full career promotion path — from Sepoy to Subedar Major — with year-by-year timeline, final achievable rank, and retirement age.</p>
+          <div class="th-badges">
+            <span class="thb">📊 Full Rank Timeline</span>
+            <span class="thb">⏳ Year-wise Progression</span>
+            <span class="thb">🚀 Fast Track Option</span>
+            <span class="thb">🎖️ JCO / Officer Path</span>
+            <span class="thb">🔒 100% Private</span>
+          </div>
+        </div>
+      </div>
+      <div class="tool-body">
+        <div class="fgrid3">
+          <div class="fld">
+            <label class="flbl" for="entryRank">Entry Rank <span>Required</span></label>
+            <select class="fsel" id="entryRank">
+              <option value="">— Select Rank —</option>
+              <optgroup label="━━ Soldier Entry ━━">
+                <option value="gd">🪖 Agniveer / Sepoy (GD)</option>
+                <option value="clerk">📝 Agniveer Clerk / SKT</option>
+                <option value="tradesman">🔧 Agniveer Tradesman</option>
+                <option value="technical">⚙️ Agniveer Technical (Sol Tech)</option>
+                <option value="nursing">🩺 Nursing Assistant (Sol NA / MNS)</option>
+                <option value="cartographer">🗺️ Cartographer (Survey / ASCF)</option>
+              </optgroup>
+              <optgroup label="━━ Direct Entry (Graduation) ━━">
+                <option value="edu_hav">🎓 Education Havaldar (Direct — Graduation)</option>
+                <option value="edu_sub">🎓 Education Subedar (Direct — Graduation)</option>
+              </optgroup>
+              <optgroup label="━━ JCO Direct Entry ━━">
+                <option value="jco_pandit">🙏 JCO Pandit / Maulvi / Granthi (Religious Teacher)</option>
+                <option value="jco_catering">🍽️ JCO Catering (Army Catering Corps)</option>
+              </optgroup>
+              <optgroup label="━━ Officer Entry ━━">
+                <option value="nda">⭐ NDA Entry (10+2) → Officer Cadre</option>
+                <option value="cds">🎖️ CDS Entry (Graduation) → Officer Cadre</option>
+              </optgroup>
+            </select>
+          </div>
+          <div class="fld">
+            <label class="flbl" for="joiningAge">Joining Age <span>Years</span></label>
+            <input class="finp" id="joiningAge" type="number" min="17" max="30" placeholder="e.g. 18" value="">
+          </div>
+          <div class="fld">
+            <label class="flbl" for="promoType">Promotion Type <span>Choose</span></label>
+            <select class="fsel" id="promoType">
+              <option value="normal">📋 Normal Promotion</option>
+              <option value="fast">🚀 Fast Track Promotion</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="hint-box">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          <div>Promotion timelines are based on <strong>average years of service</strong> across Indian Army ranks and trades. Fast Track shows minimum possible timeline for exceptional performance. Actual promotions depend on vacancies, merit, and performance reports (ACRs). <strong>JCO promotion requires passing written exams.</strong> NDA/CDS officer timelines show commissioned officer ranks. Education/RT/Catering JCO direct entries start at a higher rank with shorter total career span.</div>
+        </div>
+
+        <div class="btn-row">
+          <button class="cvt-btn" onclick="calculateTimeline()">🚀 Generate My Promotion Timeline</button>
+          <button class="rst-btn" onclick="resetTool()">↺ Reset</button>
+        </div>
+
+        <!-- RESULT AREA -->
+        <div id="resultArea">
+
+          <!-- Summary Banner -->
+          <div class="summary-banner">
+            <div>
+              <span class="sb-tag" id="sumTag">🎖️ YOUR CAREER PATH</span>
+              <div class="sb-title" id="sumTitle">—</div>
+              <div class="sb-sub" id="sumSub">—</div>
+            </div>
+            <div class="sb-score">
+              <div class="sb-num" id="sumRetireAge">—</div>
+              <div class="sb-denom">Retirement Age</div>
+            </div>
+          </div>
+
+          <!-- Progress Meter -->
+          <div class="progress-wrap">
+            <div class="prog-lbl">
+              <span>📈 Career Progression Score</span>
+              <span id="progPct" style="font-family:var(--fd);font-size:14px;font-weight:800;color:var(--blue)">—</span>
+            </div>
+            <div class="prog-track">
+              <div class="prog-fill" id="progFill" style="width:0%"></div>
+            </div>
+          </div>
+
+          <!-- Timeline Cards -->
+          <div id="timelineCards"></div>
+
+          <!-- Actions -->
+          <div class="action-row">
+            <button class="copy-btn" id="copyBtn" onclick="copyTimeline()">📋 Copy My Timeline</button>
+            <button class="reset-all-btn" onclick="resetTool()">🔄 Reset Tool</button>
+          </div>
+
+          <div style="background:var(--amber-xl);border:1.5px solid var(--amber-s);border-radius:12px;padding:14px 18px;margin-top:16px;font-size:13.5px;color:var(--ink2);line-height:1.7">
+            <strong>⚠️ Note:</strong> This timeline shows <strong>average promotion years</strong> across the Indian Army. Actual promotion depends on <strong>vacancy, ACR (Annual Confidential Report), LDCE/Departmental Exam results</strong>, and unit performance. Fast track is possible for consistently outstanding soldiers. Always follow official army promotion notifications.
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div></div>
+</section>
+
+<!-- HOW TO USE -->
+<section class="howto-sec">
+  <div class="w">
+    <div class="sec-hd rev">
+      <div class="pill" style="margin-bottom:14px">💡 Simple Steps</div>
+      <h2 class="sec-h">How to Use the <span>Promotion Timeline Tool</span></h2>
+    </div>
+    <div class="howto-box rev">
+      <div class="howto-title">🪖 Army Career Timeline — 4 Easy Steps</div>
+      <div class="howto-steps">
+        <div class="hw-step"><span class="sn">1</span><strong>Select your Entry Rank / Trade</strong> — GD, Clerk/SKT, Tradesman, Sol Technical, Nursing Assistant, Cartographer, Education Havaldar/Subedar (Direct), JCO Pandit/Catering, or NDA/CDS Officer. Each trade has its own promotion path, exams, and retirement age.</div>
+        <div class="hw-step"><span class="sn">2</span><strong>Enter your Joining Age</strong> — Army entry age is typically 17.5 to 23 years. Your joining age determines your retirement year and total service period.</div>
+        <div class="hw-step"><span class="sn">3</span><strong>Choose Promotion Type</strong> — Normal shows average promotion years. Fast Track shows minimum timeline achievable with outstanding performance, ACR, and exam clearance.</div>
+        <div class="hw-step"><span class="sn">4</span><strong>Click "Generate My Promotion Timeline"</strong> — Your full career path appears with every rank, the year you'll likely reach it, and your final achievable rank before retirement.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RANK FLOW VISUAL -->
+<section class="flow-sec">
+  <div class="w">
+    <div class="sec-hd rev">
+      <div class="pill" style="margin-bottom:14px">🎖️ Career Ladder</div>
+      <h2 class="sec-h">Army Rank <span>Progression Path</span></h2>
+      <p class="sec-sub">From Sepoy / Agniveer to Subedar Major — the complete Indian Army career ladder visualized</p>
+    </div>
+    <div class="flow-wrap rev">
+      <div class="flow-row">
+        <div class="flow-step">
+          <div class="flow-box">
+            <div class="flow-icon">🪖</div>
+            <div class="flow-rank">Sepoy / Agniveer</div>
+            <div class="flow-yrs">Year 0</div>
+          </div>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step">
+          <div class="flow-box">
+            <div class="flow-icon">⬆️</div>
+            <div class="flow-rank">Lance Naik</div>
+            <div class="flow-yrs">3–5 yrs</div>
+          </div>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step">
+          <div class="flow-box">
+            <div class="flow-icon">🏅</div>
+            <div class="flow-rank">Naik</div>
+            <div class="flow-yrs">6–9 yrs</div>
+          </div>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step">
+          <div class="flow-box">
+            <div class="flow-icon">🎖️</div>
+            <div class="flow-rank">Havaldar</div>
+            <div class="flow-yrs">10–14 yrs</div>
+          </div>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step">
+          <div class="flow-box jco">
+            <div class="flow-icon">⭐</div>
+            <div class="flow-rank">Nb Subedar</div>
+            <div class="flow-yrs">14–18 yrs</div>
+          </div>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step">
+          <div class="flow-box jco">
+            <div class="flow-icon">⭐⭐</div>
+            <div class="flow-rank">Subedar</div>
+            <div class="flow-yrs">18–22 yrs</div>
+          </div>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step">
+          <div class="flow-box jco">
+            <div class="flow-icon">⭐⭐⭐</div>
+            <div class="flow-rank">Subedar Major</div>
+            <div class="flow-yrs">24–28 yrs</div>
+          </div>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step">
+          <div class="flow-box officer">
+            <div class="flow-icon">🫡</div>
+            <div class="flow-rank">Hon. Lt / Capt</div>
+            <div class="flow-yrs">Special Entry</div>
+          </div>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:20px;font-size:13px;color:var(--ink4)">🟡 Yellow = JCO Rank &nbsp;|&nbsp; 🟣 Purple = Officer Entry &nbsp;|&nbsp; Blue = Soldier Rank</div>
+    </div>
+  </div>
+</section>
+
+<!-- STORY SECTION -->
+<section class="story-sec">
+  <div class="w">
+    <div class="sec-hd rev">
+      <div class="pill" style="margin-bottom:14px">❤️ Real Story</div>
+      <h2 class="sec-h">Why I Built <span>This Tool</span></h2>
+    </div>
+    <div class="story-card rev">
+      <span class="story-ico">🪖</span>
+      <h3>"Bhaiya Ka Promotion — Aur Ek Sawal Jisne Ye Tool Banvaya"</h3>
+      <p>Mere bhaiya mosi army mein hain. Jab unka promotion hokar <strong>NB Subedar</strong> bana, tab ghar mein sab bahut khush the. Chacha ne mithai manvayi, amma ne rote hue unhe phone kiya. Poora mohalla jaanta tha ki army mein rank milna kitni badi baat hoti hai.</p>
+      <p>Mujhe us time ek sawal aaya — <em>ye promotion ka system hota kaise hai? Kitne saal lagte hain? Kya exam hota hai? Kya sirf time se milta hai ya performance bhi matter karti hai?</em></p>
+      <p>Bhaiya ne jo bataya, wo jawab mujhe aaj bhi yaad hai: <strong>"Har rank ke liye ek fight hoti hai — vacancies limited hoti hain, exam clear karna padta hai, aur ACR achha hona chahiye. Sirf time nahi, mehnat bhi chahiye."</strong></p>
+      <p>Maine internet pe army promotion timeline search kiya — bahut scattered information mili. Kisi ne sirf rank names likhe, kisi ne galat years bataye. Koi tool nahi tha jahan aap apni age aur entry rank daal ke apna <strong>exact career path</strong> dekh sako.</p>
+      <p>Isliye maine ye <strong>Army Promotion Timeline Calculator</strong> banaya — taaki har army aspirant apna future career path dekh sake, plan kar sake, aur samajh sake ki GD se JCO tak ka safar kitne saalon ka hota hai aur kya kya karna padta hai.</p>
+      <span class="story-highlight">🎯 Har army jawan ka sapna clear hona chahiye — isliye ye tool free hai</span>
+    </div>
+  </div>
+</section>
+
+<!-- TABLE SECTION -->
+<section class="tbl-sec">
+  <div class="w">
+    <div class="sec-hd rev">
+      <div class="pill" style="margin-bottom:14px">📊 Quick Reference</div>
+      <h2 class="sec-h">Army Rank <span>Promotion Timeline Table</span></h2>
+      <p class="sec-sub">Average years of service required for each rank — across all trades & entry types</p>
+    </div>
+    <div class="tbl-wr rev">
+      <table>
+        <thead>
+          <tr>
+            <th>Rank / Post</th>
+            <th>Trade / Entry</th>
+            <th>Avg Years (Normal)</th>
+            <th>Fast Track</th>
+            <th>Exam Required</th>
+            <th>Key Criteria</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Sepoy / Sol Tech / Sol NA</strong></td><td><span class="tbadge b">GD / Tech / NA / Cart</span></td><td>Year 0 (Entry)</td><td>Year 0</td><td>—</td><td>Army Recruitment Rally</td></tr>
+          <tr><td><strong>Lance Naik</strong></td><td><span class="tbadge b">All Soldier Trades</span></td><td>3–5 Years</td><td>3 Years</td><td><span class="tbadge g">No</span></td><td>ACR + Vacancy + CO Recommendation</td></tr>
+          <tr><td><strong>Naik</strong></td><td><span class="tbadge b">All Soldier Trades</span></td><td>6–9 Years</td><td>5 Years</td><td><span class="tbadge a">LDCE + Trade Test</span></td><td>Service + Unit Exam</td></tr>
+          <tr><td><strong>Havaldar</strong></td><td><span class="tbadge b">All Soldier Trades</span></td><td>10–14 Years</td><td>8 Years</td><td><span class="tbadge a">LDCE + Selection Board</span></td><td>Selection Board + ACR</td></tr>
+          <tr><td><strong>Havaldar Education (Direct)</strong></td><td><span class="tbadge p">AEC Direct</span></td><td>Year 0 (Direct Entry)</td><td>Year 0</td><td><span class="tbadge r">Written + Interview</span></td><td>Graduation Required</td></tr>
+          <tr><td><strong>JCO Pandit / Maulvi / Granthi</strong></td><td><span class="tbadge p">RT Direct JCO</span></td><td>Year 0 (Direct Entry)</td><td>Year 0</td><td><span class="tbadge r">Written + Religious Test</span></td><td>Religious Knowledge Required</td></tr>
+          <tr><td><strong>JCO Catering</strong></td><td><span class="tbadge p">Catering Direct</span></td><td>Year 0 (Direct Entry)</td><td>Year 0</td><td><span class="tbadge r">Written + Trade Test</span></td><td>Culinary Skills + Interview</td></tr>
+          <tr><td><strong>Nb Subedar (JCO)</strong></td><td><span class="tbadge a">All Soldier Trades</span></td><td>14–18 Years</td><td>13 Years</td><td><span class="tbadge r">JCO Written Exam</span></td><td>JCO Exam + Selection</td></tr>
+          <tr><td><strong>Subedar (JCO)</strong></td><td><span class="tbadge a">All JCO Cadres</span></td><td>18–22 Years</td><td>17 Years</td><td><span class="tbadge r">Time-bound + Merit</span></td><td>Time-bound + Merit</td></tr>
+          <tr><td><strong>Subedar Major (JCO)</strong></td><td><span class="tbadge a">All JCO Cadres</span></td><td>24–28 Years</td><td>22 Years</td><td><span class="tbadge r">SM Selection</span></td><td>Unit Selection + ACR</td></tr>
+          <tr><td><strong>Lieutenant (NDA/CDS)</strong></td><td><span class="tbadge p">NDA / CDS Officer</span></td><td>4–5 Years (from entry)</td><td>4 Years</td><td><span class="tbadge p">UPSC NDA/CDS + SSB</span></td><td>IMA/OTA Commissioning</td></tr>
+          <tr><td><strong>Captain → Major → Lt Col</strong></td><td><span class="tbadge p">NDA / CDS Officer</span></td><td>6–18 Years (service)</td><td>Variable</td><td><span class="tbadge p">Time-bound + Selection Board</span></td><td>ACR + Board Selection</td></tr>
+          <tr><td><strong>Hon. Lieutenant</strong></td><td><span class="tbadge p">All SM Cadres</span></td><td>28–32 Years</td><td>26 Years</td><td><span class="tbadge p">Special</span></td><td>Retirement Honour</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="text-align:center;font-size:12.5px;color:var(--ink4);margin-top:10px">* ACR = Annual Confidential Report &nbsp;|&nbsp; LDCE = Limited Departmental Competitive Exam &nbsp;|&nbsp; JCO = Junior Commissioned Officer &nbsp;|&nbsp; AEC = Army Education Corps &nbsp;|&nbsp; AMC = Army Medical Corps &nbsp;|&nbsp; RT = Religious Teacher</p>
+  </div>
+</section>
+
+<!-- GRAPH SECTION -->
+<section class="graph-sec">
+  <div class="w">
+    <div class="sec-hd rev">
+      <div class="pill" style="margin-bottom:14px">📈 Data Charts</div>
+      <h2 class="sec-h">Army Rank <span>Growth Charts</span></h2>
+      <p class="sec-sub">Visualize how army career growth works — rank by rank, year by year</p>
+    </div>
+    <div class="graph-wrap">
+      <div class="graph-card rev">
+        <div class="gc-title">📅 Rank vs Years of Service (Normal Promotion)</div>
+        <div class="bar-chart">
+          <div class="bc-row">
+            <span class="bc-label">Sepoy / Agniveer</span>
+            <div class="bc-track"><div class="bc-fill" style="background:linear-gradient(90deg,#2563eb,#60a5fa);width:0%;--bw:5%">0 yrs</div></div>
+            <span class="bc-range">0 yrs</span>
+          </div>
+          <div class="bc-row">
+            <span class="bc-label">Lance Naik</span>
+            <div class="bc-track"><div class="bc-fill" style="background:linear-gradient(90deg,#2563eb,#60a5fa);width:0%;--bw:14%">3–5 yrs</div></div>
+            <span class="bc-range">~4 yrs</span>
+          </div>
+          <div class="bc-row">
+            <span class="bc-label">Naik</span>
+            <div class="bc-track"><div class="bc-fill" style="background:linear-gradient(90deg,#14b8a6,#2dd4bf);width:0%;--bw:26%">6–9 yrs</div></div>
+            <span class="bc-range">~7 yrs</span>
+          </div>
+          <div class="bc-row">
+            <span class="bc-label">Havaldar</span>
+            <div class="bc-track"><div class="bc-fill" style="background:linear-gradient(90deg,#f59e0b,#fbbf24);width:0%;--bw:42%">10–14 yrs</div></div>
+            <span class="bc-range">~12 yrs</span>
+          </div>
+          <div class="bc-row">
+            <span class="bc-label">Nb Subedar (JCO)</span>
+            <div class="bc-track"><div class="bc-fill" style="background:linear-gradient(90deg,#f97316,#fb923c);width:0%;--bw:57%">14–18 yrs</div></div>
+            <span class="bc-range">~16 yrs</span>
+          </div>
+          <div class="bc-row">
+            <span class="bc-label">Subedar (JCO)</span>
+            <div class="bc-track"><div class="bc-fill" style="background:linear-gradient(90deg,#ef4444,#f87171);width:0%;--bw:71%">18–22 yrs</div></div>
+            <span class="bc-range">~20 yrs</span>
+          </div>
+          <div class="bc-row">
+            <span class="bc-label">Subedar Major</span>
+            <div class="bc-track"><div class="bc-fill" style="background:linear-gradient(90deg,#8b5cf6,#a78bfa);width:0%;--bw:88%">24–28 yrs</div></div>
+            <span class="bc-range">~26 yrs</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="graph-card rev">
+        <div class="gc-title">🚀 Normal vs Fast Track — Years Comparison</div>
+        <div class="bar-chart">
+          <div class="bc-row">
+            <span class="bc-label">Lance Naik</span>
+            <div class="bc-track">
+              <div style="height:50%;border-radius:4px 4px 0 0;background:linear-gradient(90deg,#2563eb,#60a5fa);width:0%;--bw:14%;display:flex;align-items:center;padding:0 8px;font-size:10px;font-weight:700;color:#fff;transition:width 1.2s var(--ease)">Normal: ~4y</div>
+              <div style="height:50%;border-radius:0 0 4px 4px;background:linear-gradient(90deg,#10b981,#34d399);width:0%;--bw:10%;display:flex;align-items:center;padding:0 8px;font-size:10px;font-weight:700;color:#fff;transition:width 1.4s var(--ease)">Fast: 3y</div>
+            </div>
+            <span class="bc-range">Saved: 1y</span>
+          </div>
+          <div class="bc-row">
+            <span class="bc-label">Havaldar</span>
+            <div class="bc-track">
+              <div style="height:50%;border-radius:4px 4px 0 0;background:linear-gradient(90deg,#f59e0b,#fbbf24);width:0%;--bw:42%;display:flex;align-items:center;padding:0 8px;font-size:10px;font-weight:700;color:#fff;transition:width 1.2s var(--ease)">Normal: ~12y</div>
+              <div style="height:50%;border-radius:0 0 4px 4px;background:linear-gradient(90deg,#10b981,#34d399);width:0%;--bw:27%;display:flex;align-items:center;padding:0 8px;font-size:10px;font-weight:700;color:#fff;transition:width 1.4s var(--ease)">Fast: 8y</div>
+            </div>
+            <span class="bc-range">Saved: 4y</span>
+          </div>
+          <div class="bc-row">
+            <span class="bc-label">Nb Subedar</span>
+            <div class="bc-track">
+              <div style="height:50%;border-radius:4px 4px 0 0;background:linear-gradient(90deg,#f97316,#fb923c);width:0%;--bw:57%;display:flex;align-items:center;padding:0 8px;font-size:10px;font-weight:700;color:#fff;transition:width 1.2s var(--ease)">Normal: ~16y</div>
+              <div style="height:50%;border-radius:0 0 4px 4px;background:linear-gradient(90deg,#10b981,#34d399);width:0%;--bw:43%;display:flex;align-items:center;padding:0 8px;font-size:10px;font-weight:700;color:#fff;transition:width 1.4s var(--ease)">Fast: 13y</div>
+            </div>
+            <span class="bc-range">Saved: 3y</span>
+          </div>
+          <div class="bc-row">
+            <span class="bc-label">Subedar Major</span>
+            <div class="bc-track">
+              <div style="height:50%;border-radius:4px 4px 0 0;background:linear-gradient(90deg,#8b5cf6,#a78bfa);width:0%;--bw:88%;display:flex;align-items:center;padding:0 8px;font-size:10px;font-weight:700;color:#fff;transition:width 1.2s var(--ease)">Normal: ~26y</div>
+              <div style="height:50%;border-radius:0 0 4px 4px;background:linear-gradient(90deg,#10b981,#34d399);width:0%;--bw:73%;display:flex;align-items:center;padding:0 8px;font-size:10px;font-weight:700;color:#fff;transition:width 1.4s var(--ease)">Fast: 22y</div>
+            </div>
+            <span class="bc-range">Saved: 4y</span>
+          </div>
+        </div>
+        <p style="font-size:12px;color:var(--ink4);margin-top:14px;text-align:center">* Fast Track requires exceptional ACR, LDCE/exam clearance, and unit recommendation every year</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SEO ARTICLE -->
+<section class="art-sec">
+  <div class="w">
+    <div class="sec-hd rev">
+      <div class="pill" style="margin-bottom:14px">📖 Complete Guide</div>
+      <h2 class="sec-h">Army Promotion System — <span>Complete 2026 Guide</span></h2>
+    </div>
+    <div class="art-body wa rev">
+
+      <h2>Indian Army Promotion System — How Does It Actually Work?</h2>
+      <p>Har Indian Army aspirant ke mann mein ek sawal hota hai — <strong>army mein promotion kaise hota hai?</strong> Kya sirf time pass karne se rank milti hai? Ya koi exam hota hai? Kya performance matter karti hai? Aaj hum poori detail mein samjhenge ki Indian Army ka promotion system exactly kaise kaam karta hai.</p>
+      <p>Indian Army mein do tarah ke personnel hote hain: <strong>Soldiers (PBOR — Personnel Below Officer Rank)</strong> aur <strong>Officers</strong>. GD, Clerk, aur Tradesman entry soldier category mein hoti hai. Soldiers ki apni ek alag promotion chain hoti hai jo Sepoy se shuru hokar Subedar Major tak jaati hai, aur kuch exceptional cases mein Honorary Lieutenant tak.</p>
+
+      <div class="ibox">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        <div><strong>Key Insight:</strong> Army mein promotion <strong>sirf time-based nahi hota</strong>. Har rank ke liye vacancy honi chahiye, ACR (Annual Confidential Report) outstanding honi chahiye, aur kuch ranks ke liye LDCE (Limited Departmental Competitive Exam) bhi clear karna padta hai.</div>
+      </div>
+
+      <h2>Soldier Ranks — GD Se Havaldar Tak Ka Safar</h2>
+      <p>GD entry ke baad sabse pehla rank <strong>Sepoy</strong> (ya Agniveer scheme mein Agniveer) hota hai. Iske baad ki progression kuch is tarah hoti hai:</p>
+      <ul>
+        <li><strong>Lance Naik (L/Nk):</strong> Joining ke 3–5 saal baad. Iske liye koi formal exam nahi hota. Commanding Officer ki recommendation aur achha ACR kaafi hota hai. Vacancy available honi chahiye unit mein.</li>
+        <li><strong>Naik (Nk):</strong> Total 6–9 saal ki service ke baad. Kuch units mein LDCE (unit-level competitive exam) clear karna hota hai. ACR mein minimum "Good" grade required hoti hai.</li>
+        <li><strong>Havaldar (Hav):</strong> 10–14 saal ki service ke baad. Ye ek critical rank hai — iske baad aage JCO entry ke liye apply kar sakte hain. Havaldar ke liye Selection Board hota hai, LDCE hota hai, aur overall record dekha jaata hai.</li>
+      </ul>
+      <p>In saalon mein jo cheez sabse zyada matter karti hai wo hai aapka <strong>ACR — Annual Confidential Report</strong>. Har saal aapke Commanding Officer aapko "Outstanding", "Very Good", "Good", ya "Average" grade dete hain. JCO entry ke liye consistently "Outstanding" ACR hona bahut faydemand hota hai.</p>
+
+      <h2>JCO — Junior Commissioned Officer Kaise Bante Hain?</h2>
+      <p>JCO ranks (Nb Subedar, Subedar, Subedar Major) soldier aur officer ke beech ki category hoti hai. Inhe gaon mein "Sardar sahab" ya "Sahab" kehte hain. JCO banna ek bada milestone hota hai — iske saath salary bhi kaafi badhti hai aur respect bhi.</p>
+      <p><strong>Nb Subedar (JCO Entry):</strong> Typically 14–18 saal ki service ke baad. Iske liye <strong>LDCE (Limited Departmental Competitive Exam)</strong> clear karna padta hai. Ye written exam hota hai jisme English, General Knowledge, Military subjects shamil hote hain. Exam clear karne ke baad interview aur medical hota hai. Vacancy ke hisaab se final selection hoti hai.</p>
+      <p>Iske baad <strong>Subedar</strong> (18–22 saal service) aur <strong>Subedar Major</strong> (24–28 saal service) normal time-based progressions hain, subject to vacancy aur ACR. Subedar Major ek unit ka highest JCO hota hai — ek time mein ek unit mein ek hi SM hota hai.</p>
+
+      <div class="ibox a">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        <div><strong>JCO Exam Tip:</strong> Bahut se GD soldiers JCO rank tak nahi pahunch paate kyunki LDCE ki preparation nahi karte. <strong>Joining ke pehle din se padhai band mat karo</strong> — jo GD soldier consistently padhte hain, unhi ki JCO promotion hoti hai.</div>
+      </div>
+
+      <h2>Fast Track Promotion — Kya Ye Sach Mein Possible Hai?</h2>
+      <p>Haan, <strong>fast track promotion</strong> possible hai, lekin ye kuch specific conditions mein milta hai:</p>
+      <ul>
+        <li><strong>Outstanding ACR consecutive saalon tak:</strong> Agar aap lagatar 3–4 saal "Outstanding" grade paate hain, aapka naam promotion list mein upar rehta hai.</li>
+        <li><strong>Gallantry Awards:</strong> Shaurya Chakra, Sena Medal jaisi gallantry awards ke baad out-of-turn promotion diya jaata hai kuch cases mein.</li>
+        <li><strong>Sports Quota:</strong> Army ke liye national/international level pe khelo — sports personnel ko priority promotion milti hai.</li>
+        <li><strong>LDCE Topper:</strong> Agar aap LDCE mein top rank laate hain, vacancy ke hisaab se aapki posting aur promotion preference milti hai.</li>
+        <li><strong>Operational Performance:</strong> Field postings mein exceptional performance — war zones, counter-terrorism operations — ke baad special promotions diye jaate hain.</li>
+      </ul>
+      <p>Fast track mein normal timeline se 3–5 saal ki bachat ho sakti hai. Lekin ye guaranteed nahi hota. Jo consistently achha kaam karte hain unhe hi milta hai.</p>
+
+      <h2>Honorary Officer Entry — GD Jawan Se Lieutenant Kaise Bante Hain?</h2>
+      <p>Army mein ek special provision hai — <strong>Subedar Major ko retirement pe Honorary Lieutenant ya Honorary Captain</strong> ki rank di ja sakti hai. Ye ek symbolic promotion hai jo unke yogdan ko recognize karta hai. Iske saath officer ke saare privileges nahi milte, lekin pension aur identity ke liye ye bahut mahatvapurna hoti hai.</p>
+      <p>Kuch exceptional cases mein, Subedar Major who shows extraordinary merit can also be promoted to Regular Lieutenant through a special Army selection board. Ye bahut rare hai lekin hota zaroor hai.</p>
+
+      <h2>Army Promotion Mein Kya-Kya Cheezein Matter Karti Hain?</h2>
+      <ul>
+        <li><strong>ACR (Annual Confidential Report):</strong> Sabse important factor. Har saal rating milti hai. Consistently "Outstanding" ya "Very Good" ke bina JCO nahi bante.</li>
+        <li><strong>LDCE / Written Exams:</strong> Havaldar se JCO transition ke liye mandatory written exam. Syllabus cover karna zaroori hai — English, GK, Military subjects.</li>
+        <li><strong>Physical Fitness:</strong> Har saal Physical Fitness Test (PFT) hota hai. Fail karne pe promotion ruk sakti hai.</li>
+        <li><strong>Conduct / Discipline:</strong> Koi bhi court martial, punishment ya disciplinary action aapki promotion chart rok deta hai permanently.</li>
+        <li><strong>Vacancies:</strong> Chahe sab kuch theek ho — agar unit mein vacancy nahi hai to promotion nahi milegi. Vacancy ek critical factor hai.</li>
+        <li><strong>Trade Classification Test:</strong> Class I, Class II, Class III tradesmen — higher class walo ko preference milti hai promotions mein.</li>
+      </ul>
+
+      <h2>Army Mein Sabse Fast Promotion Kaise Milega — Practical Tips</h2>
+      <ul>
+        <li>Joining ke pehle din se discipline maintain karo — koi bhi conduct case nahi hona chahiye kabhi bhi.</li>
+        <li>Har saal PFT mein "Distinguished" grade lene ki koshish karo — physical fitness ka ACR pe seedha asar padta hai.</li>
+        <li>LDCE ki preparation early shuru karo — wait mat karo Havaldar banne tak. GD se hi padhai shuru karo.</li>
+        <li>Sports mein participate karo — Army level, Command level sports mein represent karna career mein bahut helpful hota hai.</li>
+        <li>Apne seniors se accha relationship rakhna — Commanding Officer ki recommendation ACR mein critical hoti hai.</li>
+        <li>Agar koi operational deployment milti hai — field posting accept karo. Field ACR normal posting ACR se better hota hai.</li>
+      </ul>
+
+      <h2>Salary Growth With Promotion — Ek Nazar</h2>
+      <p>Jaise-jaise rank badhti hai, salary bhi badhti hai — aur sirf basic pay nahi, Military Service Pay (MSP), Grade Pay, aur allowances sab milte hain. Nb Subedar (JCO) ban jaane ke baad salary Havaldar se approximately <strong>40–60% zyada</strong> ho jaati hai. Subedar Major ki salary aur pension ek chote government officer se bhi achhi hoti hai. Aur retirement pe Pension aajeevan milti hai — jo private jobs mein kabhi nahi milti.</p>
+      <p>Ye tool sirf ek estimate hai — actual salary, allowances aur benefits ke liye official 7th Pay Commission charts aur Army Pay Scale 2026 dekhein. Lekin ek baat confirm hai: <strong>army mein 25–30 saal ki service ke baad financial security complete hai</strong> — aur saath mein desh ki seva ka garv bhi.</p>
+
+    </div>
+  </div>
+</section>
+
+<!-- FAQ SECTION -->
+<section class="faq-sec">
+  <div class="w">
+    <div class="sec-hd rev">
+      <div class="pill" style="margin-bottom:14px">❓ Common Questions</div>
+      <h2 class="sec-h">Army Promotion <span>FAQs</span></h2>
+    </div>
+    <div class="fql rev">
+
+      <div class="fq">
+        <div class="fq-q" onclick="tFQ(this)">
+          <span class="fq-t">Army me promotion kitne saal mein hota hai — GD ke liye?</span>
+          <span class="fq-i">+</span>
+        </div>
+        <div class="fq-a"><div class="fq-ai">GD entry ke baad average timeline is tarah hai: Lance Naik — 3–5 saal, Naik — 6–9 saal, Havaldar — 10–14 saal, Nb Subedar (JCO) — 14–18 saal, Subedar — 18–22 saal, Subedar Major — 24–28 saal. Ye average years hain — actual timeline aapki ACR, LDCE performance, aur vacancy ke hisaab se aage-peeche ho sakti hai. Fast track mein ye 3–5 saal kam ho sakta hai.</div></div>
+      </div>
+
+      <div class="fq">
+        <div class="fq-q" onclick="tFQ(this)">
+          <span class="fq-t">Army me JCO kaise bante hain — kya exam hota hai?</span>
+          <span class="fq-i">+</span>
+        </div>
+        <div class="fq-a"><div class="fq-ai">JCO (Junior Commissioned Officer) banne ke liye sabse pehle Havaldar rank tak pahunchna padta hai. Uske baad LDCE (Limited Departmental Competitive Exam) qualify karna padta hai. Is written exam mein English, General Knowledge, Military Subjects aur reasoning ke questions hote hain. Exam clear karne ke baad interview aur medical board hota hai. Vacancy ke hisaab se final selection ke baad Nb Subedar rank milti hai. Iske liye consistent "Good" ya usse better ACR hona zaroori hai.</div></div>
+      </div>
+
+      <div class="fq">
+        <div class="fq-q" onclick="tFQ(this)">
+          <span class="fq-t">GD se Officer kaise bane — kya direct route hota hai?</span>
+          <span class="fq-i">+</span>
+        </div>
+        <div class="fq-a"><div class="fq-ai">Havaldar ya JCO rank pe pahunchne ke baad kuch officer entry routes available hain: (1) <strong>Special Commission:</strong> Outstanding JCOs ke liye special selection board through regular officer commission. (2) <strong>Honorary Commission:</strong> Subedar Major ko retirement pe Honorary Lieutenant/Captain ki rank milti hai. (3) Kuch soldiers NDA ya CDS exam dekar bhi officer ban sakte hain agar age limit ke andar hain aur educational qualification hai. GD soldiers ke liye directly officer banana mushkil lekin namumkin nahi — iske liye lagatar outstanding performance, degree, aur UPSC clearance zaroori hai.</div></div>
+      </div>
+
+      <div class="fq">
+        <div class="fq-q" onclick="tFQ(this)">
+          <span class="fq-t">Army me sabse fast promotion kaise milta hai?</span>
+          <span class="fq-i">+</span>
+        </div>
+        <div class="fq-a"><div class="fq-ai">Fast track promotion ke liye: (1) Consecutive "Outstanding" ACR grades — ye sabse important hai. (2) LDCE mein top rank — meritorious performance on exams gives priority. (3) Gallantry awards — Shaurya Chakra ya Sena Medal milne pe out-of-turn promotion possible hai. (4) Sports representation — national/international level sports ke liye Army ke liye khelne wale soldiers ko promotion preference milti hai. (5) Operational excellence — war zones ya counter-terrorism operations mein exceptional performance bhi special promotion ka raasta khol sakta hai.</div></div>
+      </div>
+
+      <div class="fq">
+        <div class="fq-q" onclick="tFQ(this)">
+          <span class="fq-t">Kya Clerk aur Tradesman ki promotion timeline GD se alag hoti hai?</span>
+          <span class="fq-i">+</span>
+        </div>
+        <div class="fq-a"><div class="fq-ai">Broad timeline roughly similar hi hoti hai — Lance Naik se Subedar Major tak ke years zyada change nahi hote. Lekin kuch differences hain: Clerk entry wale soldiers ko typing speed aur computer proficiency maintain karni padti hai — isme peeche rehne se ACR affect ho sakti hai. Tradesman soldiers ke liye Trade Classification Test important hai — Class I tradesman ko promotion mein preference milti hai. Technical soldiers ke liye kuch additional qualification criteria bhi ho sakte hain. In sabke saath, fundamental promotion criteria same rehti hai — ACR, exam, vacancy.</div></div>
+      </div>
+
+      <div class="fq">
+        <div class="fq-q" onclick="tFQ(this)">
+          <span class="fq-t">Army retirement age kya hoti hai — rank ke hisaab se?</span>
+          <span class="fq-i">+</span>
+        </div>
+        <div class="fq-a"><div class="fq-ai">Indian Army mein retirement age rank ke hisaab se alag hoti hai: Sepoy/Lance Naik/Naik — 17 saal service ya 35–37 sal ki umar, whichever is later. Havaldar — 17–20 saal service ya age 38–40. Nb Subedar — 52 years. Subedar — 54 years. Subedar Major — 56 years. Ye approximate figures hain — actual retirement age Regiment aur Corps ke hisaab se thodi vary kar sakti hai. Retirement ke baad pension, ECHS (medical), aur canteen facilities milti hain jo lifelong security provide karti hain.</div></div>
+      </div>
+
+      <div class="fq">
+        <div class="fq-q" onclick="tFQ(this)">
+          <span class="fq-t">Agniveer scheme ke baad promotion kaise hogi — puraani system se alag hai?</span>
+          <span class="fq-i">+</span>
+        </div>
+        <div class="fq-a"><div class="fq-ai">Agniveer scheme (2022 se shuru) mein entry 4 saal ki hai. In 4 saalon ke baad 25% Agniveers ko regular army mein absorb kiya jaata hai. Jo regular absorb hote hain unka career path traditional GD soldier jaisi hi hoti hai — Lance Naik, Naik, Havaldar, JCO wala progression. Jo regular absorb nahi hote unhe severance package milta hai aur CAPFs mein priority diya jaata hai. Iska matlab hai ki promotion timeline essentially same hai — sirf entry stage 4 saal ki conditional basis pe hoti hai. Regular absorption ke baad saari promotions normal rules se hi hoti hain.</div></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- RELATED TOOLS -->
+<section class="rel-sec">
+  <div class="w">
+    <div class="sec-hd rev">
+      <div class="pill" style="margin-bottom:14px">🔧 More Army Tools</div>
+      <h2 class="sec-h">Related <span>Free Tools</span></h2>
+    </div>
+    <div class="rel-grid rev">
+      <div class="rel-card">
+        <div class="rel-ico">📋</div>
+        <div class="rel-title">Army Document Checklist Generator</div>
+        <div class="rel-desc">Generate your complete rally document list instantly — 25 official documents, post-wise filtered. Never miss a document again.</div>
+        <a href="https://rajdailytools.github.io/army-document-checklist-generator.html" class="rel-btn">Use Tool <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      </div>
+      <div class="rel-card">
+        <div class="rel-ico">✅</div>
+        <div class="rel-title">Army Eligibility Checker</div>
+        <div class="rel-desc">Check if you are eligible for Agniveer GD, Clerk, Tradesman, Technical — by age, education, and category in seconds.</div>
+        <a href="https://rajdailytools.github.io/army-eligibility-checker.html" class="rel-btn">Use Tool <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      </div>
+      <div class="rel-card">
+        <div class="rel-ico">📏</div>
+        <div class="rel-title">Army Height & Weight Checker</div>
+        <div class="rel-desc">Check if your height, chest, and weight meet Army physical standards for your state and category before the rally.</div>
+        <a href="https://rajdailytools.github.io/army-height-weight-checker.html" class="rel-btn">Use Tool <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      </div>
+      <div class="rel-card">
+        <div class="rel-ico">🏃</div>
+        <div class="rel-title">Army Running Speed Calculator</div>
+        <div class="rel-desc">Calculate your 1600m run time, check if you qualify, and know your grade — Group I, II, or fail — before the actual rally.</div>
+        <a href="https://rajdailytools.github.io/running-speed-calculator.html" class="rel-btn">Use Tool <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      </div>
+      <div class="rel-card">
+        <div class="rel-ico">🏥</div>
+        <div class="rel-title">Army Medical Eligibility Checker</div>
+        <div class="rel-desc">Check if your eyesight, hearing, and physical measurements meet Indian Army medical standards for Agniveer posts.</div>
+        <a href="https://rajdailytools.github.io/army-medical-eligibility-checker.html" class="rel-btn">Use Tool <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      </div>
+      <div class="rel-card">
+        <div class="rel-ico">📅</div>
+        <div class="rel-title">Running Planner Tool</div>
+        <div class="rel-desc">Build a 30/60/90 day running plan to hit your Army 1600m target time — with daily targets, rest days, and weekly goals.</div>
+        <a href="https://rajdailytools.github.io/running-planner.html" class="rel-btn">Use Tool <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DISCLAIMER -->
+<div class="disc">
+  <div class="w">
+    <div class="disc-in">
+      <span style="font-size:20px;flex-shrink:0">⚠️</span>
+      <div><strong>Disclaimer:</strong> This Army Promotion Timeline Calculator provides estimates based on average promotion years in the Indian Army. Actual promotions depend on vacancies, Annual Confidential Report (ACR) grades, LDCE exam results, and unit recommendations. RajDailyTools is not affiliated with the Indian Army or any government body. This tool is for educational and planning reference only. Always refer to official Army notifications for exact promotion policies.</div>
+    </div>
+  </div>
+</div>
+
+<!-- PRIVACY -->
+<div style="background:var(--blue-xl);border-top:1px solid var(--blue-s);border-bottom:1px solid var(--blue-s);padding:13px 0">
+  <div class="w">
+    <div style="display:flex;align-items:flex-start;gap:12px;font-size:13px;color:var(--ink2);line-height:1.7">
+      <span style="font-size:18px;flex-shrink:0">🔒</span>
+      <div><strong>Privacy:</strong> This tool runs entirely in your browser. No personal information is stored or transmitted. 100% private and safe.</div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<section class="contact-sec">
+  <div class="w">
+    <div class="contact-card rev">
+      <h3>📬 Corrections or Suggestions?</h3>
+      <p>Found a promotion timeline that's outdated, or want to add a new feature? Contact us — we update this tool regularly based on latest army promotion notifications.</p>
+      <a href="mailto:edurajkhushit@gmail.com" class="btn-bl">✉️ Contact Us</a>
+      <p class="priv-note">🔒 No data stored. No spam. We genuinely reply.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="cta-in">
+    <div class="pill">Explore More Free Tools</div>
+    <h2>Discover <em>100+ Free Tools</em> on RajDailyTools</h2>
+    <p>Government exam tools, health calculators, finance planners and more — all free, no sign-up required.</p>
+    <div class="cta-btns">
+      <a href="https://rajdailytools.in/categories.html" class="btn-gold">🗂️ Browse All Tools</a>
+      <a href="https://rajdailytools.in/#popular" class="btn-ghost">⭐ Popular Tools</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-inner">
+    <div class="ft-top">
+      <div class="ft-brand">
+        <a href="https://rajdailytools.in/" class="logo">
+          <div class="lb"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+          <div><div class="ln">Raj<span>Daily</span>Tools</div><div class="ls">Smart Tools for Daily Life</div></div>
+        </a>
+        <div class="ft-desc">Free tools for government job aspirants, students & professionals across India. Army calculators, eligibility checkers, health tools & more.</div>
+        <div class="ft-soc">
+          <a class="fts" href="#" title="Twitter">𝕏</a>
+          <a class="fts" href="#" title="Instagram">📸</a>
+          <a class="fts" href="#" title="YouTube">▶</a>
+        </div>
+      </div>
+      <div class="fc">
+        <h4>Army Tools</h4>
+        <ul>
+          <li><a href="https://rajdailytools.github.io/army-promotion-timeline-tool.html">Promotion Timeline</a></li>
+          <li><a href="https://rajdailytools.github.io/army-document-checklist-generator.html">Document Checklist</a></li>
+          <li><a href="https://rajdailytools.github.io/army-medical-eligibility-checker.html">Army Medical Check</a></li>
+          <li><a href="https://rajdailytools.github.io/running-speed-calculator.html">Running Calculator</a></li>
+          <li><a href="https://rajdailytools.github.io/ssc-gd-age-calculator.html">SSC GD Calculator</a></li>
+        </ul>
+      </div>
+      <div class="fc">
+        <h4>More Tools</h4>
+        <ul>
+          <li><a href="https://rajdailytools.github.io/bmi-calculator.html">BMI Calculator</a></li>
+          <li><a href="https://rajdailytools.github.io/age-calculator.html">Age Calculator</a></li>
+          <li><a href="https://rajdailytools.github.io/tdee-calculator.html">TDEE Calculator</a></li>
+          <li><a href="https://rajdailytools.github.io/ncl-age-calculator-2026.html">NCL 2026 Calculator</a></li>
+          <li><a href="https://rajdailytools.github.io/rrb-alp-age-calculator.html">RRB ALP Tool</a></li>
+        </ul>
+      </div>
+      <div class="fc">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="https://rajdailytools.in/about.html">About Us</a></li>
+          <li><a href="https://rajdailytools.in/contact.html">Contact</a></li>
+          <li><a href="https://rajdailytools.in/privacy.html">Privacy Policy</a></li>
+          <li><a href="https://rajdailytools.in/disclaimer.html">Disclaimer</a></li>
+          <li><a href="https://rajdailytools.in/sitemap.xml">Sitemap</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ft-btm">
+      <div class="ft-cp">© 2026 <b>RajDailyTools.in</b> — All rights reserved. Made with ❤️ in India. 🇮🇳</div>
+      <div class="ft-lnk">
+        <a href="https://rajdailytools.in/privacy.html">Privacy</a>
+        <a href="https://rajdailytools.in/terms.html">Terms</a>
+        <a href="https://rajdailytools.in/disclaimer.html">Disclaimer</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+/* ── DRAWER ── */
+const brg=document.getElementById('brg'),dov=document.getElementById('dov'),drw=document.getElementById('drw'),dx=document.getElementById('dx');
+function oD(){drw.classList.add('on');dov.classList.add('on');document.body.style.overflow='hidden'}
+function cD(){drw.classList.remove('on');dov.classList.remove('on');document.body.style.overflow=''}
+brg.addEventListener('click',oD);dov.addEventListener('click',cD);dx.addEventListener('click',cD);
+
+/* ── BACK TO TOP ── */
+window.addEventListener('scroll',()=>document.getElementById('btt').classList.toggle('on',window.scrollY>380));
+
+/* ── SCROLL REVEAL ── */
+const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:.10});
+document.querySelectorAll('.rev').forEach(el=>obs.observe(el));
+
+/* ── BAR ANIMATE ── */
+const barObs=new IntersectionObserver(entries=>entries.forEach(e=>{
+  if(e.isIntersecting){e.target.querySelectorAll('.bc-fill,[style*="--bw"]').forEach(b=>{
+    const bw=getComputedStyle(b).getPropertyValue('--bw');
+    if(bw) b.style.width=bw;
+  });}
+}),{threshold:.3});
+document.querySelectorAll('.graph-card').forEach(el=>barObs.observe(el));
+
+/* ── FAQ ── */
+function tFQ(el){
+  const fq=el.closest('.fq');
+  document.querySelectorAll('.fq.open').forEach(f=>{if(f!==fq)f.classList.remove('open')});
+  fq.classList.toggle('open');
+}
+
+/* ── PROMOTION DATA — ALL TRADES ── */
+
+// ── SOLDIER TRADES (GD / Clerk / Tradesman / Technical / Nursing / Cartographer)
+const RANKS_SOLDIER = [
+  {id:'sepoy', icon:'🪖', name:'Sepoy / Agniveer', badge:'soldier', cat:'🪖 Soldier', normalMin:0, normalMax:0, fastMin:0, fastMax:0, exam:'None', notes:'Entry rank via Army Rally/Recruitment. All duty begins here.', retireAge:35},
+  {id:'lnk', icon:'⬆️', name:'Lance Naik (L/Nk)', badge:'soldier', cat:'🪖 Soldier', normalMin:3, normalMax:5, fastMin:3, fastMax:3, exam:'No exam — ACR + Vacancy', notes:'First stripe. CO recommendation + good ACR. No written exam required.', retireAge:37},
+  {id:'naik', icon:'🏅', name:'Naik (Nk)', badge:'soldier', cat:'🪖 Soldier', normalMin:6, normalMax:9, fastMin:5, fastMax:5, exam:'LDCE (unit-level)', notes:'Unit-level LDCE exam + ACR "Good" minimum. Second stripe rank.', retireAge:39},
+  {id:'hav', icon:'🎖️', name:'Havaldar (Hav)', badge:'soldier', cat:'🪖 Soldier', normalMin:10, normalMax:14, fastMin:8, fastMax:8, exam:'LDCE + Selection Board', notes:'Selection Board + LDCE exam. Critical rank — gateway to JCO. Three stripes.', retireAge:42},
+  {id:'nbsub', icon:'⭐', name:'Nb Subedar (JCO)', badge:'jco', cat:'⭐ JCO', normalMin:14, normalMax:18, fastMin:13, fastMax:13, exam:'Written Exam (LDCE + Interview)', notes:'JCO written exam mandatory. English, GK, Military subjects. Prestigious milestone.', retireAge:52},
+  {id:'sub', icon:'⭐⭐', name:'Subedar (JCO)', badge:'jco', cat:'⭐ JCO', normalMin:18, normalMax:22, fastMin:17, fastMax:17, exam:'Time-bound + Merit', notes:'Time-bound from Nb Subedar. Good ACR required. Unit vacancy dependent.', retireAge:54},
+  {id:'subMaj', icon:'⭐⭐⭐', name:'Subedar Major (JCO)', badge:'jco', cat:'⭐ JCO', normalMin:24, normalMax:28, fastMin:22, fastMax:22, exam:'Unit SM Selection Board', notes:'Highest JCO rank. One SM per unit at a time. Unit Selection Board decides.', retireAge:56},
+  {id:'honLt', icon:'🫡', name:'Honorary Lieutenant', badge:'officer', cat:'🫡 Officer', normalMin:28, normalMax:32, fastMin:26, fastMax:26, exam:'Special Army Selection', notes:'Retirement honour for outstanding SM. Symbolic officer rank with full respect.', retireAge:58},
+];
+
+// ── TECHNICAL SOLDIER (Sol Tech — EME, Signals, Engineers, AOC, ASC, ARMY ORD, ARMY AVN)
+const RANKS_TECHNICAL = [
+  {id:'soltech', icon:'⚙️', name:'Sol Tech / Agniveer Tech', badge:'soldier', cat:'⚙️ Sol Tech', normalMin:0, normalMax:0, fastMin:0, fastMax:0, exam:'None', notes:'Entry via Sol Tech Recruitment. ITI/PCM 10+2 required. Posted to technical Arms/Services.', retireAge:35},
+  {id:'lnk', icon:'⬆️', name:'Lance Naik (L/Nk)', badge:'soldier', cat:'⚙️ Sol Tech', normalMin:3, normalMax:5, fastMin:3, fastMax:3, exam:'No exam — ACR + Vacancy', notes:'First promotion. Technical trade proficiency + good ACR. Slightly faster in technical corps.', retireAge:37},
+  {id:'naik', icon:'🏅', name:'Naik (Nk)', badge:'soldier', cat:'⚙️ Sol Tech', normalMin:6, normalMax:8, fastMin:5, fastMax:5, exam:'LDCE (Technical trade test)', notes:'LDCE + technical trade test. ACR "Good" minimum required. Technical knowledge assessed.', retireAge:39},
+  {id:'hav', icon:'🎖️', name:'Havaldar (Hav)', badge:'soldier', cat:'⚙️ Sol Tech', normalMin:10, normalMax:13, fastMin:8, fastMax:8, exam:'LDCE + Trade Test + Selection Board', notes:'Selection Board + technical proficiency exam. Gateway to JCO technical cadre.', retireAge:42},
+  {id:'nbsub', icon:'⭐', name:'Nb Subedar (JCO) — Technical', badge:'jco', cat:'⭐ JCO Tech', normalMin:14, normalMax:17, fastMin:12, fastMax:12, exam:'JCO Written Exam + Technical Trade Board', notes:'Technical JCO exam includes technical subjects, GK, English. Very competitive.', retireAge:52},
+  {id:'sub', icon:'⭐⭐', name:'Subedar (JCO) — Technical', badge:'jco', cat:'⭐ JCO Tech', normalMin:18, normalMax:21, fastMin:16, fastMax:16, exam:'Time-bound + Merit + ACR', notes:'Time-bound from Nb Sub. Outstanding technical ACR required.', retireAge:54},
+  {id:'subMaj', icon:'⭐⭐⭐', name:'Subedar Major — Technical', badge:'jco', cat:'⭐ JCO Tech', normalMin:24, normalMax:27, fastMin:21, fastMax:21, exam:'Unit SM Selection Board', notes:'Highest JCO rank in technical unit. One SM per unit. Board selection.', retireAge:56},
+  {id:'honLt', icon:'🫡', name:'Honorary Lieutenant', badge:'officer', cat:'🫡 Officer', normalMin:28, normalMax:32, fastMin:26, fastMax:26, exam:'Special Army Selection', notes:'Retirement honour for outstanding SM. Symbolic officer rank.', retireAge:58},
+];
+
+// ── NURSING ASSISTANT (Sol NA — Army Medical Corps)
+const RANKS_NURSING = [
+  {id:'solna', icon:'🩺', name:'Sol NA / Agniveer NA', badge:'soldier', cat:'🩺 Sol NA', normalMin:0, normalMax:0, fastMin:0, fastMax:0, exam:'None', notes:'Entry via Sol NA Recruitment. Science (PCB) 10+2 required. Army Medical Corps.', retireAge:35},
+  {id:'lnk', icon:'⬆️', name:'Lance Naik (L/Nk)', badge:'soldier', cat:'🩺 Sol NA', normalMin:3, normalMax:5, fastMin:3, fastMax:3, exam:'No exam — ACR + Vacancy', notes:'First promotion in AMC. CO recommendation + good ACR. Nursing duties in hospitals/field.', retireAge:37},
+  {id:'naik', icon:'🏅', name:'Naik (Nk)', badge:'soldier', cat:'🩺 Sol NA', normalMin:6, normalMax:9, fastMin:5, fastMax:5, exam:'LDCE + Nursing/Medical Trade Test', notes:'LDCE + medical trade knowledge exam. ACR "Good" required. AMC specific syllabus.', retireAge:39},
+  {id:'hav', icon:'🎖️', name:'Havaldar (Hav)', badge:'soldier', cat:'🩺 Sol NA', normalMin:10, normalMax:14, fastMin:8, fastMax:8, exam:'LDCE + Selection Board + Trade Test', notes:'Selection Board + trade proficiency. Senior ward/field nursing roles. Gateway to JCO AMC.', retireAge:42},
+  {id:'nbsub', icon:'⭐', name:'Nb Subedar (JCO) — AMC', badge:'jco', cat:'⭐ JCO AMC', normalMin:14, normalMax:18, fastMin:13, fastMax:13, exam:'JCO Exam AMC (Nursing/Medical subjects + GK)', notes:'AMC JCO written exam. Medical/nursing subjects, English, GK. Prestigious milestone.', retireAge:52},
+  {id:'sub', icon:'⭐⭐', name:'Subedar (JCO) — AMC', badge:'jco', cat:'⭐ JCO AMC', normalMin:18, normalMax:22, fastMin:17, fastMax:17, exam:'Time-bound + Merit', notes:'Time-bound from Nb Subedar AMC. Good medical ACR required.', retireAge:54},
+  {id:'subMaj', icon:'⭐⭐⭐', name:'Subedar Major — AMC', badge:'jco', cat:'⭐ JCO AMC', normalMin:24, normalMax:28, fastMin:22, fastMax:22, exam:'Unit SM Selection Board', notes:'Highest JCO in AMC unit. One SM per unit. Board selection.', retireAge:56},
+  {id:'honLt', icon:'🫡', name:'Honorary Lieutenant', badge:'officer', cat:'🫡 Officer', normalMin:28, normalMax:32, fastMin:26, fastMax:26, exam:'Special Army Selection', notes:'Retirement honour for outstanding SM in AMC.', retireAge:58},
+];
+
+// ── CARTOGRAPHER / SURVEY (Army Survey Corps / ASCF)
+const RANKS_CARTOGRAPHER = [
+  {id:'surv', icon:'🗺️', name:'Sol Surveyor / ASCF / Cartographer', badge:'soldier', cat:'🗺️ Survey', normalMin:0, normalMax:0, fastMin:0, fastMax:0, exam:'None', notes:'Entry via Sol Surveyor/ASCF Recruitment. PCM 10+2 required. Army Survey Corps.', retireAge:35},
+  {id:'lnk', icon:'⬆️', name:'Lance Naik — Survey', badge:'soldier', cat:'🗺️ Survey', normalMin:3, normalMax:5, fastMin:3, fastMax:3, exam:'No exam — ACR + Vacancy', notes:'First promotion. Survey trade proficiency + good ACR required.', retireAge:37},
+  {id:'naik', icon:'🏅', name:'Naik — Survey', badge:'soldier', cat:'🗺️ Survey', normalMin:6, normalMax:9, fastMin:5, fastMax:5, exam:'LDCE + Survey Trade Test', notes:'Survey trade knowledge exam + LDCE. Cartographic/survey skills assessed.', retireAge:39},
+  {id:'hav', icon:'🎖️', name:'Havaldar — Survey', badge:'soldier', cat:'🗺️ Survey', normalMin:10, normalMax:14, fastMin:8, fastMax:8, exam:'LDCE + Selection Board + Survey Test', notes:'Selection Board + survey/cartography exam. Gateway to JCO survey cadre.', retireAge:42},
+  {id:'nbsub', icon:'⭐', name:'Nb Subedar (JCO) — Survey', badge:'jco', cat:'⭐ JCO Survey', normalMin:14, normalMax:18, fastMin:13, fastMax:13, exam:'JCO Written Exam (Survey/GK/English)', notes:'Survey Corps JCO exam includes survey subjects, GK, English. Competitive.', retireAge:52},
+  {id:'sub', icon:'⭐⭐', name:'Subedar (JCO) — Survey', badge:'jco', cat:'⭐ JCO Survey', normalMin:18, normalMax:22, fastMin:17, fastMax:17, exam:'Time-bound + Merit + ACR', notes:'Time-bound from Nb Sub Survey. Good survey ACR required.', retireAge:54},
+  {id:'subMaj', icon:'⭐⭐⭐', name:'Subedar Major — Survey', badge:'jco', cat:'⭐ JCO Survey', normalMin:24, normalMax:28, fastMin:22, fastMax:22, exam:'Unit SM Selection Board', notes:'Highest JCO in Survey unit. One SM per unit. Board selection.', retireAge:56},
+  {id:'honLt', icon:'🫡', name:'Honorary Lieutenant', badge:'officer', cat:'🫡 Officer', normalMin:28, normalMax:32, fastMin:26, fastMax:26, exam:'Special Army Selection', notes:'Retirement honour for outstanding Survey SM.', retireAge:58},
+];
+
+// ── EDUCATION HAVALDAR (Direct Graduation Entry — Army Education Corps AEC)
+const RANKS_EDU_HAV = [
+  {id:'eduhav', icon:'🎓', name:'Havaldar Education (Direct Entry)', badge:'soldier', cat:'🎓 AEC Hav', normalMin:0, normalMax:0, fastMin:0, fastMax:0, exam:'Written Exam + Interview', notes:'Direct entry via AEC Havaldar Recruitment. Graduation required. Posted to Army Schools/Education Centers.', retireAge:42},
+  {id:'nbsub', icon:'⭐', name:'Nb Subedar — Education (JCO)', badge:'jco', cat:'⭐ JCO AEC', normalMin:8, normalMax:12, fastMin:7, fastMax:7, exam:'JCO Written Exam (Education/GK/English)', notes:'AEC JCO written exam. Education subjects + English + GK. Competitive promotion.', retireAge:52},
+  {id:'sub', icon:'⭐⭐', name:'Subedar — Education (JCO)', badge:'jco', cat:'⭐ JCO AEC', normalMin:14, normalMax:18, fastMin:13, fastMax:13, exam:'Time-bound + Merit + ACR', notes:'Time-bound from Nb Sub AEC. Outstanding education ACR required.', retireAge:54},
+  {id:'subMaj', icon:'⭐⭐⭐', name:'Subedar Major — Education', badge:'jco', cat:'⭐ JCO AEC', normalMin:20, normalMax:24, fastMin:18, fastMax:18, exam:'Unit SM Selection Board', notes:'Highest JCO in AEC unit. One SM per unit. Board selection.', retireAge:56},
+  {id:'honLt', icon:'🫡', name:'Honorary Lieutenant (AEC)', badge:'officer', cat:'🫡 Officer', normalMin:24, normalMax:28, fastMin:22, fastMax:22, exam:'Special Army Selection', notes:'Retirement honour for outstanding AEC SM. Full officer respect.', retireAge:58},
+];
+
+// ── EDUCATION SUBEDAR (Direct Graduation Entry — AEC)
+const RANKS_EDU_SUB = [
+  {id:'edusub', icon:'🎓', name:'Subedar Education (Direct Entry)', badge:'jco', cat:'⭐ JCO AEC', normalMin:0, normalMax:0, fastMin:0, fastMax:0, exam:'Written Exam + Interview + Graduation', notes:'Direct entry as Subedar (AEC). Post-graduation preferred. Teaches in Army Education Corps schools.', retireAge:54},
+  {id:'subMaj', icon:'⭐⭐⭐', name:'Subedar Major — Education', badge:'jco', cat:'⭐ JCO AEC', normalMin:8, normalMax:12, fastMin:7, fastMax:7, exam:'Unit SM Selection Board', notes:'Promoted from Subedar AEC. One SM per unit. Board selection based on ACR + seniority.', retireAge:56},
+  {id:'honLt', icon:'🫡', name:'Honorary Lieutenant (AEC)', badge:'officer', cat:'🫡 Officer', normalMin:14, normalMax:18, fastMin:13, fastMax:13, exam:'Special Army Selection', notes:'Retirement honour for outstanding AEC Subedar/SM. Full officer respect.', retireAge:58},
+];
+
+// ── JCO PANDIT / MAULVI / GRANTHI (JCO Religious Teacher — Army)
+const RANKS_JCO_PANDIT = [
+  {id:'pandit', icon:'🙏', name:'JCO Pandit / Maulvi / Granthi (Direct)', badge:'jco', cat:'⭐ JCO RT', normalMin:0, normalMax:0, fastMin:0, fastMax:0, exam:'Written Exam + Interview + Religious Knowledge', notes:'Direct JCO entry. Religious knowledge + Sanskrit/Arabic/Gurbani proficiency required. Religious duties in unit.', retireAge:52},
+  {id:'sub', icon:'⭐⭐', name:'Subedar — Religious Teacher', badge:'jco', cat:'⭐ JCO RT', normalMin:8, normalMax:12, fastMin:7, fastMax:7, exam:'Time-bound + ACR + Merit', notes:'Time-bound promotion from JCO RT grade. Good ACR + religious duties. Senior religious guidance role.', retireAge:54},
+  {id:'subMaj', icon:'⭐⭐⭐', name:'Subedar Major — Religious Teacher', badge:'jco', cat:'⭐ JCO RT', normalMin:14, normalMax:18, fastMin:13, fastMax:13, exam:'Unit SM Selection Board', notes:'Highest JCO in Religious Teacher cadre. One SM per applicable unit.', retireAge:56},
+  {id:'honLt', icon:'🫡', name:'Honorary Lieutenant (RT)', badge:'officer', cat:'🫡 Officer', normalMin:20, normalMax:24, fastMin:18, fastMax:18, exam:'Special Army Selection', notes:'Retirement honour for outstanding JCO Religious Teacher.', retireAge:58},
+];
+
+// ── JCO CATERING (Army Catering Corps)
+const RANKS_JCO_CATERING = [
+  {id:'catering', icon:'🍽️', name:'JCO Catering / Sol Cook (Direct Entry)', badge:'jco', cat:'⭐ JCO Catering', normalMin:0, normalMax:0, fastMin:0, fastMax:0, exam:'Written Exam + Trade Test + Interview', notes:'Entry via JCO Catering Recruitment or Sol Cook → promoted. Army Catering Corps. Culinary trade skills required.', retireAge:52},
+  {id:'sub', icon:'⭐⭐', name:'Subedar — Catering', badge:'jco', cat:'⭐ JCO Catering', normalMin:8, normalMax:12, fastMin:7, fastMax:7, exam:'Time-bound + ACR + Merit', notes:'Time-bound promotion. Good catering ACR + performance required.', retireAge:54},
+  {id:'subMaj', icon:'⭐⭐⭐', name:'Subedar Major — Catering', badge:'jco', cat:'⭐ JCO Catering', normalMin:14, normalMax:18, fastMin:13, fastMax:13, exam:'Unit SM Selection Board', notes:'Highest JCO in Catering cadre. One SM per unit. Board selection.', retireAge:56},
+  {id:'honLt', icon:'🫡', name:'Honorary Lieutenant (Catering)', badge:'officer', cat:'🫡 Officer', normalMin:20, normalMax:24, fastMin:18, fastMax:18, exam:'Special Army Selection', notes:'Retirement honour for outstanding SM in Army Catering Corps.', retireAge:58},
+];
+
+// ── NDA ENTRY (10+2 → IMA/OTA → Permanent Commission)
+const RANKS_NDA = [
+  {id:'cadet', icon:'🎽', name:'NDA Cadet (Training)', badge:'officer', cat:'🫡 Officer', normalMin:0, normalMax:0, fastMin:0, fastMax:0, exam:'NDA Entrance Exam (UPSC) + SSB Interview', notes:'3-year NDA training + 1-year IMA training = 4 years total before commissioning. 10+2 entry.', retireAge:22},
+  {id:'lt', icon:'🥉', name:'Lieutenant', badge:'officer', cat:'🫡 Officer', normalMin:4, normalMax:4, fastMin:4, fastMax:4, exam:'None (Auto after IMA commissioning)', notes:'First commissioned rank after IMA passing out. Joining age ~21–22 years. 2-year service.', retireAge:58},
+  {id:'capt', icon:'🥈', name:'Captain', badge:'officer', cat:'🫡 Officer', normalMin:6, normalMax:7, fastMin:6, fastMax:6, exam:'None (Time-bound)', notes:'Auto time-bound promotion. 2 years as Lt. Mandatory posting + ACR required.', retireAge:58},
+  {id:'maj', icon:'🥇', name:'Major', badge:'officer', cat:'🫡 Officer', normalMin:10, normalMax:13, fastMin:9, fastMax:9, exam:'Time-bound + ACR + Staff Course optional', notes:'Key leadership rank. 4–6 years as Captain. Good ACR essential.', retireAge:54},
+  {id:'ltcol', icon:'🏆', name:'Lieutenant Colonel', badge:'officer', cat:'🫡 Officer', normalMin:15, normalMax:18, fastMin:13, fastMax:13, exam:'Selection Board (Non-functional time-bound)', notes:'Command rank. Selection Board from Major. Outstanding ACRs needed for timely promotion.', retireAge:54},
+  {id:'col', icon:'⭐', name:'Colonel', badge:'officer', cat:'🫡 Officer', normalMin:22, normalMax:26, fastMin:20, fastMax:20, exam:'Command Board (Selection)', notes:'Command Colonel. Only select officers reach this rank via DPC/Selection Board.', retireAge:54},
+  {id:'brig', icon:'⭐⭐', name:'Brigadier', badge:'officer', cat:'🫡 Officer', normalMin:26, normalMax:30, fastMin:24, fastMax:24, exam:'Selection Board (Highly competitive)', notes:'Star rank. Very few officers selected. National importance roles.', retireAge:56},
+  {id:'majgen', icon:'⭐⭐⭐', name:'Major General', badge:'officer', cat:'🫡 Officer', normalMin:30, normalMax:33, fastMin:28, fastMax:28, exam:'Senior Selection Board (Very rare)', notes:'GOC-level command. Less than 5% officers reach this rank.', retireAge:58},
+];
+
+// ── CDS ENTRY (Graduation → IMA/OTA → Permanent Commission)
+const RANKS_CDS = [
+  {id:'cds_sel', icon:'📋', name:'CDS Selected (IMA/OTA Training)', badge:'officer', cat:'🫡 Officer', normalMin:0, normalMax:0, fastMin:0, fastMax:0, exam:'CDS Exam (UPSC) + SSB Interview', notes:'1-year IMA training (for men) or OTA training (SSC). Graduation required. Age 19–24 at entry.', retireAge:25},
+  {id:'lt', icon:'🥉', name:'Lieutenant', badge:'officer', cat:'🫡 Officer', normalMin:1, normalMax:1, fastMin:1, fastMax:1, exam:'None (Auto after IMA/OTA commissioning)', notes:'Commissioned after IMA/OTA passing out. Direct CDS entry officer career begins.', retireAge:58},
+  {id:'capt', icon:'🥈', name:'Captain', badge:'officer', cat:'🫡 Officer', normalMin:3, normalMax:4, fastMin:3, fastMax:3, exam:'None (Time-bound)', notes:'Auto time-bound promotion. 2 years as Lt. Good ACR required.', retireAge:58},
+  {id:'maj', icon:'🥇', name:'Major', badge:'officer', cat:'🫡 Officer', normalMin:7, normalMax:10, fastMin:6, fastMax:6, exam:'Time-bound + ACR + Optional Staff Course', notes:'Leadership rank. 4–6 years as Captain. ACR performance critical.', retireAge:54},
+  {id:'ltcol', icon:'🏆', name:'Lieutenant Colonel', badge:'officer', cat:'🫡 Officer', normalMin:13, normalMax:16, fastMin:11, fastMax:11, exam:'Non-functional time-bound / Selection Board', notes:'Command rank. Board selection. Outstanding ACRs needed.', retireAge:54},
+  {id:'col', icon:'⭐', name:'Colonel', badge:'officer', cat:'🫡 Officer', normalMin:20, normalMax:24, fastMin:18, fastMax:18, exam:'Command Board (Selection)', notes:'Command Colonel. Select officers via DPC/Selection Board.', retireAge:54},
+  {id:'brig', icon:'⭐⭐', name:'Brigadier', badge:'officer', cat:'🫡 Officer', normalMin:24, normalMax:28, fastMin:22, fastMax:22, exam:'Selection Board (Highly competitive)', notes:'Star rank. National level command roles.', retireAge:56},
+  {id:'majgen', icon:'⭐⭐⭐', name:'Major General', badge:'officer', cat:'🫡 Officer', normalMin:28, normalMax:32, fastMin:26, fastMax:26, exam:'Senior Selection Board (Very rare)', notes:'GOC-level. Very few officers reach this rank.', retireAge:58},
+];
+
+// ── RANK SELECTOR by entry type
+function getRanksByEntry(entry) {
+  switch(entry) {
+    case 'gd': case 'clerk': case 'tradesman': return RANKS_SOLDIER;
+    case 'technical': return RANKS_TECHNICAL;
+    case 'nursing': return RANKS_NURSING;
+    case 'cartographer': return RANKS_CARTOGRAPHER;
+    case 'edu_hav': return RANKS_EDU_HAV;
+    case 'edu_sub': return RANKS_EDU_SUB;
+    case 'jco_pandit': return RANKS_JCO_PANDIT;
+    case 'jco_catering': return RANKS_JCO_CATERING;
+    case 'nda': return RANKS_NDA;
+    case 'cds': return RANKS_CDS;
+    default: return RANKS_SOLDIER;
+  }
+}
+
+// Keep RANKS for backward compatibility
+const RANKS = RANKS_SOLDIER;
+
+let currentTimeline = [];
+let joiningYr = 0;
+let joiningAgeVal = 0;
+
+function calculateTimeline() {
+  const entryRank = document.getElementById('entryRank').value;
+  const joiningAge = parseInt(document.getElementById('joiningAge').value);
+  const promoType = document.getElementById('promoType').value;
+
+  if(!entryRank){alert('Please select your Entry Rank / Trade.'); return;}
+  if(!joiningAge || joiningAge < 17 || joiningAge > 30){alert('Please enter a valid joining age (17–30 years).'); return;}
+
+  joiningAgeVal = joiningAge;
+  joiningYr = new Date().getFullYear();
+  const isFast = promoType === 'fast';
+
+  // Get correct rank set for this entry type
+  const rankSet = getRanksByEntry(entryRank);
+
+  // Build timeline
+  currentTimeline = rankSet.map(r => {
+    const yearsNeeded = isFast ? r.fastMin : Math.round((r.normalMin + r.normalMax) / 2);
+    const achievedAge = joiningAge + yearsNeeded;
+    const achievedYear = joiningYr + yearsNeeded;
+    const isAchievable = achievedAge <= r.retireAge;
+    return {...r, yearsNeeded, achievedAge, achievedYear, isAchievable};
+  });
+
+  // Last achievable rank
+  const achievable = currentTimeline.filter(r => r.isAchievable);
+  const lastRank = achievable[achievable.length - 1];
+  const retireAge = lastRank ? lastRank.retireAge : 35;
+
+  // Entry label mapping
+  const entryLabels = {
+    gd:'GD Soldier', clerk:'Clerk/SKT', tradesman:'Tradesman',
+    technical:'Sol Technical', nursing:'Nursing Assistant',
+    cartographer:'Cartographer', edu_hav:'Education Havaldar (Direct)',
+    edu_sub:'Education Subedar (Direct)', jco_pandit:'JCO Pandit/RT',
+    jco_catering:'JCO Catering', nda:'NDA Officer', cds:'CDS Officer'
+  };
+  const entryLabel = entryLabels[entryRank] || entryRank.toUpperCase();
+
+  // Summary
+  document.getElementById('sumTag').textContent = isFast ? '🚀 FAST TRACK PATH' : '📋 NORMAL PROMOTION PATH';
+  document.getElementById('sumTitle').textContent = `${entryLabel} Entry | Joining Age ${joiningAge} | Final Rank: ${lastRank ? lastRank.name : rankSet[0].name}`;
+  document.getElementById('sumSub').textContent = `You can achieve ${achievable.length} ranks in your army career. ${isFast ? 'Fast Track timeline shown — requires consistently outstanding ACR & exam performance.' : 'Normal average timeline shown. With outstanding performance, you can progress faster.'}`;
+  document.getElementById('sumRetireAge').textContent = retireAge;
+
+  // Progress
+  const pct = Math.round((achievable.length / rankSet.length) * 100);
+  document.getElementById('progFill').style.width = pct + '%';
+  document.getElementById('progPct').textContent = `${achievable.length}/${rankSet.length} ranks achievable`;
+
+  renderTimeline();
+
+  const ra = document.getElementById('resultArea');
+  ra.style.display = 'block';
+  ra.style.animation = 'none'; ra.offsetHeight;
+  ra.style.animation = 'resultIn .42s var(--ease) both';
+  setTimeout(() => ra.scrollIntoView({behavior:'smooth', block:'start'}), 120);
+}
+
+function renderTimeline() {
+  const isFast = document.getElementById('promoType').value === 'fast';
+  let html = '<div class="timeline-wrap">';
+  currentTimeline.forEach((r, i) => {
+    const cardClass = r.badge === 'jco' ? 'jco' : r.badge === 'officer' ? 'officer' : r.isAchievable ? '' : '';
+    const yearClass = !r.isAchievable ? '' : i === 0 ? 'achieved' : 'future';
+    const delay = i * 0.06;
+    html += `<div class="rank-card ${cardClass}" style="animation-delay:${delay}s">
+      <div class="rank-icon">${r.icon}</div>
+      <div class="rank-body">
+        <div class="rank-name">
+          ${r.name}
+          <span class="rank-badge ${r.badge}">${r.cat}</span>
+          ${!r.isAchievable ? '<span class="rank-badge" style="background:var(--red-xl);color:var(--red);border:1px solid var(--red-s)">⚠️ Age limit</span>' : ''}
+        </div>
+        <div class="rank-meta">
+          ${r.id === 'sepoy' ? `<strong>Year of Joining: ${joiningYr}</strong> | Age: ${joiningAgeVal}` : 
+          r.isAchievable ? 
+          `Service needed: <strong>${isFast ? r.fastMin + ' yrs (Fast Track)' : r.normalMin+'–'+r.normalMax+' yrs (Avg)'}</strong> &nbsp;|&nbsp; Approx. year: <strong>${r.achievedYear}</strong> &nbsp;|&nbsp; Your age: <strong>${r.achievedAge}</strong>` :
+          `Requires ~${r.normalMin} yrs of service — exceeds retirement age (${r.retireAge}) for your entry age`}
+        </div>
+        <div class="rank-meta" style="margin-top:4px;color:var(--ink4)">📌 ${r.notes} &nbsp;|&nbsp; Exam: ${r.exam}</div>
+      </div>
+      <div class="rank-year ${yearClass}">${r.id === 'sepoy' ? joiningYr : r.isAchievable ? r.achievedYear : '—'}</div>
+    </div>`;
+  });
+  html += '</div>';
+  document.getElementById('timelineCards').innerHTML = html;
+}
+
+function copyTimeline() {
+  const entryRank = document.getElementById('entryRank').value || 'GD';
+  const promoType = document.getElementById('promoType').value === 'fast' ? 'Fast Track' : 'Normal';
+  let text = `ARMY PROMOTION TIMELINE — ${entryRank.toUpperCase()} Entry (${promoType})\nJoining Age: ${joiningAgeVal} | Base Year: ${joiningYr}\nGenerated by RajDailyTools.in\n${'='.repeat(50)}\n\n`;
+  currentTimeline.forEach(r => {
+    if(r.isAchievable) {
+      text += `✅ ${r.name} (${r.cat}) — ~Year ${r.achievedYear} | Service: ~${r.yearsNeeded} yrs | Age: ${r.achievedAge}\n   Exam: ${r.exam}\n   ${r.notes}\n\n`;
+    } else {
+      text += `⛔ ${r.name} — Not achievable within retirement age\n\n`;
+    }
+  });
+  text += `\nNOTE: These are average estimates. Actual promotion depends on ACR, LDCE/exam results, and vacancy.\nVerify from official joinindianarmy.nic.in`;
+
+  navigator.clipboard?.writeText(text).then(() => {
+    const btn = document.getElementById('copyBtn');
+    btn.classList.add('copied'); btn.textContent = '✅ Copied!';
+    setTimeout(() => {btn.classList.remove('copied'); btn.textContent = '📋 Copy My Timeline';}, 2400);
+  });
+}
+
+function resetTool() {
+  document.getElementById('entryRank').value = '';
+  document.getElementById('joiningAge').value = '';
+  document.getElementById('promoType').value = 'normal';
+  document.getElementById('resultArea').style.display = 'none';
+  currentTimeline = [];
+}
+</script>
+</body>
+</html>
