@@ -1,0 +1,1369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Army Document Checklist Generator 2026 — Rally, GD, Clerk, Tradesman | RajDailyTools</title>
+<meta name="description" content="Free Army Document Checklist Generator 2026. Generate complete document list for Indian Army Rally, Agniveer GD, Clerk, Tradesman & technical posts. Check readiness instantly before document verification.">
+<meta name="keywords" content="army document checklist generator, army document required for rally, army gd documents list 2026, indian army bharti documents list, army rally document checklist 2026, army clerk documents required, army tradesman document list, army joining documents list india, army bharti document verification process, army document preparation guide">
+<meta name="robots" content="index, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#2563eb;--blue-d:#1d4ed8;--blue-l:#3b82f6;
+  --blue-xl:#eff6ff;--blue-s:#dbeafe;
+  --amber:#f59e0b;--green:#10b981;--red:#ef4444;
+  --purple:#8b5cf6;--teal:#14b8a6;--orange:#f97316;
+  --green-xl:#f0fdf4;--green-s:#bbf7d0;
+  --red-xl:#fef2f2;--red-s:#fecaca;
+  --amber-xl:#fffbeb;--amber-s:#fde68a;
+  --purple-xl:#faf5ff;--purple-s:#ddd6fe;
+  --ink:#0f172a;--ink2:#334155;--ink3:#64748b;--ink4:#94a3b8;
+  --line:#e2e8f0;--surf:#f8fafc;--white:#fff;
+  --s1:0 1px 3px rgba(15,23,42,.06),0 1px 2px rgba(15,23,42,.04);
+  --s2:0 4px 16px rgba(15,23,42,.08),0 2px 6px rgba(15,23,42,.04);
+  --s3:0 12px 40px rgba(15,23,42,.11),0 3px 10px rgba(15,23,42,.06);
+  --s4:0 24px 64px rgba(15,23,42,.13),0 6px 20px rgba(15,23,42,.07);
+  --sb:0 8px 32px rgba(37,99,235,.20);
+  --fd:'Sora',sans-serif;--fb:'DM Sans',sans-serif;
+  --ease:cubic-bezier(.4,0,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);color:var(--ink);background:var(--white);overflow-x:hidden;-webkit-font-smoothing:antialiased;line-height:1.6}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+button{cursor:pointer;border:none;background:none;font-family:var(--fb)}
+.w{max-width:1180px;margin:0 auto;padding:0 24px}
+.wa{max-width:860px;margin:0 auto;padding:0 24px}
+select,input{appearance:none;-webkit-appearance:none}
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+@keyframes resultIn{from{opacity:0;transform:translateY(18px) scale(.97)}to{opacity:1;transform:none}}
+@keyframes checkPop{0%{transform:scale(0)}80%{transform:scale(1.15)}100%{transform:scale(1)}}
+.rev{opacity:0;transform:translateY(22px);transition:opacity .55s var(--ease),transform .55s var(--ease)}
+.rev.in{opacity:1;transform:none}
+
+/* HEADER */
+.hdr{position:sticky;top:0;z-index:999;background:rgba(255,255,255,.96);backdrop-filter:blur(20px);border-bottom:1px solid var(--line);box-shadow:var(--s1)}
+.hdi{display:flex;align-items:center;justify-content:space-between;height:66px}
+.logo{display:flex;align-items:center;gap:10px}
+.lb{width:36px;height:36px;background:var(--blue);border-radius:9px;display:flex;align-items:center;justify-content:center;box-shadow:var(--sb);flex-shrink:0}
+.lb svg{width:18px;height:18px;fill:#fff}
+.ln{font-family:var(--fd);font-size:19px;font-weight:800;color:var(--ink);line-height:1}
+.ln span{color:var(--blue)}
+.ls{font-size:10px;color:var(--ink4);letter-spacing:.04em}
+nav.dn{display:flex;align-items:center;gap:2px}
+nav.dn a{font-size:13.5px;font-weight:500;color:var(--ink2);padding:7px 13px;border-radius:8px;transition:.2s}
+nav.dn a:hover{color:var(--blue);background:var(--blue-xl)}
+.hcta{background:var(--blue);color:#fff;font-family:var(--fd);font-weight:600;font-size:13px;padding:8px 18px;border-radius:8px;box-shadow:var(--sb);transition:.2s}
+.hcta:hover{background:var(--blue-d);transform:translateY(-1px)}
+.brg{display:none;flex-direction:column;gap:4.5px;padding:8px;border-radius:8px}
+.brg span{display:block;width:20px;height:2px;background:var(--ink);border-radius:2px;transition:.28s}
+.dov{display:none;position:fixed;inset:0;background:rgba(15,23,42,.45);z-index:1040;backdrop-filter:blur(3px)}
+.dov.on{display:block}
+.drw{position:fixed;top:0;right:-100%;width:270px;height:100vh;background:#fff;z-index:1050;padding:22px;box-shadow:var(--s4);transition:right .32s var(--ease);overflow-y:auto}
+.drw.on{right:0}
+.dh{display:flex;align-items:center;justify-content:space-between;margin-bottom:26px}
+.dx{width:33px;height:33px;border-radius:7px;background:var(--surf);display:flex;align-items:center;justify-content:center;color:var(--ink3);font-size:17px}
+nav.mn{display:flex;flex-direction:column;gap:3px}
+nav.mn a{display:block;font-size:14px;font-weight:500;color:var(--ink2);padding:11px 13px;border-radius:8px;transition:.2s}
+nav.mn a:hover{color:var(--blue);background:var(--blue-xl)}
+
+/* HERO */
+.hero{position:relative;overflow:hidden;background:linear-gradient(150deg,#ebf4ff 0%,#fff 46%,#f0fdf4 100%);padding:68px 0 80px}
+.hero::before{content:'';position:absolute;top:-140px;right:-180px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(37,99,235,.08) 0%,transparent 68%);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-80px;left:-100px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(16,185,129,.05) 0%,transparent 68%);pointer-events:none}
+.blob{position:absolute;border-radius:50%;pointer-events:none;animation:float 6s ease-in-out infinite}
+.b1{width:13px;height:13px;background:rgba(37,99,235,.18);top:22%;right:14%;animation-delay:0s}
+.b2{width:9px;height:9px;background:rgba(16,185,129,.22);top:58%;right:26%;animation-delay:2.2s}
+.b3{width:11px;height:11px;background:rgba(245,158,11,.18);top:36%;right:6%;animation-delay:4s}
+.bc{display:flex;align-items:center;gap:7px;font-size:12.5px;color:var(--ink3);margin-bottom:24px;position:relative;z-index:1;flex-wrap:wrap}
+.bc a{color:var(--blue);font-weight:600}
+.pill{display:inline-flex;align-items:center;gap:7px;font-family:var(--fd);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);background:var(--blue-xl);padding:5px 14px;border-radius:100px;margin-bottom:18px}
+.pill::before{content:'';width:6px;height:6px;background:var(--blue);border-radius:50%}
+.hero-inner{position:relative;z-index:1;max-width:700px;animation:fadeUp .5s ease both}
+.hero h1{font-family:var(--fd);font-size:clamp(26px,4.5vw,50px);font-weight:800;line-height:1.1;color:var(--ink);margin-bottom:14px}
+.hero h1 span{color:var(--blue)}
+.hero-sub{font-size:16px;color:var(--ink3);line-height:1.8;margin-bottom:22px;max-width:560px}
+.hero-chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.chip{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;padding:6px 14px;border-radius:100px;background:#fff;border:1.5px solid var(--line);color:var(--ink2);box-shadow:var(--s1);transition:.22s}
+.chip:hover{border-color:var(--blue);color:var(--blue);transform:translateY(-1px)}
+.hero-meta{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.upd{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:700;color:var(--blue);background:var(--blue-xl);padding:6px 14px;border-radius:100px;border:1.5px solid var(--blue-s)}
+.hmi{font-size:13px;color:var(--ink3);font-weight:500}
+
+/* TOOL */
+.tool-sec{background:var(--surf);padding:80px 0}
+.tool-wrap{max-width:860px;margin:0 auto}
+.tool-card{background:#fff;border:1.5px solid var(--line);border-radius:28px;overflow:hidden;box-shadow:var(--s4)}
+.tool-hdr{background:linear-gradient(135deg,#1d4ed8 0%,#2563eb 55%,#3b82f6 100%);padding:32px 40px;position:relative;overflow:hidden}
+.tool-hdr::before{content:'';position:absolute;top:-60px;right:-60px;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,.07)}
+.tool-hdr::after{content:'';position:absolute;bottom:-40px;left:-40px;width:180px;height:180px;border-radius:50%;background:rgba(255,255,255,.04)}
+.th{position:relative;z-index:1}
+.th h2{font-family:var(--fd);font-size:21px;font-weight:800;color:#fff;margin-bottom:6px}
+.th p{font-size:14px;color:rgba(255,255,255,.82);line-height:1.65}
+.th-badges{display:flex;flex-wrap:wrap;gap:9px;margin-top:14px}
+.thb{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:rgba(255,255,255,.9);background:rgba(255,255,255,.13);padding:5px 12px;border-radius:100px}
+.tool-body{padding:36px 40px}
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:18px}
+.fgrid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:18px}
+.fld{display:flex;flex-direction:column;gap:8px}
+.flbl{font-size:13px;font-weight:700;color:var(--ink2)}
+.flbl span{font-size:11px;font-weight:500;color:var(--ink4);margin-left:5px;background:var(--surf);padding:2px 7px;border-radius:5px;border:1px solid var(--line)}
+.finp,.fsel{padding:13px 16px;font-size:15px;color:var(--ink);background:#fff;border:1.5px solid var(--line);border-radius:10px;outline:none;transition:.22s;font-family:var(--fb);width:100%}
+.finp:focus,.fsel:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(37,99,235,.10)}
+.fsel{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2364748b' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:42px}
+.hint-box{display:flex;align-items:flex-start;gap:9px;font-size:13px;color:var(--ink2);background:var(--blue-xl);border:1.5px solid var(--blue-s);border-radius:10px;padding:11px 14px;margin-bottom:18px;line-height:1.65}
+.hint-box svg{width:16px;height:16px;stroke:var(--blue);fill:none;stroke-width:2;flex-shrink:0;margin-top:2px}
+.btn-row{display:flex;gap:12px}
+.cvt-btn{flex:1;padding:15px;background:linear-gradient(135deg,var(--blue) 0%,#1e40af 100%);color:#fff;font-family:var(--fd);font-weight:800;font-size:15px;border-radius:11px;box-shadow:var(--sb);transition:all .25s var(--ease);display:flex;align-items:center;justify-content:center;gap:9px}
+.cvt-btn:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(37,99,235,.30)}
+.cvt-btn:active{transform:translateY(0)}
+.rst-btn{padding:15px 22px;background:var(--surf);color:var(--ink2);font-family:var(--fd);font-weight:700;font-size:14px;border-radius:11px;border:1.5px solid var(--line);transition:.22s;display:flex;align-items:center;gap:7px}
+.rst-btn:hover{border-color:var(--blue);color:var(--blue);background:var(--blue-xl)}
+
+/* RESULT */
+#resultArea{display:none;margin-top:26px;animation:resultIn .42s var(--ease) both}
+
+/* READINESS BANNER */
+.ready-banner{border-radius:18px;padding:22px 26px;margin-bottom:18px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.ready-banner.ready{background:linear-gradient(135deg,var(--green-xl),#d1fae5);border:2px solid var(--green-s)}
+.ready-banner.notready{background:linear-gradient(135deg,var(--amber-xl),#fef3c7);border:2px solid var(--amber-s)}
+.ready-banner.danger{background:var(--red-xl);border:2px solid var(--red-s)}
+.rb-tag{font-family:var(--fd);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:3px 10px;border-radius:100px;display:inline-flex;width:fit-content;margin-bottom:6px}
+.rb-tag.ready{background:var(--green);color:#fff}
+.rb-tag.notready{background:var(--amber);color:#fff}
+.rb-tag.danger{background:var(--red);color:#fff}
+.rb-title{font-family:var(--fd);font-size:16px;font-weight:800;color:var(--ink)}
+.rb-sub{font-size:13px;color:var(--ink3);margin-top:4px;line-height:1.6}
+.rb-score{text-align:right}
+.rb-num{font-family:var(--fd);font-size:44px;font-weight:800;color:var(--ink);line-height:1}
+.rb-denom{font-size:14px;font-weight:600;color:var(--ink3)}
+
+/* PROGRESS BAR */
+.progress-wrap{background:var(--surf);border:1.5px solid var(--line);border-radius:12px;padding:16px 20px;margin-bottom:16px}
+.prog-lbl{font-family:var(--fd);font-size:13px;font-weight:700;color:var(--ink);margin-bottom:10px;display:flex;align-items:center;justify-content:space-between}
+.prog-track{height:16px;background:var(--line);border-radius:100px;overflow:hidden}
+.prog-fill{height:100%;border-radius:100px;transition:width 1s var(--ease)}
+.prog-fill.safe{background:linear-gradient(90deg,var(--green),#34d399)}
+.prog-fill.warn{background:linear-gradient(90deg,var(--amber),#fbbf24)}
+.prog-fill.danger{background:linear-gradient(90deg,var(--red),#f87171)}
+
+/* CHECKLIST UI */
+.checklist-section{margin-bottom:20px}
+.cs-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+.cs-title{font-family:var(--fd);font-size:14px;font-weight:800;color:var(--ink);display:flex;align-items:center;gap:8px}
+.cs-count{font-family:var(--fd);font-size:12px;font-weight:700;color:var(--ink3);background:var(--surf);border:1px solid var(--line);padding:2px 10px;border-radius:100px}
+.doc-list{display:flex;flex-direction:column;gap:8px}
+.doc-item{display:flex;align-items:flex-start;gap:12px;padding:13px 16px;border-radius:12px;border:1.5px solid var(--line);background:var(--surf);transition:.22s;cursor:pointer;user-select:none}
+.doc-item:hover{border-color:var(--blue-s);background:var(--blue-xl)}
+.doc-item.checked{border-color:var(--green-s);background:var(--green-xl)}
+.doc-item.critical{border-left:3px solid var(--red)}
+.doc-cb{width:22px;height:22px;border-radius:6px;border:2px solid var(--line);background:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:.22s;margin-top:1px}
+.doc-item.checked .doc-cb{background:var(--green);border-color:var(--green);animation:checkPop .25s var(--ease)}
+.doc-cb-tick{color:#fff;font-size:12px;font-weight:800;display:none}
+.doc-item.checked .doc-cb-tick{display:block}
+.doc-body{flex:1}
+.doc-name{font-size:14px;font-weight:700;color:var(--ink);line-height:1.35}
+.doc-desc{font-size:12.5px;color:var(--ink3);margin-top:3px;line-height:1.55}
+.doc-badge{display:inline-flex;align-items:center;font-size:10.5px;font-weight:700;padding:2px 8px;border-radius:100px;margin-top:5px}
+.doc-badge.req{background:var(--red-xl);color:var(--red);border:1px solid var(--red-s)}
+.doc-badge.opt{background:var(--amber-xl);color:#92400e;border:1px solid var(--amber-s)}
+.doc-badge.bonus{background:var(--blue-xl);color:var(--blue);border:1px solid var(--blue-s)}
+.doc-badge.checked{background:var(--green-xl);color:var(--green);border:1px solid var(--green-s)}
+
+/* MISSING ALERT */
+.missing-box{background:var(--red-xl);border:1.5px solid var(--red-s);border-radius:13px;padding:16px 18px;margin-bottom:16px}
+.mb-title{font-family:var(--fd);font-size:13.5px;font-weight:800;color:var(--red);margin-bottom:10px;display:flex;align-items:center;gap:7px}
+.mb-list{display:flex;flex-direction:column;gap:6px}
+.mb-item{display:flex;align-items:center;gap:8px;font-size:13px;color:#7f1d1d;font-weight:600}
+.mb-item::before{content:'⚠';font-size:14px}
+
+/* ACTION ROW */
+.action-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+.copy-btn{flex:1;min-width:140px;padding:11px;background:var(--green-xl);color:var(--green);border:1.5px solid var(--green-s);font-family:var(--fd);font-weight:700;font-size:13.5px;border-radius:9px;display:flex;align-items:center;justify-content:center;gap:7px;transition:.22s}
+.copy-btn:hover{background:var(--green);color:#fff}
+.copy-btn.copied{background:var(--green);color:#fff}
+.reset-all-btn{padding:11px 18px;background:var(--blue-xl);color:var(--blue);border:1.5px solid var(--blue-s);font-family:var(--fd);font-weight:700;font-size:13px;border-radius:9px;display:flex;align-items:center;gap:6px;transition:.22s}
+.reset-all-btn:hover{background:var(--blue);color:#fff}
+
+/* STORY */
+.story-sec{background:var(--white);padding:72px 0}
+.story-card{max-width:760px;margin:0 auto;background:linear-gradient(135deg,var(--blue-xl),#f0fdf4);border:1.5px solid var(--blue-s);border-radius:24px;padding:36px;box-shadow:var(--s3)}
+.story-ico{font-size:44px;margin-bottom:16px;display:block}
+.story-card h3{font-family:var(--fd);font-size:20px;font-weight:800;color:var(--ink);margin-bottom:14px}
+.story-card p{font-size:15px;color:var(--ink2);line-height:1.85}
+.story-card p+p{margin-top:11px}
+.story-highlight{display:inline-flex;align-items:center;gap:7px;background:var(--blue);color:#fff;font-family:var(--fd);font-size:13px;font-weight:700;padding:6px 14px;border-radius:100px;margin-top:14px}
+
+/* HOWTO */
+.howto-sec{background:var(--surf);padding:72px 0}
+.howto-box{background:var(--amber-xl);border:2px solid var(--amber-s);border-radius:20px;padding:32px 36px;max-width:680px;margin:0 auto}
+.howto-title{display:flex;align-items:center;gap:10px;font-family:var(--fd);font-size:19px;font-weight:800;color:var(--ink);margin-bottom:18px}
+.howto-steps{display:flex;flex-direction:column;gap:11px}
+.hw-step{display:flex;align-items:flex-start;gap:12px;font-size:14px;color:var(--ink2);line-height:1.65}
+.sn{width:26px;height:26px;background:var(--amber);color:#fff;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex-shrink:0;margin-top:1px}
+
+/* GRAPH */
+.graph-sec{background:var(--surf);padding:72px 0}
+.graph-wrap{max-width:820px;margin:0 auto}
+.graph-card{background:#fff;border:1.5px solid var(--line);border-radius:20px;padding:28px 30px;box-shadow:var(--s2);margin-bottom:20px}
+.gc-title{font-family:var(--fd);font-size:15px;font-weight:800;color:var(--ink);margin-bottom:20px;display:flex;align-items:center;gap:8px}
+.bar-chart{display:flex;flex-direction:column;gap:12px}
+.bc-row{display:flex;align-items:center;gap:12px}
+.bc-label{font-size:12.5px;font-weight:700;color:var(--ink2);width:180px;flex-shrink:0}
+.bc-track{flex:1;height:32px;background:var(--surf);border-radius:8px;overflow:hidden}
+.bc-fill{height:100%;border-radius:8px;display:flex;align-items:center;padding:0 12px;font-size:12px;font-weight:700;color:#fff;width:0;transition:width 1.2s var(--ease)}
+.bc-range{font-size:12.5px;font-weight:800;color:var(--ink3);width:60px;text-align:right;flex-shrink:0}
+.graph-legend{display:flex;gap:16px;flex-wrap:wrap;margin-top:14px;justify-content:center}
+.gl-item{display:flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;color:var(--ink3)}
+.gl-dot{width:12px;height:12px;border-radius:3px}
+
+/* TABLE */
+.tbl-sec{background:var(--white);padding:72px 0}
+.tbl-wr{overflow-x:auto;border-radius:14px;border:1.5px solid var(--line);box-shadow:var(--s2);margin-bottom:16px}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+thead th{background:linear-gradient(135deg,var(--blue) 0%,#1e40af 100%);color:#fff;padding:14px 16px;text-align:left;font-family:var(--fd);font-size:13px;font-weight:700;letter-spacing:.03em}
+thead th:first-child{border-radius:14px 0 0 0}
+thead th:last-child{border-radius:0 14px 0 0}
+tbody tr{border-bottom:1px solid var(--line);transition:.2s}
+tbody tr:hover{background:var(--blue-xl)}
+tbody td{padding:12px 16px;color:var(--ink2);vertical-align:middle}
+.tbadge{display:inline-flex;font-size:11px;font-weight:700;padding:3px 8px;border-radius:100px}
+.tbadge.g{background:var(--green-xl);color:var(--green);border:1px solid var(--green-s)}
+.tbadge.b{background:var(--blue-xl);color:var(--blue);border:1px solid var(--blue-s)}
+.tbadge.a{background:var(--amber-xl);color:#92400e;border:1px solid var(--amber-s)}
+.tbadge.r{background:var(--red-xl);color:var(--red);border:1px solid var(--red-s)}
+
+/* ARTICLE */
+.art-sec{background:var(--surf);padding:72px 0}
+.art-body h2{font-family:var(--fd);font-size:20px;font-weight:800;color:var(--ink);margin:26px 0 10px;line-height:1.3}
+.art-body h2:first-child{margin-top:0}
+.art-body p{font-size:15px;color:var(--ink3);line-height:1.85;margin-bottom:13px}
+.art-body ul{display:flex;flex-direction:column;gap:8px;margin:10px 0 14px}
+.art-body li{display:flex;align-items:flex-start;gap:10px;font-size:14.5px;color:var(--ink3);line-height:1.7}
+.art-body li::before{content:'✓';width:18px;height:18px;background:var(--blue);color:#fff;border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;flex-shrink:0;margin-top:3px}
+.art-body strong{color:var(--ink2);font-weight:700}
+.ibox{background:var(--blue-xl);border:1.5px solid var(--blue-s);border-radius:13px;padding:14px 18px;margin:14px 0;display:flex;gap:10px;font-size:14px;color:var(--ink2);line-height:1.7}
+.ibox svg{width:16px;height:16px;stroke:var(--blue);fill:none;stroke-width:2;flex-shrink:0;margin-top:2px}
+.ibox.g{background:var(--green-xl);border-color:var(--green-s)}.ibox.g svg{stroke:var(--green)}
+.ibox.a{background:var(--amber-xl);border-color:var(--amber-s)}.ibox.a svg{stroke:var(--amber)}
+.ibox.r{background:var(--red-xl);border-color:var(--red-s)}.ibox.r svg{stroke:var(--red)}
+
+/* SEC HEADERS */
+.sec-hd{text-align:center;margin-bottom:44px}
+.sec-h{font-family:var(--fd);font-size:clamp(22px,3.8vw,38px);font-weight:800;color:var(--ink);line-height:1.18;margin-bottom:10px}
+.sec-h span{color:var(--blue)}
+.sec-sub{font-size:15.5px;color:var(--ink3);line-height:1.75;max-width:500px;margin:0 auto}
+
+/* FAQ */
+.faq-sec{background:var(--white);padding:72px 0}
+.fql{max-width:760px;margin:0 auto}
+.fq{background:var(--surf);border:1.5px solid var(--line);border-radius:13px;margin-bottom:10px;overflow:hidden}
+.fq-q{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;cursor:pointer;gap:14px;transition:.2s}
+.fq-q:hover{background:var(--blue-xl)}
+.fq-t{font-weight:600;font-size:15px;color:var(--ink);line-height:1.4}
+.fq-i{width:28px;height:28px;border-radius:50%;background:var(--blue-xl);color:var(--blue);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;transition:transform .28s,background .2s}
+.fq.open .fq-i{transform:rotate(45deg);background:var(--blue);color:#fff}
+.fq-a{max-height:0;overflow:hidden;transition:max-height .35s var(--ease)}
+.fq-ai{padding:0 22px 18px;font-size:14.5px;color:var(--ink3);line-height:1.78}
+.fq.open .fq-a{max-height:400px}
+
+/* REL TOOLS */
+.rel-sec{background:var(--surf);padding:72px 0}
+.rel-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.rel-card{background:#fff;border:1.5px solid var(--line);border-radius:16px;padding:20px 18px;display:flex;flex-direction:column;gap:9px;transition:.28s}
+.rel-card:hover{transform:translateY(-5px);box-shadow:var(--s3);border-color:var(--blue-s)}
+.rel-ico{font-size:26px}
+.rel-title{font-family:var(--fd);font-size:14px;font-weight:700;color:var(--ink)}
+.rel-desc{font-size:13px;color:var(--ink3);line-height:1.6;flex:1}
+.rel-btn{display:inline-flex;align-items:center;gap:6px;font-family:var(--fd);font-weight:700;font-size:13px;color:var(--blue);transition:.2s}
+.rel-btn:hover{gap:10px}
+.rel-btn svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2.5}
+
+/* CONTACT + DISC + CTA + FOOTER */
+.disc{background:var(--amber-xl);border-top:1px solid var(--amber-s);border-bottom:1px solid var(--amber-s);padding:14px 0}
+.disc-in{display:flex;align-items:flex-start;gap:12px;font-size:13.5px;color:var(--ink2);line-height:1.7}
+.contact-sec{background:var(--surf);padding:60px 0}
+.contact-card{max-width:560px;margin:0 auto;background:#fff;border:1.5px solid var(--line);border-radius:20px;padding:32px;text-align:center;box-shadow:var(--s2)}
+.contact-card h3{font-family:var(--fd);font-size:20px;font-weight:800;color:var(--ink);margin-bottom:10px}
+.contact-card p{font-size:15px;color:var(--ink3);line-height:1.75;margin-bottom:20px}
+.btn-bl{display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:#fff;font-family:var(--fd);font-weight:700;font-size:14.5px;padding:12px 26px;border-radius:8px;box-shadow:var(--sb);transition:.22s}
+.btn-bl:hover{background:var(--blue-d);transform:translateY(-1px)}
+.priv-note{font-size:12px;color:var(--ink4);margin-top:14px}
+.cta{background:linear-gradient(140deg,#0f172a 0%,#1e3a8a 100%);padding:80px 0;text-align:center;position:relative;overflow:hidden}
+.cta::before{content:'';position:absolute;top:-80px;left:50%;transform:translateX(-50%);width:800px;height:380px;background:radial-gradient(ellipse,rgba(37,99,235,.22) 0%,transparent 68%);pointer-events:none}
+.cta-in{position:relative;z-index:1}
+.cta .pill{color:#93c5fd;background:rgba(255,255,255,.1);margin-bottom:18px}
+.cta .pill::before{background:#93c5fd}
+.cta h2{font-family:var(--fd);font-size:clamp(24px,4vw,42px);font-weight:800;color:#fff;line-height:1.15;margin-bottom:12px}
+.cta h2 em{color:#fbbf24;font-style:normal}
+.cta p{font-size:16px;color:rgba(255,255,255,.72);max-width:480px;margin:0 auto 32px;line-height:1.78}
+.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn-gold{display:inline-flex;align-items:center;gap:8px;background:var(--amber);color:#fff;font-family:var(--fd);font-weight:800;font-size:15px;padding:14px 30px;border-radius:8px;box-shadow:0 8px 28px rgba(245,158,11,.35);transition:.22s}
+.btn-gold:hover{background:#d97706;transform:translateY(-3px)}
+.btn-ghost{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.09);border:1.5px solid rgba(255,255,255,.22);color:#fff;font-family:var(--fd);font-weight:600;font-size:14px;padding:13px 26px;border-radius:8px;transition:.2s}
+.btn-ghost:hover{background:rgba(255,255,255,.16)}
+footer{background:#0f172a;padding:52px 0 0}
+.ft-inner{max-width:1180px;margin:0 auto;padding:0 24px}
+.ft-top{display:grid;grid-template-columns:1.9fr 1fr 1fr 1fr;gap:44px;margin-bottom:44px}
+.ft-brand .ln{color:#fff}.ft-brand .ls{color:#475569}
+.ft-desc{font-size:13.5px;color:#64748b;line-height:1.78;max-width:265px;margin:13px 0 20px}
+.ft-soc{display:flex;gap:9px}
+.fts{width:34px;height:34px;border-radius:7px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;color:#94a3b8;font-size:13px;transition:.2s}
+.fts:hover{background:var(--blue);color:#fff}
+.fc h4{font-family:var(--fd);font-size:12px;font-weight:700;color:#fff;margin-bottom:14px;letter-spacing:.06em;text-transform:uppercase}
+.fc ul{display:flex;flex-direction:column;gap:8px}
+.fc ul a{font-size:13.5px;color:#64748b;transition:.18s}
+.fc ul a:hover{color:#93c5fd}
+.ft-btm{border-top:1px solid rgba(255,255,255,.07);padding:20px 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.ft-cp{font-size:12.5px;color:#475569}.ft-cp b{color:#64748b}
+.ft-lnk{display:flex;gap:18px}
+.ft-lnk a{font-size:12.5px;color:#475569;transition:.18s}
+.ft-lnk a:hover{color:#93c5fd}
+.btt{position:fixed;bottom:26px;right:26px;z-index:500;width:43px;height:43px;background:var(--blue);color:#fff;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:17px;box-shadow:var(--sb);opacity:0;pointer-events:none;transform:translateY(14px);transition:.28s var(--ease)}
+.btt.on{opacity:1;pointer-events:auto;transform:translateY(0)}
+.btt:hover{transform:translateY(-3px)}
+
+@media(max-width:1060px){.ft-top{grid-template-columns:1fr 1fr}.rel-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:860px){nav.dn,.hcta{display:none}.brg{display:flex}.fgrid{grid-template-columns:1fr}.fgrid3{grid-template-columns:1fr 1fr}.tool-body{padding:24px 22px}.tool-hdr{padding:24px 22px}}
+@media(max-width:600px){.ft-top{grid-template-columns:1fr}.rel-grid{grid-template-columns:1fr}.ft-btm{flex-direction:column;text-align:center}.cta-btns{flex-direction:column;align-items:center}.howto-box{padding:24px 18px}.fgrid3{grid-template-columns:1fr}.bc-label{width:130px;font-size:11.5px}}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="hdr">
+  <div class="w"><div class="hdi">
+    <a href="https://rajdailytools.in/" class="logo">
+      <div class="lb"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+      <div><div class="ln">Raj<span>Daily</span>Tools</div><div class="ls">Smart Tools for Daily Life</div></div>
+    </a>
+    <nav class="dn">
+      <a href="https://rajdailytools.in/">Home</a>
+      <a href="https://rajdailytools.in/categories.html">Categories</a>
+      <a href="https://rajdailytools.in/#popular">Popular</a>
+      <a href="https://rajdailytools.in/about.html">About</a>
+      <a href="https://rajdailytools.in/contact.html">Contact</a>
+    </nav>
+    <a href="https://rajdailytools.in/categories.html" class="hcta">Explore Tools →</a>
+    <button class="brg" id="brg"><span></span><span></span><span></span></button>
+  </div></div>
+</header>
+<div class="dov" id="dov"></div>
+<div class="drw" id="drw">
+  <div class="dh">
+    <div class="logo">
+      <div class="lb" style="width:30px;height:30px;border-radius:7px"><svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#fff"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+      <div class="ln" style="font-size:16px">Raj<span>Daily</span>Tools</div>
+    </div>
+    <button class="dx" id="dx">✕</button>
+  </div>
+  <nav class="mn">
+    <a href="https://rajdailytools.in/" onclick="cD()">🏠 Home</a>
+    <a href="https://rajdailytools.in/categories.html" onclick="cD()">🗂️ Categories</a>
+    <a href="https://rajdailytools.in/#popular" onclick="cD()">⭐ Popular</a>
+    <a href="https://rajdailytools.in/about.html" onclick="cD()">👤 About</a>
+    <a href="https://rajdailytools.in/contact.html" onclick="cD()">📬 Contact</a>
+  </nav>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+  <div class="w">
+    <div class="bc">
+      <a href="https://rajdailytools.in/">Home</a><span style="color:var(--ink4)">›</span>
+      <a href="https://rajdailytools.in/categories.html">Tools</a><span style="color:var(--ink4)">›</span>
+      <span>Army Document Checklist Generator</span>
+    </div>
+    <div class="hero-inner">
+      <div class="pill">🪖 Indian Army Document Tool 2026</div>
+      <h1>Indian Army <span>Document Checklist</span> Generator 2026</h1>
+      <p class="hero-sub">Generate your complete document checklist for Army Rally, Agniveer GD, Clerk, Tradesman & Technical posts in one click. Know exactly which documents are ready and which are missing — before you reach the verification ground.</p>
+      <div class="hero-chips">
+        <span class="chip">🪖 Agniveer GD</span>
+        <span class="chip">📝 Clerk / SKT</span>
+        <span class="chip">🔧 Tradesman</span>
+        <span class="chip">⚙️ Technical</span>
+        <span class="chip">🎓 NDA / CDS</span>
+        <span class="chip">✅ Instant Checklist</span>
+      </div>
+      <div class="hero-meta">
+        <div class="upd">✅ 100% Free Tool</div>
+        <span class="hmi">⚡ Instant Checklist</span>
+        <span class="hmi">🔒 No Data Stored</span>
+        <span class="hmi">📱 Mobile Friendly</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOOL SECTION -->
+<section class="tool-sec" id="checklist-tool">
+  <div class="w"><div class="tool-wrap">
+    <div class="tool-card rev">
+      <div class="tool-hdr">
+        <div class="th">
+          <h2>🪖 Army Document Checklist Generator — All Posts 2026</h2>
+          <p>Select your post type, education, category & special conditions. We'll generate a personalized, interactive document checklist based on the <strong>official Indian Army Enrolment Document List (25 items)</strong>. Tick off each document you have ready and instantly see your readiness score. Print or copy your list anytime.</p>
+          <div class="th-badges">
+            <span class="thb">✅ Interactive Checklist</span>
+            <span class="thb">⚠️ Missing Alert</span>
+            <span class="thb">📊 Readiness Score</span>
+            <span class="thb">📋 All 5 Post Types</span>
+            <span class="thb">🖨️ Print Ready</span>
+            <span class="thb">📑 25 Official Docs</span>
+            <span class="thb">🔒 100% Private</span>
+          </div>
+        </div>
+      </div>
+      <div class="tool-body">
+        <div class="fgrid3">
+          <div class="fld">
+            <label class="flbl" for="postType">Post Type <span>Required</span></label>
+            <select class="fsel" id="postType">
+              <option value="">— Select Post —</option>
+              <option value="gd">🪖 Agniveer GD (General Duty)</option>
+              <option value="clerk">📝 Agniveer Clerk / SKT</option>
+              <option value="tradesman">🔧 Agniveer Tradesman</option>
+              <option value="technical">⚙️ Agniveer Technical</option>
+              <option value="nda">🎓 NDA / CDS</option>
+            </select>
+          </div>
+          <div class="fld">
+            <label class="flbl" for="eduLevel">Education Level <span>Required</span></label>
+            <select class="fsel" id="eduLevel">
+              <option value="10th">10th Pass</option>
+              <option value="12th" selected>12th Pass</option>
+              <option value="graduate">Graduate / Degree</option>
+            </select>
+          </div>
+          <div class="fld">
+            <label class="flbl" for="category">Category <span>For certificates</span></label>
+            <select class="fsel" id="category">
+              <option value="GEN">General / EWS</option>
+              <option value="OBC">OBC</option>
+              <option value="SC">SC</option>
+              <option value="ST">ST</option>
+            </select>
+          </div>
+        </div>
+        <div class="fgrid">
+          <div class="fld">
+            <label class="flbl" for="hasNCC">NCC Certificate? <span>Optional</span></label>
+            <select class="fsel" id="hasNCC">
+              <option value="no">No</option>
+              <option value="yes">Yes — I have NCC Certificate</option>
+            </select>
+          </div>
+          <div class="fld">
+            <label class="flbl" for="hasSports">Sports Achievement? <span>Bonus docs</span></label>
+            <select class="fsel" id="hasSports">
+              <option value="no">No</option>
+              <option value="yes">Yes — I have Sports Certificate</option>
+            </select>
+          </div>
+        </div>
+        <div class="fgrid">
+          <div class="fld">
+            <label class="flbl" for="isGorkha">Gorkha / Tribe Community? <span>Optional</span></label>
+            <select class="fsel" id="isGorkha">
+              <option value="no">No</option>
+              <option value="yes">Yes — Gorkha / Tribal Community</option>
+            </select>
+          </div>
+          <div class="fld">
+            <label class="flbl" for="isUnder18">Age below 18 years? <span>Optional</span></label>
+            <select class="fsel" id="isUnder18">
+              <option value="no">No — Age 18 or above</option>
+              <option value="yes">Yes — Age below 18 years</option>
+            </select>
+          </div>
+        </div>
+        <div class="fgrid">
+          <div class="fld">
+            <label class="flbl" for="hasExService">Ex-Servicemen in Family? <span>Optional</span></label>
+            <select class="fsel" id="hasExService">
+              <option value="no">No</option>
+              <option value="yes">Yes — PPO / Leave Certificate available</option>
+            </select>
+          </div>
+          <div class="fld">
+            <label class="flbl" for="isOrphan">Raised by Guardian (No Parents)? <span>Optional</span></label>
+            <select class="fsel" id="isOrphan">
+              <option value="no">No — Parents alive</option>
+              <option value="yes">Yes — Legal Guardian raised me</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="hint-box">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          <div>After generating your checklist, <strong>tick each document you have ready</strong>. The tool will show your readiness score and highlight any missing critical documents. As per official Army enrolment rules, carry <strong>originals + 03 x attested Xerox copies</strong> of every document, duly attested by Gazetted Officer.</div>
+        </div>
+
+        <div class="btn-row">
+          <button class="cvt-btn" onclick="generateChecklist()">📋 Generate My Document Checklist</button>
+          <button class="rst-btn" onclick="resetTool()">↺ Reset</button>
+        </div>
+
+        <!-- RESULT -->
+        <div id="resultArea">
+
+          <!-- Readiness Banner -->
+          <div class="ready-banner" id="readyBanner">
+            <div>
+              <span class="rb-tag" id="readyTag">Checking...</span>
+              <div class="rb-title" id="readyTitle">—</div>
+              <div class="rb-sub" id="readySub">—</div>
+            </div>
+            <div class="rb-score">
+              <div class="rb-num" id="scoreNum">0</div>
+              <div class="rb-denom" id="scoreDenom">/ 0 docs ready</div>
+            </div>
+          </div>
+
+          <!-- Progress Bar -->
+          <div class="progress-wrap">
+            <div class="prog-lbl">
+              <span>📊 Document Readiness</span>
+              <span id="progPct" style="font-family:var(--fd);font-size:14px;font-weight:800;color:var(--blue)">0%</span>
+            </div>
+            <div class="prog-track">
+              <div class="prog-fill safe" id="progFill" style="width:0%"></div>
+            </div>
+          </div>
+
+          <!-- CHECKLIST SECTIONS -->
+          <div id="checklistSections"></div>
+
+          <!-- MISSING ALERT -->
+          <div class="missing-box" id="missingBox" style="display:none">
+            <div class="mb-title">⚠️ Missing / Unchecked Critical Documents</div>
+            <div class="mb-list" id="missingList"></div>
+          </div>
+
+          <!-- ACTIONS -->
+          <div class="action-row">
+            <button class="copy-btn" id="copyBtn" onclick="copyChecklist()">📋 Copy My Checklist</button>
+            <button class="reset-all-btn" onclick="printChecklist()">🖨️ Print Checklist</button>
+            <button class="reset-all-btn" onclick="uncheckAll()">🔄 Uncheck All</button>
+          </div>
+
+          <div style="background:var(--amber-xl);border:1.5px solid var(--amber-s);border-radius:12px;padding:14px 18px;margin-top:16px;font-size:13.5px;color:var(--ink2);line-height:1.7">
+            <strong>⚠️ Important (Official Rule):</strong> Carry <strong>originals + 03 x Xerox copies</strong> of every document, <strong>duly attested by a Gazetted Officer</strong>. Address on ALL documents should match your <strong>Residential / Domicile Certificate</strong>. Spelling of your name and all family members must be identical across all documents. Photographs should be recent (within 6 months), passport size (3.5cm x 4cm), in light-coloured shirt with <strong>blue / red back background</strong>. Always verify exact requirements from the official Army rally advertisement for your zone.
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div></div>
+</section>
+
+<!-- HOW TO USE -->
+<section class="howto-sec">
+  <div class="w">
+    <div class="sec-hd rev">
+      <div class="pill" style="margin-bottom:14px">💡 Simple Steps</div>
+      <h2 class="sec-h">How to Use the <span>Checklist Generator</span></h2>
+    </div>
+    <div class="howto-box rev">
+      <div class="howto-title">📋 Army Document Checklist — 4 Steps</div>
+      <div class="howto-steps">
+        <div class="hw-step"><span class="sn">1</span><strong>Select your Post Type</strong> — Agniveer GD, Clerk/SKT, Tradesman, Technical, or NDA/CDS. Each post has a different document list.</div>
+        <div class="hw-step"><span class="sn">2</span><strong>Choose Education Level &amp; Category</strong> — 10th/12th/Graduate. SC/ST candidates need caste certificate. Select if you have NCC or Sports certificates.</div>
+        <div class="hw-step"><span class="sn">3</span><strong>Click "Generate My Document Checklist"</strong> — your personalized checklist appears with all required, optional, and bonus documents clearly labelled.</div>
+        <div class="hw-step"><span class="sn">4</span><strong>Tick each document you have ready</strong> — the readiness score updates live. Missing documents are highlighted in red so you know what to arrange before the rally date.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STORY SECTION -->
+<section class="story-sec">
+  <div class="w">
+    <div class="sec-hd rev">
+      <div class="pill" style="margin-bottom:14px">❤️ Real Story</div>
+      <h2 class="sec-h">Why This Tool <span>Is Important</span></h2>
+    </div>
+    <div class="story-card rev">
+      <span class="story-ico">🪖</span>
+      <h3>"Chacha Ka Sapna — Aur Documents Ki Wajah Se Jo Ruk Gaya"</h3>
+      <p>Mere chacha army ki tayari baar baar karte the. Unhone physical clear kar liya tha — running bilkul on time, height perfect, chest measurement sab theek. Mehnat poori thi. Sapna bada tha — Indian Army mein serve karna, desh ki seva karna.</p>
+      <p>Lekin jab document verification aaya, wo wahi reh gaye. Kuch documents incomplete the — ek certificate properly attested nahi tha, ek ka format galat tha, ek ka date expired ho chuki thi. Unhe wahan se wapas bhej diya gaya.</p>
+      <p>Sabse dukh ki baat ye thi ki unhone mehnat sab sahi ki thi. Running mein koi kami nahi thi. Physical mein koi problem nahi thi. Bas <strong>documents ki wajah se unka sapna us din aage nahi badh paya</strong>.</p>
+      <p>Us din mujhe samajh aaya ki army bharti mein sirf fitness hi nahi, <strong>documentation bhi utna hi important hai</strong>. Bahut se candidates aise hain jinhe pata hi nahi hota ki konsa certificate chahiye, kitni copies chahiye, kaise attest hona chahiye. Ye information scattered hai aur confusing hai.</p>
+      <p>Isliye maine ye Army Document Checklist Generator banaya — <strong>taaki kisi aur ka sapna sirf documents ki wajah se na ruke</strong>. Aap apna post select karein, apni details bharen, aur ek click mein puri list aa jaayegi — kya ready hai, kya nahi, kya urgent hai. Sab clear.</p>
+      <span class="story-highlight">🎯 Isliye banaya — taaki koi bhi documents se na ruke</span>
+    </div>
+  </div>
+</section>
+
+<!-- TABLE SECTION -->
+<section class="tbl-sec">
+  <div class="w">
+    <div class="sec-hd rev">
+      <div class="pill" style="margin-bottom:14px">📊 Quick Reference</div>
+      <h2 class="sec-h">Army Post-wise <span>Document Overview</span></h2>
+    </div>
+    <div class="tbl-wr rev">
+      <table>
+        <thead><tr><th>Document</th><th>GD</th><th>Clerk/SKT</th><th>Tradesman</th><th>Technical</th><th>NDA/CDS</th></tr></thead>
+        <tbody>
+          <tr><td><strong>10th Marksheet</strong></td><td><span class="tbadge g">Required</span></td><td><span class="tbadge g">Required</span></td><td><span class="tbadge g">Required</span></td><td><span class="tbadge g">Required</span></td><td><span class="tbadge g">Required</span></td></tr>
+          <tr><td><strong>12th Marksheet</strong></td><td><span class="tbadge a">If applicable</span></td><td><span class="tbadge g">Required</span></td><td><span class="tbadge a">If applicable</span></td><td><span class="tbadge g">Required</span></td><td><span class="tbadge g">Required</span></td></tr>
+          <tr><td><strong>Aadhaar Card</strong></td><td><span class="tbadge g">Required</span></td><td><span class="tbadge g">Required</span></td><td><span class="tbadge g">Required</span></td><td><span class="tbadge g">Required</span></td><td><span class="tbadge g">Required</span></td></tr>
+          <tr><td><strong>Domicile Certificate</strong></td><td><span class="tbadge g">Required</span></td><td><span class="tbadge g">Required</span></td><td><span class="tbadge g">Required</span></td><td><span class="tbadge g">Required</span></td><td><span class="tbadge b">Often</span></td></tr>
+          <tr><td><strong>Character Certificate</strong></td><td><span class="tbadge g">Required</span></td><td><span class="tbadge g">Required</span></td><td><span class="tbadge g">Required</span></td><td><span class="tbadge g">Required</span></td><td><span class="tbadge g">Required</span></td></tr>
+          <tr><td><strong>Caste Certificate (SC/ST/OBC)</strong></td><td><span class="tbadge b">If applicable</span></td><td><span class="tbadge b">If applicable</span></td><td><span class="tbadge b">If applicable</span></td><td><span class="tbadge b">If applicable</span></td><td><span class="tbadge b">If applicable</span></td></tr>
+          <tr><td><strong>Unmarried Certificate</strong></td><td><span class="tbadge g">Required</span></td><td><span class="tbadge g">Required</span></td><td><span class="tbadge g">Required</span></td><td><span class="tbadge g">Required</span></td><td><span class="tbadge a">Sometimes</span></td></tr>
+          <tr><td><strong>Police Verification Certificate</strong></td><td><span class="tbadge g">Required</span></td><td><span class="tbadge g">Required</span></td><td><span class="tbadge g">Required</span></td><td><span class="tbadge g">Required</span></td><td><span class="tbadge a">Sometimes</span></td></tr>
+          <tr><td><strong>Affidavit</strong></td><td><span class="tbadge g">Required</span></td><td><span class="tbadge g">Required</span></td><td><span class="tbadge g">Required</span></td><td><span class="tbadge g">Required</span></td><td><span class="tbadge b">Check notif</span></td></tr>
+          <tr><td><strong>ITI / Trade Certificate</strong></td><td><span class="tbadge r">Not needed</span></td><td><span class="tbadge r">Not needed</span></td><td><span class="tbadge g">Required</span></td><td><span class="tbadge a">If applicable</span></td><td><span class="tbadge r">Not needed</span></td></tr>
+          <tr><td><strong>NCC Certificate</strong></td><td><span class="tbadge b">Bonus marks</span></td><td><span class="tbadge b">Bonus marks</span></td><td><span class="tbadge b">Bonus marks</span></td><td><span class="tbadge b">Bonus marks</span></td><td><span class="tbadge b">Beneficial</span></td></tr>
+          <tr><td><strong>Sports Certificate</strong></td><td><span class="tbadge b">Bonus marks</span></td><td><span class="tbadge b">Bonus marks</span></td><td><span class="tbadge b">Bonus marks</span></td><td><span class="tbadge b">Bonus marks</span></td><td><span class="tbadge b">Beneficial</span></td></tr>
+          <tr><td><strong>Passport Photos (10+)</strong></td><td><span class="tbadge g">Required</span></td><td><span class="tbadge g">Required</span></td><td><span class="tbadge g">Required</span></td><td><span class="tbadge g">Required</span></td><td><span class="tbadge g">Required</span></td></tr>
+          <tr><td><strong>Admit Card (Army)</strong></td><td><span class="tbadge g">Required</span></td><td><span class="tbadge g">Required</span></td><td><span class="tbadge g">Required</span></td><td><span class="tbadge g">Required</span></td><td><span class="tbadge g">Required</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="text-align:center;font-size:12.5px;color:var(--ink4);margin-top:10px">* Always verify exact requirements from the official Army rally advertisement for your zone. Requirements may vary.</p>
+  </div>
+</section>
+
+<!-- GRAPH SECTION -->
+<section class="graph-sec">
+  <div class="w">
+    <div class="sec-hd rev">
+      <div class="pill" style="margin-bottom:14px">📊 Data Charts</div>
+      <h2 class="sec-h">Document Rejection <span>Data Charts</span></h2>
+      <p class="sec-sub">Understand why candidates get rejected at document verification — and how to avoid it</p>
+    </div>
+    <div class="graph-wrap">
+      <div class="graph-card rev">
+        <div class="gc-title">⚠️ Top Reasons for Rejection at Army Document Verification</div>
+        <div class="bar-chart">
+          <div class="bc-row">
+            <span class="bc-label">Missing / Expired Certificates</span>
+            <div class="bc-track"><div class="bc-fill" style="background:linear-gradient(90deg,#ef4444,#f87171);width:0%;--bw:88%">88%</div></div>
+            <span class="bc-range">88%</span>
+          </div>
+          <div class="bc-row">
+            <span class="bc-label">Not Properly Attested</span>
+            <div class="bc-track"><div class="bc-fill" style="background:linear-gradient(90deg,#f97316,#fb923c);width:0%;--bw:74%">74%</div></div>
+            <span class="bc-range">74%</span>
+          </div>
+          <div class="bc-row">
+            <span class="bc-label">Wrong Certificate Format</span>
+            <div class="bc-track"><div class="bc-fill" style="background:linear-gradient(90deg,#f59e0b,#fbbf24);width:0%;--bw:61%">61%</div></div>
+            <span class="bc-range">61%</span>
+          </div>
+          <div class="bc-row">
+            <span class="bc-label">Insufficient Copies</span>
+            <div class="bc-track"><div class="bc-fill" style="background:linear-gradient(90deg,#8b5cf6,#a78bfa);width:0%;--bw:52%">52%</div></div>
+            <span class="bc-range">52%</span>
+          </div>
+          <div class="bc-row">
+            <span class="bc-label">Photo Issues (Old/Wrong)</span>
+            <div class="bc-track"><div class="bc-fill" style="background:linear-gradient(90deg,#2563eb,#60a5fa);width:0%;--bw:38%">38%</div></div>
+            <span class="bc-range">38%</span>
+          </div>
+          <div class="bc-row">
+            <span class="bc-label">Name/DOB Mismatch</span>
+            <div class="bc-track"><div class="bc-fill" style="background:linear-gradient(90deg,#14b8a6,#2dd4bf);width:0%;--bw:29%">29%</div></div>
+            <span class="bc-range">29%</span>
+          </div>
+        </div>
+        <p style="font-size:12px;color:var(--ink4);margin-top:14px;text-align:center">* Based on common document rejection patterns reported across army rallies</p>
+      </div>
+
+      <div class="graph-card rev">
+        <div class="gc-title">📋 Most Commonly Missing Documents at Army Rallies</div>
+        <div class="bar-chart">
+          <div class="bc-row">
+            <span class="bc-label">Police Verification</span>
+            <div class="bc-track"><div class="bc-fill" style="background:linear-gradient(90deg,#ef4444,#f87171);width:0%;--bw:82%">Most Missing</div></div>
+            <span class="bc-range">#1</span>
+          </div>
+          <div class="bc-row">
+            <span class="bc-label">Unmarried Certificate</span>
+            <div class="bc-track"><div class="bc-fill" style="background:linear-gradient(90deg,#f97316,#fb923c);width:0%;--bw:70%">Very Common</div></div>
+            <span class="bc-range">#2</span>
+          </div>
+          <div class="bc-row">
+            <span class="bc-label">Character Certificate</span>
+            <div class="bc-track"><div class="bc-fill" style="background:linear-gradient(90deg,#f59e0b,#fbbf24);width:0%;--bw:62%">Common</div></div>
+            <span class="bc-range">#3</span>
+          </div>
+          <div class="bc-row">
+            <span class="bc-label">Affidavit (Notary)</span>
+            <div class="bc-track"><div class="bc-fill" style="background:linear-gradient(90deg,#8b5cf6,#a78bfa);width:0%;--bw:55%">Common</div></div>
+            <span class="bc-range">#4</span>
+          </div>
+          <div class="bc-row">
+            <span class="bc-label">Domicile Certificate</span>
+            <div class="bc-track"><div class="bc-fill" style="background:linear-gradient(90deg,#2563eb,#60a5fa);width:0%;--bw:44%">Moderate</div></div>
+            <span class="bc-range">#5</span>
+          </div>
+          <div class="bc-row">
+            <span class="bc-label">Caste Certificate (SC/OBC)</span>
+            <div class="bc-track"><div class="bc-fill" style="background:linear-gradient(90deg,#10b981,#34d399);width:0%;--bw:36%">Moderate</div></div>
+            <span class="bc-range">#6</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SEO ARTICLE -->
+<section class="art-sec">
+  <div class="w">
+    <div class="sec-hd rev">
+      <div class="pill" style="margin-bottom:14px">📖 Complete Guide</div>
+      <h2 class="sec-h">Army Document Verification — <span>Complete 2026 Guide</span></h2>
+    </div>
+    <div class="art-body wa rev">
+
+      <h2>Army Document Verification — Why It Can Make or Break Your Selection</h2>
+      <p>Every year, lakhs of young Indians train hard for the Indian Army rally — the running, the physical fitness tests, the medical examination. Many pass all of these. But a significant number get stopped at the final hurdle: <strong>document verification</strong>. It's not a lack of fitness or intelligence. It's often a missing certificate, an unattested photocopy, or an outdated format that sends a completely deserving candidate home.</p>
+      <p>The <strong>army document checklist generator</strong> on this page exists for one reason: to make sure that if you've worked hard for your fitness, your documents don't let you down. Use it before every rally, every recruitment drive, every application.</p>
+
+      <div class="ibox">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        <div><strong>Key Rule:</strong> Always carry <strong>originals + at least 2 attested photocopies</strong> of every document. Some zones ask for 3–4 copies. Bring extra. Attestation should be done by a Gazetted Officer, not just a notary for most documents.</div>
+      </div>
+
+      <h2>Complete Army Document List — What Every Candidate Needs</h2>
+      <p>The <strong>Indian army bharti documents list</strong> has evolved over recent years, especially with the introduction of the Agniveer scheme in 2022. The core list remains consistent across recruitment rallies and all post types. Here's a complete breakdown of the <strong>army rally document checklist 2026</strong>:</p>
+      <ul>
+        <li><strong>10th Marksheet & Certificate:</strong> Board examination marksheet and passing certificate. This serves as your primary age proof and educational qualification proof.</li>
+        <li><strong>12th Marksheet & Certificate:</strong> Required for Agniveer Clerk/SKT, Technical, and NDA/CDS posts. For GD and Tradesman, it's optional but beneficial.</li>
+        <li><strong>Aadhaar Card:</strong> Mandatory identity proof. Must show your current address. Both original and photocopies required.</li>
+        <li><strong>Domicile / Residence Certificate:</strong> Issued by the SDM/Tehsildar of your district. Proves you belong to the rally zone's state. Very commonly missing — get this done at least 2 months before the rally.</li>
+        <li><strong>Character Certificate:</strong> Issued by the Village Sarpanch or Ward Councillor, countersigned by a Gazetted Officer. Must be recent (within 6 months of rally date).</li>
+        <li><strong>Caste Certificate (SC/ST/OBC):</strong> If you belong to SC/ST/OBC category, this is mandatory. Must be issued by the SDM/Sub-Divisional Officer. OBC certificates must be "Non-Creamy Layer" type.</li>
+        <li><strong>Police Verification Certificate:</strong> Issued by the local SHO (Station House Officer) / Thana. One of the most commonly missing documents. Takes time to get — apply at least 3–4 weeks before your rally.</li>
+        <li><strong>Unmarried Certificate:</strong> Issued by a Gazetted Officer / Sarpanch certifying that you are unmarried. Mandatory for all Army posts as candidates must be unmarried at the time of recruitment.</li>
+        <li><strong>Affidavit (Sworn Statement):</strong> Notarized affidavit on stamp paper declaring correct information. Format may vary by zone — check official rally advertisement for the prescribed format.</li>
+        <li><strong>Bank Passbook / Account Details:</strong> Required for salary disbursement after selection. Should have candidate's name and IFSC code clearly visible.</li>
+        <li><strong>Passport Size Photographs:</strong> Carry at least 10–15 recent passport-size photographs (white or light blue background, without cap or glasses unless worn by religion). Must be taken within the last 6 months.</li>
+        <li><strong>Admit Card / Army Application Printout:</strong> Print your online application confirmation / admit card. Required for entry to the rally ground.</li>
+        <li><strong>PAN Card:</strong> For post-joining formalities and salary account. Carry a copy.</li>
+      </ul>
+
+      <h2>Post-specific Documents — What Changes by Post Type</h2>
+      <p>While the core list above applies to all posts, certain post types require additional documents for the <strong>army document verification</strong> process:</p>
+      <ul>
+        <li><strong>Agniveer Clerk / SKT:</strong> 12th marksheet with at least 60% marks (50% in each subject), computer certificate or typing certificate if available — gives bonus points during selection.</li>
+        <li><strong>Agniveer Tradesman:</strong> ITI Certificate or trade certificate for the specific trade you're applying under (Cook, Washer Man, Store Keeper, etc.). This is a hard requirement — without it, your application is invalid for Tradesman posts.</li>
+        <li><strong>Agniveer Technical:</strong> 12th with Physics, Chemistry, Maths (PCM group) with minimum 50% marks. For specific technical trades, additional technical diplomas or certificates may be required.</li>
+        <li><strong>NDA / CDS:</strong> 12th passing certificate (for NDA) or graduation degree (for CDS), UPSC admit card, fitness certificate, and all standard identity documents.</li>
+      </ul>
+
+      <h2>Common Document Mistakes That Lead to Rejection</h2>
+      <p>Based on patterns across army rallies over the years, here are the most frequent document mistakes that cause candidates to be turned away at verification — and how to avoid them before your <strong>army rally document preparation</strong>:</p>
+      <ul>
+        <li><strong>Police Verification Certificate applied too late:</strong> This takes 2–4 weeks. Most candidates apply for it only days before the rally. Apply for it immediately after the rally announcement.</li>
+        <li><strong>Character Certificate outdated:</strong> If it's more than 6 months old at the time of the rally, it may be rejected. Always get a fresh one closer to the rally date.</li>
+        <li><strong>Improper attestation:</strong> Photocopies attested only by a notary (not a Gazetted Officer) are sometimes rejected. Know the difference and get proper attestation.</li>
+        <li><strong>Name mismatch across documents:</strong> Spelling of your name differs between Aadhaar, 10th certificate, and domicile certificate. Get these corrected before applying — mismatches are a common ground for rejection.</li>
+        <li><strong>OBC certificate without NCL clause:</strong> Candidates from OBC category who bring an OBC certificate without the "Non-Creamy Layer" mention may be treated as general category. Make sure your certificate explicitly states NCL.</li>
+        <li><strong>Insufficient number of copies:</strong> Some zones require 3–4 photocopies of each document. Carry at least 4 copies of everything to be safe.</li>
+        <li><strong>Photographs too old or wrong format:</strong> Photographs older than 6 months, or with coloured backgrounds, caps, or goggles (except religious ones) are rejected. Always bring fresh, standard-format photos.</li>
+      </ul>
+
+      <div class="ibox a">
+        <svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        <div><strong>Pro Tip:</strong> Create a dedicated folder or envelope for your army documents. Keep originals in one section and attested copies in another. Label everything. Practice retrieving documents quickly — at busy rallies, candidates are given very little time to produce documents during verification.</div>
+      </div>
+
+      <h2>Step-by-Step Document Preparation Timeline</h2>
+      <p>The best approach to <strong>army document preparation</strong> is to start early and work systematically. Here's a practical timeline based on when the rally announcement is made:</p>
+      <ul>
+        <li><strong>Immediately after announcement:</strong> Apply for Police Verification Certificate at your local police station (takes 2–4 weeks).</li>
+        <li><strong>Week 1–2:</strong> Get Domicile Certificate, Caste Certificate (if applicable), and Affidavit prepared. Visit SDM/Tehsildar office early as these can take 1–3 weeks.</li>
+        <li><strong>Week 2–3:</strong> Get fresh Character Certificate and Unmarried Certificate from Sarpanch/Ward Councillor. Get all documents properly attested by a Gazetted Officer.</li>
+        <li><strong>1 week before rally:</strong> Get new passport photographs taken (10–15 copies). Print admit card/application. Make 4 photocopies of everything.</li>
+        <li><strong>Day before rally:</strong> Arrange all documents in order. Check each item against the Army document checklist. Put everything in a waterproof folder.</li>
+      </ul>
+
+      <h2>NCC and Sports Certificates — Bonus Marks That Matter</h2>
+      <p>If you have an NCC Certificate (A, B, or C grade), carry it. NCC 'C' Certificate holders get significant bonus marks in the merit list for Agniveer recruitment — this can be the difference between selection and the waitlist. Similarly, candidates with recognized sports achievements at district, state, or national level get bonus marks. These are not required documents, but they are game-changers in a competitive selection process.</p>
+
+      <div class="ibox g">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        <div><strong>Final Advice:</strong> Use the <strong>Army Document Checklist Generator</strong> above to generate your personalized list. Tick off each document you have. Don't go to the rally ground with even one critical document missing. Your fitness can get you to the door — but your documents decide if you walk through it.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-sec">
+  <div class="w">
+    <div style="text-align:center;margin-bottom:40px" class="rev">
+      <div class="pill" style="margin-bottom:14px">❓ FAQs</div>
+      <h2 class="sec-h">Frequently Asked <span>Questions</span></h2>
+      <p class="sec-sub">Army documents ke baare mein sabse common sawaalon ke seedhe jawaab</p>
+    </div>
+    <div class="fql">
+      <div class="fq">
+        <div class="fq-q" onclick="tFQ(this)"><span class="fq-t">Army rally me kaun kaun se documents chahiye? (Full List)</span><span class="fq-i">+</span></div>
+        <div class="fq-a"><div class="fq-ai">Army rally mein standard required documents: 10th marksheet + certificate, Aadhaar Card, Domicile Certificate, Character Certificate, Police Verification Certificate, Unmarried Certificate, Affidavit (notarized), Passport size photos (10-15), Bank passbook, Admit card/Army application printout. Caste certificate (SC/ST/OBC ke liye), 12th marksheet (Clerk/Technical ke liye), ITI Certificate (Tradesman ke liye) bhi required hote hain. Originals + minimum 2 attested photocopies har document ki le jaayein. Upar wala checklist generator use karke apni exact list generate karein.</div></div>
+      </div>
+      <div class="fq">
+        <div class="fq-q" onclick="tFQ(this)"><span class="fq-t">Army document verification me kya check hota hai?</span><span class="fq-i">+</span></div>
+        <div class="fq-a"><div class="fq-ai">Army document verification mein following things check hoti hain: (1) Documents ki <strong>originality</strong> — originals dekhe jaate hain. (2) <strong>Attestation</strong> — photocopies Gazetted Officer se properly attested honi chahiye. (3) <strong>Name consistency</strong> — sabhi documents mein naam exact same hona chahiye. (4) <strong>Date/expiry</strong> — character certificate, police verification etc. recent hone chahiye (6 months). (5) <strong>Format correctness</strong> — especially affidavit aur caste certificate ka format notification ke anusaar hona chahiye. (6) <strong>Number of copies</strong> — usually 2–4 attested copies required hoti hain har document ki.</div></div>
+      </div>
+      <div class="fq">
+        <div class="fq-q" onclick="tFQ(this)"><span class="fq-t">Police Verification Certificate kitne time mein milta hai aur kahan se?</span><span class="fq-i">+</span></div>
+        <div class="fq-a"><div class="fq-ai">Police Verification Certificate aapke local <strong>thane (police station) ke SHO</strong> se milta hai. Process mein <strong>2 se 4 hafte</strong> lag sakte hain. Aapko apne thane mein jaake application dena hoga — generally Name, Address, DOB, Aadhaar details ke saath. Kuch states mein online apply bhi hota hai. Important: isko army rally announcement ke baad <strong>immediately apply karein</strong>. Last minute pe apply karne pe certificate nahi milega rally ke din tak. Ye sabse commonly missing document hai.</div></div>
+      </div>
+      <div class="fq">
+        <div class="fq-q" onclick="tFQ(this)"><span class="fq-t">Army me affidavit kya hota hai aur kaise banwate hain?</span><span class="fq-i">+</span></div>
+        <div class="fq-a"><div class="fq-ai">Army affidavit ek <strong>notarized sworn statement</strong> hota hai jisme candidate declare karta hai ki uski diya hua information correct hai, woh unmarried hai, aur koi criminal case nahi hai. Ye <strong>stamp paper pe hota hai aur notary se attest hota hai</strong>. Format usually rally notification mein diya hota hai — use download karke apne paas ki stationery shop pe print karwa lein aur notary se sign karwa lein. Cost approximately ₹50–200 hoti hai depending on state. Ek baat yaad rakhen — affidavit ka format zone se zone vary kar sakta hai.</div></div>
+      </div>
+      <div class="fq">
+        <div class="fq-q" onclick="tFQ(this)"><span class="fq-t">Agniveer GD ke liye kya 12th certificate zaruri hai?</span><span class="fq-i">+</span></div>
+        <div class="fq-a"><div class="fq-ai">Agniveer GD ke liye <strong>10th pass (Matriculation)</strong> minimum qualification hai. 12th certificate mandatory nahi hai GD ke liye, lekin agar aapke paas 12th ka certificate hai toh carry zaroor karein — kuch recruitment rallies mein bonus marks milte hain ya aap 12th ke basis pe Clerk/Technical post ke liye bhi eligible ho sakte hain. <strong>Note:</strong> Agniveer GD ke liye minimum 45% marks in aggregate with 33% in each subject in Class 10th required hai (for General category).</div></div>
+      </div>
+      <div class="fq">
+        <div class="fq-q" onclick="tFQ(this)"><span class="fq-t">Documents mein name mismatch ho toh kya karein?</span><span class="fq-i">+</span></div>
+        <div class="fq-a"><div class="fq-ai">Name mismatch ek serious issue hai. Agar Aadhaar mein naam alag spelling mein hai aur 10th certificate mein alag, toh isko <strong>pehle hi correct karwa lein</strong>. Aadhaar correction ke liye nearest Aadhaar centre ya online SSUP portal. 10th certificate correction ke liye apne respective board office se contact karein. Agar correction time pe possible nahi, toh ek <strong>Gazetted Officer se affidavit banwayein</strong> jisme clearly mention ho ki dono names ek hi vyakti ke hain. Lekin is situation ko hone se roknaa best hai — apne documents pehle se check karein.</div></div>
+      </div>
+      <div class="fq">
+        <div class="fq-q" onclick="tFQ(this)"><span class="fq-t">Army rally mein kitni photos chahiye aur kaisa format?</span><span class="fq-i">+</span></div>
+        <div class="fq-a"><div class="fq-ai">Army rally ke liye <strong>minimum 10–15 passport size photographs</strong> carry karein. Requirements: Recent photographs (last 6 months mein li gayi), <strong>white ya light blue plain background</strong>, without cap, without dark goggles (religious headgear / spectacles allowed), clearly visible face, standard passport size (3.5cm × 4.5cm). Kuch forms pe coloured photos chahiye hoti hain, kuch pe black & white. Safe taraf pe dono ready rakhein. Photos ke peeth pe apna naam aur date of birth pencil se likh lein.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RELATED TOOLS -->
+<section class="rel-sec">
+  <div class="w">
+    <div class="sec-hd rev">
+      <div class="pill" style="margin-bottom:14px">🔗 Related Tools</div>
+      <h2 class="sec-h">More <span>Government Exam Tools</span></h2>
+    </div>
+    <div class="rel-grid rev">
+      <div class="rel-card">
+        <div class="rel-ico">📏</div>
+        <div class="rel-title">Height Eligibility Checker</div>
+        <div class="rel-desc">Check your height eligibility for 20+ government exams including Army, CRPF, SSC GD, and Railway. Category-wise height standards.</div>
+        <a href="https://rajdailytools.github.io/government-exam-height-eligibility-checker-india.html" class="rel-btn">Use Tool <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      </div>
+      <div class="rel-card">
+        <div class="rel-ico">🛡️</div>
+        <div class="rel-title">MP Police Eligibility Checker</div>
+        <div class="rel-desc">Check your eligibility for MP Police Constable recruitment. Age, height, education, category-wise check with instant result.</div>
+        <a href="https://rajdailytools.github.io/mp-police-eligibility-checker.html" class="rel-btn">Use Tool <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      </div>
+      <div class="rel-card">
+        <div class="rel-ico">📋</div>
+        <div class="rel-title">SSC GD Age Calculator</div>
+        <div class="rel-desc">Instant age eligibility check for SSC GD Constable recruitment. Category-wise relaxation, post-wise eligibility, and complete checklist.</div>
+        <a href="https://rajdailytools.github.io/ssc-gd-age-calculator.html" class="rel-btn">Use Tool <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      </div>
+      <div class="rel-card">
+        <div class="rel-ico">🏃</div>
+        <div class="rel-title">Running Speed Calculator</div>
+        <div class="rel-desc">Calculate your running speed and check if you meet the army physical test standards. 1600m / 1.6km time vs eligibility check.</div>
+        <a href="https://rajdailytools.github.io/running-speed-calculator.html" class="rel-btn">Use Tool <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      </div>
+      <div class="rel-card">
+        <div class="rel-ico">🚂</div>
+        <div class="rel-title">RRB ALP Age Calculator</div>
+        <div class="rel-desc">Railway Recruitment Board Assistant Loco Pilot age eligibility check. Category-wise relaxation and post-wise eligibility included.</div>
+        <a href="https://rajdailytools.github.io/rrb-alp-age-calculator.html" class="rel-btn">Use Tool <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      </div>
+      <div class="rel-card">
+        <div class="rel-ico">🏫</div>
+        <div class="rel-title">KVS Eligibility Checker</div>
+        <div class="rel-desc">Check eligibility for Kendriya Vidyalaya Sangathan teacher recruitment. Age, qualification, category relaxation checker for all posts.</div>
+        <a href="https://rajdailytools.github.io/kvs-eligibility-checker.html" class="rel-btn">Use Tool <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      </div>
+      <div class="rel-card">
+        <div class="rel-ico">🪖</div>
+        <div class="rel-title">CRPF Tradesman Age Calculator 2026</div>
+        <div class="rel-desc">CRPF Constable Tradesman 2026 eligibility check. 9195 posts, age on 01 January 2026, full category-wise check with result copy.</div>
+        <a href="https://rajdailytools.github.io/crpf-tradesman-age-calculator-2026.html" class="rel-btn">Use Tool <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      </div>
+      <div class="rel-card">
+        <div class="rel-ico">⛏️</div>
+        <div class="rel-title">NCL Recruitment 2026 Calculator</div>
+        <div class="rel-desc">NCL Various Post eligibility checker. 577 posts, age as on 01 May 2026, category relaxation, post-wise check for all NCL positions.</div>
+        <a href="https://rajdailytools.github.io/ncl-age-calculator-2026.html" class="rel-btn">Use Tool <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      </div>
+      <div class="rel-card">
+        <div class="rel-ico">⚖️</div>
+        <div class="rel-title">Patna HC Technical Assistant</div>
+        <div class="rel-desc">Patna High Court Technical Assistant eligibility checker. Age, qualification, and category-wise check with instant result.</div>
+        <a href="https://rajdailytools.github.io/patna-hc-technical-assistant-eligibility.html" class="rel-btn">Use Tool <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      </div>
+      <div class="rel-card">
+        <div class="rel-ico">📅</div>
+        <div class="rel-title">Running Planner</div>
+        <div class="rel-desc">Plan your 1600m running training schedule for army and paramilitary physical tests. Week-by-week progress planner to improve your timing.</div>
+        <a href="https://rajdailytools.github.io/running-planner.html" class="rel-btn">Use Tool <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      </div>
+      <div class="rel-card">
+        <div class="rel-ico">🏥</div>
+        <div class="rel-title">Army Medical Checker</div>
+        <div class="rel-desc">Check if your eyesight, hearing, and physical measurements meet Indian Army medical standards for various Agniveer posts.</div>
+        <a href="https://rajdailytools.github.io/army-medical-eligibility-checker.html" class="rel-btn">Use Tool <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      </div>
+      <div class="rel-card">
+        <div class="rel-ico">⚖️</div>
+        <div class="rel-title">BMI Calculator</div>
+        <div class="rel-desc">Check your Body Mass Index — important for army medical standards which require candidates to be within healthy weight range for their height.</div>
+        <a href="https://rajdailytools.github.io/bmi-calculator.html" class="rel-btn">Use Tool <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DISCLAIMER -->
+<div class="disc">
+  <div class="w">
+    <div class="disc-in">
+      <span style="font-size:20px;flex-shrink:0">⚠️</span>
+      <div><strong>Disclaimer:</strong> This Army Document Checklist Generator provides a general reference list based on common Indian Army rally requirements. Specific document requirements may vary by recruitment zone, rally notification, and post type. Always read the <strong>official Army rally/Agniveer advertisement</strong> for your specific zone before attending. RajDailyTools is not affiliated with the Indian Army or any government body. This tool is for educational reference only. No data entered is stored or transmitted.</div>
+    </div>
+  </div>
+</div>
+
+<!-- PRIVACY -->
+<div style="background:var(--blue-xl);border-top:1px solid var(--blue-s);border-bottom:1px solid var(--blue-s);padding:13px 0">
+  <div class="w">
+    <div style="display:flex;align-items:flex-start;gap:12px;font-size:13px;color:var(--ink2);line-height:1.7">
+      <span style="font-size:18px;flex-shrink:0">🔒</span>
+      <div><strong>Privacy:</strong> This tool runs entirely in your browser. No personal information is stored or transmitted. 100% private and safe.</div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<section class="contact-sec">
+  <div class="w">
+    <div class="contact-card rev">
+      <h3>📬 Corrections or Suggestions?</h3>
+      <p>Found a document missing from the list, or want to report an inaccuracy? Contact us — we update this tool regularly based on latest army recruitment notifications.</p>
+      <a href="mailto:edurajkhushit@gmail.com" class="btn-bl">✉️ Contact Us</a>
+      <p class="priv-note">🔒 No data stored. No spam. We genuinely reply.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="cta-in">
+    <div class="pill">Explore More Free Tools</div>
+    <h2>Discover <em>100+ Free Tools</em> on RajDailyTools</h2>
+    <p>Government exam tools, health calculators, finance planners and more — all free, no sign-up required.</p>
+    <div class="cta-btns">
+      <a href="https://rajdailytools.in/categories.html" class="btn-gold">🗂️ Browse All Tools</a>
+      <a href="https://rajdailytools.in/#popular" class="btn-ghost">⭐ Popular Tools</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-inner">
+    <div class="ft-top">
+      <div class="ft-brand">
+        <a href="https://rajdailytools.in/" class="logo">
+          <div class="lb"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+          <div><div class="ln">Raj<span>Daily</span>Tools</div><div class="ls">Smart Tools for Daily Life</div></div>
+        </a>
+        <div class="ft-desc">Free tools for government job aspirants, students & professionals across India. Army calculators, eligibility checkers, health tools & more.</div>
+        <div class="ft-soc">
+          <a class="fts" href="#" title="Twitter">𝕏</a>
+          <a class="fts" href="#" title="Instagram">📸</a>
+          <a class="fts" href="#" title="YouTube">▶</a>
+        </div>
+      </div>
+      <div class="fc">
+        <h4>Army Tools</h4>
+        <ul>
+          <li><a href="https://rajdailytools.github.io/army-document-checklist-generator.html">Document Checklist</a></li>
+          <li><a href="https://rajdailytools.github.io/crpf-tradesman-age-calculator-2026.html">CRPF Age Calculator</a></li>
+          <li><a href="https://rajdailytools.github.io/ssc-gd-age-calculator.html">SSC GD Calculator</a></li>
+          <li><a href="https://rajdailytools.github.io/army-medical-eligibility-checker.html">Army Medical Check</a></li>
+          <li><a href="https://rajdailytools.github.io/running-speed-calculator.html">Running Calculator</a></li>
+        </ul>
+      </div>
+      <div class="fc">
+        <h4>More Tools</h4>
+        <ul>
+          <li><a href="https://rajdailytools.github.io/ncl-age-calculator-2026.html">NCL 2026 Calculator</a></li>
+          <li><a href="https://rajdailytools.github.io/bmi-calculator.html">BMI Calculator</a></li>
+          <li><a href="https://rajdailytools.github.io/age-calculator.html">Age Calculator</a></li>
+          <li><a href="https://rajdailytools.github.io/tdee-calculator.html">TDEE Calculator</a></li>
+          <li><a href="https://rajdailytools.github.io/rrb-alp-age-calculator.html">RRB ALP Tool</a></li>
+        </ul>
+      </div>
+      <div class="fc">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="https://rajdailytools.in/about.html">About Us</a></li>
+          <li><a href="https://rajdailytools.in/contact.html">Contact</a></li>
+          <li><a href="https://rajdailytools.in/privacy.html">Privacy Policy</a></li>
+          <li><a href="https://rajdailytools.in/disclaimer.html">Disclaimer</a></li>
+          <li><a href="https://rajdailytools.in/sitemap.xml">Sitemap</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ft-btm">
+      <div class="ft-cp">© 2026 <b>RajDailyTools.in</b> — All rights reserved. Made with ❤️ in India. 🇮🇳</div>
+      <div class="ft-lnk">
+        <a href="https://rajdailytools.in/privacy.html">Privacy</a>
+        <a href="https://rajdailytools.in/terms.html">Terms</a>
+        <a href="https://rajdailytools.in/disclaimer.html">Disclaimer</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+/* ── DRAWER ── */
+const brg=document.getElementById('brg'),dov=document.getElementById('dov'),drw=document.getElementById('drw'),dx=document.getElementById('dx');
+function oD(){drw.classList.add('on');dov.classList.add('on');document.body.style.overflow='hidden'}
+function cD(){drw.classList.remove('on');dov.classList.remove('on');document.body.style.overflow=''}
+brg.addEventListener('click',oD);dov.addEventListener('click',cD);dx.addEventListener('click',cD);
+
+/* ── BACK TO TOP ── */
+window.addEventListener('scroll',()=>document.getElementById('btt').classList.toggle('on',window.scrollY>380));
+
+/* ── SCROLL REVEAL ── */
+const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:.10});
+document.querySelectorAll('.rev').forEach(el=>obs.observe(el));
+
+/* ── BAR ANIMATE ── */
+const barObs=new IntersectionObserver(entries=>entries.forEach(e=>{
+  if(e.isIntersecting){e.target.querySelectorAll('.bc-fill').forEach(b=>{b.style.width=getComputedStyle(b).getPropertyValue('--bw')});}
+}),{threshold:.3});
+document.querySelectorAll('.graph-card').forEach(el=>barObs.observe(el));
+
+/* ── FAQ ── */
+function tFQ(el){
+  const fq=el.closest('.fq');
+  document.querySelectorAll('.fq.open').forEach(f=>{if(f!==fq)f.classList.remove('open')});
+  fq.classList.toggle('open');
+}
+
+/* ── DOCUMENT DATA ── */
+// Based on OFFICIAL Indian Army Enrolment Document List (25 items)
+// Each doc: {id, name, desc, type, critical, sect, posts, edu, cats, ncc, sports, gorkha, under18, exservice, orphan}
+const DOCS = [
+
+  // ── EDUCATION DOCUMENTS ──
+  {id:'10th_admit', name:'Admit Card — 10th Class', desc:'Board Admit Card for 10th class examination. Original + 03 attested Xerox copies duly attested by Gazetted Officer.', type:'req', critical:true, sect:'🎓 Education Documents (10th Class)', posts:['all'], edu:['all'], cats:['all']},
+  {id:'10th_pass', name:'Pass Certificate — 10th Class', desc:'10th class passing certificate issued by the board. Original + 03 attested Xerox copies.', type:'req', critical:true, sect:'🎓 Education Documents (10th Class)', posts:['all'], edu:['all'], cats:['all']},
+  {id:'10th_marks', name:'Mark Sheet — 10th Class', desc:'10th class marksheet from recognized board. Primary age proof and qualification proof. Original + 03 attested copies.', type:'req', critical:true, sect:'🎓 Education Documents (10th Class)', posts:['all'], edu:['all'], cats:['all']},
+  {id:'10th_leaving', name:'School Joining/Leaving Certificate — 10th Class', desc:'School Joining / Leaving Certificate for 10th class. Duly photo affixed and attested by Head Master / Principal.', type:'req', critical:true, sect:'🎓 Education Documents (10th Class)', posts:['all'], edu:['all'], cats:['all']},
+  {id:'10th_char', name:'School Character Certificate — 10th Class', desc:'Issued within SIX MONTHS — duly photo affixed and attested by Head Master / Principal of 10th class school.', type:'req', critical:true, sect:'🎓 Education Documents (10th Class)', posts:['all'], edu:['all'], cats:['all']},
+
+  {id:'12th_admit', name:'Admit Card — 12th Class', desc:'Board Admit Card for 12th class examination. Original + 03 attested Xerox copies duly attested by Gazetted Officer.', type:'req', critical:true, sect:'🎓 Education Documents (12th Class)', posts:['clerk','technical','nda'], edu:['12th','graduate'], cats:['all']},
+  {id:'12th_pass', name:'Pass Certificate — 12th Class', desc:'12th class passing certificate issued by the board. Original + 03 attested Xerox copies.', type:'req', critical:true, sect:'🎓 Education Documents (12th Class)', posts:['clerk','technical','nda'], edu:['12th','graduate'], cats:['all']},
+  {id:'12th_marks', name:'Mark Sheet — 12th Class', desc:'12th class marksheet from recognized board. For Technical: must have PCM with min 50%. Original + 03 attested copies.', type:'req', critical:true, sect:'🎓 Education Documents (12th Class)', posts:['clerk','technical','nda'], edu:['12th','graduate'], cats:['all']},
+  {id:'12th_leaving', name:'School Joining/Leaving Certificate — 12th Class', desc:'School Joining / Leaving Certificate for 12th class. Duly photo affixed and attested by Head Master / Principal.', type:'req', critical:true, sect:'🎓 Education Documents (12th Class)', posts:['clerk','technical','nda'], edu:['12th','graduate'], cats:['all']},
+  {id:'12th_char', name:'School Character Certificate — 12th Class', desc:'Issued within SIX MONTHS — duly photo affixed and attested by Head Master / Principal of 12th class school.', type:'req', critical:true, sect:'🎓 Education Documents (12th Class)', posts:['clerk','technical','nda'], edu:['12th','graduate'], cats:['all']},
+
+  // ── RESIDENCE & DOMICILE ──
+  {id:'domicile', name:'Residential / Domicile Certificate', desc:'Issued by SDM Concerned within SIX MONTHS. Duly photo affixed and attested. Address on ALL documents must match this certificate.', type:'req', critical:true, sect:'🏠 Residence Documents', posts:['all'], edu:['all'], cats:['all']},
+  {id:'gorkha_cert', name:'Gorkha / Community / Tribe Certificate', desc:'For Gorkha / Tribal community candidates. Issued by SDM Concerned. Duly photo affixed and attested. Required if applicable.', type:'req', critical:true, sect:'🏠 Residence Documents', posts:['all'], edu:['all'], cats:['all'], gorkha:true},
+
+  // ── CHARACTER & CONDUCT ──
+  {id:'police_char', name:'Police Character Certificate', desc:'Issued by D.I.B of Police within SIX MONTHS. Duly photo affixed and attested. Commonly missing — apply 3–4 weeks before rally.', type:'req', critical:true, sect:'📜 Character & Conduct', posts:['all'], edu:['all'], cats:['all']},
+  {id:'gram_panchayat_char', name:'Gram Panchayat Character Certificate', desc:'Gram Panchayat Character Certificate issued within SIX MONTHS. Duly photo affixed and attested by Village Sarpanch.', type:'req', critical:true, sect:'📜 Character & Conduct', posts:['all'], edu:['all'], cats:['all']},
+  {id:'char_verify_family', name:'Character Verification Certificate with Family Photos', desc:'Character Verification Certificate with pasted family photographs (7cm x 5cm) of Father, Mother, Brother, Sister, and Self. Duly attested by Village Sarpanch.', type:'req', critical:true, sect:'📜 Character & Conduct', posts:['all'], edu:['all'], cats:['all']},
+  {id:'unmarried_cert', name:'Unmarried Certificate', desc:'Duly signed by Parents and Village Sarpanch. Duly photo affixed and attested. Mandatory for all posts — candidate must be unmarried at time of enrolment.', type:'req', critical:true, sect:'📜 Character & Conduct', posts:['all'], edu:['all'], cats:['all']},
+
+  // ── AFFIDAVIT & DECLARATIONS ──
+  {id:'affidavit', name:'Initial Affidavit (Personal Declaration)', desc:'Declared by the candidate. Duly photo affixed and attested by 1st Class Executive Magistrate / Notary. States personal conduct and intentions.', type:'req', critical:true, sect:'📋 Affidavits & Declarations', posts:['all'], edu:['all'], cats:['all']},
+  {id:'detail_declaration', name:'Declaration of Personal Details (Affidavit)', desc:'Declaration by candidate with: Name, Father\'s Name, Mother\'s Name, Place of Birth, Residence Address, Caste/Sub-Caste, Religion, and statement of no banned organisation membership. From 1st Class Executive Magistrate / Sub Divisional Magistrate. Duly photo affixed and attested.', type:'req', critical:true, sect:'📋 Affidavits & Declarations', posts:['all'], edu:['all'], cats:['all']},
+  {id:'under18_cert', name:'Below 18 Years Declaration Certificate', desc:'Required if candidate is under 18 years of age at time of enrolment. As per Army rules, declaration certificate must be provided.', type:'req', critical:true, sect:'📋 Affidavits & Declarations', posts:['all'], edu:['all'], cats:['all'], under18:true},
+  {id:'guardian_decl', name:'Guardian Declaration & Self Declaration (Orphan)', desc:'For candidates raised by relatives without parents. Self Declaration and Declaration of Guardian duly signed by 1st Class Executive Magistrate. Guardian declares relative is legal guardian and all service benefits will be given as NOK. Joint photograph (Candidate + Guardian) duly affixed and attested.', type:'req', critical:true, sect:'📋 Affidavits & Declarations', posts:['all'], edu:['all'], cats:['all'], orphan:true},
+
+  // ── CATEGORY CERTIFICATE ──
+  {id:'caste_sc', name:'SC Caste Certificate', desc:'Issued by SDM/Sub-Divisional Officer. Original + attested copies. Must be valid and current. Required for SC category candidates.', type:'req', critical:true, sect:'🏷️ Category Certificate', posts:['all'], edu:['all'], cats:['SC']},
+  {id:'caste_st', name:'ST Caste Certificate', desc:'Issued by SDM/Sub-Divisional Officer. Original + attested copies. Must clearly state Scheduled Tribe status.', type:'req', critical:true, sect:'🏷️ Category Certificate', posts:['all'], edu:['all'], cats:['ST']},
+  {id:'caste_obc', name:'OBC (Non-Creamy Layer) Certificate', desc:'Non-Creamy Layer OBC certificate from SDM. Must explicitly mention "Non-Creamy Layer". Without NCL clause, treated as General.', type:'req', critical:true, sect:'🏷️ Category Certificate', posts:['all'], edu:['all'], cats:['OBC']},
+
+  // ── IDENTITY PROOFS ──
+  {id:'aadhaar', name:'Aadhaar Card (Individual)', desc:'Photocopy of individual Aadhaar Card. Must show current address matching Domicile Certificate. Original + 03 attested Xerox copies.', type:'req', critical:true, sect:'🪪 Identity & Financial Proofs', posts:['all'], edu:['all'], cats:['all']},
+  {id:'pan', name:'PAN Card (Individual)', desc:'Photocopy of individual PAN Card. Required for post-joining salary and financial formalities. Carry original + copy.', type:'req', critical:true, sect:'🪪 Identity & Financial Proofs', posts:['all'], edu:['all'], cats:['all']},
+  {id:'bank_passbook', name:'Bank Passbook — 1st Page', desc:'1st / First page of bank passbook mentioning account holder details, account number, IFSC code, and photograph affixed and duty attested by Branch Manager.', type:'req', critical:true, sect:'🪪 Identity & Financial Proofs', posts:['all'], edu:['all'], cats:['all']},
+  {id:'family_age_proof', name:'Age Proof (Aadhaar / Birth Certificate) of ALL Family Members', desc:'Photocopy of Age Proof (Aadhaar Card or Birth Certificate) of all family members. Required for NOK (Next of Kin) records.', type:'req', critical:false, sect:'🪪 Identity & Financial Proofs', posts:['all'], edu:['all'], cats:['all']},
+
+  // ── FAMILY SERVICE RECORDS ──
+  {id:'ppo_exservice', name:'PPO of 02 x Ex-Servicemen / Leave Certificate of Serving Person', desc:'Legible photocopy of PPO (Pension Payment Order) of 02 Ex-Servicemen if applicable, OR Leave Certificate of currently serving personnel in family.', type:'opt', critical:false, sect:'🎖️ Service / Ex-Service Records', posts:['all'], edu:['all'], cats:['all'], exservice:true},
+
+  // ── PHOTOGRAPHS ──
+  {id:'photos', name:'Passport Size Photographs — Latest 15 Copies', desc:'Latest 15 copies of passport size colour photographs (3.5cm x 4cm). Preferably in light coloured shirt with BLUE / RED back background. Write name & DOB on reverse.', type:'req', critical:true, sect:'📸 Photographs & Admit Card', posts:['all'], edu:['all'], cats:['all']},
+  {id:'admit_card', name:'Army Application / Admit Card Printout', desc:'Print the confirmation slip / admit card from joinindianarmy.nic.in. Required for entry to the rally ground. Keep safe and dry.', type:'req', critical:true, sect:'📸 Photographs & Admit Card', posts:['all'], edu:['all'], cats:['all']},
+
+  // ── POST-SPECIFIC ──
+  {id:'iti_cert', name:'ITI / Trade Certificate', desc:'For Tradesman posts — mandatory. Certifies your specific trade skill (Cook, Clerk, Tailor, Carpenter, etc.). Must be from recognized ITI. Original + 03 attested copies.', type:'req', critical:true, sect:'📚 Post-Specific Qualifications', posts:['tradesman'], edu:['all'], cats:['all']},
+  {id:'comp_cert', name:'Computer / Typing Certificate', desc:'For Clerk/SKT — shows typing speed and computer proficiency. Gives bonus evaluation. Must be from recognized institute.', type:'opt', critical:false, sect:'📚 Post-Specific Qualifications', posts:['clerk'], edu:['all'], cats:['all']},
+  {id:'pcm_marksheet', name:'12th PCM Marksheet (Physics, Chemistry, Math)', desc:'For Technical posts — 12th with PCM group, minimum 50% aggregate. Essential qualification document. Original + 03 attested copies.', type:'req', critical:true, sect:'📚 Post-Specific Qualifications', posts:['technical'], edu:['12th','graduate'], cats:['all']},
+  {id:'degree_cert', name:'Graduation Degree / Marksheet', desc:'For NDA/CDS/OTA posts. Original degree certificate + marksheets from all years. Must be from a recognized university. Original + 03 attested copies.', type:'req', critical:true, sect:'📚 Post-Specific Qualifications', posts:['nda'], edu:['graduate'], cats:['all']},
+
+  // ── BONUS / NCC / SPORTS ──
+  {id:'ncc_cert', name:'NCC Certificate (A / B / C Grade)', desc:'NCC \'C\' Certificate gives maximum bonus marks. Any grade NCC certificate is beneficial. Original + 03 attested copies. Also bring NCC Identity Card if available.', type:'bonus', critical:false, sect:'⭐ Bonus Documents (Extra Marks)', posts:['gd','clerk','tradesman','technical'], edu:['all'], cats:['all'], ncc:true},
+  {id:'sports_cert', name:'Sports Achievement Certificate', desc:'District / State / National level sports certificates from recognized sports federation. Can significantly boost merit score. Original + 03 attested copies.', type:'bonus', critical:false, sect:'⭐ Bonus Documents (Extra Marks)', posts:['gd','clerk','tradesman','technical'], edu:['all'], cats:['all'], sports:true},
+  {id:'sports_asso', name:'Sports Association / Federation Letter', desc:'If carrying sports certificate, also bring a letter from the recognized sports association confirming the achievement. Required for sports bonus to be counted.', type:'bonus', critical:false, sect:'⭐ Bonus Documents (Extra Marks)', posts:['gd','clerk','tradesman','technical'], edu:['all'], cats:['all'], sports:true},
+];
+
+let currentChecklist = [];
+
+/* ── GENERATE CHECKLIST ── */
+function generateChecklist(){
+  const postType = document.getElementById('postType').value;
+  if(!postType){alert('Please select a Post Type first.');return;}
+
+  const eduLevel = document.getElementById('eduLevel').value;
+  const category = document.getElementById('category').value;
+  const hasNCC = document.getElementById('hasNCC').value === 'yes';
+  const hasSports = document.getElementById('hasSports').value === 'yes';
+  const isGorkha = document.getElementById('isGorkha').value === 'yes';
+  const isUnder18 = document.getElementById('isUnder18').value === 'yes';
+  const hasExService = document.getElementById('hasExService').value === 'yes';
+  const isOrphan = document.getElementById('isOrphan').value === 'yes';
+
+  // Filter relevant docs
+  currentChecklist = DOCS.filter(d=>{
+    if(d.ncc && !hasNCC) return false;
+    if(d.sports && !hasSports) return false;
+    if(d.gorkha && !isGorkha) return false;
+    if(d.under18 && !isUnder18) return false;
+    if(d.exservice && !hasExService) return false;
+    if(d.orphan && !isOrphan) return false;
+    if(!d.posts.includes('all') && !d.posts.includes(postType)) return false;
+    if(!d.edu.includes('all') && !d.edu.includes(eduLevel)) return false;
+    if(!d.cats.includes('all') && !d.cats.includes(category)) return false;
+    return true;
+  }).map(d=>({...d, checked:false}));
+
+  renderChecklist();
+  updateScore();
+
+  const ra = document.getElementById('resultArea');
+  ra.style.display = 'block';
+  ra.style.animation='none';ra.offsetHeight;
+  ra.style.animation='resultIn .42s var(--ease) both';
+  setTimeout(()=>ra.scrollIntoView({behavior:'smooth',block:'start'}),120);
+}
+
+const POST_NAMES = {gd:'Agniveer GD',clerk:'Agniveer Clerk/SKT',tradesman:'Agniveer Tradesman',technical:'Agniveer Technical',nda:'NDA/CDS'};
+
+function renderChecklist(){
+  // Group by section
+  const sections = {};
+  currentChecklist.forEach(d=>{
+    if(!sections[d.sect]) sections[d.sect]=[];
+    sections[d.sect].push(d);
+  });
+
+  let html = '';
+  Object.entries(sections).forEach(([sect, docs])=>{
+    const reqCount = docs.filter(d=>d.type==='req').length;
+    const checkedCount = docs.filter(d=>d.checked).length;
+    html += `<div class="checklist-section">
+      <div class="cs-head">
+        <div class="cs-title">${sect}</div>
+        <span class="cs-count">${checkedCount}/${docs.length} ready</span>
+      </div>
+      <div class="doc-list">`;
+    docs.forEach(d=>{
+      html += `<div class="doc-item${d.checked?' checked':''}${d.critical?' critical':''}" onclick="toggleDoc('${d.id}')" id="item_${d.id}">
+        <div class="doc-cb"><span class="doc-cb-tick">✓</span></div>
+        <div class="doc-body">
+          <div class="doc-name">${d.name}</div>
+          <div class="doc-desc">${d.desc}</div>
+          <span class="doc-badge ${d.checked?'checked':d.type}">${d.checked?'✅ Ready':d.type==='req'?'🔴 Required':d.type==='opt'?'🟡 Optional':'⭐ Bonus Marks'}</span>
+        </div>
+      </div>`;
+    });
+    html += `</div></div>`;
+  });
+  document.getElementById('checklistSections').innerHTML = html;
+}
+
+function toggleDoc(id){
+  const doc = currentChecklist.find(d=>d.id===id);
+  if(!doc) return;
+  doc.checked = !doc.checked;
+  const item = document.getElementById('item_'+id);
+  item.classList.toggle('checked', doc.checked);
+  const badge = item.querySelector('.doc-badge');
+  if(doc.checked){
+    badge.className='doc-badge checked';
+    badge.textContent='✅ Ready';
+  } else {
+    badge.className='doc-badge '+doc.type;
+    badge.textContent = doc.type==='req'?'🔴 Required':doc.type==='opt'?'🟡 Optional':'⭐ Bonus Marks';
+  }
+  updateScore();
+}
+
+function updateScore(){
+  const total = currentChecklist.length;
+  const checked = currentChecklist.filter(d=>d.checked).length;
+  const reqTotal = currentChecklist.filter(d=>d.type==='req').length;
+  const reqChecked = currentChecklist.filter(d=>d.type==='req' && d.checked).length;
+  const pct = total>0 ? Math.round((checked/total)*100) : 0;
+  const reqPct = reqTotal>0 ? Math.round((reqChecked/reqTotal)*100) : 0;
+
+  document.getElementById('scoreNum').textContent = checked;
+  document.getElementById('scoreDenom').textContent = `/ ${total} docs ready`;
+
+  const progFill = document.getElementById('progFill');
+  const progPct = document.getElementById('progPct');
+  progFill.style.width = pct+'%';
+  progPct.textContent = pct+'%';
+  progFill.className = 'prog-fill '+(pct>=80?'safe':pct>=50?'warn':'danger');
+
+  const banner = document.getElementById('readyBanner');
+  const tag = document.getElementById('readyTag');
+  const title = document.getElementById('readyTitle');
+  const sub = document.getElementById('readySub');
+  const post = POST_NAMES[document.getElementById('postType').value]||'';
+
+  if(reqPct===100){
+    banner.className='ready-banner ready';
+    tag.className='rb-tag ready'; tag.textContent='✅ READY TO GO';
+    title.textContent=`All required documents ready for ${post}!`;
+    sub.textContent='You have all critical documents. Carry originals + 2 attested copies of each to the rally ground. Double-check attestation and recency.';
+  } else if(reqPct>=70){
+    banner.className='ready-banner notready';
+    tag.className='rb-tag notready'; tag.textContent='⚠️ ALMOST READY';
+    title.textContent=`${reqTotal - reqChecked} critical document(s) still needed for ${post}`;
+    sub.textContent='Arrange the missing required documents before your rally date. Use the red alerts below to identify what\'s pending.';
+  } else {
+    banner.className='ready-banner danger';
+    tag.className='rb-tag danger'; tag.textContent='❌ NOT READY';
+    title.textContent=`${reqTotal - reqChecked} of ${reqTotal} required documents missing for ${post}`;
+    sub.textContent='Do NOT attend rally without completing this list. Start immediately — some documents like Police Verification take 2–4 weeks.';
+  }
+
+  // Missing docs alert
+  const missing = currentChecklist.filter(d=>d.type==='req' && !d.checked);
+  const missingBox = document.getElementById('missingBox');
+  const missingList = document.getElementById('missingList');
+  if(missing.length>0){
+    missingBox.style.display='block';
+    missingList.innerHTML = missing.map(d=>`<div class="mb-item">${d.name}</div>`).join('');
+  } else {
+    missingBox.style.display='none';
+  }
+
+  // Update section counts
+  const sections = {};
+  currentChecklist.forEach(d=>{
+    if(!sections[d.sect]) sections[d.sect]={total:0,checked:0};
+    sections[d.sect].total++;
+    if(d.checked) sections[d.sect].checked++;
+  });
+  document.querySelectorAll('.cs-count').forEach((el,i)=>{
+    const sectName = document.querySelectorAll('.cs-title')[i]?.textContent;
+    if(sectName && sections[sectName]) el.textContent=`${sections[sectName].checked}/${sections[sectName].total} ready`;
+  });
+}
+
+function uncheckAll(){
+  currentChecklist.forEach(d=>d.checked=false);
+  renderChecklist();
+  updateScore();
+}
+
+function printChecklist(){
+  const post = POST_NAMES[document.getElementById('postType').value]||'';
+  const cat = document.getElementById('category').value;
+  const checked = currentChecklist.filter(d=>d.checked);
+  const missing = currentChecklist.filter(d=>d.type==='req'&&!d.checked);
+  let html = `<html><head><title>Army Document Checklist — ${post}</title><style>
+    body{font-family:Arial,sans-serif;padding:28px;color:#0f172a;max-width:800px;margin:0 auto}
+    h1{font-size:18px;text-align:center;text-transform:uppercase;border-bottom:2px solid #000;padding-bottom:8px;margin-bottom:6px}
+    h2{font-size:13px;text-align:center;margin-bottom:4px}
+    .note{background:#fff3cd;border:1px solid #ffc107;padding:10px;font-size:12px;margin:12px 0;border-radius:6px}
+    .sect{font-size:13px;font-weight:bold;margin:14px 0 6px;color:#1d4ed8;border-bottom:1px solid #dbeafe;padding-bottom:3px}
+    .row{display:flex;align-items:flex-start;gap:10px;padding:6px 4px;border-bottom:1px solid #f0f0f0;font-size:12.5px}
+    .cb{width:16px;height:16px;border:1.5px solid #666;border-radius:3px;flex-shrink:0;margin-top:1px;background:${'{checked}'}}
+    .name{flex:1;font-weight:600}
+    .desc{color:#555;font-size:11.5px;margin-top:2px}
+    .badge{font-size:10px;padding:1px 7px;border-radius:10px;margin-left:6px;font-weight:700}
+    .req{background:#fee2e2;color:#dc2626}
+    .opt{background:#fff7ed;color:#92400e}
+    .bonus{background:#eff6ff;color:#1d4ed8}
+    .done{background:#d1fae5;color:#059669}
+    .footer{margin-top:22px;font-size:11px;color:#64748b;text-align:center;border-top:1px solid #e2e8f0;padding-top:10px}
+    @media print{body{padding:12px}}
+  </style></head><body>
+  <h1>Documents Required for Enrolment into the Indian Army</h1>
+  <h2>${post} (${cat}) — Generated by RajDailyTools</h2>
+  <div class="note">⚠️ <strong>Official Rule:</strong> Carry <strong>ORIGINALS + 03 x Xerox Copies</strong> of every document, duly attested by Gazetted Officer. Address on ALL documents must match Residential / Domicile Certificate.</div>`;
+
+  const sections = {};
+  currentChecklist.forEach(d=>{
+    if(!sections[d.sect]) sections[d.sect]=[];
+    sections[d.sect].push(d);
+  });
+
+  Object.entries(sections).forEach(([sect, docs])=>{
+    html += `<div class="sect">${sect}</div>`;
+    docs.forEach((d,i)=>{
+      const badgeCls = d.checked?'done':d.type;
+      const badgeTxt = d.checked?'✅ Ready':d.type==='req'?'Required':d.type==='opt'?'Optional':'Bonus';
+      html += `<div class="row">
+        <div class="cb" style="background:${d.checked?'#10b981':'#fff'}">${d.checked?'<span style="color:#fff;font-size:10px;font-weight:800">✓</span>':''}</div>
+        <div><div class="name">${i+1}. ${d.name} <span class="badge ${badgeCls}">${badgeTxt}</span></div>
+        <div class="desc">${d.desc}</div></div>
+      </div>`;
+    });
+  });
+
+  html += `<div class="footer">Generated by RajDailyTools.in | Total: ${currentChecklist.length} documents | Ready: ${checked.length} | Pending Required: ${missing.length}<br>Visit joinindianarmy.nic.in for official notifications</div></body></html>`;
+
+  const w = window.open('','_blank');
+  w.document.write(html);
+  w.document.close();
+  w.focus();
+  setTimeout(()=>w.print(),400);
+}
+
+function copyChecklist(){
+  const post = POST_NAMES[document.getElementById('postType').value]||'';
+  const cat = document.getElementById('category').value;
+  const checked = currentChecklist.filter(d=>d.checked);
+  const missing = currentChecklist.filter(d=>d.type==='req'&&!d.checked);
+  let text = `ARMY DOCUMENT CHECKLIST — ${post} (${cat})\nGenerated by RajDailyTools\n${'='.repeat(50)}\n\n`;
+  text += `✅ READY (${checked.length}):\n${checked.map(d=>`  ✓ ${d.name}`).join('\n')}\n\n`;
+  if(missing.length>0) text += `⚠️ STILL NEEDED (${missing.length}):\n${missing.map(d=>`  ✗ ${d.name}`).join('\n')}\n\n`;
+  text += `Readiness: ${checked.length}/${currentChecklist.length} | Required: ${currentChecklist.filter(d=>d.type==='req'&&d.checked).length}/${currentChecklist.filter(d=>d.type==='req').length}\n\n`;
+  text += `📌 OFFICIAL RULE: Carry originals + 03 x Xerox copies of every document, duly attested by Gazetted Officer.\nAddress on ALL documents must match Residential / Domicile Certificate.\nVerify from official rally notification at joinindianarmy.nic.in`;
+
+  navigator.clipboard?.writeText(text).then(()=>{
+    const btn=document.getElementById('copyBtn');
+    btn.classList.add('copied');btn.textContent='✅ Copied!';
+    setTimeout(()=>{btn.classList.remove('copied');btn.textContent='📋 Copy My Checklist';},2400);
+  });
+}
+
+function resetTool(){
+  document.getElementById('postType').value='';
+  document.getElementById('resultArea').style.display='none';
+  currentChecklist=[];
+}
+</script>
+</body>
+</html>
