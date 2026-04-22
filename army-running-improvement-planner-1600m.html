@@ -1,0 +1,1283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Army Running Improvement Planner 1600m (Time Reduce + Daily Plan + Calculator) | RajDailyTools</title>
+<meta name="description" content="Army 1600m Running Improvement Planner — Generate your personalized daily running plan, reduce your time, and track progress. 7-day, 15-day, and 30-day plans for Army GD, NDA, and all army bharti aspirants. Free online tool.">
+<meta name="keywords" content="1600m running improvement plan army, army running time improve kaise kare, 1600m running tips army bharti, running plan for army gd 1600m, army 1600m running practice schedule, 1600m running daily plan army, army running speed kaise badhaye, running stamina badhane ka tarika army, 1600m running under 5 min kaise kare, army rally running plan 2026, army gd running training plan, running fast kaise bhage army ke liye, army running time reduce karne ka tarika, army running improvement calculator, 1600m running time calculator army, running improvement planner online, army running plan generator, running schedule generator army, 1600m running tracker tool, army running daily planner tool">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://rajdailytools.in/army-running-improvement-planner-1600m.html">
+<meta property="og:title" content="Army Running Improvement Planner 1600m (Time Reduce + Daily Plan + Calculator)">
+<meta property="og:description" content="Generate your personalized 7/15/30-day Army 1600m running improvement plan instantly. Enter your current time, target, and fitness level. Free tool for all army aspirants.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#2563eb;--blue-d:#1d4ed8;--blue-l:#3b82f6;
+  --blue-xl:#eff6ff;--blue-s:#dbeafe;
+  --amber:#f59e0b;--green:#10b981;--red:#ef4444;
+  --purple:#8b5cf6;--teal:#14b8a6;--orange:#f97316;
+  --green-xl:#f0fdf4;--green-s:#bbf7d0;
+  --red-xl:#fef2f2;--red-s:#fecaca;
+  --amber-xl:#fffbeb;--amber-s:#fde68a;
+  --purple-xl:#faf5ff;--purple-s:#ddd6fe;
+  --ink:#0f172a;--ink2:#334155;--ink3:#64748b;--ink4:#94a3b8;
+  --line:#e2e8f0;--surf:#f8fafc;--white:#fff;
+  --s1:0 1px 3px rgba(15,23,42,.06),0 1px 2px rgba(15,23,42,.04);
+  --s2:0 4px 16px rgba(15,23,42,.08),0 2px 6px rgba(15,23,42,.04);
+  --s3:0 12px 40px rgba(15,23,42,.11),0 3px 10px rgba(15,23,42,.06);
+  --s4:0 24px 64px rgba(15,23,42,.13),0 6px 20px rgba(15,23,42,.07);
+  --sb:0 8px 32px rgba(37,99,235,.20);
+  --fd:'Sora',sans-serif;--fb:'DM Sans',sans-serif;
+  --ease:cubic-bezier(.4,0,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);color:var(--ink);background:var(--white);overflow-x:hidden;-webkit-font-smoothing:antialiased;line-height:1.6}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+button{cursor:pointer;border:none;background:none;font-family:var(--fb)}
+.w{max-width:1180px;margin:0 auto;padding:0 24px}
+.wa{max-width:860px;margin:0 auto;padding:0 24px}
+select,input{appearance:none;-webkit-appearance:none}
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+@keyframes resultIn{from{opacity:0;transform:translateY(18px) scale(.97)}to{opacity:1;transform:none}}
+.rev{opacity:0;transform:translateY(22px);transition:opacity .55s var(--ease),transform .55s var(--ease)}
+.rev.in{opacity:1;transform:none}
+
+/* HEADER */
+.hdr{position:sticky;top:0;z-index:999;background:rgba(255,255,255,.96);backdrop-filter:blur(20px);border-bottom:1px solid var(--line);box-shadow:var(--s1)}
+.hdi{display:flex;align-items:center;justify-content:space-between;height:66px}
+.logo{display:flex;align-items:center;gap:10px}
+.lb{width:36px;height:36px;background:var(--blue);border-radius:9px;display:flex;align-items:center;justify-content:center;box-shadow:var(--sb);flex-shrink:0}
+.lb svg{width:18px;height:18px;fill:#fff}
+.ln{font-family:var(--fd);font-size:19px;font-weight:800;color:var(--ink);line-height:1}
+.ln span{color:var(--blue)}
+.ls{font-size:10px;color:var(--ink4);letter-spacing:.04em}
+nav.dn{display:flex;align-items:center;gap:2px}
+nav.dn a{font-size:13.5px;font-weight:500;color:var(--ink2);padding:7px 13px;border-radius:8px;transition:.2s}
+nav.dn a:hover{color:var(--blue);background:var(--blue-xl)}
+.hcta{background:var(--blue);color:#fff;font-family:var(--fd);font-weight:600;font-size:13px;padding:8px 18px;border-radius:8px;box-shadow:var(--sb);transition:.2s}
+.hcta:hover{background:var(--blue-d);transform:translateY(-1px)}
+.brg{display:none;flex-direction:column;gap:4.5px;padding:8px;border-radius:8px}
+.brg span{display:block;width:20px;height:2px;background:var(--ink);border-radius:2px;transition:.28s}
+.dov{display:none;position:fixed;inset:0;background:rgba(15,23,42,.45);z-index:1040;backdrop-filter:blur(3px)}
+.dov.on{display:block}
+.drw{position:fixed;top:0;right:-100%;width:270px;height:100vh;background:#fff;z-index:1050;padding:22px;box-shadow:var(--s4);transition:right .32s var(--ease);overflow-y:auto}
+.drw.on{right:0}
+.dh{display:flex;align-items:center;justify-content:space-between;margin-bottom:26px}
+.dx{width:33px;height:33px;border-radius:7px;background:var(--surf);display:flex;align-items:center;justify-content:center;color:var(--ink3);font-size:17px}
+nav.mn{display:flex;flex-direction:column;gap:3px}
+nav.mn a{display:block;font-size:14px;font-weight:500;color:var(--ink2);padding:11px 13px;border-radius:8px;transition:.2s}
+nav.mn a:hover{color:var(--blue);background:var(--blue-xl)}
+
+/* HERO */
+.hero{position:relative;overflow:hidden;background:linear-gradient(150deg,#ebf4ff 0%,#fff 46%,#f0fdf4 100%);padding:68px 0 80px}
+.hero::before{content:'';position:absolute;top:-140px;right:-180px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(37,99,235,.08) 0%,transparent 68%);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-80px;left:-100px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(16,185,129,.05) 0%,transparent 68%);pointer-events:none}
+.blob{position:absolute;border-radius:50%;pointer-events:none;animation:float 6s ease-in-out infinite}
+.b1{width:13px;height:13px;background:rgba(37,99,235,.18);top:22%;right:14%;animation-delay:0s}
+.b2{width:9px;height:9px;background:rgba(16,185,129,.22);top:58%;right:26%;animation-delay:2.2s}
+.b3{width:11px;height:11px;background:rgba(245,158,11,.18);top:36%;right:6%;animation-delay:4s}
+.bc{display:flex;align-items:center;gap:7px;font-size:12.5px;color:var(--ink3);margin-bottom:24px;position:relative;z-index:1;flex-wrap:wrap}
+.bc a{color:var(--blue);font-weight:600}
+.pill{display:inline-flex;align-items:center;gap:7px;font-family:var(--fd);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);background:var(--blue-xl);padding:5px 14px;border-radius:100px;margin-bottom:18px}
+.pill::before{content:'';width:6px;height:6px;background:var(--blue);border-radius:50%}
+.hero-inner{position:relative;z-index:1;max-width:700px;animation:fadeUp .5s ease both}
+.hero h1{font-family:var(--fd);font-size:clamp(26px,4.5vw,50px);font-weight:800;line-height:1.1;color:var(--ink);margin-bottom:14px}
+.hero h1 span{color:var(--blue)}
+.hero-sub{font-size:16px;color:var(--ink3);line-height:1.8;margin-bottom:22px;max-width:560px}
+.hero-chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.chip{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;padding:6px 14px;border-radius:100px;background:#fff;border:1.5px solid var(--line);color:var(--ink2);box-shadow:var(--s1);transition:.22s}
+.chip:hover{border-color:var(--blue);color:var(--blue);transform:translateY(-1px)}
+.hero-meta{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.upd{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:700;color:var(--blue);background:var(--blue-xl);padding:6px 14px;border-radius:100px;border:1.5px solid var(--blue-s)}
+.hmi{font-size:13px;color:var(--ink3);font-weight:500}
+
+/* STATS BANNER */
+.dates-sec{background:var(--blue);padding:32px 0}
+.dates-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.date-card{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);border-radius:14px;padding:18px 14px;text-align:center;backdrop-filter:blur(4px)}
+.dc-ico{font-size:24px;margin-bottom:8px}
+.dc-label{font-size:11px;font-weight:700;color:rgba(255,255,255,.75);text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px}
+.dc-val{font-family:var(--fd);font-size:15px;font-weight:800;color:#fff;line-height:1.3}
+
+/* TOOL */
+.tool-sec{background:var(--surf);padding:80px 0}
+.tool-wrap{max-width:860px;margin:0 auto}
+.tool-card{background:#fff;border:1.5px solid var(--line);border-radius:28px;overflow:hidden;box-shadow:var(--s4)}
+.tool-hdr{background:linear-gradient(135deg,#1d4ed8 0%,#2563eb 55%,#3b82f6 100%);padding:32px 40px;position:relative;overflow:hidden}
+.tool-hdr::before{content:'';position:absolute;top:-60px;right:-60px;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,.07)}
+.tool-hdr::after{content:'';position:absolute;bottom:-40px;left:-40px;width:180px;height:180px;border-radius:50%;background:rgba(255,255,255,.04)}
+.th{position:relative;z-index:1}
+.th h2{font-family:var(--fd);font-size:21px;font-weight:800;color:#fff;margin-bottom:6px}
+.th p{font-size:14px;color:rgba(255,255,255,.82);line-height:1.65}
+.th-badges{display:flex;flex-wrap:wrap;gap:9px;margin-top:14px}
+.thb{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:rgba(255,255,255,.9);background:rgba(255,255,255,.13);padding:5px 12px;border-radius:100px}
+.tool-body{padding:36px 40px}
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:18px}
+.fgrid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px;margin-bottom:18px}
+.fld{display:flex;flex-direction:column;gap:8px}
+.flbl{font-size:13px;font-weight:700;color:var(--ink2)}
+.flbl span{font-size:11px;font-weight:500;color:var(--ink4);margin-left:5px;background:var(--surf);padding:2px 7px;border-radius:5px;border:1px solid var(--line)}
+.finp,.fsel{padding:13px 16px;font-size:15px;color:var(--ink);background:#fff;border:1.5px solid var(--line);border-radius:10px;outline:none;transition:.22s;font-family:var(--fb);width:100%}
+.finp:focus,.fsel:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(37,99,235,.10)}
+.finp.err{border-color:var(--red);box-shadow:0 0 0 3px rgba(239,68,68,.10)}
+.fsel{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2364748b' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:42px}
+.err-msg{font-size:12px;color:var(--red);font-weight:600;display:none}
+.err-msg.show{display:block}
+.hint-box{display:flex;align-items:flex-start;gap:9px;font-size:13px;color:var(--ink2);background:var(--blue-xl);border:1.5px solid var(--blue-s);border-radius:10px;padding:11px 14px;margin-bottom:18px;line-height:1.65}
+.hint-box svg{width:16px;height:16px;stroke:var(--blue);fill:none;stroke-width:2;flex-shrink:0;margin-top:2px}
+.btn-row{display:flex;gap:12px}
+.cvt-btn{flex:1;padding:15px;background:linear-gradient(135deg,var(--blue) 0%,#1e40af 100%);color:#fff;font-family:var(--fd);font-weight:800;font-size:15px;border-radius:11px;box-shadow:var(--sb);transition:all .25s var(--ease);display:flex;align-items:center;justify-content:center;gap:9px}
+.cvt-btn:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(37,99,235,.30)}
+.cvt-btn:active{transform:translateY(0)}
+.rst-btn{padding:15px 22px;background:var(--surf);color:var(--ink2);font-family:var(--fd);font-weight:700;font-size:14px;border-radius:11px;border:1.5px solid var(--line);transition:.22s;display:flex;align-items:center;gap:7px}
+.rst-btn:hover{border-color:var(--blue);color:var(--blue);background:var(--blue-xl)}
+
+/* RESULT */
+#resultArea{display:none;margin-top:26px;animation:resultIn .42s var(--ease) both}
+.res-banner{border-radius:18px;padding:24px 26px;margin-bottom:18px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;position:relative;overflow:hidden;background:linear-gradient(135deg,var(--green-xl),#d1fae5);border:2px solid var(--green-s)}
+.res-banner::before{content:'';position:absolute;inset:0;opacity:.04;background-image:repeating-linear-gradient(45deg,currentColor 0,currentColor 1px,transparent 0,transparent 50%);background-size:12px 12px;pointer-events:none}
+.rb-left{display:flex;flex-direction:column;gap:3px}
+.rb-tag{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:3px 10px;border-radius:100px;display:inline-flex;width:fit-content;margin-bottom:4px;background:var(--green);color:#fff}
+.rb-title{font-family:var(--fd);font-size:15px;font-weight:800;color:var(--ink)}
+.rb-sub{font-size:13px;color:var(--ink3);margin-top:2px}
+.rb-time{font-family:var(--fd);font-size:38px;font-weight:800;color:var(--ink);line-height:1;text-align:right}
+.rb-time span{font-size:13px;font-weight:600;color:var(--ink3)}
+.res-stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:18px}
+.rd-item{background:var(--surf);border:1.5px solid var(--line);border-radius:12px;padding:14px;text-align:center}
+.rd-num{font-family:var(--fd);font-size:18px;font-weight:800;color:var(--ink);line-height:1}
+.rd-lbl{font-size:11.5px;font-weight:600;color:var(--ink3);margin-top:3px}
+
+/* PLAN TABS */
+.plan-tabs{display:flex;gap:8px;margin-bottom:18px;flex-wrap:wrap}
+.pt{padding:9px 20px;border-radius:100px;font-family:var(--fd);font-size:13px;font-weight:700;border:1.5px solid var(--line);color:var(--ink3);cursor:pointer;transition:.22s;background:#fff}
+.pt.active{background:var(--blue);color:#fff;border-color:var(--blue);box-shadow:var(--sb)}
+.pt:hover:not(.active){border-color:var(--blue);color:var(--blue)}
+
+/* PLAN CONTENT */
+.plan-section{display:none}
+.plan-section.active{display:block}
+.plan-day{background:var(--surf);border:1.5px solid var(--line);border-radius:12px;padding:14px 16px;margin-bottom:10px;display:flex;align-items:flex-start;gap:14px;transition:.2s}
+.plan-day:hover{box-shadow:var(--s2);border-color:var(--blue-s)}
+.pd-num{width:36px;height:36px;border-radius:9px;background:var(--blue);color:#fff;font-family:var(--fd);font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.pd-num.rest{background:var(--green)}
+.pd-num.hard{background:var(--orange)}
+.pd-body{flex:1}
+.pd-title{font-family:var(--fd);font-size:13.5px;font-weight:700;color:var(--ink);margin-bottom:4px}
+.pd-desc{font-size:13px;color:var(--ink3);line-height:1.6}
+.pd-badge{display:inline-flex;align-items:center;font-size:11px;font-weight:700;padding:2px 9px;border-radius:100px;margin-top:5px}
+.pd-badge.easy{background:var(--green-xl);color:var(--green);border:1px solid var(--green-s)}
+.pd-badge.medium{background:var(--amber-xl);color:#92400e;border:1px solid var(--amber-s)}
+.pd-badge.hard{background:var(--red-xl);color:var(--red);border:1px solid var(--red-s)}
+.pd-badge.rest{background:var(--blue-xl);color:var(--blue);border:1px solid var(--blue-s)}
+
+/* PROGRESS BAR */
+.prog-bar-wrap{background:var(--surf);border:1.5px solid var(--line);border-radius:13px;padding:18px 20px;margin-bottom:16px}
+.pb-title{font-family:var(--fd);font-size:13.5px;font-weight:700;color:var(--ink);margin-bottom:14px;display:flex;align-items:center;gap:7px}
+.pb-item{margin-bottom:12px}
+.pb-top{display:flex;justify-content:space-between;font-size:12.5px;font-weight:700;color:var(--ink2);margin-bottom:6px}
+.pb-track{height:18px;background:var(--line);border-radius:9px;overflow:hidden}
+.pb-fill{height:100%;border-radius:9px;display:flex;align-items:center;padding-left:10px;font-size:10px;font-weight:700;color:#fff;transition:width 1.2s var(--ease)}
+
+/* FORMULA BOX */
+.formula-box{background:var(--surf);border:1.5px solid var(--line);border-radius:13px;padding:16px 20px;margin-bottom:16px}
+.fb-title{font-family:var(--fd);font-size:13px;font-weight:700;color:var(--ink);margin-bottom:10px;display:flex;align-items:center;gap:7px}
+.fb-formula{font-family:'Courier New',monospace;font-size:14px;color:var(--blue);background:var(--blue-xl);padding:10px 14px;border-radius:8px;border:1px solid var(--blue-s);display:block;margin-bottom:8px}
+.fb-result{font-size:13.5px;color:var(--ink3)}
+
+/* TIPS LIST */
+.chk-list{display:flex;flex-direction:column;gap:8px;margin-bottom:16px}
+.chk-item{display:flex;align-items:center;gap:10px;padding:11px 14px;border-radius:10px;border:1.5px solid var(--line);background:var(--surf);font-size:13.5px;color:var(--ink2);font-weight:500}
+.chk-item.pass{border-color:var(--green-s);background:var(--green-xl)}
+.chk-dot{width:20px;height:20px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;background:var(--blue);color:#fff}
+
+.copy-btn{display:inline-flex;align-items:center;gap:7px;font-family:var(--fd);font-size:13px;font-weight:700;padding:9px 18px;border-radius:9px;background:var(--surf);color:var(--ink2);border:1.5px solid var(--line);transition:.22s;margin-top:8px}
+.copy-btn:hover{background:var(--green);color:#fff}
+.copy-btn.copied{background:var(--green);color:#fff}
+.mini-info{background:var(--blue-xl);border:1.5px solid var(--blue-s);border-radius:12px;padding:16px 18px;margin-top:22px}
+.mi-title{font-family:var(--fd);font-size:13.5px;font-weight:700;color:var(--ink);margin-bottom:7px;display:flex;align-items:center;gap:7px}
+.mi-text{font-size:13px;color:var(--ink3);line-height:1.7}
+
+/* HOWTO */
+.howto-sec{background:var(--surf);padding:72px 0}
+.howto-box{background:var(--amber-xl);border:2px solid var(--amber-s);border-radius:20px;padding:32px 36px;max-width:680px;margin:0 auto}
+.howto-title{display:flex;align-items:center;gap:10px;font-family:var(--fd);font-size:19px;font-weight:800;color:var(--ink);margin-bottom:18px}
+.howto-steps{display:flex;flex-direction:column;gap:11px}
+.hw-step{display:flex;align-items:flex-start;gap:12px;font-size:14px;color:var(--ink2);line-height:1.65}
+.sn{width:26px;height:26px;background:var(--amber);color:#fff;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex-shrink:0;margin-top:1px}
+
+/* PLANS PREVIEW */
+.plans-sec{background:var(--white);padding:72px 0}
+.plans-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.plan-card{border-radius:20px;padding:28px 22px;border:1.5px solid var(--line);transition:.28s;position:relative;overflow:hidden}
+.plan-card:hover{transform:translateY(-6px);box-shadow:var(--s4)}
+.plan-card.p7{background:linear-gradient(135deg,#eff6ff,#dbeafe);border-color:var(--blue-s)}
+.plan-card.p15{background:linear-gradient(135deg,#f0fdf4,#bbf7d0);border-color:var(--green-s)}
+.plan-card.p30{background:linear-gradient(135deg,#fffbeb,#fde68a);border-color:var(--amber-s)}
+.pc-badge{font-family:var(--fd);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:3px 10px;border-radius:100px;margin-bottom:14px;display:inline-flex}
+.p7 .pc-badge{background:var(--blue);color:#fff}
+.p15 .pc-badge{background:var(--green);color:#fff}
+.p30 .pc-badge{background:var(--amber);color:#fff}
+.pc-title{font-family:var(--fd);font-size:22px;font-weight:800;color:var(--ink);margin-bottom:8px}
+.pc-sub{font-size:13.5px;color:var(--ink3);line-height:1.65;margin-bottom:16px}
+.pc-list{display:flex;flex-direction:column;gap:7px}
+.pc-item{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--ink2)}
+.pc-item::before{content:'✓';width:17px;height:17px;border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:800;flex-shrink:0;color:#fff}
+.p7 .pc-item::before{background:var(--blue)}
+.p15 .pc-item::before{background:var(--green)}
+.p30 .pc-item::before{background:var(--amber)}
+
+/* STORY */
+.story-sec{background:var(--white);padding:72px 0}
+.story-card{max-width:760px;margin:0 auto;background:linear-gradient(135deg,var(--blue-xl),#f0fdf4);border:1.5px solid var(--blue-s);border-radius:24px;padding:36px;box-shadow:var(--s3)}
+.story-ico{font-size:44px;margin-bottom:16px;display:block}
+.story-card h3{font-family:var(--fd);font-size:20px;font-weight:800;color:var(--ink);margin-bottom:14px}
+.story-card p{font-size:15px;color:var(--ink2);line-height:1.85}
+.story-card p+p{margin-top:11px}
+.story-highlight{display:inline-flex;align-items:center;gap:7px;background:var(--blue);color:#fff;font-family:var(--fd);font-size:13px;font-weight:700;padding:6px 14px;border-radius:100px;margin-top:14px}
+
+/* TABLE */
+.tbl-sec{background:var(--surf);padding:72px 0}
+.tbl-wr{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+thead th{background:linear-gradient(135deg,var(--blue) 0%,#1e40af 100%);color:#fff;padding:14px 16px;text-align:left;font-family:var(--fd);font-size:13px;font-weight:700;letter-spacing:.03em}
+thead th:first-child{border-radius:8px 0 0 0}
+thead th:last-child{border-radius:0 8px 0 0}
+tbody tr{border-bottom:1px solid var(--line);transition:.2s}
+tbody tr:hover{background:var(--blue-xl)}
+tbody td{padding:12px 16px;color:var(--ink2);vertical-align:middle}
+.tbadge{display:inline-flex;font-size:11px;font-weight:700;padding:3px 8px;border-radius:100px}
+.tbadge.g{background:var(--green-xl);color:var(--green);border:1px solid var(--green-s)}
+.tbadge.b{background:var(--blue-xl);color:var(--blue);border:1px solid var(--blue-s)}
+.tbadge.a{background:var(--amber-xl);color:#92400e;border:1px solid var(--amber-s)}
+.tbadge.r{background:var(--red-xl);color:var(--red);border:1px solid var(--red-s)}
+
+/* GRAPH */
+.graph-sec{background:var(--surf);padding:72px 0}
+.graph-wrap{max-width:800px;margin:0 auto}
+.graph-card{background:#fff;border:1.5px solid var(--line);border-radius:20px;padding:28px 30px;box-shadow:var(--s2);margin-bottom:24px}
+.gc-title{font-family:var(--fd);font-size:15px;font-weight:800;color:var(--ink);margin-bottom:20px;display:flex;align-items:center;gap:8px}
+.bar-chart{display:flex;flex-direction:column;gap:12px}
+.bc-row{display:flex;align-items:center;gap:12px}
+.bc-label{font-size:12.5px;font-weight:700;color:var(--ink2);width:130px;flex-shrink:0}
+.bc-track{flex:1;height:32px;background:var(--surf);border-radius:8px;overflow:hidden}
+.bc-fill{height:100%;border-radius:8px;display:flex;align-items:center;padding:0 12px;font-size:12px;font-weight:700;color:#fff;width:0;transition:width 1.2s var(--ease)}
+.bc-range{font-size:12.5px;font-weight:800;color:var(--ink3);width:80px;text-align:right;flex-shrink:0}
+.graph-legend{display:flex;gap:16px;flex-wrap:wrap;margin-top:14px;justify-content:center}
+.gl-item{display:flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;color:var(--ink3)}
+.gl-dot{width:12px;height:12px;border-radius:3px}
+
+/* ARTICLE */
+.art-sec{background:var(--white);padding:72px 0}
+.art-body h2{font-family:var(--fd);font-size:20px;font-weight:800;color:var(--ink);margin:26px 0 10px;line-height:1.3}
+.art-body h2:first-child{margin-top:0}
+.art-body p{font-size:15px;color:var(--ink3);line-height:1.85;margin-bottom:13px}
+.art-body ul{display:flex;flex-direction:column;gap:8px;margin:10px 0 14px}
+.art-body li{display:flex;align-items:flex-start;gap:10px;font-size:14.5px;color:var(--ink3);line-height:1.7}
+.art-body li::before{content:'✓';width:18px;height:18px;background:var(--blue);color:#fff;border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;flex-shrink:0;margin-top:3px}
+.art-body strong{color:var(--ink2);font-weight:700}
+.ibox{background:var(--blue-xl);border:1.5px solid var(--blue-s);border-radius:13px;padding:14px 18px;margin:14px 0;display:flex;gap:10px;font-size:14px;color:var(--ink2);line-height:1.7}
+.ibox svg{width:16px;height:16px;stroke:var(--blue);fill:none;stroke-width:2;flex-shrink:0;margin-top:2px}
+.ibox.g{background:var(--green-xl);border-color:var(--green-s)}
+.ibox.g svg{stroke:var(--green)}
+.ibox.a{background:var(--amber-xl);border-color:var(--amber-s)}
+.ibox.a svg{stroke:var(--amber)}
+
+/* SEC HEADERS */
+.sec-hd{text-align:center;margin-bottom:44px}
+.sec-h{font-family:var(--fd);font-size:clamp(22px,3.8vw,38px);font-weight:800;color:var(--ink);line-height:1.18;margin-bottom:10px}
+.sec-h span{color:var(--blue)}
+.sec-sub{font-size:15.5px;color:var(--ink3);line-height:1.75;max-width:500px;margin:0 auto}
+
+/* FAQ */
+.faq-sec{background:var(--surf);padding:72px 0}
+.fql{max-width:760px;margin:0 auto}
+.fq{background:#fff;border:1.5px solid var(--line);border-radius:13px;margin-bottom:10px;overflow:hidden}
+.fq-q{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;cursor:pointer;gap:14px;transition:.2s}
+.fq-q:hover{background:var(--blue-xl)}
+.fq-t{font-weight:600;font-size:15px;color:var(--ink);line-height:1.4}
+.fq-i{width:28px;height:28px;border-radius:50%;background:var(--blue-xl);color:var(--blue);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;transition:transform .28s,background .2s}
+.fq.open .fq-i{transform:rotate(45deg);background:var(--blue);color:#fff}
+.fq-a{max-height:0;overflow:hidden;transition:max-height .35s var(--ease)}
+.fq-ai{padding:0 22px 18px;font-size:14.5px;color:var(--ink3);line-height:1.78}
+.fq.open .fq-a{max-height:600px}
+
+/* RELATED TOOLS */
+.rel-sec{background:var(--white);padding:72px 0}
+.rel-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.rel-card{background:#fff;border:1.5px solid var(--line);border-radius:16px;padding:20px 18px;display:flex;flex-direction:column;gap:9px;transition:.28s}
+.rel-card:hover{transform:translateY(-5px);box-shadow:var(--s3);border-color:var(--blue-s)}
+.rel-ico{font-size:26px}
+.rel-title{font-family:var(--fd);font-size:14px;font-weight:700;color:var(--ink)}
+.rel-desc{font-size:13px;color:var(--ink3);line-height:1.6;flex:1}
+.rel-btn{display:inline-flex;align-items:center;gap:6px;font-family:var(--fd);font-weight:700;font-size:13px;color:var(--blue);transition:.2s}
+.rel-btn:hover{gap:10px}
+.rel-btn svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2.5}
+
+/* SEO KEYWORDS */
+.seo-sec{background:var(--surf);padding:48px 0}
+.kw-cloud{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;max-width:860px;margin:0 auto}
+.kw-tag{display:inline-flex;font-size:12px;font-weight:600;color:var(--ink3);background:#fff;border:1.5px solid var(--line);padding:5px 12px;border-radius:100px;transition:.2s}
+.kw-tag:hover{border-color:var(--blue);color:var(--blue)}
+
+/* CONTACT + DISC + CTA + FOOTER */
+.disc{background:var(--amber-xl);border-top:1px solid var(--amber-s);border-bottom:1px solid var(--amber-s);padding:14px 0}
+.disc-in{display:flex;align-items:flex-start;gap:12px;font-size:13.5px;color:var(--ink2);line-height:1.7}
+.contact-sec{background:var(--surf);padding:60px 0}
+.contact-card{max-width:560px;margin:0 auto;background:#fff;border:1.5px solid var(--line);border-radius:20px;padding:32px;text-align:center;box-shadow:var(--s2)}
+.contact-card h3{font-family:var(--fd);font-size:20px;font-weight:800;color:var(--ink);margin-bottom:10px}
+.contact-card p{font-size:15px;color:var(--ink3);line-height:1.75;margin-bottom:20px}
+.btn-bl{display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:#fff;font-family:var(--fd);font-weight:700;font-size:14.5px;padding:12px 26px;border-radius:8px;box-shadow:var(--sb);transition:.22s}
+.btn-bl:hover{background:var(--blue-d);transform:translateY(-1px)}
+.priv-note{font-size:12px;color:var(--ink4);margin-top:14px}
+.cta{background:linear-gradient(140deg,#0f172a 0%,#1e3a8a 100%);padding:80px 0;text-align:center;position:relative;overflow:hidden}
+.cta::before{content:'';position:absolute;top:-80px;left:50%;transform:translateX(-50%);width:800px;height:380px;background:radial-gradient(ellipse,rgba(37,99,235,.22) 0%,transparent 68%);pointer-events:none}
+.cta-in{position:relative;z-index:1}
+.cta .pill{color:#93c5fd;background:rgba(255,255,255,.1);margin-bottom:18px}
+.cta .pill::before{background:#93c5fd}
+.cta h2{font-family:var(--fd);font-size:clamp(24px,4vw,42px);font-weight:800;color:#fff;line-height:1.15;margin-bottom:12px}
+.cta h2 em{color:#fbbf24;font-style:normal}
+.cta p{font-size:16px;color:rgba(255,255,255,.72);max-width:480px;margin:0 auto 32px;line-height:1.78}
+.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn-gold{display:inline-flex;align-items:center;gap:8px;background:var(--amber);color:#fff;font-family:var(--fd);font-weight:800;font-size:15px;padding:14px 30px;border-radius:8px;box-shadow:0 8px 28px rgba(245,158,11,.35);transition:.22s}
+.btn-gold:hover{background:#d97706;transform:translateY(-3px)}
+.btn-ghost{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.09);border:1.5px solid rgba(255,255,255,.22);color:#fff;font-family:var(--fd);font-weight:600;font-size:14px;padding:13px 26px;border-radius:8px;transition:.2s}
+.btn-ghost:hover{background:rgba(255,255,255,.16)}
+footer{background:#0f172a;padding:52px 0 0}
+.ft-inner{max-width:1180px;margin:0 auto;padding:0 24px}
+.ft-top{display:grid;grid-template-columns:1.9fr 1fr 1fr 1fr;gap:44px;margin-bottom:44px}
+.ft-brand .ln{color:#fff}.ft-brand .ls{color:#475569}
+.ft-desc{font-size:13.5px;color:#64748b;line-height:1.78;max-width:265px;margin:13px 0 20px}
+.ft-soc{display:flex;gap:9px}
+.fts{width:34px;height:34px;border-radius:7px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;color:#94a3b8;font-size:13px;transition:.2s}
+.fts:hover{background:var(--blue);color:#fff}
+.fc h4{font-family:var(--fd);font-size:12px;font-weight:700;color:#fff;margin-bottom:14px;letter-spacing:.06em;text-transform:uppercase}
+.fc ul{display:flex;flex-direction:column;gap:8px}
+.fc ul a{font-size:13.5px;color:#64748b;transition:.18s}
+.fc ul a:hover{color:#93c5fd}
+.ft-btm{border-top:1px solid rgba(255,255,255,.07);padding:20px 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.ft-cp{font-size:12.5px;color:#475569}
+.ft-cp b{color:#64748b}
+.ft-lnk{display:flex;gap:18px}
+.ft-lnk a{font-size:12.5px;color:#475569;transition:.18s}
+.ft-lnk a:hover{color:#93c5fd}
+.btt{position:fixed;bottom:26px;right:26px;z-index:500;width:43px;height:43px;background:var(--blue);color:#fff;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:17px;box-shadow:var(--sb);opacity:0;pointer-events:none;transform:translateY(14px);transition:.28s var(--ease)}
+.btt.on{opacity:1;pointer-events:auto;transform:translateY(0)}
+.btt:hover{transform:translateY(-3px)}
+
+@media(max-width:1060px){.ft-top{grid-template-columns:1fr 1fr}.rel-grid{grid-template-columns:1fr 1fr}.dates-grid{grid-template-columns:repeat(2,1fr)}.plans-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:860px){nav.dn,.hcta{display:none}.brg{display:flex}.fgrid{grid-template-columns:1fr}.fgrid3{grid-template-columns:1fr}.tool-body{padding:24px 22px}.tool-hdr{padding:24px 22px}.res-stat-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.ft-top{grid-template-columns:1fr}.rel-grid{grid-template-columns:1fr}.ft-btm{flex-direction:column;text-align:center}.cta-btns{flex-direction:column;align-items:center}.howto-box{padding:24px 18px}.dates-grid{grid-template-columns:1fr 1fr}.plans-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","name":"Army Running Improvement Planner 1600m","description":"Generate your personalized 7/15/30-day Army 1600m running improvement plan. Enter current time, target, and fitness level. Free tool.","url":"https://rajdailytools.in/army-running-improvement-planner-1600m.html","publisher":{"@type":"Organization","name":"RajDailyTools","url":"https://rajdailytools.in"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Army 1600m running kitne minute mein hoti hai?","acceptedAnswer":{"@type":"Answer","text":"Army GD mein 1600m running ke liye maximum allowed time 5 minutes 45 seconds hai (Group I). 5:30 mein aane par highest marks milte hain. Har group ka alag time hota hai. Apni category check karein."}},{"@type":"Question","name":"1600m running kaise improve kare quickly?","acceptedAnswer":{"@type":"Answer","text":"1600m time improve karne ke liye daily interval training, tempo runs, aur progressive distance increase karna hota hai. Is tool mein apna current time aur target time enter karein — aapko personalized 7/15/30-day plan milega."}}]}
+</script>
+
+<!-- HEADER -->
+<header class="hdr">
+  <div class="w"><div class="hdi">
+    <a href="https://rajdailytools.in/" class="logo">
+      <div class="lb"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+      <div><div class="ln">Raj<span>Daily</span>Tools</div><div class="ls">Smart Tools for Daily Life</div></div>
+    </a>
+    <nav class="dn">
+      <a href="https://rajdailytools.in/">Home</a>
+      <a href="https://rajdailytools.in/categories.html">Categories</a>
+      <a href="https://rajdailytools.in/#popular">Popular</a>
+      <a href="https://rajdailytools.in/#latest">Latest</a>
+      <a href="https://rajdailytools.in/about.html">About</a>
+      <a href="https://rajdailytools.in/contact.html">Contact</a>
+    </nav>
+    <a href="https://rajdailytools.in/categories.html" class="hcta">Explore Tools →</a>
+    <button class="brg" id="brg"><span></span><span></span><span></span></button>
+  </div></div>
+</header>
+<div class="dov" id="dov"></div>
+<div class="drw" id="drw">
+  <div class="dh">
+    <div class="logo">
+      <div class="lb" style="width:30px;height:30px;border-radius:7px"><svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#fff"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+      <div class="ln" style="font-size:16px">Raj<span>Daily</span>Tools</div>
+    </div>
+    <button class="dx" id="dx">✕</button>
+  </div>
+  <nav class="mn">
+    <a href="https://rajdailytools.in/" onclick="cD()">🏠 Home</a>
+    <a href="https://rajdailytools.in/categories.html" onclick="cD()">🗂️ Categories</a>
+    <a href="https://rajdailytools.in/#popular" onclick="cD()">⭐ Popular</a>
+    <a href="https://rajdailytools.in/about.html" onclick="cD()">👤 About</a>
+    <a href="https://rajdailytools.in/contact.html" onclick="cD()">📬 Contact</a>
+  </nav>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+  <div class="w">
+    <div class="bc">
+      <a href="https://rajdailytools.in/">Home</a><span style="color:var(--ink4)">›</span>
+      <a href="https://rajdailytools.in/categories.html">Tools</a><span style="color:var(--ink4)">›</span>
+      <span>Army Running Improvement Planner 1600m</span>
+    </div>
+    <div class="hero-inner">
+      <div class="pill">🏃 Army Running Tool — 1600m Improvement Planner</div>
+      <h1>1600m Army Running <span>Improvement Planner</span></h1>
+      <p class="hero-sub">Improve your running time with a <strong>personalized daily plan</strong>, calculator &amp; progress tracking. Get 7-day, 15-day, and 30-day running schedules for Army GD, NDA, and all bharti aspirants.</p>
+      <div class="hero-chips">
+        <span class="chip">🗓️ 7 / 15 / 30 Day Plans</span>
+        <span class="chip">⏱️ Time Reduction Strategy</span>
+        <span class="chip">📊 Progress Tracking</span>
+        <span class="chip">🏃 Beginner Friendly</span>
+        <span class="chip">✅ 100% Free</span>
+        <span class="chip">📱 Mobile Ready</span>
+      </div>
+      <div class="hero-meta">
+        <div class="upd">✅ Updated 2026</div>
+        <span class="hmi">⚡ Instant Plan</span>
+        <span class="hmi">🔒 No Data Stored</span>
+        <span class="hmi">📱 Mobile Friendly</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BANNER -->
+<section class="dates-sec">
+  <div class="w">
+    <div class="dates-grid">
+      <div class="date-card"><div class="dc-ico">⏱️</div><div class="dc-label">Army GD Target</div><div class="dc-val">Under 5:30</div></div>
+      <div class="date-card"><div class="dc-ico">📅</div><div class="dc-label">Minimum Plan</div><div class="dc-val">7 Days</div></div>
+      <div class="date-card"><div class="dc-ico">🏃</div><div class="dc-label">Recommended</div><div class="dc-val">30 Day Plan</div></div>
+      <div class="date-card"><div class="dc-ico">🎯</div><div class="dc-label">Distance</div><div class="dc-val">1600 Metres</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW TO USE (YELLOW BOX) -->
+<section class="howto-sec" id="howtouse">
+  <div class="w">
+    <div class="sec-hd rev">
+      <div class="pill" style="margin-bottom:14px">💡 How to Use</div>
+      <h2 class="sec-h">Get Your Plan in <span>4 Simple Steps</span></h2>
+    </div>
+    <div class="howto-box rev">
+      <div class="howto-title">📋 Running Planner — Usage Guide</div>
+      <div class="howto-steps">
+        <div class="hw-step"><span class="sn">1</span><div><strong>Enter your current 1600m running time</strong> — Type your current best time in minutes and seconds. Be honest — the plan is built around your real starting point.</div></div>
+        <div class="hw-step"><span class="sn">2</span><div><strong>Enter your target time</strong> — Set a realistic goal. Army GD Group I target is 5:30. Adjust based on your category and exam requirements.</div></div>
+        <div class="hw-step"><span class="sn">3</span><div><strong>Select your fitness level</strong> — Choose Beginner (just starting), Intermediate (some running background), or Advanced (regular runner). This personalizes your daily schedule intensity.</div></div>
+        <div class="hw-step"><span class="sn">4</span><div><strong>Click "Generate My Running Plan"</strong> — Get your instant personalized 7/15/30-day schedule with daily workouts, rest days, and time reduction targets.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOOL SECTION -->
+<section class="tool-sec" id="calculator">
+  <div class="w"><div class="tool-wrap">
+    <div class="tool-card rev">
+      <div class="tool-hdr">
+        <div class="th">
+          <h2>🏃 Army 1600m Running Improvement Planner &amp; Calculator</h2>
+          <p>Enter your current 1600m time, target time, and fitness level to get a personalized daily running plan. Supports 7-day quick prep, 15-day focused training, and 30-day complete transformation plans.</p>
+          <div class="th-badges">
+            <span class="thb">⏱️ Time Calculator</span>
+            <span class="thb">🗓️ Daily Schedule</span>
+            <span class="thb">📊 Progress Plan</span>
+            <span class="thb">🔒 100% Private</span>
+            <span class="thb">✅ Instant Result</span>
+          </div>
+        </div>
+      </div>
+      <div class="tool-body">
+        <div class="fgrid3">
+          <div class="fld">
+            <label class="flbl" for="curMin">Current Time — Minutes <span>Required</span></label>
+            <input class="finp" type="number" id="curMin" placeholder="e.g. 7" min="3" max="15">
+            <span class="err-msg" id="curErr">Please enter your current time.</span>
+          </div>
+          <div class="fld">
+            <label class="flbl" for="curSec">Current Time — Seconds <span>0–59</span></label>
+            <input class="finp" type="number" id="curSec" placeholder="e.g. 30" min="0" max="59" value="0">
+          </div>
+          <div class="fld">
+            <label class="flbl" for="tgtMin">Target Time — Minutes <span>Required</span></label>
+            <input class="finp" type="number" id="tgtMin" placeholder="e.g. 5" min="3" max="15">
+            <span class="err-msg" id="tgtErr">Please enter your target time.</span>
+          </div>
+        </div>
+        <div class="fgrid">
+          <div class="fld">
+            <label class="flbl" for="tgtSec">Target Time — Seconds <span>0–59</span></label>
+            <input class="finp" type="number" id="tgtSec" placeholder="e.g. 30" min="0" max="59" value="0">
+          </div>
+          <div class="fld">
+            <label class="flbl" for="level">Fitness Level <span>Select yours</span></label>
+            <select class="fsel" id="level">
+              <option value="beginner">Beginner — Just Starting Out</option>
+              <option value="intermediate" selected>Intermediate — Some Running Background</option>
+              <option value="advanced">Advanced — Regular Runner</option>
+            </select>
+          </div>
+        </div>
+        <div class="hint-box">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          <div>Army GD timing: <strong>Group I ≤ 5:30</strong> (Full marks) | Group II: 5:31–5:45 | Group III: 5:46–6:00. Enter realistic times for the best plan. This planner generates schedules based on proven interval &amp; progressive overload methods.</div>
+        </div>
+        <div class="btn-row">
+          <button class="cvt-btn" onclick="generatePlan()">🚀 Generate My Running Plan</button>
+          <button class="rst-btn" onclick="resetTool()">↺ Reset</button>
+        </div>
+
+        <!-- RESULT -->
+        <div id="resultArea">
+          <div class="res-banner" id="resBanner">
+            <div class="rb-left">
+              <span class="rb-tag">✅ Plan Generated</span>
+              <div class="rb-title" id="rbTitle">Your personalized running plan is ready!</div>
+              <div class="rb-sub" id="rbSub">—</div>
+            </div>
+            <div style="text-align:right">
+              <div class="rb-time" id="rbReduction">—<span>sec to cut</span></div>
+              <div style="font-size:12px;color:var(--ink4);margin-top:4px">Total Improvement Needed</div>
+            </div>
+          </div>
+
+          <div class="res-stat-grid">
+            <div class="rd-item"><div class="rd-num" id="stCurrent">—</div><div class="rd-lbl">Current Time</div></div>
+            <div class="rd-item"><div class="rd-num" id="stTarget">—</div><div class="rd-lbl">Target Time</div></div>
+            <div class="rd-item"><div class="rd-num" id="stReduce">—</div><div class="rd-lbl">Sec to Reduce</div></div>
+            <div class="rd-item"><div class="rd-num" id="stPace">—</div><div class="rd-lbl">Target Pace/400m</div></div>
+          </div>
+
+          <!-- Progress bar overview -->
+          <div class="prog-bar-wrap">
+            <div class="pb-title">📊 Weekly Improvement Target</div>
+            <div id="progBars"></div>
+          </div>
+
+          <!-- Plan Tabs -->
+          <div style="font-family:var(--fd);font-size:13px;font-weight:700;color:var(--ink);margin-bottom:12px;display:flex;align-items:center;gap:7px">📅 Your Daily Running Schedule</div>
+          <div class="plan-tabs">
+            <button class="pt active" onclick="switchTab('p7',this)">7 Day Plan</button>
+            <button class="pt" onclick="switchTab('p15',this)">15 Day Plan</button>
+            <button class="pt" onclick="switchTab('p30',this)">30 Day Plan</button>
+          </div>
+          <div id="planContent"></div>
+
+          <!-- Formula -->
+          <div class="formula-box">
+            <div class="fb-title">🧮 Improvement Calculation</div>
+            <code class="fb-formula" id="fbFormula">Improvement = Current Time − Target Time</code>
+            <div class="fb-result" id="fbResult">Enter your times and click generate</div>
+          </div>
+
+          <!-- Key tips -->
+          <div style="font-family:var(--fd);font-size:13px;font-weight:700;color:var(--ink);margin-bottom:10px;display:flex;align-items:center;gap:7px">💡 Key Tips for Your Plan</div>
+          <div class="chk-list" id="tipsList"></div>
+
+          <button class="copy-btn" id="copyBtn" onclick="copyPlan()">📋 Copy My Plan</button>
+
+          <div class="mini-info">
+            <div class="mi-title">ℹ️ Remember</div>
+            <div class="mi-text">Consistency beats intensity. Follow your plan daily, sleep 7–8 hours, hydrate well, and eat a protein-rich diet. Do not skip rest days — they are essential for muscle recovery. Always warm up 5 min before running and cool down after.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div></div>
+</section>
+
+<!-- PLANS PREVIEW SECTION -->
+<section class="plans-sec">
+  <div class="w">
+    <div class="sec-hd rev">
+      <div class="pill" style="margin-bottom:14px">🗓️ Plan Options</div>
+      <h2 class="sec-h">Choose Your <span>Training Duration</span></h2>
+      <p class="sec-sub">Pick the plan that fits your timeline and exam date</p>
+    </div>
+    <div class="plans-grid">
+      <div class="plan-card p7 rev">
+        <div class="pc-badge">7 Day Plan</div>
+        <div class="pc-title">Quick Boost</div>
+        <div class="pc-sub">Exam is close? This plan gives maximum improvement in minimum time with focused, high-intensity sessions.</div>
+        <div class="pc-list">
+          <div class="pc-item">5 run days + 2 rest days</div>
+          <div class="pc-item">Interval training focus</div>
+          <div class="pc-item">4–8 seconds improvement</div>
+          <div class="pc-item">Ideal: exam within 1–2 weeks</div>
+          <div class="pc-item">Morning + evening sessions</div>
+        </div>
+      </div>
+      <div class="plan-card p15 rev">
+        <div class="pc-badge">15 Day Plan</div>
+        <div class="pc-title">Focused Prep</div>
+        <div class="pc-sub">The sweet spot. Build stamina and speed together with progressive overload for solid, consistent improvement.</div>
+        <div class="pc-list">
+          <div class="pc-item">11 run days + 4 rest days</div>
+          <div class="pc-item">Speed + stamina combination</div>
+          <div class="pc-item">15–25 seconds improvement</div>
+          <div class="pc-item">Ideal: exam in 2–4 weeks</div>
+          <div class="pc-item">Tempo runs + long runs</div>
+        </div>
+      </div>
+      <div class="plan-card p30 rev">
+        <div class="pc-badge">30 Day Plan</div>
+        <div class="pc-title">Full Transformation</div>
+        <div class="pc-sub">The complete plan. Build a strong aerobic base, improve form, develop speed endurance for maximum gains.</div>
+        <div class="pc-list">
+          <div class="pc-item">22 run days + 8 rest days</div>
+          <div class="pc-item">3-phase progressive plan</div>
+          <div class="pc-item">30–60 seconds improvement</div>
+          <div class="pc-item">Ideal: exam in 5–8 weeks</div>
+          <div class="pc-item">Base → Speed → Peak phases</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ARMY TIMING TABLE -->
+<section class="tbl-sec">
+  <div class="w">
+    <div class="sec-hd rev">
+      <div class="pill" style="margin-bottom:14px">⏱️ Army Standard</div>
+      <h2 class="sec-h">Army 1600m Running <span>Time Standards</span></h2>
+      <p class="sec-sub">Official timing benchmarks for Army recruitment (1600m)</p>
+    </div>
+    <div class="tbl-wr rev">
+      <table>
+        <thead><tr><th>Group</th><th>Time (1600m)</th><th>Marks / Points</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Group I (Highest)</strong></td><td>Up to 5 min 30 sec</td><td>60 Marks</td><td><span class="tbadge g">Excellent</span></td></tr>
+          <tr><td><strong>Group II</strong></td><td>5 min 31 sec – 5 min 45 sec</td><td>48 Marks</td><td><span class="tbadge b">Good</span></td></tr>
+          <tr><td><strong>Group III</strong></td><td>5 min 46 sec – 6 min 00 sec</td><td>36 Marks</td><td><span class="tbadge a">Average</span></td></tr>
+          <tr><td><strong>Group IV</strong></td><td>6 min 01 sec – 6 min 15 sec</td><td>24 Marks</td><td><span class="tbadge a">Below Avg</span></td></tr>
+          <tr><td><strong>Group V (Lowest)</strong></td><td>6 min 16 sec – 6 min 30 sec</td><td>16 Marks</td><td><span class="tbadge r">Minimum Pass</span></td></tr>
+          <tr><td><strong>Fail</strong></td><td>More than 6 min 30 sec</td><td>0 Marks</td><td><span class="tbadge r">Eliminated</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div style="margin-top:16px;font-size:13px;color:var(--ink4);text-align:center;">*Times may vary by Army unit/regiment. Always verify from official Army recruitment notification.</div>
+  </div>
+</section>
+
+<!-- GRAPHS SECTION -->
+<section class="graph-sec">
+  <div class="w">
+    <div class="sec-hd rev">
+      <div class="pill" style="margin-bottom:14px">📈 Visual Analysis</div>
+      <h2 class="sec-h">Progress &amp; Speed <span>Visual Charts</span></h2>
+    </div>
+    <div class="graph-wrap">
+      <!-- Graph 1: Progress Graph -->
+      <div class="graph-card rev">
+        <div class="gc-title">📊 Graph 1: Expected Progress — 30 Day Running Improvement</div>
+        <div class="bar-chart">
+          <div class="bc-row"><span class="bc-label">Day 1 (Baseline)</span><div class="bc-track"><div class="bc-fill" style="background:linear-gradient(90deg,#ef4444,#dc2626)" id="pg1">Starting Point</div></div><span class="bc-range">0%</span></div>
+          <div class="bc-row"><span class="bc-label">Day 7 (Week 1)</span><div class="bc-track"><div class="bc-fill" style="background:linear-gradient(90deg,#f97316,#ea580c)" id="pg2">~8 sec off</div></div><span class="bc-range">~13%</span></div>
+          <div class="bc-row"><span class="bc-label">Day 15 (Mid)</span><div class="bc-track"><div class="bc-fill" style="background:linear-gradient(90deg,#f59e0b,#d97706)" id="pg3">~20 sec off</div></div><span class="bc-range">~33%</span></div>
+          <div class="bc-row"><span class="bc-label">Day 22 (Week 3)</span><div class="bc-track"><div class="bc-fill" style="background:linear-gradient(90deg,#14b8a6,#0d9488)" id="pg4">~38 sec off</div></div><span class="bc-range">~63%</span></div>
+          <div class="bc-row"><span class="bc-label">Day 30 (Final)</span><div class="bc-track"><div class="bc-fill" style="background:linear-gradient(90deg,#10b981,#059669)" id="pg5">Target Hit</div></div><span class="bc-range">~100%</span></div>
+        </div>
+        <div class="graph-legend">
+          <div class="gl-item"><div class="gl-dot" style="background:#ef4444"></div>Start</div>
+          <div class="gl-item"><div class="gl-dot" style="background:#f59e0b"></div>Mid Progress</div>
+          <div class="gl-item"><div class="gl-dot" style="background:#10b981"></div>Goal Achieved</div>
+        </div>
+      </div>
+
+      <!-- Graph 2: Speed vs Time Chart -->
+      <div class="graph-card rev">
+        <div class="gc-title">📊 Graph 2: Speed vs Time — Army 1600m Benchmarks</div>
+        <div class="bar-chart">
+          <div class="bc-row"><span class="bc-label">Group I ≤ 5:30</span><div class="bc-track"><div class="bc-fill" style="background:linear-gradient(90deg,#10b981,#059669)" id="sg1">~17.4 km/h</div></div><span class="bc-range">60 pts</span></div>
+          <div class="bc-row"><span class="bc-label">Group II ≤ 5:45</span><div class="bc-track"><div class="bc-fill" style="background:linear-gradient(90deg,#2563eb,#1d4ed8)" id="sg2">~16.7 km/h</div></div><span class="bc-range">48 pts</span></div>
+          <div class="bc-row"><span class="bc-label">Group III ≤ 6:00</span><div class="bc-track"><div class="bc-fill" style="background:linear-gradient(90deg,#8b5cf6,#7c3aed)" id="sg3">~16.0 km/h</div></div><span class="bc-range">36 pts</span></div>
+          <div class="bc-row"><span class="bc-label">Group IV ≤ 6:15</span><div class="bc-track"><div class="bc-fill" style="background:linear-gradient(90deg,#f59e0b,#d97706)" id="sg4">~15.4 km/h</div></div><span class="bc-range">24 pts</span></div>
+          <div class="bc-row"><span class="bc-label">Group V ≤ 6:30</span><div class="bc-track"><div class="bc-fill" style="background:linear-gradient(90deg,#f97316,#ea580c)" id="sg5">~14.8 km/h</div></div><span class="bc-range">16 pts</span></div>
+        </div>
+        <div class="graph-legend">
+          <div class="gl-item"><div class="gl-dot" style="background:#10b981"></div>Excellent (60 pts)</div>
+          <div class="gl-item"><div class="gl-dot" style="background:#2563eb"></div>Good (48 pts)</div>
+          <div class="gl-item"><div class="gl-dot" style="background:#f59e0b"></div>Pass (24–36 pts)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REAL LIFE STORY -->
+<section class="story-sec">
+  <div class="w">
+    <div class="sec-hd rev">
+      <div class="pill" style="margin-bottom:14px">❤️ Real Story</div>
+      <h2 class="sec-h">Why I Built <span>This Tool</span></h2>
+    </div>
+    <div class="story-card rev">
+      <span class="story-ico">🪖</span>
+      <h3>Mere Bhai Ki Kahani — Running Ka Asli Safar</h3>
+      <p>Mera bhai army me hai. Jab wo tayari kar raha tha, usne mujhe bataya ki running sabse tough part hota hai — especially 1600m. Sab log padhai pe dhyan dete hain, lekin physical fitness pe nahi.</p>
+      <p>Us time usne koi fancy tools use nahi kiye, bas apna daily plan banata tha aur consistently practice karta tha. Subah 5 baje uthna, running karna, track karna ki kal se kitna better hua — yahi uski routine thi.</p>
+      <p>Maine usse poocha ki usne apni running kaise improve ki, toh usne apna pura plan share kiya — kaise daily schedule follow kiya, stamina kaise badhaya, aur time kaise kam kiya. Usne bataya ki pehle week mein sirf 5 second improve hua — lekin 4th week mein ek dum se 30 second ka fark aa gaya.</p>
+      <p>Tab mujhe laga ki har aspirant ko ye knowledge milna chahiye — wo bhi free, bina kisi coaching ke. Ek gaon ka student bhi same plan follow kar sake jo kisi bade city ke coaching student ko milta hai.</p>
+      <p>Isliye maine ye <strong>Army Running Improvement Planner</strong> tool banaya — taaki koi bhi student bina confusion ke apna 1600m running plan bana sake, apna time track kare, aur dream mein army join kar sake.</p>
+      <div><span class="story-highlight">🎯 Bhai ke plan se inspired — sabke liye free</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- SEO ARTICLE -->
+<section class="art-sec">
+  <div class="w">
+    <div class="sec-hd rev">
+      <div class="pill" style="margin-bottom:14px">📖 Running Guide</div>
+      <h2 class="sec-h">Army 1600m Running — <span>Complete Guide</span></h2>
+    </div>
+    <div class="wa">
+      <div class="art-body rev">
+
+        <h2>Army Running Mein 1600m Ka Importance Kya Hai?</h2>
+        <p>Indian Army ki physical fitness test (PFT) mein <strong>1600m running</strong> sabse important component hai. Yeh sirf pass/fail nahi hota — iska direct impact final merit pe padta hai. Group I mein aana (5:30 se kam) matlab 60 extra marks — jo selection ke liye game-changer ho sakta hai. Bahut se candidates written exam mein achhe marks laate hain lekin running mein pichad jaate hain.</p>
+
+        <div class="ibox">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          <div><strong>Important:</strong> 1600m running sirf Army GD mein nahi, balki Clerk, Technical, NDA, aur SPO jaise sab army bharti mein hoti hai. Har aspirant ko is pe dhyan dena chahiye.</div>
+        </div>
+
+        <h2>Beginner Mistakes Jo Running Time Improve Nahi Hone Deti</h2>
+        <p>Most aspirants yahi galtiyan karte hain jo unhe slow rakhti hain. Pehli galti — <strong>bina warm-up ke directly sprint karna</strong>, jo injury ka karan banti hai. Doosri galti — <strong>roz sirf 1600m ka full race karna</strong>, jis se body adapt nahi ho paati. Teesri — <strong>rest days ignore karna</strong>, jo recovery time churata hai. Chauthi — <strong>diet ignore karna</strong> — carbs, protein, hydration sab matter karta hai.</p>
+
+        <ul>
+          <li>5-minute warm-up hamesha karein before running</li>
+          <li>Mix karo: interval runs, tempo runs, long slow runs</li>
+          <li>Rest days strictly follow karein — muscles repair hoti hain</li>
+          <li>Protein-rich breakfast lo running se 1.5–2 hours pehle</li>
+          <li>Hydration: minimum 3 litre water daily</li>
+          <li>Proper running form: upright posture, arms at 90 degree</li>
+        </ul>
+
+        <h2>1600m Running Kaise Improve Kare — Proven Methods</h2>
+        <p>Running improve karne ke liye teen methods work karte hain. <strong>Method 1: Interval Training</strong> — 400m sprints with recovery walks. Ex: 400m fast + 200m walk × 4 sets. This builds speed. <strong>Method 2: Tempo Runs</strong> — 2-3km at "comfortably hard" pace. Builds race-pace endurance. <strong>Method 3: Progressive Overload</strong> — Har week distance ya speed thodi badhao. Is planner mein yahi combination use kiya gaya hai.</p>
+
+        <div class="ibox g">
+          <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          <div><strong>Pro Tip:</strong> Last 400m mein apna best speed lagao. "Negative split" strategy — pehle 800m controlled pace, last 800m mein speed badhao. Yeh 10–15 seconds ka fark kar sakta hai.</div>
+        </div>
+
+        <h2>Diet &amp; Recovery — Running Ka Hidden Weapon</h2>
+        <p>Running sirf legs ki baat nahi hai — <strong>80% recovery</strong> diet aur sleep se hoti hai. Pre-run meal: banana, oats, ya roti with sabzi (2 hrs before). Post-run: eggs, daal, milk (protein ke liye muscles repair hote hain). Avoid heavy oily food, processed foods, aur excess sweets. Sleep 7-8 hours — growth hormone raat ko release hota hai jo muscles repair karta hai.</p>
+
+        <h2>Kitne Din Mein Running Improve Hoti Hai?</h2>
+        <p>Yeh depend karta hai starting point par. Agar aap abhi 7-8 minute kar rahe ho aur target 5:30 hai, to 30-day consistent plan se 1–1.5 minute improvement realistic hai. Agar aap 6:30 pe hain, to 15-day plan mein 30 seconds kam karna possible hai. <strong>Key rule: pehle 7 din slow improvement dikhega, phir Week 2-3 mein speed jump aata hai</strong> — quit mat karo pehle hafte.</p>
+
+        <div class="ibox a">
+          <svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          <div><strong>Warning:</strong> Overtraining se bachein. Agar ghutne ya pair mein dard ho, ek-do din rest lo. Running ke liye consistent moderate training overtraining se better hai. Injury se mehine barbaad ho sakte hain.</div>
+        </div>
+
+        <h2>Running Fast Kaise Bhage — Army GD Ke Liye Special Tips</h2>
+        <p>Army running mein bheed hoti hai — crowd management bhi skill hai. Start mein bheed mein mat fasna — thoda bahar se start karo. Pehle 400m mein energy bachao, controlled pace rakho. 800m par apna timing check karo mentally. 1200m par acceleration start karo. Last 200m — full sprint, kuch bhi bacha lo. Breathing: 2 steps inhale, 2 steps exhale rhythm maintain karo throughout.</p>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ SECTION -->
+<section class="faq-sec">
+  <div class="w">
+    <div class="sec-hd rev">
+      <div class="pill" style="margin-bottom:14px">❓ FAQ</div>
+      <h2 class="sec-h">Frequently Asked <span>Questions</span></h2>
+      <p class="sec-sub">Army 1600m Running — Top 7 Questions Answered</p>
+    </div>
+    <div class="fql rev">
+      <div class="fq">
+        <div class="fq-q" onclick="tg(this)"><span class="fq-t">Army 1600m running kitne minute mein honi chahiye?</span><div class="fq-i">+</div></div>
+        <div class="fq-a"><div class="fq-ai">Army GD mein 1600m running ke liye Group I (highest marks: 60) ka standard 5 minutes 30 seconds hai. Group II (48 marks): 5:31–5:45. Group III (36 marks): 5:46–6:00. Group IV (24 marks): 6:01–6:15. Group V (16 marks): 6:16–6:30. 6:30 se zyada time par candidate eliminate ho jaata hai. Aapka target hamesha Group I (5:30) hona chahiye for maximum merit advantage.</div></div>
+      </div>
+      <div class="fq">
+        <div class="fq-q" onclick="tg(this)"><span class="fq-t">1600m running kaise improve kare quickly?</span><div class="fq-i">+</div></div>
+        <div class="fq-a"><div class="fq-ai">1600m time quickly improve karne ke 3 proven ways: (1) Interval Training — 400m sprints with rest, repeat 4–6 times. (2) Tempo Runs — 2km at slightly faster than race pace. (3) Fartlek Training — mix of running speeds in one session. Is tool mein apna current time enter karein — aapko personalized daily plan milega based on your fitness level. 30-day plan follow karne se 30–60 seconds improvement possible hai.</div></div>
+      </div>
+      <div class="fq">
+        <div class="fq-q" onclick="tg(this)"><span class="fq-t">Kitne din mein 1600m running improve hoti hai?</span><div class="fq-i">+</div></div>
+        <div class="fq-a"><div class="fq-ai">Pehle 7 din mein 5–10 seconds improvement aata hai as body adapts. Day 8–15 mein 15–25 seconds total improvement possible hai. 30-day consistent plan se 40–60 seconds improvement realistic hai. Key: pehle hafte slow progress dikhe to discourage mat hona — Week 3 mein jump aata hai. Consistency sabse important factor hai.</div></div>
+      </div>
+      <div class="fq">
+        <div class="fq-q" onclick="tg(this)"><span class="fq-t">Daily kitni running karni chahiye army ke liye?</span><div class="fq-i">+</div></div>
+        <div class="fq-a"><div class="fq-ai">Beginners ke liye: Week 1–2 mein 3–4km daily (with walk breaks). Intermediate: 4–6km daily mix of easy and hard days. Advanced: 5–8km with speed intervals. Roz 1600m ka full race mat karo — isse fatigue build hoti hai aur improvement slow hoti hai. Variety important hai: some days easy jog, some days intervals, some days long run.</div></div>
+      </div>
+      <div class="fq">
+        <div class="fq-q" onclick="tg(this)"><span class="fq-t">Running mein stamina kaise badhaye?</span><div class="fq-i">+</div></div>
+        <div class="fq-a"><div class="fq-ai">Stamina badhane ke liye: (1) Slow long runs — weekly ek baar 4–6km slow pace par run karo — ye aerobic base build karta hai. (2) Progressive overload — har hafta distance ya speed thodi badhao (10% rule). (3) Cross training — swimming, cycling, ya rope jumping add karo. (4) Breathing exercises — pranayam se lung capacity improve hoti hai. (5) Altitude training tip — agar possible ho, hill running add karo — maidan mein wapas aane par speed naturally improve hoti hai.</div></div>
+      </div>
+      <div class="fq">
+        <div class="fq-q" onclick="tg(this)"><span class="fq-t">1600m running ke liye diet kya honi chahiye?</span><div class="fq-i">+</div></div>
+        <div class="fq-a"><div class="fq-ai">Running ke liye ideal diet: Pre-run (2 hrs before): banana + oats ya roti. During: hydration (sirf paani). Post-run (within 30 min): eggs + milk ya daal chawal. Daily must-haves: 3–4 litre paani, daal-sabzi-roti, fruits (esp. banana aur orange), eggs ya paneer for protein. Avoid: maida, fried food, soft drinks, excess sugar. Iron-rich foods (spinach, chana) se oxygen-carrying capacity badhti hai — running faster hoti hai.</div></div>
+      </div>
+      <div class="fq">
+        <div class="fq-q" onclick="tg(this)"><span class="fq-t">Running plan 7 din, 15 din, ya 30 din — kaun sa choose karein?</span><div class="fq-i">+</div></div>
+        <div class="fq-a"><div class="fq-ai">7 Day Plan: Exam 1–2 weeks mein hai aur aap 10–15 seconds ki improvement chahte ho. High intensity. 15 Day Plan: Exam 3–4 weeks mein hai. Balance of speed and stamina work. 25–30 sec improvement expected. 30 Day Plan: Best choice. Exam 5+ weeks baad. Full aerobic base building + speed work. 40–60 sec improvement possible. Recommendation: <strong>Always go for 30-day plan if you have time</strong> — results are far superior.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SEO KEYWORDS -->
+<section class="seo-sec">
+  <div class="w">
+    <div class="sec-hd rev" style="margin-bottom:24px">
+      <div class="pill" style="margin-bottom:14px">🔍 Search Keywords</div>
+      <h2 class="sec-h" style="font-size:22px">People Also <span>Search For</span></h2>
+    </div>
+    <div class="kw-cloud rev">
+      <span class="kw-tag">1600m running improvement plan army</span>
+      <span class="kw-tag">army running time improve kaise kare</span>
+      <span class="kw-tag">1600m running tips army bharti</span>
+      <span class="kw-tag">running plan for army gd 1600m</span>
+      <span class="kw-tag">army running speed kaise badhaye</span>
+      <span class="kw-tag">1600m running under 5 min kaise kare</span>
+      <span class="kw-tag">army running improvement calculator</span>
+      <span class="kw-tag">running improvement planner online</span>
+      <span class="kw-tag">army running plan generator</span>
+      <span class="kw-tag">1600m running daily plan army</span>
+      <span class="kw-tag">army gd running training plan</span>
+      <span class="kw-tag">running fast kaise bhage army ke liye</span>
+      <span class="kw-tag">army running time reduce karne ka tarika</span>
+      <span class="kw-tag">10 din me running improve kaise kare</span>
+      <span class="kw-tag">army running daily schedule 1600m</span>
+      <span class="kw-tag">running stamina badhane ka tarika army</span>
+      <span class="kw-tag">1600m running plan 30 days</span>
+      <span class="kw-tag">army bharti running plan hindi</span>
+      <span class="kw-tag">army running performance calculator</span>
+      <span class="kw-tag">running progress tracker 1600m</span>
+      <span class="kw-tag">army running selection secret plan</span>
+      <span class="kw-tag">1600m running beginner guide</span>
+      <span class="kw-tag">running plan hindi me</span>
+      <span class="kw-tag">army rally running practice kaise kare</span>
+      <span class="kw-tag">running training kaise kare army ke liye</span>
+    </div>
+  </div>
+</section>
+
+<!-- RELATED TOOLS -->
+<section class="rel-sec">
+  <div class="w">
+    <div class="sec-hd rev">
+      <div class="pill" style="margin-bottom:14px">🔗 Related Tools</div>
+      <h2 class="sec-h">More <span>Army &amp; Govt Job Tools</span></h2>
+    </div>
+    <div class="rel-grid">
+      <div class="rel-card rev">
+        <div class="rel-ico">🪖</div>
+        <div class="rel-title">Army Eligibility Checker</div>
+        <div class="rel-desc">Check age, height, chest, education eligibility for Army GD, Clerk, Technical, NDA. Category-wise rules, instant result.</div>
+        <a href="https://rajdailytools.in/army-eligibility-checker.html" class="rel-btn">Use Tool <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      </div>
+      <div class="rel-card rev">
+        <div class="rel-ico">📏</div>
+        <div class="rel-title">Height Eligibility Checker</div>
+        <div class="rel-desc">Check if your height meets Army, Police, CRPF, SSB, and other govt job standards. Category-wise minimum height, instant result.</div>
+        <a href="https://rajdailytools.in/height-checker.html" class="rel-btn">Use Tool <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      </div>
+      <div class="rel-card rev">
+        <div class="rel-ico">👮</div>
+        <div class="rel-title">MP Police Eligibility Tool</div>
+        <div class="rel-desc">Check age, height, physical standards for Madhya Pradesh Police Constable &amp; SI recruitment 2026. Instant eligibility checker.</div>
+        <a href="https://rajdailytools.in/mp-police-eligibility-checker.html" class="rel-btn">Use Tool <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      </div>
+      <div class="rel-card rev">
+        <div class="rel-ico">🏛️</div>
+        <div class="rel-title">SSC GD Eligibility Tool</div>
+        <div class="rel-desc">Verify age, physical standards, and education for SSC GD Constable recruitment. Height, chest, and running standards included.</div>
+        <a href="https://rajdailytools.in/ssc-gd-eligibility-checker.html" class="rel-btn">Use Tool <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      </div>
+      <div class="rel-card rev">
+        <div class="rel-ico">⏱️</div>
+        <div class="rel-title">Running Time Calculator</div>
+        <div class="rel-desc">Calculate your 1600m running score for Army GD. Find which group you fall in (I–V) and how many marks you'll get. Instant result.</div>
+        <a href="https://rajdailytools.in/army-running-calculator.html" class="rel-btn">Use Tool <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      </div>
+      <div class="rel-card rev">
+        <div class="rel-ico">🚂</div>
+        <div class="rel-title">RRB ALP Eligibility Tool</div>
+        <div class="rel-desc">Check age limit and technical qualification for Railway RRB Assistant Loco Pilot recruitment. Trade-wise eligibility, instant check.</div>
+        <a href="https://rajdailytools.in/rrb-alp-eligibility-checker.html" class="rel-btn">Use Tool <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      </div>
+      <div class="rel-card rev">
+        <div class="rel-ico">📚</div>
+        <div class="rel-title">KVS Recruitment Tool</div>
+        <div class="rel-desc">Check eligibility for KVS teacher posts — TGT, PGT, PRT. Age, qualification, experience requirements with instant calculator.</div>
+        <a href="https://rajdailytools.in/kvs-eligibility-checker.html" class="rel-btn">Use Tool <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      </div>
+      <div class="rel-card rev">
+        <div class="rel-ico">🛡️</div>
+        <div class="rel-title">CRPF Eligibility Tool</div>
+        <div class="rel-desc">Check age, physical, and education eligibility for CRPF Constable and Head Constable recruitment. Category relaxation included.</div>
+        <a href="https://rajdailytools.in/crpf-eligibility-checker.html" class="rel-btn">Use Tool <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      </div>
+      <div class="rel-card rev">
+        <div class="rel-ico">⛏️</div>
+        <div class="rel-title">NCL Recruitment 2026 Tool</div>
+        <div class="rel-desc">Check eligibility for NCL Various Post 2026 (577 posts). Age limit 18–30 years. HEMM Operator, Staff Nurse, Overseer Civil &amp; more.</div>
+        <a href="https://rajdailytools.in/ncl-recruitment-2026-eligibility-calculator.html" class="rel-btn">Use Tool <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      </div>
+      <div class="rel-card rev">
+        <div class="rel-ico">⚖️</div>
+        <div class="rel-title">Patna HC Recruitment Tool</div>
+        <div class="rel-desc">Check age and education eligibility for Patna High Court posts. Bihar district court recruitment with instant eligibility calculator.</div>
+        <a href="https://rajdailytools.in/patna-hc-eligibility-checker.html" class="rel-btn">Use Tool <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DISCLAIMER -->
+<div class="disc">
+  <div class="w">
+    <div class="disc-in">
+      <span style="font-size:18px;flex-shrink:0">⚠️</span>
+      <div><strong>Disclaimer:</strong> This Army Running Improvement Planner is for informational and training guidance purposes only. Running plans are based on general fitness training principles and may not suit all individuals. Always consult a doctor before starting any new exercise regimen, especially if you have injuries or health conditions. Army running standards may vary — always verify from the official Army recruitment notification. RajDailyTools is not affiliated with the Indian Army or any government recruitment body.</div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<section class="contact-sec">
+  <div class="w">
+    <div class="contact-card rev">
+      <h3>📬 Have a Question?</h3>
+      <p>Found any issue with the running planner? Want to suggest improvements? Or need help understanding your plan? We're here for you.</p>
+      <a href="https://rajdailytools.in/contact.html" class="btn-bl">✉️ Contact RajDailyTools</a>
+      <p class="priv-note">🔒 No personal data is stored. Your running times are never saved or shared.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="cta-in">
+    <div class="pill">🪖 Army Running 2026</div>
+    <h2>Start Your 1600m Plan<br><em>Today — Not Tomorrow</em></h2>
+    <p>Every second you delay is a second your competition gains. Generate your plan now, start today, and make it to Group I.</p>
+    <div class="cta-btns">
+      <a href="#calculator" class="btn-gold">🚀 Generate My Plan Now</a>
+      <a href="#howtouse" class="btn-ghost">💡 How to Use</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-inner">
+    <div class="ft-top">
+      <div class="ft-brand">
+        <div class="logo">
+          <div class="lb"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+          <div><div class="ln">Raj<span>Daily</span>Tools</div><div class="ls">Smart Tools for Daily Life</div></div>
+        </div>
+        <p class="ft-desc">Free, instant tools to check government job eligibility, running improvement plans, age calculators, and more. Built for every Indian aspirant.</p>
+        <div class="ft-soc">
+          <a class="fts" href="#" title="Facebook">f</a>
+          <a class="fts" href="#" title="Twitter">𝕏</a>
+          <a class="fts" href="#" title="Telegram">✈</a>
+          <a class="fts" href="#" title="YouTube">▶</a>
+        </div>
+      </div>
+      <div class="fc">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="https://rajdailytools.in/">Home</a></li>
+          <li><a href="https://rajdailytools.in/categories.html">All Tools</a></li>
+          <li><a href="https://rajdailytools.in/#popular">Popular Tools</a></li>
+          <li><a href="https://rajdailytools.in/about.html">About Us</a></li>
+          <li><a href="https://rajdailytools.in/contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="fc">
+        <h4>Army Tools</h4>
+        <ul>
+          <li><a href="https://rajdailytools.in/army-running-improvement-planner-1600m.html">Running Planner</a></li>
+          <li><a href="https://rajdailytools.in/army-eligibility-checker.html">Army Eligibility</a></li>
+          <li><a href="https://rajdailytools.in/army-running-calculator.html">Running Calculator</a></li>
+          <li><a href="https://rajdailytools.in/ssc-gd-eligibility-checker.html">SSC GD Tool</a></li>
+          <li><a href="https://rajdailytools.in/crpf-eligibility-checker.html">CRPF Tool</a></li>
+        </ul>
+      </div>
+      <div class="fc">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="https://rajdailytools.in/privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="https://rajdailytools.in/terms.html">Terms of Use</a></li>
+          <li><a href="https://rajdailytools.in/disclaimer.html">Disclaimer</a></li>
+          <li><a href="https://rajdailytools.in/sitemap.xml">Sitemap</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ft-btm">
+      <div class="ft-cp">© 2026 <b>RajDailyTools</b>. All rights reserved. For informational purposes only.</div>
+      <div class="ft-lnk">
+        <a href="https://rajdailytools.in/privacy-policy.html">Privacy</a>
+        <a href="https://rajdailytools.in/terms.html">Terms</a>
+        <a href="https://rajdailytools.in/sitemap.xml">Sitemap</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+// DRAWER
+const brg=document.getElementById('brg'),dov=document.getElementById('dov'),drw=document.getElementById('drw'),dx=document.getElementById('dx');
+function oD(){drw.classList.add('on');dov.classList.add('on')}
+function cD(){drw.classList.remove('on');dov.classList.remove('on')}
+brg.addEventListener('click',oD);dov.addEventListener('click',cD);dx.addEventListener('click',cD);
+window.addEventListener('scroll',()=>document.getElementById('btt').classList.toggle('on',window.scrollY>400));
+
+// SCROLL REVEAL
+const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('in')}),{threshold:.12});
+document.querySelectorAll('.rev').forEach(el=>obs.observe(el));
+
+// ANIMATE GRAPHS
+const gObs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){
+  const fills=[['pg1','3%'],['pg2','18%'],['pg3','38%'],['pg4','72%'],['pg5','98%'],
+               ['sg1','98%'],['sg2','88%'],['sg3','75%'],['sg4','63%'],['sg5','52%']];
+  fills.forEach(([id,w],i)=>{setTimeout(()=>{const el=document.getElementById(id);if(el)el.style.width=w;},i*130+100)});
+}})},{threshold:.2});
+const gs=document.querySelector('.graph-sec');if(gs)gObs.observe(gs);
+
+// FAQ
+function tg(el){el.parentElement.classList.toggle('open')}
+
+// PLAN TABS
+let currentPlanData={};
+function switchTab(id,btn){
+  document.querySelectorAll('.pt').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  renderPlan(id);
+}
+
+// TIME CONVERSION
+function toSec(m,s){return parseInt(m||0)*60+parseInt(s||0)}
+function secToStr(s){return Math.floor(s/60)+':'+(s%60).toString().padStart(2,'0')}
+
+// PLAN GENERATOR
+function generatePlan(){
+  const cm=document.getElementById('curMin').value;
+  const cs=document.getElementById('curSec').value||0;
+  const tm=document.getElementById('tgtMin').value;
+  const ts=document.getElementById('tgtSec').value||0;
+  const lvl=document.getElementById('level').value;
+
+  let valid=true;
+  if(!cm){document.getElementById('curMin').classList.add('err');document.getElementById('curErr').classList.add('show');valid=false;}
+  else{document.getElementById('curMin').classList.remove('err');document.getElementById('curErr').classList.remove('show');}
+  if(!tm){document.getElementById('tgtMin').classList.add('err');document.getElementById('tgtErr').classList.add('show');valid=false;}
+  else{document.getElementById('tgtMin').classList.remove('err');document.getElementById('tgtErr').classList.remove('show');}
+  if(!valid)return;
+
+  const curTot=toSec(cm,cs);
+  const tgtTot=toSec(tm,ts);
+  if(tgtTot>=curTot){alert('Target time must be less than current time!');return;}
+
+  const diff=curTot-tgtTot;
+  const pace400=Math.round(tgtTot/4);
+  const levelLabel={beginner:'Beginner',intermediate:'Intermediate',advanced:'Advanced'}[lvl];
+
+  // Update stats
+  document.getElementById('stCurrent').textContent=secToStr(curTot);
+  document.getElementById('stTarget').textContent=secToStr(tgtTot);
+  document.getElementById('stReduce').textContent=diff+'s';
+  document.getElementById('stPace').textContent=secToStr(pace400);
+  document.getElementById('rbTitle').textContent=`Your ${levelLabel} 1600m Running Plan is Ready!`;
+  document.getElementById('rbSub').textContent=`Current: ${secToStr(curTot)} → Target: ${secToStr(tgtTot)} | Reduce: ${diff} seconds | ${diff<=20?'Quick Plan':'Full Plan'} recommended`;
+  document.getElementById('rbReduction').innerHTML=`${diff}<span>s to cut</span>`;
+
+  // Progress bars
+  const wk1=Math.round(diff*0.15),wk2=Math.round(diff*0.35),wk3=Math.round(diff*0.65),wk4=diff;
+  document.getElementById('progBars').innerHTML=`
+    <div class="pb-item"><div class="pb-top"><span>Week 1 Target</span><span>−${wk1} sec</span></div><div class="pb-track"><div class="pb-fill" style="background:linear-gradient(90deg,#3b82f6,#2563eb);width:15%"></div></div></div>
+    <div class="pb-item"><div class="pb-top"><span>Week 2 Target</span><span>−${wk2} sec total</span></div><div class="pb-track"><div class="pb-fill" style="background:linear-gradient(90deg,#14b8a6,#0d9488);width:35%"></div></div></div>
+    <div class="pb-item"><div class="pb-top"><span>Week 3 Target</span><span>−${wk3} sec total</span></div><div class="pb-track"><div class="pb-fill" style="background:linear-gradient(90deg,#f59e0b,#d97706);width:65%"></div></div></div>
+    <div class="pb-item"><div class="pb-top"><span>Week 4 / Goal</span><span>−${wk4} sec = ${secToStr(tgtTot)} ✅</span></div><div class="pb-track"><div class="pb-fill" style="background:linear-gradient(90deg,#10b981,#059669);width:100%"></div></div></div>`;
+
+  // Formula
+  document.getElementById('fbFormula').textContent=`Improvement = ${secToStr(curTot)} − ${secToStr(tgtTot)}`;
+  document.getElementById('fbResult').innerHTML=`= <strong>${diff} seconds reduction needed</strong> | Target pace per 400m: <strong>${secToStr(pace400)}</strong> | Level: <strong>${levelLabel}</strong> | Recommended plan: <strong>${diff>45?'30 Days':diff>20?'15 Days':'7 Days'}</strong>`;
+
+  // Store data for plans
+  currentPlanData={curTot,tgtTot,diff,pace400,lvl,levelLabel};
+
+  // Tips
+  const tips=[
+    {t:'Warm up 5–7 minutes before every run',pass:true},
+    {t:'Cool down + stretch 5 min after every run',pass:true},
+    {t:`Target pace per 400m: ${secToStr(pace400)} — practice this rhythm`,pass:true},
+    {t:'Rest days: light walk or rest only — no running',pass:true},
+    {t:'Hydrate: 3–4 litres water daily',pass:true},
+    {t:'Sleep 7–8 hours for optimal muscle recovery',pass:true},
+    {t:'Track your time every session to see progress',pass:true},
+  ];
+  document.getElementById('tipsList').innerHTML=tips.map(t=>`<div class="chk-item pass"><div class="chk-dot">✓</div>${t.t}</div>`).join('');
+
+  // Render default plan
+  renderPlan('p7');
+
+  const ra=document.getElementById('resultArea');
+  ra.style.display='block';
+  ra.style.animation='none';ra.offsetHeight;
+  ra.style.animation='resultIn .42s cubic-bezier(.4,0,.2,1) both';
+  setTimeout(()=>ra.scrollIntoView({behavior:'smooth',block:'nearest'}),120);
+}
+
+// PLAN DATA GENERATOR
+function getPlanDays(planType){
+  const {curTot,tgtTot,diff,pace400,lvl}=currentPlanData;
+  const int7={beginner:['easy','easy','medium','rest','medium','easy','rest'],intermediate:['medium','medium','hard','rest','hard','medium','rest'],advanced:['hard','hard','hard','rest','hard','hard','rest']};
+  const labels7=['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
+
+  if(planType==='p7'){
+    const types=int7[lvl]||int7.intermediate;
+    return labels7.map((d,i)=>{
+      const t=types[i];
+      if(t==='rest')return{day:i+1,label:d,title:'Rest Day',desc:'Light walk 15–20 min or complete rest. Let your muscles recover.',badge:'rest',type:'rest'};
+      const paces={easy:secToStr(Math.round(curTot*1.1)),medium:secToStr(Math.round((curTot+tgtTot)/2)),hard:secToStr(Math.round(tgtTot*1.05))};
+      const descs={
+        easy:`Easy jog: 2–3km at relaxed pace (~${paces.easy}/1600m). Focus on breathing rhythm and form. No pressure.`,
+        medium:`Interval training: 4 × 400m at pace ~${secToStr(pace400+5)} with 90s walk recovery. Then 1km easy jog.`,
+        hard:`Race simulation: 1600m at ~${paces.hard} + 2×400m sprint intervals. Push your limits.`
+      };
+      return{day:i+1,label:d,title:`Day ${i+1} — ${d}: ${t.charAt(0).toUpperCase()+t.slice(1)} Run`,desc:descs[t],badge:t,type:t};
+    });
+  }
+
+  if(planType==='p15'){
+    const plan15=[
+      {t:'easy',desc:'Easy 2km run. Focus on form and breathing. Relaxed pace.'},
+      {t:'medium',desc:'4×400m intervals at target pace + 90s walk recovery.'},
+      {t:'medium',desc:'2.5km tempo run at slightly faster than race pace.'},
+      {t:'rest',desc:'Complete rest or light 15min walk.'},
+      {t:'hard',desc:'Race simulation 1600m + 2×400m sprint.'},
+      {t:'easy',desc:'3km easy jog. Build aerobic base. No speed pressure.'},
+      {t:'rest',desc:'Rest day. Stretch, foam roll, hydrate well.'},
+      {t:'medium',desc:'6×400m intervals at target pace + 60s recovery.'},
+      {t:'hard',desc:'Timed 1600m — track your improvement vs Day 5.'},
+      {t:'medium',desc:'3km tempo run. Maintain target race pace throughout.'},
+      {t:'rest',desc:'Rest day. Massage legs, hydrate, sleep early.'},
+      {t:'hard',desc:'Pyramid: 400m–800m–1200m–800m–400m with equal rest.'},
+      {t:'medium',desc:'2km easy + 4×200m strides at full speed.'},
+      {t:'easy',desc:'Light 2km jog. Save energy for final day.'},
+      {t:'hard',desc:'Final test: full 1600m race simulation. Measure improvement!'},
+    ];
+    return plan15.map((p,i)=>({day:i+1,label:`Day ${i+1}`,title:`Day ${i+1} — ${p.t.charAt(0).toUpperCase()+p.t.slice(1)} Session`,desc:p.desc,badge:p.t,type:p.t}));
+  }
+
+  // 30 day plan
+  const plan30=[
+    // Phase 1: Base (Days 1-10)
+    {t:'easy',desc:'Base run: 2km easy. Focus only on form — upright posture, 90° arm swing, midfoot strike.'},
+    {t:'medium',desc:'Intervals: 6×400m at comfortable-hard pace with 2min walk recovery.'},
+    {t:'easy',desc:'3km easy continuous run. Keep heart rate conversational.'},
+    {t:'rest',desc:'Rest. Gentle stretching and hydration focus.'},
+    {t:'medium',desc:'Tempo: 2km at target race pace. Aim for steady effort throughout.'},
+    {t:'easy',desc:'Cross training: 30min cycling/swimming or 3km easy jog.'},
+    {t:'rest',desc:'Rest day. Ice legs if any soreness, sleep 8hrs.'},
+    {t:'hard',desc:'First timed 1600m — record your time. This is your Week 1 benchmark.'},
+    {t:'medium',desc:'Recovery run: 2km easy + 4×100m strides (fast but relaxed).'},
+    {t:'medium',desc:'8×400m intervals. First 4 at medium, last 4 slightly faster.'},
+    // Phase 2: Speed (Days 11-20)
+    {t:'rest',desc:'Rest. Start of Phase 2. Reflect on Week 1–2 progress.'},
+    {t:'hard',desc:'Pyramid: 200m–400m–800m–400m–200m. Full effort with equal rest.'},
+    {t:'medium',desc:'3km tempo at target 1600m pace. If feeling strong, push last 400m.'},
+    {t:'easy',desc:'Easy 3km. Focus on breathing — 2 steps inhale, 2 exhale.'},
+    {t:'rest',desc:'Rest. Foam roll quads, hamstrings, calves.'},
+    {t:'hard',desc:'Race sim: 2×1600m with 5min rest. Second one faster than first.'},
+    {t:'medium',desc:'Speed work: 10×200m sprints with 60s recovery. Build leg turnover.'},
+    {t:'easy',desc:'4km easy long run. Conversational pace. Builds aerobic engine.'},
+    {t:'rest',desc:'Rest day. Protein-rich meal, early sleep.'},
+    {t:'hard',desc:'Benchmark: timed 1600m. Should be 15–25s faster than Day 8.'},
+    // Phase 3: Peak (Days 21-30)
+    {t:'rest',desc:'Rest. Phase 3 begins. Peak performance training.'},
+    {t:'hard',desc:'6×400m at 5-10s faster than target 1600m pace with 90s rest.'},
+    {t:'medium',desc:'2km warm-up + 2km race pace + 2km cool-down.'},
+    {t:'easy',desc:'Easy 3km. Legs should feel fresh and fast.'},
+    {t:'rest',desc:'Rest. Taper begins — reduce volume, maintain intensity.'},
+    {t:'hard',desc:'Final speed session: 4×400m at max effort. 3min recovery.'},
+    {t:'easy',desc:'Very easy 2km jog. Save energy for final test.'},
+    {t:'easy',desc:'15min easy walk only. Rest up for tomorrow.'},
+    {t:'rest',desc:'Complete rest. Sleep 9hrs. Eat clean, hydrate well.'},
+    {t:'hard',desc:'🏆 FINAL TEST: Full 1600m race simulation. All-out effort. Compare to Day 1!'},
+  ];
+  return plan30.map((p,i)=>({day:i+1,label:`Day ${i+1}`,title:`Day ${i+1} — ${p.t==='rest'?'Rest':p.t.charAt(0).toUpperCase()+p.t.slice(1)+' Session'}`,desc:p.desc,badge:p.t,type:p.t}));
+}
+
+function renderPlan(planType){
+  const days=getPlanDays(planType);
+  const badgeLabels={easy:'🟢 Easy',medium:'🟡 Moderate',hard:'🔴 Hard',rest:'🔵 Rest'};
+  const html=days.map(d=>`
+    <div class="plan-day">
+      <div class="pd-num ${d.type==='rest'?'rest':d.type==='hard'?'hard':''}">${d.day}</div>
+      <div class="pd-body">
+        <div class="pd-title">${d.title}</div>
+        <div class="pd-desc">${d.desc}</div>
+        <span class="pd-badge ${d.type}">${badgeLabels[d.type]||d.type}</span>
+      </div>
+    </div>`).join('');
+  document.getElementById('planContent').innerHTML=`<div class="plan-section active">${html}</div>`;
+}
+
+function copyPlan(){
+  const {curTot,tgtTot,diff,lvl}=currentPlanData;
+  if(!curTot)return;
+  const text=`Army 1600m Running Improvement Plan
+Generated by RajDailyTools — rajdailytools.in
+
+Current Time: ${secToStr(curTot)}
+Target Time: ${secToStr(tgtTot)}
+Time to Reduce: ${diff} seconds
+Fitness Level: ${lvl}
+
+Follow your personalized plan on:
+https://rajdailytools.in/army-running-improvement-planner-1600m.html
+
+Key Tips:
+✓ Warm up 5–7 min before every run
+✓ Rest days are essential — don't skip them
+✓ Track your time daily to see progress
+✓ Hydrate 3–4 litres daily
+✓ Sleep 7–8 hours for recovery`;
+  navigator.clipboard?.writeText(text).then(()=>{
+    const btn=document.getElementById('copyBtn');
+    btn.classList.add('copied');btn.textContent='✅ Copied!';
+    setTimeout(()=>{btn.classList.remove('copied');btn.textContent='📋 Copy My Plan';},2200);
+  });
+}
+
+function resetTool(){
+  ['curMin','curSec','tgtMin','tgtSec'].forEach(id=>{
+    const el=document.getElementById(id);
+    if(el){el.value='';el.classList.remove('err');}
+  });
+  ['curErr','tgtErr'].forEach(id=>{
+    const el=document.getElementById(id);if(el)el.classList.remove('show');
+  });
+  document.getElementById('resultArea').style.display='none';
+  currentPlanData={};
+}
+</script>
+</body>
+</html>
