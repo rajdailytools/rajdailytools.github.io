@@ -1,0 +1,1272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Army Form Mistake Checker 2026 (Error Detection + Correction Tool) | RajDailyTools</title>
+<meta name="description" content="Free Army Form Mistake Checker Tool 2026. Detect errors in your army application form before submission. Check name mismatch, DOB error, category mistake, missing documents, photo issue — get instant correction suggestions and avoid rejection.">
+<meta name="keywords" content="army form mistake checker, army form correction kaise kare, army form error kaise fix kare, army form reject hone ke reason, army form filling guide 2026, army form validation tool, army form mistake list india, army form galti ka solution, army form check karne ka tarika, army form filling tips india">
+<meta name="robots" content="index, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#2563eb;--blue-d:#1d4ed8;--blue-l:#3b82f6;
+  --blue-xl:#eff6ff;--blue-s:#dbeafe;
+  --amber:#f59e0b;--green:#10b981;--red:#ef4444;
+  --purple:#8b5cf6;--teal:#14b8a6;--orange:#f97316;
+  --green-xl:#f0fdf4;--green-s:#bbf7d0;
+  --red-xl:#fef2f2;--red-s:#fecaca;
+  --amber-xl:#fffbeb;--amber-s:#fde68a;
+  --purple-xl:#faf5ff;--purple-s:#ddd6fe;
+  --ink:#0f172a;--ink2:#334155;--ink3:#64748b;--ink4:#94a3b8;
+  --line:#e2e8f0;--surf:#f8fafc;--white:#fff;
+  --s1:0 1px 3px rgba(15,23,42,.06),0 1px 2px rgba(15,23,42,.04);
+  --s2:0 4px 16px rgba(15,23,42,.08),0 2px 6px rgba(15,23,42,.04);
+  --s3:0 12px 40px rgba(15,23,42,.11),0 3px 10px rgba(15,23,42,.06);
+  --s4:0 24px 64px rgba(15,23,42,.13),0 6px 20px rgba(15,23,42,.07);
+  --sb:0 8px 32px rgba(37,99,235,.20);
+  --fd:'Sora',sans-serif;--fb:'DM Sans',sans-serif;
+  --ease:cubic-bezier(.4,0,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);color:var(--ink);background:var(--white);overflow-x:hidden;-webkit-font-smoothing:antialiased;line-height:1.6}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+button{cursor:pointer;border:none;background:none;font-family:var(--fb)}
+.w{max-width:1180px;margin:0 auto;padding:0 24px}
+.wa{max-width:860px;margin:0 auto;padding:0 24px}
+select,input,textarea{appearance:none;-webkit-appearance:none;font-family:var(--fb)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+@keyframes resultIn{from{opacity:0;transform:translateY(18px) scale(.97)}to{opacity:1;transform:none}}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(37,99,235,.3)}50%{box-shadow:0 0 0 8px rgba(37,99,235,0)}}
+.rev{opacity:0;transform:translateY(22px);transition:opacity .55s var(--ease),transform .55s var(--ease)}
+.rev.in{opacity:1;transform:none}
+
+/* HEADER */
+.hdr{position:sticky;top:0;z-index:999;background:rgba(255,255,255,.96);backdrop-filter:blur(20px);border-bottom:1px solid var(--line);box-shadow:var(--s1)}
+.hdi{display:flex;align-items:center;justify-content:space-between;height:66px}
+.logo{display:flex;align-items:center;gap:10px}
+.lb{width:36px;height:36px;background:var(--blue);border-radius:9px;display:flex;align-items:center;justify-content:center;box-shadow:var(--sb);flex-shrink:0}
+.lb svg{width:18px;height:18px;fill:#fff}
+.ln{font-family:var(--fd);font-size:19px;font-weight:800;color:var(--ink);line-height:1}
+.ln span{color:var(--blue)}
+.ls{font-size:10px;color:var(--ink4);letter-spacing:.04em}
+nav.dn{display:flex;align-items:center;gap:2px}
+nav.dn a{font-size:13.5px;font-weight:500;color:var(--ink2);padding:7px 13px;border-radius:8px;transition:.2s}
+nav.dn a:hover{color:var(--blue);background:var(--blue-xl)}
+.hcta{background:var(--blue);color:#fff;font-family:var(--fd);font-weight:600;font-size:13px;padding:8px 18px;border-radius:8px;box-shadow:var(--sb);transition:.2s}
+.hcta:hover{background:var(--blue-d);transform:translateY(-1px)}
+.brg{display:none;flex-direction:column;gap:4.5px;padding:8px;border-radius:8px}
+.brg span{display:block;width:20px;height:2px;background:var(--ink);border-radius:2px;transition:.28s}
+.dov{display:none;position:fixed;inset:0;background:rgba(15,23,42,.45);z-index:1040;backdrop-filter:blur(3px)}
+.dov.on{display:block}
+.drw{position:fixed;top:0;right:-100%;width:270px;height:100vh;background:#fff;z-index:1050;padding:22px;box-shadow:var(--s4);transition:right .32s var(--ease);overflow-y:auto}
+.drw.on{right:0}
+.dh{display:flex;align-items:center;justify-content:space-between;margin-bottom:26px}
+.dx{width:33px;height:33px;border-radius:7px;background:var(--surf);display:flex;align-items:center;justify-content:center;color:var(--ink3);font-size:17px}
+nav.mn{display:flex;flex-direction:column;gap:3px}
+nav.mn a{display:block;font-size:14px;font-weight:500;color:var(--ink2);padding:11px 13px;border-radius:8px;transition:.2s}
+nav.mn a:hover{color:var(--blue);background:var(--blue-xl)}
+
+/* HERO */
+.hero{position:relative;overflow:hidden;background:linear-gradient(150deg,#ebf4ff 0%,#fff 46%,#fef9ec 100%);padding:68px 0 80px}
+.hero::before{content:'';position:absolute;top:-140px;right:-180px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(37,99,235,.08) 0%,transparent 68%);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-80px;left:-100px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(245,158,11,.05) 0%,transparent 68%);pointer-events:none}
+.blob{position:absolute;border-radius:50%;pointer-events:none;animation:float 6s ease-in-out infinite}
+.b1{width:13px;height:13px;background:rgba(37,99,235,.18);top:22%;right:14%;animation-delay:0s}
+.b2{width:9px;height:9px;background:rgba(245,158,11,.22);top:58%;right:26%;animation-delay:2.2s}
+.b3{width:11px;height:11px;background:rgba(239,68,68,.18);top:36%;right:6%;animation-delay:4s}
+.bc{display:flex;align-items:center;gap:7px;font-size:12.5px;color:var(--ink3);margin-bottom:24px;position:relative;z-index:1;flex-wrap:wrap}
+.bc a{color:var(--blue);font-weight:600}
+.pill{display:inline-flex;align-items:center;gap:7px;font-family:var(--fd);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);background:var(--blue-xl);padding:5px 14px;border-radius:100px;margin-bottom:18px}
+.pill::before{content:'';width:6px;height:6px;background:var(--blue);border-radius:50%}
+.hero-inner{position:relative;z-index:1;max-width:700px;animation:fadeUp .5s ease both}
+.hero h1{font-family:var(--fd);font-size:clamp(26px,4.5vw,50px);font-weight:800;line-height:1.1;color:var(--ink);margin-bottom:14px}
+.hero h1 span{color:var(--blue)}
+.hero-sub{font-size:16px;color:var(--ink3);line-height:1.8;margin-bottom:22px;max-width:560px}
+.hero-chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.chip{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;padding:6px 14px;border-radius:100px;background:#fff;border:1.5px solid var(--line);color:var(--ink2);box-shadow:var(--s1);transition:.22s}
+.chip:hover{border-color:var(--blue);color:var(--blue);transform:translateY(-1px)}
+.hero-meta{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.upd{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:700;color:var(--blue);background:var(--blue-xl);padding:6px 14px;border-radius:100px;border:1.5px solid var(--blue-s)}
+.hmi{font-size:13px;color:var(--ink3);font-weight:500}
+
+/* TOOL */
+.tool-sec{background:var(--surf);padding:80px 0}
+.tool-wrap{max-width:820px;margin:0 auto}
+.tool-card{background:#fff;border:1.5px solid var(--line);border-radius:28px;overflow:hidden;box-shadow:var(--s4)}
+.tool-hdr{background:linear-gradient(135deg,#1d4ed8 0%,#2563eb 55%,#3b82f6 100%);padding:32px 40px;position:relative;overflow:hidden}
+.tool-hdr::before{content:'';position:absolute;top:-60px;right:-60px;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,.07)}
+.tool-hdr::after{content:'';position:absolute;bottom:-40px;left:-40px;width:180px;height:180px;border-radius:50%;background:rgba(255,255,255,.04)}
+.th{position:relative;z-index:1}
+.th h2{font-family:var(--fd);font-size:21px;font-weight:800;color:#fff;margin-bottom:6px}
+.th p{font-size:14px;color:rgba(255,255,255,.82);line-height:1.65}
+.th-badges{display:flex;flex-wrap:wrap;gap:9px;margin-top:14px}
+.thb{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:rgba(255,255,255,.9);background:rgba(255,255,255,.13);padding:5px 12px;border-radius:100px}
+.tool-body{padding:36px 40px}
+
+/* FORM FIELDS */
+.field-group{margin-bottom:22px}
+.field-label{font-size:13px;font-weight:700;color:var(--ink2);margin-bottom:8px;display:flex;align-items:center;gap:7px}
+.field-input{width:100%;padding:13px 16px;border:2px solid var(--line);border-radius:11px;font-size:14px;color:var(--ink);background:#fff;transition:.22s;outline:none}
+.field-input:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(37,99,235,.1)}
+.field-input.err{border-color:var(--red);box-shadow:0 0 0 3px rgba(239,68,68,.1)}
+.field-input.ok{border-color:var(--green);box-shadow:0 0 0 3px rgba(16,185,129,.1)}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.doc-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
+.doc-check{display:flex;align-items:center;gap:10px;padding:11px 14px;border:2px solid var(--line);border-radius:10px;cursor:pointer;transition:.22s;background:#fff;user-select:none}
+.doc-check:hover{border-color:var(--blue-s);background:var(--blue-xl)}
+.doc-check input[type=checkbox]{width:16px;height:16px;accent-color:var(--blue);cursor:pointer;flex-shrink:0}
+.doc-check span{font-size:13px;color:var(--ink2);font-weight:500}
+.doc-check.checked{border-color:var(--green);background:var(--green-xl)}
+
+/* PHOTO SIMULATION */
+.photo-sim{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:10px}
+.photo-box{border:2px dashed var(--line);border-radius:12px;padding:22px;text-align:center;cursor:pointer;transition:.22s;background:var(--surf)}
+.photo-box:hover{border-color:var(--blue);background:var(--blue-xl)}
+.photo-box.uploaded{border-style:solid;border-color:var(--green);background:var(--green-xl)}
+.photo-box.issue{border-style:solid;border-color:var(--red);background:var(--red-xl)}
+.pb-ico{font-size:28px;margin-bottom:7px}
+.pb-label{font-family:var(--fd);font-size:13px;font-weight:700;color:var(--ink)}
+.pb-sub{font-size:11.5px;color:var(--ink3);margin-top:3px}
+
+/* HINT */
+.hint-box{display:flex;align-items:flex-start;gap:9px;font-size:13px;color:var(--ink2);background:var(--blue-xl);border:1.5px solid var(--blue-s);border-radius:10px;padding:11px 14px;margin-bottom:18px;line-height:1.65}
+.hint-box svg{width:16px;height:16px;stroke:var(--blue);fill:none;stroke-width:2;flex-shrink:0;margin-top:2px}
+
+/* BUTTONS */
+.btn-row{display:flex;gap:12px}
+.cvt-btn{flex:1;padding:15px;background:linear-gradient(135deg,var(--blue) 0%,#1e40af 100%);color:#fff;font-family:var(--fd);font-weight:800;font-size:15px;border-radius:11px;box-shadow:var(--sb);transition:all .25s var(--ease);display:flex;align-items:center;justify-content:center;gap:9px}
+.cvt-btn:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(37,99,235,.30)}
+.rst-btn{padding:15px 22px;background:var(--surf);color:var(--ink2);font-family:var(--fd);font-weight:700;font-size:14px;border-radius:11px;border:1.5px solid var(--line);transition:.22s;display:flex;align-items:center;gap:7px}
+.rst-btn:hover{border-color:var(--blue);color:var(--blue);background:var(--blue-xl)}
+
+/* RESULT */
+#resultArea{display:none;margin-top:26px;animation:resultIn .42s var(--ease) both}
+.res-banner{border-radius:18px;padding:24px 26px;margin-bottom:18px;display:flex;align-items:flex-start;justify-content:space-between;gap:16px;flex-wrap:wrap;position:relative;overflow:hidden}
+.res-banner::before{content:'';position:absolute;inset:0;opacity:.04;background-image:repeating-linear-gradient(45deg,currentColor 0,currentColor 1px,transparent 0,transparent 50%);background-size:12px 12px;pointer-events:none}
+.res-banner.safe{background:linear-gradient(135deg,var(--green-xl),#d1fae5);border:2px solid var(--green-s)}
+.res-banner.minor{background:linear-gradient(135deg,var(--amber-xl),#fef3c7);border:2px solid var(--amber-s)}
+.res-banner.high{background:var(--red-xl);border:2px solid var(--red-s)}
+.rb-tag{font-family:var(--fd);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:3px 10px;border-radius:100px;display:inline-flex;margin-bottom:6px}
+.rb-tag.safe{background:var(--green);color:#fff}
+.rb-tag.minor{background:var(--amber);color:#fff}
+.rb-tag.high{background:var(--red);color:#fff}
+.rb-title{font-family:var(--fd);font-size:16px;font-weight:800;color:var(--ink);line-height:1.3;margin-bottom:4px}
+.rb-sub{font-size:13.5px;color:var(--ink2);line-height:1.65}
+.rb-ico{font-size:52px;line-height:1;flex-shrink:0}
+
+/* ERROR LIST */
+.error-list-wrap{border-radius:14px;border:1.5px solid var(--red-s);background:var(--red-xl);padding:18px 20px;margin-bottom:14px}
+.error-list-title{font-family:var(--fd);font-size:13.5px;font-weight:700;color:var(--red);margin-bottom:10px;display:flex;align-items:center;gap:7px}
+.error-item{display:flex;align-items:flex-start;gap:9px;font-size:13.5px;color:var(--ink2);line-height:1.65;margin-bottom:7px;padding:10px 12px;background:#fff;border-radius:9px;border:1px solid var(--red-s)}
+.error-item:last-child{margin-bottom:0}
+.ei-ico{font-size:16px;flex-shrink:0;margin-top:1px}
+.ei-body{flex:1}
+.ei-label{font-weight:700;color:var(--ink);font-size:13px;margin-bottom:2px}
+.ei-fix{font-size:12.5px;color:var(--ink3)}
+
+/* CORRECTION BOX */
+.correction-box{border-radius:14px;border:1.5px solid var(--green-s);background:var(--green-xl);padding:18px 20px;margin-bottom:14px}
+.cb-title{font-family:var(--fd);font-size:13.5px;font-weight:700;color:var(--green);margin-bottom:10px;display:flex;align-items:center;gap:7px}
+.cb-item{display:flex;align-items:flex-start;gap:9px;font-size:13.5px;color:var(--ink2);line-height:1.65;margin-bottom:6px}
+.cb-item::before{content:'✓';width:18px;height:18px;background:var(--green);color:#fff;border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;flex-shrink:0;margin-top:2px}
+
+/* RISK METER */
+.risk-wrap{background:var(--surf);border:1.5px solid var(--line);border-radius:13px;padding:18px 20px;margin-bottom:16px}
+.sv-title{font-family:var(--fd);font-size:13.5px;font-weight:700;color:var(--ink);margin-bottom:14px;display:flex;align-items:center;gap:7px}
+.sv-bar{height:22px;border-radius:100px;background:linear-gradient(90deg,#34d399 0%,#fbbf24 50%,#ef4444 100%);position:relative;margin-bottom:8px}
+.sv-marker{position:absolute;top:50%;transform:translate(-50%,-50%);width:18px;height:32px;background:var(--ink);border-radius:4px;transition:left 1s var(--ease);box-shadow:0 2px 8px rgba(0,0,0,.25);left:8%}
+.sv-marker::before{content:'▼';position:absolute;top:-16px;left:50%;transform:translateX(-50%);color:var(--ink);font-size:11px}
+.sv-labels{display:flex;justify-content:space-between;font-size:11px;font-weight:700;color:var(--ink3);margin-top:6px}
+
+/* action row */
+.action-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+.copy-btn{flex:1;min-width:130px;padding:11px;background:var(--green-xl);color:var(--green);border:1.5px solid var(--green-s);font-family:var(--fd);font-weight:700;font-size:13.5px;border-radius:9px;display:flex;align-items:center;justify-content:center;gap:7px;transition:.22s}
+.copy-btn:hover,.copy-btn.copied{background:var(--green);color:#fff}
+.retest-btn{padding:11px 18px;background:var(--blue-xl);color:var(--blue);border:1.5px solid var(--blue-s);font-family:var(--fd);font-weight:700;font-size:13px;border-radius:9px;display:flex;align-items:center;gap:6px;transition:.22s}
+.retest-btn:hover{background:var(--blue);color:#fff}
+
+/* HOWTO */
+.howto-sec{background:var(--surf);padding:72px 0}
+.howto-box{background:var(--amber-xl);border:2px solid var(--amber-s);border-radius:20px;padding:32px 36px;max-width:680px;margin:0 auto}
+.howto-title{display:flex;align-items:center;gap:10px;font-family:var(--fd);font-size:19px;font-weight:800;color:var(--ink);margin-bottom:18px}
+.howto-steps{display:flex;flex-direction:column;gap:11px}
+.hw-step{display:flex;align-items:flex-start;gap:12px;font-size:14px;color:var(--ink2);line-height:1.65}
+.sn{width:26px;height:26px;background:var(--amber);color:#fff;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex-shrink:0;margin-top:1px}
+
+/* COMMON MISTAKES */
+.mistakes-sec{background:var(--white);padding:72px 0}
+.mis-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:36px}
+.mis-card{border:1.5px solid var(--line);border-radius:18px;padding:26px 22px;background:#fff;transition:.28s}
+.mis-card:hover{transform:translateY(-4px);box-shadow:var(--s3);border-color:var(--red-s)}
+.mis-ico{font-size:30px;margin-bottom:12px}
+.mis-title{font-family:var(--fd);font-size:15px;font-weight:800;color:var(--ink);margin-bottom:8px}
+.mis-desc{font-size:13.5px;color:var(--ink3);line-height:1.72}
+.mis-tip{background:var(--amber-xl);border:1px solid var(--amber-s);border-radius:8px;padding:9px 12px;font-size:12.5px;color:var(--ink2);margin-top:12px;line-height:1.6}
+
+/* SMART TIPS */
+.tips-sec{background:var(--surf);padding:72px 0}
+.tips-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:36px}
+.tip-card{background:#fff;border:1.5px solid var(--line);border-radius:16px;padding:22px 20px;display:flex;align-items:flex-start;gap:14px;transition:.28s}
+.tip-card:hover{transform:translateY(-3px);box-shadow:var(--s3);border-color:var(--green-s)}
+.tip-ico{font-size:28px;flex-shrink:0}
+.tip-body{}
+.tip-title{font-family:var(--fd);font-size:14px;font-weight:800;color:var(--ink);margin-bottom:5px}
+.tip-desc{font-size:13.5px;color:var(--ink3);line-height:1.65}
+
+/* STORY */
+.story-sec{background:var(--blue-xl);padding:72px 0}
+.story-card{max-width:760px;margin:0 auto;background:linear-gradient(135deg,#fff,#f0f9ff);border:1.5px solid var(--blue-s);border-radius:24px;padding:36px;box-shadow:var(--s3)}
+.story-ico{font-size:44px;margin-bottom:16px;display:block}
+.story-card h3{font-family:var(--fd);font-size:20px;font-weight:800;color:var(--ink);margin-bottom:14px}
+.story-card p{font-size:15px;color:var(--ink2);line-height:1.85}
+.story-card p+p{margin-top:11px}
+.story-highlight{display:inline-flex;align-items:center;gap:7px;background:var(--blue);color:#fff;font-family:var(--fd);font-size:13px;font-weight:700;padding:6px 14px;border-radius:100px;margin-top:14px}
+
+/* ARTICLE */
+.art-sec{background:var(--surf);padding:72px 0}
+.art-body h2{font-family:var(--fd);font-size:20px;font-weight:800;color:var(--ink);margin:26px 0 10px;line-height:1.3}
+.art-body h2:first-child{margin-top:0}
+.art-body p{font-size:15px;color:var(--ink3);line-height:1.85;margin-bottom:13px}
+.art-body ul{display:flex;flex-direction:column;gap:8px;margin:10px 0 14px}
+.art-body li{display:flex;align-items:flex-start;gap:10px;font-size:14.5px;color:var(--ink3);line-height:1.7}
+.art-body li::before{content:'✓';width:18px;height:18px;background:var(--blue);color:#fff;border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;flex-shrink:0;margin-top:3px}
+.art-body strong{color:var(--ink2);font-weight:700}
+.ibox{background:var(--blue-xl);border:1.5px solid var(--blue-s);border-radius:13px;padding:14px 18px;margin:14px 0;display:flex;gap:10px;font-size:14px;color:var(--ink2);line-height:1.7}
+.ibox svg{width:16px;height:16px;stroke:var(--blue);fill:none;stroke-width:2;flex-shrink:0;margin-top:2px}
+.ibox.a{background:var(--amber-xl);border-color:var(--amber-s)}.ibox.a svg{stroke:var(--amber)}
+.ibox.r{background:var(--red-xl);border-color:var(--red-s)}.ibox.r svg{stroke:var(--red)}
+.ibox.g{background:var(--green-xl);border-color:var(--green-s)}.ibox.g svg{stroke:var(--green)}
+
+/* SEC HEADERS */
+.sec-hd{text-align:center;margin-bottom:44px}
+.sec-h{font-family:var(--fd);font-size:clamp(22px,3.8vw,38px);font-weight:800;color:var(--ink);line-height:1.18;margin-bottom:10px}
+.sec-h span{color:var(--blue)}
+.sec-sub{font-size:15.5px;color:var(--ink3);line-height:1.75;max-width:500px;margin:0 auto}
+
+/* FAQ */
+.faq-sec{background:var(--white);padding:72px 0}
+.fql{max-width:760px;margin:0 auto}
+.fq{background:var(--surf);border:1.5px solid var(--line);border-radius:13px;margin-bottom:10px;overflow:hidden}
+.fq-q{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;cursor:pointer;gap:14px;transition:.2s}
+.fq-q:hover{background:var(--blue-xl)}
+.fq-t{font-weight:600;font-size:15px;color:var(--ink);line-height:1.4}
+.fq-i{width:28px;height:28px;border-radius:50%;background:var(--blue-xl);color:var(--blue);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;transition:transform .28s,background .2s}
+.fq.open .fq-i{transform:rotate(45deg);background:var(--blue);color:#fff}
+.fq-a{max-height:0;overflow:hidden;transition:max-height .35s var(--ease)}
+.fq-ai{padding:0 22px 18px;font-size:14.5px;color:var(--ink3);line-height:1.78}
+.fq.open .fq-a{max-height:400px}
+
+/* REL TOOLS */
+.rel-sec{background:var(--surf);padding:72px 0}
+.rel-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.rel-card{background:#fff;border:1.5px solid var(--line);border-radius:16px;padding:20px 18px;display:flex;flex-direction:column;gap:9px;transition:.28s}
+.rel-card:hover{transform:translateY(-5px);box-shadow:var(--s3);border-color:var(--blue-s)}
+.rel-ico{font-size:26px}
+.rel-title{font-family:var(--fd);font-size:14px;font-weight:700;color:var(--ink)}
+.rel-desc{font-size:13px;color:var(--ink3);line-height:1.6;flex:1}
+.rel-btn{display:inline-flex;align-items:center;gap:6px;font-family:var(--fd);font-weight:700;font-size:13px;color:var(--blue);transition:.2s}
+.rel-btn:hover{gap:10px}
+.rel-btn svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2.5}
+
+/* DISC + FOOTER */
+.disc{background:var(--amber-xl);border-top:1px solid var(--amber-s);border-bottom:1px solid var(--amber-s);padding:14px 0}
+.disc-in{display:flex;align-items:flex-start;gap:12px;font-size:13.5px;color:var(--ink2);line-height:1.7}
+.cta{background:linear-gradient(140deg,#0f172a 0%,#1e3a8a 100%);padding:80px 0;text-align:center;position:relative;overflow:hidden}
+.cta::before{content:'';position:absolute;top:-80px;left:50%;transform:translateX(-50%);width:800px;height:380px;background:radial-gradient(ellipse,rgba(37,99,235,.22) 0%,transparent 68%);pointer-events:none}
+.cta-in{position:relative;z-index:1}
+.cta .pill{color:#93c5fd;background:rgba(255,255,255,.1);margin-bottom:18px}
+.cta .pill::before{background:#93c5fd}
+.cta h2{font-family:var(--fd);font-size:clamp(24px,4vw,42px);font-weight:800;color:#fff;line-height:1.15;margin-bottom:12px}
+.cta h2 em{color:#fbbf24;font-style:normal}
+.cta p{font-size:16px;color:rgba(255,255,255,.72);max-width:480px;margin:0 auto 32px;line-height:1.78}
+.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn-gold{display:inline-flex;align-items:center;gap:8px;background:var(--amber);color:#fff;font-family:var(--fd);font-weight:800;font-size:15px;padding:14px 30px;border-radius:8px;box-shadow:0 8px 28px rgba(245,158,11,.35);transition:.22s}
+.btn-gold:hover{background:#d97706;transform:translateY(-3px)}
+.btn-ghost{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.09);border:1.5px solid rgba(255,255,255,.22);color:#fff;font-family:var(--fd);font-weight:600;font-size:14px;padding:13px 26px;border-radius:8px;transition:.2s}
+.btn-ghost:hover{background:rgba(255,255,255,.16)}
+footer{background:#0f172a;padding:52px 0 0}
+.ft-inner{max-width:1180px;margin:0 auto;padding:0 24px}
+.ft-top{display:grid;grid-template-columns:1.9fr 1fr 1fr 1fr;gap:44px;margin-bottom:44px}
+.ft-brand .ln{color:#fff}.ft-brand .ls{color:#475569}
+.ft-desc{font-size:13.5px;color:#64748b;line-height:1.78;max-width:265px;margin:13px 0 20px}
+.ft-soc{display:flex;gap:9px}
+.fts{width:34px;height:34px;border-radius:7px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;color:#94a3b8;font-size:13px;transition:.2s}
+.fts:hover{background:var(--blue);color:#fff}
+.fc h4{font-family:var(--fd);font-size:12px;font-weight:700;color:#fff;margin-bottom:14px;letter-spacing:.06em;text-transform:uppercase}
+.fc ul{display:flex;flex-direction:column;gap:8px}
+.fc ul a{font-size:13.5px;color:#64748b;transition:.18s}
+.fc ul a:hover{color:#93c5fd}
+.ft-btm{border-top:1px solid rgba(255,255,255,.07);padding:20px 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.ft-cp{font-size:12.5px;color:#475569}.ft-cp b{color:#64748b}
+.ft-lnk{display:flex;gap:18px}
+.ft-lnk a{font-size:12.5px;color:#475569;transition:.18s}
+.ft-lnk a:hover{color:#93c5fd}
+.btt{position:fixed;bottom:26px;right:26px;z-index:500;width:43px;height:43px;background:var(--blue);color:#fff;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:17px;box-shadow:var(--sb);opacity:0;pointer-events:none;transform:translateY(14px);transition:.28s var(--ease)}
+.btt.on{opacity:1;pointer-events:auto;transform:translateY(0)}
+.btt:hover{transform:translateY(-3px)}
+
+@media(max-width:1060px){.ft-top{grid-template-columns:1fr 1fr}.rel-grid{grid-template-columns:1fr 1fr}.mis-grid{grid-template-columns:1fr 1fr}.tips-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:860px){nav.dn,.hcta{display:none}.brg{display:flex}.tool-body{padding:24px 22px}.tool-hdr{padding:24px 22px}.field-row{grid-template-columns:1fr}.doc-grid{grid-template-columns:1fr}.photo-sim{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.ft-top{grid-template-columns:1fr}.rel-grid{grid-template-columns:1fr}.mis-grid{grid-template-columns:1fr}.tips-grid{grid-template-columns:1fr}.ft-btm{flex-direction:column;text-align:center}.cta-btns{flex-direction:column;align-items:center}.photo-sim{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="hdr">
+  <div class="w"><div class="hdi">
+    <a href="https://rajdailytools.in/" class="logo">
+      <div class="lb"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+      <div><div class="ln">Raj<span>Daily</span>Tools</div><div class="ls">Smart Tools for Daily Life</div></div>
+    </a>
+    <nav class="dn">
+      <a href="https://rajdailytools.in/">Home</a>
+      <a href="https://rajdailytools.in/categories.html">Categories</a>
+      <a href="https://rajdailytools.in/#popular">Popular</a>
+      <a href="https://rajdailytools.in/about.html">About</a>
+      <a href="https://rajdailytools.in/contact.html">Contact</a>
+    </nav>
+    <a href="https://rajdailytools.in/categories.html" class="hcta">Explore Tools →</a>
+    <button class="brg" id="brg"><span></span><span></span><span></span></button>
+  </div></div>
+</header>
+<div class="dov" id="dov"></div>
+<div class="drw" id="drw">
+  <div class="dh">
+    <div class="logo">
+      <div class="lb" style="width:30px;height:30px;border-radius:7px"><svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#fff"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+      <div class="ln" style="font-size:16px">Raj<span>Daily</span>Tools</div>
+    </div>
+    <button class="dx" id="dx">✕</button>
+  </div>
+  <nav class="mn">
+    <a href="https://rajdailytools.in/" onclick="cD()">🏠 Home</a>
+    <a href="https://rajdailytools.in/categories.html" onclick="cD()">🗂️ Categories</a>
+    <a href="https://rajdailytools.in/#popular" onclick="cD()">⭐ Popular</a>
+    <a href="https://rajdailytools.in/about.html" onclick="cD()">👤 About</a>
+    <a href="https://rajdailytools.in/contact.html" onclick="cD()">📬 Contact</a>
+  </nav>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+  <div class="w">
+    <div class="bc">
+      <a href="https://rajdailytools.in/">Home</a><span style="color:var(--ink4)">›</span>
+      <a href="https://rajdailytools.in/categories.html">Tools</a><span style="color:var(--ink4)">›</span>
+      <span>Army Form Mistake Checker</span>
+    </div>
+    <div class="hero-inner">
+      <div class="pill">📋 Army Form Error Detection Tool 2026</div>
+      <h1>Army Form <span>Mistake Checker</span> (Smart Tool)</h1>
+      <p class="hero-sub">Check your army form errors before submission and avoid rejection. Detect name mismatch, DOB errors, wrong category, missing documents, photo issues — get instant correction suggestions and risk level analysis.</p>
+      <div class="hero-chips">
+        <span class="chip">🔍 Smart Error Detection</span>
+        <span class="chip">📄 Document Check</span>
+        <span class="chip">⚡ Instant Result</span>
+        <span class="chip">✅ Fix Suggestions</span>
+        <span class="chip">🎯 Risk Level</span>
+        <span class="chip">🆓 100% Free</span>
+      </div>
+      <div class="hero-meta">
+        <div class="upd">✅ 2026 Updated</div>
+        <span class="hmi">🔒 No Data Stored</span>
+        <span class="hmi">📱 Mobile Friendly</span>
+        <span class="hmi">⚡ Real-time Validation</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOOL SECTION -->
+<section class="tool-sec" id="checker">
+  <div class="w"><div class="tool-wrap">
+    <div class="tool-card rev">
+      <div class="tool-hdr">
+        <div class="th">
+          <h2>📋 Army Form Mistake Checker — Error Detection 2026</h2>
+          <p>Fill in your form details below. Our smart engine will instantly detect errors, calculate your rejection risk, and give step-by-step correction guidance.</p>
+          <div class="th-badges">
+            <span class="thb">🔍 Error Detection</span>
+            <span class="thb">📊 Risk Level</span>
+            <span class="thb">✅ Fix Suggestions</span>
+            <span class="thb">📄 Document Check</span>
+            <span class="thb">🔒 100% Private</span>
+          </div>
+        </div>
+      </div>
+      <div class="tool-body">
+
+        <div class="hint-box">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          Fill all details exactly as in your official documents. The tool will compare and flag any potential mismatches or missing information.
+        </div>
+
+        <!-- NAME -->
+        <div class="field-row">
+          <div class="field-group">
+            <div class="field-label">👤 Full Name (as in documents)</div>
+            <input class="field-input" id="fName" type="text" placeholder="e.g. RAJESH KUMAR SHARMA" oninput="liveValidate('fName')" autocomplete="off">
+          </div>
+          <div class="field-group">
+            <div class="field-label">👤 Name as filled in Form</div>
+            <input class="field-input" id="fNameForm" type="text" placeholder="e.g. Rajesh kumar" oninput="liveValidate('fNameForm')" autocomplete="off">
+          </div>
+        </div>
+
+        <!-- DOB -->
+        <div class="field-row">
+          <div class="field-group">
+            <div class="field-label">🎂 Date of Birth (10th Marksheet)</div>
+            <input class="field-input" id="fDob" type="date" onchange="liveValidate('fDob')">
+          </div>
+          <div class="field-group">
+            <div class="field-label">🎂 DOB as filled in Form</div>
+            <input class="field-input" id="fDobForm" type="date" onchange="liveValidate('fDobForm')">
+          </div>
+        </div>
+
+        <!-- CATEGORY -->
+        <div class="field-row">
+          <div class="field-group">
+            <div class="field-label">🏷️ Your Actual Category (Certificate)</div>
+            <select class="field-input" id="fCatDoc" onchange="liveValidate('fCatDoc')">
+              <option value="">-- Select Category --</option>
+              <option>General (UR)</option>
+              <option>OBC</option>
+              <option>SC</option>
+              <option>ST</option>
+              <option>EWS</option>
+            </select>
+          </div>
+          <div class="field-group">
+            <div class="field-label">🏷️ Category filled in Form</div>
+            <select class="field-input" id="fCatForm" onchange="liveValidate('fCatForm')">
+              <option value="">-- Select Category --</option>
+              <option>General (UR)</option>
+              <option>OBC</option>
+              <option>SC</option>
+              <option>ST</option>
+              <option>EWS</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- EDUCATION -->
+        <div class="field-group">
+          <div class="field-label">🎓 Highest Education Qualification</div>
+          <select class="field-input" id="fEdu" onchange="liveValidate('fEdu')">
+            <option value="">-- Select Qualification --</option>
+            <option value="8th">8th Pass</option>
+            <option value="10th">10th Pass (Matric)</option>
+            <option value="12th">12th Pass (Inter)</option>
+            <option value="grad">Graduation</option>
+            <option value="pg">Post Graduation</option>
+          </select>
+        </div>
+
+        <!-- DOCUMENTS -->
+        <div class="field-group">
+          <div class="field-label">📄 Documents Uploaded / Ready <span style="font-size:11px;color:var(--ink4);font-weight:500;margin-left:4px">(check all that apply)</span></div>
+          <div class="doc-grid" id="docGrid">
+            <label class="doc-check" id="dc_10th"><input type="checkbox" onchange="toggleDoc('dc_10th')"> <span>✅ 10th Marksheet</span></label>
+            <label class="doc-check" id="dc_12th"><input type="checkbox" onchange="toggleDoc('dc_12th')"> <span>✅ 12th Marksheet</span></label>
+            <label class="doc-check" id="dc_aadhaar"><input type="checkbox" onchange="toggleDoc('dc_aadhaar')"> <span>🪪 Aadhaar Card</span></label>
+            <label class="doc-check" id="dc_pan"><input type="checkbox" onchange="toggleDoc('dc_pan')"> <span>🪪 PAN Card</span></label>
+            <label class="doc-check" id="dc_domicile"><input type="checkbox" onchange="toggleDoc('dc_domicile')"> <span>📜 Domicile Certificate</span></label>
+            <label class="doc-check" id="dc_category"><input type="checkbox" onchange="toggleDoc('dc_category')"> <span>📜 Category Certificate</span></label>
+            <label class="doc-check" id="dc_character"><input type="checkbox" onchange="toggleDoc('dc_character')"> <span>📋 Character Certificate</span></label>
+            <label class="doc-check" id="dc_ncc"><input type="checkbox" onchange="toggleDoc('dc_ncc')"> <span>🎖️ NCC Certificate (if any)</span></label>
+          </div>
+        </div>
+
+        <!-- PHOTO / SIGNATURE -->
+        <div class="field-group">
+          <div class="field-label">🖼️ Photo & Signature Status <span style="font-size:11px;color:var(--ink4);font-weight:500;margin-left:4px">(click to toggle)</span></div>
+          <div class="photo-sim">
+            <div class="photo-box" id="pbPhoto" onclick="togglePhoto('pbPhoto')">
+              <div class="pb-ico">📷</div>
+              <div class="pb-label">Passport Photo</div>
+              <div class="pb-sub" id="pbPhotoSub">Click to mark as uploaded</div>
+            </div>
+            <div class="photo-box" id="pbSign" onclick="togglePhoto('pbSign')">
+              <div class="pb-ico">✍️</div>
+              <div class="pb-label">Signature</div>
+              <div class="pb-sub" id="pbSignSub">Click to mark as uploaded</div>
+            </div>
+          </div>
+          <!-- Photo format note -->
+          <div style="margin-top:10px">
+            <div class="field-label" style="margin-bottom:6px">📏 Photo meets requirements?</div>
+            <select class="field-input" id="fPhotoOk">
+              <option value="">-- Select --</option>
+              <option value="yes">Yes — White background, recent photo, correct size</option>
+              <option value="old">No — Photo is old or blurry</option>
+              <option value="bg">No — Wrong background color</option>
+              <option value="size">No — Wrong size / format</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- MOBILE / EMAIL -->
+        <div class="field-row">
+          <div class="field-group">
+            <div class="field-label">📱 Mobile Number in Form</div>
+            <input class="field-input" id="fMobile" type="text" placeholder="10-digit mobile number" maxlength="10" oninput="liveValidate('fMobile')">
+          </div>
+          <div class="field-group">
+            <div class="field-label">📧 Email ID in Form</div>
+            <input class="field-input" id="fEmail" type="email" placeholder="your@email.com" oninput="liveValidate('fEmail')">
+          </div>
+        </div>
+
+        <!-- BUTTONS -->
+        <div class="btn-row" style="margin-top:8px">
+          <button class="cvt-btn" onclick="checkForm()">🔍 Check My Form Now</button>
+          <button class="rst-btn" onclick="resetTool()">🔄 Reset</button>
+        </div>
+
+        <!-- RESULT -->
+        <div id="resultArea">
+          <div class="res-banner safe" id="resBanner">
+            <div>
+              <div class="rb-tag safe" id="rbTag">✅ SAFE</div>
+              <div class="rb-title" id="rbTitle">Loading...</div>
+              <div class="rb-sub" id="rbSub"></div>
+            </div>
+            <div class="rb-ico" id="rbIco">✅</div>
+          </div>
+
+          <!-- RISK METER -->
+          <div class="risk-wrap">
+            <div class="sv-title">📊 Rejection Risk Level</div>
+            <div class="sv-bar"><div class="sv-marker" id="svMarker"></div></div>
+            <div class="sv-labels"><span>✅ Safe</span><span>⚠️ Minor</span><span>❌ High Risk</span></div>
+          </div>
+
+          <!-- ERROR LIST -->
+          <div class="error-list-wrap" id="errorWrap" style="display:none">
+            <div class="error-list-title">❌ Errors Found</div>
+            <div id="errorList"></div>
+          </div>
+
+          <!-- CORRECTIONS -->
+          <div class="correction-box" id="correctionWrap">
+            <div class="cb-title">✅ Correction Suggestions</div>
+            <div id="correctionList"></div>
+          </div>
+
+          <!-- ACTIONS -->
+          <div class="action-row">
+            <button class="copy-btn" id="copyBtn" onclick="copyResult()">📋 Copy Result</button>
+            <button class="retest-btn" onclick="resetTool()">🔄 Check Again</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div></div>
+</section>
+
+<!-- HOW TO USE -->
+<section class="howto-sec">
+  <div class="w">
+    <div class="howto-box rev">
+      <div class="howto-title">💡 How to Use This Tool</div>
+      <div class="howto-steps">
+        <div class="hw-step"><div class="sn">1</div><div>Enter your details <strong>exactly as they appear in your official documents</strong> — name, DOB, category, education.</div></div>
+        <div class="hw-step"><div class="sn">2</div><div>Fill in the same information <strong>as you filled in your army application form</strong> for comparison.</div></div>
+        <div class="hw-step"><div class="sn">3</div><div>Check all documents you have uploaded / ready, and mark your photo & signature status.</div></div>
+        <div class="hw-step"><div class="sn">4</div><div>Click <strong>"Check My Form Now"</strong> — review all errors, risk level, and correction suggestions instantly.</div></div>
+        <div class="hw-step"><div class="sn">5</div><div><strong>Fix all errors before submitting</strong> your army form. Always verify from the official army website.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMMON MISTAKES -->
+<section class="mistakes-sec">
+  <div class="w">
+    <div class="sec-hd rev">
+      <div class="sec-h">Common <span>Form Mistakes</span> That Cause Rejection</div>
+      <div class="sec-sub">90% of rejections happen due to these avoidable errors. Know them before you fill your form.</div>
+    </div>
+    <div class="mis-grid">
+      <div class="mis-card rev">
+        <div class="mis-ico">📝</div>
+        <div class="mis-title">Name Mismatch</div>
+        <div class="mis-desc">Filling your name differently from official documents — even small spelling differences like "Rajesh" vs "Rajesh Kumar" cause immediate rejection during verification.</div>
+        <div class="mis-tip">✅ Fix: Always copy name exactly from 10th marksheet or Aadhaar — including spaces and spelling.</div>
+      </div>
+      <div class="mis-card rev">
+        <div class="mis-ico">📅</div>
+        <div class="mis-title">Date of Birth Error</div>
+        <div class="mis-desc">Entering wrong DOB, incorrect date format (DD/MM vs MM/DD), or typos in the year are among the most common causes of form rejection in army recruitment.</div>
+        <div class="mis-tip">✅ Fix: Cross-check DOB with 10th marksheet and Aadhaar before entering — both must match exactly.</div>
+      </div>
+      <div class="mis-card rev">
+        <div class="mis-ico">🏷️</div>
+        <div class="mis-title">Wrong Category</div>
+        <div class="mis-desc">Selecting OBC instead of General, or applying under a category without a valid certificate, can get your form disqualified during document verification at the rally.</div>
+        <div class="mis-tip">✅ Fix: Only select a category if you have the valid certificate issued by the appropriate authority.</div>
+      </div>
+      <div class="mis-card rev">
+        <div class="mis-ico">📄</div>
+        <div class="mis-title">Missing Documents</div>
+        <div class="mis-desc">Forgetting to upload required documents or uploading low-quality scans is one of the top rejection reasons. Army form portals often reject applications with missing attachments.</div>
+        <div class="mis-tip">✅ Fix: Use the checklist above. Keep scanned copies at 200–300 DPI, in PDF/JPG as specified.</div>
+      </div>
+      <div class="mis-card rev">
+        <div class="mis-ico">🖼️</div>
+        <div class="mis-title">Photo / Signature Issue</div>
+        <div class="mis-desc">Using an old photo, wrong background colour, oversized file, or missing signature are instant disqualifiers. Army strictly requires recent passport photos with white background.</div>
+        <div class="mis-tip">✅ Fix: Use a recent photo (within 3 months), white background, correct size. Sign on white paper with blue/black pen.</div>
+      </div>
+      <div class="mis-card rev">
+        <div class="mis-ico">📞</div>
+        <div class="mis-title">Invalid Contact Info</div>
+        <div class="mis-desc">Wrong mobile number, inactive email ID, or incorrect state/district entry prevents army officials from reaching you for admit cards and rally updates.</div>
+        <div class="mis-tip">✅ Fix: Use a working mobile number that will remain active for 6+ months. Double-check your email ID.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STORY SECTION -->
+<section class="story-sec">
+  <div class="w">
+    <div class="story-card rev">
+      <span class="story-ico">🪖</span>
+      <h3>Why Checking Form Mistakes is Important — Bhola Ki Kahani</h3>
+      <p>Mera dost Bhola pichle 2 saal se army ki tayari kar raha tha. Running strong thi, physical bhi clear kar leta tha. Is baar usne form bhara… lekin ek choti si galti reh gayi.</p>
+      <p>Usne apna naam documents se thoda alag fill kar diya. Jab verification aaya — uska form reject ho gaya. Uski mehnat wahi ruk gayi.</p>
+      <p>Usne bas itna bola — <strong>"Kaash maine form submit karne se pehle ek baar check kar liya hota."</strong></p>
+      <p>Us din mujhe samajh aaya ki ek choti si mistake kitni badi problem ban sakti hai. Isliye maine ye Army Form Mistake Checker banaya — taaki kisi aur Bhola ka sapna form ki galti se na ruk jaye.</p>
+      <span class="story-highlight">🎯 Ek galti = 2 saal ki mehnat barbad. Check karo. Safe raho.</span>
+    </div>
+  </div>
+</section>
+
+<!-- SMART TIPS -->
+<section class="tips-sec">
+  <div class="w">
+    <div class="sec-hd rev">
+      <div class="sec-h">Smart <span>Tips</span> to Fill Army Form Correctly</div>
+      <div class="sec-sub">Follow these tips before you click "Submit" — avoid rejection with simple checks.</div>
+    </div>
+    <div class="tips-grid">
+      <div class="tip-card rev">
+        <div class="tip-ico">📋</div>
+        <div class="tip-body">
+          <div class="tip-title">Double Check All Documents</div>
+          <div class="tip-desc">Before filling the form, keep all original documents in front of you. Enter each detail by looking directly at the document — never from memory.</div>
+        </div>
+      </div>
+      <div class="tip-card rev">
+        <div class="tip-ico">🔤</div>
+        <div class="tip-body">
+          <div class="tip-title">Match Spelling Exactly</div>
+          <div class="tip-desc">Your name spelling in the form must be 100% identical to your 10th marksheet and Aadhaar. Even a single letter difference can cause rejection.</div>
+        </div>
+      </div>
+      <div class="tip-card rev">
+        <div class="tip-ico">🏷️</div>
+        <div class="tip-body">
+          <div class="tip-title">Verify Your Category</div>
+          <div class="tip-desc">Only select OBC/SC/ST/EWS if you have a valid certificate. Using a wrong category without a valid certificate is considered fraud and can permanently ban you.</div>
+        </div>
+      </div>
+      <div class="tip-card rev">
+        <div class="tip-ico">📅</div>
+        <div class="tip-body">
+          <div class="tip-title">Check Age Eligibility</div>
+          <div class="tip-desc">For Agniveer, the age range is 17.5 to 23 years. Check the official notification for exact cut-off dates before applying. Age is verified strictly.</div>
+        </div>
+      </div>
+      <div class="tip-card rev">
+        <div class="tip-ico">🖼️</div>
+        <div class="tip-body">
+          <div class="tip-title">Photo & Signature Format</div>
+          <div class="tip-desc">Upload a recent passport photo with white background. Signature should be on plain white paper. File size must match the portal requirements (usually 20KB–50KB).</div>
+        </div>
+      </div>
+      <div class="tip-card rev">
+        <div class="tip-ico">🌐</div>
+        <div class="tip-body">
+          <div class="tip-title">Always Verify from Official Website</div>
+          <div class="tip-desc">Always verify all requirements and eligibility from the official army recruitment website before final submission — joinindianarmy.nic.in. Rules can change every notification.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SEO ARTICLE -->
+<section class="art-sec">
+  <div class="wa">
+    <div class="art-body rev">
+      <h2>Army Form Mistake Checker — Complete Guide 2026</h2>
+      <p>Filing the Indian Army recruitment form seems simple, but it is one of the most critical steps in the entire selection process. Thousands of aspirants get rejected every year not because of physical or written exam failure — but because of small, avoidable mistakes in their application form. This guide covers everything you need to know about filling the army form correctly in 2026.</p>
+
+      <div class="ibox a">
+        <svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        <div><strong>Important:</strong> This tool is an educational guide only. Always confirm all requirements from the official Indian Army website at joinindianarmy.nic.in before submitting your application.</div>
+      </div>
+
+      <h2>Why Army Forms Get Rejected — Top Reasons</h2>
+      <p>According to recruitment data and expert analysis, the most common reasons for army application form rejection include:</p>
+      <ul>
+        <li>Name mismatch between form entry and official documents (most common reason)</li>
+        <li>Date of birth error or wrong format causing age ineligibility flag</li>
+        <li>Selecting wrong category without valid certificate</li>
+        <li>Missing mandatory documents or uploading wrong format files</li>
+        <li>Photo not meeting specifications (wrong background, old photo, wrong size)</li>
+        <li>Invalid or misspelled mobile number and email address</li>
+        <li>Incorrect education qualification entry not matching certificates</li>
+        <li>Technical errors from rushing through the form without reviewing</li>
+      </ul>
+
+      <h2>Step-by-Step Army Form Filling Guide 2026</h2>
+      <p>Before you begin filling the online army application form, gather all your original documents. Do not fill from memory — every field must exactly match your official paperwork. Here is the correct sequence:</p>
+      <ul>
+        <li>Start with your 10th marksheet and Aadhaar card in front of you</li>
+        <li>Enter your name exactly as it appears on both documents (use BLOCK LETTERS as required)</li>
+        <li>Enter your date of birth from your 10th marksheet — check day, month, and year carefully</li>
+        <li>Select your state and district exactly — verify district name spelling</li>
+        <li>Select your category only if you have a valid government-issued certificate</li>
+        <li>Upload each document in the correct format and size as specified in the notification</li>
+        <li>Upload your passport photo and signature as per requirements</li>
+        <li>Enter your working mobile number and email ID — you will receive important notifications here</li>
+        <li>Review every field before clicking submit — use our Army Form Mistake Checker above</li>
+      </ul>
+
+      <div class="ibox r">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+        <div><strong>Army Form Me Ye Galti = Reject:</strong> Name alag se bharna, galat DOB, category certificate ke bina wrong category select karna, ya photo ka background colored hona — ye sab instant rejection causes hain.</div>
+      </div>
+
+      <h2>Real Mistakes Army Aspirants Make — Prevention Guide</h2>
+      <p>Based on real recruitment rally experiences and feedback from rejected candidates, here are the most impactful mistakes army aspirants make during form filling:</p>
+      <ul>
+        <li><strong>Filling name from Aadhaar but with different spelling than 10th marksheet</strong> — always ensure both documents show the exact same name spelling before applying</li>
+        <li><strong>Entering age incorrectly due to wrong year</strong> — double check the year you were born, especially if born in December or January</li>
+        <li><strong>Uploading documents in wrong format</strong> — read the notification carefully, some require PDF while others require JPG; file size limits are strictly enforced</li>
+        <li><strong>Using an old or studio-style edited photo</strong> — army requires a plain white background, no borders, no fancy editing</li>
+        <li><strong>Not filling NCC/sports certificates</strong> if available — these give bonus marks and should never be skipped</li>
+        <li><strong>Not reading the notification fully</strong> before applying — requirements change between notifications; always verify from official website par confirm zarur kare</li>
+      </ul>
+
+      <h2>Army Form Correction — Kya Option Hota Hai?</h2>
+      <p>Once an army form is submitted, correction options are extremely limited. In most cases, the portal allows a brief correction window before the form is locked. After that, no changes are possible. This is why it is absolutely critical to check everything before submitting — use this Army Form Mistake Checker to simulate your form review before you click submit.</p>
+      <p>If you notice an error after submission and the correction window has passed, contact the army recruitment helpline immediately. In some cases, you may need to re-apply in the next notification cycle. Prevention is always better than correction — official website par confirm zarur kare.</p>
+
+      <div class="ibox g">
+        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+        <div><strong>Pro Tip:</strong> After completing your form, take screenshots of every page before submitting. If any issue arises during verification, you will have proof of what you entered.</div>
+      </div>
+
+      <h2>Army Form Check Karne Ka Tarika — Smart Checklist</h2>
+      <p>Use this mental checklist every time before submitting an army application form. Go through each point carefully:</p>
+      <ul>
+        <li>Name matches exactly with 10th marksheet and Aadhaar — same spelling, same middle name inclusion</li>
+        <li>Date of birth is correct and matches marksheet — check all three: day, month, year</li>
+        <li>Category selected matches valid certificate in your possession</li>
+        <li>Age eligibility calculated correctly as per the notification release date</li>
+        <li>All mandatory documents uploaded in correct format and within size limits</li>
+        <li>Passport photo: recent, white background, correct size, clear face visibility</li>
+        <li>Signature on white paper, legible, not too light or too dark</li>
+        <li>Mobile number is 10 digits and active — this is where OTP and admit card comes</li>
+        <li>Email ID is correct and accessible — rally notices come here</li>
+        <li>State, district, and pincode all correctly selected</li>
+      </ul>
+      <p>Following this checklist along with our free Army Form Mistake Checker tool gives you the best chance of a successful application. Remember — army form mistake checker online tools are guides only. Final verification should always be done from the official army recruitment portal.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-sec">
+  <div class="w">
+    <div class="sec-hd rev">
+      <div class="sec-h">Frequently Asked <span>Questions</span></div>
+      <div class="sec-sub">Common questions about army form filling and mistake correction.</div>
+    </div>
+    <div class="fql">
+      <div class="fq rev">
+        <div class="fq-q" onclick="togFQ(this)"><span class="fq-t">Army form me name mismatch ho jaye toh kya hoga?</span><div class="fq-i">+</div></div>
+        <div class="fq-a"><div class="fq-ai">Name mismatch is one of the top rejection reasons. During document verification at the rally, your form name is cross-checked with your Aadhaar and 10th marksheet. If there is any difference — even a spelling variation — your form can be rejected on the spot. Always ensure your name spelling is identical across all documents before applying. If documents have different spellings, get them corrected through official channels first.</div></div>
+      </div>
+      <div class="fq rev">
+        <div class="fq-q" onclick="togFQ(this)"><span class="fq-t">Army form submit karne ke baad correction ho sakta hai?</span><div class="fq-i">+</div></div>
+        <div class="fq-a"><div class="fq-ai">Most army recruitment portals provide a limited correction window (usually 1–7 days after submission) where you can edit your application. After this window closes, the form is locked and no changes are allowed. This is why checking your form before submission using this Army Form Mistake Checker is so important. If the correction window has passed and you notice an error, contact the army recruitment helpline immediately. In some cases, you may need to wait for the next notification cycle.</div></div>
+      </div>
+      <div class="fq rev">
+        <div class="fq-q" onclick="togFQ(this)"><span class="fq-t">Army form me category galat fill ho jaye toh kya hoga?</span><div class="fq-i">+</div></div>
+        <div class="fq-a"><div class="fq-ai">Selecting a wrong category has serious consequences. If you select OBC/SC/ST without a valid certificate, it can be considered a fraudulent application. At the rally, your category certificate is verified against your form entry — a mismatch leads to immediate disqualification. In serious cases, it can result in debarment from future army applications. Always select your actual category based on the certificate you hold. When in doubt, select General (UR) as no certificate is required for it.</div></div>
+      </div>
+      <div class="fq rev">
+        <div class="fq-q" onclick="togFQ(this)"><span class="fq-t">Photo requirements kya hai army form ke liye?</span><div class="fq-i">+</div></div>
+        <div class="fq-a"><div class="fq-ai">Army application form requires a recent passport-size photograph (taken within the last 3 months). Requirements typically include: plain white background (no colored backgrounds), clear face visibility without sunglasses or cap, file size usually between 10KB–50KB in JPG format, and dimensions as specified in the notification (typically 3.5cm x 4.5cm). Always read the specific notification's photo requirements as they can vary. Using an old, edited, or wrong background photo is a common rejection cause.</div></div>
+      </div>
+      <div class="fq rev">
+        <div class="fq-q" onclick="togFQ(this)"><span class="fq-t">Kaunse documents army form ke liye mandatory hain?</span><div class="fq-i">+</div></div>
+        <div class="fq-a"><div class="fq-ai">Standard mandatory documents for most army recruitment notifications include: 10th marksheet and certificate, 12th marksheet (where applicable), Aadhaar card, domicile/resident certificate, character certificate from school/gazetted officer, category certificate (if applicable). Additional documents may include NCC certificates, sports certificates, relationship certificates (for son of soldier category), and more depending on the post. Always check the specific notification — requirements vary by position and state. Verify from official website par confirm zarur kare.</div></div>
+      </div>
+      <div class="fq rev">
+        <div class="fq-q" onclick="togFQ(this)"><span class="fq-t">Mobile number wrong enter ho gaya — kya problem hogi?</span><div class="fq-i">+</div></div>
+        <div class="fq-a"><div class="fq-ai">Your mobile number is critical — it is used for OTP verification during registration, admit card download notifications, and rally communication. A wrong mobile number means you may miss important updates, OTPs, and rally dates. If the correction window is open, fix it immediately. If not, contact the recruitment helpline. Always use a stable number that will remain active throughout the recruitment process (at least 6–8 months).</div></div>
+      </div>
+      <div class="fq rev">
+        <div class="fq-q" onclick="togFQ(this)"><span class="fq-t">Ye Army Form Mistake Checker tool kitna accurate hai?</span><div class="fq-i">+</div></div>
+        <div class="fq-a"><div class="fq-ai">This tool checks for the most common and critical form errors based on standard army recruitment requirements. It provides educational guidance to help you identify potential issues before submission. However, it is not an official army system — requirements can vary by notification, recruitment board, and year. Always use this tool as a first check, then verify your complete application from the official army recruitment website joinindianarmy.nic.in before final submission. Official website par confirm zarur kare.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RELATED TOOLS -->
+<section class="rel-sec">
+  <div class="w">
+    <div class="sec-hd rev">
+      <div class="sec-h">More <span>Army Tools</span> for You</div>
+      <div class="sec-sub">Complete army preparation toolkit — everything you need in one place.</div>
+    </div>
+    <div class="rel-grid">
+      <div class="rel-card rev">
+        <div class="rel-ico">✅</div>
+        <div class="rel-title">Eligibility Checker</div>
+        <div class="rel-desc">Check if you are eligible for army Agniveer based on age, education, and category before applying.</div>
+        <a href="https://rajdailytools.in/" class="rel-btn">Use Tool <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      </div>
+      <div class="rel-card rev">
+        <div class="rel-ico">🏃</div>
+        <div class="rel-title">Running Calculator</div>
+        <div class="rel-desc">Calculate your 1.6km running time and see if you qualify for army physical fitness test.</div>
+        <a href="https://rajdailytools.in/" class="rel-btn">Use Tool <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      </div>
+      <div class="rel-card rev">
+        <div class="rel-ico">📅</div>
+        <div class="rel-title">Running Planner</div>
+        <div class="rel-desc">Get a personalized 12-week running training plan to prepare for army physical fitness test.</div>
+        <a href="https://rajdailytools.in/" class="rel-btn">Use Tool <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      </div>
+      <div class="rel-card rev">
+        <div class="rel-ico">⭐</div>
+        <div class="rel-title">Promotion Tool</div>
+        <div class="rel-desc">Know the army rank promotion system and timeline from Sepoy to Naib Subedar and beyond.</div>
+        <a href="https://rajdailytools.in/" class="rel-btn">Use Tool <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      </div>
+      <div class="rel-card rev">
+        <div class="rel-ico">🏥</div>
+        <div class="rel-title">Medical Checker</div>
+        <div class="rel-desc">Check your medical fitness for army recruitment based on height, weight, chest, eyesight parameters.</div>
+        <a href="https://rajdailytools.in/" class="rel-btn">Use Tool <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      </div>
+      <div class="rel-card rev">
+        <div class="rel-ico">👁️</div>
+        <div class="rel-title">Eye Test Simulator</div>
+        <div class="rel-desc">Test your eye vision at home and know if you meet army eye fitness standards before the medical.</div>
+        <a href="https://rajdailytools.in/" class="rel-btn">Use Tool <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      </div>
+      <div class="rel-card rev">
+        <div class="rel-ico">👣</div>
+        <div class="rel-title">Flat Foot Tool</div>
+        <div class="rel-desc">Detect flat foot at home using the wet footprint method and know your army medical eligibility.</div>
+        <a href="https://rajdailytools.in/" class="rel-btn">Use Tool <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      </div>
+      <div class="rel-card rev">
+        <div class="rel-ico">📄</div>
+        <div class="rel-title">Document Tool</div>
+        <div class="rel-desc">Get a complete checklist of documents required for army Agniveer rally — never miss a paper.</div>
+        <a href="https://rajdailytools.in/" class="rel-btn">Use Tool <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      </div>
+      <div class="rel-card rev">
+        <div class="rel-ico">📊</div>
+        <div class="rel-title">Rally Analyzer</div>
+        <div class="rel-desc">Analyze your chances of selection in army rally based on your physical and written exam performance.</div>
+        <a href="https://rajdailytools.in/" class="rel-btn">Use Tool <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      </div>
+      <div class="rel-card rev">
+        <div class="rel-ico">💰</div>
+        <div class="rel-title">Pension Calculator</div>
+        <div class="rel-desc">Calculate your expected army pension benefits based on rank and years of service after retirement.</div>
+        <a href="https://rajdailytools.in/" class="rel-btn">Use Tool <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DISCLAIMER -->
+<div class="disc">
+  <div class="w"><div class="disc-in">⚠️ <div><strong>Disclaimer:</strong> This Army Form Mistake Checker is an educational and awareness tool only. It is not an official army system and results are for guidance purposes only. Army recruitment requirements may change with each notification. Always verify all details, eligibility criteria, and document requirements from the official Indian Army recruitment website at joinindianarmy.nic.in before submitting your application. Official website par confirm zarur kare.</div></div></div>
+</div>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="w cta-in">
+    <div class="pill">🪖 Army Preparation Tools</div>
+    <h2>Check Your Form. Fix Errors. <em>Get Selected.</em></h2>
+    <p>Don't let a small form mistake destroy 2 years of hard work. Use our free tools to prepare smarter — for free.</p>
+    <div class="cta-btns">
+      <a href="#checker" class="btn-gold">🔍 Check My Form Now</a>
+      <a href="https://rajdailytools.in/" class="btn-ghost">Explore All Tools →</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-inner">
+    <div class="ft-top">
+      <div class="ft-brand">
+        <div class="logo">
+          <div class="lb"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+          <div><div class="ln">Raj<span>Daily</span>Tools</div><div class="ls" style="color:#475569">Smart Tools for Daily Life</div></div>
+        </div>
+        <p class="ft-desc">Free smart tools for Indian army aspirants and daily use. No signup required. 100% free, mobile friendly, and privacy-first.</p>
+        <div class="ft-soc">
+          <a class="fts" href="#">YT</a>
+          <a class="fts" href="#">TG</a>
+          <a class="fts" href="#">TW</a>
+          <a class="fts" href="#">IG</a>
+        </div>
+      </div>
+      <div class="fc">
+        <h4>Army Tools</h4>
+        <ul>
+          <li><a href="#">Eligibility Checker</a></li>
+          <li><a href="#">Running Calculator</a></li>
+          <li><a href="#">Medical Checker</a></li>
+          <li><a href="#">Flat Foot Tool</a></li>
+          <li><a href="#">Rally Analyzer</a></li>
+        </ul>
+      </div>
+      <div class="fc">
+        <h4>More Tools</h4>
+        <ul>
+          <li><a href="#">Eye Test</a></li>
+          <li><a href="#">Document Tool</a></li>
+          <li><a href="#">Promotion Tool</a></li>
+          <li><a href="#">Pension Calculator</a></li>
+          <li><a href="#">Running Planner</a></li>
+        </ul>
+      </div>
+      <div class="fc">
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="https://rajdailytools.in/">Home</a></li>
+          <li><a href="https://rajdailytools.in/categories.html">Categories</a></li>
+          <li><a href="https://rajdailytools.in/about.html">About</a></li>
+          <li><a href="https://rajdailytools.in/contact.html">Contact</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ft-btm">
+      <div class="ft-cp">© 2026 <b>RajDailyTools</b>. All rights reserved. Educational use only.</div>
+      <div class="ft-lnk">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Disclaimer</a>
+        <a href="#">Contact</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- BACK TO TOP -->
+<button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+// === DRAWER ===
+const brg=document.getElementById('brg'),dov=document.getElementById('dov'),drw=document.getElementById('drw'),dx=document.getElementById('dx');
+function oD(){drw.classList.add('on');dov.classList.add('on');document.body.style.overflow='hidden'}
+function cD(){drw.classList.remove('on');dov.classList.remove('on');document.body.style.overflow=''}
+brg.addEventListener('click',oD);dov.addEventListener('click',cD);dx.addEventListener('click',cD);
+
+// === BACK TO TOP ===
+const btt=document.getElementById('btt');
+window.addEventListener('scroll',()=>{btt.classList.toggle('on',window.scrollY>400)});
+
+// === REVEAL ON SCROLL ===
+const revEls=document.querySelectorAll('.rev');
+const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+revEls.forEach(el=>io.observe(el));
+
+// === FAQ TOGGLE ===
+function togFQ(el){const p=el.closest('.fq');document.querySelectorAll('.fq.open').forEach(f=>{if(f!==p)f.classList.remove('open')});p.classList.toggle('open')}
+
+// === DOC TOGGLE ===
+function toggleDoc(id){
+  const el=document.getElementById(id);
+  const cb=el.querySelector('input[type=checkbox]');
+  el.classList.toggle('checked',cb.checked);
+}
+
+// === PHOTO SIM ===
+const photoState={pbPhoto:'none',pbSign:'none'};
+function togglePhoto(id){
+  const box=document.getElementById(id);
+  const sub=document.getElementById(id+'Sub');
+  if(photoState[id]==='none'){
+    photoState[id]='uploaded';
+    box.classList.remove('issue');box.classList.add('uploaded');
+    sub.textContent='✅ Uploaded';
+  } else if(photoState[id]==='uploaded'){
+    photoState[id]='issue';
+    box.classList.remove('uploaded');box.classList.add('issue');
+    sub.textContent='⚠️ Issue flagged';
+  } else {
+    photoState[id]='none';
+    box.classList.remove('uploaded','issue');
+    sub.textContent='Click to mark as uploaded';
+  }
+}
+
+// === LIVE VALIDATE ===
+function liveValidate(id){
+  const el=document.getElementById(id);
+  if(!el) return;
+  const v=el.value.trim();
+  el.classList.remove('err','ok');
+  if(!v) return;
+  let valid=true;
+  if(id==='fMobile'){valid=/^\d{10}$/.test(v)}
+  else if(id==='fEmail'){valid=/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)}
+  el.classList.add(valid?'ok':'err');
+}
+
+// === MAIN CHECKER ===
+function checkForm(){
+  const name=document.getElementById('fName').value.trim();
+  const nameForm=document.getElementById('fNameForm').value.trim();
+  const dob=document.getElementById('fDob').value;
+  const dobForm=document.getElementById('fDobForm').value;
+  const catDoc=document.getElementById('fCatDoc').value;
+  const catForm=document.getElementById('fCatForm').value;
+  const edu=document.getElementById('fEdu').value;
+  const mobile=document.getElementById('fMobile').value.trim();
+  const email=document.getElementById('fEmail').value.trim();
+  const photoOk=document.getElementById('fPhotoOk').value;
+
+  const errors=[];
+  const corrections=[];
+
+  // Name check
+  if(!name || !nameForm){
+    errors.push({ico:'📝',label:'Name not entered',fix:'Please enter your document name and form name for comparison.'});
+    corrections.push('Enter your full name as it appears on your 10th marksheet and Aadhaar card.');
+  } else if(name.trim().toLowerCase()!==nameForm.trim().toLowerCase()){
+    errors.push({ico:'❌',label:'Name Mismatch Detected',fix:`Document: "${name}" | Form: "${nameForm}" — These do not match exactly.`});
+    corrections.push('Change your form name to exactly match your 10th marksheet spelling — including middle name and spaces.');
+  }
+
+  // DOB check
+  if(!dob || !dobForm){
+    errors.push({ico:'📅',label:'Date of Birth not entered',fix:'Please enter DOB from document and from your form for comparison.'});
+    corrections.push('Enter your date of birth from both your marksheet and your army form.');
+  } else if(dob !== dobForm){
+    errors.push({ico:'❌',label:'Date of Birth Mismatch',fix:`Document DOB: ${dob} | Form DOB: ${dobForm} — These do not match.`});
+    corrections.push('Correct the DOB in your form to exactly match your 10th marksheet date of birth.');
+  } else {
+    // Age eligibility check
+    const dobDate=new Date(dob);
+    const today=new Date();
+    let age=today.getFullYear()-dobDate.getFullYear();
+    const m=today.getMonth()-dobDate.getMonth();
+    if(m<0||(m===0&&today.getDate()<dobDate.getDate()))age--;
+    if(age<17){
+      errors.push({ico:'⚠️',label:'Age Too Young (Below 17.5 years)',fix:`Your age is approximately ${age} years — minimum army age is typically 17.5 years.`});
+      corrections.push('Verify the exact age eligibility from the official notification before applying.');
+    } else if(age>25){
+      errors.push({ico:'⚠️',label:'Age May Be Over Limit',fix:`Your age is approximately ${age} years — army Agniveer upper limit is typically 23 years. Check current notification.`});
+      corrections.push('Check the latest notification for age relaxation rules for your category. Verify from official website.');
+    }
+  }
+
+  // Category check
+  if(!catDoc || !catForm){
+    errors.push({ico:'🏷️',label:'Category not selected',fix:'Please select your actual category and the category you filled in the form.'});
+    corrections.push('Select your category from the dropdown above to check for mismatch.');
+  } else if(catDoc!==catForm){
+    errors.push({ico:'❌',label:'Category Mismatch',fix:`Document category: ${catDoc} | Form category: ${catForm} — These do not match.`});
+    corrections.push('Correct the category in your form to match your certificate. Only select a reserved category if you have a valid government certificate.');
+  }
+
+  // Education check
+  if(!edu){
+    errors.push({ico:'🎓',label:'Education not selected',fix:'Select your highest education qualification.'});
+    corrections.push('Select your qualification from the dropdown to check Agniveer education eligibility.');
+  } else if(edu==='8th'){
+    errors.push({ico:'⚠️',label:'Education May Be Below Requirement',fix:'8th pass may not meet army Agniveer minimum qualification. Most posts require 10th pass or higher.'});
+    corrections.push('Verify the minimum education requirement for your chosen post from the official notification.');
+  }
+
+  // Documents check
+  const docIds=['dc_10th','dc_aadhaar','dc_domicile','dc_character'];
+  const docNames={dc_10th:'10th Marksheet',dc_aadhaar:'Aadhaar Card',dc_domicile:'Domicile Certificate',dc_character:'Character Certificate'};
+  docIds.forEach(id=>{
+    const cb=document.getElementById(id).querySelector('input[type=checkbox]');
+    if(!cb.checked){
+      errors.push({ico:'📄',label:`Missing Document: ${docNames[id]}`,fix:`${docNames[id]} is a mandatory document. Upload/prepare it before form submission.`});
+      corrections.push(`Arrange your ${docNames[id]} and upload it in the correct format as specified in the notification.`);
+    }
+  });
+
+  // Category certificate check
+  if(catForm && catForm!=='General (UR)'){
+    const catCb=document.getElementById('dc_category').querySelector('input[type=checkbox]');
+    if(!catCb.checked){
+      errors.push({ico:'📜',label:'Category Certificate Missing',fix:`You selected ${catForm} but have not checked the category certificate. This will cause rejection at the rally.`});
+      corrections.push(`Get a valid ${catForm} category certificate from the competent authority before the rally.`);
+    }
+  }
+
+  // Photo checks
+  if(photoState.pbPhoto==='none'){
+    errors.push({ico:'🖼️',label:'Passport Photo Not Uploaded',fix:'Passport photo is mandatory. Upload a recent photo with white background.'});
+    corrections.push('Upload a recent passport photo (within 3 months), white background, correct size as per notification.');
+  } else if(photoState.pbPhoto==='issue'){
+    errors.push({ico:'⚠️',label:'Photo Issue Flagged',fix:'Your passport photo may have an issue. Check background, recency, and file size.'});
+    corrections.push('Re-take photo with plain white background. Use correct file size and format as specified.');
+  }
+  if(photoState.pbSign==='none'){
+    errors.push({ico:'✍️',label:'Signature Not Uploaded',fix:'Signature is mandatory for army form submission.'});
+    corrections.push('Sign on plain white paper with black/blue pen. Scan at 200 DPI and upload in correct format.');
+  }
+  if(photoOk && photoOk!=='yes'){
+    const photoIssues={old:'Photo is old or blurry',bg:'Wrong background color',size:'Wrong file size or format'};
+    errors.push({ico:'📷',label:`Photo Quality Issue: ${photoIssues[photoOk]}`,fix:'Army photo must be recent (3 months), white background, correct size and format.'});
+    corrections.push('Take a new passport photo meeting army specifications — white background, clear face, correct JPG format.');
+  }
+
+  // Mobile check
+  if(!mobile){
+    errors.push({ico:'📱',label:'Mobile Number Missing',fix:'Enter your 10-digit mobile number to check validity.'});
+    corrections.push('Enter a working 10-digit mobile number that will remain active for the next 6 months.');
+  } else if(!/^\d{10}$/.test(mobile)){
+    errors.push({ico:'❌',label:'Invalid Mobile Number',fix:`"${mobile}" is not a valid 10-digit Indian mobile number.`});
+    corrections.push('Enter a correct 10-digit mobile number starting with 6, 7, 8, or 9.');
+  }
+
+  // Email check
+  if(!email){
+    errors.push({ico:'📧',label:'Email ID Missing',fix:'Enter your email ID to check validity.'});
+    corrections.push('Enter a valid, accessible email ID — rally notices and admit cards are sent here.');
+  } else if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
+    errors.push({ico:'❌',label:'Invalid Email ID',fix:`"${email}" does not look like a valid email address.`});
+    corrections.push('Enter a correct email ID in the format: yourname@gmail.com or yourname@email.com');
+  }
+
+  // Determine risk level
+  const criticalCount = errors.filter(e=>e.ico==='❌').length;
+  const totalErrors = errors.length;
+  let bannerClass,tagText,tagClass,ico,titleText,subText,markerPos;
+
+  if(totalErrors===0){
+    bannerClass='safe'; tagText='✅ SAFE TO SUBMIT'; tagClass='safe'; ico='✅';
+    titleText='No critical errors detected. Your form looks good!';
+    subText='All checked fields appear correct. Double-check everything manually before final submission. Always verify from the official army website.';
+    markerPos='8%';
+    corrections.push('Continue to verify from official army website before submission.');
+    corrections.push('Take a screenshot of every form page before clicking submit.');
+    corrections.push('Save your application number safely after submission.');
+  } else if(criticalCount===0 && totalErrors<=3){
+    bannerClass='minor'; tagText='⚠️ MINOR ERRORS'; tagClass='minor'; ico='⚠️';
+    titleText='Minor errors detected. Fix these before submitting.';
+    subText='Small issues found that could cause problems during verification. Fix all highlighted errors before submitting your form.';
+    markerPos='46%';
+  } else {
+    bannerClass='high'; tagText='❌ HIGH RISK'; tagClass='high'; ico='❌';
+    titleText='Critical errors found! Do NOT submit without fixing.';
+    subText='Your form has serious errors that will likely cause rejection. Fix all issues listed below immediately before submitting your army application.';
+    markerPos='88%';
+  }
+
+  // Render banner
+  const banner=document.getElementById('resBanner');
+  banner.className='res-banner '+bannerClass;
+  document.getElementById('rbTag').className='rb-tag '+tagClass;
+  document.getElementById('rbTag').textContent=tagText;
+  document.getElementById('rbTitle').textContent=titleText;
+  document.getElementById('rbSub').textContent=subText;
+  document.getElementById('rbIco').textContent=ico;
+
+  // Risk meter
+  setTimeout(()=>{document.getElementById('svMarker').style.left=markerPos;},200);
+
+  // Error list
+  const errWrap=document.getElementById('errorWrap');
+  if(errors.length>0){
+    errWrap.style.display='block';
+    document.getElementById('errorList').innerHTML=errors.map(e=>`
+      <div class="error-item">
+        <div class="ei-ico">${e.ico}</div>
+        <div class="ei-body">
+          <div class="ei-label">${e.label}</div>
+          <div class="ei-fix">${e.fix}</div>
+        </div>
+      </div>`).join('');
+  } else {
+    errWrap.style.display='none';
+  }
+
+  // Corrections
+  document.getElementById('correctionList').innerHTML=corrections.map(c=>`<div class="cb-item">${c}</div>`).join('');
+
+  // Show result
+  const ra=document.getElementById('resultArea');
+  ra.style.display='block';
+  ra.style.animation='none';ra.offsetHeight;
+  ra.style.animation='resultIn .42s var(--ease) both';
+  setTimeout(()=>ra.scrollIntoView({behavior:'smooth',block:'start'}),120);
+}
+
+// === COPY RESULT ===
+function copyResult(){
+  const tag=document.getElementById('rbTag').textContent;
+  const title=document.getElementById('rbTitle').textContent;
+  const sub=document.getElementById('rbSub').textContent;
+  const errors=Array.from(document.querySelectorAll('.error-item')).map(e=>`• ${e.querySelector('.ei-label').textContent}: ${e.querySelector('.ei-fix').textContent}`);
+  const corrections=Array.from(document.querySelectorAll('#correctionList .cb-item')).map((c,i)=>`${i+1}. ${c.textContent}`);
+  const text=`ARMY FORM MISTAKE CHECKER — Result\nGenerated by RajDailyTools\n${'='.repeat(50)}\n\nResult: ${tag}\nSummary: ${title}\n${sub}\n\n${errors.length>0?'Errors Found:\n'+errors.join('\n')+'\n\n':''}Correction Suggestions:\n${corrections.join('\n')}\n\n⚠️ This is an educational tool only.\nAlways verify from official army website: joinindianarmy.nic.in\n\nChecked via RajDailyTools — rajdailytools.in`;
+  navigator.clipboard?.writeText(text).then(()=>{
+    const btn=document.getElementById('copyBtn');
+    btn.classList.add('copied');btn.textContent='✅ Copied!';
+    setTimeout(()=>{btn.classList.remove('copied');btn.textContent='📋 Copy Result';},2400);
+  });
+}
+
+// === RESET ===
+function resetTool(){
+  document.getElementById('fName').value='';
+  document.getElementById('fNameForm').value='';
+  document.getElementById('fDob').value='';
+  document.getElementById('fDobForm').value='';
+  document.getElementById('fCatDoc').value='';
+  document.getElementById('fCatForm').value='';
+  document.getElementById('fEdu').value='';
+  document.getElementById('fMobile').value='';
+  document.getElementById('fEmail').value='';
+  document.getElementById('fPhotoOk').value='';
+  document.querySelectorAll('.field-input').forEach(i=>{i.classList.remove('err','ok')});
+  document.querySelectorAll('.doc-check input[type=checkbox]').forEach(cb=>cb.checked=false);
+  document.querySelectorAll('.doc-check').forEach(d=>d.classList.remove('checked'));
+  ['pbPhoto','pbSign'].forEach(id=>{
+    photoState[id]='none';
+    document.getElementById(id).classList.remove('uploaded','issue');
+    document.getElementById(id+'Sub').textContent='Click to mark as uploaded';
+  });
+  document.getElementById('resultArea').style.display='none';
+  document.getElementById('svMarker').style.left='8%';
+  document.getElementById('checker').scrollIntoView({behavior:'smooth',block:'start'});
+}
+</script>
+</body>
+</html>
