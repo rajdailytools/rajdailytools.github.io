@@ -7,14 +7,14 @@
   <!-- ===== MAIN PAGES ===== -->
   <url>
     <loc>https://rajdailytools.in/</loc>
-    <lastmod>2026-04-20</lastmod>
+    <lastmod>2026-04-23</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
   <url>
     <loc>https://rajdailytools.in/categories.html</loc>
-    <lastmod>2026-04-20</lastmod>
+    <lastmod>2026-04-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -112,6 +112,35 @@
   </url>
 
   <url>
+    <loc>https://rajdailytools.in/rrb-alp-eligibility-calculator-2026.html</loc>
+    <lastmod>2026-04-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://rajdailytools.in/crpf-tradesman-age-calculator-2026.html</loc>
+    <lastmod>2026-04-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://rajdailytools.in/ncl-recruitment-2026-eligibility-calculator.html</loc>
+    <lastmod>2026-04-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://rajdailytools.in/patna-hc-typist-age-calculator-2026.html</loc>
+    <lastmod>2026-04-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ===== ARMY TOOLS ===== -->
+  <url>
     <loc>https://rajdailytools.in/army-eligibility-checker-2026.html</loc>
     <lastmod>2026-04-20</lastmod>
     <changefreq>weekly</changefreq>
@@ -125,6 +154,63 @@
     <priority>0.8</priority>
   </url>
 
+  <url>
+    <loc>https://rajdailytools.in/army-running-improvement-planner-1600m.html</loc>
+    <lastmod>2026-04-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://rajdailytools.in/army-promotion-timeline-tool-1.html</loc>
+    <lastmod>2026-04-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://rajdailytools.in/army-medical-fitness-checker.html</loc>
+    <lastmod>2026-04-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://rajdailytools.in/army-document-checklist-generator-1.html</loc>
+    <lastmod>2026-04-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://rajdailytools.in/army-rally-competition-analyzer.html</loc>
+    <lastmod>2026-04-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://rajdailytools.in/army-form-mistake-checker.html</loc>
+    <lastmod>2026-04-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://rajdailytools.in/army-pension-calculator.html</loc>
+    <lastmod>2026-04-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://rajdailytools.in/army-eye-test-simulator.html</loc>
+    <lastmod>2026-04-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ===== POLICE TOOLS ===== -->
   <url>
     <loc>https://rajdailytools.in/police-running-time-calculator-india.html</loc>
     <lastmod>2026-04-20</lastmod>
