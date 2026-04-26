@@ -1,0 +1,1357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Defence Exam Eligibility Checker 2026 – NDA, CDS, AFCAT, SSC GD, Agniveer All-in-One Tool | RajDailyTools</title>
+<meta name="description" content="Free Defence Exam Eligibility Checker India 2026. Check eligibility for NDA, CDS, AFCAT, SSC GD, CAPF, Agniveer GD, Clerk, Tech, JCO, Havaldar in one click. Enter age, height, education and get instant eligible/not-eligible result with reason and suggestions.">
+<meta name="keywords" content="defence exam eligibility checker india,nda cds afcat eligibility check online,army navy airforce eligibility kaise check kare,ssc gd vs army eligibility difference,defence eligibility full check india,nda eligibility check tool,cds eligibility calculator india,afcat eligibility checker online,army eligibility checker india,navy eligibility checker india,airforce eligibility calculator india,agniveer eligibility checker online,defence exam comparison eligibility,nda cds afcat eligibility criteria 2026,defence exam eligibility by age height,ssc gd eligibility checker tool,capf eligibility criteria india,jco pandit eligibility,havaldar education eligibility,defence exam eligibility analyzer">
+<meta name="robots" content="index, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#2563eb;--blue-d:#1d4ed8;--blue-l:#3b82f6;
+  --blue-xl:#eff6ff;--blue-s:#dbeafe;
+  --amber:#f59e0b;--green:#10b981;--red:#ef4444;
+  --purple:#8b5cf6;--teal:#14b8a6;--orange:#f97316;
+  --green-xl:#f0fdf4;--green-s:#bbf7d0;
+  --red-xl:#fef2f2;--red-s:#fecaca;
+  --amber-xl:#fffbeb;--amber-s:#fde68a;
+  --purple-xl:#faf5ff;--purple-s:#ddd6fe;
+  --ink:#0f172a;--ink2:#334155;--ink3:#64748b;--ink4:#94a3b8;
+  --line:#e2e8f0;--surf:#f8fafc;--white:#fff;
+  --s1:0 1px 3px rgba(15,23,42,.06),0 1px 2px rgba(15,23,42,.04);
+  --s2:0 4px 16px rgba(15,23,42,.08),0 2px 6px rgba(15,23,42,.04);
+  --s3:0 12px 40px rgba(15,23,42,.11),0 3px 10px rgba(15,23,42,.06);
+  --s4:0 24px 64px rgba(15,23,42,.13),0 6px 20px rgba(15,23,42,.07);
+  --sb:0 8px 32px rgba(37,99,235,.20);
+  --fd:'Sora',sans-serif;--fb:'DM Sans',sans-serif;
+  --ease:cubic-bezier(.4,0,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);color:var(--ink);background:var(--white);overflow-x:hidden;-webkit-font-smoothing:antialiased;line-height:1.6}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+button{cursor:pointer;border:none;background:none;font-family:var(--fb)}
+.w{max-width:1180px;margin:0 auto;padding:0 24px}
+.wa{max-width:860px;margin:0 auto;padding:0 24px}
+select,input{appearance:none;-webkit-appearance:none}
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+@keyframes resultIn{from{opacity:0;transform:translateY(18px) scale(.97)}to{opacity:1;transform:none}}
+@keyframes shimmer{0%{background-position:-200% 0}100%{background-position:200% 0}}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.6}}
+.rev{opacity:0;transform:translateY(22px);transition:opacity .55s var(--ease),transform .55s var(--ease)}
+.rev.in{opacity:1;transform:none}
+
+/* HEADER */
+.hdr{position:sticky;top:0;z-index:999;background:rgba(255,255,255,.96);backdrop-filter:blur(20px);border-bottom:1px solid var(--line);box-shadow:var(--s1)}
+.hdi{display:flex;align-items:center;justify-content:space-between;height:66px}
+.logo{display:flex;align-items:center;gap:10px}
+.lb{width:36px;height:36px;background:var(--blue);border-radius:9px;display:flex;align-items:center;justify-content:center;box-shadow:var(--sb);flex-shrink:0}
+.lb svg{width:18px;height:18px;fill:#fff}
+.ln{font-family:var(--fd);font-size:19px;font-weight:800;color:var(--ink);line-height:1}
+.ln span{color:var(--blue)}
+.ls{font-size:10px;color:var(--ink4);letter-spacing:.04em}
+nav.dn{display:flex;align-items:center;gap:2px}
+nav.dn a{font-size:13.5px;font-weight:500;color:var(--ink2);padding:7px 13px;border-radius:8px;transition:.2s}
+nav.dn a:hover{color:var(--blue);background:var(--blue-xl)}
+.hcta{background:var(--blue);color:#fff;font-family:var(--fd);font-weight:600;font-size:13px;padding:8px 18px;border-radius:8px;box-shadow:var(--sb);transition:.2s}
+.hcta:hover{background:var(--blue-d);transform:translateY(-1px)}
+.brg{display:none;flex-direction:column;gap:4.5px;padding:8px;border-radius:8px}
+.brg span{display:block;width:20px;height:2px;background:var(--ink);border-radius:2px;transition:.28s}
+.dov{display:none;position:fixed;inset:0;background:rgba(15,23,42,.45);z-index:1040;backdrop-filter:blur(3px)}
+.dov.on{display:block}
+.drw{position:fixed;top:0;right:-100%;width:270px;height:100vh;background:#fff;z-index:1050;padding:22px;box-shadow:var(--s4);transition:right .32s var(--ease);overflow-y:auto}
+.drw.on{right:0}
+.dh{display:flex;align-items:center;justify-content:space-between;margin-bottom:26px}
+.dx{width:33px;height:33px;border-radius:7px;background:var(--surf);display:flex;align-items:center;justify-content:center;color:var(--ink3);font-size:17px}
+nav.mn{display:flex;flex-direction:column;gap:3px}
+nav.mn a{display:block;font-size:14px;font-weight:500;color:var(--ink2);padding:11px 13px;border-radius:8px;transition:.2s}
+nav.mn a:hover{color:var(--blue);background:var(--blue-xl)}
+
+/* HERO */
+.hero{position:relative;overflow:hidden;background:linear-gradient(150deg,#ebf4ff 0%,#fff 46%,#f0fdf4 100%);padding:68px 0 80px}
+.hero::before{content:'';position:absolute;top:-140px;right:-180px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(37,99,235,.08) 0%,transparent 68%);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-80px;left:-100px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(16,185,129,.05) 0%,transparent 68%);pointer-events:none}
+.blob{position:absolute;border-radius:50%;pointer-events:none;animation:float 6s ease-in-out infinite}
+.b1{width:13px;height:13px;background:rgba(37,99,235,.18);top:22%;right:14%;animation-delay:0s}
+.b2{width:9px;height:9px;background:rgba(16,185,129,.22);top:58%;right:26%;animation-delay:2.2s}
+.b3{width:11px;height:11px;background:rgba(245,158,11,.18);top:36%;right:6%;animation-delay:4s}
+.bc{display:flex;align-items:center;gap:7px;font-size:12.5px;color:var(--ink3);margin-bottom:24px;position:relative;z-index:1;flex-wrap:wrap}
+.bc a{color:var(--blue);font-weight:600}
+.pill{display:inline-flex;align-items:center;gap:7px;font-family:var(--fd);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);background:var(--blue-xl);padding:5px 14px;border-radius:100px;margin-bottom:18px}
+.pill::before{content:'';width:6px;height:6px;background:var(--blue);border-radius:50%}
+.hero-inner{position:relative;z-index:1;max-width:700px;animation:fadeUp .5s ease both}
+.hero h1{font-family:var(--fd);font-size:clamp(26px,4.5vw,50px);font-weight:800;line-height:1.1;color:var(--ink);margin-bottom:14px}
+.hero h1 span{color:var(--blue)}
+.hero-sub{font-size:16px;color:var(--ink3);line-height:1.8;margin-bottom:22px;max-width:560px}
+.hero-chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.chip{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;padding:6px 14px;border-radius:100px;background:#fff;border:1.5px solid var(--line);color:var(--ink2);box-shadow:var(--s1);transition:.22s}
+.chip:hover{border-color:var(--blue);color:var(--blue);transform:translateY(-1px)}
+.hero-meta{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.upd{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:700;color:var(--blue);background:var(--blue-xl);padding:6px 14px;border-radius:100px;border:1.5px solid var(--blue-s)}
+.hmi{font-size:13px;color:var(--ink3);font-weight:500}
+
+/* TOOL */
+.tool-sec{background:var(--surf);padding:80px 0}
+.tool-wrap{max-width:860px;margin:0 auto}
+.tool-card{background:#fff;border:1.5px solid var(--line);border-radius:28px;overflow:hidden;box-shadow:var(--s4)}
+.tool-hdr{background:linear-gradient(135deg,#1d4ed8 0%,#2563eb 55%,#3b82f6 100%);padding:32px 40px;position:relative;overflow:hidden}
+.tool-hdr::before{content:'';position:absolute;top:-60px;right:-60px;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,.07)}
+.tool-hdr::after{content:'';position:absolute;bottom:-40px;left:-40px;width:180px;height:180px;border-radius:50%;background:rgba(255,255,255,.04)}
+.th{position:relative;z-index:1}
+.th h2{font-family:var(--fd);font-size:21px;font-weight:800;color:#fff;margin-bottom:6px}
+.th p{font-size:14px;color:rgba(255,255,255,.82);line-height:1.65}
+.th-badges{display:flex;flex-wrap:wrap;gap:9px;margin-top:14px}
+.thb{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:rgba(255,255,255,.9);background:rgba(255,255,255,.13);padding:5px 12px;border-radius:100px}
+.tool-body{padding:36px 40px}
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:18px}
+.fgrid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:18px}
+.fld{display:flex;flex-direction:column;gap:8px}
+.flbl{font-size:13px;font-weight:700;color:var(--ink2)}
+.flbl span{font-size:11px;font-weight:500;color:var(--ink4);margin-left:5px;background:var(--surf);padding:2px 7px;border-radius:5px;border:1px solid var(--line)}
+.inp-wrap{position:relative}
+.finp,.fsel{padding:13px 16px;font-size:15px;color:var(--ink);background:#fff;border:1.5px solid var(--line);border-radius:10px;outline:none;transition:.22s;font-family:var(--fb);width:100%}
+.finp:focus,.fsel:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(37,99,235,.10)}
+.fsel{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2364748b' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:42px}
+.hint-box{display:flex;align-items:flex-start;gap:9px;font-size:13px;color:var(--ink2);background:var(--blue-xl);border:1.5px solid var(--blue-s);border-radius:10px;padding:11px 14px;margin-bottom:18px;line-height:1.65}
+.hint-box svg{width:16px;height:16px;stroke:var(--blue);fill:none;stroke-width:2;flex-shrink:0;margin-top:2px}
+.sec-divider{font-family:var(--fd);font-size:12px;font-weight:700;color:var(--ink3);text-transform:uppercase;letter-spacing:.08em;padding:10px 0 4px;border-top:1px solid var(--line);margin:6px 0 16px;display:flex;align-items:center;gap:8px}
+.sec-divider::after{content:'';flex:1;height:1px;background:var(--line)}
+.btn-row{display:flex;gap:12px}
+.cvt-btn{flex:1;padding:15px;background:linear-gradient(135deg,var(--blue) 0%,#1e40af 100%);color:#fff;font-family:var(--fd);font-weight:800;font-size:15px;border-radius:11px;box-shadow:var(--sb);transition:all .25s var(--ease);display:flex;align-items:center;justify-content:center;gap:9px}
+.cvt-btn:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(37,99,235,.30)}
+.cvt-btn:active{transform:translateY(0)}
+.rst-btn{padding:15px 22px;background:var(--surf);color:var(--ink2);font-family:var(--fd);font-weight:700;font-size:14px;border-radius:11px;border:1.5px solid var(--line);transition:.22s;display:flex;align-items:center;gap:7px}
+.rst-btn:hover{border-color:var(--blue);color:var(--blue);background:var(--blue-xl)}
+
+/* STEP INDICATOR */
+.step-indicator{display:flex;align-items:center;gap:0;margin-bottom:28px}
+.step-dot{display:flex;flex-direction:column;align-items:center;gap:4px;flex:1;position:relative}
+.step-dot:not(:last-child)::after{content:'';position:absolute;top:14px;left:calc(50% + 14px);width:calc(100% - 28px);height:2px;background:var(--line)}
+.step-dot.done:not(:last-child)::after{background:var(--blue)}
+.sd-num{width:28px;height:28px;border-radius:50%;background:var(--line);color:var(--ink4);font-family:var(--fd);font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center;transition:.3s;position:relative;z-index:1}
+.step-dot.active .sd-num{background:var(--blue);color:#fff;box-shadow:0 0 0 4px rgba(37,99,235,.15)}
+.step-dot.done .sd-num{background:var(--green);color:#fff}
+.sd-label{font-size:11px;font-weight:600;color:var(--ink4);text-align:center;white-space:nowrap}
+.step-dot.active .sd-label{color:var(--blue)}
+.step-dot.done .sd-label{color:var(--green)}
+
+/* RESULT */
+#resultArea{display:none;margin-top:28px;animation:resultIn .42s var(--ease) both}
+
+/* RESULT BANNER */
+.result-header{border-radius:18px;padding:24px 28px;margin-bottom:20px;position:relative;overflow:hidden}
+.result-header::before{content:'';position:absolute;inset:0;opacity:.04;background-image:repeating-linear-gradient(45deg,currentColor 0,currentColor 1px,transparent 0,transparent 50%);background-size:12px 12px;pointer-events:none}
+.rh-eligible{background:linear-gradient(135deg,var(--green-xl),#d1fae5);border:2px solid var(--green-s)}
+.rh-partial{background:linear-gradient(135deg,var(--amber-xl),#fef3c7);border:2px solid var(--amber-s)}
+.rh-none{background:linear-gradient(135deg,var(--red-xl),#fee2e2);border:2px solid var(--red-s)}
+.rh-inner{position:relative;z-index:1;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.rh-title{font-family:var(--fd);font-size:18px;font-weight:800;color:var(--ink);margin-bottom:4px}
+.rh-sub{font-size:14px;color:var(--ink3)}
+.rh-count{font-family:var(--fd);font-size:44px;font-weight:800;line-height:1;color:var(--ink)}
+.rh-count span{font-size:14px;color:var(--ink3);font-family:var(--fb);font-weight:500}
+
+/* EXAM GRID */
+.exam-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:20px}
+.exam-card{border-radius:14px;padding:16px 18px;border:1.5px solid;display:flex;flex-direction:column;gap:8px;transition:.28s}
+.exam-card.eligible{background:var(--green-xl);border-color:var(--green-s)}
+.exam-card.not-eligible{background:var(--red-xl);border-color:var(--red-s);opacity:.85}
+.ec-head{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.ec-name{font-family:var(--fd);font-size:14px;font-weight:800;color:var(--ink)}
+.ec-badge{display:inline-flex;align-items:center;gap:4px;font-size:11px;font-weight:700;padding:3px 10px;border-radius:100px}
+.ec-badge.yes{background:var(--green);color:#fff}
+.ec-badge.no{background:var(--red);color:#fff}
+.ec-detail{font-size:12.5px;color:var(--ink3);line-height:1.55}
+.ec-reason{display:flex;align-items:flex-start;gap:6px;font-size:12px;color:var(--red);font-weight:600;line-height:1.5;margin-top:2px}
+.ec-reason.green{color:var(--green)}
+.ec-suggest{display:flex;align-items:flex-start;gap:6px;font-size:12px;color:#92400e;background:var(--amber-xl);border:1px solid var(--amber-s);border-radius:7px;padding:7px 10px;line-height:1.5}
+
+/* BEST EXAM */
+.best-exam-card{background:linear-gradient(135deg,#1d4ed8 0%,#2563eb 100%);border-radius:16px;padding:22px 24px;margin-bottom:20px;color:#fff;position:relative;overflow:hidden}
+.best-exam-card::before{content:'';position:absolute;top:-30px;right:-30px;width:140px;height:140px;border-radius:50%;background:rgba(255,255,255,.08)}
+.bec-inner{position:relative;z-index:1}
+.bec-label{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.7);margin-bottom:6px}
+.bec-title{font-family:var(--fd);font-size:20px;font-weight:800;margin-bottom:6px}
+.bec-desc{font-size:13.5px;color:rgba(255,255,255,.82);line-height:1.65}
+
+/* SCORE BAR */
+.score-sec{background:var(--surf);border:1.5px solid var(--line);border-radius:14px;padding:18px 20px;margin-bottom:16px}
+.score-title{font-family:var(--fd);font-size:13.5px;font-weight:700;color:var(--ink);margin-bottom:14px}
+.score-row{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.score-label{font-size:12.5px;font-weight:700;color:var(--ink2);width:130px;flex-shrink:0}
+.score-track{flex:1;height:10px;background:var(--line);border-radius:6px;overflow:hidden}
+.score-fill{height:100%;border-radius:6px;transition:width 1.2s var(--ease)}
+.sf-green{background:linear-gradient(90deg,var(--green),#059669)}
+.sf-amber{background:linear-gradient(90deg,var(--amber),#d97706)}
+.sf-red{background:linear-gradient(90deg,var(--red),#dc2626)}
+.score-pct{font-size:12px;font-weight:800;color:var(--ink3);width:36px;text-align:right;flex-shrink:0}
+
+/* ACTION ROW */
+.action-row{display:flex;gap:10px;margin-top:14px}
+.copy-btn{flex:1;padding:11px;background:var(--green-xl);color:var(--green);border:1.5px solid var(--green-s);font-family:var(--fd);font-weight:700;font-size:13.5px;border-radius:9px;display:flex;align-items:center;justify-content:center;gap:7px;transition:.22s}
+.copy-btn:hover{background:var(--green);color:#fff}
+.copy-btn.copied{background:var(--green);color:#fff}
+
+/* HOWTO */
+.howto-sec{background:var(--surf);padding:72px 0}
+.howto-box{background:var(--amber-xl);border:2px solid var(--amber-s);border-radius:20px;padding:32px 36px;max-width:680px;margin:0 auto}
+.howto-title{display:flex;align-items:center;gap:10px;font-family:var(--fd);font-size:19px;font-weight:800;color:var(--ink);margin-bottom:18px}
+.howto-steps{display:flex;flex-direction:column;gap:11px}
+.hw-step{display:flex;align-items:flex-start;gap:12px;font-size:14px;color:var(--ink2);line-height:1.65}
+.sn{width:26px;height:26px;background:var(--amber);color:#fff;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex-shrink:0;margin-top:1px}
+
+/* COMPARISON TABLE */
+.tbl-sec{background:var(--white);padding:72px 0}
+.tbl-wr{overflow-x:auto;margin-bottom:24px}
+table.main-tbl{width:100%;border-collapse:collapse;font-size:13px;min-width:700px}
+table.main-tbl thead th{background:linear-gradient(135deg,var(--blue) 0%,#1e40af 100%);color:#fff;padding:14px 16px;text-align:left;font-family:var(--fd);font-size:12.5px;font-weight:700;letter-spacing:.03em}
+table.main-tbl tbody tr{border-bottom:1px solid var(--line);transition:.2s}
+table.main-tbl tbody tr:hover{background:var(--blue-xl)}
+table.main-tbl tbody td{padding:12px 16px;color:var(--ink2);vertical-align:middle;line-height:1.5}
+.tbadge{display:inline-flex;font-size:11px;font-weight:700;padding:3px 8px;border-radius:100px}
+.tbadge.g{background:var(--green-xl);color:var(--green);border:1px solid var(--green-s)}
+.tbadge.b{background:var(--blue-xl);color:var(--blue);border:1px solid var(--blue-s)}
+.tbadge.a{background:var(--amber-xl);color:#92400e;border:1px solid var(--amber-s)}
+.tbadge.r{background:var(--red-xl);color:var(--red);border:1px solid var(--red-s)}
+
+/* TIPS */
+.tips-sec{background:var(--surf);padding:72px 0}
+.tips-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.tip-card{background:var(--white);border:1.5px solid var(--line);border-radius:16px;padding:24px 20px;transition:.28s}
+.tip-card:hover{transform:translateY(-4px);box-shadow:var(--s3);border-color:var(--blue-s)}
+.tc-ico{font-size:32px;margin-bottom:12px}
+.tc-title{font-family:var(--fd);font-size:14px;font-weight:800;color:var(--ink);margin-bottom:8px}
+.tc-desc{font-size:13.5px;color:var(--ink3);line-height:1.7}
+.tc-list{display:flex;flex-direction:column;gap:6px;margin-top:10px}
+.tc-item{display:flex;align-items:flex-start;gap:8px;font-size:13px;color:var(--ink3);line-height:1.6}
+.tc-item::before{content:'✓';width:16px;height:16px;background:var(--green);color:#fff;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;flex-shrink:0;margin-top:3px}
+
+/* STORY */
+.story-sec{background:var(--surf);padding:72px 0}
+.story-card{max-width:760px;margin:0 auto;background:linear-gradient(135deg,var(--blue-xl),#f0fdf4);border:1.5px solid var(--blue-s);border-radius:24px;padding:36px;box-shadow:var(--s3)}
+.story-ico{font-size:44px;margin-bottom:16px;display:block}
+.story-card h3{font-family:var(--fd);font-size:20px;font-weight:800;color:var(--ink);margin-bottom:14px}
+.story-card p{font-size:15px;color:var(--ink2);line-height:1.85}
+.story-card p+p{margin-top:11px}
+.story-highlight{display:inline-flex;align-items:center;gap:7px;background:var(--blue);color:#fff;font-family:var(--fd);font-size:13px;font-weight:700;padding:6px 14px;border-radius:100px;margin-top:14px}
+
+/* ARTICLE */
+.art-sec{background:var(--white);padding:72px 0}
+.art-body h2{font-family:var(--fd);font-size:20px;font-weight:800;color:var(--ink);margin:26px 0 10px;line-height:1.3}
+.art-body h2:first-child{margin-top:0}
+.art-body p{font-size:15px;color:var(--ink3);line-height:1.85;margin-bottom:13px}
+.art-body ul{display:flex;flex-direction:column;gap:8px;margin:10px 0 14px}
+.art-body li{display:flex;align-items:flex-start;gap:10px;font-size:14.5px;color:var(--ink3);line-height:1.7}
+.art-body li::before{content:'✓';width:18px;height:18px;background:var(--blue);color:#fff;border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;flex-shrink:0;margin-top:3px}
+.art-body strong{color:var(--ink2);font-weight:700}
+.ibox{background:var(--blue-xl);border:1.5px solid var(--blue-s);border-radius:13px;padding:14px 18px;margin:14px 0;display:flex;gap:10px;font-size:14px;color:var(--ink2);line-height:1.7}
+.ibox svg{width:16px;height:16px;stroke:var(--blue);fill:none;stroke-width:2;flex-shrink:0;margin-top:2px}
+.ibox.g{background:var(--green-xl);border-color:var(--green-s)}.ibox.g svg{stroke:var(--green)}
+.ibox.a{background:var(--amber-xl);border-color:var(--amber-s)}.ibox.a svg{stroke:var(--amber)}
+
+/* SEC HEADERS */
+.sec-hd{text-align:center;margin-bottom:44px}
+.sec-h{font-family:var(--fd);font-size:clamp(22px,3.8vw,38px);font-weight:800;color:var(--ink);line-height:1.18;margin-bottom:10px}
+.sec-h span{color:var(--blue)}
+.sec-sub{font-size:15.5px;color:var(--ink3);line-height:1.75;max-width:500px;margin:0 auto}
+
+/* FAQ */
+.faq-sec{background:var(--surf);padding:72px 0}
+.fql{max-width:760px;margin:0 auto}
+.fq{background:#fff;border:1.5px solid var(--line);border-radius:13px;margin-bottom:10px;overflow:hidden}
+.fq-q{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;cursor:pointer;gap:14px;transition:.2s}
+.fq-q:hover{background:var(--blue-xl)}
+.fq-t{font-weight:600;font-size:15px;color:var(--ink);line-height:1.4}
+.fq-i{width:28px;height:28px;border-radius:50%;background:var(--blue-xl);color:var(--blue);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;transition:transform .28s,background .2s}
+.fq.open .fq-i{transform:rotate(45deg);background:var(--blue);color:#fff}
+.fq-a{max-height:0;overflow:hidden;transition:max-height .35s var(--ease)}
+.fq-ai{padding:0 22px 18px;font-size:14.5px;color:var(--ink3);line-height:1.78}
+.fq.open .fq-a{max-height:400px}
+
+/* RELATED TOOLS */
+.rel-sec{background:var(--white);padding:72px 0}
+.rel-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.rel-card{background:var(--surf);border:1.5px solid var(--line);border-radius:16px;padding:20px 18px;display:flex;flex-direction:column;gap:9px;transition:.28s}
+.rel-card:hover{transform:translateY(-5px);box-shadow:var(--s3);border-color:var(--blue-s)}
+.rel-ico{font-size:26px}
+.rel-title{font-family:var(--fd);font-size:14px;font-weight:700;color:var(--ink)}
+.rel-desc{font-size:13px;color:var(--ink3);line-height:1.6;flex:1}
+.rel-btn{display:inline-flex;align-items:center;gap:6px;font-family:var(--fd);font-weight:700;font-size:13px;color:var(--blue);transition:.2s}
+.rel-btn:hover{gap:10px}
+.rel-btn svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2.5}
+
+/* DISC / CONTACT / CTA / FOOTER */
+.disc{background:var(--amber-xl);border-top:1px solid var(--amber-s);border-bottom:1px solid var(--amber-s);padding:14px 0}
+.disc-in{display:flex;align-items:flex-start;gap:12px;font-size:13.5px;color:var(--ink2);line-height:1.7}
+.contact-sec{background:var(--surf);padding:60px 0}
+.contact-card{max-width:560px;margin:0 auto;background:#fff;border:1.5px solid var(--line);border-radius:20px;padding:32px;text-align:center;box-shadow:var(--s2)}
+.contact-card h3{font-family:var(--fd);font-size:20px;font-weight:800;color:var(--ink);margin-bottom:10px}
+.contact-card p{font-size:15px;color:var(--ink3);line-height:1.75;margin-bottom:20px}
+.btn-bl{display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:#fff;font-family:var(--fd);font-weight:700;font-size:14.5px;padding:12px 26px;border-radius:8px;box-shadow:var(--sb);transition:.22s}
+.btn-bl:hover{background:var(--blue-d);transform:translateY(-1px)}
+.priv-note{font-size:12px;color:var(--ink4);margin-top:14px}
+.cta{background:linear-gradient(140deg,#0f172a 0%,#1e3a8a 100%);padding:80px 0;text-align:center;position:relative;overflow:hidden}
+.cta::before{content:'';position:absolute;top:-80px;left:50%;transform:translateX(-50%);width:800px;height:380px;background:radial-gradient(ellipse,rgba(37,99,235,.22) 0%,transparent 68%);pointer-events:none}
+.cta-in{position:relative;z-index:1}
+.cta .pill{color:#93c5fd;background:rgba(255,255,255,.1);margin-bottom:18px}
+.cta .pill::before{background:#93c5fd}
+.cta h2{font-family:var(--fd);font-size:clamp(24px,4vw,42px);font-weight:800;color:#fff;line-height:1.15;margin-bottom:12px}
+.cta h2 em{color:#fbbf24;font-style:normal}
+.cta p{font-size:16px;color:rgba(255,255,255,.72);max-width:480px;margin:0 auto 32px;line-height:1.78}
+.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn-gold{display:inline-flex;align-items:center;gap:8px;background:var(--amber);color:#fff;font-family:var(--fd);font-weight:800;font-size:15px;padding:14px 30px;border-radius:8px;box-shadow:0 8px 28px rgba(245,158,11,.35);transition:.22s}
+.btn-gold:hover{background:#d97706;transform:translateY(-3px)}
+.btn-ghost{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.09);border:1.5px solid rgba(255,255,255,.22);color:#fff;font-family:var(--fd);font-weight:600;font-size:14px;padding:13px 26px;border-radius:8px;transition:.2s}
+.btn-ghost:hover{background:rgba(255,255,255,.16)}
+footer{background:#0f172a;padding:52px 0 0}
+.ft-inner{max-width:1180px;margin:0 auto;padding:0 24px}
+.ft-top{display:grid;grid-template-columns:1.9fr 1fr 1fr 1fr;gap:44px;margin-bottom:44px}
+.ft-brand .ln{color:#fff}.ft-brand .ls{color:#475569}
+.ft-desc{font-size:13.5px;color:#64748b;line-height:1.78;max-width:265px;margin:13px 0 20px}
+.ft-soc{display:flex;gap:9px}
+.fts{width:34px;height:34px;border-radius:7px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;color:#94a3b8;font-size:13px;transition:.2s}
+.fts:hover{background:var(--blue);color:#fff}
+.fc h4{font-family:var(--fd);font-size:12px;font-weight:700;color:#fff;margin-bottom:14px;letter-spacing:.06em;text-transform:uppercase}
+.fc ul{display:flex;flex-direction:column;gap:8px}
+.fc ul a{font-size:13.5px;color:#64748b;transition:.18s}
+.fc ul a:hover{color:#93c5fd}
+.ft-btm{border-top:1px solid rgba(255,255,255,.07);padding:20px 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.ft-cp{font-size:12.5px;color:#475569}
+.ft-lnk{display:flex;gap:18px}
+.ft-lnk a{font-size:12.5px;color:#475569;transition:.18s}
+.ft-lnk a:hover{color:#93c5fd}
+.btt{position:fixed;bottom:26px;right:26px;z-index:500;width:43px;height:43px;background:var(--blue);color:#fff;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:17px;box-shadow:var(--sb);opacity:0;pointer-events:none;transform:translateY(14px);transition:.28s var(--ease)}
+.btt.on{opacity:1;pointer-events:auto;transform:translateY(0)}
+.btt:hover{transform:translateY(-3px)}
+
+/* RESPONSIVE */
+@media(max-width:1060px){.ft-top{grid-template-columns:1fr 1fr}.tips-grid{grid-template-columns:1fr 1fr}.rel-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:860px){nav.dn,.hcta{display:none}.brg{display:flex}.tool-body{padding:24px 22px}.tool-hdr{padding:24px 22px}.fgrid{grid-template-columns:1fr}.fgrid3{grid-template-columns:1fr 1fr}.exam-grid{grid-template-columns:1fr}}
+@media(max-width:600px){.ft-top{grid-template-columns:1fr}.tips-grid{grid-template-columns:1fr}.rel-grid{grid-template-columns:1fr}.cta-btns{flex-direction:column;align-items:center}.story-card{padding:24px 20px}.ft-btm{flex-direction:column;text-align:center}.ft-lnk{justify-content:center}.fgrid3{grid-template-columns:1fr}.step-indicator{gap:0}.sd-label{display:none}}
+</style>
+</head>
+<body>
+
+<!-- BACK TO TOP -->
+<button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<!-- HEADER -->
+<header class="hdr">
+  <div class="w"><div class="hdi">
+    <a href="https://rajdailytools.in/" class="logo">
+      <div class="lb"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+      <div><div class="ln">Raj<span>Daily</span>Tools</div><div class="ls">Free Tools for India</div></div>
+    </a>
+    <nav class="dn">
+      <a href="https://rajdailytools.in/">Home</a>
+      <a href="https://rajdailytools.in/categories.html">Categories</a>
+      <a href="https://rajdailytools.in/#popular">Popular</a>
+      <a href="https://rajdailytools.in/about.html">About</a>
+      <a href="https://rajdailytools.in/contact.html">Contact</a>
+    </nav>
+    <a href="https://rajdailytools.in/" class="hcta">🏠 All Tools</a>
+    <button class="brg" id="brg" onclick="oD()"><span></span><span></span><span></span></button>
+  </div></div>
+</header>
+<div class="dov" id="dov" onclick="cD()"></div>
+<div class="drw" id="drw">
+  <div class="dh">
+    <div class="logo">
+      <div class="lb" style="width:30px;height:30px;border-radius:7px"><svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#fff"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+      <div class="ln" style="font-size:16px">Raj<span>Daily</span>Tools</div>
+    </div>
+    <button class="dx" id="dx" onclick="cD()">✕</button>
+  </div>
+  <nav class="mn">
+    <a href="https://rajdailytools.in/" onclick="cD()">🏠 Home</a>
+    <a href="https://rajdailytools.in/categories.html" onclick="cD()">🗂️ Categories</a>
+    <a href="https://rajdailytools.in/#popular" onclick="cD()">⭐ Popular</a>
+    <a href="https://rajdailytools.in/about.html" onclick="cD()">👤 About</a>
+    <a href="https://rajdailytools.in/contact.html" onclick="cD()">📬 Contact</a>
+  </nav>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+  <div class="w">
+    <div class="bc">
+      <a href="https://rajdailytools.in/">Home</a><span style="color:var(--ink4)">›</span>
+      <a href="https://rajdailytools.in/categories.html">Tools</a><span style="color:var(--ink4)">›</span>
+      <span>Defence Exam Eligibility Checker 2026</span>
+    </div>
+    <div class="hero-inner">
+      <div class="pill">🎖️ Free Defence Tools India</div>
+      <h1>All Defence Exam <span>Eligibility Checker</span> (India)</h1>
+      <p class="hero-sub">Check eligibility for <strong>Army, Navy & Airforce exams in one click</strong> — NDA, CDS, AFCAT, SSC GD, CAPF, Agniveer, JCO, Havaldar. Enter your details once and get a complete eligible/not-eligible result with reasons, suggestions, and best exam recommendation. Updated for 2026.</p>
+      <div class="hero-chips">
+        <span class="chip">🏅 NDA / CDS / AFCAT</span>
+        <span class="chip">🪖 Agniveer All Posts</span>
+        <span class="chip">🛡️ SSC GD / CAPF</span>
+        <span class="chip">⚡ Instant Result</span>
+        <span class="chip">✅ 100% Free</span>
+        <span class="chip">🔒 No Data Stored</span>
+      </div>
+      <div class="hero-meta">
+        <div class="upd">🎖️ 2026 Criteria Updated</div>
+        <span class="hmi">⚡ Instant Check</span>
+        <span class="hmi">📱 Mobile Friendly</span>
+        <span class="hmi">🔒 Private</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOOL SECTION -->
+<section class="tool-sec" id="checker">
+  <div class="w"><div class="tool-wrap">
+    <div class="tool-card rev">
+      <div class="tool-hdr">
+        <div class="th">
+          <h2>🎖️ Defence Exam Eligibility Checker — All Exams 2026</h2>
+          <p>Enter your basic details — age, gender, height, education, stream — and get instant eligibility check for 10+ defence exams including NDA, CDS, AFCAT, SSC GD, Agniveer, CAPF, JCO, and Havaldar. Get smart recommendation on which exam suits you best.</p>
+          <div class="th-badges">
+            <span class="thb">🏅 10+ Exams Covered</span>
+            <span class="thb">🪖 Army Navy Airforce</span>
+            <span class="thb">💡 Smart Recommendation</span>
+            <span class="thb">🔒 100% Private</span>
+            <span class="thb">⚡ Instant</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tool-body">
+
+        <!-- STEP INDICATOR -->
+        <div class="step-indicator" id="stepIndicator">
+          <div class="step-dot active" id="sdot1"><div class="sd-num">1</div><div class="sd-label">Basic Info</div></div>
+          <div class="step-dot" id="sdot2"><div class="sd-num">2</div><div class="sd-label">Physical</div></div>
+          <div class="step-dot" id="sdot3"><div class="sd-num">3</div><div class="sd-label">Education</div></div>
+          <div class="step-dot" id="sdot4"><div class="sd-num">4</div><div class="sd-label">Results</div></div>
+        </div>
+
+        <!-- STEP 1: BASIC INFO -->
+        <div id="step1">
+          <div class="sec-divider">👤 Step 1 — Basic Information</div>
+          <div class="fgrid">
+            <div class="fld">
+              <label class="flbl" for="age">Age <span>Years (completed)</span></label>
+              <input class="finp" type="number" id="age" placeholder="e.g. 20" min="14" max="35">
+            </div>
+            <div class="fld">
+              <label class="flbl" for="gender">Gender</label>
+              <select class="fsel" id="gender">
+                <option value="">— Select Gender —</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+              </select>
+            </div>
+          </div>
+          <div class="fgrid">
+            <div class="fld">
+              <label class="flbl" for="state">State / UT <span>For category benefit</span></label>
+              <select class="fsel" id="state">
+                <option value="">— Select State —</option>
+                <option value="general">General Category</option>
+                <option value="sc_st">SC / ST</option>
+                <option value="obc">OBC</option>
+                <option value="ex_serviceman">Ex-Serviceman Ward</option>
+              </select>
+            </div>
+            <div class="fld">
+              <label class="flbl" for="nationality">Nationality</label>
+              <select class="fsel" id="nationality">
+                <option value="indian">Indian Citizen</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- STEP 2: PHYSICAL -->
+          <div class="sec-divider">💪 Step 2 — Physical Details</div>
+          <div class="fgrid3">
+            <div class="fld">
+              <label class="flbl" for="height">Height <span>in cm</span></label>
+              <input class="finp" type="number" id="height" placeholder="e.g. 168" min="100" max="220">
+            </div>
+            <div class="fld">
+              <label class="flbl" for="weight">Weight <span>in kg (optional)</span></label>
+              <input class="finp" type="number" id="weight" placeholder="e.g. 55" min="30" max="150">
+            </div>
+            <div class="fld">
+              <label class="flbl" for="vision">Eye Vision</label>
+              <select class="fsel" id="vision">
+                <option value="normal">Normal / Corrected (6/6)</option>
+                <option value="mild">Mild Defect (correctable)</option>
+                <option value="poor">Poor / Not Correctable</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- STEP 3: EDUCATION -->
+          <div class="sec-divider">🎓 Step 3 — Education & Stream</div>
+          <div class="fgrid">
+            <div class="fld">
+              <label class="flbl" for="education">Qualification</label>
+              <select class="fsel" id="education">
+                <option value="">— Select Qualification —</option>
+                <option value="10th">10th Pass</option>
+                <option value="12th">12th Pass</option>
+                <option value="graduate">Graduate (Any Stream)</option>
+                <option value="technical">Graduate (Technical / Engineering)</option>
+              </select>
+            </div>
+            <div class="fld">
+              <label class="flbl" for="stream">Stream in 12th</label>
+              <select class="fsel" id="stream">
+                <option value="">— Select Stream —</option>
+                <option value="science_maths">Science with Maths & Physics</option>
+                <option value="science_bio">Science (Biology, no Maths)</option>
+                <option value="arts">Arts / Humanities</option>
+                <option value="commerce">Commerce</option>
+                <option value="na">Not Applicable (10th only)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="fgrid">
+            <div class="fld">
+              <label class="flbl" for="marital">Marital Status</label>
+              <select class="fsel" id="marital">
+                <option value="unmarried">Unmarried</option>
+                <option value="married">Married</option>
+              </select>
+            </div>
+            <div class="fld">
+              <label class="flbl" for="examsTarget">Target Branch</label>
+              <select class="fsel" id="examsTarget">
+                <option value="all">All (Check All Exams)</option>
+                <option value="army">Army Only</option>
+                <option value="navy">Navy Only</option>
+                <option value="airforce">Airforce Only</option>
+                <option value="paramilitary">Paramilitary (SSC GD, CAPF)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="hint-box">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            <div><strong>Note:</strong> This tool covers official eligibility criteria as per the latest recruitment notifications. Height requirements may vary slightly by region/state. Always <strong>verify from official defence recruitment website</strong> before applying.</div>
+          </div>
+
+          <div class="btn-row">
+            <button class="cvt-btn" onclick="checkEligibility()">🎖️ Check My Eligibility Now</button>
+            <button class="rst-btn" onclick="resetTool()">↺ Reset</button>
+          </div>
+        </div>
+
+        <!-- RESULT -->
+        <div id="resultArea">
+
+          <!-- Result Header -->
+          <div class="result-header" id="resultHeader">
+            <div class="rh-inner">
+              <div>
+                <div class="rh-title" id="rhTitle">—</div>
+                <div class="rh-sub" id="rhSub">—</div>
+              </div>
+              <div style="text-align:right">
+                <div class="rh-count" id="rhCount">—<span id="rhCountLabel"> exams eligible</span></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Best Exam Recommendation -->
+          <div class="best-exam-card" id="bestExamCard">
+            <div class="bec-inner">
+              <div class="bec-label">⭐ Best Exam Recommendation</div>
+              <div class="bec-title" id="bestExamTitle">—</div>
+              <div class="bec-desc" id="bestExamDesc">—</div>
+            </div>
+          </div>
+
+          <!-- Score / Match Meter -->
+          <div class="score-sec">
+            <div class="score-title">📊 Eligibility Match Score by Branch</div>
+            <div id="scoreBars"></div>
+          </div>
+
+          <!-- Exam Grid -->
+          <div style="font-family:var(--fd);font-size:14px;font-weight:800;color:var(--ink);margin-bottom:14px;display:flex;align-items:center;gap:8px;">
+            ✅ Eligible Exams &nbsp; <span id="eligibleCount" style="background:var(--green);color:#fff;font-size:12px;padding:2px 10px;border-radius:100px;">0</span>
+            &nbsp;&nbsp; ❌ Not Eligible &nbsp; <span id="notEligibleCount" style="background:var(--red);color:#fff;font-size:12px;padding:2px 10px;border-radius:100px;">0</span>
+          </div>
+          <div class="exam-grid" id="examGrid"></div>
+
+          <div class="action-row">
+            <button class="copy-btn" id="copyBtn" onclick="copyResult()">📋 Copy My Result</button>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div></div>
+</section>
+
+<!-- HOW TO USE -->
+<section class="howto-sec">
+  <div class="w">
+    <div class="howto-box rev">
+      <div class="howto-title">💛 How to Use This Tool</div>
+      <div class="howto-steps">
+        <div class="hw-step"><div class="sn">1</div><div>Enter your <strong>age, gender, state/category</strong> in Step 1 — Basic Info.</div></div>
+        <div class="hw-step"><div class="sn">2</div><div>Fill in your <strong>height, weight and eye vision</strong> in the Physical section.</div></div>
+        <div class="hw-step"><div class="sn">3</div><div>Select your <strong>education qualification and 12th stream</strong> (Science/Arts/Commerce).</div></div>
+        <div class="hw-step"><div class="sn">4</div><div>Click <strong>"Check My Eligibility Now"</strong> — instant result for all 10+ defence exams.</div></div>
+        <div class="hw-step"><div class="sn">5</div><div>Review your <strong>eligible exams list, rejection reasons, and best exam recommendation</strong> — then prepare accordingly!</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARISON TABLE -->
+<section class="tbl-sec">
+  <div class="w">
+    <div class="sec-hd rev">
+      <div class="sec-h">Defence Exams <span>Eligibility Comparison</span></div>
+      <div class="sec-sub">All major defence exams, their eligibility criteria, age limits, and educational requirements at a glance.</div>
+    </div>
+    <div class="tbl-wr rev">
+      <table class="main-tbl">
+        <thead>
+          <tr>
+            <th>Exam</th>
+            <th>Branch</th>
+            <th>Age (Male)</th>
+            <th>Min. Height (Male)</th>
+            <th>Education</th>
+            <th>Stream Required</th>
+            <th>Marital</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>NDA</strong></td><td><span class="tbadge b">Army/Navy/AF</span></td><td>16.5–19.5 yrs</td><td>157 cm</td><td>12th Pass</td><td>Maths+Physics (AF/Navy)</td><td>Unmarried only</td></tr>
+          <tr><td><strong>CDS</strong></td><td><span class="tbadge b">Army/Navy/AF</span></td><td>19–25 yrs</td><td>157 cm</td><td>Graduate</td><td>Tech for OTA optional</td><td>Unmarried (AF/Navy)</td></tr>
+          <tr><td><strong>AFCAT</strong></td><td><span class="tbadge b">Airforce</span></td><td>20–26 yrs</td><td>162.5 cm</td><td>Graduate (60%)</td><td>Maths+Physics (Flying)</td><td>Unmarried (Flying)</td></tr>
+          <tr><td><strong>SSC GD</strong></td><td><span class="tbadge g">Paramilitary</span></td><td>18–23 yrs</td><td>170 cm</td><td>10th Pass</td><td>Any</td><td>Any</td></tr>
+          <tr><td><strong>CAPF AC</strong></td><td><span class="tbadge g">Paramilitary</span></td><td>20–25 yrs</td><td>165 cm</td><td>Graduate</td><td>Any</td><td>Any</td></tr>
+          <tr><td><strong>Agniveer GD</strong></td><td><span class="tbadge a">Army</span></td><td>17.5–21 yrs</td><td>170 cm</td><td>10th (45%, 33% each)</td><td>Any</td><td>Unmarried</td></tr>
+          <tr><td><strong>Agniveer Clerk/SKT</strong></td><td><span class="tbadge a">Army</span></td><td>17.5–21 yrs</td><td>162 cm</td><td>12th (60% overall, 50% each)</td><td>Any</td><td>Unmarried</td></tr>
+          <tr><td><strong>Agniveer Tech</strong></td><td><span class="tbadge a">Army</span></td><td>17.5–21 yrs</td><td>162 cm</td><td>12th Sci (Phy+Chem+Maths, 50%)</td><td>Science (Maths)</td><td>Unmarried</td></tr>
+          <tr><td><strong>Agniveer NA/Toposurvey</strong></td><td><span class="tbadge a">Army</span></td><td>17.5–21 yrs</td><td>162 cm</td><td>12th Sci (Phy+Chem+Bio/Maths)</td><td>Science</td><td>Unmarried</td></tr>
+          <tr><td><strong>JCO (Pandit/Priest)</strong></td><td><span class="tbadge a">Army</span></td><td>27–34 yrs</td><td>157 cm</td><td>Graduate + Religious Qualification</td><td>Any</td><td>Any</td></tr>
+          <tr><td><strong>Havaldar (Education)</strong></td><td><span class="tbadge a">Army</span></td><td>20–25 yrs</td><td>162 cm</td><td>Graduate (B.Ed preferred)</td><td>Any</td><td>Any</td></tr>
+          <tr><td><strong>Havaldar (Surveyor)</strong></td><td><span class="tbadge a">Army</span></td><td>20–25 yrs</td><td>162 cm</td><td>12th Sci (Maths)</td><td>Science (Maths)</td><td>Any</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="hint-box rev">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      <div>Height requirements vary by state/region for some exams. Female candidates have different height norms (typically 152–157 cm). Always <strong>verify final eligibility from the official defence recruitment website</strong> — joinindianarmy.nic.in, joinindiannavy.gov.in, airmenselection.cdac.in, ssc.gov.in before applying.</div>
+    </div>
+  </div>
+</section>
+
+<!-- STORY -->
+<section class="story-sec">
+  <div class="wa">
+    <div class="story-card rev">
+      <span class="story-ico">🪖</span>
+      <h3>Why I Built This Tool</h3>
+      <p>Mere ghar mein mere cousins defence ki tayari kar rahe the.</p>
+      <p>Har baar jab koi new vacancy aati thi, sabse bada confusion hota tha — "kya hum eligible hain ya nahi?" Kabhi age clear nahi hoti thi, kabhi height ka doubt, kabhi qualification ka issue.</p>
+      <p>Har exam ke rules alag the — NDA alag, CDS alag, Agniveer alag, SSC GD alag. Wo alag alag jagah check karte rehte the, phir bhi confusion rehta tha. Ek baar to unhone NDA form bharke baad pata chala ki age limit cross ho gayi thi.</p>
+      <p>Tab mujhe laga ki ek aisa tool hona chahiye jahan sab kuch ek hi jagah clear ho jaye. Sirf details daalo — age, height, education — aur turant pata chale ki kaun se exams ke liye eligible ho, aur kaun se nahi. Aur agar nahi ho, to reason bhi pata chale.</p>
+      <p>Isi liye maine ye Defence Exam Eligibility Checker banaya — taaki kisi ko bhi alag alag jagah bhatakna na pade. Chahe tumhare cousins hon, dost hon, ya tum khud — sabko ek hi jagah sab jawaab milein.</p>
+      <span class="story-highlight">🎖️ Made for Every Defence Aspirant in India</span>
+    </div>
+  </div>
+</section>
+
+<!-- TIPS -->
+<section class="tips-sec">
+  <div class="w">
+    <div class="sec-hd rev">
+      <div class="sec-h">Smart Tips for <span>Defence Aspirants</span></div>
+      <div class="sec-sub">Avoid common mistakes and be better prepared before you apply.</div>
+    </div>
+    <div class="tips-grid">
+      <div class="tip-card rev">
+        <div class="tc-ico">📅</div>
+        <div class="tc-title">Check Age Limit First</div>
+        <div class="tc-desc">Every defence exam has a strict age window. Missing by even one day means disqualification. Check cut-off dates carefully.</div>
+        <div class="tc-list">
+          <div class="tc-item">NDA: 16.5–19.5 years</div>
+          <div class="tc-item">Agniveer: 17.5–21 years</div>
+          <div class="tc-item">CDS: 19–25 years (varies by post)</div>
+          <div class="tc-item">JCO: 27–34 years</div>
+        </div>
+      </div>
+      <div class="tip-card rev">
+        <div class="tc-ico">📏</div>
+        <div class="tc-title">Height & Physical Standards</div>
+        <div class="tc-desc">Many candidates are rejected at physical stage due to height or chest measurement not meeting standards.</div>
+        <div class="tc-list">
+          <div class="tc-item">SSC GD needs 170 cm (male)</div>
+          <div class="tc-item">AFCAT needs 162.5 cm (male)</div>
+          <div class="tc-item">NDA needs 157 cm minimum</div>
+          <div class="tc-item">Hilly/tribal areas get relaxation</div>
+        </div>
+      </div>
+      <div class="tip-card rev">
+        <div class="tc-ico">🎓</div>
+        <div class="tc-title">Qualification Matters</div>
+        <div class="tc-desc">The biggest confusion is education eligibility. Know what your qualification unlocks before preparing for any exam.</div>
+        <div class="tc-list">
+          <div class="tc-item">10th Pass → Agniveer GD, SSC GD</div>
+          <div class="tc-item">12th Sci → NDA, Agniveer Tech/Clerk</div>
+          <div class="tc-item">Graduate → CDS, AFCAT, CAPF</div>
+          <div class="tc-item">12th Any → Agniveer Clerk/SKT</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ARTICLE -->
+<section class="art-sec">
+  <div class="wa">
+    <div class="sec-hd rev"><div class="sec-h">Defence Exam <span>Complete Guide 2026</span></div></div>
+    <div class="art-body rev">
+
+      <h2>What is Defence Exam Eligibility and Why It Confuses Everyone</h2>
+      <p>India has some of the most respected armed forces in the world — the Indian Army, Navy, and Airforce — along with powerful paramilitary forces like CRPF, BSF, CISF, and ITBP. Every year, lakhs of young Indians dream of serving the nation in uniform. But the first hurdle everyone faces is the same: <strong>am I even eligible to apply?</strong></p>
+      <p>The confusion is real. India's defence recruitment system has more than 15 different entry schemes, each with its own age limit, height requirement, education qualification, and marital status rule. NDA eligibility is different from CDS eligibility. Agniveer rules are different from SSC GD rules. And then there are gender-wise differences on top of all that.</p>
+      <p>This is exactly why the <strong>defence exam eligibility checker india</strong> tool was needed — to put all the criteria in one place and give you a clear answer in seconds.</p>
+
+      <div class="ibox">
+        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <div>Always <strong>verify final eligibility from official defence recruitment websites</strong> — joinindianarmy.nic.in, joinindiannavy.gov.in, airmenselection.cdac.in, and ssc.gov.in — before submitting any application.</div>
+      </div>
+
+      <h2>NDA — National Defence Academy</h2>
+      <p>The NDA is the most prestigious entry for defence aspirants. Conducted by UPSC twice a year, it leads to a commission as an officer in the Indian Army, Navy, or Airforce after 3 years of training at the National Defence Academy in Khadakwasla, Pune.</p>
+      <p><strong>NDA eligibility key points:</strong> You must be between 16.5 and 19.5 years of age. You must be unmarried. For Army wing, 12th pass in any stream is acceptable, but for Navy and Airforce wings, you must have Physics and Mathematics in 12th. The minimum height is 157 cm. This exam is only for male candidates as of 2026 (Supreme Court has allowed female candidates, implementation ongoing).</p>
+      <p>The biggest beginner mistake is checking for NDA after turning 19.5 — the window is narrow, so you must start preparing in class 11 itself. Always <strong>verify nda cds afcat eligibility criteria 2026 from official website par</strong> before applying.</p>
+
+      <h2>CDS — Combined Defence Services</h2>
+      <p>CDS is the officer-level entry for graduates. Also conducted by UPSC twice a year, it leads to selection for IMA (Army), INA (Navy), AFA (Airforce), and OTA (Officers Training Academy for SSC commission).</p>
+      <p><strong>CDS eligibility key points:</strong> Age range is 19–25 years (varies by wing). Minimum qualification is graduation in any stream — but for Airforce and Navy, technical/science background is preferred. The OTA entry is open to graduates of any stream. Marital status restriction applies for Airforce and Navy entries only.</p>
+      <p>CDS is often overlooked by commerce and arts graduates who think defence is only for science students — but OTA entry at CDS is open to all graduates. This is one of the most important facts for <strong>army navy airforce eligibility kaise check kare</strong> purposes.</p>
+
+      <h2>AFCAT — Air Force Common Admission Test</h2>
+      <p>AFCAT is the Indian Airforce's own entry scheme for Flying Branch, Ground Duty (Technical), and Ground Duty (Non-Technical) branches. It is conducted twice a year.</p>
+      <p><strong>AFCAT eligibility key points:</strong> Age is 20–26 years. Minimum 60% marks in graduation is required. For Flying Branch, Physics and Mathematics in 12th is mandatory. Height minimum is 162.5 cm for male candidates. Correctable vision is acceptable for non-flying branches.</p>
+
+      <h2>SSC GD — Staff Selection Commission General Duty</h2>
+      <p>SSC GD is the entry for Constable General Duty post in paramilitary forces — CRPF, BSF, CISF, ITBP, SSB, NIA, SSF, and ASSAM Rifles. It is one of the most applied defence exams in India.</p>
+      <p><strong>SSC GD eligibility key points:</strong> Age range is 18–23 years (relaxation for reserved categories). Minimum education is only 10th pass — making it accessible to the widest pool of candidates. Height requirement is 170 cm for male (General), 157 cm for female. No marital restriction applies here. This makes SSC GD the most inclusive defence exam in India.</p>
+
+      <h2>Agniveer — Army, Navy, Airforce</h2>
+      <p>The Agniveer scheme, introduced in 2022 under the Agnipath scheme, allows youth to serve in the armed forces for four years as Agniveers, with 25% being retained for regular service. It covers Army (5 posts), Navy (2 posts), and Airforce (1 post).</p>
+      <ul>
+        <li><strong>Agniveer GD:</strong> 10th pass (45% aggregate, 33% each subject), age 17.5–21 years, height 170 cm</li>
+        <li><strong>Agniveer Clerk/Store Keeper Technical (SKT):</strong> 12th pass (60% overall, 50% each subject), age 17.5–21, height 162 cm</li>
+        <li><strong>Agniveer Technical:</strong> 12th Science with Physics, Chemistry, Maths (50% marks), age 17.5–21</li>
+        <li><strong>Agniveer Nursing Assistant (NA):</strong> 12th Science with Physics, Chemistry, Biology (50% marks)</li>
+        <li><strong>Agniveer Toposurvey:</strong> 12th with Maths and Science subjects</li>
+      </ul>
+      <p>The Agniveer scheme has brought defence services closer to youth from rural and semi-urban areas. <strong>Agniveer eligibility kya hai</strong> is one of the most searched questions in India. Always verify age cut-off dates from official website par before applying.</p>
+
+      <h2>CAPF AC — Central Armed Police Forces Assistant Commandant</h2>
+      <p>CAPF AC is an officer-level entry conducted by UPSC for BSF, CRPF, CISF, SSB, and ITBP in the Assistant Commandant rank. Age range is 20–25 years. Graduation in any stream is required. Height minimum is 165 cm for male.</p>
+
+      <h2>JCO — Junior Commissioned Officer (Religious Teacher / Pandit)</h2>
+      <p>JCO Religious Teacher entry is unique — it is for candidates with religious qualifications (Sanskrit/Urdu/Gurbani etc.) who can serve as Pandits, Maulvis, Granthi, Padri, etc. in the Army. Age range is 27–34 years, and graduation along with relevant religious qualifications is required. Height minimum is 157 cm.</p>
+
+      <h2>Havaldar — Education and Surveyor</h2>
+      <p>Army Havaldar Education posts require graduation (B.Ed preferred) and are for candidates aged 20–25 years. Army Havaldar Surveyor requires 12th with Mathematics and Science. These are technical support roles within the Army structure.</p>
+
+      <h2>Common Beginner Mistakes in Defence Exam Eligibility</h2>
+      <ul>
+        <li>Applying for NDA after age 19.5 — the window is strict</li>
+        <li>Not knowing that CDS OTA is open to all graduates including Arts/Commerce</li>
+        <li>Assuming AFCAT requires engineering — 60% graduation in any stream qualifies for Ground Duty</li>
+        <li>Forgetting that SSC GD has a very strict height requirement of 170 cm for male</li>
+        <li>Thinking Agniveer is only one post — there are 5+ posts with different education requirements</li>
+        <li>Not checking the medical eligibility (eye standards especially for AFCAT Flying)</li>
+      </ul>
+
+      <div class="ibox a">
+        <svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        <div><strong>Important Disclaimer:</strong> Eligibility criteria are updated every recruitment cycle. Always <strong>verify eligibility from official defence recruitment website</strong> (joinindianarmy.nic.in, ssc.gov.in, joinindiannavy.gov.in, airmenselection.cdac.in) before submitting any application. This tool is for guidance and reference only.</div>
+      </div>
+
+      <h2>How to Choose the Best Defence Exam for You</h2>
+      <p>The best defence exam for you depends on three things: your age, your education, and your physical fitness. Here is a simple decision guide:</p>
+      <ul>
+        <li>If you are in 11th–12th (Science with Maths): Start NDA preparation immediately — it is the earliest and most prestigious entry</li>
+        <li>If you just passed 10th: Aim for SSC GD and Agniveer GD simultaneously</li>
+        <li>If you are a graduate in any stream: CDS (OTA) and CAPF are your primary targets</li>
+        <li>If you are a graduate in Science/Engineering: CDS (Army/Navy/AF), AFCAT, and technical Agniveer posts all apply</li>
+        <li>If you are 25–34 years old: JCO Religious Teacher is a unique opportunity if you have religious qualifications</li>
+      </ul>
+
+      <h2>Physical Preparation is Just as Important as Written Exam</h2>
+      <p>Many candidates crack the written exam but fail at the physical fitness test, medical board, or SSB interview. Simultaneously preparing your physical fitness — running, push-ups, pull-ups, swimming — is absolutely essential for any defence exam. Running timing for SSC GD is 1.6 km in 5.45 minutes for male candidates aged 18–23. Prepare from day one.</p>
+
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-sec">
+  <div class="w">
+    <div class="sec-hd rev"><div class="sec-h">Frequently Asked <span>Questions</span></div></div>
+    <div class="fql">
+      <div class="fq rev">
+        <div class="fq-q" onclick="tFQ(this)"><span class="fq-t">Kya main NDA ke liye eligible hoon agar mera subject Arts hai?</span><span class="fq-i">+</span></div>
+        <div class="fq-a"><div class="fq-ai">NDA ke liye Army wing mein Arts/Commerce 12th wale eligible hain. Lekin Navy aur Airforce wing ke liye 12th mein Physics aur Mathematics hona compulsory hai. Arts stream candidates sirf Army NDA ke liye apply kar sakte hain. Verify karo official website par before applying.</div></div>
+      </div>
+      <div class="fq rev">
+        <div class="fq-q" onclick="tFQ(this)"><span class="fq-t">SSC GD aur Agniveer GD mein kya difference hai eligibility ka?</span><span class="fq-i">+</span></div>
+        <div class="fq-a"><div class="fq-ai">SSC GD paramilitary forces (CRPF, BSF, CISF etc.) ke liye hai — age 18–23 years, 10th pass required, height 170 cm (male). Agniveer GD Indian Army ke liye hai — age 17.5–21 years, 10th with 45% marks required, height 170 cm. Dono alag organizations hain, alag selection process hai, aur Agniveer sirf 4 year contract hai while SSC GD is a permanent career.</div></div>
+      </div>
+      <div class="fq rev">
+        <div class="fq-q" onclick="tFQ(this)"><span class="fq-t">CDS ke liye kya sirf science graduates apply kar sakte hain?</span><span class="fq-i">+</span></div>
+        <div class="fq-a"><div class="fq-ai">Nahi! CDS ke OTA (Officers Training Academy) post ke liye kisi bhi stream ke graduates — Arts, Commerce, Science — apply kar sakte hain. Army wing bhi any degree accept karta hai. Sirf Navy aur Airforce wings ke liye technical/science background preferred hoti hai. Isliye CDS arts aur commerce graduates ke liye bhi ek excellent opportunity hai.</div></div>
+      </div>
+      <div class="fq rev">
+        <div class="fq-q" onclick="tFQ(this)"><span class="fq-t">AFCAT mein height kitni chahiye aur kya glasses wale apply kar sakte hain?</span><span class="fq-i">+</span></div>
+        <div class="fq-a"><div class="fq-ai">AFCAT ke liye male candidates ki minimum height 162.5 cm aur female ke liye 152 cm honi chahiye. Flying branch ke liye strict eye standards hain (6/6 normal vision required). Lekin Ground Duty Technical aur Ground Duty Non-Technical posts ke liye correctable vision acceptable hai (spectacles allowed up to certain power). Official website par current medical standards verify karo.</div></div>
+      </div>
+      <div class="fq rev">
+        <div class="fq-q" onclick="tFQ(this)"><span class="fq-t">Agniveer scheme mein kitne posts hain aur sabke alag criteria hain kya?</span><span class="fq-i">+</span></div>
+        <div class="fq-a"><div class="fq-ai">Haan, Agniveer mein multiple posts hain with alag eligibility: (1) Agniveer GD — 10th pass, height 170 cm; (2) Agniveer Clerk/SKT — 12th 60% any stream; (3) Agniveer Technical — 12th Science with Phy+Chem+Maths 50%; (4) Agniveer Nursing Assistant — 12th with Bio+Phy+Chem; (5) Agniveer Toposurvey — 12th Maths+Science. Navy aur Airforce mein bhi Agniveer posts hain alag criteria ke saath.</div></div>
+      </div>
+      <div class="fq rev">
+        <div class="fq-q" onclick="tFQ(this)"><span class="fq-t">Kya married candidates defence exams ke liye apply kar sakte hain?</span><span class="fq-i">+</span></div>
+        <div class="fq-a"><div class="fq-ai">Depends on the exam: NDA, Agniveer — strictly unmarried only. CDS Airforce/Navy wings — unmarried preferred. SSC GD, CAPF, JCO, Havaldar — married candidates eligible hain. JCO Religious Teacher ke liye actually 27–34 age range hai to married hona quite likely hota hai. Har exam ki specific notification se verify karo.</div></div>
+      </div>
+      <div class="fq rev">
+        <div class="fq-q" onclick="tFQ(this)"><span class="fq-t">Agar main height mein thoda short hoon to kya koi relaxation milti hai?</span><span class="fq-i">+</span></div>
+        <div class="fq-a"><div class="fq-ai">Haan! Kuch regions ke candidates ko height relaxation milti hai — jaise North Eastern states, Himachal Pradesh, Uttarakhand, J&K, Sikkim, Ladakh etc. ke candidates ko 2–5 cm ki relaxation typically milti hai. SC/ST candidates ko bhi kuch exams mein relaxation milti hai. Exact relaxation percentage official notification se verify karo official website par. Physically training karo — proper posture bhi height measurement mein help karta hai.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RELATED TOOLS -->
+<section class="rel-sec">
+  <div class="w">
+    <div class="sec-hd rev"><div class="sec-h">Related <span>Army Tools</span></div></div>
+    <div class="rel-grid">
+      <div class="rel-card rev">
+        <div class="rel-ico">🏃</div>
+        <div class="rel-title">Army Running Calculator</div>
+        <div class="rel-desc">Check if your running timing qualifies for the physical fitness test in Army, SSC GD, and Agniveer rallies.</div>
+        <a href="https://rajdailytools.in/" class="rel-btn">Use Tool <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
+      </div>
+      <div class="rel-card rev">
+        <div class="rel-ico">🏋️</div>
+        <div class="rel-title">Running Planner</div>
+        <div class="rel-desc">Week-wise running schedule to improve your 1.6 km timing for defence physical exams in 30–90 days.</div>
+        <a href="https://rajdailytools.in/" class="rel-btn">Use Tool <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
+      </div>
+      <div class="rel-card rev">
+        <div class="rel-ico">🏥</div>
+        <div class="rel-title">Medical Standards Checker</div>
+        <div class="rel-desc">Check if your medical conditions, past injuries or surgeries affect your defence exam eligibility.</div>
+        <a href="https://rajdailytools.in/" class="rel-btn">Use Tool <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
+      </div>
+      <div class="rel-card rev">
+        <div class="rel-ico">👁️</div>
+        <div class="rel-title">Eye Test Simulator</div>
+        <div class="rel-desc">Simulate standard eye test used in defence medical boards to know if your vision meets requirements.</div>
+        <a href="https://rajdailytools.in/" class="rel-btn">Use Tool <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
+      </div>
+      <div class="rel-card rev">
+        <div class="rel-ico">📄</div>
+        <div class="rel-title">Army Document Checklist</div>
+        <div class="rel-desc">Never miss a document at rally bharti — get the complete checklist for all defence exam document requirements.</div>
+        <a href="https://rajdailytools.in/" class="rel-btn">Use Tool <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
+      </div>
+      <div class="rel-card rev">
+        <div class="rel-ico">📊</div>
+        <div class="rel-title">Rally Analyzer</div>
+        <div class="rel-desc">Analyze past Army rally bharti cutoffs and chances for your region based on history and category.</div>
+        <a href="https://rajdailytools.in/" class="rel-btn">Use Tool <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
+      </div>
+      <div class="rel-card rev">
+        <div class="rel-ico">💰</div>
+        <div class="rel-title">Army Pension Calculator</div>
+        <div class="rel-desc">Calculate estimated Army pension based on rank, years of service, and current 7th Pay Commission rates.</div>
+        <a href="https://rajdailytools.in/" class="rel-btn">Use Tool <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
+      </div>
+      <div class="rel-card rev">
+        <div class="rel-ico">🦶</div>
+        <div class="rel-title">Flat Foot Checker</div>
+        <div class="rel-desc">Check if your flat foot condition could disqualify you in defence medical examination — test and solutions.</div>
+        <a href="https://rajdailytools.in/" class="rel-btn">Use Tool <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
+      </div>
+      <div class="rel-card rev">
+        <div class="rel-ico">🎖️</div>
+        <div class="rel-title">Army Promotion Tool</div>
+        <div class="rel-desc">Track promotion timeline from Sepoy to Subedar Major and plan your career progression in the Army.</div>
+        <a href="https://rajdailytools.in/" class="rel-btn">Use Tool <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DISCLAIMER -->
+<div class="disc">
+  <div class="w"><div class="disc-in">
+    <span style="font-size:18px">⚠️</span>
+    <div><strong>Important Disclaimer:</strong> This Defence Exam Eligibility Checker is for guidance and reference purposes only. Eligibility criteria change with every recruitment cycle and notification. Always <strong>verify final eligibility from official defence recruitment websites</strong> — joinindianarmy.nic.in, joinindiannavy.gov.in, airmenselection.cdac.in, ssc.gov.in — before submitting any application. RajDailyTools is not responsible for any incorrect applications made based on this tool.</div>
+  </div></div>
+</div>
+
+<!-- CONTACT -->
+<section class="contact-sec">
+  <div class="w">
+    <div class="contact-card rev">
+      <h3>🤝 Any Question or Feedback?</h3>
+      <p>Found a mistake in eligibility criteria? Want to suggest a new defence tool? We update this tool regularly based on official notifications. Reach out anytime.</p>
+      <a href="mailto:edurajkhushit@gmail.com" class="btn-bl">📬 edurajkhushit@gmail.com</a>
+      <div class="priv-note">🔒 Your data is never stored. This tool works 100% in your browser.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="w cta-in">
+    <div class="pill">🎖️ Free Defence Eligibility Tools</div>
+    <h2>Know Your Defence <em>Eligibility</em><br>Before Anyone Else</h2>
+    <p>Stop guessing. Check all defence exam eligibility in seconds — NDA, CDS, AFCAT, Agniveer, SSC GD and more. 100% free, instant, private.</p>
+    <div class="cta-btns">
+      <a href="#checker" class="btn-gold">🎖️ Check Eligibility Now</a>
+      <a href="https://rajdailytools.in/" class="btn-ghost">🏠 Explore All Tools</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-inner">
+    <div class="ft-top">
+      <div class="ft-brand">
+        <div class="logo"><div class="lb"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div><div><div class="ln">Raj<span>Daily</span>Tools</div><div class="ls" style="color:#475569">Free Tools for India</div></div></div>
+        <div class="ft-desc">India's growing free tools platform — SEO, finance, defence, energy, utilities and personality tools. Trusted by thousands daily.</div>
+        <div class="ft-soc">
+          <a href="https://rajdailytools.in/" class="fts">🌐</a>
+          <a href="mailto:edurajkhushit@gmail.com" class="fts">✉️</a>
+        </div>
+      </div>
+      <div class="fc">
+        <h4>Defence Tools</h4>
+        <ul>
+          <li><a href="#">Eligibility Checker</a></li>
+          <li><a href="#">Running Calculator</a></li>
+          <li><a href="#">Medical Checker</a></li>
+          <li><a href="#">Pension Calculator</a></li>
+          <li><a href="#">Rally Analyzer</a></li>
+        </ul>
+      </div>
+      <div class="fc">
+        <h4>Finance Tools</h4>
+        <ul>
+          <li><a href="https://rajdailytools.in/income-tax-calculator-india-2026.html">Income Tax Calculator</a></li>
+          <li><a href="#">GST Calculator</a></li>
+          <li><a href="#">Bonus Tax Calculator</a></li>
+          <li><a href="#">Freelance Rate Calc</a></li>
+          <li><a href="#">Inflation Calculator</a></li>
+        </ul>
+      </div>
+      <div class="fc">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="https://rajdailytools.in/">Home</a></li>
+          <li><a href="https://rajdailytools.in/about.html">About</a></li>
+          <li><a href="https://rajdailytools.in/contact.html">Contact</a></li>
+          <li><a href="https://rajdailytools.in/categories.html">All Tools</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ft-btm">
+      <div class="ft-cp">© 2026 RajDailyTools. All rights reserved.</div>
+      <div class="ft-lnk">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="https://rajdailytools.in/contact.html">Contact</a>
+        <a href="https://rajdailytools.in/sitemap.xml">Sitemap</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* === DRAWER === */
+function oD(){document.getElementById('dov').classList.add('on');document.getElementById('drw').classList.add('on');}
+function cD(){document.getElementById('dov').classList.remove('on');document.getElementById('drw').classList.remove('on');}
+
+/* === BACK TO TOP === */
+window.addEventListener('scroll',()=>{
+  document.getElementById('btt').classList.toggle('on',window.scrollY>400);
+});
+
+/* === SCROLL REVEAL === */
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}});
+},{threshold:0.12});
+document.querySelectorAll('.rev').forEach(el=>obs.observe(el));
+
+/* === FAQ === */
+function tFQ(el){
+  const fq=el.closest('.fq');
+  const wasOpen=fq.classList.contains('open');
+  document.querySelectorAll('.fq').forEach(f=>f.classList.remove('open'));
+  if(!wasOpen) fq.classList.add('open');
+}
+
+/* === STEP INDICATOR === */
+function setStep(n){
+  for(let i=1;i<=4;i++){
+    const sd=document.getElementById('sdot'+i);
+    sd.classList.remove('active','done');
+    if(i<n) sd.classList.add('done');
+    else if(i===n) sd.classList.add('active');
+  }
+}
+
+/* === ELIGIBILITY DATA === */
+const EXAMS = [
+  {
+    id:'nda', name:'NDA', fullName:'National Defence Academy',
+    branch:'Army / Navy / Airforce', icon:'🏅',
+    check:(d)=>{
+      const reasons=[];
+      if(d.gender==='female') reasons.push('NDA currently open for male candidates only');
+      if(d.age<16.5||d.age>19.5) reasons.push(`Age ${d.age} not in NDA range 16.5–19.5 years`);
+      if(!['12th','graduate','technical'].includes(d.education)) reasons.push('Minimum 12th pass required');
+      if(d.marital==='married') reasons.push('Married candidates not eligible for NDA');
+      if(d.nationality!=='indian') reasons.push('Indian citizenship required');
+      if(d.height<157) reasons.push(`Height ${d.height}cm below minimum 157cm`);
+      if(d.vision==='poor') reasons.push('Vision standard not meeting NDA requirements');
+      return reasons;
+    },
+    detail:'Age 16.5–19.5 | 12th Pass | Height 157cm | Unmarried | Male',
+    suggestion:'Best option if you are in 11th/12th with Science (Maths+Physics for AF/Navy wing).'
+  },
+  {
+    id:'cds', name:'CDS', fullName:'Combined Defence Services',
+    branch:'Army / Navy / Airforce / OTA', icon:'🎖️',
+    check:(d)=>{
+      const reasons=[];
+      if(d.age<19||d.age>25) reasons.push(`Age ${d.age} not in CDS range 19–25 years`);
+      if(!['graduate','technical'].includes(d.education)) reasons.push('Graduation required for CDS');
+      if(d.nationality!=='indian') reasons.push('Indian citizenship required');
+      if(d.height<157) reasons.push(`Height ${d.height}cm below minimum 157cm`);
+      if(d.vision==='poor') reasons.push('Vision not meeting CDS medical standards');
+      return reasons;
+    },
+    detail:'Age 19–25 | Graduate (any stream for OTA) | Height 157cm',
+    suggestion:'CDS OTA is open to ALL graduates — Arts, Commerce, Science. Best for graduate candidates.'
+  },
+  {
+    id:'afcat', name:'AFCAT', fullName:'Air Force Common Admission Test',
+    branch:'Indian Airforce', icon:'✈️',
+    check:(d)=>{
+      const reasons=[];
+      if(d.age<20||d.age>26) reasons.push(`Age ${d.age} not in AFCAT range 20–26 years`);
+      if(!['graduate','technical'].includes(d.education)) reasons.push('Graduation (60%) required for AFCAT');
+      if(d.height<162) reasons.push(`Height ${d.height}cm below AFCAT minimum 162.5cm`);
+      if(d.vision==='poor') reasons.push('Poor vision not acceptable for AFCAT');
+      if(d.nationality!=='indian') reasons.push('Indian citizenship required');
+      return reasons;
+    },
+    detail:'Age 20–26 | Graduate 60% | Height 162.5cm | Flying: Maths+Physics in 12th',
+    suggestion:'For Flying Branch you need Maths+Physics in 12th. Ground Duty accepts any graduation.'
+  },
+  {
+    id:'sscgd', name:'SSC GD', fullName:'SSC General Duty Constable',
+    branch:'CRPF / BSF / CISF / ITBP / SSB', icon:'🛡️',
+    check:(d)=>{
+      const reasons=[];
+      if(d.age<18||d.age>23) reasons.push(`Age ${d.age} not in SSC GD range 18–23 years`);
+      if(d.education==='') reasons.push('Minimum 10th pass required');
+      if(d.nationality!=='indian') reasons.push('Indian citizenship required');
+      const minH = d.gender==='female' ? 157 : 170;
+      if(d.height<minH) reasons.push(`Height ${d.height}cm below SSC GD minimum ${minH}cm for ${d.gender}`);
+      if(d.vision==='poor') reasons.push('Vision standard not meeting requirements');
+      return reasons;
+    },
+    detail:'Age 18–23 | 10th Pass | Height 170cm (M) / 157cm (F) | Any category',
+    suggestion:'Most inclusive defence exam — 10th pass enough. Also one of the highest applicant pools.'
+  },
+  {
+    id:'capf', name:'CAPF AC', fullName:'Central Armed Police Forces AC',
+    branch:'BSF / CRPF / CISF / SSB / ITBP', icon:'🚔',
+    check:(d)=>{
+      const reasons=[];
+      if(d.age<20||d.age>25) reasons.push(`Age ${d.age} not in CAPF AC range 20–25 years`);
+      if(!['graduate','technical'].includes(d.education)) reasons.push('Graduation required for CAPF AC');
+      const minH = d.gender==='female' ? 157 : 165;
+      if(d.height<minH) reasons.push(`Height ${d.height}cm below CAPF minimum ${minH}cm`);
+      if(d.nationality!=='indian') reasons.push('Indian citizenship required');
+      return reasons;
+    },
+    detail:'Age 20–25 | Graduate any stream | Height 165cm (M) / 157cm (F)',
+    suggestion:'Officer-level entry in paramilitary. Good option for graduates who missed CDS age window slightly.'
+  },
+  {
+    id:'agniveer_gd', name:'Agniveer GD', fullName:'Agnipath — General Duty (Army)',
+    branch:'Indian Army', icon:'🪖',
+    check:(d)=>{
+      const reasons=[];
+      if(d.age<17.5||d.age>21) reasons.push(`Age ${d.age} not in Agniveer range 17.5–21 years`);
+      if(d.education===''||d.education===null) reasons.push('Minimum 10th pass (45% aggregate) required');
+      if(d.marital==='married') reasons.push('Married candidates not eligible for Agniveer');
+      if(d.height<170) reasons.push(`Height ${d.height}cm below Agniveer GD minimum 170cm`);
+      if(d.vision==='poor') reasons.push('Vision standard not meeting requirements');
+      return reasons;
+    },
+    detail:'Age 17.5–21 | 10th 45% | Height 170cm | Unmarried | 4-yr contract',
+    suggestion:'If you are 17.5–21 and passed 10th, Agniveer GD is your fastest route into the Army.'
+  },
+  {
+    id:'agniveer_clerk', name:'Agniveer Clerk/SKT', fullName:'Agnipath — Clerk/Store Keeper Technical',
+    branch:'Indian Army', icon:'📋',
+    check:(d)=>{
+      const reasons=[];
+      if(d.age<17.5||d.age>21) reasons.push(`Age ${d.age} not in Agniveer range 17.5–21 years`);
+      if(!['12th','graduate','technical'].includes(d.education)) reasons.push('Minimum 12th pass (60% overall, 50% each subject) required');
+      if(d.marital==='married') reasons.push('Married candidates not eligible for Agniveer');
+      if(d.height<162) reasons.push(`Height ${d.height}cm below Agniveer Clerk minimum 162cm`);
+      return reasons;
+    },
+    detail:'Age 17.5–21 | 12th 60% any stream | Height 162cm | Unmarried',
+    suggestion:'12th pass in any stream? Agniveer Clerk/SKT is a great desk-role entry into Army with good prospects.'
+  },
+  {
+    id:'agniveer_tech', name:'Agniveer Technical', fullName:'Agnipath — Technical (Army)',
+    branch:'Indian Army', icon:'⚙️',
+    check:(d)=>{
+      const reasons=[];
+      if(d.age<17.5||d.age>21) reasons.push(`Age ${d.age} not in Agniveer range 17.5–21 years`);
+      if(!['12th','graduate','technical'].includes(d.education)) reasons.push('12th Science with Phy+Chem+Maths (50%) required');
+      if(!['science_maths'].includes(d.stream)&&d.education==='12th') reasons.push('Science stream with Maths & Physics mandatory for Agniveer Technical');
+      if(d.marital==='married') reasons.push('Married candidates not eligible for Agniveer');
+      if(d.height<162) reasons.push(`Height ${d.height}cm below minimum 162cm`);
+      return reasons;
+    },
+    detail:'Age 17.5–21 | 12th Sci (Phy+Chem+Maths 50%) | Height 162cm | Unmarried',
+    suggestion:'Science students with Maths should apply here — technical role, better responsibilities, strong career path.'
+  },
+  {
+    id:'jco', name:'JCO (Pandit/Priest)', fullName:'Junior Commissioned Officer — Religious Teacher',
+    branch:'Indian Army', icon:'🕌',
+    check:(d)=>{
+      const reasons=[];
+      if(d.age<27||d.age>34) reasons.push(`Age ${d.age} not in JCO range 27–34 years`);
+      if(!['graduate','technical'].includes(d.education)) reasons.push('Graduation + religious qualification required for JCO');
+      if(d.height<157) reasons.push(`Height ${d.height}cm below JCO minimum 157cm`);
+      if(d.gender==='female') reasons.push('JCO Religious Teacher currently for male candidates only');
+      return reasons;
+    },
+    detail:'Age 27–34 | Graduate + Religious Qualification | Height 157cm | Male',
+    suggestion:'Unique opportunity for religious scholars (Sanskrit/Urdu/Gurbani etc.) — least competitive JCO entry.'
+  },
+  {
+    id:'havaldar', name:'Havaldar (Education)', fullName:'Havaldar Education Corps',
+    branch:'Indian Army', icon:'📚',
+    check:(d)=>{
+      const reasons=[];
+      if(d.age<20||d.age>25) reasons.push(`Age ${d.age} not in Havaldar Education range 20–25 years`);
+      if(!['graduate','technical'].includes(d.education)) reasons.push('Graduation (B.Ed preferred) required for Havaldar Education');
+      if(d.height<162) reasons.push(`Height ${d.height}cm below Havaldar minimum 162cm`);
+      return reasons;
+    },
+    detail:'Age 20–25 | Graduate (B.Ed preferred) | Height 162cm | Any gender',
+    suggestion:'If you are a graduate with teaching interest, Havaldar Education is a stable, respected Army career.'
+  },
+];
+
+/* === MAIN LOGIC === */
+let lastResult = {};
+
+function checkEligibility(){
+  const age = parseFloat(document.getElementById('age').value);
+  const gender = document.getElementById('gender').value;
+  const state = document.getElementById('state').value;
+  const height = parseFloat(document.getElementById('height').value);
+  const weight = parseFloat(document.getElementById('weight').value)||0;
+  const vision = document.getElementById('vision').value;
+  const education = document.getElementById('education').value;
+  const stream = document.getElementById('stream').value;
+  const marital = document.getElementById('marital').value;
+  const nationality = document.getElementById('nationality').value;
+  const target = document.getElementById('examsTarget').value;
+
+  // Validation
+  if(!age){alert('Please enter your age.');return;}
+  if(!gender){alert('Please select your gender.');return;}
+  if(!education){alert('Please select your education qualification.');return;}
+  if(!height){alert('Please enter your height.');return;}
+
+  const data = {age, gender, state, height, weight, vision, education, stream, marital, nationality, target};
+
+  // Filter exams by target
+  let examsToCheck = EXAMS;
+  if(target==='army') examsToCheck = EXAMS.filter(e=>['nda','agniveer_gd','agniveer_clerk','agniveer_tech','jco','havaldar'].includes(e.id));
+  else if(target==='navy') examsToCheck = EXAMS.filter(e=>['nda','cds'].includes(e.id));
+  else if(target==='airforce') examsToCheck = EXAMS.filter(e=>['nda','cds','afcat'].includes(e.id));
+  else if(target==='paramilitary') examsToCheck = EXAMS.filter(e=>['sscgd','capf'].includes(e.id));
+
+  // Check each exam
+  const results = examsToCheck.map(exam=>{
+    const reasons = exam.check(data);
+    return {
+      ...exam,
+      eligible: reasons.length===0,
+      reasons: reasons
+    };
+  });
+
+  const eligible = results.filter(r=>r.eligible);
+  const notEligible = results.filter(r=>!r.eligible);
+
+  lastResult = {data, results, eligible, notEligible};
+
+  // Set step 4 active
+  setStep(4);
+
+  // Update result header
+  const header = document.getElementById('resultHeader');
+  header.className = 'result-header ' + (eligible.length>0 ? (eligible.length>=3?'rh-eligible':'rh-partial') : 'rh-none');
+  document.getElementById('rhTitle').textContent = eligible.length>0
+    ? `🎉 You are eligible for ${eligible.length} defence exam${eligible.length>1?'s':''}!`
+    : '❌ Not eligible for selected exams with current details';
+  document.getElementById('rhSub').textContent = eligible.length>0
+    ? `Based on details entered — always verify from official website before applying.`
+    : `Improvement suggestions are shown below for each exam.`;
+  document.getElementById('rhCount').innerHTML = `${eligible.length}<span> / ${results.length} exams eligible</span>`;
+
+  document.getElementById('eligibleCount').textContent = eligible.length;
+  document.getElementById('notEligibleCount').textContent = notEligible.length;
+
+  // Best exam recommendation
+  const bestExam = eligible.length>0 ? getBestExam(eligible, data) : null;
+  if(bestExam){
+    document.getElementById('bestExamTitle').textContent = `${bestExam.icon} ${bestExam.fullName} (${bestExam.name})`;
+    document.getElementById('bestExamDesc').textContent = bestExam.suggestion;
+  } else {
+    document.getElementById('bestExamTitle').textContent = '📈 No eligible exam found currently';
+    document.getElementById('bestExamDesc').textContent = 'Based on details entered, no exam matches all criteria. Review rejection reasons below — a small change in qualification or physical preparation could unlock multiple exams.';
+  }
+
+  // Score bars
+  const scoreBranchMap = {
+    'Army': results.filter(r=>['nda','agniveer_gd','agniveer_clerk','agniveer_tech','jco','havaldar'].includes(r.id)),
+    'Navy/AF': results.filter(r=>['nda','cds','afcat'].includes(r.id)),
+    'Paramilitary': results.filter(r=>['sscgd','capf'].includes(r.id)),
+  };
+  let scoreBarsHtml = '';
+  for(const[branch, exs] of Object.entries(scoreBranchMap)){
+    if(exs.length===0) continue;
+    const pct = Math.round((exs.filter(e=>e.eligible).length/exs.length)*100);
+    const cls = pct>=67?'sf-green':pct>=34?'sf-amber':'sf-red';
+    scoreBarsHtml+=`<div class="score-row">
+      <span class="score-label">${branch}</span>
+      <div class="score-track"><div class="score-fill ${cls}" style="width:0%;--sw:${pct}%"></div></div>
+      <span class="score-pct">${pct}%</span>
+    </div>`;
+  }
+  document.getElementById('scoreBars').innerHTML = scoreBarsHtml;
+  setTimeout(()=>{
+    document.querySelectorAll('.score-fill').forEach(b=>{
+      const w=b.style.getPropertyValue('--sw');if(w)b.style.width=w;
+    });
+  },200);
+
+  // Exam Grid
+  const allSorted = [...eligible, ...notEligible];
+  document.getElementById('examGrid').innerHTML = allSorted.map(r=>`
+    <div class="exam-card ${r.eligible?'eligible':'not-eligible'}">
+      <div class="ec-head">
+        <span class="ec-name">${r.icon} ${r.name}</span>
+        <span class="ec-badge ${r.eligible?'yes':'no'}">${r.eligible?'✔ Eligible':'✘ Not Eligible'}</span>
+      </div>
+      <div class="ec-detail">${r.detail}</div>
+      ${r.eligible
+        ? `<div class="ec-reason green">✓ All criteria matched — you can apply!</div>`
+        : r.reasons.map(re=>`<div class="ec-reason">✘ ${re}</div>`).join('')}
+      ${!r.eligible && r.suggestion ? `<div class="ec-suggest">💡 ${r.suggestion}</div>` : ''}
+    </div>
+  `).join('');
+
+  // Show result
+  const ra = document.getElementById('resultArea');
+  ra.style.display='block';
+  ra.style.animation='none';ra.offsetHeight;
+  ra.style.animation='resultIn .42s var(--ease) both';
+  setTimeout(()=>ra.scrollIntoView({behavior:'smooth',block:'nearest'}),120);
+}
+
+function getBestExam(eligible, data){
+  // Priority order logic
+  const priority = ['nda','cds','afcat','capf','sscgd','agniveer_tech','agniveer_clerk','agniveer_gd','havaldar','jco'];
+  for(const pid of priority){
+    const found = eligible.find(e=>e.id===pid);
+    if(found) return found;
+  }
+  return eligible[0];
+}
+
+function copyResult(){
+  const {data,eligible,notEligible} = lastResult;
+  if(!eligible) return;
+  const lines = [
+    `Defence Exam Eligibility Report — RajDailyTools`,
+    `Age: ${data.age} | Gender: ${data.gender} | Height: ${data.height}cm | Education: ${data.education}`,
+    ``,
+    `✅ ELIGIBLE EXAMS (${eligible.length}):`,
+    ...eligible.map(e=>`  ✔ ${e.name} — ${e.fullName}`),
+    ``,
+    `❌ NOT ELIGIBLE (${notEligible.length}):`,
+    ...notEligible.map(e=>`  ✘ ${e.name} — ${e.reasons[0]||''}`),
+    ``,
+    `Always verify from official defence websites before applying.`,
+    `Tool: rajdailytools.in/defence-exam-eligibility-checker-2026.html`
+  ];
+  navigator.clipboard?.writeText(lines.join('\n')).then(()=>{
+    const btn=document.getElementById('copyBtn');
+    btn.classList.add('copied');btn.textContent='✅ Copied!';
+    setTimeout(()=>{btn.classList.remove('copied');btn.textContent='📋 Copy My Result';},2200);
+  });
+}
+
+function resetTool(){
+  document.getElementById('age').value='';
+  document.getElementById('gender').value='';
+  document.getElementById('state').value='';
+  document.getElementById('height').value='';
+  document.getElementById('weight').value='';
+  document.getElementById('vision').value='normal';
+  document.getElementById('education').value='';
+  document.getElementById('stream').value='';
+  document.getElementById('marital').value='unmarried';
+  document.getElementById('nationality').value='indian';
+  document.getElementById('examsTarget').value='all';
+  document.getElementById('resultArea').style.display='none';
+  setStep(1);
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+// Init
+setStep(1);
+</script>
+</body>
+</html>
