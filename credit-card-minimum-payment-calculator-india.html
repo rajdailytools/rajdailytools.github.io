@@ -1,0 +1,1134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Credit Card Minimum Payment Calculator India – Interest, EMI Trap & Total Cost | RajDailyTools</title>
+<meta name="description" content="Calculate your credit card minimum due, interest charges, and total repayment cost. See how much extra you pay if you don't clear full bill. Free tool India 2026.">
+<meta name="keywords" content="credit card minimum payment calculator india,minimum due interest calculation credit card,credit card minimum due trap india,credit card minimum payment interest india,credit card revolving credit calculator,minimum due vs full payment calculator,credit card repayment calculator india,credit card interest on minimum due,credit card outstanding balance calculator,credit card minimum due system india,credit card monthly interest calculator,credit card debt calculator india,credit card interest trap calculator,credit card emi vs minimum due,credit card payment strategy calculator,credit card outstanding interest india,credit card balance repayment calculator,credit card minimum due calculation india,credit card interest formula india,credit card cost calculator india">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://rajdailytools.in/credit-card-minimum-payment-calculator-india.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#2563eb;--blue-d:#1d4ed8;--blue-l:#3b82f6;
+  --blue-xl:#eff6ff;--blue-s:#dbeafe;
+  --amber:#f59e0b;--green:#10b981;--red:#ef4444;
+  --purple:#8b5cf6;--teal:#14b8a6;--orange:#f97316;
+  --green-xl:#f0fdf4;--green-s:#bbf7d0;
+  --red-xl:#fef2f2;--red-s:#fecaca;
+  --amber-xl:#fffbeb;--amber-s:#fde68a;
+  --purple-xl:#faf5ff;--purple-s:#ddd6fe;
+  --ink:#0f172a;--ink2:#334155;--ink3:#64748b;--ink4:#94a3b8;
+  --line:#e2e8f0;--surf:#f8fafc;--white:#fff;
+  --s1:0 1px 3px rgba(15,23,42,.06),0 1px 2px rgba(15,23,42,.04);
+  --s2:0 4px 16px rgba(15,23,42,.08),0 2px 6px rgba(15,23,42,.04);
+  --s3:0 12px 40px rgba(15,23,42,.11),0 3px 10px rgba(15,23,42,.06);
+  --s4:0 24px 64px rgba(15,23,42,.13),0 6px 20px rgba(15,23,42,.07);
+  --sb:0 8px 32px rgba(37,99,235,.20);
+  --fd:'Sora',sans-serif;--fb:'DM Sans',sans-serif;
+  --ease:cubic-bezier(.4,0,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);color:var(--ink);background:var(--white);overflow-x:hidden;-webkit-font-smoothing:antialiased;line-height:1.6}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+button{cursor:pointer;border:none;background:none;font-family:var(--fb)}
+.w{max-width:1180px;margin:0 auto;padding:0 24px}
+.wa{max-width:860px;margin:0 auto;padding:0 24px}
+select,input{appearance:none;-webkit-appearance:none}
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+@keyframes resultIn{from{opacity:0;transform:translateY(18px) scale(.97)}to{opacity:1;transform:none}}
+.rev{opacity:0;transform:translateY(22px);transition:opacity .55s var(--ease),transform .55s var(--ease)}
+.rev.in{opacity:1;transform:none}
+
+/* HEADER */
+.hdr{position:sticky;top:0;z-index:999;background:rgba(255,255,255,.96);backdrop-filter:blur(20px);border-bottom:1px solid var(--line);box-shadow:var(--s1)}
+.hdi{display:flex;align-items:center;justify-content:space-between;height:66px}
+.logo{display:flex;align-items:center;gap:10px}
+.lb{width:36px;height:36px;background:var(--blue);border-radius:9px;display:flex;align-items:center;justify-content:center;box-shadow:var(--sb);flex-shrink:0}
+.lb svg{width:18px;height:18px;fill:#fff}
+.ln{font-family:var(--fd);font-size:19px;font-weight:800;color:var(--ink);line-height:1}
+.ln span{color:var(--blue)}
+.ls{font-size:10px;color:var(--ink4);letter-spacing:.04em}
+nav.dn{display:flex;align-items:center;gap:2px}
+nav.dn a{font-size:13.5px;font-weight:500;color:var(--ink2);padding:7px 13px;border-radius:8px;transition:.2s}
+nav.dn a:hover{color:var(--blue);background:var(--blue-xl)}
+.hcta{background:var(--blue);color:#fff;font-family:var(--fd);font-weight:600;font-size:13px;padding:8px 18px;border-radius:8px;box-shadow:var(--sb);transition:.2s}
+.hcta:hover{background:var(--blue-d);transform:translateY(-1px)}
+.brg{display:none;flex-direction:column;gap:4.5px;padding:8px;border-radius:8px}
+.brg span{display:block;width:20px;height:2px;background:var(--ink);border-radius:2px;transition:.28s}
+.dov{display:none;position:fixed;inset:0;background:rgba(15,23,42,.45);z-index:1040;backdrop-filter:blur(3px)}
+.dov.on{display:block}
+.drw{position:fixed;top:0;right:-100%;width:270px;height:100vh;background:#fff;z-index:1050;padding:22px;box-shadow:var(--s4);transition:right .32s var(--ease);overflow-y:auto}
+.drw.on{right:0}
+.dh{display:flex;align-items:center;justify-content:space-between;margin-bottom:26px}
+.dx{width:33px;height:33px;border-radius:7px;background:var(--surf);display:flex;align-items:center;justify-content:center;color:var(--ink3);font-size:17px}
+nav.mn{display:flex;flex-direction:column;gap:3px}
+nav.mn a{display:block;font-size:14px;font-weight:500;color:var(--ink2);padding:11px 13px;border-radius:8px;transition:.2s}
+nav.mn a:hover{color:var(--blue);background:var(--blue-xl)}
+
+/* HERO */
+.hero{position:relative;overflow:hidden;background:linear-gradient(150deg,#ebf4ff 0%,#fff 46%,#fff7ed 100%);padding:68px 0 80px}
+.hero::before{content:'';position:absolute;top:-140px;right:-180px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(37,99,235,.08) 0%,transparent 68%);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-80px;left:-100px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(239,68,68,.04) 0%,transparent 68%);pointer-events:none}
+.blob{position:absolute;border-radius:50%;pointer-events:none;animation:float 6s ease-in-out infinite}
+.b1{width:13px;height:13px;background:rgba(37,99,235,.18);top:22%;right:14%;animation-delay:0s}
+.b2{width:9px;height:9px;background:rgba(239,68,68,.18);top:58%;right:26%;animation-delay:2.2s}
+.b3{width:11px;height:11px;background:rgba(245,158,11,.18);top:36%;right:6%;animation-delay:4s}
+.bc{display:flex;align-items:center;gap:7px;font-size:12.5px;color:var(--ink3);margin-bottom:24px;position:relative;z-index:1;flex-wrap:wrap}
+.bc a{color:var(--blue);font-weight:600}
+.pill{display:inline-flex;align-items:center;gap:7px;font-family:var(--fd);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);background:var(--blue-xl);padding:5px 14px;border-radius:100px;margin-bottom:18px}
+.pill::before{content:'';width:6px;height:6px;background:var(--blue);border-radius:50%}
+.hero-inner{position:relative;z-index:1;max-width:700px;animation:fadeUp .5s ease both}
+.hero h1{font-family:var(--fd);font-size:clamp(26px,4.5vw,50px);font-weight:800;line-height:1.1;color:var(--ink);margin-bottom:14px}
+.hero h1 span{color:var(--blue)}
+.hero-sub{font-size:16px;color:var(--ink3);line-height:1.8;margin-bottom:22px;max-width:560px}
+.hero-chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.chip{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;padding:6px 14px;border-radius:100px;background:#fff;border:1.5px solid var(--line);color:var(--ink2);box-shadow:var(--s1);transition:.22s}
+.chip:hover{border-color:var(--blue);color:var(--blue);transform:translateY(-1px)}
+.hero-meta{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.upd{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:700;color:var(--blue);background:var(--blue-xl);padding:6px 14px;border-radius:100px;border:1.5px solid var(--blue-s)}
+.hmi{font-size:13px;color:var(--ink3);font-weight:500}
+
+/* TOOL */
+.tool-sec{background:var(--surf);padding:80px 0}
+.tool-wrap{max-width:860px;margin:0 auto}
+.tool-card{background:#fff;border:1.5px solid var(--line);border-radius:28px;overflow:hidden;box-shadow:var(--s4)}
+.tool-hdr{background:linear-gradient(135deg,#1d4ed8 0%,#2563eb 55%,#3b82f6 100%);padding:32px 40px;position:relative;overflow:hidden}
+.tool-hdr::before{content:'';position:absolute;top:-60px;right:-60px;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,.07)}
+.tool-hdr::after{content:'';position:absolute;bottom:-40px;left:-40px;width:180px;height:180px;border-radius:50%;background:rgba(255,255,255,.04)}
+.th{position:relative;z-index:1}
+.th h2{font-family:var(--fd);font-size:21px;font-weight:800;color:#fff;margin-bottom:6px}
+.th p{font-size:14px;color:rgba(255,255,255,.82);line-height:1.65}
+.th-badges{display:flex;flex-wrap:wrap;gap:9px;margin-top:14px}
+.thb{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:rgba(255,255,255,.9);background:rgba(255,255,255,.13);padding:5px 12px;border-radius:100px}
+.tool-body{padding:36px 40px}
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:18px}
+.fgrid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:18px}
+.fld{display:flex;flex-direction:column;gap:8px}
+.flbl{font-size:13px;font-weight:700;color:var(--ink2)}
+.flbl span{font-size:11px;font-weight:500;color:var(--ink4);margin-left:5px;background:var(--surf);padding:2px 7px;border-radius:5px;border:1px solid var(--line)}
+.inp-wrap{position:relative}
+.inp-pre{position:absolute;left:13px;top:50%;transform:translateY(-50%);font-size:15px;font-weight:700;color:var(--ink3);pointer-events:none}
+.inp-suf{position:absolute;right:13px;top:50%;transform:translateY(-50%);font-size:13px;font-weight:600;color:var(--ink4);pointer-events:none}
+.finp,.fsel{padding:13px 16px;font-size:15px;color:var(--ink);background:#fff;border:1.5px solid var(--line);border-radius:10px;outline:none;transition:.22s;font-family:var(--fb);width:100%}
+.finp.has-pre{padding-left:30px}
+.finp.has-suf{padding-right:38px}
+.finp:focus,.fsel:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(37,99,235,.10)}
+.fsel{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2364748b' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:42px}
+.hint-box{display:flex;align-items:flex-start;gap:9px;font-size:13px;color:var(--ink2);background:var(--blue-xl);border:1.5px solid var(--blue-s);border-radius:10px;padding:11px 14px;margin-bottom:18px;line-height:1.65}
+.hint-box svg{width:16px;height:16px;stroke:var(--blue);fill:none;stroke-width:2;flex-shrink:0;margin-top:2px}
+.sec-divider{font-family:var(--fd);font-size:12px;font-weight:700;color:var(--ink3);text-transform:uppercase;letter-spacing:.08em;padding:10px 0 4px;border-top:1px solid var(--line);margin:6px 0 16px;display:flex;align-items:center;gap:8px}
+.sec-divider::after{content:'';flex:1;height:1px;background:var(--line)}
+.btn-row{display:flex;gap:12px}
+.cvt-btn{flex:1;padding:15px;background:linear-gradient(135deg,var(--blue) 0%,#1e40af 100%);color:#fff;font-family:var(--fd);font-weight:800;font-size:15px;border-radius:11px;box-shadow:var(--sb);transition:all .25s var(--ease);display:flex;align-items:center;justify-content:center;gap:9px}
+.cvt-btn:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(37,99,235,.30)}
+.cvt-btn:active{transform:translateY(0)}
+.rst-btn{padding:15px 22px;background:var(--surf);color:var(--ink2);font-family:var(--fd);font-weight:700;font-size:14px;border-radius:11px;border:1.5px solid var(--line);transition:.22s;display:flex;align-items:center;gap:7px}
+.rst-btn:hover{border-color:var(--blue);color:var(--blue);background:var(--blue-xl)}
+
+/* RESULT */
+#resultArea{display:none;margin-top:28px;animation:resultIn .42s var(--ease) both}
+
+/* SUMMARY CARDS */
+.result-summary{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-bottom:20px}
+.rs-card{border-radius:14px;padding:18px 20px;border:1.5px solid}
+.rs-card.blue{background:var(--blue-xl);border-color:var(--blue-s)}
+.rs-card.red{background:var(--red-xl);border-color:var(--red-s)}
+.rs-card.amber{background:var(--amber-xl);border-color:var(--amber-s)}
+.rs-card.green{background:var(--green-xl);border-color:var(--green-s)}
+.rs-lbl{font-size:11.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3);margin-bottom:6px}
+.rs-val{font-family:var(--fd);font-size:24px;font-weight:800;color:var(--ink);line-height:1}
+.rs-sub{font-size:12px;color:var(--ink3);margin-top:4px}
+
+/* TRAP HIGHLIGHT */
+.trap-box{background:linear-gradient(135deg,#fef2f2,#fee2e2);border:2px solid var(--red-s);border-radius:18px;padding:24px 28px;margin-bottom:20px;position:relative;overflow:hidden}
+.trap-box::before{content:'';position:absolute;inset:0;opacity:.03;background-image:repeating-linear-gradient(45deg,#ef4444 0,#ef4444 1px,transparent 0,transparent 50%);background-size:12px 12px;pointer-events:none}
+.tb-inner{position:relative;z-index:1}
+.tb-title{font-family:var(--fd);font-size:15px;font-weight:800;color:var(--red);margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.tb-row{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.tb-item{text-align:center;flex:1}
+.tb-item-val{font-family:var(--fd);font-size:22px;font-weight:800;color:var(--ink)}
+.tb-item-lbl{font-size:12px;color:var(--ink3);margin-top:3px}
+.tb-arrow{font-size:22px;color:var(--red);font-weight:900}
+.trap-extra{background:var(--red);color:#fff;border-radius:12px;padding:12px 18px;margin-top:16px;font-family:var(--fd);font-size:15px;font-weight:800;text-align:center}
+
+/* COMPARISON */
+.comp-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:20px}
+.comp-card{border-radius:14px;padding:20px;border:2px solid}
+.comp-card.full{background:var(--green-xl);border-color:var(--green-s)}
+.comp-card.min{background:var(--red-xl);border-color:var(--red-s)}
+.comp-icon{font-size:28px;margin-bottom:10px}
+.comp-title{font-family:var(--fd);font-size:14px;font-weight:800;color:var(--ink);margin-bottom:12px}
+.comp-row{display:flex;justify-content:space-between;align-items:center;font-size:13px;color:var(--ink3);padding:6px 0;border-bottom:1px solid rgba(0,0,0,.06)}
+.comp-row:last-child{border-bottom:none;padding-top:10px;margin-top:4px}
+.comp-row strong{color:var(--ink2);font-weight:700}
+.comp-total{font-family:var(--fd);font-size:16px;font-weight:800}
+.comp-total.good{color:var(--green)}
+.comp-total.bad{color:var(--red)}
+
+/* SCORE BAR */
+.score-sec{background:var(--surf);border:1.5px solid var(--line);border-radius:14px;padding:18px 20px;margin-bottom:16px}
+.score-title{font-family:var(--fd);font-size:13.5px;font-weight:700;color:var(--ink);margin-bottom:14px}
+.score-row{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.score-label{font-size:12.5px;font-weight:700;color:var(--ink2);width:160px;flex-shrink:0}
+.score-track{flex:1;height:10px;background:var(--line);border-radius:6px;overflow:hidden}
+.score-fill{height:100%;border-radius:6px;transition:width 1.2s var(--ease);width:0}
+.sf-green{background:linear-gradient(90deg,var(--green),#059669)}
+.sf-red{background:linear-gradient(90deg,var(--red),#dc2626)}
+.sf-amber{background:linear-gradient(90deg,var(--amber),#d97706)}
+.sf-blue{background:linear-gradient(90deg,var(--blue),#1d4ed8)}
+.score-pct{font-size:12px;font-weight:800;color:var(--ink3);width:60px;text-align:right;flex-shrink:0}
+
+/* MONTHLY TABLE */
+.monthly-table-wrap{overflow-x:auto;margin-bottom:16px;border-radius:12px;border:1.5px solid var(--line)}
+table.month-tbl{width:100%;border-collapse:collapse;font-size:13px;min-width:480px}
+table.month-tbl thead th{background:linear-gradient(135deg,var(--blue) 0%,#1e40af 100%);color:#fff;padding:11px 14px;text-align:left;font-family:var(--fd);font-size:12px;font-weight:700;letter-spacing:.03em}
+table.month-tbl tbody tr{border-bottom:1px solid var(--line);transition:.2s}
+table.month-tbl tbody tr:hover{background:var(--blue-xl)}
+table.month-tbl tbody td{padding:10px 14px;color:var(--ink2);vertical-align:middle}
+table.month-tbl tbody tr:last-child td{font-weight:700;background:var(--surf)}
+
+/* ACTION ROW */
+.action-row{display:flex;gap:10px;margin-top:14px}
+.copy-btn{flex:1;padding:11px;background:var(--green-xl);color:var(--green);border:1.5px solid var(--green-s);font-family:var(--fd);font-weight:700;font-size:13.5px;border-radius:9px;display:flex;align-items:center;justify-content:center;gap:7px;transition:.22s}
+.copy-btn:hover{background:var(--green);color:#fff}
+.copy-btn.copied{background:var(--green);color:#fff}
+.ibox{background:var(--blue-xl);border:1.5px solid var(--blue-s);border-radius:13px;padding:14px 18px;margin:14px 0;display:flex;gap:10px;font-size:14px;color:var(--ink2);line-height:1.7}
+.ibox svg{width:16px;height:16px;stroke:var(--blue);fill:none;stroke-width:2;flex-shrink:0;margin-top:2px}
+.ibox.g{background:var(--green-xl);border-color:var(--green-s)}.ibox.g svg{stroke:var(--green)}
+.ibox.a{background:var(--amber-xl);border-color:var(--amber-s)}.ibox.a svg{stroke:var(--amber)}
+.ibox.r{background:var(--red-xl);border-color:var(--red-s)}.ibox.r svg{stroke:var(--red)}
+
+/* HOWTO */
+.howto-sec{background:var(--surf);padding:72px 0}
+.howto-box{background:var(--amber-xl);border:2px solid var(--amber-s);border-radius:20px;padding:32px 36px;max-width:680px;margin:0 auto}
+.howto-title{display:flex;align-items:center;gap:10px;font-family:var(--fd);font-size:19px;font-weight:800;color:var(--ink);margin-bottom:18px}
+.howto-steps{display:flex;flex-direction:column;gap:11px}
+.hw-step{display:flex;align-items:flex-start;gap:12px;font-size:14px;color:var(--ink2);line-height:1.65}
+.sn{width:26px;height:26px;background:var(--amber);color:#fff;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex-shrink:0;margin-top:1px}
+
+/* WARNING */
+.warn-sec{background:linear-gradient(135deg,#fff7ed,#fef2f2);padding:56px 0;border-top:1px solid #fecaca;border-bottom:1px solid #fecaca}
+.warn-card{max-width:780px;margin:0 auto;text-align:center}
+.warn-icon{font-size:52px;margin-bottom:16px}
+.warn-title{font-family:var(--fd);font-size:clamp(20px,3.5vw,30px);font-weight:800;color:var(--red);margin-bottom:12px}
+.warn-desc{font-size:15.5px;color:var(--ink2);line-height:1.85;max-width:620px;margin:0 auto 22px}
+.warn-stats{display:flex;justify-content:center;gap:28px;flex-wrap:wrap}
+.ws{text-align:center;background:#fff;border:1.5px solid var(--red-s);border-radius:14px;padding:16px 24px;min-width:140px}
+.ws-val{font-family:var(--fd);font-size:26px;font-weight:800;color:var(--red)}
+.ws-lbl{font-size:12.5px;color:var(--ink3);margin-top:4px}
+
+/* TIPS */
+.tips-sec{background:var(--white);padding:72px 0}
+.tips-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.tip-card{background:var(--surf);border:1.5px solid var(--line);border-radius:16px;padding:24px 20px;transition:.28s}
+.tip-card:hover{transform:translateY(-4px);box-shadow:var(--s3);border-color:var(--blue-s)}
+.tc-ico{font-size:32px;margin-bottom:12px}
+.tc-title{font-family:var(--fd);font-size:14px;font-weight:800;color:var(--ink);margin-bottom:8px}
+.tc-desc{font-size:13.5px;color:var(--ink3);line-height:1.7}
+.tc-list{display:flex;flex-direction:column;gap:6px;margin-top:10px}
+.tc-item{display:flex;align-items:flex-start;gap:8px;font-size:13px;color:var(--ink3);line-height:1.6}
+.tc-item::before{content:'✓';width:16px;height:16px;background:var(--green);color:#fff;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;flex-shrink:0;margin-top:3px}
+
+/* STORY */
+.story-sec{background:var(--surf);padding:72px 0}
+.story-card{max-width:760px;margin:0 auto;background:linear-gradient(135deg,var(--blue-xl),#fff7ed);border:1.5px solid var(--blue-s);border-radius:24px;padding:36px;box-shadow:var(--s3)}
+.story-ico{font-size:44px;margin-bottom:16px;display:block}
+.story-card h3{font-family:var(--fd);font-size:20px;font-weight:800;color:var(--ink);margin-bottom:14px}
+.story-card p{font-size:15px;color:var(--ink2);line-height:1.85}
+.story-card p+p{margin-top:11px}
+.story-highlight{display:inline-flex;align-items:center;gap:7px;background:var(--red);color:#fff;font-family:var(--fd);font-size:13px;font-weight:700;padding:6px 14px;border-radius:100px;margin-top:14px}
+
+/* ARTICLE */
+.art-sec{background:var(--white);padding:72px 0}
+.art-card{background:var(--surf);border:1.5px solid var(--line);border-radius:22px;padding:40px;box-shadow:var(--s2)}
+.art-body h2{font-family:var(--fd);font-size:20px;font-weight:800;color:var(--ink);margin:26px 0 10px;line-height:1.3}
+.art-body h2:first-child{margin-top:0}
+.art-body p{font-size:15px;color:var(--ink3);line-height:1.85;margin-bottom:13px}
+.art-body ul{display:flex;flex-direction:column;gap:8px;margin:10px 0 14px}
+.art-body li{display:flex;align-items:flex-start;gap:10px;font-size:14.5px;color:var(--ink3);line-height:1.7}
+.art-body li::before{content:'✓';width:18px;height:18px;background:var(--blue);color:#fff;border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;flex-shrink:0;margin-top:3px}
+.art-body strong{color:var(--ink2);font-weight:700}
+
+/* SEC HEADERS */
+.sec-hd{text-align:center;margin-bottom:44px}
+.sec-h{font-family:var(--fd);font-size:clamp(22px,3.8vw,38px);font-weight:800;color:var(--ink);line-height:1.18;margin-bottom:10px}
+.sec-h span{color:var(--blue)}
+.sec-sub{font-size:15.5px;color:var(--ink3);line-height:1.75;max-width:500px;margin:0 auto}
+
+/* FAQ */
+.faq-sec{background:var(--surf);padding:72px 0}
+.fql{max-width:760px;margin:0 auto}
+.fq{background:#fff;border:1.5px solid var(--line);border-radius:13px;margin-bottom:10px;overflow:hidden}
+.fq-q{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;cursor:pointer;gap:14px;transition:.2s}
+.fq-q:hover{background:var(--blue-xl)}
+.fq-t{font-weight:600;font-size:15px;color:var(--ink);line-height:1.4}
+.fq-i{width:28px;height:28px;border-radius:50%;background:var(--blue-xl);color:var(--blue);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;transition:transform .28s,background .2s}
+.fq.open .fq-i{transform:rotate(45deg);background:var(--blue);color:#fff}
+.fq-a{max-height:0;overflow:hidden;transition:max-height .35s var(--ease)}
+.fq-ai{padding:0 22px 18px;font-size:14.5px;color:var(--ink3);line-height:1.78}
+.fq.open .fq-a{max-height:400px}
+
+/* RELATED TOOLS */
+.rel-sec{background:var(--white);padding:72px 0}
+.rel-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.rel-card{background:var(--surf);border:1.5px solid var(--line);border-radius:16px;padding:20px 18px;display:flex;flex-direction:column;gap:9px;transition:.28s}
+.rel-card:hover{transform:translateY(-5px);box-shadow:var(--s3);border-color:var(--blue-s)}
+.rel-ico{font-size:26px}
+.rel-title{font-family:var(--fd);font-size:14px;font-weight:700;color:var(--ink)}
+.rel-desc{font-size:13px;color:var(--ink3);line-height:1.6;flex:1}
+.rel-btn{display:inline-flex;align-items:center;gap:6px;font-family:var(--fd);font-weight:700;font-size:13px;color:var(--blue);transition:.2s}
+.rel-btn:hover{gap:10px}
+.rel-btn svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2.5}
+
+/* DISC / FOOTER */
+.disc{background:var(--amber-xl);border-top:1px solid var(--amber-s);border-bottom:1px solid var(--amber-s);padding:14px 0}
+.disc-in{display:flex;align-items:flex-start;gap:12px;font-size:13.5px;color:var(--ink2);line-height:1.7}
+.contact-sec{background:var(--surf);padding:60px 0}
+.contact-card{max-width:560px;margin:0 auto;background:#fff;border:1.5px solid var(--line);border-radius:20px;padding:32px;text-align:center;box-shadow:var(--s2)}
+.contact-card h3{font-family:var(--fd);font-size:20px;font-weight:800;color:var(--ink);margin-bottom:10px}
+.contact-card p{font-size:15px;color:var(--ink3);line-height:1.75;margin-bottom:20px}
+.btn-bl{display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:#fff;font-family:var(--fd);font-weight:700;font-size:14.5px;padding:12px 26px;border-radius:8px;box-shadow:var(--sb);transition:.22s}
+.btn-bl:hover{background:var(--blue-d);transform:translateY(-1px)}
+.cta{background:linear-gradient(140deg,#0f172a 0%,#1e3a8a 100%);padding:80px 0;text-align:center;position:relative;overflow:hidden}
+.cta::before{content:'';position:absolute;top:-80px;left:50%;transform:translateX(-50%);width:800px;height:380px;background:radial-gradient(ellipse,rgba(37,99,235,.22) 0%,transparent 68%);pointer-events:none}
+.cta-in{position:relative;z-index:1}
+.cta .pill{color:#93c5fd;background:rgba(255,255,255,.1);margin-bottom:18px}
+.cta .pill::before{background:#93c5fd}
+.cta h2{font-family:var(--fd);font-size:clamp(24px,4vw,42px);font-weight:800;color:#fff;line-height:1.15;margin-bottom:12px}
+.cta h2 em{color:#fbbf24;font-style:normal}
+.cta p{font-size:16px;color:rgba(255,255,255,.72);max-width:480px;margin:0 auto 32px;line-height:1.78}
+.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn-gold{display:inline-flex;align-items:center;gap:8px;background:var(--amber);color:#fff;font-family:var(--fd);font-weight:800;font-size:15px;padding:14px 30px;border-radius:8px;box-shadow:0 8px 28px rgba(245,158,11,.35);transition:.22s}
+.btn-gold:hover{background:#d97706;transform:translateY(-3px)}
+.btn-ghost{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.09);border:1.5px solid rgba(255,255,255,.22);color:#fff;font-family:var(--fd);font-weight:600;font-size:14px;padding:13px 26px;border-radius:8px;transition:.2s}
+.btn-ghost:hover{background:rgba(255,255,255,.16)}
+footer{background:#0f172a;padding:52px 0 0}
+.ft-inner{max-width:1180px;margin:0 auto;padding:0 24px}
+.ft-top{display:grid;grid-template-columns:1.9fr 1fr 1fr 1fr;gap:44px;margin-bottom:44px}
+.ft-brand .ln{color:#fff}.ft-brand .ls{color:#475569}
+.ft-desc{font-size:13.5px;color:#64748b;line-height:1.78;max-width:265px;margin:13px 0 20px}
+.ft-soc{display:flex;gap:9px}
+.fts{width:34px;height:34px;border-radius:7px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;color:#94a3b8;font-size:13px;transition:.2s}
+.fts:hover{background:var(--blue);color:#fff}
+.fc h4{font-family:var(--fd);font-size:12px;font-weight:700;color:#fff;margin-bottom:14px;letter-spacing:.06em;text-transform:uppercase}
+.fc ul{display:flex;flex-direction:column;gap:8px}
+.fc ul a{font-size:13.5px;color:#64748b;transition:.18s}
+.fc ul a:hover{color:#93c5fd}
+.ft-btm{border-top:1px solid rgba(255,255,255,.07);padding:20px 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.ft-cp{font-size:12.5px;color:#475569}
+.ft-lnk{display:flex;gap:18px}
+.ft-lnk a{font-size:12.5px;color:#475569;transition:.18s}
+.ft-lnk a:hover{color:#93c5fd}
+.btt{position:fixed;bottom:26px;right:26px;z-index:500;width:43px;height:43px;background:var(--blue);color:#fff;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:17px;box-shadow:var(--sb);opacity:0;pointer-events:none;transform:translateY(14px);transition:.28s var(--ease)}
+.btt.on{opacity:1;pointer-events:auto;transform:translateY(0)}
+.btt:hover{transform:translateY(-3px)}
+
+/* RESPONSIVE */
+@media(max-width:1060px){.ft-top{grid-template-columns:1fr 1fr}.tips-grid{grid-template-columns:1fr 1fr}.rel-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:860px){nav.dn,.hcta{display:none}.brg{display:flex}.tool-body{padding:24px 22px}.tool-hdr{padding:24px 22px}.fgrid{grid-template-columns:1fr}.fgrid3{grid-template-columns:1fr 1fr}.result-summary{grid-template-columns:1fr 1fr}.comp-grid{grid-template-columns:1fr}}
+@media(max-width:600px){.ft-top{grid-template-columns:1fr}.tips-grid{grid-template-columns:1fr}.rel-grid{grid-template-columns:1fr}.cta-btns{flex-direction:column;align-items:center}.story-card{padding:24px 20px}.ft-btm{flex-direction:column;text-align:center}.ft-lnk{justify-content:center}.result-summary{grid-template-columns:1fr}.warn-stats{gap:14px}.tb-row{flex-direction:column;text-align:center}.tb-arrow{transform:rotate(90deg)}.score-label{width:110px}}
+</style>
+</head>
+<body>
+
+<!-- BACK TO TOP -->
+<button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<!-- HEADER -->
+<header class="hdr">
+  <div class="w"><div class="hdi">
+    <a href="https://rajdailytools.in/" class="logo">
+      <div class="lb"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+      <div><div class="ln">Raj<span>Daily</span>Tools</div><div class="ls">Free Tools for India</div></div>
+    </a>
+    <nav class="dn">
+      <a href="https://rajdailytools.in/">Home</a>
+      <a href="https://rajdailytools.in/categories.html">Categories</a>
+      <a href="https://rajdailytools.in/#popular">Popular</a>
+      <a href="https://rajdailytools.in/about.html">About</a>
+      <a href="https://rajdailytools.in/contact.html">Contact</a>
+    </nav>
+    <a href="https://rajdailytools.in/" class="hcta">🏠 All Tools</a>
+    <button class="brg" id="brg" onclick="oD()"><span></span><span></span><span></span></button>
+  </div></div>
+</header>
+<div class="dov" id="dov" onclick="cD()"></div>
+<div class="drw" id="drw">
+  <div class="dh">
+    <div class="logo">
+      <div class="lb" style="width:30px;height:30px;border-radius:7px"><svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#fff"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+      <div class="ln" style="font-size:16px">Raj<span>Daily</span>Tools</div>
+    </div>
+    <button class="dx" onclick="cD()">✕</button>
+  </div>
+  <nav class="mn">
+    <a href="https://rajdailytools.in/" onclick="cD()">🏠 Home</a>
+    <a href="https://rajdailytools.in/categories.html" onclick="cD()">🗂️ Categories</a>
+    <a href="https://rajdailytools.in/#popular" onclick="cD()">⭐ Popular</a>
+    <a href="https://rajdailytools.in/about.html" onclick="cD()">👤 About</a>
+    <a href="https://rajdailytools.in/contact.html" onclick="cD()">📬 Contact</a>
+  </nav>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+  <div class="w">
+    <div class="bc">
+      <a href="https://rajdailytools.in/">Home</a><span style="color:var(--ink4)">›</span>
+      <a href="https://rajdailytools.in/categories.html">Finance Tools</a><span style="color:var(--ink4)">›</span>
+      <span>Credit Card Minimum Payment Calculator India</span>
+    </div>
+    <div class="hero-inner">
+      <div class="pill">💳 Free Finance Tools India</div>
+      <h1>Credit Card <span>Minimum Payment Calculator</span></h1>
+      <p class="hero-sub">Understand the <strong>real cost of paying only minimum due</strong> on your credit card. See total interest, extra charges, and how long it takes to clear your debt — before it's too late.</p>
+      <div class="hero-chips">
+        <span class="chip">💳 Minimum Due Trap</span>
+        <span class="chip">📊 Interest Breakdown</span>
+        <span class="chip">🔄 Monthly Schedule</span>
+        <span class="chip">⚡ Instant Result</span>
+        <span class="chip">✅ 100% Free</span>
+        <span class="chip">🔒 No Data Stored</span>
+      </div>
+      <div class="hero-meta">
+        <div class="upd">💰 India Credit Card Rates</div>
+        <span class="hmi">⚡ Instant Calculation</span>
+        <span class="hmi">📱 Mobile Friendly</span>
+        <span class="hmi">🔒 Private</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOOL SECTION -->
+<section class="tool-sec" id="calculator">
+  <div class="w"><div class="tool-wrap">
+    <div class="tool-card rev">
+      <div class="tool-hdr">
+        <div class="th">
+          <h2>💳 Credit Card Minimum Payment Calculator India</h2>
+          <p>Enter your credit card bill amount, minimum due percentage, monthly interest rate, and number of months to simulate. The tool instantly shows your interest trap, total repayment cost, and month-by-month debt breakdown.</p>
+          <div class="th-badges">
+            <span class="thb">💰 Interest Trap Exposed</span>
+            <span class="thb">📊 Full vs Min Comparison</span>
+            <span class="thb">🗓️ Monthly Breakdown</span>
+            <span class="thb">📈 Debt Growth Tracker</span>
+            <span class="thb">⚡ Instant</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tool-body">
+
+        <div class="hint-box">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          <div><strong>How it works:</strong> Enter your total outstanding credit card bill, the minimum due percentage your bank charges, the monthly interest rate, and how many months to simulate. See exactly how much you lose by paying only minimum due.</div>
+        </div>
+
+        <div class="sec-divider">💳 Credit Card Details</div>
+        <div class="fgrid">
+          <div class="fld">
+            <label class="flbl" for="billAmt">Total Outstanding Bill <span>₹</span></label>
+            <div class="inp-wrap">
+              <span class="inp-pre">₹</span>
+              <input class="finp has-pre" type="number" id="billAmt" placeholder="e.g. 50000" min="0">
+            </div>
+          </div>
+          <div class="fld">
+            <label class="flbl" for="minPct">Minimum Due Percentage <span>%</span></label>
+            <div class="inp-wrap">
+              <input class="finp has-suf" type="number" id="minPct" placeholder="e.g. 5" min="0" max="100" value="5">
+              <span class="inp-suf">%</span>
+            </div>
+          </div>
+        </div>
+        <div class="fgrid">
+          <div class="fld">
+            <label class="flbl" for="intRate">Monthly Interest Rate <span>% per month</span></label>
+            <div class="inp-wrap">
+              <input class="finp has-suf" type="number" id="intRate" placeholder="e.g. 3.5" min="0" max="10" step="0.1" value="3.5">
+              <span class="inp-suf">%/mo</span>
+            </div>
+          </div>
+          <div class="fld">
+            <label class="flbl" for="months">Simulation Period <span>months</span></label>
+            <div class="inp-wrap">
+              <input class="finp has-suf" type="number" id="months" placeholder="e.g. 12" min="1" max="60" value="12">
+              <span class="inp-suf">mo</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="ibox a">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <div><strong>Typical Indian bank rates:</strong> Most banks charge 3–3.5% per month (36–42% per annum) on revolving credit. Minimum due is usually 5% of the outstanding balance or ₹100–200, whichever is higher.</div>
+        </div>
+
+        <div class="btn-row">
+          <button class="cvt-btn" onclick="calcCC()">💳 Calculate My Interest Trap</button>
+          <button class="rst-btn" onclick="resetTool()">↺ Reset</button>
+        </div>
+
+        <!-- RESULT AREA -->
+        <div id="resultArea">
+
+          <!-- SUMMARY CARDS -->
+          <div class="result-summary" id="summaryCards"></div>
+
+          <!-- TRAP HIGHLIGHT -->
+          <div class="trap-box" id="trapBox"></div>
+
+          <!-- COMPARISON -->
+          <div class="comp-grid" id="compGrid"></div>
+
+          <!-- PERFORMANCE BARS -->
+          <div class="score-sec">
+            <div class="score-title">📊 Financial Impact Analysis</div>
+            <div id="scoreBars"></div>
+          </div>
+
+          <!-- MONTHLY TABLE -->
+          <div class="score-sec" style="padding:0;overflow:hidden">
+            <div class="score-title" style="padding:18px 20px 0">🗓️ Monthly Breakdown <span style="font-size:12px;font-weight:500;color:var(--ink4)">(First 12 months shown)</span></div>
+            <div class="monthly-table-wrap" style="border:none;border-radius:0;margin:0">
+              <table class="month-tbl" id="monthlyTable"></table>
+            </div>
+          </div>
+
+          <div class="action-row">
+            <button class="copy-btn" id="copyBtn" onclick="copyResult()">📋 Copy My Report</button>
+          </div>
+
+        </div><!-- end resultArea -->
+
+      </div><!-- end tool-body -->
+    </div><!-- end tool-card -->
+  </div></div>
+</section>
+
+<!-- HOW TO USE -->
+<section class="howto-sec" id="howto">
+  <div class="wa">
+    <div class="sec-hd rev">
+      <div class="sec-h">How to Use This <span>Calculator</span></div>
+      <p class="sec-sub">4 simple steps to understand the true cost of your credit card minimum payment</p>
+    </div>
+    <div class="howto-box rev">
+      <div class="howto-title">📋 Step-by-Step Guide</div>
+      <div class="howto-steps">
+        <div class="hw-step"><div class="sn">1</div><div><strong>Enter Your Total Bill Amount</strong> — This is your current credit card outstanding balance. Check your latest credit card statement or app to find the exact outstanding amount.</div></div>
+        <div class="hw-step"><div class="sn">2</div><div><strong>Enter Minimum Due Percentage</strong> — Most Indian banks set minimum due at 5% of the outstanding balance. Some banks may go as low as 2%. Check your statement for the exact figure, or use the default 5%.</div></div>
+        <div class="hw-step"><div class="sn">3</div><div><strong>Enter Monthly Interest Rate</strong> — Look at your credit card terms or statement for the monthly interest rate (usually 3–3.5% per month for most Indian banks). The default 3.5% is applicable for many cards.</div></div>
+        <div class="hw-step"><div class="sn">4</div><div><strong>Set Simulation Period & Calculate</strong> — Choose how many months to simulate (default 12 months). Click Calculate to see the full interest trap — total interest paid, outstanding remaining, and how much extra you pay vs clearing the full bill.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WARNING SECTION -->
+<section class="warn-sec" id="warning">
+  <div class="w">
+    <div class="warn-card rev">
+      <div class="warn-icon">⚠️</div>
+      <div class="warn-title">The Minimum Payment Trap Is Very Real</div>
+      <div class="warn-desc">Paying only the minimum due every month does NOT reduce your debt meaningfully. The interest that gets added back is almost always higher than the small amount you paid. This is how credit card companies make billions — and how people stay trapped in debt for years.</div>
+      <div class="warn-stats">
+        <div class="ws"><div class="ws-val">3.5%</div><div class="ws-lbl">Monthly Interest<br>Most Indian Banks</div></div>
+        <div class="ws"><div class="ws-val">42%</div><div class="ws-lbl">Annual Interest Rate<br>(3.5% × 12)</div></div>
+        <div class="ws"><div class="ws-val">2–3×</div><div class="ws-lbl">Bill Can Grow<br>In 2–3 Years</div></div>
+        <div class="ws"><div class="ws-val">5%</div><div class="ws-lbl">Typical Minimum Due<br>Charged by Banks</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SMART TIPS -->
+<section class="tips-sec" id="tips">
+  <div class="w">
+    <div class="sec-hd rev">
+      <div class="sec-h">Smart Credit Card <span>Habits to Follow</span></div>
+      <p class="sec-sub">Avoid the minimum payment trap with these proven financial strategies</p>
+    </div>
+    <div class="tips-grid">
+      <div class="tip-card rev">
+        <div class="tc-ico">💳</div>
+        <div class="tc-title">Always Pay the Full Bill</div>
+        <div class="tc-desc">The single most powerful habit: pay your complete credit card statement balance before the due date every month. This costs you zero interest — ever.</div>
+        <div class="tc-list">
+          <div class="tc-item">Set a calendar reminder 5 days before due date</div>
+          <div class="tc-item">Enable auto-pay for full balance if your bank allows</div>
+          <div class="tc-item">Never carry a balance across billing cycles</div>
+        </div>
+      </div>
+      <div class="tip-card rev">
+        <div class="tc-ico">🚫</div>
+        <div class="tc-title">Avoid Revolving Credit</div>
+        <div class="tc-desc">Revolving credit means carrying unpaid balance forward month after month. Even one month of revolving can trigger interest on future purchases immediately.</div>
+        <div class="tc-list">
+          <div class="tc-item">If you can't pay full, pay as much as possible</div>
+          <div class="tc-item">Use a personal loan at lower rate to clear CC debt</div>
+          <div class="tc-item">Stop using the card until balance is cleared</div>
+        </div>
+      </div>
+      <div class="tip-card rev">
+        <div class="tc-ico">📊</div>
+        <div class="tc-title">Track & Budget Every Month</div>
+        <div class="tc-desc">Most people overspend on credit cards because they don't track in real time. Setting a monthly spending limit prevents bill shock at statement time.</div>
+        <div class="tc-list">
+          <div class="tc-item">Check your card app balance weekly, not monthly</div>
+          <div class="tc-item">Set spending alerts at 50% and 80% of limit</div>
+          <div class="tc-item">Keep credit utilisation below 30% of your limit</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STORY SECTION -->
+<section class="story-sec" id="story">
+  <div class="wa">
+    <div class="sec-hd rev">
+      <div class="sec-h">The Minimum Payment <span>Trap Story</span></div>
+    </div>
+    <div class="story-card rev">
+      <span class="story-ico">💳</span>
+      <h3>Why I Built This Calculator</h3>
+      <p>Mera dost Raghav ne recently credit card use karna start kiya tha. Usse lagta tha ki minimum due pay karna safe hai — bank ka system hai, toh theek hi hoga.</p>
+      <p>Wo har month sirf minimum amount pay karta tha aur sochta tha ki baaki baad me clear kar lega. Pehle 2-3 months toh kuch alag nahi laga. Bill roughly same hi tha.</p>
+      <p>Lekin dheere dheere uska bill badhta gaya. Interest lagta raha — silently, automatically, har mahine. Aur ek din usne dekha ki uska total payable amount original bill se kaafi zyada ho chuka hai. Usne ₹40,000 ke bills par sirf minimum pay kiya tha, aur ab outstanding ₹55,000 se bhi upar tha.</p>
+      <p>Usse tab samajh aaya ki minimum due actually ek trap hai — bank chahta hai ki tum sirf minimum pay karo taaki unhe zyada interest milta rahe. Jitna zyada time lagega, utna zyada unka faida.</p>
+      <p>Uski problem dekh kar maine ye calculator banaya — taaki aap pehle hi dekh lo ki minimum due pay karne ka asli kya cost hai. Kyunki jab tak samajh aata hai, tab tak kaafi late ho chuki hoti hai.</p>
+      <div class="story-highlight">⚠️ Check your real cost — right now, before it's too late</div>
+    </div>
+  </div>
+</section>
+
+<!-- SEO ARTICLE -->
+<section class="art-sec" id="article">
+  <div class="wa">
+    <div class="sec-hd rev">
+      <div class="sec-h">Credit Card Minimum Payment — <span>Complete Guide India 2026</span></div>
+    </div>
+    <div class="art-card rev">
+      <div class="art-body">
+
+        <h2>What is Credit Card Minimum Due — and Why It Exists</h2>
+        <p>When your credit card statement arrives, you will see two figures: the total amount due and the minimum amount due. The total amount due is the complete balance you owe. The minimum amount due is a small fraction — typically 5% of the outstanding balance — that your bank requires you to pay by the due date to avoid a late payment fee.</p>
+        <p>Here is the critical thing most people do not understand: paying the minimum due does NOT prevent interest from being charged. It only prevents the late fee. The remaining balance — 95% of your bill — continues to attract monthly interest at rates ranging from 3% to 3.5% per month, which translates to 36% to 42% annually. This is one of the highest interest rates in the entire consumer finance space.</p>
+        <p>Banks design the minimum due system this way intentionally. When customers pay only the minimum, banks earn massive interest income on the revolving balance. The longer you take to repay, the more profitable you are as a customer.</p>
+
+        <h2>How Credit Card Interest is Calculated in India</h2>
+        <p>Understanding the calculation mechanics reveals just how costly this trap is. Most Indian banks calculate credit card interest on a daily basis and then add it to your statement monthly. The daily interest rate is the annual rate divided by 365.</p>
+        <p>For example, if your bank charges 3.5% per month (42% per annum) and your outstanding balance is ₹50,000:</p>
+        <ul>
+          <li><strong>Monthly interest</strong> = ₹50,000 × 3.5% = ₹1,750 added in just one month</li>
+          <li><strong>Your minimum due</strong> at 5% = ₹2,500 — which means only ₹750 goes toward reducing your actual debt</li>
+          <li><strong>After 12 months of minimum payments</strong>, your debt may still be ₹30,000–₹40,000 depending on the month-by-month compounding</li>
+        </ul>
+        <p>This is why the minimum payment trap is so insidious. You feel like you are paying — ₹2,500 is not nothing — but your actual balance barely moves because most of that payment is consumed by interest.</p>
+
+        <h2>The True Cost of Paying Only Minimum Due — Real Numbers</h2>
+        <p>Let us look at concrete numbers that illustrate the damage. Suppose you have a ₹50,000 credit card bill and you pay only the minimum 5% every month at 3.5% monthly interest:</p>
+        <ul>
+          <li>By month 3 you will have paid roughly ₹7,000 in total but your outstanding will still be around ₹47,000</li>
+          <li>By month 6 your total payments will be over ₹12,000 but your balance will still be ₹43,000+</li>
+          <li>By month 12 you will have paid roughly ₹20,000 in payments — but your balance could still be ₹35,000+</li>
+          <li>Over 3 years, you could pay ₹50,000+ just in interest alone — more than your original bill</li>
+        </ul>
+        <p>This is not an exaggeration — this is standard mathematical reality. The compound interest curve on revolving credit card debt is brutal, and it works entirely against you.</p>
+
+        <h2>EMI vs Credit Card Minimum Due — Which is Better?</h2>
+        <p>Many people wonder whether converting their credit card outstanding to an EMI (Equated Monthly Instalment) is better than paying minimum due. The answer is almost always: yes, EMI is significantly better.</p>
+        <p>When you convert your credit card balance to an EMI plan:</p>
+        <ul>
+          <li>The interest rate on EMI is typically 1.5–2% per month, versus 3–3.5% on revolving credit</li>
+          <li>You have a fixed repayment schedule — you know exactly when your debt will be cleared</li>
+          <li>Your credit score is less damaged by EMI conversion than by prolonged revolving credit</li>
+          <li>The psychological clarity of a fixed end date helps you stay disciplined</li>
+        </ul>
+        <p>However, converting to EMI is still a cost — it is just a lower cost than revolving. The ideal situation remains clearing your full balance. If you cannot do that, EMI conversion is the smarter second option.</p>
+
+        <h2>Common Financial Mistakes People Make with Credit Cards</h2>
+        <p>After studying thousands of credit card debt cases, a clear pattern of mistakes emerges:</p>
+        <ul>
+          <li><strong>Using credit for lifestyle inflation:</strong> Buying things you cannot actually afford, then paying minimum due to manage the illusion. This is the most common pathway into serious debt.</li>
+          <li><strong>Multiple cards with revolving balances:</strong> Having 3–4 credit cards each with an outstanding balance multiplies the interest burden dramatically. Each card's 3.5% monthly rate compounds independently.</li>
+          <li><strong>Not reading the statement carefully:</strong> Many people do not distinguish between the statement balance and the current balance, leading to confusion about how much interest is being charged.</li>
+          <li><strong>Cash advances on credit cards:</strong> Cash withdrawals from a credit card attract interest from day one — there is no grace period. The rate is often higher than the standard revolving rate. This is one of the costliest financial mistakes possible.</li>
+          <li><strong>Missing due dates:</strong> Even one missed payment triggers a late fee (₹500–₹1,500 typically) and can increase your interest rate for future cycles.</li>
+          <li><strong>Ignoring the credit limit utilisation impact:</strong> High utilisation hurts your CIBIL score significantly. Keeping minimum due high by keeping balance high creates a double problem — debt AND a lower credit score that makes future borrowing more expensive.</li>
+        </ul>
+
+        <h2>How to Escape the Minimum Due Trap — Practical Steps</h2>
+        <p>If you are already in the minimum due cycle, here is a realistic escape plan:</p>
+        <ul>
+          <li><strong>Stop using the card immediately</strong> — You cannot dig out of a hole while still digging. Freeze the card literally if needed until the balance is cleared.</li>
+          <li><strong>Calculate your true position</strong> — Use this calculator to understand exactly how much you owe, how much interest is accruing, and how long it will take to clear at different payment levels.</li>
+          <li><strong>Pay as much as possible above minimum</strong> — Even paying double the minimum dramatically accelerates your debt reduction. Every extra rupee above the interest amount goes directly to principal reduction.</li>
+          <li><strong>Consider a personal loan at lower rate</strong> — A personal loan at 12–18% annually is drastically cheaper than a credit card at 42% annually. Using it to clear your credit card balance is mathematically smart.</li>
+          <li><strong>Negotiate with your bank</strong> — Many banks have hardship or restructuring programmes. Calling your bank and explaining your situation can sometimes get you a lower interest rate temporarily.</li>
+          <li><strong>Build an emergency fund</strong> — Most credit card debt starts because of unexpected expenses. An emergency fund of 3–6 months of expenses prevents you from needing the credit card when life surprises you.</li>
+        </ul>
+
+        <h2>Understanding Your Credit Card Statement — Key Terms</h2>
+        <p>Financial literacy about your statement is the first line of defence against the minimum due trap. Key terms to understand:</p>
+        <ul>
+          <li><strong>Statement Balance:</strong> The total amount owed as of the statement date. Paying this in full avoids all interest.</li>
+          <li><strong>Minimum Amount Due:</strong> The smallest amount you can pay to avoid a late fee. Does NOT prevent interest on the remaining balance.</li>
+          <li><strong>Due Date:</strong> The last date to make at least the minimum payment. Missing this triggers a late fee AND potentially a penalty interest rate.</li>
+          <li><strong>Finance Charge:</strong> The interest amount added to your statement because of an unpaid revolving balance.</li>
+          <li><strong>Credit Limit:</strong> Your approved spending ceiling. High utilisation (above 30–40%) hurts your CIBIL score.</li>
+          <li><strong>Cash Advance Limit:</strong> The amount you can withdraw as cash. This always attracts interest from day one at often higher rates — never use it except in genuine emergencies.</li>
+        </ul>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-sec" id="faq">
+  <div class="wa">
+    <div class="sec-hd rev">
+      <div class="sec-h">Frequently Asked <span>Questions</span></div>
+      <p class="sec-sub">Everything you need to know about credit card minimum due and interest traps in India</p>
+    </div>
+    <div class="fql rev">
+
+      <div class="fq">
+        <div class="fq-q" onclick="toggleFAQ(this)">
+          <span class="fq-t">Credit card minimum due pay karne par kya hota hai? Kya interest lagna band ho jata hai?</span>
+          <span class="fq-i">+</span>
+        </div>
+        <div class="fq-a"><div class="fq-ai">Nahi — minimum due pay karne par sirf late fee avoid hoti hai, interest nahi rokti. Baki jo balance bachta hai — usually 95% of your bill — us par monthly interest lagti rehti hai at 3–3.5% per month. Matlab aap ₹50,000 ke bill par ₹2,500 minimum pay karo, toh bhi bache ₹47,500 par interest lagega — jo roughly ₹1,600–1,750 per month hoga. Aapka actual debt barely reduce ho raha hoga.</div></div>
+      </div>
+
+      <div class="fq">
+        <div class="fq-q" onclick="toggleFAQ(this)">
+          <span class="fq-t">Credit card minimum due kitna hota hai? Sabhi banks same charge karti hain?</span>
+          <span class="fq-i">+</span>
+        </div>
+        <div class="fq-a"><div class="fq-ai">Generally minimum due 5% of outstanding balance hota hai, ya ₹100–200 fixed amount (jo bhi zyada ho). Lekin different banks ki different policies hain. Kuch banks 2% charge karti hain, kuch 5%. SBI Cards typically 5%, HDFC 5%, ICICI 5%, Axis bhi 5% ke aaspaas hoti hai. Apna exact figure apni latest statement ya bank app mein dekho — 'Minimum Amount Due' ke column mein clearly mention hoga.</div></div>
+      </div>
+
+      <div class="fq">
+        <div class="fq-q" onclick="toggleFAQ(this)">
+          <span class="fq-t">Agar main credit card ka poora bill clear nahi kar sakta, toh kya karna chahiye?</span>
+          <span class="fq-i">+</span>
+        </div>
+        <div class="fq-a"><div class="fq-ai">Best approach hai: apni bank se EMI conversion request karo. Credit card revolving interest (3–3.5%/month = 42%/year) se EMI rate (typically 1.5–2%/month = 18–24%/year) bahut zyada better hota hai. Alternatively, personal loan le lo lower rate par aur CC balance clear karo. Minimum do karna avoid karo — always pay as much above minimum as possible. Har extra rupee aapke principal reduction ki taraf jaata hai.</div></div>
+      </div>
+
+      <div class="fq">
+        <div class="fq-q" onclick="toggleFAQ(this)">
+          <span class="fq-t">Credit card interest rate India mein kitna hota hai? Kya ye FD ya loan se zyada hai?</span>
+          <span class="fq-i">+</span>
+        </div>
+        <div class="fq-a"><div class="fq-ai">Haan — credit card revolving interest India mein sabse highest consumer finance rates mein se ek hai. Typically 36–42% per annum (3–3.5% per month). Compare karo: home loans 8–10% p.a., personal loans 12–24% p.a., FD returns 6–7% p.a. Credit card interest almost 5–6 times higher hai personal loans se. Isi liye credit card balance carry karna ek of the worst financial decisions possible hai.</div></div>
+      </div>
+
+      <div class="fq">
+        <div class="fq-q" onclick="toggleFAQ(this)">
+          <span class="fq-t">Minimum due pay karna CIBIL score ko affect karta hai kya?</span>
+          <span class="fq-i">+</span>
+        </div>
+        <div class="fq-a"><div class="fq-ai">Direct late payment default nahi hai agar minimum due time par pay ho gaya — so technically late payment mark nahi aata. Lekin high credit utilisation (high outstanding balance as % of your credit limit) se CIBIL score definitely drop hoti hai. Aur agar kabhi minimum bhi miss ho gayi, toh wo ek negative mark banata hai jo 7 years tak credit history mein rehta hai. Ideal position: hamesha full bill pay karo.</div></div>
+      </div>
+
+      <div class="fq">
+        <div class="fq-q" onclick="toggleFAQ(this)">
+          <span class="fq-t">Credit card ka bill 0 karne mein kitna time lag sakta hai agar sirf minimum pay karein?</span>
+          <span class="fq-i">+</span>
+        </div>
+        <div class="fq-a"><div class="fq-ai">This is the shocking reality. For a ₹50,000 balance at 3.5%/month with 5% minimum due: it can take 5–7+ years to fully clear the balance through minimum-only payments, and you will pay ₹60,000–₹80,000 in total interest on top of the original ₹50,000. In the early months, most of your payment goes to interest, not principal reduction. Use this calculator to see the exact numbers for your specific situation.</div></div>
+      </div>
+
+      <div class="fq">
+        <div class="fq-q" onclick="toggleFAQ(this)">
+          <span class="fq-t">Kya credit card use karna completely bura hai? Kaise use karna chahiye?</span>
+          <span class="fq-i">+</span>
+        </div>
+        <div class="fq-a"><div class="fq-ai">Credit card khud mein bura nahi hai — agar sahi use karo. Benefits hain: reward points, cashback, fraud protection, interest-free credit period (up to 45–50 days). Smart rule: credit card ko debit card ki tarah use karo — sirf utna spend karo jo aap immediately afford kar sako, aur poora bill due date se pehle clear karo. Kabhi bhi minimum due par rely mat karo. Jo log credit card effectively use karte hain — unhe interest nahi dena padta, lekin rewards milte hain.</div></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- RELATED TOOLS -->
+<section class="rel-sec" id="related">
+  <div class="w">
+    <div class="sec-hd rev">
+      <div class="sec-h">More <span>Finance Tools</span></div>
+      <p class="sec-sub">All free finance calculators on RajDailyTools — your complete money management toolkit</p>
+    </div>
+    <div class="rel-grid rev">
+      <div class="rel-card">
+        <div class="rel-ico">💳</div>
+        <div class="rel-title">Credit Card Interest Calculator</div>
+        <div class="rel-desc">Calculate your exact monthly and annual interest charges on any credit card balance at your specific interest rate.</div>
+        <a href="https://rajdailytools.in/" class="rel-btn">Calculate <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+      <div class="rel-card">
+        <div class="rel-ico">⚡</div>
+        <div class="rel-title">Late Fee Calculator</div>
+        <div class="rel-desc">Find out how much your bank charges in late fees and GST when you miss a credit card payment due date.</div>
+        <a href="https://rajdailytools.in/" class="rel-btn">Calculate <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+      <div class="rel-card">
+        <div class="rel-ico">🏦</div>
+        <div class="rel-title">EMI Calculator</div>
+        <div class="rel-desc">Calculate your monthly EMI for any loan — home, personal, or car — with total interest and repayment breakdown.</div>
+        <a href="https://rajdailytools.in/" class="rel-btn">Calculate <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+      <div class="rel-card">
+        <div class="rel-ico">📈</div>
+        <div class="rel-title">Compound Interest Calculator</div>
+        <div class="rel-desc">See how your savings or debt grows with compound interest over time — the power of compounding in both directions.</div>
+        <a href="https://rajdailytools.in/" class="rel-btn">Calculate <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+      <div class="rel-card">
+        <div class="rel-ico">💰</div>
+        <div class="rel-title">SIP Calculator</div>
+        <div class="rel-desc">Calculate your SIP returns, maturity amount, and wealth gained through systematic monthly mutual fund investments.</div>
+        <a href="https://rajdailytools.in/" class="rel-btn">Calculate <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+      <div class="rel-card">
+        <div class="rel-ico">📊</div>
+        <div class="rel-title">Net Worth Tracker</div>
+        <div class="rel-desc">Calculate your personal net worth by entering all your assets and liabilities — know exactly where you stand financially.</div>
+        <a href="https://rajdailytools.in/" class="rel-btn">Calculate <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+      <div class="rel-card">
+        <div class="rel-ico">🧾</div>
+        <div class="rel-title">Bonus Tax Calculator India</div>
+        <div class="rel-desc">Calculate your take-home bonus after tax deduction under Old and New regime for FY 2025-26 with 87A rebate logic.</div>
+        <a href="https://rajdailytools.in/" class="rel-btn">Calculate <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+      <div class="rel-card">
+        <div class="rel-ico">🌍</div>
+        <div class="rel-title">Global GST & Tax Calculator</div>
+        <div class="rel-desc">Calculate GST, VAT, and sales tax for 150+ countries including India's full GST slab system — free and instant.</div>
+        <a href="https://rajdailytools.in/" class="rel-btn">Calculate <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+      <div class="rel-card">
+        <div class="rel-ico">💵</div>
+        <div class="rel-title">Budget Calculator</div>
+        <div class="rel-desc">Plan your monthly household budget, track income vs expenses, and find where your money is going each month.</div>
+        <a href="https://rajdailytools.in/" class="rel-btn">Calculate <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DISCLAIMER -->
+<div class="disc">
+  <div class="w"><div class="disc-in">
+    ⚠️ <div><strong>Disclaimer:</strong> This calculator provides estimated results based on the inputs provided. Actual interest charges, minimum due amounts, and fees vary by bank, card type, and individual account terms. Always confirm exact figures with your bank or credit card statement. RajDailyTools is not a financial advisor. This tool is for educational and awareness purposes only.</div>
+  </div></div>
+</div>
+
+<!-- CONTACT -->
+<section class="contact-sec">
+  <div class="w">
+    <div class="contact-card rev">
+      <h3>💳 Questions About Your Credit Card Debt?</h3>
+      <p>Have a specific question about the calculator, credit card interest rules, or your repayment strategy? We're here to help you understand your finances better.</p>
+      <a href="mailto:edurajkhushit@gmail.com" class="btn-bl">📬 Contact Us</a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="cta-in">
+    <div class="pill">💰 Free Finance Tools India</div>
+    <h2>Stop Paying <em>More Than You Should</em></h2>
+    <p>Use all our free financial calculators to understand your credit card debt, loans, taxes, and savings — and make smarter money decisions today.</p>
+    <div class="cta-btns">
+      <a href="#calculator" class="btn-gold">💳 Check My Interest Trap</a>
+      <a href="https://rajdailytools.in/" class="btn-ghost">🏠 All Free Tools</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-inner">
+    <div class="ft-top">
+      <div class="ft-brand">
+        <div class="logo">
+          <div class="lb"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+          <div><div class="ln">Raj<span>Daily</span>Tools</div><div class="ls">Free Tools for India</div></div>
+        </div>
+        <p class="ft-desc">Free online tools for everyday India — SEO, finance, army, energy, utility & personality tools. Built with ❤️ for every Indian.</p>
+        <div class="ft-soc">
+          <a class="fts" href="https://rajdailytools.in/">🌐</a>
+          <a class="fts" href="mailto:edurajkhushit@gmail.com">📬</a>
+        </div>
+      </div>
+      <div class="fc">
+        <h4>Finance Tools</h4>
+        <ul>
+          <li><a href="https://rajdailytools.in/credit-card-minimum-payment-calculator-india.html">CC Min Payment</a></li>
+          <li><a href="https://rajdailytools.in/">EMI Calculator</a></li>
+          <li><a href="https://rajdailytools.in/">SIP Calculator</a></li>
+          <li><a href="https://rajdailytools.in/">GST Calculator</a></li>
+          <li><a href="https://rajdailytools.in/">Bonus Tax Calc</a></li>
+        </ul>
+      </div>
+      <div class="fc">
+        <h4>Army Tools</h4>
+        <ul>
+          <li><a href="https://rajdailytools.in/army-height-checker-region-wise-2026.html">Height Checker</a></li>
+          <li><a href="https://rajdailytools.in/agniveer-1600m-running-time-calculator-2026.html">Running Calc</a></li>
+          <li><a href="https://rajdailytools.in/">Medical Checker</a></li>
+          <li><a href="https://rajdailytools.in/">Pension Calc</a></li>
+        </ul>
+      </div>
+      <div class="fc">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="https://rajdailytools.in/">Home</a></li>
+          <li><a href="https://rajdailytools.in/categories.html">All Categories</a></li>
+          <li><a href="https://rajdailytools.in/about.html">About</a></li>
+          <li><a href="https://rajdailytools.in/contact.html">Contact</a></li>
+          <li><a href="mailto:edurajkhushit@gmail.com">Email Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ft-btm">
+      <span class="ft-cp">© 2026 RajDailyTools.in — All Rights Reserved</span>
+      <div class="ft-lnk">
+        <a href="https://rajdailytools.in/">Privacy</a>
+        <a href="https://rajdailytools.in/">Terms</a>
+        <a href="https://rajdailytools.in/contact.html">Contact</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ─── HELPERS ──────────────────────────────────────────────────────────────
+const fmt = n => '₹' + Math.round(n).toLocaleString('en-IN');
+let lastResult = {};
+
+// ─── MAIN CALCULATOR ──────────────────────────────────────────────────────
+function calcCC() {
+  const bill    = parseFloat(document.getElementById('billAmt').value);
+  const minPct  = parseFloat(document.getElementById('minPct').value);
+  const intRate = parseFloat(document.getElementById('intRate').value) / 100;
+  const months  = parseInt(document.getElementById('months').value);
+
+  if (!bill || bill <= 0)       { alert('Please enter a valid bill amount.'); return; }
+  if (!minPct || minPct <= 0)   { alert('Please enter a valid minimum due percentage.'); return; }
+  if (!intRate || intRate <= 0) { alert('Please enter a valid monthly interest rate.'); return; }
+  if (!months || months < 1)    { alert('Please enter a valid number of months (1–60).'); return; }
+
+  const minDue        = bill * (minPct / 100);
+  const remaining     = bill - minDue;
+  const monthlyInt    = remaining * intRate;
+
+  // Simulate month-by-month minimum due payments
+  let balance       = bill;
+  let totalPaid     = 0;
+  let totalInterest = 0;
+  const schedule   = [];
+
+  for (let m = 1; m <= Math.min(months, 60); m++) {
+    const intCharge = balance * intRate;
+    const payment   = Math.max(balance * (minPct / 100), 100); // min ₹100
+    const principalPaid = payment - intCharge;
+    totalInterest += intCharge;
+    totalPaid += payment;
+    balance = balance + intCharge - payment;
+    if (balance < 0) balance = 0;
+    schedule.push({ m, payment: Math.round(payment), intCharge: Math.round(intCharge), principalPaid: Math.round(principalPaid > 0 ? principalPaid : 0), balance: Math.round(balance) });
+    if (balance <= 0) break;
+  }
+
+  const totalPayableMinOnly = bill + totalInterest;
+  const extraVsFull         = totalPaid - bill;          // extra vs just paying bill once
+  const interestFrac        = (totalInterest / totalPayableMinOnly) * 100;
+
+  // ── SUMMARY CARDS
+  document.getElementById('summaryCards').innerHTML = `
+    <div class="rs-card blue">
+      <div class="rs-lbl">Minimum Due (Month 1)</div>
+      <div class="rs-val">${fmt(minDue)}</div>
+      <div class="rs-sub">${minPct}% of ${fmt(bill)}</div>
+    </div>
+    <div class="rs-card red">
+      <div class="rs-lbl">Total Interest (${months} mo)</div>
+      <div class="rs-val">${fmt(totalInterest)}</div>
+      <div class="rs-sub">${intRate*100}%/month on revolving balance</div>
+    </div>
+    <div class="rs-card amber">
+      <div class="rs-lbl">Balance After ${months} Months</div>
+      <div class="rs-val">${fmt(balance)}</div>
+      <div class="rs-sub">${balance > 0 ? 'Still outstanding!' : '✅ Cleared!'}</div>
+    </div>
+    <div class="rs-card green">
+      <div class="rs-lbl">Total Paid (${months} mo)</div>
+      <div class="rs-val">${fmt(totalPaid)}</div>
+      <div class="rs-sub">Principal + Interest combined</div>
+    </div>
+  `;
+
+  // ── TRAP BOX
+  document.getElementById('trapBox').innerHTML = `
+    <div class="tb-inner">
+      <div class="tb-title">🚨 The Minimum Payment Trap — Your Numbers</div>
+      <div class="tb-row">
+        <div class="tb-item">
+          <div class="tb-item-val">${fmt(bill)}</div>
+          <div class="tb-item-lbl">Original Bill</div>
+        </div>
+        <div class="tb-arrow">→</div>
+        <div class="tb-item">
+          <div class="tb-item-val">${fmt(totalPaid)}</div>
+          <div class="tb-item-lbl">Total Paid (${months} mo)</div>
+        </div>
+        <div class="tb-arrow">→</div>
+        <div class="tb-item">
+          <div class="tb-item-val" style="color:var(--red)">${fmt(balance)}</div>
+          <div class="tb-item-lbl">Still Remaining</div>
+        </div>
+      </div>
+      <div class="trap-extra">
+        💸 You're paying ${fmt(totalInterest)} EXTRA in interest — just for not clearing your full bill.
+      </div>
+    </div>
+  `;
+
+  // ── COMPARISON
+  document.getElementById('compGrid').innerHTML = `
+    <div class="comp-card full">
+      <div class="comp-icon">✅</div>
+      <div class="comp-title">Full Payment Strategy</div>
+      <div class="comp-row"><span>Amount Paid</span><strong>${fmt(bill)}</strong></div>
+      <div class="comp-row"><span>Interest Paid</span><strong>₹0</strong></div>
+      <div class="comp-row"><span>Total Months to Clear</span><strong>1 Month</strong></div>
+      <div class="comp-row"><span>Money Wasted</span><strong>₹0</strong></div>
+      <div class="comp-row"><span class="comp-total good">Total Cost</span><span class="comp-total good">${fmt(bill)}</span></div>
+    </div>
+    <div class="comp-card min">
+      <div class="comp-icon">❌</div>
+      <div class="comp-title">Minimum Due Strategy</div>
+      <div class="comp-row"><span>Amount Paid</span><strong>${fmt(totalPaid)}</strong></div>
+      <div class="comp-row"><span>Interest Paid</span><strong style="color:var(--red)">${fmt(totalInterest)}</strong></div>
+      <div class="comp-row"><span>Balance After ${months} mo</span><strong style="color:var(--red)">${fmt(balance)}</strong></div>
+      <div class="comp-row"><span>Extra Wasted</span><strong style="color:var(--red)">${fmt(totalInterest)}</strong></div>
+      <div class="comp-row"><span class="comp-total bad">Total Cost</span><span class="comp-total bad">${fmt(totalPaid + balance)}</span></div>
+    </div>
+  `;
+
+  // ── PERFORMANCE BARS
+  const interestRatio = Math.min((totalInterest / bill) * 100, 100);
+  const debtReductionPct = balance > 0 ? Math.round(((bill - balance) / bill) * 100) : 100;
+  const burnRatePct = Math.min(Math.round((totalInterest / totalPaid) * 100), 100);
+  const savingsPct = Math.round((bill / (totalPaid + balance)) * 100);
+  document.getElementById('scoreBars').innerHTML = `
+    <div class="score-row"><span class="score-label">Interest Burden</span><div class="score-track"><div class="score-fill sf-red" data-w="${interestRatio}%"></div></div><span class="score-pct">${fmt(totalInterest)}</span></div>
+    <div class="score-row"><span class="score-label">Debt Reduced</span><div class="score-track"><div class="score-fill sf-green" data-w="${debtReductionPct}%"></div></div><span class="score-pct">${debtReductionPct}%</span></div>
+    <div class="score-row"><span class="score-label">% Payment Wasted</span><div class="score-track"><div class="score-fill sf-amber" data-w="${burnRatePct}%"></div></div><span class="score-pct">${burnRatePct}%</span></div>
+    <div class="score-row"><span class="score-label">Full Pay Savings</span><div class="score-track"><div class="score-fill sf-blue" data-w="${savingsPct}%"></div></div><span class="score-pct">${fmt(totalInterest)}</span></div>
+  `;
+  setTimeout(() => {
+    document.querySelectorAll('#scoreBars .score-fill').forEach(b => {
+      b.style.width = b.getAttribute('data-w');
+    });
+  }, 150);
+
+  // ── MONTHLY TABLE
+  const displayRows = schedule.slice(0, 12);
+  let tableHTML = `<thead><tr><th>Month</th><th>Payment Made</th><th>Interest Charged</th><th>Principal Paid</th><th>Balance Remaining</th></tr></thead><tbody>`;
+  displayRows.forEach(r => {
+    const balColor = r.balance > bill * 0.5 ? '#ef4444' : r.balance > 0 ? '#f59e0b' : '#10b981';
+    tableHTML += `<tr>
+      <td><strong>${r.m}</strong></td>
+      <td>${fmt(r.payment)}</td>
+      <td style="color:#ef4444">${fmt(r.intCharge)}</td>
+      <td style="color:#10b981">${fmt(r.principalPaid)}</td>
+      <td style="color:${balColor};font-weight:700">${r.balance > 0 ? fmt(r.balance) : '✅ Cleared'}</td>
+    </tr>`;
+  });
+  tableHTML += `</tbody>`;
+  document.getElementById('monthlyTable').innerHTML = tableHTML;
+
+  lastResult = { bill, minPct, intRate, months, minDue, totalInterest, totalPaid, balance, schedule };
+
+  const ra = document.getElementById('resultArea');
+  ra.style.display = 'block';
+  ra.style.animation = 'none'; ra.offsetHeight;
+  ra.style.animation = 'resultIn .42s var(--ease) both';
+  setTimeout(() => ra.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 120);
+}
+
+function resetTool() {
+  document.getElementById('billAmt').value = '';
+  document.getElementById('minPct').value = '5';
+  document.getElementById('intRate').value = '3.5';
+  document.getElementById('months').value = '12';
+  document.getElementById('resultArea').style.display = 'none';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function copyResult() {
+  const { bill, minPct, intRate, months, minDue, totalInterest, totalPaid, balance } = lastResult;
+  if (!bill) return;
+  const lines = [
+    `Credit Card Minimum Payment Report — RajDailyTools`,
+    `Total Bill: ₹${Math.round(bill).toLocaleString('en-IN')}`,
+    `Min Due %: ${minPct}% | Monthly Interest: ${(intRate*100).toFixed(1)}%`,
+    `Simulation: ${months} months`,
+    ``,
+    `Minimum Due (Month 1): ₹${Math.round(minDue).toLocaleString('en-IN')}`,
+    `Total Interest (${months} mo): ₹${Math.round(totalInterest).toLocaleString('en-IN')}`,
+    `Total Paid (${months} mo): ₹${Math.round(totalPaid).toLocaleString('en-IN')}`,
+    `Balance Remaining: ₹${Math.round(balance).toLocaleString('en-IN')}`,
+    ``,
+    `FULL PAYMENT would cost: ₹${Math.round(bill).toLocaleString('en-IN')} (₹0 interest)`,
+    `You save ₹${Math.round(totalInterest).toLocaleString('en-IN')} by paying full bill`,
+    ``,
+    `Tool: rajdailytools.in/credit-card-minimum-payment-calculator-india.html`
+  ];
+  navigator.clipboard?.writeText(lines.join('\n')).then(() => {
+    const btn = document.getElementById('copyBtn');
+    btn.classList.add('copied'); btn.textContent = '✅ Copied!';
+    setTimeout(() => { btn.classList.remove('copied'); btn.textContent = '📋 Copy My Report'; }, 2200);
+  });
+}
+
+// ─── FAQ ──────────────────────────────────────────────────────────────────
+function toggleFAQ(el) {
+  const fq = el.closest('.fq');
+  const isOpen = fq.classList.contains('open');
+  document.querySelectorAll('.fq').forEach(f => f.classList.remove('open'));
+  if (!isOpen) fq.classList.add('open');
+}
+
+// ─── DRAWER ───────────────────────────────────────────────────────────────
+function oD() { document.getElementById('drw').classList.add('on'); document.getElementById('dov').classList.add('on'); }
+function cD() { document.getElementById('drw').classList.remove('on'); document.getElementById('dov').classList.remove('on'); }
+
+// ─── SCROLL REVEAL ────────────────────────────────────────────────────────
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); } });
+}, { threshold: 0.12 });
+document.querySelectorAll('.rev').forEach(el => obs.observe(el));
+
+// ─── BACK TO TOP ──────────────────────────────────────────────────────────
+window.addEventListener('scroll', () => {
+  document.getElementById('btt').classList.toggle('on', window.scrollY > 380);
+});
+</script>
+</body>
+</html>
