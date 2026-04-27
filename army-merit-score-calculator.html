@@ -1,0 +1,1240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Army Merit Score Calculator – Check Final Selection Score (Running + Written + Physical) | RajDailyTools</title>
+<meta name="description" content="Calculate your Army final merit score including running, written, and physical marks. Check your selection chances instantly with this advanced tool. Free for Agniveer & Army Rally 2026.">
+<meta name="keywords" content="army merit score calculator,army final merit kaise calculate kare,agniveer merit calculation 2026,army selection score calculator,army final score running written,army merit list marks system,army rally final merit calculation,army gd merit score kaise banta hai,army physical written marks calculator,army selection marks system india,army merit calculation tool,army merit score calculator online,army final score calculator india,army merit list prediction,army merit system explanation,army merit score analysis,army merit calculation guide,army final selection score tool,army merit comparison tool,army merit predictor tool,army merit marks breakdown,army merit score estimation,army merit calculator india,army selection score checker,army final marks calculator,army selection predictor tool,agniveer merit score tool,army merit kaise banta hai,running aur written marks kaise add hote hai,army me kitne marks par selection hota hai,agniveer merit list kaise banti hai">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://rajdailytools.in/army-merit-score-calculator.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#2563eb;--blue-d:#1d4ed8;--blue-l:#3b82f6;
+  --blue-xl:#eff6ff;--blue-s:#dbeafe;
+  --amber:#f59e0b;--green:#10b981;--red:#ef4444;
+  --purple:#8b5cf6;--teal:#14b8a6;--orange:#f97316;
+  --green-xl:#f0fdf4;--green-s:#bbf7d0;
+  --red-xl:#fef2f2;--red-s:#fecaca;
+  --amber-xl:#fffbeb;--amber-s:#fde68a;
+  --purple-xl:#faf5ff;--purple-s:#ddd6fe;
+  --ink:#0f172a;--ink2:#334155;--ink3:#64748b;--ink4:#94a3b8;
+  --line:#e2e8f0;--surf:#f8fafc;--white:#fff;
+  --s1:0 1px 3px rgba(15,23,42,.06),0 1px 2px rgba(15,23,42,.04);
+  --s2:0 4px 16px rgba(15,23,42,.08),0 2px 6px rgba(15,23,42,.04);
+  --s3:0 12px 40px rgba(15,23,42,.11),0 3px 10px rgba(15,23,42,.06);
+  --s4:0 24px 64px rgba(15,23,42,.13),0 6px 20px rgba(15,23,42,.07);
+  --sb:0 8px 32px rgba(37,99,235,.20);
+  --fd:'Sora',sans-serif;--fb:'DM Sans',sans-serif;
+  --ease:cubic-bezier(.4,0,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);color:var(--ink);background:var(--white);overflow-x:hidden;-webkit-font-smoothing:antialiased;line-height:1.6}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+button{cursor:pointer;border:none;background:none;font-family:var(--fb)}
+.w{max-width:1180px;margin:0 auto;padding:0 24px}
+.wa{max-width:860px;margin:0 auto;padding:0 24px}
+select,input{appearance:none;-webkit-appearance:none}
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+@keyframes resultIn{from{opacity:0;transform:translateY(18px) scale(.97)}to{opacity:1;transform:none}}
+@keyframes countUp{from{opacity:0;transform:scale(.72)}to{opacity:1;transform:scale(1)}}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.55}}
+.rev{opacity:0;transform:translateY(22px);transition:opacity .55s var(--ease),transform .55s var(--ease)}
+.rev.in{opacity:1;transform:none}
+
+/* ===== HEADER ===== */
+.hdr{position:sticky;top:0;z-index:999;background:rgba(255,255,255,.96);backdrop-filter:blur(20px);border-bottom:1px solid var(--line);box-shadow:var(--s1)}
+.hdi{display:flex;align-items:center;justify-content:space-between;height:66px}
+.logo{display:flex;align-items:center;gap:10px}
+.lb{width:36px;height:36px;background:var(--blue);border-radius:9px;display:flex;align-items:center;justify-content:center;box-shadow:var(--sb);flex-shrink:0}
+.lb svg{width:18px;height:18px;fill:#fff}
+.ln{font-family:var(--fd);font-size:19px;font-weight:800;color:var(--ink);line-height:1}
+.ln span{color:var(--blue)}
+.ls{font-size:10px;color:var(--ink4);letter-spacing:.04em}
+nav.dn{display:flex;align-items:center;gap:2px}
+nav.dn a{font-size:13.5px;font-weight:500;color:var(--ink2);padding:7px 13px;border-radius:8px;transition:.2s}
+nav.dn a:hover{color:var(--blue);background:var(--blue-xl)}
+.hcta{background:var(--blue);color:#fff;font-family:var(--fd);font-weight:600;font-size:13px;padding:8px 18px;border-radius:8px;box-shadow:var(--sb);transition:.2s;display:inline-block}
+.hcta:hover{background:var(--blue-d);transform:translateY(-1px)}
+.brg{display:none;flex-direction:column;gap:4.5px;padding:8px;border-radius:8px}
+.brg span{display:block;width:20px;height:2px;background:var(--ink);border-radius:2px;transition:.28s}
+.dov{display:none;position:fixed;inset:0;background:rgba(15,23,42,.45);z-index:1040;backdrop-filter:blur(3px)}
+.dov.on{display:block}
+.drw{position:fixed;top:0;right:-100%;width:270px;height:100vh;background:#fff;z-index:1050;padding:22px;box-shadow:var(--s4);transition:right .32s var(--ease);overflow-y:auto}
+.drw.on{right:0}
+.dh{display:flex;align-items:center;justify-content:space-between;margin-bottom:26px}
+.dx{width:33px;height:33px;border-radius:7px;background:var(--surf);display:flex;align-items:center;justify-content:center;color:var(--ink3);font-size:17px}
+nav.mn{display:flex;flex-direction:column;gap:3px}
+nav.mn a{display:block;font-size:14px;font-weight:500;color:var(--ink2);padding:11px 13px;border-radius:8px;transition:.2s}
+nav.mn a:hover{color:var(--blue);background:var(--blue-xl)}
+
+/* ===== HERO ===== */
+.hero{position:relative;overflow:hidden;background:linear-gradient(150deg,#ebf4ff 0%,#fff 46%,#f0fdf4 100%);padding:68px 0 80px}
+.hero::before{content:'';position:absolute;top:-140px;right:-180px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(37,99,235,.08) 0%,transparent 68%);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-80px;left:-100px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(16,185,129,.05) 0%,transparent 68%);pointer-events:none}
+.blob{position:absolute;border-radius:50%;pointer-events:none;animation:float 6s ease-in-out infinite}
+.b1{width:13px;height:13px;background:rgba(37,99,235,.18);top:22%;right:14%;animation-delay:0s}
+.b2{width:9px;height:9px;background:rgba(16,185,129,.22);top:58%;right:26%;animation-delay:2.2s}
+.b3{width:11px;height:11px;background:rgba(245,158,11,.18);top:36%;right:6%;animation-delay:4s}
+.bc{display:flex;align-items:center;gap:7px;font-size:12.5px;color:var(--ink3);margin-bottom:24px;position:relative;z-index:1;flex-wrap:wrap}
+.bc a{color:var(--blue);font-weight:600}
+.pill{display:inline-flex;align-items:center;gap:7px;font-family:var(--fd);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);background:var(--blue-xl);padding:5px 14px;border-radius:100px;margin-bottom:18px}
+.pill::before{content:'';width:6px;height:6px;background:var(--blue);border-radius:50%}
+.hero-inner{position:relative;z-index:1;max-width:700px;animation:fadeUp .5s ease both}
+.hero h1{font-family:var(--fd);font-size:clamp(26px,4.5vw,50px);font-weight:800;line-height:1.1;color:var(--ink);margin-bottom:14px}
+.hero h1 span{color:var(--blue)}
+.hero-sub{font-size:16px;color:var(--ink3);line-height:1.8;margin-bottom:22px;max-width:560px}
+.hero-chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.chip{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;padding:6px 14px;border-radius:100px;background:#fff;border:1.5px solid var(--line);color:var(--ink2);box-shadow:var(--s1);transition:.22s}
+.chip:hover{border-color:var(--blue);color:var(--blue);transform:translateY(-1px)}
+.hero-meta{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.upd{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:700;color:var(--blue);background:var(--blue-xl);padding:6px 14px;border-radius:100px;border:1.5px solid var(--blue-s)}
+.hmi{font-size:13px;color:var(--ink3);font-weight:500}
+
+/* ===== TOOL ===== */
+.tool-sec{background:var(--surf);padding:80px 0}
+.tool-wrap{max-width:860px;margin:0 auto}
+.tool-card{background:#fff;border:1.5px solid var(--line);border-radius:28px;overflow:hidden;box-shadow:var(--s4)}
+.tool-hdr{background:linear-gradient(135deg,#1d4ed8 0%,#2563eb 55%,#3b82f6 100%);padding:32px 40px;position:relative;overflow:hidden}
+.tool-hdr::before{content:'';position:absolute;top:-60px;right:-60px;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,.07)}
+.tool-hdr::after{content:'';position:absolute;bottom:-40px;left:-40px;width:180px;height:180px;border-radius:50%;background:rgba(255,255,255,.04)}
+.th{position:relative;z-index:1}
+.th h2{font-family:var(--fd);font-size:21px;font-weight:800;color:#fff;margin-bottom:6px}
+.th p{font-size:14px;color:rgba(255,255,255,.82);line-height:1.65}
+.th-badges{display:flex;flex-wrap:wrap;gap:9px;margin-top:14px}
+.thb{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:rgba(255,255,255,.9);background:rgba(255,255,255,.13);padding:5px 12px;border-radius:100px}
+.tool-body{padding:36px 40px}
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:18px}
+.fgrid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:18px}
+.fgrid4{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:14px;margin-bottom:18px}
+.fld{display:flex;flex-direction:column;gap:8px}
+.flbl{font-size:13px;font-weight:700;color:var(--ink2)}
+.flbl span{font-size:11px;font-weight:500;color:var(--ink4);margin-left:5px;background:var(--surf);padding:2px 7px;border-radius:5px;border:1px solid var(--line)}
+.finp,.fsel{padding:13px 16px;font-size:15px;color:var(--ink);background:#fff;border:1.5px solid var(--line);border-radius:10px;outline:none;transition:.22s;font-family:var(--fb);width:100%}
+.finp:focus,.fsel:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(37,99,235,.10)}
+.fsel{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2364748b' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:42px}
+.hint-box{display:flex;align-items:flex-start;gap:9px;font-size:13px;color:var(--ink2);background:var(--blue-xl);border:1.5px solid var(--blue-s);border-radius:10px;padding:11px 14px;margin-bottom:18px;line-height:1.65}
+.hint-box svg{width:16px;height:16px;stroke:var(--blue);fill:none;stroke-width:2;flex-shrink:0;margin-top:2px}
+.sec-divider{font-family:var(--fd);font-size:12px;font-weight:700;color:var(--ink3);text-transform:uppercase;letter-spacing:.08em;padding:10px 0 4px;border-top:1px solid var(--line);margin:6px 0 16px;display:flex;align-items:center;gap:8px}
+.sec-divider::after{content:'';flex:1;height:1px;background:var(--line)}
+.btn-row{display:flex;gap:12px}
+.cvt-btn{flex:1;padding:15px;background:linear-gradient(135deg,var(--blue) 0%,#1e40af 100%);color:#fff;font-family:var(--fd);font-weight:800;font-size:15px;border-radius:11px;box-shadow:var(--sb);transition:all .25s var(--ease);display:flex;align-items:center;justify-content:center;gap:9px}
+.cvt-btn:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(37,99,235,.30)}
+.rst-btn{padding:15px 22px;background:var(--surf);color:var(--ink2);font-family:var(--fd);font-weight:700;font-size:14px;border-radius:11px;border:1.5px solid var(--line);transition:.22s;display:flex;align-items:center;gap:7px}
+.rst-btn:hover{border-color:var(--blue);color:var(--blue);background:var(--blue-xl)}
+
+/* ===== RESULT ===== */
+#resultArea{display:none;margin-top:28px;animation:resultIn .42s var(--ease) both}
+
+/* Final Score Hero */
+.merit-hero{background:linear-gradient(135deg,#0f172a 0%,#1e3a8a 100%);border-radius:24px;padding:34px;margin-bottom:20px;position:relative;overflow:hidden;text-align:center}
+.merit-hero::before{content:'';position:absolute;top:-70px;right:-70px;width:280px;height:280px;border-radius:50%;background:rgba(255,255,255,.04)}
+.merit-hero::after{content:'';position:absolute;bottom:-50px;left:-50px;width:200px;height:200px;border-radius:50%;background:rgba(59,130,246,.07)}
+.mh-inner{position:relative;z-index:1}
+.mh-label{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:8px}
+.mh-score{font-family:var(--fd);font-size:80px;font-weight:800;line-height:1;color:#fff;animation:countUp .55s var(--ease) both}
+.mh-denom{font-size:26px;color:rgba(255,255,255,.45);font-weight:600}
+.mh-verdict{display:inline-flex;align-items:center;gap:8px;font-family:var(--fd);font-size:15px;font-weight:800;padding:8px 22px;border-radius:100px;margin-top:14px}
+.mhv-safe{background:rgba(16,185,129,.28);color:#6ee7b7;border:1.5px solid rgba(16,185,129,.35)}
+.mhv-ok{background:rgba(245,158,11,.25);color:#fcd34d;border:1.5px solid rgba(245,158,11,.32)}
+.mhv-risk{background:rgba(239,68,68,.25);color:#fca5a5;border:1.5px solid rgba(239,68,68,.32)}
+.mh-meta{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:22px}
+.mhm{background:rgba(255,255,255,.08);border-radius:12px;padding:14px 10px;text-align:center}
+.mhm-val{font-family:var(--fd);font-size:22px;font-weight:800;color:#fff;margin-bottom:3px}
+.mhm-key{font-size:11px;color:rgba(255,255,255,.55);font-weight:600;line-height:1.4}
+
+/* Selection Chance */
+.chance-card{background:#fff;border:1.5px solid var(--line);border-radius:18px;padding:24px;margin-bottom:20px;box-shadow:var(--s2)}
+.cc-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;flex-wrap:wrap;gap:10px}
+.cc-title{font-family:var(--fd);font-size:15px;font-weight:800;color:var(--ink)}
+.cc-pct{font-family:var(--fd);font-size:34px;font-weight:800}
+.cc-pct.hi{color:var(--green)}
+.cc-pct.md{color:var(--amber)}
+.cc-pct.lo{color:var(--red)}
+.chance-track{position:relative;height:22px;background:var(--line);border-radius:100px;overflow:hidden;margin-bottom:10px}
+.chance-fill{height:100%;border-radius:100px;transition:width 1.5s var(--ease);position:relative}
+.cf-hi{background:linear-gradient(90deg,#059669,#10b981,#34d399)}
+.cf-md{background:linear-gradient(90deg,#d97706,#f59e0b,#fcd34d)}
+.cf-lo{background:linear-gradient(90deg,#dc2626,#ef4444,#f87171)}
+.chance-fill::after{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:linear-gradient(90deg,rgba(255,255,255,0) 60%,rgba(255,255,255,.25));border-radius:100px}
+.chance-zones{display:flex;justify-content:space-between;font-size:11px;color:var(--ink4);font-weight:600;margin-top:7px}
+.cutoff-row{display:flex;align-items:center;justify-content:space-between;background:var(--surf);border:1.5px solid var(--line);border-radius:11px;padding:12px 16px;margin-top:14px;flex-wrap:wrap;gap:10px}
+.cut-item{text-align:center}
+.cut-val{font-family:var(--fd);font-size:18px;font-weight:800;color:var(--ink)}
+.cut-label{font-size:11px;color:var(--ink4);font-weight:600;margin-top:2px}
+.cut-divider{width:1px;height:36px;background:var(--line)}
+.need-hint{display:flex;align-items:flex-start;gap:10px;border-radius:11px;padding:13px 15px;margin-top:14px;font-size:13.5px;color:var(--ink2);line-height:1.7}
+.need-hint svg{width:16px;height:16px;fill:none;stroke-width:2;flex-shrink:0;margin-top:2px}
+.nh-green{background:var(--green-xl);border:1.5px solid var(--green-s)}.nh-green svg{stroke:var(--green)}
+.nh-amber{background:var(--amber-xl);border:1.5px solid var(--amber-s)}.nh-amber svg{stroke:var(--amber)}
+.nh-red{background:var(--red-xl);border:1.5px solid var(--red-s)}.nh-red svg{stroke:var(--red)}
+
+/* Score breakdown */
+.breakdown-card{background:var(--surf);border:1.5px solid var(--line);border-radius:16px;padding:22px;margin-bottom:20px}
+.bk-title{font-family:var(--fd);font-size:14px;font-weight:800;color:var(--ink);margin-bottom:18px}
+.bk-row{display:flex;align-items:center;gap:12px;margin-bottom:13px}
+.bk-ico{font-size:20px;width:32px;flex-shrink:0;text-align:center}
+.bk-label{font-size:13px;font-weight:700;color:var(--ink2);width:130px;flex-shrink:0}
+.bk-bar-wrap{flex:1;height:10px;background:var(--line);border-radius:6px;overflow:hidden}
+.bk-bar{height:100%;border-radius:6px;transition:width 1.3s var(--ease)}
+.bb-g{background:linear-gradient(90deg,var(--green),#059669)}
+.bb-b{background:linear-gradient(90deg,var(--blue),#1e40af)}
+.bb-p{background:linear-gradient(90deg,var(--purple),#7c3aed)}
+.bb-t{background:linear-gradient(90deg,var(--teal),#0f766e)}
+.bk-val{font-size:13px;font-weight:800;color:var(--ink3);width:60px;text-align:right;flex-shrink:0}
+.bk-total-row{display:flex;align-items:center;justify-content:space-between;background:var(--blue-xl);border:1.5px solid var(--blue-s);border-radius:10px;padding:12px 16px;margin-top:4px}
+.bkt-label{font-family:var(--fd);font-size:14px;font-weight:700;color:var(--ink)}
+.bkt-val{font-family:var(--fd);font-size:20px;font-weight:800;color:var(--blue)}
+
+/* Comparison table */
+.comp-wrap{overflow-x:auto;margin-bottom:20px}
+table.comp-tbl{width:100%;border-collapse:collapse;font-size:13px;min-width:560px}
+table.comp-tbl thead th{background:linear-gradient(135deg,var(--blue),#1e40af);color:#fff;padding:13px 15px;text-align:left;font-family:var(--fd);font-size:12px;font-weight:700;letter-spacing:.03em}
+table.comp-tbl tbody tr{border-bottom:1px solid var(--line);transition:.18s}
+table.comp-tbl tbody tr:hover{background:var(--blue-xl)}
+table.comp-tbl tbody tr.hl{background:var(--blue-xl)!important;font-weight:600}
+table.comp-tbl tbody td{padding:11px 15px;color:var(--ink2);vertical-align:middle}
+.ct{display:inline-flex;font-size:11px;font-weight:700;padding:3px 9px;border-radius:100px}
+.ct-safe{background:var(--green-xl);color:var(--green);border:1px solid var(--green-s)}
+.ct-ok{background:var(--amber-xl);color:#92400e;border:1px solid var(--amber-s)}
+.ct-risk{background:var(--red-xl);color:var(--red);border:1px solid var(--red-s)}
+.ct-you{background:var(--blue);color:#fff}
+
+/* Strategy cards */
+.strat-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px}
+.strat-card{border-radius:14px;padding:18px;border:1.5px solid var(--line);background:var(--surf)}
+.sc-head{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.sc-ico{font-size:24px}
+.sc-title{font-family:var(--fd);font-size:13.5px;font-weight:800;color:var(--ink)}
+.sc-body{font-size:13px;color:var(--ink3);line-height:1.7}
+.sc-body strong{color:var(--ink2)}
+
+/* Action row */
+.action-row{display:flex;gap:10px;margin-top:4px}
+.copy-btn{flex:1;padding:12px;background:var(--green-xl);color:var(--green);border:1.5px solid var(--green-s);font-family:var(--fd);font-weight:700;font-size:13.5px;border-radius:9px;display:flex;align-items:center;justify-content:center;gap:7px;transition:.22s}
+.copy-btn:hover{background:var(--green);color:#fff}
+.copy-btn.copied{background:var(--green);color:#fff}
+
+/* ===== HOW TO USE ===== */
+.howto-sec{background:var(--surf);padding:72px 0}
+.howto-box{background:var(--amber-xl);border:2px solid var(--amber-s);border-radius:20px;padding:32px 36px;max-width:680px;margin:0 auto}
+.howto-title{display:flex;align-items:center;gap:10px;font-family:var(--fd);font-size:19px;font-weight:800;color:var(--ink);margin-bottom:18px}
+.howto-steps{display:flex;flex-direction:column;gap:11px}
+.hw-step{display:flex;align-items:flex-start;gap:12px;font-size:14px;color:var(--ink2);line-height:1.65}
+.sn{width:26px;height:26px;background:var(--amber);color:#fff;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex-shrink:0;margin-top:1px}
+
+/* ===== MERIT TABLE ===== */
+.tbl-sec{background:var(--white);padding:72px 0}
+.tbl-wr{overflow-x:auto;margin-bottom:24px}
+table.main-tbl{width:100%;border-collapse:collapse;font-size:13px;min-width:620px}
+table.main-tbl thead th{background:linear-gradient(135deg,var(--blue),#1e40af);color:#fff;padding:14px 16px;text-align:left;font-family:var(--fd);font-size:12.5px;font-weight:700;letter-spacing:.03em}
+table.main-tbl tbody tr{border-bottom:1px solid var(--line);transition:.2s}
+table.main-tbl tbody tr:hover{background:var(--blue-xl)}
+table.main-tbl tbody td{padding:12px 16px;color:var(--ink2);vertical-align:middle;line-height:1.5}
+.tbadge{display:inline-flex;font-size:11px;font-weight:700;padding:3px 8px;border-radius:100px}
+.tbadge.g{background:var(--green-xl);color:var(--green);border:1px solid var(--green-s)}
+.tbadge.b{background:var(--blue-xl);color:var(--blue);border:1px solid var(--blue-s)}
+.tbadge.a{background:var(--amber-xl);color:#92400e;border:1px solid var(--amber-s)}
+.tbadge.r{background:var(--red-xl);color:var(--red);border:1px solid var(--red-s)}
+.tbadge.p{background:var(--purple-xl);color:var(--purple);border:1px solid var(--purple-s)}
+
+/* ===== TIPS ===== */
+.tips-sec{background:var(--surf);padding:72px 0}
+.tips-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.tip-card{background:var(--white);border:1.5px solid var(--line);border-radius:16px;padding:24px 20px;transition:.28s}
+.tip-card:hover{transform:translateY(-4px);box-shadow:var(--s3);border-color:var(--blue-s)}
+.tc-ico{font-size:32px;margin-bottom:12px}
+.tc-title{font-family:var(--fd);font-size:14px;font-weight:800;color:var(--ink);margin-bottom:8px}
+.tc-desc{font-size:13.5px;color:var(--ink3);line-height:1.72}
+.tc-list{display:flex;flex-direction:column;gap:7px;margin-top:10px}
+.tc-item{display:flex;align-items:flex-start;gap:8px;font-size:13px;color:var(--ink3);line-height:1.6}
+.tc-item::before{content:'✓';width:16px;height:16px;background:var(--green);color:#fff;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;flex-shrink:0;margin-top:3px}
+
+/* ===== STORY ===== */
+.story-sec{background:var(--white);padding:72px 0}
+.story-card{max-width:760px;margin:0 auto;background:linear-gradient(135deg,var(--blue-xl),#f0fdf4);border:1.5px solid var(--blue-s);border-radius:24px;padding:36px;box-shadow:var(--s3)}
+.story-ico{font-size:44px;margin-bottom:16px;display:block}
+.story-card h3{font-family:var(--fd);font-size:20px;font-weight:800;color:var(--ink);margin-bottom:14px}
+.story-card p{font-size:15px;color:var(--ink2);line-height:1.85}
+.story-card p+p{margin-top:11px}
+.story-highlight{display:inline-flex;align-items:center;gap:7px;background:var(--blue);color:#fff;font-family:var(--fd);font-size:13px;font-weight:700;padding:6px 14px;border-radius:100px;margin-top:14px}
+
+/* ===== ARTICLE ===== */
+.art-sec{background:var(--surf);padding:72px 0}
+.art-card{background:var(--white);border:1.5px solid var(--line);border-radius:22px;padding:40px;box-shadow:var(--s2)}
+.art-body h2{font-family:var(--fd);font-size:20px;font-weight:800;color:var(--ink);margin:26px 0 10px;line-height:1.3}
+.art-body h2:first-child{margin-top:0}
+.art-body p{font-size:15px;color:var(--ink3);line-height:1.85;margin-bottom:13px}
+.art-body ul{display:flex;flex-direction:column;gap:8px;margin:10px 0 14px}
+.art-body li{display:flex;align-items:flex-start;gap:10px;font-size:14.5px;color:var(--ink3);line-height:1.7}
+.art-body li::before{content:'✓';width:18px;height:18px;background:var(--blue);color:#fff;border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;flex-shrink:0;margin-top:3px}
+.art-body strong{color:var(--ink2);font-weight:700}
+.ibox{background:var(--blue-xl);border:1.5px solid var(--blue-s);border-radius:13px;padding:14px 18px;margin:14px 0;display:flex;gap:10px;font-size:14px;color:var(--ink2);line-height:1.7}
+.ibox svg{width:16px;height:16px;stroke:var(--blue);fill:none;stroke-width:2;flex-shrink:0;margin-top:2px}
+.ibox.g{background:var(--green-xl);border-color:var(--green-s)}.ibox.g svg{stroke:var(--green)}
+.ibox.a{background:var(--amber-xl);border-color:var(--amber-s)}.ibox.a svg{stroke:var(--amber)}
+
+/* ===== SEC HEADERS ===== */
+.sec-hd{text-align:center;margin-bottom:44px}
+.sec-h{font-family:var(--fd);font-size:clamp(22px,3.8vw,38px);font-weight:800;color:var(--ink);line-height:1.18;margin-bottom:10px}
+.sec-h span{color:var(--blue)}
+.sec-sub{font-size:15.5px;color:var(--ink3);line-height:1.75;max-width:500px;margin:0 auto}
+
+/* ===== FAQ ===== */
+.faq-sec{background:var(--surf);padding:72px 0}
+.fql{max-width:760px;margin:0 auto}
+.fq{background:#fff;border:1.5px solid var(--line);border-radius:13px;margin-bottom:10px;overflow:hidden}
+.fq-q{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;cursor:pointer;gap:14px;transition:.2s}
+.fq-q:hover{background:var(--blue-xl)}
+.fq-t{font-weight:600;font-size:15px;color:var(--ink);line-height:1.4}
+.fq-i{width:28px;height:28px;border-radius:50%;background:var(--blue-xl);color:var(--blue);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;transition:transform .28s,background .2s}
+.fq.open .fq-i{transform:rotate(45deg);background:var(--blue);color:#fff}
+.fq-a{max-height:0;overflow:hidden;transition:max-height .35s var(--ease)}
+.fq-ai{padding:0 22px 18px;font-size:14.5px;color:var(--ink3);line-height:1.78}
+.fq.open .fq-a{max-height:500px}
+
+/* ===== RELATED TOOLS ===== */
+.rel-sec{background:var(--white);padding:72px 0}
+.rel-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.rel-card{background:var(--surf);border:1.5px solid var(--line);border-radius:16px;padding:20px 18px;display:flex;flex-direction:column;gap:9px;transition:.28s}
+.rel-card:hover{transform:translateY(-5px);box-shadow:var(--s3);border-color:var(--blue-s)}
+.rel-card.star{border-color:var(--blue-s);background:var(--blue-xl)}
+.rel-ico{font-size:26px}
+.rel-title{font-family:var(--fd);font-size:14px;font-weight:700;color:var(--ink)}
+.rel-desc{font-size:13px;color:var(--ink3);line-height:1.6;flex:1}
+.rel-btn{display:inline-flex;align-items:center;gap:6px;font-family:var(--fd);font-weight:700;font-size:13px;color:var(--blue);transition:.2s}
+.rel-btn:hover{gap:10px}
+.rel-btn svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2.5}
+
+/* ===== DISC / CTA / FOOTER ===== */
+.disc{background:var(--amber-xl);border-top:1px solid var(--amber-s);border-bottom:1px solid var(--amber-s);padding:14px 0}
+.disc-in{display:flex;align-items:flex-start;gap:12px;font-size:13.5px;color:var(--ink2);line-height:1.7}
+.cta{background:linear-gradient(140deg,#0f172a 0%,#1e3a8a 100%);padding:80px 0;text-align:center;position:relative;overflow:hidden}
+.cta::before{content:'';position:absolute;top:-80px;left:50%;transform:translateX(-50%);width:800px;height:380px;background:radial-gradient(ellipse,rgba(37,99,235,.22) 0%,transparent 68%);pointer-events:none}
+.cta-in{position:relative;z-index:1}
+.cta .pill{color:#93c5fd;background:rgba(255,255,255,.1);margin-bottom:18px}
+.cta .pill::before{background:#93c5fd}
+.cta h2{font-family:var(--fd);font-size:clamp(24px,4vw,42px);font-weight:800;color:#fff;line-height:1.15;margin-bottom:12px}
+.cta h2 em{color:#fbbf24;font-style:normal}
+.cta p{font-size:16px;color:rgba(255,255,255,.72);max-width:480px;margin:0 auto 32px;line-height:1.78}
+.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn-gold{display:inline-flex;align-items:center;gap:8px;background:var(--amber);color:#fff;font-family:var(--fd);font-weight:800;font-size:15px;padding:14px 30px;border-radius:8px;box-shadow:0 8px 28px rgba(245,158,11,.35);transition:.22s}
+.btn-gold:hover{background:#d97706;transform:translateY(-3px)}
+.btn-ghost{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.09);border:1.5px solid rgba(255,255,255,.22);color:#fff;font-family:var(--fd);font-weight:600;font-size:14px;padding:13px 26px;border-radius:8px;transition:.2s}
+.btn-ghost:hover{background:rgba(255,255,255,.16)}
+footer{background:#0f172a;padding:52px 0 0}
+.ft-inner{max-width:1180px;margin:0 auto;padding:0 24px}
+.ft-top{display:grid;grid-template-columns:1.9fr 1fr 1fr 1fr;gap:44px;margin-bottom:44px}
+.ft-brand .ln{color:#fff}.ft-brand .ls{color:#475569}
+.ft-desc{font-size:13.5px;color:#64748b;line-height:1.78;max-width:265px;margin:13px 0 20px}
+.ft-soc{display:flex;gap:9px}
+.fts{width:34px;height:34px;border-radius:7px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;color:#94a3b8;font-size:13px;transition:.2s}
+.fts:hover{background:var(--blue);color:#fff}
+.fc h4{font-family:var(--fd);font-size:12px;font-weight:700;color:#fff;margin-bottom:14px;letter-spacing:.06em;text-transform:uppercase}
+.fc ul{display:flex;flex-direction:column;gap:8px}
+.fc ul a{font-size:13.5px;color:#64748b;transition:.18s}
+.fc ul a:hover{color:#93c5fd}
+.ft-btm{border-top:1px solid rgba(255,255,255,.07);padding:20px 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.ft-cp{font-size:12.5px;color:#475569}
+.ft-lnk{display:flex;gap:18px}
+.ft-lnk a{font-size:12.5px;color:#475569;transition:.18s}
+.ft-lnk a:hover{color:#93c5fd}
+.btt{position:fixed;bottom:26px;right:26px;z-index:500;width:43px;height:43px;background:var(--blue);color:#fff;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:17px;box-shadow:var(--sb);opacity:0;pointer-events:none;transform:translateY(14px);transition:.28s var(--ease)}
+.btt.on{opacity:1;pointer-events:auto;transform:translateY(0)}
+.btt:hover{transform:translateY(-3px)}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:1060px){.ft-top{grid-template-columns:1fr 1fr}.tips-grid{grid-template-columns:1fr 1fr}.rel-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:860px){nav.dn,.hcta{display:none}.brg{display:flex}.tool-body{padding:24px 22px}.tool-hdr{padding:24px 22px}.fgrid{grid-template-columns:1fr}.fgrid3{grid-template-columns:1fr 1fr}.fgrid4{grid-template-columns:1fr 1fr}.mh-meta{grid-template-columns:1fr 1fr}.strat-grid{grid-template-columns:1fr}}
+@media(max-width:600px){.ft-top{grid-template-columns:1fr}.tips-grid{grid-template-columns:1fr}.rel-grid{grid-template-columns:1fr}.cta-btns{flex-direction:column;align-items:center}.story-card{padding:24px 20px}.ft-btm{flex-direction:column;text-align:center}.ft-lnk{justify-content:center}.fgrid3{grid-template-columns:1fr}.fgrid4{grid-template-columns:1fr 1fr}.mh-meta{grid-template-columns:1fr 1fr}.btn-row{flex-direction:column}.action-row{flex-direction:column}}
+</style>
+</head>
+<body>
+
+<button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<!-- HEADER -->
+<header class="hdr">
+  <div class="w"><div class="hdi">
+    <a href="https://rajdailytools.in/" class="logo">
+      <div class="lb"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+      <div><div class="ln">Raj<span>Daily</span>Tools</div><div class="ls">Free Tools for India</div></div>
+    </a>
+    <nav class="dn">
+      <a href="https://rajdailytools.in/">Home</a>
+      <a href="https://rajdailytools.in/categories.html">Categories</a>
+      <a href="https://rajdailytools.in/#popular">Popular</a>
+      <a href="https://rajdailytools.in/about.html">About</a>
+      <a href="https://rajdailytools.in/contact.html">Contact</a>
+    </nav>
+    <a href="https://rajdailytools.in/" class="hcta">🏠 All Tools</a>
+    <button class="brg" id="brg" onclick="oD()"><span></span><span></span><span></span></button>
+  </div></div>
+</header>
+<div class="dov" id="dov" onclick="cD()"></div>
+<div class="drw" id="drw">
+  <div class="dh">
+    <div class="logo">
+      <div class="lb" style="width:30px;height:30px;border-radius:7px"><svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#fff"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+      <div class="ln" style="font-size:16px">Raj<span>Daily</span>Tools</div>
+    </div>
+    <button class="dx" onclick="cD()">✕</button>
+  </div>
+  <nav class="mn">
+    <a href="https://rajdailytools.in/" onclick="cD()">🏠 Home</a>
+    <a href="https://rajdailytools.in/categories.html" onclick="cD()">🗂️ Categories</a>
+    <a href="https://rajdailytools.in/#popular" onclick="cD()">⭐ Popular</a>
+    <a href="https://rajdailytools.in/about.html" onclick="cD()">👤 About</a>
+    <a href="https://rajdailytools.in/contact.html" onclick="cD()">📬 Contact</a>
+  </nav>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+  <div class="w">
+    <div class="bc">
+      <a href="https://rajdailytools.in/">Home</a><span style="color:var(--ink4)">›</span>
+      <a href="https://rajdailytools.in/categories.html">Tools</a><span style="color:var(--ink4)">›</span>
+      <span>Army Merit Score Calculator</span>
+    </div>
+    <div class="hero-inner">
+      <div class="pill">🎖️ Free Army Merit Tools India</div>
+      <h1>Army Merit Score <span>Calculator</span></h1>
+      <p class="hero-sub">Enter your <strong>running marks, written exam score, beam marks, and bonus</strong> — get your predicted final merit score, cutoff comparison, and selection probability instantly. Know if your name will appear in the merit list. Updated for Agniveer & Army Rally 2026.</p>
+      <div class="hero-chips">
+        <span class="chip">📊 Final Merit Calculator</span>
+        <span class="chip">🏃 Running + Written + Beam</span>
+        <span class="chip">🎯 Selection Chance %</span>
+        <span class="chip">🏅 NCC / Sports Bonus</span>
+        <span class="chip">✅ 100% Free</span>
+        <span class="chip">📱 Mobile Ready</span>
+      </div>
+      <div class="hero-meta">
+        <div class="upd">🪖 2026 Merit Formula Updated</div>
+        <span class="hmi">⚡ Instant Result</span>
+        <span class="hmi">📱 Mobile Friendly</span>
+        <span class="hmi">🔒 Private</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOOL SECTION -->
+<section class="tool-sec" id="calculator">
+  <div class="w"><div class="tool-wrap">
+    <div class="tool-card rev">
+      <div class="tool-hdr">
+        <div class="th">
+          <h2>🎖️ Army Merit Score Calculator – Check Final Selection Score</h2>
+          <p>Enter your marks from each component of the army selection process. The engine calculates your total merit score (out of 300), compares it against estimated cutoffs, and gives your selection probability % with a full breakdown and smart strategy tips.</p>
+          <div class="th-badges">
+            <span class="thb">🏃 Running Marks</span>
+            <span class="thb">📝 Written (CEE)</span>
+            <span class="thb">💪 Beam / Pull-ups</span>
+            <span class="thb">🏅 NCC / Bonus</span>
+            <span class="thb">🎯 Selection % Meter</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tool-body">
+
+        <div class="hint-box">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          <div><strong>How it works:</strong> Fill in your marks from each event. If you haven't attended the rally yet, enter your expected/practice scores. The tool calculates total merit, compares with historical cutoffs, and tells you your selection chance — plus how many marks you need to improve.</div>
+        </div>
+
+        <!-- PHYSICAL MARKS -->
+        <div class="sec-divider">🏃 Physical Test (PFT) Marks</div>
+        <div class="fgrid3">
+          <div class="fld">
+            <label class="flbl" for="runMarks">Running Marks <span>Max 60</span></label>
+            <select class="fsel" id="runMarks">
+              <option value="">— Select Group —</option>
+              <option value="60">60 — Group I (≤5:30 min)</option>
+              <option value="48">48 — Group II (5:31–5:45 min)</option>
+              <option value="0">0 — Fail (>5:45 min)</option>
+            </select>
+          </div>
+          <div class="fld">
+            <label class="flbl" for="beamMarks">Beam / Pull-ups <span>Max 40</span></label>
+            <select class="fsel" id="beamMarks">
+              <option value="">— Select Pull-ups —</option>
+              <option value="40">40 — 10 pull-ups</option>
+              <option value="33">33 — 9 pull-ups</option>
+              <option value="27">27 — 8 pull-ups</option>
+              <option value="21">21 — 7 pull-ups</option>
+              <option value="16">16 — 6 pull-ups (minimum)</option>
+              <option value="0">0 — Below 6 (Fail)</option>
+            </select>
+          </div>
+          <div class="fld">
+            <label class="flbl" for="physExtra">Balance / Ditch <span>Qualifying</span></label>
+            <select class="fsel" id="physExtra">
+              <option value="pass">Passed ✓</option>
+              <option value="fail">Failed ✗</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- WRITTEN MARKS -->
+        <div class="sec-divider">📝 Written Exam (CEE) Marks</div>
+        <div class="fgrid">
+          <div class="fld">
+            <label class="flbl" for="writtenMarks">Written Marks <span>Out of 100</span></label>
+            <input class="finp" type="number" id="writtenMarks" placeholder="e.g. 72" min="0" max="100">
+          </div>
+          <div class="fld">
+            <label class="flbl" for="post">Post / Trade</label>
+            <select class="fsel" id="post">
+              <option value="gd">Agniveer GD</option>
+              <option value="clerk">Agniveer Clerk / SKT</option>
+              <option value="technical">Agniveer Technical / NA</option>
+              <option value="tradesman">Agniveer Tradesman</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- BONUS -->
+        <div class="sec-divider">🏅 Bonus Marks <span style="font-weight:400;text-transform:none;font-size:12px;letter-spacing:0;color:var(--ink4)">(Optional — if applicable)</span></div>
+        <div class="fgrid4">
+          <div class="fld">
+            <label class="flbl" for="nccBonus">NCC Bonus <span>A/B/C</span></label>
+            <select class="fsel" id="nccBonus">
+              <option value="0">None</option>
+              <option value="5">NCC 'A' — 5 pts</option>
+              <option value="10">NCC 'B' — 10 pts</option>
+              <option value="15">NCC 'C' — 15 pts</option>
+            </select>
+          </div>
+          <div class="fld">
+            <label class="flbl" for="sportsBonus">Sports Bonus</label>
+            <select class="fsel" id="sportsBonus">
+              <option value="0">None</option>
+              <option value="5">State Level — 5 pts</option>
+              <option value="10">National Level — 10 pts</option>
+            </select>
+          </div>
+          <div class="fld">
+            <label class="flbl" for="sonBonus">Son of Soldier</label>
+            <select class="fsel" id="sonBonus">
+              <option value="0">No</option>
+              <option value="20">Yes — 20 pts</option>
+            </select>
+          </div>
+          <div class="fld">
+            <label class="flbl" for="category">Category</label>
+            <select class="fsel" id="category">
+              <option value="general">General / EWS</option>
+              <option value="obc">OBC</option>
+              <option value="sc">SC</option>
+              <option value="st">ST</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="btn-row">
+          <button class="cvt-btn" onclick="calculate()">🎯 Calculate My Final Merit Score</button>
+          <button class="rst-btn" onclick="resetTool()">↺ Reset</button>
+        </div>
+
+        <!-- ===== RESULT ===== -->
+        <div id="resultArea">
+
+          <!-- Final Score Hero -->
+          <div class="merit-hero">
+            <div class="mh-inner">
+              <div class="mh-label">Your Final Army Merit Score</div>
+              <div><span class="mh-score" id="mhScore">—</span><span class="mh-denom"> / 300</span></div>
+              <div class="mh-verdict" id="mhVerdict">—</div>
+              <div class="mh-meta">
+                <div class="mhm"><div class="mhm-val" id="mhmRun">—</div><div class="mhm-key">Running<br>Marks</div></div>
+                <div class="mhm"><div class="mhm-val" id="mhmBeam">—</div><div class="mhm-key">Beam<br>Marks</div></div>
+                <div class="mhm"><div class="mhm-val" id="mhmWritten">—</div><div class="mhm-key">Written<br>Marks</div></div>
+                <div class="mhm"><div class="mhm-val" id="mhmBonus">—</div><div class="mhm-key">Bonus<br>Marks</div></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Selection Chance -->
+          <div class="chance-card">
+            <div class="cc-head">
+              <div class="cc-title">🎯 Selection Probability</div>
+              <div class="cc-pct" id="ccPct">—</div>
+            </div>
+            <div class="chance-track">
+              <div class="chance-fill" id="chanceFill" style="width:0%"></div>
+            </div>
+            <div class="chance-zones">
+              <span>0%</span><span>Weak</span><span>Average</span><span>Strong</span><span>Safe</span><span>100%</span>
+            </div>
+            <!-- Cutoff comparison row -->
+            <div class="cutoff-row">
+              <div class="cut-item"><div class="cut-val" id="cutYour">—</div><div class="cut-label">Your Score</div></div>
+              <div class="cut-divider"></div>
+              <div class="cut-item"><div class="cut-val" id="cutEst">~160–175</div><div class="cut-label">Est. Cutoff Range</div></div>
+              <div class="cut-divider"></div>
+              <div class="cut-item"><div class="cut-val" id="cutSafe">185+</div><div class="cut-label">Safe Zone</div></div>
+              <div class="cut-divider"></div>
+              <div class="cut-item"><div class="cut-val" id="cutGap" style="color:var(--blue)">—</div><div class="cut-label">Gap to Safe</div></div>
+            </div>
+            <!-- Need hint -->
+            <div class="need-hint" id="needHint">
+              <svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+              <div id="needText">—</div>
+            </div>
+          </div>
+
+          <!-- Score Breakdown -->
+          <div class="breakdown-card">
+            <div class="bk-title">📊 Score Breakdown</div>
+            <div id="bkRows"></div>
+            <div class="bk-total-row">
+              <span class="bkt-label">Total Merit Score</span>
+              <span class="bkt-val" id="bktTotal">—</span>
+            </div>
+          </div>
+
+          <!-- Comparison Table -->
+          <div style="font-family:var(--fd);font-size:13.5px;font-weight:700;color:var(--ink);margin-bottom:12px">📋 Merit Zone Comparison — Where You Stand</div>
+          <div class="comp-wrap">
+            <table class="comp-tbl">
+              <thead><tr><th>Zone</th><th>Score Range</th><th>Selection Chance</th><th>Status</th><th>Strategy</th></tr></thead>
+              <tbody id="compBody"></tbody>
+            </table>
+          </div>
+
+          <!-- Strategy Cards -->
+          <div style="font-family:var(--fd);font-size:13.5px;font-weight:700;color:var(--ink);margin-bottom:12px">💡 Smart Improvement Strategy</div>
+          <div class="strat-grid" id="stratGrid"></div>
+
+          <!-- Action -->
+          <div class="action-row">
+            <button class="copy-btn" id="copyBtn" onclick="copyResult()">📋 Copy My Result</button>
+          </div>
+
+        </div><!-- end resultArea -->
+      </div>
+    </div>
+  </div></div>
+</section>
+
+<!-- HOW TO USE -->
+<section class="howto-sec">
+  <div class="wa">
+    <div class="sec-hd rev">
+      <div class="sec-h">How to Use This <span>Merit Calculator</span></div>
+      <p class="sec-sub">4 simple steps to calculate your final army merit score</p>
+    </div>
+    <div class="howto-box rev">
+      <div class="howto-title">📋 Step-by-Step Guide</div>
+      <div class="howto-steps">
+        <div class="hw-step"><div class="sn">1</div><div><strong>Running Marks Enter Kare</strong> — Group I = 60 marks, Group II = 48 marks select karo. Agar abhi rally nahi di toh practice time ke hisaab se estimate karo. Beam pull-ups bhi select karo (6 minimum, 10 maximum).</div></div>
+        <div class="hw-step"><div class="sn">2</div><div><strong>Written Marks Dale</strong> — Apna CEE (Common Entrance Exam) score enter karo out of 100. Agar exam dena baki hai toh expected score estimate karke enter karo taaki future planning ho sake.</div></div>
+        <div class="hw-step"><div class="sn">3</div><div><strong>Bonus Add Kare</strong> — Agar NCC certificate hai, sports representation hai, ya Son of Soldier benefit available hai toh select karo. Ye marks total mein add ho jaate hain aur merit mein significant advantage de sakte hain.</div></div>
+        <div class="hw-step"><div class="sn">4</div><div><strong>Final Merit Check Kare</strong> — "Calculate" button dabao. Total score, selection probability %, cutoff comparison, aur personalized improvement strategy instant result mein milegi.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MERIT SYSTEM TABLE -->
+<section class="tbl-sec">
+  <div class="w">
+    <div class="sec-hd rev">
+      <div class="sec-h">Army Merit <span>Marks System Explained</span></div>
+      <p class="sec-sub">Complete breakdown of all components — running, beam, written, and bonus marks</p>
+    </div>
+    <div class="tbl-wr rev">
+      <table class="main-tbl">
+        <thead>
+          <tr><th>Component</th><th>Maximum Marks</th><th>Scoring Criteria</th><th>Category</th><th>Notes</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>1600m Running</strong></td><td><span class="tbadge g">60 Marks</span></td><td>Group I (≤5:30) = 60 | Group II (5:31–5:45) = 48 | Fail = 0</td><td><span class="tbadge b">Physical</span></td><td>First filter — fail = exit rally</td></tr>
+          <tr><td><strong>Beam (Pull-ups)</strong></td><td><span class="tbadge g">40 Marks</span></td><td>10 = 40 | 9 = 33 | 8 = 27 | 7 = 21 | 6 = 16 | &lt;6 = Fail</td><td><span class="tbadge b">Physical</span></td><td>Minimum 6 pull-ups required</td></tr>
+          <tr><td><strong>9-Foot Ditch</strong></td><td><span class="tbadge a">Qualifying</span></td><td>Pass / Fail — no marks added</td><td><span class="tbadge b">Physical</span></td><td>Must cross — disqualification if fail</td></tr>
+          <tr><td><strong>Balance Beam</strong></td><td><span class="tbadge a">Qualifying</span></td><td>Pass / Fail — no marks added</td><td><span class="tbadge b">Physical</span></td><td>Must balance — disqualification if fail</td></tr>
+          <tr><td><strong>Written (CEE)</strong></td><td><span class="tbadge g">100 Marks</span></td><td>Objective: GK, Maths, Science, English</td><td><span class="tbadge p">Written</span></td><td>Largest single component</td></tr>
+          <tr><td><strong>NCC Bonus</strong></td><td><span class="tbadge g">+15 Max</span></td><td>'A' = +5 | 'B' = +10 | 'C' = +15</td><td><span class="tbadge a">Bonus</span></td><td>Certificate verification required</td></tr>
+          <tr><td><strong>Sports Bonus</strong></td><td><span class="tbadge g">+10 Max</span></td><td>State = +5 | National = +10</td><td><span class="tbadge a">Bonus</span></td><td>Relevant sports only</td></tr>
+          <tr><td><strong>Son of Soldier</strong></td><td><span class="tbadge g">+20</span></td><td>Father/guardian currently serving/retired</td><td><span class="tbadge a">Bonus</span></td><td>Document proof required at rally</td></tr>
+          <tr><td><strong>Total (Base)</strong></td><td><span class="tbadge g">200 Marks</span></td><td>Running (60) + Beam (40) + Written (100)</td><td><span class="tbadge b">Combined</span></td><td>Max 200 without bonus</td></tr>
+          <tr><td><strong>Total (With Bonus)</strong></td><td><span class="tbadge g">Up to 245</span></td><td>Base + All applicable bonuses</td><td><span class="tbadge b">Final Merit</span></td><td>Calculated for merit list ranking</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="hint-box rev">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      <div>Estimated cutoff ranges: <strong>GD ~160–175</strong> | Clerk ~165–180 | Technical ~170–185. These vary by rally, state, and number of vacancies. Candidates above 185 (without bonus) are generally in a safe zone for most rallies. Always verify from the official ARO notification for your specific rally.</div>
+    </div>
+  </div>
+</section>
+
+<!-- TIPS -->
+<section class="tips-sec">
+  <div class="w">
+    <div class="sec-hd rev">
+      <div class="sec-h">Smart Strategy to <span>Improve Merit Score</span></div>
+      <p class="sec-sub">Where to focus your energy for maximum score gain before the rally</p>
+    </div>
+    <div class="tips-grid">
+      <div class="tip-card rev">
+        <div class="tc-ico">📝</div>
+        <div class="tc-title">Written Exam (CEE) — Biggest Gain</div>
+        <div class="tc-desc">Written is 100 marks — the single biggest component. Every extra 10 marks here directly improves your rank. Focus here first:</div>
+        <div class="tc-list">
+          <div class="tc-item">GK — daily newspaper + NCERTs Class 9–10</div>
+          <div class="tc-item">Maths — Class 8–10 basics + practice sets</div>
+          <div class="tc-item">General Science — Physics, Chemistry, Biology basics</div>
+          <div class="tc-item">English — basic grammar + reading comprehension</div>
+          <div class="tc-item">Previous year papers — 3 years minimum</div>
+        </div>
+      </div>
+      <div class="tip-card rev">
+        <div class="tc-ico">💪</div>
+        <div class="tc-title">Beam Pull-ups — 24 Extra Marks</div>
+        <div class="tc-desc">6 pull-ups = 16 marks. 10 pull-ups = 40 marks. That's 24 extra marks — equivalent to scoring 24 more in written. Easy gains:</div>
+        <div class="tc-list">
+          <div class="tc-item">Daily pull-up practice — start from negatives</div>
+          <div class="tc-item">Dead hangs to build grip strength</div>
+          <div class="tc-item">Aim: +1 pull-up per week</div>
+          <div class="tc-item">8 weeks → go from 6 to 10 pull-ups realistic</div>
+          <div class="tc-item">Proper form — full extension to chin over bar</div>
+        </div>
+      </div>
+      <div class="tip-card rev">
+        <div class="tc-ico">🏅</div>
+        <div class="tc-title">Bonus Marks — Free Advantage</div>
+        <div class="tc-desc">Bonus marks are the easiest way to pull ahead — no extra physical effort required:</div>
+        <div class="tc-list">
+          <div class="tc-item">NCC 'C' certificate = 15 bonus marks — join NCC if in school/college</div>
+          <div class="tc-item">Son of Soldier = 20 bonus marks — verify eligibility</div>
+          <div class="tc-item">Sports rep certificates — keep updated</div>
+          <div class="tc-item">All certificates ready on rally day</div>
+          <div class="tc-item">Verify bonus rules in specific ARO notification</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STORY -->
+<section class="story-sec">
+  <div class="wa">
+    <div class="sec-hd rev">
+      <div class="sec-h">Ram Ki <span>Rejection — Aur Ek Seekh</span></div>
+    </div>
+    <div class="story-card rev">
+      <span class="story-ico">🪖</span>
+      <h3>Merit List Mein Naam Nahi Aaya — Kyun?</h3>
+      <p>Mera bhai Ram army ki tayari kar raha tha. Usne running clear kar li thi, written bhi theek gaya tha, aur usse pura confidence tha ki is baar selection ho jayega. Medical bhi pass hua. Documents sab theek the.</p>
+      <p>Lekin jab final merit list aayi, uska naam usme nahi tha. Usse samajh hi nahi aaya ki problem kaha reh gayi — marks kam the ya competition jyada tha. Dono cheezein sach thi — uska total score 158 tha aur cutoff us rally mein 167 tak gaya tha. Sirf 9 marks ka fark tha selection aur rejection ke beech.</p>
+      <p>Baad mein calculate kiya toh pata chala — agar usne 8 pull-ups ki jagah 10 kiye hote, toh 13 extra marks aate. Agar written mein 5 aur marks aate, toh woh safe zone mein hota. Agar usse pehle se pata hota ki uska total score 158 hai aur cutoff 165–170 ke beech hota hai, toh wo specifically un areas pe focus karta jo most improvement de sakti thi.</p>
+      <p>Us din ek baat clear hui — sirf exam clear karna kaafi nahi hota, final merit samajhna zaroori hota hai. Isi confusion ko solve karne ke liye ye <strong>Army Merit Score Calculator</strong> banaya gaya hai — jahan aap apna final score aur selection chance easily check kar sakte ho — aur decide kar sakte ho ki kahan focus karna hai.</p>
+      <span class="story-highlight">🎖️ Score Pehle Samjho — Phir Selection Jeeto</span>
+    </div>
+  </div>
+</section>
+
+<!-- LONG SEO ARTICLE -->
+<section class="art-sec">
+  <div class="wa">
+    <div class="sec-hd rev">
+      <div class="sec-h">Army Merit System <span>Complete Guide 2026</span></div>
+      <p class="sec-sub">Marks formula, cutoff understanding, smart strategy — poora samjho</p>
+    </div>
+    <div class="art-card rev">
+      <div class="art-body">
+
+        <h2>Army Final Merit Score Kaise Banta Hai — Poora System</h2>
+        <p>Bahut saare army aspirants ek galti karte hain — wo sirf individual events pe focus karte hain, lekin final merit kaise calculate hoti hai ye nahi jaante. Reality ye hai ki army selection ek cumulative merit system hai — jisme running, beam, written, aur bonus sab milke ek final number banate hain. Usi number ke basis par selection hota hai — nahi ki kisi ek event ke basis par.</p>
+        <p>Total merit formula is tarah hai: Running marks (max 60) + Beam/Pull-ups marks (max 40) + Written exam/CEE marks (max 100) + Bonus marks (NCC, Sports, Son of Soldier) = Final Merit. Isko samajhna selection ka sabse pehla step hai.</p>
+
+        <div class="ibox">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          <div><strong>Key Insight:</strong> Maximum base merit = 200 marks (60 + 40 + 100). With all bonuses (NCC 'C' + Sports National + Son of Soldier) = 200 + 15 + 10 + 20 = 245 marks. Candidates with strong bonuses have a massive edge in competitive rallies.</div>
+        </div>
+
+        <h2>Running vs Written — Kaunsa Zyada Important Hai?</h2>
+        <p>Ye ek bahut common question hai aur iska jawab thoda nuanced hai. Running mein maximum 60 marks hain — aur ye ek filter event hai, matlab fail karne par aage jane ka mauka hi nahi milta. Written mein maximum 100 marks hain — ye sabse large single component hai.</p>
+        <p>Iska matlab ye hai ki sirf running pe focus karna galat strategy hai. Jo candidate Group I mein aata hai (60 marks) aur written mein 60 marks laata hai — uska total physical + written = 120 + beam marks. Jo candidate Group I (60) aur written mein 80 marks laata hai — uska total zyada hoga. Written mein 20 extra marks ka fark running ke Group II se Group I shift (12 marks) se zyada hota hai.</p>
+        <ul>
+          <li>Running Group I se Group II mein difference: 12 marks</li>
+          <li>Beam 6 pull-ups se 10 pull-ups mein difference: 24 marks</li>
+          <li>Written mein 60 se 80 karna: 20 marks gain</li>
+          <li>NCC 'C' certificate: 15 bonus marks — zero physical effort needed</li>
+        </ul>
+        <p>Is analysis se clear hai ki beam improvement aur written exam mein focus karna highest return on investment deta hai — after ensuring running Group I is achieved.</p>
+
+        <h2>Army Merit Cutoff Kaise Decide Hoti Hai?</h2>
+        <p>Merit cutoff koi fixed number nahi hoti — ye har rally mein alag hoti hai. Ye in factors par depend karti hai:</p>
+        <ul>
+          <li><strong>Vacancy count:</strong> Zyada vacancies = lower cutoff. Kam vacancies = higher cutoff.</li>
+          <li><strong>Number of candidates:</strong> Zyada candidates = higher competition = higher cutoff.</li>
+          <li><strong>State/region:</strong> Kuch rallies state-specific hoti hain jahan local competition level alag hota hai.</li>
+          <li><strong>Post category:</strong> GD, Clerk, Technical — inki cutoffs alag hoti hain. Technical post mein written ka weightage zyada important hota hai.</li>
+          <li><strong>Bonus marks effect:</strong> Agar us area mein bahut saare NCC wale candidates hain toh effective cutoff aur upar chali jaati hai unke sath compare karne ke liye.</li>
+        </ul>
+        <p>Historical data ke basis par: Agniveer GD cutoff typically 160–175 range mein rehti hai. Safe zone 185+ consider kiya jaata hai. 190+ = almost guaranteed selection (vacancy sufficient hone par).</p>
+
+        <h2>Beam (Pull-ups) Ka Importance — Jo Log Ignore Karte Hain</h2>
+        <p>Pull-ups ek aisi area hai jahan bahut log apna score maximize nahi karte — aur ye ek costly mistake hai. Sirf 6 pull-ups karne wale ko 16 marks milte hain. 10 pull-ups karne wale ko 40 marks milte hain. 24 marks ka fark — ye ek massive gain hai jo easily achieved ho sakta hai 6–8 weeks of consistent training se.</p>
+        <p>Bahut aspirants running pe ghante lagate hain lekin beam practice ignore karte hain. Agar running Group I already clear ho chuki hai, toh beam mein 24 extra marks gain karna much more efficient time investment hai compared to squeezing 5–10 more seconds off your running time.</p>
+
+        <div class="ibox g">
+          <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          <div><strong>Smart Priority Order:</strong> (1) Get Running to Group I — non-negotiable, (2) Maximize Pull-ups to 10 — 24 marks at stake, (3) Written exam 75+ — largest component, (4) Secure all applicable bonus marks — free advantage. This order gives maximum merit per unit of effort.</div>
+        </div>
+
+        <h2>Common Mistakes Jo Merit Score Down Karte Hain</h2>
+        <ul>
+          <li><strong>Mistake 1 — Only running focus:</strong> Running Group I clear karna important hai, but beam aur written par equal attention zaroori hai</li>
+          <li><strong>Mistake 2 — Bonus marks ignore karna:</strong> NCC certificate, sports certificate, Son of Soldier documents rally pe nahi laana — fir baad mein regret karna</li>
+          <li><strong>Mistake 3 — Written underestimate karna:</strong> "Written toh clear ho jayega" attitude — ye sabse common merit killer hai</li>
+          <li><strong>Mistake 4 — Beam se kum practice:</strong> 6 pull-ups se 10 pull-ups tak jaana sirf 8 weeks mein possible hai dedicated practice se</li>
+          <li><strong>Mistake 5 — Total merit track nahi karna:</strong> Ye calculator use karo — pehle se pata karo ki kitna score hoga aur kitna improve karna hai</li>
+        </ul>
+
+        <h2>Written Exam (CEE) Smart Preparation Strategy</h2>
+        <p>CEE (Common Entrance Exam) 100 marks ka hota hai aur isme 4 sections hote hain — General Knowledge, Mathematics, General Science, aur English. Har section roughly 25 marks ka hota hai. Ye preparation strategy follow karo:</p>
+        <ul>
+          <li><strong>GK (25 marks):</strong> Current affairs last 6 months + India GK + Basic history, geography. Daily 1 hour newspaper ya app se news padhna. Static GK ke liye Lucent ka GK book.</li>
+          <li><strong>Maths (25 marks):</strong> Class 8–10 NCERT concepts solid karo. Focus areas: percentage, ratio, time-speed-distance, simple/compound interest, basic algebra.</li>
+          <li><strong>General Science (25 marks):</strong> Physics: force, motion, electricity basics. Chemistry: elements, compounds, reactions. Biology: human body, diseases, nutrition. Class 9–10 NCERT sufficient.</li>
+          <li><strong>English (25 marks):</strong> Grammar: tense, articles, prepositions, active-passive voice. Reading comprehension practice. Fill in the blanks type questions.</li>
+        </ul>
+
+        <h2>Final Selection Process — Medical aur Documents</h2>
+        <p>Physical test aur written exam ke baad merit list banti hai. Shortlisted candidates medical examination ke liye call hote hain — jisme height, weight, chest, eyes, color vision, flat foot, aur general medical fitness check hoti hai. Medical pass karne ke baad document verification hota hai. In dono mein se kisi mein bhi fail hone par selection cancel ho jaata hai — chahe merit kitni bhi achhi ho.</p>
+        <p>Isliye merit score ke saath saath medical preparation bhi utni hi zaroori hai. Color blindness, flat foot grade, aur other medical conditions pehle se check karo taaki koi surprise na ho. Hmare paas Color Blindness Test aur Medical Checker tools bhi available hain — in bhi zaroor check karo.</p>
+
+        <h2>Conclusion — Merit Samjho, Strategy Banao, Selection Jeeto</h2>
+        <p>Army selection ek complete package hai — running, beam, written, bonus, medical, documents — sab milke final result decide karte hain. Sirf running ya sirf written pe focus karna incomplete approach hai. Is calculator ko use karo — apna current expected score calculate karo, gap identify karo, aur specifically unhe areas pe focus karo jo maximum merit gain de saken. Ram ki tarah 9 marks se reh jana nahi chahiye — isliye pehle se plan karo.</p>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-sec">
+  <div class="wa">
+    <div class="sec-hd rev">
+      <div class="sec-h">Frequently Asked <span>Questions</span></div>
+    </div>
+    <div class="fql">
+      <div class="fq"><div class="fq-q" onclick="tFAQ(this)"><span class="fq-t">Army merit score kaise calculate hoti hai?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">Army merit score = Running marks (max 60) + Beam/Pull-ups marks (max 40) + Written exam/CEE marks (max 100) + Bonus marks (NCC up to 15, Sports up to 10, Son of Soldier 20). Total base maximum = 200 marks. With all bonuses maximum ~245 marks. Merit list is prepared based on this total — highest scoring candidates get selected within available vacancies. 9-foot ditch and balance beam are qualifying events — no marks added but mandatory to pass.</div></div></div>
+
+      <div class="fq"><div class="fq-q" onclick="tFAQ(this)"><span class="fq-t">Army merit mein kitne marks safe zone mein aate hain?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">Historical rally data ke basis par: 185+ marks (without bonus) generally safe zone consider kiya jaata hai for GD post. 165–185 range mein selection possible but competitive — depends on specific rally vacancy count and number of participants. Below 160 — high risk. Clerk aur Technical ke liye cutoff typically 5–15 marks zyada hoti hai due to higher written component importance. These are estimates — actual cutoff varies by rally.</div></div></div>
+
+      <div class="fq"><div class="fq-q" onclick="tFAQ(this)"><span class="fq-t">NCC certificate se kitne bonus marks milte hain?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">NCC bonus marks: 'A' Certificate = +5 marks | 'B' Certificate = +10 marks | 'C' Certificate = +15 marks. Ye marks total merit mein add hote hain. NCC 'C' certificate 15 marks deta hai — ye equivalent hai running Group II se Group I shift (12 marks) se bhi zyada. School/college students ke liye NCC join karna army preparation ke liye highly recommended hai. Certificate original aur photocopy dono rally pe laana zaroori hai.</div></div></div>
+
+      <div class="fq"><div class="fq-q" onclick="tFAQ(this)"><span class="fq-t">Running fail hone par merit mein kya hota hai?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">Agar 1600m running mein fail ho jaate ho (male: above 5:45, female: above 8:00) — toh immediately rally se disqualified ho jaate ho. Baaki events (beam, written, medical) ke liye aage nahi ja sakte. 0 marks milte hain running mein. Is reason se running fail karna = selection chance = 0%. Running sabse pehla priority hona chahiye. Pehle running Group I ensure karo, phir baaki sab improve karo.</div></div></div>
+
+      <div class="fq"><div class="fq-q" onclick="tFAQ(this)"><span class="fq-t">Written exam mein kitne marks chahiye selection ke liye?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">Written exam (CEE) ke liye koi fixed "pass marks" nahi hote — merit-based system hai. Lekin generally 50+ marks good माने जाते हैं, 65+ marks = competitive, 75+ marks = strong position. Written marks sabse zyada impact karte hain merit mein kyunki ye 100 out of 200 hai — 50% of base merit. Jo candidates physical mein achi marks laate hain (Group I + 10 pull-ups = 100 marks) unhe written mein 65+ chahiye for safe zone. Ye tool use karke apna exact target calculate karo.</div></div></div>
+
+      <div class="fq"><div class="fq-q" onclick="tFAQ(this)"><span class="fq-t">Merit list kaise banti hai — state wise ya national?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">Army merit list ARO (Army Recruiting Office) wise banti hai — jo generally state ya region specific hoti hai. Har rally ke liye alag merit list hoti hai — jisme sirf us specific rally ke candidates ka merit rank compare kiya jaata hai. Isliye same score alag rally mein alag result de sakta hai — ek rally mein selected, doosre mein nahi. Ye is liye hota hai ki har rally mein vacancies aur competition level different hota hai. Apne specific ARO aur rally notification carefully padhna zaroori hai.</div></div></div>
+
+      <div class="fq"><div class="fq-q" onclick="tFAQ(this)"><span class="fq-t">Kya ye calculator actual army merit ke barabar accurate hai?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">Ye calculator official army scoring formula ke aadhar par estimated merit calculate karta hai — aur running, beam, written marks ka calculation official criteria se match karta hai. Selection probability ek statistical estimate hai based on historical rally patterns. Actual cutoff official ARO notification mein specified hoti hai aur vary karti hai by rally, vacancies, aur competition. Is tool ko planning aur gap analysis ke liye use karo — final result official merit list se hi confirm hogi. Medical aur document verification ki conditions bhi selection mein role play karti hain.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- RELATED TOOLS -->
+<section class="rel-sec">
+  <div class="w">
+    <div class="sec-hd rev">
+      <div class="sec-h">More <span>Army Tools</span> for You</div>
+      <p class="sec-sub">Complete army preparation toolkit — all free, all instant</p>
+    </div>
+    <div class="rel-grid">
+      <div class="rel-card rev star"><div class="rel-ico">🏃</div><div class="rel-title">Running Score Predictor ⭐</div><div class="rel-desc">Predict your 1600m marks, Group I/II, and selection chance from your running time.</div><a href="https://rajdailytools.in/army-running-score-predictor-1600m.html" class="rel-btn">Use Tool <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a></div>
+      <div class="rel-card rev star"><div class="rel-ico">🎖️</div><div class="rel-title">Defence Eligibility Checker ⭐</div><div class="rel-desc">Check eligibility for NDA, CDS, AFCAT, SSC GD, Agniveer in one click — all exams instant.</div><a href="https://rajdailytools.in/defence-exam-eligibility-checker-2026.html" class="rel-btn">Use Tool <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a></div>
+      <div class="rel-card rev"><div class="rel-ico">📏</div><div class="rel-title">Army Height Checker</div><div class="rel-desc">Check height eligibility region-wise — NE relaxation, Gorkha, tribal areas covered.</div><a href="https://rajdailytools.in/army-height-checker-region-wise-2026.html" class="rel-btn">Use Tool <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a></div>
+      <div class="rel-card rev"><div class="rel-ico">👁️</div><div class="rel-title">Color Blindness Test</div><div class="rel-desc">Free Ishihara simulator — check color vision and army medical eye test eligibility.</div><a href="https://rajdailytools.in/color-blindness-test-online-free-2026.html" class="rel-btn">Use Tool <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a></div>
+      <div class="rel-card rev"><div class="rel-ico">📅</div><div class="rel-title">Running Planner</div><div class="rel-desc">Get a 60-day personalized running plan to reach Group I before your rally.</div><a href="https://rajdailytools.in/" class="rel-btn">Use Tool <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a></div>
+      <div class="rel-card rev"><div class="rel-ico">🏥</div><div class="rel-title">Army Medical Checker</div><div class="rel-desc">Check if your medical conditions affect army eligibility — flat foot, vision, hearing.</div><a href="https://rajdailytools.in/" class="rel-btn">Use Tool <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a></div>
+      <div class="rel-card rev"><div class="rel-ico">📊</div><div class="rel-title">Rally Analyzer</div><div class="rel-desc">Analyze upcoming rally dates, competition level, and expected cutoffs for your district.</div><a href="https://rajdailytools.in/" class="rel-btn">Use Tool <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a></div>
+      <div class="rel-card rev"><div class="rel-ico">💰</div><div class="rel-title">Army Pension Calculator</div><div class="rel-desc">Calculate expected pension by rank and years of service with current pay scales.</div><a href="https://rajdailytools.in/" class="rel-btn">Use Tool <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a></div>
+      <div class="rel-card rev"><div class="rel-ico">📚</div><div class="rel-title">Education Tools</div><div class="rel-desc">Explore all education and learning tools — free study helpers for every student.</div><a href="https://rajdailytools.in/education-tools-category.html" class="rel-btn">Browse All <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a></div>
+    </div>
+  </div>
+</section>
+
+<!-- DISCLAIMER -->
+<div class="disc">
+  <div class="w"><div class="disc-in">
+    <span style="font-size:20px">⚠️</span>
+    <div><strong>Disclaimer:</strong> This tool provides estimated merit calculation only based on official army scoring guidelines. Actual selection depends on official ARO cutoffs, number of vacancies, total candidates, medical fitness, and document verification. Cutoff ranges shown are historical estimates and may vary by rally. Always verify from the official Indian Army recruitment website: <strong>joinindianarmy.nic.in</strong></div>
+  </div></div>
+</div>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="w cta-in">
+    <div class="pill">🎖️ Know Your Final Score</div>
+    <h2>Calculate Your <em>Army Merit Score</em> Right Now</h2>
+    <p>Free, instant. Know exactly where you stand — and what you need to improve before the rally.</p>
+    <div class="cta-btns">
+      <a href="#calculator" class="btn-gold">🎯 Calculate Merit Now — Free</a>
+      <a href="https://rajdailytools.in/" class="btn-ghost">🏠 All Tools</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-inner">
+    <div class="ft-top">
+      <div class="ft-brand">
+        <div class="logo">
+          <div class="lb" style="width:34px;height:34px;border-radius:8px"><svg viewBox="0 0 24 24" style="width:16px;height:16px;fill:#fff"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+          <div><div class="ln">Raj<span>Daily</span>Tools</div><div class="ls" style="color:#475569">Free Tools for India</div></div>
+        </div>
+        <p class="ft-desc">Free online tools for Indian defence aspirants, government job seekers, and students. Built with care — updated regularly.</p>
+        <div class="ft-soc">
+          <a class="fts" href="#" title="YouTube">▶</a>
+          <a class="fts" href="#" title="Telegram">✈</a>
+          <a class="fts" href="#" title="Instagram">◎</a>
+        </div>
+      </div>
+      <div class="fc"><h4>Merit Tools</h4><ul>
+        <li><a href="#">Merit Calculator</a></li>
+        <li><a href="https://rajdailytools.in/army-running-score-predictor-1600m.html">Running Predictor</a></li>
+        <li><a href="#">Rally Analyzer</a></li>
+        <li><a href="#">Cutoff Tracker</a></li>
+      </ul></div>
+      <div class="fc"><h4>Army Tools</h4><ul>
+        <li><a href="https://rajdailytools.in/defence-exam-eligibility-checker-2026.html">Defence Eligibility</a></li>
+        <li><a href="https://rajdailytools.in/army-height-checker-region-wise-2026.html">Height Checker</a></li>
+        <li><a href="https://rajdailytools.in/color-blindness-test-online-free-2026.html">Eye Test</a></li>
+        <li><a href="#">Medical Checker</a></li>
+      </ul></div>
+      <div class="fc"><h4>Links</h4><ul>
+        <li><a href="https://rajdailytools.in/">Home</a></li>
+        <li><a href="https://rajdailytools.in/about.html">About</a></li>
+        <li><a href="https://rajdailytools.in/contact.html">Contact</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+      </ul></div>
+    </div>
+    <div class="ft-btm">
+      <span class="ft-cp">© 2026 RajDailyTools. All rights reserved. | Army Merit Score Calculator 2026</span>
+      <div class="ft-lnk"><a href="#">Privacy</a><a href="#">Disclaimer</a><a href="#">Contact</a></div>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================================================
+     MERIT CALCULATION ENGINE
+     ============================================================ -->
+<script>
+// ============================================================
+// MERIT DATA
+// ============================================================
+const CUTOFFS = {
+  gd:         { low:160, mid:172, safe:185, label:'Agniveer GD' },
+  clerk:      { low:165, mid:177, safe:190, label:'Agniveer Clerk/SKT' },
+  technical:  { low:168, mid:180, safe:193, label:'Agniveer Technical/NA' },
+  tradesman:  { low:155, mid:167, safe:180, label:'Agniveer Tradesman' },
+};
+
+const ZONES = [
+  { label:'Safe Zone',     min:185, max:300, chance:88, cls:'ct-safe', status:'✅ Highly Likely', strategy:'Focus on maintaining — verify documents, medical preparation.' },
+  { label:'Competitive',   min:170, max:184, chance:62, cls:'ct-ok',   status:'⚠️ Good Chance',  strategy:'Improve written by 10+ marks or ensure all bonus marks claimed.' },
+  { label:'Borderline',    min:155, max:169, chance:35, cls:'ct-ok',   status:'⚠️ Risky',        strategy:'Need 15–20 more marks. Focus on beam + written + check bonuses.' },
+  { label:'Risk Zone',     min:0,   max:154, chance:12, cls:'ct-risk', status:'❌ High Risk',    strategy:'Significant improvement needed. Reassess beam, written, and bonus marks.' },
+];
+
+const BEAM_TABLE = { 40:10, 33:9, 27:8, 21:7, 16:6, 0:0 };
+
+let lastResult = {};
+
+// ============================================================
+// CALCULATE
+// ============================================================
+function calculate() {
+  const runMarks     = document.getElementById('runMarks').value;
+  const beamMarks    = document.getElementById('beamMarks').value;
+  const physExtra    = document.getElementById('physExtra').value;
+  const writtenRaw   = document.getElementById('writtenMarks').value;
+  const post         = document.getElementById('post').value;
+  const nccBonus     = parseInt(document.getElementById('nccBonus').value) || 0;
+  const sportsBonus  = parseInt(document.getElementById('sportsBonus').value) || 0;
+  const sonBonus     = parseInt(document.getElementById('sonBonus').value) || 0;
+
+  // Validation
+  if (!runMarks) { alert('Please select your running group / marks.'); return; }
+  if (!beamMarks) { alert('Please select your beam / pull-up marks.'); return; }
+  if (writtenRaw === '' || isNaN(parseInt(writtenRaw))) { alert('Please enter your written exam marks.'); return; }
+
+  const written = Math.max(0, Math.min(100, parseInt(writtenRaw)));
+  const run     = parseInt(runMarks);
+  const beam    = parseInt(beamMarks);
+
+  // Fail checks
+  if (run === 0) {
+    showFailAlert('Running Fail ❌', 'Running fail hone par rally se immediately disqualify ho jaate hain. Merit calculate nahi hoti. Pehle running Group I ya Group II tak laana zaroori hai.', '#ef4444');
+    return;
+  }
+  if (beam === 0) {
+    showFailAlert('Beam Fail ❌', 'Pull-ups mein minimum 6 required hain. Below 6 pe fail ho jaate hain. Pehle beam improve karo — 8 weeks mein 6 pull-ups achieve karna realistic hai.', '#ef4444');
+    return;
+  }
+  if (physExtra === 'fail') {
+    showFailAlert('9-Foot Ditch / Balance Beam Fail ❌', 'Qualifying events fail karne par selection process se bahar ho jaate hain. Ye events practice se easy hain — do these regularly before the rally.', '#f59e0b');
+    return;
+  }
+
+  const totalBonus = nccBonus + sportsBonus + sonBonus;
+  const totalScore = run + beam + written + totalBonus;
+
+  const cutoff = CUTOFFS[post] || CUTOFFS.gd;
+
+  // Zone detection
+  const zone = ZONES.find(z => totalScore >= z.min && totalScore <= z.max) || ZONES[ZONES.length-1];
+
+  // Fine chance calculation
+  let chance = zone.chance;
+  if (totalScore >= cutoff.safe) chance = Math.min(95, 85 + Math.floor((totalScore - cutoff.safe)/5)*2);
+  else if (totalScore >= cutoff.mid) chance = Math.round(55 + (totalScore - cutoff.mid)/(cutoff.safe - cutoff.mid) * 30);
+  else if (totalScore >= cutoff.low) chance = Math.round(25 + (totalScore - cutoff.low)/(cutoff.mid - cutoff.low) * 30);
+  else chance = Math.max(5, Math.round(25 * (totalScore / cutoff.low)));
+
+  const gapToSafe = Math.max(0, cutoff.safe - totalScore);
+  const gapToCutoff = Math.max(0, cutoff.low - totalScore);
+
+  // Verdict
+  let verdict, verdictCls;
+  if (totalScore >= cutoff.safe) { verdict = '🏆 Safe Zone'; verdictCls = 'mhv-safe'; }
+  else if (totalScore >= cutoff.mid) { verdict = '✅ Competitive'; verdictCls = 'mhv-ok'; }
+  else if (totalScore >= cutoff.low) { verdict = '⚠️ Borderline'; verdictCls = 'mhv-ok'; }
+  else { verdict = '❌ Risk Zone'; verdictCls = 'mhv-risk'; }
+
+  lastResult = { run, beam, written, totalBonus, totalScore, chance, verdict, verdictCls, zone, cutoff, gapToSafe, gapToCutoff, post, nccBonus, sportsBonus, sonBonus };
+
+  renderResult(lastResult);
+}
+
+function showFailAlert(title, msg) {
+  const area = document.getElementById('resultArea');
+  area.style.display = 'block';
+  area.innerHTML = `<div class="merit-hero" style="background:linear-gradient(135deg,#450a0a,#7f1d1d)">
+    <div class="mh-inner">
+      <div style="font-size:56px;margin-bottom:12px">❌</div>
+      <div style="font-family:var(--fd);font-size:22px;font-weight:800;color:#fca5a5;margin-bottom:10px">${title}</div>
+      <div style="font-size:14px;color:rgba(255,255,255,.75);line-height:1.75;max-width:460px;margin:0 auto">${msg}</div>
+      <button onclick="resetTool()" style="margin-top:20px;padding:12px 28px;background:rgba(255,255,255,.12);color:#fff;font-family:var(--fd);font-weight:700;font-size:14px;border-radius:9px;border:1.5px solid rgba(255,255,255,.2);cursor:pointer">↺ Try Again</button>
+    </div>
+  </div>`;
+  area.style.animation = 'none'; area.offsetHeight; area.style.animation = 'resultIn .42s var(--ease) both';
+  setTimeout(()=>area.scrollIntoView({behavior:'smooth',block:'nearest'}),140);
+}
+
+function renderResult(d) {
+  const { run, beam, written, totalBonus, totalScore, chance, verdict, verdictCls, zone, cutoff, gapToSafe, gapToCutoff } = d;
+
+  // Re-inject full result HTML (in case fail state replaced it)
+  document.getElementById('resultArea').innerHTML = `
+    <div class="merit-hero">
+      <div class="mh-inner">
+        <div class="mh-label">Your Final Army Merit Score</div>
+        <div><span class="mh-score" id="mhScore">—</span><span class="mh-denom"> / 300</span></div>
+        <div class="mh-verdict" id="mhVerdict">—</div>
+        <div class="mh-meta">
+          <div class="mhm"><div class="mhm-val" id="mhmRun">—</div><div class="mhm-key">Running<br>Marks</div></div>
+          <div class="mhm"><div class="mhm-val" id="mhmBeam">—</div><div class="mhm-key">Beam<br>Marks</div></div>
+          <div class="mhm"><div class="mhm-val" id="mhmWritten">—</div><div class="mhm-key">Written<br>Marks</div></div>
+          <div class="mhm"><div class="mhm-val" id="mhmBonus">—</div><div class="mhm-key">Bonus<br>Marks</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="chance-card">
+      <div class="cc-head"><div class="cc-title">🎯 Selection Probability</div><div class="cc-pct" id="ccPct">—</div></div>
+      <div class="chance-track"><div class="chance-fill" id="chanceFill" style="width:0%"></div></div>
+      <div class="chance-zones"><span>0%</span><span>Weak</span><span>Average</span><span>Strong</span><span>Safe</span><span>100%</span></div>
+      <div class="cutoff-row">
+        <div class="cut-item"><div class="cut-val" id="cutYour">—</div><div class="cut-label">Your Score</div></div>
+        <div class="cut-divider"></div>
+        <div class="cut-item"><div class="cut-val" id="cutEst">—</div><div class="cut-label">Est. Cutoff</div></div>
+        <div class="cut-divider"></div>
+        <div class="cut-item"><div class="cut-val" id="cutSafe">—</div><div class="cut-label">Safe Zone</div></div>
+        <div class="cut-divider"></div>
+        <div class="cut-item"><div class="cut-val" id="cutGap" style="color:var(--blue)">—</div><div class="cut-label">Gap to Safe</div></div>
+      </div>
+      <div class="need-hint" id="needHint"><svg viewBox="0 0 24 24" style="width:16px;height:16px;fill:none;stroke-width:2;flex-shrink:0;margin-top:2px"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg><div id="needText">—</div></div>
+    </div>
+    <div class="breakdown-card">
+      <div class="bk-title">📊 Score Breakdown</div>
+      <div id="bkRows"></div>
+      <div class="bk-total-row"><span class="bkt-label">Total Merit Score</span><span class="bkt-val" id="bktTotal">—</span></div>
+    </div>
+    <div style="font-family:var(--fd);font-size:13.5px;font-weight:700;color:var(--ink);margin-bottom:12px">📋 Merit Zone Comparison</div>
+    <div class="comp-wrap"><table class="comp-tbl"><thead><tr><th>Zone</th><th>Score Range</th><th>Selection Chance</th><th>Status</th><th>Strategy</th></tr></thead><tbody id="compBody"></tbody></table></div>
+    <div style="font-family:var(--fd);font-size:13.5px;font-weight:700;color:var(--ink);margin-bottom:12px">💡 Smart Improvement Strategy</div>
+    <div class="strat-grid" id="stratGrid"></div>
+    <div class="action-row"><button class="copy-btn" id="copyBtn" onclick="copyResult()">📋 Copy My Result</button></div>`;
+
+  // Fill values
+  document.getElementById('mhScore').textContent = totalScore;
+  const vEl = document.getElementById('mhVerdict');
+  vEl.className = 'mh-verdict ' + verdictCls; vEl.textContent = verdict;
+  document.getElementById('mhmRun').textContent     = run;
+  document.getElementById('mhmBeam').textContent    = beam;
+  document.getElementById('mhmWritten').textContent = written;
+  document.getElementById('mhmBonus').textContent   = '+' + totalBonus;
+
+  // Chance meter
+  const ccPct = document.getElementById('ccPct');
+  ccPct.textContent = chance + '%';
+  ccPct.className = 'cc-pct ' + (chance>=65?'hi':chance>=35?'md':'lo');
+  const cf = document.getElementById('chanceFill');
+  cf.className = 'chance-fill ' + (chance>=65?'cf-hi':chance>=35?'cf-md':'cf-lo');
+  cf.style.width = '0%';
+  setTimeout(()=>{ cf.style.width = chance+'%'; }, 200);
+
+  // Cutoff row
+  document.getElementById('cutYour').textContent = totalScore;
+  document.getElementById('cutEst').textContent  = cutoff.low + '–' + cutoff.mid;
+  document.getElementById('cutSafe').textContent = cutoff.safe + '+';
+  document.getElementById('cutGap').textContent  = gapToSafe > 0 ? '-' + gapToSafe : '✓ Safe';
+
+  // Need hint
+  const nh = document.getElementById('needHint');
+  const nt = document.getElementById('needText');
+  if (gapToSafe <= 0) {
+    nh.className = 'need-hint nh-green';
+    nt.innerHTML = `<strong>🏆 Safe Zone!</strong> Aapka score (${totalScore}) safe zone (${cutoff.safe}+) se upar hai. Selection chance bahut strong hai. Ab focus karo: (1) Medical preparation, (2) Documents ready rakhna, (3) Physical fitness maintain karna.`;
+  } else if (gapToSafe <= 20) {
+    nh.className = 'need-hint nh-amber';
+    nt.innerHTML = `<strong>⚠️ Close!</strong> Safe zone ke liye sirf <strong>${gapToSafe} more marks</strong> chahiye. Beam mein 1–2 extra pull-ups (7–14 marks) ya written mein thoda improvement kaafi hoga. Bonus marks bhi check karo.`;
+  } else {
+    nh.className = 'need-hint nh-red';
+    nt.innerHTML = `<strong>❌ Improvement Needed:</strong> Safe zone ke liye <strong>${gapToSafe} marks</strong> ka gap hai. Strategy: (1) Beam maximize karo (up to 24 marks gain), (2) Written mein 15–20 marks improve karo, (3) All bonus marks claim karo. Rally se pehle itna improve karna realistic hai.`;
+  }
+
+  // Breakdown bars
+  const maxScore = 200 + totalBonus;
+  const bkData = [
+    { ico:'🏃', label:'Running', val:run, max:60, cls:'bb-g' },
+    { ico:'💪', label:'Beam (Pull-ups)', val:beam, max:40, cls:'bb-b' },
+    { ico:'📝', label:'Written (CEE)', val:written, max:100, cls:'bb-p' },
+    { ico:'🏅', label:'Bonus Marks', val:totalBonus, max:45, cls:'bb-t' },
+  ];
+  document.getElementById('bkRows').innerHTML = bkData.map(b=>`
+    <div class="bk-row">
+      <span class="bk-ico">${b.ico}</span>
+      <span class="bk-label">${b.label}</span>
+      <div class="bk-bar-wrap"><div class="bk-bar ${b.cls}" style="width:0%;--bw:${Math.round(b.val/b.max*100)}%"></div></div>
+      <span class="bk-val">${b.val} / ${b.max}</span>
+    </div>`).join('');
+  document.getElementById('bktTotal').textContent = totalScore + ' / 300';
+  setTimeout(()=>document.querySelectorAll('.bk-bar').forEach(b=>{ const w=b.style.getPropertyValue('--bw'); if(w) b.style.width=w; }),200);
+
+  // Comparison table
+  document.getElementById('compBody').innerHTML = ZONES.map(z=>{
+    const isYou = totalScore >= z.min && totalScore <= z.max;
+    return `<tr class="${isYou?'hl':''}">
+      <td><span class="ct ${z.cls}">${z.label}</span>${isYou?' <span class="ct ct-you">← You</span>':''}</td>
+      <td>${z.min}–${z.max===300?'300+':z.max}</td>
+      <td>${z.chance}%</td>
+      <td>${z.status}</td>
+      <td style="font-size:12px;color:var(--ink3)">${z.strategy}</td>
+    </tr>`;
+  }).join('');
+
+  // Strategy cards
+  const strategies = buildStrategy(d);
+  document.getElementById('stratGrid').innerHTML = strategies.map(s=>`
+    <div class="strat-card">
+      <div class="sc-head"><span class="sc-ico">${s.ico}</span><div class="sc-title">${s.title}</div></div>
+      <div class="sc-body">${s.body}</div>
+    </div>`).join('');
+
+  const area = document.getElementById('resultArea');
+  area.style.display = 'block';
+  area.style.animation = 'none'; area.offsetHeight; area.style.animation = 'resultIn .42s var(--ease) both';
+  setTimeout(()=>area.scrollIntoView({behavior:'smooth',block:'nearest'}),140);
+}
+
+function buildStrategy(d) {
+  const s = [];
+  // Running
+  if (d.run < 60) s.push({ ico:'🏃', title:'Running: Reach Group I', body:`Abhi <strong>Group II (48 marks)</strong> mein ho. Group I ke liye 10–15 seconds kam karo = <strong>12 extra marks</strong>. Interval training + breathing control. 4 weeks dedicated practice se possible hai.` });
+  else s.push({ ico:'🏃', title:'Running: Group I — Maintain!', body:`<strong>Group I (60 marks)</strong> — maximum running marks hain. Iski maintenance karo — rally se pehle easy runs keep karo. Zyada energy beam aur written pe lagao.` });
+  // Beam
+  if (d.beam < 40) {
+    const pulls = {40:10,33:9,27:8,21:7,16:6}[d.beam]||0;
+    const toMax = 40 - d.beam;
+    s.push({ ico:'💪', title:`Beam: ${pulls} Pulls → 10 for ${toMax} More Marks`, body:`Currently <strong>${d.beam} marks (${pulls} pull-ups)</strong>. 10 pull-ups = 40 marks = <strong>${toMax} extra marks</strong>. Daily bar hangs + negative pull-ups practice. 6 weeks consistent → most candidates reach 10.` });
+  } else {
+    s.push({ ico:'💪', title:'Beam: Maximum 40 Marks!', body:`<strong>10 pull-ups = 40/40 marks!</strong> Perfect score. Focus ab written aur bonus pe karo — wahan aur gain possible hai.` });
+  }
+  // Written
+  const writGap = 85 - d.written;
+  if (writGap > 0) s.push({ ico:'📝', title:`Written: ${d.written}/100 → Target 85+`, body:`Written mein <strong>${writGap} marks ka gap</strong> hai target se. Har 10 marks gain = 5% selection chance increase. GK + Maths + Science + English — daily 2 hours, 6 weeks = 15–20 marks improve realistic hai.` });
+  else s.push({ ico:'📝', title:'Written: Excellent Score!', body:`<strong>${d.written}/100 — excellent written performance!</strong> Isko maintain karo aur revision karo. Focus ab physical components aur medical preparation pe.` });
+  // Bonus
+  if (d.totalBonus < 30) s.push({ ico:'🏅', title:'Claim Remaining Bonus Marks', body:`Abhi <strong>${d.totalBonus} bonus marks</strong> hain. Maximum possible ~45 marks. Check karo: NCC certificate (up to +15), sports certificate (up to +10), Son of Soldier (+20). Documents ready rakhna zaroori hai rally pe.` });
+  else s.push({ ico:'🏅', title:'Bonus Marks Well Claimed!', body:`<strong>${d.totalBonus} bonus marks</strong> — very good! Ye aapka selection chance significantly improve karte hain. Rally pe sab original documents le ke jaana zaroor.` });
+  return s.slice(0, 4);
+}
+
+function resetTool() {
+  ['runMarks','beamMarks','writtenMarks','post','nccBonus','sportsBonus','sonBonus','category','physExtra'].forEach(id=>{
+    const el = document.getElementById(id);
+    if (el) el.value = el.tagName==='SELECT' ? (id==='post'?'gd':id==='physExtra'?'pass':id==='category'?'general':'') : '';
+  });
+  const area = document.getElementById('resultArea');
+  area.style.display = 'none';
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function copyResult() {
+  const d = lastResult;
+  if (!d.totalScore) return;
+  const lines = [
+    'Army Merit Score Result — RajDailyTools',
+    `Post: ${CUTOFFS[d.post]?.label || 'Agniveer GD'}`,
+    `Running: ${d.run}/60 | Beam: ${d.beam}/40 | Written: ${d.written}/100 | Bonus: +${d.totalBonus}`,
+    `Total Merit Score: ${d.totalScore}/300`,
+    `Selection Chance: ${d.chance}%`,
+    `Verdict: ${d.verdict}`,
+    `Gap to Safe Zone: ${d.gapToSafe > 0 ? d.gapToSafe + ' marks needed' : 'Already in safe zone!'}`,
+    '',
+    'NOTE: Estimated prediction — verify from joinindianarmy.nic.in',
+    'Tool: rajdailytools.in/army-merit-score-calculator.html'
+  ];
+  navigator.clipboard?.writeText(lines.join('\n')).then(()=>{
+    const btn = document.getElementById('copyBtn');
+    if (!btn) return;
+    btn.classList.add('copied'); btn.textContent='✅ Copied!';
+    setTimeout(()=>{ btn.classList.remove('copied'); btn.textContent='📋 Copy My Result'; },2200);
+  });
+}
+
+// ============================================================
+// FAQ / NAV / SCROLL
+// ============================================================
+function tFAQ(el) {
+  const fq = el.closest('.fq');
+  const isOpen = fq.classList.contains('open');
+  document.querySelectorAll('.fq').forEach(f=>f.classList.remove('open'));
+  if (!isOpen) fq.classList.add('open');
+}
+function oD(){ document.getElementById('drw').classList.add('on'); document.getElementById('dov').classList.add('on'); }
+function cD(){ document.getElementById('drw').classList.remove('on'); document.getElementById('dov').classList.remove('on'); }
+window.addEventListener('scroll',()=>{ document.getElementById('btt').classList.toggle('on',window.scrollY>380); });
+const obs = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); obs.unobserve(e.target); } });
+},{threshold:0.1});
+document.querySelectorAll('.rev').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
