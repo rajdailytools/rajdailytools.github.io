@@ -1,0 +1,1144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Army Running Score Predictor (1600m) – Predict Your Final Score & Selection Chance | RajDailyTools</title>
+<meta name="description" content="Predict your Army 1600m running score and selection chance instantly. Enter your time to see Group, marks, and improvement target. Free tool for Agniveer & Army Rally 2026.">
+<meta name="keywords" content="army running score predictor,army running score predictor 1600m,agniveer running score prediction,army running marks predictor group 1 group 2,1600m running score calculator army,army running performance predictor,army running selection chance calculator,army running score estimation tool,agniveer running marks prediction 2026,army rally running score predictor online,running time to marks conversion army,army running prediction tool india,army running score check online,army running score calculator india,army running marks estimation,army running performance calculator,army running score conversion tool,army running probability calculator,army running marks prediction tool,army running score system india,army running score comparison,army running me kitne marks milte hai,group 1 group 2 kya hota hai,army running ka score kaise nikalte hai,1600m running me kitna time lena chahiye,army running me selection ka chance kitna hota hai,running improve kaise kare army ke liye,army running test ka score system kya hai">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://rajdailytools.in/army-running-score-predictor-1600m.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#2563eb;--blue-d:#1d4ed8;--blue-l:#3b82f6;
+  --blue-xl:#eff6ff;--blue-s:#dbeafe;
+  --amber:#f59e0b;--green:#10b981;--red:#ef4444;
+  --purple:#8b5cf6;--teal:#14b8a6;--orange:#f97316;
+  --green-xl:#f0fdf4;--green-s:#bbf7d0;
+  --red-xl:#fef2f2;--red-s:#fecaca;
+  --amber-xl:#fffbeb;--amber-s:#fde68a;
+  --purple-xl:#faf5ff;--purple-s:#ddd6fe;
+  --ink:#0f172a;--ink2:#334155;--ink3:#64748b;--ink4:#94a3b8;
+  --line:#e2e8f0;--surf:#f8fafc;--white:#fff;
+  --s1:0 1px 3px rgba(15,23,42,.06),0 1px 2px rgba(15,23,42,.04);
+  --s2:0 4px 16px rgba(15,23,42,.08),0 2px 6px rgba(15,23,42,.04);
+  --s3:0 12px 40px rgba(15,23,42,.11),0 3px 10px rgba(15,23,42,.06);
+  --s4:0 24px 64px rgba(15,23,42,.13),0 6px 20px rgba(15,23,42,.07);
+  --sb:0 8px 32px rgba(37,99,235,.20);
+  --fd:'Sora',sans-serif;--fb:'DM Sans',sans-serif;
+  --ease:cubic-bezier(.4,0,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);color:var(--ink);background:var(--white);overflow-x:hidden;-webkit-font-smoothing:antialiased;line-height:1.6}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+button{cursor:pointer;border:none;background:none;font-family:var(--fb)}
+.w{max-width:1180px;margin:0 auto;padding:0 24px}
+.wa{max-width:860px;margin:0 auto;padding:0 24px}
+select,input{appearance:none;-webkit-appearance:none}
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+@keyframes resultIn{from{opacity:0;transform:translateY(18px) scale(.97)}to{opacity:1;transform:none}}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.6}}
+@keyframes countUp{from{opacity:0;transform:scale(.7)}to{opacity:1;transform:scale(1)}}
+@keyframes barGrow{from{width:0}to{width:var(--target-w)}}
+.rev{opacity:0;transform:translateY(22px);transition:opacity .55s var(--ease),transform .55s var(--ease)}
+.rev.in{opacity:1;transform:none}
+
+/* ===== HEADER ===== */
+.hdr{position:sticky;top:0;z-index:999;background:rgba(255,255,255,.96);backdrop-filter:blur(20px);border-bottom:1px solid var(--line);box-shadow:var(--s1)}
+.hdi{display:flex;align-items:center;justify-content:space-between;height:66px}
+.logo{display:flex;align-items:center;gap:10px}
+.lb{width:36px;height:36px;background:var(--blue);border-radius:9px;display:flex;align-items:center;justify-content:center;box-shadow:var(--sb);flex-shrink:0}
+.lb svg{width:18px;height:18px;fill:#fff}
+.ln{font-family:var(--fd);font-size:19px;font-weight:800;color:var(--ink);line-height:1}
+.ln span{color:var(--blue)}
+.ls{font-size:10px;color:var(--ink4);letter-spacing:.04em}
+nav.dn{display:flex;align-items:center;gap:2px}
+nav.dn a{font-size:13.5px;font-weight:500;color:var(--ink2);padding:7px 13px;border-radius:8px;transition:.2s}
+nav.dn a:hover{color:var(--blue);background:var(--blue-xl)}
+.hcta{background:var(--blue);color:#fff;font-family:var(--fd);font-weight:600;font-size:13px;padding:8px 18px;border-radius:8px;box-shadow:var(--sb);transition:.2s;display:inline-block}
+.hcta:hover{background:var(--blue-d);transform:translateY(-1px)}
+.brg{display:none;flex-direction:column;gap:4.5px;padding:8px;border-radius:8px}
+.brg span{display:block;width:20px;height:2px;background:var(--ink);border-radius:2px}
+.dov{display:none;position:fixed;inset:0;background:rgba(15,23,42,.45);z-index:1040;backdrop-filter:blur(3px)}
+.dov.on{display:block}
+.drw{position:fixed;top:0;right:-100%;width:270px;height:100vh;background:#fff;z-index:1050;padding:22px;box-shadow:var(--s4);transition:right .32s var(--ease);overflow-y:auto}
+.drw.on{right:0}
+.dh{display:flex;align-items:center;justify-content:space-between;margin-bottom:26px}
+.dx{width:33px;height:33px;border-radius:7px;background:var(--surf);display:flex;align-items:center;justify-content:center;color:var(--ink3);font-size:17px}
+nav.mn{display:flex;flex-direction:column;gap:3px}
+nav.mn a{display:block;font-size:14px;font-weight:500;color:var(--ink2);padding:11px 13px;border-radius:8px;transition:.2s}
+nav.mn a:hover{color:var(--blue);background:var(--blue-xl)}
+
+/* ===== HERO ===== */
+.hero{position:relative;overflow:hidden;background:linear-gradient(150deg,#ebf4ff 0%,#fff 46%,#f0fdf4 100%);padding:68px 0 80px}
+.hero::before{content:'';position:absolute;top:-140px;right:-180px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(37,99,235,.08) 0%,transparent 68%);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-80px;left:-100px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(16,185,129,.05) 0%,transparent 68%);pointer-events:none}
+.blob{position:absolute;border-radius:50%;pointer-events:none;animation:float 6s ease-in-out infinite}
+.b1{width:13px;height:13px;background:rgba(37,99,235,.18);top:22%;right:14%;animation-delay:0s}
+.b2{width:9px;height:9px;background:rgba(16,185,129,.22);top:58%;right:26%;animation-delay:2.2s}
+.b3{width:11px;height:11px;background:rgba(245,158,11,.18);top:36%;right:6%;animation-delay:4s}
+.bc{display:flex;align-items:center;gap:7px;font-size:12.5px;color:var(--ink3);margin-bottom:24px;position:relative;z-index:1;flex-wrap:wrap}
+.bc a{color:var(--blue);font-weight:600}
+.pill{display:inline-flex;align-items:center;gap:7px;font-family:var(--fd);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);background:var(--blue-xl);padding:5px 14px;border-radius:100px;margin-bottom:18px}
+.pill::before{content:'';width:6px;height:6px;background:var(--blue);border-radius:50%}
+.hero-inner{position:relative;z-index:1;max-width:700px;animation:fadeUp .5s ease both}
+.hero h1{font-family:var(--fd);font-size:clamp(26px,4.5vw,50px);font-weight:800;line-height:1.1;color:var(--ink);margin-bottom:14px}
+.hero h1 span{color:var(--blue)}
+.hero-sub{font-size:16px;color:var(--ink3);line-height:1.8;margin-bottom:22px;max-width:560px}
+.hero-chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.chip{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;padding:6px 14px;border-radius:100px;background:#fff;border:1.5px solid var(--line);color:var(--ink2);box-shadow:var(--s1);transition:.22s}
+.chip:hover{border-color:var(--blue);color:var(--blue);transform:translateY(-1px)}
+.hero-meta{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.upd{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:700;color:var(--blue);background:var(--blue-xl);padding:6px 14px;border-radius:100px;border:1.5px solid var(--blue-s)}
+.hmi{font-size:13px;color:var(--ink3);font-weight:500}
+
+/* ===== TOOL CARD ===== */
+.tool-sec{background:var(--surf);padding:80px 0}
+.tool-wrap{max-width:860px;margin:0 auto}
+.tool-card{background:#fff;border:1.5px solid var(--line);border-radius:28px;overflow:hidden;box-shadow:var(--s4)}
+.tool-hdr{background:linear-gradient(135deg,#1d4ed8 0%,#2563eb 55%,#3b82f6 100%);padding:32px 40px;position:relative;overflow:hidden}
+.tool-hdr::before{content:'';position:absolute;top:-60px;right:-60px;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,.07)}
+.tool-hdr::after{content:'';position:absolute;bottom:-40px;left:-40px;width:180px;height:180px;border-radius:50%;background:rgba(255,255,255,.04)}
+.th{position:relative;z-index:1}
+.th h2{font-family:var(--fd);font-size:21px;font-weight:800;color:#fff;margin-bottom:6px}
+.th p{font-size:14px;color:rgba(255,255,255,.82);line-height:1.65}
+.th-badges{display:flex;flex-wrap:wrap;gap:9px;margin-top:14px}
+.thb{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:rgba(255,255,255,.9);background:rgba(255,255,255,.13);padding:5px 12px;border-radius:100px}
+.tool-body{padding:36px 40px}
+
+/* ===== FORM ELEMENTS ===== */
+.sec-divider{font-family:var(--fd);font-size:12px;font-weight:700;color:var(--ink3);text-transform:uppercase;letter-spacing:.08em;padding:10px 0 4px;border-top:1px solid var(--line);margin:6px 0 16px;display:flex;align-items:center;gap:8px}
+.sec-divider::after{content:'';flex:1;height:1px;background:var(--line)}
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:18px}
+.fgrid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:18px}
+.fld{display:flex;flex-direction:column;gap:8px}
+.flbl{font-size:13px;font-weight:700;color:var(--ink2)}
+.flbl span{font-size:11px;font-weight:500;color:var(--ink4);margin-left:5px;background:var(--surf);padding:2px 7px;border-radius:5px;border:1px solid var(--line)}
+.finp,.fsel{padding:13px 16px;font-size:15px;color:var(--ink);background:#fff;border:1.5px solid var(--line);border-radius:10px;outline:none;transition:.22s;font-family:var(--fb);width:100%}
+.finp:focus,.fsel:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(37,99,235,.10)}
+.fsel{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2364748b' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:42px}
+.time-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.time-sep{display:flex;align-items:flex-end;padding-bottom:14px;font-family:var(--fd);font-size:18px;font-weight:800;color:var(--ink3);justify-content:center}
+.hint-box{display:flex;align-items:flex-start;gap:9px;font-size:13px;color:var(--ink2);background:var(--blue-xl);border:1.5px solid var(--blue-s);border-radius:10px;padding:11px 14px;margin-bottom:18px;line-height:1.65}
+.hint-box svg{width:16px;height:16px;stroke:var(--blue);fill:none;stroke-width:2;flex-shrink:0;margin-top:2px}
+.btn-row{display:flex;gap:12px}
+.cvt-btn{flex:1;padding:15px;background:linear-gradient(135deg,var(--blue) 0%,#1e40af 100%);color:#fff;font-family:var(--fd);font-weight:800;font-size:15px;border-radius:11px;box-shadow:var(--sb);transition:all .25s var(--ease);display:flex;align-items:center;justify-content:center;gap:9px}
+.cvt-btn:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(37,99,235,.30)}
+.rst-btn{padding:15px 22px;background:var(--surf);color:var(--ink2);font-family:var(--fd);font-weight:700;font-size:14px;border-radius:11px;border:1.5px solid var(--line);transition:.22s;display:flex;align-items:center;gap:7px}
+.rst-btn:hover{border-color:var(--blue);color:var(--blue);background:var(--blue-xl)}
+
+/* ===== RESULT ===== */
+#resultArea{display:none;margin-top:28px;animation:resultIn .42s var(--ease) both}
+
+/* Big Score Display */
+.score-display{background:linear-gradient(135deg,#0f172a 0%,#1e3a8a 100%);border-radius:24px;padding:32px;text-align:center;margin-bottom:20px;position:relative;overflow:hidden}
+.score-display::before{content:'';position:absolute;top:-60px;right:-60px;width:250px;height:250px;border-radius:50%;background:rgba(255,255,255,.05)}
+.score-display::after{content:'';position:absolute;bottom:-40px;left:-40px;width:180px;height:180px;border-radius:50%;background:rgba(59,130,246,.08)}
+.sd-inner{position:relative;z-index:1}
+.sd-label{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:6px}
+.sd-score{font-family:var(--fd);font-size:72px;font-weight:800;line-height:1;color:#fff;animation:countUp .5s var(--ease) both}
+.sd-unit{font-size:22px;color:rgba(255,255,255,.5);font-weight:600}
+.sd-group{display:inline-flex;align-items:center;gap:8px;font-family:var(--fd);font-size:14px;font-weight:700;padding:6px 18px;border-radius:100px;margin-top:12px}
+.sd-group.g1{background:rgba(16,185,129,.25);color:#6ee7b7;border:1px solid rgba(16,185,129,.3)}
+.sd-group.g2{background:rgba(245,158,11,.22);color:#fcd34d;border:1px solid rgba(245,158,11,.3)}
+.sd-group.fail{background:rgba(239,68,68,.22);color:#fca5a5;border:1px solid rgba(239,68,68,.3)}
+.sd-meta{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:20px}
+.sd-m{background:rgba(255,255,255,.08);border-radius:12px;padding:13px;text-align:center}
+.sd-m-val{font-family:var(--fd);font-size:20px;font-weight:800;color:#fff;margin-bottom:2px}
+.sd-m-key{font-size:11px;color:rgba(255,255,255,.58);font-weight:600}
+
+/* Selection Chance Meter */
+.chance-card{background:#fff;border:1.5px solid var(--line);border-radius:18px;padding:24px;margin-bottom:20px;box-shadow:var(--s2)}
+.cc-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;flex-wrap:wrap;gap:10px}
+.cc-title{font-family:var(--fd);font-size:15px;font-weight:800;color:var(--ink)}
+.cc-pct{font-family:var(--fd);font-size:32px;font-weight:800}
+.cc-pct.high{color:var(--green)}
+.cc-pct.mid{color:var(--amber)}
+.cc-pct.low{color:var(--red)}
+.chance-bar-wrap{position:relative;height:20px;background:var(--line);border-radius:100px;overflow:hidden;margin-bottom:10px}
+.chance-bar-fill{height:100%;border-radius:100px;transition:width 1.4s var(--ease)}
+.cb-high{background:linear-gradient(90deg,#059669,#10b981,#34d399)}
+.cb-mid{background:linear-gradient(90deg,#d97706,#f59e0b,#fcd34d)}
+.cb-low{background:linear-gradient(90deg,#dc2626,#ef4444,#f87171)}
+.chance-zones{display:flex;justify-content:space-between;font-size:11px;color:var(--ink4);font-weight:600;margin-top:6px}
+.improve-hint{display:flex;align-items:flex-start;gap:10px;background:var(--amber-xl);border:1.5px solid var(--amber-s);border-radius:12px;padding:13px 15px;margin-top:14px;font-size:13.5px;color:var(--ink2);line-height:1.65}
+.improve-hint svg{width:16px;height:16px;stroke:var(--amber);fill:none;stroke-width:2;flex-shrink:0;margin-top:2px}
+.improve-hint.good{background:var(--green-xl);border-color:var(--green-s)}
+.improve-hint.good svg{stroke:var(--green)}
+
+/* Performance breakdown */
+.perf-card{background:var(--surf);border:1.5px solid var(--line);border-radius:16px;padding:20px 22px;margin-bottom:20px}
+.perf-title{font-family:var(--fd);font-size:14px;font-weight:800;color:var(--ink);margin-bottom:16px}
+.perf-row{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.perf-label{font-size:13px;font-weight:700;color:var(--ink2);width:130px;flex-shrink:0}
+.perf-bar-wrap{flex:1;height:10px;background:var(--line);border-radius:6px;overflow:hidden}
+.perf-bar-fill{height:100%;border-radius:6px;transition:width 1.2s var(--ease)}
+.pbf-green{background:linear-gradient(90deg,var(--green),#059669)}
+.pbf-amber{background:linear-gradient(90deg,var(--amber),#d97706)}
+.pbf-red{background:linear-gradient(90deg,var(--red),#dc2626)}
+.perf-val{font-size:12px;font-weight:800;color:var(--ink3);width:50px;text-align:right;flex-shrink:0}
+
+/* Performance level badge */
+.perf-level{display:flex;align-items:center;justify-content:space-between;background:var(--surf);border:1.5px solid var(--line);border-radius:14px;padding:14px 18px;margin-bottom:20px;flex-wrap:wrap;gap:12px}
+.pl-left{display:flex;align-items:center;gap:12px}
+.pl-icon{font-size:32px}
+.pl-title{font-family:var(--fd);font-size:14px;font-weight:800;color:var(--ink)}
+.pl-sub{font-size:13px;color:var(--ink3);margin-top:3px}
+.pl-badge{display:inline-flex;align-items:center;gap:6px;font-family:var(--fd);font-size:13px;font-weight:700;padding:7px 16px;border-radius:100px}
+.plb-excellent{background:var(--green);color:#fff}
+.plb-good{background:#10b981;color:#fff}
+.plb-average{background:var(--amber);color:#fff}
+.plb-weak{background:var(--red);color:#fff}
+
+/* Comparison table */
+.comp-tbl{width:100%;border-collapse:collapse;font-size:13px;margin-bottom:20px}
+.comp-tbl thead th{background:linear-gradient(135deg,var(--blue),#1e40af);color:#fff;padding:12px 14px;text-align:left;font-family:var(--fd);font-size:12px;font-weight:700;letter-spacing:.03em}
+.comp-tbl tbody tr{border-bottom:1px solid var(--line);transition:.18s}
+.comp-tbl tbody tr.highlight-row{background:var(--blue-xl)!important}
+.comp-tbl tbody tr:hover{background:var(--surf)}
+.comp-tbl tbody td{padding:11px 14px;color:var(--ink2);vertical-align:middle}
+.ct-badge{display:inline-flex;font-size:11px;font-weight:700;padding:3px 8px;border-radius:100px}
+.ct-g1{background:var(--green-xl);color:var(--green);border:1px solid var(--green-s)}
+.ct-g2{background:var(--amber-xl);color:#92400e;border:1px solid var(--amber-s)}
+.ct-fl{background:var(--red-xl);color:var(--red);border:1px solid var(--red-s)}
+.ct-you{background:var(--blue);color:#fff}
+
+/* Action row */
+.action-row{display:flex;gap:10px;margin-top:4px}
+.copy-btn{flex:1;padding:12px;background:var(--green-xl);color:var(--green);border:1.5px solid var(--green-s);font-family:var(--fd);font-weight:700;font-size:13.5px;border-radius:9px;display:flex;align-items:center;justify-content:center;gap:7px;transition:.22s}
+.copy-btn:hover{background:var(--green);color:#fff}
+.copy-btn.copied{background:var(--green);color:#fff}
+
+/* ===== HOW TO USE ===== */
+.howto-sec{background:var(--surf);padding:72px 0}
+.howto-box{background:var(--amber-xl);border:2px solid var(--amber-s);border-radius:20px;padding:32px 36px;max-width:680px;margin:0 auto}
+.howto-title{display:flex;align-items:center;gap:10px;font-family:var(--fd);font-size:19px;font-weight:800;color:var(--ink);margin-bottom:18px}
+.howto-steps{display:flex;flex-direction:column;gap:11px}
+.hw-step{display:flex;align-items:flex-start;gap:12px;font-size:14px;color:var(--ink2);line-height:1.65}
+.sn{width:26px;height:26px;background:var(--amber);color:#fff;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex-shrink:0;margin-top:1px}
+
+/* ===== SCORING TABLE ===== */
+.tbl-sec{background:var(--white);padding:72px 0}
+.tbl-wr{overflow-x:auto;margin-bottom:24px}
+table.main-tbl{width:100%;border-collapse:collapse;font-size:13px;min-width:600px}
+table.main-tbl thead th{background:linear-gradient(135deg,var(--blue) 0%,#1e40af 100%);color:#fff;padding:14px 16px;text-align:left;font-family:var(--fd);font-size:12.5px;font-weight:700;letter-spacing:.03em}
+table.main-tbl tbody tr{border-bottom:1px solid var(--line);transition:.2s}
+table.main-tbl tbody tr:hover{background:var(--blue-xl)}
+table.main-tbl tbody td{padding:12px 16px;color:var(--ink2);vertical-align:middle}
+.tbadge{display:inline-flex;font-size:11px;font-weight:700;padding:3px 8px;border-radius:100px}
+.tbadge.g{background:var(--green-xl);color:var(--green);border:1px solid var(--green-s)}
+.tbadge.b{background:var(--blue-xl);color:var(--blue);border:1px solid var(--blue-s)}
+.tbadge.a{background:var(--amber-xl);color:#92400e;border:1px solid var(--amber-s)}
+.tbadge.r{background:var(--red-xl);color:var(--red);border:1px solid var(--red-s)}
+
+/* ===== TIPS ===== */
+.tips-sec{background:var(--surf);padding:72px 0}
+.tips-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.tip-card{background:var(--white);border:1.5px solid var(--line);border-radius:16px;padding:24px 20px;transition:.28s}
+.tip-card:hover{transform:translateY(-4px);box-shadow:var(--s3);border-color:var(--blue-s)}
+.tc-ico{font-size:32px;margin-bottom:12px}
+.tc-title{font-family:var(--fd);font-size:14px;font-weight:800;color:var(--ink);margin-bottom:8px}
+.tc-desc{font-size:13.5px;color:var(--ink3);line-height:1.72}
+.tc-list{display:flex;flex-direction:column;gap:7px;margin-top:10px}
+.tc-item{display:flex;align-items:flex-start;gap:8px;font-size:13px;color:var(--ink3);line-height:1.6}
+.tc-item::before{content:'✓';width:16px;height:16px;background:var(--green);color:#fff;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;flex-shrink:0;margin-top:3px}
+
+/* ===== STORY ===== */
+.story-sec{background:var(--white);padding:72px 0}
+.story-card{max-width:760px;margin:0 auto;background:linear-gradient(135deg,var(--blue-xl),#f0fdf4);border:1.5px solid var(--blue-s);border-radius:24px;padding:36px;box-shadow:var(--s3)}
+.story-ico{font-size:44px;margin-bottom:16px;display:block}
+.story-card h3{font-family:var(--fd);font-size:20px;font-weight:800;color:var(--ink);margin-bottom:14px}
+.story-card p{font-size:15px;color:var(--ink2);line-height:1.85}
+.story-card p+p{margin-top:11px}
+.story-highlight{display:inline-flex;align-items:center;gap:7px;background:var(--blue);color:#fff;font-family:var(--fd);font-size:13px;font-weight:700;padding:6px 14px;border-radius:100px;margin-top:14px}
+
+/* ===== ARTICLE ===== */
+.art-sec{background:var(--surf);padding:72px 0}
+.art-card{background:var(--white);border:1.5px solid var(--line);border-radius:22px;padding:40px;box-shadow:var(--s2)}
+.art-body h2{font-family:var(--fd);font-size:20px;font-weight:800;color:var(--ink);margin:26px 0 10px;line-height:1.3}
+.art-body h2:first-child{margin-top:0}
+.art-body p{font-size:15px;color:var(--ink3);line-height:1.85;margin-bottom:13px}
+.art-body ul{display:flex;flex-direction:column;gap:8px;margin:10px 0 14px}
+.art-body li{display:flex;align-items:flex-start;gap:10px;font-size:14.5px;color:var(--ink3);line-height:1.7}
+.art-body li::before{content:'✓';width:18px;height:18px;background:var(--blue);color:#fff;border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;flex-shrink:0;margin-top:3px}
+.art-body strong{color:var(--ink2);font-weight:700}
+.ibox{background:var(--blue-xl);border:1.5px solid var(--blue-s);border-radius:13px;padding:14px 18px;margin:14px 0;display:flex;gap:10px;font-size:14px;color:var(--ink2);line-height:1.7}
+.ibox svg{width:16px;height:16px;stroke:var(--blue);fill:none;stroke-width:2;flex-shrink:0;margin-top:2px}
+.ibox.g{background:var(--green-xl);border-color:var(--green-s)}.ibox.g svg{stroke:var(--green)}
+.ibox.a{background:var(--amber-xl);border-color:var(--amber-s)}.ibox.a svg{stroke:var(--amber)}
+.ibox.r{background:var(--red-xl);border-color:var(--red-s)}.ibox.r svg{stroke:var(--red)}
+
+/* ===== SEC HEADERS ===== */
+.sec-hd{text-align:center;margin-bottom:44px}
+.sec-h{font-family:var(--fd);font-size:clamp(22px,3.8vw,38px);font-weight:800;color:var(--ink);line-height:1.18;margin-bottom:10px}
+.sec-h span{color:var(--blue)}
+.sec-sub{font-size:15.5px;color:var(--ink3);line-height:1.75;max-width:500px;margin:0 auto}
+
+/* ===== FAQ ===== */
+.faq-sec{background:var(--surf);padding:72px 0}
+.fql{max-width:760px;margin:0 auto}
+.fq{background:#fff;border:1.5px solid var(--line);border-radius:13px;margin-bottom:10px;overflow:hidden}
+.fq-q{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;cursor:pointer;gap:14px;transition:.2s}
+.fq-q:hover{background:var(--blue-xl)}
+.fq-t{font-weight:600;font-size:15px;color:var(--ink);line-height:1.4}
+.fq-i{width:28px;height:28px;border-radius:50%;background:var(--blue-xl);color:var(--blue);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;transition:transform .28s,background .2s}
+.fq.open .fq-i{transform:rotate(45deg);background:var(--blue);color:#fff}
+.fq-a{max-height:0;overflow:hidden;transition:max-height .35s var(--ease)}
+.fq-ai{padding:0 22px 18px;font-size:14.5px;color:var(--ink3);line-height:1.78}
+.fq.open .fq-a{max-height:500px}
+
+/* ===== RELATED TOOLS ===== */
+.rel-sec{background:var(--white);padding:72px 0}
+.rel-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.rel-card{background:var(--surf);border:1.5px solid var(--line);border-radius:16px;padding:20px 18px;display:flex;flex-direction:column;gap:9px;transition:.28s}
+.rel-card:hover{transform:translateY(-5px);box-shadow:var(--s3);border-color:var(--blue-s)}
+.rel-card.featured{border-color:var(--blue-s);background:var(--blue-xl)}
+.rel-ico{font-size:26px}
+.rel-title{font-family:var(--fd);font-size:14px;font-weight:700;color:var(--ink)}
+.rel-desc{font-size:13px;color:var(--ink3);line-height:1.6;flex:1}
+.rel-btn{display:inline-flex;align-items:center;gap:6px;font-family:var(--fd);font-weight:700;font-size:13px;color:var(--blue);transition:.2s}
+.rel-btn:hover{gap:10px}
+.rel-btn svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2.5}
+
+/* ===== DISC / CTA / FOOTER ===== */
+.disc{background:var(--amber-xl);border-top:1px solid var(--amber-s);border-bottom:1px solid var(--amber-s);padding:14px 0}
+.disc-in{display:flex;align-items:flex-start;gap:12px;font-size:13.5px;color:var(--ink2);line-height:1.7}
+.cta{background:linear-gradient(140deg,#0f172a 0%,#1e3a8a 100%);padding:80px 0;text-align:center;position:relative;overflow:hidden}
+.cta::before{content:'';position:absolute;top:-80px;left:50%;transform:translateX(-50%);width:800px;height:380px;background:radial-gradient(ellipse,rgba(37,99,235,.22) 0%,transparent 68%);pointer-events:none}
+.cta-in{position:relative;z-index:1}
+.cta .pill{color:#93c5fd;background:rgba(255,255,255,.1);margin-bottom:18px}
+.cta .pill::before{background:#93c5fd}
+.cta h2{font-family:var(--fd);font-size:clamp(24px,4vw,42px);font-weight:800;color:#fff;line-height:1.15;margin-bottom:12px}
+.cta h2 em{color:#fbbf24;font-style:normal}
+.cta p{font-size:16px;color:rgba(255,255,255,.72);max-width:480px;margin:0 auto 32px;line-height:1.78}
+.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn-gold{display:inline-flex;align-items:center;gap:8px;background:var(--amber);color:#fff;font-family:var(--fd);font-weight:800;font-size:15px;padding:14px 30px;border-radius:8px;box-shadow:0 8px 28px rgba(245,158,11,.35);transition:.22s}
+.btn-gold:hover{background:#d97706;transform:translateY(-3px)}
+.btn-ghost{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.09);border:1.5px solid rgba(255,255,255,.22);color:#fff;font-family:var(--fd);font-weight:600;font-size:14px;padding:13px 26px;border-radius:8px;transition:.2s}
+.btn-ghost:hover{background:rgba(255,255,255,.16)}
+footer{background:#0f172a;padding:52px 0 0}
+.ft-inner{max-width:1180px;margin:0 auto;padding:0 24px}
+.ft-top{display:grid;grid-template-columns:1.9fr 1fr 1fr 1fr;gap:44px;margin-bottom:44px}
+.ft-brand .ln{color:#fff}.ft-brand .ls{color:#475569}
+.ft-desc{font-size:13.5px;color:#64748b;line-height:1.78;max-width:265px;margin:13px 0 20px}
+.ft-soc{display:flex;gap:9px}
+.fts{width:34px;height:34px;border-radius:7px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;color:#94a3b8;font-size:13px;transition:.2s}
+.fts:hover{background:var(--blue);color:#fff}
+.fc h4{font-family:var(--fd);font-size:12px;font-weight:700;color:#fff;margin-bottom:14px;letter-spacing:.06em;text-transform:uppercase}
+.fc ul{display:flex;flex-direction:column;gap:8px}
+.fc ul a{font-size:13.5px;color:#64748b;transition:.18s}
+.fc ul a:hover{color:#93c5fd}
+.ft-btm{border-top:1px solid rgba(255,255,255,.07);padding:20px 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.ft-cp{font-size:12.5px;color:#475569}
+.ft-lnk{display:flex;gap:18px}
+.ft-lnk a{font-size:12.5px;color:#475569;transition:.18s}
+.ft-lnk a:hover{color:#93c5fd}
+.btt{position:fixed;bottom:26px;right:26px;z-index:500;width:43px;height:43px;background:var(--blue);color:#fff;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:17px;box-shadow:var(--sb);opacity:0;pointer-events:none;transform:translateY(14px);transition:.28s var(--ease)}
+.btt.on{opacity:1;pointer-events:auto;transform:translateY(0)}
+.btt:hover{transform:translateY(-3px)}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:1060px){.ft-top{grid-template-columns:1fr 1fr}.tips-grid{grid-template-columns:1fr 1fr}.rel-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:860px){nav.dn,.hcta{display:none}.brg{display:flex}.tool-body{padding:24px 22px}.tool-hdr{padding:24px 22px}.fgrid{grid-template-columns:1fr}.fgrid3{grid-template-columns:1fr 1fr}.sd-meta{grid-template-columns:1fr 1fr 1fr}}
+@media(max-width:600px){.ft-top{grid-template-columns:1fr}.tips-grid{grid-template-columns:1fr}.rel-grid{grid-template-columns:1fr}.cta-btns{flex-direction:column;align-items:center}.story-card{padding:24px 20px}.ft-btm{flex-direction:column;text-align:center}.ft-lnk{justify-content:center}.fgrid3{grid-template-columns:1fr}.sd-meta{grid-template-columns:1fr}.action-row{flex-direction:column}.btn-row{flex-direction:column}}
+</style>
+</head>
+<body>
+
+<button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<!-- HEADER -->
+<header class="hdr">
+  <div class="w"><div class="hdi">
+    <a href="https://rajdailytools.in/" class="logo">
+      <div class="lb"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+      <div><div class="ln">Raj<span>Daily</span>Tools</div><div class="ls">Free Tools for India</div></div>
+    </a>
+    <nav class="dn">
+      <a href="https://rajdailytools.in/">Home</a>
+      <a href="https://rajdailytools.in/categories.html">Categories</a>
+      <a href="https://rajdailytools.in/#popular">Popular</a>
+      <a href="https://rajdailytools.in/about.html">About</a>
+      <a href="https://rajdailytools.in/contact.html">Contact</a>
+    </nav>
+    <a href="https://rajdailytools.in/" class="hcta">🏠 All Tools</a>
+    <button class="brg" id="brg" onclick="oD()"><span></span><span></span><span></span></button>
+  </div></div>
+</header>
+<div class="dov" id="dov" onclick="cD()"></div>
+<div class="drw" id="drw">
+  <div class="dh">
+    <div class="logo">
+      <div class="lb" style="width:30px;height:30px;border-radius:7px"><svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#fff"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+      <div class="ln" style="font-size:16px">Raj<span>Daily</span>Tools</div>
+    </div>
+    <button class="dx" onclick="cD()">✕</button>
+  </div>
+  <nav class="mn">
+    <a href="https://rajdailytools.in/" onclick="cD()">🏠 Home</a>
+    <a href="https://rajdailytools.in/categories.html" onclick="cD()">🗂️ Categories</a>
+    <a href="https://rajdailytools.in/#popular" onclick="cD()">⭐ Popular</a>
+    <a href="https://rajdailytools.in/about.html" onclick="cD()">👤 About</a>
+    <a href="https://rajdailytools.in/contact.html" onclick="cD()">📬 Contact</a>
+  </nav>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+  <div class="w">
+    <div class="bc">
+      <a href="https://rajdailytools.in/">Home</a><span style="color:var(--ink4)">›</span>
+      <a href="https://rajdailytools.in/categories.html">Tools</a><span style="color:var(--ink4)">›</span>
+      <span>Army Running Score Predictor 1600m</span>
+    </div>
+    <div class="hero-inner">
+      <div class="pill">🏃 Free Army Running Tools India</div>
+      <h1>Army Running Score <span>Predictor (1600m)</span></h1>
+      <p class="hero-sub">Enter your <strong>1600m running time</strong> and instantly get your predicted marks, Group (I / II / Fail), and selection probability percentage. Know exactly where you stand — and what you need to improve. Updated for Agniveer & Army Rally 2026.</p>
+      <div class="hero-chips">
+        <span class="chip">🏃 1600m Score Engine</span>
+        <span class="chip">📊 Group I / II Prediction</span>
+        <span class="chip">🎯 Selection Chance %</span>
+        <span class="chip">⚡ Instant Result</span>
+        <span class="chip">✅ 100% Free</span>
+        <span class="chip">📱 Mobile Ready</span>
+      </div>
+      <div class="hero-meta">
+        <div class="upd">🪖 2026 Marks System Updated</div>
+        <span class="hmi">⚡ Instant Prediction</span>
+        <span class="hmi">📱 Mobile Friendly</span>
+        <span class="hmi">🔒 Private</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOOL SECTION -->
+<section class="tool-sec" id="predictor">
+  <div class="w"><div class="tool-wrap">
+    <div class="tool-card rev">
+      <div class="tool-hdr">
+        <div class="th">
+          <h2>🏃 Army Running Score Predictor – Check 1600m Score &amp; Chance</h2>
+          <p>Enter your 1600m running time (minutes + seconds) and gender. The prediction engine converts your time into the official army marks system — Group I, Group II, or Fail — and calculates your selection probability based on real rally competition data.</p>
+          <div class="th-badges">
+            <span class="thb">🏅 Official Marks Formula</span>
+            <span class="thb">📊 Group I / II / Fail</span>
+            <span class="thb">🎯 Selection Probability</span>
+            <span class="thb">💡 Improvement Target</span>
+            <span class="thb">⚡ Instant</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tool-body">
+
+        <div class="hint-box">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          <div><strong>How it works:</strong> Enter your gender and your actual 1600m running time. The tool applies the official army scoring formula — converts time to marks, assigns Group I/II/Fail, and calculates your selection chance percentage based on historical rally data.</div>
+        </div>
+
+        <div class="sec-divider">👤 Your Details</div>
+        <div class="fgrid">
+          <div class="fld">
+            <label class="flbl" for="gender">Gender</label>
+            <select class="fsel" id="gender">
+              <option value="">— Select Gender —</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
+          </div>
+          <div class="fld">
+            <label class="flbl" for="post">Post / Exam <span>Optional</span></label>
+            <select class="fsel" id="post">
+              <option value="general">General / Agniveer GD</option>
+              <option value="clerk">Agniveer Clerk / SKT</option>
+              <option value="technical">Agniveer Technical / NA</option>
+              <option value="tradesman">Agniveer Tradesman</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="sec-divider">⏱️ Your 1600m Running Time</div>
+        <div class="fgrid3">
+          <div class="fld">
+            <label class="flbl" for="mins">Minutes</label>
+            <input class="finp" type="number" id="mins" placeholder="e.g. 5" min="3" max="12">
+          </div>
+          <div class="fld">
+            <label class="flbl" for="secs">Seconds</label>
+            <input class="finp" type="number" id="secs" placeholder="e.g. 30" min="0" max="59">
+          </div>
+          <div class="fld">
+            <label class="flbl" for="attempt">Rally Attempt</label>
+            <select class="fsel" id="attempt">
+              <option value="1">1st Attempt</option>
+              <option value="2">2nd Attempt</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="btn-row">
+          <button class="cvt-btn" onclick="predict()">🏃 Predict My Score &amp; Chance</button>
+          <button class="rst-btn" onclick="resetTool()">↺ Reset</button>
+        </div>
+
+        <!-- ===== RESULT ===== -->
+        <div id="resultArea">
+
+          <!-- Big Score Display -->
+          <div class="score-display">
+            <div class="sd-inner">
+              <div class="sd-label">Your Predicted Running Score</div>
+              <div><span class="sd-score" id="sdScore">—</span><span class="sd-unit"> / 100</span></div>
+              <div class="sd-group" id="sdGroup">—</div>
+              <div class="sd-meta">
+                <div class="sd-m"><div class="sd-m-val" id="sdTime">—</div><div class="sd-m-key">Your Time</div></div>
+                <div class="sd-m"><div class="sd-m-val" id="sdMarks">—</div><div class="sd-m-key">Marks (out of 100)</div></div>
+                <div class="sd-m"><div class="sd-m-val" id="sdChanceBig">—</div><div class="sd-m-key">Selection Chance</div></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Selection Chance Meter -->
+          <div class="chance-card">
+            <div class="cc-head">
+              <div class="cc-title">🎯 Selection Probability Meter</div>
+              <div class="cc-pct" id="ccPct">—</div>
+            </div>
+            <div class="chance-bar-wrap">
+              <div class="chance-bar-fill" id="chanceBar" style="width:0%"></div>
+            </div>
+            <div class="chance-zones">
+              <span>0%</span><span>Weak</span><span>Average</span><span>Good</span><span>Excellent</span><span>100%</span>
+            </div>
+            <div class="improve-hint" id="improveHint">
+              <svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+              <div id="improveText">—</div>
+            </div>
+          </div>
+
+          <!-- Performance Level -->
+          <div class="perf-level" id="perfLevel">
+            <div class="pl-left">
+              <span class="pl-icon" id="plIcon">🏃</span>
+              <div>
+                <div class="pl-title" id="plTitle">Performance Level</div>
+                <div class="pl-sub" id="plSub">—</div>
+              </div>
+            </div>
+            <div class="pl-badge" id="plBadge">—</div>
+          </div>
+
+          <!-- Performance Breakdown Bars -->
+          <div class="perf-card">
+            <div class="perf-title">📊 Performance Breakdown</div>
+            <div id="perfBars"></div>
+          </div>
+
+          <!-- Comparison Table -->
+          <div style="font-family:var(--fd);font-size:13.5px;font-weight:700;color:var(--ink);margin-bottom:12px">📋 Group Comparison — Where You Stand</div>
+          <div style="overflow-x:auto;margin-bottom:20px">
+            <table class="comp-tbl" id="compTbl">
+              <thead><tr><th>Group</th><th>Time (Male)</th><th>Time (Female)</th><th>Marks</th><th>Selection Chance</th><th>Status</th></tr></thead>
+              <tbody id="compTblBody"></tbody>
+            </table>
+          </div>
+
+          <!-- Action row -->
+          <div class="action-row">
+            <button class="copy-btn" id="copyBtn" onclick="copyResult()">📋 Copy My Result</button>
+          </div>
+
+        </div><!-- end resultArea -->
+      </div>
+    </div>
+  </div></div>
+</section>
+
+<!-- HOW TO USE -->
+<section class="howto-sec">
+  <div class="wa">
+    <div class="sec-hd rev">
+      <div class="sec-h">How to Use This <span>Score Predictor</span></div>
+      <p class="sec-sub">3 simple steps to predict your army running score instantly</p>
+    </div>
+    <div class="howto-box rev">
+      <div class="howto-title">📋 Step-by-Step Guide</div>
+      <div class="howto-steps">
+        <div class="hw-step"><div class="sn">1</div><div><strong>Apna Running Time Enter Kare</strong> — Apna 1600m ka exact time note karo — minutes aur seconds alag alag. Agar practice run kiya hai toh wo time use karo. Agar pehle se koi recorded time nahi hai, toh pehle ek timed run karo.</div></div>
+        <div class="hw-step"><div class="sn">2</div><div><strong>Gender Select Kare</strong> — Male aur female ke liye army running standards alag hote hain. Sahi gender select karo taaki accurate group aur marks calculation ho sake.</div></div>
+        <div class="hw-step"><div class="sn">3</div><div><strong>Result Dekhe</strong> — Instant result milega: apna predicted score (out of 100), Group I / II / Fail status, selection probability % meter, aur agar improve karna hai toh kitne seconds kam karne hain — wo bhi dikhega.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SCORING TABLE -->
+<section class="tbl-sec">
+  <div class="w">
+    <div class="sec-hd rev">
+      <div class="sec-h">Army Running <span>Score System Explained</span></div>
+      <p class="sec-sub">Official Group I / II / Fail criteria for 1600m — Male & Female (Agniveer & Army Rally 2026)</p>
+    </div>
+    <div class="tbl-wr rev">
+      <table class="main-tbl">
+        <thead>
+          <tr><th>Group</th><th>Male Time (1600m)</th><th>Female Time (1600m)</th><th>Marks (out of 100)</th><th>Selection Status</th><th>Competition Level</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Group I</strong></td><td><span class="tbadge g">Up to 5:30 min</span></td><td><span class="tbadge g">Up to 7:30 min</span></td><td><span class="tbadge g">60 marks</span></td><td><span class="tbadge g">✔ Strong Chance</span></td><td>Excellent / Top Performance</td></tr>
+          <tr><td><strong>Group II</strong></td><td><span class="tbadge a">5:31 – 5:45 min</span></td><td><span class="tbadge a">7:31 – 8:00 min</span></td><td><span class="tbadge a">48 marks</span></td><td><span class="tbadge a">⚠ Average Chance</span></td><td>Average / Qualifying</td></tr>
+          <tr><td><strong>Fail</strong></td><td><span class="tbadge r">Above 5:45 min</span></td><td><span class="tbadge r">Above 8:00 min</span></td><td><span class="tbadge r">0 marks</span></td><td><span class="tbadge r">✘ Disqualified</span></td><td>Below Standard</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="ibox a rev">
+      <svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+      <div><strong>Important:</strong> These marks are for the running (PFT) component only. Final selection also includes Written Exam marks, Beam (pull-ups), Balance Beam, 9-foot ditch jump, Medical, and Document verification. Total marks are calculated combining all events. Group I se Group II marks mein 12 ka difference hota hai — jo written mein cover ho sakta hai, lekin Group I target karo hamesha.</div>
+    </div>
+  </div>
+</section>
+
+<!-- TIPS -->
+<section class="tips-sec">
+  <div class="w">
+    <div class="sec-hd rev">
+      <div class="sec-h">Running Improvement <span>Strategy & Tips</span></div>
+      <p class="sec-sub">Science-backed tips to cut your 1600m time and reach Group I</p>
+    </div>
+    <div class="tips-grid">
+      <div class="tip-card rev">
+        <div class="tc-ico">🏃</div>
+        <div class="tc-title">Daily Running Drills</div>
+        <div class="tc-desc">Consistent daily practice is the only real shortcut. Structure your week for maximum gain:</div>
+        <div class="tc-list">
+          <div class="tc-item">Mon/Wed/Fri — 2–3 km timed runs</div>
+          <div class="tc-item">Tue/Thu — interval sprints (400m × 4)</div>
+          <div class="tc-item">Saturday — long slow run (4–5 km)</div>
+          <div class="tc-item">Sunday — rest / light stretching</div>
+          <div class="tc-item">Target: 5–10 sec improvement per week</div>
+        </div>
+      </div>
+      <div class="tip-card rev">
+        <div class="tc-ico">⚡</div>
+        <div class="tc-title">Speed Tips — Instant Gains</div>
+        <div class="tc-desc">Small technique corrections can save 15–20 seconds without extra training:</div>
+        <div class="tc-list">
+          <div class="tc-item">Breathe rhythmically — 2 steps in, 2 out</div>
+          <div class="tc-item">Arms bent at 90° — drive them back</div>
+          <div class="tc-item">Land on mid-foot — not heel</div>
+          <div class="tc-item">First 400m conservative — don't sprint out</div>
+          <div class="tc-item">Final 200m — give maximum effort</div>
+        </div>
+      </div>
+      <div class="tip-card rev">
+        <div class="tc-ico">🗓️</div>
+        <div class="tc-title">Time Reduction Roadmap</div>
+        <div class="tc-desc">8-week plan to go from Group II to Group I (drop 15–30 seconds):</div>
+        <div class="tc-list">
+          <div class="tc-item">Week 1–2: Build base — run daily 2 km easy</div>
+          <div class="tc-item">Week 3–4: Add intervals — 400m × 4 reps</div>
+          <div class="tc-item">Week 5–6: Tempo runs — 80% effort 2 km</div>
+          <div class="tc-item">Week 7: Race pace simulation</div>
+          <div class="tc-item">Week 8: Taper + rest before rally</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STORY -->
+<section class="story-sec">
+  <div class="wa">
+    <div class="sec-hd rev">
+      <div class="sec-h">Pappu Ka <span>Wake-Up Call</span></div>
+    </div>
+    <div class="story-card rev">
+      <span class="story-ico">🏃</span>
+      <h3>Score Pata Hota Toh Shayad Alag Hoti Kahani</h3>
+      <p>Mera dost Pappu army ki tayari kar raha tha aur usne 1600m running 5 min 40 sec me complete ki. Usse laga ki wo safe zone me hai aur selection ho jayega.</p>
+      <p>Lekin jab usne marks aur group calculate kiya, to pata chala ki wo Group II me aa raha hai aur uska selection chance expected se kaafi kam hai. Group I ke liye usse sirf 10 seconds aur kam karne the — aur wo nahi kar paya sirf isliye kyunki usse pata hi nahi tha ki wo borderline par hai.</p>
+      <p>Uska confidence thoda down ho gaya kyunki usse pehle exact idea hi nahi tha ki uska performance kis level par hai. Agar usse pehle se pata hota ki Group I ke liye 5:30 chahiye aur wo 5:40 chal raha hai — to wo us 10 seconds ko target karta. Shayad 4–5 weeks mein wo Group I bhi aa jaata.</p>
+      <p>Isi confusion ko solve karne ke liye ye Army Running Score Predictor tool banaya gaya hai — taaki aap sirf time nahi, balki apna final score aur selection chance bhi samajh sake. Aur usse pehle hi — rally se pehle hi — pata chal sake ki aapko kitna improve karna hai.</p>
+      <span class="story-highlight">🏃 Rally Se Pehle Score Predict Karo — Plan Better</span>
+    </div>
+  </div>
+</section>
+
+<!-- LONG SEO ARTICLE -->
+<section class="art-sec">
+  <div class="wa">
+    <div class="sec-hd rev">
+      <div class="sec-h">Army Running Score <span>Complete Guide 2026</span></div>
+      <p class="sec-sub">Marks system, selection probability, common mistakes, and full improvement roadmap</p>
+    </div>
+    <div class="art-card rev">
+      <div class="art-body">
+
+        <h2>Army 1600m Running Score System — Poora Samjho</h2>
+        <p>Indian Army ki physical fitness test (PFT) mein 1600m running sabse important component hai. Ye scoring ka direct hissa hai — matlab jo time lagaoge, uska seedha matlab marks mein hai. Army mein running ko sirf "pass/fail" nahi dekha jaata — isme Group I aur Group II ka concept hai, aur dono mein marks ka difference 12 points ka hota hai. Ye 12 points kabhi kabhi selection aur rejection ke beech ka fark ban jaata hai.</p>
+
+        <div class="ibox">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          <div><strong>Key Formula:</strong> Group I (≤5:30 min male) = 60 marks out of 100. Group II (5:31–5:45 min male) = 48 marks out of 100. Fail (>5:45) = 0 marks and immediate disqualification from further events at the rally.</div>
+        </div>
+
+        <h2>Group I vs Group II — 12 Marks Ka Fark Kyun Important Hai?</h2>
+        <p>Bahut log sochte hain ki Group II mein aa gaye toh bhi selection ho jayega — kyunki written mein cover kar lenge. Ye soch partially sahi hai, but partially galat bhi. Yahan asli math hai:</p>
+        <ul>
+          <li>Group I running marks: 60 | Group II running marks: 48 — difference 12 marks</li>
+          <li>Written exam typically 100 marks ka hota hai — 12 marks isme cover ho sakte hain</li>
+          <li>Lekin army rallies mein competition bahut high hoti hai — merit list mein 5–8 marks ka bhi fark selection decide kar deta hai</li>
+          <li>Group I mein aane wale candidates ko psychological advantage bhi milta hai — confidence alag hoti hai</li>
+          <li>Agar written mein thoda weak ho, toh Group I running hi tumhara "cushion" ban sakti hai</li>
+        </ul>
+        <p>Isliye target hamesha Group I hona chahiye — Group II ko "safe" zone mat samjho. Ye ek common mistake hai jo bahut aspirants karte hain.</p>
+
+        <h2>Selection Probability Kaise Calculate Hoti Hai?</h2>
+        <p>Army rally mein selection chance sirf tumhare marks par nahi, balki overall competition par depend karta hai. Rally mein thousands of candidates participate karte hain — merit list kaafi competitive hoti hai. Ye probability factors matter karte hain:</p>
+        <ul>
+          <li><strong>Running Group:</strong> Group I candidates ka selection chance Group II se significantly zyada hota hai — rally data ke hisaab se Group I: ~65–75% chance, Group II: ~35–45% chance (assuming average written performance)</li>
+          <li><strong>Written Exam Score:</strong> Jitna zyada written score, utna zyada total merit — running marks + written marks = total</li>
+          <li><strong>Beam (Pull-ups):</strong> Extra marks milte hain — 10 pull-ups = 40 marks, 6 pull-ups = 16 marks</li>
+          <li><strong>Vacancies vs Applicants ratio:</strong> Agar 500 vacancies aur 50,000 candidates hain — competition 1:100 — toh Group I bhi guarantee nahi, sirf better chance</li>
+          <li><strong>Document & Medical:</strong> Agar in mein issue hai toh marks irrelevant — pehle ye clear karo</li>
+        </ul>
+
+        <h2>Common Mistakes Aspirants Karte Hain Running Mein</h2>
+        <p>Kaafi saare candidates rally mein achi running nahi kar paate — aur zyada tar ye reasons ki wajah se:</p>
+        <ul>
+          <li><strong>Galti #1 — Pacing Nahi Pata:</strong> Pehle 400m mein bhaag dete hain, last 400m mein dhaap jaate hain. Solution: consistent pace maintain karo — 1:20-1:22 per 400m for Group I</li>
+          <li><strong>Galti #2 — Breathing Control Nahi:</strong> Irregular breathing se stamina jaldi khatam hota hai. 2 steps breathe in, 2 steps breathe out ka rhythm banao</li>
+          <li><strong>Galti #3 — Warmup Nahi Kiya:</strong> Cold muscles slow hoti hain aur injury ka risk zyada. Rally se 20 min pehle light jog + stretching karo</li>
+          <li><strong>Galti #4 — Galat Footwear:</strong> Running shoes vs canvas shoes mein significant time difference ho sakta hai. Light running shoes use karo</li>
+          <li><strong>Galti #5 — Practice Runs Timer Se Nahi Kiye:</strong> Agar time note nahi kiya toh pata hi nahi ki kis group mein ho. Hamesha timed practice karo</li>
+          <li><strong>Galti #6 — Group II pe Settle Karna:</strong> "Chal jayega" attitude — yahi sabse bada enemy hai. Group I target karo</li>
+        </ul>
+
+        <h2>Improvement Roadmap — Group II Se Group I Mein Kaise Aao</h2>
+        <p>Agar abhi aap 5:40–5:45 range mein chal rahe ho (Group II borderline) — aur rally 8 weeks mein hai — ye plan follow karo:</p>
+        <ul>
+          <li><strong>Week 1–2 (Base Building):</strong> Roz 2 km easy jog. Focus on consistency, not speed. Breathing rhythm establish karo. Time: ~11–12 min per 2 km</li>
+          <li><strong>Week 3–4 (Interval Training):</strong> 400m × 4 intervals with 2 min rest between each. Target: 1:45 per interval. Plus 1 easy run per week</li>
+          <li><strong>Week 5–6 (Tempo Runs):</strong> 80% effort ke saath 1600m run roz — time note karo. Ye race simulation hai. Target: 5:35 mein lao</li>
+          <li><strong>Week 7 (Race Pace Work):</strong> 1600m at target pace (5:25) with all-out effort. See if you can hold it</li>
+          <li><strong>Week 8 (Taper + Rest):</strong> Easy 2 km jog Mon/Wed — Thursday se complete rest. Rally se 2 din pehle bilkul koi strenuous exercise nahi</li>
+        </ul>
+
+        <div class="ibox g">
+          <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          <div><strong>Reality Check:</strong> 8 weeks mein 15–20 seconds improve karna realistic hai agar consistently train karo. 30+ seconds improve karna rare hai — agar bahut kum time hai toh written exam extra prepare karo taaki running ka gap cover ho sake.</div>
+        </div>
+
+        <h2>Army Running Ka Total Score System (Complete Picture)</h2>
+        <p>Running sirf ek component hai. Ye pure PFT aur selection marks structure samjho taaki aap correctly prioritize kar sako:</p>
+        <ul>
+          <li><strong>1600m Running:</strong> Group I = 60 marks, Group II = 48 marks</li>
+          <li><strong>Pull-ups (Beam):</strong> 10 = 40 marks, 9 = 33, 8 = 27, 7 = 21, 6 = 16 marks (minimum 6)</li>
+          <li><strong>9 Foot Ditch:</strong> Qualifying event — cross karna mandatory, no marks</li>
+          <li><strong>Balance Beam:</strong> Qualifying event — no marks</li>
+          <li><strong>Written Exam (CEE):</strong> 100 marks — GK, Maths, General Science, English</li>
+        </ul>
+        <p>Total merit = Running marks + Beam marks + Written marks. Is hisaab se maximum possible marks = 60 + 40 + 100 = 200. Jo candidates 160+ score karte hain unka selection almost guaranteed hota hai (vacancy ke hisaab se). 140–160 = competitive. Below 130 = risk zone.</p>
+
+        <h2>Female Candidates Ka Running Standard</h2>
+        <p>Mahila candidates ke liye 1600m standard alag hai — Group I ke liye 7:30 minutes ka target hai. Group II 7:31–8:00 minutes. 8 minutes ke upar fail. Female candidates ke liye ye standard relatively achievable hai — consistent training se most candidates Group I tak pahunch sakti hain 6–8 weeks mein.</p>
+
+        <h2>Conclusion — Predict Karo, Plan Karo, Execute Karo</h2>
+        <p>Army running score predictor ka use isliye karo ki aapko aaj pata chale — kal nahi — ki aap kis group mein ho aur kitna improve karna hai. Rally se 2 weeks pehle pata karne se koi fayda nahi. Abhi pata karo, abhi plan banao, abhi start karo. Group I target hamesha. Running mein 12 extra marks — ye potentially selection aur rejection ka fark hai.</p>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-sec">
+  <div class="wa">
+    <div class="sec-hd rev">
+      <div class="sec-h">Frequently Asked <span>Questions</span></div>
+    </div>
+    <div class="fql">
+      <div class="fq"><div class="fq-q" onclick="tFAQ(this)"><span class="fq-t">Army running mein Group I ke liye kitna time chahiye?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">Male candidates ke liye Group I: 5 minutes 30 seconds ya usse kam. Female candidates ke liye Group I: 7 minutes 30 seconds ya usse kam. Group I mein aane par 60 marks milte hain (running component mein max). Ye sabse important running benchmark hai — isko hamesha target karo. Group II (5:31–5:45 male) mein 48 marks milte hain — 12 marks ka difference hota hai jo selection mein critical ho sakta hai.</div></div></div>
+
+      <div class="fq"><div class="fq-q" onclick="tFAQ(this)"><span class="fq-t">Army running mein fail hone par kya hota hai?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">Agar 1600m time 5:45 (male) ya 8:00 (female) se zyada ho jaaye — candidate immediately fail ho jaata hai aur rally ke baaki events (beam, written, medical) ke liye aage nahi jaa sakta. 0 marks milte hain running mein aur selection process wahan khatam ho jaati hai. Isliye running preparation sabse pehle priority honi chahiye — baaki sab baad mein.</div></div></div>
+
+      <div class="fq"><div class="fq-q" onclick="tFAQ(this)"><span class="fq-t">Group II mein army me selection hoti hai kya?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">Haan, Group II mein bhi selection hoti hai — lekin chance Group I se significantly kum hota hai. Group II mein 48 marks milte hain vs Group I ke 60 marks — 12 marks ka gap hota hai. Agar written exam (CEE) mein achhe marks aaye toh ye gap cover ho sakta hai. Lekin highly competitive rallies mein 5–10 marks ka fark bhi selection decide karta hai. Isliye Group I hamesha target karo — Group II ko safety net mat samjho.</div></div></div>
+
+      <div class="fq"><div class="fq-q" onclick="tFAQ(this)"><span class="fq-t">Running mein 10 seconds improve karne ke liye kitna time chahiye?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">Agar consistently train karo toh 10 seconds improve karna 3–4 weeks mein realistic hai. Key strategies: interval training (400m reps), breathing control, proper pacing strategy, aur heel-to-midfoot running form. Rally se 6–8 weeks pehle training shuru karo. Har week 5–10 seconds improvement target rakho. Running shoes ka bhi fark padta hai — canvas shoes se light running shoes better hain.</div></div></div>
+
+      <div class="fq"><div class="fq-q" onclick="tFAQ(this)"><span class="fq-t">Army running ke total marks kaise calculate hote hain?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">Army selection marks formula: Running marks (max 60) + Beam/Pull-ups marks (max 40) + Written exam marks (max 100) = Total (max 200). Example: Group I running (60) + 10 pull-ups (40) + written 75 = 175/200. Merit list is based on this total. Isliye running, beam, aur written — teeno ki preparation zaroori hai. Running fail hone par written tak pahunchne ka chance hi nahi milta.</div></div></div>
+
+      <div class="fq"><div class="fq-q" onclick="tFAQ(this)"><span class="fq-t">Kya ye predictor tool 100% accurate result deta hai?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">Ye tool official army scoring formula ke base par estimated prediction deta hai. Running marks (Group I/II/Fail) actual army criteria pe based hain aur accurate hain. Selection chance probability ek statistical estimate hai — actual selection vacancies, total applicants, aur aapke written + beam marks par depend karta hai. Real selection chance in sab factors ka combination hai. Ye tool aapko benchmark deta hai ki aap kahan hain aur kahan pahunchna hai — final result official army merit list se hi pata chalega.</div></div></div>
+
+      <div class="fq"><div class="fq-q" onclick="tFAQ(this)"><span class="fq-t">Rally mein running se pehle kya karna chahiye?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">Rally se ek raat pehle: achha khana khao (carbs heavy — roti, rice), 8 ghante sona, koi heavy exercise nahi. Rally ke din: 2–3 ghante pehle light breakfast (banana, bread — heavy nahi), 1 litre paani drink karo, running se 30 min pehle light warm-up (easy 400m jog + leg stretches), starting line par calm raho, first 400m conservative chalo — overtime nahi. Breathing rhythm maintain karo. Last 300–400m mein maximum effort do.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- RELATED TOOLS -->
+<section class="rel-sec">
+  <div class="w">
+    <div class="sec-hd rev">
+      <div class="sec-h">More <span>Army Tools</span> for You</div>
+      <p class="sec-sub">Complete army preparation toolkit — all free, all instant</p>
+    </div>
+    <div class="rel-grid">
+      <div class="rel-card rev featured">
+        <div class="rel-ico">📅</div>
+        <div class="rel-title">Army Running Planner ⭐</div>
+        <div class="rel-desc">Get a personalized 60-day running training plan based on your current time and rally date — with daily targets.</div>
+        <a href="https://rajdailytools.in/" class="rel-btn">Use Tool <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
+      </div>
+      <div class="rel-card rev featured">
+        <div class="rel-ico">🎖️</div>
+        <div class="rel-title">Defence Eligibility Checker ⭐</div>
+        <div class="rel-desc">Check eligibility for NDA, CDS, AFCAT, SSC GD, Agniveer in one click — all exams, instant result.</div>
+        <a href="https://rajdailytools.in/defence-exam-eligibility-checker-2026.html" class="rel-btn">Use Tool <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
+      </div>
+      <div class="rel-card rev">
+        <div class="rel-ico">📏</div>
+        <div class="rel-title">Army Height Checker</div>
+        <div class="rel-desc">Check height eligibility region-wise — NE relaxation, Gorkha, tribal areas all automatically applied.</div>
+        <a href="https://rajdailytools.in/army-height-checker-region-wise-2026.html" class="rel-btn">Use Tool <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
+      </div>
+      <div class="rel-card rev">
+        <div class="rel-ico">👁️</div>
+        <div class="rel-title">Color Blindness Test</div>
+        <div class="rel-desc">Free Ishihara simulator — check your color vision and army medical eye test eligibility.</div>
+        <a href="https://rajdailytools.in/color-blindness-test-online-free-2026.html" class="rel-btn">Use Tool <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
+      </div>
+      <div class="rel-card rev">
+        <div class="rel-ico">🏥</div>
+        <div class="rel-title">Army Medical Checker</div>
+        <div class="rel-desc">Check if your medical conditions affect army eligibility post-wise — flat foot, vision, hearing and more.</div>
+        <a href="https://rajdailytools.in/" class="rel-btn">Use Tool <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
+      </div>
+      <div class="rel-card rev">
+        <div class="rel-ico">📋</div>
+        <div class="rel-title">Army Form Checker</div>
+        <div class="rel-desc">Verify all documents before submitting army application — avoid common rejection mistakes.</div>
+        <a href="https://rajdailytools.in/" class="rel-btn">Use Tool <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
+      </div>
+      <div class="rel-card rev">
+        <div class="rel-ico">📊</div>
+        <div class="rel-title">Rally Analyzer</div>
+        <div class="rel-desc">Analyze army rally dates, competition level, and cutoffs for your district and state.</div>
+        <a href="https://rajdailytools.in/" class="rel-btn">Use Tool <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
+      </div>
+      <div class="rel-card rev">
+        <div class="rel-ico">💰</div>
+        <div class="rel-title">Army Pension Calculator</div>
+        <div class="rel-desc">Calculate expected pension after retirement based on rank and years of service.</div>
+        <a href="https://rajdailytools.in/" class="rel-btn">Use Tool <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
+      </div>
+      <div class="rel-card rev">
+        <div class="rel-ico">🔤</div>
+        <div class="rel-title">Text Tools Category</div>
+        <div class="rel-desc">Explore all text and writing tools — word counter, case converter, and more utility tools.</div>
+        <a href="https://rajdailytools.in/text-tools-category.html" class="rel-btn">Browse All <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DISCLAIMER -->
+<div class="disc">
+  <div class="w"><div class="disc-in">
+    <span style="font-size:20px">⚠️</span>
+    <div><strong>Disclaimer:</strong> This tool provides estimated prediction only based on official army scoring guidelines. Actual marks, selection, and group classification are determined by the official Army Recruiting Office (ARO) at the actual rally. Selection also depends on written exam, beam, medical, and document verification. Always verify from official army recruitment sources: <strong>joinindianarmy.nic.in</strong></div>
+  </div></div>
+</div>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="w cta-in">
+    <div class="pill">🏃 Predict Before You Run</div>
+    <h2>Check Your Running <em>Score &amp; Selection Chance</em> Now</h2>
+    <p>Free, instant. Know your predicted marks, group, and exactly how much you need to improve — before rally day.</p>
+    <div class="cta-btns">
+      <a href="#predictor" class="btn-gold">🏃 Predict My Score — Free</a>
+      <a href="https://rajdailytools.in/" class="btn-ghost">🏠 All Tools</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-inner">
+    <div class="ft-top">
+      <div class="ft-brand">
+        <div class="logo">
+          <div class="lb" style="width:34px;height:34px;border-radius:8px"><svg viewBox="0 0 24 24" style="width:16px;height:16px;fill:#fff"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+          <div><div class="ln">Raj<span>Daily</span>Tools</div><div class="ls" style="color:#475569">Free Tools for India</div></div>
+        </div>
+        <p class="ft-desc">Free online tools for Indian defence aspirants, government job seekers, and students. Built with care — updated regularly.</p>
+        <div class="ft-soc">
+          <a class="fts" href="#" title="YouTube">▶</a>
+          <a class="fts" href="#" title="Telegram">✈</a>
+          <a class="fts" href="#" title="Instagram">◎</a>
+        </div>
+      </div>
+      <div class="fc"><h4>Running Tools</h4><ul>
+        <li><a href="#">Score Predictor</a></li>
+        <li><a href="#">Running Planner</a></li>
+        <li><a href="#">Running Calculator</a></li>
+        <li><a href="#">Stamina Tips</a></li>
+      </ul></div>
+      <div class="fc"><h4>Army Tools</h4><ul>
+        <li><a href="https://rajdailytools.in/defence-exam-eligibility-checker-2026.html">Defence Eligibility</a></li>
+        <li><a href="https://rajdailytools.in/army-height-checker-region-wise-2026.html">Height Checker</a></li>
+        <li><a href="https://rajdailytools.in/color-blindness-test-online-free-2026.html">Color Blindness Test</a></li>
+        <li><a href="#">Medical Checker</a></li>
+      </ul></div>
+      <div class="fc"><h4>Links</h4><ul>
+        <li><a href="https://rajdailytools.in/">Home</a></li>
+        <li><a href="https://rajdailytools.in/about.html">About</a></li>
+        <li><a href="https://rajdailytools.in/contact.html">Contact</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+      </ul></div>
+    </div>
+    <div class="ft-btm">
+      <span class="ft-cp">© 2026 RajDailyTools. All rights reserved. | Army Running Score Predictor 1600m 2026</span>
+      <div class="ft-lnk"><a href="#">Privacy</a><a href="#">Disclaimer</a><a href="#">Contact</a></div>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================================================
+     PREDICTION ENGINE — JavaScript
+     ============================================================ -->
+<script>
+// ============================================================
+// SCORING DATA — Official Army 1600m System
+// ============================================================
+const SCORING = {
+  male: [
+    { group:'I',    label:'Group I',    timeMax: 5*60+30, marks:60, chance:72, cls:'g1', tblCls:'ct-g1', perfCls:'plb-excellent', perfIcon:'🏆', perfLabel:'Excellent',   perfSub:'Top performance — strong selection candidate' },
+    { group:'II',   label:'Group II',   timeMax: 5*60+45, marks:48, chance:42, cls:'g2', tblCls:'ct-g2', perfCls:'plb-average',   perfIcon:'⚠️', perfLabel:'Average',     perfSub:'Qualifying but borderline — improve to Group I' },
+    { group:'Fail', label:'Fail',       timeMax: Infinity, marks:0, chance: 0, cls:'fail',tblCls:'ct-fl', perfCls:'plb-weak',     perfIcon:'❌', perfLabel:'Fail',        perfSub:'Below standard — immediate disqualification' },
+  ],
+  female: [
+    { group:'I',    label:'Group I',    timeMax: 7*60+30, marks:60, chance:70, cls:'g1', tblCls:'ct-g1', perfCls:'plb-excellent', perfIcon:'🏆', perfLabel:'Excellent',   perfSub:'Top performance — strong selection candidate' },
+    { group:'II',   label:'Group II',   timeMax: 8*60+0,  marks:48, chance:40, cls:'g2', tblCls:'ct-g2', perfCls:'plb-average',   perfIcon:'⚠️', perfLabel:'Average',     perfSub:'Qualifying but borderline — improve to Group I' },
+    { group:'Fail', label:'Fail',       timeMax: Infinity, marks:0, chance: 0, cls:'fail',tblCls:'ct-fl', perfCls:'plb-weak',     perfIcon:'❌', perfLabel:'Fail',        perfSub:'Below standard — immediate disqualification' },
+  ]
+};
+
+const COMPARISON_ROWS = {
+  male:   [[`≤ 5:30`,`≤ 7:30`,60,72,'Group I'],   [`5:31–5:45`,`7:31–8:00`,48,42,'Group II'],  [`> 5:45`,`> 8:00`,0,0,'Fail']],
+  female: [[`≤ 5:30`,`≤ 7:30`,60,72,'Group I'],   [`5:31–5:45`,`7:31–8:00`,48,42,'Group II'],  [`> 5:45`,`> 8:00`,0,0,'Fail']],
+};
+
+let lastResult = {};
+
+// ============================================================
+// PREDICT
+// ============================================================
+function predict() {
+  const gender  = document.getElementById('gender').value;
+  const minsRaw = document.getElementById('mins').value;
+  const secsRaw = document.getElementById('secs').value;
+
+  // Validate
+  if (!gender) { alert('Please select your gender.'); return; }
+  if (minsRaw === '' || secsRaw === '') { alert('Please enter your running time (minutes and seconds).'); return; }
+
+  const mins = parseInt(minsRaw);
+  const secs = parseInt(secsRaw);
+
+  if (isNaN(mins) || isNaN(secs) || mins < 3 || mins > 12 || secs < 0 || secs > 59) {
+    alert('Please enter a valid time. Minutes: 3–12, Seconds: 0–59.'); return;
+  }
+
+  const totalSecs = mins * 60 + secs;
+  const timeStr   = `${mins}:${String(secs).padStart(2,'0')} min`;
+  const rows      = SCORING[gender];
+
+  // Find group
+  let result = rows[rows.length - 1]; // default: Fail
+  for (const row of rows) {
+    if (totalSecs <= row.timeMax) { result = row; break; }
+  }
+
+  // How many seconds to Group I?
+  const g1Time = rows[0].timeMax;
+  const secToG1 = Math.max(0, totalSecs - g1Time);
+  const secToG2 = gender === 'male'
+    ? Math.max(0, totalSecs - (5*60+45))
+    : Math.max(0, totalSecs - (8*60+0));
+
+  // Calculate chance — fine-grained within group
+  let chance = result.chance;
+  if (result.group === 'I') {
+    // Faster = higher chance
+    const margin = g1Time - totalSecs; // seconds under G1 limit
+    chance = Math.min(95, 72 + Math.floor(margin / 5) * 2);
+  } else if (result.group === 'II') {
+    const g2Limit = gender === 'male' ? 5*60+45 : 8*60;
+    const margin  = g2Limit - totalSecs;
+    chance = Math.max(18, 42 - Math.floor((totalSecs - g1Time) / 3) * 2);
+  }
+
+  // Performance bars
+  const maxTime = gender === 'male' ? 5*60+45 : 8*60;
+  const speedPct = result.group === 'Fail' ? 15
+    : Math.min(98, Math.round((1 - (totalSecs - (gender==='male'?4*60:6*60)) / ((maxTime - (gender==='male'?4*60:6*60)))) * 100));
+  const marksPct  = Math.round(result.marks / 60 * 100);
+  const chancePct = chance;
+
+  // Store
+  lastResult = { gender, timeStr, totalSecs, result, chance, speedPct, marksPct, secToG1, g1Time, g2Time: gender==='male'?5*60+45:8*60 };
+
+  renderResult(lastResult);
+}
+
+function renderResult(d) {
+  const { gender, timeStr, result, chance, speedPct, marksPct, secToG1, g1Time, g2Time } = d;
+
+  // Show area
+  const area = document.getElementById('resultArea');
+  area.style.display = 'block';
+  area.style.animation = 'none'; area.offsetHeight;
+  area.style.animation = 'resultIn .42s var(--ease) both';
+
+  // Big score display
+  document.getElementById('sdScore').textContent = result.marks;
+  document.getElementById('sdTime').textContent  = timeStr;
+  document.getElementById('sdMarks').textContent = result.marks + '/100';
+  document.getElementById('sdChanceBig').textContent = chance + '%';
+
+  const grpEl = document.getElementById('sdGroup');
+  grpEl.className = 'sd-group ' + result.cls;
+  grpEl.textContent = result.group === 'Fail' ? '❌ Fail — Disqualified' :
+    result.group === 'I' ? '✅ Group I — Excellent' : '⚠️ Group II — Average';
+
+  // Chance meter
+  const ccPct = document.getElementById('ccPct');
+  ccPct.textContent = chance + '%';
+  ccPct.className   = 'cc-pct ' + (chance >= 65 ? 'high' : chance >= 35 ? 'mid' : 'low');
+  const bar = document.getElementById('chanceBar');
+  bar.className = 'chance-bar-fill ' + (chance >= 65 ? 'cb-high' : chance >= 35 ? 'cb-mid' : 'cb-low');
+  bar.style.width = '0%';
+  setTimeout(() => bar.style.width = chance + '%', 180);
+
+  // Improve hint
+  const ih = document.getElementById('improveHint');
+  const it = document.getElementById('improveText');
+  if (result.group === 'I') {
+    ih.className = 'improve-hint good';
+    ih.querySelector('svg').setAttribute('viewBox','0 0 24 24');
+    it.innerHTML = `<strong>🏆 Excellent!</strong> Aap Group I mein hain! Running mein ${result.marks}/100 marks pakke hain. Improve karne ka scope bahut kum hai — ab written exam aur beam (pull-ups) par focus karo. Merit mein aage rehne ke liye written mein 70+ laane ki koshish karo.`;
+  } else if (result.group === 'II') {
+    ih.className = 'improve-hint';
+    it.innerHTML = `<strong>⚠️ Group II detected.</strong> Aap Group I se sirf <strong>${secToG1} seconds</strong> door hain! ${secToG1} seconds improve karo aur 12 extra marks pakke ho jayenge. 4–6 weeks consistent interval training se ye possible hai. Group I = 60 marks vs Group II = 48 marks — ye 12 marks selection mein critical ho sakte hain.`;
+  } else {
+    ih.className = 'improve-hint';
+    it.innerHTML = `<strong>❌ Fail zone.</strong> Aap fail zone mein hain. Abhi rally apply mat karo — pehle running improve karo. Group II ke liye <strong>${Math.abs(d.totalSecs - g2Time)} seconds</strong> aur Group I ke liye <strong>${secToG1} seconds</strong> kam karne hain. 8–12 weeks ki consistent training se qualify karna possible hai.`;
+  }
+
+  // Performance level
+  document.getElementById('plIcon').textContent  = result.perfIcon;
+  document.getElementById('plTitle').textContent = result.group === 'Fail' ? 'Below Standard' : `Performance Level: ${result.perfLabel}`;
+  document.getElementById('plSub').textContent   = result.perfSub;
+  const plBadge = document.getElementById('plBadge');
+  plBadge.className = 'pl-badge ' + result.perfCls;
+  plBadge.textContent = result.perfLabel;
+
+  // Performance bars
+  const bars = [
+    { label:'Speed Score',    pct: speedPct,  cls: speedPct>=70?'pbf-green':speedPct>=40?'pbf-amber':'pbf-red' },
+    { label:'Running Marks',  pct: marksPct,  cls: marksPct>=90?'pbf-green':marksPct>=60?'pbf-amber':'pbf-red' },
+    { label:'Selection Odds', pct: chance,    cls: chance>=65?'pbf-green':chance>=35?'pbf-amber':'pbf-red' },
+  ];
+  document.getElementById('perfBars').innerHTML = bars.map(b => `
+    <div class="perf-row">
+      <span class="perf-label">${b.label}</span>
+      <div class="perf-bar-wrap"><div class="perf-bar-fill ${b.cls}" style="width:0%;--tw:${b.pct}%"></div></div>
+      <span class="perf-val">${b.pct}%</span>
+    </div>`).join('');
+  setTimeout(() => document.querySelectorAll('.perf-bar-fill').forEach(f => {
+    const w = f.style.getPropertyValue('--tw'); if (w) f.style.width = w;
+  }), 220);
+
+  // Comparison table
+  const groups = SCORING[gender];
+  const compRows = [
+    { g:'Group I',  male:'≤ 5:30', female:'≤ 7:30', marks:60, chance:72, cls:'ct-g1' },
+    { g:'Group II', male:'5:31–5:45', female:'7:31–8:00', marks:48, chance:42, cls:'ct-g2' },
+    { g:'Fail',     male:'> 5:45', female:'> 8:00', marks:0,  chance:0,  cls:'ct-fl' },
+  ];
+  document.getElementById('compTblBody').innerHTML = compRows.map(r => {
+    const isYou = r.g === result.label || (r.g === 'Fail' && result.group === 'Fail');
+    const youBadge = isYou ? ` <span class="ct-badge ct-you">← You</span>` : '';
+    return `<tr class="${isYou?'highlight-row':''}">
+      <td><span class="ct-badge ${r.cls}">${r.g}</span>${youBadge}</td>
+      <td>${r.male}</td><td>${r.female}</td>
+      <td><strong>${r.marks}</strong>/100</td>
+      <td>${r.chance}%</td>
+      <td>${r.chance>=65?'✅ Strong':r.chance>=35?'⚠️ Average':'❌ Disqualified'}</td>
+    </tr>`;
+  }).join('');
+
+  setTimeout(() => area.scrollIntoView({ behavior:'smooth', block:'nearest' }), 140);
+}
+
+function resetTool() {
+  document.getElementById('gender').value = '';
+  document.getElementById('mins').value   = '';
+  document.getElementById('secs').value   = '';
+  document.getElementById('resultArea').style.display = 'none';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function copyResult() {
+  const r = lastResult;
+  if (!r.result) return;
+  const lines = [
+    'Army Running Score Prediction — RajDailyTools',
+    `Gender: ${r.gender} | Time: ${r.timeStr}`,
+    `Group: ${r.result.group} | Marks: ${r.result.marks}/100`,
+    `Selection Chance: ${r.chance}%`,
+    `To reach Group I: need ${r.secToG1} more seconds faster`,
+    '',
+    'NOTE: This is an estimated prediction — not official result.',
+    'Verify: joinindianarmy.nic.in',
+    'Tool: rajdailytools.in/army-running-score-predictor-1600m.html'
+  ];
+  navigator.clipboard?.writeText(lines.join('\n')).then(() => {
+    const btn = document.getElementById('copyBtn');
+    btn.classList.add('copied'); btn.textContent = '✅ Copied!';
+    setTimeout(() => { btn.classList.remove('copied'); btn.textContent = '📋 Copy My Result'; }, 2200);
+  });
+}
+
+// ============================================================
+// FAQ / NAV / SCROLL
+// ============================================================
+function tFAQ(el) {
+  const fq = el.closest('.fq');
+  const isOpen = fq.classList.contains('open');
+  document.querySelectorAll('.fq').forEach(f => f.classList.remove('open'));
+  if (!isOpen) fq.classList.add('open');
+}
+function oD() { document.getElementById('drw').classList.add('on'); document.getElementById('dov').classList.add('on'); }
+function cD() { document.getElementById('drw').classList.remove('on'); document.getElementById('dov').classList.remove('on'); }
+
+window.addEventListener('scroll', () => {
+  document.getElementById('btt').classList.toggle('on', window.scrollY > 380);
+});
+
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); } });
+}, { threshold: 0.1 });
+document.querySelectorAll('.rev').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
