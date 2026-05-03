@@ -1,0 +1,1534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maths Practice Tool Online – Free Unlimited Questions (SSC, Bank, Railway, NDA, UPSC) | RajDailyTools</title>
+<meta name="description" content="Practice maths questions online with unlimited auto-generated problems. Covers SSC, Banking, Railway, Defence, UPSC exams. Improve speed & accuracy instantly. Free forever.">
+<meta name="keywords" content="maths practice tool online,free maths questions ssc,bank maths practice,railway maths practice,nda maths preparation,upsc maths questions,percentage practice online,profit loss questions,time speed distance practice,aptitude questions online free,maths speed improve,mental maths practice india,competitive exam maths,simplification bodmas practice,unlimited maths questions free">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://rajdailytools.in/maths-practice-tool-online.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#2563eb;--blue-d:#1d4ed8;--blue-l:#3b82f6;
+  --blue-xl:#eff6ff;--blue-s:#dbeafe;
+  --amber:#f59e0b;--green:#10b981;--red:#ef4444;
+  --purple:#8b5cf6;--teal:#14b8a6;--orange:#f97316;
+  --green-xl:#f0fdf4;--green-s:#bbf7d0;
+  --red-xl:#fef2f2;--red-s:#fecaca;
+  --amber-xl:#fffbeb;--amber-s:#fde68a;
+  --ink:#0f172a;--ink2:#334155;--ink3:#64748b;--ink4:#94a3b8;
+  --line:#e2e8f0;--surf:#f8fafc;--white:#fff;
+  --s1:0 1px 3px rgba(15,23,42,.06),0 1px 2px rgba(15,23,42,.04);
+  --s2:0 4px 16px rgba(15,23,42,.08),0 2px 6px rgba(15,23,42,.04);
+  --s3:0 12px 40px rgba(15,23,42,.11),0 3px 10px rgba(15,23,42,.06);
+  --s4:0 24px 64px rgba(15,23,42,.13),0 6px 20px rgba(15,23,42,.07);
+  --sb:0 8px 32px rgba(37,99,235,.20);
+  --fd:'Sora',sans-serif;--fb:'DM Sans',sans-serif;
+  --ease:cubic-bezier(.4,0,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);color:var(--ink);background:var(--white);overflow-x:hidden;-webkit-font-smoothing:antialiased;line-height:1.6}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+button{cursor:pointer;border:none;font-family:var(--fb)}
+.w{max-width:1180px;margin:0 auto;padding:0 24px}
+.wa{max-width:900px;margin:0 auto;padding:0 24px}
+select,input{appearance:none;-webkit-appearance:none}
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+@keyframes resultIn{from{opacity:0;transform:translateY(18px) scale(.97)}to{opacity:1;transform:none}}
+@keyframes popIn{from{opacity:0;transform:scale(.85)}to{opacity:1;transform:scale(1)}}
+@keyframes shake{0%,100%{transform:translateX(0)}20%,60%{transform:translateX(-6px)}40%,80%{transform:translateX(6px)}}
+@keyframes timerWarning{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}
+@keyframes streakPop{0%{transform:scale(1)}50%{transform:scale(1.35)}100%{transform:scale(1)}}
+@keyframes progressFlow{from{background-position:0 0}to{background-position:40px 0}}
+.rev{opacity:0;transform:translateY(22px);transition:opacity .55s var(--ease),transform .55s var(--ease)}
+.rev.in{opacity:1;transform:none}
+
+/* ===== HEADER ===== */
+.hdr{position:sticky;top:0;z-index:999;background:rgba(255,255,255,.96);backdrop-filter:blur(20px);border-bottom:1px solid var(--line);box-shadow:var(--s1)}
+.hdi{display:flex;align-items:center;justify-content:space-between;height:66px}
+.logo{display:flex;align-items:center;gap:10px}
+.lb{width:36px;height:36px;background:var(--blue);border-radius:9px;display:flex;align-items:center;justify-content:center;box-shadow:var(--sb);flex-shrink:0}
+.lb svg{width:18px;height:18px;fill:#fff}
+.ln{font-family:var(--fd);font-size:19px;font-weight:800;color:var(--ink);line-height:1}
+.ln span{color:var(--blue)}
+.ls{font-size:10px;color:var(--ink4);letter-spacing:.04em}
+nav.dn{display:flex;align-items:center;gap:2px}
+nav.dn a{font-size:13.5px;font-weight:500;color:var(--ink2);padding:7px 13px;border-radius:8px;transition:.2s}
+nav.dn a:hover{color:var(--blue);background:var(--blue-xl)}
+.hcta{background:var(--blue);color:#fff;font-family:var(--fd);font-weight:600;font-size:13px;padding:8px 18px;border-radius:8px;box-shadow:var(--sb);transition:.2s;display:inline-block}
+.hcta:hover{background:var(--blue-d);transform:translateY(-1px)}
+.brg{display:none;flex-direction:column;gap:4.5px;padding:8px;border-radius:8px;background:none;border:none}
+.brg span{display:block;width:20px;height:2px;background:var(--ink);border-radius:2px}
+.dov{display:none;position:fixed;inset:0;background:rgba(15,23,42,.45);z-index:1040;backdrop-filter:blur(3px)}
+.dov.on{display:block}
+.drw{position:fixed;top:0;right:-100%;width:270px;height:100vh;background:#fff;z-index:1050;padding:22px;box-shadow:var(--s4);transition:right .32s var(--ease);overflow-y:auto}
+.drw.on{right:0}
+.dh{display:flex;align-items:center;justify-content:space-between;margin-bottom:26px}
+.dx{width:33px;height:33px;border-radius:7px;background:var(--surf);display:flex;align-items:center;justify-content:center;color:var(--ink3);font-size:17px;border:none;cursor:pointer}
+nav.mn{display:flex;flex-direction:column;gap:3px}
+nav.mn a{display:block;font-size:14px;font-weight:500;color:var(--ink2);padding:11px 13px;border-radius:8px;transition:.2s}
+nav.mn a:hover{color:var(--blue);background:var(--blue-xl)}
+
+/* ===== HERO ===== */
+.hero{position:relative;overflow:hidden;background:linear-gradient(150deg,#ebf4ff 0%,#fff 46%,#f0fdf4 100%);padding:60px 0 72px}
+.hero::before{content:'';position:absolute;top:-140px;right:-180px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(37,99,235,.08) 0%,transparent 68%);pointer-events:none}
+.blob{position:absolute;border-radius:50%;pointer-events:none;animation:float 6s ease-in-out infinite}
+.b1{width:13px;height:13px;background:rgba(37,99,235,.18);top:22%;right:14%}
+.b2{width:9px;height:9px;background:rgba(16,185,129,.22);top:58%;right:26%;animation-delay:2.2s}
+.b3{width:11px;height:11px;background:rgba(245,158,11,.18);top:36%;right:6%;animation-delay:4s}
+.bc{display:flex;align-items:center;gap:7px;font-size:12.5px;color:var(--ink3);margin-bottom:22px;position:relative;z-index:1;flex-wrap:wrap}
+.bc a{color:var(--blue);font-weight:600}
+.pill{display:inline-flex;align-items:center;gap:7px;font-family:var(--fd);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);background:var(--blue-xl);padding:5px 14px;border-radius:100px;margin-bottom:16px}
+.pill::before{content:'';width:6px;height:6px;background:var(--blue);border-radius:50%}
+.hero-inner{position:relative;z-index:1;max-width:720px;animation:fadeUp .5s ease both}
+.hero h1{font-family:var(--fd);font-size:clamp(24px,4.5vw,48px);font-weight:800;line-height:1.1;color:var(--ink);margin-bottom:13px}
+.hero h1 span{color:var(--blue)}
+.hero-sub{font-size:16px;color:var(--ink3);line-height:1.8;margin-bottom:20px;max-width:580px}
+.hero-chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+.chip{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;padding:6px 14px;border-radius:100px;background:#fff;border:1.5px solid var(--line);color:var(--ink2);box-shadow:var(--s1)}
+.hero-meta{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.upd{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:700;color:var(--blue);background:var(--blue-xl);padding:6px 14px;border-radius:100px;border:1.5px solid var(--blue-s)}
+
+/* ===== TOOL SECTION ===== */
+.tool-sec{background:var(--surf);padding:72px 0}
+.tool-wrap{max-width:980px;margin:0 auto}
+
+/* STATS BAR */
+.stats-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:24px}
+.stat-item{background:#fff;border:1.5px solid var(--line);border-radius:14px;padding:16px;text-align:center;box-shadow:var(--s1);transition:.28s}
+.stat-item:hover{box-shadow:var(--s2)}
+.stat-val{font-family:var(--fd);font-size:26px;font-weight:800;color:var(--blue);line-height:1;margin-bottom:4px}
+.stat-val.green{color:var(--green)}
+.stat-val.red{color:var(--red)}
+.stat-val.amber{color:var(--amber)}
+.stat-key{font-size:11.5px;font-weight:600;color:var(--ink4);text-transform:uppercase;letter-spacing:.05em}
+
+/* SETUP CARD */
+.setup-card{background:#fff;border:1.5px solid var(--line);border-radius:24px;overflow:hidden;box-shadow:var(--s4);margin-bottom:24px}
+.setup-hdr{background:linear-gradient(135deg,#1d4ed8 0%,#2563eb 55%,#3b82f6 100%);padding:28px 36px;position:relative;overflow:hidden}
+.setup-hdr::before{content:'';position:absolute;top:-50px;right:-50px;width:200px;height:200px;border-radius:50%;background:rgba(255,255,255,.07)}
+.sh-inner{position:relative;z-index:1}
+.sh-inner h2{font-family:var(--fd);font-size:20px;font-weight:800;color:#fff;margin-bottom:5px}
+.sh-inner p{font-size:13.5px;color:rgba(255,255,255,.8);line-height:1.6}
+.sh-badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.shb{font-size:11.5px;font-weight:600;color:rgba(255,255,255,.9);background:rgba(255,255,255,.13);padding:4px 12px;border-radius:100px}
+.setup-body{padding:32px 36px}
+
+/* FORM CONTROLS */
+.ctrl-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:16px;margin-bottom:20px}
+.ctrl-grid2{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:14px;margin-bottom:20px}
+.fld{display:flex;flex-direction:column;gap:7px}
+.flbl{font-size:13px;font-weight:700;color:var(--ink2)}
+.flbl span{font-size:11px;font-weight:500;color:var(--ink4);margin-left:5px;background:var(--surf);padding:2px 7px;border-radius:5px;border:1px solid var(--line)}
+.fsel,.finp{padding:12px 16px;font-size:14.5px;color:var(--ink);background:#fff;border:1.5px solid var(--line);border-radius:10px;outline:none;transition:.22s;font-family:var(--fb);width:100%}
+.fsel:focus,.finp:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(37,99,235,.10)}
+.fsel{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2364748b' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:42px}
+
+/* TOGGLE SWITCHES */
+.toggle-row{display:flex;align-items:center;gap:20px;flex-wrap:wrap;margin-bottom:22px}
+.tog-item{display:flex;align-items:center;gap:9px;font-size:13px;font-weight:600;color:var(--ink2);cursor:pointer}
+.tog{position:relative;width:40px;height:22px;background:var(--line);border-radius:100px;transition:.25s;flex-shrink:0}
+.tog.on{background:var(--blue)}
+.tog::after{content:'';position:absolute;top:3px;left:3px;width:16px;height:16px;border-radius:50%;background:#fff;transition:.25s;box-shadow:0 1px 4px rgba(0,0,0,.18)}
+.tog.on::after{left:21px}
+
+/* DIFFICULTY PILLS */
+.diff-row{display:flex;gap:10px;margin-bottom:22px;flex-wrap:wrap}
+.diff-pill{padding:9px 20px;border-radius:100px;font-family:var(--fd);font-size:13px;font-weight:700;border:2px solid var(--line);background:var(--surf);color:var(--ink2);cursor:pointer;transition:.22s}
+.diff-pill.active.easy{background:var(--green);border-color:var(--green);color:#fff}
+.diff-pill.active.med{background:var(--amber);border-color:var(--amber);color:#fff}
+.diff-pill.active.hard{background:var(--red);border-color:var(--red);color:#fff}
+.diff-pill:hover{border-color:var(--blue)}
+
+/* START BUTTON */
+.start-btn{width:100%;padding:16px;background:linear-gradient(135deg,var(--blue) 0%,#1e40af 100%);color:#fff;font-family:var(--fd);font-weight:800;font-size:16px;border-radius:12px;box-shadow:var(--sb);transition:all .25s var(--ease);display:flex;align-items:center;justify-content:center;gap:10px;border:none}
+.start-btn:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(37,99,235,.32)}
+
+/* ===== PRACTICE AREA ===== */
+#practiceArea{display:none;animation:resultIn .4s var(--ease) both}
+
+/* TIMER BAR */
+.timer-section{background:#fff;border:1.5px solid var(--line);border-radius:16px;padding:16px 22px;margin-bottom:18px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.timer-display{display:flex;align-items:center;gap:10px}
+.timer-icon{font-size:20px}
+.timer-num{font-family:var(--fd);font-size:32px;font-weight:800;color:var(--ink);min-width:52px;transition:.2s}
+.timer-num.warn{color:var(--amber);animation:timerWarning .6s ease-in-out infinite}
+.timer-num.danger{color:var(--red);animation:timerWarning .4s ease-in-out infinite}
+.timer-bar-wrap{flex:1;height:8px;background:var(--line);border-radius:100px;overflow:hidden;min-width:100px}
+.timer-bar{height:100%;border-radius:100px;transition:width .9s linear, background .3s}
+.tb-safe{background:linear-gradient(90deg,var(--green),#059669)}
+.tb-warn{background:linear-gradient(90deg,var(--amber),#d97706)}
+.tb-danger{background:linear-gradient(90deg,var(--red),#dc2626)}
+.timer-label{font-size:12px;font-weight:700;color:var(--ink4)}
+
+/* STREAK + COMBO */
+.streak-badge{display:flex;align-items:center;gap:7px;font-family:var(--fd);font-size:13px;font-weight:700;padding:7px 16px;border-radius:100px;background:var(--surf);border:1.5px solid var(--line);transition:.3s}
+.streak-badge.fire{background:linear-gradient(135deg,#fef3c7,#fde68a);border-color:var(--amber);color:#92400e;animation:streakPop .4s var(--ease)}
+.streak-badge.mega{background:linear-gradient(135deg,#fee2e2,#fecaca);border-color:var(--red);color:#991b1b}
+.streak-icon{font-size:16px}
+
+/* QUESTION CARD */
+.q-card{background:#fff;border:1.5px solid var(--line);border-radius:22px;overflow:hidden;box-shadow:var(--s4);margin-bottom:18px}
+.q-top{background:linear-gradient(135deg,#0f172a 0%,#1e3a8a 100%);padding:20px 28px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.q-meta{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.q-num{font-family:var(--fd);font-size:13px;font-weight:700;color:rgba(255,255,255,.7)}
+.q-topic-tag{display:inline-flex;align-items:center;gap:5px;font-size:11.5px;font-weight:700;padding:4px 11px;border-radius:100px;background:rgba(255,255,255,.13);color:rgba(255,255,255,.9)}
+.q-diff-tag{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:700;padding:3px 9px;border-radius:100px}
+.qdt-easy{background:rgba(16,185,129,.28);color:#6ee7b7}
+.qdt-med{background:rgba(245,158,11,.28);color:#fcd34d}
+.qdt-hard{background:rgba(239,68,68,.28);color:#fca5a5}
+.q-score-mini{font-family:var(--fd);font-size:13px;font-weight:700;color:rgba(255,255,255,.85)}
+
+.q-body{padding:28px}
+.q-text{font-size:17px;font-weight:600;color:var(--ink);line-height:1.7;margin-bottom:22px;min-height:52px}
+.q-text .highlight{color:var(--blue);font-weight:800}
+
+/* ANSWER INPUT */
+.ans-section{margin-bottom:20px}
+.ans-label{font-size:12.5px;font-weight:700;color:var(--ink3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px}
+.ans-input{width:100%;padding:15px 20px;font-size:18px;font-family:var(--fd);font-weight:700;color:var(--ink);background:var(--surf);border:2px solid var(--line);border-radius:12px;outline:none;transition:.25s}
+.ans-input:focus{border-color:var(--blue);background:#fff;box-shadow:0 0 0 4px rgba(37,99,235,.08)}
+.ans-input.correct{border-color:var(--green);background:var(--green-xl);color:var(--green)}
+.ans-input.wrong{border-color:var(--red);background:var(--red-xl);color:var(--red);animation:shake .4s ease}
+
+/* FEEDBACK */
+.feedback-box{border-radius:13px;padding:14px 18px;margin-bottom:18px;display:none;animation:popIn .3s var(--ease)}
+.fb-correct{background:var(--green-xl);border:1.5px solid var(--green-s)}
+.fb-wrong{background:var(--red-xl);border:1.5px solid var(--red-s)}
+.fb-timeout{background:var(--amber-xl);border:1.5px solid var(--amber-s)}
+.fb-head{display:flex;align-items:center;gap:9px;font-family:var(--fd);font-size:15px;font-weight:800;color:var(--ink);margin-bottom:6px}
+.fb-detail{font-size:13.5px;color:var(--ink3);line-height:1.65}
+.fb-detail strong{color:var(--ink2)}
+
+/* PROGRESS BAR */
+.progress-section{margin-bottom:18px}
+.prog-row{display:flex;justify-content:space-between;font-size:12px;font-weight:700;color:var(--ink4);margin-bottom:7px}
+.prog-track{height:10px;background:var(--line);border-radius:100px;overflow:hidden}
+.prog-fill{height:100%;border-radius:100px;background:linear-gradient(90deg,var(--blue),#3b82f6);background-size:40px 100%;transition:width .5s var(--ease);animation:progressFlow 1s linear infinite}
+
+/* ACTION BUTTONS */
+.action-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+.act-btn{padding:13px;font-family:var(--fd);font-weight:700;font-size:13.5px;border-radius:10px;border:none;transition:all .22s var(--ease);display:flex;align-items:center;justify-content:center;gap:7px}
+.btn-check{background:linear-gradient(135deg,var(--blue),#1e40af);color:#fff;box-shadow:var(--sb)}
+.btn-check:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(37,99,235,.28)}
+.btn-next{background:var(--green);color:#fff;box-shadow:0 4px 16px rgba(16,185,129,.25)}
+.btn-next:hover{background:#059669;transform:translateY(-2px)}
+.btn-skip{background:var(--surf);color:var(--ink2);border:1.5px solid var(--line)}
+.btn-skip:hover{border-color:var(--amber);color:var(--amber)}
+.btn-reset{background:var(--red-xl);color:var(--red);border:1.5px solid var(--red-s)}
+.btn-reset:hover{background:var(--red);color:#fff}
+
+/* RESULT SUMMARY */
+#resultSummary{display:none;animation:resultIn .45s var(--ease) both}
+.summary-card{background:linear-gradient(135deg,#0f172a 0%,#1e3a8a 100%);border-radius:24px;padding:36px;text-align:center;margin-bottom:20px;position:relative;overflow:hidden;color:#fff}
+.summary-card::before{content:'';position:absolute;top:-60px;right:-60px;width:250px;height:250px;border-radius:50%;background:rgba(255,255,255,.05)}
+.sum-emoji{font-size:60px;display:block;margin-bottom:12px;position:relative;z-index:1}
+.sum-title{font-family:var(--fd);font-size:26px;font-weight:800;margin-bottom:6px;position:relative;z-index:1}
+.sum-sub{font-size:14px;color:rgba(255,255,255,.72);position:relative;z-index:1;margin-bottom:20px}
+.sum-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;position:relative;z-index:1}
+.sum-item{background:rgba(255,255,255,.1);border-radius:12px;padding:14px}
+.sum-val{font-family:var(--fd);font-size:24px;font-weight:800;color:#fff;margin-bottom:3px}
+.sum-key{font-size:11px;color:rgba(255,255,255,.6);font-weight:600}
+.replay-btn{width:100%;padding:15px;background:var(--blue);color:#fff;font-family:var(--fd);font-weight:800;font-size:15px;border-radius:12px;box-shadow:var(--sb);transition:.25s;display:flex;align-items:center;justify-content:center;gap:9px;border:none}
+.replay-btn:hover{background:var(--blue-d);transform:translateY(-2px)}
+
+/* HISTORY LIST */
+.history-wrap{background:#fff;border:1.5px solid var(--line);border-radius:16px;padding:20px;max-height:320px;overflow-y:auto;margin-bottom:18px}
+.history-title{font-family:var(--fd);font-size:13px;font-weight:700;color:var(--ink2);margin-bottom:12px;text-transform:uppercase;letter-spacing:.06em}
+.h-item{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--line);font-size:13px;color:var(--ink3)}
+.h-item:last-child{border-bottom:none;padding-bottom:0}
+.h-badge{width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;flex-shrink:0}
+.hb-c{background:var(--green);color:#fff}
+.hb-w{background:var(--red);color:#fff}
+.hb-t{background:var(--amber);color:#fff}
+.h-q{flex:1;line-height:1.5}
+.h-ans{font-weight:700;color:var(--ink2);font-size:12px;text-align:right;flex-shrink:0}
+
+/* ===== SEC HEADERS ===== */
+.sec-hd{text-align:center;margin-bottom:44px}
+.sec-h{font-family:var(--fd);font-size:clamp(22px,3.8vw,38px);font-weight:800;color:var(--ink);line-height:1.18;margin-bottom:10px}
+.sec-h span{color:var(--blue)}
+.sec-sub{font-size:15.5px;color:var(--ink3);line-height:1.75;max-width:520px;margin:0 auto}
+
+/* TIPS / CONTENT SECTIONS */
+.tips-sec{background:var(--white);padding:72px 0}
+.tips-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.tip-card{background:var(--surf);border:1.5px solid var(--line);border-radius:16px;padding:24px 20px;transition:.28s}
+.tip-card:hover{transform:translateY(-4px);box-shadow:var(--s3);border-color:var(--blue-s)}
+.tc-ico{font-size:32px;margin-bottom:12px}
+.tc-title{font-family:var(--fd);font-size:14px;font-weight:800;color:var(--ink);margin-bottom:8px}
+.tc-desc{font-size:13.5px;color:var(--ink3);line-height:1.72}
+.tc-list{display:flex;flex-direction:column;gap:7px;margin-top:10px}
+.tc-item{display:flex;align-items:flex-start;gap:8px;font-size:13px;color:var(--ink3);line-height:1.6}
+.tc-item::before{content:'✓';width:16px;height:16px;background:var(--green);color:#fff;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;flex-shrink:0;margin-top:3px}
+
+/* STORY */
+.story-sec{background:var(--surf);padding:72px 0}
+.story-card{max-width:780px;margin:0 auto;background:linear-gradient(135deg,var(--blue-xl),#f0fdf4);border:1.5px solid var(--blue-s);border-radius:24px;padding:36px;box-shadow:var(--s3)}
+.story-ico{font-size:44px;margin-bottom:16px;display:block}
+.story-card h3{font-family:var(--fd);font-size:20px;font-weight:800;color:var(--ink);margin-bottom:14px}
+.story-card p{font-size:15px;color:var(--ink2);line-height:1.88}
+.story-card p+p{margin-top:12px}
+.story-highlight{display:inline-flex;align-items:center;gap:7px;background:var(--blue);color:#fff;font-family:var(--fd);font-size:13px;font-weight:700;padding:6px 14px;border-radius:100px;margin-top:14px}
+
+/* SEO ARTICLE */
+.art-sec{background:var(--white);padding:72px 0}
+.art-card{background:var(--surf);border:1.5px solid var(--line);border-radius:22px;padding:40px;box-shadow:var(--s2)}
+.art-body h2{font-family:var(--fd);font-size:19px;font-weight:800;color:var(--ink);margin:26px 0 10px}
+.art-body h2:first-child{margin-top:0}
+.art-body p{font-size:14.5px;color:var(--ink3);line-height:1.85;margin-bottom:12px}
+.art-body ul{display:flex;flex-direction:column;gap:8px;margin:10px 0 14px}
+.art-body li{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--ink3);line-height:1.7}
+.art-body li::before{content:'✓';width:17px;height:17px;background:var(--blue);color:#fff;border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:9.5px;font-weight:700;flex-shrink:0;margin-top:3px}
+.art-body strong{color:var(--ink2);font-weight:700}
+.ibox{background:var(--blue-xl);border:1.5px solid var(--blue-s);border-radius:12px;padding:13px 17px;margin:13px 0;display:flex;gap:10px;font-size:13.5px;color:var(--ink2);line-height:1.7}
+.ibox svg{width:16px;height:16px;stroke:var(--blue);fill:none;stroke-width:2;flex-shrink:0;margin-top:2px}
+.ibox.g{background:var(--green-xl);border-color:var(--green-s)}.ibox.g svg{stroke:var(--green)}
+.ibox.a{background:var(--amber-xl);border-color:var(--amber-s)}.ibox.a svg{stroke:var(--amber)}
+
+/* EXAM TAGS */
+.exam-tags{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}
+.exam-tag{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:700;padding:6px 14px;border-radius:100px;background:var(--blue-xl);color:var(--blue);border:1.5px solid var(--blue-s)}
+
+/* FAQ */
+.faq-sec{background:var(--surf);padding:72px 0}
+.fql{max-width:800px;margin:0 auto}
+.fq{background:#fff;border:1.5px solid var(--line);border-radius:13px;margin-bottom:10px;overflow:hidden}
+.fq-q{display:flex;align-items:center;justify-content:space-between;padding:17px 22px;cursor:pointer;gap:14px;transition:.2s}
+.fq-q:hover{background:var(--blue-xl)}
+.fq-t{font-weight:600;font-size:14.5px;color:var(--ink);line-height:1.4}
+.fq-i{width:28px;height:28px;border-radius:50%;background:var(--blue-xl);color:var(--blue);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;transition:transform .28s,background .2s;border:none;cursor:pointer}
+.fq.open .fq-i{transform:rotate(45deg);background:var(--blue);color:#fff}
+.fq-a{max-height:0;overflow:hidden;transition:max-height .35s var(--ease)}
+.fq-ai{padding:0 22px 17px;font-size:14px;color:var(--ink3);line-height:1.78}
+.fq.open .fq-a{max-height:400px}
+
+/* RELATED */
+.rel-sec{background:var(--white);padding:72px 0}
+.rel-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.rel-card{background:var(--surf);border:1.5px solid var(--line);border-radius:14px;padding:18px 16px;display:flex;flex-direction:column;gap:8px;transition:.28s}
+.rel-card:hover{transform:translateY(-4px);box-shadow:var(--s3);border-color:var(--blue-s)}
+.rel-ico{font-size:22px}
+.rel-title{font-family:var(--fd);font-size:13px;font-weight:700;color:var(--ink)}
+.rel-desc{font-size:12px;color:var(--ink3);line-height:1.55;flex:1}
+.rel-btn{display:inline-flex;align-items:center;gap:5px;font-family:var(--fd);font-weight:700;font-size:12.5px;color:var(--blue);transition:.2s}
+.rel-btn:hover{gap:8px}
+.rel-btn svg{width:13px;height:13px;stroke:currentColor;fill:none;stroke-width:2.5}
+
+/* DISC + CTA + FOOTER */
+.disc{background:var(--amber-xl);border-top:1px solid var(--amber-s);border-bottom:1px solid var(--amber-s);padding:13px 0}
+.disc-in{display:flex;align-items:flex-start;gap:12px;font-size:13px;color:var(--ink2);line-height:1.7}
+.cta{background:linear-gradient(140deg,#0f172a 0%,#1e3a8a 100%);padding:72px 0;text-align:center;position:relative;overflow:hidden}
+.cta::before{content:'';position:absolute;top:-80px;left:50%;transform:translateX(-50%);width:700px;height:350px;background:radial-gradient(ellipse,rgba(37,99,235,.22) 0%,transparent 68%);pointer-events:none}
+.cta-in{position:relative;z-index:1}
+.cta .pill{color:#93c5fd;background:rgba(255,255,255,.1);margin-bottom:16px}
+.cta .pill::before{background:#93c5fd}
+.cta h2{font-family:var(--fd);font-size:clamp(22px,4vw,40px);font-weight:800;color:#fff;line-height:1.15;margin-bottom:11px}
+.cta h2 em{color:#fbbf24;font-style:normal}
+.cta p{font-size:15.5px;color:rgba(255,255,255,.72);max-width:460px;margin:0 auto 28px;line-height:1.78}
+.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn-gold{display:inline-flex;align-items:center;gap:8px;background:var(--amber);color:#fff;font-family:var(--fd);font-weight:800;font-size:14.5px;padding:13px 28px;border-radius:8px;box-shadow:0 8px 28px rgba(245,158,11,.35);transition:.22s}
+.btn-gold:hover{background:#d97706;transform:translateY(-3px)}
+.btn-ghost{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.09);border:1.5px solid rgba(255,255,255,.22);color:#fff;font-family:var(--fd);font-weight:600;font-size:13.5px;padding:12px 24px;border-radius:8px;transition:.2s}
+.btn-ghost:hover{background:rgba(255,255,255,.16)}
+footer{background:#0f172a;padding:48px 0 0}
+.ft-inner{max-width:1180px;margin:0 auto;padding:0 24px}
+.ft-top{display:grid;grid-template-columns:1.9fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px}
+.ft-brand .ln{color:#fff}.ft-brand .ls{color:#475569}
+.ft-desc{font-size:13px;color:#64748b;line-height:1.78;max-width:255px;margin:12px 0 18px}
+.ft-soc{display:flex;gap:9px}
+.fts{width:33px;height:33px;border-radius:7px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;color:#94a3b8;font-size:13px;transition:.2s;border:none;cursor:pointer}
+.fts:hover{background:var(--blue);color:#fff}
+.fc h4{font-family:var(--fd);font-size:11.5px;font-weight:700;color:#fff;margin-bottom:13px;letter-spacing:.06em;text-transform:uppercase}
+.fc ul{display:flex;flex-direction:column;gap:7px}
+.fc ul a{font-size:13px;color:#64748b;transition:.18s}
+.fc ul a:hover{color:#93c5fd}
+.ft-btm{border-top:1px solid rgba(255,255,255,.07);padding:18px 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:9px}
+.ft-cp{font-size:12px;color:#475569}
+.ft-lnk{display:flex;gap:16px}
+.ft-lnk a{font-size:12px;color:#475569;transition:.18s}
+.ft-lnk a:hover{color:#93c5fd}
+.btt{position:fixed;bottom:26px;right:26px;z-index:500;width:43px;height:43px;background:var(--blue);color:#fff;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:17px;box-shadow:var(--sb);opacity:0;pointer-events:none;transform:translateY(14px);transition:.28s var(--ease);border:none;cursor:pointer}
+.btt.on{opacity:1;pointer-events:auto;transform:translateY(0)}
+.btt:hover{transform:translateY(-3px)}
+
+/* HOWTO */
+.howto-sec{background:var(--surf);padding:64px 0}
+.howto-box{background:var(--amber-xl);border:2px solid var(--amber-s);border-radius:20px;padding:30px 34px;max-width:700px;margin:0 auto}
+.howto-title{display:flex;align-items:center;gap:10px;font-family:var(--fd);font-size:18px;font-weight:800;color:var(--ink);margin-bottom:16px}
+.howto-steps{display:flex;flex-direction:column;gap:10px}
+.hw-step{display:flex;align-items:flex-start;gap:12px;font-size:14px;color:var(--ink2);line-height:1.65}
+.sn{width:25px;height:25px;background:var(--amber);color:#fff;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:11.5px;font-weight:800;flex-shrink:0;margin-top:1px}
+
+/* RESPONSIVE */
+@media(max-width:1060px){.ft-top{grid-template-columns:1fr 1fr}.tips-grid{grid-template-columns:1fr 1fr}.rel-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:860px){nav.dn,.hcta{display:none}.brg{display:flex}.ctrl-grid{grid-template-columns:1fr 1fr}.ctrl-grid2{grid-template-columns:1fr 1fr}.stats-bar{grid-template-columns:1fr 1fr}.action-grid{grid-template-columns:1fr 1fr}.sum-grid{grid-template-columns:1fr 1fr}.setup-body{padding:22px 22px}.setup-hdr{padding:22px 22px}}
+@media(max-width:600px){.ft-top{grid-template-columns:1fr}.tips-grid{grid-template-columns:1fr}.rel-grid{grid-template-columns:1fr}.cta-btns{flex-direction:column;align-items:center}.story-card{padding:22px 18px}.ft-btm{flex-direction:column;text-align:center}.ft-lnk{justify-content:center}.ctrl-grid{grid-template-columns:1fr}.ctrl-grid2{grid-template-columns:1fr 1fr}.stats-bar{grid-template-columns:1fr 1fr}.action-grid{grid-template-columns:1fr}.sum-grid{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+
+<button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<!-- HEADER -->
+<header class="hdr">
+  <div class="w"><div class="hdi">
+    <a href="https://rajdailytools.in/" class="logo">
+      <div class="lb"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+      <div><div class="ln">Raj<span>Daily</span>Tools</div><div class="ls">Free Tools for India</div></div>
+    </a>
+    <nav class="dn">
+      <a href="https://rajdailytools.in/">Home</a>
+      <a href="https://rajdailytools.in/categories.html">Categories</a>
+      <a href="https://rajdailytools.in/#popular">Popular</a>
+      <a href="https://rajdailytools.in/about.html">About</a>
+      <a href="https://rajdailytools.in/contact.html">Contact</a>
+    </nav>
+    <a href="https://rajdailytools.in/" class="hcta">🏠 All Tools</a>
+    <button class="brg" id="brg" onclick="oD()"><span></span><span></span><span></span></button>
+  </div></div>
+</header>
+<div class="dov" id="dov" onclick="cD()"></div>
+<div class="drw" id="drw">
+  <div class="dh">
+    <div class="logo">
+      <div class="lb" style="width:30px;height:30px;border-radius:7px"><svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#fff"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+      <div class="ln" style="font-size:16px">Raj<span>Daily</span>Tools</div>
+    </div>
+    <button class="dx" onclick="cD()">✕</button>
+  </div>
+  <nav class="mn">
+    <a href="https://rajdailytools.in/" onclick="cD()">🏠 Home</a>
+    <a href="https://rajdailytools.in/categories.html" onclick="cD()">🗂️ Categories</a>
+    <a href="https://rajdailytools.in/#popular" onclick="cD()">⭐ Popular</a>
+    <a href="https://rajdailytools.in/about.html" onclick="cD()">👤 About</a>
+    <a href="https://rajdailytools.in/contact.html" onclick="cD()">📬 Contact</a>
+  </nav>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+  <div class="w">
+    <div class="bc">
+      <a href="https://rajdailytools.in/">Home</a><span style="color:var(--ink4)">›</span>
+      <a href="https://rajdailytools.in/useful-tools-category.html">Tools</a><span style="color:var(--ink4)">›</span>
+      <span>Maths Practice Tool</span>
+    </div>
+    <div class="hero-inner">
+      <div class="pill">🔢 Free Unlimited Maths Practice</div>
+      <h1>Maths Practice Tool <span>Online</span><br>Unlimited Questions Practice</h1>
+      <p class="hero-sub">Auto-generated unlimited maths questions with countdown timer, streak tracking, and score analysis. Practice Percentage, Profit Loss, SI/CI, Time-Speed, Ratio, BODMAS, Average and 15+ more topics. Built for SSC, Bank, Railway, NDA, UPSC.</p>
+      <div class="hero-chips">
+        <span class="chip">🔢 19+ Topics</span>
+        <span class="chip">⏱️ Live Timer</span>
+        <span class="chip">🔥 Streak Counter</span>
+        <span class="chip">📊 Score Tracking</span>
+        <span class="chip">♾️ Infinite Questions</span>
+        <span class="chip">📱 Mobile First</span>
+      </div>
+      <div class="hero-meta">
+        <div class="upd">🧮 SSC · Bank · Railway · NDA · UPSC</div>
+        <span style="font-size:13px;color:var(--ink3);font-weight:500">⚡ 100% Free</span>
+        <span style="font-size:13px;color:var(--ink3);font-weight:500">🔒 No Signup</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOOL SECTION -->
+<section class="tool-sec" id="practice">
+  <div class="w"><div class="tool-wrap">
+
+    <!-- STATS BAR -->
+    <div class="stats-bar" id="statsBar">
+      <div class="stat-item"><div class="stat-val green" id="statCorrect">0</div><div class="stat-key">✅ Correct</div></div>
+      <div class="stat-item"><div class="stat-val red" id="statWrong">0</div><div class="stat-key">❌ Wrong</div></div>
+      <div class="stat-item"><div class="stat-val amber" id="statStreak">0</div><div class="stat-key">🔥 Streak</div></div>
+      <div class="stat-item"><div class="stat-val" id="statAcc">—</div><div class="stat-key">🎯 Accuracy</div></div>
+    </div>
+
+    <!-- SETUP CARD -->
+    <div class="setup-card" id="setupCard">
+      <div class="setup-hdr">
+        <div class="sh-inner">
+          <h2>🧮 Configure Your Practice Session</h2>
+          <p>Choose your topic, difficulty level, timer setting and session length. Then hit Start — unlimited auto-generated questions begin instantly.</p>
+          <div class="sh-badges">
+            <span class="shb">♾️ Infinite Engine</span>
+            <span class="shb">⏱️ Countdown Timer</span>
+            <span class="shb">🔥 Streak System</span>
+            <span class="shb">📊 Live Score</span>
+            <span class="shb">✅ All Topics</span>
+          </div>
+        </div>
+      </div>
+      <div class="setup-body">
+
+        <div class="ctrl-grid">
+          <div class="fld">
+            <label class="flbl">Topic <span>19 topics available</span></label>
+            <select class="fsel" id="topicSel">
+              <option value="random">🎲 Random Mix (All Topics)</option>
+              <optgroup label="Basic Arithmetic">
+                <option value="addition">➕ Addition</option>
+                <option value="subtraction">➖ Subtraction</option>
+                <option value="multiplication">✖️ Multiplication</option>
+                <option value="division">➗ Division</option>
+              </optgroup>
+              <optgroup label="Powers & Roots">
+                <option value="square">² Square</option>
+                <option value="cube">³ Cube</option>
+                <option value="squareRoot">√ Square Root</option>
+                <option value="cubeRoot">∛ Cube Root</option>
+              </optgroup>
+              <optgroup label="Aptitude Chapters">
+                <option value="percentage">📊 Percentage</option>
+                <option value="profitLoss">💰 Profit & Loss</option>
+                <option value="discount">🏷️ Discount</option>
+                <option value="simpleInterest">💵 Simple Interest</option>
+                <option value="compoundInterest">📈 Compound Interest</option>
+                <option value="ratio">⚖️ Ratio & Proportion</option>
+                <option value="timeWork">🔨 Time & Work</option>
+                <option value="timeSpeed">🚗 Time Speed Distance</option>
+                <option value="average">📉 Average</option>
+                <option value="bodmas">🔢 Simplification (BODMAS)</option>
+                <option value="numberSystem">🔢 Number System</option>
+                <option value="mixture">🧪 Mixture & Alligation</option>
+              </optgroup>
+            </select>
+          </div>
+          <div class="fld">
+            <label class="flbl">Timer (per question)</label>
+            <select class="fsel" id="timerSel">
+              <option value="0">⏱️ No Timer</option>
+              <option value="10">⚡ 10 seconds (Hard)</option>
+              <option value="15">🏃 15 seconds</option>
+              <option value="20" selected>⏰ 20 seconds</option>
+              <option value="30">🕐 30 seconds</option>
+              <option value="45">🕐 45 seconds</option>
+              <option value="60">🕐 60 seconds</option>
+              <option value="90">🕐 90 seconds</option>
+            </select>
+          </div>
+          <div class="fld">
+            <label class="flbl">Session Length</label>
+            <select class="fsel" id="sessionSel">
+              <option value="10">10 Questions</option>
+              <option value="20" selected>20 Questions</option>
+              <option value="30">30 Questions</option>
+              <option value="50">50 Questions</option>
+              <option value="100">100 Questions</option>
+              <option value="0">♾️ Unlimited</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="fld" style="margin-bottom:18px">
+          <label class="flbl">Difficulty Level</label>
+          <div class="diff-row">
+            <button class="diff-pill easy" onclick="setDiff('easy',this)">🟢 Easy</button>
+            <button class="diff-pill med active" onclick="setDiff('med',this)">🟡 Medium</button>
+            <button class="diff-pill hard" onclick="setDiff('hard',this)">🔴 Hard</button>
+          </div>
+        </div>
+
+        <button class="start-btn" onclick="startPractice()">🚀 Start Practice Session</button>
+      </div>
+    </div>
+
+    <!-- PRACTICE AREA -->
+    <div id="practiceArea">
+
+      <!-- TIMER -->
+      <div class="timer-section" id="timerSection" style="display:none">
+        <div class="timer-display">
+          <span class="timer-icon">⏱️</span>
+          <span class="timer-num" id="timerNum">20</span>
+          <span style="font-size:13px;color:var(--ink4);font-weight:600;margin-left:2px">sec</span>
+        </div>
+        <div class="timer-bar-wrap">
+          <div class="timer-bar tb-safe" id="timerBar"></div>
+        </div>
+        <span class="timer-label" id="timerLabel">Time Remaining</span>
+        <div class="streak-badge" id="streakBadge">
+          <span class="streak-icon">🔥</span>
+          <span id="streakNum">0</span> streak
+        </div>
+      </div>
+
+      <!-- NO-TIMER STREAK (always show) -->
+      <div class="timer-section" id="noTimerStreak" style="display:none;padding:12px 22px">
+        <div style="display:flex;align-items:center;gap:10px">
+          <span style="font-size:20px">🔥</span>
+          <span style="font-family:var(--fd);font-size:15px;font-weight:800;color:var(--ink)">Streak: <span id="streakNum2">0</span></span>
+        </div>
+        <div class="streak-badge" id="streakBadge2" style="margin-left:auto">Keep Going!</div>
+      </div>
+
+      <!-- QUESTION CARD -->
+      <div class="q-card">
+        <div class="q-top">
+          <div class="q-meta">
+            <span class="q-num" id="qNum">Q.1</span>
+            <span class="q-topic-tag" id="qTopicTag">—</span>
+            <span class="q-diff-tag" id="qDiffTag">—</span>
+          </div>
+          <div class="q-score-mini" id="qScoreMini">Score: 0</div>
+        </div>
+
+        <div class="q-body">
+          <!-- PROGRESS -->
+          <div class="progress-section" id="progSection" style="display:none">
+            <div class="prog-row">
+              <span id="progLabel">Question 1 of 20</span>
+              <span id="progPct">0%</span>
+            </div>
+            <div class="prog-track"><div class="prog-fill" id="progFill" style="width:0%"></div></div>
+          </div>
+
+          <!-- QUESTION TEXT -->
+          <div class="q-text" id="qText">Loading question...</div>
+
+          <!-- ANSWER -->
+          <div class="ans-section">
+            <div class="ans-label">📝 Your Answer</div>
+            <input class="ans-input" type="text" id="ansInput" placeholder="Type your answer here..." autocomplete="off" inputmode="decimal" onkeydown="if(event.key==='Enter')checkAnswer()">
+          </div>
+
+          <!-- FEEDBACK -->
+          <div class="feedback-box" id="feedbackBox">
+            <div class="fb-head" id="fbHead">—</div>
+            <div class="fb-detail" id="fbDetail">—</div>
+          </div>
+
+          <!-- ACTIONS -->
+          <div class="action-grid">
+            <button class="act-btn btn-check" id="checkBtn" onclick="checkAnswer()">✅ Check Answer</button>
+            <button class="act-btn btn-next" id="nextBtn" onclick="nextQuestion()" style="display:none">➡️ Next Question</button>
+            <button class="act-btn btn-skip" id="skipBtn" onclick="skipQuestion()">⏭️ Skip</button>
+            <button class="act-btn btn-reset" onclick="resetAll()">🔁 Reset</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- HISTORY -->
+      <div class="history-wrap" id="historyWrap">
+        <div class="history-title">📋 Question History</div>
+        <div id="historyList"><div style="font-size:13px;color:var(--ink4);text-align:center;padding:16px">No history yet — answer your first question!</div></div>
+      </div>
+
+    </div><!-- end practiceArea -->
+
+    <!-- RESULT SUMMARY -->
+    <div id="resultSummary">
+      <div class="summary-card">
+        <span class="sum-emoji" id="sumEmoji">🎉</span>
+        <div class="sum-title" id="sumTitle">Session Complete!</div>
+        <div class="sum-sub" id="sumSub">Here's how you performed</div>
+        <div class="sum-grid">
+          <div class="sum-item"><div class="sum-val" id="sumTotal">—</div><div class="sum-key">Total</div></div>
+          <div class="sum-item"><div class="sum-val" id="sumCorr">—</div><div class="sum-key">Correct</div></div>
+          <div class="sum-item"><div class="sum-val" id="sumAcc">—</div><div class="sum-key">Accuracy</div></div>
+          <div class="sum-item"><div class="sum-val" id="sumBest">—</div><div class="sum-key">Best Streak</div></div>
+        </div>
+      </div>
+      <button class="replay-btn" onclick="resetAll()">🔄 Start New Session</button>
+    </div>
+
+  </div></div>
+</section>
+
+<!-- HOW TO USE -->
+<section class="howto-sec">
+  <div class="wa">
+    <div class="sec-hd rev">
+      <div class="sec-h">How to Use This <span>Practice Tool</span></div>
+      <p class="sec-sub">5 steps to maximize your maths speed and accuracy</p>
+    </div>
+    <div class="howto-box rev">
+      <div class="howto-title">📋 Quick Setup Guide</div>
+      <div class="howto-steps">
+        <div class="hw-step"><div class="sn">1</div><div><strong>Topic select karo</strong> — Specific chapter choose karo (e.g. Percentage) ya Random Mix select karo saare topics practice ke liye.</div></div>
+        <div class="hw-step"><div class="sn">2</div><div><strong>Difficulty set karo</strong> — Easy (small numbers), Medium (exam level), Hard (tricky patterns). Beginners Easy se shuru karo.</div></div>
+        <div class="hw-step"><div class="sn">3</div><div><strong>Timer ON karo</strong> — 20–30 seconds timer competitive exam ki preparation ke liye best hai. Timer finish hone par question automatically skip ho jaata hai.</div></div>
+        <div class="hw-step"><div class="sn">4</div><div><strong>Answer type karo aur Check karo</strong> — Enter key ya Check button se answer verify karo. Correct answer hone par streak badhti hai 🔥</div></div>
+        <div class="hw-step"><div class="sn">5</div><div><strong>Session complete hone par result dekho</strong> — Total correct, accuracy %, best streak — sab summary mein dikhega. Phir nayi session start karo!</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STORY -->
+<section class="story-sec">
+  <div class="wa">
+    <div class="sec-hd rev">
+      <div class="sec-h">Abhitas Bhaiya Ki <span>Struggle</span></div>
+    </div>
+    <div class="story-card rev">
+      <span class="story-ico">🧮</span>
+      <h3>"Concept aata tha, lekin exam mein time nahi milta tha"</h3>
+      <p>Abhitas bhaiya ko maths mein sabse zyada dikkat calculation speed mein hoti thi. Concept samajhne ke baad bhi wo exam mein questions time par solve nahi kar paate the. Percentage ka formula yaad tha, Profit-Loss ka logic clear tha — lekin jab ghadi chalti thi toh haath rone lagte the.</p>
+      <p>Coaching mein teacher se poocha toh unhone kaha — "zyada practice chahiye." Lekin practice kahan se kare? Books ke questions khatam ho jaate the. Online tool dhundha toh ya toh paid tha ya sirf 10-20 fixed questions the — ek baar solve karne ke baad dobara karne ka koi matlab nahi tha.</p>
+      <p>Ek din bhaiya ne kaha — "Kaash ek aisa tool hota jo kabhi questions khatam na kare, timer ke saath pressure simulate kare, aur bata bhi de ki accuracy kitni hai." Tab idea aaya. Isliye ye Maths Practice Tool banaya — jahan questions kabhi khatam nahi hote, timer real exam pressure deta hai, aur har session ke baad pura breakdown milta hai. Bhaiya aaj bhi rozana 30 minutes yahan practice karte hain.</p>
+      <span class="story-highlight">🧮 Practice Baar Baar — Improvement Guaranteed</span>
+    </div>
+  </div>
+</section>
+
+<!-- TIPS -->
+<section class="tips-sec">
+  <div class="w">
+    <div class="sec-hd rev">
+      <div class="sec-h">Maths Speed <span>Badhane ke Tips</span></div>
+      <p class="sec-sub">Proven strategies to improve calculation speed for competitive exams</p>
+    </div>
+    <div class="tips-grid">
+      <div class="tip-card rev">
+        <div class="tc-ico">⚡</div>
+        <div class="tc-title">Timer ke Saath Practice Karo</div>
+        <div class="tc-desc">Speed tabhi badhti hai jab pressure ho. Timer ke bina practice casual hoti hai — timer ke saath brain accelerate karta hai:</div>
+        <div class="tc-list">
+          <div class="tc-item">Shuru mein 30 seconds timer rakho</div>
+          <div class="tc-item">Accuracy 80%+ hone par 20 seconds pe aao</div>
+          <div class="tc-item">Advanced level ke liye 10-15 seconds</div>
+          <div class="tc-item">Real exam timing ke hisaab se simulate karo</div>
+          <div class="tc-item">Daily minimum 50 questions with timer</div>
+        </div>
+      </div>
+      <div class="tip-card rev">
+        <div class="tc-ico">🧠</div>
+        <div class="tc-title">Mental Maths Tricks Seekho</div>
+        <div class="tc-desc">Calculator nahi milta exam mein — mental shortcuts zaroori hain:</div>
+        <div class="tc-list">
+          <div class="tc-item">Tables 20 tak strong karo — no paper needed</div>
+          <div class="tc-item">Squares 1–30 yaad karo (SSC mein direct aate hain)</div>
+          <div class="tc-item">Percentage = Fraction convert karna sikho (25% = 1/4)</div>
+          <div class="tc-item">Vedic maths tricks — multiplication shortcuts</div>
+          <div class="tc-item">Approximation method for DI questions</div>
+        </div>
+      </div>
+      <div class="tip-card rev">
+        <div class="tc-ico">📊</div>
+        <div class="tc-title">Topic-Wise Smart Strategy</div>
+        <div class="tc-desc">Har topic ki alag strategy hoti hai — aise approach karo:</div>
+        <div class="tc-list">
+          <div class="tc-item">Weak topics pe zyada time do — use this tool's topic filter</div>
+          <div class="tc-item">Percentage + Ratio combo sabse zyada aate hain SSC mein</div>
+          <div class="tc-item">BODMAS daily — simplification fast aata hai practice se</div>
+          <div class="tc-item">SI/CI formula card banao — daily revision karo</div>
+          <div class="tc-item">Random Mix mode: exam jaisi variety milti hai</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SEO ARTICLE -->
+<section class="art-sec">
+  <div class="wa">
+    <div class="sec-hd rev">
+      <div class="sec-h">Maths Practice Tool — <span>Complete Guide</span></div>
+    </div>
+    <div class="art-card rev">
+      <div class="art-body">
+
+        <h2>Ye Tool Kis Kaam Ka Hai?</h2>
+        <p>Ye ek fully automated maths question generator hai jo infinite questions auto-generate karta hai — Percentage, Profit & Loss, Simple Interest, Compound Interest, Ratio, Time & Work, Time Speed Distance, Average, BODMAS, Number System, Mixture & Alligation aur basic arithmetic sab topics cover karta hai. Ek baar bhi repeat nahi hoga question kyunki sab randomly generate hote hain har baar.</p>
+
+        <div class="ibox">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          <div><strong>Key Feature:</strong> Timer ON karne ke baad agar aap time limit mein answer nahi karte toh question automatically skip ho jaata hai — bilkul real exam jaise pressure simulation. Streak system consecutive correct answers track karta hai — motivation automatically badhti rehti hai.</div>
+        </div>
+
+        <h2>Kaunse Exams ke Liye Useful Hai?</h2>
+        <p>Is tool ka syllabus directly competitive exam pattern se match karta hai. Jo topics yahan hain wahi exams mein pooche jaate hain:</p>
+        <div class="exam-tags">
+          <span class="exam-tag">🎯 SSC CGL / CHSL / GD</span>
+          <span class="exam-tag">🏦 IBPS PO / Clerk / RRB</span>
+          <span class="exam-tag">🚂 Railway RRB NTPC / Group D</span>
+          <span class="exam-tag">🪖 NDA / CDS / AFCAT</span>
+          <span class="exam-tag">📋 UPSC CSAT</span>
+          <span class="exam-tag">🛡️ SSC GD / CRPF / BSF</span>
+          <span class="exam-tag">🏛️ State PCS / SI Exams</span>
+          <span class="exam-tag">📚 CUET / Other Entrance</span>
+        </div>
+
+        <h2>Difficulty System — Easy se Hard Tak</h2>
+        <p>Teen difficulty levels carefully designed hain:</p>
+        <ul>
+          <li><strong>Easy:</strong> Chhote numbers, straightforward calculations. Beginners aur concept clarity ke liye perfect. Confidence build karta hai.</li>
+          <li><strong>Medium:</strong> Exam-level complexity. 2-3 step calculations, realistic numbers. SSC aur Banking exam level ke liye ideal daily practice.</li>
+          <li><strong>Hard:</strong> Tricky patterns, large numbers, multi-step problems. Advanced preparation aur speed challenge ke liye.</li>
+        </ul>
+
+        <h2>Streak System Kyun Important Hai?</h2>
+        <p>Streak system ek gamification technique hai jo brain ko focus rakhti hai. Jab aap consecutive correct answers dete ho toh streak count badhta hai — ye motivation loop create karta hai. Research kehti hai ki streak-based learning mein attention 40% zyada focused rehti hai compared to simple practice. Best streak score session ke end mein dikhta hai.</p>
+
+        <div class="ibox g">
+          <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          <div><strong>Pro Tip:</strong> Roz subah 20–30 minutes is tool pe practice karo — specifically Timer ON karke Medium difficulty pe. 30 din mein calculation speed mein clearly measurable difference aayega. Accuracy % track karo har session mein — improvement graph mentally track karo.</div>
+        </div>
+
+        <h2>NDA Maths Kaise Prepare Kare Is Tool Se?</h2>
+        <p>NDA maths ka level 11th-12th standard ka hota hai — lekin speed aur accuracy dono critical hain. Paper I mein 120 questions mein se approximately 60-70 maths ke hote hain — 150 minutes mein. Matlab roughly 2.5 minutes per question. Is tool mein Timer 30 seconds pe set karo — yahan consistently 30 seconds mein solve karne ki habit banao. Fir NDA paper mein 2.5 minutes zyada aasaan lagenge.</p>
+
+        <h2>Common Mistakes Jo Aspirants Karte Hain</h2>
+        <ul>
+          <li>Timer ke bina practice — speed nahi badhti sirf accuracy focus se</li>
+          <li>Ek hi topic baar baar — variety nahi hoti toh exam mein switch karna mushkil lagta hai</li>
+          <li>Wrong answer chhod dena — ye tool correct answer dikhata hai, use samjho aur memorize karo</li>
+          <li>Sessions ka record nahi rakhna — accuracy track karo improvement measure karne ke liye</li>
+          <li>Hard directly start karna — pehle Easy mein 85%+ accuracy aaye, tabhi Medium pe jaao</li>
+        </ul>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-sec">
+  <div class="wa">
+    <div class="sec-hd rev">
+      <div class="sec-h">Frequently Asked <span>Questions</span></div>
+    </div>
+    <div class="fql">
+      <div class="fq"><div class="fq-q" onclick="tFAQ(this)"><span class="fq-t">Kya ye tool SSC ke liye useful hai?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">Bilkul haan — ye tool specifically SSC CGL, CHSL, GD jaise exams ko dhyan mein rakh kar banaya gaya hai. SSC mein percentage, profit-loss, SI/CI, ratio, time-work, time-speed, BODMAS aur average sabse zyada aate hain — aur ye sab topics is tool mein hain. Timer ke saath practice karo — SSC mein speed critical hoti hai.</div></div></div>
+
+      <div class="fq"><div class="fq-q" onclick="tFAQ(this)"><span class="fq-t">Kya unlimited practice milegi ya questions khatam ho jaate hain?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">Questions kabhi khatam nahi hote — ye ek infinite question engine hai. Har baar ek naya random question generate hota hai. Random numbers, random values, random scenarios — algorithmically generated. Ek question bhi repeat nahi hoga. Unlimited mode choose karo aur chahe 500 questions lagatar practice karo.</div></div></div>
+
+      <div class="fq"><div class="fq-q" onclick="tFAQ(this)"><span class="fq-t">Maths speed kaise badhaye — kya ye tool sach mein help karta hai?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">Haan — scientific research aur lakho students ki experience se ye proven hai ki timed practice speed badhati hai. Is tool mein timer countdown hota hai, streak system focus maintain karta hai, aur auto-generated questions variety dete hain. Daily 20-30 minutes consistently karo — 30 din mein speed mein noticeable improvement aata hai.</div></div></div>
+
+      <div class="fq"><div class="fq-q" onclick="tFAQ(this)"><span class="fq-t">NDA maths kaise prepare kare is tool se?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">NDA ke liye Random Mix topic set karo, Hard difficulty select karo, Timer 30-45 seconds pe set karo. Daily 50 questions consistently practice karo. NDA Paper I mein maths ke 120 questions mein mostly percentage, ratio, number system, algebra, geometry aate hain — is tool se non-geometry topics cover ho jaate hain. Accuracy 75%+ maintain karo.</div></div></div>
+
+      <div class="fq"><div class="fq-q" onclick="tFAQ(this)"><span class="fq-t">Percentage fast kaise sikhe?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">Percentage is tool mein select karo aur daily 30 questions practice karo. Key trick: percentage ko fraction mein convert karna sikho — 25% = 1/4, 20% = 1/5, 12.5% = 1/8. Ye conversions yaad karne ke baad percentage calculation 3x fast ho jaati hai. Medium difficulty se shuru karo phir Hard pe jaao jab 80%+ accuracy aaye.</div></div></div>
+
+      <div class="fq"><div class="fq-q" onclick="tFAQ(this)"><span class="fq-t">Mental maths kaise improve kare?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">Mental maths ke liye: (1) Tables 2 se 20 tak zabani, (2) Squares 1 se 30 tak memorize, (3) Cubes 1 se 15 tak, (4) Common fractions aur unke percentage equivalents. Is tool mein Easy difficulty pe multiplication, square, cube root topics select karo aur roz 10-15 min practice karo — 3 weeks mein mental calculation significantly fast ho jaati hai.</div></div></div>
+
+      <div class="fq"><div class="fq-q" onclick="tFAQ(this)"><span class="fq-t">BODMAS / Simplification fast kaise kare?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">BODMAS mein order yaad rakhna zaroori hai — Brackets, Orders (powers/roots), Division, Multiplication, Addition, Subtraction. Is tool mein Simplification topic select karo aur Medium difficulty pe practice karo. Key: pehle brackets solve karo, phir powers, phir division/multiplication (left to right), aakhir mein addition/subtraction. Daily 20 questions se speed aati hai.</div></div></div>
+
+      <div class="fq"><div class="fq-q" onclick="tFAQ(this)"><span class="fq-t">Banking exam ke liye kaunse topics important hain?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">IBPS PO/Clerk mein percentage, profit-loss, SI/CI, ratio, average, time-work, time-speed, data interpretation aur number series aate hain. Is tool mein ye sab topics available hain. Bank mein speed critical hai — Quant section mein 35 questions 35 minutes mein. Timer 30 seconds pe set karo aur practice karo. Accuracy 80%+ target rakho.</div></div></div>
+
+      <div class="fq"><div class="fq-q" onclick="tFAQ(this)"><span class="fq-t">Aptitude strong karne ka best tarika kya hai?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">Aptitude strong karne ke liye: (1) Concept pehle clear karo — YouTube ya books se, (2) Phir is tool pe specific topic select karo aur Easy se practice shuru karo, (3) 80%+ accuracy aane par Medium pe shift karo, (4) Random Mix mode mein practice karo variety ke liye, (5) Daily consistency — 20 minutes daily better hai 2 ghante weekly se. 60 din mein aptitude significantly strong hoti hai.</div></div></div>
+
+      <div class="fq"><div class="fq-q" onclick="tFAQ(this)"><span class="fq-t">Streak system kaise kaam karta hai?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">Streak system consecutive correct answers count karta hai. Ek bhi galat jawab — streak 0 pe reset. Streak 5+ hone par 🔥 fire badge milta hai. Streak 10+ par extra motivation message. Session ke end mein best streak score summary mein dikhta hai. Ye gamification technique brain ko focused rakhti hai aur learning mein fun add karti hai.</div></div></div>
+
+      <div class="fq"><div class="fq-q" onclick="tFAQ(this)"><span class="fq-t">Timer expire hone par kya hota hai?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">Agar timer 0 tak pahunch jaaye aur aapne answer nahi diya — question automatically "timeout" mark hota hai (yellow indicator), streak reset ho jaati hai, aur next question load ho jaata hai. Timeout counted as wrong for accuracy calculation. Ye real exam pressure exactly simulate karta hai — time khatam toh question miss.</div></div></div>
+
+      <div class="fq"><div class="fq-q" onclick="tFAQ(this)"><span class="fq-t">Kya ye mobile pe bhi kaam karta hai?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">Bilkul haan — ye tool mobile-first design pe banaya gaya hai. Android aur iOS dono pe perfectly kaam karta hai — number keypad automatically open hota hai answer input ke liye. Chrome, Firefox, Safari sab browsers support karta hai. Koi app download ki zarurat nahi — directly browser mein kholo aur practice karo.</div></div></div>
+
+      <div class="fq"><div class="fq-q" onclick="tFAQ(this)"><span class="fq-t">Railway exam ke liye kaunsa difficulty level choose kare?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">Railway RRB NTPC aur Group D ke liye Medium difficulty ideal hai. Timer 20-25 seconds pe set karo. Topics: percentage, ratio, time-work, time-speed, average aur number system focus karo. Group D mein maths basic level ka hota hai — Easy se Medium enough hai. NTPC ke liye Medium to Hard range better hai kyunki competition level zyada hota hai.</div></div></div>
+
+      <div class="fq"><div class="fq-q" onclick="tFAQ(this)"><span class="fq-t">Kitni der practice karni chahiye daily?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">Beginners ke liye: 20-30 minutes daily — ek specific topic pe focus karo. Intermediate: 30-45 minutes — Multiple topics, Random Mix mode use karo. Advanced: 45-60 minutes — Hard difficulty, timer 15 seconds, target 80%+ accuracy. Quality over quantity — focused 20 minutes better hai than distracted 1 hour. Daily consistency most important hai.</div></div></div>
+
+      <div class="fq"><div class="fq-q" onclick="tFAQ(this)"><span class="fq-t">Kya is tool mein decimal answers accept hote hain?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">Haan — decimal answers accept hote hain. SI/CI aur Compound Interest mein kabhi kabhi decimal answers aate hain. Answer mein decimal point type karo normally. Near-exact answers bhi check karta hai — 0.01 tak difference allowed hai for floating point questions. Number system mein hamesha integer answers aate hain. Percentage mein usually round numbers aate hain Easy/Medium pe.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- RELATED TOOLS -->
+<section class="rel-sec">
+  <div class="w">
+    <div class="sec-hd rev">
+      <div class="sec-h">More <span>Useful Tools</span></div>
+      <p class="sec-sub">Complete exam preparation toolkit — free, instant, no signup</p>
+    </div>
+    <div class="rel-grid">
+      <div class="rel-card rev"><div class="rel-ico">🎖️</div><div class="rel-title">Army Eligibility Checker</div><div class="rel-desc">Check your army eligibility instantly.</div><a href="https://rajdailytools.in/army-eligibility-checker-2026.html" class="rel-btn">Use <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a></div>
+      <div class="rel-card rev"><div class="rel-ico">📏</div><div class="rel-title">Height Eligibility Checker</div><div class="rel-desc">Government exam height eligibility India.</div><a href="https://rajdailytools.in/government-exam-height-eligibility-checker-india.html" class="rel-btn">Use <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a></div>
+      <div class="rel-card rev"><div class="rel-ico">🚔</div><div class="rel-title">MP Police Eligibility</div><div class="rel-desc">Check MP Police eligibility 2026.</div><a href="https://rajdailytools.in/mp-police-eligibility-2026.html" class="rel-btn">Use <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a></div>
+      <div class="rel-card rev"><div class="rel-ico">🛡️</div><div class="rel-title">SSC GD Eligibility</div><div class="rel-desc">Instant SSC GD eligibility check.</div><a href="https://rajdailytools.in/ssc-gd-eligibility-2026.html" class="rel-btn">Use <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a></div>
+      <div class="rel-card rev"><div class="rel-ico">🏃</div><div class="rel-title">Army Running Calculator</div><div class="rel-desc">1600m time calculator for army.</div><a href="https://rajdailytools.in/army-running-time-calculator-1600m-2026.html" class="rel-btn">Use <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a></div>
+      <div class="rel-card rev"><div class="rel-ico">📅</div><div class="rel-title">Running Improvement Planner</div><div class="rel-desc">Army 1600m improvement plan.</div><a href="https://rajdailytools.in/army-running-improvement-planner-1600m.html" class="rel-btn">Use <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a></div>
+      <div class="rel-card rev"><div class="rel-ico">📊</div><div class="rel-title">Running Score Predictor</div><div class="rel-desc">Predict 1600m score and group.</div><a href="https://rajdailytools.in/army-running-score-predictor-1600m.html" class="rel-btn">Use <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a></div>
+      <div class="rel-card rev"><div class="rel-ico">🕐</div><div class="rel-title">Running Time by Age</div><div class="rel-desc">Age-wise 1600m performance check.</div><a href="https://rajdailytools.in/army-running-time-by-age-1600m.html" class="rel-btn">Use <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a></div>
+      <div class="rel-card rev"><div class="rel-ico">🏥</div><div class="rel-title">Army Medical Fitness</div><div class="rel-desc">Check army medical fitness criteria.</div><a href="https://rajdailytools.in/army-medical-fitness-checker.html" class="rel-btn">Use <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a></div>
+      <div class="rel-card rev"><div class="rel-ico">👁️</div><div class="rel-title">Army Eye Test Simulator</div><div class="rel-desc">Simulate army eye test online.</div><a href="https://rajdailytools.in/army-eye-test-simulator.html" class="rel-btn">Use <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a></div>
+      <div class="rel-card rev"><div class="rel-ico">🪖</div><div class="rel-title">Defence Eligibility Checker</div><div class="rel-desc">NDA, CDS, AFCAT eligibility check.</div><a href="https://rajdailytools.in/defence-exam-eligibility-checker-2026.html" class="rel-btn">Use <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a></div>
+      <div class="rel-card rev"><div class="rel-ico">💰</div><div class="rel-title">Army Pension Calculator</div><div class="rel-desc">Calculate army pension by rank.</div><a href="https://rajdailytools.in/army-pension-calculator.html" class="rel-btn">Use <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a></div>
+    </div>
+  </div>
+</section>
+
+<!-- DISCLAIMER -->
+<div class="disc">
+  <div class="w"><div class="disc-in">
+    <span style="font-size:18px">⚠️</span>
+    <div><strong>Disclaimer:</strong> This tool provides maths practice only. Questions are auto-generated for practice purposes. Actual exam pattern, difficulty and marking scheme may vary. Always refer to official exam notifications for accurate information.</div>
+  </div></div>
+</div>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="w cta-in">
+    <div class="pill">🧮 Start Practicing Now</div>
+    <h2>Unlimited Maths Practice — <em>Always Free</em></h2>
+    <p>Timer, streak, score tracking — everything you need to improve speed and accuracy for competitive exams.</p>
+    <div class="cta-btns">
+      <a href="#practice" class="btn-gold">🚀 Start Practice Now</a>
+      <a href="https://rajdailytools.in/" class="btn-ghost">🏠 All Tools</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-inner">
+    <div class="ft-top">
+      <div class="ft-brand">
+        <div class="logo">
+          <div class="lb" style="width:34px;height:34px;border-radius:8px"><svg viewBox="0 0 24 24" style="width:16px;height:16px;fill:#fff"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+          <div><div class="ln">Raj<span>Daily</span>Tools</div><div class="ls" style="color:#475569">Free Tools for India</div></div>
+        </div>
+        <p class="ft-desc">Free online tools for Indian competitive exam aspirants. Built with care, updated regularly.</p>
+        <div class="ft-soc"><button class="fts">▶</button><button class="fts">✈</button><button class="fts">◎</button></div>
+      </div>
+      <div class="fc"><h4>Practice Tools</h4><ul>
+        <li><a href="#">Maths Practice</a></li>
+        <li><a href="#">English Practice</a></li>
+        <li><a href="#">GK Practice</a></li>
+        <li><a href="#">Reasoning Tool</a></li>
+      </ul></div>
+      <div class="fc"><h4>Army Tools</h4><ul>
+        <li><a href="https://rajdailytools.in/army-eligibility-checker-2026.html">Eligibility Checker</a></li>
+        <li><a href="https://rajdailytools.in/army-running-score-predictor-1600m.html">Running Predictor</a></li>
+        <li><a href="https://rajdailytools.in/army-medical-fitness-checker.html">Medical Checker</a></li>
+        <li><a href="https://rajdailytools.in/army-pension-calculator.html">Pension Calculator</a></li>
+      </ul></div>
+      <div class="fc"><h4>Links</h4><ul>
+        <li><a href="https://rajdailytools.in/">Home</a></li>
+        <li><a href="https://rajdailytools.in/useful-tools-category.html">All Tools</a></li>
+        <li><a href="https://rajdailytools.in/about.html">About</a></li>
+        <li><a href="https://rajdailytools.in/contact.html">Contact</a></li>
+      </ul></div>
+    </div>
+    <div class="ft-btm">
+      <span class="ft-cp">© 2026 RajDailyTools. All rights reserved. | Maths Practice Tool Online</span>
+      <div class="ft-lnk"><a href="#">Privacy</a><a href="#">Disclaimer</a><a href="#">Contact</a></div>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================================================
+     INFINITE MATHS ENGINE — JAVASCRIPT
+     ============================================================ -->
+<script>
+'use strict';
+
+// ============================================================
+// STATE
+// ============================================================
+let state = {
+  topic:'random', diff:'med', timerSec:20, sessionLen:20,
+  qNum:0, correct:0, wrong:0, streak:0, bestStreak:0,
+  currentAnswer:null, answered:false, timerInterval:null,
+  timeLeft:20, started:false, history:[],
+  currentQ:null
+};
+
+// ============================================================
+// UTILITY
+// ============================================================
+const R = (a,b) => Math.floor(Math.random()*(b-a+1))+a;
+const pick = arr => arr[R(0,arr.length-1)];
+
+function fmt(n){
+  if(Number.isInteger(n)) return n;
+  return Math.round(n*100)/100;
+}
+
+// ============================================================
+// DIFFICULTY SELECTOR
+// ============================================================
+let currentDiff = 'med';
+function setDiff(d, el) {
+  currentDiff = d;
+  document.querySelectorAll('.diff-pill').forEach(p => p.classList.remove('active','easy','med','hard'));
+  el.classList.add('active', d);
+}
+
+// ============================================================
+// QUESTION GENERATORS — ALL TOPICS
+// ============================================================
+const GENERATORS = {
+
+  addition: (d) => {
+    const ranges = {easy:[1,99], med:[100,9999], hard:[1000,999999]};
+    const [lo,hi] = ranges[d];
+    const a=R(lo,hi), b=R(lo,hi);
+    return { q:`${a} + ${b} = ?`, a: a+b, hint:`Add the numbers directly. ${a} + ${b}` };
+  },
+
+  subtraction: (d) => {
+    const ranges = {easy:[1,99], med:[100,9999], hard:[1000,999999]};
+    const [lo,hi] = ranges[d];
+    const b=R(lo,hi), a=R(b, b+hi);
+    return { q:`${a} − ${b} = ?`, a: a-b, hint:`Subtract. ${a} − ${b}` };
+  },
+
+  multiplication: (d) => {
+    const configs = {easy:[2,12,2,12], med:[12,50,12,50], hard:[25,999,25,999]};
+    const [al,ah,bl,bh] = configs[d];
+    const a=R(al,ah), b=R(bl,bh);
+    return { q:`${a} × ${b} = ?`, a: a*b, hint:`Multiply: ${a} × ${b}` };
+  },
+
+  division: (d) => {
+    const configs = {easy:[1,9,1,12], med:[10,99,2,20], hard:[50,999,11,50]};
+    const [dl,dh,ql,qh] = configs[d];
+    const divisor=R(dl,dh), quotient=R(ql,qh);
+    const dividend = divisor * quotient;
+    return { q:`${dividend} ÷ ${divisor} = ?`, a: quotient, hint:`Divide: ${dividend} ÷ ${divisor}` };
+  },
+
+  square: (d) => {
+    const ranges = {easy:[1,15], med:[15,40], hard:[40,100]};
+    const [lo,hi] = ranges[d];
+    const n = R(lo,hi);
+    return { q:`What is ${n}² (${n} squared)?`, a: n*n, hint:`${n} × ${n} = ${n*n}` };
+  },
+
+  cube: (d) => {
+    const ranges = {easy:[1,10], med:[10,20], hard:[20,35]};
+    const [lo,hi] = ranges[d];
+    const n = R(lo,hi);
+    return { q:`What is ${n}³ (${n} cubed)?`, a: n*n*n, hint:`${n} × ${n} × ${n}` };
+  },
+
+  squareRoot: (d) => {
+    const ranges = {easy:[1,15], med:[15,40], hard:[40,100]};
+    const [lo,hi] = ranges[d];
+    const n = R(lo,hi);
+    return { q:`√${n*n} = ? (Square root of ${n*n})`, a: n, hint:`Find the number whose square is ${n*n}` };
+  },
+
+  cubeRoot: (d) => {
+    const ranges = {easy:[1,10], med:[10,20], hard:[20,35]};
+    const [lo,hi] = ranges[d];
+    const n = R(lo,hi);
+    return { q:`∛${n*n*n} = ? (Cube root of ${n*n*n})`, a: n, hint:`Find the number whose cube is ${n*n*n}` };
+  },
+
+  percentage: (d) => {
+    if(d==='easy'){
+      const percs=[10,20,25,50,75];
+      const p=pick(percs), num=R(2,20)*10;
+      return { q:`${p}% of ${num} = ?`, a:fmt(num*p/100), hint:`${num} × ${p}/100` };
+    } else if(d==='med'){
+      const p=pick([5,10,15,20,25,30,35,40,45,50,60,75,80]);
+      const num=R(10,500);
+      return { q:`${p}% of ${num} = ?`, a:fmt(num*p/100), hint:`${num} × ${p} ÷ 100` };
+    } else {
+      const types=R(1,3);
+      if(types===1){
+        const p=R(5,95), num=R(100,5000);
+        return { q:`${p}% of ${num} = ?`, a:fmt(num*p/100), hint:`${num} × ${p}/100` };
+      } else if(types===2){
+        const p=R(5,80), num=R(100,2000);
+        const result=fmt(num*p/100);
+        return { q:`${result} is ${p}% of what number?`, a:num, hint:`${result} × 100 ÷ ${p} = ${num}` };
+      } else {
+        const n1=R(100,1000), n2=R(80,n1-10);
+        const pct=fmt((n1-n2)/n1*100);
+        return { q:`${n1} decreased by what % gives ${n2}?`, a:pct, hint:`(${n1}-${n2})/${n1} × 100` };
+      }
+    }
+  },
+
+  profitLoss: (d) => {
+    if(d==='easy'){
+      const cp=R(5,20)*10, pp=pick([10,20,25,50]);
+      const sp=fmt(cp*(1+pp/100));
+      return { q:`CP = ₹${cp}, Profit = ${pp}%. Find SP.`, a:sp, hint:`SP = CP × (100+Profit%)/100` };
+    } else if(d==='med'){
+      const type=pick(['profit','loss','pct']);
+      if(type==='profit'){
+        const cp=R(200,2000), pp=R(5,40);
+        const sp=fmt(cp*(1+pp/100));
+        return { q:`CP = ₹${cp}, Profit% = ${pp}%. Find SP (₹).`, a:sp, hint:`SP = CP × (100+${pp})/100` };
+      } else if(type==='loss'){
+        const cp=R(200,2000), lp=R(5,30);
+        const sp=fmt(cp*(1-lp/100));
+        return { q:`CP = ₹${cp}, Loss% = ${lp}%. Find SP (₹).`, a:sp, hint:`SP = CP × (100-${lp})/100` };
+      } else {
+        const cp=R(100,1000)*2, pp=R(5,40);
+        const sp=fmt(cp*(1+pp/100));
+        return { q:`If CP = ₹${cp} and SP = ₹${sp}, Profit% = ?`, a:pp, hint:`Profit% = (SP-CP)/CP × 100` };
+      }
+    } else {
+      const cp=R(500,5000), sp=R(Math.floor(cp*0.7),Math.floor(cp*1.5));
+      const pOrL = sp > cp ? 'Profit' : 'Loss';
+      const pct = fmt(Math.abs(sp-cp)/cp*100);
+      return { q:`CP = ₹${cp}, SP = ₹${sp}. What is the ${pOrL}%?`, a:pct, hint:`|SP-CP|/CP × 100 = ${pct}%` };
+    }
+  },
+
+  discount: (d) => {
+    const mp=R(d==='easy'?100:500, d==='easy'?500:5000);
+    const disc=pick(d==='easy'?[5,10,20,25]:d==='med'?[10,15,20,25,30]:[12,15,18,22,35,40]);
+    const sp=fmt(mp*(1-disc/100));
+    const types=pick([1,2,3]);
+    if(types===1) return { q:`MP = ₹${mp}, Discount = ${disc}%. Find SP.`, a:sp, hint:`SP = MP × (100-${disc})/100` };
+    if(types===2) return { q:`MP = ₹${mp}, SP = ₹${sp}. Discount% = ?`, a:disc, hint:`Disc% = (MP-SP)/MP × 100` };
+    return { q:`SP = ₹${sp}, Discount = ${disc}%. Find MP.`, a:mp, hint:`MP = SP × 100/(100-${disc})` };
+  },
+
+  simpleInterest: (d) => {
+    const configs = {
+      easy: {P:[1000,5000], R:[5,10], T:[1,3]},
+      med:  {P:[5000,50000], R:[6,15], T:[2,5]},
+      hard: {P:[10000,200000], R:[7,18], T:[3,8]}
+    };
+    const c=configs[d];
+    const P=R(c.P[0],c.P[1]), Rr=R(c.R[0],c.R[1]), T=R(c.T[0],c.T[1]);
+    const SI=fmt(P*Rr*T/100), A=fmt(P+SI);
+    const t=pick(['si','amount']);
+    if(t==='si') return { q:`P = ₹${P}, R = ${Rr}%, T = ${T} yr. Find Simple Interest (₹).`, a:SI, hint:`SI = P × R × T / 100 = ${P}×${Rr}×${T}/100` };
+    return { q:`P = ₹${P}, R = ${Rr}%, T = ${T} yr. Find Amount (₹).`, a:A, hint:`A = P + SI = ${P} + ${SI}` };
+  },
+
+  compoundInterest: (d) => {
+    const configs = {
+      easy: {P:[1000,5000], R:[10,20], T:[2,3]},
+      med:  {P:[5000,20000], R:[5,15], T:[2,4]},
+      hard: {P:[10000,100000], R:[8,20], T:[2,4]}
+    };
+    const c=configs[d];
+    const P=R(c.P[0],c.P[1]), Rr=pick([5,8,10,12,15,20]), T=R(c.T[0],c.T[1]);
+    const A=fmt(P*Math.pow(1+Rr/100,T));
+    const CI=fmt(A-P);
+    const t=pick(['ci','amount']);
+    if(t==='ci') return { q:`P = ₹${P}, R = ${Rr}% p.a., T = ${T} yr (compounded annually). Find CI (₹).`, a:CI, hint:`A = P(1+r/100)^T = ${P}×(1+${Rr}/100)^${T} ≈ ${A}, CI = A - P` };
+    return { q:`P = ₹${P}, R = ${Rr}% p.a., T = ${T} yr (CI annually). Find Amount (₹).`, a:A, hint:`A = ${P} × (1+${Rr}/100)^${T}` };
+  },
+
+  ratio: (d) => {
+    const a=R(1, d==='easy'?5:d==='med'?10:25);
+    const b=R(1, d==='easy'?5:d==='med'?10:25);
+    const total=R(d==='easy'?20:d==='med'?100:1000, d==='easy'?100:d==='med'?1000:10000);
+    const realTotal=total - (total%(a+b));
+    const shareA=realTotal*a/(a+b);
+    return { q:`Divide ₹${realTotal} in ratio ${a}:${b}. What is the larger share (₹)?`, a:fmt(Math.max(shareA,realTotal-shareA)), hint:`Each part = ${realTotal}/(${a}+${b}) = ${realTotal/(a+b)}. Larger = ${Math.max(a,b)} × ${realTotal/(a+b)}` };
+  },
+
+  timeWork: (d) => {
+    const aD=R(d==='easy'?3:d==='med'?6:10, d==='easy'?10:d==='med'?20:40);
+    const bD=R(d==='easy'?4:d==='med'?8:12, d==='easy'?15:d==='med'?30:60);
+    const together=fmt(aD*bD/(aD+bD));
+    const types=pick([1,2]);
+    if(types===1) return { q:`A completes work in ${aD} days, B in ${bD} days. Together they finish in how many days?`, a:together, hint:`1/A + 1/B = 1/${aD} + 1/${bD} = (${aD}+${bD})/(${aD}×${bD})` };
+    const days=R(2,Math.min(aD,bD)-1);
+    const remaining=fmt(1 - days/aD - days/bD);
+    if(remaining <= 0) return GENERATORS.timeWork(d);
+    return { q:`A finishes in ${aD} days, B in ${bD} days. After ${days} days of working together, what fraction of work remains?`, a:fmt(remaining), hint:`Work done in ${days} days = ${days}×(1/${aD}+1/${bD}). Remaining = 1 - that.` };
+  },
+
+  timeSpeed: (d) => {
+    const configs={easy:{s:[20,60],t:[1,5]},med:{s:[40,120],t:[2,8]},hard:{s:[60,200],t:[3,12]}};
+    const c=configs[d];
+    const speed=R(c.s[0],c.s[1]), time=R(c.t[0],c.t[1]);
+    const dist=speed*time;
+    const types=pick(['dist','speed','time']);
+    if(types==='dist') return { q:`Speed = ${speed} km/h, Time = ${time} hr. Distance = ? (km)`, a:dist, hint:`D = S × T = ${speed} × ${time}` };
+    if(types==='speed') return { q:`Distance = ${dist} km, Time = ${time} hr. Speed = ? (km/h)`, a:speed, hint:`S = D/T = ${dist}/${time}` };
+    return { q:`Distance = ${dist} km, Speed = ${speed} km/h. Time = ? (hr)`, a:time, hint:`T = D/S = ${dist}/${speed}` };
+  },
+
+  average: (d) => {
+    const count=R(3,d==='easy'?5:d==='med'?8:12);
+    const range=d==='easy'?[10,50]:d==='med'?[20,200]:d==='hard'?[50,500]:[50,500];
+    const nums=Array.from({length:count},()=>R(range[0],range[1]));
+    const avg=fmt(nums.reduce((a,b)=>a+b,0)/count);
+    return { q:`Find the average of: ${nums.join(', ')}`, a:avg, hint:`Sum = ${nums.reduce((a,b)=>a+b,0)}, Count = ${count}, Average = Sum/Count` };
+  },
+
+  bodmas: (d) => {
+    if(d==='easy'){
+      const a=R(2,9),b=R(2,9),c=R(1,9);
+      return { q:`Simplify: ${a} + ${b} × ${c} = ?`, a:a+b*c, hint:`Multiplication first: ${b}×${c}=${b*c}, then ${a}+${b*c}` };
+    } else if(d==='med'){
+      const a=R(2,20),b=R(2,15),c=R(2,10),e=R(2,8);
+      const ans=(a+b)*(c-e%c);
+      const _c=c, _e=e%c||1;
+      const innerL=a+b, innerR=_c-_e;
+      return { q:`Simplify: (${a} + ${b}) × (${_c} − ${_e}) = ?`, a:innerL*innerR, hint:`(${innerL}) × (${innerR}) = ${innerL*innerR}` };
+    } else {
+      const a=R(5,30),b=R(2,10),c=R(2,8),e=R(2,6),f=R(1,5);
+      const ans=a+b*c-(e+f);
+      return { q:`Simplify: ${a} + ${b} × ${c} − (${e} + ${f}) = ?`, a:ans, hint:`Step1: ${b}×${c}=${b*c}. Step2: ${e}+${f}=${e+f}. Step3: ${a}+${b*c}-${e+f}=${ans}` };
+    }
+  },
+
+  numberSystem: (d) => {
+    const types=['divisible','leastDiv','factorCount'];
+    const t=pick(types);
+    if(t==='divisible'){
+      const divs=[3,4,6,7,8,9,11];
+      const div=pick(divs);
+      const range=d==='easy'?[10,100]:d==='med'?[100,1000]:d==='hard'?[1000,5000]:[100,1000];
+      const start=R(range[0],range[1]);
+      let n=start;
+      while(n%div!==0) n++;
+      return { q:`What is the smallest number ≥ ${start} divisible by ${div}?`, a:n, hint:`Find next multiple of ${div} from ${start}` };
+    } else if(t==='leastDiv'){
+      const n=R(d==='easy'?10:d==='med'?50:200, d==='easy'?50:d==='med'?200:1000);
+      let factors=[];
+      for(let i=2;i<=Math.sqrt(n);i++) if(n%i===0){ factors.push(i); break; }
+      if(n>1 && factors.length===0) factors=[n];
+      return { q:`What is the smallest factor of ${n} other than 1?`, a:factors[0], hint:`Try dividing ${n} by 2, 3, 5, 7...` };
+    } else {
+      const bases=[2,4,5,6,8,9,10];
+      const b=pick(bases);
+      const n=R(d==='easy'?2:5, d==='easy'?5:15)*b*b;
+      return { q:`Is ${n} divisible by ${b*b}? Enter 1 for Yes, 0 for No.`, a:n%(b*b)===0?1:0, hint:`Check if ${n} ÷ ${b*b} leaves no remainder. ${n} ÷ ${b*b} = ${n/(b*b)}` };
+    }
+  },
+
+  mixture: (d) => {
+    const cheaper=R(d==='easy'?10:20,d==='easy'?30:80);
+    const costlier=R(cheaper+5,cheaper+(d==='easy'?10:d==='med'?30:80));
+    const mean=R(cheaper+1,costlier-1);
+    const r1=costlier-mean, r2=mean-cheaper;
+    return { q:`Cheaper variety: ₹${cheaper}/kg, Costlier: ₹${costlier}/kg, Mixed at ₹${mean}/kg. What is the ratio (cheaper:costlier)?`, a:`${r1}:${r2}`, hint:`By Alligation Rule: Ratio = (${costlier}-${mean}) : (${mean}-${cheaper}) = ${r1}:${r2}` };
+  }
+};
+
+const TOPIC_NAMES = {
+  addition:'Addition',subtraction:'Subtraction',multiplication:'Multiplication',
+  division:'Division',square:'Square',cube:'Cube',squareRoot:'Square Root',
+  cubeRoot:'Cube Root',percentage:'Percentage',profitLoss:'Profit & Loss',
+  discount:'Discount',simpleInterest:'Simple Interest',compoundInterest:'Compound Interest',
+  ratio:'Ratio & Proportion',timeWork:'Time & Work',timeSpeed:'Time Speed Distance',
+  average:'Average',bodmas:'BODMAS',numberSystem:'Number System',mixture:'Mixture & Alligation',
+  random:'Random Mix'
+};
+
+const TOPICS_LIST = Object.keys(GENERATORS);
+
+// ============================================================
+// GENERATE QUESTION
+// ============================================================
+function generateQuestion(){
+  let topic = state.topic;
+  if(topic==='random') topic = pick(TOPICS_LIST);
+  const gen = GENERATORS[topic] || GENERATORS.percentage;
+  let q;
+  try { q = gen(state.diff); } catch(e){ q = gen('med'); }
+  q.topic = TOPIC_NAMES[topic] || topic;
+  q.topicKey = topic;
+  return q;
+}
+
+// ============================================================
+// START PRACTICE
+// ============================================================
+function startPractice(){
+  state.topic   = document.getElementById('topicSel').value;
+  state.timerSec= parseInt(document.getElementById('timerSel').value);
+  state.sessionLen=parseInt(document.getElementById('sessionSel').value);
+  state.diff    = currentDiff;
+  state.qNum=0; state.correct=0; state.wrong=0;
+  state.streak=0; state.bestStreak=0; state.history=[];
+
+  document.getElementById('setupCard').style.display='none';
+  document.getElementById('practiceArea').style.display='block';
+  document.getElementById('resultSummary').style.display='none';
+
+  if(state.sessionLen > 0){
+    document.getElementById('progSection').style.display='block';
+  }
+
+  if(state.timerSec > 0){
+    document.getElementById('timerSection').style.display='flex';
+    document.getElementById('noTimerStreak').style.display='none';
+  } else {
+    document.getElementById('timerSection').style.display='none';
+    document.getElementById('noTimerStreak').style.display='flex';
+  }
+
+  loadQuestion();
+}
+
+// ============================================================
+// LOAD QUESTION
+// ============================================================
+function loadQuestion(){
+  clearTimer();
+  state.answered = false;
+  state.qNum++;
+
+  const q = generateQuestion();
+  state.currentQ = q;
+  state.currentAnswer = q.a;
+
+  // Update UI
+  document.getElementById('qNum').textContent = `Q.${state.qNum}`;
+  document.getElementById('qTopicTag').textContent = q.topic;
+  const diffEl = document.getElementById('qDiffTag');
+  diffEl.textContent = {easy:'🟢 Easy',med:'🟡 Medium',hard:'🔴 Hard'}[state.diff];
+  diffEl.className = 'q-diff-tag ' + {easy:'qdt-easy',med:'qdt-med',hard:'qdt-hard'}[state.diff];
+
+  document.getElementById('qText').textContent = q.q;
+  document.getElementById('ansInput').value='';
+  document.getElementById('ansInput').className='ans-input';
+  document.getElementById('ansInput').disabled=false;
+  document.getElementById('feedbackBox').style.display='none';
+  document.getElementById('feedbackBox').className='feedback-box';
+  document.getElementById('checkBtn').style.display='flex';
+  document.getElementById('nextBtn').style.display='none';
+
+  // Progress
+  if(state.sessionLen > 0){
+    const pct=Math.round((state.qNum-1)/state.sessionLen*100);
+    document.getElementById('progLabel').textContent=`Question ${state.qNum} of ${state.sessionLen}`;
+    document.getElementById('progPct').textContent=pct+'%';
+    document.getElementById('progFill').style.width=pct+'%';
+  }
+
+  updateStats();
+  document.getElementById('ansInput').focus();
+  if(state.timerSec > 0) startTimer();
+}
+
+// ============================================================
+// TIMER
+// ============================================================
+function startTimer(){
+  state.timeLeft = state.timerSec;
+  updateTimerUI();
+  state.timerInterval = setInterval(()=>{
+    state.timeLeft--;
+    updateTimerUI();
+    if(state.timeLeft <= 0){
+      clearTimer();
+      timeoutQuestion();
+    }
+  }, 1000);
+}
+function clearTimer(){ if(state.timerInterval){ clearInterval(state.timerInterval); state.timerInterval=null; } }
+
+function updateTimerUI(){
+  const el = document.getElementById('timerNum');
+  const bar = document.getElementById('timerBar');
+  const pct = (state.timeLeft / state.timerSec) * 100;
+  el.textContent = state.timeLeft;
+  el.className = 'timer-num' + (state.timeLeft <= 5 ? ' danger' : state.timeLeft <= state.timerSec*0.35 ? ' warn' : '');
+  bar.style.width = pct + '%';
+  bar.className = 'timer-bar ' + (state.timeLeft <= 5 ? 'tb-danger' : state.timeLeft <= state.timerSec*0.35 ? 'tb-warn' : 'tb-safe');
+  document.getElementById('timerLabel').textContent = state.timeLeft <= 3 ? '⚠️ Hurry!' : 'Time Remaining';
+}
+
+function timeoutQuestion(){
+  if(state.answered) return;
+  state.answered = true;
+  state.wrong++;
+  state.streak = 0;
+  updateStats();
+  showFeedback('timeout', state.currentQ.hint);
+  pushHistory('t');
+  document.getElementById('ansInput').disabled = true;
+  document.getElementById('checkBtn').style.display = 'none';
+  document.getElementById('nextBtn').style.display = 'flex';
+}
+
+// ============================================================
+// CHECK ANSWER
+// ============================================================
+function checkAnswer(){
+  if(state.answered) return;
+  const raw = document.getElementById('ansInput').value.trim();
+  if(!raw){ alert('Please enter an answer!'); return; }
+  clearTimer();
+  state.answered = true;
+
+  const userAns = raw;
+  const correctAns = state.currentAnswer;
+
+  // Flexible matching
+  let isCorrect = false;
+  if(typeof correctAns === 'number'){
+    const userNum = parseFloat(userAns.replace(/,/g,''));
+    isCorrect = !isNaN(userNum) && Math.abs(userNum - correctAns) < 0.05;
+  } else if(typeof correctAns === 'string'){
+    // For ratio answers like "3:2"
+    isCorrect = userAns.replace(/\s/g,'') === correctAns.replace(/\s/g,'') ||
+                userAns.toLowerCase() === correctAns.toString().toLowerCase();
+  }
+
+  const inp = document.getElementById('ansInput');
+  inp.className = 'ans-input ' + (isCorrect ? 'correct' : 'wrong');
+  inp.disabled = true;
+  document.getElementById('checkBtn').style.display='none';
+  document.getElementById('nextBtn').style.display='flex';
+
+  if(isCorrect){
+    state.correct++;
+    state.streak++;
+    if(state.streak > state.bestStreak) state.bestStreak = state.streak;
+    showFeedback('correct', `Correct answer: ${correctAns}. ${state.currentQ.hint || ''}`);
+    pushHistory('c');
+  } else {
+    state.wrong++;
+    state.streak = 0;
+    showFeedback('wrong', `Your answer: ${userAns}. Correct answer: ${correctAns}. ${state.currentQ.hint || ''}`);
+    pushHistory('w');
+  }
+  updateStats();
+  updateStreak();
+}
+
+function showFeedback(type, detail){
+  const box = document.getElementById('feedbackBox');
+  const head = document.getElementById('fbHead');
+  const det = document.getElementById('fbDetail');
+  box.style.display='block';
+  if(type==='correct'){
+    box.className='feedback-box fb-correct';
+    head.innerHTML='✅ Correct! Well done!';
+  } else if(type==='wrong'){
+    box.className='feedback-box fb-wrong';
+    head.innerHTML='❌ Wrong!';
+  } else {
+    box.className='feedback-box fb-timeout';
+    head.innerHTML='⏰ Time\'s Up!';
+  }
+  det.innerHTML='<strong>Hint/Solution:</strong> '+detail;
+}
+
+// ============================================================
+// NEXT QUESTION
+// ============================================================
+function nextQuestion(){
+  if(state.sessionLen > 0 && state.qNum >= state.sessionLen){
+    showSummary();
+    return;
+  }
+  loadQuestion();
+}
+
+function skipQuestion(){
+  if(state.answered) return;
+  clearTimer();
+  state.answered = true;
+  state.wrong++;
+  state.streak = 0;
+  pushHistory('t');
+  updateStats();
+  nextQuestion();
+}
+
+// ============================================================
+// HISTORY
+// ============================================================
+function pushHistory(type){
+  const q = state.currentQ;
+  const entry = { type, q:q.q.substring(0,60)+(q.q.length>60?'...':''), ans:state.currentAnswer };
+  state.history.unshift(entry);
+  if(state.history.length > 30) state.history.pop();
+  renderHistory();
+}
+
+function renderHistory(){
+  const list = document.getElementById('historyList');
+  if(!state.history.length){
+    list.innerHTML='<div style="font-size:13px;color:var(--ink4);text-align:center;padding:16px">No history yet.</div>';
+    return;
+  }
+  list.innerHTML = state.history.slice(0,20).map(h=>`
+    <div class="h-item">
+      <div class="h-badge hb-${h.type}">${h.type==='c'?'✓':h.type==='w'?'✗':'⏰'}</div>
+      <div class="h-q">${h.q}</div>
+      <div class="h-ans">Ans: ${h.ans}</div>
+    </div>`).join('');
+}
+
+// ============================================================
+// STATS + STREAK
+// ============================================================
+function updateStats(){
+  document.getElementById('statCorrect').textContent = state.correct;
+  document.getElementById('statWrong').textContent   = state.wrong;
+  document.getElementById('statStreak').textContent  = state.streak;
+  const total = state.correct + state.wrong;
+  document.getElementById('statAcc').textContent = total ? Math.round(state.correct/total*100)+'%' : '—';
+  document.getElementById('qScoreMini').textContent = `Score: ${state.correct}/${state.qNum-1||0}`;
+}
+
+function updateStreak(){
+  const sb = document.getElementById('streakBadge');
+  const sb2 = document.getElementById('streakBadge2');
+  const sn = document.getElementById('streakNum');
+  const sn2 = document.getElementById('streakNum2');
+  if(sn) sn.textContent = state.streak;
+  if(sn2) sn2.textContent = state.streak;
+  const cls = state.streak >= 10 ? 'streak-badge mega' : state.streak >= 5 ? 'streak-badge fire' : 'streak-badge';
+  if(sb) sb.className = cls;
+  if(sb2) sb2.className = cls;
+  const msg = state.streak >= 15 ? '🚀 LEGENDARY!' : state.streak >= 10 ? '⭐ AMAZING!' : state.streak >= 5 ? '🔥 ON FIRE!' : state.streak >= 3 ? '💪 Great streak!' : 'Keep Going!';
+  if(sb) sb.innerHTML = `<span class="streak-icon">${state.streak>=5?'🔥':'✨'}</span>${state.streak} streak`;
+  if(sb2) sb2.textContent = msg;
+}
+
+// ============================================================
+// SUMMARY
+// ============================================================
+function showSummary(){
+  document.getElementById('practiceArea').style.display='none';
+  const total=state.correct+state.wrong;
+  const acc=total?Math.round(state.correct/total*100):0;
+  document.getElementById('resultSummary').style.display='block';
+  let emoji='🎉', title='Session Complete!', sub='';
+  if(acc>=90){ emoji='🏆'; title='Outstanding Performance!'; sub='Exceptional accuracy! You are exam-ready.'; }
+  else if(acc>=75){ emoji='⭐'; title='Great Work!'; sub='Strong performance. Keep it up!'; }
+  else if(acc>=60){ emoji='👍'; title='Good Effort!'; sub='Decent result. More practice needed for exam level.'; }
+  else { emoji='💪'; title='Keep Practicing!'; sub='Need more practice. Focus on weak topics and retry.'; }
+  document.getElementById('sumEmoji').textContent=emoji;
+  document.getElementById('sumTitle').textContent=title;
+  document.getElementById('sumSub').textContent=sub+` (${acc}% accuracy)`;
+  document.getElementById('sumTotal').textContent=total;
+  document.getElementById('sumCorr').textContent=state.correct;
+  document.getElementById('sumAcc').textContent=acc+'%';
+  document.getElementById('sumBest').textContent='🔥'+state.bestStreak;
+}
+
+// ============================================================
+// RESET
+// ============================================================
+function resetAll(){
+  clearTimer();
+  state.qNum=0; state.correct=0; state.wrong=0; state.streak=0;
+  state.bestStreak=0; state.history=[]; state.answered=false;
+  document.getElementById('practiceArea').style.display='none';
+  document.getElementById('resultSummary').style.display='none';
+  document.getElementById('setupCard').style.display='block';
+  document.getElementById('statCorrect').textContent='0';
+  document.getElementById('statWrong').textContent='0';
+  document.getElementById('statStreak').textContent='0';
+  document.getElementById('statAcc').textContent='—';
+  renderHistory();
+}
+
+// ============================================================
+// FAQ + NAV
+// ============================================================
+function tFAQ(el){ const fq=el.closest('.fq'),open=fq.classList.contains('open'); document.querySelectorAll('.fq').forEach(f=>f.classList.remove('open')); if(!open) fq.classList.add('open'); }
+function oD(){ document.getElementById('drw').classList.add('on'); document.getElementById('dov').classList.add('on'); }
+function cD(){ document.getElementById('drw').classList.remove('on'); document.getElementById('dov').classList.remove('on'); }
+window.addEventListener('scroll',()=>{ document.getElementById('btt').classList.toggle('on',window.scrollY>380); });
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}});},{threshold:0.1});
+document.querySelectorAll('.rev').forEach(el=>obs.observe(el));
+
+// Init diff pill
+document.querySelectorAll('.diff-pill').forEach(p=>{
+  if(p.textContent.includes('Medium')) p.classList.add('active','med');
+});
+</script>
+</body>
+</html>
