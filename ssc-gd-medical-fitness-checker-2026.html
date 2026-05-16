@@ -1243,10 +1243,22 @@ footer{background:#0f172a;padding:56px 0 0}
 // ── STATE ──
 const S = {gender:'',colorVision:'',squint:'none',flatFoot:'',knockKnee:'',varicose:'no',hearing:'normal',deform:'none',physFit:'moderate'};
 
-function setT(key,val,btn){
-  S[key]=val;
-  btn.closest('.tgl-grp').querySelectorAll('.tgl').forEach(b=>{b.classList.remove('on','on-r','on-a')});
-  const cls = key==='flatFoot'&&val==='yes'?'on-r': key==='knockKnee'&&val==='yes'?'on-r':'on';
+function setT(key, val, btn){
+  // Store in state object
+  S[key] = val;
+
+  // Also update hidden input if it exists
+  const inp = document.getElementById(key);
+  if(inp && inp.type === 'hidden') inp.value = val;
+
+  // Visual toggle update
+  const grp = btn.closest('.tgl-grp');
+  if(grp) grp.querySelectorAll('.tgl').forEach(b => b.classList.remove('on','on-r','on-a'));
+
+  // Pick highlight class
+  let cls = 'on';
+  if((key==='flatFoot' || key==='knockKnee') && val==='yes') cls = 'on-r';
+  else if((key==='flatFoot' || key==='knockKnee') && val==='mild') cls = 'on-a';
   btn.classList.add(cls);
 }
 
@@ -1282,32 +1294,33 @@ function hearScore(h){ return h==='normal'?100:h==='partial'?45:5;}
 
 // ── MAIN CALC ──
 function checkMedical(){
-  const gender=document.getElementById('gender').value;
-  const cat=document.getElementById('category').value;
-  const h=parseFloat(document.getElementById('height').value);
-  const w=parseFloat(document.getElementById('weight').value);
-  const dv=document.getElementById('distantVision').value;
-  const nv=document.getElementById('nearVision').value;
-  const cv=S.colorVision;
-  const sq=S.squint;
-  const ff=S.flatFoot;
-  const kk=S.knockKnee;
-  const tat=document.getElementById('tattoo').value;
-  const hist=document.getElementById('medHistory').value;
-  const var_=S.varicose;
-  const hear=S.hearing;
-  const pf=S.physFit;
+  // Read ALL toggle-based values from S state (not hidden inputs)
+  const gender = S.gender;
+  const cat    = document.getElementById('category').value;
+  const h      = parseFloat(document.getElementById('height').value);
+  const w      = parseFloat(document.getElementById('weight').value);
+  const dv     = document.getElementById('distantVision').value;
+  const nv     = document.getElementById('nearVision').value;
+  const cv     = S.colorVision;
+  const sq     = S.squint || 'none';
+  const ff     = S.flatFoot;
+  const kk     = S.knockKnee;
+  const tat    = document.getElementById('tattoo').value;
+  const hist   = document.getElementById('medHistory').value || 'none';
+  const var_   = S.varicose || 'no';
+  const hear   = S.hearing  || 'normal';
+  const pf     = S.physFit  || 'moderate';
 
-  if(!gender){alert('Please select Gender.');return;}
-  if(!cat){alert('Please select Category.');return;}
-  if(!h||h<140||h>220){alert('Please enter valid Height (140–220 cm).');return;}
-  if(!w||w<35||w>150){alert('Please enter valid Weight (35–150 kg).');return;}
-  if(!dv){alert('Please select Distant Vision.');return;}
-  if(!nv){alert('Please select Near Vision.');return;}
-  if(!cv){alert('Please select Color Vision status.');return;}
-  if(!ff){alert('Please select Flat Foot status.');return;}
-  if(!kk){alert('Please select Knock Knee status.');return;}
-  if(!tat){alert('Please select Tattoo Status.');return;}
+  if(!gender){alert('Kripya Gender select karein (Male / Female button dabayein).');return;}
+  if(!cat){alert('Kripya Category select karein.');return;}
+  if(!h||isNaN(h)||h<140||h>220){alert('Valid Height enter karein (140–220 cm).');return;}
+  if(!w||isNaN(w)||w<35||w>150){alert('Valid Weight enter karein (35–150 kg).');return;}
+  if(!dv){alert('Kripya Distant Vision select karein.');return;}
+  if(!nv){alert('Kripya Near Vision select karein.');return;}
+  if(!cv){alert('Kripya Color Vision button dabayein.');return;}
+  if(!ff){alert('Kripya Flat Foot status button dabayein.');return;}
+  if(!kk){alert('Kripya Knock Knee status button dabayein.');return;}
+  if(!tat){alert('Kripya Tattoo Status select karein.');return;}
 
   const bmiVal=bmi(h,w);
   const bmiSc=bmiScore(bmiVal);
