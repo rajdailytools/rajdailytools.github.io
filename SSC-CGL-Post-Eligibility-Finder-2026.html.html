@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>SSC CGL Post Eligibility Finder 2026 | Check Eligible SSC CGL Posts</title>
+<meta name="description" content="Use SSC CGL Post Eligibility Finder 2026 to check which SSC CGL posts you are eligible for based on age limit, graduation qualification, and official SSC CGL 2026 eligibility rules.">
+<meta name="keywords" content="ssc cgl post eligibility finder, ssc cgl eligible posts, ssc cgl post checker, ssc cgl post wise eligibility, ssc cgl qualification checker, ssc cgl age eligibility, ssc cgl jso eligibility">
+<meta name="robots" content="index, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ══════════════════════════════════════
+   DESIGN TOKENS
+══════════════════════════════════════ */
+:root{
+  --blue:#2563eb;--blue-d:#1d4ed8;--blue-xl:#eff6ff;--blue-s:#dbeafe;
+  --amber:#f59e0b;--green:#10b981;--red:#ef4444;--purple:#8b5cf6;
+  --orange:#f97316;--teal:#14b8a6;
+  --green-xl:#f0fdf4;--green-s:#bbf7d0;
+  --red-xl:#fef2f2;--red-s:#fecaca;
+  --amber-xl:#fffbeb;--amber-s:#fde68a;
+  --purple-xl:#faf5ff;--purple-s:#ddd6fe;
+  --yellow:#eab308;--yellow-xl:#fefce8;--yellow-s:#fef08a;
+  --ink:#0f172a;--ink2:#334155;--ink3:#64748b;--ink4:#94a3b8;
+  --line:#e2e8f0;--surf:#f8fafc;--white:#fff;
+  --s1:0 1px 3px rgba(15,23,42,.06),0 1px 2px rgba(15,23,42,.04);
+  --s2:0 4px 16px rgba(15,23,42,.08),0 2px 6px rgba(15,23,42,.04);
+  --s3:0 12px 40px rgba(15,23,42,.11),0 3px 10px rgba(15,23,42,.06);
+  --s4:0 24px 64px rgba(15,23,42,.13),0 6px 20px rgba(15,23,42,.07);
+  --sb:0 8px 32px rgba(37,99,235,.20);
+  --fd:'Sora',sans-serif;--fb:'DM Sans',sans-serif;
+  --ease:cubic-bezier(.4,0,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);color:var(--ink);background:var(--white);overflow-x:hidden;-webkit-font-smoothing:antialiased;line-height:1.6}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+button{cursor:pointer;border:none;background:none;font-family:var(--fb)}
+.w{max-width:1180px;margin:0 auto;padding:0 24px}
+.wa{max-width:880px;margin:0 auto;padding:0 24px}
+select,input{appearance:none;-webkit-appearance:none}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+@keyframes resultIn{from{opacity:0;transform:translateY(18px) scale(.97)}to{opacity:1;transform:none}}
+@keyframes meterFill{from{stroke-dashoffset:283}to{stroke-dashoffset:var(--dash)}}
+@keyframes barGrow{from{width:0}to{width:var(--bw)}}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}
+@keyframes countUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.rev{opacity:0;transform:translateY(22px);transition:opacity .55s var(--ease),transform .55s var(--ease)}
+.rev.in{opacity:1;transform:none}
+
+/* ══ HEADER ══ */
+.hdr{position:sticky;top:0;z-index:999;background:rgba(255,255,255,.96);backdrop-filter:blur(20px);border-bottom:1px solid var(--line);box-shadow:var(--s1)}
+.hdi{display:flex;align-items:center;justify-content:space-between;height:66px}
+.logo{display:flex;align-items:center;gap:10px}
+.lb{width:36px;height:36px;background:var(--blue);border-radius:9px;display:flex;align-items:center;justify-content:center;box-shadow:var(--sb);flex-shrink:0}
+.lb svg{width:18px;height:18px;fill:#fff}
+.ln{font-family:var(--fd);font-size:19px;font-weight:800;color:var(--ink);line-height:1}
+.ln span{color:var(--blue)}
+.ls{font-size:10px;color:var(--ink4);letter-spacing:.04em}
+nav.dn{display:flex;align-items:center;gap:2px}
+nav.dn a{font-size:13.5px;font-weight:500;color:var(--ink2);padding:7px 13px;border-radius:8px;transition:.2s}
+nav.dn a:hover{color:var(--blue);background:var(--blue-xl)}
+.hcta{background:var(--blue);color:#fff;font-family:var(--fd);font-weight:600;font-size:13px;padding:8px 18px;border-radius:8px;box-shadow:var(--sb);transition:.2s}
+.hcta:hover{background:var(--blue-d);transform:translateY(-1px)}
+.brg{display:none;flex-direction:column;gap:4.5px;padding:8px;border-radius:8px}
+.brg span{display:block;width:20px;height:2px;background:var(--ink);border-radius:2px;transition:.28s}
+.dov{display:none;position:fixed;inset:0;background:rgba(15,23,42,.45);z-index:1040;backdrop-filter:blur(3px)}
+.dov.on{display:block}
+.drw{position:fixed;top:0;right:-100%;width:270px;height:100vh;background:#fff;z-index:1050;padding:22px;box-shadow:var(--s4);transition:right .32s var(--ease);overflow-y:auto}
+.drw.on{right:0}
+.dh{display:flex;align-items:center;justify-content:space-between;margin-bottom:26px}
+.dx{width:33px;height:33px;border-radius:7px;background:var(--surf);display:flex;align-items:center;justify-content:center;color:var(--ink3);font-size:17px}
+nav.mn{display:flex;flex-direction:column;gap:3px}
+nav.mn a{display:block;font-size:14px;font-weight:500;color:var(--ink2);padding:11px 13px;border-radius:8px;transition:.2s}
+nav.mn a:hover{color:var(--blue);background:var(--blue-xl)}
+
+/* ══ HERO ══ */
+.hero{position:relative;overflow:hidden;background:linear-gradient(150deg,#ebf4ff 0%,#fff 46%,#fdf0f0 100%);padding:64px 0 72px}
+.hero::before{content:'';position:absolute;top:-140px;right:-180px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(37,99,235,.08) 0%,transparent 68%);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-80px;left:-100px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(249,115,22,.05) 0%,transparent 68%);pointer-events:none}
+.blob{position:absolute;border-radius:50%;pointer-events:none;animation:float 6s ease-in-out infinite}
+.b1{width:13px;height:13px;background:rgba(37,99,235,.18);top:22%;right:14%;animation-delay:0s}
+.b2{width:9px;height:9px;background:rgba(249,115,22,.22);top:58%;right:26%;animation-delay:2.2s}
+.b3{width:11px;height:11px;background:rgba(16,185,129,.18);top:36%;right:6%;animation-delay:4s}
+.bc{display:flex;align-items:center;gap:7px;font-size:12.5px;color:var(--ink3);margin-bottom:22px;position:relative;z-index:1;flex-wrap:wrap}
+.bc a{color:var(--blue);font-weight:600}
+.pill{display:inline-flex;align-items:center;gap:7px;font-family:var(--fd);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);background:var(--blue-xl);padding:5px 14px;border-radius:100px;margin-bottom:18px}
+.pill::before{content:'';width:6px;height:6px;background:var(--blue);border-radius:50%}
+.hero-inner{position:relative;z-index:1;max-width:720px;animation:fadeUp .5s ease both}
+.hero h1{font-family:var(--fd);font-size:clamp(26px,4.5vw,50px);font-weight:800;line-height:1.1;color:var(--ink);margin-bottom:14px}
+.hero h1 span{color:var(--blue)}
+.hero-sub{font-size:16px;color:var(--ink3);line-height:1.8;margin-bottom:22px;max-width:600px}
+.hero-chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.chip{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;padding:6px 14px;border-radius:100px;background:#fff;border:1.5px solid var(--line);color:var(--ink2);box-shadow:var(--s1);transition:.22s}
+.chip:hover{border-color:var(--blue);color:var(--blue);transform:translateY(-1px)}
+.hero-meta{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:24px}
+.upd{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:700;color:var(--blue);background:var(--blue-xl);padding:6px 14px;border-radius:100px;border:1.5px solid var(--blue-s)}
+.mi{font-size:13px;color:var(--ink3);font-weight:500}
+
+/* HOW TO USE */
+.howto{background:var(--amber-xl);border:2px solid var(--amber-s);border-radius:16px;padding:22px 26px;max-width:560px;margin-bottom:24px}
+.howto-ttl{display:flex;align-items:center;gap:9px;font-family:var(--fd);font-size:15px;font-weight:800;color:var(--ink);margin-bottom:13px}
+.howto-steps{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.hs{display:flex;align-items:flex-start;gap:10px;font-size:13.5px;color:var(--ink2);line-height:1.6}
+.sn{width:24px;height:24px;background:var(--amber);color:#fff;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex-shrink:0;margin-top:1px}
+
+/* related tools */
+.rel-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;position:relative;z-index:1}
+.rg-box{border-radius:14px;padding:14px 14px 12px;display:flex;flex-direction:column;gap:8px;transition:.22s;border:1.5px solid}
+.rg-box:hover{transform:translateY(-3px);box-shadow:var(--s3)}
+.rg-box.army{background:linear-gradient(135deg,#fffbeb,#fef3c7);border-color:var(--amber-s)}
+.rg-box.ht{background:linear-gradient(135deg,var(--green-xl),#dcfce7);border-color:var(--green-s)}
+.rg-box.ssc{background:linear-gradient(135deg,var(--blue-xl),var(--blue-s));border-color:var(--blue-s)}
+.rg-box.mp{background:linear-gradient(135deg,var(--purple-xl),#ede9fe);border-color:var(--purple-s)}
+.rg-ico{font-size:22px}
+.rg-txt h4{font-family:var(--fd);font-size:12px;font-weight:800;color:var(--ink);margin-bottom:2px}
+.rg-txt p{font-size:11px;color:var(--ink3);line-height:1.5}
+.btn-xs{display:inline-flex;align-items:center;gap:4px;font-family:var(--fd);font-weight:700;font-size:11px;padding:5px 10px;border-radius:7px;transition:.22s;margin-top:4px}
+.btn-xs.a{background:var(--amber);color:#fff}.btn-xs.a:hover{background:#d97706}
+.btn-xs.g{background:var(--green);color:#fff}.btn-xs.g:hover{background:#059669}
+.btn-xs.b{background:var(--blue);color:#fff}.btn-xs.b:hover{background:var(--blue-d)}
+.btn-xs.p{background:var(--purple);color:#fff}.btn-xs.p:hover{background:#7c3aed}
+
+/* ══ TOOL SECTION ══ */
+.tool-sec{background:var(--surf);padding:80px 0}
+.tool-wrap{max-width:860px;margin:0 auto}
+.tool-card{background:#fff;border:1.5px solid var(--line);border-radius:28px;overflow:hidden;box-shadow:var(--s4)}
+.tool-hdr{background:linear-gradient(135deg,#0f172a 0%,#1e3a8a 50%,#1d4ed8 100%);padding:32px 40px;position:relative;overflow:hidden}
+.tool-hdr::before{content:'';position:absolute;top:-60px;right:-60px;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,.07)}
+.tool-hdr::after{content:'';position:absolute;bottom:-40px;left:-40px;width:180px;height:180px;border-radius:50%;background:rgba(255,255,255,.04)}
+.run-dots{position:absolute;bottom:20px;right:40px;display:flex;gap:5px;opacity:.3;z-index:0}
+.run-dot{width:6px;height:6px;border-radius:50%;background:#fff}
+.th{position:relative;z-index:1}
+.th h2{font-family:var(--fd);font-size:21px;font-weight:800;color:#fff;margin-bottom:6px}
+.th p{font-size:14px;color:rgba(255,255,255,.82);line-height:1.65}
+.th-badges{display:flex;flex-wrap:wrap;gap:9px;margin-top:14px}
+.thb{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:rgba(255,255,255,.9);background:rgba(255,255,255,.13);padding:5px 12px;border-radius:100px}
+.tool-body{padding:36px 40px}
+
+/* form */
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+.fgrid3{grid-template-columns:1fr 1fr 1fr}
+.fld{display:flex;flex-direction:column;gap:7px}
+.flbl{font-size:13px;font-weight:700;color:var(--ink2)}
+.flbl span{font-size:11px;font-weight:500;color:var(--ink4);margin-left:5px;background:var(--surf);padding:2px 7px;border-radius:5px;border:1px solid var(--line)}
+.finp,.fsel{padding:12px 16px;font-size:14.5px;color:var(--ink);background:#fff;border:1.5px solid var(--line);border-radius:10px;outline:none;transition:.22s;font-family:var(--fb);width:100%}
+.finp:focus,.fsel:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(37,99,235,.10)}
+.fsel{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2364748b' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:40px}
+
+.ro-row{display:flex;gap:8px;flex-wrap:wrap}
+.ro{position:relative}
+.ro input{position:absolute;opacity:0;width:0;height:0}
+.ro label{display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:600;color:var(--ink2);padding:10px 18px;border-radius:9px;border:1.5px solid var(--line);background:#fff;cursor:pointer;transition:.22s}
+.ro input:checked+label{border-color:var(--blue);background:var(--blue-xl);color:var(--blue)}
+.ro label:hover{border-color:var(--blue-s);background:var(--blue-xl)}
+.hint-box{display:flex;align-items:flex-start;gap:9px;font-size:13px;color:var(--ink2);background:var(--blue-xl);border:1.5px solid var(--blue-s);border-radius:10px;padding:11px 14px;margin:16px 0;line-height:1.65}
+.hint-box svg{width:16px;height:16px;stroke:var(--blue);fill:none;stroke-width:2;flex-shrink:0;margin-top:2px}
+.chk-btn{width:100%;padding:17px;background:linear-gradient(135deg,#0f172a 0%,#1e3a8a 50%,#2563eb 100%);color:#fff;font-family:var(--fd);font-weight:800;font-size:16px;border-radius:12px;box-shadow:0 8px 32px rgba(30,58,138,.30);transition:all .25s var(--ease);display:flex;align-items:center;justify-content:center;gap:10px}
+.chk-btn:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(30,58,138,.40)}
+
+/* ══ RESULT ══ */
+#resultArea{display:none;margin-top:28px;animation:resultIn .45s var(--ease) both}
+.res-banner{border-radius:20px;padding:28px;margin-bottom:22px;position:relative;overflow:hidden;display:flex;align-items:center;gap:24px;flex-wrap:wrap}
+.res-banner.pass{background:linear-gradient(135deg,var(--green-xl),#d1fae5);border:2px solid var(--green-s)}
+.res-banner.avg{background:var(--amber-xl);border:2px solid var(--amber-s)}
+.res-banner.fail{background:var(--red-xl);border:2px solid var(--red-s)}
+.meter-wrap{flex-shrink:0;position:relative;width:100px;height:100px}
+.meter-svg{width:100px;height:100px;transform:rotate(-90deg)}
+.meter-bg{fill:none;stroke:rgba(0,0,0,.08);stroke-width:10}
+.meter-fill{fill:none;stroke-width:10;stroke-linecap:round;transition:stroke-dashoffset 1.2s var(--ease)}
+.meter-center{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.meter-pct{font-family:var(--fd);font-size:20px;font-weight:800;color:var(--ink);line-height:1}
+.meter-lbl{font-size:10px;font-weight:700;color:var(--ink3);text-transform:uppercase;letter-spacing:.06em}
+.res-info{flex:1}
+.res-icon{font-size:32px;margin-bottom:6px}
+.res-title{font-family:var(--fd);font-size:22px;font-weight:800;color:var(--ink);line-height:1.1;margin-bottom:6px}
+.res-sub{font-size:14px;color:var(--ink3);line-height:1.65}
+.res-tag{display:inline-flex;align-items:center;gap:6px;font-family:var(--fd);font-size:13px;font-weight:700;padding:5px 14px;border-radius:100px;margin-top:10px}
+.res-tag.pass{background:var(--green);color:#fff}
+.res-tag.avg{background:var(--amber);color:#fff}
+.res-tag.fail{background:var(--red);color:#fff}
+.grade-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:13px;margin-bottom:18px}
+.gc{border-radius:13px;padding:16px 14px;text-align:center;border:1.5px solid;transition:.22s}
+.gc:hover{transform:translateY(-2px);box-shadow:var(--s2)}
+.gc.active-pass{background:var(--green-xl);border-color:var(--green-s)}
+.gc.active-avg{background:var(--amber-xl);border-color:var(--amber-s)}
+.gc.active-fail{background:var(--red-xl);border-color:var(--red-s)}
+.gc.inactive{background:var(--surf);border-color:var(--line);opacity:.7}
+.gc-ico{font-size:24px;margin-bottom:6px}
+.gc-title{font-family:var(--fd);font-size:13px;font-weight:700;color:var(--ink);margin-bottom:3px}
+.gc-val{font-size:12px;color:var(--ink3);line-height:1.55}
+.sugg-box{background:var(--blue-xl);border:1.5px solid var(--blue-s);border-radius:13px;padding:16px 18px;font-size:14px;color:var(--ink2);line-height:1.78}
+.warn-box{background:var(--amber-xl);border:1.5px solid var(--amber-s);border-radius:12px;padding:14px 18px;display:flex;gap:10px;font-size:13.5px;color:var(--ink2);line-height:1.7;margin-top:14px}
+
+/* ══ TABLE SECTION ══ */
+.tbl-sec{background:#fff;padding:72px 0}
+.tbl-wr{overflow-x:auto;margin-bottom:20px}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+thead th{background:linear-gradient(135deg,#0f172a 0%,#1e3a8a 100%);color:#fff;padding:14px 16px;text-align:left;font-family:var(--fd);font-size:13px;font-weight:700;letter-spacing:.03em}
+tbody tr{border-bottom:1px solid var(--line);transition:.2s}
+tbody tr:hover{background:var(--blue-xl)}
+tbody td{padding:12px 16px;color:var(--ink2);vertical-align:middle}
+.row-pass{background:var(--green-xl)!important}
+.row-avg{background:var(--amber-xl)!important}
+.row-fail{background:var(--red-xl)!important}
+.tbadge{display:inline-flex;font-size:11px;font-weight:700;padding:3px 8px;border-radius:100px}
+.tbadge.g{background:var(--green-xl);color:var(--green);border:1px solid var(--green-s)}
+.tbadge.a{background:var(--amber-xl);color:#92400e;border:1px solid var(--amber-s)}
+.tbadge.r{background:var(--red-xl);color:var(--red);border:1px solid var(--red-s)}
+.tbadge.b{background:var(--blue-xl);color:var(--blue);border:1px solid var(--blue-s)}
+
+/* ══ TIPS SECTION ══ */
+.tips-sec{background:var(--surf);padding:72px 0}
+.tips-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.tip-card{background:#fff;border:1.5px solid var(--line);border-radius:16px;padding:22px 18px;text-align:center;transition:.28s}
+.tip-card:hover{transform:translateY(-4px);box-shadow:var(--s3);border-color:var(--blue-s)}
+.tip-ico{font-size:32px;margin-bottom:12px}
+.tip-title{font-family:var(--fd);font-size:14px;font-weight:800;color:var(--ink);margin-bottom:8px}
+.tip-desc{font-size:13px;color:var(--ink3);line-height:1.7}
+
+/* ══ STORY ══ */
+.story-sec{background:#fff;padding:72px 0}
+.story-card{background:var(--surf);border:1.5px solid var(--line);border-radius:24px;padding:40px;box-shadow:var(--s3);position:relative;overflow:hidden}
+.story-card::before{content:'';position:absolute;top:0;left:0;bottom:0;width:5px;background:linear-gradient(180deg,var(--blue) 0%,var(--orange) 100%);border-radius:5px 0 0 5px}
+.sq{font-size:54px;color:var(--blue-s);font-family:Georgia,serif;line-height:1;padding-left:8px}
+.sb{font-size:15.5px;color:var(--ink2);line-height:1.9;padding:0 8px}
+.sauth{display:flex;align-items:center;gap:14px;margin-top:22px;padding-top:20px;border-top:1px solid var(--line)}
+.savt{width:48px;height:48px;background:var(--blue);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+.sname{font-family:var(--fd);font-size:15px;font-weight:700;color:var(--ink)}
+.srole{font-size:12.5px;color:var(--ink3)}
+.founder-msg{background:linear-gradient(135deg,var(--blue-xl),var(--blue-s));border:1.5px solid var(--blue-s);border-radius:14px;padding:20px 22px;margin-top:20px;display:flex;gap:13px}
+.fm-ico{font-size:26px;flex-shrink:0}
+.fm-txt{font-size:14px;color:var(--ink2);line-height:1.75;font-style:italic}
+.fm-txt strong{color:var(--ink);font-weight:700;font-style:normal}
+
+/* ══ GUIDE ══ */
+.guide-sec{background:var(--surf);padding:72px 0}
+.guide-body h2{font-family:var(--fd);font-size:21px;font-weight:800;color:var(--ink);margin:28px 0 11px;line-height:1.3}
+.guide-body h2:first-child{margin-top:0}
+.guide-body p{font-size:15px;color:var(--ink3);line-height:1.85;margin-bottom:14px}
+.guide-body ul{display:flex;flex-direction:column;gap:8px;margin:12px 0 16px}
+.guide-body li{display:flex;align-items:flex-start;gap:10px;font-size:14.5px;color:var(--ink3);line-height:1.7}
+.guide-body li::before{content:'✓';width:18px;height:18px;background:var(--blue);color:#fff;border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;flex-shrink:0;margin-top:3px}
+.guide-body strong{color:var(--ink2);font-weight:700}
+.ibox{background:var(--blue-xl);border:1.5px solid var(--blue-s);border-radius:13px;padding:15px 18px;margin:16px 0;display:flex;gap:11px;font-size:14px;color:var(--ink2);line-height:1.7}
+.ibox svg{width:17px;height:17px;stroke:var(--blue);fill:none;stroke-width:2;flex-shrink:0;margin-top:2px}
+
+/* ══ FAQ ══ */
+.faq-sec{background:#fff;padding:72px 0}
+.fql{max-width:780px;margin:0 auto}
+.fq{background:var(--surf);border:1.5px solid var(--line);border-radius:13px;margin-bottom:10px;overflow:hidden}
+.fq-q{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;cursor:pointer;gap:14px;transition:.2s}
+.fq-q:hover{background:var(--blue-xl)}
+.fq-t{font-weight:600;font-size:15px;color:var(--ink);line-height:1.4}
+.fq-i{width:28px;height:28px;border-radius:50%;background:var(--blue-xl);color:var(--blue);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;transition:transform .28s,background .2s}
+.fq.open .fq-i{transform:rotate(45deg);background:var(--blue);color:#fff}
+.fq-a{max-height:0;overflow:hidden;transition:max-height .35s var(--ease)}
+.fq-ai{padding:0 22px 18px;font-size:14.5px;color:var(--ink3);line-height:1.78}
+.fq.open .fq-a{max-height:400px}
+
+/* ══ DISC / CONTACT / CTA / FOOTER ══ */
+.disc{background:var(--amber-xl);border-top:1px solid var(--amber-s);border-bottom:1px solid var(--amber-s);padding:15px 0}
+.disc-in{display:flex;align-items:flex-start;gap:12px;font-size:13.5px;color:var(--ink2);line-height:1.7}
+.contact-sec{background:var(--surf);padding:60px 0}
+.contact-card{max-width:580px;margin:0 auto;background:#fff;border:1.5px solid var(--line);border-radius:20px;padding:32px;text-align:center;box-shadow:var(--s2)}
+.contact-card h3{font-family:var(--fd);font-size:19px;font-weight:800;color:var(--ink);margin-bottom:10px}
+.contact-card p{font-size:15px;color:var(--ink3);line-height:1.75;margin-bottom:20px}
+.btn-bl{display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:#fff;font-family:var(--fd);font-weight:700;font-size:14.5px;padding:12px 26px;border-radius:8px;box-shadow:var(--sb);transition:.22s}
+.btn-bl:hover{background:var(--blue-d);transform:translateY(-1px)}
+.priv-note{font-size:12px;color:var(--ink4);margin-top:14px}
+.cta{background:linear-gradient(140deg,#0f172a 0%,#1e3a8a 100%);padding:80px 0;text-align:center;position:relative;overflow:hidden}
+.cta::before{content:'';position:absolute;top:-80px;left:50%;transform:translateX(-50%);width:800px;height:380px;background:radial-gradient(ellipse,rgba(37,99,235,.22) 0%,transparent 68%);pointer-events:none}
+.cta-in{position:relative;z-index:1}
+.cta .pill{color:#93c5fd;background:rgba(255,255,255,.1);margin-bottom:18px}
+.cta .pill::before{background:#93c5fd}
+.cta h2{font-family:var(--fd);font-size:clamp(24px,4vw,42px);font-weight:800;color:#fff;line-height:1.15;margin-bottom:12px}
+.cta h2 em{color:#fbbf24;font-style:normal}
+.cta p{font-size:16px;color:rgba(255,255,255,.72);max-width:480px;margin:0 auto 32px;line-height:1.78}
+.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn-gold{display:inline-flex;align-items:center;gap:8px;background:var(--amber);color:#fff;font-family:var(--fd);font-weight:800;font-size:15px;padding:14px 30px;border-radius:8px;box-shadow:0 8px 28px rgba(245,158,11,.35);transition:.22s}
+.btn-gold:hover{background:#d97706;transform:translateY(-3px)}
+.btn-ghost{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.09);border:1.5px solid rgba(255,255,255,.22);color:#fff;font-family:var(--fd);font-weight:600;font-size:14px;padding:13px 26px;border-radius:8px;transition:.2s}
+.btn-ghost:hover{background:rgba(255,255,255,.16)}
+footer{background:#0f172a;padding:52px 0 0}
+.ft-inner{max-width:1180px;margin:0 auto;padding:0 24px}
+.ft-top{display:grid;grid-template-columns:1.9fr 1fr 1fr 1fr;gap:44px;margin-bottom:44px}
+.ft-brand .ln{color:#fff}.ft-brand .ls{color:#475569}
+.ft-desc{font-size:13.5px;color:#64748b;line-height:1.78;max-width:265px;margin:13px 0 20px}
+.ft-soc{display:flex;gap:9px}
+.fts{width:34px;height:34px;border-radius:7px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;color:#94a3b8;font-size:13px;transition:.2s}
+.fts:hover{background:var(--blue);color:#fff}
+.fc h4{font-family:var(--fd);font-size:12px;font-weight:700;color:#fff;margin-bottom:14px;letter-spacing:.06em;text-transform:uppercase}
+.fc ul{display:flex;flex-direction:column;gap:8px}
+.fc ul a{font-size:13.5px;color:#64748b;transition:.18s}
+.fc ul a:hover{color:#93c5fd}
+.ft-btm{border-top:1px solid rgba(255,255,255,.07);padding:20px 0;text-align:center}
+.ft-cp{font-size:12.5px;color:#475569}
+.ft-cp b{color:#64748b}
+.ft-tag{font-size:12px;color:#334155;margin-top:4px;font-style:italic}
+.btt{position:fixed;bottom:26px;right:26px;z-index:500;width:43px;height:43px;background:var(--blue);color:#fff;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:17px;box-shadow:var(--sb);opacity:0;pointer-events:none;transform:translateY(14px);transition:.28s var(--ease)}
+.btt.on{opacity:1;pointer-events:auto;transform:translateY(0)}
+.btt:hover{transform:translateY(-3px)}
+
+/* RESPONSIVE */
+@media(max-width:1060px){.ft-top{grid-template-columns:1fr 1fr}.tips-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:860px){
+  nav.dn,.hcta{display:none}.brg{display:flex}
+  .tool-body{padding:24px 22px}.tool-hdr{padding:24px 22px}
+  .fgrid{grid-template-columns:1fr}.fgrid.fgrid3{grid-template-columns:1fr 1fr}
+  .grade-grid{grid-template-columns:1fr 1fr}.howto-steps{grid-template-columns:1fr}
+  .rel-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+  .ft-top{grid-template-columns:1fr}.rel-grid{grid-template-columns:1fr}
+  .fgrid.fgrid3{grid-template-columns:1fr}
+  .tips-grid{grid-template-columns:1fr 1fr}
+  .cta-btns{flex-direction:column;align-items:center}
+  .story-card{padding:26px 20px}
+  .res-banner{flex-direction:column;align-items:flex-start;gap:16px}
+  .grade-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+  
+<!-- HEADER -->
+<header class="hdr">
+  <div class="w">
+    <div class="hdi">
+      <a href="/" class="logo">
+        <div class="lb"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+        <div><div class="ln">Raj<span>Daily</span>Tools</div><div class="ls">Smart Tools for Daily Life</div></div>
+      </a>
+      <nav class="dn">
+        <a href="/">Home</a><a href="/categories">Categories</a>
+        <a href="/#popular">Popular</a><a href="/about">About</a><a href="/contact">Contact</a>
+      </nav>
+      <a href="/categories" class="hcta">All Tools →</a>
+      <button class="brg" id="brg"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="dov" id="dov"></div>
+<div class="drw" id="drw">
+  <div class="dh">
+    <div class="logo">
+      <div class="lb" style="width:30px;height:30px;border-radius:7px"><svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#fff"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+      <div class="ln" style="font-size:16px">Raj<span>Daily</span>Tools</div>
+    </div>
+    <button class="dx" id="dx">✕</button>
+  </div>
+  <nav class="mn">
+    <a href="/" onclick="cD()">🏠 Home</a>
+    <a href="/categories" onclick="cD()">🗂️ Categories</a>
+    <a href="/#popular" onclick="cD()">⭐ Popular</a>
+    <a href="/about" onclick="cD()">👤 About</a>
+    <a href="/contact" onclick="cD()">📬 Contact</a>
+  </nav>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+  <div class="w">
+    <div class="bc">
+      <a href="/">Home</a><span style="color:var(--ink4)">›</span>
+      <a href="/categories">Tools</a><span style="color:var(--ink4)">›</span>
+      <span>SSC CGL Post Eligibility Finder</span>
+    </div>
+    <div class="hero-inner">
+      <div class="pill">SSC Eligibility Tools 2026</div>
+      <h1>SSC CGL <span>Post Eligibility</span> Finder 2026</h1>
+      <p class="hero-sub">Identification of eligible posts is the first step towards a successful career. Use our <strong>SSC CGL 2026 Post Eligibility Finder</strong> to filter through 35+ central government posts based on your age, category, and graduation stream.</p>
+      <div class="hero-chips">
+        <span class="chip">📅 Cut-off: 01-08-2026</span>
+        <span class="chip">🎖️ 35+ CGL Posts</span>
+        <span class="chip">📊 JSO/Stat. Inv. Filters</span>
+        <span class="chip">🎓 Degree Matching</span>
+        <span class="chip">🆓 100% Free</span>
+      </div>
+      <div class="hero-meta">
+        <div class="upd">📅 Based on Official 2026 PDF</div>
+        <span class="mi">✅ Precise Age Tiers</span>
+        <span class="mi">🔒 Secure & Private</span>
+      </div>
+      <!-- HOW TO USE -->
+      <div class="howto">
+        <div class="howto-ttl">💡 How to Find Your Eligible Posts</div>
+        <div class="howto-steps">
+          <div class="hs"><span class="sn">1</span>Enter your Date of Birth and select your Category</div>
+          <div class="hs"><span class="sn">2</span>Choose your Graduation Stream and Completion status</div>
+          <div class="hs"><span class="sn">3</span>Click "Check My Eligibility"</div>
+          <div class="hs"><span class="sn">4</span>Scroll down to see the list of matching posts</div>
+        </div>
+      </div>
+      <!-- RELATED TOOLS -->
+      <div class="rel-grid">
+        <div class="rg-box ssc">
+          <div class="rg-ico">📅</div>
+          <div class="rg-txt">
+            <h4>SSC CGL Age Calculator</h4>
+            <p>Calculate exact age as on 01-08-2026</p>
+            <a href="https://rajdailytools.in/ssc-cgl-age-limit-2026-calculator.html" class="btn-xs b">Check Age →</a>
+          </div>
+        </div>
+        <div class="rg-box mp">
+          <div class="rg-ico">👮</div>
+          <div class="rg-txt">
+            <h4>Physical Eligibility</h4>
+            <p>Check Height/Chest for Inspector & SI posts</p>
+            <a href="https://rajdailytools.in/ssc-cgl-physical-eligibility-checker-2026.html" class="btn-xs p">Check Now →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOOL SECTION -->
+<section class="tool-sec" id="tool">
+  <div class="w">
+    <div class="tool-wrap">
+      <div class="tool-card rev">
+        <div class="tool-hdr">
+          <div class="run-dots">
+            <div class="run-dot"></div><div class="run-dot"></div><div class="run-dot"></div>
+          </div>
+          <div class="th">
+            <h2>🔎 Advanced Post Eligibility Finder</h2>
+            <p>Don't risk rejection during Document Verification. Input your academic and personal details to find posts that match the official SSC CGL 2026 standards.</p>
+            <div class="th-badges">
+              <span class="thb">📅 01-08-2026 Base</span>
+              <span class="thb">🎓 Degree Check</span>
+              <span class="thb">🔢 Relaxation Logic</span>
+            </div>
+          </div>
+        </div>
+        <div class="tool-body">
+
+          <!-- ROW 1 -->
+          <div class="fgrid">
+            <div class="fld">
+              <label class="flbl">Date of Birth <span>Required</span></label>
+              <input type="date" id="dob" class="finp">
+            </div>
+            <div class="fld">
+              <label class="flbl" for="category">Category <span>Required</span></label>
+              <select class="fsel" id="category">
+                <option value="gen">General / UR / EWS</option>
+                <option value="obc">OBC (Non-Creamy)</option>
+                <option value="scst">SC / ST</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- ROW 2 -->
+          <div class="fgrid">
+            <div class="fld">
+              <label class="flbl">Graduation Stream <span>For JSO/Stat Inv</span></label>
+              <select class="fsel" id="stream">
+                <option value="any">General (BA, BSc, BCom, BTech etc.)</option>
+                <option value="stats">Degree with Statistics</option>
+                <option value="math">Degree with Mathematics</option>
+                <option value="economics">Degree with Economics</option>
+                <option value="cs">Degree with CS / IT / AI / Data Sci</option>
+              </select>
+            </div>
+            <div class="fld">
+              <label class="flbl">Graduation Status <span>By Aug 2026</span></label>
+              <div class="ro-row">
+                <div class="ro"><input type="radio" name="grad_status" id="gs_yes" value="yes" checked><label for="gs_yes">✅ Completed</label></div>
+                <div class="ro"><input type="radio" name="grad_status" id="gs_no" value="no"><label for="gs_no">⌛ Appearing</label></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ROW 3 -->
+          <div class="fgrid">
+             <div class="fld">
+              <label class="flbl">12th Mathematics 60%+? <span>JSO Special</span></label>
+              <div class="ro-row">
+                <div class="ro"><input type="radio" name="math_12" id="m12_y" value="yes"><label for="m12_y">Yes</label></div>
+                <div class="ro"><input type="radio" name="math_12" id="m12_n" value="no" checked><label for="m12_n">No</label></div>
+              </div>
+            </div>
+            <div class="fld">
+              <label class="flbl">PwBD Status? <span>Age Relaxation</span></label>
+              <div class="ro-row">
+                <div class="ro"><input type="radio" name="pwbd" id="pw_y" value="yes"><label for="pw_y">Yes</label></div>
+                <div class="ro"><input type="radio" name="pwbd" id="pw_n" value="no" checked><label for="pw_n">No</label></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="hint-box">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            <div>Official Age Cut-off date is <strong>01-08-2026</strong>. Final year students must ensure their result is declared by this date. Post preferences once locked cannot be changed easily.</div>
+          </div>
+
+          <button class="chk-btn" onclick="checkEligibility()">✅ Find Eligible Posts</button>
+
+          <!-- RESULT AREA -->
+          <div id="resultArea">
+            <div class="res-banner" id="resBanner">
+              <div class="meter-wrap">
+                <svg class="meter-svg" viewBox="0 0 100 100">
+                  <circle class="meter-bg" cx="50" cy="50" r="45"/>
+                  <circle class="meter-fill" id="meterFill" cx="50" cy="50" r="45" stroke-dasharray="283" stroke-dashoffset="283"/>
+                </svg>
+                <div class="meter-center">
+                  <div class="meter-pct" id="meterPct">0%</div>
+                  <div class="meter-lbl" id="meterLbl">Match</div>
+                </div>
+              </div>
+              <div class="res-info">
+                <div class="res-icon" id="resIcon"></div>
+                <div class="res-title" id="resTitle"></div>
+                <div class="res-sub" id="resSub"></div>
+                <div class="res-tag" id="resTag"></div>
+              </div>
+            </div>
+
+            <div class="grade-grid" id="postGrid"></div>
+            <div class="sugg-box" id="suggBox"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+  
+<!-- TABLE SECTION -->
+<section class="tbl-sec" id="posts">
+  <div class="w">
+    <div style="max-width:860px;margin:0 auto">
+      <div class="rev" style="text-align:center;margin-bottom:36px">
+        <div class="pill">Official Post Breakdown</div>
+        <h2 style="font-family:var(--fd);font-size:clamp(22px,3.5vw,36px);font-weight:800;color:var(--ink);margin-bottom:10px">SSC CGL 2026 <span style="color:var(--blue)">Post-wise Age Standards</span></h2>
+        <p style="font-size:15px;color:var(--ink3)">Complete age and qualification table as per 2026 Official Notification.</p>
+      </div>
+
+      <div class="tbl-wr rev">
+        <table>
+          <thead><tr><th>Post Group</th><th>Age Limit</th><th>Pay Level</th><th>Qualification</th></tr></thead>
+          <tbody>
+            <tr class="row-pass"><td>Assistant Audit/Accounts Officer</td><td>18-30 years</td><td>Level-8</td><td>Bachelor Degree</td></tr>
+            <tr class="row-pass"><td>Income Tax/Excise Inspector</td><td>18-30 years</td><td>Level-7</td><td>Bachelor Degree</td></tr>
+            <tr class="row-pass"><td>Sub Inspector (CBI)</td><td>20-30 years</td><td>Level-7</td><td>Bachelor Degree</td></tr>
+            <tr class="row-pass"><td>Assistant Section Officer (CSS)</td><td>20-30 years</td><td>Level-7</td><td>Bachelor Degree</td></tr>
+            <tr class="row-pass"><td>Junior Statistical Officer (JSO)</td><td>Up to 32 years</td><td>Level-6</td><td>Degree + Math/Stat</td></tr>
+            <tr class="row-avg"><td>Auditor / Accountant</td><td>18-27 years</td><td>Level-5</td><td>Bachelor Degree</td></tr>
+            <tr class="row-avg"><td>Tax Assistant / Postal Assistant</td><td>18-27 years</td><td>Level-4</td><td>Bachelor Degree</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 style="font-family:var(--fd);font-size:17px;font-weight:700;color:var(--ink);margin:24px 0 12px">📊 Statistical Investigator Grade-II Stream</h3>
+      <div class="tbl-wr rev">
+        <table>
+          <thead><tr><th>Subject Category</th><th>Eligible Stream / Specialization</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Mathematics</strong></td><td>Bachelor Degree with Statistics as a subject</td></tr>
+            <tr><td><strong>Computer</strong></td><td>CS, IT, Data Science, AI, Computer Application</td></tr>
+            <tr><td><strong>Analysis</strong></td><td>Demography, Population Studies, Operation Research</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ SECTION -->
+<section class="faq-sec" id="faq">
+  <div class="w">
+    <div style="text-align:center;margin-bottom:40px" class="rev">
+      <div class="pill">FAQs</div>
+      <h2 style="font-family:var(--fd);font-size:clamp(22px,3.5vw,36px);font-weight:800;color:var(--ink);margin-bottom:10px">SSC CGL Eligibility <span style="color:var(--blue)">Doubts</span></h2>
+      <p style="font-size:15px;color:var(--ink3);max-width:480px;margin:0 auto">Quick answers to 50 most common eligibility queries.</p>
+    </div>
+    <div class="fql" id="faqList">
+      <!-- 1-50 FAQs strictly on Eligibility -->
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">1. What is the critical date for CGL 2026 eligibility?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">The critical date is 01-08-2026. All age and qualification requirements must be met by this date.</div></div></div>
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">2. Can final year students apply?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">Yes, but your final degree results must be declared on or before 01-08-2026.</div></div></div>
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">3. What is the age limit for IT Inspector?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">The age limit is 18-30 years. OBC gets 3 years and SC/ST gets 5 years relaxation.</div></div></div>
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">4. What is the qualification for JSO?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">Bachelor's Degree in any subject with 60% in 12th Math OR Bachelor's with Statistics as a subject.</div></div></div>
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">5. Is any specific degree needed for Income Tax Inspector?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">No, any Bachelor's degree from a recognized university is sufficient.</div></div></div>
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">6. What is the age limit for Assistant Section Officer (CSS)?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">For CSS ASO, the age limit is 20-30 years.</div></div></div>
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">7. What is the minimum age for SI in CBI?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">The minimum age is 20 years as on 01-08-2026.</div></div></div>
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">8. How much relaxation do PwBD General candidates get?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">PwBD (Unreserved) candidates get 10 years of age relaxation.</div></div></div>
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">9. Is a B.Tech degree eligible for Statistical Investigator?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">Yes, if Statistics was one of the subjects during the degree.</div></div></div>
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">10. Can I apply for JSO if I had 59% in 12th Math?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">No, exactly 60% or more is required if applying via the 12th Math route.</div></div></div>
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">11. What is the upper age limit for SC/ST in JSO?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">The limit is 32 + 5 = 37 years.</div></div></div>
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">12. Is degree from IGNOU/Distance learning valid?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">Yes, if the university is recognized by UGC/DEB.</div></div></div>
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">13. Is there any attempt limit for SSC CGL?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">No, there is no limit on attempts as long as you meet the age criteria.</div></div></div>
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">14. What is the age limit for Tax Assistant?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">The age limit is 18-27 years.</div></div></div>
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">15. Is BCA degree eligible for CGL?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">Yes, BCA is a recognized Bachelor's degree.</div></div></div>
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">16. What is the age limit for AAO?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">18-30 years for General category.</div></div></div>
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">17. Is CA qualification mandatory for AAO?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">No, it is a desirable qualification. A simple Bachelor's degree is enough to apply.</div></div></div>
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">18. What is the age relaxation for OBC in Tax Assistant posts?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">OBC limit is 27 + 3 = 30 years.</div></div></div>
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">19. Can I apply for JSO with B.Com?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">Yes, if you had 60% in 12th Mathematics.</div></div></div>
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">20. What is the age limit for Sub Inspector in NIA?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">Up to 30 years for the General category.</div></div></div>
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">21. Is B.Sc Mathematics eligible for Statistical Investigator?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">Yes, as per the 2026 notification Para 8.3.1.</div></div></div>
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">22. Can I apply for ASO MEA if I am 19 years old?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">No, the minimum age for ASO posts is 20 years.</div></div></div>
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">23. Is height a factor for Auditor posts?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">No, physical standards apply only to specific Inspector and SI posts.</div></div></div>
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">24. What is the age limit for Senior Secretariat Assistant?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">The limit is 18-27 years.</div></div></div>
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">25. Can a B.Tech (CS) apply for Statistical Investigator?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">Yes, if Statistics was a subject in the curriculum.</div></div></div>
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">26. Is the degree certificate needed during application?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">No, you just need to enter details. Original is checked during Document Verification.</div></div></div>
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">27. What if my result comes on 02-08-2026?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">You will be ineligible as the cut-off is strictly 01-08-2026.</div></div></div>
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">28. Is there age relaxation for central govt employees?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">Yes, up to 40 years (General) for Group C posts if they have 3 years of service.</div></div></div>
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">29. What is the age limit for SI in Narcotics?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">18-30 years for General category.</div></div></div>
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">30. Can an Ex-Serviceman get age relaxation?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">Yes, 3 years after deduction of the military service rendered.</div></div></div>
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">31. Is B.E. (Electronics) eligible for CGL?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">Yes, any B.E. or B.Tech degree is considered a Bachelor's degree.</div></div></div>
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">32. What is the age limit for Divisional Accountant?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">18-30 years for General category.</div></div></div>
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">33. Can candidates with benchmark disabilities apply for Excise Inspector?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">Yes, specific PwBD categories are identified as suitable for these posts.</div></div></div>
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">34. Is 12th math required for IT Inspector?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">No, 12th math is only a requirement for the JSO post.</div></div></div>
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">35. Can a B.Sc Physics student apply for JSO?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">Only if you have 60% in 12th Math or Statistics as a subject in B.Sc.</div></div></div>
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">36. What is the upper age for OBC in JSO?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">32 + 3 = 35 years.</div></div></div>
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">37. Is BBA degree valid for CGL?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">Yes, BBA is a recognized graduation degree.</div></div></div>
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">38. Is there any physical test for Auditors?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">No physical test is required for Auditor posts.</div></div></div>
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">39. Can a married person apply?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">Yes, provided they do not have more than one living spouse (Para 22).</div></div></div>
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">40. What is the age limit for Junior Accountant?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">18-27 years for the General category.</div></div></div>
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">41. Is there age relaxation for widows?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">Yes, up to 35 years for General and 40 years for SC/ST (Group C posts).</div></div></div>
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">42. Can I apply if I graduated from a private university?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">Yes, as long as the university is UGC-recognized.</div></div></div>
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">43. What is the age limit for ASO in Railways?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">18-30 years for General category.</div></div></div>
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">44. Is 60% in graduation required for CGL?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">No, a simple pass certificate is enough for most posts.</div></div></div>
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">45. What is the age limit for SI in NIA?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">18-30 years.</div></div></div>
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">46. Can a B.Arch student apply?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">Yes, B.Arch is a valid graduation degree.</div></div></div>
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">47. Is there physical criteria for AAO?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">No, there is no physical criteria for the AAO post.</div></div></div>
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">48. What is the age limit for Section Head?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">18-30 years for the General category.</div></div></div>
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">49. Is B.Sc IT eligible for Statistical Investigator?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">Yes, as per Para 8.3.1 of the 2026 notification.</div></div></div>
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">50. Can I change my category after application?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">No, changes are generally not allowed after the correction window closes.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-inner">
+    <div class="ft-top">
+      <div class="ft-brand">
+        <div class="logo" style="margin-bottom:4px">
+          <div class="lb"><svg viewBox="0 0 24 24" fill="#fff"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+          <div><div class="ln">Raj<span>Daily</span>Tools</div><div class="ls">Official-based Exam Tools</div></div>
+        </div>
+        <p class="ft-desc">Empowering SSC aspirants with logic-driven eligibility tools based on the latest 2026 official notification.</p>
+        <div class="ft-soc">
+          <a href="#" class="fts">f</a><a href="#" class="fts">𝕏</a><a href="#" class="fts">▶</a><a href="#" class="fts">📷</a>
+        </div>
+      </div>
+      <div class="fc"><h4>SSC CGL Tools</h4><ul>
+        <li><a href="#">Eligibility Finder</a></li>
+        <li><a href="https://rajdailytools.in/ssc-cgl-age-limit-2026-calculator.html">Age Calculator</a></li>
+        <li><a href="https://rajdailytools.in/ssc-cgl-physical-eligibility-checker-2026.html">Physical Standards</a></li>
+      </ul></div>
+      <div class="fc"><h4>Legal</h4><ul>
+        <li><a href="/privacy">Privacy Policy</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
+      </ul></div>
+    </div>
+    <div class="ft-btm">
+      <p class="ft-cp">Copyright © 2026 <b>RajDailyTools</b>. Made with ❤️ in India.</p>
+    </div>
+  </div>
+</footer>
+<button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+/* ── UI Logic ── */
+const brg=document.getElementById('brg'),drw=document.getElementById('drw'),dov=document.getElementById('dov');
+function oD(){drw.classList.add('on');dov.classList.add('on');document.body.style.overflow='hidden'}
+function cD(){drw.classList.remove('on');dov.classList.remove('on');document.body.style.overflow=''}
+brg.addEventListener('click',oD);document.getElementById('dx').addEventListener('click',cD);dov.addEventListener('click',cD);
+const btt=document.getElementById('btt');
+window.addEventListener('scroll',()=>btt.classList.toggle('on',scrollY>380),{passive:true});
+
+/* ── TOOL LOGIC ── */
+function checkEligibility(){
+  const dobVal = document.getElementById('dob').value;
+  const cat = document.getElementById('category').value;
+  const stream = document.getElementById('stream').value;
+  const gradYes = document.getElementById('gs_yes').checked;
+  const math12 = document.getElementById('m12_y').checked;
+  const pwbd = document.getElementById('pw_y').checked;
+
+  if(!dobVal){ alert("Please enter Date of Birth"); return; }
+
+  const cutoff = new Date('2026-08-01');
+  const birth = new Date(dobVal);
+  let age = cutoff.getFullYear() - birth.getFullYear();
+  const m = cutoff.getMonth() - birth.getMonth();
+  if (m < 0 || (m === 0 && cutoff.getDate() < birth.getDate())) age--;
+
+  if(age < 18){ alert("Minimum age is 18 years."); return; }
+
+  let relaxation = 0;
+  if(cat === 'obc') relaxation = 3;
+  if(cat === 'scst') relaxation = 5;
+  if(pwbd) relaxation += 10;
+
+  const results = [];
+  const addP = (n, t) => results.push({name:n, tier:t});
+
+  // Tiers
+  if(age <= (27 + relaxation)) {
+    addP("Auditor, Accountant, SSA, Tax Assistant, Postal Assistant", "18-27 Range");
+  }
+  if(age <= (30 + relaxation)) {
+    addP("Income Tax Inspector, Central Excise, Examiner, Preventive Officer", "18-30 Range");
+    addP("Assistant Enforcement Officer, Inspector Posts, Inspector Narcotics", "18-30 Range");
+    addP("Divisional Accountant, Executive Assistant (CBIC)", "18-30 Range");
+  }
+  if(age >= 20 && age <= (30 + relaxation)) {
+    addP("ASO (CSS), ASO (MEA), ASO (Railways), Sub Inspector (CBI)", "20-30 Range");
+  }
+  
+  // Special
+  if((math12 || stream === 'stats') && age <= (32 + relaxation)) {
+    addP("Junior Statistical Officer (JSO)", "Up to 32 Range");
+  }
+  if(['stats','math','economics','cs'].includes(stream) && age <= (30 + relaxation)) {
+    addP("Statistical Investigator Grade-II", "18-30 Range");
+  }
+
+  // Build Results
+  const resArea = document.getElementById('resultArea');
+  const postGrid = document.getElementById('postGrid');
+  const banner = document.getElementById('resBanner');
+  
+  resArea.style.display = 'block';
+  
+  if(!gradYes) {
+    banner.className = "res-banner fail";
+    document.getElementById('resIcon').textContent = "❌";
+    document.getElementById('resTitle').textContent = "Ineligible";
+    document.getElementById('resSub').textContent = "Bachelor's degree must be completed by 01-08-2026.";
+    postGrid.innerHTML = "";
+    return;
+  }
+
+  banner.className = "res-banner pass";
+  document.getElementById('resIcon').textContent = "✅";
+  document.getElementById('resTitle').textContent = "Eligible Posts Found";
+  document.getElementById('resSub').textContent = `Age as on Aug 1: ${age} Years | Relaxation applied: ${relaxation} Years.`;
+  
+  let gridHTML = `<div style="width:100%;font-weight:800;margin-bottom:10px;color:var(--blue)">Matched SSC CGL 2026 Posts:</div>`;
+  results.forEach(r => {
+    gridHTML += `<div class="gc active-pass"><div class="gc-title">${r.name}</div><div class="gc-val">${r.tier}</div></div>`;
+  });
+  postGrid.innerHTML = gridHTML;
+
+  const matchPct = Math.round((results.length / 10) * 100);
+  document.getElementById('meterPct').textContent = Math.min(100, matchPct) + "%";
+  document.getElementById('meterFill').style.strokeDashoffset = 283 - (Math.min(100, matchPct)/100 * 283);
+
+  document.getElementById('suggBox').innerHTML = `<strong>💡 Pro Advice:</strong> You qualify for ${results.length} post groups. For ASO and SI posts, ensure you meet the physical and 20-year min age criteria. JSO requires specific 12th math or degree stats.`;
+
+  resArea.scrollIntoView({behavior:'smooth'});
+}
+
+/* ── Intersection Observer ── */
+const rvObs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');}});
+},{threshold:0.1});
+document.querySelectorAll('.rev').forEach(el=>rvObs.observe(el));
+
+/* ── FAQ ── */
+document.getElementById('faqList').addEventListener('click', e => {
+  const q = e.target.closest('.fq-q'); if(!q) return;
+  q.closest('.fq').classList.toggle('open');
+});
+</script>
+</body>
+</html>
