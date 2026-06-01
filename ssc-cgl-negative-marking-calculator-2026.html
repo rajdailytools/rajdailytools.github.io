@@ -1,0 +1,1278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SSC CGL Negative Marking Calculator 2026 | Tier 1 & Tier 2 Score Calculator</title>
+<meta name="description" content="Calculate SSC CGL 2026 score using official Tier 1 and Tier 2 negative marking rules. Check raw score, negative marks deduction, final score, accuracy percentage, risk level and performance analysis instantly.">
+<meta name="keywords" content="ssc cgl negative marking calculator, ssc cgl negative marking 2026, ssc cgl tier 1 negative marking, ssc cgl tier 2 negative marking, ssc cgl score calculator, ssc cgl marks calculator, ssc cgl accuracy calculator, ssc cgl raw score calculator, ssc cgl final score predictor, ssc cgl attempt analysis">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://rajdailytools.in/ssc-cgl-negative-marking-calculator-2026.html">
+<meta property="og:title" content="SSC CGL Negative Marking Calculator 2026 | Tier 1 & Tier 2 Score Calculator">
+<meta property="og:description" content="Calculate SSC CGL 2026 score instantly using official Tier 1 & Tier 2 negative marking rules. Free, accurate & mobile friendly.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ══════════════════════════════════════
+   DESIGN TOKENS
+══════════════════════════════════════ */
+:root{
+  --blue:#2563eb;--blue-d:#1d4ed8;--blue-xl:#eff6ff;--blue-s:#dbeafe;
+  --amber:#f59e0b;--green:#10b981;--red:#ef4444;--purple:#8b5cf6;
+  --orange:#f97316;--teal:#14b8a6;
+  --green-xl:#f0fdf4;--green-s:#bbf7d0;
+  --red-xl:#fef2f2;--red-s:#fecaca;
+  --amber-xl:#fffbeb;--amber-s:#fde68a;
+  --purple-xl:#faf5ff;--purple-s:#ddd6fe;
+  --yellow:#eab308;--yellow-xl:#fefce8;--yellow-s:#fef08a;
+  --ink:#0f172a;--ink2:#334155;--ink3:#64748b;--ink4:#94a3b8;
+  --line:#e2e8f0;--surf:#f8fafc;--white:#fff;
+  --s1:0 1px 3px rgba(15,23,42,.06),0 1px 2px rgba(15,23,42,.04);
+  --s2:0 4px 16px rgba(15,23,42,.08),0 2px 6px rgba(15,23,42,.04);
+  --s3:0 12px 40px rgba(15,23,42,.11),0 3px 10px rgba(15,23,42,.06);
+  --s4:0 24px 64px rgba(15,23,42,.13),0 6px 20px rgba(15,23,42,.07);
+  --sb:0 8px 32px rgba(37,99,235,.20);
+  --fd:'Sora',sans-serif;--fb:'DM Sans',sans-serif;
+  --ease:cubic-bezier(.4,0,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);color:var(--ink);background:var(--white);overflow-x:hidden;-webkit-font-smoothing:antialiased;line-height:1.6}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+button{cursor:pointer;border:none;background:none;font-family:var(--fb)}
+.w{max-width:1180px;margin:0 auto;padding:0 24px}
+.wa{max-width:880px;margin:0 auto;padding:0 24px}
+select,input{appearance:none;-webkit-appearance:none}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+@keyframes resultIn{from{opacity:0;transform:translateY(18px) scale(.97)}to{opacity:1;transform:none}}
+@keyframes meterFill{from{stroke-dashoffset:283}to{stroke-dashoffset:var(--dash)}}
+@keyframes barGrow{from{width:0}to{width:var(--bw)}}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}
+@keyframes countUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.rev{opacity:0;transform:translateY(22px);transition:opacity .55s var(--ease),transform .55s var(--ease)}
+.rev.in{opacity:1;transform:none}
+
+/* ══ HEADER ══ */
+.hdr{position:sticky;top:0;z-index:999;background:rgba(255,255,255,.96);backdrop-filter:blur(20px);border-bottom:1px solid var(--line);box-shadow:var(--s1)}
+.hdi{display:flex;align-items:center;justify-content:space-between;height:66px}
+.logo{display:flex;align-items:center;gap:10px}
+.lb{width:36px;height:36px;background:var(--blue);border-radius:9px;display:flex;align-items:center;justify-content:center;box-shadow:var(--sb);flex-shrink:0}
+.lb svg{width:18px;height:18px;fill:#fff}
+.ln{font-family:var(--fd);font-size:19px;font-weight:800;color:var(--ink);line-height:1}
+.ln span{color:var(--blue)}
+.ls{font-size:10px;color:var(--ink4);letter-spacing:.04em}
+nav.dn{display:flex;align-items:center;gap:2px}
+nav.dn a{font-size:13.5px;font-weight:500;color:var(--ink2);padding:7px 13px;border-radius:8px;transition:.2s}
+nav.dn a:hover{color:var(--blue);background:var(--blue-xl)}
+.hcta{background:var(--blue);color:#fff;font-family:var(--fd);font-weight:600;font-size:13px;padding:8px 18px;border-radius:8px;box-shadow:var(--sb);transition:.2s}
+.hcta:hover{background:var(--blue-d);transform:translateY(-1px)}
+.brg{display:none;flex-direction:column;gap:4.5px;padding:8px;border-radius:8px}
+.brg span{display:block;width:20px;height:2px;background:var(--ink);border-radius:2px;transition:.28s}
+.dov{display:none;position:fixed;inset:0;background:rgba(15,23,42,.45);z-index:1040;backdrop-filter:blur(3px)}
+.dov.on{display:block}
+.drw{position:fixed;top:0;right:-100%;width:270px;height:100vh;background:#fff;z-index:1050;padding:22px;box-shadow:var(--s4);transition:right .32s var(--ease);overflow-y:auto}
+.drw.on{right:0}
+.dh{display:flex;align-items:center;justify-content:space-between;margin-bottom:26px}
+.dx{width:33px;height:33px;border-radius:7px;background:var(--surf);display:flex;align-items:center;justify-content:center;color:var(--ink3);font-size:17px}
+nav.mn{display:flex;flex-direction:column;gap:3px}
+nav.mn a{display:block;font-size:14px;font-weight:500;color:var(--ink2);padding:11px 13px;border-radius:8px;transition:.2s}
+nav.mn a:hover{color:var(--blue);background:var(--blue-xl)}
+
+/* ══ HERO ══ */
+.hero{position:relative;overflow:hidden;background:linear-gradient(150deg,#ebf4ff 0%,#fff 46%,#fdf0f0 100%);padding:64px 0 72px}
+.hero::before{content:'';position:absolute;top:-140px;right:-180px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(37,99,235,.08) 0%,transparent 68%);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-80px;left:-100px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(249,115,22,.05) 0%,transparent 68%);pointer-events:none}
+.blob{position:absolute;border-radius:50%;pointer-events:none;animation:float 6s ease-in-out infinite}
+.b1{width:13px;height:13px;background:rgba(37,99,235,.18);top:22%;right:14%;animation-delay:0s}
+.b2{width:9px;height:9px;background:rgba(249,115,22,.22);top:58%;right:26%;animation-delay:2.2s}
+.b3{width:11px;height:11px;background:rgba(16,185,129,.18);top:36%;right:6%;animation-delay:4s}
+.bc{display:flex;align-items:center;gap:7px;font-size:12.5px;color:var(--ink3);margin-bottom:22px;position:relative;z-index:1;flex-wrap:wrap}
+.bc a{color:var(--blue);font-weight:600}
+.pill{display:inline-flex;align-items:center;gap:7px;font-family:var(--fd);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);background:var(--blue-xl);padding:5px 14px;border-radius:100px;margin-bottom:18px}
+.pill::before{content:'';width:6px;height:6px;background:var(--blue);border-radius:50%}
+.hero-inner{position:relative;z-index:1;max-width:720px;animation:fadeUp .5s ease both}
+.hero h1{font-family:var(--fd);font-size:clamp(26px,4.5vw,50px);font-weight:800;line-height:1.1;color:var(--ink);margin-bottom:14px}
+.hero h1 span{color:var(--blue)}
+.hero-sub{font-size:16px;color:var(--ink3);line-height:1.8;margin-bottom:22px;max-width:600px}
+.hero-chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.chip{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;padding:6px 14px;border-radius:100px;background:#fff;border:1.5px solid var(--line);color:var(--ink2);box-shadow:var(--s1);transition:.22s}
+.chip:hover{border-color:var(--blue);color:var(--blue);transform:translateY(-1px)}
+.hero-meta{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:24px}
+.upd{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:700;color:var(--blue);background:var(--blue-xl);padding:6px 14px;border-radius:100px;border:1.5px solid var(--blue-s)}
+.mi{font-size:13px;color:var(--ink3);font-weight:500}
+
+/* HOW TO USE */
+.howto{background:var(--amber-xl);border:2px solid var(--amber-s);border-radius:16px;padding:22px 26px;max-width:560px;margin-bottom:24px}
+.howto-ttl{display:flex;align-items:center;gap:9px;font-family:var(--fd);font-size:15px;font-weight:800;color:var(--ink);margin-bottom:13px}
+.howto-steps{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.hs{display:flex;align-items:flex-start;gap:10px;font-size:13.5px;color:var(--ink2);line-height:1.6}
+.sn{width:24px;height:24px;background:var(--amber);color:#fff;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex-shrink:0;margin-top:1px}
+
+/* related tools */
+.rel-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;position:relative;z-index:1}
+.rg-box{border-radius:14px;padding:14px 14px 12px;display:flex;flex-direction:column;gap:8px;transition:.22s;border:1.5px solid}
+.rg-box:hover{transform:translateY(-3px);box-shadow:var(--s3)}
+.rg-box.army{background:linear-gradient(135deg,#fffbeb,#fef3c7);border-color:var(--amber-s)}
+.rg-box.ht{background:linear-gradient(135deg,var(--green-xl),#dcfce7);border-color:var(--green-s)}
+.rg-box.ssc{background:linear-gradient(135deg,var(--blue-xl),var(--blue-s));border-color:var(--blue-s)}
+.rg-box.mp{background:linear-gradient(135deg,var(--purple-xl),#ede9fe);border-color:var(--purple-s)}
+.rg-ico{font-size:22px}
+.rg-txt h4{font-family:var(--fd);font-size:12px;font-weight:800;color:var(--ink);margin-bottom:2px}
+.rg-txt p{font-size:11px;color:var(--ink3);line-height:1.5}
+.btn-xs{display:inline-flex;align-items:center;gap:4px;font-family:var(--fd);font-weight:700;font-size:11px;padding:5px 10px;border-radius:7px;transition:.22s;margin-top:4px}
+.btn-xs.a{background:var(--amber);color:#fff}.btn-xs.a:hover{background:#d97706}
+.btn-xs.g{background:var(--green);color:#fff}.btn-xs.g:hover{background:#059669}
+.btn-xs.b{background:var(--blue);color:#fff}.btn-xs.b:hover{background:var(--blue-d)}
+.btn-xs.p{background:var(--purple);color:#fff}.btn-xs.p:hover{background:#7c3aed}
+
+/* ══ TOOL SECTION ══ */
+.tool-sec{background:var(--surf);padding:80px 0}
+.tool-wrap{max-width:860px;margin:0 auto}
+.tool-card{background:#fff;border:1.5px solid var(--line);border-radius:28px;overflow:hidden;box-shadow:var(--s4)}
+.tool-hdr{background:linear-gradient(135deg,#0f172a 0%,#1e3a8a 50%,#1d4ed8 100%);padding:32px 40px;position:relative;overflow:hidden}
+.tool-hdr::before{content:'';position:absolute;top:-60px;right:-60px;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,.07)}
+.tool-hdr::after{content:'';position:absolute;bottom:-40px;left:-40px;width:180px;height:180px;border-radius:50%;background:rgba(255,255,255,.04)}
+.run-dots{position:absolute;bottom:20px;right:40px;display:flex;gap:5px;opacity:.3;z-index:0}
+.run-dot{width:6px;height:6px;border-radius:50%;background:#fff}
+.th{position:relative;z-index:1}
+.th h2{font-family:var(--fd);font-size:21px;font-weight:800;color:#fff;margin-bottom:6px}
+.th p{font-size:14px;color:rgba(255,255,255,.82);line-height:1.65}
+.th-badges{display:flex;flex-wrap:wrap;gap:9px;margin-top:14px}
+.thb{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:rgba(255,255,255,.9);background:rgba(255,255,255,.13);padding:5px 12px;border-radius:100px}
+.tool-body{padding:36px 40px}
+
+/* form */
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+.fgrid3{grid-template-columns:1fr 1fr 1fr}
+.fld{display:flex;flex-direction:column;gap:7px}
+.flbl{font-size:13px;font-weight:700;color:var(--ink2)}
+.flbl span{font-size:11px;font-weight:500;color:var(--ink4);margin-left:5px;background:var(--surf);padding:2px 7px;border-radius:5px;border:1px solid var(--line)}
+.finp,.fsel{padding:12px 16px;font-size:14.5px;color:var(--ink);background:#fff;border:1.5px solid var(--line);border-radius:10px;outline:none;transition:.22s;font-family:var(--fb);width:100%}
+.finp:focus,.fsel:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(37,99,235,.10)}
+.fsel{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2364748b' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:40px}
+.ro-row{display:flex;gap:8px;flex-wrap:wrap}
+.ro{position:relative}
+.ro input{position:absolute;opacity:0;width:0;height:0}
+.ro label{display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:600;color:var(--ink2);padding:10px 18px;border-radius:9px;border:1.5px solid var(--line);background:#fff;cursor:pointer;transition:.22s}
+.ro input:checked+label{border-color:var(--blue);background:var(--blue-xl);color:var(--blue)}
+.ro label:hover{border-color:var(--blue-s);background:var(--blue-xl)}
+.hint-box{display:flex;align-items:flex-start;gap:9px;font-size:13px;color:var(--ink2);background:var(--blue-xl);border:1.5px solid var(--blue-s);border-radius:10px;padding:11px 14px;margin:16px 0;line-height:1.65}
+.hint-box svg{width:16px;height:16px;stroke:var(--blue);fill:none;stroke-width:2;flex-shrink:0;margin-top:2px}
+.chk-btn{width:100%;padding:17px;background:linear-gradient(135deg,#0f172a 0%,#1e3a8a 50%,#2563eb 100%);color:#fff;font-family:var(--fd);font-weight:800;font-size:16px;border-radius:12px;box-shadow:0 8px 32px rgba(30,58,138,.30);transition:all .25s var(--ease);display:flex;align-items:center;justify-content:center;gap:10px}
+.chk-btn:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(30,58,138,.40)}
+.chk-btn:active{transform:translateY(0)}
+
+/* ══ RESULT ══ */
+#resultArea{display:none;margin-top:28px;animation:resultIn .45s var(--ease) both}
+.res-banner{border-radius:20px;padding:28px;margin-bottom:22px;position:relative;overflow:hidden;display:flex;align-items:center;gap:24px;flex-wrap:wrap}
+.res-banner.pass{background:linear-gradient(135deg,var(--green-xl),#d1fae5);border:2px solid var(--green-s)}
+.res-banner.avg{background:var(--amber-xl);border:2px solid var(--amber-s)}
+.res-banner.fail{background:var(--red-xl);border:2px solid var(--red-s)}
+.res-banner::before{content:'';position:absolute;inset:0;opacity:.04;background-image:repeating-linear-gradient(45deg,currentColor 0,currentColor 1px,transparent 0,transparent 50%);background-size:12px 12px;pointer-events:none}
+.meter-wrap{flex-shrink:0;position:relative;width:100px;height:100px}
+.meter-svg{width:100px;height:100px;transform:rotate(-90deg)}
+.meter-bg{fill:none;stroke:rgba(0,0,0,.08);stroke-width:10}
+.meter-fill{fill:none;stroke-width:10;stroke-linecap:round;transition:stroke-dashoffset 1.2s var(--ease)}
+.meter-center{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.meter-pct{font-family:var(--fd);font-size:20px;font-weight:800;color:var(--ink);line-height:1}
+.meter-lbl{font-size:10px;font-weight:700;color:var(--ink3);text-transform:uppercase;letter-spacing:.06em}
+.res-info{flex:1}
+.res-icon{font-size:32px;margin-bottom:6px}
+.res-title{font-family:var(--fd);font-size:22px;font-weight:800;color:var(--ink);line-height:1.1;margin-bottom:6px}
+.res-sub{font-size:14px;color:var(--ink3);line-height:1.65}
+.res-tag{display:inline-flex;align-items:center;gap:6px;font-family:var(--fd);font-size:13px;font-weight:700;padding:5px 14px;border-radius:100px;margin-top:10px}
+.res-tag.pass{background:var(--green);color:#fff}
+.res-tag.avg{background:var(--amber);color:#fff}
+.res-tag.fail{background:var(--red);color:#fff}
+
+/* score cards grid */
+.score-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:13px;margin-bottom:18px}
+.sc-card{border-radius:13px;padding:16px 14px;text-align:center;border:1.5px solid;transition:.22s}
+.sc-card:hover{transform:translateY(-2px);box-shadow:var(--s2)}
+.sc-card.raw{background:var(--blue-xl);border-color:var(--blue-s)}
+.sc-card.neg{background:var(--red-xl);border-color:var(--red-s)}
+.sc-card.fin{background:var(--green-xl);border-color:var(--green-s)}
+.sc-card.acc{background:var(--amber-xl);border-color:var(--amber-s)}
+.sc-card.att{background:var(--surf);border-color:var(--line)}
+.sc-ico{font-size:22px;margin-bottom:5px}
+.sc-lbl{font-family:var(--fd);font-size:11px;font-weight:700;color:var(--ink3);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px}
+.sc-val{font-family:var(--fd);font-size:22px;font-weight:800;color:var(--ink);line-height:1}
+
+/* time comparison card */
+.time-compare{background:var(--surf);border:1.5px solid var(--line);border-radius:16px;padding:22px 24px;margin-bottom:18px}
+.tc-title{font-family:var(--fd);font-size:14px;font-weight:700;color:var(--ink);margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.tc-row{display:flex;align-items:center;gap:14px;margin-bottom:12px}
+.tc-lbl{font-size:12.5px;font-weight:600;color:var(--ink2);width:130px;flex-shrink:0}
+.tc-bar-track{flex:1;height:20px;background:var(--line);border-radius:10px;overflow:hidden;position:relative}
+.tc-bar-fill{height:100%;border-radius:10px;display:flex;align-items:center;padding-left:10px;font-size:11px;font-weight:700;color:#fff;transition:width 1.2s var(--ease)}
+.tc-bar-fill.g{background:linear-gradient(90deg,var(--green),#059669)}
+.tc-bar-fill.a{background:linear-gradient(90deg,var(--amber),#d97706)}
+.tc-bar-fill.r{background:linear-gradient(90deg,var(--red),#dc2626)}
+.tc-bar-fill.b{background:linear-gradient(90deg,var(--blue),var(--blue-d))}
+.tc-val{font-size:13px;font-weight:700;width:60px;flex-shrink:0;text-align:right}
+
+/* grade cards */
+.grade-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:13px;margin-bottom:18px}
+.gc{border-radius:13px;padding:16px 14px;text-align:center;border:1.5px solid;transition:.22s}
+.gc:hover{transform:translateY(-2px);box-shadow:var(--s2)}
+.gc.active-pass{background:var(--green-xl);border-color:var(--green-s)}
+.gc.active-avg{background:var(--amber-xl);border-color:var(--amber-s)}
+.gc.active-fail{background:var(--red-xl);border-color:var(--red-s)}
+.gc.inactive{background:var(--surf);border-color:var(--line);opacity:.7}
+.gc-ico{font-size:24px;margin-bottom:6px}
+.gc-title{font-family:var(--fd);font-size:13px;font-weight:700;color:var(--ink);margin-bottom:3px}
+.gc-val{font-size:12px;color:var(--ink3);line-height:1.55}
+
+/* suggestions */
+.sugg-box{background:var(--blue-xl);border:1.5px solid var(--blue-s);border-radius:13px;padding:16px 18px;font-size:14px;color:var(--ink2);line-height:1.78}
+.warn-box{background:var(--amber-xl);border:1.5px solid var(--amber-s);border-radius:12px;padding:14px 18px;display:flex;gap:10px;font-size:13.5px;color:var(--ink2);line-height:1.7;margin-top:14px}
+
+/* ══ TABLE SECTION ══ */
+.tbl-sec{background:#fff;padding:72px 0}
+.tbl-wr{overflow-x:auto;margin-bottom:20px}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+thead th{background:linear-gradient(135deg,#0f172a 0%,#1e3a8a 100%);color:#fff;padding:14px 16px;text-align:left;font-family:var(--fd);font-size:13px;font-weight:700;letter-spacing:.03em}
+tbody tr{border-bottom:1px solid var(--line);transition:.2s}
+tbody tr:hover{background:var(--blue-xl)}
+tbody td{padding:12px 16px;color:var(--ink2);vertical-align:middle}
+.row-pass{background:var(--green-xl)!important}
+.row-avg{background:var(--amber-xl)!important}
+.row-fail{background:var(--red-xl)!important}
+.tbadge{display:inline-flex;font-size:11px;font-weight:700;padding:3px 8px;border-radius:100px}
+.tbadge.g{background:var(--green-xl);color:var(--green);border:1px solid var(--green-s)}
+.tbadge.a{background:var(--amber-xl);color:#92400e;border:1px solid var(--amber-s)}
+.tbadge.r{background:var(--red-xl);color:var(--red);border:1px solid var(--red-s)}
+.tbadge.b{background:var(--blue-xl);color:var(--blue);border:1px solid var(--blue-s)}
+
+/* ══ TIPS SECTION ══ */
+.tips-sec{background:var(--surf);padding:72px 0}
+.tips-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.tip-card{background:#fff;border:1.5px solid var(--line);border-radius:16px;padding:22px 18px;text-align:center;transition:.28s}
+.tip-card:hover{transform:translateY(-4px);box-shadow:var(--s3);border-color:var(--blue-s)}
+.tip-ico{font-size:32px;margin-bottom:12px}
+.tip-title{font-family:var(--fd);font-size:14px;font-weight:800;color:var(--ink);margin-bottom:8px}
+.tip-desc{font-size:13px;color:var(--ink3);line-height:1.7}
+
+/* ══ STORY ══ */
+.story-sec{background:#fff;padding:72px 0}
+.story-card{background:var(--surf);border:1.5px solid var(--line);border-radius:24px;padding:40px;box-shadow:var(--s3);position:relative;overflow:hidden}
+.story-card::before{content:'';position:absolute;top:0;left:0;bottom:0;width:5px;background:linear-gradient(180deg,var(--blue) 0%,var(--orange) 100%);border-radius:5px 0 0 5px}
+.sq{font-size:54px;color:var(--blue-s);font-family:Georgia,serif;line-height:1;padding-left:8px}
+.sb{font-size:15.5px;color:var(--ink2);line-height:1.9;padding:0 8px}
+.sauth{display:flex;align-items:center;gap:14px;margin-top:22px;padding-top:20px;border-top:1px solid var(--line)}
+.savt{width:48px;height:48px;background:var(--blue);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+.sname{font-family:var(--fd);font-size:15px;font-weight:700;color:var(--ink)}
+.srole{font-size:12.5px;color:var(--ink3)}
+.founder-msg{background:linear-gradient(135deg,var(--blue-xl),var(--blue-s));border:1.5px solid var(--blue-s);border-radius:14px;padding:20px 22px;margin-top:20px;display:flex;gap:13px}
+.fm-ico{font-size:26px;flex-shrink:0}
+.fm-txt{font-size:14px;color:var(--ink2);line-height:1.75;font-style:italic}
+.fm-txt strong{color:var(--ink);font-weight:700;font-style:normal}
+
+/* ══ GUIDE ══ */
+.guide-sec{background:var(--surf);padding:72px 0}
+.guide-body h2{font-family:var(--fd);font-size:21px;font-weight:800;color:var(--ink);margin:28px 0 11px;line-height:1.3}
+.guide-body h2:first-child{margin-top:0}
+.guide-body p{font-size:15px;color:var(--ink3);line-height:1.85;margin-bottom:14px}
+.guide-body ul{display:flex;flex-direction:column;gap:8px;margin:12px 0 16px}
+.guide-body li{display:flex;align-items:flex-start;gap:10px;font-size:14.5px;color:var(--ink3);line-height:1.7}
+.guide-body li::before{content:'✓';width:18px;height:18px;background:var(--blue);color:#fff;border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;flex-shrink:0;margin-top:3px}
+.guide-body strong{color:var(--ink2);font-weight:700}
+.ibox{background:var(--blue-xl);border:1.5px solid var(--blue-s);border-radius:13px;padding:15px 18px;margin:16px 0;display:flex;gap:11px;font-size:14px;color:var(--ink2);line-height:1.7}
+.ibox svg{width:17px;height:17px;stroke:var(--blue);fill:none;stroke-width:2;flex-shrink:0;margin-top:2px}
+.ibox.g{background:var(--green-xl);border-color:var(--green-s)}
+.ibox.g svg{stroke:var(--green)}
+.ibox.a{background:var(--amber-xl);border-color:var(--amber-s)}
+.ibox.a svg{stroke:var(--amber)}
+
+/* TOC */
+.toc-box{background:var(--blue-xl);border:1.5px solid var(--blue-s);border-radius:16px;padding:22px 26px;margin:20px 0 28px}
+.toc-title{font-family:var(--fd);font-size:14px;font-weight:800;color:var(--ink);margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.toc-list{display:flex;flex-direction:column;gap:7px}
+.toc-list a{font-size:13.5px;color:var(--blue);font-weight:600;display:flex;align-items:center;gap:8px;transition:.2s}
+.toc-list a:hover{color:var(--blue-d);text-decoration:underline}
+.toc-list a::before{content:'›';font-size:16px;font-weight:800}
+
+/* snippet box */
+.snippet-box{background:linear-gradient(135deg,#0f172a 0%,#1e3a8a 100%);border-radius:16px;padding:22px 26px;margin:20px 0}
+.snippet-box p{font-size:15px;color:rgba(255,255,255,.9);line-height:1.8;font-style:italic}
+.snippet-box strong{color:#fbbf24;font-style:normal}
+
+/* PAA cards */
+.paa-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0}
+.paa-card{background:#fff;border:1.5px solid var(--line);border-radius:12px;padding:16px 18px;transition:.22s}
+.paa-card:hover{border-color:var(--blue-s);box-shadow:var(--s2)}
+.paa-q{font-family:var(--fd);font-size:13px;font-weight:700;color:var(--ink);margin-bottom:7px;display:flex;align-items:flex-start;gap:8px}
+.paa-q::before{content:'Q';background:var(--blue);color:#fff;width:20px;height:20px;border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;flex-shrink:0;margin-top:1px}
+.paa-a{font-size:13px;color:var(--ink3);line-height:1.65}
+
+/* ══ FAQ ══ */
+.faq-sec{background:#fff;padding:72px 0}
+.fql{max-width:780px;margin:0 auto}
+.fq{background:var(--surf);border:1.5px solid var(--line);border-radius:13px;margin-bottom:10px;overflow:hidden}
+.fq-q{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;cursor:pointer;gap:14px;transition:.2s}
+.fq-q:hover{background:var(--blue-xl)}
+.fq-t{font-weight:600;font-size:15px;color:var(--ink);line-height:1.4}
+.fq-i{width:28px;height:28px;border-radius:50%;background:var(--blue-xl);color:var(--blue);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;transition:transform .28s,background .2s}
+.fq.open .fq-i{transform:rotate(45deg);background:var(--blue);color:#fff}
+.fq-a{max-height:0;overflow:hidden;transition:max-height .35s var(--ease)}
+.fq-ai{padding:0 22px 18px;font-size:14.5px;color:var(--ink3);line-height:1.78}
+.fq.open .fq-a{max-height:400px}
+
+/* ══ DISC / CONTACT / CTA / FOOTER ══ */
+.disc{background:var(--amber-xl);border-top:1px solid var(--amber-s);border-bottom:1px solid var(--amber-s);padding:15px 0}
+.disc-in{display:flex;align-items:flex-start;gap:12px;font-size:13.5px;color:var(--ink2);line-height:1.7}
+.contact-sec{background:var(--surf);padding:60px 0}
+.contact-card{max-width:580px;margin:0 auto;background:#fff;border:1.5px solid var(--line);border-radius:20px;padding:32px;text-align:center;box-shadow:var(--s2)}
+.contact-card h3{font-family:var(--fd);font-size:19px;font-weight:800;color:var(--ink);margin-bottom:10px}
+.contact-card p{font-size:15px;color:var(--ink3);line-height:1.75;margin-bottom:20px}
+.btn-bl{display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:#fff;font-family:var(--fd);font-weight:700;font-size:14.5px;padding:12px 26px;border-radius:8px;box-shadow:var(--sb);transition:.22s}
+.btn-bl:hover{background:var(--blue-d);transform:translateY(-1px)}
+.priv-note{font-size:12px;color:var(--ink4);margin-top:14px}
+.cta{background:linear-gradient(140deg,#0f172a 0%,#1e3a8a 100%);padding:80px 0;text-align:center;position:relative;overflow:hidden}
+.cta::before{content:'';position:absolute;top:-80px;left:50%;transform:translateX(-50%);width:800px;height:380px;background:radial-gradient(ellipse,rgba(37,99,235,.22) 0%,transparent 68%);pointer-events:none}
+.cta-in{position:relative;z-index:1}
+.cta .pill{color:#93c5fd;background:rgba(255,255,255,.1);margin-bottom:18px}
+.cta .pill::before{background:#93c5fd}
+.cta h2{font-family:var(--fd);font-size:clamp(24px,4vw,42px);font-weight:800;color:#fff;line-height:1.15;margin-bottom:12px}
+.cta h2 em{color:#fbbf24;font-style:normal}
+.cta p{font-size:16px;color:rgba(255,255,255,.72);max-width:480px;margin:0 auto 32px;line-height:1.78}
+.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn-gold{display:inline-flex;align-items:center;gap:8px;background:var(--amber);color:#fff;font-family:var(--fd);font-weight:800;font-size:15px;padding:14px 30px;border-radius:8px;box-shadow:0 8px 28px rgba(245,158,11,.35);transition:.22s}
+.btn-gold:hover{background:#d97706;transform:translateY(-3px)}
+.btn-ghost{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.09);border:1.5px solid rgba(255,255,255,.22);color:#fff;font-family:var(--fd);font-weight:600;font-size:14px;padding:13px 26px;border-radius:8px;transition:.2s}
+.btn-ghost:hover{background:rgba(255,255,255,.16)}
+footer{background:#0f172a;padding:52px 0 0}
+.ft-inner{max-width:1180px;margin:0 auto;padding:0 24px}
+.ft-top{display:grid;grid-template-columns:1.9fr 1fr 1fr 1fr;gap:44px;margin-bottom:44px}
+.ft-brand .ln{color:#fff}.ft-brand .ls{color:#475569}
+.ft-desc{font-size:13.5px;color:#64748b;line-height:1.78;max-width:265px;margin:13px 0 20px}
+.ft-soc{display:flex;gap:9px}
+.fts{width:34px;height:34px;border-radius:7px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;color:#94a3b8;font-size:13px;transition:.2s}
+.fts:hover{background:var(--blue);color:#fff}
+.fc h4{font-family:var(--fd);font-size:12px;font-weight:700;color:#fff;margin-bottom:14px;letter-spacing:.06em;text-transform:uppercase}
+.fc ul{display:flex;flex-direction:column;gap:8px}
+.fc ul a{font-size:13.5px;color:#64748b;transition:.18s}
+.fc ul a:hover{color:#93c5fd}
+.ft-btm{border-top:1px solid rgba(255,255,255,.07);padding:20px 0;text-align:center}
+.ft-cp{font-size:12.5px;color:#475569}
+.ft-cp b{color:#64748b}
+.ft-tag{font-size:12px;color:#334155;margin-top:4px;font-style:italic}
+.btt{position:fixed;bottom:26px;right:26px;z-index:500;width:43px;height:43px;background:var(--blue);color:#fff;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:17px;box-shadow:var(--sb);opacity:0;pointer-events:none;transform:translateY(14px);transition:.28s var(--ease)}
+.btt.on{opacity:1;pointer-events:auto;transform:translateY(0)}
+.btt:hover{transform:translateY(-3px)}
+
+/* RESPONSIVE */
+@media(max-width:1060px){.ft-top{grid-template-columns:1fr 1fr}.tips-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:860px){
+  nav.dn,.hcta{display:none}.brg{display:flex}
+  .tool-body{padding:24px 22px}.tool-hdr{padding:24px 22px}
+  .fgrid{grid-template-columns:1fr}.fgrid.fgrid3{grid-template-columns:1fr 1fr}
+  .grade-grid{grid-template-columns:1fr 1fr}.score-cards{grid-template-columns:1fr 1fr}
+  .howto-steps{grid-template-columns:1fr}
+  .rel-grid{grid-template-columns:1fr 1fr}
+  .paa-grid{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+  .ft-top{grid-template-columns:1fr}.rel-grid{grid-template-columns:1fr}
+  .fgrid.fgrid3{grid-template-columns:1fr}
+  .tips-grid{grid-template-columns:1fr 1fr}
+  .cta-btns{flex-direction:column;align-items:center}
+  .story-card{padding:26px 20px}
+  .res-banner{flex-direction:column;align-items:flex-start;gap:16px}
+  .grade-grid{grid-template-columns:1fr}.score-cards{grid-template-columns:1fr}
+  .tc-lbl{width:90px}
+  .paa-grid{grid-template-columns:1fr}
+}
+</style>
+
+<!-- FAQ Schema -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"SSC CGL Tier-1 me negative marking kitni hai?","acceptedAnswer":{"@type":"Answer","text":"SSC CGL Tier-1 mein har galat answer par 0.50 marks deduct hote hain. Unattempted questions par koi penalty nahi hoti."}},
+    {"@type":"Question","name":"SSC CGL Tier-2 Paper-I me negative marking kitni hai?","acceptedAnswer":{"@type":"Answer","text":"SSC CGL Tier-2 Paper-I mein har galat answer par 1 mark deduct hota hai. Ye Tier-1 se zyada hai isliye accuracy bahut zaroori hai."}},
+    {"@type":"Question","name":"SSC CGL Statistics paper me negative marking kya hai?","acceptedAnswer":{"@type":"Answer","text":"Tier-2 Paper-II (Statistics) mein har galat answer par 0.50 marks deduct hote hain. Har sahi answer par +2 marks milte hain."}},
+    {"@type":"Question","name":"SSC CGL Finance & Economics paper me negative marking kya hai?","acceptedAnswer":{"@type":"Answer","text":"Tier-2 Paper-III (Finance & Economics) mein bhi 0.50 marks negative marking hai. Har sahi answer par +2 marks milte hain."}},
+    {"@type":"Question","name":"Accuracy percentage kaise calculate karein SSC CGL mein?","acceptedAnswer":{"@type":"Answer","text":"Accuracy (%) = Correct Answers ÷ Attempted Questions × 100. Example: 72 correct, 90 attempted = 72/90 × 100 = 80% accuracy."}},
+    {"@type":"Question","name":"SSC CGL mein safe attempt strategy kya honi chahiye?","acceptedAnswer":{"@type":"Answer","text":"90%+ accuracy ho toh freely attempt karein. 80-90% accuracy par balanced attempt karein. 70% se neeche accuracy par guessing avoid karein."}},
+    {"@type":"Question","name":"Unattempted questions par negative marking lagti hai kya?","acceptedAnswer":{"@type":"Answer","text":"Nahi. SSC CGL mein unattempted questions par koi negative marking nahi lagti. Sirf wrong answers par penalty hoti hai."}},
+    {"@type":"Question","name":"SSC CGL Tier-1 formula kya hai?","acceptedAnswer":{"@type":"Answer","text":"Final Score = (Correct Answers × 2) − (Wrong Answers × 0.50). Total 100 questions, 200 marks."}},
+    {"@type":"Question","name":"SSC CGL Tier-2 Paper-I formula kya hai?","acceptedAnswer":{"@type":"Answer","text":"Final Score = (Correct Answers × 3) − (Wrong Answers × 1). Paper-I mein +3/-1 marking scheme hai."}},
+    {"@type":"Question","name":"Blind guessing karna sahi hai SSC CGL mein?","acceptedAnswer":{"@type":"Answer","text":"Nahi. Blind guessing bahut risky hai. Tier-2 Paper-I mein 1 mark negative hai isliye 3 galat answers 1 sahi answer ko cancel kar dete hain."}},
+    {"@type":"Question","name":"SSC CGL mein 10 galat answers se score kitna ghata hai Tier-1 mein?","acceptedAnswer":{"@type":"Answer","text":"Tier-1 mein 10 galat answers se 10 × 0.50 = 5 marks deduct hote hain. Agar 80 correct hai to score 160 − 5 = 155 ho jaata hai."}},
+    {"@type":"Question","name":"SSC CGL mein 90% se zyada accuracy ka matlab kya hai?","acceptedAnswer":{"@type":"Answer","text":"90%+ accuracy 'Excellent' category mein aati hai. Iska matlab hai aap jo attempt kar rahe ho uska 90% se zyada sahi hai — ye selection ke liye bahut strong indicator hai."}},
+    {"@type":"Question","name":"Kya negative marking cutoff ko affect karti hai?","acceptedAnswer":{"@type":"Answer","text":"Haan, bahut zyada. Excessive negative marking final score kam karti hai jisse merit mein position neeche jaati hai aur cutoff miss ho sakta hai."}},
+    {"@type":"Question","name":"SSC CGL Tier-2 aur Tier-1 negative marking mein kya difference hai?","acceptedAnswer":{"@type":"Answer","text":"Tier-1 mein -0.50 per wrong answer hai. Tier-2 Paper-I mein -1 per wrong answer hai. Statistics aur Finance papers mein -0.50 hai."}},
+    {"@type":"Question","name":"Mock test mein negative marking calculator kaise helpful hai?","acceptedAnswer":{"@type":"Answer","text":"Mock test ke baad is tool se exact score calculate karein, accuracy check karein, aur risky attempt zones identify karein taaki real exam strategy improve ho sake."}},
+    {"@type":"Question","name":"SSC CGL Tier-1 mein total questions aur marks kitne hain?","acceptedAnswer":{"@type":"Answer","text":"Tier-1 mein total 100 questions hain aur total marks 200 hain. Har sahi answer par 2 marks milte hain."}},
+    {"@type":"Question","name":"60% se neeche accuracy par kya result hota hai?","acceptedAnswer":{"@type":"Answer","text":"60% se neeche accuracy 'Dangerous' zone mein aati hai. Iska matlab hai guesswork bahut zyada ho raha hai aur negative marking score significantly reduce kar sakti hai."}},
+    {"@type":"Question","name":"SSC CGL Tier-2 Paper-I mein ek galat answer ka actual nuksaan kya hai?","acceptedAnswer":{"@type":"Answer","text":"Tier-2 Paper-I mein ek galat answer par 1 mark deduct hota hai. To ek galat attempt se 3 marks ka nuksaan hota hai — 3 marks jo sahi answer se milte aur 1 mark penalty, total 4 marks ka impact."}},
+    {"@type":"Question","name":"Over-attempting kya hota hai aur ye kaise score affect karta hai?","acceptedAnswer":{"@type":"Answer","text":"Over-attempting matlab hai accuracy ignore karke zyada questions attempt karna. Isse negative marks badhte hain aur final score gir sakta hai even if correct answers count zyada ho."}},
+    {"@type":"Question","name":"SSC CGL negative marking calculator ka use kab karna chahiye?","acceptedAnswer":{"@type":"Answer","text":"Har mock test ke baad, real exam ke baad estimated score check karne ke liye, aur exam strategy planning ke samay is calculator ka use karein."}}
+  ]
+}
+</script>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="hdr">
+  <div class="w">
+    <div class="hdi">
+      <a href="/" class="logo">
+        <div class="lb"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+        <div><div class="ln">Raj<span>Daily</span>Tools</div><div class="ls">Smart Tools for Daily Life</div></div>
+      </a>
+      <nav class="dn">
+        <a href="/">Home</a><a href="/categories">Categories</a>
+        <a href="/#popular">Popular</a><a href="/about">About</a><a href="/contact">Contact</a>
+      </nav>
+      <a href="/categories" class="hcta">All Tools →</a>
+      <button class="brg" id="brg"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="dov" id="dov"></div>
+<div class="drw" id="drw">
+  <div class="dh">
+    <div class="logo">
+      <div class="lb" style="width:30px;height:30px;border-radius:7px"><svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#fff"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+      <div class="ln" style="font-size:16px">Raj<span>Daily</span>Tools</div>
+    </div>
+    <button class="dx" id="dx">✕</button>
+  </div>
+  <nav class="mn">
+    <a href="/" onclick="cD()">🏠 Home</a>
+    <a href="/categories" onclick="cD()">🗂️ Categories</a>
+    <a href="/#popular" onclick="cD()">⭐ Popular</a>
+    <a href="/about" onclick="cD()">👤 About</a>
+    <a href="/contact" onclick="cD()">📬 Contact</a>
+  </nav>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+  <div class="w">
+    <div class="bc">
+      <a href="/">Home</a><span style="color:var(--ink4)">›</span>
+      <a href="/categories">Tools</a><span style="color:var(--ink4)">›</span>
+      <a href="/categories/ssc">SSC Tools</a><span style="color:var(--ink4)">›</span>
+      <span>SSC CGL Negative Marking Calculator</span>
+    </div>
+    <div class="hero-inner">
+      <div class="pill">SSC CGL 2026 Score Tools</div>
+      <h1>SSC CGL <span>Negative Marking</span> Calculator 2026</h1>
+      <p class="hero-sub">SSC CGL exam mein sabse common mistake sirf galat answer nahi hoti — <strong>negative marking ko ignore karna hota hai.</strong> Tier-1, Tier-2 Paper-I, Statistics aur Finance papers ke liye official marking rules ke saath apna exact score calculate karein.</p>
+      <div class="hero-chips">
+        <span class="chip">📊 Tier-1 & Tier-2</span>
+        <span class="chip">🎯 Accuracy Analysis</span>
+        <span class="chip">⚡ Instant Score</span>
+        <span class="chip">📉 Risk Level</span>
+        <span class="chip">🆓 100% Free</span>
+      </div>
+      <div class="hero-meta">
+        <div class="upd">📅 Based on SSC CGL 2026 Official Notification</div>
+        <span class="mi">✅ Official marking rules</span>
+        <span class="mi">🔒 No data stored</span>
+      </div>
+      <!-- HOW TO USE -->
+      <div class="howto">
+        <div class="howto-ttl">💡 How to Use This Calculator</div>
+        <div class="howto-steps">
+          <div class="hs"><span class="sn">1</span>Select exam type (Tier-1 or Tier-2 Paper)</div>
+          <div class="hs"><span class="sn">2</span>Enter correct answers count</div>
+          <div class="hs"><span class="sn">3</span>Enter wrong answers count</div>
+          <div class="hs"><span class="sn">4</span>Enter unattempted questions</div>
+          <div class="hs"><span class="sn">5</span>Click Calculate Score</div>
+          <div class="hs"><span class="sn">6</span>View complete score analysis</div>
+        </div>
+      </div>
+      <!-- RELATED TOOLS -->
+      <div class="rel-grid">
+        <div class="rg-box ssc">
+          <div class="rg-ico">🎓</div>
+          <div class="rg-txt">
+            <h4>SSC CGL Age Limit Calculator</h4>
+            <p>Check if you're eligible by age for SSC CGL 2026</p>
+            <a href="https://rajdailytools.in/ssc-cgl-age-limit-2026-calculator.html#tool" target="_blank" rel="noopener" class="btn-xs b">Check Now →</a>
+          </div>
+        </div>
+        <div class="rg-box ht">
+          <div class="rg-ico">📋</div>
+          <div class="rg-txt">
+            <h4>SSC CGL Attempt Calculator</h4>
+            <p>Calculate safe attempt count for SSC CGL</p>
+            <a href="https://rajdailytools.in/ssc-cgl-attempt-calculator-2026.html" target="_blank" rel="noopener" class="btn-xs g">Check Now →</a>
+          </div>
+        </div>
+        <div class="rg-box army">
+          <div class="rg-ico">📝</div>
+          <div class="rg-txt">
+            <h4>SSC CGL Eligibility Checker</h4>
+            <p>Complete SSC CGL eligibility criteria 2026</p>
+            <a href="https://rajdailytools.in/ssc-cgl-eligibility-2026.html" target="_blank" rel="noopener" class="btn-xs a">Check Now →</a>
+          </div>
+        </div>
+        <div class="rg-box mp">
+          <div class="rg-ico">📊</div>
+          <div class="rg-txt">
+            <h4>SSC CGL Exam Pattern Checker</h4>
+            <p>Full exam pattern and syllabus for SSC CGL 2026</p>
+            <a href="https://rajdailytools.in/ssc-cgl-exam-pattern-checker-2026.html" target="_blank" rel="noopener" class="btn-xs p">Check Now →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOOL SECTION -->
+<section class="tool-sec" id="tool">
+  <div class="w">
+    <div class="tool-wrap">
+      <div class="tool-card rev">
+        <div class="tool-hdr">
+          <div class="run-dots">
+            <div class="run-dot"></div><div class="run-dot"></div><div class="run-dot"></div>
+            <div class="run-dot"></div><div class="run-dot"></div><div class="run-dot"></div>
+          </div>
+          <div class="th">
+            <h2>🎯 SSC CGL Negative Marking Calculator 2026</h2>
+            <p>Official marking scheme ke anusaar apna Tier-1 ya Tier-2 score calculate karein. Raw score, negative deduction, final score, accuracy percentage aur risk level sabh ek jagah milega.</p>
+            <div class="th-badges">
+              <span class="thb">📊 All Tiers Covered</span>
+              <span class="thb">🎯 Accuracy Meter</span>
+              <span class="thb">⚠️ Risk Analysis</span>
+              <span class="thb">🔒 No Data Stored</span>
+            </div>
+          </div>
+        </div>
+        <div class="tool-body">
+
+          <!-- EXAM TYPE -->
+          <div class="fgrid" style="grid-template-columns:1fr">
+            <div class="fld">
+              <label class="flbl">Exam Type <span>Required</span></label>
+              <div class="ro-row">
+                <div class="ro"><input type="radio" name="examtype" id="tier1" value="tier1" checked><label for="tier1">📝 Tier-I</label></div>
+                <div class="ro"><input type="radio" name="examtype" id="tier2p1" value="tier2p1"><label for="tier2p1">📊 Tier-II Paper-I</label></div>
+                <div class="ro"><input type="radio" name="examtype" id="tier2p2" value="tier2p2"><label for="tier2p2">📈 Tier-II Paper-II (Statistics)</label></div>
+                <div class="ro"><input type="radio" name="examtype" id="tier2p3" value="tier2p3"><label for="tier2p3">💹 Tier-II Paper-III (Finance)</label></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- INPUTS -->
+          <div class="fgrid fgrid3">
+            <div class="fld">
+              <label class="flbl" for="correct">✅ Correct Answers <span>Required</span></label>
+              <input class="finp" type="number" id="correct" placeholder="e.g. 75" min="0" max="200">
+            </div>
+            <div class="fld">
+              <label class="flbl" for="wrong">❌ Wrong Answers <span>Required</span></label>
+              <input class="finp" type="number" id="wrong" placeholder="e.g. 10" min="0" max="200">
+            </div>
+            <div class="fld">
+              <label class="flbl" for="unattempted">⬜ Unattempted <span>No Penalty</span></label>
+              <input class="finp" type="number" id="unattempted" placeholder="e.g. 15" min="0" max="200">
+            </div>
+          </div>
+
+          <div class="hint-box">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            <div>Tier-I: <strong>+2 / -0.50</strong> per question (100Q, 200M). Tier-II Paper-I: <strong>+3 / -1</strong> per question. Tier-II Statistics & Finance Papers: <strong>+2 / -0.50</strong>. Unattempted questions attract <strong>no negative marking</strong>. Always verify from official SSC CGL 2026 notification.</div>
+          </div>
+
+          <button class="chk-btn" onclick="calculateScore()">🎯 Calculate My SSC CGL Score</button>
+
+          <!-- RESULT -->
+          <div id="resultArea">
+            <div class="res-banner" id="resBanner">
+              <div class="meter-wrap">
+                <svg class="meter-svg" viewBox="0 0 100 100">
+                  <circle class="meter-bg" cx="50" cy="50" r="45"/>
+                  <circle class="meter-fill" id="meterFill" cx="50" cy="50" r="45" stroke-dasharray="283" stroke-dashoffset="283"/>
+                </svg>
+                <div class="meter-center">
+                  <div class="meter-pct" id="meterPct">0%</div>
+                  <div class="meter-lbl" id="meterLbl">Accuracy</div>
+                </div>
+              </div>
+              <div class="res-info">
+                <div class="res-icon" id="resIcon"></div>
+                <div class="res-title" id="resTitle"></div>
+                <div class="res-sub" id="resSub"></div>
+                <div class="res-tag" id="resTag"></div>
+              </div>
+            </div>
+
+            <!-- Score Cards -->
+            <div class="score-cards" id="scoreCards"></div>
+
+            <!-- Score Breakdown Bars -->
+            <div class="time-compare" id="scoreBreakdown">
+              <div class="tc-title">📊 Score Breakdown — Visual Analysis</div>
+              <div id="scoreBars"></div>
+            </div>
+
+            <!-- Accuracy Grade Cards -->
+            <div class="grade-grid" id="gradeGrid"></div>
+
+            <div class="sugg-box" id="suggBox"></div>
+            <div class="warn-box">
+              <span style="font-size:20px;flex-shrink:0">⚠️</span>
+              <div style="font-size:13.5px;color:var(--ink2);line-height:1.72"><strong>Important:</strong> This calculator is based on official SSC CGL 2026 marking scheme. Final score may vary due to normalization applied by SSC. This tool is for estimation only. Always verify from official SSC results. <strong>We do not collect or store any personal data.</strong></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TABLE SECTION -->
+<section class="tbl-sec" id="negative-marking-rules">
+  <div class="w">
+    <div style="max-width:860px;margin:0 auto">
+      <div class="rev" style="text-align:center;margin-bottom:36px">
+        <div class="pill" style="margin-bottom:14px">Official Marking Scheme</div>
+        <h2 style="font-family:var(--fd);font-size:clamp(22px,3.5vw,36px);font-weight:800;color:var(--ink);margin-bottom:10px">SSC CGL <span style="color:var(--blue)">Negative Marking Rules 2026</span></h2>
+        <p style="font-size:15px;color:var(--ink3);max-width:520px;margin:0 auto;line-height:1.75">Official SSC CGL 2026 notification ke anusaar marking scheme — Tier-I aur Tier-II dono ke liye.</p>
+      </div>
+
+      <h3 style="font-family:var(--fd);font-size:17px;font-weight:700;color:var(--ink);margin-bottom:12px">📊 SSC CGL Negative Marking Comparison Table</h3>
+      <div class="tbl-wr rev">
+        <table>
+          <thead><tr><th>Exam Stage</th><th>Correct Marks</th><th>Negative Marks</th><th>Formula</th><th>Max Marks</th></tr></thead>
+          <tbody>
+            <tr class="row-pass"><td><strong>Tier-I</strong></td><td><span class="tbadge g">+2</span></td><td><span class="tbadge r">-0.50</span></td><td>Correct×2 − Wrong×0.50</td><td>200</td></tr>
+            <tr class="row-fail"><td><strong>Tier-II Paper-I</strong></td><td><span class="tbadge g">+3</span></td><td><span class="tbadge r">-1</span></td><td>Correct×3 − Wrong×1</td><td>—</td></tr>
+            <tr class="row-avg"><td><strong>Tier-II Paper-II (Statistics)</strong></td><td><span class="tbadge g">+2</span></td><td><span class="tbadge r">-0.50</span></td><td>Correct×2 − Wrong×0.50</td><td>—</td></tr>
+            <tr class="row-avg"><td><strong>Tier-II Paper-III (Finance & Eco)</strong></td><td><span class="tbadge g">+2</span></td><td><span class="tbadge r">-0.50</span></td><td>Correct×2 − Wrong×0.50</td><td>—</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 style="font-family:var(--fd);font-size:17px;font-weight:700;color:var(--ink);margin:28px 0 12px">🎯 Accuracy Level — Performance Rating</h3>
+      <div class="tbl-wr rev">
+        <table>
+          <thead><tr><th>Accuracy %</th><th>Performance Level</th><th>Strategy Advice</th><th>Risk Level</th></tr></thead>
+          <tbody>
+            <tr class="row-pass"><td><strong>90% and above</strong></td><td><span class="tbadge g">✅ Excellent</span></td><td>Attempt more freely</td><td>🟢 Very Low</td></tr>
+            <tr class="row-pass"><td><strong>80% – 89%</strong></td><td><span class="tbadge g">Very Good</span></td><td>Maintain balance</td><td>🟢 Low</td></tr>
+            <tr class="row-avg"><td><strong>70% – 79%</strong></td><td><span class="tbadge a">⚠️ Good</span></td><td>Improve accuracy</td><td>🟡 Medium</td></tr>
+            <tr class="row-fail"><td><strong>60% – 69%</strong></td><td><span class="tbadge r">Risky</span></td><td>Reduce guessing</td><td>🔴 High</td></tr>
+            <tr class="row-fail"><td><strong>Below 60%</strong></td><td><span class="tbadge r">❌ Dangerous</span></td><td>Stop random guessing</td><td>🔴 Very High</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:12.5px;color:var(--ink4);margin-top:12px;text-align:center">* Negative marking directly impacts normalized score and merit position. Higher accuracy = better selection chances.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TIPS SECTION -->
+<section class="tips-sec" id="tier1-analysis">
+  <div class="w">
+    <div style="text-align:center;margin-bottom:36px" class="rev">
+      <div class="pill" style="margin-bottom:14px">Score Strategy Tips</div>
+      <h2 style="font-family:var(--fd);font-size:clamp(22px,3.5vw,36px);font-weight:800;color:var(--ink);margin-bottom:10px">Smart Attempt <span style="color:var(--blue)">Strategy Guide</span></h2>
+      <p style="font-size:15px;color:var(--ink3);max-width:480px;margin:0 auto">Negative marking se bachne ke liye ye strategies apnayein aur apna final score maximize karein.</p>
+    </div>
+    <div class="tips-grid rev">
+      <div class="tip-card">
+        <div class="tip-ico">🎯</div>
+        <div class="tip-title">Accuracy First</div>
+        <div class="tip-desc">Pehle accuracy improve karein. 70 questions sahi karna 100 questions mein se 50 sahi aur 50 galat karne se behtar hai. Quality over quantity hamesha win karta hai.</div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-ico">⚠️</div>
+        <div class="tip-title">Blind Guessing Avoid Karein</div>
+        <div class="tip-desc">Agar kisi question ka bilkul pata nahi toh usse skip karein. Tier-2 Paper-I mein ek galat answer 1 mark minus aur 3 marks plus ka dual loss hota hai — total 4 marks ka nuksaan.</div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-ico">🧠</div>
+        <div class="tip-title">Educated Guess Strategy</div>
+        <div class="tip-desc">Agar 2-3 options eliminate kar sako toh attempt karna smart hai. Random 4-option guess = 25% accuracy jo risky hai, lekin 2-option mein 50% chance acceptable hota hai.</div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-ico">⏱️</div>
+        <div class="tip-title">Time Management</div>
+        <div class="tip-desc">Last 10 minutes mein panic mein questions attempt karna sabse badi galati hai. Pre-decide karein ki agar 60 seconds se zyada lag rahe hain toh skip karein aur aage badhein.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STORY -->
+<section class="story-sec" id="risk-analysis">
+  <div class="wa">
+    <div class="rev" style="text-align:center;margin-bottom:36px">
+      <div class="pill" style="margin-bottom:14px">Why I Built This</div>
+      <h2 style="font-family:var(--fd);font-size:clamp(22px,3.4vw,34px);font-weight:800;color:var(--ink);margin-bottom:8px">Priya ki <span style="color:var(--blue)">Kahaani</span></h2>
+      <p style="font-size:15px;color:var(--ink3)">Jo problem Priya ko thi, woh problem lakhs SSC aspirants ko hoti hai.</p>
+    </div>
+    <div class="story-card rev">
+      <div class="sq">"</div>
+      <div class="sb">
+        Maine ye tool isliye banaya kyunki <strong>meri cousin Priya SSC CGL ki tayari kar rahi thi</strong>. Wo mock tests mein 75-80 questions attempt karti thi — bahut mehnat ke saath.<br><br>
+        Lekin exam ke baad wo aksar kehti — <em>"yaar, mere 78 attempts the, sahi toh 62 the — toh score kitna hoga? Negative marking ne kitna ghata diya?"</em><br><br>
+        <strong>Real life mein aspirants attempt count toh jaante hain lekin exact score aur negative marking ka actual impact nahi jaante</strong> — jab tak official result nahi aata. Tab tak anxiety aur guesswork chalta rehta hai.<br><br>
+        Priya kehti thi — <em>"agar koi tool hota jisse mock test ke baad hi pata chal jaata ki actual score kya hai, accuracy kaisi hai aur risk level kya hai — toh strategy bahut better ho sakti."</em><br><br>
+        <strong>Unki zaroorat ko samajhke maine ye SSC CGL Negative Marking Calculator banaya — taaki har aspirant apna real score instantly jaane aur smarter strategy bana sake.</strong> 📝🙏
+      </div>
+      <div class="sauth">
+        <div class="savt">👨‍💻</div>
+        <div>
+          <div class="sname">Raj Bhai</div>
+          <div class="srole">Founder, RajDailyTools · BSc Physics · COPA ITI Certified</div>
+        </div>
+      </div>
+    </div>
+    <div class="founder-msg rev" style="margin-top:18px">
+      <div class="fm-ico">💡</div>
+      <div class="fm-txt">
+        <strong>Founder's Message:</strong> "SSC CGL aspirants ko data-driven clarity milni chahiye — sirf 'haan, attempt karo' ya 'nahi karo' type vague advice nahi. Har wrong answer ka exact cost pata hona chahiye, taaki exam hall mein sahi decision le sako."
+        <br><span style="font-size:13px;color:var(--ink3);font-style:normal;margin-top:6px;display:block">— Raj Bhai, Founder, RajDailyTools</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GUIDE -->
+<section class="guide-sec" id="accuracy-calculation">
+  <div class="wa">
+    <div class="rev">
+      <div class="pill" style="margin-bottom:14px">Complete Guide</div>
+      <h2 style="font-family:var(--fd);font-size:clamp(22px,3.5vw,36px);font-weight:800;color:var(--ink);margin-bottom:8px">SSC CGL Negative Marking <span style="color:var(--blue)">Complete Guide 2026</span></h2>
+      <p style="font-size:15px;color:var(--ink3);margin-bottom:24px">Negative marking ke basics se lekar Tier-2 strategy tak — sab kuch detail mein samjhein.</p>
+    </div>
+
+    <!-- TOC -->
+    <div class="toc-box rev">
+      <div class="toc-title">📑 Table of Contents</div>
+      <div class="toc-list">
+        <a href="#tool">🧮 Calculator Tool</a>
+        <a href="#negative-marking-rules">📊 Negative Marking Rules</a>
+        <a href="#tier1-analysis">🎯 Tier-1 Score Analysis</a>
+        <a href="#tier2-section">📈 Tier-2 Marking Details</a>
+        <a href="#accuracy-calculation">🔢 Accuracy Calculation</a>
+        <a href="#risk-analysis">⚠️ Risk Analysis</a>
+        <a href="#faq-section">❓ FAQs</a>
+        <a href="#related-tools">🔗 Related Tools</a>
+      </div>
+    </div>
+
+    <div class="guide-body rev">
+      <h2>SSC CGL Negative Marking Kya Hoti Hai?</h2>
+      <p>SSC CGL exam mein negative marking ek aisi system hai jisme <strong>har galat answer par kuch marks deduct kiye jaate hain</strong>. Matlab ye nahi ki sirf sahi answers ke marks milte hain — balki galat answers ke marks kaat bhi liye jaate hain. Ye directly aapke final score ko affect karta hai.</p>
+      <p>Bahut saare aspirants ek common galati karte hain — wo sirf correct answers count karte hain aur socha karte hain ki "80 sahi kiye toh 160 marks" — lekin agar 20 galat bhi kiye toh Tier-1 mein actual score sirf 150 hoga, 10 marks less. Ye fark cutoff mein bahut matter karta hai.</p>
+
+      <div class="snippet-box rev">
+        <p>📌 <strong>Featured Fact:</strong> SSC CGL 2026 mein Tier-I me har galat answer par <strong>0.50 marks</strong> aur Tier-II Paper-I mein har galat answer par <strong>1 mark deduct</strong> hota hai. Isliye accuracy aur smart attempts final score ko significantly impact karte hain.</p>
+      </div>
+
+      <h2 id="tier2-section">SSC CGL Tier-I Negative Marking — Full Detail</h2>
+      <p>Tier-1 SSC CGL ka pehla aur qualifying stage hai. Yahan <strong>100 questions, 200 marks</strong> hote hain. Har sahi answer par <strong>+2 marks</strong> aur har galat answer par <strong>-0.50 marks</strong> deduct hote hain.</p>
+      <ul>
+        <li>Total Questions: 100</li>
+        <li>Total Marks: 200</li>
+        <li>Correct Answer: +2 marks</li>
+        <li>Wrong Answer: -0.50 marks</li>
+        <li>Unattempted: 0 (No penalty)</li>
+        <li>Formula: Score = (Correct × 2) − (Wrong × 0.50)</li>
+      </ul>
+      <div class="ibox a">
+        <svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        <div><strong>Tier-I Example:</strong> Agar aapne 80 sahi kiye aur 15 galat kiye — Score = (80×2) − (15×0.50) = 160 − 7.5 = <strong>152.5 marks</strong>. Sirf 15 galat answers ne 7.5 marks ghata diye!</div>
+      </div>
+
+      <h2>SSC CGL Tier-II Paper-I — Zyada Risk Zone</h2>
+      <p>Tier-2 Paper-I mein negative marking Tier-1 se <strong>double hai</strong> — har galat answer par <strong>-1 mark</strong> deduct hota hai. Ye paper Maths, Reasoning, English, General Awareness aur Computer sections cover karta hai.</p>
+      <ul>
+        <li>Correct Answer: +3 marks</li>
+        <li>Wrong Answer: -1 mark</li>
+        <li>Formula: Score = (Correct × 3) − (Wrong × 1)</li>
+      </ul>
+      <div class="ibox">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        <div><strong>Tier-2 Example:</strong> 90 correct, 15 wrong = (90×3) − (15×1) = 270 − 15 = <strong>255 marks</strong>. Lekin agar 30 wrong karein toh = 270 − 30 = <strong>240 marks</strong> — 15 extra wrong answers ne 15 marks ghata diye!</div>
+      </div>
+
+      <h2>Tier-II Statistics & Finance Papers</h2>
+      <p>Tier-2 Paper-II (Statistics) aur Paper-III (Finance & Economics) dono mein <strong>+2 sahi, -0.50 galat</strong> ka marking scheme hai — Tier-1 jaise hi. Statistics paper Junior Statistical Officer ke liye aur Finance paper Assistant Audit Officer ke liye hota hai.</p>
+
+      <h2>Accuracy Kitni Zaroori Hai?</h2>
+      <p>Accuracy = Correct Answers ÷ Attempted Questions × 100. Ye formula batata hai ki aap jo attempt kar rahe ho usmein kitne percent sahi aa rahe ho. <strong>90%+ accuracy excellent mani jaati hai</strong> aur selection ke liye strong indicator hai. 60% se neeche accuracy dangerous zone hai jahan negative marking score drastically gira sakti hai.</p>
+
+      <h2>Common Negative Marking Mistakes</h2>
+      <ul>
+        <li>Blind guessing — sabse zyada score ghataata hai</li>
+        <li>Last 5 minutes mein panic attempts karna</li>
+        <li>Accuracy check kiye bina zyada questions attempt karna</li>
+        <li>Tier-2 Paper-I mein Tier-1 wali casual approach rakhna</li>
+        <li>Eliminate kiye bina 4-option questions attempt karna</li>
+        <li>Time pressure mein cafefully nahi padhna</li>
+      </ul>
+
+      <!-- PAA Cards -->
+      <h2>People Also Ask</h2>
+      <div class="paa-grid">
+        <div class="paa-card">
+          <div class="paa-q">SSC CGL Tier 1 negative marking kitni hai?</div>
+          <div class="paa-a">Tier-1 mein har galat answer par 0.50 marks deduct hote hain. Sahi answer par +2 marks milte hain.</div>
+        </div>
+        <div class="paa-card">
+          <div class="paa-q">Tier-2 mein 1 mark deduction hota hai?</div>
+          <div class="paa-a">Haan, sirf Tier-2 Paper-I mein -1 per wrong. Statistics aur Finance papers mein -0.50 hai.</div>
+        </div>
+        <div class="paa-card">
+          <div class="paa-q">Safe attempts kitne hone chahiye?</div>
+          <div class="paa-a">Jo questions 90%+ confidence ke saath solve ho sakein unhe hi attempt karein. Forced attempts avoid karein.</div>
+        </div>
+        <div class="paa-card">
+          <div class="paa-q">Accuracy percentage kaise calculate karein?</div>
+          <div class="paa-a">Accuracy (%) = Correct ÷ (Correct + Wrong) × 100. Example: 72 correct, 90 attempted = 80%.</div>
+        </div>
+        <div class="paa-card">
+          <div class="paa-q">Guesswork karna sahi hai?</div>
+          <div class="paa-a">Educated guess (2 options eliminate karke) acceptable hai. Pure blind guess risky hai especially in Tier-2.</div>
+        </div>
+        <div class="paa-card">
+          <div class="paa-q">Negative marking cutoff ko kitna affect karti hai?</div>
+          <div class="paa-a">Bahut zyada. 20 extra wrong answers Tier-1 mein 10 marks aur Tier-2 mein 20 marks gha sakti hai — jo cutoff mein critical difference ho sakta hai.</div>
+        </div>
+        <div class="paa-card">
+          <div class="paa-q">Tier-1 aur Tier-2 mein fark kya hai?</div>
+          <div class="paa-a">Tier-1: +2/-0.50 (100 questions). Tier-2 Paper-I: +3/-1 (stricter). Tier-2 Paper-II/III: +2/-0.50.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FAQ SECTION -->
+<section class="faq-sec" id="faq-section">
+  <div class="wa">
+    <div class="rev" style="text-align:center;margin-bottom:36px">
+      <div class="pill" style="margin-bottom:14px">FAQs</div>
+      <h2 style="font-family:var(--fd);font-size:clamp(22px,3.5vw,36px);font-weight:800;color:var(--ink);margin-bottom:8px">SSC CGL Negative Marking <span style="color:var(--blue)">FAQs</span></h2>
+      <p style="font-size:15px;color:var(--ink3)">Sabse common sawaal — short aur clear answers ke saath.</p>
+    </div>
+    <div class="fql" id="faqList">
+
+      <div class="fq"><div class="fq-q"><span class="fq-t">SSC CGL Tier-1 mein negative marking kitni hai?</span><div class="fq-i">+</div></div><div class="fq-a"><div class="fq-ai">SSC CGL Tier-1 mein har galat answer par <strong>0.50 marks deduct</strong> hote hain. Sahi answer par +2 marks milte hain. Unattempted questions par koi penalty nahi hai.</div></div></div>
+
+      <div class="fq"><div class="fq-q"><span class="fq-t">SSC CGL Tier-2 Paper-I mein negative marking kya hai?</span><div class="fq-i">+</div></div><div class="fq-a"><div class="fq-ai">Tier-2 Paper-I mein negative marking <strong>-1 mark per wrong answer</strong> hai — Tier-1 se double. Sahi answer par +3 marks milte hain. Ye paper sabse risky hai guessing ke liye.</div></div></div>
+
+      <div class="fq"><div class="fq-q"><span class="fq-t">Tier-2 Statistics paper mein negative marking kya hai?</span><div class="fq-i">+</div></div><div class="fq-a"><div class="fq-ai">Tier-2 Paper-II (Statistics) mein <strong>-0.50 per wrong answer</strong> aur <strong>+2 per correct answer</strong> hai. Ye Junior Statistical Officer posts ke liye applicable hai.</div></div></div>
+
+      <div class="fq"><div class="fq-q"><span class="fq-t">Finance & Economics paper mein negative marking kya hai?</span><div class="fq-i">+</div></div><div class="fq-a"><div class="fq-ai">Tier-2 Paper-III (Finance & Economics) mein bhi <strong>-0.50 per wrong</strong> aur <strong>+2 per correct</strong> hai. Ye Assistant Audit Officer aur Assistant Accounts Officer ke liye hai.</div></div></div>
+
+      <div class="fq"><div class="fq-q"><span class="fq-t">Unattempted questions par negative marking lagti hai kya?</span><div class="fq-i">+</div></div><div class="fq-a"><div class="fq-ai"><strong>Bilkul nahi.</strong> SSC CGL mein unattempted questions par zero penalty hai. Agar kisi question ka confident answer nahi hai toh skip karna smart strategy hai.</div></div></div>
+
+      <div class="fq"><div class="fq-q"><span class="fq-t">SSC CGL Tier-1 ka complete formula kya hai?</span><div class="fq-i">+</div></div><div class="fq-a"><div class="fq-ai">Final Score = (Correct Answers × 2) − (Wrong Answers × 0.50). Total 100 questions, maximum 200 marks. Example: 85 correct, 8 wrong = 170 − 4 = <strong>166 marks</strong>.</div></div></div>
+
+      <div class="fq"><div class="fq-q"><span class="fq-t">Accuracy percentage kaise calculate hoti hai?</span><div class="fq-i">+</div></div><div class="fq-a"><div class="fq-ai">Accuracy (%) = Correct Answers ÷ Attempted Questions × 100. Agar 72 correct aur 90 total attempted (correct + wrong) hain = 72/90 × 100 = <strong>80% accuracy</strong>.</div></div></div>
+
+      <div class="fq"><div class="fq-q"><span class="fq-t">80% accuracy good mani jaati hai SSC CGL mein?</span><div class="fq-i">+</div></div><div class="fq-a"><div class="fq-ai">Haan, 80–89% accuracy "Very Good" category mein aati hai. Iska matlab hai aap sahi direction mein hain. Ideally 90%+ ki taraf aim karein kyunki ye selection ke liye excellent indicator hai.</div></div></div>
+
+      <div class="fq"><div class="fq-q"><span class="fq-t">Blind guessing karna sahi hai SSC CGL mein?</span><div class="fq-i">+</div></div><div class="fq-a"><div class="fq-ai">Nahi. Blind guessing bahut risky hai. Random guess ki accuracy sirf 25% hoti hai 4-option MCQ mein. Tier-2 Paper-I mein ek blind guess se 1+3 = effective 4 marks ka nuksaan ho sakta hai.</div></div></div>
+
+      <div class="fq"><div class="fq-q"><span class="fq-t">10 galat answers se Tier-1 score kitna ghata hai?</span><div class="fq-i">+</div></div><div class="fq-a"><div class="fq-ai">Tier-1 mein 10 wrong answers = 10 × 0.50 = <strong>5 marks deduction</strong>. Agar 80 correct the toh 160 − 5 = 155. 20 wrong hote toh 160 − 10 = 150. Difference gradually badhta hai.</div></div></div>
+
+      <div class="fq"><div class="fq-q"><span class="fq-t">Tier-2 Paper-I mein 10 wrong answers ka impact kya hai?</span><div class="fq-i">+</div></div><div class="fq-a"><div class="fq-ai">Tier-2 Paper-I mein 10 wrong = 10 × 1 = <strong>10 marks deduction</strong> — Tier-1 se double impact. Plus un 10 questions ka +3 bhi nahi mila, total loss 10 correct answers ke barabar ho sakta hai.</div></div></div>
+
+      <div class="fq"><div class="fq-q"><span class="fq-t">SSC CGL mein safe attempt strategy kya hai?</span><div class="fq-i">+</div></div><div class="fq-a"><div class="fq-ai">90%+ accuracy pe freely attempt karein. 80-90% mein balance maintain karein. 70-80% mein accuracy improve focus karein. 70% se neeche mein random guessing strictly avoid karein.</div></div></div>
+
+      <div class="fq"><div class="fq-q"><span class="fq-t">Negative marking final score ke saath selection ko kaise affect karti hai?</span><div class="fq-i">+</div></div><div class="fq-a"><div class="fq-ai">Normalized score aur merit list mein position determine karte waqt har mark count karta hai. Excessive negative marking final score ghata ke cutoff miss karwa sakti hai even if correct attempts kaafi hain.</div></div></div>
+
+      <div class="fq"><div class="fq-q"><span class="fq-t">Mock test mein negative marking calculator kaab use karein?</span><div class="fq-i">+</div></div><div class="fq-a"><div class="fq-ai">Har mock test ke immediately baad use karein. Ye aapko actual score, accuracy aur risk level dikhata hai taaki aap galti analyse karke strategy improve kar sakein next test ke liye.</div></div></div>
+
+      <div class="fq"><div class="fq-q"><span class="fq-t">Kya educated guess karna safe hai?</span><div class="fq-i">+</div></div><div class="fq-a"><div class="fq-ai">Educated guess — jab 2 options confidently eliminate kar sako — acceptable hai. 2 remaining options mein 50% chance hai jo Tier-1 mein +2 expected return vs -0.50 risk se favorable hai mathematically.</div></div></div>
+
+      <div class="fq"><div class="fq-q"><span class="fq-t">SSC CGL ke liye ideal accuracy target kya hona chahiye?</span><div class="fq-i">+</div></div><div class="fq-a"><div class="fq-ai">Preparation mein 90%+ accuracy target rakhein. Real exam mein 85%+ maintain karna strong performance mana jaata hai. 80% se neeche girne par strategy review zaroor karein.</div></div></div>
+
+      <div class="fq"><div class="fq-q"><span class="fq-t">Tier-2 Paper-I mein minimum safe accuracy kya honi chahiye?</span><div class="fq-i">+</div></div><div class="fq-a"><div class="fq-ai">Tier-2 Paper-I mein -1 negative marking ki wajah se <strong>85%+ accuracy</strong> recommended hai. 75% se neeche jana bahut risky hai. Har wrong answer bahut costly hai is paper mein.</div></div></div>
+
+      <div class="fq"><div class="fq-q"><span class="fq-t">Over attempting kya hota hai aur ye kyun galat hai?</span><div class="fq-i">+</div></div><div class="fq-a"><div class="fq-ai">Over attempting matlab hai accuracy drop kiye bina attempt count badhana. Agar aap 75 confident attempts ke saath 90 attempt karte hain toh extra 15 attempts mein accuracy low hogi, jisse net score ghatta hai.</div></div></div>
+
+      <div class="fq"><div class="fq-q"><span class="fq-t">SSC CGL Tier-1 mein total negative marks ka limit kya hai?</span><div class="fq-i">+</div></div><div class="fq-a"><div class="fq-ai">No specific limit. Maximum nuksaan 100 questions × 0.50 = 50 marks hai agar sab galat karo. Practically 10-15 galat answers pe bhi attention dena chahiye.</div></div></div>
+
+      <div class="fq"><div class="fq-q"><span class="fq-t">Kya SSC CGL 2026 mein negative marking rules change hue hain?</span><div class="fq-i">+</div></div><div class="fq-a"><div class="fq-ai">Official SSC CGL 2026 notification ke anusaar Tier-1: -0.50, Tier-2 Paper-I: -1, Tier-2 Paper-II & III: -0.50. Hamesha official SSC website se latest notification verify karein.</div></div></div>
+
+    </div>
+  </div>
+</section>
+
+<!-- RELATED TOOLS -->
+<section class="tips-sec" id="related-tools">
+  <div class="w">
+    <div style="text-align:center;margin-bottom:36px" class="rev">
+      <div class="pill" style="margin-bottom:14px">More SSC Tools</div>
+      <h2 style="font-family:var(--fd);font-size:clamp(22px,3.5vw,36px);font-weight:800;color:var(--ink);margin-bottom:10px">Related <span style="color:var(--blue)">SSC CGL Tools</span></h2>
+      <p style="font-size:15px;color:var(--ink3);max-width:480px;margin:0 auto">SSC CGL preparation ke liye aur bhi helpful tools.</p>
+    </div>
+    <div class="tips-grid rev" style="grid-template-columns:repeat(3,1fr)">
+      <div class="tip-card">
+        <div class="tip-ico">🎂</div>
+        <div class="tip-title">Age Limit Calculator</div>
+        <div class="tip-desc">SSC CGL 2026 ke liye apni age eligibility check karein.</div>
+        <a href="https://rajdailytools.in/ssc-cgl-age-limit-2026-calculator.html#tool" target="_blank" rel="noopener" class="btn-xs b" style="margin-top:12px;display:inline-flex">Check Now →</a>
+      </div>
+      <div class="tip-card">
+        <div class="tip-ico">📋</div>
+        <div class="tip-title">Eligibility Checker</div>
+        <div class="tip-desc">Complete SSC CGL 2026 eligibility criteria — qualification, age, category.</div>
+        <a href="https://rajdailytools.in/ssc-cgl-eligibility-2026.html" target="_blank" rel="noopener" class="btn-xs b" style="margin-top:12px;display:inline-flex">Check Now →</a>
+      </div>
+      <div class="tip-card">
+        <div class="tip-ico">💪</div>
+        <div class="tip-title">Physical Eligibility</div>
+        <div class="tip-desc">SSC CGL physical eligibility checker 2026 — post-wise criteria.</div>
+        <a href="https://rajdailytools.in/ssc-cgl-physical-eligibility-checker-2026.html" target="_blank" rel="noopener" class="btn-xs b" style="margin-top:12px;display:inline-flex">Check Now →</a>
+      </div>
+      <div class="tip-card">
+        <div class="tip-ico">🏠</div>
+        <div class="tip-title">Home Posting Checker</div>
+        <div class="tip-desc">SSC CGL home posting chances check karein 2026.</div>
+        <a href="https://rajdailytools.in/ssc-cgl-home-posting-chance-checker.html" target="_blank" rel="noopener" class="btn-xs b" style="margin-top:12px;display:inline-flex">Check Now →</a>
+      </div>
+      <div class="tip-card">
+        <div class="tip-ico">🖊️</div>
+        <div class="tip-title">Signature Resizer</div>
+        <div class="tip-desc">SSC CGL application form ke liye signature resize karein.</div>
+        <a href="https://rajdailytools.in/ssc-cgl-signature-resizer-2026.html" target="_blank" rel="noopener" class="btn-xs b" style="margin-top:12px;display:inline-flex">Use Tool →</a>
+      </div>
+      <div class="tip-card">
+        <div class="tip-ico">🔢</div>
+        <div class="tip-title">Attempt Calculator</div>
+        <div class="tip-desc">SSC CGL 2026 mein safe attempt count calculate karein.</div>
+        <a href="https://rajdailytools.in/ssc-cgl-attempt-calculator-2026.html" target="_blank" rel="noopener" class="btn-xs b" style="margin-top:12px;display:inline-flex">Calculate →</a>
+      </div>
+      <div class="tip-card">
+        <div class="tip-ico">📊</div>
+        <div class="tip-title">Exam Pattern Checker</div>
+        <div class="tip-desc">SSC CGL 2026 complete exam pattern aur syllabus dekh enn.</div>
+        <a href="https://rajdailytools.in/ssc-cgl-exam-pattern-checker-2026.html" target="_blank" rel="noopener" class="btn-xs b" style="margin-top:12px;display:inline-flex">Check Now →</a>
+      </div>
+      <div class="tip-card">
+        <div class="tip-ico">📄</div>
+        <div class="tip-title">DV Documents Checklist</div>
+        <div class="tip-desc">Document Verification ke liye complete checklist 2026.</div>
+        <a href="https://rajdailytools.in/SSC-CGL-Document-Verification-Checklist-2026-Complete-DV-Documents-List.html" target="_blank" rel="noopener" class="btn-xs b" style="margin-top:12px;display:inline-flex">View List →</a>
+      </div>
+      <div class="tip-card">
+        <div class="tip-ico">🏷️</div>
+        <div class="tip-title">Category Eligibility</div>
+        <div class="tip-desc">SSC CGL 2026 mein category-wise eligibility check karein.</div>
+        <a href="https://rajdailytools.in/ssc-cgl-category-eligibility-checker-2026.html" target="_blank" rel="noopener" class="btn-xs b" style="margin-top:12px;display:inline-flex">Check Now →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DISCLAIMER -->
+<div class="disc">
+  <div class="w">
+    <div class="disc-in">
+      <span style="font-size:20px;flex-shrink:0">⚠️</span>
+      <div><strong>Educational Disclaimer:</strong> SSC CGL Negative Marking Calculator 2026 sirf educational aur informational purposes ke liye banaya gaya hai. Ye calculator official SSC CGL marking scheme ke anusaar marks estimate karta hai. Final score, normalization aur results Staff Selection Commission (SSC) ke official examination processes se determine hote hain. Hamesha official SSC website se latest notification verify karein.</div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="cta-in">
+    <div class="pill">Free SSC Tools</div>
+    <h2>Score Kaise Badhana Hai? <em>Smart Tools Use Karein</em></h2>
+    <p>RajDailyTools par 50+ free government exam tools milte hain — SSC, Army, Police, Banking sab ke liye.</p>
+    <div class="cta-btns">
+      <a href="https://rajdailytools.in/ssc-cgl-attempt-calculator-2026.html" class="btn-gold">📊 Attempt Calculator →</a>
+      <a href="/categories" class="btn-ghost">All SSC Tools →</a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-sec">
+  <div class="w">
+    <div class="contact-card rev">
+      <h3>📬 Koi Sawaal Hai?</h3>
+      <p>SSC CGL negative marking ya is tool ke baare mein koi confusion hai? Hum help karne ke liye hamesha available hain.</p>
+      <a href="mailto:rajdailytools@gmail.com" class="btn-bl">📧 Contact Us</a>
+      <p class="priv-note">rajdailytools@gmail.com · We respond within 24 hours</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="ft-inner">
+    <div class="ft-top">
+      <div class="ft-brand">
+        <div class="logo" style="margin-bottom:4px">
+          <div class="lb"><svg viewBox="0 0 24 24" fill="#fff"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+          <div><div class="ln">Raj<span>Daily</span>Tools</div><div class="ls">Smart Tools for Daily Life</div></div>
+        </div>
+        <p class="ft-desc">India's most ambitious free tools platform. Built by Raj Bhai. Solving daily life problems, one tool at a time.</p>
+        <div class="ft-soc">
+          <a href="https://www.facebook.com/share/1Dq3Y1k7mG/" target="_blank" class="fts">f</a>
+          <a href="https://x.com/Educator4ll" target="_blank" class="fts">𝕏</a>
+          <a href="https://youtube.com/@rajdailytools" target="_blank" class="fts">▶</a>
+          <a href="https://www.instagram.com/rajdailytools" target="_blank" class="fts">📷</a>
+        </div>
+      </div>
+      <div class="fc"><h4>SSC Tools</h4><ul>
+        <li><a href="#">Negative Marking Calculator</a></li>
+        <li><a href="https://rajdailytools.in/ssc-cgl-attempt-calculator-2026.html">Attempt Calculator</a></li>
+        <li><a href="https://rajdailytools.in/ssc-cgl-eligibility-2026.html">CGL Eligibility</a></li>
+        <li><a href="https://rajdailytools.in/ssc-cgl-exam-pattern-checker-2026.html">Exam Pattern</a></li>
+      </ul></div>
+      <div class="fc"><h4>Categories</h4><ul>
+        <li><a href="/education-tools">Education Tools</a></li>
+        <li><a href="/finance-tools">Finance Tools</a></li>
+        <li><a href="/calculator-tools">Calculator Tools</a></li>
+        <li><a href="/health-tools">Health Tools</a></li>
+        <li><a href="/text-tools">Text Tools</a></li>
+      </ul></div>
+      <div class="fc"><h4>Company</h4><ul>
+        <li><a href="/about">About Us</a></li>
+        <li><a href="/contact">Contact</a></li>
+        <li><a href="/privacy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
+      </ul></div>
+    </div>
+    <div class="ft-btm">
+      <p class="ft-cp">Copyright © 2026 <b>RajDailyTools</b>. All rights reserved. Designed by <b>RajDailyTools</b></p>
+      <p class="ft-tag">Made with ❤️ in India — "Solving daily life problems with smart tools"</p>
+    </div>
+  </div>
+</footer>
+<button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+/* ── Drawer ── */
+const brg=document.getElementById('brg'),drw=document.getElementById('drw'),dov=document.getElementById('dov');
+function oD(){drw.classList.add('on');dov.classList.add('on');document.body.style.overflow='hidden'}
+function cD(){drw.classList.remove('on');dov.classList.remove('on');document.body.style.overflow=''}
+brg.addEventListener('click',oD);document.getElementById('dx').addEventListener('click',cD);dov.addEventListener('click',cD);
+const btt=document.getElementById('btt');
+window.addEventListener('scroll',()=>btt.classList.toggle('on',scrollY>380),{passive:true});
+const rvObs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){const s=[...(e.target.parentElement?.children||[])];e.target.style.transitionDelay=(s.indexOf(e.target)%4)*0.08+'s';e.target.classList.add('in');rvObs.unobserve(e.target);}});
+},{threshold:0.06,rootMargin:'0px 0px -20px 0px'});
+document.querySelectorAll('.rev').forEach(el=>rvObs.observe(el));
+document.getElementById('faqList').addEventListener('click',function(e){
+  const q=e.target.closest('.fq-q');if(!q)return;
+  const item=q.closest('.fq'),open=item.classList.contains('open');
+  document.querySelectorAll('.fq.open').forEach(i=>i.classList.remove('open'));
+  if(!open)item.classList.add('open');
+});
+
+/* ══════════════════════════════════════
+   SSC CGL NEGATIVE MARKING CALCULATOR LOGIC
+══════════════════════════════════════ */
+function getExamType(){
+  const el=document.querySelector('input[name="examtype"]:checked');
+  return el?el.value:'tier1';
+}
+
+function getExamConfig(type){
+  const configs={
+    tier1:{name:'Tier-I',correct:2,negative:0.50,totalQ:100,maxMarks:200,label:'Tier-I (100Q, 200M)'},
+    tier2p1:{name:'Tier-II Paper-I',correct:3,negative:1,totalQ:null,maxMarks:null,label:'Tier-II Paper-I (+3/-1)'},
+    tier2p2:{name:'Tier-II Paper-II (Statistics)',correct:2,negative:0.50,totalQ:null,maxMarks:null,label:'Tier-II Statistics (+2/-0.50)'},
+    tier2p3:{name:'Tier-II Paper-III (Finance)',correct:2,negative:0.50,totalQ:null,maxMarks:null,label:'Tier-II Finance (+2/-0.50)'}
+  };
+  return configs[type]||configs.tier1;
+}
+
+function getAccuracyGrade(acc){
+  if(acc>=90)return{label:'Excellent',cls:'active-pass',ico:'🏆',risk:'Very Low',color:'var(--green)'};
+  if(acc>=80)return{label:'Very Good',cls:'active-pass',ico:'✅',risk:'Low',color:'var(--green)'};
+  if(acc>=70)return{label:'Good',cls:'active-avg',ico:'👍',risk:'Medium',color:'var(--amber)'};
+  if(acc>=60)return{label:'Risky',cls:'active-avg',ico:'⚠️',risk:'High',color:'var(--amber)'};
+  return{label:'Dangerous',cls:'active-fail',ico:'❌',risk:'Very High',color:'var(--red)'};
+}
+
+function calculateScore(){
+  const examType=getExamType();
+  const cfg=getExamConfig(examType);
+  const correct=parseInt(document.getElementById('correct').value)||0;
+  const wrong=parseInt(document.getElementById('wrong').value)||0;
+  const unattempted=parseInt(document.getElementById('unattempted').value)||0;
+
+  if(correct===0&&wrong===0){
+    alert('Kripya correct aur/ya wrong answers enter karein.');
+    return;
+  }
+  if(correct<0||wrong<0||unattempted<0){
+    alert('Values 0 se kam nahi ho sakti.');
+    return;
+  }
+
+  const attempted=correct+wrong;
+  const rawScore=correct*cfg.correct;
+  const negDeduction=wrong*cfg.negative;
+  const finalScore=rawScore-negDeduction;
+  const accuracy=attempted>0?Math.round((correct/attempted)*100):0;
+  const accGrade=getAccuracyGrade(accuracy);
+
+  /* Max possible score for percentage display */
+  const maxPossible=cfg.totalQ?(cfg.totalQ*cfg.correct):(attempted>0?(attempted+unattempted)*cfg.correct:200);
+  const scorePct=maxPossible>0?Math.max(0,Math.min(100,Math.round((finalScore/maxPossible)*100))):0;
+
+  /* Banner */
+  const banner=document.getElementById('resBanner');
+  let bannerCls=accuracy<60?'fail':(accuracy>=80?'pass':'avg');
+  banner.className=`res-banner ${bannerCls}`;
+
+  /* Circular meter — shows accuracy */
+  const circumference=283;
+  const dashOffset=Math.round(circumference-(accuracy/100)*circumference);
+  const meterFill=document.getElementById('meterFill');
+  meterFill.style.strokeDashoffset=circumference;
+  meterFill.style.stroke=accuracy<60?'var(--red)':(accuracy>=80?'var(--green)':'var(--amber)');
+  document.getElementById('meterPct').textContent=accuracy+'%';
+  document.getElementById('meterLbl').textContent='Accuracy';
+  setTimeout(()=>{meterFill.style.strokeDashoffset=dashOffset;},200);
+
+  /* Banner text */
+  document.getElementById('resIcon').textContent=accGrade.ico;
+  document.getElementById('resTitle').textContent=`${accGrade.label} Performance`;
+  document.getElementById('resSub').textContent=`Final Score: ${finalScore.toFixed(2)} | Accuracy: ${accuracy}% | Exam: ${cfg.name}`;
+  const tag=document.getElementById('resTag');
+  tag.className=`res-tag ${accuracy>=80?'pass':(accuracy>=60?'avg':'fail')}`;
+  tag.textContent=`${accGrade.ico} ${accGrade.label} — Risk: ${accGrade.risk}`;
+
+  /* Score Cards */
+  const scoreCardsHtml=`
+    <div class="sc-card raw">
+      <div class="sc-ico">📝</div>
+      <div class="sc-lbl">Raw Score</div>
+      <div class="sc-val">${rawScore}</div>
+    </div>
+    <div class="sc-card neg">
+      <div class="sc-ico">📉</div>
+      <div class="sc-lbl">Negative Deducted</div>
+      <div class="sc-val">−${negDeduction.toFixed(2)}</div>
+    </div>
+    <div class="sc-card fin">
+      <div class="sc-ico">🎯</div>
+      <div class="sc-lbl">Final Score</div>
+      <div class="sc-val">${finalScore.toFixed(2)}</div>
+    </div>
+    <div class="sc-card acc">
+      <div class="sc-ico">🎯</div>
+      <div class="sc-lbl">Accuracy</div>
+      <div class="sc-val">${accuracy}%</div>
+    </div>
+    <div class="sc-card att">
+      <div class="sc-ico">📊</div>
+      <div class="sc-lbl">Attempted</div>
+      <div class="sc-val">${attempted}</div>
+    </div>
+    <div class="sc-card att">
+      <div class="sc-ico">⬜</div>
+      <div class="sc-lbl">Unattempted</div>
+      <div class="sc-val">${unattempted}</div>
+    </div>
+  `;
+  document.getElementById('scoreCards').innerHTML=scoreCardsHtml;
+
+  /* Score Breakdown Bars */
+  const maxBars=maxPossible;
+  const barsData=[
+    {label:'Raw Score (Gross)',val:rawScore,max:maxBars,cls:'b'},
+    {label:'Negative Deducted',val:negDeduction,max:maxBars,cls:'r'},
+    {label:'Final Score (Net)',val:Math.max(0,finalScore),max:maxBars,cls:'g'},
+    {label:'Accuracy %',val:accuracy,max:100,cls:accuracy>=80?'g':(accuracy>=60?'a':'r'),suffix:'%'},
+  ];
+  let barsHtml='';
+  barsData.forEach(b=>{
+    const pct=Math.min((b.val/b.max)*100,100).toFixed(1);
+    barsHtml+=`
+      <div class="tc-row">
+        <div class="tc-lbl">${b.label}</div>
+        <div class="tc-bar-track">
+          <div class="tc-bar-fill ${b.cls}" style="width:0%" data-w="${pct}%">${b.val.toFixed?b.val.toFixed(1)+(b.suffix||''):b.val+(b.suffix||'')}</div>
+        </div>
+        <div class="tc-val" style="color:${b.cls==='g'?'var(--green)':b.cls==='r'?'var(--red)':'var(--blue)'}">${b.suffix?b.val+'%':b.val.toFixed(2)}</div>
+      </div>
+    `;
+  });
+  document.getElementById('scoreBars').innerHTML=barsHtml;
+  setTimeout(()=>{
+    document.querySelectorAll('.tc-bar-fill').forEach(b=>{b.style.width=b.dataset.w||'0%'});
+  },200);
+
+  /* Grade Cards — Accuracy Zones */
+  const grades=[
+    {label:'Excellent',range:'90%+',ico:'🏆',cls:accuracy>=90?'active-pass':'inactive'},
+    {label:'Very Good',range:'80–89%',ico:'✅',cls:(accuracy>=80&&accuracy<90)?'active-pass':'inactive'},
+    {label:'Good',range:'70–79%',ico:'👍',cls:(accuracy>=70&&accuracy<80)?'active-avg':'inactive'},
+    {label:'Risky',range:'60–69%',ico:'⚠️',cls:(accuracy>=60&&accuracy<70)?'active-avg':'inactive'},
+    {label:'Dangerous',range:'<60%',ico:'❌',cls:accuracy<60?'active-fail':'inactive'},
+  ];
+  let gradeHtml='';
+  grades.forEach(g=>{
+    gradeHtml+=`
+      <div class="gc ${g.cls}">
+        <div class="gc-ico">${g.ico}</div>
+        <div class="gc-title">${g.label}</div>
+        <div class="gc-val">${g.range}${g.cls!=='inactive'?' 👈 Your Zone':''}</div>
+      </div>
+    `;
+  });
+  document.getElementById('gradeGrid').innerHTML=gradeHtml;
+
+  /* Suggestions */
+  let suggLines=[];
+  if(accuracy>=90){
+    suggLines.push(`<strong>🏆 Excellent Performance! Accuracy: ${accuracy}%.</strong> Aapki accuracy bahut achi hai. Is level par aap safely zyada questions attempt kar sakte hain. Tier-2 mein bhi ye confidence maintain rakhen aur mock tests mein consistency build karein.`);
+  } else if(accuracy>=80){
+    suggLines.push(`<strong>✅ Very Good — ${accuracy}% Accuracy.</strong> Aap sahi track par hain. Thoda aur practice se 90%+ zone mein aa sakte hain. Jo topics mein galti ho rahi hai unhe specifically target karein. ${cfg.name} ke liye ye ek solid performance hai.`);
+  } else if(accuracy>=70){
+    suggLines.push(`<strong>👍 Good but Improvable — ${accuracy}% Accuracy.</strong> 70-79% zone mein hain. Negative marking ${negDeduction.toFixed(2)} marks le gayi. Practice mein accuracy improvement pe focus karein. Speed se pehle accuracy — ye mantra SSC mein kaam karta hai.`);
+  } else if(accuracy>=60){
+    suggLines.push(`<strong>⚠️ Risky Zone — ${accuracy}% Accuracy.</strong> ${negDeduction.toFixed(2)} marks negative mein gaye. Ye trend real exam mein selection chances significantly reduce karta hai. Uncertain questions skip karna seekhein. Quality attempts > quantity attempts.`);
+  } else {
+    suggLines.push(`<strong>❌ Dangerous Zone — ${accuracy}% Accuracy.</strong> Negative marking ${negDeduction.toFixed(2)} marks le gayi jo bahut zyada hai. Blind guessing se bachein. Sirf wo questions attempt karein jinka answer confident ho. Practice mein accuracy drill karein — speed baad mein aayegi.`);
+  }
+
+  if(wrong>20&&examType==='tier2p1'){
+    suggLines.push(`<strong>💡 Tier-2 Paper-I Warning:</strong> ${wrong} wrong answers = ${negDeduction} marks penalty. Tier-2 Paper-I mein -1 marking ke saath itne wrong attempts bahut costly hain. Attempt count reduce karke accuracy improve karein.`);
+  }
+
+  if(finalScore<0){
+    suggLines.push(`<strong>🚨 Score Negative!</strong> Negative marking itni zyada hai ki final score zero se neeche hai. Iska matlab hai ki galat attempts ne sahi answers ke marks bhi kha liye. Real exam mein ye never hona chahiye.`);
+  }
+
+  document.getElementById('suggBox').innerHTML=`<strong style="display:block;font-family:var(--fd);font-size:14px;margin-bottom:8px">💡 Performance Analysis & Smart Strategy</strong>${suggLines.map(s=>`<p style="margin-bottom:8px;font-size:14px;color:var(--ink2);line-height:1.72">${s}</p>`).join('')}`;
+
+  const ra=document.getElementById('resultArea');
+  ra.style.display='block';
+  ra.style.animation='none';ra.offsetHeight;
+  ra.style.animation='resultIn .45s cubic-bezier(.4,0,.2,1) both';
+  setTimeout(()=>ra.scrollIntoView({behavior:'smooth',block:'nearest'}),120);
+}
+
+/* Allow Enter key on inputs */
+['correct','wrong','unattempted'].forEach(id=>{
+  document.getElementById(id).addEventListener('keydown',e=>{
+    if(e.key==='Enter')calculateScore();
+  });
+});
+</script>
+</body>
+</html>
