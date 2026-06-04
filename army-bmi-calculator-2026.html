@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Army BMI Calculator 2026 – Check Body Mass Index & Army Fitness Status</title>
+<meta name="description" content="Use the Army BMI Calculator 2026 to calculate your Body Mass Index, ideal weight range, fitness category and overall army physical readiness instantly.">
+<meta name="keywords" content="army bmi calculator, army body mass index calculator, army fitness calculator, army bmi checker, army physical fitness calculator, military bmi calculator, army readiness calculator">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://rajdailytools.in/army-bmi-calculator-2026.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* ══════════════════════════════════════
+   DESIGN TOKENS
+══════════════════════════════════════ */
+:root{
+  --blue:#2563eb;--blue-d:#1d4ed8;--blue-xl:#eff6ff;--blue-s:#dbeafe;
+  --amber:#f59e0b;--green:#10b981;--red:#ef4444;--purple:#8b5cf6;
+  --orange:#f97316;--teal:#14b8a6;
+  --green-xl:#f0fdf4;--green-s:#bbf7d0;
+  --red-xl:#fef2f2;--red-s:#fecaca;
+  --amber-xl:#fffbeb;--amber-s:#fde68a;
+  --purple-xl:#faf5ff;--purple-s:#ddd6fe;
+  --yellow:#eab308;--yellow-xl:#fefce8;--yellow-s:#fef08a;
+  --ink:#0f172a;--ink2:#334155;--ink3:#64748b;--ink4:#94a3b8;
+  --line:#e2e8f0;--surf:#f8fafc;--white:#fff;
+  --s1:0 1px 3px rgba(15,23,42,.06),0 1px 2px rgba(15,23,42,.04);
+  --s2:0 4px 16px rgba(15,23,42,.08),0 2px 6px rgba(15,23,42,.04);
+  --s3:0 12px 40px rgba(15,23,42,.11),0 3px 10px rgba(15,23,42,.06);
+  --s4:0 24px 64px rgba(15,23,42,.13),0 6px 20px rgba(15,23,42,.07);
+  --sb:0 8px 32px rgba(37,99,235,.20);
+  --fd:'Sora',sans-serif;--fb:'DM Sans',sans-serif;
+  --ease:cubic-bezier(.4,0,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);color:var(--ink);background:var(--white);overflow-x:hidden;-webkit-font-smoothing:antialiased;line-height:1.6}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+button{cursor:pointer;border:none;background:none;font-family:var(--fb)}
+.w{max-width:1180px;margin:0 auto;padding:0 24px}
+.wa{max-width:880px;margin:0 auto;padding:0 24px}
+select,input{appearance:none;-webkit-appearance:none}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+@keyframes resultIn{from{opacity:0;transform:translateY(18px) scale(.97)}to{opacity:1;transform:none}}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}
+.rev{opacity:0;transform:translateY(22px);transition:opacity .55s var(--ease),transform .55s var(--ease)}
+.rev.in{opacity:1;transform:none}
+
+/* ══ HEADER ══ */
+.hdr{position:sticky;top:0;z-index:999;background:rgba(255,255,255,.96);backdrop-filter:blur(20px);border-bottom:1px solid var(--line);box-shadow:var(--s1)}
+.hdi{display:flex;align-items:center;justify-content:space-between;height:66px}
+.logo{display:flex;align-items:center;gap:10px}
+.lb{width:36px;height:36px;background:var(--blue);border-radius:9px;display:flex;align-items:center;justify-content:center;box-shadow:var(--sb);flex-shrink:0}
+.lb svg{width:18px;height:18px;fill:#fff}
+.ln{font-family:var(--fd);font-size:19px;font-weight:800;color:var(--ink);line-height:1}
+.ln span{color:var(--blue)}
+.ls{font-size:10px;color:var(--ink4);letter-spacing:.04em}
+nav.dn{display:flex;align-items:center;gap:2px}
+nav.dn a{font-size:13.5px;font-weight:500;color:var(--ink2);padding:7px 13px;border-radius:8px;transition:.2s}
+nav.dn a:hover{color:var(--blue);background:var(--blue-xl)}
+.hcta{background:var(--blue);color:#fff;font-family:var(--fd);font-weight:600;font-size:13px;padding:8px 18px;border-radius:8px;box-shadow:var(--sb);transition:.2s}
+.hcta:hover{background:var(--blue-d);transform:translateY(-1px)}
+.brg{display:none;flex-direction:column;gap:4.5px;padding:8px;border-radius:8px}
+.brg span{display:block;width:20px;height:2px;background:var(--ink);border-radius:2px;transition:.28s}
+.dov{display:none;position:fixed;inset:0;background:rgba(15,23,42,.45);z-index:1040;backdrop-filter:blur(3px)}
+.dov.on{display:block}
+.drw{position:fixed;top:0;right:-100%;width:270px;height:100vh;background:#fff;z-index:1050;padding:22px;box-shadow:var(--s4);transition:right .32s var(--ease);overflow-y:auto}
+.drw.on{right:0}
+.dh{display:flex;align-items:center;justify-content:space-between;margin-bottom:26px}
+.dx{width:33px;height:33px;border-radius:7px;background:var(--surf);display:flex;align-items:center;justify-content:center;color:var(--ink3);font-size:17px}
+nav.mn{display:flex;flex-direction:column;gap:3px}
+nav.mn a{display:block;font-size:14px;font-weight:500;color:var(--ink2);padding:11px 13px;border-radius:8px;transition:.2s}
+nav.mn a:hover{color:var(--blue);background:var(--blue-xl)}
+
+/* ══ HERO ══ */
+.hero{position:relative;overflow:hidden;background:linear-gradient(150deg,#ebf4ff 0%,#fff 46%,#f0f9ff 100%);padding:64px 0 72px}
+.hero::before{content:'';position:absolute;top:-140px;right:-180px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(37,99,235,.08) 0%,transparent 68%);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-80px;left:-100px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(16,185,129,.05) 0%,transparent 68%);pointer-events:none}
+.blob{position:absolute;border-radius:50%;pointer-events:none;animation:float 6s ease-in-out infinite}
+.b1{width:13px;height:13px;background:rgba(37,99,235,.18);top:22%;right:14%;animation-delay:0s}
+.b2{width:9px;height:9px;background:rgba(16,185,129,.22);top:58%;right:26%;animation-delay:2.2s}
+.b3{width:11px;height:11px;background:rgba(37,99,235,.18);top:36%;right:6%;animation-delay:4s}
+.bc{display:flex;align-items:center;gap:7px;font-size:12.5px;color:var(--ink3);margin-bottom:22px;position:relative;z-index:1;flex-wrap:wrap}
+.bc a{color:var(--blue);font-weight:600}
+.pill{display:inline-flex;align-items:center;gap:7px;font-family:var(--fd);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);background:var(--blue-xl);padding:5px 14px;border-radius:100px;margin-bottom:18px}
+.pill::before{content:'';width:6px;height:6px;background:var(--blue);border-radius:50%}
+.hero-inner{position:relative;z-index:1;max-width:720px;animation:fadeUp .5s ease both}
+.hero h1{font-family:var(--fd);font-size:clamp(26px,4.5vw,50px);font-weight:800;line-height:1.1;color:var(--ink);margin-bottom:14px}
+.hero h1 span{color:var(--blue)}
+.hero-sub{font-size:16px;color:var(--ink3);line-height:1.8;margin-bottom:22px;max-width:600px}
+.hero-chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.chip{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;padding:6px 14px;border-radius:100px;background:#fff;border:1.5px solid var(--line);color:var(--ink2);box-shadow:var(--s1);transition:.22s}
+.chip:hover{border-color:var(--blue);color:var(--blue);transform:translateY(-1px)}
+.hero-meta{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:24px}
+.upd{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:700;color:var(--blue);background:var(--blue-xl);padding:6px 14px;border-radius:100px;border:1.5px solid var(--blue-s)}
+.mi{font-size:13px;color:var(--ink3);font-weight:500}
+
+/* HOW TO USE */
+.howto{background:var(--amber-xl);border:2px solid var(--amber-s);border-radius:16px;padding:22px 26px;max-width:560px;margin-bottom:24px}
+.howto-ttl{display:flex;align-items:center;gap:9px;font-family:var(--fd);font-size:15px;font-weight:800;color:var(--ink);margin-bottom:13px}
+.howto-steps{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.hs{display:flex;align-items:flex-start;gap:10px;font-size:13.5px;color:var(--ink2);line-height:1.6}
+.sn{width:24px;height:24px;background:var(--amber);color:#fff;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex-shrink:0;margin-top:1px}
+
+/* related tools hero */
+.rel-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;position:relative;z-index:1}
+.rg-box{border-radius:14px;padding:14px 14px 12px;display:flex;flex-direction:column;gap:8px;transition:.22s;border:1.5px solid}
+.rg-box:hover{transform:translateY(-3px);box-shadow:var(--s3)}
+.rg-box.blue{background:linear-gradient(135deg,var(--blue-xl),var(--blue-s));border-color:var(--blue-s)}
+.rg-box.green{background:linear-gradient(135deg,var(--green-xl),#dcfce7);border-color:var(--green-s)}
+.rg-box.amber{background:linear-gradient(135deg,var(--amber-xl),#fef3c7);border-color:var(--amber-s)}
+.rg-box.purple{background:linear-gradient(135deg,var(--purple-xl),#ede9fe);border-color:var(--purple-s)}
+.rg-ico{font-size:22px}
+.rg-txt h4{font-family:var(--fd);font-size:12px;font-weight:800;color:var(--ink);margin-bottom:2px}
+.rg-txt p{font-size:11px;color:var(--ink3);line-height:1.5}
+.btn-xs{display:inline-flex;align-items:center;gap:4px;font-family:var(--fd);font-weight:700;font-size:11px;padding:5px 10px;border-radius:7px;transition:.22s;margin-top:4px}
+.btn-xs.b{background:var(--blue);color:#fff}.btn-xs.b:hover{background:var(--blue-d)}
+.btn-xs.g{background:var(--green);color:#fff}.btn-xs.g:hover{background:#059669}
+.btn-xs.a{background:var(--amber);color:#fff}.btn-xs.a:hover{background:#d97706}
+.btn-xs.p{background:var(--purple);color:#fff}.btn-xs.p:hover{background:#7c3aed}
+
+/* ══ TOOL SECTION ══ */
+.tool-sec{background:var(--surf);padding:80px 0}
+.tool-wrap{max-width:860px;margin:0 auto}
+.tool-card{background:#fff;border:1.5px solid var(--line);border-radius:28px;overflow:hidden;box-shadow:var(--s4)}
+.tool-hdr{background:linear-gradient(135deg,#0f172a 0%,#1e3a8a 50%,#1d4ed8 100%);padding:32px 40px;position:relative;overflow:hidden}
+.tool-hdr::before{content:'';position:absolute;top:-60px;right:-60px;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,.07)}
+.tool-hdr::after{content:'';position:absolute;bottom:-40px;left:-40px;width:180px;height:180px;border-radius:50%;background:rgba(255,255,255,.04)}
+.cert-dots{position:absolute;bottom:20px;right:40px;display:flex;gap:5px;opacity:.3;z-index:0}
+.cert-dot{width:6px;height:6px;border-radius:50%;background:#fff}
+.th{position:relative;z-index:1}
+.th h2{font-family:var(--fd);font-size:21px;font-weight:800;color:#fff;margin-bottom:6px}
+.th p{font-size:14px;color:rgba(255,255,255,.82);line-height:1.65}
+.th-badges{display:flex;flex-wrap:wrap;gap:9px;margin-top:14px}
+.thb{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:rgba(255,255,255,.9);background:rgba(255,255,255,.13);padding:5px 12px;border-radius:100px}
+.tool-body{padding:36px 40px}
+
+/* form */
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+.fld{display:flex;flex-direction:column;gap:7px}
+.flbl{font-size:13px;font-weight:700;color:var(--ink2)}
+.flbl span{font-size:11px;font-weight:500;color:var(--ink4);margin-left:5px;background:var(--surf);padding:2px 7px;border-radius:5px;border:1px solid var(--line)}
+.fsel{padding:12px 16px;font-size:14.5px;color:var(--ink);background:#fff;border:1.5px solid var(--line);border-radius:10px;outline:none;transition:.22s;font-family:var(--fb);width:100%;cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2364748b' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:40px}
+.fsel:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(37,99,235,.10)}
+.finp{padding:12px 16px;font-size:14.5px;color:var(--ink);background:#fff;border:1.5px solid var(--line);border-radius:10px;outline:none;transition:.22s;font-family:var(--fb);width:100%}
+.finp:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(37,99,235,.10)}
+.ro-row{display:flex;gap:8px;flex-wrap:wrap}
+.ro{position:relative}
+.ro input{position:absolute;opacity:0;width:0;height:0}
+.ro label{display:inline-flex;align-items:center;gap:6px;font-size:13.5px;font-weight:600;color:var(--ink2);padding:10px 16px;border-radius:9px;border:1.5px solid var(--line);background:#fff;cursor:pointer;transition:.22s}
+.ro input:checked+label{border-color:var(--blue);background:var(--blue-xl);color:var(--blue)}
+.ro label:hover{border-color:var(--blue-s);background:var(--blue-xl)}
+.hint-box{display:flex;align-items:flex-start;gap:9px;font-size:13px;color:var(--ink2);background:var(--blue-xl);border:1.5px solid var(--blue-s);border-radius:10px;padding:11px 14px;margin:16px 0;line-height:1.65}
+.hint-box svg{width:16px;height:16px;stroke:var(--blue);fill:none;stroke-width:2;flex-shrink:0;margin-top:2px}
+.chk-btn{width:100%;padding:17px;background:linear-gradient(135deg,#0f172a 0%,#1e3a8a 50%,#2563eb 100%);color:#fff;font-family:var(--fd);font-weight:800;font-size:16px;border-radius:12px;box-shadow:0 8px 32px rgba(30,58,138,.30);transition:all .25s var(--ease);display:flex;align-items:center;justify-content:center;gap:10px}
+.chk-btn:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(30,58,138,.40)}
+.chk-btn:active{transform:translateY(0)}
+
+/* RESULT */
+#resultArea{display:none;margin-top:28px;animation:resultIn .45s var(--ease) both}
+.res-banner{border-radius:20px;padding:28px;margin-bottom:22px;position:relative;overflow:hidden;display:flex;align-items:center;gap:24px;flex-wrap:wrap}
+.res-banner.eligible{background:linear-gradient(135deg,var(--green-xl),#d1fae5);border:2px solid var(--green-s)}
+.res-banner.partial{background:var(--amber-xl);border:2px solid var(--amber-s)}
+.res-banner.noteligible{background:var(--red-xl);border:2px solid var(--red-s)}
+.res-banner.info{background:var(--blue-xl);border:2px solid var(--blue-s)}
+.res-banner::before{content:'';position:absolute;inset:0;opacity:.04;background-image:repeating-linear-gradient(45deg,currentColor 0,currentColor 1px,transparent 0,transparent 50%);background-size:12px 12px;pointer-events:none}
+
+/* result cards */
+.status-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-bottom:18px}
+.sc-card{border-radius:13px;padding:16px 14px;text-align:center;border:1.5px solid;transition:.22s}
+.sc-card:hover{transform:translateY(-2px);box-shadow:var(--s2)}
+.sc-card.yes{background:var(--green-xl);border-color:var(--green-s)}
+.sc-card.no{background:var(--red-xl);border-color:var(--red-s)}
+.sc-card.warn{background:var(--amber-xl);border-color:var(--amber-s)}
+.sc-card.info{background:var(--blue-xl);border-color:var(--blue-s)}
+.sc-ico{font-size:24px;margin-bottom:6px}
+.sc-title{font-family:var(--fd);font-size:11px;font-weight:700;color:var(--ink);margin-bottom:3px}
+.sc-val{font-size:15px;font-weight:800;line-height:1.3}
+.sc-val.yes{color:var(--green)}
+.sc-val.no{color:var(--red)}
+.sc-val.warn{color:#92400e}
+.sc-val.info{color:var(--blue)}
+.sc-sub{font-size:10.5px;color:var(--ink4);margin-top:2px}
+
+.sugg-box{background:var(--blue-xl);border:1.5px solid var(--blue-s);border-radius:13px;padding:16px 18px;font-size:14px;color:var(--ink2);line-height:1.78;margin-bottom:14px}
+.warn-box{background:var(--amber-xl);border:1.5px solid var(--amber-s);border-radius:12px;padding:14px 18px;display:flex;gap:10px;font-size:13.5px;color:var(--ink2);line-height:1.7;margin-top:14px}
+
+/* TABLE SECTION */
+.tbl-sec{background:#fff;padding:72px 0}
+.tbl-wr{overflow-x:auto;margin-bottom:20px}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+thead th{background:linear-gradient(135deg,#0f172a 0%,#1e3a8a 100%);color:#fff;padding:14px 16px;text-align:left;font-family:var(--fd);font-size:13px;font-weight:700;letter-spacing:.03em}
+tbody tr{border-bottom:1px solid var(--line);transition:.2s}
+tbody tr:hover{background:var(--blue-xl)}
+tbody td{padding:12px 16px;color:var(--ink2);vertical-align:middle}
+.row-pass{background:var(--green-xl)!important}
+.row-avg{background:var(--amber-xl)!important}
+.row-fail{background:var(--red-xl)!important}
+.tbadge{display:inline-flex;font-size:11px;font-weight:700;padding:3px 8px;border-radius:100px}
+.tbadge.g{background:var(--green-xl);color:var(--green);border:1px solid var(--green-s)}
+.tbadge.a{background:var(--amber-xl);color:#92400e;border:1px solid var(--amber-s)}
+.tbadge.r{background:var(--red-xl);color:var(--red);border:1px solid var(--red-s)}
+.tbadge.b{background:var(--blue-xl);color:var(--blue);border:1px solid var(--blue-s)}
+.tbl-title{font-family:var(--fd);font-size:19px;font-weight:800;color:var(--ink);margin-bottom:6px}
+.tbl-sub{font-size:14px;color:var(--ink3);margin-bottom:20px}
+
+/* RELATED TOOLS FINAL */
+.rt-sec{background:var(--surf);padding:60px 0}
+.rt-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.rt-card{background:#fff;border:1.5px solid var(--line);border-radius:16px;padding:20px;text-align:center;transition:.28s;box-shadow:var(--s1)}
+.rt-card:hover{transform:translateY(-4px);box-shadow:var(--s3);border-color:var(--blue-s)}
+.rt-ico{font-size:28px;margin-bottom:10px}
+.rt-title{font-family:var(--fd);font-size:13px;font-weight:800;color:var(--ink);margin-bottom:6px}
+.rt-desc{font-size:12px;color:var(--ink3);line-height:1.6;margin-bottom:12px}
+.rt-btn{display:inline-flex;align-items:center;gap:5px;background:var(--blue);color:#fff;font-family:var(--fd);font-weight:700;font-size:12px;padding:7px 14px;border-radius:7px;box-shadow:var(--sb);transition:.22s}
+.rt-btn:hover{background:var(--blue-d);transform:translateY(-1px)}
+
+/* FOOTER & BUTTONS */
+.disc{background:var(--amber-xl);border-top:1px solid var(--amber-s);border-bottom:1px solid var(--amber-s);padding:15px 0}
+.disc-in{display:flex;align-items:flex-start;gap:12px;font-size:13.5px;color:var(--ink2);line-height:1.7}
+footer{background:#0f172a;padding:52px 0 0}
+.ft-inner{max-width:1180px;margin:0 auto;padding:0 24px}
+.ft-top{display:grid;grid-template-columns:1.9fr 1fr 1fr 1fr;gap:44px;margin-bottom:44px}
+.ft-brand .ln{color:#fff}.ft-brand .ls{color:#475569}
+.ft-desc{font-size:13.5px;color:#64748b;line-height:1.78;max-width:265px;margin:13px 0 20px}
+.ft-soc{display:flex;gap:9px}
+.fts{width:34px;height:34px;border-radius:7px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;color:#94a3b8;font-size:13px;transition:.2s}
+.fts:hover{background:var(--blue);color:#fff}
+.fc h4{font-family:var(--fd);font-size:12px;font-weight:700;color:#fff;margin-bottom:14px;letter-spacing:.06em;text-transform:uppercase}
+.fc ul{display:flex;flex-direction:column;gap:8px}
+.fc ul a{font-size:13.5px;color:#64748b;transition:.18s}
+.fc ul a:hover{color:#93c5fd}
+.ft-btm{border-top:1px solid rgba(255,255,255,.07);padding:20px 0;text-align:center}
+.ft-cp{font-size:12.5px;color:#475569}
+.ft-cp b{color:#64748b}
+.ft-tag{font-size:12px;color:#334155;margin-top:4px;font-style:italic}
+.btt{position:fixed;bottom:26px;right:26px;z-index:500;width:43px;height:43px;background:var(--blue);color:#fff;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:17px;box-shadow:var(--sb);opacity:0;pointer-events:none;transform:translateY(14px);transition:.28s var(--ease)}
+.btt.on{opacity:1;pointer-events:auto;transform:translateY(0)}
+.btt:hover{transform:translateY(-3px)}
+.floating-buttons{position:fixed;bottom:80px;right:26px;z-index:500;display:flex;flex-direction:column;gap:10px}
+.f-btn{width:43px;height:43px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:18px;color:#fff;box-shadow:var(--s2);transition:transform .22s}
+.f-btn:hover{transform:translateY(-3px)}
+.f-btn.wa-btn{background:#25d366}
+
+/* BMI gauge */
+.bmi-gauge-wrap{background:var(--surf);border:1.5px solid var(--line);border-radius:14px;padding:18px;margin-bottom:18px}
+.bmi-gauge-label{font-family:var(--fd);font-size:13px;font-weight:700;color:var(--ink);margin-bottom:10px;text-align:center}
+.bmi-bar{height:18px;border-radius:100px;background:linear-gradient(90deg,#60a5fa 0%,#10b981 28%,#f59e0b 56%,#ef4444 100%);position:relative;overflow:visible;margin-bottom:6px}
+.bmi-marker{position:absolute;top:-5px;width:4px;height:28px;background:var(--ink);border-radius:2px;transform:translateX(-50%);transition:left .5s var(--ease)}
+.bmi-ticks{display:flex;justify-content:space-between;font-size:10.5px;color:var(--ink4);font-weight:600}
+
+/* RESPONSIVE */
+@media(max-width:1060px){.ft-top{grid-template-columns:1fr 1fr}.rt-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:860px){
+  nav.dn,.hcta{display:none}.brg{display:flex}
+  .tool-body{padding:24px 22px}.tool-hdr{padding:24px 22px}
+  .fgrid{grid-template-columns:1fr}
+  .status-grid{grid-template-columns:1fr 1fr}
+  .howto-steps{grid-template-columns:1fr}
+  .rel-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+  .ft-top{grid-template-columns:1fr}.rel-grid{grid-template-columns:1fr}
+  .status-grid{grid-template-columns:1fr 1fr}
+  .rt-grid{grid-template-columns:1fr}
+  .res-banner{flex-direction:column;align-items:flex-start;gap:16px}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="hdr">
+  <div class="w">
+    <div class="hdi">
+      <a href="/" class="logo">
+        <div class="lb"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+        <div><div class="ln">Raj<span>Daily</span>Tools</div><div class="ls">Smart Tools for Daily Life</div></div>
+      </a>
+      <nav class="dn">
+        <a href="/">Home</a><a href="/categories">Categories</a>
+        <a href="/#popular">Popular</a><a href="/about">About</a><a href="/contact">Contact</a>
+      </nav>
+      <a href="/categories" class="hcta">All Tools →</a>
+      <button class="brg" id="brg"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="dov" id="dov"></div>
+<div class="drw" id="drw">
+  <div class="dh">
+    <div class="logo">
+      <div class="lb" style="width:30px;height:30px;border-radius:7px"><svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#fff"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+      <div class="ln" style="font-size:16px">Raj<span>Daily</span>Tools</div>
+    </div>
+    <button class="dx" id="dx">✕</button>
+  </div>
+  <nav class="mn">
+    <a href="/" onclick="cD()">🏠 Home</a>
+    <a href="/categories" onclick="cD()">🗂️ Categories</a>
+    <a href="/#popular" onclick="cD()">⭐ Popular</a>
+    <a href="/about" onclick="cD()">👤 About</a>
+    <a href="/contact" onclick="cD()">📬 Contact</a>
+  </nav>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="overview">
+  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+  <div class="w">
+    <div class="bc">
+      <a href="/">Home</a><span style="color:var(--ink4)">›</span>
+      <a href="/categories">Tools</a><span style="color:var(--ink4)">›</span>
+      <span>Army BMI Calculator 2026</span>
+    </div>
+    <div class="hero-inner">
+      <div class="pill">Army Fitness Tools 2026</div>
+      <h1>Army BMI <span>Calculator</span> 2026</h1>
+      <p class="hero-sub">Calculate your Body Mass Index, ideal weight range, BMI fitness category and overall Army physical readiness score instantly. Covers all Army categories including Agniveer GD, Technical, Clerk and more.</p>
+
+      <div class="hero-chips">
+        <span class="chip">🩺 BMI Score</span>
+        <span class="chip">⚖️ Ideal Weight Range</span>
+        <span class="chip">🏋️ Fitness Status</span>
+        <span class="chip">🎯 Readiness Score</span>
+        <span class="chip">🆓 100% Free</span>
+      </div>
+      <div class="hero-meta">
+        <div class="upd">📅 Updated for 2026 Standards</div>
+        <span class="mi">✅ Instant Results</span>
+        <span class="mi">🔒 No Data Stored</span>
+      </div>
+
+      <!-- HOW TO USE -->
+      <div class="howto">
+        <div class="howto-ttl">💡 How To Use This Calculator</div>
+        <div class="howto-steps">
+          <div class="hs"><span class="sn">1</span>Select your gender and enter your age.</div>
+          <div class="hs"><span class="sn">2</span>Choose your Army category (Agniveer GD, Technical, etc.).</div>
+          <div class="hs"><span class="sn">3</span>Enter your height in centimetres and weight in kilograms.</div>
+          <div class="hs"><span class="sn">4</span>Click Calculate BMI to see your full fitness report instantly.</div>
+        </div>
+      </div>
+
+      <!-- HERO RELATED TOOLS -->
+      <div class="rel-grid">
+        <div class="rg-box blue">
+          <div class="rg-ico">🎯</div>
+          <div class="rg-txt">
+            <h4>Agniveer Age Calculator 2026</h4>
+            <p>Instantly verify Agniveer age eligibility window.</p>
+            <a href="https://rajdailytools.in/agniveer-age-calculator-2026.html" class="btn-xs b">Check Now →</a>
+          </div>
+        </div>
+        <div class="rg-box amber">
+          <div class="rg-ico">⏱️</div>
+          <div class="rg-txt">
+            <h4>Army 1600m Running Calculator</h4>
+            <p>Check your running time score for Army recruitment.</p>
+            <a href="https://rajdailytools.in/army-running-time-calculator-1600m-2026.html" class="btn-xs a">Check Now →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOOL SECTION -->
+<section class="tool-sec" id="tool">
+  <div class="w">
+    <div class="tool-wrap">
+      <div class="tool-card rev in">
+        <div class="tool-hdr">
+          <div class="cert-dots">
+            <div class="cert-dot"></div><div class="cert-dot"></div><div class="cert-dot"></div>
+            <div class="cert-dot"></div><div class="cert-dot"></div><div class="cert-dot"></div>
+          </div>
+          <div class="th">
+            <h2>🩺 Army BMI Calculator 2026</h2>
+            <p>Enter your gender, age, army category, height and weight to instantly calculate your BMI score, fitness category, ideal weight range and physical readiness score.</p>
+            <div class="th-badges">
+              <span class="thb">🩺 BMI Auto Calculator</span>
+              <span class="thb">🏋️ Army Fitness Status</span>
+              <span class="thb">📊 Readiness Score</span>
+            </div>
+          </div>
+        </div>
+        <div class="tool-body">
+
+          <!-- SECTION 1: Candidate Details -->
+          <h3 style="font-family:var(--fd);font-size:15px;font-weight:800;color:var(--ink);margin-bottom:12px;display:flex;align-items:center;gap:6px">👤 Section 1: Candidate Details</h3>
+          <div class="fgrid">
+            <div class="fld">
+              <label class="flbl">Gender <span>Required</span></label>
+              <div class="ro-row">
+                <div class="ro"><input type="radio" name="gender" id="g_male" value="male" checked><label for="g_male">♂ Male</label></div>
+                <div class="ro"><input type="radio" name="gender" id="g_female" value="female"><label for="g_female">♀ Female</label></div>
+              </div>
+            </div>
+            <div class="fld">
+              <label class="flbl">Age <span>Required</span></label>
+              <input type="number" id="ageInput" class="finp" placeholder="e.g. 22" min="16" max="50" style="background-image:none;padding-right:16px;">
+            </div>
+          </div>
+
+          <div class="fgrid">
+            <div class="fld">
+              <label class="flbl">Army Category <span>Required</span></label>
+              <select class="fsel" id="armyCategory">
+                <option value="AgniveerGD">Agniveer GD</option>
+                <option value="Technical">Technical</option>
+                <option value="Clerk">Clerk / Store Keeper</option>
+                <option value="Tradesman">Tradesman</option>
+                <option value="WomenMP">Women Military Police</option>
+              </select>
+            </div>
+          </div>
+
+          <div style="height:6px"></div>
+          <!-- SECTION 2: Body Measurements -->
+          <h3 style="font-family:var(--fd);font-size:15px;font-weight:800;color:var(--ink);margin-bottom:12px;display:flex;align-items:center;gap:6px">📏 Section 2: Body Measurements</h3>
+          <div class="fgrid">
+            <div class="fld">
+              <label class="flbl">Height (cm) <span>Required</span></label>
+              <input type="number" id="heightCm" class="finp" placeholder="e.g. 172" min="100" max="250" oninput="liveCalc()" style="background-image:none;padding-right:16px;">
+            </div>
+            <div class="fld">
+              <label class="flbl">Weight (kg) <span>Required</span></label>
+              <input type="number" id="weightKg" class="finp" placeholder="e.g. 65" min="30" max="200" oninput="liveCalc()" style="background-image:none;padding-right:16px;">
+            </div>
+          </div>
+
+          <!-- Live BMI preview -->
+          <div id="liveBMIPreview" style="display:none;margin-bottom:16px;">
+            <div class="bmi-gauge-wrap">
+              <div class="bmi-gauge-label">Live BMI: <strong id="liveBMIVal">—</strong> &nbsp;|&nbsp; <span id="liveBMICat" style="font-weight:700">—</span></div>
+              <div class="bmi-bar">
+                <div class="bmi-marker" id="bmiMarker" style="left:0%"></div>
+              </div>
+              <div class="bmi-ticks">
+                <span>10</span><span>18.5</span><span>25</span><span>30</span><span>40</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hint-box">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            <div><strong>BMI Formula:</strong> BMI = Weight (kg) ÷ Height² (m²). The Army ideal BMI range is 18.5 – 25.0 for optimal physical fitness classification. Ideal weight range is calculated using standard BMI boundaries for your entered height.</div>
+          </div>
+
+          <button class="chk-btn" onclick="calculateBMI()">🩺 Calculate BMI &amp; Fitness Status</button>
+
+          <!-- RESULT AREA -->
+          <div id="resultArea">
+
+            <!-- Banner -->
+            <div class="res-banner info" id="resBanner">
+              <div style="font-size:52px" id="resBannerIcon">🩺</div>
+              <div style="flex:1">
+                <div style="font-family:var(--fd);font-size:22px;font-weight:800;color:var(--ink);margin-bottom:6px" id="resBannerTitle">BMI Calculated</div>
+                <div style="font-size:14px;color:var(--ink3);line-height:1.65" id="resBannerSub">Review your full fitness breakdown below.</div>
+              </div>
+            </div>
+
+            <!-- 5 Result Cards -->
+            <div class="status-grid">
+              <div class="sc-card info" id="cardBMI">
+                <div class="sc-ico">🩺</div>
+                <div class="sc-title">BMI Score</div>
+                <div class="sc-val info" id="resBMIScore">—</div>
+                <div class="sc-sub">Body Mass Index</div>
+              </div>
+              <div class="sc-card info" id="cardBMICat">
+                <div class="sc-ico">📊</div>
+                <div class="sc-title">BMI Category</div>
+                <div class="sc-val info" id="resBMICategory">—</div>
+                <div class="sc-sub">WHO Classification</div>
+              </div>
+              <div class="sc-card info" id="cardIdealWt">
+                <div class="sc-ico">⚖️</div>
+                <div class="sc-title">Ideal Weight</div>
+                <div class="sc-val info" id="resIdealWeight">—</div>
+                <div class="sc-sub">For your height</div>
+              </div>
+              <div class="sc-card info" id="cardFitStatus">
+                <div class="sc-ico">🏋️</div>
+                <div class="sc-title">Army Fitness</div>
+                <div class="sc-val info" id="resFitnessStatus">—</div>
+                <div class="sc-sub">Fitness Level</div>
+              </div>
+              <div class="sc-card info" id="cardReadiness">
+                <div class="sc-ico">🎯</div>
+                <div class="sc-title">Readiness Score</div>
+                <div class="sc-val info" id="resReadinessScore">—</div>
+                <div class="sc-sub">Physical Readiness</div>
+              </div>
+            </div>
+
+            <!-- Recommendation -->
+            <div class="sugg-box" id="resRecommendation"></div>
+
+            <div class="warn-box">
+              <span style="font-size:20px;flex-shrink:0">⚠️</span>
+              <div style="font-size:13.5px;color:var(--ink2);line-height:1.72">
+                <strong>Disclaimer:</strong> This calculator is for informational purposes only. Final physical fitness assessment is conducted by authorised Army Medical Corps personnel at the official recruitment rally. Always verify with the latest official Army recruitment notification.
+              </div>
+            </div>
+
+          </div><!-- end resultArea -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TABLE SECTION -->
+<section class="tbl-sec" id="bmi-table">
+  <div class="w">
+    <div style="max-width:860px;margin:0 auto">
+
+      <!-- Table 1 -->
+      <div style="margin-bottom:52px">
+        <div class="tbl-title">📋 BMI Classification Table</div>
+        <div class="tbl-sub">Standard WHO BMI categories used for Army fitness assessment.</div>
+        <div class="tbl-wr">
+          <table>
+            <thead>
+              <tr>
+                <th>BMI Range</th>
+                <th>Category</th>
+                <th>Army Interpretation</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="row-fail">
+                <td><strong>Below 18.5</strong></td>
+                <td>Underweight</td>
+                <td>Below ideal physical standard</td>
+                <td><span class="tbadge r">Needs Improvement</span></td>
+              </tr>
+              <tr class="row-pass">
+                <td><strong>18.5 – 22.9</strong></td>
+                <td>Normal (Lower)</td>
+                <td>Good physical condition</td>
+                <td><span class="tbadge g">Good</span></td>
+              </tr>
+              <tr class="row-pass">
+                <td><strong>23.0 – 24.9</strong></td>
+                <td>Normal (Upper)</td>
+                <td>Excellent physical condition</td>
+                <td><span class="tbadge g">Excellent</span></td>
+              </tr>
+              <tr class="row-avg">
+                <td><strong>25.0 – 29.9</strong></td>
+                <td>Overweight</td>
+                <td>Above ideal physical standard</td>
+                <td><span class="tbadge a">Average</span></td>
+              </tr>
+              <tr class="row-fail">
+                <td><strong>30.0 and above</strong></td>
+                <td>Obese</td>
+                <td>Requires fitness improvement</td>
+                <td><span class="tbadge r">Needs Improvement</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Table 2 -->
+      <div>
+        <div class="tbl-title">🪖 Army Fitness Guide by BMI Status</div>
+        <div class="tbl-sub">Recommended fitness actions based on your BMI category for Army preparation.</div>
+        <div class="tbl-wr">
+          <table>
+            <thead>
+              <tr>
+                <th>BMI Status</th>
+                <th>Army Fitness Status</th>
+                <th>Recommendation</th>
+                <th>Priority</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="tbadge r">Underweight</span></td>
+                <td>Needs Improvement</td>
+                <td>Gain healthy weight through nutritious diet and strength training</td>
+                <td><span class="tbadge r">High</span></td>
+              </tr>
+              <tr>
+                <td><span class="tbadge g">Normal (Lower)</span></td>
+                <td>Good</td>
+                <td>Maintain fitness with balanced diet and regular exercise</td>
+                <td><span class="tbadge b">Low</span></td>
+              </tr>
+              <tr>
+                <td><span class="tbadge g">Normal (Upper)</span></td>
+                <td>Excellent</td>
+                <td>Maintain current fitness level and continue physical training</td>
+                <td><span class="tbadge b">Low</span></td>
+              </tr>
+              <tr>
+                <td><span class="tbadge a">Overweight</span></td>
+                <td>Average</td>
+                <td>Reduce excess weight through cardio, running and diet control</td>
+                <td><span class="tbadge a">Medium</span></td>
+              </tr>
+              <tr>
+                <td><span class="tbadge r">Obese</span></td>
+                <td>Needs Improvement</td>
+                <td>Consult a doctor and begin structured weight loss and fitness program</td>
+                <td><span class="tbadge r">High</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- DISCLAIMER -->
+<div class="disc">
+  <div class="w">
+    <div class="disc-in">
+      <span style="font-size:18px;flex-shrink:0">⚠️</span>
+      <div><strong>Disclaimer:</strong> This Army BMI Calculator is for informational and educational purposes only. BMI is one of multiple physical parameters assessed during official Army recruitment. Final eligibility is determined by authorised medical personnel at the Army recruitment rally. Always refer to the official Army recruitment notification from joinindianarmy.nic.in for final standards.</div>
+    </div>
+  </div>
+</div>
+
+<!-- RELATED TOOLS -->
+<section class="rt-sec" id="related">
+  <div class="w">
+    <div style="text-align:center;margin-bottom:36px">
+      <div style="font-family:var(--fd);font-size:26px;font-weight:800;color:var(--ink);margin-bottom:8px">🔗 Related Defence Tools</div>
+      <div style="font-size:15px;color:var(--ink3)">Explore more Army and Defence preparation tools on RajDailyTools.</div>
+    </div>
+    <div class="rt-grid">
+      <div class="rt-card">
+        <div class="rt-ico">🎯</div>
+        <div class="rt-title">Agniveer Age Calculator 2026</div>
+        <div class="rt-desc">Check Agniveer age eligibility based on official 2026 recruitment notification window.</div>
+        <a href="https://rajdailytools.in/agniveer-age-calculator-2026.html" class="rt-btn">Launch Tool →</a>
+      </div>
+      <div class="rt-card">
+        <div class="rt-ico">🏃</div>
+        <div class="rt-title">Army 1 Mile Running Calculator</div>
+        <div class="rt-desc">Calculate your 1-mile run timing and score for Army physical fitness test preparation.</div>
+        <a href="https://rajdailytools.in/army-1-mile-running-calculator.html" class="rt-btn">Launch Tool →</a>
+      </div>
+      <div class="rt-card">
+        <div class="rt-ico">⏱️</div>
+        <div class="rt-title">Army 1600m Running Time Calculator</div>
+        <div class="rt-desc">Check your 1600m run time score for Agniveer and Army recruitment physical tests.</div>
+        <a href="https://rajdailytools.in/army-running-time-calculator-1600m-2026.html" class="rt-btn">Launch Tool →</a>
+      </div>
+      <div class="rt-card">
+        <div class="rt-ico">💰</div>
+        <div class="rt-title">Army Pension Calculator</div>
+        <div class="rt-desc">Estimate retirement pension benefits based on service period and rank configurations.</div>
+        <a href="https://rajdailytools.in/army-pension-calculator.html" class="rt-btn">Launch Tool →</a>
+      </div>
+      <div class="rt-card">
+        <div class="rt-ico">📏</div>
+        <div class="rt-title">Government Exam Height Eligibility Checker</div>
+        <div class="rt-desc">Verify height eligibility for all major government recruitment exams across departments.</div>
+        <a href="https://rajdailytools.in/government-exam-height-eligibility-checker-india.html" class="rt-btn">Launch Tool →</a>
+      </div>
+      <div class="rt-card">
+        <div class="rt-ico">🎖️</div>
+        <div class="rt-title">Army Promotion Timeline Tool</div>
+        <div class="rt-desc">Map out your expected promotion timeline based on enrolment rank and service progression.</div>
+        <a href="https://rajdailytools.in/army-promotion-timeline-tool-1.html" class="rt-btn">Launch Tool →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-inner">
+    <div class="ft-top">
+      <div class="ft-brand">
+        <div class="logo" style="margin-bottom:12px;">
+          <div class="lb"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+          <div><div class="ln">Raj<span>Daily</span>Tools</div><div class="ls">Smart Tools for Daily Life</div></div>
+        </div>
+        <p class="ft-desc">Engineered to produce robust, high precision diagnostic calculation utilities facilitating accurate information discovery across major lifestyle compliance criteria frameworks.</p>
+        <div class="ft-soc">
+          <a href="#" class="fts">FB</a><a href="#" class="fts">TW</a><a href="#" class="fts">LN</a>
+        </div>
+      </div>
+      <div class="fc">
+        <h4>Product Platforms</h4>
+        <ul>
+          <li><a href="/">Home Dashboard</a></li>
+          <li><a href="/categories">Tools Catalog</a></li>
+          <li><a href="/#popular">Popular Utilities</a></li>
+        </ul>
+      </div>
+      <div class="fc">
+        <h4>Legal Context</h4>
+        <ul>
+          <li><a href="/privacy">Privacy Protocol</a></li>
+          <li><a href="/terms">Terms Of Usage</a></li>
+          <li><a href="/disclaimer">Disclaimer Notice</a></li>
+        </ul>
+      </div>
+      <div class="fc">
+        <h4>Company Nodes</h4>
+        <ul>
+          <li><a href="/about">About Developer</a></li>
+          <li><a href="/contact">Support Center</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ft-btm">
+      <p class="ft-cp">© 2026 <b>RajDailyTools</b>. All analytical system rights reserved worldwide.</p>
+      <p class="ft-tag">Designed with absolute precision for high scannability efficiency layouts.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- FLOATING BUTTONS -->
+<div class="floating-buttons">
+  <a href="https://api.whatsapp.com/send?text=Check%20Army%20BMI%20Calculator%202026%20here%20https%3A%2F%2Frajdailytools.in%2Farmy-bmi-calculator-2026.html" target="_blank" rel="noopener" class="f-btn wa-btn" title="Share via WhatsApp">WA</a>
+  <button class="btt" id="btt" title="Scroll To Top" onclick="window.scrollTo({top:0,behavior:'smooth'});">↑</button>
+</div>
+
+<script>
+// ── Header drawer
+const brg = document.getElementById('brg');
+const drw = document.getElementById('drw');
+const dov = document.getElementById('dov');
+const dx  = document.getElementById('dx');
+const btt = document.getElementById('btt');
+if(brg&&drw&&dov&&dx){
+  brg.addEventListener('click',()=>{drw.classList.add('on');dov.classList.add('on');});
+  dx.addEventListener('click',cD);
+  dov.addEventListener('click',cD);
+}
+function cD(){drw.classList.remove('on');dov.classList.remove('on');}
+window.addEventListener('scroll',()=>{
+  if(window.scrollY>400){btt.classList.add('on');}else{btt.classList.remove('on');}
+});
+
+// ── Scroll reveal
+const revEls=document.querySelectorAll('.rev');
+const obs=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}});
+},{threshold:0.12});
+revEls.forEach(el=>obs.observe(el));
+
+// ── Live BMI preview while typing
+function liveCalc(){
+  const h=parseFloat(document.getElementById('heightCm').value);
+  const w=parseFloat(document.getElementById('weightKg').value);
+  const preview=document.getElementById('liveBMIPreview');
+  if(!h||!w||h<100||h>250||w<20||w>300){preview.style.display='none';return;}
+  const bmi=w/((h/100)*(h/100));
+  document.getElementById('liveBMIVal').textContent=bmi.toFixed(1);
+  const cat=getBMICategory(bmi);
+  document.getElementById('liveBMICat').textContent=cat.label;
+  document.getElementById('liveBMICat').style.color=cat.color;
+  // position marker: map bmi 10-40 → 0-100%
+  const pct=Math.min(100,Math.max(0,((bmi-10)/30)*100));
+  document.getElementById('bmiMarker').style.left=pct+'%';
+  preview.style.display='block';
+}
+
+function getBMICategory(bmi){
+  if(bmi<18.5)  return{label:'Underweight',color:'#3b82f6',cls:'no'};
+  if(bmi<23.0)  return{label:'Normal',color:'#10b981',cls:'yes'};
+  if(bmi<25.0)  return{label:'Normal',color:'#10b981',cls:'yes'};
+  if(bmi<30.0)  return{label:'Overweight',color:'#f59e0b',cls:'warn'};
+  return{label:'Obese',color:'#ef4444',cls:'no'};
+}
+
+function getIdealWeight(heightCm){
+  const hm=heightCm/100;
+  const low=(18.5*hm*hm).toFixed(1);
+  const high=(24.9*hm*hm).toFixed(1);
+  return{low,high};
+}
+
+function getFitnessStatus(bmi){
+  if(bmi<18.5) return{label:'Needs Improvement',cls:'no',icon:'⚠️'};
+  if(bmi<22.0) return{label:'Good',cls:'yes',icon:'👍'};
+  if(bmi<25.0) return{label:'Excellent',cls:'yes',icon:'🏆'};
+  if(bmi<28.0) return{label:'Average',cls:'warn',icon:'📊'};
+  if(bmi<30.0) return{label:'Needs Improvement',cls:'warn',icon:'⚠️'};
+  return{label:'Needs Improvement',cls:'no',icon:'❌'};
+}
+
+function getReadinessScore(bmi){
+  // Score out of 100 based on proximity to ideal BMI centre (21.7)
+  const ideal=21.7;
+  const diff=Math.abs(bmi-ideal);
+  if(diff<=1.5) return 95;
+  if(diff<=3.0) return 85;
+  if(diff<=5.0) return 70;
+  if(diff<=7.0) return 55;
+  if(diff<=10)  return 40;
+  return 25;
+}
+
+function getRecommendation(bmi,category,gender,armyCat){
+  const catLabels={AgniveerGD:'Agniveer GD',Technical:'Technical',Clerk:'Clerk',Tradesman:'Tradesman',WomenMP:'Women Military Police'};
+  const cLabel=catLabels[armyCat]||armyCat;
+  if(bmi<18.5){
+    return`<strong>📌 Recommendation for ${cLabel}:</strong> Your BMI indicates you are underweight. Focus on a high-protein, calorie-surplus diet with strength training (push-ups, squats, weight training) to gain healthy muscle mass. Aim to reach a BMI of at least 18.5 before your recruitment rally.`;
+  }
+  if(bmi<25.0){
+    return`<strong>✅ Recommendation for ${cLabel}:</strong> Your BMI is in the normal range — excellent! Maintain your current fitness through regular running, physical training and a balanced diet. You are well within the ideal BMI range for Army recruitment.`;
+  }
+  if(bmi<30.0){
+    return`<strong>📌 Recommendation for ${cLabel}:</strong> Your BMI is slightly above the ideal range. Focus on cardio exercises (running, cycling), reduce processed food intake and aim to reduce body weight gradually. Target reaching below 25 BMI before your recruitment.`;
+  }
+  return`<strong>⚠️ Recommendation for ${cLabel}:</strong> Your BMI indicates obesity. It is strongly advised to consult a doctor and begin a structured fitness and weight management program immediately. Daily running, calorie deficit diet and consistent physical training are essential.`;
+}
+
+function calculateBMI(){
+  const gender=document.querySelector('input[name="gender"]:checked')?.value||'male';
+  const age=parseFloat(document.getElementById('ageInput').value);
+  const armyCat=document.getElementById('armyCategory').value;
+  const h=parseFloat(document.getElementById('heightCm').value);
+  const w=parseFloat(document.getElementById('weightKg').value);
+
+  // Validation
+  if(!h||!w||h<100||h>250||w<20||w>300){
+    alert('Please enter valid height (100–250 cm) and weight (20–300 kg).');
+    return;
+  }
+
+  const bmi=w/((h/100)*(h/100));
+  const bmiRounded=Math.round(bmi*10)/10;
+  const cat=getBMICategory(bmi);
+  const idealWt=getIdealWeight(h);
+  const fitness=getFitnessStatus(bmi);
+  const score=getReadinessScore(bmi);
+
+  // Update banner
+  const banner=document.getElementById('resBanner');
+  banner.className='res-banner '+(bmi<18.5||bmi>=30?'noteligible':bmi<25?'eligible':'partial');
+  document.getElementById('resBannerIcon').textContent=fitness.icon;
+  document.getElementById('resBannerTitle').textContent=`BMI: ${bmiRounded} — ${cat.label}`;
+  document.getElementById('resBannerSub').textContent=`Category: ${armyCat.replace('AgniveerGD','Agniveer GD').replace('WomenMP','Women Military Police')} | Age: ${age||'—'} | ${gender==='male'?'Male':'Female'}`;
+
+  // Card 1 — BMI Score
+  const c1=document.getElementById('cardBMI');
+  c1.className='sc-card '+cat.cls;
+  document.getElementById('resBMIScore').className='sc-val '+cat.cls;
+  document.getElementById('resBMIScore').textContent=bmiRounded;
+
+  // Card 2 — BMI Category
+  const c2=document.getElementById('cardBMICat');
+  c2.className='sc-card '+cat.cls;
+  document.getElementById('resBMICategory').className='sc-val '+cat.cls;
+  document.getElementById('resBMICategory').textContent=cat.label;
+
+  // Card 3 — Ideal Weight
+  const c3=document.getElementById('cardIdealWt');
+  c3.className='sc-card info';
+  document.getElementById('resIdealWeight').className='sc-val info';
+  document.getElementById('resIdealWeight').textContent=`${idealWt.low}–${idealWt.high} kg`;
+
+  // Card 4 — Fitness Status
+  const c4=document.getElementById('cardFitStatus');
+  c4.className='sc-card '+fitness.cls;
+  document.getElementById('resFitnessStatus').className='sc-val '+fitness.cls;
+  document.getElementById('resFitnessStatus').textContent=fitness.label;
+
+  // Card 5 — Readiness Score
+  const c5=document.getElementById('cardReadiness');
+  const scoreCls=score>=80?'yes':score>=60?'warn':'no';
+  c5.className='sc-card '+scoreCls;
+  document.getElementById('resReadinessScore').className='sc-val '+scoreCls;
+  document.getElementById('resReadinessScore').textContent=score+'/100';
+
+  // Recommendation
+  document.getElementById('resRecommendation').innerHTML=getRecommendation(bmi,cat,gender,armyCat);
+
+  // Show result
+  const ra=document.getElementById('resultArea');
+  ra.style.display='block';
+  setTimeout(()=>{ra.scrollIntoView({behavior:'smooth',block:'nearest'});},150);
+}
+</script>
+
+</body>
+</html>
