@@ -1,0 +1,1306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Army 1 Mile Running Calculator 2026 – Calculate Pace, Speed & Estimated Army Running Time</title>
+<meta name="description" content="Use the Army 1 Mile Running Calculator to calculate running time, average speed, pace per kilometer, pace per mile, estimated 1600m timing and fitness performance for army preparation.">
+<meta name="keywords" content="army 1 mile running calculator, 1 mile running calculator, army mile run calculator, army running pace calculator, army running speed calculator, army fitness calculator, military running calculator, army running time estimator">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://rajdailytools.in/army-1-mile-running-calculator.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<style>
+/* ══════════════════════════════════════
+   DESIGN TOKENS
+══════════════════════════════════════ */
+:root{
+  --blue:#2563eb;--blue-d:#1d4ed8;--blue-xl:#eff6ff;--blue-s:#dbeafe;
+  --amber:#f59e0b;--green:#10b981;--red:#ef4444;--purple:#8b5cf6;
+  --orange:#f97316;--teal:#14b8a6;
+  --green-xl:#f0fdf4;--green-s:#bbf7d0;
+  --red-xl:#fef2f2;--red-s:#fecaca;
+  --amber-xl:#fffbeb;--amber-s:#fde68a;
+  --purple-xl:#faf5ff;--purple-s:#ddd6fe;
+  --yellow:#eab308;--yellow-xl:#fefce8;--yellow-s:#fef08a;
+  --ink:#0f172a;--ink2:#334155;--ink3:#64748b;--ink4:#94a3b8;
+  --line:#e2e8f0;--surf:#f8fafc;--white:#fff;
+  --s1:0 1px 3px rgba(15,23,42,.06),0 1px 2px rgba(15,23,42,.04);
+  --s2:0 4px 16px rgba(15,23,42,.08),0 2px 6px rgba(15,23,42,.04);
+  --s3:0 12px 40px rgba(15,23,42,.11),0 3px 10px rgba(15,23,42,.06);
+  --s4:0 24px 64px rgba(15,23,42,.13),0 6px 20px rgba(15,23,42,.07);
+  --sb:0 8px 32px rgba(37,99,235,.20);
+  --fd:'Sora',sans-serif;--fb:'DM Sans',sans-serif;
+  --ease:cubic-bezier(.4,0,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);color:var(--ink);background:var(--white);overflow-x:hidden;-webkit-font-smoothing:antialiased;line-height:1.6}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+button{cursor:pointer;border:none;background:none;font-family:var(--fb)}
+.w{max-width:1180px;margin:0 auto;padding:0 24px}
+.wa{max-width:880px;margin:0 auto;padding:0 24px}
+select,input{appearance:none;-webkit-appearance:none}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+@keyframes resultIn{from{opacity:0;transform:translateY(18px) scale(.97)}to{opacity:1;transform:none}}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}
+.rev{opacity:0;transform:translateY(22px);transition:opacity .55s var(--ease),transform .55s var(--ease)}
+.rev.in{opacity:1;transform:none}
+
+/* ══ HEADER ══ */
+.hdr{position:sticky;top:0;z-index:999;background:rgba(255,255,255,.96);backdrop-filter:blur(20px);border-bottom:1px solid var(--line);box-shadow:var(--s1)}
+.hdi{display:flex;align-items:center;justify-content:space-between;height:66px}
+.logo{display:flex;align-items:center;gap:10px}
+.lb{width:36px;height:36px;background:var(--blue);border-radius:9px;display:flex;align-items:center;justify-content:center;box-shadow:var(--sb);flex-shrink:0}
+.lb svg{width:18px;height:18px;fill:#fff}
+.ln{font-family:var(--fd);font-size:19px;font-weight:800;color:var(--ink);line-height:1}
+.ln span{color:var(--blue)}
+.ls{font-size:10px;color:var(--ink4);letter-spacing:.04em}
+nav.dn{display:flex;align-items:center;gap:2px}
+nav.dn a{font-size:13.5px;font-weight:500;color:var(--ink2);padding:7px 13px;border-radius:8px;transition:.2s}
+nav.dn a:hover{color:var(--blue);background:var(--blue-xl)}
+.hcta{background:var(--blue);color:#fff;font-family:var(--fd);font-weight:600;font-size:13px;padding:8px 18px;border-radius:8px;box-shadow:var(--sb);transition:.2s}
+.hcta:hover{background:var(--blue-d);transform:translateY(-1px)}
+.brg{display:none;flex-direction:column;gap:4.5px;padding:8px;border-radius:8px}
+.brg span{display:block;width:20px;height:2px;background:var(--ink);border-radius:2px;transition:.28s}
+.dov{display:none;position:fixed;inset:0;background:rgba(15,23,42,.45);z-index:1040;backdrop-filter:blur(3px)}
+.dov.on{display:block}
+.drw{position:fixed;top:0;right:-100%;width:270px;height:100vh;background:#fff;z-index:1050;padding:22px;box-shadow:var(--s4);transition:right .32s var(--ease);overflow-y:auto}
+.drw.on{right:0}
+.dh{display:flex;align-items:center;justify-content:space-between;margin-bottom:26px}
+.dx{width:33px;height:33px;border-radius:7px;background:var(--surf);display:flex;align-items:center;justify-content:center;color:var(--ink3);font-size:17px}
+nav.mn{display:flex;flex-direction:column;gap:3px}
+nav.mn a{display:block;font-size:14px;font-weight:500;color:var(--ink2);padding:11px 13px;border-radius:8px;transition:.2s}
+nav.mn a:hover{color:var(--blue);background:var(--blue-xl)}
+
+/* ══ HERO ══ */
+.hero{position:relative;overflow:hidden;background:linear-gradient(150deg,#ebf4ff 0%,#fff 46%,#f0f9ff 100%);padding:64px 0 72px}
+.hero::before{content:'';position:absolute;top:-140px;right:-180px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(37,99,235,.08) 0%,transparent 68%);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-80px;left:-100px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(16,185,129,.05) 0%,transparent 68%);pointer-events:none}
+.blob{position:absolute;border-radius:50%;pointer-events:none;animation:float 6s ease-in-out infinite}
+.b1{width:13px;height:13px;background:rgba(37,99,235,.18);top:22%;right:14%;animation-delay:0s}
+.b2{width:9px;height:9px;background:rgba(16,185,129,.22);top:58%;right:26%;animation-delay:2.2s}
+.b3{width:11px;height:11px;background:rgba(37,99,235,.18);top:36%;right:6%;animation-delay:4s}
+.bc{display:flex;align-items:center;gap:7px;font-size:12.5px;color:var(--ink3);margin-bottom:22px;position:relative;z-index:1;flex-wrap:wrap}
+.bc a{color:var(--blue);font-weight:600}
+.pill{display:inline-flex;align-items:center;gap:7px;font-family:var(--fd);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);background:var(--blue-xl);padding:5px 14px;border-radius:100px;margin-bottom:18px}
+.pill::before{content:'';width:6px;height:6px;background:var(--blue);border-radius:50%}
+.hero-inner{position:relative;z-index:1;max-width:720px;animation:fadeUp .5s ease both}
+.hero h1{font-family:var(--fd);font-size:clamp(26px,4.5vw,50px);font-weight:800;line-height:1.1;color:var(--ink);margin-bottom:14px}
+.hero h1 span{color:var(--blue)}
+.hero-sub{font-size:16px;color:var(--ink3);line-height:1.8;margin-bottom:22px;max-width:600px}
+.hero-chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.chip{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;padding:6px 14px;border-radius:100px;background:#fff;border:1.5px solid var(--line);color:var(--ink2);box-shadow:var(--s1);transition:.22s}
+.chip:hover{border-color:var(--blue);color:var(--blue);transform:translateY(-1px)}
+.hero-meta{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:24px}
+.upd{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:700;color:var(--blue);background:var(--blue-xl);padding:6px 14px;border-radius:100px;border:1.5px solid var(--blue-s)}
+.mi{font-size:13px;color:var(--ink3);font-weight:500}
+
+/* TOC */
+.toc-box{background:var(--blue-xl);border:2px solid var(--blue-s);border-radius:16px;padding:22px 26px;max-width:560px;margin-bottom:24px}
+.toc-ttl{display:flex;align-items:center;gap:9px;font-family:var(--fd);font-size:15px;font-weight:800;color:var(--ink);margin-bottom:13px}
+.toc-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.toc-item{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:var(--blue);padding:6px 10px;border-radius:8px;background:#fff;border:1px solid var(--blue-s);transition:.2s}
+.toc-item:hover{background:var(--blue);color:#fff;transform:translateX(3px)}
+.toc-item::before{content:'→';font-size:11px}
+
+/* HOW TO USE */
+.howto{background:var(--amber-xl);border:2px solid var(--amber-s);border-radius:16px;padding:22px 26px;max-width:560px;margin-bottom:24px}
+.howto-ttl{display:flex;align-items:center;gap:9px;font-family:var(--fd);font-size:15px;font-weight:800;color:var(--ink);margin-bottom:13px}
+.howto-steps{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.hs{display:flex;align-items:flex-start;gap:10px;font-size:13.5px;color:var(--ink2);line-height:1.6}
+.sn{width:24px;height:24px;background:var(--amber);color:#fff;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex-shrink:0;margin-top:1px}
+
+/* related tools */
+.rel-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;position:relative;z-index:1}
+.rg-box{border-radius:14px;padding:14px 14px 12px;display:flex;flex-direction:column;gap:8px;transition:.22s;border:1.5px solid}
+.rg-box:hover{transform:translateY(-3px);box-shadow:var(--s3)}
+.rg-box.blue{background:linear-gradient(135deg,var(--blue-xl),var(--blue-s));border-color:var(--blue-s)}
+.rg-box.green{background:linear-gradient(135deg,var(--green-xl),#dcfce7);border-color:var(--green-s)}
+.rg-box.amber{background:linear-gradient(135deg,var(--amber-xl),#fef3c7);border-color:var(--amber-s)}
+.rg-box.purple{background:linear-gradient(135deg,var(--purple-xl),#ede9fe);border-color:var(--purple-s)}
+.rg-ico{font-size:22px}
+.rg-txt h4{font-family:var(--fd);font-size:12px;font-weight:800;color:var(--ink);margin-bottom:2px}
+.rg-txt p{font-size:11px;color:var(--ink3);line-height:1.5}
+.btn-xs{display:inline-flex;align-items:center;gap:4px;font-family:var(--fd);font-weight:700;font-size:11px;padding:5px 10px;border-radius:7px;transition:.22s;margin-top:4px}
+.btn-xs.b{background:var(--blue);color:#fff}.btn-xs.b:hover{background:var(--blue-d)}
+.btn-xs.g{background:var(--green);color:#fff}.btn-xs.g:hover{background:#059669}
+.btn-xs.a{background:var(--amber);color:#fff}.btn-xs.a:hover{background:#d97706}
+.btn-xs.p{background:var(--purple);color:#fff}.btn-xs.p:hover{background:#7c3aed}
+
+/* ══ TOOL SECTION ══ */
+.tool-sec{background:var(--surf);padding:80px 0}
+.tool-wrap{max-width:860px;margin:0 auto}
+.tool-card{background:#fff;border:1.5px solid var(--line);border-radius:28px;overflow:hidden;box-shadow:var(--s4)}
+.tool-hdr{background:linear-gradient(135deg,#0f172a 0%,#1e3a8a 50%,#1d4ed8 100%);padding:32px 40px;position:relative;overflow:hidden}
+.tool-hdr::before{content:'';position:absolute;top:-60px;right:-60px;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,.07)}
+.tool-hdr::after{content:'';position:absolute;bottom:-40px;left:-40px;width:180px;height:180px;border-radius:50%;background:rgba(255,255,255,.04)}
+.cert-dots{position:absolute;bottom:20px;right:40px;display:flex;gap:5px;opacity:.3;z-index:0}
+.cert-dot{width:6px;height:6px;border-radius:50%;background:#fff}
+.th{position:relative;z-index:1}
+.th h2{font-family:var(--fd);font-size:21px;font-weight:800;color:#fff;margin-bottom:6px}
+.th p{font-size:14px;color:rgba(255,255,255,.82);line-height:1.65}
+.th-badges{display:flex;flex-wrap:wrap;gap:9px;margin-top:14px}
+.thb{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:rgba(255,255,255,.9);background:rgba(255,255,255,.13);padding:5px 12px;border-radius:100px}
+.tool-body{padding:36px 40px}
+
+/* form */
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+.fld{display:flex;flex-direction:column;gap:7px}
+.flbl{font-size:13px;font-weight:700;color:var(--ink2)}
+.flbl span{font-size:11px;font-weight:500;color:var(--ink4);margin-left:5px;background:var(--surf);padding:2px 7px;border-radius:5px;border:1px solid var(--line)}
+.fsel{padding:12px 16px;font-size:14.5px;color:var(--ink);background:#fff;border:1.5px solid var(--line);border-radius:10px;outline:none;transition:.22s;font-family:var(--fb);width:100%;cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2364748b' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:40px}
+.fsel:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(37,99,235,.10)}
+.finput{padding:12px 16px;font-size:14.5px;color:var(--ink);background:#fff;border:1.5px solid var(--line);border-radius:10px;outline:none;transition:.22s;font-family:var(--fb);width:100%}
+.finput:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(37,99,235,.10)}
+.ro-row{display:flex;gap:8px;flex-wrap:wrap}
+.ro{position:relative}
+.ro input{position:absolute;opacity:0;width:0;height:0}
+.ro label{display:inline-flex;align-items:center;gap:6px;font-size:13.5px;font-weight:600;color:var(--ink2);padding:10px 16px;border-radius:9px;border:1.5px solid var(--line);background:#fff;cursor:pointer;transition:.22s}
+.ro input:checked+label{border-color:var(--blue);background:var(--blue-xl);color:var(--blue)}
+.ro label:hover{border-color:var(--blue-s);background:var(--blue-xl)}
+.hint-box{display:flex;align-items:flex-start;gap:9px;font-size:13px;color:var(--ink2);background:var(--blue-xl);border:1.5px solid var(--blue-s);border-radius:10px;padding:11px 14px;margin:16px 0;line-height:1.65}
+.hint-box svg{width:16px;height:16px;stroke:var(--blue);fill:none;stroke-width:2;flex-shrink:0;margin-top:2px}
+.chk-btn{width:100%;padding:17px;background:linear-gradient(135deg,#0f172a 0%,#1e3a8a 50%,#2563eb 100%);color:#fff;font-family:var(--fd);font-weight:800;font-size:16px;border-radius:12px;box-shadow:0 8px 32px rgba(30,58,138,.30);transition:all .25s var(--ease);display:flex;align-items:center;justify-content:center;gap:10px}
+.chk-btn:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(30,58,138,.40)}
+.chk-btn:active{transform:translateY(0)}
+
+/* RESULT */
+#resultArea{display:none;margin-top:28px;animation:resultIn .45s var(--ease) both}
+.res-banner{border-radius:20px;padding:28px;margin-bottom:22px;position:relative;overflow:hidden;display:flex;align-items:center;gap:24px;flex-wrap:wrap}
+.res-banner.eligible{background:linear-gradient(135deg,var(--green-xl),#d1fae5);border:2px solid var(--green-s)}
+.res-banner.partial{background:var(--amber-xl);border:2px solid var(--amber-s)}
+.res-banner.noteligible{background:var(--red-xl);border:2px solid var(--red-s)}
+.res-banner.info{background:var(--blue-xl);border:2px solid var(--blue-s)}
+.res-banner::before{content:'';position:absolute;inset:0;opacity:.04;background-image:repeating-linear-gradient(45deg,currentColor 0,currentColor 1px,transparent 0,transparent 50%);background-size:12px 12px;pointer-events:none}
+
+/* status cards */
+.status-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:18px}
+.sc-card{border-radius:13px;padding:16px 14px;text-align:center;border:1.5px solid;transition:.22s}
+.sc-card:hover{transform:translateY(-2px);box-shadow:var(--s2)}
+.sc-card.yes{background:var(--green-xl);border-color:var(--green-s)}
+.sc-card.no{background:var(--red-xl);border-color:var(--red-s)}
+.sc-card.na{background:var(--surf);border-color:var(--line);opacity:.75}
+.sc-card.blue{background:linear-gradient(135deg,var(--blue-xl),#fff);border-color:var(--blue-s)}
+.sc-ico{font-size:24px;margin-bottom:6px}
+.sc-title{font-family:var(--fd);font-size:12px;font-weight:700;color:var(--ink);margin-bottom:3px}
+.sc-val{font-size:11.5px;line-height:1.55;font-weight:700}
+.sc-val.yes{color:var(--green)}
+.sc-val.no{color:var(--red)}
+.sc-val.na{color:var(--ink4)}
+.sc-val.blue{color:var(--blue);font-size:15px}
+
+.sugg-box{background:var(--blue-xl);border:1.5px solid var(--blue-s);border-radius:13px;padding:16px 18px;font-size:14px;color:var(--ink2);line-height:1.78;margin-bottom:14px}
+.warn-box{background:var(--amber-xl);border:1.5px solid var(--amber-s);border-radius:12px;padding:14px 18px;display:flex;gap:10px;font-size:13.5px;color:var(--ink2);line-height:1.7;margin-top:14px}
+
+.steps-box{background:var(--green-xl);border:1.5px solid var(--green-s);border-radius:13px;padding:16px 18px;margin-bottom:14px}
+.steps-title{font-family:var(--fd);font-size:14px;font-weight:700;color:var(--green);margin-bottom:8px}
+.steps-list{list-style:none;padding:0;margin:0}
+.steps-item{display:flex;align-items:center;gap:8px;font-size:13.5px;color:var(--ink2);margin-bottom:4px}
+
+.charts-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:18px}
+.chart-container{background:#fff;border:1.5px solid var(--line);border-radius:14px;padding:16px;position:relative}
+.chart-title{font-family:var(--fd);font-size:13px;font-weight:700;color:var(--ink);margin-bottom:12px;text-align:center}
+
+/* ACTION BUTTONS */
+.action-btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px;margin-bottom:14px}
+.act-btn{display:inline-flex;align-items:center;gap:7px;font-family:var(--fd);font-weight:700;font-size:13px;padding:10px 18px;border-radius:10px;transition:.22s;cursor:pointer;border:none}
+.act-btn.print{background:var(--surf);color:var(--ink2);border:1.5px solid var(--line)}
+.act-btn.print:hover{border-color:var(--blue);color:var(--blue)}
+.act-btn.copy{background:var(--green-xl);color:var(--green);border:1.5px solid var(--green-s)}
+.act-btn.copy:hover{background:var(--green);color:#fff}
+
+/* INFO BOXES */
+.ibox-blue{background:var(--blue-xl);border:2px solid var(--blue-s);border-radius:16px;padding:20px 24px;margin:20px 0}
+.ibox-blue-ttl{display:flex;align-items:center;gap:9px;font-family:var(--fd);font-size:15px;font-weight:800;color:var(--blue);margin-bottom:12px}
+.ibox-green{background:var(--green-xl);border:2px solid var(--green-s);border-radius:16px;padding:20px 24px;margin:20px 0}
+.ibox-green-ttl{display:flex;align-items:center;gap:9px;font-family:var(--fd);font-size:15px;font-weight:800;color:var(--green);margin-bottom:12px}
+.ibox-yellow{background:var(--amber-xl);border:2px solid var(--amber-s);border-radius:16px;padding:20px 24px;margin:20px 0}
+.ibox-yellow-ttl{display:flex;align-items:center;gap:9px;font-family:var(--fd);font-size:15px;font-weight:800;color:#92400e;margin-bottom:12px}
+.ibox-list{display:flex;flex-direction:column;gap:7px}
+.ibox-item{display:flex;align-items:flex-start;gap:9px;font-size:14px;color:var(--ink2);line-height:1.65}
+
+/* FEATURE CARDS */
+.feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:28px 0}
+.feat-card{background:#fff;border:1.5px solid var(--line);border-radius:16px;padding:22px 18px;text-align:center;transition:.28s;box-shadow:var(--s1)}
+.feat-card:hover{transform:translateY(-4px);box-shadow:var(--s3);border-color:var(--blue-s)}
+.feat-ico{font-size:32px;margin-bottom:12px}
+.feat-title{font-family:var(--fd);font-size:14px;font-weight:800;color:var(--ink);margin-bottom:8px}
+.feat-desc{font-size:13px;color:var(--ink3);line-height:1.7}
+
+/* TABLE SECTION */
+.tbl-sec{background:#fff;padding:72px 0}
+.tbl-wr{overflow-x:auto;margin-bottom:20px}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+thead th{background:linear-gradient(135deg,#0f172a 0%,#1e3a8a 100%);color:#fff;padding:14px 16px;text-align:left;font-family:var(--fd);font-size:13px;font-weight:700;letter-spacing:.03em}
+tbody tr{border-bottom:1px solid var(--line);transition:.2s}
+tbody tr:hover{background:var(--blue-xl)}
+tbody td{padding:12px 16px;color:var(--ink2);vertical-align:middle}
+.row-pass{background:var(--green-xl)!important}
+.row-avg{background:var(--amber-xl)!important}
+.row-fail{background:var(--red-xl)!important}
+.row-info{background:var(--blue-xl)!important}
+.tbadge{display:inline-flex;font-size:11px;font-weight:700;padding:3px 8px;border-radius:100px}
+.tbadge.g{background:var(--green-xl);color:var(--green);border:1px solid var(--green-s)}
+.tbadge.a{background:var(--amber-xl);color:#92400e;border:1px solid var(--amber-s)}
+.tbadge.r{background:var(--red-xl);color:var(--red);border:1px solid var(--red-s)}
+.tbadge.b{background:var(--blue-xl);color:var(--blue);border:1px solid var(--blue-s)}
+
+/* CONTENT SECTION */
+.content-sec{background:var(--surf);padding:72px 0}
+.content-sec.white{background:#fff}
+.content-body h2{font-family:var(--fd);font-size:21px;font-weight:800;color:var(--ink);margin:28px 0 11px;line-height:1.3}
+.content-body h2:first-child{margin-top:0}
+.content-body h3{font-family:var(--fd);font-size:17px;font-weight:700;color:var(--ink);margin:20px 0 9px}
+.content-body p{font-size:15px;color:var(--ink3);line-height:1.85;margin-bottom:14px}
+.content-body ul{display:flex;flex-direction:column;gap:8px;margin:12px 0 16px}
+.content-body li{display:flex;align-items:flex-start;gap:10px;font-size:14.5px;color:var(--ink3);line-height:1.7}
+.content-body li::before{content:'✓';width:18px;height:18px;background:var(--blue);color:#fff;border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;flex-shrink:0;margin-top:3px}
+.content-body strong{color:var(--ink2);font-weight:700}
+.ibox{background:var(--blue-xl);border:1.5px solid var(--blue-s);border-radius:13px;padding:15px 18px;margin:16px 0;display:flex;gap:11px;font-size:14px;color:var(--ink2);line-height:1.7}
+.ibox svg{width:17px;height:17px;stroke:var(--blue);fill:none;stroke-width:2;flex-shrink:0;margin-top:2px}
+.ibox.g{background:var(--green-xl);border-color:var(--green-s)}
+.ibox.g svg{stroke:var(--green)}
+.ibox.a{background:var(--amber-xl);border-color:var(--amber-s)}
+.ibox.a svg{stroke:var(--amber)}
+.ibox.r{background:var(--red-xl);border-color:var(--red-s)}
+.ibox.r svg{stroke:var(--red)}
+
+/* FAQ */
+.faq-item{border:1.5px solid var(--line);border-radius:13px;overflow:hidden;margin-bottom:10px;background:#fff}
+.faq-q{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;font-family:var(--fd);font-size:14.5px;font-weight:700;color:var(--ink);cursor:pointer;gap:12px;transition:.22s}
+.faq-q:hover{color:var(--blue);background:var(--blue-xl)}
+.faq-q .faq-icon{font-size:18px;flex-shrink:0;transition:.3s}
+.faq-a{display:none;padding:0 20px 16px;font-size:14px;color:var(--ink3);line-height:1.78}
+.faq-item.open .faq-a{display:block}
+.faq-item.open .faq-icon{transform:rotate(45deg)}
+.faq-item.open .faq-q{color:var(--blue);background:var(--blue-xl)}
+
+/* RELATED TOOLS FINAL */
+.rt-sec{background:var(--surf);padding:60px 0}
+.rt-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.rt-card{background:#fff;border:1.5px solid var(--line);border-radius:16px;padding:20px;text-align:center;transition:.28s;box-shadow:var(--s1)}
+.rt-card:hover{transform:translateY(-4px);box-shadow:var(--s3);border-color:var(--blue-s)}
+.rt-ico{font-size:28px;margin-bottom:10px}
+.rt-title{font-family:var(--fd);font-size:13px;font-weight:800;color:var(--ink);margin-bottom:6px}
+.rt-desc{font-size:12px;color:var(--ink3);line-height:1.6;margin-bottom:12px}
+.rt-btn{display:inline-flex;align-items:center;gap:5px;background:var(--blue);color:#fff;font-family:var(--fd);font-weight:700;font-size:12px;padding:7px 14px;border-radius:7px;box-shadow:var(--sb);transition:.22s}
+.rt-btn:hover{background:var(--blue-d);transform:translateY(-1px)}
+
+/* FOOTER & BUTTONS */
+.disc{background:var(--amber-xl);border-top:1px solid var(--amber-s);border-bottom:1px solid var(--amber-s);padding:15px 0}
+.disc-in{display:flex;align-items:flex-start;gap:12px;font-size:13.5px;color:var(--ink2);line-height:1.7}
+footer{background:#0f172a;padding:52px 0 0}
+.ft-inner{max-width:1180px;margin:0 auto;padding:0 24px}
+.ft-top{display:grid;grid-template-columns:1.9fr 1fr 1fr 1fr;gap:44px;margin-bottom:44px}
+.ft-brand .ln{color:#fff}.ft-brand .ls{color:#475569}
+.ft-desc{font-size:13.5px;color:#64748b;line-height:1.78;max-width:265px;margin:13px 0 20px}
+.ft-soc{display:flex;gap:9px}
+.fts{width:34px;height:34px;border-radius:7px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;color:#94a3b8;font-size:13px;transition:.2s}
+.fts:hover{background:var(--blue);color:#fff}
+.fc h4{font-family:var(--fd);font-size:12px;font-weight:700;color:#fff;margin-bottom:14px;letter-spacing:.06em;text-transform:uppercase}
+.fc ul{display:flex;flex-direction:column;gap:8px}
+.fc ul a{font-size:13.5px;color:#64748b;transition:.18s}
+.fc ul a:hover{color:#93c5fd}
+.ft-btm{border-top:1px solid rgba(255,255,255,.07);padding:20px 0;text-align:center}
+.ft-cp{font-size:12.5px;color:#475569}
+.ft-cp b{color:#64748b}
+.ft-tag{font-size:12px;color:#334155;margin-top:4px;font-style:italic}
+.btt{position:fixed;bottom:26px;right:26px;z-index:500;width:43px;height:43px;background:var(--blue);color:#fff;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:17px;box-shadow:var(--sb);opacity:0;pointer-events:none;transform:translateY(14px);transition:.28s var(--ease)}
+.btt.on{opacity:1;pointer-events:auto;transform:translateY(0)}
+.btt:hover{transform:translateY(-3px)}
+
+.floating-buttons{position:fixed;bottom:80px;right:26px;z-index:500;display:flex;flex-direction:column;gap:10px}
+.f-btn{width:43px;height:43px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:18px;color:#fff;box-shadow:var(--s2);transition:transform .22s}
+.f-btn:hover{transform:translateY(-3px)}
+.f-btn.wa-btn{background:#25d366}
+
+/* RESPONSIVE */
+@media(max-width:1060px){.ft-top{grid-template-columns:1fr 1fr}.feat-grid{grid-template-columns:1fr 1fr}.rt-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:860px){
+  nav.dn,.hcta{display:none}.brg{display:flex}
+  .tool-body{padding:24px 22px}.tool-hdr{padding:24px 22px}
+  .fgrid{grid-template-columns:1fr}
+  .status-grid{grid-template-columns:1fr 1fr}
+  .charts-row{grid-template-columns:1fr}
+  .howto-steps{grid-template-columns:1fr}
+  .rel-grid{grid-template-columns:1fr 1fr}
+  .toc-grid{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+  .ft-top{grid-template-columns:1fr}.rel-grid{grid-template-columns:1fr}
+  .feat-grid{grid-template-columns:1fr}
+  .status-grid{grid-template-columns:1fr}
+  .rt-grid{grid-template-columns:1fr}
+  .res-banner{flex-direction:column;align-items:flex-start;gap:16px}
+  .action-btns{flex-direction:column}
+}
+@media print{
+  .hdr,.floating-buttons,.btt,.hero,.howto,.toc-box,.rel-grid,.hero-chips,.hero-meta,.chk-btn,.action-btns,.rt-sec,footer,.disc{display:none!important}
+  .tool-sec{padding:0!important;background:#fff!important}
+  .tool-card{box-shadow:none!important;border:1px solid #ccc!important}
+  #resultArea{display:block!important}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="hdr">
+  <div class="w">
+    <div class="hdi">
+      <a href="/" class="logo">
+        <div class="lb"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+        <div><div class="ln">Raj<span>Daily</span>Tools</div><div class="ls">Smart Tools for Daily Life</div></div>
+      </a>
+      <nav class="dn">
+        <a href="/">Home</a><a href="/categories">Categories</a>
+        <a href="/#popular">Popular</a><a href="/about">About</a><a href="/contact">Contact</a>
+      </nav>
+      <a href="/categories" class="hcta">All Tools →</a>
+      <button class="brg" id="brg"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="dov" id="dov"></div>
+<div class="drw" id="drw">
+  <div class="dh">
+    <div class="logo">
+      <div class="lb" style="width:30px;height:30px;border-radius:7px"><svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#fff"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+      <div class="ln" style="font-size:16px">Raj<span>Daily</span>Tools</div>
+    </div>
+    <button class="dx" id="dx">✕</button>
+  </div>
+  <nav class="mn">
+    <a href="/" onclick="cD()">🏠 Home</a>
+    <a href="/categories" onclick="cD()">🗂️ Categories</a>
+    <a href="/#popular" onclick="cD()">⭐ Popular</a>
+    <a href="/about" onclick="cD()">👤 About</a>
+    <a href="/contact" onclick="cD()">📬 Contact</a>
+  </nav>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="overview">
+  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+  <div class="w">
+    <div class="bc">
+      <a href="/">Home</a><span style="color:var(--ink4)">›</span>
+      <a href="/categories">Tools</a><span style="color:var(--ink4)">›</span>
+      <span>Army 1 Mile Running Calculator</span>
+    </div>
+    <div class="hero-inner">
+      <div class="pill">Army Running Tools 2026</div>
+      <h1>Army 1 Mile <span>Running Calculator</span></h1>
+      <p class="hero-sub">Calculate your 1 mile running pace, average speed, estimated 1600m timing, army readiness score and calorie burn for accurate army fitness preparation.</p>
+
+      <div class="hero-chips">
+        <span class="chip">🏃 Pace Per KM & Mile</span>
+        <span class="chip">⚡ Speed in km/h & mph</span>
+        <span class="chip">📊 Army Readiness Score</span>
+        <span class="chip">🔥 Calorie Burn Estimate</span>
+        <span class="chip">🆓 100% Free</span>
+      </div>
+      <div class="hero-meta">
+        <div class="upd">📅 Army Fitness Standards 2026</div>
+        <span class="mi">✅ Instant Results</span>
+        <span class="mi">🔒 No Data Stored</span>
+      </div>
+
+      <!-- TOC -->
+      <div class="toc-box" id="toc">
+        <div class="toc-ttl">📋 Table of Contents</div>
+        <div class="toc-grid">
+          <a href="#overview" class="toc-item">Overview & Guide</a>
+          <a href="#tool" class="toc-item">1 Mile Running Calculator</a>
+          <a href="#performance-table" class="toc-item">Performance Guide Table</a>
+          <a href="#pace-table" class="toc-item">Pace Conversion Table</a>
+          <a href="#content" class="toc-item">Training Tips & Info</a>
+          <a href="#faq" class="toc-item">FAQ Section</a>
+          <a href="#related" class="toc-item">More Army Tools</a>
+        </div>
+      </div>
+
+      <!-- HOW TO USE -->
+      <div class="howto">
+        <div class="howto-ttl">💡 How To Use</div>
+        <div class="howto-steps">
+          <div class="hs"><span class="sn">1</span>Enter your age, gender, weight and height in Card 1.</div>
+          <div class="hs"><span class="sn">2</span>Enter your 1 mile running time in minutes and seconds.</div>
+          <div class="hs"><span class="sn">3</span>Select running surface and weather condition.</div>
+          <div class="hs"><span class="sn">4</span>Click Calculate to get your full performance dashboard report.</div>
+        </div>
+      </div>
+
+      <!-- RELATED TOOLS HERO -->
+      <div class="rel-grid">
+        <div class="rg-box blue">
+          <div class="rg-ico">⏱️</div>
+          <div class="rg-txt">
+            <h4>Army Running Time Calculator 1600m</h4>
+            <p>Calculate your 1600m army running time score and grade.</p>
+            <a href="https://rajdailytools.in/army-running-time-calculator-1600m-2026.html" class="btn-xs b">Check Now →</a>
+          </div>
+        </div>
+        <div class="rg-box amber">
+          <div class="rg-ico">🏅</div>
+          <div class="rg-txt">
+            <h4>Army Rally Competition Analyzer</h4>
+            <p>Analyze your competition standing with army rally parameters.</p>
+            <a href="https://rajdailytools.in/army-rally-competition-analyzer.html" class="btn-xs a">Check Now →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOOL START -->
+<section class="tool-sec" id="tool">
+  <div class="w">
+    <div class="tool-wrap">
+      <div class="tool-card rev in">
+        <div class="tool-hdr">
+          <div class="cert-dots">
+            <div class="cert-dot"></div><div class="cert-dot"></div><div class="cert-dot"></div>
+            <div class="cert-dot"></div><div class="cert-dot"></div><div class="cert-dot"></div>
+          </div>
+          <div class="th">
+            <h2>🏃 Army 1 Mile Running Calculator</h2>
+            <p>Enter your running time and personal details to instantly calculate pace, speed, army readiness score, calorie burn and detailed performance analysis for army fitness preparation.</p>
+            <div class="th-badges">
+              <span class="thb">🎯 Pace Per KM & Mile</span>
+              <span class="thb">📊 Army Readiness Score</span>
+              <span class="thb">🔥 Calorie Burn Estimate</span>
+            </div>
+          </div>
+        </div>
+        <div class="tool-body">
+
+          <!-- CARD 1: Runner Information -->
+          <h3 style="font-family:var(--fd);font-size:15px;font-weight:800;color:var(--ink);margin-bottom:12px;display:flex;align-items:center;gap:6px">👤 Card 1: Runner Information</h3>
+          <div class="fgrid">
+            <div class="fld">
+              <label class="flbl">Age <span>Required</span></label>
+              <input type="number" id="runnerAge" class="finput" placeholder="e.g. 24" min="10" max="70" value="">
+            </div>
+            <div class="fld">
+              <label class="flbl">Gender <span>Required</span></label>
+              <div class="ro-row">
+                <div class="ro"><input type="radio" name="runnerGender" id="rg_male" value="Male" checked><label for="rg_male">Male</label></div>
+                <div class="ro"><input type="radio" name="runnerGender" id="rg_female" value="Female"><label for="rg_female">Female</label></div>
+              </div>
+            </div>
+          </div>
+          <div class="fgrid">
+            <div class="fld">
+              <label class="flbl">Weight <span>kg</span></label>
+              <input type="number" id="runnerWeight" class="finput" placeholder="e.g. 65" min="30" max="150" value="">
+            </div>
+            <div class="fld">
+              <label class="flbl">Height <span>cm</span></label>
+              <input type="number" id="runnerHeight" class="finput" placeholder="e.g. 170" min="100" max="220" value="">
+            </div>
+          </div>
+
+          <div style="height:20px"></div>
+
+          <!-- CARD 2: Running Performance -->
+          <h3 style="font-family:var(--fd);font-size:15px;font-weight:800;color:var(--ink);margin-bottom:12px;display:flex;align-items:center;gap:6px">⏱️ Card 2: Running Performance</h3>
+          <div class="fgrid">
+            <div class="fld">
+              <label class="flbl">Minutes <span>1 Mile Time</span></label>
+              <select class="fsel" id="runMinutes">
+                <option value="4">4 Minutes</option>
+                <option value="5">5 Minutes</option>
+                <option value="6" selected>6 Minutes</option>
+                <option value="7">7 Minutes</option>
+                <option value="8">8 Minutes</option>
+                <option value="9">9 Minutes</option>
+                <option value="10">10 Minutes</option>
+                <option value="11">11 Minutes</option>
+                <option value="12">12 Minutes</option>
+                <option value="13">13 Minutes</option>
+                <option value="14">14 Minutes</option>
+                <option value="15">15 Minutes</option>
+              </select>
+            </div>
+            <div class="fld">
+              <label class="flbl">Seconds <span>1 Mile Time</span></label>
+              <select class="fsel" id="runSeconds">
+                <option value="0">00 Seconds</option>
+                <option value="5">05 Seconds</option>
+                <option value="10">10 Seconds</option>
+                <option value="15">15 Seconds</option>
+                <option value="20">20 Seconds</option>
+                <option value="25">25 Seconds</option>
+                <option value="30">30 Seconds</option>
+                <option value="35">35 Seconds</option>
+                <option value="40">40 Seconds</option>
+                <option value="45" selected>45 Seconds</option>
+                <option value="50">50 Seconds</option>
+                <option value="55">55 Seconds</option>
+              </select>
+            </div>
+          </div>
+
+          <div style="height:20px"></div>
+
+          <!-- CARD 3: Advanced Options -->
+          <h3 style="font-family:var(--fd);font-size:15px;font-weight:800;color:var(--ink);margin-bottom:12px;display:flex;align-items:center;gap:6px">⚙️ Card 3: Advanced Options</h3>
+          <div class="fgrid">
+            <div class="fld">
+              <label class="flbl">Running Surface <span>Optional</span></label>
+              <select class="fsel" id="runSurface">
+                <option value="track">Track</option>
+                <option value="road" selected>Road</option>
+                <option value="ground">Ground</option>
+                <option value="trail">Trail</option>
+              </select>
+            </div>
+            <div class="fld">
+              <label class="flbl">Weather Condition <span>Optional</span></label>
+              <select class="fsel" id="runWeather">
+                <option value="normal" selected>Normal</option>
+                <option value="hot">Hot</option>
+                <option value="cold">Cold</option>
+                <option value="rainy">Rainy</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="hint-box">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            <div><strong>Tip:</strong> Enter your actual 1 mile running time for the most accurate results. The calculator estimates 1600m time, pace, speed, calorie burn and army readiness score from your inputs.</div>
+          </div>
+
+          <button class="chk-btn" onclick="calculateMileRun()">🏃 Calculate My Running Performance Now</button>
+
+          <!-- PREMIUM RESULTS OUTPUT -->
+          <div id="resultArea">
+
+            <!-- Banner -->
+            <div class="res-banner info" id="premiumStatusBanner">
+              <div style="font-size:52px" id="statusBadgeIcon">🏃</div>
+              <div style="flex:1">
+                <div style="font-family:var(--fd);font-size:22px;font-weight:800;color:var(--ink);margin-bottom:6px" id="statusMainTitle">Performance Analysis Complete</div>
+                <div style="font-size:14px;color:var(--ink3);line-height:1.65" id="statusSummarySubtitle">Review your full running performance dashboard below.</div>
+              </div>
+            </div>
+
+            <!-- 8 Result Score Cards -->
+            <div class="status-grid">
+              <div class="sc-card blue" id="cardSpeedBox">
+                <div class="sc-ico">⚡</div>
+                <div class="sc-title">Average Speed</div>
+                <div class="sc-val blue" id="resCardSpeed">— km/h</div>
+              </div>
+              <div class="sc-card blue" id="cardPaceKMBox">
+                <div class="sc-ico">📏</div>
+                <div class="sc-title">Pace Per KM</div>
+                <div class="sc-val blue" id="resCardPaceKM">— /km</div>
+              </div>
+              <div class="sc-card blue" id="cardPaceMileBox">
+                <div class="sc-ico">🛣️</div>
+                <div class="sc-title">Pace Per Mile</div>
+                <div class="sc-val blue" id="resCardPaceMile">— /mile</div>
+              </div>
+              <div class="sc-card blue" id="card1600Box">
+                <div class="sc-ico">🎯</div>
+                <div class="sc-title">Est. 1600m Time</div>
+                <div class="sc-val blue" id="resCard1600">—</div>
+              </div>
+              <div class="sc-card yes" id="cardFitnessBox">
+                <div class="sc-ico">🏅</div>
+                <div class="sc-title">Fitness Rating</div>
+                <div class="sc-val yes" id="resCardFitness">—</div>
+              </div>
+              <div class="sc-card blue" id="cardReadinessBox">
+                <div class="sc-ico">🪖</div>
+                <div class="sc-title">Army Readiness</div>
+                <div class="sc-val blue" id="resCardReadiness">— / 100</div>
+              </div>
+              <div class="sc-card blue" id="cardCalorieBox">
+                <div class="sc-ico">🔥</div>
+                <div class="sc-title">Calorie Burn</div>
+                <div class="sc-val blue" id="resCardCalories">— Cal</div>
+              </div>
+              <div class="sc-card blue" id="cardImprovementBox">
+                <div class="sc-ico">📈</div>
+                <div class="sc-title">Improvement Potential</div>
+                <div class="sc-val blue" id="resCardImprovement">—</div>
+              </div>
+            </div>
+
+            <!-- Smart Recommendation -->
+            <div class="sugg-box" id="recommendationEngineBox"></div>
+
+            <!-- Next Steps -->
+            <div class="steps-box" id="nextStepsBox">
+              <div class="steps-title">🏃 Recommended Training Steps</div>
+              <ul class="steps-list" id="nextStepsList"></ul>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="action-btns">
+              <button class="act-btn copy" onclick="copyResults()">📋 Copy Results</button>
+              <button class="act-btn print" onclick="window.print()">🖨️ Print Report</button>
+            </div>
+
+            <!-- Charts -->
+            <div class="charts-row">
+              <div class="chart-container">
+                <div class="chart-title">Running Performance Radar Analysis</div>
+                <canvas id="radarChart"></canvas>
+              </div>
+              <div class="chart-container">
+                <div class="chart-title">Time Comparison Benchmark</div>
+                <canvas id="barChart"></canvas>
+              </div>
+            </div>
+
+            <div class="warn-box" style="margin-top:14px;">
+              <span style="font-size:20px;flex-shrink:0">⚠️</span>
+              <div style="font-size:13.5px;color:var(--ink2);line-height:1.72">
+                <strong>Disclaimer:</strong> Results are calculated estimates based on standard formulas. Individual performance may vary based on fitness level, health conditions and training history. Consult a fitness professional for personalised advice.
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+let radarChartInstance = null;
+let barChartInstance = null;
+
+function formatTime(totalSeconds) {
+  const m = Math.floor(totalSeconds / 60);
+  const s = Math.round(totalSeconds % 60);
+  return m + ' Min ' + (s < 10 ? '0' : '') + s + ' Sec';
+}
+
+function formatPace(secsPerKm) {
+  const m = Math.floor(secsPerKm / 60);
+  const s = Math.round(secsPerKm % 60);
+  return m + ':' + (s < 10 ? '0' : '') + s;
+}
+
+function getFitnessRating(mileTimeSecs) {
+  if (mileTimeSecs < 360) return { label: 'Elite', cls: 'yes', emoji: '🏆' };
+  if (mileTimeSecs < 420) return { label: 'Excellent', cls: 'yes', emoji: '⭐' };
+  if (mileTimeSecs < 480) return { label: 'Very Good', cls: 'yes', emoji: '👍' };
+  if (mileTimeSecs < 540) return { label: 'Good', cls: 'yes', emoji: '✅' };
+  if (mileTimeSecs < 600) return { label: 'Average', cls: 'na', emoji: '📊' };
+  return { label: 'Needs Improvement', cls: 'no', emoji: '⚠️' };
+}
+
+function getReadinessScore(mileTimeSecs) {
+  if (mileTimeSecs <= 300) return 100;
+  if (mileTimeSecs <= 360) return 95;
+  if (mileTimeSecs <= 390) return 90;
+  if (mileTimeSecs <= 420) return 86;
+  if (mileTimeSecs <= 450) return 80;
+  if (mileTimeSecs <= 480) return 74;
+  if (mileTimeSecs <= 510) return 66;
+  if (mileTimeSecs <= 540) return 58;
+  if (mileTimeSecs <= 570) return 48;
+  if (mileTimeSecs <= 600) return 38;
+  return Math.max(10, 38 - Math.floor((mileTimeSecs - 600) / 30) * 6);
+}
+
+function getImprovementPotential(score) {
+  if (score >= 95) return 'Peak — +2%';
+  if (score >= 86) return 'High — +8%';
+  if (score >= 74) return 'Good — +12%';
+  if (score >= 58) return 'Moderate — +18%';
+  return 'High Potential — +25%+';
+}
+
+function calculateCalories(weightKg, mileTimeSecs, gender) {
+  const hours = mileTimeSecs / 3600;
+  const met = gender === 'Male' ? 11.5 : 10.5;
+  return Math.round(met * weightKg * hours);
+}
+
+function getSurfaceAdjustment(surface) {
+  if (surface === 'track') return 1.0;
+  if (surface === 'road') return 1.01;
+  if (surface === 'ground') return 1.03;
+  if (surface === 'trail') return 1.06;
+  return 1.0;
+}
+
+function getWeatherAdjustment(weather) {
+  if (weather === 'normal') return 1.0;
+  if (weather === 'hot') return 1.04;
+  if (weather === 'cold') return 1.02;
+  if (weather === 'rainy') return 1.03;
+  return 1.0;
+}
+
+function getRecommendation(rating, score) {
+  if (rating === 'Elite') return "<strong>🏆 Elite Performance:</strong> Outstanding running performance. Maintain your endurance training, speed drills and interval sessions. You are army-ready at the highest level.";
+  if (rating === 'Excellent') return "<strong>⭐ Excellent Performance:</strong> You are performing at an excellent level. Focus on maintaining consistency, adding tempo runs and fine-tuning recovery protocols.";
+  if (rating === 'Very Good') return "<strong>👍 Very Good Performance:</strong> Strong running foundation. Focus on interval running and stamina building to push into the excellent category.";
+  if (rating === 'Good') return "<strong>✅ Good Performance:</strong> Solid baseline. Incorporate 3–4 running sessions per week with progressive distance increases. Add interval training twice per week.";
+  if (rating === 'Average') return "<strong>📊 Average Performance:</strong> You are at an average level. Increase weekly running distance, add sprint sessions and focus on consistent training schedules.";
+  return "<strong>⚠️ Needs Improvement:</strong> Begin with easy 20–30 minute runs 3 times per week. Build your base endurance gradually. Focus on proper form and nutrition before increasing speed training.";
+}
+
+function getNextSteps(rating) {
+  const steps = {
+    'Elite': [
+      '🏆 Maintain elite training with advanced interval drills.',
+      '⚡ Add race-pace speed work to sustain peak conditioning.',
+      '🧘 Focus on recovery, sleep and nutrition optimisation.',
+      '📅 Compete in timed events to benchmark performance.'
+    ],
+    'Excellent': [
+      '⭐ Continue structured interval training 2x per week.',
+      '🏃 Add tempo runs to build lactate threshold capacity.',
+      '🔥 Maintain calorie and hydration targets.',
+      '📊 Track weekly mileage to monitor progress.'
+    ],
+    'Very Good': [
+      '👍 Add one extra run session per week.',
+      '⚡ Incorporate 400m interval sprints.',
+      '🧘 Focus on active recovery techniques.',
+      '📅 Set a target to reach Excellent rating in 8 weeks.'
+    ],
+    'Good': [
+      '✅ Run 3–4 days per week with progressive load.',
+      '🏃 Include one long slow distance run per week.',
+      '⚡ Add two sprint sessions of 200m intervals.',
+      '🔥 Monitor nutrition and protein intake for recovery.'
+    ],
+    'Average': [
+      '📊 Increase weekly running distance by 10% each week.',
+      '🏃 Add one additional training day per week.',
+      '⚡ Begin basic interval training — 30 sec fast / 60 sec easy.',
+      '🧘 Focus on consistent sleep and rest days.'
+    ],
+    'Needs Improvement': [
+      '⚠️ Start with 20–30 min easy jog 3 days per week.',
+      '🏃 Build base fitness before adding speed work.',
+      '🔥 Focus on proper running form and breathing.',
+      '📅 Gradually increase distance by 5 min per week.'
+    ]
+  };
+  return steps[rating] || steps['Needs Improvement'];
+}
+
+function calculateMileRun() {
+  const age = parseInt(document.getElementById('runnerAge').value);
+  const gender = document.querySelector('input[name="runnerGender"]:checked').value;
+  const weight = parseFloat(document.getElementById('runnerWeight').value);
+  const height = parseFloat(document.getElementById('runnerHeight').value);
+  const minutes = parseInt(document.getElementById('runMinutes').value);
+  const seconds = parseInt(document.getElementById('runSeconds').value);
+  const surface = document.getElementById('runSurface').value;
+  const weather = document.getElementById('runWeather').value;
+
+  if (!age || age < 10 || age > 70) { alert('Please enter a valid age between 10 and 70.'); return; }
+  if (!weight || weight < 30) { alert('Please enter a valid weight in kg.'); return; }
+  if (!height || height < 100) { alert('Please enter a valid height in cm.'); return; }
+
+  const surfaceAdj = getSurfaceAdjustment(surface);
+  const weatherAdj = getWeatherAdjustment(weather);
+  const baseMileTimeSecs = (minutes * 60) + seconds;
+  const adjustedMileTimeSecs = Math.round(baseMileTimeSecs * surfaceAdj * weatherAdj);
+
+  // Calculations
+  const mileKm = 1.60934;
+  const speedKmh = (mileKm / (adjustedMileTimeSecs / 3600));
+  const speedMph = speedKmh / 1.60934;
+  const paceSecsPerKm = adjustedMileTimeSecs / mileKm;
+  const paceSecsPerMile = adjustedMileTimeSecs;
+
+  // 1600m time (1600m = 0.9942 miles)
+  const time1600Secs = adjustedMileTimeSecs * (1600 / 1609.34);
+
+  const fitness = getFitnessRating(adjustedMileTimeSecs);
+  const readinessScore = getReadinessScore(adjustedMileTimeSecs);
+  const calories = weight ? calculateCalories(weight, adjustedMileTimeSecs, gender) : 0;
+  const improvement = getImprovementPotential(readinessScore);
+
+  // Populate banner
+  const banner = document.getElementById('premiumStatusBanner');
+  const bIcon = document.getElementById('statusBadgeIcon');
+  const bTitle = document.getElementById('statusMainTitle');
+  const bSub = document.getElementById('statusSummarySubtitle');
+
+  const bannerMap = {
+    'Elite': { cls: 'eligible', icon: '🏆', title: 'Elite Performance Detected!', sub: 'Outstanding running metrics. You are performing at an exceptional level for army fitness requirements.' },
+    'Excellent': { cls: 'eligible', icon: '⭐', title: 'Excellent Running Performance!', sub: 'Strong running profile identified. You meet and exceed standard army running benchmarks.' },
+    'Very Good': { cls: 'eligible', icon: '👍', title: 'Very Good Performance!', sub: 'Solid running foundation detected. Minor improvements will push you to the Excellent category.' },
+    'Good': { cls: 'partial', icon: '✅', title: 'Good Running Performance', sub: 'Acceptable performance level. Consistent training will improve your army readiness score.' },
+    'Average': { cls: 'partial', icon: '📊', title: 'Average Performance Level', sub: 'Performance is at average level. Structured training plan recommended for improvement.' },
+    'Needs Improvement': { cls: 'noteligible', icon: '⚠️', title: 'Performance Needs Improvement', sub: 'Current timing is below army fitness standard benchmarks. Begin a progressive training programme.' }
+  };
+
+  const bm = bannerMap[fitness.label];
+  banner.className = 'res-banner ' + bm.cls;
+  bIcon.innerText = bm.icon;
+  bTitle.innerText = bm.title;
+  bSub.innerText = bm.sub;
+
+  // Result cards
+  document.getElementById('resCardSpeed').innerText = speedKmh.toFixed(1) + ' km/h (' + speedMph.toFixed(1) + ' mph)';
+  document.getElementById('resCardPaceKM').innerText = formatPace(paceSecsPerKm) + ' /km';
+  document.getElementById('resCardPaceMile').innerText = formatPace(paceSecsPerMile) + ' /mile';
+  document.getElementById('resCard1600').innerText = formatTime(time1600Secs);
+  document.getElementById('resCardFitness').innerText = fitness.emoji + ' ' + fitness.label;
+  document.getElementById('resCardReadiness').innerText = readinessScore + ' / 100';
+  document.getElementById('resCardCalories').innerText = calories + ' Calories';
+  document.getElementById('resCardImprovement').innerText = improvement;
+
+  // Style fitness card
+  const fitnessBox = document.getElementById('cardFitnessBox');
+  const fitnessVal = document.getElementById('resCardFitness');
+  fitnessBox.className = 'sc-card ' + fitness.cls;
+  fitnessVal.className = 'sc-val ' + fitness.cls;
+
+  // Recommendation
+  document.getElementById('recommendationEngineBox').innerHTML = getRecommendation(fitness.label, readinessScore);
+
+  // Next steps
+  const stepsList = document.getElementById('nextStepsList');
+  stepsList.innerHTML = '';
+  getNextSteps(fitness.label).forEach(step => {
+    const li = document.createElement('li');
+    li.className = 'steps-item';
+    li.innerText = step;
+    stepsList.appendChild(li);
+  });
+
+  // Charts
+  if (radarChartInstance) radarChartInstance.destroy();
+  if (barChartInstance) barChartInstance.destroy();
+
+  const speedScore = Math.min(10, (speedKmh / 24) * 10);
+  const enduranceScore = Math.min(10, readinessScore / 10);
+  const consistencyScore = fitness.label === 'Elite' ? 10 : fitness.label === 'Excellent' ? 9 : fitness.label === 'Very Good' ? 7.5 : fitness.label === 'Good' ? 6 : fitness.label === 'Average' ? 4.5 : 3;
+  const fitnessScore = Math.min(10, readinessScore / 10);
+  const recoveryScore = gender === 'Male' ? Math.min(10, speedScore * 0.9) : Math.min(10, speedScore * 0.95);
+
+  const ctx1 = document.getElementById('radarChart').getContext('2d');
+  radarChartInstance = new Chart(ctx1, {
+    type: 'radar',
+    data: {
+      labels: ['Speed', 'Endurance', 'Consistency', 'Fitness', 'Recovery'],
+      datasets: [
+        {
+          label: 'Your Performance',
+          data: [speedScore.toFixed(1), enduranceScore.toFixed(1), consistencyScore, fitnessScore.toFixed(1), recoveryScore.toFixed(1)],
+          backgroundColor: 'rgba(37, 99, 235, 0.18)',
+          borderColor: '#2563eb',
+          pointBackgroundColor: '#2563eb'
+        },
+        {
+          label: 'Army Standard',
+          data: [8, 8, 8, 8, 8],
+          backgroundColor: 'rgba(16, 185, 129, 0.08)',
+          borderColor: '#10b981',
+          pointBackgroundColor: '#10b981'
+        }
+      ]
+    },
+    options: { responsive: true, scales: { r: { beginAtZero: true, max: 10 } } }
+  });
+
+  const eliteTimeSecs = 300;
+  const targetTimeSecs = 420;
+
+  const ctx2 = document.getElementById('barChart').getContext('2d');
+  barChartInstance = new Chart(ctx2, {
+    type: 'bar',
+    data: {
+      labels: ['Current Time (sec)', 'Target Time (7 min)', 'Elite Time (5 min)'],
+      datasets: [{
+        label: 'Time in Seconds',
+        data: [adjustedMileTimeSecs, targetTimeSecs, eliteTimeSecs],
+        backgroundColor: [
+          adjustedMileTimeSecs <= targetTimeSecs ? '#10b981' : '#ef4444',
+          '#f59e0b',
+          '#8b5cf6'
+        ]
+      }]
+    },
+    options: {
+      responsive: true,
+      scales: { y: { beginAtZero: true, title: { display: true, text: 'Seconds' } } }
+    }
+  });
+
+  document.getElementById('resultArea').style.display = 'block';
+  document.getElementById('premiumStatusBanner').scrollIntoView({ behavior: 'smooth' });
+}
+
+function copyResults() {
+  const speed = document.getElementById('resCardSpeed').innerText;
+  const paceKM = document.getElementById('resCardPaceKM').innerText;
+  const paceMile = document.getElementById('resCardPaceMile').innerText;
+  const t1600 = document.getElementById('resCard1600').innerText;
+  const fitness = document.getElementById('resCardFitness').innerText;
+  const readiness = document.getElementById('resCardReadiness').innerText;
+  const calories = document.getElementById('resCardCalories').innerText;
+  const improvement = document.getElementById('resCardImprovement').innerText;
+
+  const text = `Army 1 Mile Running Calculator Results\n\nAverage Speed: ${speed}\nPace Per KM: ${paceKM}\nPace Per Mile: ${paceMile}\nEst. 1600m Time: ${t1600}\nFitness Rating: ${fitness}\nArmy Readiness Score: ${readiness}\nCalorie Burn: ${calories}\nImprovement Potential: ${improvement}\n\nCalculated via RajDailyTools.in`;
+
+  navigator.clipboard.writeText(text).then(() => {
+    alert('Results copied to clipboard!');
+  }).catch(() => {
+    alert('Copy failed. Please manually select and copy the results.');
+  });
+}
+</script>
+<!-- TOOL END -->
+
+<!-- TABLES SECTION -->
+<section class="tbl-sec" id="performance-table">
+  <div class="w">
+    <div style="max-width:860px;margin:0 auto">
+      <div class="rev in" style="text-align:center;margin-bottom:36px">
+        <div class="pill" style="margin-bottom:14px">Official Performance Standards</div>
+        <h2 style="font-family:var(--fd);font-size:clamp(22px,3.5vw,36px);font-weight:800;color:var(--ink);margin-bottom:10px">Running <span>Performance Guide</span></h2>
+        <p style="font-size:15px;color:var(--ink3);max-width:520px;margin:0 auto;line-height:1.75">Standard 1 mile running performance classification ratings used for army fitness assessment.</p>
+      </div>
+
+      <h3 style="font-family:var(--fd);font-size:17px;font-weight:700;color:var(--ink);margin-bottom:12px">📋 Table 1: Running Performance Guide</h3>
+      <div class="tbl-wr">
+        <table>
+          <thead>
+            <tr>
+              <th>1 Mile Time</th>
+              <th>Rating</th>
+              <th>Army Readiness Score</th>
+              <th>Training Level</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="row-pass">
+              <td><strong>Under 6:00</strong></td>
+              <td><span class="tbadge g">Elite</span></td>
+              <td>95–100 / 100</td>
+              <td>Competition Level</td>
+            </tr>
+            <tr class="row-pass">
+              <td><strong>6:00 – 7:00</strong></td>
+              <td><span class="tbadge g">Excellent</span></td>
+              <td>86–94 / 100</td>
+              <td>Advanced Runner</td>
+            </tr>
+            <tr class="row-pass">
+              <td><strong>7:00 – 8:00</strong></td>
+              <td><span class="tbadge b">Very Good</span></td>
+              <td>74–85 / 100</td>
+              <td>Intermediate Runner</td>
+            </tr>
+            <tr class="row-info">
+              <td><strong>8:00 – 9:00</strong></td>
+              <td><span class="tbadge b">Good</span></td>
+              <td>58–73 / 100</td>
+              <td>Regular Fitness</td>
+            </tr>
+            <tr class="row-avg">
+              <td><strong>9:00 – 10:00</strong></td>
+              <td><span class="tbadge a">Average</span></td>
+              <td>38–57 / 100</td>
+              <td>Basic Fitness</td>
+            </tr>
+            <tr class="row-fail">
+              <td><strong>Above 10:00</strong></td>
+              <td><span class="tbadge r">Needs Improvement</span></td>
+              <td>Below 38 / 100</td>
+              <td>Beginner Level</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="tbl-sec" id="pace-table" style="background:var(--surf);padding-top:40px;">
+  <div class="w">
+    <div style="max-width:860px;margin:0 auto">
+      <h3 style="font-family:var(--fd);font-size:17px;font-weight:700;color:var(--ink);margin-bottom:12px">📋 Table 2: Pace Conversion Reference Table</h3>
+      <div class="tbl-wr">
+        <table>
+          <thead>
+            <tr>
+              <th>Mile Time</th>
+              <th>Speed (km/h)</th>
+              <th>Pace /KM</th>
+              <th>Est. 1600m Time</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="row-pass"><td><strong>6:00</strong></td><td>16.1 km/h</td><td>3:44 /km</td><td>5:58</td></tr>
+            <tr class="row-pass"><td><strong>6:30</strong></td><td>14.8 km/h</td><td>4:03 /km</td><td>6:28</td></tr>
+            <tr class="row-pass"><td><strong>7:00</strong></td><td>13.8 km/h</td><td>4:21 /km</td><td>6:58</td></tr>
+            <tr class="row-info"><td><strong>7:30</strong></td><td>12.9 km/h</td><td>4:39 /km</td><td>7:28</td></tr>
+            <tr class="row-info"><td><strong>8:00</strong></td><td>12.1 km/h</td><td>4:58 /km</td><td>7:58</td></tr>
+            <tr class="row-avg"><td><strong>8:30</strong></td><td>11.3 km/h</td><td>5:17 /km</td><td>8:28</td></tr>
+            <tr class="row-avg"><td><strong>9:00</strong></td><td>10.7 km/h</td><td>5:35 /km</td><td>8:57</td></tr>
+            <tr class="row-fail"><td><strong>10:00</strong></td><td>9.7 km/h</td><td>6:13 /km</td><td>9:57</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTENT SECTION -->
+<section class="content-sec white" id="content">
+  <div class="wa">
+    <div class="content-body">
+
+      <h2>What Is the Army 1 Mile Running Calculator?</h2>
+      <p>The Army 1 Mile Running Calculator is a precision fitness measurement tool designed specifically for individuals preparing for army physical fitness assessments. This calculator takes your actual 1 mile running time along with personal attributes such as age, gender, weight and height to produce a comprehensive performance analysis dashboard.</p>
+      <p>A 1 mile run is approximately 1609.34 metres and serves as a fundamental distance benchmark used in military, defence and fitness testing protocols globally. The calculator computes your average running speed in both km/h and mph, calculates your pace per kilometre and per mile, estimates your 1600m time, assigns a fitness rating, produces an army readiness score out of 100, estimates calorie burn and provides an improvement potential percentage.</p>
+      <p>For army candidates, understanding your 1 mile running performance in detail allows you to identify exactly where you stand against standard benchmarks and create a targeted training plan. The calculator also accounts for running surface and weather conditions to provide adjusted estimates that reflect real-world performance scenarios.</p>
+
+      <div class="ibox-blue">
+        <div class="ibox-blue-ttl">🪖 Why 1 Mile Running Matters for Army Preparation</div>
+        <div class="ibox-list">
+          <div class="ibox-item">✅ <span><strong>Cardiovascular Fitness Baseline:</strong> The 1 mile run directly tests your aerobic capacity, which is a core requirement for army physical training.</span></div>
+          <div class="ibox-item">✅ <span><strong>Running Efficiency Measurement:</strong> Pace per kilometre and per mile metrics reveal how efficiently you use energy during sustained running efforts.</span></div>
+          <div class="ibox-item">✅ <span><strong>1600m Benchmark Estimation:</strong> Army running tests often use the 1600m distance. This calculator accurately estimates your 1600m time from your 1 mile performance.</span></div>
+          <div class="ibox-item">✅ <span><strong>Progressive Training Target:</strong> The readiness score and improvement potential help you set clear measurable training goals.</span></div>
+        </div>
+      </div>
+
+      <h2>Understanding Running Pace and Speed</h2>
+      <p>Running pace and speed are two distinct but related measurements. <strong>Speed</strong> refers to how fast you are moving, expressed in km/h or mph. A higher speed means you cover the same distance in a shorter time. <strong>Pace</strong> is the inverse measure — it tells you how long it takes to cover one unit of distance, such as one kilometre or one mile, expressed as minutes and seconds per unit.</p>
+      <p>For army fitness tracking, pace per kilometre is the most practical metric since it directly relates to race distance planning and training intensity zones. Elite army runners typically achieve a pace of under 3:44 per kilometre for a 1 mile effort. The average candidate targeting army fitness standards should aim for a pace between 4:21 and 4:58 per kilometre.</p>
+      <p>Speed in km/h is useful for comparing performance across different age groups and for tracking improvement over time. A running speed of 13–16 km/h represents a strong performance range for army fitness tests. Candidates below 10 km/h should prioritise building their aerobic base before attempting timed fitness assessments.</p>
+
+      <h2>Army Fitness Preparation Training Tips</h2>
+      <h3>Interval Training</h3>
+      <p>Interval training is the most effective method for improving your 1 mile running time. This involves alternating between high-intensity running bursts and recovery periods. A standard session involves running 400m at near-maximum effort, recovering with a 90-second slow jog, and repeating 6–8 times. This builds both speed and lactate threshold capacity.</p>
+      <h3>Long Distance Running</h3>
+      <p>Building an aerobic base through longer, slower runs is essential for army fitness preparation. Running 5–8 km at a comfortable conversational pace two to three times per week develops the cardiovascular endurance required to maintain speed over the 1 mile distance. Aim to increase your weekly distance by no more than 10% per week to avoid injury.</p>
+      <h3>Sprint Sessions</h3>
+      <p>Short sprint sessions of 100m–200m at maximum effort, with full recovery between repetitions, develop fast-twitch muscle fibres and improve neuromuscular efficiency. Include one sprint session per week in your training plan to build raw speed capability that translates to a faster mile time.</p>
+      <h3>Recovery Methods</h3>
+      <p>Recovery is as important as training. Active recovery sessions such as easy 20-minute jogs, stretching and foam rolling prevent accumulation of muscle fatigue. Ensure you have at least one full rest day per week. Sleep of 7–9 hours per night is essential for muscle repair and performance gains.</p>
+      <h3>Nutrition for Running Performance</h3>
+      <p>A high-protein diet supports muscle recovery while adequate carbohydrate intake fuels running sessions. Hydration before, during and after runs is critical, particularly in hot weather conditions. Avoid heavy meals within 2 hours of a timed running session. Post-run recovery meals containing protein and carbohydrates should be consumed within 45 minutes of completing your session.</p>
+
+      <h2>Common Running Mistakes to Avoid</h2>
+      <ul>
+        <li><strong>Poor Warm-Up:</strong> Skipping dynamic warm-up routines increases injury risk and reduces immediate performance. Always perform 5–10 minutes of light jogging and dynamic stretching before timed runs.</li>
+        <li><strong>Overtraining:</strong> Running too frequently without adequate recovery leads to performance plateaus and overuse injuries. Follow a structured plan with rest days built in.</li>
+        <li><strong>Bad Running Form:</strong> Excessive forward lean, heel striking and arm crossing are common form errors that waste energy. Focus on upright posture, midfoot landing and relaxed arm swing.</li>
+        <li><strong>Ignoring Recovery:</strong> Neglecting sleep, hydration and nutrition after training significantly slows progress. Recovery is when fitness gains are actually consolidated.</li>
+        <li><strong>Starting Too Fast:</strong> Going out too fast in a timed mile leads to premature fatigue. Start at a controlled pace and build speed in the second half of the run.</li>
+      </ul>
+
+    </div>
+  </div>
+</section>
+
+<!-- FAQ SECTION -->
+<section class="content-sec" id="faq">
+  <div class="wa">
+    <div style="text-align:center;margin-bottom:36px">
+      <div class="pill">Common Questions</div>
+      <h2 style="font-family:var(--fd);font-size:clamp(22px,3.5vw,36px);font-weight:800;color:var(--ink);">Frequently Asked <span>Questions</span></h2>
+    </div>
+
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q">What is a good 1 mile running time for army preparation?<span class="faq-icon">+</span></div>
+      <div class="faq-a">A time under 7 minutes is considered very good for army fitness preparation. Elite candidates achieve under 6 minutes. Most army physical fitness tests use the 1600m distance which is very close to 1 mile, so training for a sub-7-minute mile places you in a strong position for army running assessments.</div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q">How is pace per kilometre calculated from mile time?<span class="faq-icon">+</span></div>
+      <div class="faq-a">Pace per kilometre is calculated by dividing your total mile time in seconds by 1.60934 (the number of kilometres in a mile), then converting the result back to minutes and seconds. For example, a 7-minute mile equals 420 seconds divided by 1.60934, giving approximately 261 seconds or 4:21 per kilometre.</div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q">Can this calculator estimate my 1600m timing?<span class="faq-icon">+</span></div>
+      <div class="faq-a">Yes. The calculator converts your 1 mile time to an estimated 1600 metre time by multiplying your mile time in seconds by the ratio of 1600m to 1609.34m (the precise length of one mile). The result is a close estimate of your 1600m time, accounting for any surface and weather adjustments you selected.</div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q">How can I improve my 1 mile run time?<span class="faq-icon">+</span></div>
+      <div class="faq-a">The most effective methods are interval training (400m repeats), tempo runs at a comfortably hard pace, building weekly mileage gradually and ensuring adequate recovery. Adding two structured quality sessions per week alongside easy base building runs produces consistent improvement. Most candidates see measurable improvement in 6–8 weeks of structured training.</div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q">Is pace more important than speed for army running tests?<span class="faq-icon">+</span></div>
+      <div class="faq-a">Both are related measurements. Pace is generally more useful for training and race planning as it tells you how to distribute your effort over a set distance. Speed in km/h is useful for comparing fitness levels and tracking progress. For army training purposes, targeting a specific pace per kilometre during training sessions is a more practical approach.</div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q">How many calories does a 1 mile run burn?<span class="faq-icon">+</span></div>
+      <div class="faq-a">Calorie burn depends on body weight, running speed and gender. A typical person weighing 65 kg running a 7-minute mile burns approximately 100–140 calories. Heavier individuals and faster runners burn more calories per mile. This calculator estimates your calorie burn using standard MET (Metabolic Equivalent of Task) values adjusted for your inputs.</div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q">Can beginners use this calculator?<span class="faq-icon">+</span></div>
+      <div class="faq-a">Absolutely. This calculator is designed for all fitness levels from beginners to elite runners. If you are a beginner, focus on completing the distance first before targeting a specific time. Use the recommendations provided to build a suitable training plan based on your current performance level.</div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q">What is an elite 1 mile running time?<span class="faq-icon">+</span></div>
+      <div class="faq-a">An elite 1 mile running time for army fitness purposes is under 6 minutes. Professional competitive runners achieve times well under 5 minutes. For army selection and fitness tests, a time of 6–7 minutes is classified as Excellent while under 6 minutes is classified as Elite in this calculator's performance framework.</div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q">How often should I train to improve my mile time?<span class="faq-icon">+</span></div>
+      <div class="faq-a">3 to 5 running sessions per week is optimal for most candidates preparing for army fitness tests. This should include one interval session, one tempo run, one long slow distance run and one or two easy recovery runs. Rest days are essential — avoid running on consecutive days when first starting a structured programme.</div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q">Does body weight affect running performance?<span class="faq-icon">+</span></div>
+      <div class="faq-a">Yes. Running economy is significantly affected by body weight. Carrying excess body weight increases the energy cost of running at any given pace. Reaching a healthy body weight through a combination of consistent training and proper nutrition will improve running performance. This calculator uses your weight to estimate calorie burn and provides a performance baseline for your personal profile.</div>
+    </div>
+  </div>
+</section>
+<script>
+function toggleFaq(item) {
+  item.classList.toggle('open');
+}
+</script>
+
+<!-- RELATED TOOLS SECTION -->
+<section class="rt-sec" id="related">
+  <div class="w">
+    <div style="text-align:center;margin-bottom:40px">
+      <div class="pill">More Fitness Tools</div>
+      <h2 style="font-family:var(--fd);font-size:clamp(22px,3.5vw,36px);font-weight:800;color:var(--ink);">Related Army <span>Calculators Suite</span></h2>
+    </div>
+    <div class="rt-grid">
+      <div class="rt-card">
+        <div class="rt-ico">⏱️</div>
+        <div class="rt-title">Army Running Time Calculator 1600m</div>
+        <div class="rt-desc">Calculate your 1600m army running time score and performance grade instantly.</div>
+        <a href="https://rajdailytools.in/army-running-time-calculator-1600m-2026.html" class="rt-btn">Launch Tool →</a>
+      </div>
+      <div class="rt-card">
+        <div class="rt-ico">🏅</div>
+        <div class="rt-title">Army Rally Competition Analyzer</div>
+        <div class="rt-desc">Analyze your competition standing with army rally performance parameters.</div>
+        <a href="https://rajdailytools.in/army-rally-competition-analyzer.html" class="rt-btn">Launch Tool →</a>
+      </div>
+      <div class="rt-card">
+        <div class="rt-ico">💰</div>
+        <div class="rt-title">Army Pension Calculator</div>
+        <div class="rt-desc">Estimate army pension benefits and retirement entitlement computations.</div>
+        <a href="https://rajdailytools.in/army-pension-calculator.html" class="rt-btn">Launch Tool →</a>
+      </div>
+      <div class="rt-card">
+        <div class="rt-ico">🎂</div>
+        <div class="rt-title">Agniveer Age Calculator 2026</div>
+        <div class="rt-desc">Check your Agniveer age eligibility and verify exact recruitment cutoff parameters.</div>
+        <a href="https://rajdailytools.in/agniveer-age-calculator-2026.html" class="rt-btn">Launch Tool →</a>
+      </div>
+      <div class="rt-card">
+        <div class="rt-ico">⚖️</div>
+        <div class="rt-title">Army Height Weight Checker</div>
+        <div class="rt-desc">Cross-check age scale height dimensions with standard army physical measurement logs.</div>
+        <a href="https://rajdailytools.in/army-height-weight-checker.html" class="rt-btn">Launch Tool →</a>
+      </div>
+      <div class="rt-card">
+        <div class="rt-ico">🎯</div>
+        <div class="rt-title">TA Officer Eligibility Checker</div>
+        <div class="rt-desc">Verify Territorial Army Officer entry eligibility against official 2026 criteria.</div>
+        <a href="https://rajdailytools.in/ta-officer-eligibility-checker-2026.html" class="rt-btn">Launch Tool →</a>
+      </div>
+      <div class="rt-card">
+        <div class="rt-ico">📊</div>
+        <div class="rt-title">Army Fitness Score Calculator</div>
+        <div class="rt-desc">Compute your comprehensive army fitness score from physical test parameters.</div>
+        <a href="https://rajdailytools.in/army-fitness-score-calculator.html" class="rt-btn">Launch Tool →</a>
+      </div>
+      <div class="rt-card">
+        <div class="rt-ico">🧮</div>
+        <div class="rt-title">Army BMI Calculator</div>
+        <div class="rt-desc">Calculate your Body Mass Index matching army medical fitness standards.</div>
+        <a href="https://rajdailytools.in/army-bmi-calculator.html" class="rt-btn">Launch Tool →</a>
+      </div>
+      <div class="rt-card">
+        <div class="rt-ico">🩺</div>
+        <div class="rt-title">Army Medical Fitness Checker</div>
+        <div class="rt-desc">Assess your medical fitness parameters against army recruitment health standards.</div>
+        <a href="https://rajdailytools.in/army-medical-fitness-checker.html" class="rt-btn">Launch Tool →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-inner">
+    <div class="ft-top">
+      <div class="ft-brand">
+        <div class="logo" style="margin-bottom:12px;">
+          <div class="lb"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+          <div><div class="ln">Raj<span>Daily</span>Tools</div><div class="ls">Smart Tools for Daily Life</div></div>
+        </div>
+        <p class="ft-desc">Engineered to produce robust, high precision diagnostic calculation utilities facilitating accurate information discovery across major lifestyle compliance criteria frameworks.</p>
+        <div class="ft-soc">
+          <a href="#" class="fts">FB</a><a href="#" class="fts">TW</a><a href="#" class="fts">LN</a>
+        </div>
+      </div>
+      <div class="fc">
+        <h4>Product Platforms</h4>
+        <ul>
+          <li><a href="/">Home Dashboard</a></li>
+          <li><a href="/categories">Tools Catalog</a></li>
+          <li><a href="/#popular">Popular Utilities</a></li>
+        </ul>
+      </div>
+      <div class="fc">
+        <h4>Legal Context</h4>
+        <ul>
+          <li><a href="/privacy">Privacy Protocol</a></li>
+          <li><a href="/terms">Terms Of Usage</a></li>
+          <li><a href="/disclaimer">Disclaimer Notice</a></li>
+        </ul>
+      </div>
+      <div class="fc">
+        <h4>Company Nodes</h4>
+        <ul>
+          <li><a href="/about">About Developer</a></li>
+          <li><a href="/contact">Support Center</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ft-btm">
+      <p class="ft-cp">© 2026 <b>RajDailyTools</b>. All analytical system rights reserved worldwide.</p>
+      <p class="ft-tag">Designed with absolute precision for high scannability efficiency layouts.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- FLOATING ACTION SYSTEM -->
+<div class="floating-buttons">
+  <a href="https://api.whatsapp.com/send?text=Calculate%20Your%20Army%201%20Mile%20Running%20Pace%20%26%20Speed%20Online%20here%20https%3A%2F%2Frajdailytools.in%2Farmy-1-mile-running-calculator.html" target="_blank" rel="noopener" class="f-btn wa-btn" title="Share via WhatsApp">WA</a>
+  <button class="btt" id="btt" title="Scroll To Top" onclick="window.scrollTo({top:0, behavior:'smooth'});">↑</button>
+</div>
+
+<script>
+const brg = document.getElementById('brg');
+const drw = document.getElementById('drw');
+const dov = document.getElementById('dov');
+const dx = document.getElementById('dx');
+const btt = document.getElementById('btt');
+
+if(brg && drw && dov && dx) {
+  brg.addEventListener('click', () => { drw.classList.add('on'); dov.classList.add('on'); });
+  dx.addEventListener('click', cD);
+  dov.addEventListener('click', cD);
+}
+function cD() { drw.classList.remove('on'); dov.classList.remove('on'); }
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 400) { btt.classList.add('on'); } else { btt.classList.remove('on'); }
+});
+</script>
+
+</body>
+</html>
