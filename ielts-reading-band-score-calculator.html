@@ -1,0 +1,1306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IELTS Reading Band Score Calculator – Convert Reading Answers to Band Score</title>
+<meta name="description" content="Calculate your IELTS Reading band score instantly from correct answers. Supports Academic and General Training score estimation with detailed band explanation.">
+<meta name="keywords" content="IELTS reading band score calculator, IELTS reading score, IELTS academic reading band, IELTS general training reading score, reading correct answers to band, IELTS reading conversion table">
+<meta name="robots" content="index, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ══════════════════════════════════════
+   DESIGN TOKENS
+══════════════════════════════════════ */
+:root{
+  --blue:#2563eb;--blue-d:#1d4ed8;--blue-xl:#eff6ff;--blue-s:#dbeafe;
+  --amber:#f59e0b;--green:#10b981;--red:#ef4444;--purple:#8b5cf6;
+  --orange:#f97316;--teal:#14b8a6;
+  --green-xl:#f0fdf4;--green-s:#bbf7d0;
+  --red-xl:#fef2f2;--red-s:#fecaca;
+  --amber-xl:#fffbeb;--amber-s:#fde68a;
+  --purple-xl:#faf5ff;--purple-s:#ddd6fe;
+  --yellow:#eab308;--yellow-xl:#fefce8;--yellow-s:#fef08a;
+  --ink:#0f172a;--ink2:#334155;--ink3:#64748b;--ink4:#94a3b8;
+  --line:#e2e8f0;--surf:#f8fafc;--white:#fff;
+  --s1:0 1px 3px rgba(15,23,42,.06),0 1px 2px rgba(15,23,42,.04);
+  --s2:0 4px 16px rgba(15,23,42,.08),0 2px 6px rgba(15,23,42,.04);
+  --s3:0 12px 40px rgba(15,23,42,.11),0 3px 10px rgba(15,23,42,.06);
+  --s4:0 24px 64px rgba(15,23,42,.13),0 6px 20px rgba(15,23,42,.07);
+  --sb:0 8px 32px rgba(37,99,235,.20);
+  --fd:'Sora',sans-serif;--fb:'DM Sans',sans-serif;
+  --ease:cubic-bezier(.4,0,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);color:var(--ink);background:var(--white);overflow-x:hidden;-webkit-font-smoothing:antialiased;line-height:1.6}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+button{cursor:pointer;border:none;background:none;font-family:var(--fb)}
+.w{max-width:1180px;margin:0 auto;padding:0 24px}
+.wa{max-width:880px;margin:0 auto;padding:0 24px}
+select,input{appearance:none;-webkit-appearance:none}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+@keyframes resultIn{from{opacity:0;transform:translateY(18px) scale(.97)}to{opacity:1;transform:none}}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}
+.rev{opacity:0;transform:translateY(22px);transition:opacity .55s var(--ease),transform .55s var(--ease)}
+.rev.in{opacity:1;transform:none}
+
+/* ══ HEADER ══ */
+.hdr{position:sticky;top:0;z-index:999;background:rgba(255,255,255,.96);backdrop-filter:blur(20px);border-bottom:1px solid var(--line);box-shadow:var(--s1)}
+.hdi{display:flex;align-items:center;justify-content:space-between;height:66px}
+.logo{display:flex;align-items:center;gap:10px}
+.lb{width:36px;height:36px;background:var(--blue);border-radius:9px;display:flex;align-items:center;justify-content:center;box-shadow:var(--sb);flex-shrink:0}
+.lb svg{width:18px;height:18px;fill:#fff}
+.ln{font-family:var(--fd);font-size:19px;font-weight:800;color:var(--ink);line-height:1}
+.ln span{color:var(--blue)}
+.ls{font-size:10px;color:var(--ink4);letter-spacing:.04em}
+nav.dn{display:flex;align-items:center;gap:2px}
+nav.dn a{font-size:13.5px;font-weight:500;color:var(--ink2);padding:7px 13px;border-radius:8px;transition:.2s}
+nav.dn a:hover{color:var(--blue);background:var(--blue-xl)}
+.hcta{background:var(--blue);color:#fff;font-family:var(--fd);font-weight:600;font-size:13px;padding:8px 18px;border-radius:8px;box-shadow:var(--sb);transition:.2s}
+.hcta:hover{background:var(--blue-d);transform:translateY(-1px)}
+.brg{display:none;flex-direction:column;gap:4.5px;padding:8px;border-radius:8px}
+.brg span{display:block;width:20px;height:2px;background:var(--ink);border-radius:2px;transition:.28s}
+.dov{display:none;position:fixed;inset:0;background:rgba(15,23,42,.45);z-index:1040;backdrop-filter:blur(3px)}
+.dov.on{display:block}
+.drw{position:fixed;top:0;right:-100%;width:270px;height:100vh;background:#fff;z-index:1050;padding:22px;box-shadow:var(--s4);transition:right .32s var(--ease);overflow-y:auto}
+.drw.on{right:0}
+.dh{display:flex;align-items:center;justify-content:space-between;margin-bottom:26px}
+.dx{width:33px;height:33px;border-radius:7px;background:var(--surf);display:flex;align-items:center;justify-content:center;color:var(--ink3);font-size:17px}
+nav.mn{display:flex;flex-direction:column;gap:3px}
+nav.mn a{display:block;font-size:14px;font-weight:500;color:var(--ink2);padding:11px 13px;border-radius:8px;transition:.2s}
+nav.mn a:hover{color:var(--blue);background:var(--blue-xl)}
+
+/* ══ HERO ══ */
+.hero{position:relative;overflow:hidden;background:linear-gradient(150deg,#f0f7ff 0%,#fff 46%,#f0fdf4 100%);padding:64px 0 72px}
+.hero::before{content:'';position:absolute;top:-140px;right:-180px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(37,99,235,.08) 0%,transparent 68%);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-80px;left:-100px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(20,184,166,.06) 0%,transparent 68%);pointer-events:none}
+.blob{position:absolute;border-radius:50%;pointer-events:none;animation:float 6s ease-in-out infinite}
+.b1{width:13px;height:13px;background:rgba(37,99,235,.18);top:22%;right:14%;animation-delay:0s}
+.b2{width:9px;height:9px;background:rgba(20,184,166,.22);top:58%;right:26%;animation-delay:2.2s}
+.b3{width:11px;height:11px;background:rgba(245,158,11,.18);top:36%;right:6%;animation-delay:4s}
+.bc{display:flex;align-items:center;gap:7px;font-size:12.5px;color:var(--ink3);margin-bottom:22px;position:relative;z-index:1;flex-wrap:wrap}
+.bc a{color:var(--blue);font-weight:600}
+.pill{display:inline-flex;align-items:center;gap:7px;font-family:var(--fd);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);background:var(--blue-xl);padding:5px 14px;border-radius:100px;margin-bottom:18px}
+.pill::before{content:'';width:6px;height:6px;background:var(--blue);border-radius:50%}
+.hero-inner{position:relative;z-index:1;max-width:720px;animation:fadeUp .5s ease both}
+.hero h1{font-family:var(--fd);font-size:clamp(26px,4.5vw,50px);font-weight:800;line-height:1.1;color:var(--ink);margin-bottom:14px}
+.hero h1 span{color:var(--blue)}
+.hero-sub{font-size:16px;color:var(--ink3);line-height:1.8;margin-bottom:22px;max-width:600px}
+.hero-chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.chip{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;padding:6px 14px;border-radius:100px;background:#fff;border:1.5px solid var(--line);color:var(--ink2);box-shadow:var(--s1);transition:.22s}
+.chip:hover{border-color:var(--blue);color:var(--blue);transform:translateY(-1px)}
+.hero-meta{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:24px}
+.upd{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:700;color:var(--blue);background:var(--blue-xl);padding:6px 14px;border-radius:100px;border:1.5px solid var(--blue-s)}
+.mi{font-size:13px;color:var(--ink3);font-weight:500}
+
+/* HOW TO USE */
+.howto{background:var(--amber-xl);border:2px solid var(--amber-s);border-radius:16px;padding:22px 26px;max-width:560px;margin-bottom:24px}
+.howto-ttl{display:flex;align-items:center;gap:9px;font-family:var(--fd);font-size:15px;font-weight:800;color:var(--ink);margin-bottom:13px}
+.howto-steps{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.hs{display:flex;align-items:flex-start;gap:10px;font-size:13.5px;color:var(--ink2);line-height:1.6}
+.sn{width:24px;height:24px;background:var(--amber);color:#fff;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex-shrink:0;margin-top:1px}
+
+/* related tools */
+.rel-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;position:relative;z-index:1}
+.rg-box{border-radius:14px;padding:14px 14px 12px;display:flex;flex-direction:column;gap:8px;transition:.22s;border:1.5px solid}
+.rg-box:hover{transform:translateY(-3px);box-shadow:var(--s3)}
+.rg-box.c1{background:linear-gradient(135deg,#fffbeb,#fef3c7);border-color:var(--amber-s)}
+.rg-box.c2{background:linear-gradient(135deg,var(--green-xl),#dcfce7);border-color:var(--green-s)}
+.rg-box.c3{background:linear-gradient(135deg,var(--blue-xl),var(--blue-s));border-color:var(--blue-s)}
+.rg-box.c4{background:linear-gradient(135deg,var(--purple-xl),#ede9fe);border-color:var(--purple-s)}
+.rg-ico{font-size:22px}
+.rg-txt h4{font-family:var(--fd);font-size:12px;font-weight:800;color:var(--ink);margin-bottom:2px}
+.rg-txt p{font-size:11px;color:var(--ink3);line-height:1.5}
+.btn-xs{display:inline-flex;align-items:center;gap:4px;font-family:var(--fd);font-weight:700;font-size:11px;padding:5px 10px;border-radius:7px;transition:.22s;margin-top:4px}
+.btn-xs.a{background:var(--amber);color:#fff}.btn-xs.a:hover{background:#d97706}
+.btn-xs.g{background:var(--green);color:#fff}.btn-xs.g:hover{background:#059669}
+.btn-xs.b{background:var(--blue);color:#fff}.btn-xs.b:hover{background:var(--blue-d)}
+.btn-xs.p{background:var(--purple);color:#fff}.btn-xs.p:hover{background:#7c3aed}
+.btn-xs.t{background:var(--teal);color:#fff}.btn-xs.t:hover{background:#0d9488}
+
+/* ══ TOOL SECTION ══ */
+.tool-sec{background:var(--surf);padding:80px 0}
+.tool-wrap{max-width:860px;margin:0 auto}
+.tool-card{background:#fff;border:1.5px solid var(--line);border-radius:28px;overflow:hidden;box-shadow:var(--s4)}
+.tool-hdr{background:linear-gradient(135deg,#0f172a 0%,#0f4c75 50%,#1e88e5 100%);padding:32px 40px;position:relative;overflow:hidden}
+.tool-hdr::before{content:'';position:absolute;top:-60px;right:-60px;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,.07)}
+.tool-hdr::after{content:'';position:absolute;bottom:-40px;left:-40px;width:180px;height:180px;border-radius:50%;background:rgba(255,255,255,.04)}
+.run-dots{position:absolute;bottom:20px;right:40px;display:flex;gap:5px;opacity:.3;z-index:0}
+.run-dot{width:6px;height:6px;border-radius:50%;background:#fff}
+.th{position:relative;z-index:1}
+.th h2{font-family:var(--fd);font-size:21px;font-weight:800;color:#fff;margin-bottom:6px}
+.th p{font-size:14px;color:rgba(255,255,255,.82);line-height:1.65}
+.th-badges{display:flex;flex-wrap:wrap;gap:9px;margin-top:14px}
+.thb{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:rgba(255,255,255,.9);background:rgba(255,255,255,.13);padding:5px 12px;border-radius:100px}
+.tool-body{padding:36px 40px}
+
+/* select input */
+.fsel{padding:12px 16px;font-size:15px;font-weight:700;font-family:var(--fd);color:var(--ink);background:#fff;border:1.5px solid var(--line);border-radius:10px;outline:none;transition:.22s;width:100%;cursor:pointer}
+.fsel:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(37,99,235,.10)}
+/* number input */
+.finp{padding:12px 16px;font-size:22px;font-weight:800;font-family:var(--fd);color:var(--ink);background:#fff;border:1.5px solid var(--line);border-radius:10px;outline:none;transition:.22s;width:100%;text-align:center}
+.finp:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(37,99,235,.10)}
+.finp.err{border-color:var(--red);box-shadow:0 0 0 3px rgba(239,68,68,.10)}
+.fld{display:flex;flex-direction:column;gap:7px;margin-bottom:20px}
+.flbl{font-size:13px;font-weight:700;color:var(--ink2)}
+.flbl span{font-size:11px;font-weight:500;color:var(--ink4);margin-left:5px;background:var(--surf);padding:2px 7px;border-radius:5px;border:1px solid var(--line)}
+.score-range{display:flex;gap:8px;margin-top:8px;flex-wrap:wrap}
+.sr-item{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:600;padding:4px 11px;border-radius:100px;border:1.5px solid var(--line);background:var(--surf);color:var(--ink3);cursor:pointer;transition:.2s}
+.sr-item:hover{border-color:var(--blue);color:var(--blue);background:var(--blue-xl)}
+.hint-box{display:flex;align-items:flex-start;gap:9px;font-size:13px;color:var(--ink2);background:var(--blue-xl);border:1.5px solid var(--blue-s);border-radius:10px;padding:11px 14px;margin:16px 0;line-height:1.65}
+.hint-box svg{width:16px;height:16px;stroke:var(--blue);fill:none;stroke-width:2;flex-shrink:0;margin-top:2px}
+.btn-row{display:flex;gap:12px;margin-top:4px}
+.chk-btn{flex:1;padding:17px;background:linear-gradient(135deg,#0f172a 0%,#0f4c75 50%,#1e88e5 100%);color:#fff;font-family:var(--fd);font-weight:800;font-size:16px;border-radius:12px;box-shadow:0 8px 32px rgba(15,76,117,.28);transition:all .25s var(--ease);display:flex;align-items:center;justify-content:center;gap:10px}
+.chk-btn:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(15,76,117,.40)}
+.chk-btn:active{transform:translateY(0)}
+.rst-btn{padding:17px 24px;background:var(--surf);color:var(--ink3);font-family:var(--fd);font-weight:700;font-size:15px;border-radius:12px;border:1.5px solid var(--line);transition:.22s;display:flex;align-items:center;gap:8px}
+.rst-btn:hover{background:var(--red-xl);color:var(--red);border-color:var(--red-s)}
+
+/* ══ RESULT ══ */
+#resultArea{display:none;margin-top:28px;animation:resultIn .45s var(--ease) both}
+.res-banner{border-radius:20px;padding:28px;margin-bottom:22px;position:relative;overflow:hidden;display:flex;align-items:center;gap:24px;flex-wrap:wrap}
+.res-banner.pass{background:linear-gradient(135deg,var(--green-xl),#d1fae5);border:2px solid var(--green-s)}
+.res-banner.avg{background:var(--amber-xl);border:2px solid var(--amber-s)}
+.res-banner.low{background:var(--red-xl);border:2px solid var(--red-s)}
+.res-banner::before{content:'';position:absolute;inset:0;opacity:.04;background-image:repeating-linear-gradient(45deg,currentColor 0,currentColor 1px,transparent 0,transparent 50%);background-size:12px 12px;pointer-events:none}
+.meter-wrap{flex-shrink:0;position:relative;width:100px;height:100px}
+.meter-svg{width:100px;height:100px;transform:rotate(-90deg)}
+.meter-bg{fill:none;stroke:rgba(0,0,0,.08);stroke-width:10}
+.meter-fill{fill:none;stroke-width:10;stroke-linecap:round;transition:stroke-dashoffset 1.2s var(--ease)}
+.meter-center{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.meter-pct{font-family:var(--fd);font-size:20px;font-weight:800;color:var(--ink);line-height:1}
+.meter-lbl{font-size:10px;font-weight:700;color:var(--ink3);text-transform:uppercase;letter-spacing:.06em}
+.res-info{flex:1}
+.res-icon{font-size:32px;margin-bottom:6px}
+.res-title{font-family:var(--fd);font-size:22px;font-weight:800;color:var(--ink);line-height:1.1;margin-bottom:6px}
+.res-sub{font-size:14px;color:var(--ink3);line-height:1.65}
+.res-tag{display:inline-flex;align-items:center;gap:6px;font-family:var(--fd);font-size:13px;font-weight:700;padding:5px 14px;border-radius:100px;margin-top:10px}
+.res-tag.pass{background:var(--green);color:#fff}
+.res-tag.avg{background:var(--amber);color:#fff}
+.res-tag.low{background:var(--red);color:#fff}
+
+/* progress card */
+.time-compare{background:var(--surf);border:1.5px solid var(--line);border-radius:16px;padding:22px 24px;margin-bottom:18px}
+.tc-title{font-family:var(--fd);font-size:14px;font-weight:700;color:var(--ink);margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.tc-row{display:flex;align-items:center;gap:14px;margin-bottom:12px}
+.tc-lbl{font-size:12.5px;font-weight:600;color:var(--ink2);width:130px;flex-shrink:0}
+.tc-bar-track{flex:1;height:20px;background:var(--line);border-radius:10px;overflow:hidden}
+.tc-bar-fill{height:100%;border-radius:10px;display:flex;align-items:center;padding-left:10px;font-size:11px;font-weight:700;color:#fff;transition:width 1.2s var(--ease)}
+.tc-bar-fill.g{background:linear-gradient(90deg,var(--green),#059669)}
+.tc-bar-fill.a{background:linear-gradient(90deg,var(--amber),#d97706)}
+.tc-bar-fill.r{background:linear-gradient(90deg,var(--red),#dc2626)}
+.tc-bar-fill.b{background:linear-gradient(90deg,var(--blue),var(--blue-d))}
+.tc-val{font-size:13px;font-weight:700;width:60px;flex-shrink:0;text-align:right}
+
+/* band milestone cards */
+.grade-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:13px;margin-bottom:18px}
+.gc{border-radius:13px;padding:16px 14px;text-align:center;border:1.5px solid;transition:.22s}
+.gc:hover{transform:translateY(-2px);box-shadow:var(--s2)}
+.gc.active-pass{background:var(--green-xl);border-color:var(--green-s)}
+.gc.active-avg{background:var(--amber-xl);border-color:var(--amber-s)}
+.gc.active-fail{background:var(--red-xl);border-color:var(--red-s)}
+.gc.inactive{background:var(--surf);border-color:var(--line);opacity:.7}
+.gc-ico{font-size:24px;margin-bottom:6px}
+.gc-title{font-family:var(--fd);font-size:13px;font-weight:700;color:var(--ink);margin-bottom:3px}
+.gc-val{font-size:12px;color:var(--ink3);line-height:1.55}
+
+.sugg-box{background:var(--blue-xl);border:1.5px solid var(--blue-s);border-radius:13px;padding:16px 18px;font-size:14px;color:var(--ink2);line-height:1.78}
+.warn-box{background:var(--amber-xl);border:1.5px solid var(--amber-s);border-radius:12px;padding:14px 18px;display:flex;gap:10px;font-size:13.5px;color:var(--ink2);line-height:1.7;margin-top:14px}
+
+/* ══ TABLE SECTION ══ */
+.tbl-sec{background:#fff;padding:72px 0}
+.tbl-wr{overflow-x:auto;margin-bottom:20px}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+thead th{background:linear-gradient(135deg,#0f172a 0%,#0f4c75 100%);color:#fff;padding:14px 16px;text-align:left;font-family:var(--fd);font-size:13px;font-weight:700;letter-spacing:.03em}
+tbody tr{border-bottom:1px solid var(--line);transition:.2s}
+tbody tr:hover{background:var(--blue-xl)}
+tbody td{padding:12px 16px;color:var(--ink2);vertical-align:middle}
+.row-pass{background:var(--green-xl)!important}
+.row-avg{background:var(--amber-xl)!important}
+.row-fail{background:var(--red-xl)!important}
+.tbadge{display:inline-flex;font-size:11px;font-weight:700;padding:3px 8px;border-radius:100px}
+.tbadge.g{background:var(--green-xl);color:var(--green);border:1px solid var(--green-s)}
+.tbadge.a{background:var(--amber-xl);color:#92400e;border:1px solid var(--amber-s)}
+.tbadge.r{background:var(--red-xl);color:var(--red);border:1px solid var(--red-s)}
+.tbadge.b{background:var(--blue-xl);color:var(--blue);border:1px solid var(--blue-s)}
+.you-row td{font-weight:700!important;border-left:4px solid var(--blue)!important}
+
+/* tab switcher for dual table */
+.tab-btns{display:flex;gap:8px;margin-bottom:20px;flex-wrap:wrap}
+.tab-btn{padding:9px 20px;font-family:var(--fd);font-size:13px;font-weight:700;border-radius:8px;border:1.5px solid var(--line);background:var(--surf);color:var(--ink3);cursor:pointer;transition:.22s}
+.tab-btn.active{background:var(--blue);color:#fff;border-color:var(--blue);box-shadow:var(--sb)}
+
+/* ══ TIPS SECTION ══ */
+.tips-sec{background:var(--surf);padding:72px 0}
+.tips-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.tip-card{background:#fff;border:1.5px solid var(--line);border-radius:16px;padding:22px 18px;text-align:center;transition:.28s}
+.tip-card:hover{transform:translateY(-4px);box-shadow:var(--s3);border-color:var(--blue-s)}
+.tip-ico{font-size:32px;margin-bottom:12px}
+.tip-title{font-family:var(--fd);font-size:14px;font-weight:800;color:var(--ink);margin-bottom:8px}
+.tip-desc{font-size:13px;color:var(--ink3);line-height:1.7}
+
+/* ══ STORY ══ */
+.story-sec{background:#fff;padding:72px 0}
+.story-card{background:var(--surf);border:1.5px solid var(--line);border-radius:24px;padding:40px;box-shadow:var(--s3);position:relative;overflow:hidden}
+.story-card::before{content:'';position:absolute;top:0;left:0;bottom:0;width:5px;background:linear-gradient(180deg,var(--blue) 0%,var(--teal) 100%);border-radius:5px 0 0 5px}
+.sq{font-size:54px;color:var(--blue-s);font-family:Georgia,serif;line-height:1;padding-left:8px}
+.sb{font-size:15.5px;color:var(--ink2);line-height:1.9;padding:0 8px}
+.sauth{display:flex;align-items:center;gap:14px;margin-top:22px;padding-top:20px;border-top:1px solid var(--line)}
+.savt{width:48px;height:48px;background:var(--blue);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+.sname{font-family:var(--fd);font-size:15px;font-weight:700;color:var(--ink)}
+.srole{font-size:12.5px;color:var(--ink3)}
+.founder-msg{background:linear-gradient(135deg,var(--blue-xl),var(--blue-s));border:1.5px solid var(--blue-s);border-radius:14px;padding:20px 22px;margin-top:20px;display:flex;gap:13px}
+.fm-ico{font-size:26px;flex-shrink:0}
+.fm-txt{font-size:14px;color:var(--ink2);line-height:1.75;font-style:italic}
+.fm-txt strong{color:var(--ink);font-weight:700;font-style:normal}
+
+/* ══ GUIDE ══ */
+.guide-sec{background:var(--surf);padding:72px 0}
+.guide-body h2{font-family:var(--fd);font-size:21px;font-weight:800;color:var(--ink);margin:28px 0 11px;line-height:1.3}
+.guide-body h2:first-child{margin-top:0}
+.guide-body p{font-size:15px;color:var(--ink3);line-height:1.85;margin-bottom:14px}
+.guide-body ul{display:flex;flex-direction:column;gap:8px;margin:12px 0 16px}
+.guide-body li{display:flex;align-items:flex-start;gap:10px;font-size:14.5px;color:var(--ink3);line-height:1.7}
+.guide-body li::before{content:'✓';width:18px;height:18px;background:var(--blue);color:#fff;border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;flex-shrink:0;margin-top:3px}
+.guide-body strong{color:var(--ink2);font-weight:700}
+.ibox{background:var(--blue-xl);border:1.5px solid var(--blue-s);border-radius:13px;padding:15px 18px;margin:16px 0;display:flex;gap:11px;font-size:14px;color:var(--ink2);line-height:1.7}
+.ibox svg{width:17px;height:17px;stroke:var(--blue);fill:none;stroke-width:2;flex-shrink:0;margin-top:2px}
+.ibox.g{background:var(--green-xl);border-color:var(--green-s)}
+.ibox.g svg{stroke:var(--green)}
+.ibox.a{background:var(--amber-xl);border-color:var(--amber-s)}
+.ibox.a svg{stroke:var(--amber)}
+.ex-card{background:#fff;border:1.5px solid var(--line);border-radius:16px;padding:24px;margin:16px 0;box-shadow:var(--s2)}
+.ex-row{display:flex;align-items:center;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--line);font-size:14.5px;color:var(--ink2)}
+.ex-row:last-child{border-bottom:none;font-weight:800;font-size:16px;color:var(--ink)}
+.ex-band{display:inline-flex;align-items:center;justify-content:center;min-width:46px;height:46px;border-radius:12px;background:var(--blue);color:#fff;font-family:var(--fd);font-size:18px;font-weight:800;padding:0 8px}
+
+/* structure section */
+.struct-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:16px 0}
+.struct-card{background:#fff;border:1.5px solid var(--line);border-radius:13px;padding:16px;text-align:center;transition:.22s}
+.struct-card:hover{border-color:var(--blue-s);box-shadow:var(--s2)}
+.struct-ico{font-size:26px;margin-bottom:8px}
+.struct-num{font-family:var(--fd);font-size:11px;font-weight:700;color:var(--blue);text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px}
+.struct-title{font-family:var(--fd);font-size:12px;font-weight:800;color:var(--ink);margin-bottom:4px}
+.struct-desc{font-size:11px;color:var(--ink3);line-height:1.5}
+
+/* mistake cards */
+.mistake-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:16px 0}
+.mistake-card{background:#fff;border:1.5px solid var(--red-s);border-radius:13px;padding:16px 18px;display:flex;gap:12px;align-items:flex-start}
+.mistake-ico{font-size:20px;flex-shrink:0;margin-top:2px}
+.mistake-body h4{font-family:var(--fd);font-size:13px;font-weight:800;color:var(--ink);margin-bottom:4px}
+.mistake-body p{font-size:12.5px;color:var(--ink3);line-height:1.6}
+
+/* ══ FAQ ══ */
+.faq-sec{background:#fff;padding:72px 0}
+.fql{max-width:780px;margin:0 auto}
+.fq{background:var(--surf);border:1.5px solid var(--line);border-radius:13px;margin-bottom:10px;overflow:hidden}
+.fq-q{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;cursor:pointer;gap:14px;transition:.2s}
+.fq-q:hover{background:var(--blue-xl)}
+.fq-t{font-weight:600;font-size:15px;color:var(--ink);line-height:1.4}
+.fq-i{width:28px;height:28px;border-radius:50%;background:var(--blue-xl);color:var(--blue);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;transition:transform .28s,background .2s}
+.fq.open .fq-i{transform:rotate(45deg);background:var(--blue);color:#fff}
+.fq-a{max-height:0;overflow:hidden;transition:max-height .38s var(--ease)}
+.fq-ai{padding:0 22px 18px;font-size:14.5px;color:var(--ink3);line-height:1.78}
+.fq.open .fq-a{max-height:500px}
+
+/* ══ DISC / CONTACT / CTA / FOOTER ══ */
+.disc{background:var(--amber-xl);border-top:1px solid var(--amber-s);border-bottom:1px solid var(--amber-s);padding:15px 0}
+.disc-in{display:flex;align-items:flex-start;gap:12px;font-size:13.5px;color:var(--ink2);line-height:1.7}
+.contact-sec{background:var(--surf);padding:60px 0}
+.contact-card{max-width:580px;margin:0 auto;background:#fff;border:1.5px solid var(--line);border-radius:20px;padding:32px;text-align:center;box-shadow:var(--s2)}
+.contact-card h3{font-family:var(--fd);font-size:19px;font-weight:800;color:var(--ink);margin-bottom:10px}
+.contact-card p{font-size:15px;color:var(--ink3);line-height:1.75;margin-bottom:20px}
+.btn-bl{display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:#fff;font-family:var(--fd);font-weight:700;font-size:14.5px;padding:12px 26px;border-radius:8px;box-shadow:var(--sb);transition:.22s}
+.btn-bl:hover{background:var(--blue-d);transform:translateY(-1px)}
+.priv-note{font-size:12px;color:var(--ink4);margin-top:14px}
+.cta{background:linear-gradient(140deg,#0f172a 0%,#0f4c75 100%);padding:80px 0;text-align:center;position:relative;overflow:hidden}
+.cta::before{content:'';position:absolute;top:-80px;left:50%;transform:translateX(-50%);width:800px;height:380px;background:radial-gradient(ellipse,rgba(30,136,229,.22) 0%,transparent 68%);pointer-events:none}
+.cta-in{position:relative;z-index:1}
+.cta .pill{color:#93c5fd;background:rgba(255,255,255,.1);margin-bottom:18px}
+.cta .pill::before{background:#93c5fd}
+.cta h2{font-family:var(--fd);font-size:clamp(24px,4vw,42px);font-weight:800;color:#fff;line-height:1.15;margin-bottom:12px}
+.cta h2 em{color:#fbbf24;font-style:normal}
+.cta p{font-size:16px;color:rgba(255,255,255,.72);max-width:480px;margin:0 auto 32px;line-height:1.78}
+.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn-gold{display:inline-flex;align-items:center;gap:8px;background:var(--amber);color:#fff;font-family:var(--fd);font-weight:800;font-size:15px;padding:14px 30px;border-radius:8px;box-shadow:0 8px 28px rgba(245,158,11,.35);transition:.22s}
+.btn-gold:hover{background:#d97706;transform:translateY(-3px)}
+.btn-ghost{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.09);border:1.5px solid rgba(255,255,255,.22);color:#fff;font-family:var(--fd);font-weight:600;font-size:14px;padding:13px 26px;border-radius:8px;transition:.2s}
+.btn-ghost:hover{background:rgba(255,255,255,.16)}
+footer{background:#0f172a;padding:52px 0 0}
+.ft-inner{max-width:1180px;margin:0 auto;padding:0 24px}
+.ft-top{display:grid;grid-template-columns:1.9fr 1fr 1fr 1fr;gap:44px;margin-bottom:44px}
+.ft-brand .ln{color:#fff}.ft-brand .ls{color:#475569}
+.ft-desc{font-size:13.5px;color:#64748b;line-height:1.78;max-width:265px;margin:13px 0 20px}
+.ft-soc{display:flex;gap:9px}
+.fts{width:34px;height:34px;border-radius:7px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;color:#94a3b8;font-size:13px;transition:.2s}
+.fts:hover{background:var(--blue);color:#fff}
+.fc h4{font-family:var(--fd);font-size:12px;font-weight:700;color:#fff;margin-bottom:14px;letter-spacing:.06em;text-transform:uppercase}
+.fc ul{display:flex;flex-direction:column;gap:8px}
+.fc ul a{font-size:13.5px;color:#64748b;transition:.18s}
+.fc ul a:hover{color:#93c5fd}
+.ft-btm{border-top:1px solid rgba(255,255,255,.07);padding:20px 0;text-align:center}
+.ft-cp{font-size:12.5px;color:#475569}
+.ft-cp b{color:#64748b}
+.ft-tag{font-size:12px;color:#334155;margin-top:4px;font-style:italic}
+.btt{position:fixed;bottom:26px;right:26px;z-index:500;width:43px;height:43px;background:var(--blue);color:#fff;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:17px;box-shadow:var(--sb);opacity:0;pointer-events:none;transform:translateY(14px);transition:.28s var(--ease)}
+.btt.on{opacity:1;pointer-events:auto;transform:translateY(0)}
+.btt:hover{transform:translateY(-3px)}
+
+/* RESPONSIVE */
+@media(max-width:1060px){.ft-top{grid-template-columns:1fr 1fr}.tips-grid{grid-template-columns:1fr 1fr}.struct-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:860px){
+  nav.dn,.hcta{display:none}.brg{display:flex}
+  .tool-body{padding:24px 22px}.tool-hdr{padding:24px 22px}
+  .grade-grid{grid-template-columns:1fr 1fr}.howto-steps{grid-template-columns:1fr}
+  .rel-grid{grid-template-columns:1fr 1fr}.mistake-grid{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+  .ft-top{grid-template-columns:1fr}.rel-grid{grid-template-columns:1fr}
+  .tips-grid{grid-template-columns:1fr 1fr}.cta-btns{flex-direction:column;align-items:center}
+  .story-card{padding:26px 20px}.res-banner{flex-direction:column;align-items:flex-start;gap:16px}
+  .grade-grid{grid-template-columns:1fr 1fr}.tc-lbl{width:90px}
+  .struct-grid{grid-template-columns:1fr 1fr}.btn-row{flex-direction:column}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="hdr">
+  <div class="w">
+    <div class="hdi">
+      <a href="/" class="logo">
+        <div class="lb"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+        <div><div class="ln">Raj<span>Daily</span>Tools</div><div class="ls">Smart Tools for Daily Life</div></div>
+      </a>
+      <nav class="dn">
+        <a href="/">Home</a><a href="/categories">Categories</a>
+        <a href="/#popular">Popular</a><a href="/about">About</a><a href="/contact">Contact</a>
+      </nav>
+      <a href="/categories" class="hcta">All Tools →</a>
+      <button class="brg" id="brg"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="dov" id="dov"></div>
+<div class="drw" id="drw">
+  <div class="dh">
+    <div class="logo">
+      <div class="lb" style="width:30px;height:30px;border-radius:7px"><svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#fff"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+      <div class="ln" style="font-size:16px">Raj<span>Daily</span>Tools</div>
+    </div>
+    <button class="dx" id="dx">✕</button>
+  </div>
+  <nav class="mn">
+    <a href="/" onclick="cD()">🏠 Home</a>
+    <a href="/categories" onclick="cD()">🗂️ Categories</a>
+    <a href="/#popular" onclick="cD()">⭐ Popular</a>
+    <a href="/about" onclick="cD()">👤 About</a>
+    <a href="/contact" onclick="cD()">📬 Contact</a>
+  </nav>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+  <div class="w">
+    <div class="bc">
+      <a href="/">Home</a><span style="color:var(--ink4)">›</span>
+      <a href="/categories">Tools</a><span style="color:var(--ink4)">›</span>
+      <span>IELTS Reading Band Calculator</span>
+    </div>
+    <div class="hero-inner">
+      <div class="pill">IELTS Study Tools</div>
+      <h1>IELTS <span>Reading Band</span> Score Calculator</h1>
+      <p class="hero-sub">Select your IELTS Reading test type and enter your correct answers to instantly find your <strong>estimated band score</strong>. Supports both Academic and General Training formats with full conversion table and expert preparation tips.</p>
+      <div class="hero-chips">
+        <span class="chip">📖 Academic & General Training</span>
+        <span class="chip">📊 Band 1–9 Conversion</span>
+        <span class="chip">💡 Score Explanation</span>
+        <span class="chip">🆓 100% Free</span>
+      </div>
+      <div class="hero-meta">
+        <div class="upd">📅 Updated for 2025–26</div>
+        <span class="mi">✅ Dual format support</span>
+        <span class="mi">🔒 No data stored</span>
+      </div>
+      <!-- HOW TO USE -->
+      <div class="howto">
+        <div class="howto-ttl">💡 How to Use This Tool</div>
+        <div class="howto-steps">
+          <div class="hs"><span class="sn">1</span>Select Academic or General Training</div>
+          <div class="hs"><span class="sn">2</span>Enter your correct answers (0–40)</div>
+          <div class="hs"><span class="sn">3</span>Click "Calculate My Reading Band"</div>
+          <div class="hs"><span class="sn">4</span>Review band score, level, and tips</div>
+          <div class="hs"><span class="sn">5</span>Compare with your target score</div>
+        </div>
+      </div>
+      <!-- RELATED TOOLS -->
+      <div class="rel-grid">
+        <div class="rg-box c1">
+          <div class="rg-ico">📊</div>
+          <div class="rg-txt">
+            <h4>IELTS Overall Band Calculator</h4>
+            <p>Calculate your final IELTS overall band score</p>
+            <a href="https://rajdailytools.in/ielts-overall-band-score-calculator.html" target="_blank" rel="noopener" class="btn-xs a">Use Now →</a>
+          </div>
+        </div>
+        <div class="rg-box c2">
+          <div class="rg-ico">🎧</div>
+          <div class="rg-txt">
+            <h4>IELTS Listening Band Calculator</h4>
+            <p>Convert Listening correct answers to band score</p>
+            <a href="https://rajdailytools.in/ielts-listening-band-score-calculator.html" target="_blank" rel="noopener" class="btn-xs g">Use Now →</a>
+          </div>
+        </div>
+        <div class="rg-box c3">
+          <div class="rg-ico">✍️</div>
+          <div class="rg-txt">
+            <h4>IELTS Writing Band Guide</h4>
+            <p>Understand Writing band descriptors clearly</p>
+            <a href="#" class="btn-xs b">Coming Soon →</a>
+          </div>
+        </div>
+        <div class="rg-box c4">
+          <div class="rg-ico">🗣️</div>
+          <div class="rg-txt">
+            <h4>IELTS Speaking Band Guide</h4>
+            <p>Know what examiners look for in each band</p>
+            <a href="#" class="btn-xs p">Coming Soon →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOOL SECTION -->
+<section class="tool-sec" id="tool">
+  <div class="w">
+    <div class="tool-wrap">
+      <div class="tool-card rev">
+        <div class="tool-hdr">
+          <div class="run-dots">
+            <div class="run-dot"></div><div class="run-dot"></div><div class="run-dot"></div>
+            <div class="run-dot"></div><div class="run-dot"></div><div class="run-dot"></div>
+          </div>
+          <div class="th">
+            <h2>📖 IELTS Reading Band Score Calculator</h2>
+            <p>Select Academic or General Training, then enter the number of correct answers out of 40. The calculator maps your raw score to an estimated IELTS Reading band using the standard conversion scale for each format.</p>
+            <div class="th-badges">
+              <span class="thb">🎯 Academic & General Training</span>
+              <span class="thb">📊 Visual Progress</span>
+              <span class="thb">💡 Improvement Tips</span>
+              <span class="thb">🔒 No Data Stored</span>
+            </div>
+          </div>
+        </div>
+        <div class="tool-body">
+
+          <div class="fld">
+            <label class="flbl" for="examType">Exam Type <span>Select one</span></label>
+            <select class="fsel" id="examType">
+              <option value="academic">Academic IELTS</option>
+              <option value="general">General Training IELTS</option>
+            </select>
+          </div>
+
+          <div class="fld">
+            <label class="flbl" for="correct">Number of Correct Answers <span>0 – 40</span></label>
+            <input class="finp" type="number" id="correct" placeholder="e.g. 27" min="0" max="40" autocomplete="off">
+            <div class="score-range">
+              <span class="sr-item" onclick="setScore(15)">15 ≈ Band 5</span>
+              <span class="sr-item" onclick="setScore(23)">23 ≈ Band 6</span>
+              <span class="sr-item" onclick="setScore(30)">30 ≈ Band 7</span>
+              <span class="sr-item" onclick="setScore(35)">35 ≈ Band 8</span>
+              <span class="sr-item" onclick="setScore(39)">39 ≈ Band 9</span>
+            </div>
+          </div>
+
+          <div class="hint-box">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            <div>The IELTS Reading test has <strong>40 questions</strong> across three passages (Academic) or sections (General Training). Every correct answer earns one mark. No marks are deducted for wrong answers. Academic and General Training use <strong>different conversion scales</strong> — always select the correct format for an accurate estimate.</div>
+          </div>
+
+          <div class="btn-row">
+            <button class="chk-btn" onclick="calcReading()">📖 Calculate My Reading Band</button>
+            <button class="rst-btn" onclick="resetTool()">↺ Reset</button>
+          </div>
+
+          <!-- RESULT -->
+          <div id="resultArea">
+            <div class="res-banner" id="resBanner">
+              <div class="meter-wrap">
+                <svg class="meter-svg" viewBox="0 0 100 100">
+                  <circle class="meter-bg" cx="50" cy="50" r="45"/>
+                  <circle class="meter-fill" id="meterFill" cx="50" cy="50" r="45" stroke-dasharray="283" stroke-dashoffset="283"/>
+                </svg>
+                <div class="meter-center">
+                  <div class="meter-pct" id="meterPct">–</div>
+                  <div class="meter-lbl" id="meterLbl">Band</div>
+                </div>
+              </div>
+              <div class="res-info">
+                <div class="res-icon" id="resIcon"></div>
+                <div class="res-title" id="resTitle"></div>
+                <div class="res-sub" id="resSub"></div>
+                <div class="res-tag" id="resTag"></div>
+              </div>
+            </div>
+
+            <div class="grade-grid" id="gradeGrid"></div>
+
+            <div class="time-compare">
+              <div class="tc-title">📊 Score Progress — Correct Answers vs Band Targets</div>
+              <div id="scoreBars"></div>
+            </div>
+
+            <div class="sugg-box" id="suggBox"></div>
+            <div class="warn-box">
+              <span style="font-size:20px;flex-shrink:0">⚠️</span>
+              <div style="font-size:13.5px;color:var(--ink2);line-height:1.72"><strong>Note:</strong> This is an estimated band score based on the standard IELTS Reading conversion table. Actual results are determined by official IELTS test centres and may vary slightly depending on the specific test version. Always refer to your official Test Report Form for confirmed scores. <strong>No data you enter is stored or shared.</strong></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SCORE TABLE SECTION -->
+<section class="tbl-sec" id="score-table">
+  <div class="w">
+    <div style="max-width:860px;margin:0 auto">
+      <div class="rev" style="text-align:center;margin-bottom:36px">
+        <div class="pill" style="margin-bottom:14px">Complete Conversion Tables</div>
+        <h2 style="font-family:var(--fd);font-size:clamp(22px,3.5vw,36px);font-weight:800;color:var(--ink);margin-bottom:10px">IELTS Reading <span style="color:var(--blue)">Score to Band Conversion</span></h2>
+        <p style="font-size:15px;color:var(--ink3);max-width:520px;margin:0 auto;line-height:1.75">Full raw score to band mapping for both Academic and General Training IELTS Reading — 40 questions, each worth one mark.</p>
+      </div>
+
+      <div class="tab-btns rev">
+        <button class="tab-btn active" id="tabAcademic" onclick="showTable('academic')">📘 Academic Reading</button>
+        <button class="tab-btn" id="tabGeneral" onclick="showTable('general')">📗 General Training Reading</button>
+      </div>
+
+      <div class="tbl-wr rev" id="tableAcademic">
+        <table id="convTableAcademic">
+          <thead><tr><th>Correct Answers</th><th>Estimated Band Score</th><th>Performance Level</th><th>Description</th></tr></thead>
+          <tbody>
+            <tr class="row-pass"><td><strong>39 – 40</strong></td><td><strong>Band 9.0</strong></td><td><span class="tbadge g">Expert User</span></td><td>Exceptional comprehension of complex academic texts</td></tr>
+            <tr class="row-pass"><td><strong>37 – 38</strong></td><td><strong>Band 8.5</strong></td><td><span class="tbadge g">Very Good+</span></td><td>Near-perfect accuracy across all passage types</td></tr>
+            <tr class="row-pass"><td><strong>35 – 36</strong></td><td><strong>Band 8.0</strong></td><td><span class="tbadge g">Very Good User</span></td><td>Strong comprehension with minimal errors</td></tr>
+            <tr class="row-pass"><td><strong>33 – 34</strong></td><td><strong>Band 7.5</strong></td><td><span class="tbadge g">Good+</span></td><td>Reliable reading with occasional detail slips</td></tr>
+            <tr class="row-pass"><td><strong>30 – 32</strong></td><td><strong>Band 7.0</strong></td><td><span class="tbadge g">Good User</span></td><td>Effective understanding of most academic material</td></tr>
+            <tr class="row-avg"><td><strong>27 – 29</strong></td><td><strong>Band 6.5</strong></td><td><span class="tbadge a">Competent+</span></td><td>Good grasp of main ideas; some gaps in detail</td></tr>
+            <tr class="row-avg"><td><strong>23 – 26</strong></td><td><strong>Band 6.0</strong></td><td><span class="tbadge a">Competent User</span></td><td>Generally understands familiar academic content</td></tr>
+            <tr class="row-avg"><td><strong>19 – 22</strong></td><td><strong>Band 5.5</strong></td><td><span class="tbadge a">Modest+</span></td><td>Follows main argument; misses complex inferences</td></tr>
+            <tr class="row-avg"><td><strong>15 – 18</strong></td><td><strong>Band 5.0</strong></td><td><span class="tbadge a">Modest User</span></td><td>Partial comprehension; struggles with dense text</td></tr>
+            <tr class="row-fail"><td><strong>13 – 14</strong></td><td><strong>Band 4.5</strong></td><td><span class="tbadge r">Limited+</span></td><td>Only straightforward text on familiar topics</td></tr>
+            <tr class="row-fail"><td><strong>10 – 12</strong></td><td><strong>Band 4.0</strong></td><td><span class="tbadge r">Limited User</span></td><td>Frequent difficulty with unfamiliar vocabulary</td></tr>
+            <tr class="row-fail"><td><strong>6 – 9</strong></td><td><strong>Band 3.5</strong></td><td><span class="tbadge r">Extremely Limited</span></td><td>Very limited reading comprehension ability</td></tr>
+            <tr class="row-fail"><td><strong>3 – 5</strong></td><td><strong>Band 3.0</strong></td><td><span class="tbadge r">Extremely Limited</span></td><td>Only isolated words or very short phrases</td></tr>
+            <tr class="row-fail"><td><strong>1 – 2</strong></td><td><strong>Band 2.5</strong></td><td><span class="tbadge r">Intermittent</span></td><td>Minimal ability; occasional word recognition only</td></tr>
+            <tr class="row-fail"><td><strong>0</strong></td><td><strong>Band 1.0</strong></td><td><span class="tbadge r">Non User</span></td><td>No usable reading ability demonstrated</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="tbl-wr rev" id="tableGeneral" style="display:none">
+        <table id="convTableGeneral">
+          <thead><tr><th>Correct Answers</th><th>Estimated Band Score</th><th>Performance Level</th><th>Description</th></tr></thead>
+          <tbody>
+            <tr class="row-pass"><td><strong>40</strong></td><td><strong>Band 9.0</strong></td><td><span class="tbadge g">Expert User</span></td><td>Complete mastery of everyday and extended texts</td></tr>
+            <tr class="row-pass"><td><strong>39</strong></td><td><strong>Band 8.5</strong></td><td><span class="tbadge g">Very Good+</span></td><td>Near-perfect accuracy across all text types</td></tr>
+            <tr class="row-pass"><td><strong>37 – 38</strong></td><td><strong>Band 8.0</strong></td><td><span class="tbadge g">Very Good User</span></td><td>Excellent comprehension with very few errors</td></tr>
+            <tr class="row-pass"><td><strong>35 – 36</strong></td><td><strong>Band 7.5</strong></td><td><span class="tbadge g">Good+</span></td><td>Confident reading with minor misreads</td></tr>
+            <tr class="row-pass"><td><strong>32 – 34</strong></td><td><strong>Band 7.0</strong></td><td><span class="tbadge g">Good User</span></td><td>Solid understanding of written English in context</td></tr>
+            <tr class="row-avg"><td><strong>30 – 31</strong></td><td><strong>Band 6.5</strong></td><td><span class="tbadge a">Competent+</span></td><td>Effective reading with occasional gaps</td></tr>
+            <tr class="row-avg"><td><strong>27 – 29</strong></td><td><strong>Band 6.0</strong></td><td><span class="tbadge a">Competent User</span></td><td>Understands most written material on familiar topics</td></tr>
+            <tr class="row-avg"><td><strong>23 – 26</strong></td><td><strong>Band 5.5</strong></td><td><span class="tbadge a">Modest+</span></td><td>Follows familiar text reasonably well</td></tr>
+            <tr class="row-avg"><td><strong>19 – 22</strong></td><td><strong>Band 5.0</strong></td><td><span class="tbadge a">Modest User</span></td><td>Partial understanding; familiar contexts manageable</td></tr>
+            <tr class="row-fail"><td><strong>15 – 18</strong></td><td><strong>Band 4.5</strong></td><td><span class="tbadge r">Limited+</span></td><td>Only very simple, short texts understood</td></tr>
+            <tr class="row-fail"><td><strong>12 – 14</strong></td><td><strong>Band 4.0</strong></td><td><span class="tbadge r">Limited User</span></td><td>Frequent difficulty with most written content</td></tr>
+            <tr class="row-fail"><td><strong>8 – 11</strong></td><td><strong>Band 3.5</strong></td><td><span class="tbadge r">Extremely Limited</span></td><td>Basic word recognition only</td></tr>
+            <tr class="row-fail"><td><strong>5 – 7</strong></td><td><strong>Band 3.0</strong></td><td><span class="tbadge r">Extremely Limited</span></td><td>Very limited ability in reading comprehension</td></tr>
+            <tr class="row-fail"><td><strong>1 – 4</strong></td><td><strong>Band 2.5</strong></td><td><span class="tbadge r">Intermittent</span></td><td>Minimal reading ability demonstrated</td></tr>
+            <tr class="row-fail"><td><strong>0</strong></td><td><strong>Band 1.0</strong></td><td><span class="tbadge r">Non User</span></td><td>No usable reading ability demonstrated</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p style="font-size:12.5px;color:var(--ink4);margin-top:12px;text-align:center">* Band score conversions are estimates based on published IELTS scoring guidelines. Actual scores may vary by test paper version. Highlighted rows reflect your result when you use the calculator above.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TIPS SECTION -->
+<section class="tips-sec">
+  <div class="w">
+    <div style="text-align:center;margin-bottom:36px" class="rev">
+      <div class="pill" style="margin-bottom:14px">Improvement Strategies</div>
+      <h2 style="font-family:var(--fd);font-size:clamp(22px,3.5vw,36px);font-weight:800;color:var(--ink);margin-bottom:10px">How to Score <span style="color:var(--blue)">Higher in Reading</span></h2>
+      <p style="font-size:15px;color:var(--ink3);max-width:480px;margin:0 auto">Proven techniques that raise your correct answer count — and your band score — with focused daily practice.</p>
+    </div>
+    <div class="tips-grid rev">
+      <div class="tip-card">
+        <div class="tip-ico">⏱️</div>
+        <div class="tip-title">Manage Your Time Strictly</div>
+        <div class="tip-desc">The IELTS Reading test is 60 minutes for 40 questions across three passages. That leaves roughly 20 minutes per passage. Candidates who spend too long on one passage run out of time for the others. Practice with a timer from day one so time management becomes automatic, not something you think about during the actual test.</div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-ico">🔍</div>
+        <div class="tip-title">Skim and Scan First</div>
+        <div class="tip-desc">Before reading in detail, skim the passage for its structure and scan for key topics and headings. Then read each question and scan for the relevant section of text. Attempting to read the entire passage word-for-word before answering questions is the single most common time-wasting mistake in the Reading section.</div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-ico">🗝️</div>
+        <div class="tip-title">Understand Question Types</div>
+        <div class="tip-desc">IELTS Reading uses multiple question formats — True/False/Not Given, matching headings, sentence completion, multiple choice, and summary completion. Each type requires a different approach. Practice each format separately until you recognise exactly what it demands. Misunderstanding the T/F/NG distinction alone can cost four or five marks per test.</div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-ico">📚</div>
+        <div class="tip-title">Build Vocabulary Daily</div>
+        <div class="tip-desc">A wide vocabulary is the most reliable predictor of IELTS Reading performance. Read quality English content every day — news articles, journals, opinion pieces. Focus particularly on academic and formal register words. When you encounter an unfamiliar word in practice, note it down and review it. Consistent vocabulary growth directly translates into faster, more accurate reading.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STORY SECTION -->
+<section class="story-sec">
+  <div class="wa">
+    <div class="rev" style="text-align:center;margin-bottom:36px">
+      <div class="pill" style="margin-bottom:14px">Why I Built This</div>
+      <h2 style="font-family:var(--fd);font-size:clamp(22px,3.4vw,34px);font-weight:800;color:var(--ink);margin-bottom:8px">Priya ki <span style="color:var(--blue)">Kahaani</span></h2>
+      <p style="font-size:15px;color:var(--ink3)">Ek aisi problem jo almost har IELTS student face karta hai — band pata hi nahi chalta.</p>
+    </div>
+    <div class="story-card rev">
+      <div class="sq">"</div>
+      <div class="sb">
+        Maine ye Reading Band Calculator isliye banaya kyunki <strong>meri behen ki dost Priya Canada ke liye IELTS prepare kar rahi thi</strong>. Wo roz subah ek reading passage practice karti thi — newspaper articles, journal excerpts, IELTS sample papers. Bahut systematic approach tha uska.<br><br>
+        Lekin ek cheez thi jo use hamesha confuse karti thi. Practice test ke baad wo call karti — <em>"bhai, aaj maine 28 correct kiye hain Academic paper mein — mera band score kya hua? Main confused hoon kyunki meri padosi ne bola ki General Training mein yahi score alag band deta hai."</em><br><br>
+        <strong>Problem ye thi ki Academic aur General Training ke liye alag-alag conversion tables hoti hain, aur kisi ko bhi easily milti nahi thi. Har baar Google karo, alag-alag answers milte the.</strong> Kabhi Band 6 dikhta, kabhi 6.5 — kaunsa sahi hai koi nahi jaanta tha.<br><br>
+        Ek raat usne message kiya — <em>"ek hi tool mein dono formats ka score convert ho jaata toh kitna easy hota. Main seedha jaanti apna target se kitni door hoon."</em><br><br>
+        <strong>Usi conversation ke baad maine decide kiya — ek aisa tool banaunga jo Academic aur General Training dono handle kare. Ek click mein, correct table se, correct band. Priya jaisi situation mein koi aur confuse na ho.</strong> 🇮🇳📖
+      </div>
+      <div class="sauth">
+        <div class="savt">🛠️</div>
+        <div>
+          <div class="sname">Raj Bhai — RajDailyTools</div>
+          <div class="srole">Founder, RajDailyTools.in · Every tool solves a real problem</div>
+        </div>
+      </div>
+      <div class="founder-msg">
+        <div class="fm-ico">📖</div>
+        <div class="fm-txt"><strong>To every IELTS candidate pushing through dense reading passages:</strong> After every practice test, run your score through this calculator. Know your band. Know the gap. Then focus specifically on the question types — headings matching, T/F/NG, sentence completion — where you are losing the most marks. Targeted correction beats general re-reading every single time.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GUIDE SECTION -->
+<section class="guide-sec" id="guide">
+  <div class="wa">
+    <div class="rev" style="text-align:center;margin-bottom:40px">
+      <div class="pill" style="margin-bottom:14px">Complete Guide</div>
+      <h2 style="font-family:var(--fd);font-size:clamp(22px,3.5vw,36px);font-weight:800;color:var(--ink);margin-bottom:10px">IELTS Reading Score — <span style="color:var(--blue)">Full Guide</span></h2>
+      <p style="font-size:15px;color:var(--ink3);max-width:520px;margin:0 auto;line-height:1.75">Everything you need to understand the IELTS Reading test, how your score is calculated, the difference between Academic and General Training, common mistakes to avoid, and how to move up a band.</p>
+    </div>
+    <div class="story-card rev guide-body">
+
+      <h2>What Is the IELTS Reading Test?</h2>
+      <p>The IELTS Reading test is one of the four components of the IELTS examination. It runs for exactly 60 minutes with no additional transfer time — unlike the Listening test, answers must be written directly on the answer sheet during the 60-minute window. Missing this distinction has cost many candidates dearly on test day.</p>
+      <p>The test measures a wide range of reading skills including following arguments, identifying opinions versus facts, skimming for general meaning, scanning for specific information, and understanding complex vocabulary in context. There are 40 questions in total, and every correct answer earns one mark with no penalty for wrong answers.</p>
+
+      <div class="ibox">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        <div><strong>Important Difference:</strong> Unlike the Listening test, there is no transfer time in IELTS Reading. Your 60 minutes is all you have — for both reading and writing your answers. Many candidates discover this too late in their preparation.</div>
+      </div>
+
+      <h2>Academic vs General Training Reading</h2>
+      <p>This is the most important distinction for the Reading section. While the Listening and Speaking tests are identical for both IELTS formats, the Reading test is fundamentally different between Academic and General Training in both content and scoring.</p>
+
+      <div class="struct-grid">
+        <div class="struct-card">
+          <div class="struct-ico">📘</div>
+          <div class="struct-num">Academic</div>
+          <div class="struct-title">Three Long Passages</div>
+          <div class="struct-desc">Three long, complex texts from academic journals, books, and magazines. Progressively harder, with abstract and technical vocabulary.</div>
+        </div>
+        <div class="struct-card">
+          <div class="struct-ico">📗</div>
+          <div class="struct-num">General Training</div>
+          <div class="struct-title">Multiple Shorter Texts</div>
+          <div class="struct-desc">Section 1 and 2 have everyday texts (ads, notices, workplace materials). Section 3 has one longer, more complex reading extract.</div>
+        </div>
+        <div class="struct-card">
+          <div class="struct-ico">📊</div>
+          <div class="struct-num">Scoring</div>
+          <div class="struct-title">Different Scales</div>
+          <div class="struct-desc">Academic has a stricter conversion table. Achieving Band 7 in Academic requires more correct answers than in General Training.</div>
+        </div>
+        <div class="struct-card">
+          <div class="struct-ico">🎯</div>
+          <div class="struct-num">Purpose</div>
+          <div class="struct-title">Different Goals</div>
+          <div class="struct-desc">Academic is for university and postgraduate entry. General Training is for work experience, vocational training, and migration.</div>
+        </div>
+      </div>
+
+      <h2>How Reading Scores Are Calculated</h2>
+      <p>Each of the 40 questions earns one mark. Your total correct answers form your raw score, which is converted to a band using the relevant Academic or General Training scale. There is no negative marking — a wrong or blank answer simply receives zero, so always attempt every question.</p>
+      <p>The conversion is not linear. At the higher end of the scale, the difference between Band 8 and Band 9 in Academic Reading is just four to five correct answers. This means that for high scorers, small improvements in accuracy produce significant band gains. Conversely, at the lower end of the scale, you can gain several correct answers without moving a full band, which is why targeted improvement at your current level matters more than broad practice.</p>
+
+      <div class="ibox a">
+        <svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        <div><strong>Academic vs General Scaling:</strong> If you get 30 correct answers — you achieve Band 7.0 in Academic IELTS Reading, but Band 6.5 in General Training. Always select the correct format in the calculator above to get an accurate estimate.</div>
+      </div>
+
+      <h2>Reading Band Score Guide</h2>
+      <p>Here is what each band zone means practically for an IELTS Reading result:</p>
+      <ul>
+        <li><strong>Band 9 (39–40 Academic / 40 General):</strong> Expert reading ability. You process complex, abstract text with complete accuracy, including inferential meaning and writer's purpose.</li>
+        <li><strong>Band 8 (35–38 Academic / 37–38 General):</strong> Very high accuracy with only occasional slips. You handle specialised vocabulary and long argument structures comfortably.</li>
+        <li><strong>Band 7 (30–34 Academic / 32–34 General):</strong> Reliable comprehension of most material. Occasional misreads of implied meaning or complex sentence structure.</li>
+        <li><strong>Band 6 (23–29 Academic / 27–29 General):</strong> Generally competent. Gets the main ideas and most factual details but struggles with inference, tone, and heading matching on difficult passages.</li>
+        <li><strong>Band 5 (15–22 Academic / 19–22 General):</strong> Partial comprehension. Familiar topics are manageable but dense academic or formal texts cause significant difficulty.</li>
+        <li><strong>Band 4 and below:</strong> Limited reading comprehension. Dedicated language and vocabulary development is needed alongside test-specific practice.</li>
+      </ul>
+
+      <h2>Common Reading Mistakes</h2>
+      <p>Many candidates lose marks not because their English is poor, but because of avoidable errors specific to the test format.</p>
+      <div class="mistake-grid">
+        <div class="mistake-card">
+          <div class="mistake-ico">❌</div>
+          <div class="mistake-body">
+            <h4>Confusing True / False / Not Given</h4>
+            <p>This is the single most commonly misunderstood question type. "False" means the passage directly contradicts the statement. "Not Given" means the passage neither confirms nor denies it. Many candidates mark "False" when the answer is actually "Not Given" — treating absence of information as contradiction.</p>
+          </div>
+        </div>
+        <div class="mistake-card">
+          <div class="mistake-ico">❌</div>
+          <div class="mistake-body">
+            <h4>Reading Word-for-Word</h4>
+            <p>Trying to read every word in every passage is the fastest way to run out of time. Efficient IELTS readers skim the passage structure first, then scan for the specific information each question asks for. Developing this habit through practice is essential.</p>
+          </div>
+        </div>
+        <div class="mistake-card">
+          <div class="mistake-ico">❌</div>
+          <div class="mistake-body">
+            <h4>Exceeding Word Limits</h4>
+            <p>If a completion question says "no more than two words," a three-word answer receives zero even if it contains the correct information. Check word limits carefully before writing. Numbers as digits (e.g., "40") count as one word.</p>
+          </div>
+        </div>
+        <div class="mistake-card">
+          <div class="mistake-ico">❌</div>
+          <div class="mistake-body">
+            <h4>Choosing Based on Vocabulary Matches</h4>
+            <p>IELTS Reading passages frequently paraphrase statements in the questions using different vocabulary. Candidates who scan for the exact words in the question often land in the wrong part of the passage. The meaning matches — not the words.</p>
+          </div>
+        </div>
+        <div class="mistake-card">
+          <div class="mistake-ico">❌</div>
+          <div class="mistake-body">
+            <h4>Skipping Difficult Questions</h4>
+            <p>Since there is no negative marking, leaving a question blank is always worse than guessing. If you are unsure after a reasonable attempt, make your best guess and move on. Unanswered questions are guaranteed zeros; guesses sometimes turn into correct marks.</p>
+          </div>
+        </div>
+        <div class="mistake-card">
+          <div class="mistake-ico">❌</div>
+          <div class="mistake-body">
+            <h4>Not Practising Heading Matching</h4>
+            <p>Matching headings to paragraphs is one of the most time-consuming question types in Academic Reading. Candidates who have not specifically practised it often spend too long and lose time for other questions. Dedicated heading matching drills save significant time in the real test.</p>
+          </div>
+        </div>
+      </div>
+
+      <h2>Score Interpretation — Practical Targets</h2>
+      <p>Here is how your IELTS Reading band connects to common real-world requirements:</p>
+      <div class="ex-card">
+        <div class="ex-row"><span>🏫 Most UK undergraduate programs</span><span><strong>Band 6.0+</strong></span></div>
+        <div class="ex-row"><span>🎓 Most postgraduate UK/Australia</span><span><strong>Band 6.5–7.0+</strong></span></div>
+        <div class="ex-row"><span>✈️ Australian skilled migration (general)</span><span><strong>Band 6.0–7.0+</strong></span></div>
+        <div class="ex-row"><span>🏥 UK nursing / healthcare registration</span><span><strong>Band 7.0+</strong></span></div>
+        <div class="ex-row"><span>🍁 Canadian Express Entry (FSW)</span><span><strong>Band 6.0+</strong></span></div>
+        <div class="ex-row" style="border-bottom:none"><span>👮 Some professional licensing bodies</span><span><strong>Band 7.5–8.0+</strong></span></div>
+      </div>
+      <p style="font-size:13px;color:var(--ink4)">* Requirements vary by institution, program, and immigration stream. Always verify from the official source before applying.</p>
+
+      <div class="ibox g">
+        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+        <div><strong>Score Strategy:</strong> If you are at Band 6.0 in Academic Reading (around 23–26 correct) and need Band 7.0, that means getting 4–7 more correct answers. Do not practice randomly — identify which question types cause the most errors in your mock tests. For most Band 6 candidates, it is either True/False/Not Given or matching headings. Fixing two question types can shift you a full band.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FAQ SECTION -->
+<section class="faq-sec" id="faq">
+  <div class="w">
+    <div class="rev" style="text-align:center;margin-bottom:40px">
+      <div class="pill" style="margin-bottom:14px">Frequently Asked Questions</div>
+      <h2 style="font-family:var(--fd);font-size:clamp(22px,3.5vw,36px);font-weight:800;color:var(--ink);margin-bottom:10px">IELTS Reading — <span style="color:var(--blue)">Common Questions Answered</span></h2>
+      <p style="font-size:15px;color:var(--ink3);max-width:500px;margin:0 auto;line-height:1.75">Clear answers to questions IELTS Reading candidates ask most often about scoring, format, and preparation.</p>
+    </div>
+    <div class="fql" id="faqList">
+
+      <div class="fq rev">
+        <div class="fq-q"><span class="fq-t">What is the IELTS Reading Band Score Calculator?</span><div class="fq-i">+</div></div>
+        <div class="fq-a"><div class="fq-ai">The IELTS Reading Band Score Calculator estimates your IELTS Reading band score based on the number of correct answers in the reading section. It supports both Academic and General Training IELTS Reading formats and provides an instant estimated band score along with your performance level, a progress comparison against key band thresholds, and targeted improvement suggestions.</div></div>
+      </div>
+
+      <div class="fq rev">
+        <div class="fq-q"><span class="fq-t">Does this calculator support both Academic and General Training IELTS?</span><div class="fq-i">+</div></div>
+        <div class="fq-a"><div class="fq-ai">Yes. The calculator fully supports both Academic and General Training IELTS Reading score estimation. Since the two formats use different score conversion scales, it is important to select the correct exam type before entering your correct answer count. The same number of correct answers can result in different band scores depending on which format you are sitting.</div></div>
+      </div>
+
+      <div class="fq rev">
+        <div class="fq-q"><span class="fq-t">How many questions are in the IELTS Reading test?</span><div class="fq-i">+</div></div>
+        <div class="fq-a"><div class="fq-ai">The IELTS Reading test contains 40 questions. For Academic IELTS, these are distributed across three long passages (typically around 13–14 questions per passage). For General Training IELTS, questions are spread across shorter Section 1 and 2 texts and a longer Section 3 passage. Each question is worth one mark, giving a maximum raw score of 40.</div></div>
+      </div>
+
+      <div class="fq rev">
+        <div class="fq-q"><span class="fq-t">Is the Reading score calculation the same for Academic and General IELTS?</span><div class="fq-i">+</div></div>
+        <div class="fq-a"><div class="fq-ai">No. Academic and General Training Reading tests use different score conversion scales. Academic Reading has a stricter scale because the texts are more complex and specialised. The same number of correct answers will typically produce a lower band in Academic IELTS than in General Training. For example, 30 correct answers gives Band 7.0 in Academic but Band 6.5 in General Training. Always use the correct format in this calculator.</div></div>
+      </div>
+
+      <div class="fq rev">
+        <div class="fq-q"><span class="fq-t">Is there negative marking in IELTS Reading?</span><div class="fq-i">+</div></div>
+        <div class="fq-a"><div class="fq-ai">No. IELTS does not apply negative marking to Reading answers. A wrong answer simply receives zero marks — the same as leaving a question blank. This means you should always attempt every question and never leave an answer blank. Even an educated guess is better than nothing, since a guess has a chance of being correct while a blank answer is guaranteed to score zero.</div></div>
+      </div>
+
+      <div class="fq rev">
+        <div class="fq-q"><span class="fq-t">How long is the IELTS Reading test?</span><div class="fq-i">+</div></div>
+        <div class="fq-a"><div class="fq-ai">The IELTS Reading test is exactly 60 minutes. Unlike the Listening test, there is no additional transfer time — candidates must write their answers directly on the answer sheet within those 60 minutes. This makes time management critical in Reading. The standard advice is to spend approximately 20 minutes on each of the three passages or sections and to move on even if you have not finished, rather than running out of time on the final passage.</div></div>
+      </div>
+
+      <div class="fq rev">
+        <div class="fq-q"><span class="fq-t">What Reading score is usually needed for Band 7?</span><div class="fq-i">+</div></div>
+        <div class="fq-a"><div class="fq-ai">In Academic IELTS Reading, Band 7.0 generally requires approximately 30–32 correct answers out of 40. In General Training IELTS Reading, Band 7.0 requires approximately 32–34 correct answers. The exact thresholds can vary slightly between different test versions, and the scores shown here are based on standard published conversion references.</div></div>
+      </div>
+
+      <div class="fq rev">
+        <div class="fq-q"><span class="fq-t">Can I use this calculator for study abroad or immigration planning?</span><div class="fq-i">+</div></div>
+        <div class="fq-a"><div class="fq-ai">Yes. The calculator can help you estimate whether your current Reading performance is close to the band required by your target university or immigration program. It is designed to give you a realistic picture of where you stand and how many more correct answers you would need to reach the next band threshold. Always verify the exact Reading score requirements directly with the institution or authority you are applying to, as requirements vary and may be updated.</div></div>
+      </div>
+
+      <div class="fq rev">
+        <div class="fq-q"><span class="fq-t">Is Band 6 a good IELTS Reading score?</span><div class="fq-i">+</div></div>
+        <div class="fq-a"><div class="fq-ai">Band 6 is generally described as a "Competent User" level and is accepted by many undergraduate institutions and some immigration pathways. However, postgraduate programs and skilled migration routes in the UK, Australia, and Canada typically require Band 6.5 to Band 7.0 or higher in Reading. Whether Band 6 is "good enough" depends entirely on the specific requirement of the institution or program you are targeting — always check the official requirement first.</div></div>
+      </div>
+
+      <div class="fq rev">
+        <div class="fq-q"><span class="fq-t">What is the difference between True/False/Not Given and Yes/No/Not Given?</span><div class="fq-i">+</div></div>
+        <div class="fq-a"><div class="fq-ai">Both question types use "Not Given" in the same way — the passage provides no information to confirm or deny the statement. The key difference is in what they assess: True/False/Not Given questions test whether a factual claim in the question matches information in the passage. Yes/No/Not Given questions test whether a claim about the writer's opinion or viewpoint agrees with the writer's position. Mixing these up is a common source of errors. Read the question type instruction carefully before answering.</div></div>
+      </div>
+
+      <div class="fq rev">
+        <div class="fq-q"><span class="fq-t">Can I improve my IELTS Reading score?</span><div class="fq-i">+</div></div>
+        <div class="fq-a"><div class="fq-ai">Yes, definitely. IELTS Reading scores can improve significantly with targeted preparation. The most effective approaches include practising specific question types that cause the most errors (especially T/F/NG and matching headings), building vocabulary through regular reading of quality English material, practising timed full mock tests under real conditions, and reviewing every wrong answer to understand why it was incorrect. Broad daily reading combined with specific question-type drilling is the fastest route to band improvement.</div></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- DISCLAIMER -->
+<div class="disc">
+  <div class="w">
+    <div class="disc-in">
+      <span style="font-size:18px;flex-shrink:0">⚠️</span>
+      <div><strong>Disclaimer:</strong> This IELTS Reading Band Score Calculator is an independent educational tool. It is not affiliated with, endorsed by, or connected to IELTS, IDP, British Council, or Cambridge Assessment English. Band score estimates are based on published IELTS conversion guidelines and are provided for preparation purposes only. Official scores are determined solely by authorised test centres. Always refer to your official Test Report Form for confirmed results.</div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<section class="contact-sec">
+  <div class="w">
+    <div class="contact-card rev">
+      <h3>📬 Questions or Feedback?</h3>
+      <p>If this tool helped you or you have a suggestion to make it better, we would love to hear from you. We are always improving RajDailyTools to serve students preparing for IELTS and other English language tests.</p>
+      <a href="mailto:contact@rajdailytools.in" class="btn-bl">📧 Contact Us</a>
+      <p class="priv-note">🔒 We do not collect or store any information entered into our tools. Your privacy is fully protected.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="w">
+    <div class="cta-in">
+      <div class="pill">Free IELTS Tools</div>
+      <h2>More IELTS Preparation?<br><em>Explore All Our Tools</em></h2>
+      <p>From band calculators to score guides — everything you need to track progress and reach your target band, completely free.</p>
+      <div class="cta-btns">
+        <a href="/categories" class="btn-gold">🎯 Explore All Tools</a>
+        <a href="#tool" class="btn-ghost">📖 Calculate Again ↑</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-inner">
+    <div class="ft-top">
+      <div class="ft-brand">
+        <div class="logo" style="margin-bottom:4px">
+          <div class="lb"><svg viewBox="0 0 24 24" fill="#fff"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+          <div><div class="ln">Raj<span>Daily</span>Tools</div><div class="ls">Smart Tools for Daily Life</div></div>
+        </div>
+        <p class="ft-desc">India's most ambitious free tools platform. Built by Raj Bhai. Solving daily life problems, one tool at a time.</p>
+        <div class="ft-soc">
+          <a href="https://www.facebook.com/share/1Dq3Y1k7mG/" target="_blank" class="fts">f</a>
+          <a href="https://x.com/Educator4ll" target="_blank" class="fts">𝕏</a>
+          <a href="https://youtube.com/@rajdailytools" target="_blank" class="fts">▶</a>
+          <a href="https://www.instagram.com/rajdailytools" target="_blank" class="fts">📷</a>
+        </div>
+      </div>
+      <div class="fc"><h4>IELTS Tools</h4><ul>
+        <li><a href="https://rajdailytools.in/ielts-overall-band-score-calculator.html">Overall Band Calculator</a></li>
+        <li><a href="https://rajdailytools.in/ielts-listening-band-score-calculator.html">Listening Band Calculator</a></li>
+        <li><a href="#">Reading Band Calculator</a></li>
+        <li><a href="#">Target Band Planner</a></li>
+      </ul></div>
+      <div class="fc"><h4>Categories</h4><ul>
+        <li><a href="/education-tools">Education Tools</a></li>
+        <li><a href="/finance-tools">Finance Tools</a></li>
+        <li><a href="/calculator-tools">Calculator Tools</a></li>
+        <li><a href="/health-tools">Health Tools</a></li>
+        <li><a href="/text-tools">Text Tools</a></li>
+      </ul></div>
+      <div class="fc"><h4>Company</h4><ul>
+        <li><a href="/about">About Us</a></li>
+        <li><a href="/contact">Contact</a></li>
+        <li><a href="/privacy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
+      </ul></div>
+    </div>
+    <div class="ft-btm">
+      <p class="ft-cp">Copyright © 2026 <b>RajDailyTools</b>. All rights reserved. Designed by <b>RajDailyTools</b></p>
+      <p class="ft-tag">Made with ❤️ in India — "Solving daily life problems with smart tools"</p>
+    </div>
+  </div>
+</footer>
+<button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+/* ── Drawer ── */
+const brg=document.getElementById('brg'),drw=document.getElementById('drw'),dov=document.getElementById('dov');
+function oD(){drw.classList.add('on');dov.classList.add('on');document.body.style.overflow='hidden'}
+function cD(){drw.classList.remove('on');dov.classList.remove('on');document.body.style.overflow=''}
+brg.addEventListener('click',oD);
+document.getElementById('dx').addEventListener('click',cD);
+dov.addEventListener('click',cD);
+
+/* ── Back to Top ── */
+const btt=document.getElementById('btt');
+window.addEventListener('scroll',()=>btt.classList.toggle('on',scrollY>380),{passive:true});
+
+/* ── Reveal on scroll ── */
+const rvObs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      const s=[...(e.target.parentElement?.children||[])];
+      e.target.style.transitionDelay=(s.indexOf(e.target)%4)*0.08+'s';
+      e.target.classList.add('in');
+      rvObs.unobserve(e.target);
+    }
+  });
+},{threshold:0.06,rootMargin:'0px 0px -20px 0px'});
+document.querySelectorAll('.rev').forEach(el=>rvObs.observe(el));
+
+/* ── FAQ Accordion ── */
+document.getElementById('faqList').addEventListener('click',function(e){
+  const q=e.target.closest('.fq-q');
+  if(!q)return;
+  const item=q.closest('.fq'),open=item.classList.contains('open');
+  document.querySelectorAll('.fq.open').forEach(i=>i.classList.remove('open'));
+  if(!open)item.classList.add('open');
+});
+
+/* ── Table tab switcher ── */
+function showTable(type){
+  document.getElementById('tableAcademic').style.display=type==='academic'?'block':'none';
+  document.getElementById('tableGeneral').style.display=type==='general'?'block':'none';
+  document.getElementById('tabAcademic').classList.toggle('active',type==='academic');
+  document.getElementById('tabGeneral').classList.toggle('active',type==='general');
+}
+
+/* ── Quick Score Pills ── */
+function setScore(val){
+  document.getElementById('correct').value=val;
+  document.getElementById('correct').focus();
+}
+
+/* ══════════════════════════════════════
+   IELTS READING BAND CALCULATOR LOGIC
+══════════════════════════════════════ */
+
+/* Academic raw score → band (0–40) */
+const academicBandMap=[
+  /* 0  */ 1.0,
+  /* 1  */ 2.5,/* 2 */ 2.5,/* 3 */ 3.0,/* 4 */ 3.0,/* 5 */ 3.0,
+  /* 6  */ 3.5,/* 7 */ 3.5,/* 8 */ 3.5,/* 9 */ 3.5,
+  /* 10 */ 4.0,/* 11 */ 4.0,/* 12 */ 4.0,
+  /* 13 */ 4.5,/* 14 */ 4.5,
+  /* 15 */ 5.0,/* 16 */ 5.0,/* 17 */ 5.0,/* 18 */ 5.0,
+  /* 19 */ 5.5,/* 20 */ 5.5,/* 21 */ 5.5,/* 22 */ 5.5,
+  /* 23 */ 6.0,/* 24 */ 6.0,/* 25 */ 6.0,/* 26 */ 6.0,
+  /* 27 */ 6.5,/* 28 */ 6.5,/* 29 */ 6.5,
+  /* 30 */ 7.0,/* 31 */ 7.0,/* 32 */ 7.0,
+  /* 33 */ 7.5,/* 34 */ 7.5,
+  /* 35 */ 8.0,/* 36 */ 8.0,
+  /* 37 */ 8.5,/* 38 */ 8.5,
+  /* 39 */ 9.0,/* 40 */ 9.0
+];
+
+/* General Training raw score → band (0–40) */
+const generalBandMap=[
+  /* 0  */ 1.0,
+  /* 1  */ 2.5,/* 2 */ 2.5,/* 3 */ 2.5,/* 4 */ 2.5,
+  /* 5  */ 3.0,/* 6 */ 3.0,/* 7 */ 3.0,
+  /* 8  */ 3.5,/* 9 */ 3.5,/* 10 */ 3.5,/* 11 */ 3.5,
+  /* 12 */ 4.0,/* 13 */ 4.0,/* 14 */ 4.0,
+  /* 15 */ 4.5,/* 16 */ 4.5,/* 17 */ 4.5,/* 18 */ 4.5,
+  /* 19 */ 5.0,/* 20 */ 5.0,/* 21 */ 5.0,/* 22 */ 5.0,
+  /* 23 */ 5.5,/* 24 */ 5.5,/* 25 */ 5.5,/* 26 */ 5.5,
+  /* 27 */ 6.0,/* 28 */ 6.0,/* 29 */ 6.0,
+  /* 30 */ 6.5,/* 31 */ 6.5,
+  /* 32 */ 7.0,/* 33 */ 7.0,/* 34 */ 7.0,
+  /* 35 */ 7.5,/* 36 */ 7.5,
+  /* 37 */ 8.0,/* 38 */ 8.0,
+  /* 39 */ 8.5,
+  /* 40 */ 9.0
+];
+
+function getBandLabel(band){
+  const labels={
+    9:{label:'Expert User',icon:'🏆',level:'Outstanding',cls:'pass',tagCls:'pass'},
+    8.5:{label:'Very Good+ User',icon:'🌟',level:'Excellent',cls:'pass',tagCls:'pass'},
+    8:{label:'Very Good User',icon:'🌟',level:'Excellent',cls:'pass',tagCls:'pass'},
+    7.5:{label:'Good+ User',icon:'✅',level:'Strong',cls:'pass',tagCls:'pass'},
+    7:{label:'Good User',icon:'✅',level:'Good',cls:'pass',tagCls:'pass'},
+    6.5:{label:'Competent+ User',icon:'✅',level:'Competent',cls:'pass',tagCls:'pass'},
+    6:{label:'Competent User',icon:'⚠️',level:'Competent',cls:'avg',tagCls:'avg'},
+    5.5:{label:'Modest+ User',icon:'⚠️',level:'Developing',cls:'avg',tagCls:'avg'},
+    5:{label:'Modest User',icon:'⚠️',level:'Developing',cls:'avg',tagCls:'avg'},
+    4.5:{label:'Limited+ User',icon:'🔴',level:'Limited',cls:'low',tagCls:'low'},
+    4:{label:'Limited User',icon:'🔴',level:'Limited',cls:'low',tagCls:'low'},
+    3.5:{label:'Extremely Limited',icon:'❌',level:'Very Low',cls:'low',tagCls:'low'},
+    3:{label:'Extremely Limited',icon:'❌',level:'Very Low',cls:'low',tagCls:'low'},
+    2.5:{label:'Intermittent User',icon:'❌',level:'Minimal',cls:'low',tagCls:'low'},
+    1:{label:'Non User',icon:'❌',level:'No ability',cls:'low',tagCls:'low'}
+  };
+  return labels[band]||{label:'Unknown',icon:'❓',level:'Unknown',cls:'avg',tagCls:'avg'};
+}
+
+function calcReading(){
+  const inp=document.getElementById('correct');
+  const raw=inp.value.trim();
+  const examType=document.getElementById('examType').value;
+
+  if(raw===''||isNaN(raw)){
+    inp.classList.add('err');
+    inp.placeholder='Please enter a number (0–40)';
+    setTimeout(()=>inp.classList.remove('err'),2000);
+    return;
+  }
+  const score=Math.round(parseFloat(raw));
+  if(score<0||score>40){
+    inp.classList.add('err');
+    alert('Please enter a number between 0 and 40.');
+    setTimeout(()=>inp.classList.remove('err'),2000);
+    return;
+  }
+  inp.classList.remove('err');
+
+  const bandMap=examType==='academic'?academicBandMap:generalBandMap;
+  const band=bandMap[score];
+  const info=getBandLabel(band);
+  const pct=Math.round((score/40)*100);
+  const examLabel=examType==='academic'?'Academic':'General Training';
+
+  /* Circular meter */
+  const circumference=283;
+  const dashOffset=Math.round(circumference-(pct/100)*circumference);
+  const mf=document.getElementById('meterFill');
+  mf.style.strokeDashoffset=circumference;
+  mf.style.stroke=info.cls==='pass'?'var(--green)':(info.cls==='avg'?'var(--amber)':'var(--red)');
+  document.getElementById('meterPct').textContent=band%1===0?band.toFixed(1):band;
+  document.getElementById('meterLbl').textContent='Band';
+  setTimeout(()=>{mf.style.strokeDashoffset=dashOffset;},200);
+
+  /* Banner */
+  document.getElementById('resBanner').className=`res-banner ${info.cls}`;
+  document.getElementById('resIcon').textContent=info.icon;
+  document.getElementById('resTitle').textContent=`Reading Band ${band%1===0?band.toFixed(1):band} — ${info.label}`;
+  document.getElementById('resSub').textContent=`Correct answers: ${score} / 40 (${pct}%) · ${examLabel} · Performance Level: ${info.level}`;
+  const tag=document.getElementById('resTag');
+  tag.className=`res-tag ${info.tagCls}`;
+  tag.textContent=`${info.icon} Band ${band%1===0?band.toFixed(1):band} — ${info.label}`;
+
+  /* Score progress bars — thresholds vary by exam type */
+  const thresholds=examType==='academic'
+    ?[
+        {label:'Band 5 Threshold',target:15,cls:'a'},
+        {label:'Band 6 Threshold',target:23,cls:'a'},
+        {label:'Band 7 Threshold',target:30,cls:'g'},
+        {label:'Band 8 Threshold',target:35,cls:'g'},
+        {label:'Band 9 Threshold',target:39,cls:'b'},
+      ]
+    :[
+        {label:'Band 5 Threshold',target:19,cls:'a'},
+        {label:'Band 6 Threshold',target:27,cls:'a'},
+        {label:'Band 7 Threshold',target:32,cls:'g'},
+        {label:'Band 8 Threshold',target:37,cls:'g'},
+        {label:'Band 9 Threshold',target:40,cls:'b'},
+      ];
+
+  let barsHTML=`
+    <div class="tc-row">
+      <div class="tc-lbl" style="font-weight:800;color:var(--ink)">⭐ Your Score</div>
+      <div class="tc-bar-track">
+        <div class="tc-bar-fill ${info.cls==='pass'?'g':(info.cls==='avg'?'a':'r')}" style="width:0%" data-w="${pct}%">${score}/40</div>
+      </div>
+      <div class="tc-val" style="font-family:var(--fd)">${score}/40</div>
+    </div>
+  `;
+  thresholds.forEach(t=>{
+    const tp=Math.round((t.target/40)*100);
+    const achieved=score>=t.target;
+    barsHTML+=`
+      <div class="tc-row">
+        <div class="tc-lbl">${t.label}</div>
+        <div class="tc-bar-track">
+          <div class="tc-bar-fill ${achieved?t.cls:'r'}" style="width:0%" data-w="${tp}%">${t.target}/40</div>
+        </div>
+        <div class="tc-val" style="color:${achieved?'var(--green)':'var(--ink3)'}">${achieved?'✓':t.target-score+' more'}</div>
+      </div>
+    `;
+  });
+  barsHTML+=`<p style="font-size:11.5px;color:var(--ink4);margin-top:8px">Numbers on the right show how many more correct answers you need to reach each band threshold (${examLabel}). ✓ means already achieved.</p>`;
+  document.getElementById('scoreBars').innerHTML=barsHTML;
+  setTimeout(()=>{document.querySelectorAll('.tc-bar-fill').forEach(b=>{b.style.width=b.dataset.w||'0%'})},200);
+
+  /* Milestone cards */
+  const milestones=examType==='academic'
+    ?[
+        {band:5,min:15,label:'Band 5.0',icon:'📘',use:'Foundation level'},
+        {band:6,min:23,label:'Band 6.0',icon:'📗',use:'Undergraduate entry'},
+        {band:6.5,min:27,label:'Band 6.5',icon:'🎓',use:'Most UG & some PG'},
+        {band:7,min:30,label:'Band 7.0',icon:'🏅',use:'Postgraduate / PR'},
+        {band:7.5,min:33,label:'Band 7.5',icon:'🌟',use:'Competitive programs'},
+        {band:8,min:35,label:'Band 8.0',icon:'🏆',use:'Expert level / top PR'},
+      ]
+    :[
+        {band:5,min:19,label:'Band 5.0',icon:'📘',use:'Foundation level'},
+        {band:6,min:27,label:'Band 6.0',icon:'📗',use:'Work / vocational'},
+        {band:6.5,min:30,label:'Band 6.5',icon:'🎓',use:'Migration / work'},
+        {band:7,min:32,label:'Band 7.0',icon:'🏅',use:'Skilled migration'},
+        {band:7.5,min:35,label:'Band 7.5',icon:'🌟',use:'Competitive streams'},
+        {band:8,min:37,label:'Band 8.0',icon:'🏆',use:'Top migration / PR'},
+      ];
+
+  let gradeHTML='';
+  milestones.forEach(m=>{
+    const achieved=band>=m.band;
+    const isCurrent=band===m.band;
+    let cls='inactive';
+    if(isCurrent){cls=m.band>=7?'active-pass':(m.band>=6?'active-avg':'active-fail');}
+    else if(achieved){cls='active-pass';}
+    gradeHTML+=`
+      <div class="gc ${cls}">
+        <div class="gc-ico">${achieved?m.icon:'🔒'}</div>
+        <div class="gc-title">${m.label}</div>
+        <div class="gc-val">${m.use}<br><span style="font-size:10px">${achieved?'✓ Achieved':'Need '+m.min+' correct'}</span>${isCurrent?' 👈 Your level':''}</div>
+      </div>
+    `;
+  });
+  document.getElementById('gradeGrid').innerHTML=gradeHTML;
+
+  /* Suggestions */
+  let msg='';
+  if(band>=8){
+    msg=`<strong>🏆 Outstanding — Band ${band%1===0?band.toFixed(1):band} (${examLabel}).</strong> Your Reading score is at a very high level. You are handling complex texts, inferential questions, and specialised vocabulary with exceptional accuracy. This score meets the Reading requirement for virtually any English-speaking university or migration pathway. Maintain this standard and cross-check your overall band score using our <a href="https://rajdailytools.in/ielts-overall-band-score-calculator.html" style="color:var(--blue);font-weight:700">Overall Band Calculator</a>.`;
+  } else if(band>=7){
+    msg=`<strong>✅ Strong Result — Band ${band%1===0?band.toFixed(1):band} (${examLabel}).</strong> You have a solid level of reading comprehension. This meets most postgraduate and skilled migration Reading requirements. To move to Band 8, focus on the question types where you lose the most marks — for most Band 7 candidates, that is matching headings or inference-based multiple choice questions. Precise reading rather than broad practice is what bridges this gap.`;
+  } else if(band>=6){
+    msg=`<strong>⚠️ Competent Level — Band ${band%1===0?band.toFixed(1):band} (${examLabel}).</strong> You are getting the main ideas but dropping marks on complex inference and T/F/NG questions. Focus specifically on the True/False/Not Given and Yes/No/Not Given question types — these are the most common Band 6 sticking points. Understanding the precise difference between "False" and "Not Given" alone can be worth two or three correct answers per test.`;
+  } else if(band>=5){
+    msg=`<strong>🔴 Developing — Band ${band%1===0?band.toFixed(1):band} (${examLabel}).</strong> You are below most university and professional Reading requirements. Start with skimming and scanning drills — building these core techniques will improve your speed and accuracy across all question types. Prioritise everyday English reading alongside IELTS-specific practice to grow your vocabulary and reading stamina simultaneously.`;
+  } else {
+    msg=`<strong>❌ Below functional threshold — Band ${band%1===0?band.toFixed(1):band} (${examLabel}).</strong> Significant reading development is needed before IELTS is a realistic target. Begin with extensive general English reading — short news articles, simple non-fiction, graded readers — to build foundational comprehension skills. Return to IELTS practice tests once you can follow extended written English comfortably.`;
+  }
+  document.getElementById('suggBox').innerHTML=`<strong style="display:block;font-family:var(--fd);font-size:14px;margin-bottom:10px">📖 Your Reading Score Analysis</strong><p style="font-size:14px;color:var(--ink2);line-height:1.82">${msg}</p>`;
+
+  /* Highlight table row */
+  highlightTableRow(score, examType);
+
+  /* Show result */
+  const ra=document.getElementById('resultArea');
+  ra.style.display='block';
+  ra.style.animation='none';ra.offsetHeight;
+  ra.style.animation='resultIn .45s var(--ease) both';
+  setTimeout(()=>ra.scrollIntoView({behavior:'smooth',block:'nearest'}),120);
+}
+
+function highlightTableRow(score, examType){
+  document.querySelectorAll('#convTableAcademic tbody tr, #convTableGeneral tbody tr').forEach(tr=>{
+    tr.classList.remove('you-row');
+  });
+
+  const academicRanges=[
+    {min:39,max:40,idx:0},{min:37,max:38,idx:1},{min:35,max:36,idx:2},
+    {min:33,max:34,idx:3},{min:30,max:32,idx:4},{min:27,max:29,idx:5},
+    {min:23,max:26,idx:6},{min:19,max:22,idx:7},{min:15,max:18,idx:8},
+    {min:13,max:14,idx:9},{min:10,max:12,idx:10},{min:6,max:9,idx:11},
+    {min:3,max:5,idx:12},{min:1,max:2,idx:13},{min:0,max:0,idx:14}
+  ];
+  const generalRanges=[
+    {min:40,max:40,idx:0},{min:39,max:39,idx:1},{min:37,max:38,idx:2},
+    {min:35,max:36,idx:3},{min:32,max:34,idx:4},{min:30,max:31,idx:5},
+    {min:27,max:29,idx:6},{min:23,max:26,idx:7},{min:19,max:22,idx:8},
+    {min:15,max:18,idx:9},{min:12,max:14,idx:10},{min:8,max:11,idx:11},
+    {min:5,max:7,idx:12},{min:1,max:4,idx:13},{min:0,max:0,idx:14}
+  ];
+
+  const ranges=examType==='academic'?academicRanges:generalRanges;
+  const tableId=examType==='academic'?'convTableAcademic':'convTableGeneral';
+  const rows=document.querySelectorAll(`#${tableId} tbody tr`);
+
+  for(const r of ranges){
+    if(score>=r.min&&score<=r.max){
+      if(rows[r.idx])rows[r.idx].classList.add('you-row');
+      break;
+    }
+  }
+
+  /* Switch to the correct table tab */
+  showTable(examType);
+}
+
+function resetTool(){
+  document.getElementById('correct').value='';
+  document.getElementById('correct').placeholder='e.g. 27';
+  document.getElementById('resultArea').style.display='none';
+  document.querySelectorAll('#convTableAcademic tbody tr, #convTableGeneral tbody tr').forEach(tr=>tr.classList.remove('you-row'));
+  window.scrollTo({top:document.getElementById('tool').offsetTop-80,behavior:'smooth'});
+}
+
+/* Enter key */
+document.getElementById('correct').addEventListener('keydown',function(e){
+  if(e.key==='Enter')calcReading();
+});
+</script>
+</body>
+</html>
