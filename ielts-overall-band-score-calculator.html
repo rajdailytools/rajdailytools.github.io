@@ -1,0 +1,1182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IELTS Overall Band Score Calculator – Calculate Your Final IELTS Band</title>
+<meta name="description" content="Calculate your IELTS Overall Band Score using Listening, Reading, Writing and Speaking band scores. Includes official rounding rules and score explanation.">
+<meta name="keywords" content="IELTS overall band score calculator, IELTS band calculator, IELTS score calculator, IELTS final band, IELTS rounding rules, IELTS band score">
+<meta name="robots" content="index, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ══════════════════════════════════════
+   DESIGN TOKENS
+══════════════════════════════════════ */
+:root{
+  --blue:#2563eb;--blue-d:#1d4ed8;--blue-xl:#eff6ff;--blue-s:#dbeafe;
+  --amber:#f59e0b;--green:#10b981;--red:#ef4444;--purple:#8b5cf6;
+  --orange:#f97316;--teal:#14b8a6;
+  --green-xl:#f0fdf4;--green-s:#bbf7d0;
+  --red-xl:#fef2f2;--red-s:#fecaca;
+  --amber-xl:#fffbeb;--amber-s:#fde68a;
+  --purple-xl:#faf5ff;--purple-s:#ddd6fe;
+  --yellow:#eab308;--yellow-xl:#fefce8;--yellow-s:#fef08a;
+  --ink:#0f172a;--ink2:#334155;--ink3:#64748b;--ink4:#94a3b8;
+  --line:#e2e8f0;--surf:#f8fafc;--white:#fff;
+  --s1:0 1px 3px rgba(15,23,42,.06),0 1px 2px rgba(15,23,42,.04);
+  --s2:0 4px 16px rgba(15,23,42,.08),0 2px 6px rgba(15,23,42,.04);
+  --s3:0 12px 40px rgba(15,23,42,.11),0 3px 10px rgba(15,23,42,.06);
+  --s4:0 24px 64px rgba(15,23,42,.13),0 6px 20px rgba(15,23,42,.07);
+  --sb:0 8px 32px rgba(37,99,235,.20);
+  --fd:'Sora',sans-serif;--fb:'DM Sans',sans-serif;
+  --ease:cubic-bezier(.4,0,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);color:var(--ink);background:var(--white);overflow-x:hidden;-webkit-font-smoothing:antialiased;line-height:1.6}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+button{cursor:pointer;border:none;background:none;font-family:var(--fb)}
+.w{max-width:1180px;margin:0 auto;padding:0 24px}
+.wa{max-width:880px;margin:0 auto;padding:0 24px}
+select,input{appearance:none;-webkit-appearance:none}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+@keyframes resultIn{from{opacity:0;transform:translateY(18px) scale(.97)}to{opacity:1;transform:none}}
+@keyframes meterFill{from{stroke-dashoffset:283}to{stroke-dashoffset:var(--dash)}}
+@keyframes barGrow{from{width:0}to{width:var(--bw)}}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}
+@keyframes countUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.rev{opacity:0;transform:translateY(22px);transition:opacity .55s var(--ease),transform .55s var(--ease)}
+.rev.in{opacity:1;transform:none}
+
+/* ══ HEADER ══ */
+.hdr{position:sticky;top:0;z-index:999;background:rgba(255,255,255,.96);backdrop-filter:blur(20px);border-bottom:1px solid var(--line);box-shadow:var(--s1)}
+.hdi{display:flex;align-items:center;justify-content:space-between;height:66px}
+.logo{display:flex;align-items:center;gap:10px}
+.lb{width:36px;height:36px;background:var(--blue);border-radius:9px;display:flex;align-items:center;justify-content:center;box-shadow:var(--sb);flex-shrink:0}
+.lb svg{width:18px;height:18px;fill:#fff}
+.ln{font-family:var(--fd);font-size:19px;font-weight:800;color:var(--ink);line-height:1}
+.ln span{color:var(--blue)}
+.ls{font-size:10px;color:var(--ink4);letter-spacing:.04em}
+nav.dn{display:flex;align-items:center;gap:2px}
+nav.dn a{font-size:13.5px;font-weight:500;color:var(--ink2);padding:7px 13px;border-radius:8px;transition:.2s}
+nav.dn a:hover{color:var(--blue);background:var(--blue-xl)}
+.hcta{background:var(--blue);color:#fff;font-family:var(--fd);font-weight:600;font-size:13px;padding:8px 18px;border-radius:8px;box-shadow:var(--sb);transition:.2s}
+.hcta:hover{background:var(--blue-d);transform:translateY(-1px)}
+.brg{display:none;flex-direction:column;gap:4.5px;padding:8px;border-radius:8px}
+.brg span{display:block;width:20px;height:2px;background:var(--ink);border-radius:2px;transition:.28s}
+.dov{display:none;position:fixed;inset:0;background:rgba(15,23,42,.45);z-index:1040;backdrop-filter:blur(3px)}
+.dov.on{display:block}
+.drw{position:fixed;top:0;right:-100%;width:270px;height:100vh;background:#fff;z-index:1050;padding:22px;box-shadow:var(--s4);transition:right .32s var(--ease);overflow-y:auto}
+.drw.on{right:0}
+.dh{display:flex;align-items:center;justify-content:space-between;margin-bottom:26px}
+.dx{width:33px;height:33px;border-radius:7px;background:var(--surf);display:flex;align-items:center;justify-content:center;color:var(--ink3);font-size:17px}
+nav.mn{display:flex;flex-direction:column;gap:3px}
+nav.mn a{display:block;font-size:14px;font-weight:500;color:var(--ink2);padding:11px 13px;border-radius:8px;transition:.2s}
+nav.mn a:hover{color:var(--blue);background:var(--blue-xl)}
+
+/* ══ HERO ══ */
+.hero{position:relative;overflow:hidden;background:linear-gradient(150deg,#ebf4ff 0%,#fff 46%,#f0fdf4 100%);padding:64px 0 72px}
+.hero::before{content:'';position:absolute;top:-140px;right:-180px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(37,99,235,.08) 0%,transparent 68%);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-80px;left:-100px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(16,185,129,.05) 0%,transparent 68%);pointer-events:none}
+.blob{position:absolute;border-radius:50%;pointer-events:none;animation:float 6s ease-in-out infinite}
+.b1{width:13px;height:13px;background:rgba(37,99,235,.18);top:22%;right:14%;animation-delay:0s}
+.b2{width:9px;height:9px;background:rgba(16,185,129,.22);top:58%;right:26%;animation-delay:2.2s}
+.b3{width:11px;height:11px;background:rgba(245,158,11,.18);top:36%;right:6%;animation-delay:4s}
+.bc{display:flex;align-items:center;gap:7px;font-size:12.5px;color:var(--ink3);margin-bottom:22px;position:relative;z-index:1;flex-wrap:wrap}
+.bc a{color:var(--blue);font-weight:600}
+.pill{display:inline-flex;align-items:center;gap:7px;font-family:var(--fd);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);background:var(--blue-xl);padding:5px 14px;border-radius:100px;margin-bottom:18px}
+.pill::before{content:'';width:6px;height:6px;background:var(--blue);border-radius:50%}
+.hero-inner{position:relative;z-index:1;max-width:720px;animation:fadeUp .5s ease both}
+.hero h1{font-family:var(--fd);font-size:clamp(26px,4.5vw,50px);font-weight:800;line-height:1.1;color:var(--ink);margin-bottom:14px}
+.hero h1 span{color:var(--blue)}
+.hero-sub{font-size:16px;color:var(--ink3);line-height:1.8;margin-bottom:22px;max-width:600px}
+.hero-chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.chip{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;padding:6px 14px;border-radius:100px;background:#fff;border:1.5px solid var(--line);color:var(--ink2);box-shadow:var(--s1);transition:.22s}
+.chip:hover{border-color:var(--blue);color:var(--blue);transform:translateY(-1px)}
+.hero-meta{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:24px}
+.upd{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:700;color:var(--blue);background:var(--blue-xl);padding:6px 14px;border-radius:100px;border:1.5px solid var(--blue-s)}
+.mi{font-size:13px;color:var(--ink3);font-weight:500}
+
+/* HOW TO USE */
+.howto{background:var(--amber-xl);border:2px solid var(--amber-s);border-radius:16px;padding:22px 26px;max-width:560px;margin-bottom:24px}
+.howto-ttl{display:flex;align-items:center;gap:9px;font-family:var(--fd);font-size:15px;font-weight:800;color:var(--ink);margin-bottom:13px}
+.howto-steps{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.hs{display:flex;align-items:flex-start;gap:10px;font-size:13.5px;color:var(--ink2);line-height:1.6}
+.sn{width:24px;height:24px;background:var(--amber);color:#fff;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex-shrink:0;margin-top:1px}
+
+/* related tools */
+.rel-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;position:relative;z-index:1}
+.rg-box{border-radius:14px;padding:14px 14px 12px;display:flex;flex-direction:column;gap:8px;transition:.22s;border:1.5px solid}
+.rg-box:hover{transform:translateY(-3px);box-shadow:var(--s3)}
+.rg-box.c1{background:linear-gradient(135deg,#fffbeb,#fef3c7);border-color:var(--amber-s)}
+.rg-box.c2{background:linear-gradient(135deg,var(--green-xl),#dcfce7);border-color:var(--green-s)}
+.rg-box.c3{background:linear-gradient(135deg,var(--blue-xl),var(--blue-s));border-color:var(--blue-s)}
+.rg-box.c4{background:linear-gradient(135deg,var(--purple-xl),#ede9fe);border-color:var(--purple-s)}
+.rg-ico{font-size:22px}
+.rg-txt h4{font-family:var(--fd);font-size:12px;font-weight:800;color:var(--ink);margin-bottom:2px}
+.rg-txt p{font-size:11px;color:var(--ink3);line-height:1.5}
+.btn-xs{display:inline-flex;align-items:center;gap:4px;font-family:var(--fd);font-weight:700;font-size:11px;padding:5px 10px;border-radius:7px;transition:.22s;margin-top:4px}
+.btn-xs.a{background:var(--amber);color:#fff}.btn-xs.a:hover{background:#d97706}
+.btn-xs.g{background:var(--green);color:#fff}.btn-xs.g:hover{background:#059669}
+.btn-xs.b{background:var(--blue);color:#fff}.btn-xs.b:hover{background:var(--blue-d)}
+.btn-xs.p{background:var(--purple);color:#fff}.btn-xs.p:hover{background:#7c3aed}
+
+/* ══ TOOL SECTION ══ */
+.tool-sec{background:var(--surf);padding:80px 0}
+.tool-wrap{max-width:860px;margin:0 auto}
+.tool-card{background:#fff;border:1.5px solid var(--line);border-radius:28px;overflow:hidden;box-shadow:var(--s4)}
+.tool-hdr{background:linear-gradient(135deg,#0f172a 0%,#1e3a8a 50%,#1d4ed8 100%);padding:32px 40px;position:relative;overflow:hidden}
+.tool-hdr::before{content:'';position:absolute;top:-60px;right:-60px;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,.07)}
+.tool-hdr::after{content:'';position:absolute;bottom:-40px;left:-40px;width:180px;height:180px;border-radius:50%;background:rgba(255,255,255,.04)}
+.run-dots{position:absolute;bottom:20px;right:40px;display:flex;gap:5px;opacity:.3;z-index:0}
+.run-dot{width:6px;height:6px;border-radius:50%;background:#fff}
+.th{position:relative;z-index:1}
+.th h2{font-family:var(--fd);font-size:21px;font-weight:800;color:#fff;margin-bottom:6px}
+.th p{font-size:14px;color:rgba(255,255,255,.82);line-height:1.65}
+.th-badges{display:flex;flex-wrap:wrap;gap:9px;margin-top:14px}
+.thb{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:rgba(255,255,255,.9);background:rgba(255,255,255,.13);padding:5px 12px;border-radius:100px}
+.tool-body{padding:36px 40px}
+
+/* form */
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+.fgrid3{grid-template-columns:1fr 1fr 1fr}
+.fld{display:flex;flex-direction:column;gap:7px}
+.flbl{font-size:13px;font-weight:700;color:var(--ink2)}
+.flbl span{font-size:11px;font-weight:500;color:var(--ink4);margin-left:5px;background:var(--surf);padding:2px 7px;border-radius:5px;border:1px solid var(--line)}
+.fsel{padding:12px 16px;font-size:14.5px;color:var(--ink);background:#fff;border:1.5px solid var(--line);border-radius:10px;outline:none;transition:.22s;font-family:var(--fb);width:100%;cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2364748b' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:40px}
+.fsel:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(37,99,235,.10)}
+.hint-box{display:flex;align-items:flex-start;gap:9px;font-size:13px;color:var(--ink2);background:var(--blue-xl);border:1.5px solid var(--blue-s);border-radius:10px;padding:11px 14px;margin:16px 0;line-height:1.65}
+.hint-box svg{width:16px;height:16px;stroke:var(--blue);fill:none;stroke-width:2;flex-shrink:0;margin-top:2px}
+.chk-btn{width:100%;padding:17px;background:linear-gradient(135deg,#0f172a 0%,#1e3a8a 50%,#2563eb 100%);color:#fff;font-family:var(--fd);font-weight:800;font-size:16px;border-radius:12px;box-shadow:0 8px 32px rgba(30,58,138,.30);transition:all .25s var(--ease);display:flex;align-items:center;justify-content:center;gap:10px}
+.chk-btn:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(30,58,138,.40)}
+.chk-btn:active{transform:translateY(0)}
+
+/* ══ RESULT ══ */
+#resultArea{display:none;margin-top:28px;animation:resultIn .45s var(--ease) both}
+.res-banner{border-radius:20px;padding:28px;margin-bottom:22px;position:relative;overflow:hidden;display:flex;align-items:center;gap:24px;flex-wrap:wrap}
+.res-banner.pass{background:linear-gradient(135deg,var(--green-xl),#d1fae5);border:2px solid var(--green-s)}
+.res-banner.avg{background:var(--amber-xl);border:2px solid var(--amber-s)}
+.res-banner.low{background:var(--red-xl);border:2px solid var(--red-s)}
+.res-banner::before{content:'';position:absolute;inset:0;opacity:.04;background-image:repeating-linear-gradient(45deg,currentColor 0,currentColor 1px,transparent 0,transparent 50%);background-size:12px 12px;pointer-events:none}
+.meter-wrap{flex-shrink:0;position:relative;width:100px;height:100px}
+.meter-svg{width:100px;height:100px;transform:rotate(-90deg)}
+.meter-bg{fill:none;stroke:rgba(0,0,0,.08);stroke-width:10}
+.meter-fill{fill:none;stroke-width:10;stroke-linecap:round;transition:stroke-dashoffset 1.2s var(--ease)}
+.meter-center{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.meter-pct{font-family:var(--fd);font-size:20px;font-weight:800;color:var(--ink);line-height:1}
+.meter-lbl{font-size:10px;font-weight:700;color:var(--ink3);text-transform:uppercase;letter-spacing:.06em}
+.res-info{flex:1}
+.res-icon{font-size:32px;margin-bottom:6px}
+.res-title{font-family:var(--fd);font-size:22px;font-weight:800;color:var(--ink);line-height:1.1;margin-bottom:6px}
+.res-sub{font-size:14px;color:var(--ink3);line-height:1.65}
+.res-tag{display:inline-flex;align-items:center;gap:6px;font-family:var(--fd);font-size:13px;font-weight:700;padding:5px 14px;border-radius:100px;margin-top:10px}
+.res-tag.pass{background:var(--green);color:#fff}
+.res-tag.avg{background:var(--amber);color:#fff}
+.res-tag.low{background:var(--red);color:#fff}
+
+/* score breakdown bars */
+.time-compare{background:var(--surf);border:1.5px solid var(--line);border-radius:16px;padding:22px 24px;margin-bottom:18px}
+.tc-title{font-family:var(--fd);font-size:14px;font-weight:700;color:var(--ink);margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.tc-row{display:flex;align-items:center;gap:14px;margin-bottom:12px}
+.tc-lbl{font-size:12.5px;font-weight:600;color:var(--ink2);width:130px;flex-shrink:0}
+.tc-bar-track{flex:1;height:20px;background:var(--line);border-radius:10px;overflow:hidden;position:relative}
+.tc-bar-fill{height:100%;border-radius:10px;display:flex;align-items:center;padding-left:10px;font-size:11px;font-weight:700;color:#fff;transition:width 1.2s var(--ease)}
+.tc-bar-fill.g{background:linear-gradient(90deg,var(--green),#059669)}
+.tc-bar-fill.a{background:linear-gradient(90deg,var(--amber),#d97706)}
+.tc-bar-fill.r{background:linear-gradient(90deg,var(--red),#dc2626)}
+.tc-bar-fill.b{background:linear-gradient(90deg,var(--blue),var(--blue-d))}
+.tc-val{font-size:13px;font-weight:700;width:60px;flex-shrink:0;text-align:right}
+
+/* band cards */
+.grade-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:13px;margin-bottom:18px}
+.gc{border-radius:13px;padding:16px 14px;text-align:center;border:1.5px solid;transition:.22s}
+.gc:hover{transform:translateY(-2px);box-shadow:var(--s2)}
+.gc.active-pass{background:var(--green-xl);border-color:var(--green-s)}
+.gc.active-avg{background:var(--amber-xl);border-color:var(--amber-s)}
+.gc.active-fail{background:var(--red-xl);border-color:var(--red-s)}
+.gc.inactive{background:var(--surf);border-color:var(--line);opacity:.7}
+.gc-ico{font-size:24px;margin-bottom:6px}
+.gc-title{font-family:var(--fd);font-size:13px;font-weight:700;color:var(--ink);margin-bottom:3px}
+.gc-val{font-size:12px;color:var(--ink3);line-height:1.55}
+
+.sugg-box{background:var(--blue-xl);border:1.5px solid var(--blue-s);border-radius:13px;padding:16px 18px;font-size:14px;color:var(--ink2);line-height:1.78}
+.warn-box{background:var(--amber-xl);border:1.5px solid var(--amber-s);border-radius:12px;padding:14px 18px;display:flex;gap:10px;font-size:13.5px;color:var(--ink2);line-height:1.7;margin-top:14px}
+
+/* ══ TABLE SECTION ══ */
+.tbl-sec{background:#fff;padding:72px 0}
+.tbl-wr{overflow-x:auto;margin-bottom:20px}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+thead th{background:linear-gradient(135deg,#0f172a 0%,#1e3a8a 100%);color:#fff;padding:14px 16px;text-align:left;font-family:var(--fd);font-size:13px;font-weight:700;letter-spacing:.03em}
+tbody tr{border-bottom:1px solid var(--line);transition:.2s}
+tbody tr:hover{background:var(--blue-xl)}
+tbody td{padding:12px 16px;color:var(--ink2);vertical-align:middle}
+.row-pass{background:var(--green-xl)!important}
+.row-avg{background:var(--amber-xl)!important}
+.row-fail{background:var(--red-xl)!important}
+.tbadge{display:inline-flex;font-size:11px;font-weight:700;padding:3px 8px;border-radius:100px}
+.tbadge.g{background:var(--green-xl);color:var(--green);border:1px solid var(--green-s)}
+.tbadge.a{background:var(--amber-xl);color:#92400e;border:1px solid var(--amber-s)}
+.tbadge.r{background:var(--red-xl);color:var(--red);border:1px solid var(--red-s)}
+.tbadge.b{background:var(--blue-xl);color:var(--blue);border:1px solid var(--blue-s)}
+
+/* ══ TIPS SECTION ══ */
+.tips-sec{background:var(--surf);padding:72px 0}
+.tips-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.tip-card{background:#fff;border:1.5px solid var(--line);border-radius:16px;padding:22px 18px;text-align:center;transition:.28s}
+.tip-card:hover{transform:translateY(-4px);box-shadow:var(--s3);border-color:var(--blue-s)}
+.tip-ico{font-size:32px;margin-bottom:12px}
+.tip-title{font-family:var(--fd);font-size:14px;font-weight:800;color:var(--ink);margin-bottom:8px}
+.tip-desc{font-size:13px;color:var(--ink3);line-height:1.7}
+
+/* ══ STORY ══ */
+.story-sec{background:#fff;padding:72px 0}
+.story-card{background:var(--surf);border:1.5px solid var(--line);border-radius:24px;padding:40px;box-shadow:var(--s3);position:relative;overflow:hidden}
+.story-card::before{content:'';position:absolute;top:0;left:0;bottom:0;width:5px;background:linear-gradient(180deg,var(--blue) 0%,var(--green) 100%);border-radius:5px 0 0 5px}
+.sq{font-size:54px;color:var(--blue-s);font-family:Georgia,serif;line-height:1;padding-left:8px}
+.sb{font-size:15.5px;color:var(--ink2);line-height:1.9;padding:0 8px}
+.sauth{display:flex;align-items:center;gap:14px;margin-top:22px;padding-top:20px;border-top:1px solid var(--line)}
+.savt{width:48px;height:48px;background:var(--blue);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+.sname{font-family:var(--fd);font-size:15px;font-weight:700;color:var(--ink)}
+.srole{font-size:12.5px;color:var(--ink3)}
+.founder-msg{background:linear-gradient(135deg,var(--blue-xl),var(--blue-s));border:1.5px solid var(--blue-s);border-radius:14px;padding:20px 22px;margin-top:20px;display:flex;gap:13px}
+.fm-ico{font-size:26px;flex-shrink:0}
+.fm-txt{font-size:14px;color:var(--ink2);line-height:1.75;font-style:italic}
+.fm-txt strong{color:var(--ink);font-weight:700;font-style:normal}
+
+/* ══ GUIDE ══ */
+.guide-sec{background:var(--surf);padding:72px 0}
+.guide-body h2{font-family:var(--fd);font-size:21px;font-weight:800;color:var(--ink);margin:28px 0 11px;line-height:1.3}
+.guide-body h2:first-child{margin-top:0}
+.guide-body p{font-size:15px;color:var(--ink3);line-height:1.85;margin-bottom:14px}
+.guide-body ul{display:flex;flex-direction:column;gap:8px;margin:12px 0 16px}
+.guide-body li{display:flex;align-items:flex-start;gap:10px;font-size:14.5px;color:var(--ink3);line-height:1.7}
+.guide-body li::before{content:'✓';width:18px;height:18px;background:var(--blue);color:#fff;border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;flex-shrink:0;margin-top:3px}
+.guide-body strong{color:var(--ink2);font-weight:700}
+.ibox{background:var(--blue-xl);border:1.5px solid var(--blue-s);border-radius:13px;padding:15px 18px;margin:16px 0;display:flex;gap:11px;font-size:14px;color:var(--ink2);line-height:1.7}
+.ibox svg{width:17px;height:17px;stroke:var(--blue);fill:none;stroke-width:2;flex-shrink:0;margin-top:2px}
+.ibox.g{background:var(--green-xl);border-color:var(--green-s)}
+.ibox.g svg{stroke:var(--green)}
+.ibox.a{background:var(--amber-xl);border-color:var(--amber-s)}
+.ibox.a svg{stroke:var(--amber)}
+
+/* example calc */
+.ex-card{background:#fff;border:1.5px solid var(--line);border-radius:16px;padding:24px;margin:16px 0;box-shadow:var(--s2)}
+.ex-row{display:flex;align-items:center;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--line);font-size:14.5px;color:var(--ink2)}
+.ex-row:last-child{border-bottom:none;font-weight:800;font-size:16px;color:var(--ink)}
+.ex-band{display:inline-flex;align-items:center;justify-content:center;width:46px;height:46px;border-radius:12px;background:var(--blue);color:#fff;font-family:var(--fd);font-size:18px;font-weight:800}
+
+/* band meaning table */
+.band-tbl{width:100%;border-collapse:collapse;margin:14px 0;font-size:14px}
+.band-tbl th{background:linear-gradient(135deg,#0f172a,#1e3a8a);color:#fff;padding:12px 16px;text-align:left;font-family:var(--fd);font-weight:700}
+.band-tbl td{padding:11px 16px;border-bottom:1px solid var(--line);color:var(--ink2);vertical-align:middle}
+.band-tbl tr:hover td{background:var(--blue-xl)}
+.b-badge{display:inline-flex;align-items:center;justify-content:center;min-width:40px;height:32px;border-radius:8px;font-family:var(--fd);font-size:15px;font-weight:800;color:#fff}
+
+/* ══ FAQ ══ */
+.faq-sec{background:#fff;padding:72px 0}
+.fql{max-width:780px;margin:0 auto}
+.fq{background:var(--surf);border:1.5px solid var(--line);border-radius:13px;margin-bottom:10px;overflow:hidden}
+.fq-q{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;cursor:pointer;gap:14px;transition:.2s}
+.fq-q:hover{background:var(--blue-xl)}
+.fq-t{font-weight:600;font-size:15px;color:var(--ink);line-height:1.4}
+.fq-i{width:28px;height:28px;border-radius:50%;background:var(--blue-xl);color:var(--blue);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;transition:transform .28s,background .2s}
+.fq.open .fq-i{transform:rotate(45deg);background:var(--blue);color:#fff}
+.fq-a{max-height:0;overflow:hidden;transition:max-height .35s var(--ease)}
+.fq-ai{padding:0 22px 18px;font-size:14.5px;color:var(--ink3);line-height:1.78}
+.fq.open .fq-a{max-height:500px}
+
+/* ══ DISC / CONTACT / CTA / FOOTER ══ */
+.disc{background:var(--amber-xl);border-top:1px solid var(--amber-s);border-bottom:1px solid var(--amber-s);padding:15px 0}
+.disc-in{display:flex;align-items:flex-start;gap:12px;font-size:13.5px;color:var(--ink2);line-height:1.7}
+.contact-sec{background:var(--surf);padding:60px 0}
+.contact-card{max-width:580px;margin:0 auto;background:#fff;border:1.5px solid var(--line);border-radius:20px;padding:32px;text-align:center;box-shadow:var(--s2)}
+.contact-card h3{font-family:var(--fd);font-size:19px;font-weight:800;color:var(--ink);margin-bottom:10px}
+.contact-card p{font-size:15px;color:var(--ink3);line-height:1.75;margin-bottom:20px}
+.btn-bl{display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:#fff;font-family:var(--fd);font-weight:700;font-size:14.5px;padding:12px 26px;border-radius:8px;box-shadow:var(--sb);transition:.22s}
+.btn-bl:hover{background:var(--blue-d);transform:translateY(-1px)}
+.priv-note{font-size:12px;color:var(--ink4);margin-top:14px}
+.cta{background:linear-gradient(140deg,#0f172a 0%,#1e3a8a 100%);padding:80px 0;text-align:center;position:relative;overflow:hidden}
+.cta::before{content:'';position:absolute;top:-80px;left:50%;transform:translateX(-50%);width:800px;height:380px;background:radial-gradient(ellipse,rgba(37,99,235,.22) 0%,transparent 68%);pointer-events:none}
+.cta-in{position:relative;z-index:1}
+.cta .pill{color:#93c5fd;background:rgba(255,255,255,.1);margin-bottom:18px}
+.cta .pill::before{background:#93c5fd}
+.cta h2{font-family:var(--fd);font-size:clamp(24px,4vw,42px);font-weight:800;color:#fff;line-height:1.15;margin-bottom:12px}
+.cta h2 em{color:#fbbf24;font-style:normal}
+.cta p{font-size:16px;color:rgba(255,255,255,.72);max-width:480px;margin:0 auto 32px;line-height:1.78}
+.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn-gold{display:inline-flex;align-items:center;gap:8px;background:var(--amber);color:#fff;font-family:var(--fd);font-weight:800;font-size:15px;padding:14px 30px;border-radius:8px;box-shadow:0 8px 28px rgba(245,158,11,.35);transition:.22s}
+.btn-gold:hover{background:#d97706;transform:translateY(-3px)}
+.btn-ghost{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.09);border:1.5px solid rgba(255,255,255,.22);color:#fff;font-family:var(--fd);font-weight:600;font-size:14px;padding:13px 26px;border-radius:8px;transition:.2s}
+.btn-ghost:hover{background:rgba(255,255,255,.16)}
+footer{background:#0f172a;padding:52px 0 0}
+.ft-inner{max-width:1180px;margin:0 auto;padding:0 24px}
+.ft-top{display:grid;grid-template-columns:1.9fr 1fr 1fr 1fr;gap:44px;margin-bottom:44px}
+.ft-brand .ln{color:#fff}.ft-brand .ls{color:#475569}
+.ft-desc{font-size:13.5px;color:#64748b;line-height:1.78;max-width:265px;margin:13px 0 20px}
+.ft-soc{display:flex;gap:9px}
+.fts{width:34px;height:34px;border-radius:7px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;color:#94a3b8;font-size:13px;transition:.2s}
+.fts:hover{background:var(--blue);color:#fff}
+.fc h4{font-family:var(--fd);font-size:12px;font-weight:700;color:#fff;margin-bottom:14px;letter-spacing:.06em;text-transform:uppercase}
+.fc ul{display:flex;flex-direction:column;gap:8px}
+.fc ul a{font-size:13.5px;color:#64748b;transition:.18s}
+.fc ul a:hover{color:#93c5fd}
+.ft-btm{border-top:1px solid rgba(255,255,255,.07);padding:20px 0;text-align:center}
+.ft-cp{font-size:12.5px;color:#475569}
+.ft-cp b{color:#64748b}
+.ft-tag{font-size:12px;color:#334155;margin-top:4px;font-style:italic}
+.btt{position:fixed;bottom:26px;right:26px;z-index:500;width:43px;height:43px;background:var(--blue);color:#fff;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:17px;box-shadow:var(--sb);opacity:0;pointer-events:none;transform:translateY(14px);transition:.28s var(--ease)}
+.btt.on{opacity:1;pointer-events:auto;transform:translateY(0)}
+.btt:hover{transform:translateY(-3px)}
+
+/* RESPONSIVE */
+@media(max-width:1060px){.ft-top{grid-template-columns:1fr 1fr}.tips-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:860px){
+  nav.dn,.hcta{display:none}.brg{display:flex}
+  .tool-body{padding:24px 22px}.tool-hdr{padding:24px 22px}
+  .fgrid{grid-template-columns:1fr}.grade-grid{grid-template-columns:1fr 1fr}
+  .howto-steps{grid-template-columns:1fr}.rel-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+  .ft-top{grid-template-columns:1fr}.rel-grid{grid-template-columns:1fr}
+  .tips-grid{grid-template-columns:1fr 1fr}
+  .cta-btns{flex-direction:column;align-items:center}
+  .story-card{padding:26px 20px}
+  .res-banner{flex-direction:column;align-items:flex-start;gap:16px}
+  .grade-grid{grid-template-columns:1fr 1fr}
+  .tc-lbl{width:90px}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="hdr">
+  <div class="w">
+    <div class="hdi">
+      <a href="/" class="logo">
+        <div class="lb"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+        <div><div class="ln">Raj<span>Daily</span>Tools</div><div class="ls">Smart Tools for Daily Life</div></div>
+      </a>
+      <nav class="dn">
+        <a href="/">Home</a><a href="/categories">Categories</a>
+        <a href="/#popular">Popular</a><a href="/about">About</a><a href="/contact">Contact</a>
+      </nav>
+      <a href="/categories" class="hcta">All Tools →</a>
+      <button class="brg" id="brg"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="dov" id="dov"></div>
+<div class="drw" id="drw">
+  <div class="dh">
+    <div class="logo">
+      <div class="lb" style="width:30px;height:30px;border-radius:7px"><svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#fff"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+      <div class="ln" style="font-size:16px">Raj<span>Daily</span>Tools</div>
+    </div>
+    <button class="dx" id="dx">✕</button>
+  </div>
+  <nav class="mn">
+    <a href="/" onclick="cD()">🏠 Home</a>
+    <a href="/categories" onclick="cD()">🗂️ Categories</a>
+    <a href="/#popular" onclick="cD()">⭐ Popular</a>
+    <a href="/about" onclick="cD()">👤 About</a>
+    <a href="/contact" onclick="cD()">📬 Contact</a>
+  </nav>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+  <div class="w">
+    <div class="bc">
+      <a href="/">Home</a><span style="color:var(--ink4)">›</span>
+      <a href="/categories">Tools</a><span style="color:var(--ink4)">›</span>
+      <span>IELTS Band Score Calculator</span>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr auto;gap:40px;align-items:start">
+      <div class="hero-inner">
+        <div class="pill">IELTS Study Tools</div>
+        <h1>IELTS Overall <span>Band Score</span> Calculator</h1>
+        <p class="hero-sub">Find your final IELTS band score in seconds. Enter your <strong>Listening, Reading, Writing and Speaking</strong> scores — the calculator applies official IELTS rounding logic and tells you exactly where you stand.</p>
+        <div class="hero-chips">
+          <span class="chip">🎧 Listening</span>
+          <span class="chip">📖 Reading</span>
+          <span class="chip">✍️ Writing</span>
+          <span class="chip">🗣️ Speaking</span>
+          <span class="chip">🆓 100% Free</span>
+        </div>
+        <div class="hero-meta">
+          <div class="upd">📅 Updated for 2025–26</div>
+          <span class="mi">✅ Official rounding logic</span>
+          <span class="mi">🔒 No data stored</span>
+        </div>
+        <!-- HOW TO USE -->
+        <div class="howto">
+          <div class="howto-ttl">💡 How to Use This Tool</div>
+          <div class="howto-steps">
+            <div class="hs"><span class="sn">1</span>Select your Listening band score</div>
+            <div class="hs"><span class="sn">2</span>Select your Reading band score</div>
+            <div class="hs"><span class="sn">3</span>Select your Writing band score</div>
+            <div class="hs"><span class="sn">4</span>Select your Speaking band score</div>
+            <div class="hs"><span class="sn">5</span>Click "Calculate My Overall Band"</div>
+            <div class="hs"><span class="sn">6</span>View your final score and band meaning</div>
+          </div>
+        </div>
+        <!-- RELATED TOOLS -->
+        <div class="rel-grid">
+          <div class="rg-box c1">
+            <div class="rg-ico">🎧</div>
+            <div class="rg-txt">
+              <h4>IELTS Listening Calculator</h4>
+              <p>Convert raw marks to Listening band score</p>
+              <a href="#" class="btn-xs a">Coming Soon →</a>
+            </div>
+          </div>
+          <div class="rg-box c2">
+            <div class="rg-ico">📖</div>
+            <div class="rg-txt">
+              <h4>IELTS Reading Calculator</h4>
+              <p>Check your Reading band from correct answers</p>
+              <a href="#" class="btn-xs g">Coming Soon →</a>
+            </div>
+          </div>
+          <div class="rg-box c3">
+            <div class="rg-ico">✍️</div>
+            <div class="rg-txt">
+              <h4>IELTS Writing Band Guide</h4>
+              <p>Understand Writing Task 1 and Task 2 criteria</p>
+              <a href="#" class="btn-xs b">Coming Soon →</a>
+            </div>
+          </div>
+          <div class="rg-box c4">
+            <div class="rg-ico">🗣️</div>
+            <div class="rg-txt">
+              <h4>IELTS Speaking Band Guide</h4>
+              <p>Know what examiners look for in each band</p>
+              <a href="#" class="btn-xs p">Coming Soon →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOOL SECTION -->
+<section class="tool-sec" id="tool">
+  <div class="w">
+    <div class="tool-wrap">
+      <div class="tool-card rev">
+        <div class="tool-hdr">
+          <div class="run-dots">
+            <div class="run-dot"></div><div class="run-dot"></div><div class="run-dot"></div>
+            <div class="run-dot"></div><div class="run-dot"></div><div class="run-dot"></div>
+          </div>
+          <div class="th">
+            <h2>📊 IELTS Overall Band Score Calculator</h2>
+            <p>Choose your band score for each of the four IELTS sections. The tool calculates your weighted average and applies official IELTS rounding rules to give you an accurate final band.</p>
+            <div class="th-badges">
+              <span class="thb">🎯 Official Rounding Rules</span>
+              <span class="thb">📊 Section Breakdown</span>
+              <span class="thb">💡 Band Meaning</span>
+              <span class="thb">🔒 No Data Stored</span>
+            </div>
+          </div>
+        </div>
+        <div class="tool-body">
+
+          <!-- ROW 1: Listening + Reading -->
+          <div class="fgrid">
+            <div class="fld">
+              <label class="flbl" for="listening">🎧 Listening <span>Required</span></label>
+              <select class="fsel" id="listening">
+                <option value="" disabled selected>Select band score</option>
+                <option value="0">0.0 — Not Attempted</option>
+                <option value="0.5">0.5</option>
+                <option value="1">1.0</option>
+                <option value="1.5">1.5</option>
+                <option value="2">2.0</option>
+                <option value="2.5">2.5</option>
+                <option value="3">3.0</option>
+                <option value="3.5">3.5</option>
+                <option value="4">4.0</option>
+                <option value="4.5">4.5</option>
+                <option value="5">5.0</option>
+                <option value="5.5">5.5</option>
+                <option value="6">6.0</option>
+                <option value="6.5">6.5</option>
+                <option value="7">7.0</option>
+                <option value="7.5">7.5</option>
+                <option value="8">8.0</option>
+                <option value="8.5">8.5</option>
+                <option value="9">9.0</option>
+              </select>
+            </div>
+            <div class="fld">
+              <label class="flbl" for="reading">📖 Reading <span>Required</span></label>
+              <select class="fsel" id="reading">
+                <option value="" disabled selected>Select band score</option>
+                <option value="0">0.0 — Not Attempted</option>
+                <option value="0.5">0.5</option>
+                <option value="1">1.0</option>
+                <option value="1.5">1.5</option>
+                <option value="2">2.0</option>
+                <option value="2.5">2.5</option>
+                <option value="3">3.0</option>
+                <option value="3.5">3.5</option>
+                <option value="4">4.0</option>
+                <option value="4.5">4.5</option>
+                <option value="5">5.0</option>
+                <option value="5.5">5.5</option>
+                <option value="6">6.0</option>
+                <option value="6.5">6.5</option>
+                <option value="7">7.0</option>
+                <option value="7.5">7.5</option>
+                <option value="8">8.0</option>
+                <option value="8.5">8.5</option>
+                <option value="9">9.0</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- ROW 2: Writing + Speaking -->
+          <div class="fgrid">
+            <div class="fld">
+              <label class="flbl" for="writing">✍️ Writing <span>Required</span></label>
+              <select class="fsel" id="writing">
+                <option value="" disabled selected>Select band score</option>
+                <option value="0">0.0 — Not Attempted</option>
+                <option value="0.5">0.5</option>
+                <option value="1">1.0</option>
+                <option value="1.5">1.5</option>
+                <option value="2">2.0</option>
+                <option value="2.5">2.5</option>
+                <option value="3">3.0</option>
+                <option value="3.5">3.5</option>
+                <option value="4">4.0</option>
+                <option value="4.5">4.5</option>
+                <option value="5">5.0</option>
+                <option value="5.5">5.5</option>
+                <option value="6">6.0</option>
+                <option value="6.5">6.5</option>
+                <option value="7">7.0</option>
+                <option value="7.5">7.5</option>
+                <option value="8">8.0</option>
+                <option value="8.5">8.5</option>
+                <option value="9">9.0</option>
+              </select>
+            </div>
+            <div class="fld">
+              <label class="flbl" for="speaking">🗣️ Speaking <span>Required</span></label>
+              <select class="fsel" id="speaking">
+                <option value="" disabled selected>Select band score</option>
+                <option value="0">0.0 — Not Attempted</option>
+                <option value="0.5">0.5</option>
+                <option value="1">1.0</option>
+                <option value="1.5">1.5</option>
+                <option value="2">2.0</option>
+                <option value="2.5">2.5</option>
+                <option value="3">3.0</option>
+                <option value="3.5">3.5</option>
+                <option value="4">4.0</option>
+                <option value="4.5">4.5</option>
+                <option value="5">5.0</option>
+                <option value="5.5">5.5</option>
+                <option value="6">6.0</option>
+                <option value="6.5">6.5</option>
+                <option value="7">7.0</option>
+                <option value="7.5">7.5</option>
+                <option value="8">8.0</option>
+                <option value="8.5">8.5</option>
+                <option value="9">9.0</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="hint-box">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            <div>Each IELTS section is scored in full or half bands (0.5 steps). All four sections carry <strong>equal weight</strong> in the overall score. The final result is reported in full or half band increments only — fractional scores are rounded using official IELTS methodology.</div>
+          </div>
+
+          <button class="chk-btn" onclick="calcBand()">📊 Calculate My Overall Band Score</button>
+
+          <!-- RESULT -->
+          <div id="resultArea">
+            <div class="res-banner" id="resBanner">
+              <div class="meter-wrap">
+                <svg class="meter-svg" viewBox="0 0 100 100">
+                  <circle class="meter-bg" cx="50" cy="50" r="45"/>
+                  <circle class="meter-fill" id="meterFill" cx="50" cy="50" r="45" stroke-dasharray="283" stroke-dashoffset="283"/>
+                </svg>
+                <div class="meter-center">
+                  <div class="meter-pct" id="meterPct">0</div>
+                  <div class="meter-lbl" id="meterLbl">Band</div>
+                </div>
+              </div>
+              <div class="res-info">
+                <div class="res-icon" id="resIcon"></div>
+                <div class="res-title" id="resTitle"></div>
+                <div class="res-sub" id="resSub"></div>
+                <div class="res-tag" id="resTag"></div>
+              </div>
+            </div>
+
+            <div class="grade-grid" id="gradeGrid"></div>
+
+            <div class="time-compare" id="scoreBreakdown">
+              <div class="tc-title">📊 Section Score Breakdown</div>
+              <div id="sectionBars"></div>
+            </div>
+
+            <div class="sugg-box" id="suggBox"></div>
+            <div class="warn-box">
+              <span style="font-size:20px;flex-shrink:0">⚠️</span>
+              <div style="font-size:13.5px;color:var(--ink2);line-height:1.72"><strong>Note:</strong> This tool provides an estimate based on standard IELTS overall band calculation methodology. Actual band scores are determined by official IELTS test centres. Always refer to your official result slip for confirmed scores. <strong>This tool does not store any data you enter.</strong></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TABLE SECTION -->
+<section class="tbl-sec" id="band-table">
+  <div class="w">
+    <div style="max-width:860px;margin:0 auto">
+      <div class="rev" style="text-align:center;margin-bottom:36px">
+        <div class="pill" style="margin-bottom:14px">Official Band Guide</div>
+        <h2 style="font-family:var(--fd);font-size:clamp(22px,3.5vw,36px);font-weight:800;color:var(--ink);margin-bottom:10px">IELTS <span style="color:var(--blue)">Band Score Meanings</span></h2>
+        <p style="font-size:15px;color:var(--ink3);max-width:520px;margin:0 auto;line-height:1.75">What each overall IELTS band score actually says about your English ability.</p>
+      </div>
+
+      <div class="tbl-wr rev">
+        <table class="band-tbl">
+          <thead><tr><th>Band</th><th>User Level</th><th>What It Means</th><th>Typical Use Case</th></tr></thead>
+          <tbody>
+            <tr class="row-pass"><td><span class="b-badge" style="background:#059669">9</span></td><td><strong>Expert User</strong></td><td>Complete mastery of the language with full operational command in all contexts.</td><td><span class="tbadge g">Top universities, C-suite roles</span></td></tr>
+            <tr class="row-pass"><td><span class="b-badge" style="background:#10b981">8</span></td><td><strong>Very Good User</strong></td><td>Handles complex language accurately with minor inaccuracies in unfamiliar situations.</td><td><span class="tbadge g">UK, Canada, Australia PR</span></td></tr>
+            <tr class="row-pass"><td><span class="b-badge" style="background:#34d399">7</span></td><td><strong>Good User</strong></td><td>Operational command with some inaccuracies and misunderstandings in certain situations.</td><td><span class="tbadge g">Postgraduate admissions</span></td></tr>
+            <tr class="row-avg"><td><span class="b-badge" style="background:#f59e0b">6</span></td><td><strong>Competent User</strong></td><td>Generally effective command with some inaccuracies, particularly in unfamiliar situations.</td><td><span class="tbadge a">Undergraduate admissions</span></td></tr>
+            <tr class="row-avg"><td><span class="b-badge" style="background:#f97316">5</span></td><td><strong>Modest User</strong></td><td>Partial command, copes with overall meaning in most situations, though frequent errors occur.</td><td><span class="tbadge a">Foundation courses, basic work visas</span></td></tr>
+            <tr class="row-fail"><td><span class="b-badge" style="background:#ef4444">4</span></td><td><strong>Limited User</strong></td><td>Basic competence limited to familiar situations with frequent communication breakdown.</td><td><span class="tbadge r">Some work permits (limited)</span></td></tr>
+            <tr class="row-fail"><td><span class="b-badge" style="background:#dc2626">3</span></td><td><strong>Extremely Limited</strong></td><td>Only very basic communication in highly familiar areas. Frequent major communication difficulty.</td><td><span class="tbadge r">Not suitable for most purposes</span></td></tr>
+            <tr class="row-fail"><td><span class="b-badge" style="background:#991b1b">2</span></td><td><strong>Intermittent User</strong></td><td>No real communication possible except in the most basic terms. Isolated words and phrases only.</td><td><span class="tbadge r">Not usable for any qualification</span></td></tr>
+            <tr class="row-fail"><td><span class="b-badge" style="background:#7f1d1d">1</span></td><td><strong>Non User</strong></td><td>No ability to use the language beyond a few isolated words. No communicative ability.</td><td><span class="tbadge r">No practical use</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:12.5px;color:var(--ink4);margin-top:12px;text-align:center">* Band requirements vary by institution, country, and visa category. Always verify from the official source before applying.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TIPS SECTION -->
+<section class="tips-sec">
+  <div class="w">
+    <div style="text-align:center;margin-bottom:36px" class="rev">
+      <div class="pill" style="margin-bottom:14px">Preparation Tips</div>
+      <h2 style="font-family:var(--fd);font-size:clamp(22px,3.5vw,36px);font-weight:800;color:var(--ink);margin-bottom:10px">Improve Your <span style="color:var(--blue)">IELTS Band Score</span></h2>
+      <p style="font-size:15px;color:var(--ink3);max-width:480px;margin:0 auto">Practical strategies that actually move your band score in each section.</p>
+    </div>
+    <div class="tips-grid rev">
+      <div class="tip-card">
+        <div class="tip-ico">🎧</div>
+        <div class="tip-title">Listening Strategy</div>
+        <div class="tip-desc">Underline keywords before the audio begins. Train your ear with different English accents — British, Australian, and North American. Predict answer types before listening and check spelling carefully in answers.</div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-ico">📖</div>
+        <div class="tip-title">Reading Efficiency</div>
+        <div class="tip-desc">Always skim the passage for gist before reading questions. Use skimming and scanning, not word-for-word reading. Manage your 60 minutes carefully across all three passages — don't linger on difficult questions.</div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-ico">✍️</div>
+        <div class="tip-title">Writing Improvement</div>
+        <div class="tip-desc">For Task 2, spend 5 minutes planning your structure first. Use a range of linking words but do not overuse them. Every body paragraph needs a clear topic sentence plus supporting examples. Aim for 250–280 words, not more.</div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-ico">🗣️</div>
+        <div class="tip-title">Speaking Fluency</div>
+        <div class="tip-desc">Practice speaking in English for at least 20 minutes every day. Record yourself and listen back. In Part 2, use all 1 minute of preparation time. Speak naturally — examiners reward fluency and vocabulary range, not perfect grammar alone.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STORY SECTION -->
+<section class="story-sec">
+  <div class="wa">
+    <div class="rev" style="text-align:center;margin-bottom:36px">
+      <div class="pill" style="margin-bottom:14px">Why I Built This</div>
+      <h2 style="font-family:var(--fd);font-size:clamp(22px,3.4vw,34px);font-weight:800;color:var(--ink);margin-bottom:8px">Priya ki <span style="color:var(--blue)">Kahaani</span></h2>
+      <p style="font-size:15px;color:var(--ink3)">Ek real problem, jo thousands of IELTS students face karte hain.</p>
+    </div>
+    <div class="story-card rev">
+      <div class="sq">"</div>
+      <div class="sb">
+        Ye tool maine isliye banaya kyunki <strong>meri cousin Priya Canada ke liye IELTS de rahi thi</strong>. Wo bahut seriously padh rahi thi — har section par weeks laga diye. Mock tests diye. Notes banaye.<br><br>
+        Lekin ek chiz thi jo unhe hamesha confuse karti thi — <em>"bhai, mere Listening mein 7, Reading mein 6.5, Writing mein 6, Speaking mein 6.5 aaye hain — toh overall band score kya hoga? Kya 6.5 aayega ya 7?"</em><br><br>
+        <strong>Ye calculation seedhi nahi hoti — kyunki IELTS official rounding rules use karta hai</strong> jo simple averaging se alag hoti hai. Bahut log manually calculate karte hain aur galat answer nikalte hain, fir unhe pata hi nahi chalta ki unka target band achieve hua ya nahi.<br><br>
+        Priya bhi theek isi confusion mein thi. Ek din usne mujhe call karke bola — <em>"agar mujhe pehle se pata hota ki mera current score exact kitna hai, toh main specific section par focus karti."</em><br><br>
+        <strong>Wahi din tha jab maine decide kiya — ye tool build karna hai. Taki koi bhi IELTS student ek second mein accurate overall band calculate kar sake. Bina confusion ke.</strong> 🙏✈️
+      </div>
+      <div class="sauth">
+        <div class="savt">🛠️</div>
+        <div>
+          <div class="sname">Raj Bhai — RajDailyTools</div>
+          <div class="srole">Founder, RajDailyTools.in · Built for students, by a student's family</div>
+        </div>
+      </div>
+      <div class="founder-msg">
+        <div class="fm-ico">💙</div>
+        <div class="fm-txt"><strong>To every student preparing for IELTS:</strong> Your band score is just a number. But understanding exactly where you are right now — that's what shapes how you study next. Use this tool every time you do a mock test. Track your progress. And keep going. You've got this.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GUIDE SECTION -->
+<section class="guide-sec" id="guide">
+  <div class="wa">
+    <div class="rev" style="text-align:center;margin-bottom:40px">
+      <div class="pill" style="margin-bottom:14px">Complete Guide</div>
+      <h2 style="font-family:var(--fd);font-size:clamp(22px,3.5vw,36px);font-weight:800;color:var(--ink);margin-bottom:10px">IELTS Overall Band Score — <span style="color:var(--blue)">Full Guide</span></h2>
+      <p style="font-size:15px;color:var(--ink3);max-width:520px;margin:0 auto;line-height:1.75">Everything you need to understand how the final IELTS band score is calculated, rounded, and what it means for your goals.</p>
+    </div>
+    <div class="story-card rev guide-body">
+
+      <h2>What Is the IELTS Overall Band Score?</h2>
+      <p>When you receive your IELTS result, you get five scores: one for each of the four test sections and a single overall band. That overall band is the number most institutions ask for when you apply for a university course, a work visa, or a migration program.</p>
+      <p>The overall band does not come from a separate test. It is a calculated figure derived from your four sectional scores. Understanding this calculation helps you know exactly what you need to improve when your score falls short of a target.</p>
+
+      <div class="ibox">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        <div><strong>Quick Fact:</strong> IELTS is offered in two formats — Academic and General Training. The way the overall band score is calculated is identical for both formats. The same formula and rounding rules apply regardless of which version of the test you take.</div>
+      </div>
+
+      <h2>How This Calculator Works</h2>
+      <p>The calculation process is simple in principle but requires careful rounding to get right. Here is exactly what happens step by step:</p>
+      <ul>
+        <li>You enter your Listening, Reading, Writing and Speaking band scores.</li>
+        <li>The calculator adds all four scores together and divides the total by four.</li>
+        <li>That raw average is then rounded according to official IELTS rounding rules.</li>
+        <li>The rounded result becomes your overall band score — displayed in full or half bands only.</li>
+      </ul>
+
+      <h2>IELTS Overall Band Calculation Explained</h2>
+      <p>All four sections carry equal weight. There is no section that contributes more or less to the final overall — Listening counts exactly as much as Writing, and Reading counts exactly as much as Speaking.</p>
+      <p>The formula itself is:</p>
+      <div class="ex-card">
+        <div class="ex-row"><span>Overall Score Formula</span><span style="font-size:13px;color:var(--ink3)">(L + R + W + S) ÷ 4 = Raw Average</span></div>
+        <div class="ex-row"><span>Raw Average → Apply Rounding</span><span style="font-size:13px;color:var(--ink3)">Official IELTS Rounding Method</span></div>
+        <div class="ex-row"><span>🎯 Final Overall Band</span><span><span class="ex-band">X.0</span> or <span class="ex-band" style="background:var(--teal)">X.5</span></span></div>
+      </div>
+
+      <h2>IELTS Rounding Rules — Explained Clearly</h2>
+      <p>This is the part that trips up most students. IELTS does not use standard mathematical rounding. It uses its own specific system. Here is how it works in plain language:</p>
+      <ul>
+        <li><strong>If the raw average ends in .25 → round up to the next .5 band.</strong> For example, 6.25 becomes 6.5.</li>
+        <li><strong>If the raw average ends in .75 → round up to the next whole band.</strong> For example, 6.75 becomes 7.0.</li>
+        <li><strong>If the raw average is below .25 after the decimal → round down to the nearest whole band.</strong> For example, 6.1 becomes 6.0.</li>
+        <li><strong>If the raw average is between .25 and .74 → round to the nearest half band.</strong> For example, 6.4 becomes 6.5, and 6.6 also becomes 6.5.</li>
+      </ul>
+
+      <div class="ibox a">
+        <svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        <div><strong>Common Mistake:</strong> Many students assume that scoring 6.0 in three sections and 7.0 in one section always gives an overall of 6.0 or 6.5. Run the numbers — (6+6+6+7) ÷ 4 = 6.25 → rounds up to 6.5. Small differences in one section can shift your overall band.</div>
+      </div>
+
+      <h2>Example Calculation</h2>
+      <p>Here is a worked example to show the full process:</p>
+      <div class="ex-card">
+        <div class="ex-row"><span>🎧 Listening</span><span><strong>7.5</strong></span></div>
+        <div class="ex-row"><span>📖 Reading</span><span><strong>7.0</strong></span></div>
+        <div class="ex-row"><span>✍️ Writing</span><span><strong>6.5</strong></span></div>
+        <div class="ex-row"><span>🗣️ Speaking</span><span><strong>7.0</strong></span></div>
+        <div class="ex-row"><span>Raw Average</span><span style="color:var(--ink3)">(7.5 + 7.0 + 6.5 + 7.0) ÷ 4 = <strong>7.0</strong></span></div>
+        <div class="ex-row"><span>✅ Final Overall Band</span><span><span class="ex-band">7.0</span></span></div>
+      </div>
+      <p>In this case the raw average is exactly 7.0 — a whole number — so no rounding adjustment is needed. The overall band score is 7.0.</p>
+
+      <h2>Band Score Interpretation</h2>
+      <p>Each IELTS band corresponds to a defined level of English ability. Here is a practical way to understand what each band means for your goals:</p>
+      <ul>
+        <li><strong>Band 9 (Expert User):</strong> Complete command of the language. Extremely rare and not required for any standard admission or visa purpose.</li>
+        <li><strong>Band 8 (Very Good User):</strong> Required for some competitive universities and certain Australian or Canadian migration streams.</li>
+        <li><strong>Band 7 (Good User):</strong> The most commonly required band for postgraduate programs and skilled migration applications.</li>
+        <li><strong>Band 6.5:</strong> Accepted by many undergraduate programs and a number of professional registration bodies worldwide.</li>
+        <li><strong>Band 6 (Competent User):</strong> Minimum requirement for many undergraduate admissions and general work visa categories.</li>
+        <li><strong>Band 5.5:</strong> Typically the floor for diploma programs and some foundation-level entry in English-speaking countries.</li>
+      </ul>
+
+      <h2>Why Students Use This Calculator</h2>
+      <p>The IELTS rounding system is not difficult, but it is easy to get wrong when you calculate manually in your head. Using this calculator removes that error and gives you an instant, accurate overall band based on the same logic IELTS applies.</p>
+      <p>More importantly, it helps during test preparation. When you finish a mock test and have four section scores, running them through this tool tells you your estimated overall band immediately. You can then see clearly which section, if improved by even half a band, would push your overall over your target. That kind of targeted feedback is what makes preparation efficient.</p>
+
+      <div class="ibox g">
+        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+        <div><strong>Pro Tip:</strong> If you need a 7.0 overall and you are currently sitting at 6.5, do not try to improve all four sections equally. Use this calculator to run different scenarios — for example, what happens if Writing goes from 6.0 to 6.5, or if Speaking moves from 7.0 to 7.5. Find the single section that gives you the most efficient overall gain and focus your energy there.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FAQ SECTION -->
+<section class="faq-sec" id="faq">
+  <div class="w">
+    <div class="rev" style="text-align:center;margin-bottom:40px">
+      <div class="pill" style="margin-bottom:14px">Frequently Asked Questions</div>
+      <h2 style="font-family:var(--fd);font-size:clamp(22px,3.5vw,36px);font-weight:800;color:var(--ink);margin-bottom:10px">Common Questions About <span style="color:var(--blue)">IELTS Band Scores</span></h2>
+      <p style="font-size:15px;color:var(--ink3);max-width:500px;margin:0 auto;line-height:1.75">Clear answers to the questions IELTS test-takers ask most often about scoring and calculation.</p>
+    </div>
+    <div class="fql" id="faqList">
+
+      <div class="fq">
+        <div class="fq-q"><span class="fq-t">What exactly is the IELTS Overall Band Score?</span><div class="fq-i">+</div></div>
+        <div class="fq-a"><div class="fq-ai">The Overall Band Score is the single final number that summarises your entire IELTS result. It is calculated from your four individual section scores — Listening, Reading, Writing, and Speaking — averaged together and rounded using the official IELTS rounding method. This is the number most universities, employers, and immigration authorities ask for when you apply.</div></div>
+      </div>
+
+      <div class="fq">
+        <div class="fq-q"><span class="fq-t">Does every section have equal weight in the overall score?</span><div class="fq-i">+</div></div>
+        <div class="fq-a"><div class="fq-ai">Yes. Listening, Reading, Writing, and Speaking each contribute exactly 25% to the final overall band. No section carries more weight than another. This means a weak Writing score can drag down your overall just as much as a weak Listening or Reading score. All four sections matter equally.</div></div>
+      </div>
+
+      <div class="fq">
+        <div class="fq-q"><span class="fq-t">Why does IELTS use special rounding rules instead of normal rounding?</span><div class="fq-i">+</div></div>
+        <div class="fq-a"><div class="fq-ai">IELTS scores are only reported in full or half band increments — that means 6.0, 6.5, 7.0, 7.5, and so on. A raw average like 6.25 or 6.75 cannot be reported as-is. The rounding rules exist to map any raw average cleanly to the nearest valid band. The rules always round up at the midpoints (.25 and .75), which means candidates benefit slightly from this system compared to standard mathematical rounding.</div></div>
+      </div>
+
+      <div class="fq">
+        <div class="fq-q"><span class="fq-t">Can my IELTS overall score contain decimals like 6.3 or 7.2?</span><div class="fq-i">+</div></div>
+        <div class="fq-a"><div class="fq-ai">No. Your official overall IELTS band score is always expressed in either a whole number (like 6.0 or 7.0) or a half band (like 6.5 or 7.5). Numbers like 6.3 or 7.2 do not appear on an IELTS result. The raw average calculated from your four section scores is rounded using official methodology before your result is reported.</div></div>
+      </div>
+
+      <div class="fq">
+        <div class="fq-q"><span class="fq-t">Is this calculator accurate for both Academic and General Training IELTS?</span><div class="fq-i">+</div></div>
+        <div class="fq-a"><div class="fq-ai">Yes. The overall band score calculation formula and rounding methodology is identical for Academic and General Training IELTS. The two formats differ in the content and difficulty level of Reading and Writing tasks, and in how raw marks in Listening and Reading convert to section bands — but the overall band calculation process itself is the same for both.</div></div>
+      </div>
+
+      <div class="fq">
+        <div class="fq-q"><span class="fq-t">What happens if I score 0 in one section?</span><div class="fq-i">+</div></div>
+        <div class="fq-a"><div class="fq-ai">A score of 0 in any section means you did not attempt or were unable to demonstrate any language ability in that section. It is included in the average calculation like any other score. Because all four sections are equally weighted, a 0 in one section will significantly reduce your overall band. For official test purposes, a 0 also typically results in the section being marked as "absent" or "not rated" on your Test Report Form.</div></div>
+      </div>
+
+      <div class="fq">
+        <div class="fq-q"><span class="fq-t">How can I improve my IELTS overall band score most efficiently?</span><div class="fq-i">+</div></div>
+        <div class="fq-a"><div class="fq-ai">The most efficient approach is to identify which of your four section scores is lowest relative to your target, and focus improvement efforts there. Improving a section by just 0.5 bands can sometimes shift your overall band by 0.5. Use this calculator to run "what if" scenarios — enter your current scores, then adjust one section at a time to see how your overall band changes. That tells you exactly where your effort will have the highest return.</div></div>
+      </div>
+
+      <div class="fq">
+        <div class="fq-q"><span class="fq-t">My four section scores are the same but my official result looks different. Why?</span><div class="fq-i">+</div></div>
+        <div class="fq-a"><div class="fq-ai">This tool calculates an estimated overall band based on the section scores you enter. Your actual IELTS Test Report Form reflects scores determined by official test centre marking, which may include examiner review, second marking for Speaking and Writing, and verification processes. If you believe there is a discrepancy, you can apply for an Enquiry on Results (EOR) through the official IELTS test centre where you sat the exam.</div></div>
+      </div>
+
+      <div class="fq">
+        <div class="fq-q"><span class="fq-t">How long is an IELTS score valid?</span><div class="fq-i">+</div></div>
+        <div class="fq-a"><div class="fq-ai">An IELTS Test Report Form is considered valid for two years from the date of your test. After two years, most universities, immigration authorities, and professional bodies will not accept your score and will require you to retake the test. A small number of institutions may accept older scores under specific circumstances, so it is worth checking with the receiving organisation directly.</div></div>
+      </div>
+
+      <div class="fq">
+        <div class="fq-q"><span class="fq-t">What overall band score do I need for a UK or Canada study visa?</span><div class="fq-i">+</div></div>
+        <div class="fq-a"><div class="fq-ai">Requirements vary by institution, program level, and visa category. For the UK, a common undergraduate requirement is an overall band of 6.0 to 6.5, while many postgraduate programs require 6.5 to 7.0. For Canadian student visas, a band of 6.0 overall is often the minimum, though individual institutions and programs may require higher scores. Always check the specific requirements of your chosen institution and the immigration authority of the destination country, as these can change.</div></div>
+      </div>
+
+      <div class="fq">
+        <div class="fq-q"><span class="fq-t">Can I use my best section scores from different IELTS sittings?</span><div class="fq-i">+</div></div>
+        <div class="fq-a"><div class="fq-ai">This depends entirely on the institution or authority you are applying to. Most standard IELTS acceptance policies require that all four section scores come from a single test sitting. However, some institutions — particularly in Australia and certain professional bodies — do accept a combination of best scores from multiple sittings within a specified time window. This is sometimes called "score combination" or "multi-sitting" acceptance. You must confirm the policy with the specific organisation you are applying to.</div></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- DISCLAIMER -->
+<div class="disc">
+  <div class="w">
+    <div class="disc-in">
+      <span style="font-size:18px;flex-shrink:0">⚠️</span>
+      <div><strong>Disclaimer:</strong> This IELTS Overall Band Score Calculator is an independent tool built for estimation and preparation purposes. It is not affiliated with, endorsed by, or connected to IELTS, IDP, British Council, or Cambridge Assessment English. All scoring logic is based on publicly available IELTS band calculation methodology. Official IELTS results are determined solely by authorised test centres. Always refer to your official Test Report Form for confirmed scores.</div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT SECTION -->
+<section class="contact-sec">
+  <div class="w">
+    <div class="contact-card rev">
+      <h3>📬 Have a Question or Suggestion?</h3>
+      <p>If you found this tool useful or noticed something that could be improved, we would love to hear from you. We are constantly working to make RajDailyTools more accurate and more helpful for students across India and beyond.</p>
+      <a href="mailto:contact@rajdailytools.in" class="btn-bl">📧 Contact Us</a>
+      <p class="priv-note">🔒 We do not collect or store any information entered into our tools. Your privacy is fully protected.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA SECTION -->
+<section class="cta">
+  <div class="w">
+    <div class="cta-in">
+      <div class="pill">Free Study Tools</div>
+      <h2>Preparing for IELTS?<br><em>Use All Our Study Tools</em></h2>
+      <p>From band calculators to study guides — all the tools you need to track your progress and hit your target band, completely free.</p>
+      <div class="cta-btns">
+        <a href="/categories" class="btn-gold">🎯 Explore All Tools</a>
+        <a href="#tool" class="btn-ghost">📊 Calculate Again ↑</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-inner">
+    <div class="ft-top">
+      <div class="ft-brand">
+        <div class="logo" style="margin-bottom:4px">
+          <div class="lb"><svg viewBox="0 0 24 24" fill="#fff"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+          <div><div class="ln">Raj<span>Daily</span>Tools</div><div class="ls">Smart Tools for Daily Life</div></div>
+        </div>
+        <p class="ft-desc">India's most ambitious free tools platform. Built by Raj Bhai. Solving daily life problems, one tool at a time.</p>
+        <div class="ft-soc">
+          <a href="https://www.facebook.com/share/1Dq3Y1k7mG/" target="_blank" class="fts">f</a>
+          <a href="https://x.com/Educator4ll" target="_blank" class="fts">𝕏</a>
+          <a href="https://youtube.com/@rajdailytools" target="_blank" class="fts">▶</a>
+          <a href="https://www.instagram.com/rajdailytools" target="_blank" class="fts">📷</a>
+        </div>
+      </div>
+      <div class="fc"><h4>IELTS Tools</h4><ul>
+        <li><a href="#">Overall Band Calculator</a></li>
+        <li><a href="#">Listening Band Calculator</a></li>
+        <li><a href="#">Reading Band Calculator</a></li>
+        <li><a href="#">Target Band Planner</a></li>
+      </ul></div>
+      <div class="fc"><h4>Categories</h4><ul>
+        <li><a href="/education-tools">Education Tools</a></li>
+        <li><a href="/finance-tools">Finance Tools</a></li>
+        <li><a href="/calculator-tools">Calculator Tools</a></li>
+        <li><a href="/health-tools">Health Tools</a></li>
+        <li><a href="/text-tools">Text Tools</a></li>
+      </ul></div>
+      <div class="fc"><h4>Company</h4><ul>
+        <li><a href="/about">About Us</a></li>
+        <li><a href="/contact">Contact</a></li>
+        <li><a href="/privacy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
+      </ul></div>
+    </div>
+    <div class="ft-btm">
+      <p class="ft-cp">Copyright © 2026 <b>RajDailyTools</b>. All rights reserved. Designed by <b>RajDailyTools</b></p>
+      <p class="ft-tag">Made with ❤️ in India — "Solving daily life problems with smart tools"</p>
+    </div>
+  </div>
+</footer>
+<button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+/* ── Drawer ── */
+const brg=document.getElementById('brg'),drw=document.getElementById('drw'),dov=document.getElementById('dov');
+function oD(){drw.classList.add('on');dov.classList.add('on');document.body.style.overflow='hidden'}
+function cD(){drw.classList.remove('on');dov.classList.remove('on');document.body.style.overflow=''}
+brg.addEventListener('click',oD);
+document.getElementById('dx').addEventListener('click',cD);
+dov.addEventListener('click',cD);
+
+/* ── Back to Top ── */
+const btt=document.getElementById('btt');
+window.addEventListener('scroll',()=>btt.classList.toggle('on',scrollY>380),{passive:true});
+
+/* ── Reveal on scroll ── */
+const rvObs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      const s=[...(e.target.parentElement?.children||[])];
+      e.target.style.transitionDelay=(s.indexOf(e.target)%4)*0.08+'s';
+      e.target.classList.add('in');
+      rvObs.unobserve(e.target);
+    }
+  });
+},{threshold:0.06,rootMargin:'0px 0px -20px 0px'});
+document.querySelectorAll('.rev').forEach(el=>rvObs.observe(el));
+
+/* ── FAQ Accordion ── */
+document.getElementById('faqList').addEventListener('click',function(e){
+  const q=e.target.closest('.fq-q');
+  if(!q)return;
+  const item=q.closest('.fq'),open=item.classList.contains('open');
+  document.querySelectorAll('.fq.open').forEach(i=>i.classList.remove('open'));
+  if(!open)item.classList.add('open');
+});
+
+/* ══════════════════════════════════════
+   IELTS BAND SCORE CALCULATOR LOGIC
+══════════════════════════════════════ */
+
+function applyIELTSRounding(avg){
+  /* IELTS official rounding:
+     .25 → round up to .5
+     .75 → round up to next whole
+     below .25 → round down to whole
+     .25–.74 → round to .5
+  */
+  const whole=Math.floor(avg);
+  const decimal=avg-whole;
+
+  if(decimal<0.25){return whole;}
+  else if(decimal>=0.25&&decimal<0.75){return whole+0.5;}
+  else{return whole+1;}
+}
+
+function getBandInfo(band){
+  const map={
+    9:{label:'Expert User',icon:'🏆',cls:'pass',tagCls:'pass',desc:'Your English is at the highest level. Complete command of the language in any context.'},
+    8.5:{label:'Very Good+ User',icon:'🌟',cls:'pass',tagCls:'pass',desc:'Extremely high proficiency. Accepted by top-tier institutions and competitive migration programs.'},
+    8:{label:'Very Good User',icon:'🌟',cls:'pass',tagCls:'pass',desc:'Strong command with only minor occasional inaccuracies. Suitable for most competitive programs.'},
+    7.5:{label:'Good+ User',icon:'✅',cls:'pass',tagCls:'pass',desc:'Proficient with occasional errors. Meets requirements for most universities and visa programs.'},
+    7:{label:'Good User',icon:'✅',cls:'pass',tagCls:'pass',desc:'Solid operational English. Widely required for postgraduate admission and skilled migration.'},
+    6.5:{label:'Competent+ User',icon:'✅',cls:'pass',tagCls:'pass',desc:'Effective English with some inaccuracies. Meets many undergraduate and work visa requirements.'},
+    6:{label:'Competent User',icon:'⚠️',cls:'avg',tagCls:'avg',desc:'General command of English with noticeable inaccuracies. Meets many undergraduate entry requirements.'},
+    5.5:{label:'Modest+ User',icon:'⚠️',cls:'avg',tagCls:'avg',desc:'Partial but growing command. Enough for some foundation programs and entry-level positions.'},
+    5:{label:'Modest User',icon:'⚠️',cls:'avg',tagCls:'avg',desc:'Limited command in familiar situations. Typically below university admission requirements.'},
+    4.5:{label:'Limited+ User',icon:'🔴',cls:'low',tagCls:'low',desc:'Communication is inconsistent and limited to very familiar topics.'},
+    4:{label:'Limited User',icon:'🔴',cls:'low',tagCls:'low',desc:'Basic competence only in familiar situations. Not suitable for most academic or professional purposes.'},
+    3.5:{label:'Extremely Limited+',icon:'🔴',cls:'low',tagCls:'low',desc:'Very limited communication ability. Not suitable for any academic purpose.'},
+    3:{label:'Extremely Limited',icon:'❌',cls:'low',tagCls:'low',desc:'Only partial understanding. Difficulty in most communication situations.'},
+    2.5:{label:'Intermittent+',icon:'❌',cls:'low',tagCls:'low',desc:'No real communication possible except for isolated words.'},
+    2:{label:'Intermittent User',icon:'❌',cls:'low',tagCls:'low',desc:'Very minimal ability — isolated words only. No effective communication possible.'},
+    1.5:{label:'Non User',icon:'❌',cls:'low',tagCls:'low',desc:'No ability to use language beyond a single word.'},
+    1:{label:'Non User',icon:'❌',cls:'low',tagCls:'low',desc:'No communicative ability in the language whatsoever.'},
+    0.5:{label:'Did Not Attempt',icon:'❌',cls:'low',tagCls:'low',desc:'No attempt or result available for scoring.'},
+    0:{label:'Did Not Attempt',icon:'❌',cls:'low',tagCls:'low',desc:'Test not taken or section not attempted.'}
+  };
+  return map[band]||{label:'Unknown Band',icon:'❓',cls:'avg',tagCls:'avg',desc:'No data for this band level.'};
+}
+
+function calcBand(){
+  const L=parseFloat(document.getElementById('listening').value);
+  const R=parseFloat(document.getElementById('reading').value);
+  const W=parseFloat(document.getElementById('writing').value);
+  const S=parseFloat(document.getElementById('speaking').value);
+
+  if(isNaN(L)||isNaN(R)||isNaN(W)||isNaN(S)){
+    alert('Please select a band score for all four sections before calculating.');
+    return;
+  }
+
+  const rawAvg=(L+R+W+S)/4;
+  const overall=applyIELTSRounding(rawAvg);
+  const info=getBandInfo(overall);
+
+  /* Circular meter — scale band 0–9 as 0–100% */
+  const pct=Math.round((overall/9)*100);
+  const circumference=283;
+  const dashOffset=Math.round(circumference-(pct/100)*circumference);
+  const meterFill=document.getElementById('meterFill');
+  meterFill.style.strokeDashoffset=circumference;
+  meterFill.style.stroke=info.cls==='pass'?'var(--green)':(info.cls==='avg'?'var(--amber)':'var(--red)');
+  document.getElementById('meterPct').textContent=overall%1===0?overall.toFixed(1):overall;
+  document.getElementById('meterLbl').textContent='Band';
+  setTimeout(()=>{meterFill.style.strokeDashoffset=dashOffset;},200);
+
+  /* Banner */
+  const banner=document.getElementById('resBanner');
+  banner.className=`res-banner ${info.cls}`;
+  document.getElementById('resIcon').textContent=info.icon;
+  document.getElementById('resTitle').textContent=`Overall Band ${overall%1===0?overall.toFixed(1):overall} — ${info.label}`;
+  document.getElementById('resSub').textContent=`L: ${L} | R: ${R} | W: ${W} | S: ${S} | Raw Avg: ${rawAvg.toFixed(3)}`;
+  const tag=document.getElementById('resTag');
+  tag.className=`res-tag ${info.tagCls}`;
+  tag.textContent=`${info.icon} ${info.label} — Band ${overall%1===0?overall.toFixed(1):overall}`;
+
+  /* Section breakdown bars */
+  const sections=[
+    {label:'🎧 Listening',val:L,cls:'b'},
+    {label:'📖 Reading',val:R,cls:'g'},
+    {label:'✍️ Writing',val:W,cls:'a'},
+    {label:'🗣️ Speaking',val:S,cls:S>=7?'g':(S>=5.5?'a':'r')},
+    {label:'🎯 Overall Band',val:overall,cls:info.cls==='pass'?'g':(info.cls==='avg'?'a':'r')}
+  ];
+  let barsHTML='';
+  sections.forEach(sec=>{
+    const pctBar=Math.round((sec.val/9)*100);
+    barsHTML+=`
+      <div class="tc-row">
+        <div class="tc-lbl">${sec.label}</div>
+        <div class="tc-bar-track">
+          <div class="tc-bar-fill ${sec.cls}" style="width:0%" data-w="${pctBar}%">${sec.val%1===0?sec.val.toFixed(1):sec.val}</div>
+        </div>
+        <div class="tc-val" style="font-family:var(--fd)">${sec.val%1===0?sec.val.toFixed(1):sec.val}</div>
+      </div>
+    `;
+  });
+  barsHTML+=`<p style="font-size:11.5px;color:var(--ink4);margin-top:8px">Longer bar = higher score. Overall band is shown separately at the bottom after IELTS rounding is applied.</p>`;
+  document.getElementById('sectionBars').innerHTML=barsHTML;
+  setTimeout(()=>{
+    document.querySelectorAll('.tc-bar-fill').forEach(b=>{b.style.width=b.dataset.w||'50%'});
+  },200);
+
+  /* Band milestone cards */
+  const milestones=[
+    {band:5.5,label:'Band 5.5',icon:'📘',meaning:'Foundation / Entry',desc:'Minimum for many diploma programs'},
+    {band:6,label:'Band 6.0',icon:'📗',meaning:'Undergraduate Entry',desc:'Common UG admission minimum'},
+    {band:6.5,label:'Band 6.5',icon:'🎓',meaning:'Most UG Programs',desc:'Accepted by majority of UK/AU UG'},
+    {band:7,label:'Band 7.0',icon:'🏅',meaning:'Postgraduate / PR',desc:'Required for most PG & migration'},
+    {band:7.5,label:'Band 7.5',icon:'🌟',meaning:'Competitive PG',desc:'Top universities & skilled migration'},
+    {band:8,label:'Band 8.0',icon:'🏆',meaning:'Expert Level',desc:'Australian / Canadian PR streams'},
+  ];
+  let gradeHTML='';
+  milestones.forEach(m=>{
+    const achieved=overall>=m.band;
+    const isCurrentZone=overall===m.band;
+    let cls='inactive';
+    if(isCurrentZone){cls=overall>=7?'active-pass':(overall>=6?'active-avg':'active-fail');}
+    else if(achieved){cls='active-pass';}
+    gradeHTML+=`
+      <div class="gc ${cls}">
+        <div class="gc-ico">${achieved?m.icon:'🔒'}</div>
+        <div class="gc-title">${m.label}</div>
+        <div class="gc-val">${m.meaning}<br><span style="font-size:10.5px">${m.desc}</span>${isCurrentZone?' 👈 Your band':''}</div>
+      </div>
+    `;
+  });
+  document.getElementById('gradeGrid').innerHTML=gradeHTML;
+
+  /* Suggestion box */
+  let suggMsg='';
+  if(overall>=8){
+    suggMsg=`<strong>🏆 Outstanding — Band ${overall%1===0?overall.toFixed(1):overall}.</strong> Your English proficiency is at a very high level. This score opens doors to virtually any English-speaking university, migration pathway, or professional registration globally. Focus on maintaining this level and verify specific requirements of your target institution.`;
+  } else if(overall>=7){
+    suggMsg=`<strong>✅ Strong Result — Band ${overall%1===0?overall.toFixed(1):overall}.</strong> This is a well-recognised proficiency level. Most postgraduate programs and skilled migration categories accept Band 7.0 or above. If your target requires a higher band, try improving your lowest-scoring section by 0.5 — use the section breakdown above to identify it.`;
+  } else if(overall>=6){
+    suggMsg=`<strong>⚠️ Competent Level — Band ${overall%1===0?overall.toFixed(1):overall}.</strong> You meet many undergraduate entry requirements at this level. If your target is 6.5 or 7.0, focus on the section holding your average down. Writing is often where candidates lose the most ground — consider structured Task 2 practice with feedback.`;
+  } else if(overall>=5){
+    suggMsg=`<strong>🔴 Developing Level — Band ${overall%1===0?overall.toFixed(1):overall}.</strong> This range is below the minimum for most university admissions. Consistent daily practice across all four skills is needed. Consider a structured IELTS preparation course and aim for at least 2 full mock tests per week to build test familiarity alongside language skills.`;
+  } else {
+    suggMsg=`<strong>❌ Below Functional Level — Band ${overall%1===0?overall.toFixed(1):overall}.</strong> Significant language development work is needed before attempting IELTS for any academic or professional purpose. Focus on foundational English building through reading, listening, and speaking practice before returning to IELTS-specific preparation.`;
+  }
+  /* section-specific tip */
+  const scores={L,R,W,S};
+  const labels={L:'Listening',R:'Reading',W:'Writing',S:'Speaking'};
+  const minKey=Object.keys(scores).reduce((a,b)=>scores[a]<scores[b]?a:b);
+  const minVal=scores[minKey];
+  if(minVal<overall){
+    suggMsg+=`<br><br><strong>💡 Section Tip:</strong> Your ${labels[minKey]} score (${minVal}) is your lowest section and is currently pulling your overall band down. Improving it by just 0.5 could change your overall band. Prioritise ${labels[minKey]} practice in your next study block.`;
+  }
+  document.getElementById('suggBox').innerHTML=`<strong style="display:block;font-family:var(--fd);font-size:14px;margin-bottom:10px">📊 Your Score Analysis</strong><p style="font-size:14px;color:var(--ink2);line-height:1.78">${suggMsg}</p><p style="font-size:13px;color:var(--ink);font-weight:700;margin-top:12px">${info.desc}</p>`;
+
+  /* Show result */
+  const ra=document.getElementById('resultArea');
+  ra.style.display='block';
+  ra.style.animation='none';ra.offsetHeight;
+  ra.style.animation='resultIn .45s var(--ease) both';
+  setTimeout(()=>ra.scrollIntoView({behavior:'smooth',block:'nearest'}),120);
+}
+</script>
+</body>
+</html>
