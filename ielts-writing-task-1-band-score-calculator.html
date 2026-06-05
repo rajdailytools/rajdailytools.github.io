@@ -1,0 +1,1254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IELTS Writing Task 1 Band Score Calculator – Estimate Your Task 1 Writing Band</title>
+<meta name="description" content="Calculate your IELTS Writing Task 1 band score using Task Achievement, Coherence & Cohesion, Lexical Resource, and Grammar scores. Free instant estimation.">
+<meta name="keywords" content="IELTS writing task 1 band score calculator, IELTS task 1 score, IELTS writing band estimation, task achievement score, coherence cohesion IELTS, IELTS writing criteria">
+<meta name="robots" content="index, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#2563eb;--blue-d:#1d4ed8;--blue-xl:#eff6ff;--blue-s:#dbeafe;
+  --amber:#f59e0b;--green:#10b981;--red:#ef4444;--purple:#8b5cf6;
+  --orange:#f97316;--teal:#14b8a6;
+  --green-xl:#f0fdf4;--green-s:#bbf7d0;
+  --red-xl:#fef2f2;--red-s:#fecaca;
+  --amber-xl:#fffbeb;--amber-s:#fde68a;
+  --purple-xl:#faf5ff;--purple-s:#ddd6fe;
+  --ink:#0f172a;--ink2:#334155;--ink3:#64748b;--ink4:#94a3b8;
+  --line:#e2e8f0;--surf:#f8fafc;--white:#fff;
+  --s1:0 1px 3px rgba(15,23,42,.06),0 1px 2px rgba(15,23,42,.04);
+  --s2:0 4px 16px rgba(15,23,42,.08),0 2px 6px rgba(15,23,42,.04);
+  --s3:0 12px 40px rgba(15,23,42,.11),0 3px 10px rgba(15,23,42,.06);
+  --s4:0 24px 64px rgba(15,23,42,.13),0 6px 20px rgba(15,23,42,.07);
+  --sb:0 8px 32px rgba(37,99,235,.20);
+  --fd:'Sora',sans-serif;--fb:'DM Sans',sans-serif;
+  --ease:cubic-bezier(.4,0,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);color:var(--ink);background:var(--white);overflow-x:hidden;-webkit-font-smoothing:antialiased;line-height:1.6}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+button{cursor:pointer;border:none;background:none;font-family:var(--fb)}
+.w{max-width:1180px;margin:0 auto;padding:0 24px}
+.wa{max-width:880px;margin:0 auto;padding:0 24px}
+select,input{appearance:none;-webkit-appearance:none}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+@keyframes resultIn{from{opacity:0;transform:translateY(18px) scale(.97)}to{opacity:1;transform:none}}
+.rev{opacity:0;transform:translateY(22px);transition:opacity .55s var(--ease),transform .55s var(--ease)}
+.rev.in{opacity:1;transform:none}
+
+/* HEADER */
+.hdr{position:sticky;top:0;z-index:999;background:rgba(255,255,255,.96);backdrop-filter:blur(20px);border-bottom:1px solid var(--line);box-shadow:var(--s1)}
+.hdi{display:flex;align-items:center;justify-content:space-between;height:66px}
+.logo{display:flex;align-items:center;gap:10px}
+.lb{width:36px;height:36px;background:var(--blue);border-radius:9px;display:flex;align-items:center;justify-content:center;box-shadow:var(--sb);flex-shrink:0}
+.lb svg{width:18px;height:18px;fill:#fff}
+.ln{font-family:var(--fd);font-size:19px;font-weight:800;color:var(--ink);line-height:1}
+.ln span{color:var(--blue)}
+.ls{font-size:10px;color:var(--ink4);letter-spacing:.04em}
+nav.dn{display:flex;align-items:center;gap:2px}
+nav.dn a{font-size:13.5px;font-weight:500;color:var(--ink2);padding:7px 13px;border-radius:8px;transition:.2s}
+nav.dn a:hover{color:var(--blue);background:var(--blue-xl)}
+.hcta{background:var(--blue);color:#fff;font-family:var(--fd);font-weight:600;font-size:13px;padding:8px 18px;border-radius:8px;box-shadow:var(--sb);transition:.2s}
+.hcta:hover{background:var(--blue-d);transform:translateY(-1px)}
+.brg{display:none;flex-direction:column;gap:4.5px;padding:8px;border-radius:8px}
+.brg span{display:block;width:20px;height:2px;background:var(--ink);border-radius:2px;transition:.28s}
+.dov{display:none;position:fixed;inset:0;background:rgba(15,23,42,.45);z-index:1040;backdrop-filter:blur(3px)}
+.dov.on{display:block}
+.drw{position:fixed;top:0;right:-100%;width:270px;height:100vh;background:#fff;z-index:1050;padding:22px;box-shadow:var(--s4);transition:right .32s var(--ease);overflow-y:auto}
+.drw.on{right:0}
+.dh{display:flex;align-items:center;justify-content:space-between;margin-bottom:26px}
+.dx{width:33px;height:33px;border-radius:7px;background:var(--surf);display:flex;align-items:center;justify-content:center;color:var(--ink3);font-size:17px}
+nav.mn{display:flex;flex-direction:column;gap:3px}
+nav.mn a{display:block;font-size:14px;font-weight:500;color:var(--ink2);padding:11px 13px;border-radius:8px;transition:.2s}
+nav.mn a:hover{color:var(--blue);background:var(--blue-xl)}
+
+/* HERO */
+.hero{position:relative;overflow:hidden;background:linear-gradient(150deg,#f0f7ff 0%,#fff 46%,#f0fdf4 100%);padding:64px 0 72px}
+.hero::before{content:'';position:absolute;top:-140px;right:-180px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(37,99,235,.08) 0%,transparent 68%);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-80px;left:-100px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(20,184,166,.06) 0%,transparent 68%);pointer-events:none}
+.blob{position:absolute;border-radius:50%;pointer-events:none;animation:float 6s ease-in-out infinite}
+.b1{width:13px;height:13px;background:rgba(37,99,235,.18);top:22%;right:14%;animation-delay:0s}
+.b2{width:9px;height:9px;background:rgba(20,184,166,.22);top:58%;right:26%;animation-delay:2.2s}
+.b3{width:11px;height:11px;background:rgba(245,158,11,.18);top:36%;right:6%;animation-delay:4s}
+.bc{display:flex;align-items:center;gap:7px;font-size:12.5px;color:var(--ink3);margin-bottom:22px;position:relative;z-index:1;flex-wrap:wrap}
+.bc a{color:var(--blue);font-weight:600}
+.pill{display:inline-flex;align-items:center;gap:7px;font-family:var(--fd);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);background:var(--blue-xl);padding:5px 14px;border-radius:100px;margin-bottom:18px}
+.pill::before{content:'';width:6px;height:6px;background:var(--blue);border-radius:50%}
+.hero-inner{position:relative;z-index:1;max-width:720px;animation:fadeUp .5s ease both}
+.hero h1{font-family:var(--fd);font-size:clamp(26px,4.5vw,50px);font-weight:800;line-height:1.1;color:var(--ink);margin-bottom:14px}
+.hero h1 span{color:var(--blue)}
+.hero-sub{font-size:16px;color:var(--ink3);line-height:1.8;margin-bottom:22px;max-width:600px}
+.hero-chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.chip{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;padding:6px 14px;border-radius:100px;background:#fff;border:1.5px solid var(--line);color:var(--ink2);box-shadow:var(--s1);transition:.22s}
+.chip:hover{border-color:var(--blue);color:var(--blue);transform:translateY(-1px)}
+.hero-meta{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:24px}
+.upd{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:700;color:var(--blue);background:var(--blue-xl);padding:6px 14px;border-radius:100px;border:1.5px solid var(--blue-s)}
+.mi{font-size:13px;color:var(--ink3);font-weight:500}
+
+/* HOW TO USE */
+.howto{background:var(--amber-xl);border:2px solid var(--amber-s);border-radius:16px;padding:22px 26px;max-width:560px;margin-bottom:24px}
+.howto-ttl{display:flex;align-items:center;gap:9px;font-family:var(--fd);font-size:15px;font-weight:800;color:var(--ink);margin-bottom:13px}
+.howto-steps{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.hs{display:flex;align-items:flex-start;gap:10px;font-size:13.5px;color:var(--ink2);line-height:1.6}
+.sn{width:24px;height:24px;background:var(--amber);color:#fff;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex-shrink:0;margin-top:1px}
+
+/* related tools */
+.rel-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;position:relative;z-index:1}
+.rg-box{border-radius:14px;padding:14px 14px 12px;display:flex;flex-direction:column;gap:8px;transition:.22s;border:1.5px solid}
+.rg-box:hover{transform:translateY(-3px);box-shadow:var(--s3)}
+.rg-box.c1{background:linear-gradient(135deg,#fffbeb,#fef3c7);border-color:var(--amber-s)}
+.rg-box.c2{background:linear-gradient(135deg,var(--green-xl),#dcfce7);border-color:var(--green-s)}
+.rg-box.c3{background:linear-gradient(135deg,var(--blue-xl),var(--blue-s));border-color:var(--blue-s)}
+.rg-box.c4{background:linear-gradient(135deg,var(--purple-xl),#ede9fe);border-color:var(--purple-s)}
+.rg-ico{font-size:22px}
+.rg-txt h4{font-family:var(--fd);font-size:12px;font-weight:800;color:var(--ink);margin-bottom:2px}
+.rg-txt p{font-size:11px;color:var(--ink3);line-height:1.5}
+.btn-xs{display:inline-flex;align-items:center;gap:4px;font-family:var(--fd);font-weight:700;font-size:11px;padding:5px 10px;border-radius:7px;transition:.22s;margin-top:4px}
+.btn-xs.a{background:var(--amber);color:#fff}.btn-xs.a:hover{background:#d97706}
+.btn-xs.g{background:var(--green);color:#fff}.btn-xs.g:hover{background:#059669}
+.btn-xs.b{background:var(--blue);color:#fff}.btn-xs.b:hover{background:var(--blue-d)}
+.btn-xs.p{background:var(--purple);color:#fff}.btn-xs.p:hover{background:#7c3aed}
+.btn-xs.t{background:var(--teal);color:#fff}.btn-xs.t:hover{background:#0d9488}
+
+/* TOOL SECTION */
+.tool-sec{background:var(--surf);padding:80px 0}
+.tool-wrap{max-width:860px;margin:0 auto}
+.tool-card{background:#fff;border:1.5px solid var(--line);border-radius:28px;overflow:hidden;box-shadow:var(--s4)}
+.tool-hdr{background:linear-gradient(135deg,#0f172a 0%,#0f4c75 50%,#1e88e5 100%);padding:32px 40px;position:relative;overflow:hidden}
+.tool-hdr::before{content:'';position:absolute;top:-60px;right:-60px;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,.07)}
+.tool-hdr::after{content:'';position:absolute;bottom:-40px;left:-40px;width:180px;height:180px;border-radius:50%;background:rgba(255,255,255,.04)}
+.run-dots{position:absolute;bottom:20px;right:40px;display:flex;gap:5px;opacity:.3;z-index:0}
+.run-dot{width:6px;height:6px;border-radius:50%;background:#fff}
+.th{position:relative;z-index:1}
+.th h2{font-family:var(--fd);font-size:21px;font-weight:800;color:#fff;margin-bottom:6px}
+.th p{font-size:14px;color:rgba(255,255,255,.82);line-height:1.65}
+.th-badges{display:flex;flex-wrap:wrap;gap:9px;margin-top:14px}
+.thb{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:rgba(255,255,255,.9);background:rgba(255,255,255,.13);padding:5px 12px;border-radius:100px}
+.tool-body{padding:36px 40px}
+
+/* criteria inputs grid */
+.crit-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:20px}
+.fld{display:flex;flex-direction:column;gap:7px}
+.flbl{font-size:13px;font-weight:700;color:var(--ink2);display:flex;align-items:center;gap:6px}
+.crit-badge{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:5px;font-size:10px;font-weight:800;color:#fff;flex-shrink:0}
+.cb-ta{background:#8b5cf6}
+.cb-cc{background:#14b8a6}
+.cb-lr{background:#f59e0b}
+.cb-gr{background:#10b981}
+.finp{padding:10px 16px;font-size:22px;font-weight:800;font-family:var(--fd);color:var(--ink);background:#fff;border:1.5px solid var(--line);border-radius:10px;outline:none;transition:.22s;width:100%;text-align:center}
+.finp:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(37,99,235,.10)}
+.finp.err{border-color:var(--red);box-shadow:0 0 0 3px rgba(239,68,68,.10)}
+.score-range{display:flex;gap:6px;margin-top:6px;flex-wrap:wrap}
+.sr-item{display:inline-flex;align-items:center;font-size:11px;font-weight:600;padding:3px 9px;border-radius:100px;border:1.5px solid var(--line);background:var(--surf);color:var(--ink3);cursor:pointer;transition:.2s}
+.sr-item:hover{border-color:var(--blue);color:var(--blue);background:var(--blue-xl)}
+.hint-box{display:flex;align-items:flex-start;gap:9px;font-size:13px;color:var(--ink2);background:var(--blue-xl);border:1.5px solid var(--blue-s);border-radius:10px;padding:11px 14px;margin:16px 0;line-height:1.65}
+.hint-box svg{width:16px;height:16px;stroke:var(--blue);fill:none;stroke-width:2;flex-shrink:0;margin-top:2px}
+.btn-row{display:flex;gap:12px;margin-top:4px}
+.chk-btn{flex:1;padding:17px;background:linear-gradient(135deg,#0f172a 0%,#0f4c75 50%,#1e88e5 100%);color:#fff;font-family:var(--fd);font-weight:800;font-size:16px;border-radius:12px;box-shadow:0 8px 32px rgba(15,76,117,.28);transition:all .25s var(--ease);display:flex;align-items:center;justify-content:center;gap:10px}
+.chk-btn:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(15,76,117,.40)}
+.chk-btn:active{transform:translateY(0)}
+.rst-btn{padding:17px 24px;background:var(--surf);color:var(--ink3);font-family:var(--fd);font-weight:700;font-size:15px;border-radius:12px;border:1.5px solid var(--line);transition:.22s;display:flex;align-items:center;gap:8px}
+.rst-btn:hover{background:var(--red-xl);color:var(--red);border-color:var(--red-s)}
+
+/* RESULT */
+#resultArea{display:none;margin-top:28px;animation:resultIn .45s var(--ease) both}
+.res-banner{border-radius:20px;padding:28px;margin-bottom:22px;position:relative;overflow:hidden;display:flex;align-items:center;gap:24px;flex-wrap:wrap}
+.res-banner.pass{background:linear-gradient(135deg,var(--green-xl),#d1fae5);border:2px solid var(--green-s)}
+.res-banner.avg{background:var(--amber-xl);border:2px solid var(--amber-s)}
+.res-banner.low{background:var(--red-xl);border:2px solid var(--red-s)}
+.res-banner::before{content:'';position:absolute;inset:0;opacity:.04;background-image:repeating-linear-gradient(45deg,currentColor 0,currentColor 1px,transparent 0,transparent 50%);background-size:12px 12px;pointer-events:none}
+.meter-wrap{flex-shrink:0;position:relative;width:100px;height:100px}
+.meter-svg{width:100px;height:100px;transform:rotate(-90deg)}
+.meter-bg{fill:none;stroke:rgba(0,0,0,.08);stroke-width:10}
+.meter-fill{fill:none;stroke-width:10;stroke-linecap:round;transition:stroke-dashoffset 1.2s var(--ease)}
+.meter-center{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.meter-pct{font-family:var(--fd);font-size:20px;font-weight:800;color:var(--ink);line-height:1}
+.meter-lbl{font-size:10px;font-weight:700;color:var(--ink3);text-transform:uppercase;letter-spacing:.06em}
+.res-info{flex:1}
+.res-icon{font-size:32px;margin-bottom:6px}
+.res-title{font-family:var(--fd);font-size:22px;font-weight:800;color:var(--ink);line-height:1.1;margin-bottom:6px}
+.res-sub{font-size:14px;color:var(--ink3);line-height:1.65}
+.res-tag{display:inline-flex;align-items:center;gap:6px;font-family:var(--fd);font-size:13px;font-weight:700;padding:5px 14px;border-radius:100px;margin-top:10px}
+.res-tag.pass{background:var(--green);color:#fff}
+.res-tag.avg{background:var(--amber);color:#fff}
+.res-tag.low{background:var(--red);color:#fff}
+
+/* criteria breakdown */
+.crit-breakdown{background:var(--surf);border:1.5px solid var(--line);border-radius:16px;padding:22px 24px;margin-bottom:18px}
+.cb-title{font-family:var(--fd);font-size:14px;font-weight:700;color:var(--ink);margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.cb-row{display:flex;align-items:center;gap:14px;margin-bottom:12px}
+.cb-lbl{font-size:12.5px;font-weight:600;color:var(--ink2);width:170px;flex-shrink:0;display:flex;align-items:center;gap:6px}
+.cb-bar-track{flex:1;height:20px;background:var(--line);border-radius:10px;overflow:hidden}
+.cb-bar-fill{height:100%;border-radius:10px;display:flex;align-items:center;padding-left:10px;font-size:11px;font-weight:700;color:#fff;transition:width 1.2s var(--ease)}
+.cb-bar-fill.ta{background:linear-gradient(90deg,#8b5cf6,#7c3aed)}
+.cb-bar-fill.cc{background:linear-gradient(90deg,var(--teal),#0d9488)}
+.cb-bar-fill.lr{background:linear-gradient(90deg,var(--amber),#d97706)}
+.cb-bar-fill.gr{background:linear-gradient(90deg,var(--green),#059669)}
+.cb-bar-fill.avg-line{background:linear-gradient(90deg,var(--blue),var(--blue-d))}
+.cb-val{font-size:14px;font-weight:800;width:30px;flex-shrink:0;text-align:right;font-family:var(--fd)}
+
+/* weakness cards */
+.weakness-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:18px}
+.wk-card{border-radius:13px;padding:14px 16px;border:1.5px solid;display:flex;gap:10px;align-items:flex-start}
+.wk-card.good{background:var(--green-xl);border-color:var(--green-s)}
+.wk-card.warn{background:var(--amber-xl);border-color:var(--amber-s)}
+.wk-card.bad{background:var(--red-xl);border-color:var(--red-s)}
+.wk-ico{font-size:20px;flex-shrink:0;margin-top:2px}
+.wk-body h4{font-family:var(--fd);font-size:12.5px;font-weight:800;color:var(--ink);margin-bottom:3px}
+.wk-body p{font-size:12px;color:var(--ink3);line-height:1.55}
+
+.sugg-box{background:var(--blue-xl);border:1.5px solid var(--blue-s);border-radius:13px;padding:16px 18px;font-size:14px;color:var(--ink2);line-height:1.78}
+.warn-box{background:var(--amber-xl);border:1.5px solid var(--amber-s);border-radius:12px;padding:14px 18px;display:flex;gap:10px;font-size:13.5px;color:var(--ink2);line-height:1.7;margin-top:14px}
+
+/* TABLE SECTION */
+.tbl-sec{background:#fff;padding:72px 0}
+.tbl-wr{overflow-x:auto;margin-bottom:20px}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+thead th{background:linear-gradient(135deg,#0f172a 0%,#0f4c75 100%);color:#fff;padding:14px 16px;text-align:left;font-family:var(--fd);font-size:13px;font-weight:700;letter-spacing:.03em}
+tbody tr{border-bottom:1px solid var(--line);transition:.2s}
+tbody tr:hover{background:var(--blue-xl)}
+tbody td{padding:12px 16px;color:var(--ink2);vertical-align:middle}
+.row-pass{background:var(--green-xl)!important}
+.row-avg{background:var(--amber-xl)!important}
+.row-fail{background:var(--red-xl)!important}
+.tbadge{display:inline-flex;font-size:11px;font-weight:700;padding:3px 8px;border-radius:100px}
+.tbadge.g{background:var(--green-xl);color:var(--green);border:1px solid var(--green-s)}
+.tbadge.a{background:var(--amber-xl);color:#92400e;border:1px solid var(--amber-s)}
+.tbadge.r{background:var(--red-xl);color:var(--red);border:1px solid var(--red-s)}
+.tbadge.b{background:var(--blue-xl);color:var(--blue);border:1px solid var(--blue-s)}
+.tbadge.p{background:var(--purple-xl);color:var(--purple);border:1px solid var(--purple-s)}
+.you-row td{font-weight:700!important;border-left:4px solid var(--blue)!important}
+
+/* TIPS SECTION */
+.tips-sec{background:var(--surf);padding:72px 0}
+.tips-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.tip-card{background:#fff;border:1.5px solid var(--line);border-radius:16px;padding:22px 18px;text-align:center;transition:.28s}
+.tip-card:hover{transform:translateY(-4px);box-shadow:var(--s3);border-color:var(--blue-s)}
+.tip-ico{font-size:32px;margin-bottom:12px}
+.tip-title{font-family:var(--fd);font-size:14px;font-weight:800;color:var(--ink);margin-bottom:8px}
+.tip-desc{font-size:13px;color:var(--ink3);line-height:1.7}
+
+/* STORY */
+.story-sec{background:#fff;padding:72px 0}
+.story-card{background:var(--surf);border:1.5px solid var(--line);border-radius:24px;padding:40px;box-shadow:var(--s3);position:relative;overflow:hidden}
+.story-card::before{content:'';position:absolute;top:0;left:0;bottom:0;width:5px;background:linear-gradient(180deg,var(--blue) 0%,var(--teal) 100%);border-radius:5px 0 0 5px}
+.sq{font-size:54px;color:var(--blue-s);font-family:Georgia,serif;line-height:1;padding-left:8px}
+.sb{font-size:15.5px;color:var(--ink2);line-height:1.9;padding:0 8px}
+.sauth{display:flex;align-items:center;gap:14px;margin-top:22px;padding-top:20px;border-top:1px solid var(--line)}
+.savt{width:48px;height:48px;background:var(--blue);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+.sname{font-family:var(--fd);font-size:15px;font-weight:700;color:var(--ink)}
+.srole{font-size:12.5px;color:var(--ink3)}
+.founder-msg{background:linear-gradient(135deg,var(--blue-xl),var(--blue-s));border:1.5px solid var(--blue-s);border-radius:14px;padding:20px 22px;margin-top:20px;display:flex;gap:13px}
+.fm-ico{font-size:26px;flex-shrink:0}
+.fm-txt{font-size:14px;color:var(--ink2);line-height:1.75;font-style:italic}
+.fm-txt strong{color:var(--ink);font-weight:700;font-style:normal}
+
+/* GUIDE */
+.guide-sec{background:var(--surf);padding:72px 0}
+.guide-body h2{font-family:var(--fd);font-size:21px;font-weight:800;color:var(--ink);margin:28px 0 11px;line-height:1.3}
+.guide-body h2:first-child{margin-top:0}
+.guide-body p{font-size:15px;color:var(--ink3);line-height:1.85;margin-bottom:14px}
+.guide-body ul{display:flex;flex-direction:column;gap:8px;margin:12px 0 16px}
+.guide-body li{display:flex;align-items:flex-start;gap:10px;font-size:14.5px;color:var(--ink3);line-height:1.7}
+.guide-body li::before{content:'✓';width:18px;height:18px;background:var(--blue);color:#fff;border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;flex-shrink:0;margin-top:3px}
+.guide-body strong{color:var(--ink2);font-weight:700}
+.ibox{background:var(--blue-xl);border:1.5px solid var(--blue-s);border-radius:13px;padding:15px 18px;margin:16px 0;display:flex;gap:11px;font-size:14px;color:var(--ink2);line-height:1.7}
+.ibox svg{width:17px;height:17px;stroke:var(--blue);fill:none;stroke-width:2;flex-shrink:0;margin-top:2px}
+.ibox.g{background:var(--green-xl);border-color:var(--green-s)}
+.ibox.g svg{stroke:var(--green)}
+.ibox.a{background:var(--amber-xl);border-color:var(--amber-s)}
+.ibox.a svg{stroke:var(--amber)}
+.ex-card{background:#fff;border:1.5px solid var(--line);border-radius:16px;padding:24px;margin:16px 0;box-shadow:var(--s2)}
+.ex-row{display:flex;align-items:center;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--line);font-size:14.5px;color:var(--ink2)}
+.ex-row:last-child{border-bottom:none}
+
+/* criteria explanation cards */
+.crit-cards{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:16px 0}
+.cc-card{background:#fff;border:1.5px solid var(--line);border-radius:13px;padding:18px;transition:.22s}
+.cc-card:hover{box-shadow:var(--s2)}
+.cc-top{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.cc-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.cc-title{font-family:var(--fd);font-size:13px;font-weight:800;color:var(--ink)}
+.cc-weight{font-size:11px;font-weight:700;color:#fff;background:var(--blue);padding:2px 8px;border-radius:100px;margin-left:auto;flex-shrink:0}
+.cc-desc{font-size:13px;color:var(--ink3);line-height:1.65}
+
+/* mistake cards */
+.mistake-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:16px 0}
+.mistake-card{background:#fff;border:1.5px solid var(--red-s);border-radius:13px;padding:16px 18px;display:flex;gap:12px;align-items:flex-start}
+.mistake-ico{font-size:20px;flex-shrink:0;margin-top:2px}
+.mistake-body h4{font-family:var(--fd);font-size:13px;font-weight:800;color:var(--ink);margin-bottom:4px}
+.mistake-body p{font-size:12.5px;color:var(--ink3);line-height:1.6}
+
+/* FAQ */
+.faq-sec{background:#fff;padding:72px 0}
+.fql{max-width:780px;margin:0 auto}
+.fq{background:var(--surf);border:1.5px solid var(--line);border-radius:13px;margin-bottom:10px;overflow:hidden}
+.fq-q{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;cursor:pointer;gap:14px;transition:.2s}
+.fq-q:hover{background:var(--blue-xl)}
+.fq-t{font-weight:600;font-size:15px;color:var(--ink);line-height:1.4}
+.fq-i{width:28px;height:28px;border-radius:50%;background:var(--blue-xl);color:var(--blue);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;transition:transform .28s,background .2s}
+.fq.open .fq-i{transform:rotate(45deg);background:var(--blue);color:#fff}
+.fq-a{max-height:0;overflow:hidden;transition:max-height .38s var(--ease)}
+.fq-ai{padding:0 22px 18px;font-size:14.5px;color:var(--ink3);line-height:1.78}
+.fq.open .fq-a{max-height:500px}
+
+/* DISC / CONTACT / CTA / FOOTER */
+.disc{background:var(--amber-xl);border-top:1px solid var(--amber-s);border-bottom:1px solid var(--amber-s);padding:15px 0}
+.disc-in{display:flex;align-items:flex-start;gap:12px;font-size:13.5px;color:var(--ink2);line-height:1.7}
+.contact-sec{background:var(--surf);padding:60px 0}
+.contact-card{max-width:580px;margin:0 auto;background:#fff;border:1.5px solid var(--line);border-radius:20px;padding:32px;text-align:center;box-shadow:var(--s2)}
+.contact-card h3{font-family:var(--fd);font-size:19px;font-weight:800;color:var(--ink);margin-bottom:10px}
+.contact-card p{font-size:15px;color:var(--ink3);line-height:1.75;margin-bottom:20px}
+.btn-bl{display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:#fff;font-family:var(--fd);font-weight:700;font-size:14.5px;padding:12px 26px;border-radius:8px;box-shadow:var(--sb);transition:.22s}
+.btn-bl:hover{background:var(--blue-d);transform:translateY(-1px)}
+.priv-note{font-size:12px;color:var(--ink4);margin-top:14px}
+.cta{background:linear-gradient(140deg,#0f172a 0%,#0f4c75 100%);padding:80px 0;text-align:center;position:relative;overflow:hidden}
+.cta::before{content:'';position:absolute;top:-80px;left:50%;transform:translateX(-50%);width:800px;height:380px;background:radial-gradient(ellipse,rgba(30,136,229,.22) 0%,transparent 68%);pointer-events:none}
+.cta-in{position:relative;z-index:1}
+.cta .pill{color:#93c5fd;background:rgba(255,255,255,.1);margin-bottom:18px}
+.cta .pill::before{background:#93c5fd}
+.cta h2{font-family:var(--fd);font-size:clamp(24px,4vw,42px);font-weight:800;color:#fff;line-height:1.15;margin-bottom:12px}
+.cta h2 em{color:#fbbf24;font-style:normal}
+.cta p{font-size:16px;color:rgba(255,255,255,.72);max-width:480px;margin:0 auto 32px;line-height:1.78}
+.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn-gold{display:inline-flex;align-items:center;gap:8px;background:var(--amber);color:#fff;font-family:var(--fd);font-weight:800;font-size:15px;padding:14px 30px;border-radius:8px;box-shadow:0 8px 28px rgba(245,158,11,.35);transition:.22s}
+.btn-gold:hover{background:#d97706;transform:translateY(-3px)}
+.btn-ghost{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.09);border:1.5px solid rgba(255,255,255,.22);color:#fff;font-family:var(--fd);font-weight:600;font-size:14px;padding:13px 26px;border-radius:8px;transition:.2s}
+.btn-ghost:hover{background:rgba(255,255,255,.16)}
+footer{background:#0f172a;padding:52px 0 0}
+.ft-inner{max-width:1180px;margin:0 auto;padding:0 24px}
+.ft-top{display:grid;grid-template-columns:1.9fr 1fr 1fr 1fr;gap:44px;margin-bottom:44px}
+.ft-brand .ln{color:#fff}.ft-brand .ls{color:#475569}
+.ft-desc{font-size:13.5px;color:#64748b;line-height:1.78;max-width:265px;margin:13px 0 20px}
+.ft-soc{display:flex;gap:9px}
+.fts{width:34px;height:34px;border-radius:7px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;color:#94a3b8;font-size:13px;transition:.2s}
+.fts:hover{background:var(--blue);color:#fff}
+.fc h4{font-family:var(--fd);font-size:12px;font-weight:700;color:#fff;margin-bottom:14px;letter-spacing:.06em;text-transform:uppercase}
+.fc ul{display:flex;flex-direction:column;gap:8px}
+.fc ul a{font-size:13.5px;color:#64748b;transition:.18s}
+.fc ul a:hover{color:#93c5fd}
+.ft-btm{border-top:1px solid rgba(255,255,255,.07);padding:20px 0;text-align:center}
+.ft-cp{font-size:12.5px;color:#475569}
+.ft-cp b{color:#64748b}
+.ft-tag{font-size:12px;color:#334155;margin-top:4px;font-style:italic}
+.btt{position:fixed;bottom:26px;right:26px;z-index:500;width:43px;height:43px;background:var(--blue);color:#fff;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:17px;box-shadow:var(--sb);opacity:0;pointer-events:none;transform:translateY(14px);transition:.28s var(--ease)}
+.btt.on{opacity:1;pointer-events:auto;transform:translateY(0)}
+.btt:hover{transform:translateY(-3px)}
+
+/* RESPONSIVE */
+@media(max-width:1060px){.ft-top{grid-template-columns:1fr 1fr}.tips-grid{grid-template-columns:1fr 1fr}.crit-cards{grid-template-columns:1fr 1fr}}
+@media(max-width:860px){
+  nav.dn,.hcta{display:none}.brg{display:flex}
+  .tool-body{padding:24px 22px}.tool-hdr{padding:24px 22px}
+  .crit-grid{grid-template-columns:1fr}.howto-steps{grid-template-columns:1fr}
+  .rel-grid{grid-template-columns:1fr 1fr}.mistake-grid{grid-template-columns:1fr}
+  .weakness-grid{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+  .ft-top{grid-template-columns:1fr}.rel-grid{grid-template-columns:1fr}
+  .tips-grid{grid-template-columns:1fr 1fr}.cta-btns{flex-direction:column;align-items:center}
+  .story-card{padding:26px 20px}.res-banner{flex-direction:column;align-items:flex-start;gap:16px}
+  .crit-cards{grid-template-columns:1fr}.btn-row{flex-direction:column}
+  .cb-lbl{width:120px}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="hdr">
+  <div class="w">
+    <div class="hdi">
+      <a href="/" class="logo">
+        <div class="lb"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+        <div><div class="ln">Raj<span>Daily</span>Tools</div><div class="ls">Smart Tools for Daily Life</div></div>
+      </a>
+      <nav class="dn">
+        <a href="/">Home</a><a href="/categories">Categories</a>
+        <a href="/#popular">Popular</a><a href="/about">About</a><a href="/contact">Contact</a>
+      </nav>
+      <a href="/categories" class="hcta">All Tools →</a>
+      <button class="brg" id="brg"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="dov" id="dov"></div>
+<div class="drw" id="drw">
+  <div class="dh">
+    <div class="logo">
+      <div class="lb" style="width:30px;height:30px;border-radius:7px"><svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#fff"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+      <div class="ln" style="font-size:16px">Raj<span>Daily</span>Tools</div>
+    </div>
+    <button class="dx" id="dx">✕</button>
+  </div>
+  <nav class="mn">
+    <a href="/" onclick="cD()">🏠 Home</a>
+    <a href="/categories" onclick="cD()">🗂️ Categories</a>
+    <a href="/#popular" onclick="cD()">⭐ Popular</a>
+    <a href="/about" onclick="cD()">👤 About</a>
+    <a href="/contact" onclick="cD()">📬 Contact</a>
+  </nav>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+  <div class="w">
+    <div class="bc">
+      <a href="/">Home</a><span style="color:var(--ink4)">›</span>
+      <a href="/categories">Tools</a><span style="color:var(--ink4)">›</span>
+      <span>IELTS Writing Task 1 Band Calculator</span>
+    </div>
+    <div class="hero-inner">
+      <div class="pill">IELTS Study Tools</div>
+      <h1>IELTS Writing <span>Task 1 Band</span> Score Calculator</h1>
+      <p class="hero-sub">Enter your scores across the four official writing criteria to instantly estimate your <strong>IELTS Writing Task 1 band score</strong>. Includes per-criterion breakdown, weakness identification, and targeted improvement advice.</p>
+      <div class="hero-chips">
+        <span class="chip">✍️ 4 Official Criteria</span>
+        <span class="chip">📊 Instant Band Estimate</span>
+        <span class="chip">💡 Weakness Breakdown</span>
+        <span class="chip">🆓 100% Free</span>
+      </div>
+      <div class="hero-meta">
+        <div class="upd">📅 Updated for 2025–26</div>
+        <span class="mi">✅ Official scoring formula</span>
+        <span class="mi">🔒 No data stored</span>
+      </div>
+      <!-- HOW TO USE -->
+      <div class="howto">
+        <div class="howto-ttl">💡 How to Use This Tool</div>
+        <div class="howto-steps">
+          <div class="hs"><span class="sn">1</span>Enter your Task Achievement score (0–9)</div>
+          <div class="hs"><span class="sn">2</span>Enter your Coherence &amp; Cohesion score (0–9)</div>
+          <div class="hs"><span class="sn">3</span>Enter your Lexical Resource score (0–9)</div>
+          <div class="hs"><span class="sn">4</span>Enter your Grammar score (0–9)</div>
+          <div class="hs"><span class="sn">5</span>Click Calculate to see your Task 1 band</div>
+          <div class="hs"><span class="sn">6</span>Review your criterion breakdown and tips</div>
+        </div>
+      </div>
+      <!-- RELATED TOOLS -->
+      <div class="rel-grid">
+        <div class="rg-box c1">
+          <div class="rg-ico">📊</div>
+          <div class="rg-txt">
+            <h4>IELTS Overall Band Calculator</h4>
+            <p>Calculate your final IELTS overall band score</p>
+            <a href="https://rajdailytools.in/ielts-overall-band-score-calculator.html" target="_blank" rel="noopener" class="btn-xs a">Use Now →</a>
+          </div>
+        </div>
+        <div class="rg-box c2">
+          <div class="rg-ico">🎧</div>
+          <div class="rg-txt">
+            <h4>IELTS Listening Band Calculator</h4>
+            <p>Convert Listening correct answers to band score</p>
+            <a href="https://rajdailytools.in/ielts-listening-band-score-calculator.html" target="_blank" rel="noopener" class="btn-xs g">Use Now →</a>
+          </div>
+        </div>
+        <div class="rg-box c3">
+          <div class="rg-ico">📖</div>
+          <div class="rg-txt">
+            <h4>IELTS Reading Band Calculator</h4>
+            <p>Convert Reading correct answers to band score</p>
+            <a href="https://rajdailytools.in/ielts-reading-band-score-calculator.html" target="_blank" rel="noopener" class="btn-xs b">Use Now →</a>
+          </div>
+        </div>
+        <div class="rg-box c4">
+          <div class="rg-ico">✍️</div>
+          <div class="rg-txt">
+            <h4>IELTS Writing Task 2 Calculator</h4>
+            <p>Estimate your Writing Task 2 band score</p>
+            <a href="#" class="btn-xs p">Coming Soon →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOOL SECTION -->
+<section class="tool-sec" id="tool">
+  <div class="w">
+    <div class="tool-wrap">
+      <div class="tool-card rev">
+        <div class="tool-hdr">
+          <div class="run-dots">
+            <div class="run-dot"></div><div class="run-dot"></div><div class="run-dot"></div>
+            <div class="run-dot"></div><div class="run-dot"></div><div class="run-dot"></div>
+          </div>
+          <div class="th">
+            <h2>✍️ IELTS Writing Task 1 Band Score Calculator</h2>
+            <p>Enter your individual criterion scores — Task Achievement, Coherence &amp; Cohesion, Lexical Resource, and Grammatical Range &amp; Accuracy. The calculator averages them to produce your estimated Task 1 band score and identifies your weakest areas.</p>
+            <div class="th-badges">
+              <span class="thb">🎯 Official 4-Criterion Formula</span>
+              <span class="thb">📊 Weakness Identified</span>
+              <span class="thb">💡 Improvement Tips</span>
+              <span class="thb">🔒 No Data Stored</span>
+            </div>
+          </div>
+        </div>
+        <div class="tool-body">
+
+          <div class="crit-grid">
+            <div class="fld">
+              <label class="flbl" for="ta">
+                <span class="crit-badge cb-ta">TA</span>
+                Task Achievement
+              </label>
+              <input class="finp" type="number" id="ta" placeholder="0–9" min="0" max="9" step="0.5" autocomplete="off">
+              <div class="score-range">
+                <span class="sr-item" onclick="setVal('ta',5)">5</span>
+                <span class="sr-item" onclick="setVal('ta',6)">6</span>
+                <span class="sr-item" onclick="setVal('ta',6.5)">6.5</span>
+                <span class="sr-item" onclick="setVal('ta',7)">7</span>
+                <span class="sr-item" onclick="setVal('ta',7.5)">7.5</span>
+                <span class="sr-item" onclick="setVal('ta',8)">8</span>
+              </div>
+            </div>
+            <div class="fld">
+              <label class="flbl" for="cc">
+                <span class="crit-badge cb-cc">CC</span>
+                Coherence &amp; Cohesion
+              </label>
+              <input class="finp" type="number" id="cc" placeholder="0–9" min="0" max="9" step="0.5" autocomplete="off">
+              <div class="score-range">
+                <span class="sr-item" onclick="setVal('cc',5)">5</span>
+                <span class="sr-item" onclick="setVal('cc',6)">6</span>
+                <span class="sr-item" onclick="setVal('cc',6.5)">6.5</span>
+                <span class="sr-item" onclick="setVal('cc',7)">7</span>
+                <span class="sr-item" onclick="setVal('cc',7.5)">7.5</span>
+                <span class="sr-item" onclick="setVal('cc',8)">8</span>
+              </div>
+            </div>
+            <div class="fld">
+              <label class="flbl" for="lr">
+                <span class="crit-badge cb-lr">LR</span>
+                Lexical Resource
+              </label>
+              <input class="finp" type="number" id="lr" placeholder="0–9" min="0" max="9" step="0.5" autocomplete="off">
+              <div class="score-range">
+                <span class="sr-item" onclick="setVal('lr',5)">5</span>
+                <span class="sr-item" onclick="setVal('lr',6)">6</span>
+                <span class="sr-item" onclick="setVal('lr',6.5)">6.5</span>
+                <span class="sr-item" onclick="setVal('lr',7)">7</span>
+                <span class="sr-item" onclick="setVal('lr',7.5)">7.5</span>
+                <span class="sr-item" onclick="setVal('lr',8)">8</span>
+              </div>
+            </div>
+            <div class="fld">
+              <label class="flbl" for="gr">
+                <span class="crit-badge cb-gr">GR</span>
+                Grammatical Range &amp; Accuracy
+              </label>
+              <input class="finp" type="number" id="gr" placeholder="0–9" min="0" max="9" step="0.5" autocomplete="off">
+              <div class="score-range">
+                <span class="sr-item" onclick="setVal('gr',5)">5</span>
+                <span class="sr-item" onclick="setVal('gr',6)">6</span>
+                <span class="sr-item" onclick="setVal('gr',6.5)">6.5</span>
+                <span class="sr-item" onclick="setVal('gr',7)">7</span>
+                <span class="sr-item" onclick="setVal('gr',7.5)">7.5</span>
+                <span class="sr-item" onclick="setVal('gr',8)">8</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hint-box">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            <div>IELTS Writing Task 1 is scored on <strong>four equally weighted criteria</strong>. The final band is the average of all four scores, rounded to the nearest 0.5. Scores can be whole numbers or half-bands (e.g. 6.5, 7.0, 7.5). Enter each criterion score you received from your examiner or practice feedback.</div>
+          </div>
+
+          <div class="btn-row">
+            <button class="chk-btn" onclick="calcWriting()">✍️ Calculate My Task 1 Band</button>
+            <button class="rst-btn" onclick="resetTool()">↺ Reset</button>
+          </div>
+
+          <!-- RESULT -->
+          <div id="resultArea">
+            <div class="res-banner" id="resBanner">
+              <div class="meter-wrap">
+                <svg class="meter-svg" viewBox="0 0 100 100">
+                  <circle class="meter-bg" cx="50" cy="50" r="45"/>
+                  <circle class="meter-fill" id="meterFill" cx="50" cy="50" r="45" stroke-dasharray="283" stroke-dashoffset="283"/>
+                </svg>
+                <div class="meter-center">
+                  <div class="meter-pct" id="meterPct">–</div>
+                  <div class="meter-lbl" id="meterLbl">Band</div>
+                </div>
+              </div>
+              <div class="res-info">
+                <div class="res-icon" id="resIcon"></div>
+                <div class="res-title" id="resTitle"></div>
+                <div class="res-sub" id="resSub"></div>
+                <div class="res-tag" id="resTag"></div>
+              </div>
+            </div>
+
+            <!-- Criterion Breakdown Bars -->
+            <div class="crit-breakdown">
+              <div class="cb-title">📊 Criterion Breakdown — Your Scores vs Band 7 Target</div>
+              <div id="critBars"></div>
+            </div>
+
+            <!-- Per-criterion weakness cards -->
+            <div class="weakness-grid" id="weaknessGrid"></div>
+
+            <div class="sugg-box" id="suggBox"></div>
+            <div class="warn-box">
+              <span style="font-size:20px;flex-shrink:0">⚠️</span>
+              <div style="font-size:13.5px;color:var(--ink2);line-height:1.72"><strong>Note:</strong> This is an estimated band score based on the official IELTS Writing Task 1 scoring formula. Actual IELTS results are assessed by certified examiners and may differ. Band scores entered here should come from official or professionally graded practice feedback for the most accurate estimate. <strong>No data you enter is stored or shared.</strong></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TABLE SECTION -->
+<section class="tbl-sec" id="score-table">
+  <div class="w">
+    <div style="max-width:860px;margin:0 auto">
+      <div class="rev" style="text-align:center;margin-bottom:36px">
+        <div class="pill" style="margin-bottom:14px">Scoring Reference Tables</div>
+        <h2 style="font-family:var(--fd);font-size:clamp(22px,3.5vw,36px);font-weight:800;color:var(--ink);margin-bottom:10px">IELTS Writing Task 1 <span style="color:var(--blue)">Scoring Reference</span></h2>
+        <p style="font-size:15px;color:var(--ink3);max-width:520px;margin:0 auto;line-height:1.75">Assessment criteria descriptions and band interpretation guide used by IELTS examiners to score Writing Task 1 responses.</p>
+      </div>
+
+      <div class="rev" style="margin-bottom:32px">
+        <h3 style="font-family:var(--fd);font-size:17px;font-weight:800;color:var(--ink);margin-bottom:14px">Table 1 — IELTS Writing Task 1 Assessment Criteria</h3>
+        <div class="tbl-wr">
+          <table>
+            <thead><tr><th>Criterion</th><th>Code</th><th>What It Measures</th><th>Weight</th></tr></thead>
+            <tbody>
+              <tr class="row-pass"><td><strong>Task Achievement</strong></td><td><span class="tbadge p">TA</span></td><td>How fully and accurately the task is addressed — key trends, comparisons, and data included; minimum 150 words; no opinions or irrelevant content</td><td style="font-weight:700;font-family:var(--fd)">25%</td></tr>
+              <tr class="row-avg"><td><strong>Coherence &amp; Cohesion</strong></td><td><span class="tbadge b" style="background:#e0f7fa;color:#0d9488;border-color:#99f6e4">CC</span></td><td>Logical organisation of ideas; effective use of paragraphing, linking words, and referencing throughout the response</td><td style="font-weight:700;font-family:var(--fd)">25%</td></tr>
+              <tr class="row-avg"><td><strong>Lexical Resource</strong></td><td><span class="tbadge a">LR</span></td><td>Range, accuracy, and appropriacy of vocabulary; ability to use less common words correctly and avoid repetition</td><td style="font-weight:700;font-family:var(--fd)">25%</td></tr>
+              <tr class="row-pass"><td><strong>Grammatical Range &amp; Accuracy</strong></td><td><span class="tbadge g">GR</span></td><td>Variety of sentence structures used and accuracy of grammar; frequency and significance of grammatical errors</td><td style="font-weight:700;font-family:var(--fd)">25%</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="rev">
+        <h3 style="font-family:var(--fd);font-size:17px;font-weight:800;color:var(--ink);margin-bottom:14px">Table 2 — Writing Band Score Interpretation</h3>
+        <div class="tbl-wr">
+          <table id="bandTable">
+            <thead><tr><th>Band Score</th><th>Level</th><th>Writing Ability Description</th><th>Typical Use</th></tr></thead>
+            <tbody>
+              <tr class="row-pass"><td><strong>9.0</strong></td><td><span class="tbadge g">Expert User</span></td><td>Near-perfect writing with full task coverage, excellent cohesion, varied vocabulary, and error-free grammar</td><td>Any purpose globally</td></tr>
+              <tr class="row-pass"><td><strong>8.0 – 8.5</strong></td><td><span class="tbadge g">Very Good User</span></td><td>Highly competent writing with only minor inaccuracies; strong command of all four criteria</td><td>Top postgraduate / research</td></tr>
+              <tr class="row-pass"><td><strong>7.0 – 7.5</strong></td><td><span class="tbadge g">Good User</span></td><td>Effective, well-organised writing that addresses the task; occasional errors do not impede communication</td><td>Most PG programs / PR</td></tr>
+              <tr class="row-avg"><td><strong>6.0 – 6.5</strong></td><td><span class="tbadge a">Competent User</span></td><td>Generally effective writing with some inaccuracies; addresses the task but may miss key trends or overuse linking words</td><td>Most UG / some immigration</td></tr>
+              <tr class="row-avg"><td><strong>5.0 – 5.5</strong></td><td><span class="tbadge a">Modest User</span></td><td>Partial task coverage; limited vocabulary and sentence variety; errors that sometimes impede clarity</td><td>Foundation / basic entry</td></tr>
+              <tr class="row-fail"><td><strong>4.0 – 4.5</strong></td><td><span class="tbadge r">Limited User</span></td><td>Incomplete task response; frequent errors; very limited vocabulary and grammatical range</td><td>Below most requirements</td></tr>
+              <tr class="row-fail"><td><strong>Below 4.0</strong></td><td><span class="tbadge r">Extremely Limited</span></td><td>Little meaningful writing produced; serious and persistent errors throughout</td><td>Significant development needed</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="font-size:12.5px;color:var(--ink4);margin-top:12px;text-align:center">* Band scores are rounded to the nearest 0.5 using the standard IELTS rounding rule. Highlighted row reflects your estimated result when you use the calculator above.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TIPS SECTION -->
+<section class="tips-sec">
+  <div class="w">
+    <div style="text-align:center;margin-bottom:36px" class="rev">
+      <div class="pill" style="margin-bottom:14px">Improvement Strategies</div>
+      <h2 style="font-family:var(--fd);font-size:clamp(22px,3.5vw,36px);font-weight:800;color:var(--ink);margin-bottom:10px">How to Score <span style="color:var(--blue)">Higher in Writing Task 1</span></h2>
+      <p style="font-size:15px;color:var(--ink3);max-width:480px;margin:0 auto">Targeted techniques for each criterion that produce measurable band improvement with consistent practice.</p>
+    </div>
+    <div class="tips-grid rev">
+      <div class="tip-card">
+        <div class="tip-ico">📈</div>
+        <div class="tip-title">Master Task Achievement</div>
+        <div class="tip-desc">Always write an overview in the second paragraph — a two-sentence summary of the most significant trends without data. Examiners specifically look for this and it is the fastest single change that raises Task Achievement scores. Cover all key features but avoid describing every individual figure. Aim for at least 150 words and never add personal opinions.</div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-ico">🔗</div>
+        <div class="tip-title">Improve Coherence &amp; Cohesion</div>
+        <div class="tip-desc">Organise your response in four clear paragraphs: introduction (paraphrase), overview, body paragraph 1, body paragraph 2. Vary your linking devices — avoid starting every sentence with "Furthermore" or "Moreover." Use pronouns, substitution, and ellipsis alongside connectors. Excessive use of linking words actually lowers the CC score, not raises it.</div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-ico">📚</div>
+        <div class="tip-title">Expand Lexical Resource</div>
+        <div class="tip-desc">Learn a range of verbs, nouns, and adjectives for describing data: surged, plateaued, fluctuated, marginal, substantial, a sharp decline, a gradual increase. Paraphrase the question vocabulary — never copy words from the task prompt. Attempt less common vocabulary even if you are not 100% certain; cautious attempts are rewarded. Spelling errors consistently reduce this score.</div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-ico">📝</div>
+        <div class="tip-title">Strengthen Grammar Range</div>
+        <div class="tip-desc">Mix simple, compound, and complex sentence structures throughout your response. Use relative clauses ("which rose sharply"), passive voice where appropriate, and conditional structures for comparisons. Errors on high-frequency basic structures (subject-verb agreement, articles, prepositions) hurt the GR score more than errors on ambitious complex sentences. Proofread the last 2 minutes for basic errors.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STORY SECTION -->
+<section class="story-sec">
+  <div class="wa">
+    <div class="rev" style="text-align:center;margin-bottom:36px">
+      <div class="pill" style="margin-bottom:14px">Why I Built This</div>
+      <h2 style="font-family:var(--fd);font-size:clamp(22px,3.4vw,34px);font-weight:800;color:var(--ink);margin-bottom:8px">Meera ki <span style="color:var(--blue)">Kahaani</span></h2>
+      <p style="font-size:15px;color:var(--ink3)">Ek aisi confusion jo almost har Writing student ko hoti hai — criterion score se band kaise nikaalte hain?</p>
+    </div>
+    <div class="story-card rev">
+      <div class="sq">"</div>
+      <div class="sb">
+        Maine ye Writing Task 1 Calculator isliye banaya kyunki <strong>meri cousin Meera UK mein nursing ke liye IELTS de rahi thi</strong>. Usse IELTS Writing mein Band 7 chahiye tha — NMC registration ke liye. Wo roz ek graph describe karti thi, apne teacher se feedback leti thi.<br><br>
+        Ek din teacher ne uska paper return kiya — <em>Task Achievement: 6.5, Coherence: 7.0, Lexical Resource: 6.5, Grammar: 7.0 — toh uska Task 1 band kya hua?</em><br><br>
+        <strong>Meera ko pata hi nahi tha ki in chaar scores ko average karna hota hai. Wo seriously soch rahi thi ki uska score sab mein se minimum — 6.5 — hai. Iska matlab hoga ki wo fail ho gayi.</strong> Wo bahut nervous ho gayi.<br><br>
+        Jab maine samjhaya ki actual band 6.75 hai jo round hoke 7.0 ban jaata hai — <em>uski aankhon mein aansu aa gaye. Itna stress, sirf isliye ki calculation nahi aati thi.</em><br><br>
+        <strong>Usi din socha — ek simple tool banana chahiye. Chaar number daalo, band seedha milega. Meera jaisi situation mein koi aur confuse na ho, panic na kare.</strong> 🇮🇳✍️
+      </div>
+      <div class="sauth">
+        <div class="savt">🛠️</div>
+        <div>
+          <div class="sname">Raj Bhai — RajDailyTools</div>
+          <div class="srole">Founder, RajDailyTools.in · Every tool solves a real problem</div>
+        </div>
+      </div>
+      <div class="founder-msg">
+        <div class="fm-ico">✍️</div>
+        <div class="fm-txt"><strong>To every IELTS Writing candidate getting feedback on their practice responses:</strong> After every marked paper, enter your four criterion scores into this tool. Know your Task 1 band. Know which criterion is dragging you down. Then practise that specific criterion — not writing in general. One criterion improved by one point raises your Task 1 band by 0.25 — and that adds up fast.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GUIDE SECTION -->
+<section class="guide-sec" id="guide">
+  <div class="wa">
+    <div class="rev" style="text-align:center;margin-bottom:40px">
+      <div class="pill" style="margin-bottom:14px">Complete Guide</div>
+      <h2 style="font-family:var(--fd);font-size:clamp(22px,3.5vw,36px);font-weight:800;color:var(--ink);margin-bottom:10px">IELTS Writing Task 1 — <span style="color:var(--blue)">Full Scoring Guide</span></h2>
+      <p style="font-size:15px;color:var(--ink3);max-width:520px;margin:0 auto;line-height:1.75">Everything you need to understand how Writing Task 1 is assessed, what each criterion means in practice, common mistakes to avoid, and how to improve your score band by band.</p>
+    </div>
+    <div class="story-card rev guide-body">
+
+      <h2>What Is IELTS Writing Task 1?</h2>
+      <p>IELTS Writing Task 1 is the first part of the IELTS Writing test. Candidates are given a visual data source — a line graph, bar chart, pie chart, table, map, or process diagram — and asked to describe, summarise, or explain the information in their own words. The minimum required length is 150 words, and the recommended time is 20 minutes.</p>
+      <p>Task 1 accounts for one-third of the total Writing score. Task 2 (essay writing) is worth twice as much and accounts for two-thirds. This means that while Task 1 matters, a weak Task 2 has a bigger impact on the overall Writing band than a weak Task 1. Both tasks use the same four criteria, though in Task 1 the first criterion is called "Task Achievement" (in Task 2 it is "Task Response").</p>
+
+      <div class="ibox">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        <div><strong>Important:</strong> Task 1 uses the term "Task Achievement" while Task 2 uses "Task Response." Both assess how well you address the task prompt, but the specific requirements differ. In Task 1, the key requirement is a clear overview of the key trends — not just a description of every data point.</div>
+      </div>
+
+      <h2>The Four Assessment Criteria in Detail</h2>
+      <p>All four criteria carry equal weight (25% each). Here is what each one actually measures in the context of Task 1:</p>
+      <div class="crit-cards">
+        <div class="cc-card">
+          <div class="cc-top">
+            <span class="cc-dot" style="background:#8b5cf6"></span>
+            <span class="cc-title">Task Achievement (TA)</span>
+            <span class="cc-weight">25%</span>
+          </div>
+          <div class="cc-desc">Covers all key features of the visual data, provides an overview, presents data accurately, meets the 150-word minimum. Band 7+ requires a clear overview identifying the most significant trends. Missing the overview is the most common reason candidates stay at Band 6.</div>
+        </div>
+        <div class="cc-card">
+          <div class="cc-top">
+            <span class="cc-dot" style="background:#14b8a6"></span>
+            <span class="cc-title">Coherence &amp; Cohesion (CC)</span>
+            <span class="cc-weight">25%</span>
+          </div>
+          <div class="cc-desc">Assesses paragraph structure, logical sequencing of information, and use of cohesive devices. Mechanical overuse of linking words ("Firstly… Secondly… Furthermore…") signals a Band 6 response. Band 7 candidates manage cohesion naturally and effectively without forcing connectors.</div>
+        </div>
+        <div class="cc-card">
+          <div class="cc-top">
+            <span class="cc-dot" style="background:#f59e0b"></span>
+            <span class="cc-title">Lexical Resource (LR)</span>
+            <span class="cc-weight">25%</span>
+          </div>
+          <div class="cc-desc">Evaluates the range and accuracy of vocabulary. Includes topic-specific data language (surged, fluctuated, remained stable), paraphrasing of task prompts, and avoidance of repetition. Spelling errors consistently reduce this criterion. Attempting less common vocabulary — even imperfectly — is rewarded over playing safe with basic words.</div>
+        </div>
+        <div class="cc-card">
+          <div class="cc-top">
+            <span class="cc-dot" style="background:#10b981"></span>
+            <span class="cc-title">Grammatical Range &amp; Accuracy (GR)</span>
+            <span class="cc-weight">25%</span>
+          </div>
+          <div class="cc-desc">Measures both variety of sentence structures and grammatical accuracy. Mixing simple, compound, and complex sentences is necessary for Band 7+. Errors on basic structures (articles, prepositions, subject-verb agreement) are penalised more heavily than errors on ambitious complex sentences.</div>
+        </div>
+      </div>
+
+      <h2>How the Task 1 Band Score Is Calculated</h2>
+      <p>The four criterion scores are added together and divided by four. The result is rounded to the nearest whole or half band using standard IELTS rounding rules:</p>
+      <div class="ex-card">
+        <div class="ex-row"><span>Task Achievement</span><span style="font-family:var(--fd);font-weight:700">7.0</span></div>
+        <div class="ex-row"><span>Coherence &amp; Cohesion</span><span style="font-family:var(--fd);font-weight:700">6.5</span></div>
+        <div class="ex-row"><span>Lexical Resource</span><span style="font-family:var(--fd);font-weight:700">6.5</span></div>
+        <div class="ex-row"><span>Grammatical Range &amp; Accuracy</span><span style="font-family:var(--fd);font-weight:700">7.0</span></div>
+        <div class="ex-row" style="border-bottom:none"><span>Total ÷ 4 → Rounded to nearest 0.5</span><span style="font-family:var(--fd);font-weight:800;color:var(--blue);font-size:18px">Band 6.75 → 7.0</span></div>
+      </div>
+
+      <div class="ibox a">
+        <svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        <div><strong>Rounding Rule:</strong> IELTS rounds to the nearest 0.5. So 6.75 rounds up to 7.0, and 6.25 rounds up to 6.5. A raw average of exactly 6.5 stays as 6.5. This means that improving your weakest criterion by even half a band can push the overall result up one full rounded band in some combinations.</div>
+      </div>
+
+      <h2>Common Writing Task 1 Mistakes</h2>
+      <div class="mistake-grid">
+        <div class="mistake-card">
+          <div class="mistake-ico">❌</div>
+          <div class="mistake-body">
+            <h4>No Overview Paragraph</h4>
+            <p>The overview — a general summary of the most significant trends without specific data — is essential for Band 7 Task Achievement. Many candidates skip it and go straight into describing individual data points. Without an overview, Band 7 TA is almost impossible regardless of how accurately the data is described.</p>
+          </div>
+        </div>
+        <div class="mistake-card">
+          <div class="mistake-ico">❌</div>
+          <div class="mistake-body">
+            <h4>Copying the Task Prompt</h4>
+            <p>The introduction must paraphrase the task — rewrite it in your own words. Copying the question prompt verbatim does not count toward the word limit and signals a Band 5 approach to vocabulary. Paraphrasing the prompt is also the easiest way to demonstrate Lexical Resource in the very first sentence.</p>
+          </div>
+        </div>
+        <div class="mistake-card">
+          <div class="mistake-ico">❌</div>
+          <div class="mistake-body">
+            <h4>Describing Everything, Selecting Nothing</h4>
+            <p>Task 1 does not ask you to transcribe every figure. Examiners want you to identify and group the most significant patterns, compare extremes, and highlight notable exceptions. Trying to mention every number wastes words, makes the response list-like, and lowers the Coherence score.</p>
+          </div>
+        </div>
+        <div class="mistake-card">
+          <div class="mistake-ico">❌</div>
+          <div class="mistake-body">
+            <h4>Adding Personal Opinions</h4>
+            <p>Task 1 is a purely descriptive task. Phrases like "I think this trend is caused by…" or "In my opinion, the government should…" are task errors that directly lower the Task Achievement score. Save opinion and analysis language for Task 2 entirely.</p>
+          </div>
+        </div>
+        <div class="mistake-card">
+          <div class="mistake-ico">❌</div>
+          <div class="mistake-body">
+            <h4>Overusing Linking Words</h4>
+            <p>Using "Furthermore," "Moreover," and "Additionally" at the start of every sentence is heavily penalised in Coherence &amp; Cohesion above Band 6. Varied cohesion means using referencing ("this figure," "both countries"), substitution, and varied sentence openers — not just stacking connectors.</p>
+          </div>
+        </div>
+        <div class="mistake-card">
+          <div class="mistake-ico">❌</div>
+          <div class="mistake-body">
+            <h4>Under 150 Words</h4>
+            <p>Responses under the 150-word minimum are penalised in Task Achievement. The examiner notes the word count and it directly affects the TA band. In practice, a thorough description of key trends with an overview and two body paragraphs naturally exceeds 150 words — falling short usually means too little content was selected.</p>
+          </div>
+        </div>
+      </div>
+
+      <h2>Practical Band Targets — What Is Required</h2>
+      <div class="ex-card">
+        <div class="ex-row"><span>🏫 Most UK undergraduate programs</span><span><strong>Writing Band 6.0+</strong></span></div>
+        <div class="ex-row"><span>🎓 Most postgraduate UK/Australia</span><span><strong>Writing Band 6.5–7.0+</strong></span></div>
+        <div class="ex-row"><span>🏥 UK nursing (NMC) registration</span><span><strong>Writing Band 7.0+</strong></span></div>
+        <div class="ex-row"><span>✈️ Australian skilled migration</span><span><strong>Writing Band 6.0–7.0+</strong></span></div>
+        <div class="ex-row"><span>🍁 Canadian Express Entry (FSW)</span><span><strong>Writing Band 6.0+</strong></span></div>
+        <div class="ex-row" style="border-bottom:none"><span>👮 Some professional / licensing bodies</span><span><strong>Writing Band 7.0–8.0+</strong></span></div>
+      </div>
+      <p style="font-size:13px;color:var(--ink4)">* Requirements vary by institution and immigration stream. Always verify directly with the relevant authority before applying.</p>
+
+      <div class="ibox g">
+        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+        <div><strong>Band Strategy:</strong> If you are at Band 6.0 in Writing Task 1 and need Band 7.0, you need to raise your average criterion score from around 6.0 to around 7.0. The fastest route is usually Task Achievement — adding a clear overview paragraph is a structural fix that can raise TA by a full band in one or two practice sessions. Fix the easiest criterion first, then address the others systematically.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FAQ SECTION -->
+<section class="faq-sec" id="faq">
+  <div class="w">
+    <div class="rev" style="text-align:center;margin-bottom:40px">
+      <div class="pill" style="margin-bottom:14px">Frequently Asked Questions</div>
+      <h2 style="font-family:var(--fd);font-size:clamp(22px,3.5vw,36px);font-weight:800;color:var(--ink);margin-bottom:10px">IELTS Writing Task 1 — <span style="color:var(--blue)">Common Questions Answered</span></h2>
+      <p style="font-size:15px;color:var(--ink3);max-width:500px;margin:0 auto;line-height:1.75">Clear answers to questions IELTS Writing Task 1 candidates ask most often about scoring, criteria, and preparation.</p>
+    </div>
+    <div class="fql" id="faqList">
+
+      <div class="fq rev">
+        <div class="fq-q"><span class="fq-t">What is IELTS Writing Task 1?</span><div class="fq-i">+</div></div>
+        <div class="fq-a"><div class="fq-ai">IELTS Writing Task 1 requires candidates to describe, summarise, or explain information presented in a visual format — typically a line graph, bar chart, pie chart, table, map, or process diagram. The response must be at least 150 words and should be written in around 20 minutes. It accounts for one-third of the total Writing band score.</div></div>
+      </div>
+
+      <div class="fq rev">
+        <div class="fq-q"><span class="fq-t">How is the Writing Task 1 band score calculated?</span><div class="fq-i">+</div></div>
+        <div class="fq-a"><div class="fq-ai">The Task 1 band score is the average of four equally weighted criteria: Task Achievement, Coherence &amp; Cohesion, Lexical Resource, and Grammatical Range &amp; Accuracy. Each criterion is scored on a 0–9 scale. The four scores are added together, divided by four, and rounded to the nearest whole or half band. This calculator performs that calculation automatically.</div></div>
+      </div>
+
+      <div class="fq rev">
+        <div class="fq-q"><span class="fq-t">Do all four criteria have equal weight?</span><div class="fq-i">+</div></div>
+        <div class="fq-a"><div class="fq-ai">Yes. Each of the four assessment criteria contributes exactly 25% to the final Writing Task 1 band score. No single criterion outweighs the others. This means that a very low score in any one criterion — even with strong scores in the other three — can significantly pull the overall band down. Balanced improvement across all four criteria is the most effective strategy.</div></div>
+      </div>
+
+      <div class="fq rev">
+        <div class="fq-q"><span class="fq-t">What is considered a good Task 1 band score?</span><div class="fq-i">+</div></div>
+        <div class="fq-a"><div class="fq-ai">Band 7.0 or above is generally considered a strong Task 1 result for academic admission and most immigration purposes. Many universities requiring overall Band 6.5 also require a minimum Writing band of 6.0 to 6.5. Healthcare and professional registration bodies (such as NMC in the UK) typically require Writing Band 7.0 or higher. Always check the specific requirement of your target institution or program.</div></div>
+      </div>
+
+      <div class="fq rev">
+        <div class="fq-q"><span class="fq-t">What is Task Achievement in Writing Task 1?</span><div class="fq-i">+</div></div>
+        <div class="fq-a"><div class="fq-ai">Task Achievement (TA) measures how effectively you have addressed the specific task requirements. For Task 1, this means writing a clear introduction (paraphrasing the question), providing an overview of the most significant trends, and supporting that overview with accurate and relevant data from the visual. Writing below 150 words, omitting the overview, or including irrelevant information all reduce the TA band.</div></div>
+      </div>
+
+      <div class="fq rev">
+        <div class="fq-q"><span class="fq-t">What is the difference between Task Achievement in Task 1 and Task Response in Task 2?</span><div class="fq-i">+</div></div>
+        <div class="fq-a"><div class="fq-ai">Both criteria assess how well you address the task prompt, but they apply to different task types. Task Achievement (Task 1) requires you to fully cover the visual data, provide an overview, and present information accurately and relevantly. Task Response (Task 2) requires you to answer the essay question directly, develop a clear position, and support it with relevant ideas. The criteria have the same weight in both tasks — 25% each.</div></div>
+      </div>
+
+      <div class="fq rev">
+        <div class="fq-q"><span class="fq-t">Why is vocabulary important in IELTS Writing Task 1?</span><div class="fq-i">+</div></div>
+        <div class="fq-a"><div class="fq-ai">Lexical Resource (LR) evaluates the range, accuracy, and appropriacy of vocabulary used in the response. For Task 1, this includes the language of data description (verbs like surged, plummeted, fluctuated; nouns like peak, trough, plateau) and the ability to paraphrase the task prompt rather than copying it. Spelling errors reduce the LR band. Attempting varied and topic-specific vocabulary — even when slightly uncertain — is rewarded more than playing it safe with limited basic words.</div></div>
+      </div>
+
+      <div class="fq rev">
+        <div class="fq-q"><span class="fq-t">Is grammar important for a high Task 1 band?</span><div class="fq-i">+</div></div>
+        <div class="fq-a"><div class="fq-ai">Yes. Grammatical Range &amp; Accuracy (GR) is one of the four equally weighted criteria. To achieve Band 7 in GR, candidates need to use a mix of simple, compound, and complex sentence structures with only occasional minor errors. Errors on basic grammar (articles, subject-verb agreement, prepositions) are penalised more heavily than errors on ambitious complex sentences. Spending the last two minutes of Task 1 proofreading for basic grammatical errors is one of the most efficient uses of time.</div></div>
+      </div>
+
+      <div class="fq rev">
+        <div class="fq-q"><span class="fq-t">Can I use personal opinions in Writing Task 1?</span><div class="fq-i">+</div></div>
+        <div class="fq-a"><div class="fq-ai">No. Writing Task 1 is a purely descriptive and analytical task. You should describe and compare the data, identify trends, and highlight significant features. Personal opinions, interpretations, or suggestions about causes and solutions are out of scope and will reduce the Task Achievement score. Keep all analytical and opinion language for Writing Task 2.</div></div>
+      </div>
+
+      <div class="fq rev">
+        <div class="fq-q"><span class="fq-t">Can I use this calculator during IELTS preparation?</span><div class="fq-i">+</div></div>
+        <div class="fq-a"><div class="fq-ai">Yes. The calculator is designed for use throughout IELTS preparation. After each marked practice essay, enter the four criterion scores to see your estimated Task 1 band and identify which criterion is your weakest. Tracking this over multiple practice responses helps you measure improvement and focus your preparation on the areas that will produce the most band gain.</div></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- DISCLAIMER -->
+<div class="disc">
+  <div class="w">
+    <div class="disc-in">
+      <span style="font-size:18px;flex-shrink:0">⚠️</span>
+      <div><strong>Disclaimer:</strong> This IELTS Writing Task 1 Band Score Calculator is an independent educational tool. It is not affiliated with, endorsed by, or connected to IELTS, IDP, British Council, or Cambridge Assessment English. Band score estimates are based on the official IELTS Writing assessment formula and are provided for preparation purposes only. Official scores are determined solely by certified IELTS examiners. Always refer to your official Test Report Form for confirmed results.</div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<section class="contact-sec">
+  <div class="w">
+    <div class="contact-card rev">
+      <h3>📬 Questions or Feedback?</h3>
+      <p>If this tool helped you or you have a suggestion to make it better, we would love to hear from you. We are always improving RajDailyTools to serve students preparing for IELTS and other English language tests.</p>
+      <a href="mailto:contact@rajdailytools.in" class="btn-bl">📧 Contact Us</a>
+      <p class="priv-note">🔒 We do not collect or store any information entered into our tools. Your privacy is fully protected.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="w">
+    <div class="cta-in">
+      <div class="pill">Free IELTS Tools</div>
+      <h2>More IELTS Preparation?<br><em>Explore All Our Tools</em></h2>
+      <p>From band calculators to score guides — everything you need to track progress and reach your target band, completely free.</p>
+      <div class="cta-btns">
+        <a href="/categories" class="btn-gold">🎯 Explore All Tools</a>
+        <a href="#tool" class="btn-ghost">✍️ Calculate Again ↑</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-inner">
+    <div class="ft-top">
+      <div class="ft-brand">
+        <div class="logo" style="margin-bottom:4px">
+          <div class="lb"><svg viewBox="0 0 24 24" fill="#fff"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+          <div><div class="ln">Raj<span>Daily</span>Tools</div><div class="ls">Smart Tools for Daily Life</div></div>
+        </div>
+        <p class="ft-desc">India's most ambitious free tools platform. Built by Raj Bhai. Solving daily life problems, one tool at a time.</p>
+        <div class="ft-soc">
+          <a href="https://www.facebook.com/share/1Dq3Y1k7mG/" target="_blank" class="fts">f</a>
+          <a href="https://x.com/Educator4ll" target="_blank" class="fts">𝕏</a>
+          <a href="https://youtube.com/@rajdailytools" target="_blank" class="fts">▶</a>
+          <a href="https://www.instagram.com/rajdailytools" target="_blank" class="fts">📷</a>
+        </div>
+      </div>
+      <div class="fc"><h4>IELTS Tools</h4><ul>
+        <li><a href="https://rajdailytools.in/ielts-overall-band-score-calculator.html">Overall Band Calculator</a></li>
+        <li><a href="https://rajdailytools.in/ielts-listening-band-score-calculator.html">Listening Band Calculator</a></li>
+        <li><a href="https://rajdailytools.in/ielts-reading-band-score-calculator.html">Reading Band Calculator</a></li>
+        <li><a href="#">Writing Task 1 Calculator</a></li>
+      </ul></div>
+      <div class="fc"><h4>Categories</h4><ul>
+        <li><a href="/education-tools">Education Tools</a></li>
+        <li><a href="/finance-tools">Finance Tools</a></li>
+        <li><a href="/calculator-tools">Calculator Tools</a></li>
+        <li><a href="/health-tools">Health Tools</a></li>
+        <li><a href="/text-tools">Text Tools</a></li>
+      </ul></div>
+      <div class="fc"><h4>Company</h4><ul>
+        <li><a href="/about">About Us</a></li>
+        <li><a href="/contact">Contact</a></li>
+        <li><a href="/privacy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
+      </ul></div>
+    </div>
+    <div class="ft-btm">
+      <p class="ft-cp">Copyright © 2026 <b>RajDailyTools</b>. All rights reserved. Designed by <b>RajDailyTools</b></p>
+      <p class="ft-tag">Made with ❤️ in India — "Solving daily life problems with smart tools"</p>
+    </div>
+  </div>
+</footer>
+<button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+/* ── Drawer ── */
+const brg=document.getElementById('brg'),drw=document.getElementById('drw'),dov=document.getElementById('dov');
+function oD(){drw.classList.add('on');dov.classList.add('on');document.body.style.overflow='hidden'}
+function cD(){drw.classList.remove('on');dov.classList.remove('on');document.body.style.overflow=''}
+brg.addEventListener('click',oD);
+document.getElementById('dx').addEventListener('click',cD);
+dov.addEventListener('click',cD);
+
+/* ── Back to Top ── */
+const bttBtn=document.getElementById('btt');
+window.addEventListener('scroll',()=>bttBtn.classList.toggle('on',scrollY>380),{passive:true});
+
+/* ── Reveal on scroll ── */
+const rvObs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      const s=[...(e.target.parentElement?.children||[])];
+      e.target.style.transitionDelay=(s.indexOf(e.target)%4)*0.08+'s';
+      e.target.classList.add('in');
+      rvObs.unobserve(e.target);
+    }
+  });
+},{threshold:0.06,rootMargin:'0px 0px -20px 0px'});
+document.querySelectorAll('.rev').forEach(el=>rvObs.observe(el));
+
+/* ── FAQ Accordion ── */
+document.getElementById('faqList').addEventListener('click',function(e){
+  const q=e.target.closest('.fq-q');
+  if(!q)return;
+  const item=q.closest('.fq'),open=item.classList.contains('open');
+  document.querySelectorAll('.fq.open').forEach(i=>i.classList.remove('open'));
+  if(!open)item.classList.add('open');
+});
+
+/* ── Quick score pills ── */
+function setVal(id,val){
+  document.getElementById(id).value=val;
+  document.getElementById(id).focus();
+}
+
+/* ══════════════════════════════════════
+   IELTS WRITING TASK 1 CALCULATOR LOGIC
+══════════════════════════════════════ */
+
+function roundToHalf(n){
+  return Math.round(n*2)/2;
+}
+
+function getBandLabel(band){
+  const labels={
+    9:{label:'Expert User',icon:'🏆',level:'Outstanding',cls:'pass',tagCls:'pass'},
+    8.5:{label:'Very Good+ User',icon:'🌟',level:'Excellent',cls:'pass',tagCls:'pass'},
+    8:{label:'Very Good User',icon:'🌟',level:'Excellent',cls:'pass',tagCls:'pass'},
+    7.5:{label:'Good+ User',icon:'✅',level:'Strong',cls:'pass',tagCls:'pass'},
+    7:{label:'Good User',icon:'✅',level:'Good',cls:'pass',tagCls:'pass'},
+    6.5:{label:'Competent+ User',icon:'✅',level:'Competent',cls:'pass',tagCls:'pass'},
+    6:{label:'Competent User',icon:'⚠️',level:'Competent',cls:'avg',tagCls:'avg'},
+    5.5:{label:'Modest+ User',icon:'⚠️',level:'Developing',cls:'avg',tagCls:'avg'},
+    5:{label:'Modest User',icon:'⚠️',level:'Developing',cls:'avg',tagCls:'avg'},
+    4.5:{label:'Limited+ User',icon:'🔴',level:'Limited',cls:'low',tagCls:'low'},
+    4:{label:'Limited User',icon:'🔴',level:'Limited',cls:'low',tagCls:'low'},
+    3.5:{label:'Extremely Limited',icon:'❌',level:'Very Low',cls:'low',tagCls:'low'},
+    3:{label:'Extremely Limited',icon:'❌',level:'Very Low',cls:'low',tagCls:'low'},
+  };
+  return labels[band]||{label:'Developing',icon:'⚠️',level:'Developing',cls:'avg',tagCls:'avg'};
+}
+
+function getCritLabel(score){
+  if(score>=8)return{cls:'good',icon:'🏆',msg:'Excellent'};
+  if(score>=7)return{cls:'good',icon:'✅',msg:'Strong'};
+  if(score>=6)return{cls:'warn',icon:'⚠️',msg:'Needs improvement'};
+  return{cls:'bad',icon:'🔴',msg:'Focus area'};
+}
+
+function validateInput(id){
+  const val=document.getElementById(id).value.trim();
+  if(val===''||isNaN(val))return null;
+  const n=parseFloat(val);
+  if(n<0||n>9)return null;
+  return n;
+}
+
+function calcWriting(){
+  const ids=['ta','cc','lr','gr'];
+  const labels=['Task Achievement','Coherence & Cohesion','Lexical Resource','Grammar Range & Accuracy'];
+  const barClasses=['ta','cc','lr','gr'];
+  const scores=[];
+  let hasError=false;
+
+  ids.forEach(id=>{
+    const v=validateInput(id);
+    if(v===null){
+      document.getElementById(id).classList.add('err');
+      setTimeout(()=>document.getElementById(id).classList.remove('err'),2000);
+      hasError=true;
+    } else {
+      scores.push(v);
+    }
+  });
+
+  if(hasError||scores.length!==4){
+    alert('Please enter valid scores between 0 and 9 for all four criteria.');
+    return;
+  }
+
+  const avg=(scores[0]+scores[1]+scores[2]+scores[3])/4;
+  const band=roundToHalf(avg);
+  const info=getBandLabel(band);
+  const pct=Math.round((band/9)*100);
+
+  /* Circular meter */
+  const circumference=283;
+  const dashOffset=Math.round(circumference-(pct/100)*circumference);
+  const mf=document.getElementById('meterFill');
+  mf.style.strokeDashoffset=circumference;
+  mf.style.stroke=info.cls==='pass'?'var(--green)':(info.cls==='avg'?'var(--amber)':'var(--red)');
+  document.getElementById('meterPct').textContent=band%1===0?band.toFixed(1):band;
+  document.getElementById('meterLbl').textContent='Band';
+  setTimeout(()=>{mf.style.strokeDashoffset=dashOffset;},200);
+
+  /* Banner */
+  document.getElementById('resBanner').className=`res-banner ${info.cls}`;
+  document.getElementById('resIcon').textContent=info.icon;
+  document.getElementById('resTitle').textContent=`Task 1 Band ${band%1===0?band.toFixed(1):band} — ${info.label}`;
+  document.getElementById('resSub').textContent=`Raw average: ${avg.toFixed(2)} → Rounded to Band ${band%1===0?band.toFixed(1):band} · Performance: ${info.level}`;
+  const tag=document.getElementById('resTag');
+  tag.className=`res-tag ${info.tagCls}`;
+  tag.textContent=`${info.icon} Band ${band%1===0?band.toFixed(1):band} — ${info.label}`;
+
+  /* Criterion breakdown bars */
+  let barsHTML='';
+  const shortLabels=['TA','CC','LR','GR'];
+  scores.forEach((s,i)=>{
+    const pctBar=Math.round((s/9)*100);
+    const target7pct=Math.round((7/9)*100);
+    const achieved=s>=7;
+    barsHTML+=`
+      <div class="cb-row">
+        <div class="cb-lbl"><span class="crit-badge cb-${ids[i]}" style="font-size:9px">${shortLabels[i]}</span>${labels[i]}</div>
+        <div class="cb-bar-track">
+          <div class="cb-bar-fill ${ids[i]}" style="width:0%" data-w="${pctBar}%">${s}</div>
+        </div>
+        <div class="cb-val" style="color:${achieved?'var(--green)':'var(--red)'}">${s%1===0?s.toFixed(1):s}</div>
+      </div>
+    `;
+  });
+  const avgPct=Math.round((avg/9)*100);
+  barsHTML+=`
+    <div class="cb-row" style="margin-top:6px;padding-top:10px;border-top:1px solid var(--line)">
+      <div class="cb-lbl" style="font-weight:800;color:var(--ink)">⭐ Your Average</div>
+      <div class="cb-bar-track">
+        <div class="cb-bar-fill avg-line" style="width:0%" data-w="${avgPct}%">${avg.toFixed(2)}</div>
+      </div>
+      <div class="cb-val" style="font-family:var(--fd);color:var(--blue)">${band%1===0?band.toFixed(1):band}</div>
+    </div>
+    <p style="font-size:11.5px;color:var(--ink4);margin-top:8px">Scores below 7.0 are in red — these are your focus areas for improvement.</p>
+  `;
+  document.getElementById('critBars').innerHTML=barsHTML;
+  setTimeout(()=>{document.querySelectorAll('.cb-bar-fill').forEach(b=>{b.style.width=b.dataset.w||'0%'})},200);
+
+  /* Weakness cards */
+  const critDetails=[
+    {id:'ta',label:'Task Achievement',tip:'Write a clear overview paragraph. Cover all key trends without adding opinions. Meet the 150-word minimum.'},
+    {id:'cc',label:'Coherence & Cohesion',tip:'Structure response in 4 clear paragraphs. Vary linking devices — avoid overusing "Furthermore/Moreover." Use referencing and substitution.'},
+    {id:'lr',label:'Lexical Resource',tip:'Use data-specific vocabulary (surged, plateaued, fluctuated). Paraphrase the task prompt. Avoid spelling errors. Attempt less common words.'},
+    {id:'gr',label:'Grammatical Range',tip:'Mix simple, compound, and complex sentences. Use relative clauses and passives. Proofread last 2 minutes for basic grammar errors.'},
+  ];
+  let weakHTML='';
+  critDetails.forEach((c,i)=>{
+    const s=scores[i];
+    const cl=getCritLabel(s);
+    weakHTML+=`
+      <div class="wk-card ${cl.cls}">
+        <div class="wk-ico">${cl.icon}</div>
+        <div class="wk-body">
+          <h4>${c.label} — ${s%1===0?s.toFixed(1):s} ${cl.msg}</h4>
+          <p>${s>=7?'On track for Band 7+. Keep maintaining this standard in every response.':c.tip}</p>
+        </div>
+      </div>
+    `;
+  });
+  document.getElementById('weaknessGrid').innerHTML=weakHTML;
+
+  /* Suggestion message */
+  const minScore=Math.min(...scores);
+  const weakIdx=scores.indexOf(minScore);
+  const weakName=labels[weakIdx];
+  let msg='';
+  if(band>=8){
+    msg=`<strong>🏆 Outstanding — Band ${band%1===0?band.toFixed(1):band}.</strong> Your Writing Task 1 performance is at a very high level. All four criteria are strong and well-balanced. This score meets the Writing Task 1 requirement for virtually any academic or immigration purpose. Use the <a href="https://rajdailytools.in/ielts-overall-band-score-calculator.html" style="color:var(--blue);font-weight:700">Overall Band Calculator</a> to combine all four skill scores into a final overall band.`;
+  } else if(band>=7){
+    msg=`<strong>✅ Strong Result — Band ${band%1===0?band.toFixed(1):band}.</strong> You are meeting most postgraduate and professional Writing requirements. Your weakest criterion is <strong>${weakName} (${minScore})</strong>. Raising it by 0.5 would push your Task 1 average to ${(avg+0.5/4).toFixed(2)} — potentially lifting the rounded band. Focus specifically on ${weakName} in your next two to three practice responses.`;
+  } else if(band>=6){
+    msg=`<strong>⚠️ Competent Level — Band ${band%1===0?band.toFixed(1):band}.</strong> You are close to Band 7 — the most common university and immigration requirement. Your weakest criterion is <strong>${weakName} (${minScore})</strong>. This is your priority focus. ${minScore<6.5?'A one-band improvement in '+weakName+' alone would raise your Task 1 average by 0.25':'You need consistent improvement across at least two criteria to reach Band 7.0'}. Practice one full Task 1 response daily with specific feedback on your weakest criterion.`;
+  } else if(band>=5){
+    msg=`<strong>🔴 Developing — Band ${band%1===0?band.toFixed(1):band}.</strong> All four criteria need development to meet most requirements. Start with <strong>${weakName}</strong> as your primary focus, then work systematically through the others. Aim to write two to three fully marked practice responses per week — consistent feedback-driven practice is the fastest route to improvement at this level.`;
+  } else {
+    msg=`<strong>❌ Below Band 5 — Band ${band%1===0?band.toFixed(1):band}.</strong> Significant writing development is needed across all criteria. Consider targeted writing coaching alongside self-practice to build foundational skills in task structure, vocabulary, and grammar before targeting higher band scores.`;
+  }
+  document.getElementById('suggBox').innerHTML=`<strong style="display:block;font-family:var(--fd);font-size:14px;margin-bottom:10px">✍️ Your Writing Task 1 Score Analysis</strong><p style="font-size:14px;color:var(--ink2);line-height:1.82">${msg}</p>`;
+
+  /* Highlight band table row */
+  highlightBandRow(band);
+
+  /* Show result */
+  const ra=document.getElementById('resultArea');
+  ra.style.display='block';
+  ra.style.animation='none';ra.offsetHeight;
+  ra.style.animation='resultIn .45s var(--ease) both';
+  setTimeout(()=>ra.scrollIntoView({behavior:'smooth',block:'nearest'}),120);
+}
+
+function highlightBandRow(band){
+  document.querySelectorAll('#bandTable tbody tr').forEach(tr=>tr.classList.remove('you-row'));
+  const rows=document.querySelectorAll('#bandTable tbody tr');
+  if(band>=9){if(rows[0])rows[0].classList.add('you-row');}
+  else if(band>=8){if(rows[1])rows[1].classList.add('you-row');}
+  else if(band>=7){if(rows[2])rows[2].classList.add('you-row');}
+  else if(band>=6){if(rows[3])rows[3].classList.add('you-row');}
+  else if(band>=5){if(rows[4])rows[4].classList.add('you-row');}
+  else if(band>=4){if(rows[5])rows[5].classList.add('you-row');}
+  else{if(rows[6])rows[6].classList.add('you-row');}
+}
+
+function resetTool(){
+  ['ta','cc','lr','gr'].forEach(id=>{
+    document.getElementById(id).value='';
+    document.getElementById(id).placeholder='0–9';
+  });
+  document.getElementById('resultArea').style.display='none';
+  document.querySelectorAll('#bandTable tbody tr').forEach(tr=>tr.classList.remove('you-row'));
+  window.scrollTo({top:document.getElementById('tool').offsetTop-80,behavior:'smooth'});
+}
+
+/* Enter key on any input */
+['ta','cc','lr','gr'].forEach(id=>{
+  document.getElementById(id).addEventListener('keydown',function(e){
+    if(e.key==='Enter')calcWriting();
+  });
+});
+</script>
+</body>
+</html>
