@@ -1,0 +1,1067 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IELTS Score Validity Checker – Check IELTS Result Validity Period</title>
+<meta name="description" content="Check whether your IELTS score is still valid. Enter your test date and instantly calculate IELTS score validity and expiration status.">
+<meta name="keywords" content="IELTS score validity checker, IELTS result valid, IELTS expiry date calculator, IELTS 2 year validity, IELTS score expired, IELTS validity period">
+<meta name="robots" content="index, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ══════════════════════════════════════
+   DESIGN TOKENS
+══════════════════════════════════════ */
+:root{
+  --blue:#2563eb;--blue-d:#1d4ed8;--blue-xl:#eff6ff;--blue-s:#dbeafe;
+  --amber:#f59e0b;--green:#10b981;--red:#ef4444;--purple:#8b5cf6;
+  --orange:#f97316;--teal:#14b8a6;
+  --green-xl:#f0fdf4;--green-s:#bbf7d0;
+  --red-xl:#fef2f2;--red-s:#fecaca;
+  --amber-xl:#fffbeb;--amber-s:#fde68a;
+  --purple-xl:#faf5ff;--purple-s:#ddd6fe;
+  --yellow:#eab308;--yellow-xl:#fefce8;--yellow-s:#fef08a;
+  --ink:#0f172a;--ink2:#334155;--ink3:#64748b;--ink4:#94a3b8;
+  --line:#e2e8f0;--surf:#f8fafc;--white:#fff;
+  --s1:0 1px 3px rgba(15,23,42,.06),0 1px 2px rgba(15,23,42,.04);
+  --s2:0 4px 16px rgba(15,23,42,.08),0 2px 6px rgba(15,23,42,.04);
+  --s3:0 12px 40px rgba(15,23,42,.11),0 3px 10px rgba(15,23,42,.06);
+  --s4:0 24px 64px rgba(15,23,42,.13),0 6px 20px rgba(15,23,42,.07);
+  --sb:0 8px 32px rgba(37,99,235,.20);
+  --fd:'Sora',sans-serif;--fb:'DM Sans',sans-serif;
+  --ease:cubic-bezier(.4,0,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);color:var(--ink);background:var(--white);overflow-x:hidden;-webkit-font-smoothing:antialiased;line-height:1.6}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+button{cursor:pointer;border:none;background:none;font-family:var(--fb)}
+.w{max-width:1180px;margin:0 auto;padding:0 24px}
+.wa{max-width:880px;margin:0 auto;padding:0 24px}
+select,input{appearance:none;-webkit-appearance:none}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+@keyframes resultIn{from{opacity:0;transform:translateY(18px) scale(.97)}to{opacity:1;transform:none}}
+@keyframes countDown{from{stroke-dashoffset:0}to{stroke-dashoffset:251.2}}
+.rev{opacity:0;transform:translateY(22px);transition:opacity .55s var(--ease),transform .55s var(--ease)}
+.rev.in{opacity:1;transform:none}
+
+/* ══ HEADER ══ */
+.hdr{position:sticky;top:0;z-index:999;background:rgba(255,255,255,.96);backdrop-filter:blur(20px);border-bottom:1px solid var(--line);box-shadow:var(--s1)}
+.hdi{display:flex;align-items:center;justify-content:space-between;height:66px}
+.logo{display:flex;align-items:center;gap:10px}
+.lb{width:36px;height:36px;background:var(--blue);border-radius:9px;display:flex;align-items:center;justify-content:center;box-shadow:var(--sb);flex-shrink:0}
+.lb svg{width:18px;height:18px;fill:#fff}
+.ln{font-family:var(--fd);font-size:19px;font-weight:800;color:var(--ink);line-height:1}
+.ln span{color:var(--blue)}
+.ls{font-size:10px;color:var(--ink4);letter-spacing:.04em}
+nav.dn{display:flex;align-items:center;gap:2px}
+nav.dn a{font-size:13.5px;font-weight:500;color:var(--ink2);padding:7px 13px;border-radius:8px;transition:.2s}
+nav.dn a:hover{color:var(--blue);background:var(--blue-xl)}
+.hcta{background:var(--blue);color:#fff;font-family:var(--fd);font-weight:600;font-size:13px;padding:8px 18px;border-radius:8px;box-shadow:var(--sb);transition:.2s}
+.hcta:hover{background:var(--blue-d);transform:translateY(-1px)}
+.brg{display:none;flex-direction:column;gap:4.5px;padding:8px;border-radius:8px}
+.brg span{display:block;width:20px;height:2px;background:var(--ink);border-radius:2px;transition:.28s}
+.dov{display:none;position:fixed;inset:0;background:rgba(15,23,42,.45);z-index:1040;backdrop-filter:blur(3px)}
+.dov.on{display:block}
+.drw{position:fixed;top:0;right:-100%;width:270px;height:100vh;background:#fff;z-index:1050;padding:22px;box-shadow:var(--s4);transition:right .32s var(--ease);overflow-y:auto}
+.drw.on{right:0}
+.dh{display:flex;align-items:center;justify-content:space-between;margin-bottom:26px}
+.dx{width:33px;height:33px;border-radius:7px;background:var(--surf);display:flex;align-items:center;justify-content:center;color:var(--ink3);font-size:17px;cursor:pointer}
+nav.mn{display:flex;flex-direction:column;gap:3px}
+nav.mn a{display:block;font-size:14px;font-weight:500;color:var(--ink2);padding:11px 13px;border-radius:8px;transition:.2s}
+nav.mn a:hover{color:var(--blue);background:var(--blue-xl)}
+
+/* ══ HERO ══ */
+.hero{position:relative;overflow:hidden;background:linear-gradient(150deg,#f0f7ff 0%,#fff 46%,#fefce8 100%);padding:64px 0 72px}
+.hero::before{content:'';position:absolute;top:-140px;right:-180px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(37,99,235,.08) 0%,transparent 68%);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-80px;left:-100px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(234,179,8,.06) 0%,transparent 68%);pointer-events:none}
+.blob{position:absolute;border-radius:50%;pointer-events:none;animation:float 6s ease-in-out infinite}
+.b1{width:13px;height:13px;background:rgba(37,99,235,.18);top:22%;right:14%;animation-delay:0s}
+.b2{width:9px;height:9px;background:rgba(234,179,8,.26);top:58%;right:26%;animation-delay:2.2s}
+.b3{width:11px;height:11px;background:rgba(16,185,129,.18);top:36%;right:6%;animation-delay:4s}
+.bc{display:flex;align-items:center;gap:7px;font-size:12.5px;color:var(--ink3);margin-bottom:22px;position:relative;z-index:1;flex-wrap:wrap}
+.bc a{color:var(--blue);font-weight:600}
+.pill{display:inline-flex;align-items:center;gap:7px;font-family:var(--fd);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);background:var(--blue-xl);padding:5px 14px;border-radius:100px;margin-bottom:18px}
+.pill::before{content:'';width:6px;height:6px;background:var(--blue);border-radius:50%}
+.hero-inner{position:relative;z-index:1;max-width:720px;animation:fadeUp .5s ease both}
+.hero h1{font-family:var(--fd);font-size:clamp(26px,4.5vw,50px);font-weight:800;line-height:1.1;color:var(--ink);margin-bottom:14px}
+.hero h1 span{color:var(--blue)}
+.hero-sub{font-size:16px;color:var(--ink3);line-height:1.8;margin-bottom:22px;max-width:600px}
+.hero-chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.chip{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;padding:6px 14px;border-radius:100px;background:#fff;border:1.5px solid var(--line);color:var(--ink2);box-shadow:var(--s1);transition:.22s}
+.chip:hover{border-color:var(--blue);color:var(--blue);transform:translateY(-1px)}
+.hero-meta{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:24px}
+.upd{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:700;color:var(--blue);background:var(--blue-xl);padding:6px 14px;border-radius:100px;border:1.5px solid var(--blue-s)}
+.mi{font-size:13px;color:var(--ink3);font-weight:500}
+
+/* HOW TO USE */
+.howto{background:var(--amber-xl);border:2px solid var(--amber-s);border-radius:16px;padding:22px 26px;max-width:560px;margin-bottom:24px}
+.howto-ttl{display:flex;align-items:center;gap:9px;font-family:var(--fd);font-size:15px;font-weight:800;color:var(--ink);margin-bottom:13px}
+.howto-steps{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.hs{display:flex;align-items:flex-start;gap:10px;font-size:13.5px;color:var(--ink2);line-height:1.6}
+.sn{width:24px;height:24px;background:var(--amber);color:#fff;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex-shrink:0;margin-top:1px}
+
+/* related tools */
+.rel-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;position:relative;z-index:1}
+.rg-box{border-radius:14px;padding:14px 14px 12px;display:flex;flex-direction:column;gap:8px;transition:.22s;border:1.5px solid}
+.rg-box:hover{transform:translateY(-3px);box-shadow:var(--s3)}
+.rg-box.c1{background:linear-gradient(135deg,#fffbeb,#fef3c7);border-color:var(--amber-s)}
+.rg-box.c2{background:linear-gradient(135deg,var(--green-xl),#dcfce7);border-color:var(--green-s)}
+.rg-box.c3{background:linear-gradient(135deg,var(--blue-xl),var(--blue-s));border-color:var(--blue-s)}
+.rg-box.c4{background:linear-gradient(135deg,var(--purple-xl),#ede9fe);border-color:var(--purple-s)}
+.rg-ico{font-size:22px}
+.rg-txt h4{font-family:var(--fd);font-size:12px;font-weight:800;color:var(--ink);margin-bottom:2px}
+.rg-txt p{font-size:11px;color:var(--ink3);line-height:1.5}
+.btn-xs{display:inline-flex;align-items:center;gap:4px;font-family:var(--fd);font-weight:700;font-size:11px;padding:5px 10px;border-radius:7px;transition:.22s;margin-top:4px}
+.btn-xs.a{background:var(--amber);color:#fff}.btn-xs.a:hover{background:#d97706}
+.btn-xs.g{background:var(--green);color:#fff}.btn-xs.g:hover{background:#059669}
+.btn-xs.b{background:var(--blue);color:#fff}.btn-xs.b:hover{background:var(--blue-d)}
+.btn-xs.p{background:var(--purple);color:#fff}.btn-xs.p:hover{background:#7c3aed}
+
+/* ══ TOOL SECTION ══ */
+.tool-sec{background:var(--surf);padding:80px 0}
+.tool-wrap{max-width:760px;margin:0 auto}
+.tool-card{background:#fff;border:1.5px solid var(--line);border-radius:28px;overflow:hidden;box-shadow:var(--s4)}
+.tool-hdr{background:linear-gradient(135deg,#0f172a 0%,#1e3a5f 50%,#0f766e 100%);padding:32px 40px;position:relative;overflow:hidden}
+.tool-hdr::before{content:'';position:absolute;top:-60px;right:-60px;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,.07)}
+.tool-hdr::after{content:'';position:absolute;bottom:-40px;left:-40px;width:180px;height:180px;border-radius:50%;background:rgba(255,255,255,.04)}
+.run-dots{position:absolute;bottom:20px;right:40px;display:flex;gap:5px;opacity:.3;z-index:0}
+.run-dot{width:6px;height:6px;border-radius:50%;background:#fff}
+.th{position:relative;z-index:1}
+.th h2{font-family:var(--fd);font-size:21px;font-weight:800;color:#fff;margin-bottom:6px}
+.th p{font-size:14px;color:rgba(255,255,255,.82);line-height:1.65}
+.th-badges{display:flex;flex-wrap:wrap;gap:9px;margin-top:14px}
+.thb{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:rgba(255,255,255,.9);background:rgba(255,255,255,.13);padding:5px 12px;border-radius:100px}
+.tool-body{padding:36px 40px}
+
+/* date input */
+.finp{padding:12px 16px;font-size:18px;font-weight:700;font-family:var(--fd);color:var(--ink);background:#fff;border:1.5px solid var(--line);border-radius:10px;outline:none;transition:.22s;width:100%}
+.finp:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(37,99,235,.10)}
+.finp.err{border-color:var(--red);box-shadow:0 0 0 3px rgba(239,68,68,.10)}
+.fld{display:flex;flex-direction:column;gap:7px;margin-bottom:20px}
+.flbl{font-size:13px;font-weight:700;color:var(--ink2)}
+.flbl span{font-size:11px;font-weight:500;color:var(--ink4);margin-left:5px;background:var(--surf);padding:2px 7px;border-radius:5px;border:1px solid var(--line)}
+.hint-box{display:flex;align-items:flex-start;gap:9px;font-size:13px;color:var(--ink2);background:var(--blue-xl);border:1.5px solid var(--blue-s);border-radius:10px;padding:11px 14px;margin:16px 0;line-height:1.65}
+.hint-box svg{width:16px;height:16px;stroke:var(--blue);fill:none;stroke-width:2;flex-shrink:0;margin-top:2px}
+.btn-row{display:flex;gap:12px;margin-top:4px}
+.chk-btn{flex:1;padding:17px;background:linear-gradient(135deg,#0f172a 0%,#1e3a5f 50%,#0f766e 100%);color:#fff;font-family:var(--fd);font-weight:800;font-size:16px;border-radius:12px;box-shadow:0 8px 32px rgba(15,76,110,.28);transition:all .25s var(--ease);display:flex;align-items:center;justify-content:center;gap:10px}
+.chk-btn:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(15,76,110,.40)}
+.chk-btn:active{transform:translateY(0)}
+.rst-btn{padding:17px 24px;background:var(--surf);color:var(--ink3);font-family:var(--fd);font-weight:700;font-size:15px;border-radius:12px;border:1.5px solid var(--line);transition:.22s;display:flex;align-items:center;gap:8px}
+.rst-btn:hover{background:var(--red-xl);color:var(--red);border-color:var(--red-s)}
+
+/* ══ RESULT ══ */
+#resultArea{display:none;margin-top:28px;animation:resultIn .45s var(--ease) both}
+
+/* Big validity display */
+.validity-hero{border-radius:22px;padding:32px;margin-bottom:22px;text-align:center;position:relative;overflow:hidden;border:2px solid}
+.validity-hero.valid{background:linear-gradient(135deg,var(--green-xl),#d1fae5);border-color:var(--green-s)}
+.validity-hero.near{background:var(--amber-xl);border-color:var(--amber-s)}
+.validity-hero.expired{background:var(--red-xl);border-color:var(--red-s)}
+.validity-hero::before{content:'';position:absolute;inset:0;opacity:.04;background-image:repeating-linear-gradient(45deg,currentColor 0,currentColor 1px,transparent 0,transparent 50%);background-size:12px 12px;pointer-events:none}
+.vh-icon{font-size:52px;margin-bottom:10px}
+.vh-status{font-family:var(--fd);font-size:28px;font-weight:800;color:var(--ink);margin-bottom:6px}
+.vh-sub{font-size:15px;color:var(--ink3);margin-bottom:18px}
+.vh-tag{display:inline-flex;align-items:center;gap:8px;font-family:var(--fd);font-size:14px;font-weight:700;padding:7px 20px;border-radius:100px}
+.vh-tag.valid{background:var(--green);color:#fff}
+.vh-tag.near{background:var(--amber);color:#fff}
+.vh-tag.expired{background:var(--red);color:#fff}
+
+/* countdown ring */
+.ring-wrap{display:flex;justify-content:center;margin-bottom:18px;position:relative}
+.ring-svg{width:160px;height:160px;transform:rotate(-90deg)}
+.ring-bg{fill:none;stroke:rgba(0,0,0,.08);stroke-width:12}
+.ring-fill{fill:none;stroke-width:12;stroke-linecap:round;transition:stroke-dashoffset 1.4s var(--ease)}
+.ring-center{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.ring-days{font-family:var(--fd);font-size:28px;font-weight:800;color:var(--ink);line-height:1}
+.ring-lbl{font-size:11px;font-weight:700;color:var(--ink3);text-transform:uppercase;letter-spacing:.07em}
+
+/* detail cards */
+.detail-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:18px}
+.det-card{background:var(--surf);border:1.5px solid var(--line);border-radius:14px;padding:16px;text-align:center}
+.det-ico{font-size:22px;margin-bottom:6px}
+.det-lbl{font-size:11px;font-weight:700;color:var(--ink4);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px}
+.det-val{font-family:var(--fd);font-size:14px;font-weight:800;color:var(--ink)}
+.det-sub{font-size:11px;color:var(--ink3);margin-top:2px}
+
+/* timeline bar */
+.timeline-card{background:var(--surf);border:1.5px solid var(--line);border-radius:16px;padding:22px 24px;margin-bottom:18px}
+.tl-title{font-family:var(--fd);font-size:14px;font-weight:700;color:var(--ink);margin-bottom:18px;display:flex;align-items:center;gap:8px}
+.tl-track{position:relative;height:12px;background:var(--line);border-radius:10px;overflow:hidden;margin-bottom:10px}
+.tl-fill{height:100%;border-radius:10px;transition:width 1.2s var(--ease)}
+.tl-markers{display:flex;justify-content:space-between;font-size:11.5px;color:var(--ink3);font-weight:600}
+.tl-marker{display:flex;flex-direction:column;align-items:center;gap:2px}
+
+/* sugg box */
+.sugg-box{background:var(--blue-xl);border:1.5px solid var(--blue-s);border-radius:14px;padding:18px 20px;margin-bottom:18px}
+
+/* ══ TABLE SECTION ══ */
+.tbl-sec{background:#fff;padding:80px 0}
+.tbl-tabs{display:flex;gap:10px;margin-bottom:24px;flex-wrap:wrap}
+.tbl-tab{font-family:var(--fd);font-size:13px;font-weight:700;padding:9px 20px;border-radius:10px;border:1.5px solid var(--line);color:var(--ink3);cursor:pointer;transition:.22s}
+.tbl-tab.active{background:var(--blue);color:#fff;border-color:var(--blue);box-shadow:var(--sb)}
+.tbl-wrap{overflow-x:auto;border-radius:16px;border:1.5px solid var(--line);box-shadow:var(--s2)}
+table{width:100%;border-collapse:collapse}
+th{font-family:var(--fd);font-size:12px;font-weight:700;color:var(--ink2);background:var(--surf);padding:13px 16px;text-align:left;border-bottom:2px solid var(--line)}
+td{font-size:13.5px;color:var(--ink2);padding:12px 16px;border-bottom:1px solid var(--line)}
+tr:last-child td{border-bottom:none}
+.row-pass{background:var(--green-xl)}
+.row-avg{background:var(--amber-xl)}
+.row-fail{background:var(--red-xl)}
+.tbadge{display:inline-flex;align-items:center;font-size:11px;font-weight:700;padding:3px 9px;border-radius:100px}
+.tbadge.g{background:var(--green);color:#fff}
+.tbadge.a{background:var(--amber);color:#fff}
+.tbadge.r{background:var(--red);color:#fff}
+.tbadge.b{background:var(--blue);color:#fff}
+
+/* ══ GUIDE / STORY ══ */
+.guide-sec{background:var(--surf);padding:80px 0}
+.story-sec{background:#fff;padding:80px 0}
+.story-card{background:#fff;border:1.5px solid var(--line);border-radius:24px;padding:40px;box-shadow:var(--s3);position:relative;overflow:hidden}
+.sq{position:absolute;top:20px;right:28px;font-family:var(--fd);font-size:100px;color:var(--blue);opacity:.06;line-height:1;pointer-events:none;user-select:none}
+.sb{font-size:15px;color:var(--ink2);line-height:1.9;margin-bottom:26px}
+.sauth{display:flex;align-items:center;gap:14px;padding-top:20px;border-top:1.5px solid var(--line)}
+.savt{width:46px;height:46px;border-radius:12px;background:var(--blue-xl);display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+.sname{font-family:var(--fd);font-size:14px;font-weight:800;color:var(--ink)}
+.srole{font-size:12px;color:var(--ink3)}
+.founder-msg{margin-top:22px;background:var(--blue-xl);border:1.5px solid var(--blue-s);border-radius:14px;padding:16px 18px;display:flex;gap:12px;align-items:flex-start}
+.fm-ico{font-size:22px;flex-shrink:0}
+.fm-txt{font-size:13.5px;color:var(--ink2);line-height:1.75}
+.guide-body h2{font-family:var(--fd);font-size:20px;font-weight:800;color:var(--ink);margin:28px 0 12px}
+.guide-body h2:first-child{margin-top:0}
+.guide-body p{font-size:14.5px;color:var(--ink2);line-height:1.85;margin-bottom:14px}
+.guide-body ul{display:flex;flex-direction:column;gap:9px;margin:0 0 18px 0}
+.guide-body ul li{font-size:14.5px;color:var(--ink2);line-height:1.75;padding-left:20px;position:relative}
+.guide-body ul li::before{content:'→';position:absolute;left:0;color:var(--blue);font-weight:700}
+.ibox{display:flex;gap:12px;align-items:flex-start;padding:14px 16px;border-radius:12px;font-size:13.5px;line-height:1.75;margin:16px 0;background:var(--blue-xl);border:1.5px solid var(--blue-s);color:var(--blue)}
+.ibox svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2;flex-shrink:0;margin-top:2px}
+.ibox.a{background:var(--amber-xl);border-color:var(--amber-s);color:#92400e}
+.ibox.g{background:var(--green-xl);border-color:var(--green-s);color:#065f46}
+
+.struct-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:16px 0}
+.struct-card{background:var(--surf);border:1.5px solid var(--line);border-radius:14px;padding:18px}
+.struct-ico{font-size:26px;margin-bottom:8px}
+.struct-num{font-size:11px;font-weight:700;color:var(--blue);text-transform:uppercase;letter-spacing:.08em;margin-bottom:3px}
+.struct-title{font-family:var(--fd);font-size:14px;font-weight:800;color:var(--ink);margin-bottom:6px}
+.struct-desc{font-size:13px;color:var(--ink3);line-height:1.6}
+
+.ex-card{background:var(--surf);border:1.5px solid var(--line);border-radius:14px;overflow:hidden;margin:16px 0}
+.ex-row{display:flex;align-items:center;justify-content:space-between;padding:13px 18px;border-bottom:1px solid var(--line);font-size:14px;color:var(--ink2)}
+.ex-row:last-child{border-bottom:none}
+
+/* ══ TIPS ══ */
+.tips-sec{background:#fff;padding:80px 0}
+.tips-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.tip-card{background:var(--surf);border:1.5px solid var(--line);border-radius:18px;padding:26px;transition:.22s}
+.tip-card:hover{border-color:var(--blue);transform:translateY(-3px);box-shadow:var(--s3)}
+.tip-ico{font-size:30px;margin-bottom:12px}
+.tip-title{font-family:var(--fd);font-size:15px;font-weight:800;color:var(--ink);margin-bottom:9px}
+.tip-desc{font-size:13.5px;color:var(--ink3);line-height:1.8}
+
+/* ══ FAQ ══ */
+.faq-sec{background:var(--surf);padding:80px 0}
+.fql{display:flex;flex-direction:column;gap:10px;max-width:760px;margin:0 auto}
+.fq{background:#fff;border:1.5px solid var(--line);border-radius:14px;overflow:hidden;transition:.22s}
+.fq:hover{border-color:var(--blue-s)}
+.fq.open{border-color:var(--blue)}
+.fq-q{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;cursor:pointer;gap:14px}
+.fq-t{font-family:var(--fd);font-size:14px;font-weight:700;color:var(--ink);line-height:1.4}
+.fq-i{width:26px;height:26px;background:var(--surf);border:1.5px solid var(--line);border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:16px;color:var(--ink3);flex-shrink:0;transition:.22s}
+.fq.open .fq-i{background:var(--blue);color:#fff;border-color:var(--blue);transform:rotate(45deg)}
+.fq-a{max-height:0;overflow:hidden;transition:max-height .38s var(--ease)}
+.fq.open .fq-a{max-height:400px}
+.fq-ai{padding:0 22px 18px;font-size:14px;color:var(--ink2);line-height:1.8}
+
+/* ══ DISCLAIMER ══ */
+.disc{background:var(--amber-xl);border-top:2px solid var(--amber-s);border-bottom:2px solid var(--amber-s);padding:18px 0}
+.disc-in{display:flex;gap:12px;align-items:flex-start;font-size:13px;color:#92400e;line-height:1.75}
+
+/* ══ CONTACT ══ */
+.contact-sec{padding:64px 0}
+.contact-card{background:linear-gradient(135deg,var(--blue-xl),var(--surf));border:2px solid var(--blue-s);border-radius:24px;padding:40px;text-align:center;max-width:580px;margin:0 auto}
+.contact-card h3{font-family:var(--fd);font-size:22px;font-weight:800;color:var(--ink);margin-bottom:10px}
+.contact-card p{font-size:14px;color:var(--ink3);margin-bottom:22px;line-height:1.75}
+.btn-bl{display:inline-flex;align-items:center;gap:8px;font-family:var(--fd);font-weight:700;font-size:14px;background:var(--blue);color:#fff;padding:12px 26px;border-radius:10px;box-shadow:var(--sb);transition:.22s}
+.btn-bl:hover{background:var(--blue-d);transform:translateY(-2px)}
+.priv-note{margin-top:14px;font-size:12px;color:var(--ink4)}
+
+/* ══ CTA ══ */
+.cta{background:linear-gradient(135deg,#0f172a 0%,#1e3a5f 50%,#0f766e 100%);padding:80px 0}
+.cta-in{text-align:center;color:#fff}
+.cta-in h2{font-family:var(--fd);font-size:clamp(24px,4vw,42px);font-weight:800;line-height:1.15;margin:14px 0 10px}
+.cta-in em{font-style:normal;color:var(--amber)}
+.cta-in p{font-size:15px;color:rgba(255,255,255,.75);max-width:480px;margin:0 auto 28px;line-height:1.75}
+.cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn-gold{display:inline-flex;align-items:center;gap:8px;font-family:var(--fd);font-weight:800;font-size:15px;background:var(--amber);color:#fff;padding:14px 30px;border-radius:12px;box-shadow:0 8px 28px rgba(245,158,11,.35);transition:.22s}
+.btn-gold:hover{background:#d97706;transform:translateY(-2px)}
+.btn-ghost{display:inline-flex;align-items:center;gap:8px;font-family:var(--fd);font-weight:700;font-size:15px;background:rgba(255,255,255,.12);color:#fff;padding:14px 30px;border-radius:12px;border:1.5px solid rgba(255,255,255,.25);transition:.22s}
+.btn-ghost:hover{background:rgba(255,255,255,.2);transform:translateY(-2px)}
+
+/* ══ FOOTER ══ */
+footer{background:#0f172a;color:rgba(255,255,255,.8);padding:56px 0 0}
+.ft-inner{max-width:1180px;margin:0 auto;padding:0 24px}
+.ft-top{display:grid;grid-template-columns:1.8fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px}
+.ft-brand p.ft-desc{font-size:13px;color:rgba(255,255,255,.55);line-height:1.75;margin:12px 0 18px}
+.ft-soc{display:flex;gap:8px}
+.fts{width:34px;height:34px;border-radius:8px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;font-size:13px;color:rgba(255,255,255,.8);transition:.2s}
+.fts:hover{background:var(--blue);color:#fff}
+.fc h4{font-family:var(--fd);font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:14px}
+.fc ul{display:flex;flex-direction:column;gap:7px}
+.fc ul a{font-size:13px;color:rgba(255,255,255,.65);transition:.2s}
+.fc ul a:hover{color:#fff}
+.ft-btm{border-top:1px solid rgba(255,255,255,.08);padding:20px 0;display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between}
+.ft-cp{font-size:12px;color:rgba(255,255,255,.4)}
+.ft-tag{font-size:12px;color:rgba(255,255,255,.3)}
+
+/* ══ BTT ══ */
+.btt{position:fixed;bottom:24px;right:24px;width:42px;height:42px;background:var(--blue);color:#fff;border-radius:10px;font-size:17px;box-shadow:var(--sb);opacity:0;pointer-events:none;transition:.28s;z-index:900}
+.btt.on{opacity:1;pointer-events:auto}
+
+/* ══ RESPONSIVE ══ */
+@media(max-width:900px){
+  .ft-top{grid-template-columns:1fr 1fr;gap:28px}
+  nav.dn,.hcta{display:none}
+  .brg{display:flex}
+  .tips-grid{grid-template-columns:1fr}
+  .struct-grid{grid-template-columns:1fr}
+  .detail-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+  .ft-top{grid-template-columns:1fr}
+  .tool-body,.tool-hdr{padding:24px 20px}
+  .howto-steps{grid-template-columns:1fr}
+  .rel-grid{grid-template-columns:1fr}
+  .detail-grid{grid-template-columns:1fr}
+  .btn-row{flex-direction:column}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="hdr">
+  <div class="w hdi">
+    <a href="/" class="logo">
+      <div class="lb"><svg viewBox="0 0 24 24" fill="#fff"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+      <div><div class="ln">Raj<span>Daily</span>Tools</div><div class="ls">Smart Tools for Daily Life</div></div>
+    </a>
+    <nav class="dn">
+      <a href="/">Home</a>
+      <a href="/categories">Tools</a>
+      <a href="#guide">Guide</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a href="/categories" class="hcta">Explore Tools →</a>
+    <button class="brg" id="brg" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<div class="dov" id="dov"></div>
+<div class="drw" id="drw">
+  <div class="dh">
+    <div class="logo"><div class="lb"><svg viewBox="0 0 24 24" fill="#fff"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div><div class="ln">Raj<span>Daily</span>Tools</div></div>
+    <div class="dx" id="dx">✕</div>
+  </div>
+  <nav class="mn">
+    <a href="/">Home</a>
+    <a href="/categories">All Tools</a>
+    <a href="#guide">Guide</a>
+    <a href="#faq">FAQ</a>
+    <a href="mailto:contact@rajdailytools.in">Contact</a>
+  </nav>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+  <div class="w">
+    <div class="hero-inner">
+      <div class="bc"><a href="/">Home</a> › <a href="/categories">IELTS Tools</a> › IELTS Score Validity Checker</div>
+      <div class="pill">IELTS Validity</div>
+      <h1>IELTS Score <span>Validity Checker</span></h1>
+      <p class="hero-sub">Check whether your IELTS result is still valid. Enter your test date and instantly calculate the validity period, expiry date, and days remaining — all in one click.</p>
+      <div class="hero-chips">
+        <span class="chip">📅 2-Year Validity</span>
+        <span class="chip">🎓 Study Abroad</span>
+        <span class="chip">💼 Work Visa</span>
+        <span class="chip">🏠 Migration</span>
+        <span class="chip">🏥 Professional Registration</span>
+        <span class="chip">⚡ Instant Result</span>
+      </div>
+      <div class="hero-meta">
+        <div class="upd">🕐 Updated 2025</div>
+        <span class="mi">Free · No signup · Instant result</span>
+      </div>
+
+      <div class="howto">
+        <div class="howto-ttl">📋 How To Use</div>
+        <div class="howto-steps">
+          <div class="hs"><div class="sn">1</div><div>Enter your IELTS test date</div></div>
+          <div class="hs"><div class="sn">2</div><div>Click <strong>Check Validity</strong></div></div>
+          <div class="hs"><div class="sn">3</div><div>See validity status instantly</div></div>
+          <div class="hs"><div class="sn">4</div><div>Review expiry date and days remaining</div></div>
+          <div class="hs"><div class="sn">5</div><div>Plan your study, work, or migration application</div></div>
+        </div>
+      </div>
+
+      <div class="rel-grid">
+        <a href="https://rajdailytools.in/ielts-visa-eligibility-checker.html" class="rg-box c1 rev">
+          <div class="rg-ico">🌍</div>
+          <div class="rg-txt"><h4>Visa Eligibility Checker</h4><p>Check IELTS readiness for visa pathways</p></div>
+          <span class="btn-xs a">Use Tool →</span>
+        </a>
+        <a href="https://rajdailytools.in/ielts-target-band-calculator.html" class="rg-box c2 rev">
+          <div class="rg-ico">🎯</div>
+          <div class="rg-txt"><h4>Target Band Calculator</h4><p>Plan your IELTS band target</p></div>
+          <span class="btn-xs g">Use Tool →</span>
+        </a>
+        <a href="https://rajdailytools.in/ielts-exam-readiness-checker.html" class="rg-box c3 rev">
+          <div class="rg-ico">✅</div>
+          <div class="rg-txt"><h4>Exam Readiness Checker</h4><p>Are you ready to sit the test?</p></div>
+          <span class="btn-xs b">Use Tool →</span>
+        </a>
+        <a href="https://rajdailytools.in/IELTS-Score-Improvement-Tracker.html" class="rg-box c4 rev">
+          <div class="rg-ico">📈</div>
+          <div class="rg-txt"><h4>Score Improvement Tracker</h4><p>Track your IELTS progress over time</p></div>
+          <span class="btn-xs p">Use Tool →</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOOL SECTION -->
+<section class="tool-sec" id="tool">
+  <div class="w">
+    <div class="tool-wrap">
+      <div class="tool-card rev">
+        <div class="tool-hdr">
+          <div class="run-dots"><div class="run-dot"></div><div class="run-dot"></div><div class="run-dot"></div></div>
+          <div class="th">
+            <h2>📅 IELTS Score Validity Checker</h2>
+            <p>Enter your IELTS test date to instantly calculate your score validity status, expiry date, and the number of days remaining in your validity window.</p>
+            <div class="th-badges">
+              <span class="thb">⏱️ 2-Year Validity Period</span>
+              <span class="thb">📆 Auto Expiry Calculation</span>
+              <span class="thb">✅ Valid / Near Expiry / Expired</span>
+            </div>
+          </div>
+        </div>
+        <div class="tool-body">
+
+          <div class="fld">
+            <label class="flbl" for="testDate">IELTS Test Date <span>DD/MM/YYYY or use date picker</span></label>
+            <input class="finp" type="date" id="testDate" max="">
+          </div>
+
+          <div class="hint-box">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            <div>IELTS results are <strong>generally valid for 2 years</strong> from your official test date. A score is considered <em>Near Expiry</em> when fewer than 90 days remain. Always confirm validity requirements with the institution or authority you are applying to, as some may have stricter policies.</div>
+          </div>
+
+          <div class="btn-row">
+            <button class="chk-btn" onclick="checkValidity()">📅 Check Validity</button>
+            <button class="rst-btn" onclick="resetTool()">↺ Reset</button>
+          </div>
+
+          <!-- RESULT -->
+          <div id="resultArea">
+
+            <!-- Status Banner -->
+            <div class="validity-hero" id="validityHero">
+              <div class="vh-icon" id="vhIcon">—</div>
+              <div class="vh-status" id="vhStatus">—</div>
+              <div class="vh-sub" id="vhSub">—</div>
+              <div class="vh-tag" id="vhTag">—</div>
+            </div>
+
+            <!-- Countdown Ring -->
+            <div class="ring-wrap">
+              <svg class="ring-svg" viewBox="0 0 160 160">
+                <circle class="ring-bg" cx="80" cy="80" r="64"/>
+                <circle class="ring-fill" id="ringFill" cx="80" cy="80" r="64" stroke-dasharray="402" stroke-dashoffset="402"/>
+              </svg>
+              <div class="ring-center">
+                <div class="ring-days" id="ringDays">—</div>
+                <div class="ring-lbl" id="ringLbl">days</div>
+              </div>
+            </div>
+
+            <!-- Detail Cards -->
+            <div class="detail-grid">
+              <div class="det-card">
+                <div class="det-ico">📝</div>
+                <div class="det-lbl">Test Date</div>
+                <div class="det-val" id="dTestDate">—</div>
+                <div class="det-sub">When you sat IELTS</div>
+              </div>
+              <div class="det-card">
+                <div class="det-ico">🔚</div>
+                <div class="det-lbl">Validity End Date</div>
+                <div class="det-val" id="dExpiry">—</div>
+                <div class="det-sub">Score accepted until</div>
+              </div>
+              <div class="det-card">
+                <div class="det-ico">📊</div>
+                <div class="det-lbl">Total Days Elapsed</div>
+                <div class="det-val" id="dElapsed">—</div>
+                <div class="det-sub">Since test date</div>
+              </div>
+            </div>
+
+            <!-- Timeline Bar -->
+            <div class="timeline-card">
+              <div class="tl-title">📊 Validity Timeline Progress</div>
+              <div class="tl-track">
+                <div class="tl-fill" id="tlFill" style="width:0%"></div>
+              </div>
+              <div class="tl-markers">
+                <div class="tl-marker"><span>Test Date</span></div>
+                <div class="tl-marker"><span>6 months</span></div>
+                <div class="tl-marker"><span>1 year</span></div>
+                <div class="tl-marker"><span>18 months</span></div>
+                <div class="tl-marker"><span>2 years</span></div>
+              </div>
+            </div>
+
+            <!-- Suggestion -->
+            <div class="sugg-box" id="suggBox"></div>
+
+          </div><!-- /resultArea -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REFERENCE TABLE SECTION -->
+<section class="tbl-sec" id="table">
+  <div class="wa">
+    <div class="rev" style="text-align:center;margin-bottom:36px">
+      <div class="pill" style="margin-bottom:14px">Validity Reference</div>
+      <h2 style="font-family:var(--fd);font-size:clamp(22px,3.5vw,36px);font-weight:800;color:var(--ink);margin-bottom:10px">IELTS Score Validity — <span style="color:var(--blue)">Reference Tables</span></h2>
+      <p style="font-size:15px;color:var(--ink3);max-width:520px;margin:0 auto;line-height:1.75">A quick reference to understanding IELTS score validity and common uses of IELTS results across major international pathways.</p>
+    </div>
+
+    <div class="tbl-tabs rev">
+      <button class="tbl-tab active" id="tabValidity" onclick="showRefTable('validity')">IELTS Validity Guide</button>
+      <button class="tbl-tab" id="tabUses" onclick="showRefTable('uses')">Common Uses of IELTS Scores</button>
+    </div>
+
+    <div id="tableValidity" class="rev">
+      <div class="tbl-wrap">
+        <table>
+          <thead>
+            <tr><th>Status</th><th>Meaning</th><th>Days Remaining</th><th>Recommendation</th></tr>
+          </thead>
+          <tbody>
+            <tr class="row-pass">
+              <td><strong>✅ Valid</strong></td>
+              <td>Score is within the 2-year validity period</td>
+              <td><span class="tbadge g">91+ days</span></td>
+              <td>Score is currently acceptable for most applications</td>
+            </tr>
+            <tr class="row-avg">
+              <td><strong>⚠️ Near Expiry</strong></td>
+              <td>Valid but approaching the end of the validity window</td>
+              <td><span class="tbadge a">1 – 90 days</span></td>
+              <td>Plan applications urgently or consider a retake</td>
+            </tr>
+            <tr class="row-fail">
+              <td><strong>❌ Expired</strong></td>
+              <td>Score validity period has ended</td>
+              <td><span class="tbadge r">0 days</span></td>
+              <td>A new IELTS test is required for most applications</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:12.5px;color:var(--ink4);margin-top:12px;text-align:center">* Near Expiry threshold set at 90 days remaining. Some institutions may consider a score near expiry as insufficient — always verify with your specific authority.</p>
+    </div>
+
+    <div id="tableUses" style="display:none" class="rev">
+      <div class="tbl-wrap">
+        <table>
+          <thead>
+            <tr><th>Purpose</th><th>IELTS Often Used For</th><th>Typical Band Range</th><th>Validity Note</th></tr>
+          </thead>
+          <tbody>
+            <tr class="row-pass">
+              <td><strong>🎓 Study Abroad</strong></td>
+              <td>University and college applications in English-speaking countries</td>
+              <td><span class="tbadge b">6.0 – 7.5</span></td>
+              <td>Score must be valid at time of enrollment, not just application</td>
+            </tr>
+            <tr class="row-pass">
+              <td><strong>💼 Employment</strong></td>
+              <td>International job applications and work permit requirements</td>
+              <td><span class="tbadge b">5.5 – 7.0</span></td>
+              <td>Employer may require score valid at time of job offer</td>
+            </tr>
+            <tr class="row-avg">
+              <td><strong>🏠 Migration</strong></td>
+              <td>Permanent residence and skilled migration programs</td>
+              <td><span class="tbadge b">6.0 – 8.0</span></td>
+              <td>Score must remain valid throughout processing period</td>
+            </tr>
+            <tr class="row-avg">
+              <td><strong>🏥 Registration</strong></td>
+              <td>Professional licensing bodies (nursing, medicine, teaching, law)</td>
+              <td><span class="tbadge b">7.0 – 8.0+</span></td>
+              <td>Some bodies require score within 2 years of application date</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:12.5px;color:var(--ink4);margin-top:12px;text-align:center">* Band ranges shown are indicative. Always verify the specific requirement from the institution, employer, or authority you are applying to.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TIPS SECTION -->
+<section class="tips-sec">
+  <div class="w">
+    <div style="text-align:center;margin-bottom:36px" class="rev">
+      <div class="pill" style="margin-bottom:14px">Planning Advice</div>
+      <h2 style="font-family:var(--fd);font-size:clamp(22px,3.5vw,36px);font-weight:800;color:var(--ink);margin-bottom:10px">Managing Your <span style="color:var(--blue)">IELTS Validity Window</span></h2>
+      <p style="font-size:15px;color:var(--ink3);max-width:480px;margin:0 auto">Smart planning decisions that help you make the most of your two-year IELTS validity period.</p>
+    </div>
+    <div class="tips-grid rev">
+      <div class="tip-card">
+        <div class="tip-ico">🗓️</div>
+        <div class="tip-title">Plan Your Application Timeline First</div>
+        <div class="tip-desc">Before sitting the IELTS test, map out when you intend to submit your university, visa, or migration application. IELTS results are valid for two years from the test date — your score must remain valid not just at the time of application submission, but in many cases through the entire processing period. If processing takes six to twelve months, you need to sit the test accordingly.</div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-ico">⏰</div>
+        <div class="tip-title">Do Not Wait Until Near Expiry to Act</div>
+        <div class="tip-desc">Waiting until your score is near expiry before submitting an application is a high-risk strategy. If your application is delayed, returned, or requires additional documents, you may find that your score expires mid-process. Aim to submit your application with at least six to twelve months of validity remaining wherever possible, giving yourself a comfortable buffer.</div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-ico">🔁</div>
+        <div class="tip-title">Consider a Retake if Expiry Is Near</div>
+        <div class="tip-desc">If your IELTS score is within 90 days of expiry and you have not yet submitted your application, a retake is often the safer option. Beyond the validity question, a retake also gives you the opportunity to achieve a higher score, which can strengthen your application — particularly for competitive migration streams that award additional points for higher IELTS results.</div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-ico">📋</div>
+        <div class="tip-title">Verify Validity Requirements Individually</div>
+        <div class="tip-desc">While the standard IELTS validity period is two years, some institutions and government bodies may apply stricter requirements. For example, certain professional registration bodies may require the score to be within two years of the application date specifically, not the enrollment date. Always verify the precise validity requirement directly from the institution, employer, or authority you are applying to before submitting.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STORY SECTION -->
+<section class="story-sec">
+  <div class="wa">
+    <div class="rev" style="text-align:center;margin-bottom:36px">
+      <div class="pill" style="margin-bottom:14px">Why I Built This</div>
+      <h2 style="font-family:var(--fd);font-size:clamp(22px,3.4vw,34px);font-weight:800;color:var(--ink);margin-bottom:8px">Meera ki <span style="color:var(--blue)">Kahaani</span></h2>
+      <p style="font-size:15px;color:var(--ink3)">Ek aisi galti jo bahut log karte hain — expiry ka dhyan nahi rakhna.</p>
+    </div>
+    <div class="story-card rev">
+      <div class="sq">"</div>
+      <div class="sb">
+        Maine ye Score Validity Checker isliye banaya kyunki <strong>meri colleague ki beti Meera Australia ke liye nursing registration apply kar rahi thi</strong>. Usne 2 saal pehle IELTS diya tha — Band 7.5 — ek bahut acha score. Usne socha ki yahi score use registration mein kaam aayega.<br><br>
+        Usne saare documents ready kiye, AHPRA ko application bheji, sab kuch perfect tha. Phir ek message aaya — <em>"Your IELTS score has expired and cannot be accepted for this application. Please provide a valid English language test result."</em><br><br>
+        <strong>Meera ka score sirf 11 din pehle expire hua tha. 11 din. Itni choti si baat usne track nahi ki thi — aur ab use dobara IELTS dena padega, time waste hoga, aur Australia registration mein months ki delay.</strong><br><br>
+        Jab usne mujhe bataya toh usne kaha — <em>"kash koi simple tool hota jahan main apni test date daalti aur ye check karti ki mere paas kitna time bacha hai."</em><br><br>
+        <strong>Usi baat ke baad maine ye tool banaya. Meera jaisi situation mein koi aur na phase — apni score expiry hamesha track mein rahe.</strong> 🇮🇳📅
+      </div>
+      <div class="sauth">
+        <div class="savt">🛠️</div>
+        <div>
+          <div class="sname">Raj Bhai — RajDailyTools</div>
+          <div class="srole">Founder, RajDailyTools.in · Every tool solves a real problem</div>
+        </div>
+      </div>
+      <div class="founder-msg">
+        <div class="fm-ico">📅</div>
+        <div class="fm-txt"><strong>To every IELTS candidate with an existing result:</strong> Check your validity date today. If you have an application coming up, make sure your score remains valid through the entire process — not just at the time of submission. A few minutes of planning now can save you months of delay later.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GUIDE SECTION -->
+<section class="guide-sec" id="guide">
+  <div class="wa">
+    <div class="rev" style="text-align:center;margin-bottom:40px">
+      <div class="pill" style="margin-bottom:14px">Complete Guide</div>
+      <h2 style="font-family:var(--fd);font-size:clamp(22px,3.5vw,36px);font-weight:800;color:var(--ink);margin-bottom:10px">IELTS Score Validity — <span style="color:var(--blue)">Full Guide</span></h2>
+      <p style="font-size:15px;color:var(--ink3);max-width:520px;margin:0 auto;line-height:1.75">Everything you need to understand about IELTS score validity periods, how to manage your timing, what happens when a score expires, and how to plan effectively.</p>
+    </div>
+    <div class="story-card rev guide-body">
+
+      <h2>How Long Is an IELTS Score Valid?</h2>
+      <p>IELTS results are generally considered valid for two years from the date of the test. This is the standard validity period recognised by the vast majority of universities, employers, immigration authorities, and professional registration bodies worldwide.</p>
+      <p>The two-year clock starts from your official IELTS test date — the date you actually sat the exam — not from the date you received your Test Report Form or the date you registered. If you took the test on 1 June 2023, your score is generally valid until 1 June 2025.</p>
+
+      <div class="ibox">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        <div><strong>Key Point:</strong> The validity period is calculated from the test date, not from when you received your result. IELTS typically releases results 3–13 days after the test depending on the test type, but the validity clock starts from the test date itself.</div>
+      </div>
+
+      <h2>What Does "Near Expiry" Mean?</h2>
+      <p>This tool flags your score as "Near Expiry" when fewer than 90 days remain in your validity window. This threshold is used because many applications — particularly visa and migration applications — take weeks to process after submission. If you submit with only a few weeks of validity remaining and the processing takes longer than expected, your score may expire before a decision is made.</p>
+      <p>In practice, it is advisable to leave at least six months of validity when submitting any major application, and ideally twelve months for migration and professional registration pathways, which can have longer processing timelines.</p>
+
+      <h2>What Happens When an IELTS Score Expires?</h2>
+      <p>Once an IELTS score passes the two-year validity threshold, most institutions and authorities will not accept it as evidence of English language proficiency. This means you will need to sit the IELTS test again and achieve the required band score before your application can proceed.</p>
+      <p>An expired IELTS score does not carry over — your previous score, however high, is no longer usable. There is no formal extension or renewal process for IELTS results; a new test is the only option once a score has expired.</p>
+
+      <div class="ibox a">
+        <svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        <div><strong>Important:</strong> There is no way to extend or renew an IELTS score. Once expired, a new test is required. Planning ahead is the only way to avoid this situation — and this checker is designed to help you do exactly that.</div>
+      </div>
+
+      <h2>Can Institutions Accept an Expired Score?</h2>
+      <p>In exceptional circumstances, some institutions may have discretion to consider an expired IELTS score — for example, in cases where the applicant's English-language environment has been continuous since the test date. However, this is rare, institution-specific, and not something that can be relied upon. Immigration authorities and professional registration bodies almost never make exceptions to the validity requirement.</p>
+      <p>If you have an expired score and are in an unusual situation, it is worth contacting the institution directly to ask whether any discretion applies. But the safest course of action is always to sit a new test.</p>
+
+      <h2>When to Time Your IELTS Test</h2>
+      <p>The best time to sit your IELTS test depends on when you plan to submit your application and how long that application is likely to take to process.</p>
+      <div class="struct-grid">
+        <div class="struct-card">
+          <div class="struct-ico">🎓</div>
+          <div class="struct-num">University Application</div>
+          <div class="struct-title">6–12 Months Before Intake</div>
+          <div class="struct-desc">Sit IELTS early enough that your score is valid at both application and enrollment. Most university intakes are annual, so plan backwards from the start date.</div>
+        </div>
+        <div class="struct-card">
+          <div class="struct-ico">💼</div>
+          <div class="struct-num">Work Visa / Employer</div>
+          <div class="struct-title">3–6 Months Before Application</div>
+          <div class="struct-desc">Work visa processing times vary widely. Ensure your score covers the processing period — check current processing times for your specific visa category.</div>
+        </div>
+        <div class="struct-card">
+          <div class="struct-ico">🏠</div>
+          <div class="struct-num">Migration / PR</div>
+          <div class="struct-title">12–18 Months Buffer Recommended</div>
+          <div class="struct-desc">Migration processing is often long and unpredictable. Sit your IELTS test with enough validity to cover a full processing cycle plus any potential delays.</div>
+        </div>
+        <div class="struct-card">
+          <div class="struct-ico">🏥</div>
+          <div class="struct-num">Professional Registration</div>
+          <div class="struct-title">Verify Registration Timeline</div>
+          <div class="struct-desc">Professional bodies set their own processing timelines. Contact the relevant body to understand how long registration typically takes and plan your test date accordingly.</div>
+        </div>
+      </div>
+
+      <h2>IELTS Academic vs General Training — Validity Is the Same</h2>
+      <p>Both IELTS Academic and IELTS General Training results carry the same two-year validity period. The version of IELTS you sit does not affect how long your score remains valid — only the uses for which each version is accepted differ. Your Academic score is valid for academic applications for two years; your General Training score is valid for migration and work applications for two years.</p>
+
+      <div class="ibox g">
+        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+        <div><strong>Pro Tip:</strong> Set a reminder on your phone or calendar for 18 months after your IELTS test date. This gives you a 6-month warning to check upcoming applications and decide whether to proceed with your current score or sit a retake — before you are forced into urgent action.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FAQ SECTION -->
+<section class="faq-sec" id="faq">
+  <div class="w">
+    <div class="rev" style="text-align:center;margin-bottom:40px">
+      <div class="pill" style="margin-bottom:14px">Frequently Asked Questions</div>
+      <h2 style="font-family:var(--fd);font-size:clamp(22px,3.5vw,36px);font-weight:800;color:var(--ink);margin-bottom:10px">IELTS Validity — <span style="color:var(--blue)">Common Questions Answered</span></h2>
+      <p style="font-size:15px;color:var(--ink3);max-width:500px;margin:0 auto;line-height:1.75">Clear answers to questions IELTS candidates ask most often about score validity periods, expiry, and planning.</p>
+    </div>
+    <div class="fql" id="faqList">
+
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">What is the IELTS Score Validity Checker?</span><div class="fq-i">+</div></div><div class="fq-a"><div class="fq-ai">The IELTS Score Validity Checker calculates whether your IELTS result is still within its accepted validity period. You enter your IELTS test date and the tool instantly calculates the validity end date, the number of days remaining, and whether your score is currently valid, near expiry, or expired. It is designed to help you plan study, work, or migration applications with confidence.</div></div></div>
+
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">How long is an IELTS score valid?</span><div class="fq-i">+</div></div><div class="fq-a"><div class="fq-ai">IELTS results are generally accepted for two years from the test date. This standard validity period is recognised by universities, immigration authorities, employers, and professional registration bodies worldwide. The two-year period begins from the date you sat the exam — not from when you received your Test Report Form or when you registered for the test.</div></div></div>
+
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">What happens after an IELTS score expires?</span><div class="fq-i">+</div></div><div class="fq-a"><div class="fq-ai">Once your IELTS score passes the two-year validity threshold, most organisations will no longer accept it as evidence of English language proficiency. You will need to sit the IELTS test again and achieve the required band score before your application can proceed. There is no extension or renewal process for expired IELTS results — a new test is the only option.</div></div></div>
+
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">Can I still use an expired IELTS score?</span><div class="fq-i">+</div></div><div class="fq-a"><div class="fq-ai">In most cases, no. The majority of institutions, immigration authorities, and professional bodies will not accept a score that has passed the two-year validity window. In very rare circumstances, some institutions may have discretion to consider an expired score — for example, if the applicant has been living and working in an English-speaking environment continuously — but this is institution-specific and cannot be relied upon. Always check directly with the relevant authority if you are in this situation.</div></div></div>
+
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">Does every country use the same validity period?</span><div class="fq-i">+</div></div><div class="fq-a"><div class="fq-ai">The standard IELTS validity period of two years is widely recognised, but individual institutions and authorities set their own requirements and may apply stricter policies. Some professional registration bodies, for example, may require the score to be within two years of the specific application date rather than the enrollment date. Always verify current validity requirements directly with the institution or authority you are applying to before submitting.</div></div></div>
+
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">Can this tool calculate my expiry date automatically?</span><div class="fq-i">+</div></div><div class="fq-a"><div class="fq-ai">Yes. The tool automatically calculates your validity end date by adding two years to the test date you enter, then compares it with today's date to determine your current validity status. It also calculates the number of days remaining in your validity window and displays a timeline showing how much of your two-year validity period has elapsed.</div></div></div>
+
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">Who should use this tool?</span><div class="fq-i">+</div></div><div class="fq-a"><div class="fq-ai">Students planning to apply to universities, professionals applying for work visas or employer-sponsored positions, immigration applicants preparing permanent residence or skilled migration applications, and anyone seeking professional registration who used IELTS as their English language evidence can all use this checker to monitor their score validity and plan their application timing effectively.</div></div></div>
+
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">Can I use this tool for study abroad planning?</span><div class="fq-i">+</div></div><div class="fq-a"><div class="fq-ai">Yes. It helps you determine whether your existing IELTS score is still usable for an upcoming university application. If you sat IELTS some time ago and are now planning to apply for a program starting in the next intake cycle, use this checker to confirm that your score will remain valid through both the application and enrollment period. If not, you will know to plan a retake in advance.</div></div></div>
+
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">Does this tool provide official confirmation of validity?</span><div class="fq-i">+</div></div><div class="fq-a"><div class="fq-ai">No. The tool provides a calculation based on the standard two-year validity period and the test date you enter. It is intended for planning purposes only and does not constitute an official confirmation of score validity. Official confirmation of your IELTS result and its validity is provided only by your Test Report Form issued by the official IELTS test providers — IDP or British Council.</div></div></div>
+
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">Should I verify validity requirements separately?</span><div class="fq-i">+</div></div><div class="fq-a"><div class="fq-ai">Yes, always. While the standard validity period is two years, the precise requirements — including whether the score must be valid at the time of application, at the time of a decision, or at the time of enrollment or registration — vary by institution and authority. This tool gives you an accurate general calculation, but the final authority on validity requirements is always the institution, employer, or government body you are applying to.</div></div></div>
+
+    </div>
+  </div>
+</section>
+
+<!-- DISCLAIMER -->
+<div class="disc">
+  <div class="w">
+    <div class="disc-in">
+      <span style="font-size:18px;flex-shrink:0">⚠️</span>
+      <div><strong>Disclaimer:</strong> This IELTS Score Validity Checker is an independent educational tool. It is not affiliated with, endorsed by, or connected to IELTS, IDP, British Council, Cambridge Assessment English, or any government immigration authority. Validity calculations are based on the standard two-year IELTS validity period and the test date entered. Actual validity requirements may vary by institution, authority, and application type. Always verify current validity requirements from official sources before submitting any application. This tool does not constitute legal, immigration, or professional advice.</div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<section class="contact-sec">
+  <div class="w">
+    <div class="contact-card rev">
+      <h3>📬 Questions or Feedback?</h3>
+      <p>If this tool helped you or you have a suggestion to make it better, we would love to hear from you. We are always improving RajDailyTools to serve students and professionals planning international opportunities.</p>
+      <a href="mailto:contact@rajdailytools.in" class="btn-bl">📧 Contact Us</a>
+      <p class="priv-note">🔒 We do not collect or store any information entered into our tools. Your privacy is fully protected.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="w">
+    <div class="cta-in">
+      <div class="pill">Free IELTS Tools</div>
+      <h2>More IELTS Preparation?<br><em>Explore All Our Tools</em></h2>
+      <p>From band calculators to validity checkers — everything you need to track and plan your IELTS journey, completely free.</p>
+      <div class="cta-btns">
+        <a href="/categories" class="btn-gold">🎯 Explore All Tools</a>
+        <a href="#tool" class="btn-ghost">📅 Check Again ↑</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-inner">
+    <div class="ft-top">
+      <div class="ft-brand">
+        <div class="logo" style="margin-bottom:4px">
+          <div class="lb"><svg viewBox="0 0 24 24" fill="#fff"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+          <div><div class="ln">Raj<span>Daily</span>Tools</div><div class="ls">Smart Tools for Daily Life</div></div>
+        </div>
+        <p class="ft-desc">India's most ambitious free tools platform. Built by Raj Bhai. Solving daily life problems, one tool at a time.</p>
+        <div class="ft-soc">
+          <a href="https://www.facebook.com/share/1Dq3Y1k7mG/" target="_blank" class="fts">f</a>
+          <a href="https://x.com/Educator4ll" target="_blank" class="fts">𝕏</a>
+          <a href="https://youtube.com/@rajdailytools" target="_blank" class="fts">▶</a>
+          <a href="https://www.instagram.com/rajdailytools" target="_blank" class="fts">📷</a>
+        </div>
+      </div>
+      <div class="fc"><h4>IELTS Tools</h4><ul>
+        <li><a href="https://rajdailytools.in/ielts-writing-task-2-band-score-calculator.html">Writing Task 2 Calculator</a></li>
+        <li><a href="https://rajdailytools.in/ielts-speaking-band-score-calculator.html">Speaking Band Calculator</a></li>
+        <li><a href="https://rajdailytools.in/ielts-listening-band-score-calculator.html">Listening Band Calculator</a></li>
+        <li><a href="https://rajdailytools.in/ielts-reading-band-score-calculator.html">Reading Band Calculator</a></li>
+        <li><a href="https://rajdailytools.in/ielts-complete-score-predictor.html">Complete Score Predictor</a></li>
+      </ul></div>
+      <div class="fc"><h4>More IELTS</h4><ul>
+        <li><a href="https://rajdailytools.in/ielts-target-band-calculator.html">Target Band Calculator</a></li>
+        <li><a href="https://rajdailytools.in/ielts-academic-eligibility-checker.html">Academic Eligibility</a></li>
+        <li><a href="https://rajdailytools.in/ielts-visa-eligibility-checker.html">Visa Eligibility Checker</a></li>
+        <li><a href="https://rajdailytools.in/ielts-university-eligibility-checker.html">University Eligibility</a></li>
+        <li><a href="https://rajdailytools.in/ielts-exam-readiness-checker.html">Exam Readiness Checker</a></li>
+      </ul></div>
+      <div class="fc"><h4>Company</h4><ul>
+        <li><a href="/about">About Us</a></li>
+        <li><a href="/contact">Contact</a></li>
+        <li><a href="/privacy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
+      </ul></div>
+    </div>
+    <div class="ft-btm">
+      <p class="ft-cp">Copyright © 2026 <b>RajDailyTools</b>. All rights reserved. Designed by <b>RajDailyTools</b></p>
+      <p class="ft-tag">Made with ❤️ in India — "Solving daily life problems with smart tools"</p>
+    </div>
+  </div>
+</footer>
+<button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+/* ── Drawer ── */
+const brg=document.getElementById('brg'),drw=document.getElementById('drw'),dov=document.getElementById('dov');
+function oD(){drw.classList.add('on');dov.classList.add('on');document.body.style.overflow='hidden'}
+function cD(){drw.classList.remove('on');dov.classList.remove('on');document.body.style.overflow=''}
+brg.addEventListener('click',oD);
+document.getElementById('dx').addEventListener('click',cD);
+dov.addEventListener('click',cD);
+
+/* ── Back to Top ── */
+const btt=document.getElementById('btt');
+window.addEventListener('scroll',()=>btt.classList.toggle('on',scrollY>380),{passive:true});
+
+/* ── Reveal on scroll ── */
+const rvObs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      const s=[...(e.target.parentElement?.children||[])];
+      e.target.style.transitionDelay=(s.indexOf(e.target)%4)*0.08+'s';
+      e.target.classList.add('in');
+      rvObs.unobserve(e.target);
+    }
+  });
+},{threshold:0.06,rootMargin:'0px 0px -20px 0px'});
+document.querySelectorAll('.rev').forEach(el=>rvObs.observe(el));
+
+/* ── FAQ Accordion ── */
+document.getElementById('faqList').addEventListener('click',function(e){
+  const q=e.target.closest('.fq-q');
+  if(!q)return;
+  const item=q.closest('.fq'),open=item.classList.contains('open');
+  document.querySelectorAll('.fq.open').forEach(i=>i.classList.remove('open'));
+  if(!open)item.classList.add('open');
+});
+
+/* ── Table tab switcher ── */
+function showRefTable(type){
+  document.getElementById('tableValidity').style.display=type==='validity'?'block':'none';
+  document.getElementById('tableUses').style.display=type==='uses'?'block':'none';
+  document.getElementById('tabValidity').classList.toggle('active',type==='validity');
+  document.getElementById('tabUses').classList.toggle('active',type==='uses');
+}
+
+/* Set max date to today */
+document.getElementById('testDate').max=new Date().toISOString().split('T')[0];
+
+/* ══════════════════════════════════════
+   DATE UTILITIES
+══════════════════════════════════════ */
+function formatDate(d){
+  return d.toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'});
+}
+
+/* ══════════════════════════════════════
+   MAIN LOGIC
+══════════════════════════════════════ */
+function checkValidity(){
+  const inp=document.getElementById('testDate');
+  const val=inp.value;
+  if(!val){inp.classList.add('err');inp.focus();return;}
+  inp.classList.remove('err');
+
+  const testDate=new Date(val);
+  testDate.setHours(0,0,0,0);
+  const today=new Date();
+  today.setHours(0,0,0,0);
+
+  if(testDate>today){
+    inp.classList.add('err');
+    document.getElementById('resultArea').style.display='none';
+    alert('Test date cannot be in the future. Please enter your actual IELTS test date.');
+    return;
+  }
+
+  /* Validity end date = test date + 2 years */
+  const expiryDate=new Date(testDate);
+  expiryDate.setFullYear(expiryDate.getFullYear()+2);
+
+  const totalValidity=730; /* 2 years in days (approx) */
+  const msPerDay=1000*60*60*24;
+
+  const daysElapsed=Math.round((today-testDate)/msPerDay);
+  const daysRemaining=Math.round((expiryDate-today)/msPerDay);
+  const isExpired=today>expiryDate;
+  const isNear=!isExpired&&daysRemaining<=90;
+
+  /* Status */
+  let status,statusCls,icon,sub,tagText;
+  if(isExpired){
+    status='Score Expired';
+    statusCls='expired';
+    icon='❌';
+    sub=`Your IELTS score expired ${Math.abs(daysRemaining)} day${Math.abs(daysRemaining)!==1?'s':''} ago. A new IELTS test is required for most applications.`;
+    tagText='Expired — Retake Required';
+  } else if(isNear){
+    status='Near Expiry';
+    statusCls='near';
+    icon='⚠️';
+    sub=`Only ${daysRemaining} day${daysRemaining!==1?'s':''} remaining. Submit any pending applications urgently or consider scheduling a retake.`;
+    tagText='⚠️ Near Expiry — Act Now';
+  } else {
+    status='Score Valid';
+    statusCls='valid';
+    icon='✅';
+    sub=`Your IELTS score is valid for ${daysRemaining} more day${daysRemaining!==1?'s':''}. You are within the 2-year validity window.`;
+    tagText='✅ Valid — Good to Go';
+  }
+
+  /* Banner */
+  const hero=document.getElementById('validityHero');
+  hero.className='validity-hero '+statusCls;
+  document.getElementById('vhIcon').textContent=icon;
+  document.getElementById('vhStatus').textContent=status;
+  document.getElementById('vhSub').textContent=sub;
+  const tag=document.getElementById('vhTag');
+  tag.textContent=tagText;
+  tag.className='vh-tag '+statusCls;
+
+  /* Ring */
+  const ringFill=document.getElementById('ringFill');
+  const ringCirc=402; /* 2π × 64 */
+  ringFill.style.strokeDashoffset=ringCirc;
+  const ringStroke=statusCls==='valid'?'var(--green)':(statusCls==='near'?'var(--amber)':'var(--red)');
+  ringFill.style.stroke=ringStroke;
+
+  if(isExpired){
+    document.getElementById('ringDays').textContent=Math.abs(daysRemaining);
+    document.getElementById('ringLbl').textContent='days ago';
+    setTimeout(()=>ringFill.style.strokeDashoffset=0,100);
+  } else {
+    document.getElementById('ringDays').textContent=daysRemaining;
+    document.getElementById('ringLbl').textContent='days left';
+    const pct=Math.max(0,Math.min(1,(totalValidity-daysRemaining)/totalValidity));
+    setTimeout(()=>ringFill.style.strokeDashoffset=ringCirc-(pct*ringCirc),100);
+  }
+
+  /* Detail Cards */
+  document.getElementById('dTestDate').textContent=formatDate(testDate);
+  document.getElementById('dExpiry').textContent=formatDate(expiryDate);
+  document.getElementById('dElapsed').textContent=daysElapsed+' days';
+
+  /* Timeline bar */
+  const tlPct=Math.min(100,Math.round((daysElapsed/totalValidity)*100));
+  const tlFill=document.getElementById('tlFill');
+  tlFill.style.width='0%';
+  tlFill.style.background=statusCls==='valid'?'linear-gradient(90deg,var(--green),#059669)':(statusCls==='near'?'linear-gradient(90deg,var(--amber),#d97706)':'linear-gradient(90deg,var(--red),#dc2626)');
+  setTimeout(()=>tlFill.style.transition='width 1.2s var(--ease)',50);
+  setTimeout(()=>tlFill.style.width=tlPct+'%',100);
+
+  /* Suggestion */
+  let msg='';
+  if(isExpired){
+    const daysOver=Math.abs(daysRemaining);
+    msg=`<strong>❌ Score Expired — ${daysOver} Day${daysOver!==1?'s':''} Ago.</strong> Your IELTS score is no longer within the standard 2-year validity window. Most institutions, immigration authorities, and professional registration bodies will not accept an expired result. You will need to sit the IELTS test again. Before booking, check whether your circumstances have changed — you may be aiming for a different band or visa category than last time. Use our <a href="https://rajdailytools.in/ielts-target-band-calculator.html" style="color:var(--blue);font-weight:700">Target Band Calculator</a> to set your new preparation goal.`;
+  } else if(isNear){
+    msg=`<strong>⚠️ Near Expiry — Only ${daysRemaining} Day${daysRemaining!==1?'s':''} Remaining.</strong> Your score is still technically valid, but time is running out. If you have a pending application, submit it urgently — making sure the institution or authority will accept a score that may be close to its end date by the time a decision is made. If your application has not yet started, strongly consider booking a retake to give yourself a fresh two-year window and potentially a stronger score.`;
+  } else {
+    const months=Math.floor(daysRemaining/30);
+    msg=`<strong>✅ Score Valid — ${daysRemaining} Day${daysRemaining!==1?'s':''} Remaining (approx. ${months} month${months!==1?'s':''}).</strong> Your IELTS score is within the 2-year validity period and is currently acceptable for most applications. ${daysRemaining>365?'You have a comfortable window remaining — continue your application preparation.':'You still have time, but be mindful of processing timelines for your specific application pathway.'} Remember: the score must remain valid not just at the time of submission, but through the processing period. Check our <a href="https://rajdailytools.in/ielts-visa-eligibility-checker.html" style="color:var(--blue);font-weight:700">Visa Eligibility Checker</a> to see how your band score aligns with your target pathway.`;
+  }
+  document.getElementById('suggBox').innerHTML=`<strong style="display:block;font-family:var(--fd);font-size:14px;margin-bottom:10px">📅 Your Validity Assessment</strong><p style="font-size:14px;color:var(--ink2);line-height:1.82">${msg}</p>`;
+
+  /* Show result */
+  const ra=document.getElementById('resultArea');
+  ra.style.display='block';
+  ra.style.animation='none';ra.offsetHeight;
+  ra.style.animation='resultIn .45s var(--ease) both';
+  setTimeout(()=>ra.scrollIntoView({behavior:'smooth',block:'nearest'}),120);
+}
+
+function resetTool(){
+  document.getElementById('testDate').value='';
+  document.getElementById('testDate').classList.remove('err');
+  document.getElementById('resultArea').style.display='none';
+  window.scrollTo({top:document.getElementById('tool').offsetTop-80,behavior:'smooth'});
+}
+
+/* Enter key */
+document.getElementById('testDate').addEventListener('keydown',function(e){
+  if(e.key==='Enter')checkValidity();
+});
+</script>
+</body>
+</html>
