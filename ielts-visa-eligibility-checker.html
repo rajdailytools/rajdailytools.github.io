@@ -1,0 +1,1183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IELTS Visa Eligibility Checker – Check IELTS Readiness for Visa Applications</title>
+<meta name="description" content="Check your IELTS readiness for study, work, and migration pathways. Compare your IELTS score with common visa-related language expectations.">
+<meta name="keywords" content="IELTS visa eligibility checker, IELTS visa requirements, IELTS study visa, IELTS work visa, IELTS migration score, IELTS immigration band score">
+<meta name="robots" content="index, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ══════════════════════════════════════
+   DESIGN TOKENS
+══════════════════════════════════════ */
+:root{
+  --blue:#2563eb;--blue-d:#1d4ed8;--blue-xl:#eff6ff;--blue-s:#dbeafe;
+  --amber:#f59e0b;--green:#10b981;--red:#ef4444;--purple:#8b5cf6;
+  --orange:#f97316;--teal:#14b8a6;
+  --green-xl:#f0fdf4;--green-s:#bbf7d0;
+  --red-xl:#fef2f2;--red-s:#fecaca;
+  --amber-xl:#fffbeb;--amber-s:#fde68a;
+  --purple-xl:#faf5ff;--purple-s:#ddd6fe;
+  --yellow:#eab308;--yellow-xl:#fefce8;--yellow-s:#fef08a;
+  --ink:#0f172a;--ink2:#334155;--ink3:#64748b;--ink4:#94a3b8;
+  --line:#e2e8f0;--surf:#f8fafc;--white:#fff;
+  --s1:0 1px 3px rgba(15,23,42,.06),0 1px 2px rgba(15,23,42,.04);
+  --s2:0 4px 16px rgba(15,23,42,.08),0 2px 6px rgba(15,23,42,.04);
+  --s3:0 12px 40px rgba(15,23,42,.11),0 3px 10px rgba(15,23,42,.06);
+  --s4:0 24px 64px rgba(15,23,42,.13),0 6px 20px rgba(15,23,42,.07);
+  --sb:0 8px 32px rgba(37,99,235,.20);
+  --fd:'Sora',sans-serif;--fb:'DM Sans',sans-serif;
+  --ease:cubic-bezier(.4,0,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);color:var(--ink);background:var(--white);overflow-x:hidden;-webkit-font-smoothing:antialiased;line-height:1.6}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+button{cursor:pointer;border:none;background:none;font-family:var(--fb)}
+.w{max-width:1180px;margin:0 auto;padding:0 24px}
+.wa{max-width:880px;margin:0 auto;padding:0 24px}
+select,input{appearance:none;-webkit-appearance:none}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+@keyframes resultIn{from{opacity:0;transform:translateY(18px) scale(.97)}to{opacity:1;transform:none}}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}
+.rev{opacity:0;transform:translateY(22px);transition:opacity .55s var(--ease),transform .55s var(--ease)}
+.rev.in{opacity:1;transform:none}
+
+/* ══ HEADER ══ */
+.hdr{position:sticky;top:0;z-index:999;background:rgba(255,255,255,.96);backdrop-filter:blur(20px);border-bottom:1px solid var(--line);box-shadow:var(--s1)}
+.hdi{display:flex;align-items:center;justify-content:space-between;height:66px}
+.logo{display:flex;align-items:center;gap:10px}
+.lb{width:36px;height:36px;background:var(--blue);border-radius:9px;display:flex;align-items:center;justify-content:center;box-shadow:var(--sb);flex-shrink:0}
+.lb svg{width:18px;height:18px;fill:#fff}
+.ln{font-family:var(--fd);font-size:19px;font-weight:800;color:var(--ink);line-height:1}
+.ln span{color:var(--blue)}
+.ls{font-size:10px;color:var(--ink4);letter-spacing:.04em}
+nav.dn{display:flex;align-items:center;gap:2px}
+nav.dn a{font-size:13.5px;font-weight:500;color:var(--ink2);padding:7px 13px;border-radius:8px;transition:.2s}
+nav.dn a:hover{color:var(--blue);background:var(--blue-xl)}
+.hcta{background:var(--blue);color:#fff;font-family:var(--fd);font-weight:600;font-size:13px;padding:8px 18px;border-radius:8px;box-shadow:var(--sb);transition:.2s}
+.hcta:hover{background:var(--blue-d);transform:translateY(-1px)}
+.brg{display:none;flex-direction:column;gap:4.5px;padding:8px;border-radius:8px}
+.brg span{display:block;width:20px;height:2px;background:var(--ink);border-radius:2px;transition:.28s}
+.dov{display:none;position:fixed;inset:0;background:rgba(15,23,42,.45);z-index:1040;backdrop-filter:blur(3px)}
+.dov.on{display:block}
+.drw{position:fixed;top:0;right:-100%;width:270px;height:100vh;background:#fff;z-index:1050;padding:22px;box-shadow:var(--s4);transition:right .32s var(--ease);overflow-y:auto}
+.drw.on{right:0}
+.dh{display:flex;align-items:center;justify-content:space-between;margin-bottom:26px}
+.dx{width:33px;height:33px;border-radius:7px;background:var(--surf);display:flex;align-items:center;justify-content:center;color:var(--ink3);font-size:17px;cursor:pointer}
+nav.mn{display:flex;flex-direction:column;gap:3px}
+nav.mn a{display:block;font-size:14px;font-weight:500;color:var(--ink2);padding:11px 13px;border-radius:8px;transition:.2s}
+nav.mn a:hover{color:var(--blue);background:var(--blue-xl)}
+
+/* ══ HERO ══ */
+.hero{position:relative;overflow:hidden;background:linear-gradient(150deg,#f0f7ff 0%,#fff 46%,#f0fdf4 100%);padding:64px 0 72px}
+.hero::before{content:'';position:absolute;top:-140px;right:-180px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(37,99,235,.08) 0%,transparent 68%);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-80px;left:-100px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(20,184,166,.06) 0%,transparent 68%);pointer-events:none}
+.blob{position:absolute;border-radius:50%;pointer-events:none;animation:float 6s ease-in-out infinite}
+.b1{width:13px;height:13px;background:rgba(37,99,235,.18);top:22%;right:14%;animation-delay:0s}
+.b2{width:9px;height:9px;background:rgba(20,184,166,.22);top:58%;right:26%;animation-delay:2.2s}
+.b3{width:11px;height:11px;background:rgba(245,158,11,.18);top:36%;right:6%;animation-delay:4s}
+.bc{display:flex;align-items:center;gap:7px;font-size:12.5px;color:var(--ink3);margin-bottom:22px;position:relative;z-index:1;flex-wrap:wrap}
+.bc a{color:var(--blue);font-weight:600}
+.pill{display:inline-flex;align-items:center;gap:7px;font-family:var(--fd);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);background:var(--blue-xl);padding:5px 14px;border-radius:100px;margin-bottom:18px}
+.pill::before{content:'';width:6px;height:6px;background:var(--blue);border-radius:50%}
+.hero-inner{position:relative;z-index:1;max-width:720px;animation:fadeUp .5s ease both}
+.hero h1{font-family:var(--fd);font-size:clamp(26px,4.5vw,50px);font-weight:800;line-height:1.1;color:var(--ink);margin-bottom:14px}
+.hero h1 span{color:var(--blue)}
+.hero-sub{font-size:16px;color:var(--ink3);line-height:1.8;margin-bottom:22px;max-width:600px}
+.hero-chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.chip{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;padding:6px 14px;border-radius:100px;background:#fff;border:1.5px solid var(--line);color:var(--ink2);box-shadow:var(--s1);transition:.22s}
+.chip:hover{border-color:var(--blue);color:var(--blue);transform:translateY(-1px)}
+.hero-meta{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:24px}
+.upd{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:700;color:var(--blue);background:var(--blue-xl);padding:6px 14px;border-radius:100px;border:1.5px solid var(--blue-s)}
+.mi{font-size:13px;color:var(--ink3);font-weight:500}
+
+/* HOW TO USE */
+.howto{background:var(--amber-xl);border:2px solid var(--amber-s);border-radius:16px;padding:22px 26px;max-width:560px;margin-bottom:24px}
+.howto-ttl{display:flex;align-items:center;gap:9px;font-family:var(--fd);font-size:15px;font-weight:800;color:var(--ink);margin-bottom:13px}
+.howto-steps{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.hs{display:flex;align-items:flex-start;gap:10px;font-size:13.5px;color:var(--ink2);line-height:1.6}
+.sn{width:24px;height:24px;background:var(--amber);color:#fff;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex-shrink:0;margin-top:1px}
+
+/* related tools */
+.rel-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;position:relative;z-index:1}
+.rg-box{border-radius:14px;padding:14px 14px 12px;display:flex;flex-direction:column;gap:8px;transition:.22s;border:1.5px solid}
+.rg-box:hover{transform:translateY(-3px);box-shadow:var(--s3)}
+.rg-box.c1{background:linear-gradient(135deg,#fffbeb,#fef3c7);border-color:var(--amber-s)}
+.rg-box.c2{background:linear-gradient(135deg,var(--green-xl),#dcfce7);border-color:var(--green-s)}
+.rg-box.c3{background:linear-gradient(135deg,var(--blue-xl),var(--blue-s));border-color:var(--blue-s)}
+.rg-box.c4{background:linear-gradient(135deg,var(--purple-xl),#ede9fe);border-color:var(--purple-s)}
+.rg-ico{font-size:22px}
+.rg-txt h4{font-family:var(--fd);font-size:12px;font-weight:800;color:var(--ink);margin-bottom:2px}
+.rg-txt p{font-size:11px;color:var(--ink3);line-height:1.5}
+.btn-xs{display:inline-flex;align-items:center;gap:4px;font-family:var(--fd);font-weight:700;font-size:11px;padding:5px 10px;border-radius:7px;transition:.22s;margin-top:4px}
+.btn-xs.a{background:var(--amber);color:#fff}.btn-xs.a:hover{background:#d97706}
+.btn-xs.g{background:var(--green);color:#fff}.btn-xs.g:hover{background:#059669}
+.btn-xs.b{background:var(--blue);color:#fff}.btn-xs.b:hover{background:var(--blue-d)}
+.btn-xs.p{background:var(--purple);color:#fff}.btn-xs.p:hover{background:#7c3aed}
+.btn-xs.t{background:var(--teal);color:#fff}.btn-xs.t:hover{background:#0d9488}
+
+/* ══ TOOL SECTION ══ */
+.tool-sec{background:var(--surf);padding:80px 0}
+.tool-wrap{max-width:860px;margin:0 auto}
+.tool-card{background:#fff;border:1.5px solid var(--line);border-radius:28px;overflow:hidden;box-shadow:var(--s4)}
+.tool-hdr{background:linear-gradient(135deg,#0f172a 0%,#0f4c75 50%,#1e88e5 100%);padding:32px 40px;position:relative;overflow:hidden}
+.tool-hdr::before{content:'';position:absolute;top:-60px;right:-60px;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,.07)}
+.tool-hdr::after{content:'';position:absolute;bottom:-40px;left:-40px;width:180px;height:180px;border-radius:50%;background:rgba(255,255,255,.04)}
+.run-dots{position:absolute;bottom:20px;right:40px;display:flex;gap:5px;opacity:.3;z-index:0}
+.run-dot{width:6px;height:6px;border-radius:50%;background:#fff}
+.th{position:relative;z-index:1}
+.th h2{font-family:var(--fd);font-size:21px;font-weight:800;color:#fff;margin-bottom:6px}
+.th p{font-size:14px;color:rgba(255,255,255,.82);line-height:1.65}
+.th-badges{display:flex;flex-wrap:wrap;gap:9px;margin-top:14px}
+.thb{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:rgba(255,255,255,.9);background:rgba(255,255,255,.13);padding:5px 12px;border-radius:100px}
+.tool-body{padding:36px 40px}
+
+/* select input */
+.fsel{padding:12px 16px;font-size:15px;font-weight:700;font-family:var(--fd);color:var(--ink);background:#fff;border:1.5px solid var(--line);border-radius:10px;outline:none;transition:.22s;width:100%;cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2364748b' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center}
+.fsel:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(37,99,235,.10)}
+/* number input */
+.finp{padding:12px 16px;font-size:22px;font-weight:800;font-family:var(--fd);color:var(--ink);background:#fff;border:1.5px solid var(--line);border-radius:10px;outline:none;transition:.22s;width:100%;text-align:center}
+.finp:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(37,99,235,.10)}
+.finp.err{border-color:var(--red);box-shadow:0 0 0 3px rgba(239,68,68,.10)}
+.fld{display:flex;flex-direction:column;gap:7px;margin-bottom:20px}
+.flbl{font-size:13px;font-weight:700;color:var(--ink2)}
+.flbl span{font-size:11px;font-weight:500;color:var(--ink4);margin-left:5px;background:var(--surf);padding:2px 7px;border-radius:5px;border:1px solid var(--line)}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:0}
+.hint-box{display:flex;align-items:flex-start;gap:9px;font-size:13px;color:var(--ink2);background:var(--blue-xl);border:1.5px solid var(--blue-s);border-radius:10px;padding:11px 14px;margin:16px 0;line-height:1.65}
+.hint-box svg{width:16px;height:16px;stroke:var(--blue);fill:none;stroke-width:2;flex-shrink:0;margin-top:2px}
+.btn-row{display:flex;gap:12px;margin-top:4px}
+.chk-btn{flex:1;padding:17px;background:linear-gradient(135deg,#0f172a 0%,#0f4c75 50%,#1e88e5 100%);color:#fff;font-family:var(--fd);font-weight:800;font-size:16px;border-radius:12px;box-shadow:0 8px 32px rgba(15,76,117,.28);transition:all .25s var(--ease);display:flex;align-items:center;justify-content:center;gap:10px}
+.chk-btn:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(15,76,117,.40)}
+.chk-btn:active{transform:translateY(0)}
+.rst-btn{padding:17px 24px;background:var(--surf);color:var(--ink3);font-family:var(--fd);font-weight:700;font-size:15px;border-radius:12px;border:1.5px solid var(--line);transition:.22s;display:flex;align-items:center;gap:8px}
+.rst-btn:hover{background:var(--red-xl);color:var(--red);border-color:var(--red-s)}
+
+/* ══ RESULT ══ */
+#resultArea{display:none;margin-top:28px;animation:resultIn .45s var(--ease) both}
+.res-banner{border-radius:20px;padding:28px;margin-bottom:22px;position:relative;overflow:hidden;display:flex;align-items:center;gap:24px;flex-wrap:wrap}
+.res-banner.pass{background:linear-gradient(135deg,var(--green-xl),#d1fae5);border:2px solid var(--green-s)}
+.res-banner.avg{background:var(--amber-xl);border:2px solid var(--amber-s)}
+.res-banner.low{background:var(--red-xl);border:2px solid var(--red-s)}
+.res-banner::before{content:'';position:absolute;inset:0;opacity:.04;background-image:repeating-linear-gradient(45deg,currentColor 0,currentColor 1px,transparent 0,transparent 50%);background-size:12px 12px;pointer-events:none}
+.meter-wrap{flex-shrink:0;position:relative;width:100px;height:100px}
+.meter-svg{width:100px;height:100px;transform:rotate(-90deg)}
+.meter-bg{fill:none;stroke:rgba(0,0,0,.08);stroke-width:10}
+.meter-fill{fill:none;stroke-width:10;stroke-linecap:round;transition:stroke-dashoffset 1.2s var(--ease)}
+.meter-center{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.meter-pct{font-family:var(--fd);font-size:20px;font-weight:800;color:var(--ink);line-height:1}
+.meter-lbl{font-size:10px;font-weight:700;color:var(--ink3);text-transform:uppercase;letter-spacing:.06em}
+.res-info{flex:1}
+.res-icon{font-size:32px;margin-bottom:6px}
+.res-title{font-family:var(--fd);font-size:22px;font-weight:800;color:var(--ink);line-height:1.1;margin-bottom:6px}
+.res-sub{font-size:14px;color:var(--ink3);line-height:1.65}
+.res-tag{display:inline-flex;align-items:center;gap:6px;font-family:var(--fd);font-size:13px;font-weight:700;padding:5px 14px;border-radius:100px;margin-top:10px}
+.res-tag.pass{background:var(--green);color:#fff}
+.res-tag.avg{background:var(--amber);color:#fff}
+.res-tag.low{background:var(--red);color:#fff}
+
+/* detail cards */
+.detail-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:18px}
+.det-card{background:var(--surf);border:1.5px solid var(--line);border-radius:14px;padding:16px;text-align:center}
+.det-ico{font-size:22px;margin-bottom:6px}
+.det-lbl{font-size:11px;font-weight:700;color:var(--ink4);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px}
+.det-val{font-family:var(--fd);font-size:15px;font-weight:800;color:var(--ink)}
+.det-sub{font-size:11px;color:var(--ink3);margin-top:2px}
+
+/* profile strength bar */
+.pstr-card{background:var(--surf);border:1.5px solid var(--line);border-radius:16px;padding:22px 24px;margin-bottom:18px}
+.pstr-title{font-family:var(--fd);font-size:14px;font-weight:700;color:var(--ink);margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.pstr-row{display:flex;align-items:center;gap:14px;margin-bottom:10px}
+.pstr-lbl{font-size:12.5px;font-weight:600;color:var(--ink2);width:140px;flex-shrink:0}
+.pstr-track{flex:1;height:20px;background:var(--line);border-radius:10px;overflow:hidden}
+.pstr-fill{height:100%;border-radius:10px;display:flex;align-items:center;padding-left:10px;font-size:11px;font-weight:700;color:#fff;transition:width 1.2s var(--ease)}
+.pstr-fill.g{background:linear-gradient(90deg,var(--green),#059669)}
+.pstr-fill.a{background:linear-gradient(90deg,var(--amber),#d97706)}
+.pstr-fill.r{background:linear-gradient(90deg,var(--red),#dc2626)}
+.pstr-fill.b{background:linear-gradient(90deg,var(--blue),var(--blue-d))}
+.pstr-val{font-size:13px;font-weight:700;width:50px;flex-shrink:0;text-align:right}
+
+/* milestone grid */
+.grade-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:18px}
+.gc{border-radius:14px;padding:14px 12px;text-align:center;border:1.5px solid;transition:.22s}
+.gc.active-pass{background:linear-gradient(135deg,var(--green-xl),#d1fae5);border-color:var(--green-s)}
+.gc.active-avg{background:var(--amber-xl);border-color:var(--amber-s)}
+.gc.active-fail{background:var(--red-xl);border-color:var(--red-s)}
+.gc.inactive{background:var(--surf);border-color:var(--line);opacity:.65}
+.gc-ico{font-size:20px;margin-bottom:5px}
+.gc-title{font-family:var(--fd);font-size:12px;font-weight:800;color:var(--ink);margin-bottom:3px}
+.gc-val{font-size:11px;color:var(--ink3);line-height:1.5}
+
+/* sugg box */
+.sugg-box{background:var(--blue-xl);border:1.5px solid var(--blue-s);border-radius:14px;padding:18px 20px;margin-bottom:18px}
+
+/* ══ TABLE SECTION ══ */
+.tbl-sec{background:#fff;padding:80px 0}
+.tbl-tabs{display:flex;gap:10px;margin-bottom:24px;flex-wrap:wrap}
+.tbl-tab{font-family:var(--fd);font-size:13px;font-weight:700;padding:9px 20px;border-radius:10px;border:1.5px solid var(--line);color:var(--ink3);cursor:pointer;transition:.22s}
+.tbl-tab.active{background:var(--blue);color:#fff;border-color:var(--blue);box-shadow:var(--sb)}
+.tbl-wrap{overflow-x:auto;border-radius:16px;border:1.5px solid var(--line);box-shadow:var(--s2)}
+table{width:100%;border-collapse:collapse}
+th{font-family:var(--fd);font-size:12px;font-weight:700;color:var(--ink2);background:var(--surf);padding:13px 16px;text-align:left;border-bottom:2px solid var(--line)}
+td{font-size:13.5px;color:var(--ink2);padding:12px 16px;border-bottom:1px solid var(--line)}
+tr:last-child td{border-bottom:none}
+.row-pass{background:var(--green-xl)}
+.row-avg{background:var(--amber-xl)}
+.row-fail{background:var(--red-xl)}
+.you-row{outline:3px solid var(--blue);outline-offset:-2px;position:relative}
+.tbadge{display:inline-flex;align-items:center;font-size:11px;font-weight:700;padding:3px 9px;border-radius:100px}
+.tbadge.g{background:var(--green);color:#fff}
+.tbadge.a{background:var(--amber);color:#fff}
+.tbadge.r{background:var(--red);color:#fff}
+.tbadge.b{background:var(--blue);color:#fff}
+
+/* ══ GUIDE/STORY ══ */
+.guide-sec{background:var(--surf);padding:80px 0}
+.story-sec{background:#fff;padding:80px 0}
+.story-card{background:#fff;border:1.5px solid var(--line);border-radius:24px;padding:40px;box-shadow:var(--s3);position:relative;overflow:hidden}
+.sq{position:absolute;top:20px;right:28px;font-family:var(--fd);font-size:100px;color:var(--blue);opacity:.06;line-height:1;pointer-events:none;user-select:none}
+.sb{font-size:15px;color:var(--ink2);line-height:1.9;margin-bottom:26px}
+.sauth{display:flex;align-items:center;gap:14px;padding-top:20px;border-top:1.5px solid var(--line)}
+.savt{width:46px;height:46px;border-radius:12px;background:var(--blue-xl);display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+.sname{font-family:var(--fd);font-size:14px;font-weight:800;color:var(--ink)}
+.srole{font-size:12px;color:var(--ink3)}
+.founder-msg{margin-top:22px;background:var(--blue-xl);border:1.5px solid var(--blue-s);border-radius:14px;padding:16px 18px;display:flex;gap:12px;align-items:flex-start}
+.fm-ico{font-size:22px;flex-shrink:0}
+.fm-txt{font-size:13.5px;color:var(--ink2);line-height:1.75}
+.guide-body h2{font-family:var(--fd);font-size:20px;font-weight:800;color:var(--ink);margin:28px 0 12px}
+.guide-body h2:first-child{margin-top:0}
+.guide-body p{font-size:14.5px;color:var(--ink2);line-height:1.85;margin-bottom:14px}
+.guide-body ul{display:flex;flex-direction:column;gap:9px;margin:0 0 18px 0}
+.guide-body ul li{font-size:14.5px;color:var(--ink2);line-height:1.75;padding-left:20px;position:relative}
+.guide-body ul li::before{content:'→';position:absolute;left:0;color:var(--blue);font-weight:700}
+.ibox{display:flex;gap:12px;align-items:flex-start;padding:14px 16px;border-radius:12px;font-size:13.5px;line-height:1.75;color:var(--ink2);margin:16px 0}
+.ibox svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2;flex-shrink:0;margin-top:2px}
+.ibox{background:var(--blue-xl);border:1.5px solid var(--blue-s);color:var(--blue)}
+.ibox.a{background:var(--amber-xl);border-color:var(--amber-s);color:#92400e}
+.ibox.g{background:var(--green-xl);border-color:var(--green-s);color:#065f46}
+
+.struct-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:16px 0}
+.struct-card{background:var(--surf);border:1.5px solid var(--line);border-radius:14px;padding:18px}
+.struct-ico{font-size:26px;margin-bottom:8px}
+.struct-num{font-size:11px;font-weight:700;color:var(--blue);text-transform:uppercase;letter-spacing:.08em;margin-bottom:3px}
+.struct-title{font-family:var(--fd);font-size:14px;font-weight:800;color:var(--ink);margin-bottom:6px}
+.struct-desc{font-size:13px;color:var(--ink3);line-height:1.6}
+
+.ex-card{background:var(--surf);border:1.5px solid var(--line);border-radius:14px;overflow:hidden;margin:16px 0}
+.ex-row{display:flex;align-items:center;justify-content:space-between;padding:13px 18px;border-bottom:1px solid var(--line);font-size:14px;color:var(--ink2)}
+.ex-row:last-child{border-bottom:none}
+
+/* ══ TIPS ══ */
+.tips-sec{background:#fff;padding:80px 0}
+.tips-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.tip-card{background:var(--surf);border:1.5px solid var(--line);border-radius:18px;padding:26px;transition:.22s}
+.tip-card:hover{border-color:var(--blue);transform:translateY(-3px);box-shadow:var(--s3)}
+.tip-ico{font-size:30px;margin-bottom:12px}
+.tip-title{font-family:var(--fd);font-size:15px;font-weight:800;color:var(--ink);margin-bottom:9px}
+.tip-desc{font-size:13.5px;color:var(--ink3);line-height:1.8}
+
+/* ══ FAQ ══ */
+.faq-sec{background:var(--surf);padding:80px 0}
+.fql{display:flex;flex-direction:column;gap:10px;max-width:760px;margin:0 auto}
+.fq{background:#fff;border:1.5px solid var(--line);border-radius:14px;overflow:hidden;transition:.22s}
+.fq:hover{border-color:var(--blue-s)}
+.fq.open{border-color:var(--blue)}
+.fq-q{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;cursor:pointer;gap:14px}
+.fq-t{font-family:var(--fd);font-size:14px;font-weight:700;color:var(--ink);line-height:1.4}
+.fq-i{width:26px;height:26px;background:var(--surf);border:1.5px solid var(--line);border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:16px;color:var(--ink3);flex-shrink:0;transition:.22s}
+.fq.open .fq-i{background:var(--blue);color:#fff;border-color:var(--blue);transform:rotate(45deg)}
+.fq-a{max-height:0;overflow:hidden;transition:max-height .38s var(--ease)}
+.fq.open .fq-a{max-height:400px}
+.fq-ai{padding:0 22px 18px;font-size:14px;color:var(--ink2);line-height:1.8}
+
+/* ══ DISCLAIMER ══ */
+.disc{background:var(--amber-xl);border-top:2px solid var(--amber-s);border-bottom:2px solid var(--amber-s);padding:18px 0}
+.disc-in{display:flex;gap:12px;align-items:flex-start;font-size:13px;color:#92400e;line-height:1.75}
+
+/* ══ CONTACT ══ */
+.contact-sec{padding:64px 0}
+.contact-card{background:linear-gradient(135deg,var(--blue-xl),var(--surf));border:2px solid var(--blue-s);border-radius:24px;padding:40px;text-align:center;max-width:580px;margin:0 auto}
+.contact-card h3{font-family:var(--fd);font-size:22px;font-weight:800;color:var(--ink);margin-bottom:10px}
+.contact-card p{font-size:14px;color:var(--ink3);margin-bottom:22px;line-height:1.75}
+.btn-bl{display:inline-flex;align-items:center;gap:8px;font-family:var(--fd);font-weight:700;font-size:14px;background:var(--blue);color:#fff;padding:12px 26px;border-radius:10px;box-shadow:var(--sb);transition:.22s}
+.btn-bl:hover{background:var(--blue-d);transform:translateY(-2px)}
+.priv-note{margin-top:14px;font-size:12px;color:var(--ink4)}
+
+/* ══ CTA ══ */
+.cta{background:linear-gradient(135deg,#0f172a 0%,#0f4c75 50%,#1e88e5 100%);padding:80px 0}
+.cta-in{text-align:center;color:#fff}
+.cta-in h2{font-family:var(--fd);font-size:clamp(24px,4vw,42px);font-weight:800;line-height:1.15;margin:14px 0 10px}
+.cta-in em{font-style:normal;color:var(--amber)}
+.cta-in p{font-size:15px;color:rgba(255,255,255,.75);max-width:480px;margin:0 auto 28px;line-height:1.75}
+.cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn-gold{display:inline-flex;align-items:center;gap:8px;font-family:var(--fd);font-weight:800;font-size:15px;background:var(--amber);color:#fff;padding:14px 30px;border-radius:12px;box-shadow:0 8px 28px rgba(245,158,11,.35);transition:.22s}
+.btn-gold:hover{background:#d97706;transform:translateY(-2px)}
+.btn-ghost{display:inline-flex;align-items:center;gap:8px;font-family:var(--fd);font-weight:700;font-size:15px;background:rgba(255,255,255,.12);color:#fff;padding:14px 30px;border-radius:12px;border:1.5px solid rgba(255,255,255,.25);transition:.22s}
+.btn-ghost:hover{background:rgba(255,255,255,.2);transform:translateY(-2px)}
+
+/* ══ FOOTER ══ */
+footer{background:#0f172a;color:rgba(255,255,255,.8);padding:56px 0 0}
+.ft-inner{max-width:1180px;margin:0 auto;padding:0 24px}
+.ft-top{display:grid;grid-template-columns:1.8fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px}
+.ft-brand p.ft-desc{font-size:13px;color:rgba(255,255,255,.55);line-height:1.75;margin:12px 0 18px}
+.ft-soc{display:flex;gap:8px}
+.fts{width:34px;height:34px;border-radius:8px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;font-size:13px;color:rgba(255,255,255,.8);transition:.2s}
+.fts:hover{background:var(--blue);color:#fff}
+.fc h4{font-family:var(--fd);font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:14px}
+.fc ul{display:flex;flex-direction:column;gap:7px}
+.fc ul a{font-size:13px;color:rgba(255,255,255,.65);transition:.2s}
+.fc ul a:hover{color:#fff}
+.ft-btm{border-top:1px solid rgba(255,255,255,.08);padding:20px 0;display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between}
+.ft-cp{font-size:12px;color:rgba(255,255,255,.4)}
+.ft-tag{font-size:12px;color:rgba(255,255,255,.3)}
+
+/* ══ BTT ══ */
+.btt{position:fixed;bottom:24px;right:24px;width:42px;height:42px;background:var(--blue);color:#fff;border-radius:10px;font-size:17px;box-shadow:var(--sb);opacity:0;pointer-events:none;transition:.28s;z-index:900}
+.btt.on{opacity:1;pointer-events:auto}
+
+/* ══ RESPONSIVE ══ */
+@media(max-width:900px){
+  .ft-top{grid-template-columns:1fr 1fr;gap:28px}
+  nav.dn,.hcta{display:none}
+  .brg{display:flex}
+  .tips-grid{grid-template-columns:1fr}
+  .frow{grid-template-columns:1fr}
+  .struct-grid{grid-template-columns:1fr}
+  .detail-grid{grid-template-columns:repeat(2,1fr)}
+  .grade-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:600px){
+  .ft-top{grid-template-columns:1fr}
+  .tool-body,.tool-hdr{padding:24px 20px}
+  .howto-steps{grid-template-columns:1fr}
+  .rel-grid{grid-template-columns:1fr}
+  .detail-grid{grid-template-columns:1fr}
+  .grade-grid{grid-template-columns:1fr}
+  .btn-row{flex-direction:column}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="hdr">
+  <div class="w hdi">
+    <a href="/" class="logo">
+      <div class="lb"><svg viewBox="0 0 24 24" fill="#fff"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+      <div><div class="ln">Raj<span>Daily</span>Tools</div><div class="ls">Smart Tools for Daily Life</div></div>
+    </a>
+    <nav class="dn">
+      <a href="/">Home</a>
+      <a href="/categories">Tools</a>
+      <a href="#guide">Guide</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a href="/categories" class="hcta">Explore Tools →</a>
+    <button class="brg" id="brg" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<div class="dov" id="dov"></div>
+<div class="drw" id="drw">
+  <div class="dh">
+    <div class="logo"><div class="lb"><svg viewBox="0 0 24 24" fill="#fff"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div><div class="ln">Raj<span>Daily</span>Tools</div></div>
+    <div class="dx" id="dx">✕</div>
+  </div>
+  <nav class="mn">
+    <a href="/">Home</a>
+    <a href="/categories">All Tools</a>
+    <a href="#guide">Guide</a>
+    <a href="#faq">FAQ</a>
+    <a href="mailto:contact@rajdailytools.in">Contact</a>
+  </nav>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+  <div class="w">
+    <div class="hero-inner">
+      <div class="bc"><a href="/">Home</a> › <a href="/categories">IELTS Tools</a> › IELTS Visa Eligibility Checker</div>
+      <div class="pill">IELTS Visa Checker</div>
+      <h1>IELTS <span>Visa Eligibility</span> Checker</h1>
+      <p class="hero-sub">Check your IELTS readiness for study, work, and migration pathways. Compare your band score with common language expectations for major destination countries.</p>
+      <div class="hero-chips">
+        <span class="chip">🇬🇧 United Kingdom</span>
+        <span class="chip">🇨🇦 Canada</span>
+        <span class="chip">🇦🇺 Australia</span>
+        <span class="chip">🇳🇿 New Zealand</span>
+        <span class="chip">🇺🇸 United States</span>
+        <span class="chip">🇮🇪 Ireland</span>
+        <span class="chip">🇩🇪 Germany</span>
+        <span class="chip">🇸🇬 Singapore</span>
+      </div>
+      <div class="hero-meta">
+        <div class="upd">🕐 Updated 2025</div>
+        <span class="mi">Free · No signup · Instant result</span>
+      </div>
+
+      <div class="howto">
+        <div class="howto-ttl">📋 How To Use</div>
+        <div class="howto-steps">
+          <div class="hs"><div class="sn">1</div><div>Select your destination country</div></div>
+          <div class="hs"><div class="sn">2</div><div>Choose your visa purpose</div></div>
+          <div class="hs"><div class="sn">3</div><div>Enter your IELTS Overall Band Score</div></div>
+          <div class="hs"><div class="sn">4</div><div>Click <strong>Check Eligibility</strong></div></div>
+          <div class="hs"><div class="sn">5</div><div>Review your readiness assessment</div></div>
+        </div>
+      </div>
+
+      <div class="rel-grid">
+        <a href="https://rajdailytools.in/ielts-reading-band-score-calculator.html" class="rg-box c1 rev">
+          <div class="rg-ico">📖</div>
+          <div class="rg-txt"><h4>Reading Band Calculator</h4><p>Convert reading answers to band score</p></div>
+          <span class="btn-xs a">Use Tool →</span>
+        </a>
+        <a href="https://rajdailytools.in/ielts-target-band-calculator.html" class="rg-box c2 rev">
+          <div class="rg-ico">🎯</div>
+          <div class="rg-txt"><h4>Target Band Calculator</h4><p>Plan your IELTS band target</p></div>
+          <span class="btn-xs g">Use Tool →</span>
+        </a>
+        <a href="https://rajdailytools.in/ielts-academic-eligibility-checker.html" class="rg-box c3 rev">
+          <div class="rg-ico">🎓</div>
+          <div class="rg-txt"><h4>Academic Eligibility Checker</h4><p>Check university band requirements</p></div>
+          <span class="btn-xs b">Use Tool →</span>
+        </a>
+        <a href="https://rajdailytools.in/ielts-exam-readiness-checker.html" class="rg-box c4 rev">
+          <div class="rg-ico">✅</div>
+          <div class="rg-txt"><h4>Exam Readiness Checker</h4><p>Are you ready to sit the test?</p></div>
+          <span class="btn-xs p">Use Tool →</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOOL SECTION -->
+<section class="tool-sec" id="tool">
+  <div class="w">
+    <div class="tool-wrap">
+      <div class="tool-card rev">
+        <div class="tool-hdr">
+          <div class="run-dots"><div class="run-dot"></div><div class="run-dot"></div><div class="run-dot"></div></div>
+          <div class="th">
+            <h2>🌍 IELTS Visa Eligibility Checker</h2>
+            <p>Enter your destination, visa purpose, and IELTS overall band score to get an instant readiness assessment for your international application pathway.</p>
+            <div class="th-badges">
+              <span class="thb">✈️ Study Visa</span>
+              <span class="thb">💼 Work Visa</span>
+              <span class="thb">🏠 Migration</span>
+              <span class="thb">🏥 Professional Registration</span>
+            </div>
+          </div>
+        </div>
+        <div class="tool-body">
+
+          <div class="frow">
+            <div class="fld">
+              <label class="flbl" for="country">Destination Country <span>Required</span></label>
+              <select class="fsel" id="country">
+                <option value="">— Select Country —</option>
+                <option value="uk">🇬🇧 United Kingdom</option>
+                <option value="canada">🇨🇦 Canada</option>
+                <option value="australia">🇦🇺 Australia</option>
+                <option value="nz">🇳🇿 New Zealand</option>
+                <option value="usa">🇺🇸 United States</option>
+                <option value="ireland">🇮🇪 Ireland</option>
+                <option value="germany">🇩🇪 Germany</option>
+                <option value="singapore">🇸🇬 Singapore</option>
+              </select>
+            </div>
+            <div class="fld">
+              <label class="flbl" for="purpose">Visa Purpose <span>Required</span></label>
+              <select class="fsel" id="purpose">
+                <option value="">— Select Purpose —</option>
+                <option value="student">🎓 Student Visa</option>
+                <option value="work">💼 Work Visa</option>
+                <option value="migration">🏠 Migration</option>
+                <option value="professional">🏥 Professional Registration</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="fld">
+            <label class="flbl" for="band">IELTS Overall Band Score <span>0 – 9 in 0.5 steps</span></label>
+            <input class="finp" type="number" id="band" min="0" max="9" step="0.5" placeholder="e.g. 6.5">
+          </div>
+
+          <div class="hint-box">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            <div>Enter your <strong>overall band score</strong> (not individual section scores). IELTS scores range from 1.0 to 9.0 in 0.5 increments. This tool assesses your readiness against common language expectations — always verify official requirements from the relevant authority.</div>
+          </div>
+
+          <div class="btn-row">
+            <button class="chk-btn" onclick="checkEligibility()">🌍 Check Eligibility</button>
+            <button class="rst-btn" onclick="resetTool()">↺ Reset</button>
+          </div>
+
+          <!-- RESULT -->
+          <div id="resultArea">
+
+            <div class="res-banner" id="resBanner">
+              <div class="meter-wrap">
+                <svg class="meter-svg" viewBox="0 0 100 100">
+                  <circle class="meter-bg" cx="50" cy="50" r="40"/>
+                  <circle class="meter-fill" id="meterFill" cx="50" cy="50" r="40" stroke-dasharray="251.2" stroke-dashoffset="251.2"/>
+                </svg>
+                <div class="meter-center">
+                  <div class="meter-pct" id="meterPct">—</div>
+                  <div class="meter-lbl">Band</div>
+                </div>
+              </div>
+              <div class="res-info">
+                <div class="res-icon" id="resIcon">—</div>
+                <div class="res-title" id="resTitle">—</div>
+                <div class="res-sub" id="resSub">—</div>
+                <div class="res-tag" id="resTag">—</div>
+              </div>
+            </div>
+
+            <!-- Detail Cards -->
+            <div class="detail-grid">
+              <div class="det-card">
+                <div class="det-ico">🌍</div>
+                <div class="det-lbl">Destination</div>
+                <div class="det-val" id="dCountry">—</div>
+                <div class="det-sub" id="dCountrySub">—</div>
+              </div>
+              <div class="det-card">
+                <div class="det-ico">📋</div>
+                <div class="det-lbl">Visa Purpose</div>
+                <div class="det-val" id="dPurpose">—</div>
+                <div class="det-sub" id="dPurposeSub">—</div>
+              </div>
+              <div class="det-card">
+                <div class="det-ico">📊</div>
+                <div class="det-lbl">Typical Expectation</div>
+                <div class="det-val" id="dRequired">—</div>
+                <div class="det-sub" id="dRequiredSub">—</div>
+              </div>
+            </div>
+
+            <!-- Profile Strength Bars -->
+            <div class="pstr-card">
+              <div class="pstr-title">📈 Profile Strength Assessment</div>
+              <div id="strengthBars"></div>
+            </div>
+
+            <!-- Band Milestone Grid -->
+            <div style="font-family:var(--fd);font-size:14px;font-weight:700;color:var(--ink);margin-bottom:12px;display:flex;align-items:center;gap:8px">🏅 Visa Readiness Scale</div>
+            <div class="grade-grid" id="gradeGrid"></div>
+
+            <!-- Suggestion -->
+            <div class="sugg-box" id="suggBox"></div>
+
+          </div><!-- /resultArea -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- READINESS TABLE SECTION -->
+<section class="tbl-sec" id="table">
+  <div class="wa">
+    <div class="rev" style="text-align:center;margin-bottom:36px">
+      <div class="pill" style="margin-bottom:14px">Readiness Reference</div>
+      <h2 style="font-family:var(--fd);font-size:clamp(22px,3.5vw,36px);font-weight:800;color:var(--ink);margin-bottom:10px">IELTS Visa Readiness — <span style="color:var(--blue)">Reference Tables</span></h2>
+      <p style="font-size:15px;color:var(--ink3);max-width:520px;margin:0 auto;line-height:1.75">How IELTS band scores generally align with language expectations across common international pathways. Always verify official requirements independently.</p>
+    </div>
+
+    <div class="tbl-tabs rev">
+      <button class="tbl-tab active" id="tabOverall" onclick="showRefTable('overall')">Overall Readiness Scale</button>
+      <button class="tbl-tab" id="tabVisa" onclick="showRefTable('visa')">Visa Preparation Guide</button>
+    </div>
+
+    <div id="tableOverall" class="rev">
+      <div class="tbl-wrap">
+        <table>
+          <thead>
+            <tr><th>IELTS Band</th><th>Readiness Level</th><th>Profile Status</th><th>General Outlook</th></tr>
+          </thead>
+          <tbody>
+            <tr class="row-pass"><td><strong>8.0 – 9.0</strong></td><td><strong>Excellent</strong></td><td><span class="tbadge g">Excellent</span></td><td>Exceptional language profile — meets virtually all pathway requirements</td></tr>
+            <tr class="row-pass"><td><strong>7.5</strong></td><td><strong>Very Strong</strong></td><td><span class="tbadge g">Very Strong</span></td><td>Meets high-demand professional, migration, and academic requirements</td></tr>
+            <tr class="row-pass"><td><strong>7.0</strong></td><td><strong>Strong</strong></td><td><span class="tbadge g">Strong</span></td><td>Meets most skilled migration and postgraduate language expectations</td></tr>
+            <tr class="row-avg"><td><strong>6.5</strong></td><td><strong>Competitive</strong></td><td><span class="tbadge a">Competitive</span></td><td>Meets many undergraduate and work pathway expectations</td></tr>
+            <tr class="row-avg"><td><strong>6.0</strong></td><td><strong>Moderate</strong></td><td><span class="tbadge a">Moderate</span></td><td>Meets some pathway thresholds; improvement may strengthen profile</td></tr>
+            <tr class="row-avg"><td><strong>5.5</strong></td><td><strong>Developing</strong></td><td><span class="tbadge a">Developing</span></td><td>Below many pathway expectations; targeted preparation recommended</td></tr>
+            <tr class="row-fail"><td><strong>Below 5.5</strong></td><td><strong>Needs Improvement</strong></td><td><span class="tbadge r">Low</span></td><td>Significant improvement needed before most international applications</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div id="tableVisa" style="display:none" class="rev">
+      <div class="tbl-wrap">
+        <table>
+          <thead>
+            <tr><th>Readiness Level</th><th>Study Visa</th><th>Work Visa</th><th>Migration</th><th>Professional Reg.</th></tr>
+          </thead>
+          <tbody>
+            <tr class="row-pass"><td><strong>Excellent (8.0+)</strong></td><td><span class="tbadge g">Strong Profile</span></td><td><span class="tbadge g">Strong Profile</span></td><td><span class="tbadge g">Strong Profile</span></td><td><span class="tbadge g">Strong Profile</span></td></tr>
+            <tr class="row-pass"><td><strong>Very Strong (7.5)</strong></td><td><span class="tbadge g">Good Preparation</span></td><td><span class="tbadge g">Good Preparation</span></td><td><span class="tbadge g">Good Preparation</span></td><td><span class="tbadge g">Good Preparation</span></td></tr>
+            <tr class="row-pass"><td><strong>Strong (7.0)</strong></td><td><span class="tbadge g">Good Preparation</span></td><td><span class="tbadge g">Good Preparation</span></td><td><span class="tbadge a">Review Requirements</span></td><td><span class="tbadge a">Review Requirements</span></td></tr>
+            <tr class="row-avg"><td><strong>Competitive (6.5)</strong></td><td><span class="tbadge a">Continue Improving</span></td><td><span class="tbadge a">Continue Improving</span></td><td><span class="tbadge a">Continue Improving</span></td><td><span class="tbadge r">Additional Practice</span></td></tr>
+            <tr class="row-avg"><td><strong>Moderate (6.0)</strong></td><td><span class="tbadge a">Continue Improving</span></td><td><span class="tbadge r">Additional Practice</span></td><td><span class="tbadge r">Additional Practice</span></td><td><span class="tbadge r">Additional Practice</span></td></tr>
+            <tr class="row-fail"><td><strong>Below 6.0</strong></td><td><span class="tbadge r">Additional Practice</span></td><td><span class="tbadge r">Additional Practice</span></td><td><span class="tbadge r">Additional Practice</span></td><td><span class="tbadge r">Additional Practice</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <p style="font-size:12.5px;color:var(--ink4);margin-top:12px;text-align:center">* This table reflects general expectations based on publicly available information. Official requirements vary by country, institution, employer, and program. Always verify from official government and institutional sources.</p>
+  </div>
+</section>
+
+<!-- TIPS SECTION -->
+<section class="tips-sec">
+  <div class="w">
+    <div style="text-align:center;margin-bottom:36px" class="rev">
+      <div class="pill" style="margin-bottom:14px">Preparation Strategies</div>
+      <h2 style="font-family:var(--fd);font-size:clamp(22px,3.5vw,36px);font-weight:800;color:var(--ink);margin-bottom:10px">How to <span style="color:var(--blue)">Strengthen Your Profile</span></h2>
+      <p style="font-size:15px;color:var(--ink3);max-width:480px;margin:0 auto">Practical steps that improve your IELTS score and strengthen your overall application readiness.</p>
+    </div>
+    <div class="tips-grid rev">
+      <div class="tip-card">
+        <div class="tip-ico">🎯</div>
+        <div class="tip-title">Know Your Target Score Early</div>
+        <div class="tip-desc">Before you begin preparation, research the exact IELTS score required by your target institution, employer, or immigration authority. Requirements vary significantly — a student visa to a UK university may require Band 6.0, while a postgraduate program or skilled migration application may demand Band 7.0 or above. Knowing your target defines your entire preparation strategy.</div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-ico">📝</div>
+        <div class="tip-title">Improve Each Skill Systematically</div>
+        <div class="tip-desc">IELTS assesses Listening, Reading, Writing, and Speaking. Many visa requirements specify both overall band and minimum scores in individual sections. A Band 7 overall score with a Band 5.5 Writing score may not meet requirements. Use specific practice materials for each skill and track your progress by question type, not just total marks.</div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-ico">🧪</div>
+        <div class="tip-title">Take Full Mock Tests Regularly</div>
+        <div class="tip-desc">Sitting timed full-length IELTS practice tests under exam conditions is the most reliable way to measure readiness. Mock tests reveal stamina issues, timing problems, and weak question types that short drills miss. Aim for at least four to six full mock tests before your exam date, reviewing every incorrect answer in detail afterwards.</div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-ico">📅</div>
+        <div class="tip-title">Plan Your Application Timeline</div>
+        <div class="tip-desc">IELTS test results are valid for two years. Plan your test date strategically around your visa or university application deadlines, leaving time to retake the test if needed. Most preparation programs recommend two to three months of focused study to move up half to one full band. Do not leave your IELTS test to the last moment before an application deadline.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STORY SECTION -->
+<section class="story-sec">
+  <div class="wa">
+    <div class="rev" style="text-align:center;margin-bottom:36px">
+      <div class="pill" style="margin-bottom:14px">Why I Built This</div>
+      <h2 style="font-family:var(--fd);font-size:clamp(22px,3.4vw,34px);font-weight:800;color:var(--ink);margin-bottom:8px">Arjun ki <span style="color:var(--blue)">Kahaani</span></h2>
+      <p style="font-size:15px;color:var(--ink3)">Ek aisi confusion jo almost har IELTS candidate face karta hai — score toh hai, par kaafi hai ya nahi?</p>
+    </div>
+    <div class="story-card rev">
+      <div class="sq">"</div>
+      <div class="sb">
+        Maine ye Visa Eligibility Checker isliye banaya kyunki <strong>mere dost ka bhaanja Arjun Canada ke liye PR apply karna chahta tha</strong>. Usne IELTS mein Band 6.5 score kiya tha — bahut mehnat ke baad. Wo kaafi khush bhi tha.<br><br>
+        Phir usne apne consultant se poocha — <em>"bhai, mera Band 6.5 hai, kya Canada migration ke liye kaafi hai?"</em> Consultant ne bola haan, aur Arjun ne application fees bhi bhar di. Baad mein pata chala ki uske specific NOC code ke liye aur uski stream ke liye minimum Band 7.0 Reading aur Writing chahiye tha.<br><br>
+        <strong>Problem ye thi ki Arjun ko pehle se koi simple tool nahi mila tha jahan wo apna score dalkar dekh sakta ki uska profile kitna ready hai. Country, visa type, aur band score — teen cheezein ek saath check karna kahin possible nahi tha.</strong> Har jagah sirf general info milti thi, practical readiness assessment nahi.<br><br>
+        Usi din usne message kiya — <em>"kash koi ek tool hota jahan main apna score aur destination daalke ye dekh sakta ki main ready hoon ya nahi. Paise aur time dono bachte."</em><br><br>
+        <strong>Usi baat ne mujhe ye tool banane pe majboor kiya. Arjun jaisi situation mein koi aur na phase — ek click mein clarity mile.</strong> 🇮🇳✈️
+      </div>
+      <div class="sauth">
+        <div class="savt">🛠️</div>
+        <div>
+          <div class="sname">Raj Bhai — RajDailyTools</div>
+          <div class="srole">Founder, RajDailyTools.in · Every tool solves a real problem</div>
+        </div>
+      </div>
+      <div class="founder-msg">
+        <div class="fm-ico">✈️</div>
+        <div class="fm-txt"><strong>To every IELTS candidate planning an international move:</strong> Check your score against your specific pathway requirements before you commit to an application. A few weeks of additional targeted preparation can be the difference between a strong profile and a shortfall. Know where you stand. Then prepare with a clear target.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GUIDE SECTION -->
+<section class="guide-sec" id="guide">
+  <div class="wa">
+    <div class="rev" style="text-align:center;margin-bottom:40px">
+      <div class="pill" style="margin-bottom:14px">Complete Guide</div>
+      <h2 style="font-family:var(--fd);font-size:clamp(22px,3.5vw,36px);font-weight:800;color:var(--ink);margin-bottom:10px">IELTS for Visa — <span style="color:var(--blue)">Full Guide</span></h2>
+      <p style="font-size:15px;color:var(--ink3);max-width:520px;margin:0 auto;line-height:1.75">Everything you need to understand how IELTS scores relate to visa, study, work, and migration applications across major English-speaking destinations.</p>
+    </div>
+    <div class="story-card rev guide-body">
+
+      <h2>Why IELTS Matters for International Applications</h2>
+      <p>IELTS — the International English Language Testing System — is one of the most widely accepted English language proficiency tests globally. It is used by universities, employers, immigration authorities, and professional licensing bodies across the United Kingdom, Canada, Australia, New Zealand, Ireland, and beyond.</p>
+      <p>When you apply for a student visa, work visa, skilled migration program, or professional registration in an English-speaking country, demonstrating a minimum level of English proficiency is typically a mandatory requirement. For many pathways, IELTS is the preferred or only accepted test.</p>
+
+      <div class="ibox">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        <div><strong>Key Principle:</strong> IELTS requirements are set by the institution, employer, or government authority — not by IELTS itself. The same visa category in two different countries may have very different band requirements. Always verify directly with the authority you are applying to.</div>
+      </div>
+
+      <h2>How IELTS Requirements Vary by Pathway</h2>
+      <p>The band score you need depends on three factors: the destination country, the visa or application type, and the specific institution, employer, or program. The table below gives a broad overview of how requirements typically differ across pathways.</p>
+
+      <div class="struct-grid">
+        <div class="struct-card">
+          <div class="struct-ico">🎓</div>
+          <div class="struct-num">Student Visa</div>
+          <div class="struct-title">6.0 – 7.5 Typical</div>
+          <div class="struct-desc">Undergraduate programs often require 6.0–6.5 overall. Postgraduate and research programs commonly require 6.5–7.5, sometimes with minimum section scores.</div>
+        </div>
+        <div class="struct-card">
+          <div class="struct-ico">💼</div>
+          <div class="struct-num">Work Visa</div>
+          <div class="struct-title">5.0 – 7.0 Typical</div>
+          <div class="struct-desc">Work visa language requirements vary by occupation and country. Skilled and specialised roles, particularly in healthcare, education, and law, typically require higher scores.</div>
+        </div>
+        <div class="struct-card">
+          <div class="struct-ico">🏠</div>
+          <div class="struct-num">Migration</div>
+          <div class="struct-title">6.0 – 8.0 Typical</div>
+          <div class="struct-desc">Permanent residence and skilled migration streams often require Band 6.0–7.0 overall. High-points or competitive streams reward higher scores.</div>
+        </div>
+        <div class="struct-card">
+          <div class="struct-ico">🏥</div>
+          <div class="struct-num">Professional Registration</div>
+          <div class="struct-title">7.0 – 8.0+ Typical</div>
+          <div class="struct-desc">Healthcare, nursing, medical, legal, and teaching professionals face the strictest requirements — often 7.0–8.0 overall with minimum section scores.</div>
+        </div>
+      </div>
+
+      <h2>Country-Specific Language Expectations</h2>
+      <p>Here is a general overview of how IELTS is typically used in major destination countries. These are indicative expectations — always consult official sources for your specific application.</p>
+      <ul>
+        <li><strong>United Kingdom:</strong> Student visas typically require Band 5.5–6.5 for UKVI-approved IELTS (Secure English Language Test version). NHS and professional bodies often require Band 7.0+.</li>
+        <li><strong>Canada:</strong> Express Entry uses IELTS General Training. Federal Skilled Worker typically expects Band 6.0+. Canadian Experience Class and Provincial Nominee Programs have varying thresholds, some requiring Band 7.0+.</li>
+        <li><strong>Australia:</strong> Student visas require minimum Band 5.5–6.5 depending on course level. Skilled migration (General Skilled Migration) scores IELTS points and rewards Band 8.0 with maximum points in many streams.</li>
+        <li><strong>New Zealand:</strong> Student and skilled migrant visas generally require Band 5.5–6.5. Certain occupations and employer-sponsored roles may require higher.</li>
+        <li><strong>Ireland:</strong> Non-EEA students typically need Band 6.0–6.5. Employment permits and general employment pathways have variable requirements depending on the role.</li>
+        <li><strong>Germany:</strong> Germany primarily uses German language tests but English-taught programs and some international professional roles may use IELTS as an alternative demonstrating English proficiency.</li>
+        <li><strong>Singapore:</strong> Employment pass and student pass requirements reference English proficiency. Competitive programs at NUS and NTU typically require Band 6.0–7.0.</li>
+      </ul>
+
+      <h2>IELTS Academic vs General Training for Visa Purposes</h2>
+      <p>Most immigration and work visa applications specify IELTS General Training. Most university and academic applications require IELTS Academic. Some pathways, particularly in Australia and Canada, specify which version is required — submitting the wrong version can result in the application being rejected.</p>
+
+      <div class="ibox a">
+        <svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        <div><strong>Check Which Version Is Required:</strong> Canada Express Entry requires IELTS General Training. Australian General Skilled Migration accepts both Academic and General Training. UK student visas require UKVI Academic IELTS. Confirm the exact version required before booking your test.</div>
+      </div>
+
+      <h2>Score Requirements — Practical Reference</h2>
+      <p>How your IELTS band connects to common real-world visa and migration requirements:</p>
+      <div class="ex-card">
+        <div class="ex-row"><span>🎓 UK undergraduate (most universities)</span><span><strong>Band 6.0 – 6.5</strong></span></div>
+        <div class="ex-row"><span>🎓 UK postgraduate programs</span><span><strong>Band 6.5 – 7.0+</strong></span></div>
+        <div class="ex-row"><span>🍁 Canadian Express Entry (FSW)</span><span><strong>Band 6.0+ (CLB 7)</strong></span></div>
+        <div class="ex-row"><span>🇦🇺 Australian GSM — maximum language points</span><span><strong>Band 8.0+</strong></span></div>
+        <div class="ex-row"><span>🏥 UK NHS nursing / healthcare registration</span><span><strong>Band 7.0+</strong></span></div>
+        <div class="ex-row"><span>🇳🇿 New Zealand skilled migrant</span><span><strong>Band 6.5+</strong></span></div>
+        <div class="ex-row" style="border-bottom:none"><span>⚕️ Professional bodies (law, teaching, medicine)</span><span><strong>Band 7.5 – 8.0+</strong></span></div>
+      </div>
+      <p style="font-size:13px;color:var(--ink4)">* Requirements shown are indicative only and subject to change. Always verify from official government and institutional sources before applying.</p>
+
+      <div class="ibox g">
+        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+        <div><strong>Key Advice:</strong> If your band score is close to but below the requirement, do not submit with an insufficient score. A retake with a higher score is far less costly than a rejected application. Use this checker to identify the gap, focus your preparation, and retake strategically.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FAQ SECTION -->
+<section class="faq-sec" id="faq">
+  <div class="w">
+    <div class="rev" style="text-align:center;margin-bottom:40px">
+      <div class="pill" style="margin-bottom:14px">Frequently Asked Questions</div>
+      <h2 style="font-family:var(--fd);font-size:clamp(22px,3.5vw,36px);font-weight:800;color:var(--ink);margin-bottom:10px">IELTS Visa Checker — <span style="color:var(--blue)">Common Questions Answered</span></h2>
+      <p style="font-size:15px;color:var(--ink3);max-width:500px;margin:0 auto;line-height:1.75">Clear answers to questions IELTS candidates ask most often about visa requirements, eligibility, and preparation planning.</p>
+    </div>
+    <div class="fql" id="faqList">
+
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">What is the IELTS Visa Eligibility Checker?</span><div class="fq-i">+</div></div><div class="fq-a"><div class="fq-ai">The IELTS Visa Eligibility Checker helps users evaluate their IELTS readiness for study, work, and migration planning purposes. It takes your destination country, visa purpose, and overall IELTS band score, and provides a readiness assessment along with profile strength analysis and preparation recommendations. It is designed for planning purposes and does not guarantee visa approval.</div></div></div>
+
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">Can this tool guarantee visa approval?</span><div class="fq-i">+</div></div><div class="fq-a"><div class="fq-ai">No. Visa decisions depend on multiple factors including documentation, financial requirements, health assessments, background checks, eligibility criteria, and official government policies. IELTS is one component of an application. This tool assesses your language proficiency readiness only, and is intended for planning purposes. Always consult the relevant embassy, immigration authority, or a registered migration agent for official advice.</div></div></div>
+
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">Why is IELTS important for international opportunities?</span><div class="fq-i">+</div></div><div class="fq-a"><div class="fq-ai">IELTS is widely recognised as a standard measure of English language proficiency for academic, professional, and immigration purposes. Over 11,000 organisations in more than 140 countries accept IELTS, including universities, employers, professional bodies, and government immigration departments. For many international pathways, a minimum IELTS score is a mandatory eligibility requirement that must be met before other parts of the application are even assessed.</div></div></div>
+
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">Does every country require the same IELTS score?</span><div class="fq-i">+</div></div><div class="fq-a"><div class="fq-ai">No. Language expectations vary considerably by country, institution, employer, and application pathway. For example, a UK undergraduate student visa may require Band 5.5–6.5, while Australian skilled migration may require Band 6.0–8.0 depending on the points stream. Even within the same country, different universities or employers may set different thresholds. Always verify the exact requirement from the specific authority or institution you are applying to.</div></div></div>
+
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">Can a higher IELTS score strengthen my profile?</span><div class="fq-i">+</div></div><div class="fq-a"><div class="fq-ai">Yes, in several ways. Some migration points systems, such as Australia's General Skilled Migration, award additional points for higher IELTS scores — Band 8.0 or above in all four sections earns maximum language points in many streams. For competitive university programs, a strong IELTS score can strengthen your overall application. Even where a minimum score is all that is required, a higher score demonstrates stronger English proficiency and may support your application credibility.</div></div></div>
+
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">Who can use this checker?</span><div class="fq-i">+</div></div><div class="fq-a"><div class="fq-ai">Students, professionals, job seekers, and immigration applicants can use this tool for planning purposes. It is useful both before taking IELTS — to understand what target score to aim for — and after receiving results, to assess whether your score is likely to meet the requirements of your intended application. It can also help you decide whether to invest in preparation for a retake.</div></div></div>
+
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">Is Band 7 considered a strong score for visa purposes?</span><div class="fq-i">+</div></div><div class="fq-a"><div class="fq-ai">Band 7 is generally considered a strong level of English proficiency and meets the requirements for many international pathways, including most postgraduate programs and skilled migration streams. However, certain professional registration pathways — such as UK healthcare registration, Australian nursing, or legal professional licensing — may require Band 7.5 or Band 8.0 in specific sections. Whether Band 7 is sufficient depends on the specific application you are making.</div></div></div>
+
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">Can I improve my IELTS readiness?</span><div class="fq-i">+</div></div><div class="fq-a"><div class="fq-ai">Yes. Regular practice, focused mock tests, and targeted preparation for your weak skill areas can significantly improve IELTS performance. Most candidates can improve by half to one full band with two to three months of focused study. Identifying which specific question types or skills cause the most errors — using a tool like this to understand your target gap — and focusing preparation there is more effective than general broad practice.</div></div></div>
+
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">Should I verify official requirements separately?</span><div class="fq-i">+</div></div><div class="fq-a"><div class="fq-ai">Yes, absolutely. This tool is for planning and self-assessment purposes only. IELTS requirements can change, and they vary significantly by country, institution, program, and application year. Always review the latest requirements directly from official government immigration websites, university admissions pages, or professional body registration portals before applying. Requirements shown in this tool are based on publicly available information and may not reflect the most current or specific requirements for your application.</div></div></div>
+
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">Can this tool be used before taking IELTS?</span><div class="fq-i">+</div></div><div class="fq-a"><div class="fq-ai">Yes. It can help candidates understand the target score they need for their intended international pathway before sitting the exam. By entering the score you are currently achieving in practice tests, you can assess how close you are to your target and how much further preparation may be needed. This makes it useful for setting realistic preparation goals and deciding when you are likely to be ready to sit the official test.</div></div></div>
+
+    </div>
+  </div>
+</section>
+
+<!-- DISCLAIMER -->
+<div class="disc">
+  <div class="w">
+    <div class="disc-in">
+      <span style="font-size:18px;flex-shrink:0">⚠️</span>
+      <div><strong>Disclaimer:</strong> This IELTS Visa Eligibility Checker is an independent educational tool. It is not affiliated with, endorsed by, or connected to IELTS, IDP, British Council, Cambridge Assessment English, or any government immigration authority. Readiness assessments are based on publicly available information and are provided for planning purposes only. Language requirements for visa and immigration applications are set by individual authorities and may change. Always verify current requirements directly from official government and institutional sources before making any application decision. This tool does not constitute immigration, legal, or professional advice.</div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<section class="contact-sec">
+  <div class="w">
+    <div class="contact-card rev">
+      <h3>📬 Questions or Feedback?</h3>
+      <p>If this tool helped you or you have a suggestion to make it better, we would love to hear from you. We are always improving RajDailyTools to serve students, professionals, and families planning international opportunities.</p>
+      <a href="mailto:contact@rajdailytools.in" class="btn-bl">📧 Contact Us</a>
+      <p class="priv-note">🔒 We do not collect or store any information entered into our tools. Your privacy is fully protected.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="w">
+    <div class="cta-in">
+      <div class="pill">Free IELTS Tools</div>
+      <h2>More IELTS Preparation?<br><em>Explore All Our Tools</em></h2>
+      <p>From band calculators to eligibility checkers — everything you need to track progress and reach your target band, completely free.</p>
+      <div class="cta-btns">
+        <a href="/categories" class="btn-gold">🎯 Explore All Tools</a>
+        <a href="#tool" class="btn-ghost">🌍 Check Again ↑</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-inner">
+    <div class="ft-top">
+      <div class="ft-brand">
+        <div class="logo" style="margin-bottom:4px">
+          <div class="lb"><svg viewBox="0 0 24 24" fill="#fff"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+          <div><div class="ln">Raj<span>Daily</span>Tools</div><div class="ls">Smart Tools for Daily Life</div></div>
+        </div>
+        <p class="ft-desc">India's most ambitious free tools platform. Built by Raj Bhai. Solving daily life problems, one tool at a time.</p>
+        <div class="ft-soc">
+          <a href="https://www.facebook.com/share/1Dq3Y1k7mG/" target="_blank" class="fts">f</a>
+          <a href="https://x.com/Educator4ll" target="_blank" class="fts">𝕏</a>
+          <a href="https://youtube.com/@rajdailytools" target="_blank" class="fts">▶</a>
+          <a href="https://www.instagram.com/rajdailytools" target="_blank" class="fts">📷</a>
+        </div>
+      </div>
+      <div class="fc"><h4>IELTS Tools</h4><ul>
+        <li><a href="https://rajdailytools.in/ielts-writing-task-2-band-score-calculator.html">Writing Task 2 Calculator</a></li>
+        <li><a href="https://rajdailytools.in/ielts-speaking-band-score-calculator.html">Speaking Band Calculator</a></li>
+        <li><a href="https://rajdailytools.in/ielts-listening-band-score-calculator.html">Listening Band Calculator</a></li>
+        <li><a href="https://rajdailytools.in/ielts-reading-band-score-calculator.html">Reading Band Calculator</a></li>
+        <li><a href="https://rajdailytools.in/ielts-complete-score-predictor.html">Complete Score Predictor</a></li>
+      </ul></div>
+      <div class="fc"><h4>More IELTS</h4><ul>
+        <li><a href="https://rajdailytools.in/ielts-target-band-calculator.html">Target Band Calculator</a></li>
+        <li><a href="https://rajdailytools.in/ielts-academic-eligibility-checker.html">Academic Eligibility</a></li>
+        <li><a href="https://rajdailytools.in/ielts-band-requirement-finder.html">Band Requirement Finder</a></li>
+        <li><a href="https://rajdailytools.in/ielts-university-eligibility-checker.html">University Eligibility</a></li>
+        <li><a href="https://rajdailytools.in/ielts-exam-readiness-checker.html">Exam Readiness Checker</a></li>
+      </ul></div>
+      <div class="fc"><h4>Company</h4><ul>
+        <li><a href="/about">About Us</a></li>
+        <li><a href="/contact">Contact</a></li>
+        <li><a href="/privacy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
+      </ul></div>
+    </div>
+    <div class="ft-btm">
+      <p class="ft-cp">Copyright © 2026 <b>RajDailyTools</b>. All rights reserved. Designed by <b>RajDailyTools</b></p>
+      <p class="ft-tag">Made with ❤️ in India — "Solving daily life problems with smart tools"</p>
+    </div>
+  </div>
+</footer>
+<button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+/* ── Drawer ── */
+const brg=document.getElementById('brg'),drw=document.getElementById('drw'),dov=document.getElementById('dov');
+function oD(){drw.classList.add('on');dov.classList.add('on');document.body.style.overflow='hidden'}
+function cD(){drw.classList.remove('on');dov.classList.remove('on');document.body.style.overflow=''}
+brg.addEventListener('click',oD);
+document.getElementById('dx').addEventListener('click',cD);
+dov.addEventListener('click',cD);
+
+/* ── Back to Top ── */
+const btt=document.getElementById('btt');
+window.addEventListener('scroll',()=>btt.classList.toggle('on',scrollY>380),{passive:true});
+
+/* ── Reveal on scroll ── */
+const rvObs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      const s=[...(e.target.parentElement?.children||[])];
+      e.target.style.transitionDelay=(s.indexOf(e.target)%4)*0.08+'s';
+      e.target.classList.add('in');
+      rvObs.unobserve(e.target);
+    }
+  });
+},{threshold:0.06,rootMargin:'0px 0px -20px 0px'});
+document.querySelectorAll('.rev').forEach(el=>rvObs.observe(el));
+
+/* ── FAQ Accordion ── */
+document.getElementById('faqList').addEventListener('click',function(e){
+  const q=e.target.closest('.fq-q');
+  if(!q)return;
+  const item=q.closest('.fq'),open=item.classList.contains('open');
+  document.querySelectorAll('.fq.open').forEach(i=>i.classList.remove('open'));
+  if(!open)item.classList.add('open');
+});
+
+/* ── Table tab switcher ── */
+function showRefTable(type){
+  document.getElementById('tableOverall').style.display=type==='overall'?'block':'none';
+  document.getElementById('tableVisa').style.display=type==='visa'?'block':'none';
+  document.getElementById('tabOverall').classList.toggle('active',type==='overall');
+  document.getElementById('tabVisa').classList.toggle('active',type==='visa');
+}
+
+/* ══════════════════════════════════════
+   ELIGIBILITY DATA
+══════════════════════════════════════ */
+
+/* Country labels */
+const countryLabels={
+  uk:'🇬🇧 United Kingdom',
+  canada:'🇨🇦 Canada',
+  australia:'🇦🇺 Australia',
+  nz:'🇳🇿 New Zealand',
+  usa:'🇺🇸 United States',
+  ireland:'🇮🇪 Ireland',
+  germany:'🇩🇪 Germany',
+  singapore:'🇸🇬 Singapore'
+};
+
+/* Purpose labels */
+const purposeLabels={
+  student:'🎓 Student Visa',
+  work:'💼 Work Visa',
+  migration:'🏠 Migration',
+  professional:'🏥 Professional Registration'
+};
+
+/* Typical band expectations [min, recommended] by country+purpose */
+const expectations={
+  uk:{
+    student:{min:5.5,rec:6.5,note:'UKVI Academic IELTS required for most student routes'},
+    work:{min:5.0,rec:6.0,note:'Varies by visa type and employer; some roles require more'},
+    migration:{min:6.0,rec:7.0,note:'Skilled Worker and Global Talent routes have varying thresholds'},
+    professional:{min:7.0,rec:7.5,note:'NMC nursing, GMC medical, GTC teaching — high thresholds apply'}
+  },
+  canada:{
+    student:{min:6.0,rec:6.5,note:'DLI institutions generally require 6.0–6.5 IELTS Academic'},
+    work:{min:6.0,rec:7.0,note:'LMIA and employer-specific requirements vary by occupation'},
+    migration:{min:6.0,rec:7.0,note:'Express Entry FSW uses IELTS General Training; CLB 7 = Band 6'},
+    professional:{min:7.0,rec:7.5,note:'Regulated professions (nursing, teaching) require higher scores'}
+  },
+  australia:{
+    student:{min:5.5,rec:6.5,note:'Student visa subclass 500 — varies by course level and institution'},
+    work:{min:5.0,rec:6.0,note:'TSS and employer-nominated streams vary by occupation and employer'},
+    migration:{min:6.0,rec:8.0,note:'GSM — Band 8.0+ earns maximum language points in most streams'},
+    professional:{min:7.0,rec:8.0,note:'AHPRA nursing/healthcare typically requires Band 7.0 in all sections'}
+  },
+  nz:{
+    student:{min:5.5,rec:6.0,note:'Student visa requirements depend on institution and course level'},
+    work:{min:5.5,rec:6.5,note:'Accredited Employer Work Visa requirements vary by occupation'},
+    migration:{min:6.0,rec:6.5,note:'Skilled Migrant Category uses points — English proficiency is scored'},
+    professional:{min:7.0,rec:7.5,note:'NZMC medical and NCNZ nursing require high section scores'}
+  },
+  usa:{
+    student:{min:6.0,rec:6.5,note:'F-1 visa — IELTS accepted at most US universities; varies by institution'},
+    work:{min:6.0,rec:6.5,note:'H-1B employer-sponsored — employer sets English requirements'},
+    migration:{min:6.0,rec:6.5,note:'Green card pathways — IELTS less commonly used than in Commonwealth countries'},
+    professional:{min:7.0,rec:7.5,note:'USMLE and bar admission requirements vary by state and profession'}
+  },
+  ireland:{
+    student:{min:6.0,rec:6.5,note:'Study visa for non-EEA nationals — programme requirements apply'},
+    work:{min:6.0,rec:6.5,note:'Critical Skills Employment Permit — employer sets requirements'},
+    migration:{min:6.0,rec:7.0,note:'IRP and long-stay permissions — requirements vary by pathway'},
+    professional:{min:7.0,rec:7.5,note:'Medical Council Ireland and NMBI nursing require high scores'}
+  },
+  germany:{
+    student:{min:6.0,rec:6.5,note:'English-taught programs at German universities — institution requirements vary'},
+    work:{min:6.0,rec:6.5,note:'EU Blue Card and skilled worker visa — German or English proficiency'},
+    migration:{min:6.0,rec:7.0,note:'Skilled immigration — language requirements depend on occupation'},
+    professional:{min:7.0,rec:7.5,note:'Regulated professions require formal language recognition; varies by Bundesland'}
+  },
+  singapore:{
+    student:{min:6.0,rec:6.5,note:'NUS, NTU, SMU typically require Band 6.0–7.0 for admission'},
+    work:{min:6.0,rec:6.5,note:'Employment Pass — MOM requirements; employer language expectations apply'},
+    migration:{min:6.0,rec:6.5,note:'Permanent Residence — overall profile assessed; English proficiency is a positive factor'},
+    professional:{min:7.0,rec:7.5,note:'SMC medical and SNB nursing — high language standards apply'}
+  }
+};
+
+/* Readiness levels */
+function getReadiness(band,expectation){
+  const diff=band-expectation.rec;
+  if(diff>=0.5) return{label:'Excellent',level:'Strong Profile',cls:'pass',icon:'🏆',tagCls:'pass'};
+  if(diff>=0)   return{label:'Very Strong',level:'Good Preparation',cls:'pass',icon:'✅',tagCls:'pass'};
+  if(diff>=-0.5)return{label:'Competitive',level:'Continue Improving',cls:'pass',icon:'⚠️',tagCls:'avg'};
+  if(diff>=-1)  return{label:'Moderate',level:'More Preparation Needed',cls:'avg',icon:'⚠️',tagCls:'avg'};
+  return{label:'Needs Improvement',level:'Additional Practice Recommended',cls:'low',icon:'🔴',tagCls:'low'};
+}
+
+/* ══════════════════════════════════════
+   MAIN FUNCTION
+══════════════════════════════════════ */
+function checkEligibility(){
+  const countryEl=document.getElementById('country');
+  const purposeEl=document.getElementById('purpose');
+  const bandEl=document.getElementById('band');
+
+  const country=countryEl.value;
+  const purpose=purposeEl.value;
+  const band=parseFloat(bandEl.value);
+
+  /* Validation */
+  let valid=true;
+  if(!country){countryEl.style.borderColor='var(--red)';valid=false;}else{countryEl.style.borderColor='';}
+  if(!purpose){purposeEl.style.borderColor='var(--red)';valid=false;}else{purposeEl.style.borderColor='';}
+  if(isNaN(band)||band<0||band>9){bandEl.classList.add('err');valid=false;}else{bandEl.classList.remove('err');}
+  if(!valid){
+    bandEl.placeholder='Enter 0 – 9 (e.g. 6.5)';
+    return;
+  }
+
+  const exp=expectations[country][purpose];
+  const readiness=getReadiness(band,exp);
+
+  /* Meter */
+  const pct=Math.round((band/9)*100);
+  const circ=251.2;
+  const offset=circ-((pct/100)*circ);
+  const mf=document.getElementById('meterFill');
+  mf.style.strokeDashoffset=circ;
+  const strokeColor=readiness.cls==='pass'?'var(--green)':(readiness.cls==='avg'?'var(--amber)':'var(--red)');
+  mf.style.stroke=strokeColor;
+  setTimeout(()=>mf.style.strokeDashoffset=offset,100);
+  document.getElementById('meterPct').textContent=band%1===0?band.toFixed(1):band;
+
+  /* Banner */
+  const banner=document.getElementById('resBanner');
+  banner.className='res-banner '+readiness.cls;
+  document.getElementById('resIcon').textContent=readiness.icon;
+  document.getElementById('resTitle').textContent=readiness.label+' Readiness';
+  document.getElementById('resSub').textContent=`Your IELTS Band ${band%1===0?band.toFixed(1):band} assessed against ${purposeLabels[purpose]} requirements for ${countryLabels[country]}.`;
+  const tag=document.getElementById('resTag');
+  tag.textContent=readiness.level;
+  tag.className='res-tag '+readiness.tagCls;
+
+  /* Detail Cards */
+  document.getElementById('dCountry').textContent=countryLabels[country];
+  document.getElementById('dCountrySub').textContent='Destination country';
+  document.getElementById('dPurpose').textContent=purposeLabels[purpose];
+  document.getElementById('dPurposeSub').textContent='Application type';
+  document.getElementById('dRequired').textContent='Band '+exp.rec.toFixed(1)+'+';
+  document.getElementById('dRequiredSub').textContent='Typical expectation';
+
+  /* Profile Strength Bars */
+  const minPct=Math.round((exp.min/9)*100);
+  const recPct=Math.round((exp.rec/9)*100);
+  const myPct=Math.round((band/9)*100);
+  const myCol=band>=exp.rec?'g':(band>=exp.min?'a':'r');
+  const barsHTML=`
+    <div class="pstr-row"><div class="pstr-lbl">Your Score</div><div class="pstr-track"><div class="pstr-fill ${myCol}" data-w="${myPct}%" style="width:0%">Band ${band%1===0?band.toFixed(1):band}</div></div><div class="pstr-val" style="color:var(--${myCol==='g'?'green':myCol==='a'?'amber':'red'})">${band%1===0?band.toFixed(1):band}</div></div>
+    <div class="pstr-row"><div class="pstr-lbl">Typical Expectation</div><div class="pstr-track"><div class="pstr-fill b" data-w="${recPct}%" style="width:0%">Band ${exp.rec.toFixed(1)}</div></div><div class="pstr-val" style="color:var(--blue)">${exp.rec.toFixed(1)}</div></div>
+    <div class="pstr-row"><div class="pstr-lbl">Minimum Threshold</div><div class="pstr-track"><div class="pstr-fill a" data-w="${minPct}%" style="width:0%">Band ${exp.min.toFixed(1)}</div></div><div class="pstr-val" style="color:var(--amber)">${exp.min.toFixed(1)}</div></div>
+  `;
+  document.getElementById('strengthBars').innerHTML=barsHTML;
+  setTimeout(()=>document.querySelectorAll('.pstr-fill').forEach(b=>{b.style.width=b.dataset.w||'0%'}),200);
+
+  /* Milestone Grid */
+  const milestones=[
+    {band:5.5,label:'Band 5.5',icon:'📘',use:'Foundation level'},
+    {band:6.0,label:'Band 6.0',icon:'📗',use:'Entry level pathways'},
+    {band:6.5,label:'Band 6.5',icon:'🎓',use:'Most student / work visas'},
+    {band:7.0,label:'Band 7.0',icon:'🏅',use:'Skilled migration / PG'},
+    {band:7.5,label:'Band 7.5',icon:'🌟',use:'Professional registration'},
+    {band:8.0,label:'Band 8.0',icon:'🏆',use:'Top migration / expert roles'}
+  ];
+  let gradeHTML='';
+  milestones.forEach(m=>{
+    const achieved=band>=m.band;
+    const isCurrent=band===m.band;
+    let cls='inactive';
+    if(isCurrent){cls=m.band>=7?'active-pass':(m.band>=6?'active-avg':'active-fail');}
+    else if(achieved){cls='active-pass';}
+    gradeHTML+=`
+      <div class="gc ${cls}">
+        <div class="gc-ico">${achieved?m.icon:'🔒'}</div>
+        <div class="gc-title">${m.label}</div>
+        <div class="gc-val">${m.use}<br><span style="font-size:10px">${achieved?'✓ Achieved':'Need '+m.band.toFixed(1)}${isCurrent?' 👈 Your level':''}</span></div>
+      </div>
+    `;
+  });
+  document.getElementById('gradeGrid').innerHTML=gradeHTML;
+
+  /* Suggestion */
+  let msg='';
+  const diff=band-exp.rec;
+  const bandFmt=band%1===0?band.toFixed(1):band;
+  const countryName=countryLabels[country].replace(/🇬🇧|🇨🇦|🇦🇺|🇳🇿|🇺🇸|🇮🇪|🇩🇪|🇸🇬/,'').trim();
+  const purposeName=purposeLabels[purpose].replace(/🎓|💼|🏠|🏥/,'').trim();
+
+  if(diff>=0.5){
+    msg=`<strong>🏆 Excellent Readiness — Band ${bandFmt}.</strong> Your IELTS score is well above the typical expectation for ${purposeName} in ${countryName}. This is a strong language profile. Focus on preparing the non-IELTS elements of your application — documentation, financial evidence, and meeting all other eligibility criteria. Note that ${exp.note}.`;
+  } else if(diff>=0){
+    msg=`<strong>✅ Good Preparation — Band ${bandFmt}.</strong> Your score meets the typical expectation for ${purposeName} in ${countryName}. This is a solid position. Continue to verify the exact requirements for your specific program or stream — some may require higher individual section scores. Note that ${exp.note}.`;
+  } else if(diff>=-0.5){
+    msg=`<strong>⚠️ Continue Improving — Band ${bandFmt}.</strong> Your score is close to but slightly below the typical expectation for ${purposeName} in ${countryName}. Improving by 0.5 to 1.0 band would significantly strengthen your profile. Focus on your weakest IELTS section and consider a targeted retake. Note: ${exp.note}.`;
+  } else if(diff>=-1){
+    msg=`<strong>⚠️ More Preparation Needed — Band ${bandFmt}.</strong> Your score is currently below the typical expectation for ${purposeName} in ${countryName} (Band ${exp.rec.toFixed(1)}+ recommended). Structured preparation focusing on your weakest skills — particularly Writing and Speaking which are most commonly the limiting sections — can close this gap. Plan for a retake after 2–3 months of focused study.`;
+  } else {
+    msg=`<strong>🔴 Significant Improvement Required — Band ${bandFmt}.</strong> Your current score is considerably below the typical expectation for ${purposeName} in ${countryName}. Building from Band ${bandFmt} to Band ${exp.min.toFixed(1)}+ requires sustained, structured preparation. Start with skill-based drilling in Listening and Reading to gain quick wins, and invest in Writing feedback. Do not apply with your current score — target the next retake strategically.`;
+  }
+  document.getElementById('suggBox').innerHTML=`<strong style="display:block;font-family:var(--fd);font-size:14px;margin-bottom:10px">🌍 Your Visa Readiness Assessment</strong><p style="font-size:14px;color:var(--ink2);line-height:1.82">${msg}</p><p style="font-size:12px;color:var(--ink4);margin-top:10px">ℹ️ Requirements shown are indicative. Always verify from official sources before applying. <em>${exp.note}.</em></p>`;
+
+  /* Show result */
+  const ra=document.getElementById('resultArea');
+  ra.style.display='block';
+  ra.style.animation='none';ra.offsetHeight;
+  ra.style.animation='resultIn .45s var(--ease) both';
+  setTimeout(()=>ra.scrollIntoView({behavior:'smooth',block:'nearest'}),120);
+}
+
+function resetTool(){
+  document.getElementById('country').value='';
+  document.getElementById('purpose').value='';
+  document.getElementById('band').value='';
+  document.getElementById('band').classList.remove('err');
+  document.getElementById('country').style.borderColor='';
+  document.getElementById('purpose').style.borderColor='';
+  document.getElementById('resultArea').style.display='none';
+  window.scrollTo({top:document.getElementById('tool').offsetTop-80,behavior:'smooth'});
+}
+
+/* Enter key */
+document.getElementById('band').addEventListener('keydown',function(e){
+  if(e.key==='Enter')checkEligibility();
+});
+</script>
+</body>
+</html>
