@@ -1,0 +1,1237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PTE Score Predictor 2026 – Predict Your PTE Academic Score Online</title>
+<meta name="description" content="Use the PTE Score Predictor 2026 to estimate your expected PTE Academic score before official results. Predict overall score, skill scores, and target score chances instantly.">
+<meta name="keywords" content="PTE score predictor, PTE Academic score prediction, PTE mock score, PTE expected score, PTE skill performance, PTE score estimate, PTE 2026, PTE study abroad">
+<meta name="robots" content="index, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ══════════════════════════════════════
+   DESIGN TOKENS
+══════════════════════════════════════ */
+:root{
+  --blue:#2563eb;--blue-d:#1d4ed8;--blue-xl:#eff6ff;--blue-s:#dbeafe;
+  --amber:#f59e0b;--green:#10b981;--red:#ef4444;--purple:#8b5cf6;
+  --orange:#f97316;--teal:#14b8a6;
+  --green-xl:#f0fdf4;--green-s:#bbf7d0;
+  --red-xl:#fef2f2;--red-s:#fecaca;
+  --amber-xl:#fffbeb;--amber-s:#fde68a;
+  --purple-xl:#faf5ff;--purple-s:#ddd6fe;
+  --yellow:#eab308;--yellow-xl:#fefce8;--yellow-s:#fef08a;
+  --ink:#0f172a;--ink2:#334155;--ink3:#64748b;--ink4:#94a3b8;
+  --line:#e2e8f0;--surf:#f8fafc;--white:#fff;
+  --s1:0 1px 3px rgba(15,23,42,.06),0 1px 2px rgba(15,23,42,.04);
+  --s2:0 4px 16px rgba(15,23,42,.08),0 2px 6px rgba(15,23,42,.04);
+  --s3:0 12px 40px rgba(15,23,42,.11),0 3px 10px rgba(15,23,42,.06);
+  --s4:0 24px 64px rgba(15,23,42,.13),0 6px 20px rgba(15,23,42,.07);
+  --sb:0 8px 32px rgba(37,99,235,.20);
+  --fd:'Sora',sans-serif;--fb:'DM Sans',sans-serif;
+  --ease:cubic-bezier(.4,0,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);color:var(--ink);background:var(--white);overflow-x:hidden;-webkit-font-smoothing:antialiased;line-height:1.6}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+button{cursor:pointer;border:none;background:none;font-family:var(--fb)}
+.w{max-width:1180px;margin:0 auto;padding:0 24px}
+.wa{max-width:880px;margin:0 auto;padding:0 24px}
+select,input{appearance:none;-webkit-appearance:none}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+@keyframes resultIn{from{opacity:0;transform:translateY(18px) scale(.97)}to{opacity:1;transform:none}}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}
+@keyframes probFill{from{width:0%}to{width:var(--pw)}}
+.rev{opacity:0;transform:translateY(22px);transition:opacity .55s var(--ease),transform .55s var(--ease)}
+.rev.in{opacity:1;transform:none}
+
+/* ══ HEADER ══ */
+.hdr{position:sticky;top:0;z-index:999;background:rgba(255,255,255,.96);backdrop-filter:blur(20px);border-bottom:1px solid var(--line);box-shadow:var(--s1)}
+.hdi{display:flex;align-items:center;justify-content:space-between;height:66px}
+.logo{display:flex;align-items:center;gap:10px}
+.lb{width:36px;height:36px;background:var(--blue);border-radius:9px;display:flex;align-items:center;justify-content:center;box-shadow:var(--sb);flex-shrink:0}
+.lb svg{width:18px;height:18px;fill:#fff}
+.ln{font-family:var(--fd);font-size:19px;font-weight:800;color:var(--ink);line-height:1}
+.ln span{color:var(--blue)}
+.ls{font-size:10px;color:var(--ink4);letter-spacing:.04em}
+nav.dn{display:flex;align-items:center;gap:2px}
+nav.dn a{font-size:13.5px;font-weight:500;color:var(--ink2);padding:7px 13px;border-radius:8px;transition:.2s}
+nav.dn a:hover{color:var(--blue);background:var(--blue-xl)}
+.hcta{background:var(--blue);color:#fff;font-family:var(--fd);font-weight:600;font-size:13px;padding:8px 18px;border-radius:8px;box-shadow:var(--sb);transition:.2s}
+.hcta:hover{background:var(--blue-d);transform:translateY(-1px)}
+.brg{display:none;flex-direction:column;gap:4.5px;padding:8px;border-radius:8px}
+.brg span{display:block;width:20px;height:2px;background:var(--ink);border-radius:2px;transition:.28s}
+.dov{display:none;position:fixed;inset:0;background:rgba(15,23,42,.45);z-index:1040;backdrop-filter:blur(3px)}
+.dov.on{display:block}
+.drw{position:fixed;top:0;right:-100%;width:270px;height:100vh;background:#fff;z-index:1050;padding:22px;box-shadow:var(--s4);transition:right .32s var(--ease);overflow-y:auto}
+.drw.on{right:0}
+.dh{display:flex;align-items:center;justify-content:space-between;margin-bottom:26px}
+.dx{width:33px;height:33px;border-radius:7px;background:var(--surf);display:flex;align-items:center;justify-content:center;color:var(--ink3);font-size:17px}
+nav.mn{display:flex;flex-direction:column;gap:3px}
+nav.mn a{display:block;font-size:14px;font-weight:500;color:var(--ink2);padding:11px 13px;border-radius:8px;transition:.2s}
+nav.mn a:hover{color:var(--blue);background:var(--blue-xl)}
+
+/* ══ HERO ══ */
+.hero{position:relative;overflow:hidden;background:linear-gradient(150deg,#f0f7ff 0%,#fff 46%,#fff7f0 100%);padding:64px 0 72px}
+.hero::before{content:'';position:absolute;top:-140px;right:-180px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(37,99,235,.08) 0%,transparent 68%);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-80px;left:-100px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(249,115,22,.07) 0%,transparent 68%);pointer-events:none}
+.blob{position:absolute;border-radius:50%;pointer-events:none;animation:float 6s ease-in-out infinite}
+.b1{width:13px;height:13px;background:rgba(37,99,235,.18);top:22%;right:14%;animation-delay:0s}
+.b2{width:9px;height:9px;background:rgba(249,115,22,.22);top:58%;right:26%;animation-delay:2.2s}
+.b3{width:11px;height:11px;background:rgba(245,158,11,.18);top:36%;right:6%;animation-delay:4s}
+.bc{display:flex;align-items:center;gap:7px;font-size:12.5px;color:var(--ink3);margin-bottom:22px;position:relative;z-index:1;flex-wrap:wrap}
+.bc a{color:var(--blue);font-weight:600}
+.pill{display:inline-flex;align-items:center;gap:7px;font-family:var(--fd);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--orange);background:#fff7ed;padding:5px 14px;border-radius:100px;margin-bottom:18px}
+.pill::before{content:'';width:6px;height:6px;background:var(--orange);border-radius:50%}
+.hero-inner{position:relative;z-index:1;max-width:720px;animation:fadeUp .5s ease both}
+.hero h1{font-family:var(--fd);font-size:clamp(26px,4.5vw,50px);font-weight:800;line-height:1.1;color:var(--ink);margin-bottom:14px}
+.hero h1 span{color:var(--orange)}
+.hero-sub{font-size:16px;color:var(--ink3);line-height:1.8;margin-bottom:22px;max-width:600px}
+.hero-chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.chip{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;padding:6px 14px;border-radius:100px;background:#fff;border:1.5px solid var(--line);color:var(--ink2);box-shadow:var(--s1);transition:.22s}
+.chip:hover{border-color:var(--orange);color:var(--orange);transform:translateY(-1px)}
+.hero-meta{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:24px}
+.upd{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:700;color:var(--orange);background:#fff7ed;padding:6px 14px;border-radius:100px;border:1.5px solid #fed7aa}
+.mi{font-size:13px;color:var(--ink3);font-weight:500}
+
+/* HOW TO USE */
+.howto{background:var(--amber-xl);border:2px solid var(--amber-s);border-radius:16px;padding:22px 26px;max-width:560px;margin-bottom:24px}
+.howto-ttl{display:flex;align-items:center;gap:9px;font-family:var(--fd);font-size:15px;font-weight:800;color:var(--ink);margin-bottom:13px}
+.howto-steps{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.hs{display:flex;align-items:flex-start;gap:10px;font-size:13.5px;color:var(--ink2);line-height:1.6}
+.sn{width:24px;height:24px;background:var(--amber);color:#fff;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex-shrink:0;margin-top:1px}
+
+/* related tools */
+.rel-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;position:relative;z-index:1}
+.rg-box{border-radius:14px;padding:14px 14px 12px;display:flex;flex-direction:column;gap:8px;transition:.22s;border:1.5px solid}
+.rg-box:hover{transform:translateY(-3px);box-shadow:var(--s3)}
+.rg-box.c1{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fed7aa}
+.rg-box.c2{background:linear-gradient(135deg,var(--purple-xl),#ede9fe);border-color:var(--purple-s)}
+.rg-box.c3{background:linear-gradient(135deg,var(--green-xl),#dcfce7);border-color:var(--green-s)}
+.rg-box.c4{background:linear-gradient(135deg,var(--blue-xl),var(--blue-s));border-color:var(--blue-s)}
+.rg-ico{font-size:22px}
+.rg-txt h4{font-family:var(--fd);font-size:12px;font-weight:800;color:var(--ink);margin-bottom:2px}
+.rg-txt p{font-size:11px;color:var(--ink3);line-height:1.5}
+.btn-xs{display:inline-flex;align-items:center;gap:4px;font-family:var(--fd);font-weight:700;font-size:11px;padding:5px 10px;border-radius:7px;transition:.22s;margin-top:4px}
+.btn-xs.o{background:var(--orange);color:#fff}.btn-xs.o:hover{background:#ea580c}
+.btn-xs.p{background:var(--purple);color:#fff}.btn-xs.p:hover{background:#7c3aed}
+.btn-xs.g{background:var(--green);color:#fff}.btn-xs.g:hover{background:#059669}
+.btn-xs.b{background:var(--blue);color:#fff}.btn-xs.b:hover{background:var(--blue-d)}
+
+/* ══ TOOL SECTION ══ */
+.tool-sec{background:var(--surf);padding:80px 0}
+.tool-wrap{max-width:900px;margin:0 auto}
+.tool-card{background:#fff;border:1.5px solid var(--line);border-radius:28px;overflow:hidden;box-shadow:var(--s4)}
+.tool-hdr{background:linear-gradient(135deg,#0f172a 0%,#431407 50%,#f97316 100%);padding:32px 40px;position:relative;overflow:hidden}
+.tool-hdr::before{content:'';position:absolute;top:-60px;right:-60px;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,.07)}
+.tool-hdr::after{content:'';position:absolute;bottom:-40px;left:-40px;width:180px;height:180px;border-radius:50%;background:rgba(255,255,255,.04)}
+.run-dots{position:absolute;bottom:20px;right:40px;display:flex;gap:5px;opacity:.3;z-index:0}
+.run-dot{width:6px;height:6px;border-radius:50%;background:#fff}
+.th{position:relative;z-index:1}
+.th h2{font-family:var(--fd);font-size:21px;font-weight:800;color:#fff;margin-bottom:6px}
+.th p{font-size:14px;color:rgba(255,255,255,.82);line-height:1.65}
+.th-badges{display:flex;flex-wrap:wrap;gap:9px;margin-top:14px}
+.thb{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:rgba(255,255,255,.9);background:rgba(255,255,255,.13);padding:5px 12px;border-radius:100px}
+.tool-body{padding:36px 40px}
+
+/* inputs */
+.inp-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px}
+.inp-grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;margin-bottom:20px}
+.fld{display:flex;flex-direction:column;gap:7px}
+.flbl{font-size:13px;font-weight:700;color:var(--ink2)}
+.flbl span{font-size:11px;font-weight:500;color:var(--ink4);margin-left:5px;background:var(--surf);padding:2px 7px;border-radius:5px;border:1px solid var(--line)}
+.finp{padding:12px 16px;font-size:22px;font-weight:800;font-family:var(--fd);color:var(--ink);background:#fff;border:1.5px solid var(--line);border-radius:10px;outline:none;transition:.22s;width:100%;text-align:center}
+.finp:focus{border-color:var(--orange);box-shadow:0 0 0 3px rgba(249,115,22,.10)}
+.finp.err{border-color:var(--red);box-shadow:0 0 0 3px rgba(239,68,68,.10)}
+.finp.tgt{border-color:var(--orange);background:#fff7ed}
+.score-chips{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}
+.sc-item{display:inline-flex;align-items:center;font-size:11px;font-weight:600;padding:3px 9px;border-radius:100px;border:1.5px solid var(--line);background:var(--surf);color:var(--ink3);cursor:pointer;transition:.2s}
+.sc-item:hover{border-color:var(--orange);color:var(--orange);background:#fff7ed}
+.pct-item{display:inline-flex;align-items:center;font-size:11px;font-weight:600;padding:3px 9px;border-radius:100px;border:1.5px solid var(--line);background:var(--surf);color:var(--ink3);cursor:pointer;transition:.2s}
+.pct-item:hover{border-color:var(--orange);color:var(--orange);background:#fff7ed}
+.divider{border:none;border-top:1.5px dashed var(--line);margin:22px 0}
+.sec-label{font-family:var(--fd);font-size:12px;font-weight:700;color:var(--ink4);text-transform:uppercase;letter-spacing:.08em;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.sec-label::after{content:'';flex:1;height:1px;background:var(--line)}
+.hint-box{display:flex;align-items:flex-start;gap:9px;font-size:13px;color:var(--ink2);background:#fff7ed;border:1.5px solid #fed7aa;border-radius:10px;padding:11px 14px;margin:16px 0;line-height:1.65}
+.hint-box svg{width:16px;height:16px;stroke:var(--orange);fill:none;stroke-width:2;flex-shrink:0;margin-top:2px}
+.btn-row{display:flex;gap:12px;margin-top:4px}
+.chk-btn{flex:1;padding:17px;background:linear-gradient(135deg,#0f172a 0%,#431407 50%,#f97316 100%);color:#fff;font-family:var(--fd);font-weight:800;font-size:16px;border-radius:12px;box-shadow:0 8px 32px rgba(249,115,22,.30);transition:all .25s var(--ease);display:flex;align-items:center;justify-content:center;gap:10px}
+.chk-btn:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(249,115,22,.42)}
+.chk-btn:active{transform:translateY(0)}
+.rst-btn{padding:17px 24px;background:var(--surf);color:var(--ink3);font-family:var(--fd);font-weight:700;font-size:15px;border-radius:12px;border:1.5px solid var(--line);transition:.22s;display:flex;align-items:center;gap:8px}
+.rst-btn:hover{background:var(--red-xl);color:var(--red);border-color:var(--red-s)}
+
+/* ══ RESULT ══ */
+#resultArea{display:none;margin-top:28px;animation:resultIn .45s var(--ease) both}
+
+/* Main score banner */
+.res-banner{border-radius:20px;padding:28px;margin-bottom:22px;position:relative;overflow:hidden;display:flex;align-items:center;gap:24px;flex-wrap:wrap}
+.res-banner.pass{background:linear-gradient(135deg,var(--green-xl),#d1fae5);border:2px solid var(--green-s)}
+.res-banner.avg{background:var(--amber-xl);border:2px solid var(--amber-s)}
+.res-banner.low{background:var(--red-xl);border:2px solid var(--red-s)}
+.res-banner::before{content:'';position:absolute;inset:0;opacity:.04;background-image:repeating-linear-gradient(45deg,currentColor 0,currentColor 1px,transparent 0,transparent 50%);background-size:12px 12px;pointer-events:none}
+.meter-wrap{flex-shrink:0;position:relative;width:110px;height:110px}
+.meter-svg{width:110px;height:110px;transform:rotate(-90deg)}
+.meter-bg{fill:none;stroke:rgba(0,0,0,.08);stroke-width:10}
+.meter-fill{fill:none;stroke-width:10;stroke-linecap:round;transition:stroke-dashoffset 1.2s var(--ease)}
+.meter-center{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.meter-pct{font-family:var(--fd);font-size:24px;font-weight:800;color:var(--ink);line-height:1}
+.meter-lbl{font-size:10px;font-weight:700;color:var(--ink3);text-transform:uppercase;letter-spacing:.06em}
+.res-info{flex:1}
+.res-icon{font-size:32px;margin-bottom:6px}
+.res-title{font-family:var(--fd);font-size:22px;font-weight:800;color:var(--ink);line-height:1.1;margin-bottom:6px}
+.res-sub{font-size:14px;color:var(--ink3);line-height:1.65}
+.res-tag{display:inline-flex;align-items:center;gap:6px;font-family:var(--fd);font-size:13px;font-weight:700;padding:5px 14px;border-radius:100px;margin-top:10px}
+.res-tag.pass{background:var(--green);color:#fff}
+.res-tag.avg{background:var(--amber);color:#fff}
+.res-tag.low{background:var(--red);color:#fff}
+
+/* Target probability card */
+.prob-card{background:#fff;border:1.5px solid var(--line);border-radius:16px;padding:20px 24px;margin-bottom:18px}
+.prob-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;flex-wrap:wrap;gap:8px}
+.prob-title{font-family:var(--fd);font-size:14px;font-weight:700;color:var(--ink);display:flex;align-items:center;gap:8px}
+.prob-target{font-family:var(--fd);font-size:13px;font-weight:700;padding:4px 12px;border-radius:100px}
+.prob-bar-track{height:28px;background:var(--line);border-radius:14px;overflow:hidden;margin-bottom:8px}
+.prob-bar-fill{height:100%;border-radius:14px;display:flex;align-items:center;padding-left:14px;font-family:var(--fd);font-size:13px;font-weight:700;color:#fff;transition:width 1.4s var(--ease)}
+.prob-meta{font-size:12.5px;color:var(--ink3);line-height:1.6}
+
+/* Section skill breakdown */
+.section-breakdown{background:var(--surf);border:1.5px solid var(--line);border-radius:16px;padding:22px 24px;margin-bottom:18px}
+.sb-title{font-family:var(--fd);font-size:14px;font-weight:700;color:var(--ink);margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.sb-row{display:flex;align-items:center;gap:14px;margin-bottom:14px}
+.sb-lbl{font-size:12.5px;font-weight:600;color:var(--ink2);width:130px;flex-shrink:0;display:flex;align-items:center;gap:6px}
+.sb-bar-track{flex:1;height:20px;background:var(--line);border-radius:10px;overflow:hidden}
+.sb-bar-fill{height:100%;border-radius:10px;display:flex;align-items:center;padding-left:10px;font-size:11px;font-weight:700;color:#fff;transition:width 1.2s var(--ease)}
+.sb-bar-fill.sp{background:linear-gradient(90deg,#7c3aed,#6d28d9)}
+.sb-bar-fill.wr{background:linear-gradient(90deg,var(--blue),var(--blue-d))}
+.sb-bar-fill.rd{background:linear-gradient(90deg,var(--green),#059669)}
+.sb-bar-fill.ls{background:linear-gradient(90deg,var(--amber),#d97706)}
+.sb-bar-fill.ov{background:linear-gradient(90deg,var(--orange),#ea580c)}
+.sb-val{font-size:13px;font-weight:700;width:50px;flex-shrink:0;text-align:right}
+.sb-badge{font-size:10px;font-weight:700;padding:2px 7px;border-radius:100px;margin-left:4px}
+.sb-badge.s{background:var(--green-xl);color:var(--green);border:1px solid var(--green-s)}
+.sb-badge.w{background:var(--amber-xl);color:#92400e;border:1px solid var(--amber-s)}
+.sb-badge.d{background:var(--red-xl);color:var(--red);border:1px solid var(--red-s)}
+
+/* grade milestone cards */
+.grade-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:13px;margin-bottom:18px}
+.gc{border-radius:13px;padding:16px 14px;text-align:center;border:1.5px solid;transition:.22s}
+.gc:hover{transform:translateY(-2px);box-shadow:var(--s2)}
+.gc.active-pass{background:var(--green-xl);border-color:var(--green-s)}
+.gc.active-avg{background:var(--amber-xl);border-color:var(--amber-s)}
+.gc.active-fail{background:var(--red-xl);border-color:var(--red-s)}
+.gc.inactive{background:var(--surf);border-color:var(--line);opacity:.7}
+.gc-ico{font-size:24px;margin-bottom:6px}
+.gc-title{font-family:var(--fd);font-size:13px;font-weight:700;color:var(--ink);margin-bottom:3px}
+.gc-val{font-size:12px;color:var(--ink3);line-height:1.55}
+
+/* improvement cards */
+.impr-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:18px}
+.impr-card{background:#fff;border:1.5px solid var(--line);border-radius:13px;padding:16px;display:flex;gap:12px;align-items:flex-start;transition:.22s}
+.impr-card:hover{border-color:#fed7aa;box-shadow:var(--s2)}
+.impr-card.strong{border-color:var(--green-s);background:var(--green-xl)}
+.impr-card.weak{border-color:var(--red-s);background:var(--red-xl)}
+.impr-card.avg{border-color:var(--amber-s);background:var(--amber-xl)}
+.impr-ico{font-size:22px;flex-shrink:0}
+.impr-ttl{font-family:var(--fd);font-size:12px;font-weight:700;color:var(--ink);margin-bottom:3px}
+.impr-sub{font-size:11.5px;color:var(--ink3);line-height:1.5}
+
+.sugg-box{background:#fff7ed;border:1.5px solid #fed7aa;border-radius:13px;padding:16px 18px;font-size:14px;color:var(--ink2);line-height:1.78;margin-bottom:14px}
+.warn-box{background:var(--amber-xl);border:1.5px solid var(--amber-s);border-radius:12px;padding:14px 18px;display:flex;gap:10px;font-size:13.5px;color:var(--ink2);line-height:1.7}
+
+/* example card */
+.ex-card{background:linear-gradient(135deg,#fff7ed,#ffedd5);border:1.5px solid #fed7aa;border-radius:16px;padding:22px 24px;margin:16px 0}
+.ex-title{font-family:var(--fd);font-size:14px;font-weight:800;color:var(--ink);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.ex-row{display:flex;align-items:center;gap:10px;font-size:13.5px;color:var(--ink2);margin-bottom:6px}
+.ex-lbl{width:160px;flex-shrink:0;font-weight:600}
+.ex-val{font-family:var(--fd);font-weight:700;font-size:14px;color:var(--orange)}
+.ex-formula{background:rgba(255,255,255,.7);border:1px solid #fed7aa;border-radius:8px;padding:12px 16px;margin:12px 0;font-family:monospace;font-size:13.5px;color:var(--ink2);line-height:1.9}
+.ex-result{display:flex;align-items:center;gap:10px;margin-top:10px;background:#fff;border:2px solid #fed7aa;border-radius:10px;padding:10px 16px}
+.ex-result-score{font-family:var(--fd);font-size:28px;font-weight:800;color:var(--orange)}
+.ex-result-lbl{font-size:13px;color:var(--ink3);line-height:1.5}
+
+/* ══ SCORE TABLE ══ */
+.tbl-sec{background:#fff;padding:72px 0}
+.tbl-wr{overflow-x:auto;margin-bottom:20px}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+thead th{background:linear-gradient(135deg,#0f172a 0%,#431407 100%);color:#fff;padding:14px 16px;text-align:left;font-family:var(--fd);font-size:13px;font-weight:700;letter-spacing:.03em}
+tbody tr{border-bottom:1px solid var(--line);transition:.2s}
+tbody tr:hover{background:#fff7ed}
+tbody td{padding:12px 16px;color:var(--ink2);vertical-align:middle}
+.row-pass{background:var(--green-xl)!important}
+.row-avg{background:var(--amber-xl)!important}
+.row-fail{background:var(--red-xl)!important}
+.tbadge{display:inline-flex;font-size:11px;font-weight:700;padding:3px 8px;border-radius:100px}
+.tbadge.g{background:var(--green-xl);color:var(--green);border:1px solid var(--green-s)}
+.tbadge.a{background:var(--amber-xl);color:#92400e;border:1px solid var(--amber-s)}
+.tbadge.r{background:var(--red-xl);color:var(--red);border:1px solid var(--red-s)}
+.tbadge.b{background:var(--blue-xl);color:var(--blue);border:1px solid var(--blue-s)}
+.tbadge.o{background:#fff7ed;color:var(--orange);border:1px solid #fed7aa}
+
+/* ══ FEATURES ══ */
+.feat-sec{background:var(--surf);padding:72px 0}
+.feat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.feat-card{background:#fff;border:1.5px solid var(--line);border-radius:16px;padding:22px 18px;text-align:center;transition:.28s}
+.feat-card:hover{transform:translateY(-4px);box-shadow:var(--s3);border-color:#fed7aa}
+.feat-ico{font-size:32px;margin-bottom:12px}
+.feat-title{font-family:var(--fd);font-size:14px;font-weight:800;color:var(--ink);margin-bottom:8px}
+.feat-desc{font-size:13px;color:var(--ink3);line-height:1.7}
+
+/* ══ GUIDE ══ */
+.guide-sec{background:#fff;padding:72px 0}
+.guide-body h2{font-family:var(--fd);font-size:21px;font-weight:800;color:var(--ink);margin:28px 0 11px;line-height:1.3}
+.guide-body h2:first-child{margin-top:0}
+.guide-body p{font-size:15px;color:var(--ink3);line-height:1.85;margin-bottom:14px}
+.guide-body ul{display:flex;flex-direction:column;gap:8px;margin:12px 0 16px}
+.guide-body li{display:flex;align-items:flex-start;gap:10px;font-size:14.5px;color:var(--ink3);line-height:1.7}
+.guide-body li::before{content:'✓';width:18px;height:18px;background:var(--orange);color:#fff;border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;flex-shrink:0;margin-top:3px}
+.guide-body strong{color:var(--ink2);font-weight:700}
+.ibox{background:#fff7ed;border:1.5px solid #fed7aa;border-radius:13px;padding:15px 18px;margin:16px 0;display:flex;gap:11px;font-size:14px;color:var(--ink2);line-height:1.7}
+.ibox svg{width:17px;height:17px;stroke:var(--orange);fill:none;stroke-width:2;flex-shrink:0;margin-top:2px}
+.ibox.bl{background:var(--blue-xl);border-color:var(--blue-s)}
+.ibox.bl svg{stroke:var(--blue)}
+.mistakes-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:14px 0}
+.mst{background:var(--red-xl);border:1.5px solid var(--red-s);border-radius:12px;padding:14px;display:flex;gap:10px;font-size:13.5px;color:var(--ink2);line-height:1.6}
+.mst-ico{font-size:18px;flex-shrink:0}
+.benefit-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:14px 0}
+.bft{background:var(--green-xl);border:1.5px solid var(--green-s);border-radius:12px;padding:14px;display:flex;gap:10px;font-size:13.5px;color:var(--ink2);line-height:1.6}
+.bft-ico{font-size:18px;flex-shrink:0}
+
+/* ══ FAQ ══ */
+.faq-sec{background:var(--surf);padding:72px 0}
+.fql{max-width:780px;margin:0 auto}
+.fq{background:#fff;border:1.5px solid var(--line);border-radius:13px;margin-bottom:10px;overflow:hidden}
+.fq-q{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;cursor:pointer;gap:14px;transition:.2s}
+.fq-q:hover{background:#fff7ed}
+.fq-t{font-weight:600;font-size:15px;color:var(--ink);line-height:1.4}
+.fq-i{width:28px;height:28px;border-radius:50%;background:#fff7ed;color:var(--orange);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;transition:transform .28s,background .2s}
+.fq.open .fq-i{transform:rotate(45deg);background:var(--orange);color:#fff}
+.fq-a{max-height:0;overflow:hidden;transition:max-height .38s var(--ease)}
+.fq-ai{padding:0 22px 18px;font-size:14.5px;color:var(--ink3);line-height:1.78}
+.fq.open .fq-a{max-height:500px}
+
+/* ══ DISC / CTA / FOOTER ══ */
+.disc{background:var(--amber-xl);border-top:1px solid var(--amber-s);border-bottom:1px solid var(--amber-s);padding:15px 0}
+.disc-in{display:flex;align-items:flex-start;gap:12px;font-size:13.5px;color:var(--ink2);line-height:1.7}
+.contact-sec{background:#fff;padding:60px 0}
+.contact-card{max-width:580px;margin:0 auto;background:var(--surf);border:1.5px solid var(--line);border-radius:20px;padding:32px;text-align:center;box-shadow:var(--s2)}
+.contact-card h3{font-family:var(--fd);font-size:19px;font-weight:800;color:var(--ink);margin-bottom:10px}
+.contact-card p{font-size:15px;color:var(--ink3);line-height:1.75;margin-bottom:20px}
+.btn-bl{display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:#fff;font-family:var(--fd);font-weight:700;font-size:14.5px;padding:12px 26px;border-radius:8px;box-shadow:var(--sb);transition:.22s}
+.btn-bl:hover{background:var(--blue-d);transform:translateY(-1px)}
+.priv-note{font-size:12px;color:var(--ink4);margin-top:14px}
+.cta{background:linear-gradient(140deg,#0f172a 0%,#431407 60%,#f97316 100%);padding:80px 0;text-align:center;position:relative;overflow:hidden}
+.cta::before{content:'';position:absolute;top:-80px;left:50%;transform:translateX(-50%);width:800px;height:380px;background:radial-gradient(ellipse,rgba(249,115,22,.22) 0%,transparent 68%);pointer-events:none}
+.cta-in{position:relative;z-index:1}
+.cta .pill{color:#fed7aa;background:rgba(255,255,255,.1);margin-bottom:18px}
+.cta .pill::before{background:#fed7aa}
+.cta h2{font-family:var(--fd);font-size:clamp(24px,4vw,42px);font-weight:800;color:#fff;line-height:1.15;margin-bottom:12px}
+.cta h2 em{color:#fbbf24;font-style:normal}
+.cta p{font-size:16px;color:rgba(255,255,255,.72);max-width:480px;margin:0 auto 32px;line-height:1.78}
+.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn-gold{display:inline-flex;align-items:center;gap:8px;background:var(--amber);color:#fff;font-family:var(--fd);font-weight:800;font-size:15px;padding:14px 30px;border-radius:8px;box-shadow:0 8px 28px rgba(245,158,11,.35);transition:.22s}
+.btn-gold:hover{background:#d97706;transform:translateY(-3px)}
+.btn-ghost{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.09);border:1.5px solid rgba(255,255,255,.22);color:#fff;font-family:var(--fd);font-weight:600;font-size:14px;padding:13px 26px;border-radius:8px;transition:.2s}
+.btn-ghost:hover{background:rgba(255,255,255,.16)}
+footer{background:#0f172a;padding:52px 0 0}
+.ft-inner{max-width:1180px;margin:0 auto;padding:0 24px}
+.ft-top{display:grid;grid-template-columns:1.9fr 1fr 1fr 1fr;gap:44px;margin-bottom:44px}
+.ft-brand .ln{color:#fff}.ft-brand .ls{color:#475569}
+.ft-desc{font-size:13.5px;color:#64748b;line-height:1.78;max-width:265px;margin:13px 0 20px}
+.fc h4{font-family:var(--fd);font-size:12px;font-weight:700;color:#fff;margin-bottom:14px;letter-spacing:.06em;text-transform:uppercase}
+.fc ul{display:flex;flex-direction:column;gap:8px}
+.fc ul a{font-size:13.5px;color:#64748b;transition:.18s}
+.fc ul a:hover{color:#fed7aa}
+.ft-bot{border-top:1px solid #1e293b;padding:20px 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.ft-bot p{font-size:12.5px;color:#475569}
+
+/* ══ SECTION HEADERS ══ */
+.sec-hdr{text-align:center;margin-bottom:44px}
+.sec-hdr h2{font-family:var(--fd);font-size:clamp(22px,3.5vw,36px);font-weight:800;color:var(--ink);margin-bottom:10px}
+.sec-hdr h2 span{color:var(--orange)}
+.sec-hdr p{font-size:15px;color:var(--ink3);max-width:520px;margin:0 auto;line-height:1.75}
+
+/* ══ RESPONSIVE ══ */
+@media(max-width:768px){
+  nav.dn,.hcta{display:none}
+  .brg{display:flex}
+  .hero{padding:44px 0 52px}
+  .howto-steps{grid-template-columns:1fr}
+  .rel-grid{grid-template-columns:1fr}
+  .inp-grid,.inp-grid-3{grid-template-columns:1fr}
+  .tool-body{padding:24px 20px}
+  .tool-hdr{padding:24px 20px}
+  .grade-grid{grid-template-columns:repeat(2,1fr)}
+  .feat-grid{grid-template-columns:1fr 1fr}
+  .impr-grid,.mistakes-grid,.benefit-grid{grid-template-columns:1fr}
+  .ft-top{grid-template-columns:1fr 1fr;gap:28px}
+  .res-banner{flex-direction:column;text-align:center}
+}
+@media(max-width:480px){
+  .grade-grid{grid-template-columns:1fr 1fr}
+  .feat-grid{grid-template-columns:1fr}
+  .ft-top{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="hdr">
+  <div class="w">
+    <div class="hdi">
+      <a href="/" class="logo">
+        <div class="lb"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+        <div><div class="ln">Raj<span>Daily</span>Tools</div><div class="ls">Smart Tools for Daily Life</div></div>
+      </a>
+      <nav class="dn">
+        <a href="/">Home</a><a href="/categories">Categories</a>
+        <a href="/#popular">Popular</a><a href="/about">About</a><a href="/contact">Contact</a>
+      </nav>
+      <a href="/categories" class="hcta">All Tools →</a>
+      <button class="brg" id="brg"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="dov" id="dov"></div>
+<div class="drw" id="drw">
+  <div class="dh">
+    <div class="logo">
+      <div class="lb" style="width:30px;height:30px;border-radius:7px"><svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#fff"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+      <div class="ln" style="font-size:16px">Raj<span>Daily</span>Tools</div>
+    </div>
+    <button class="dx" id="dx">✕</button>
+  </div>
+  <nav class="mn">
+    <a href="/" onclick="cD()">🏠 Home</a>
+    <a href="/categories" onclick="cD()">🗂️ Categories</a>
+    <a href="/#popular" onclick="cD()">⭐ Popular</a>
+    <a href="/about" onclick="cD()">👤 About</a>
+    <a href="/contact" onclick="cD()">📬 Contact</a>
+  </nav>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+  <div class="w">
+    <div class="bc">
+      <a href="/">Home</a><span style="color:var(--ink4)">›</span>
+      <a href="/categories">Tools</a><span style="color:var(--ink4)">›</span>
+      <span>PTE Score Predictor 2026</span>
+    </div>
+    <div class="hero-inner">
+      <div class="pill">PTE Academic Tools</div>
+      <h1>PTE Score <span>Predictor</span> 2026</h1>
+      <p class="hero-sub">Enter your mock test score and section-wise skill performance to get a <strong>realistic PTE Academic score prediction</strong>. Includes target score probability, skill breakdown, and personalised improvement tips.</p>
+      <div class="hero-chips">
+        <span class="chip">📋 Mock Score Input</span>
+        <span class="chip">🎙️ Speaking %</span>
+        <span class="chip">✍️ Writing %</span>
+        <span class="chip">📖 Reading %</span>
+        <span class="chip">🎧 Listening %</span>
+        <span class="chip">🎯 Target Tracker</span>
+        <span class="chip">🆓 Free Tool</span>
+      </div>
+      <div class="hero-meta">
+        <div class="upd">📅 Updated for 2025–26</div>
+        <span class="mi">✅ GSE Scale 10–90</span>
+        <span class="mi">🔒 No data stored</span>
+      </div>
+      <!-- HOW TO USE -->
+      <div class="howto">
+        <div class="howto-ttl">💡 How to Use This Predictor</div>
+        <div class="howto-steps">
+          <div class="hs"><span class="sn">1</span>Enter your latest mock test score (10–90)</div>
+          <div class="hs"><span class="sn">2</span>Enter your Speaking performance % (0–100)</div>
+          <div class="hs"><span class="sn">3</span>Enter Writing, Reading, Listening % each</div>
+          <div class="hs"><span class="sn">4</span>Set your target PTE score (10–90)</div>
+          <div class="hs"><span class="sn">5</span>Click "Predict My PTE Score"</div>
+          <div class="hs"><span class="sn">6</span>Review prediction, probability &amp; tips</div>
+        </div>
+      </div>
+      <!-- RELATED TOOLS -->
+      <div class="rel-grid">
+        <div class="rg-box c1">
+          <div class="rg-ico">🎓</div>
+          <div class="rg-txt">
+            <h4>PTE Score Calculator</h4>
+            <p>Estimate your PTE overall score from section scores</p>
+            <a href="https://rajdailytools.in/pte-score-calculator-2026.html" target="_blank" rel="noopener" class="btn-xs o">Use Now →</a>
+          </div>
+        </div>
+        <div class="rg-box c2">
+          <div class="rg-ico">🔄</div>
+          <div class="rg-txt">
+            <h4>PTE ↔ IELTS Converter</h4>
+            <p>Compare your PTE score with IELTS equivalent</p>
+            <a href="#" class="btn-xs p">Coming Soon →</a>
+          </div>
+        </div>
+        <div class="rg-box c3">
+          <div class="rg-ico">📊</div>
+          <div class="rg-txt">
+            <h4>IELTS Overall Band Calculator</h4>
+            <p>Calculate your final IELTS overall band score</p>
+            <a href="https://rajdailytools.in/ielts-overall-band-score-calculator.html" target="_blank" rel="noopener" class="btn-xs g">Use Now →</a>
+          </div>
+        </div>
+        <div class="rg-box c4">
+          <div class="rg-ico">🎯</div>
+          <div class="rg-txt">
+            <h4>PTE Target Score Planner</h4>
+            <p>Plan your preparation around your target score</p>
+            <a href="#" class="btn-xs b">Coming Soon →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOOL SECTION -->
+<section class="tool-sec" id="tool">
+  <div class="w">
+    <div class="tool-wrap">
+      <div class="tool-card rev">
+        <div class="tool-hdr">
+          <div class="run-dots">
+            <div class="run-dot"></div><div class="run-dot"></div><div class="run-dot"></div>
+            <div class="run-dot"></div><div class="run-dot"></div><div class="run-dot"></div>
+          </div>
+          <div class="th">
+            <h2>🎯 PTE Academic Score Predictor</h2>
+            <p>Combines your mock test score (60% weight) with your average section performance (40% weight) to produce a realistic predicted score. Also calculates the probability of hitting your target PTE score.</p>
+            <div class="th-badges">
+              <span class="thb">📋 Mock Score Weighted</span>
+              <span class="thb">📊 4-Skill Analysis</span>
+              <span class="thb">🎯 Target Probability</span>
+              <span class="thb">🔒 No Data Stored</span>
+            </div>
+          </div>
+        </div>
+        <div class="tool-body">
+
+          <!-- MOCK SCORE -->
+          <div class="sec-label">📋 Step 1 — Mock Test Score</div>
+          <div class="inp-grid" style="grid-template-columns:1fr 1fr;margin-bottom:10px">
+            <div class="fld">
+              <label class="flbl" for="mock">Mock Test Score <span>10 – 90</span></label>
+              <input class="finp" type="number" id="mock" placeholder="e.g. 68" min="10" max="90" autocomplete="off">
+              <div class="score-chips">
+                <span class="sc-item" onclick="setVal('mock',50)">50</span>
+                <span class="sc-item" onclick="setVal('mock',60)">60</span>
+                <span class="sc-item" onclick="setVal('mock',68)">68</span>
+                <span class="sc-item" onclick="setVal('mock',75)">75</span>
+                <span class="sc-item" onclick="setVal('mock',80)">80</span>
+              </div>
+            </div>
+            <div class="fld">
+              <label class="flbl" for="tgt">🎯 Target PTE Score <span>10 – 90</span></label>
+              <input class="finp tgt" type="number" id="tgt" placeholder="e.g. 79" min="10" max="90" autocomplete="off">
+              <div class="score-chips">
+                <span class="sc-item" onclick="setVal('tgt',50)">50</span>
+                <span class="sc-item" onclick="setVal('tgt',65)">65</span>
+                <span class="sc-item" onclick="setVal('tgt',79)">79</span>
+                <span class="sc-item" onclick="setVal('tgt',85)">85</span>
+              </div>
+            </div>
+          </div>
+
+          <hr class="divider">
+
+          <!-- SKILL PERFORMANCE -->
+          <div class="sec-label">📊 Step 2 — Section Performance (%)</div>
+          <div class="inp-grid" style="margin-bottom:10px">
+            <div class="fld">
+              <label class="flbl" for="pSpk">🎙️ Speaking Performance <span>0 – 100 %</span></label>
+              <input class="finp" type="number" id="pSpk" placeholder="e.g. 72" min="0" max="100" autocomplete="off">
+              <div class="score-chips">
+                <span class="pct-item" onclick="setVal('pSpk',55)">55%</span>
+                <span class="pct-item" onclick="setVal('pSpk',70)">70%</span>
+                <span class="pct-item" onclick="setVal('pSpk',80)">80%</span>
+                <span class="pct-item" onclick="setVal('pSpk',90)">90%</span>
+              </div>
+            </div>
+            <div class="fld">
+              <label class="flbl" for="pWri">✍️ Writing Performance <span>0 – 100 %</span></label>
+              <input class="finp" type="number" id="pWri" placeholder="e.g. 70" min="0" max="100" autocomplete="off">
+              <div class="score-chips">
+                <span class="pct-item" onclick="setVal('pWri',55)">55%</span>
+                <span class="pct-item" onclick="setVal('pWri',70)">70%</span>
+                <span class="pct-item" onclick="setVal('pWri',80)">80%</span>
+                <span class="pct-item" onclick="setVal('pWri',90)">90%</span>
+              </div>
+            </div>
+            <div class="fld">
+              <label class="flbl" for="pRdn">📖 Reading Performance <span>0 – 100 %</span></label>
+              <input class="finp" type="number" id="pRdn" placeholder="e.g. 66" min="0" max="100" autocomplete="off">
+              <div class="score-chips">
+                <span class="pct-item" onclick="setVal('pRdn',55)">55%</span>
+                <span class="pct-item" onclick="setVal('pRdn',70)">70%</span>
+                <span class="pct-item" onclick="setVal('pRdn',80)">80%</span>
+                <span class="pct-item" onclick="setVal('pRdn',90)">90%</span>
+              </div>
+            </div>
+            <div class="fld">
+              <label class="flbl" for="pLst">🎧 Listening Performance <span>0 – 100 %</span></label>
+              <input class="finp" type="number" id="pLst" placeholder="e.g. 74" min="0" max="100" autocomplete="off">
+              <div class="score-chips">
+                <span class="pct-item" onclick="setVal('pLst',55)">55%</span>
+                <span class="pct-item" onclick="setVal('pLst',70)">70%</span>
+                <span class="pct-item" onclick="setVal('pLst',80)">80%</span>
+                <span class="pct-item" onclick="setVal('pLst',90)">90%</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hint-box">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            <div><strong>Formula:</strong> Avg Performance = (Speaking + Writing + Reading + Listening) ÷ 4 &nbsp;|&nbsp; <strong>Predicted Score = (Mock × 0.6) + (Avg Performance × 0.4)</strong> — rounded to nearest whole number. Section performance % is converted to the 10–90 GSE scale for section predictions.</div>
+          </div>
+
+          <div class="btn-row">
+            <button class="chk-btn" onclick="predictPTE()">🎯 Predict My PTE Score</button>
+            <button class="rst-btn" onclick="resetTool()">↺ Reset</button>
+          </div>
+
+          <!-- RESULT -->
+          <div id="resultArea">
+
+            <!-- Main Banner -->
+            <div class="res-banner" id="resBanner">
+              <div class="meter-wrap">
+                <svg class="meter-svg" viewBox="0 0 100 100">
+                  <circle class="meter-bg" cx="50" cy="50" r="43"/>
+                  <circle class="meter-fill" id="meterFill" cx="50" cy="50" r="43" stroke-dasharray="270" stroke-dashoffset="270"/>
+                </svg>
+                <div class="meter-center">
+                  <div class="meter-pct" id="meterPct">–</div>
+                  <div class="meter-lbl" id="meterLbl">/ 90</div>
+                </div>
+              </div>
+              <div class="res-info">
+                <div class="res-icon" id="resIcon"></div>
+                <div class="res-title" id="resTitle"></div>
+                <div class="res-sub" id="resSub"></div>
+                <div class="res-tag" id="resTag"></div>
+              </div>
+            </div>
+
+            <!-- Target Probability -->
+            <div class="prob-card" id="probCard">
+              <div class="prob-header">
+                <div class="prob-title">🎯 Target Score Probability</div>
+                <div class="prob-target" id="probTarget"></div>
+              </div>
+              <div class="prob-bar-track">
+                <div class="prob-bar-fill" id="probBar" style="width:0%">0%</div>
+              </div>
+              <div class="prob-meta" id="probMeta"></div>
+            </div>
+
+            <!-- Section Skill Breakdown -->
+            <div class="section-breakdown">
+              <div class="sb-title">📊 Predicted Section Scores &amp; Skill Breakdown</div>
+              <div class="sb-row">
+                <div class="sb-lbl">🎙️ Speaking</div>
+                <div class="sb-bar-track"><div class="sb-bar-fill sp" id="barSpk" style="width:0%"></div></div>
+                <div class="sb-val" id="valSpk">–</div>
+              </div>
+              <div class="sb-row">
+                <div class="sb-lbl">✍️ Writing</div>
+                <div class="sb-bar-track"><div class="sb-bar-fill wr" id="barWri" style="width:0%"></div></div>
+                <div class="sb-val" id="valWri">–</div>
+              </div>
+              <div class="sb-row">
+                <div class="sb-lbl">📖 Reading</div>
+                <div class="sb-bar-track"><div class="sb-bar-fill rd" id="barRdn" style="width:0%"></div></div>
+                <div class="sb-val" id="valRdn">–</div>
+              </div>
+              <div class="sb-row">
+                <div class="sb-lbl">🎧 Listening</div>
+                <div class="sb-bar-track"><div class="sb-bar-fill ls" id="barLst" style="width:0%"></div></div>
+                <div class="sb-val" id="valLst">–</div>
+              </div>
+              <div style="border-top:1.5px dashed var(--line);margin:12px 0 14px"></div>
+              <div class="sb-row">
+                <div class="sb-lbl" style="font-weight:800;color:var(--ink)">🎓 Overall (Predicted)</div>
+                <div class="sb-bar-track"><div class="sb-bar-fill ov" id="barOv" style="width:0%"></div></div>
+                <div class="sb-val" id="valOv" style="color:var(--orange);font-size:15px">–</div>
+              </div>
+            </div>
+
+            <!-- Section Improvement Cards -->
+            <div class="impr-grid" id="imprGrid"></div>
+
+            <!-- Milestone Cards -->
+            <div class="grade-grid" id="gradeGrid"></div>
+
+            <!-- Analysis Box -->
+            <div class="sugg-box" id="suggBox"></div>
+
+            <div class="warn-box">
+              <span style="font-size:20px;flex-shrink:0">⚠️</span>
+              <div style="font-size:13.5px;color:var(--ink2);line-height:1.72"><strong>Note:</strong> This is an estimated prediction based on your inputs. Official PTE Academic scores are generated by Pearson's AI-powered automated scoring system and may differ from this prediction. Use this result for planning and preparation purposes only. <strong>No data you enter is stored or shared.</strong></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SCORE TABLE SECTION -->
+<section class="tbl-sec" id="score-table">
+  <div class="w">
+    <div style="max-width:900px;margin:0 auto">
+      <div class="rev" style="text-align:center;margin-bottom:36px">
+        <div class="pill" style="margin:0 auto 14px">Score Reference</div>
+        <h2 style="font-family:var(--fd);font-size:clamp(22px,3.5vw,36px);font-weight:800;color:var(--ink);margin-bottom:10px">PTE Score Band <span style="color:var(--orange)">Reference Table</span></h2>
+        <p style="font-size:15px;color:var(--ink3);max-width:520px;margin:0 auto;line-height:1.75">Use this table to interpret your predicted score and understand which study abroad, immigration, and professional pathways it unlocks.</p>
+      </div>
+      <div class="tbl-wr rev">
+        <table id="pteTable">
+          <thead><tr><th>PTE Score Range</th><th>English Level</th><th>Proficiency</th><th>Typical Use</th><th>Target Score</th></tr></thead>
+          <tbody>
+            <tr class="row-pass"><td><strong>85 – 90</strong></td><td>Expert</td><td><span class="tbadge g">Expert User</span></td><td>Top universities, competitive PR, specialist roles</td><td>85+</td></tr>
+            <tr class="row-pass"><td><strong>76 – 84</strong></td><td>Advanced</td><td><span class="tbadge g">Advanced User</span></td><td>Postgraduate programs, skilled migration</td><td>79+</td></tr>
+            <tr class="row-pass"><td><strong>65 – 75</strong></td><td>Upper Intermediate+</td><td><span class="tbadge b">Upper Intermediate</span></td><td>Most universities, visa applications</td><td>65+</td></tr>
+            <tr class="row-avg"><td><strong>59 – 64</strong></td><td>Upper Intermediate</td><td><span class="tbadge o">Upper Intermediate</span></td><td>Undergraduate entry; some visa pathways</td><td>—</td></tr>
+            <tr class="row-avg"><td><strong>43 – 58</strong></td><td>Intermediate</td><td><span class="tbadge a">Intermediate</span></td><td>Foundation courses, vocational programs</td><td>50+</td></tr>
+            <tr class="row-avg"><td><strong>30 – 42</strong></td><td>Elementary</td><td><span class="tbadge a">Elementary</span></td><td>Basic communication; pre-academic prep needed</td><td>—</td></tr>
+            <tr class="row-fail"><td><strong>10 – 29</strong></td><td>Basic</td><td><span class="tbadge r">Basic User</span></td><td>Foundational English; significant development needed</td><td>—</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES SECTION -->
+<section class="feat-sec">
+  <div class="w">
+    <div class="sec-hdr rev">
+      <div class="pill" style="margin:0 auto 14px">Tool Features</div>
+      <h2>What This <span>Predictor</span> Provides</h2>
+      <p>More than a basic score estimate — a full diagnostic and planning tool for PTE preparation.</p>
+    </div>
+    <div class="feat-grid">
+      <div class="feat-card rev">
+        <div class="feat-ico">⚡</div>
+        <div class="feat-title">Instant Prediction</div>
+        <div class="feat-desc">Get your predicted PTE score in seconds using a weighted formula combining mock test and section performance.</div>
+      </div>
+      <div class="feat-card rev">
+        <div class="feat-ico">📊</div>
+        <div class="feat-title">Section Analysis</div>
+        <div class="feat-desc">See individual predicted scores for Speaking, Writing, Reading, and Listening to identify strengths and weak spots.</div>
+      </div>
+      <div class="feat-card rev">
+        <div class="feat-ico">🎯</div>
+        <div class="feat-title">Target Probability</div>
+        <div class="feat-desc">Enter your target PTE score and see a probability estimate of achieving it based on your current performance inputs.</div>
+      </div>
+      <div class="feat-card rev">
+        <div class="feat-ico">📈</div>
+        <div class="feat-title">Progress Tracking</div>
+        <div class="feat-desc">Use after every mock test to monitor improvement over time and see how your predicted score changes with practice.</div>
+      </div>
+      <div class="feat-card rev">
+        <div class="feat-ico">🌍</div>
+        <div class="feat-title">Study Abroad Ready</div>
+        <div class="feat-desc">Instantly see if your predicted score meets university admission thresholds at 50+, 65+, 79+, and 85+ levels.</div>
+      </div>
+      <div class="feat-card rev">
+        <div class="feat-ico">🛂</div>
+        <div class="feat-title">Visa Planning</div>
+        <div class="feat-desc">Understand whether your current trajectory meets visa and skilled migration language score requirements.</div>
+      </div>
+      <div class="feat-card rev">
+        <div class="feat-ico">📱</div>
+        <div class="feat-title">Mobile Friendly</div>
+        <div class="feat-desc">Fully responsive design — works perfectly on any device, no app download or registration required.</div>
+      </div>
+      <div class="feat-card rev">
+        <div class="feat-ico">🔒</div>
+        <div class="feat-title">100% Private</div>
+        <div class="feat-desc">No account needed. No data collected. All calculations run locally in your browser for complete privacy.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GUIDE SECTION -->
+<section class="guide-sec" id="guide">
+  <div class="wa">
+    <div class="rev">
+      <div class="pill" style="margin-bottom:14px">Complete Guide</div>
+    </div>
+    <div class="guide-body rev">
+
+      <h2>What is the PTE Score Predictor?</h2>
+      <p>The <strong>PTE Score Predictor</strong> helps candidates estimate their likely PTE Academic score before sitting the official exam. By analysing your most recent mock test result alongside your section-wise performance percentages for Speaking, Writing, Reading, and Listening, this tool provides a realistic predicted score on the official <strong>10–90 PTE Academic scale</strong>.</p>
+      <p>The prediction also calculates a target score probability — helping you understand how likely you are to achieve your goal score and what preparation is still needed before exam day.</p>
+
+      <h2>How the Prediction Formula Works</h2>
+      <div class="ibox">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        <div>
+          <strong>Step 1:</strong> Average Performance = (Speaking% + Writing% + Reading% + Listening%) ÷ 4<br>
+          <strong>Step 2:</strong> Predicted Score = (Mock Score × 0.6) + (Average Performance × 0.4)<br>
+          <strong>Step 3:</strong> Round to nearest whole number.<br><br>
+          <em>The mock score carries 60% weight (more reliable than self-assessed %) and average performance carries 40% to factor in section-level strengths and gaps.</em>
+        </div>
+      </div>
+
+      <!-- Real-life example -->
+      <h2>Real-Life Prediction Example</h2>
+      <div class="ex-card">
+        <div class="ex-title">📋 Example Student Calculation</div>
+        <div class="ex-row"><div class="ex-lbl">Mock Test Score</div><div class="ex-val">68</div></div>
+        <div class="ex-row"><div class="ex-lbl">Speaking</div><div class="ex-val">72%</div></div>
+        <div class="ex-row"><div class="ex-lbl">Writing</div><div class="ex-val">70%</div></div>
+        <div class="ex-row"><div class="ex-lbl">Reading</div><div class="ex-val">66%</div></div>
+        <div class="ex-row"><div class="ex-lbl">Listening</div><div class="ex-val">74%</div></div>
+        <div class="ex-formula">
+          Average Performance = (72 + 70 + 66 + 74) ÷ 4 = 70.5<br>
+          Predicted Score = (68 × 0.6) + (70.5 × 0.4)<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= 40.8 + 28.2<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= <strong>69</strong>
+        </div>
+        <div class="ex-result">
+          <div class="ex-result-score">69</div>
+          <div class="ex-result-lbl">Predicted Overall PTE Score<br><strong>Upper Intermediate</strong> — Meets most undergraduate entry requirements</div>
+        </div>
+      </div>
+
+      <h2>Why Predict Your PTE Score?</h2>
+      <p>Score prediction helps candidates understand their exam readiness before sitting the official test. Rather than going in blind, prediction tools allow you to:</p>
+      <ul>
+        <li>Set realistic score expectations based on current performance</li>
+        <li>Identify which sections need the most improvement before exam day</li>
+        <li>Track progress across multiple mock test cycles</li>
+        <li>Decide whether to book the exam now or continue preparation</li>
+        <li>Plan for university admission, visa, or migration applications more confidently</li>
+      </ul>
+
+      <h2>Who Should Use This Tool?</h2>
+      <div class="benefit-grid">
+        <div class="bft"><div class="bft-ico">🎓</div><div>Students applying to universities who need a minimum PTE score for admission</div></div>
+        <div class="bft"><div class="bft-ico">🛂</div><div>Immigration applicants needing to meet language thresholds for visa or PR</div></div>
+        <div class="bft"><div class="bft-ico">💼</div><div>Working professionals seeking migration, registration, or workplace English proof</div></div>
+        <div class="bft"><div class="bft-ico">📚</div><div>Self-study candidates and coaching students tracking preparation progress</div></div>
+      </div>
+
+      <h2>Common Mistakes to Avoid</h2>
+      <div class="mistakes-grid">
+        <div class="mst"><div class="mst-ico">❌</div><div>Entering inflated performance values that don't reflect actual mock test conditions</div></div>
+        <div class="mst"><div class="mst-ico">❌</div><div>Ignoring weak skill sections and focusing only on the overall predicted score</div></div>
+        <div class="mst"><div class="mst-ico">❌</div><div>Using outdated mock test results that don't reflect current preparation level</div></div>
+        <div class="mst"><div class="mst-ico">❌</div><div>Not updating predictions after each practice session to track real progress</div></div>
+        <div class="mst"><div class="mst-ico">❌</div><div>Treating the prediction as a guaranteed result rather than a planning estimate</div></div>
+        <div class="mst"><div class="mst-ico">❌</div><div>Setting an unrealistic target score without building section scores incrementally</div></div>
+      </div>
+
+      <h2>Score Interpretation Guide</h2>
+      <ul>
+        <li><strong>50+:</strong> Suitable for many diploma, foundation, and vocational programs internationally</li>
+        <li><strong>65+:</strong> Accepted by a large number of universities for undergraduate study and most visa applications</li>
+        <li><strong>79+:</strong> Strong academic English — meets postgraduate and skilled migration language requirements</li>
+        <li><strong>85+:</strong> Exceptional communicator — qualifies for top university programs and competitive immigration streams</li>
+      </ul>
+
+      <div class="ibox bl">
+        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <div>PTE Academic results are typically released within <strong>48 hours</strong> and scores are valid for <strong>2 years</strong> from the test date. This makes PTE one of the fastest and most flexible English proficiency tests for study, migration, and professional purposes.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FAQ SECTION -->
+<section class="faq-sec" id="faq">
+  <div class="w">
+    <div class="sec-hdr rev">
+      <div class="pill" style="margin:0 auto 14px">FAQ</div>
+      <h2>Frequently Asked <span>Questions</span></h2>
+      <p>Everything you need to know about predicting your PTE Academic score.</p>
+    </div>
+    <div class="fql">
+      <div class="fq">
+        <div class="fq-q" onclick="tog(this)"><span class="fq-t">What is a PTE Score Predictor?</span><span class="fq-i">+</span></div>
+        <div class="fq-a"><div class="fq-ai">A PTE Score Predictor is a tool that estimates your likely PTE Academic overall score before you receive official results. It does this by combining your mock test score and self-assessed section performance percentages using a weighted formula to produce a directional score prediction on the 10–90 GSE scale.</div></div>
+      </div>
+      <div class="fq">
+        <div class="fq-q" onclick="tog(this)"><span class="fq-t">Is this an official Pearson tool?</span><span class="fq-i">+</span></div>
+        <div class="fq-a"><div class="fq-ai">No. This is an independent educational tool and is not affiliated with or endorsed by Pearson VUE or Pearson Education. It is designed for planning and preparation purposes only. For official PTE Academic information, visit pearsonpte.com.</div></div>
+      </div>
+      <div class="fq">
+        <div class="fq-q" onclick="tog(this)"><span class="fq-t">Can this predictor guarantee my final score?</span><span class="fq-i">+</span></div>
+        <div class="fq-a"><div class="fq-ai">No. This tool provides an estimate only. Actual PTE Academic scores depend on exam-day performance, the specific tasks assigned, and Pearson's AI-based automated scoring system which weights individual task types differently. Use this prediction as a planning guide, not a guaranteed outcome.</div></div>
+      </div>
+      <div class="fq">
+        <div class="fq-q" onclick="tog(this)"><span class="fq-t">What score is considered good for PTE Academic?</span><span class="fq-i">+</span></div>
+        <div class="fq-a"><div class="fq-ai">It depends on your purpose. A score of <strong>50+</strong> suits foundation programs; <strong>65+</strong> is accepted by most universities for undergraduate admission; <strong>79+</strong> is needed for most postgraduate programs and skilled migration pathways; and <strong>85+</strong> is required for the most competitive academic and immigration streams.</div></div>
+      </div>
+      <div class="fq">
+        <div class="fq-q" onclick="tog(this)"><span class="fq-t">Can I use it after every mock test?</span><span class="fq-i">+</span></div>
+        <div class="fq-a"><div class="fq-ai">Yes, and this is strongly recommended. Regular use after each mock test helps you track how your predicted score changes over time, whether your section performance is improving, and whether you are on course to meet your target score before the official exam.</div></div>
+      </div>
+      <div class="fq">
+        <div class="fq-q" onclick="tog(this)"><span class="fq-t">How do I estimate my section performance percentages?</span><span class="fq-i">+</span></div>
+        <div class="fq-a"><div class="fq-ai">After completing a mock test, most PTE practice platforms provide a score or percentage for each skill area. If not, you can estimate by calculating how many tasks in each section you feel you completed well versus poorly. Be honest — inflating percentages will make the prediction less useful.</div></div>
+      </div>
+      <div class="fq">
+        <div class="fq-q" onclick="tog(this)"><span class="fq-t">Does it analyse all four PTE skills?</span><span class="fq-i">+</span></div>
+        <div class="fq-a"><div class="fq-ai">Yes. The predictor analyses Speaking, Writing, Reading, and Listening performance separately, producing individual predicted section scores and identifying which sections are strong, developing, or need urgent improvement before the official exam.</div></div>
+      </div>
+      <div class="fq">
+        <div class="fq-q" onclick="tog(this)"><span class="fq-t">Can immigration applicants use this tool?</span><span class="fq-i">+</span></div>
+        <div class="fq-a"><div class="fq-ai">Yes. This tool includes visa and skilled migration readiness indicators and is useful for immigration applicants who want to understand whether their current preparation is likely to meet the language score requirements for Australian, Canadian, UK, or New Zealand visa applications before booking the official exam.</div></div>
+      </div>
+      <div class="fq">
+        <div class="fq-q" onclick="tog(this)"><span class="fq-t">Does this tool store my data?</span><span class="fq-i">+</span></div>
+        <div class="fq-a"><div class="fq-ai">No. All calculations are performed locally in your browser. No data you enter — including your mock score, performance percentages, or target score — is stored, transmitted, or shared with any third party.</div></div>
+      </div>
+      <div class="fq">
+        <div class="fq-q" onclick="tog(this)"><span class="fq-t">Is the PTE Score Predictor mobile friendly?</span><span class="fq-i">+</span></div>
+        <div class="fq-a"><div class="fq-ai">Yes. The tool is fully responsive and works on all screen sizes — smartphone, tablet, and desktop. No app download or account registration is required.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DISCLAIMER -->
+<div class="disc">
+  <div class="w">
+    <div class="disc-in">
+      <span style="font-size:20px;flex-shrink:0">⚠️</span>
+      <div><strong>Disclaimer:</strong> This PTE Score Predictor is an independent educational tool and is not affiliated with, endorsed by, or connected to Pearson VUE or Pearson Education. Results are estimates only. For official PTE Academic information and results, visit <a href="https://pearsonpte.com" target="_blank" rel="noopener" style="color:var(--blue);font-weight:600">pearsonpte.com</a>.</div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<section class="contact-sec">
+  <div class="w">
+    <div class="contact-card rev">
+      <h3>💬 Have a Question or Suggestion?</h3>
+      <p>We're always improving our tools. If you'd like to request a new feature or report an issue, get in touch — we respond within 24 hours.</p>
+      <a href="/contact" class="btn-bl">📬 Contact Us</a>
+      <p class="priv-note">🔒 No personal data is collected or stored by this tool.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="w">
+    <div class="cta-in">
+      <div class="pill">Explore More Tools</div>
+      <h2>More Free Tools for <em>PTE &amp; IELTS Prep</em></h2>
+      <p>Access our full collection of English test tools — all free, no registration required.</p>
+      <div class="cta-btns">
+        <a href="/categories" class="btn-gold">🗂️ Browse All Tools</a>
+        <a href="https://rajdailytools.in/pte-score-calculator-2026.html" class="btn-ghost">🎓 PTE Score Calculator</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-inner">
+    <div class="ft-top">
+      <div class="ft-brand">
+        <div class="logo">
+          <div class="lb"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+          <div><div class="ln">Raj<span>Daily</span>Tools</div><div class="ls">Smart Tools for Daily Life</div></div>
+        </div>
+        <p class="ft-desc">Free online tools for English test preparation, study abroad planning, immigration scoring, and everyday calculations. Built for students and professionals worldwide.</p>
+      </div>
+      <div class="fc">
+        <h4>PTE Tools</h4>
+        <ul>
+          <li><a href="https://rajdailytools.in/pte-score-calculator-2026.html">PTE Score Calculator</a></li>
+          <li><a href="#">PTE Score Predictor</a></li>
+          <li><a href="#">PTE ↔ IELTS Converter</a></li>
+          <li><a href="#">PTE Eligibility Checker</a></li>
+          <li><a href="#">PTE Target Score Planner</a></li>
+        </ul>
+      </div>
+      <div class="fc">
+        <h4>IELTS Tools</h4>
+        <ul>
+          <li><a href="https://rajdailytools.in/ielts-overall-band-score-calculator.html">Overall Band Calculator</a></li>
+          <li><a href="https://rajdailytools.in/ielts-reading-band-score-calculator.html">Reading Band Calculator</a></li>
+          <li><a href="https://rajdailytools.in/ielts-listening-band-score-calculator.html">Listening Band Calculator</a></li>
+          <li><a href="#">Writing Band Guide</a></li>
+          <li><a href="#">Speaking Band Guide</a></li>
+        </ul>
+      </div>
+      <div class="fc">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/categories">All Tools</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/contact">Contact</a></li>
+          <li><a href="/privacy">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ft-bot">
+      <p>© 2026 RajDailyTools. All rights reserved. Not affiliated with Pearson VUE or any official test authority.</p>
+      <p>Free · Ad-supported · No login required</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ══ DRAWER ══ */
+const brg=document.getElementById('brg'),dov=document.getElementById('dov'),drw=document.getElementById('drw'),dx=document.getElementById('dx');
+function oD(){drw.classList.add('on');dov.classList.add('on')}
+function cD(){drw.classList.remove('on');dov.classList.remove('on')}
+brg.addEventListener('click',oD);dov.addEventListener('click',cD);dx.addEventListener('click',cD);
+
+/* ══ SCROLL REVEAL ══ */
+const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target)}})},{threshold:.12});
+document.querySelectorAll('.rev').forEach(el=>obs.observe(el));
+
+/* ══ FAQ TOGGLE ══ */
+function tog(el){const fq=el.closest('.fq');fq.classList.toggle('open')}
+
+/* ══ QUICK SET ══ */
+function setVal(id,v){document.getElementById(id).value=v;document.getElementById(id).classList.remove('err')}
+
+/* ══ LEVEL HELPER ══ */
+function getLevel(s){
+  if(s>=85)return{label:'Expert',cls:'pass',tag:'Expert User (85–90)',icon:'🏆',sub:'Outstanding performance. This score meets language requirements for virtually any university admission, visa, or professional pathway worldwide.'};
+  if(s>=76)return{label:'Advanced',cls:'pass',tag:'Advanced User (76–84)',icon:'🌟',sub:'Excellent prediction. Most postgraduate programs and skilled migration pathways accept scores in this range. Focus on maintaining consistency across all four sections.'};
+  if(s>=65)return{label:'Upper Intermediate+',cls:'pass',tag:'Upper Intermediate+ (65–75)',icon:'✅',sub:'Above the undergraduate admission threshold for most institutions. With focused section practice, achieving 79+ is a realistic next target.'};
+  if(s>=59)return{label:'Upper Intermediate',cls:'avg',tag:'Upper Intermediate (59–64)',icon:'📗',sub:'Close to the undergraduate entry threshold. Targeted section practice — especially the weaker areas — should bring you above 65 efficiently.'};
+  if(s>=43)return{label:'Intermediate',cls:'avg',tag:'Intermediate User (43–58)',icon:'📘',sub:'Below most university admission requirements. Structured, section-by-section practice is recommended before booking the official exam.'};
+  if(s>=30)return{label:'Elementary',cls:'low',tag:'Elementary User (30–42)',icon:'🔴',sub:'Significant preparation is needed. Focus on foundational vocabulary, reading fluency, and listening comprehension before attempting PTE Academic.'};
+  return{label:'Basic',cls:'low',tag:'Basic User (10–29)',icon:'❌',sub:'Extensive English language development is required. Build core skills through everyday reading, listening, and writing practice before beginning PTE-specific preparation.'};
+}
+
+/* ══ SECTION LEVEL HELPER ══ */
+function secLevel(pct){
+  if(pct>=88)return{cls:'strong',lbl:'Excellent'};
+  if(pct>=72)return{cls:'strong',lbl:'Strong'};
+  if(pct>=58)return{cls:'avg',lbl:'Developing'};
+  return{cls:'weak',lbl:'Needs Work'};
+}
+
+/* ══ PREDICT ══ */
+function predictPTE(){
+  const mock=parseFloat(document.getElementById('mock').value);
+  const tgt=parseFloat(document.getElementById('tgt').value);
+  const pSpk=parseFloat(document.getElementById('pSpk').value);
+  const pWri=parseFloat(document.getElementById('pWri').value);
+  const pRdn=parseFloat(document.getElementById('pRdn').value);
+  const pLst=parseFloat(document.getElementById('pLst').value);
+
+  let valid=true;
+  const fields=[
+    {id:'mock',v:mock,min:10,max:90},
+    {id:'tgt',v:tgt,min:10,max:90},
+    {id:'pSpk',v:pSpk,min:0,max:100},
+    {id:'pWri',v:pWri,min:0,max:100},
+    {id:'pRdn',v:pRdn,min:0,max:100},
+    {id:'pLst',v:pLst,min:0,max:100},
+  ];
+  fields.forEach(f=>{
+    const el=document.getElementById(f.id);
+    el.classList.remove('err');
+    if(isNaN(f.v)||f.v<f.min||f.v>f.max){el.classList.add('err');valid=false;}
+  });
+  if(!valid){alert('Please fill all fields with valid values.\n• Mock & Target: 10–90\n• Performance percentages: 0–100');return;}
+
+  const avgPerf=(pSpk+pWri+pRdn+pLst)/4;
+  const predicted=Math.round((mock*0.6)+(avgPerf*0.4));
+  const lv=getLevel(predicted);
+
+  /* Convert % to approximate PTE scale score for each section */
+  const toScore=pct=>Math.min(90,Math.max(10,Math.round(10+(pct/100)*80)));
+  const sSpk=toScore(pSpk),sWri=toScore(pWri),sRdn=toScore(pRdn),sLst=toScore(pLst);
+
+  /* Meter */
+  const pct=(predicted-10)/80;
+  const circ=270;
+  document.getElementById('meterFill').style.strokeDashoffset=circ-(circ*pct);
+  document.getElementById('meterFill').style.stroke=lv.cls==='pass'?'#10b981':lv.cls==='avg'?'#f59e0b':'#ef4444';
+  document.getElementById('meterPct').textContent=predicted;
+
+  /* Banner */
+  const banner=document.getElementById('resBanner');
+  banner.className='res-banner '+lv.cls;
+  document.getElementById('resIcon').textContent=lv.icon;
+  document.getElementById('resTitle').textContent='Predicted PTE Score: '+predicted;
+  document.getElementById('resSub').textContent=lv.sub;
+  const tag=document.getElementById('resTag');
+  tag.className='res-tag '+(lv.cls==='pass'?'pass':lv.cls==='avg'?'avg':'low');
+  tag.textContent='🎓 '+lv.tag;
+
+  /* Target probability */
+  const gap=tgt-predicted;
+  let prob,probCls,probMsg;
+  if(gap<=0){
+    prob=100;probCls='background:var(--green)';
+    probMsg=`<strong>🏆 Target already met!</strong> Your predicted score of <strong>${predicted}</strong> meets or exceeds your target of <strong>${tgt}</strong>. Continue your current preparation approach to maintain this level and aim for consistency on exam day.`;
+  } else if(gap<=5){
+    prob=Math.round(78-gap*8);probCls='background:var(--green)';
+    probMsg=`<strong>✅ Very close to target!</strong> You are just <strong>${gap} points</strong> away from your target of <strong>${tgt}</strong>. Focus preparation on your weakest section — a focused 2–4 week sprint should close this gap before the exam.`;
+  } else if(gap<=12){
+    prob=Math.max(30,Math.round(60-gap*3.5));probCls='background:var(--amber)';
+    probMsg=`<strong>⚠️ Within reach with effort.</strong> You are <strong>${gap} points</strong> from your target of <strong>${tgt}</strong>. This gap is closeable with 4–8 weeks of structured section-focused practice. Prioritise your lowest-performing skill immediately.`;
+  } else if(gap<=20){
+    prob=Math.max(12,Math.round(35-gap*1.5));probCls='background:var(--orange)';
+    probMsg=`<strong>🔴 Significant gap to bridge.</strong> You are <strong>${gap} points</strong> from your target of <strong>${tgt}</strong>. Revisit your study plan, increase daily practice time, and consider mock test coaching to close this gap systematically.`;
+  } else {
+    prob=Math.max(5,15-Math.round((gap-20)*0.4));probCls='background:var(--red)';
+    probMsg=`<strong>❌ Target is ambitious at current level.</strong> You are <strong>${gap} points</strong> from your target of <strong>${tgt}</strong>. Consider a phased approach: first aim for ${Math.round(predicted+10)}, then work toward your final target. Extensive structured preparation will be needed.`;
+  }
+  prob=Math.min(100,Math.max(5,prob));
+
+  const probBar=document.getElementById('probBar');
+  probBar.style.cssText=`width:0%;${probCls}`;
+  probBar.textContent=prob+'%';
+  setTimeout(()=>probBar.style.width=prob+'%',200);
+
+  const probTarget=document.getElementById('probTarget');
+  probTarget.style.cssText=`${probCls};color:#fff;padding:4px 12px;border-radius:100px`;
+  probTarget.textContent='Target: '+tgt;
+  document.getElementById('probMeta').innerHTML=probMsg;
+
+  /* Section bars */
+  const bars=[
+    {bar:'barSpk',val:'valSpk',score:sSpk,pct:pSpk},
+    {bar:'barWri',val:'valWri',score:sWri,pct:pWri},
+    {bar:'barRdn',val:'valRdn',score:sRdn,pct:pRdn},
+    {bar:'barLst',val:'valLst',score:sLst,pct:pLst},
+  ];
+  bars.forEach(d=>{
+    document.getElementById(d.val).textContent=d.score;
+    document.getElementById(d.bar).style.width='0%';
+    document.getElementById(d.bar).textContent='';
+  });
+  document.getElementById('valOv').textContent=predicted;
+  document.getElementById('barOv').style.width='0%';
+  document.getElementById('barOv').textContent='';
+
+  setTimeout(()=>{
+    bars.forEach(d=>{
+      const w=((d.score-10)/80*100).toFixed(1)+'%';
+      const bar=document.getElementById(d.bar);
+      bar.style.width=w;
+      if(d.score>=60)bar.textContent=d.score;
+    });
+    const ow=((predicted-10)/80*100).toFixed(1)+'%';
+    const ob=document.getElementById('barOv');
+    ob.style.width=ow;
+    if(predicted>=60)ob.textContent=predicted;
+  },200);
+
+  /* Section improvement cards */
+  const secData=[
+    {ico:'🎙️',lbl:'Speaking',pct:pSpk,score:sSpk,
+      tips:{strong:'Excellent fluency — keep practising Read Aloud and Describe Image with timed conditions.',avg:'Work on fluency in Read Aloud. Pause only at punctuation. Record yourself to identify hesitation patterns.',weak:'Speaking needs urgent attention. Practise Describe Image daily using a 4-point structure: overview, detail, comparison, conclusion.'}},
+    {ico:'✍️',lbl:'Writing',pct:pWri,score:sWri,
+      tips:{strong:'Strong writing — maintain essay structure discipline and aim for wider vocabulary range.',avg:'Practise Summarize Written Text with strict 75-word discipline. In essays, improve your linking word variety.',weak:'Writing is a priority. Focus on essay templates (intro → 2 body paragraphs → conclusion) and Summarize Written Text format.'}},
+    {ico:'📖',lbl:'Reading',pct:pRdn,score:sRdn,
+      tips:{strong:'Strong reader — drill Re-order Paragraphs under timed conditions to push higher.',avg:'Target Fill in the Blanks and Re-order Paragraphs specifically. These two task types have the biggest score impact.',weak:'Reading needs significant work. Start with skimming and scanning drills. Build vocabulary with academic wordlists.'}},
+    {ico:'🎧',lbl:'Listening',pct:pLst,score:sLst,
+      tips:{strong:'Excellent listening — Write From Dictation practice will help you maximise this section.',avg:'Write From Dictation carries the most marks — prioritise it. Practise Summarize Spoken Text structure: topic, key points, conclusion.',weak:'Listening is a priority. Expose yourself to academic English daily — TED Talks, BBC podcasts, academic lectures. Practise WFD every day.'}},
+  ];
+
+  let imprHTML='';
+  secData.forEach(s=>{
+    const lv2=secLevel(s.pct);
+    const tip=s.tips[lv2.cls==='strong'?'strong':lv2.cls==='avg'?'avg':'weak'];
+    imprHTML+=`
+      <div class="impr-card ${lv2.cls}">
+        <div class="impr-ico">${s.ico}</div>
+        <div>
+          <div class="impr-ttl">${s.lbl} — ${lv2.lbl} (${s.pct}%)</div>
+          <div class="impr-sub">${tip}</div>
+        </div>
+      </div>`;
+  });
+  document.getElementById('imprGrid').innerHTML=imprHTML;
+
+  /* Milestone cards */
+  const milestones=[
+    {score:50,label:'Score 50+',icon:'📘',use:'Foundation / Vocational'},
+    {score:59,label:'Score 59+',icon:'✅',use:'Upper Intermediate'},
+    {score:65,label:'Score 65+',icon:'📗',use:'Undergraduate Entry'},
+    {score:76,label:'Score 76+',icon:'🌟',use:'Advanced / Skilled'},
+    {score:79,label:'Score 79+',icon:'🎓',use:'Postgrad / PR Pathway'},
+    {score:85,label:'Score 85+',icon:'🏆',use:'Expert / Top Streams'},
+  ];
+  let gradeHTML='';
+  milestones.forEach((m,i)=>{
+    const achieved=predicted>=m.score;
+    const isCurrent=predicted>=m.score&&(i===milestones.length-1||predicted<milestones[i+1].score);
+    let cls='inactive';
+    if(isCurrent){cls=m.score>=76?'active-pass':(m.score>=59?'active-avg':'active-fail');}
+    else if(achieved){cls='active-pass';}
+    gradeHTML+=`
+      <div class="gc ${cls}">
+        <div class="gc-ico">${achieved?m.icon:'🔒'}</div>
+        <div class="gc-title">${m.label}</div>
+        <div class="gc-val">${m.use}<br><span style="font-size:10px">${achieved?'✓ Achieved':'Need '+m.score+' predicted'}</span>${isCurrent?' 👈 Your level':''}</div>
+      </div>`;
+  });
+  document.getElementById('gradeGrid').innerHTML=gradeHTML;
+
+  /* Analysis */
+  const weakest=secData.reduce((a,b)=>a.pct<b.pct?a:b);
+  let msg='';
+  if(predicted>=85){
+    msg=`<strong>🏆 Exceptional Prediction — Predicted PTE Score: ${predicted}.</strong> Your mock test performance and section-level scores point to an Expert-level result. This prediction meets the language requirement for virtually every academic and immigration pathway. Focus on maintaining consistent performance across all four sections on exam day — particularly in your lowest section (${weakest.lbl} at ${weakest.pct}%).`;
+  } else if(predicted>=76){
+    msg=`<strong>🌟 Strong Prediction — Predicted PTE Score: ${predicted}.</strong> Your current preparation points to an Advanced result. To push toward 85+, target your weakest section: <strong>${weakest.lbl} (${weakest.pct}%)</strong>. Even a 10-percentage-point improvement in one section can add 4+ points to your overall predicted score using this model.`;
+  } else if(predicted>=65){
+    msg=`<strong>✅ Good Prediction — Predicted PTE Score: ${predicted}.</strong> You are above the undergraduate admission threshold. To reach 79+ for postgraduate or migration purposes, focus concentrated practice on your lowest-performing section: <strong>${weakest.lbl} (${weakest.pct}%)</strong>. Write From Dictation (Listening) and Re-order Paragraphs (Reading) are the highest-yield improvement tasks at this level.`;
+  } else if(predicted>=59){
+    msg=`<strong>📗 Developing — Predicted PTE Score: ${predicted}.</strong> You are close to the undergraduate entry line. Closing the gap to 65+ requires targeted section work. Your weakest area is <strong>${weakest.lbl} (${weakest.pct}%)</strong> — prioritise this section in your next 2–4 weeks of preparation. Focus on task-specific strategies rather than general practice.`;
+  } else if(predicted>=43){
+    msg=`<strong>📘 Below Target — Predicted PTE Score: ${predicted}.</strong> Significant improvement is needed before the official exam. Your weakest section is <strong>${weakest.lbl} (${weakest.pct}%)</strong>. Redesign your study plan around daily section-focused drills. Vocabulary development and regular English exposure (news, podcasts, academic articles) will build the underlying language skills all sections require.`;
+  } else {
+    msg=`<strong>❌ Significantly Below Target — Predicted PTE Score: ${predicted}.</strong> Extensive preparation is needed. Concentrate on foundational English skills before PTE-specific tasks. Begin with daily reading and listening in English, then introduce PTE task formats once your baseline comprehension improves.`;
+  }
+  document.getElementById('suggBox').innerHTML=`<strong style="display:block;font-family:var(--fd);font-size:14px;margin-bottom:10px">🎯 Your PTE Score Prediction Analysis</strong><p style="font-size:14px;color:var(--ink2);line-height:1.82">${msg}</p>`;
+
+  /* Show result */
+  const ra=document.getElementById('resultArea');
+  ra.style.display='block';
+  ra.style.animation='none';ra.offsetHeight;
+  ra.style.animation='resultIn .45s var(--ease) both';
+  setTimeout(()=>ra.scrollIntoView({behavior:'smooth',block:'nearest'}),120);
+}
+
+function resetTool(){
+  ['mock','tgt','pSpk','pWri','pRdn','pLst'].forEach(id=>{
+    document.getElementById(id).value='';
+    document.getElementById(id).classList.remove('err');
+  });
+  document.getElementById('resultArea').style.display='none';
+  window.scrollTo({top:document.getElementById('tool').offsetTop-80,behavior:'smooth'});
+}
+
+/* Enter key */
+['mock','tgt','pSpk','pWri','pRdn','pLst'].forEach(id=>{
+  document.getElementById(id).addEventListener('keydown',function(e){if(e.key==='Enter')predictPTE();});
+});
+</script>
+</body>
+</html>
