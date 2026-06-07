@@ -1,0 +1,1191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IELTS Preparation Time Calculator – Estimate How Long You Need to Reach Your Target Band</title>
+<meta name="description" content="Estimate the preparation time required to reach your target IELTS band score. Compare your current score, target score, and study hours to create a realistic study timeline.">
+<meta name="keywords" content="IELTS preparation time calculator, IELTS study plan, IELTS band improvement, IELTS study hours, IELTS target band, IELTS preparation duration, how long to prepare for IELTS">
+<meta name="robots" content="index, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ══════════════════════════════════════
+   DESIGN TOKENS
+══════════════════════════════════════ */
+:root{
+  --blue:#2563eb;--blue-d:#1d4ed8;--blue-xl:#eff6ff;--blue-s:#dbeafe;
+  --amber:#f59e0b;--green:#10b981;--red:#ef4444;--purple:#8b5cf6;
+  --orange:#f97316;--teal:#14b8a6;
+  --green-xl:#f0fdf4;--green-s:#bbf7d0;
+  --red-xl:#fef2f2;--red-s:#fecaca;
+  --amber-xl:#fffbeb;--amber-s:#fde68a;
+  --purple-xl:#faf5ff;--purple-s:#ddd6fe;
+  --yellow:#eab308;--yellow-xl:#fefce8;--yellow-s:#fef08a;
+  --ink:#0f172a;--ink2:#334155;--ink3:#64748b;--ink4:#94a3b8;
+  --line:#e2e8f0;--surf:#f8fafc;--white:#fff;
+  --s1:0 1px 3px rgba(15,23,42,.06),0 1px 2px rgba(15,23,42,.04);
+  --s2:0 4px 16px rgba(15,23,42,.08),0 2px 6px rgba(15,23,42,.04);
+  --s3:0 12px 40px rgba(15,23,42,.11),0 3px 10px rgba(15,23,42,.06);
+  --s4:0 24px 64px rgba(15,23,42,.13),0 6px 20px rgba(15,23,42,.07);
+  --sb:0 8px 32px rgba(37,99,235,.20);
+  --fd:'Sora',sans-serif;--fb:'DM Sans',sans-serif;
+  --ease:cubic-bezier(.4,0,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);color:var(--ink);background:var(--white);overflow-x:hidden;-webkit-font-smoothing:antialiased;line-height:1.6}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+button{cursor:pointer;border:none;background:none;font-family:var(--fb)}
+.w{max-width:1180px;margin:0 auto;padding:0 24px}
+.wa{max-width:880px;margin:0 auto;padding:0 24px}
+select,input{appearance:none;-webkit-appearance:none}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+@keyframes resultIn{from{opacity:0;transform:translateY(18px) scale(.97)}to{opacity:1;transform:none}}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}
+.rev{opacity:0;transform:translateY(22px);transition:opacity .55s var(--ease),transform .55s var(--ease)}
+.rev.in{opacity:1;transform:none}
+
+/* ══ HEADER ══ */
+.hdr{position:sticky;top:0;z-index:999;background:rgba(255,255,255,.96);backdrop-filter:blur(20px);border-bottom:1px solid var(--line);box-shadow:var(--s1)}
+.hdi{display:flex;align-items:center;justify-content:space-between;height:66px}
+.logo{display:flex;align-items:center;gap:10px}
+.lb{width:36px;height:36px;background:var(--blue);border-radius:9px;display:flex;align-items:center;justify-content:center;box-shadow:var(--sb);flex-shrink:0}
+.lb svg{width:18px;height:18px;fill:#fff}
+.ln{font-family:var(--fd);font-size:19px;font-weight:800;color:var(--ink);line-height:1}
+.ln span{color:var(--blue)}
+.ls{font-size:10px;color:var(--ink4);letter-spacing:.04em}
+nav.dn{display:flex;align-items:center;gap:2px}
+nav.dn a{font-size:13.5px;font-weight:500;color:var(--ink2);padding:7px 13px;border-radius:8px;transition:.2s}
+nav.dn a:hover{color:var(--blue);background:var(--blue-xl)}
+.hcta{background:var(--blue);color:#fff;font-family:var(--fd);font-weight:600;font-size:13px;padding:8px 18px;border-radius:8px;box-shadow:var(--sb);transition:.2s}
+.hcta:hover{background:var(--blue-d);transform:translateY(-1px)}
+.brg{display:none;flex-direction:column;gap:4.5px;padding:8px;border-radius:8px}
+.brg span{display:block;width:20px;height:2px;background:var(--ink);border-radius:2px;transition:.28s}
+.dov{display:none;position:fixed;inset:0;background:rgba(15,23,42,.45);z-index:1040;backdrop-filter:blur(3px)}
+.dov.on{display:block}
+.drw{position:fixed;top:0;right:-100%;width:270px;height:100vh;background:#fff;z-index:1050;padding:22px;box-shadow:var(--s4);transition:right .32s var(--ease);overflow-y:auto}
+.drw.on{right:0}
+.dh{display:flex;align-items:center;justify-content:space-between;margin-bottom:26px}
+.dx{width:33px;height:33px;border-radius:7px;background:var(--surf);display:flex;align-items:center;justify-content:center;color:var(--ink3);font-size:17px}
+nav.mn{display:flex;flex-direction:column;gap:3px}
+nav.mn a{display:block;font-size:14px;font-weight:500;color:var(--ink2);padding:11px 13px;border-radius:8px;transition:.2s}
+nav.mn a:hover{color:var(--blue);background:var(--blue-xl)}
+
+/* ══ HERO ══ */
+.hero{position:relative;overflow:hidden;background:linear-gradient(150deg,#f0f7ff 0%,#fff 46%,#f0fdf4 100%);padding:64px 0 72px}
+.hero::before{content:'';position:absolute;top:-140px;right:-180px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(37,99,235,.08) 0%,transparent 68%);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-80px;left:-100px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(20,184,166,.06) 0%,transparent 68%);pointer-events:none}
+.blob{position:absolute;border-radius:50%;pointer-events:none;animation:float 6s ease-in-out infinite}
+.b1{width:13px;height:13px;background:rgba(37,99,235,.18);top:22%;right:14%;animation-delay:0s}
+.b2{width:9px;height:9px;background:rgba(20,184,166,.22);top:58%;right:26%;animation-delay:2.2s}
+.b3{width:11px;height:11px;background:rgba(245,158,11,.18);top:36%;right:6%;animation-delay:4s}
+.bc{display:flex;align-items:center;gap:7px;font-size:12.5px;color:var(--ink3);margin-bottom:22px;position:relative;z-index:1;flex-wrap:wrap}
+.bc a{color:var(--blue);font-weight:600}
+.pill{display:inline-flex;align-items:center;gap:7px;font-family:var(--fd);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);background:var(--blue-xl);padding:5px 14px;border-radius:100px;margin-bottom:18px}
+.pill::before{content:'';width:6px;height:6px;background:var(--blue);border-radius:50%}
+.hero-inner{position:relative;z-index:1;max-width:720px;animation:fadeUp .5s ease both}
+.hero h1{font-family:var(--fd);font-size:clamp(26px,4.5vw,50px);font-weight:800;line-height:1.1;color:var(--ink);margin-bottom:14px}
+.hero h1 span{color:var(--blue)}
+.hero-sub{font-size:16px;color:var(--ink3);line-height:1.8;margin-bottom:22px;max-width:600px}
+.hero-chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.chip{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;padding:6px 14px;border-radius:100px;background:#fff;border:1.5px solid var(--line);color:var(--ink2);box-shadow:var(--s1);transition:.22s}
+.chip:hover{border-color:var(--blue);color:var(--blue);transform:translateY(-1px)}
+.hero-meta{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:24px}
+.upd{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:700;color:var(--blue);background:var(--blue-xl);padding:6px 14px;border-radius:100px;border:1.5px solid var(--blue-s)}
+.mi{font-size:13px;color:var(--ink3);font-weight:500}
+
+/* HOW TO USE */
+.howto{background:var(--amber-xl);border:2px solid var(--amber-s);border-radius:16px;padding:22px 26px;max-width:560px;margin-bottom:24px}
+.howto-ttl{display:flex;align-items:center;gap:9px;font-family:var(--fd);font-size:15px;font-weight:800;color:var(--ink);margin-bottom:13px}
+.howto-steps{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.hs{display:flex;align-items:flex-start;gap:10px;font-size:13.5px;color:var(--ink2);line-height:1.6}
+.sn{width:24px;height:24px;background:var(--amber);color:#fff;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex-shrink:0;margin-top:1px}
+
+/* related tools */
+.rel-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;position:relative;z-index:1}
+.rg-box{border-radius:14px;padding:14px 14px 12px;display:flex;flex-direction:column;gap:8px;transition:.22s;border:1.5px solid}
+.rg-box:hover{transform:translateY(-3px);box-shadow:var(--s3)}
+.rg-box.c1{background:linear-gradient(135deg,#fffbeb,#fef3c7);border-color:var(--amber-s)}
+.rg-box.c2{background:linear-gradient(135deg,var(--green-xl),#dcfce7);border-color:var(--green-s)}
+.rg-box.c3{background:linear-gradient(135deg,var(--blue-xl),var(--blue-s));border-color:var(--blue-s)}
+.rg-box.c4{background:linear-gradient(135deg,var(--purple-xl),#ede9fe);border-color:var(--purple-s)}
+.rg-ico{font-size:22px}
+.rg-txt h4{font-family:var(--fd);font-size:12px;font-weight:800;color:var(--ink);margin-bottom:2px}
+.rg-txt p{font-size:11px;color:var(--ink3);line-height:1.5}
+.btn-xs{display:inline-flex;align-items:center;gap:4px;font-family:var(--fd);font-weight:700;font-size:11px;padding:5px 10px;border-radius:7px;transition:.22s;margin-top:4px}
+.btn-xs.a{background:var(--amber);color:#fff}.btn-xs.a:hover{background:#d97706}
+.btn-xs.g{background:var(--green);color:#fff}.btn-xs.g:hover{background:#059669}
+.btn-xs.b{background:var(--blue);color:#fff}.btn-xs.b:hover{background:var(--blue-d)}
+.btn-xs.p{background:var(--purple);color:#fff}.btn-xs.p:hover{background:#7c3aed}
+.btn-xs.t{background:var(--teal);color:#fff}.btn-xs.t:hover{background:#0d9488}
+
+/* ══ TOOL SECTION ══ */
+.tool-sec{background:var(--surf);padding:80px 0}
+.tool-wrap{max-width:860px;margin:0 auto}
+.tool-card{background:#fff;border:1.5px solid var(--line);border-radius:28px;overflow:hidden;box-shadow:var(--s4)}
+.tool-hdr{background:linear-gradient(135deg,#0f172a 0%,#0f4c75 50%,#1e88e5 100%);padding:32px 40px;position:relative;overflow:hidden}
+.tool-hdr::before{content:'';position:absolute;top:-60px;right:-60px;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,.07)}
+.tool-hdr::after{content:'';position:absolute;bottom:-40px;left:-40px;width:180px;height:180px;border-radius:50%;background:rgba(255,255,255,.04)}
+.run-dots{position:absolute;bottom:20px;right:40px;display:flex;gap:5px;opacity:.3;z-index:0}
+.run-dot{width:6px;height:6px;border-radius:50%;background:#fff}
+.th{position:relative;z-index:1}
+.th h2{font-family:var(--fd);font-size:21px;font-weight:800;color:#fff;margin-bottom:6px}
+.th p{font-size:14px;color:rgba(255,255,255,.82);line-height:1.65}
+.th-badges{display:flex;flex-wrap:wrap;gap:9px;margin-top:14px}
+.thb{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:rgba(255,255,255,.9);background:rgba(255,255,255,.13);padding:5px 12px;border-radius:100px}
+.tool-body{padding:36px 40px}
+
+/* select + input */
+.fsel{padding:12px 16px;font-size:15px;font-weight:700;font-family:var(--fd);color:var(--ink);background:#fff;border:1.5px solid var(--line);border-radius:10px;outline:none;transition:.22s;width:100%;cursor:pointer}
+.fsel:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(37,99,235,.10)}
+.finp{padding:12px 16px;font-size:22px;font-weight:800;font-family:var(--fd);color:var(--ink);background:#fff;border:1.5px solid var(--line);border-radius:10px;outline:none;transition:.22s;width:100%;text-align:center}
+.finp:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(37,99,235,.10)}
+.finp.err{border-color:var(--red);box-shadow:0 0 0 3px rgba(239,68,68,.10)}
+.fld{display:flex;flex-direction:column;gap:7px;margin-bottom:20px}
+.flbl{font-size:13px;font-weight:700;color:var(--ink2)}
+.flbl span{font-size:11px;font-weight:500;color:var(--ink4);margin-left:5px;background:var(--surf);padding:2px 7px;border-radius:5px;border:1px solid var(--line)}
+.score-range{display:flex;gap:8px;margin-top:8px;flex-wrap:wrap}
+.sr-item{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:600;padding:4px 11px;border-radius:100px;border:1.5px solid var(--line);background:var(--surf);color:var(--ink3);cursor:pointer;transition:.2s}
+.sr-item:hover{border-color:var(--blue);color:var(--blue);background:var(--blue-xl)}
+.hint-box{display:flex;align-items:flex-start;gap:9px;font-size:13px;color:var(--ink2);background:var(--blue-xl);border:1.5px solid var(--blue-s);border-radius:10px;padding:11px 14px;margin:16px 0;line-height:1.65}
+.hint-box svg{width:16px;height:16px;stroke:var(--blue);fill:none;stroke-width:2;flex-shrink:0;margin-top:2px}
+.btn-row{display:flex;gap:12px;margin-top:4px}
+.chk-btn{flex:1;padding:17px;background:linear-gradient(135deg,#0f172a 0%,#0f4c75 50%,#1e88e5 100%);color:#fff;font-family:var(--fd);font-weight:800;font-size:16px;border-radius:12px;box-shadow:0 8px 32px rgba(15,76,117,.28);transition:all .25s var(--ease);display:flex;align-items:center;justify-content:center;gap:10px}
+.chk-btn:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(15,76,117,.40)}
+.chk-btn:active{transform:translateY(0)}
+.rst-btn{padding:17px 24px;background:var(--surf);color:var(--ink3);font-family:var(--fd);font-weight:700;font-size:15px;border-radius:12px;border:1.5px solid var(--line);transition:.22s;display:flex;align-items:center;gap:8px}
+.rst-btn:hover{background:var(--red-xl);color:var(--red);border-color:var(--red-s)}
+
+/* ══ RESULT ══ */
+#resultArea{display:none;margin-top:28px;animation:resultIn .45s var(--ease) both}
+.res-banner{border-radius:20px;padding:28px;margin-bottom:22px;position:relative;overflow:hidden;display:flex;align-items:center;gap:24px;flex-wrap:wrap}
+.res-banner.pass{background:linear-gradient(135deg,var(--green-xl),#d1fae5);border:2px solid var(--green-s)}
+.res-banner.avg{background:var(--amber-xl);border:2px solid var(--amber-s)}
+.res-banner.low{background:var(--red-xl);border:2px solid var(--red-s)}
+.res-banner::before{content:'';position:absolute;inset:0;opacity:.04;background-image:repeating-linear-gradient(45deg,currentColor 0,currentColor 1px,transparent 0,transparent 50%);background-size:12px 12px;pointer-events:none}
+.meter-wrap{flex-shrink:0;position:relative;width:100px;height:100px}
+.meter-svg{width:100px;height:100px;transform:rotate(-90deg)}
+.meter-bg{fill:none;stroke:rgba(0,0,0,.08);stroke-width:10}
+.meter-fill{fill:none;stroke-width:10;stroke-linecap:round;transition:stroke-dashoffset 1.2s var(--ease)}
+.meter-center{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.meter-pct{font-family:var(--fd);font-size:14px;font-weight:800;color:var(--ink);line-height:1;text-align:center}
+.meter-lbl{font-size:10px;font-weight:700;color:var(--ink3);text-transform:uppercase;letter-spacing:.06em;text-align:center}
+.res-info{flex:1}
+.res-icon{font-size:32px;margin-bottom:6px}
+.res-title{font-family:var(--fd);font-size:22px;font-weight:800;color:var(--ink);line-height:1.1;margin-bottom:6px}
+.res-sub{font-size:14px;color:var(--ink3);line-height:1.65}
+.res-tag{display:inline-flex;align-items:center;gap:6px;font-family:var(--fd);font-size:13px;font-weight:700;padding:5px 14px;border-radius:100px;margin-top:10px}
+.res-tag.pass{background:var(--green);color:#fff}
+.res-tag.avg{background:var(--amber);color:#fff}
+.res-tag.low{background:var(--red);color:#fff}
+
+/* summary stat cards */
+.stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:13px;margin-bottom:18px}
+.sc{border-radius:13px;padding:16px 14px;text-align:center;border:1.5px solid;transition:.22s}
+.sc:hover{transform:translateY(-2px);box-shadow:var(--s2)}
+.sc.blue{background:var(--blue-xl);border-color:var(--blue-s)}
+.sc.green{background:var(--green-xl);border-color:var(--green-s)}
+.sc.amber{background:var(--amber-xl);border-color:var(--amber-s)}
+.sc.purple{background:var(--purple-xl);border-color:var(--purple-s)}
+.sc-ico{font-size:22px;margin-bottom:6px}
+.sc-val{font-family:var(--fd);font-size:16px;font-weight:800;color:var(--ink);margin-bottom:3px}
+.sc-lbl{font-size:11px;color:var(--ink3);line-height:1.4}
+
+/* weekly plan bars */
+.time-compare{background:var(--surf);border:1.5px solid var(--line);border-radius:16px;padding:22px 24px;margin-bottom:18px}
+.tc-title{font-family:var(--fd);font-size:14px;font-weight:700;color:var(--ink);margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.tc-row{display:flex;align-items:center;gap:14px;margin-bottom:12px}
+.tc-lbl{font-size:12.5px;font-weight:600;color:var(--ink2);width:130px;flex-shrink:0}
+.tc-bar-track{flex:1;height:20px;background:var(--line);border-radius:10px;overflow:hidden}
+.tc-bar-fill{height:100%;border-radius:10px;display:flex;align-items:center;padding-left:10px;font-size:11px;font-weight:700;color:#fff;transition:width 1.2s var(--ease)}
+.tc-bar-fill.g{background:linear-gradient(90deg,var(--green),#059669)}
+.tc-bar-fill.a{background:linear-gradient(90deg,var(--amber),#d97706)}
+.tc-bar-fill.r{background:linear-gradient(90deg,var(--red),#dc2626)}
+.tc-bar-fill.b{background:linear-gradient(90deg,var(--blue),var(--blue-d))}
+.tc-val{font-size:13px;font-weight:700;width:60px;flex-shrink:0;text-align:right}
+
+/* focus areas */
+.focus-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:18px}
+.focus-card{background:#fff;border:1.5px solid var(--line);border-radius:13px;padding:16px;display:flex;gap:12px;align-items:flex-start;transition:.22s}
+.focus-card:hover{border-color:var(--blue-s);box-shadow:var(--s2)}
+.focus-ico{font-size:22px;flex-shrink:0}
+.focus-body h4{font-family:var(--fd);font-size:13px;font-weight:800;color:var(--ink);margin-bottom:4px}
+.focus-body p{font-size:12.5px;color:var(--ink3);line-height:1.6}
+
+.sugg-box{background:var(--blue-xl);border:1.5px solid var(--blue-s);border-radius:13px;padding:16px 18px;font-size:14px;color:var(--ink2);line-height:1.78}
+.warn-box{background:var(--amber-xl);border:1.5px solid var(--amber-s);border-radius:12px;padding:14px 18px;display:flex;gap:10px;font-size:13.5px;color:var(--ink2);line-height:1.7;margin-top:14px}
+
+/* ══ TABLE SECTION ══ */
+.tbl-sec{background:#fff;padding:72px 0}
+.tbl-wr{overflow-x:auto;margin-bottom:20px}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+thead th{background:linear-gradient(135deg,#0f172a 0%,#0f4c75 100%);color:#fff;padding:14px 16px;text-align:left;font-family:var(--fd);font-size:13px;font-weight:700;letter-spacing:.03em}
+tbody tr{border-bottom:1px solid var(--line);transition:.2s}
+tbody tr:hover{background:var(--blue-xl)}
+tbody td{padding:12px 16px;color:var(--ink2);vertical-align:middle}
+.row-pass{background:var(--green-xl)!important}
+.row-avg{background:var(--amber-xl)!important}
+.row-fail{background:var(--red-xl)!important}
+.tbadge{display:inline-flex;font-size:11px;font-weight:700;padding:3px 8px;border-radius:100px}
+.tbadge.g{background:var(--green-xl);color:var(--green);border:1px solid var(--green-s)}
+.tbadge.a{background:var(--amber-xl);color:#92400e;border:1px solid var(--amber-s)}
+.tbadge.r{background:var(--red-xl);color:var(--red);border:1px solid var(--red-s)}
+.tbadge.b{background:var(--blue-xl);color:var(--blue);border:1px solid var(--blue-s)}
+.tbadge.p{background:var(--purple-xl);color:var(--purple);border:1px solid var(--purple-s)}
+
+/* ══ TIPS SECTION ══ */
+.tips-sec{background:var(--surf);padding:72px 0}
+.tips-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.tip-card{background:#fff;border:1.5px solid var(--line);border-radius:16px;padding:22px 18px;text-align:center;transition:.28s}
+.tip-card:hover{transform:translateY(-4px);box-shadow:var(--s3);border-color:var(--blue-s)}
+.tip-ico{font-size:32px;margin-bottom:12px}
+.tip-title{font-family:var(--fd);font-size:14px;font-weight:800;color:var(--ink);margin-bottom:8px}
+.tip-desc{font-size:13px;color:var(--ink3);line-height:1.7}
+
+/* ══ STORY ══ */
+.story-sec{background:#fff;padding:72px 0}
+.story-card{background:var(--surf);border:1.5px solid var(--line);border-radius:24px;padding:40px;box-shadow:var(--s3);position:relative;overflow:hidden}
+.story-card::before{content:'';position:absolute;top:0;left:0;bottom:0;width:5px;background:linear-gradient(180deg,var(--blue) 0%,var(--teal) 100%);border-radius:5px 0 0 5px}
+.sq{font-size:54px;color:var(--blue-s);font-family:Georgia,serif;line-height:1;padding-left:8px}
+.sb{font-size:15.5px;color:var(--ink2);line-height:1.9;padding:0 8px}
+.sauth{display:flex;align-items:center;gap:14px;margin-top:22px;padding-top:20px;border-top:1px solid var(--line)}
+.savt{width:48px;height:48px;background:var(--blue);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+.sname{font-family:var(--fd);font-size:15px;font-weight:700;color:var(--ink)}
+.srole{font-size:12.5px;color:var(--ink3)}
+.founder-msg{background:linear-gradient(135deg,var(--blue-xl),var(--blue-s));border:1.5px solid var(--blue-s);border-radius:14px;padding:20px 22px;margin-top:20px;display:flex;gap:13px}
+.fm-ico{font-size:26px;flex-shrink:0}
+.fm-txt{font-size:14px;color:var(--ink2);line-height:1.75;font-style:italic}
+.fm-txt strong{color:var(--ink);font-weight:700;font-style:normal}
+
+/* ══ GUIDE ══ */
+.guide-sec{background:var(--surf);padding:72px 0}
+.guide-body h2{font-family:var(--fd);font-size:21px;font-weight:800;color:var(--ink);margin:28px 0 11px;line-height:1.3}
+.guide-body h2:first-child{margin-top:0}
+.guide-body p{font-size:15px;color:var(--ink3);line-height:1.85;margin-bottom:14px}
+.guide-body ul{display:flex;flex-direction:column;gap:8px;margin:12px 0 16px}
+.guide-body li{display:flex;align-items:flex-start;gap:10px;font-size:14.5px;color:var(--ink3);line-height:1.7}
+.guide-body li::before{content:'✓';width:18px;height:18px;background:var(--blue);color:#fff;border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;flex-shrink:0;margin-top:3px}
+.guide-body strong{color:var(--ink2);font-weight:700}
+.ibox{background:var(--blue-xl);border:1.5px solid var(--blue-s);border-radius:13px;padding:15px 18px;margin:16px 0;display:flex;gap:11px;font-size:14px;color:var(--ink2);line-height:1.7}
+.ibox svg{width:17px;height:17px;stroke:var(--blue);fill:none;stroke-width:2;flex-shrink:0;margin-top:2px}
+.ibox.g{background:var(--green-xl);border-color:var(--green-s)}
+.ibox.g svg{stroke:var(--green)}
+.ibox.a{background:var(--amber-xl);border-color:var(--amber-s)}
+.ibox.a svg{stroke:var(--amber)}
+
+/* band timeline */
+.timeline{display:flex;flex-direction:column;gap:0;margin:20px 0}
+.tl-row{display:flex;align-items:flex-start;gap:16px;position:relative}
+.tl-dot{width:14px;height:14px;border-radius:50%;flex-shrink:0;margin-top:5px;border:2.5px solid #fff;box-shadow:var(--s2)}
+.tl-line{position:absolute;left:6px;top:20px;bottom:-10px;width:2px;background:var(--line)}
+.tl-row:last-child .tl-line{display:none}
+.tl-body{flex:1;padding-bottom:20px}
+.tl-title{font-family:var(--fd);font-size:14px;font-weight:800;color:var(--ink);margin-bottom:4px}
+.tl-desc{font-size:13.5px;color:var(--ink3);line-height:1.7}
+.tl-tag{display:inline-flex;font-size:11px;font-weight:700;padding:3px 9px;border-radius:100px;margin-top:5px}
+
+/* ══ FAQ ══ */
+.faq-sec{background:#fff;padding:72px 0}
+.fql{max-width:780px;margin:0 auto}
+.fq{background:var(--surf);border:1.5px solid var(--line);border-radius:13px;margin-bottom:10px;overflow:hidden}
+.fq-q{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;cursor:pointer;gap:14px;transition:.2s}
+.fq-q:hover{background:var(--blue-xl)}
+.fq-t{font-weight:600;font-size:15px;color:var(--ink);line-height:1.4}
+.fq-i{width:28px;height:28px;border-radius:50%;background:var(--blue-xl);color:var(--blue);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;transition:transform .28s,background .2s}
+.fq.open .fq-i{transform:rotate(45deg);background:var(--blue);color:#fff}
+.fq-a{max-height:0;overflow:hidden;transition:max-height .38s var(--ease)}
+.fq-ai{padding:0 22px 18px;font-size:14.5px;color:var(--ink3);line-height:1.78}
+.fq.open .fq-a{max-height:500px}
+
+/* ══ DISC / CTA / FOOTER ══ */
+.disc{background:var(--amber-xl);border-top:1px solid var(--amber-s);border-bottom:1px solid var(--amber-s);padding:15px 0}
+.disc-in{display:flex;align-items:flex-start;gap:12px;font-size:13.5px;color:var(--ink2);line-height:1.7}
+.contact-sec{background:var(--surf);padding:60px 0}
+.contact-card{max-width:580px;margin:0 auto;background:#fff;border:1.5px solid var(--line);border-radius:20px;padding:32px;text-align:center;box-shadow:var(--s2)}
+.contact-card h3{font-family:var(--fd);font-size:19px;font-weight:800;color:var(--ink);margin-bottom:10px}
+.contact-card p{font-size:15px;color:var(--ink3);line-height:1.75;margin-bottom:20px}
+.btn-bl{display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:#fff;font-family:var(--fd);font-weight:700;font-size:14.5px;padding:12px 26px;border-radius:8px;box-shadow:var(--sb);transition:.22s}
+.btn-bl:hover{background:var(--blue-d);transform:translateY(-1px)}
+.priv-note{font-size:12px;color:var(--ink4);margin-top:14px}
+.cta{background:linear-gradient(140deg,#0f172a 0%,#0f4c75 100%);padding:80px 0;text-align:center;position:relative;overflow:hidden}
+.cta::before{content:'';position:absolute;top:-80px;left:50%;transform:translateX(-50%);width:800px;height:380px;background:radial-gradient(ellipse,rgba(30,136,229,.22) 0%,transparent 68%);pointer-events:none}
+.cta-in{position:relative;z-index:1}
+.cta .pill{color:#93c5fd;background:rgba(255,255,255,.1);margin-bottom:18px}
+.cta .pill::before{background:#93c5fd}
+.cta h2{font-family:var(--fd);font-size:clamp(24px,4vw,42px);font-weight:800;color:#fff;line-height:1.15;margin-bottom:12px}
+.cta h2 em{color:#fbbf24;font-style:normal}
+.cta p{font-size:16px;color:rgba(255,255,255,.72);max-width:480px;margin:0 auto 32px;line-height:1.78}
+.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn-gold{display:inline-flex;align-items:center;gap:8px;background:var(--amber);color:#fff;font-family:var(--fd);font-weight:800;font-size:15px;padding:14px 30px;border-radius:8px;box-shadow:0 8px 28px rgba(245,158,11,.35);transition:.22s}
+.btn-gold:hover{background:#d97706;transform:translateY(-3px)}
+.btn-ghost{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.09);border:1.5px solid rgba(255,255,255,.22);color:#fff;font-family:var(--fd);font-weight:600;font-size:14px;padding:13px 26px;border-radius:8px;transition:.2s}
+.btn-ghost:hover{background:rgba(255,255,255,.16)}
+footer{background:#0f172a;padding:52px 0 0}
+.ft-inner{max-width:1180px;margin:0 auto;padding:0 24px}
+.ft-top{display:grid;grid-template-columns:1.9fr 1fr 1fr 1fr;gap:44px;margin-bottom:44px}
+.ft-brand .ln{color:#fff}.ft-brand .ls{color:#475569}
+.ft-desc{font-size:13.5px;color:#64748b;line-height:1.78;max-width:265px;margin:13px 0 20px}
+.ft-soc{display:flex;gap:9px}
+.fts{width:34px;height:34px;border-radius:7px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;color:#94a3b8;font-size:13px;transition:.2s}
+.fts:hover{background:var(--blue);color:#fff}
+.fc h4{font-family:var(--fd);font-size:12px;font-weight:700;color:#fff;margin-bottom:14px;letter-spacing:.06em;text-transform:uppercase}
+.fc ul{display:flex;flex-direction:column;gap:8px}
+.fc ul a{font-size:13.5px;color:#64748b;transition:.18s}
+.fc ul a:hover{color:#93c5fd}
+.ft-btm{border-top:1px solid rgba(255,255,255,.07);padding:20px 0;text-align:center}
+.ft-cp{font-size:12.5px;color:#475569}
+.ft-cp b{color:#64748b}
+.ft-tag{font-size:12px;color:#334155;margin-top:4px;font-style:italic}
+.btt{position:fixed;bottom:26px;right:26px;z-index:500;width:43px;height:43px;background:var(--blue);color:#fff;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:17px;box-shadow:var(--sb);opacity:0;pointer-events:none;transform:translateY(14px);transition:.28s var(--ease)}
+.btt.on{opacity:1;pointer-events:auto;transform:translateY(0)}
+.btt:hover{transform:translateY(-3px)}
+
+/* RESPONSIVE */
+@media(max-width:1060px){.ft-top{grid-template-columns:1fr 1fr}.tips-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:860px){
+  nav.dn,.hcta{display:none}.brg{display:flex}
+  .tool-body{padding:24px 22px}.tool-hdr{padding:24px 22px}
+  .stat-grid{grid-template-columns:1fr 1fr}.howto-steps{grid-template-columns:1fr}
+  .rel-grid{grid-template-columns:1fr 1fr}.focus-grid{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+  .ft-top{grid-template-columns:1fr}.rel-grid{grid-template-columns:1fr}
+  .tips-grid{grid-template-columns:1fr 1fr}.cta-btns{flex-direction:column;align-items:center}
+  .story-card{padding:26px 20px}.res-banner{flex-direction:column;align-items:flex-start;gap:16px}
+  .stat-grid{grid-template-columns:1fr 1fr}.tc-lbl{width:90px}
+  .btn-row{flex-direction:column}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="hdr">
+  <div class="w">
+    <div class="hdi">
+      <a href="/" class="logo">
+        <div class="lb"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+        <div><div class="ln">Raj<span>Daily</span>Tools</div><div class="ls">Smart Tools for Daily Life</div></div>
+      </a>
+      <nav class="dn">
+        <a href="/">Home</a><a href="/categories">Categories</a>
+        <a href="/#popular">Popular</a><a href="/about">About</a><a href="/contact">Contact</a>
+      </nav>
+      <a href="/categories" class="hcta">All Tools →</a>
+      <button class="brg" id="brg"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="dov" id="dov"></div>
+<div class="drw" id="drw">
+  <div class="dh">
+    <div class="logo">
+      <div class="lb" style="width:30px;height:30px;border-radius:7px"><svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#fff"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+      <div class="ln" style="font-size:16px">Raj<span>Daily</span>Tools</div>
+    </div>
+    <button class="dx" id="dx">✕</button>
+  </div>
+  <nav class="mn">
+    <a href="/" onclick="cD()">🏠 Home</a>
+    <a href="/categories" onclick="cD()">🗂️ Categories</a>
+    <a href="/#popular" onclick="cD()">⭐ Popular</a>
+    <a href="/about" onclick="cD()">👤 About</a>
+    <a href="/contact" onclick="cD()">📬 Contact</a>
+  </nav>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+  <div class="w">
+    <div class="bc">
+      <a href="/">Home</a><span style="color:var(--ink4)">›</span>
+      <a href="/categories">Tools</a><span style="color:var(--ink4)">›</span>
+      <span>IELTS Preparation Time Calculator</span>
+    </div>
+    <div class="hero-inner">
+      <div class="pill">IELTS Study Tools</div>
+      <h1>IELTS <span>Preparation Time</span> Calculator</h1>
+      <p class="hero-sub">Enter your current IELTS band, target band, and daily study hours to get a <strong>realistic preparation timeline</strong>. Know exactly how many weeks or months you need — and plan your study schedule with confidence.</p>
+      <div class="hero-chips">
+        <span class="chip">📅 Preparation Timeline</span>
+        <span class="chip">📚 Study Intensity Guide</span>
+        <span class="chip">🎯 Weekly Goal Planner</span>
+        <span class="chip">🆓 100% Free</span>
+      </div>
+      <div class="hero-meta">
+        <div class="upd">📅 Updated for 2025–26</div>
+        <span class="mi">✅ Personalised estimate</span>
+        <span class="mi">🔒 No data stored</span>
+      </div>
+      <!-- HOW TO USE -->
+      <div class="howto">
+        <div class="howto-ttl">💡 How to Use This Tool</div>
+        <div class="howto-steps">
+          <div class="hs"><span class="sn">1</span>Enter your current IELTS band score</div>
+          <div class="hs"><span class="sn">2</span>Enter your target IELTS band score</div>
+          <div class="hs"><span class="sn">3</span>Select your daily study hours</div>
+          <div class="hs"><span class="sn">4</span>Click "Calculate My Prep Time"</div>
+          <div class="hs"><span class="sn">5</span>Review timeline, intensity &amp; focus areas</div>
+        </div>
+      </div>
+      <!-- RELATED TOOLS -->
+      <div class="rel-grid">
+        <div class="rg-box c1">
+          <div class="rg-ico">📖</div>
+          <div class="rg-txt">
+            <h4>IELTS Reading Band Calculator</h4>
+            <p>Convert reading correct answers to band score</p>
+            <a href="https://rajdailytools.in/ielts-reading-band-score-calculator.html" class="btn-xs a">Use Now →</a>
+          </div>
+        </div>
+        <div class="rg-box c2">
+          <div class="rg-ico">🎧</div>
+          <div class="rg-txt">
+            <h4>IELTS Listening Band Calculator</h4>
+            <p>Convert Listening correct answers to band score</p>
+            <a href="https://rajdailytools.in/ielts-listening-band-score-calculator.html" class="btn-xs g">Use Now →</a>
+          </div>
+        </div>
+        <div class="rg-box c3">
+          <div class="rg-ico">✍️</div>
+          <div class="rg-txt">
+            <h4>IELTS Writing Task 2 Calculator</h4>
+            <p>Estimate your Writing Task 2 band score</p>
+            <a href="https://rajdailytools.in/ielts-writing-task-2-band-score-calculator.html" class="btn-xs b">Use Now →</a>
+          </div>
+        </div>
+        <div class="rg-box c4">
+          <div class="rg-ico">🗣️</div>
+          <div class="rg-txt">
+            <h4>IELTS Speaking Band Calculator</h4>
+            <p>Estimate your IELTS Speaking band score</p>
+            <a href="http://rajdailytools.in/ielts-speaking-band-score-calculator.html" class="btn-xs p">Use Now →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOOL SECTION -->
+<section class="tool-sec" id="tool">
+  <div class="w">
+    <div class="tool-wrap">
+      <div class="tool-card rev">
+        <div class="tool-hdr">
+          <div class="run-dots">
+            <div class="run-dot"></div><div class="run-dot"></div><div class="run-dot"></div>
+            <div class="run-dot"></div><div class="run-dot"></div><div class="run-dot"></div>
+          </div>
+          <div class="th">
+            <h2>⏱️ IELTS Preparation Time Calculator</h2>
+            <p>Enter your current band, target band, and daily study commitment. The calculator estimates a realistic preparation duration and suggests a weekly practice focus tailored to your gap.</p>
+            <div class="th-badges">
+              <span class="thb">🎯 Band Gap Analysis</span>
+              <span class="thb">📅 Timeline Estimate</span>
+              <span class="thb">💪 Intensity Rating</span>
+              <span class="thb">🔒 No Data Stored</span>
+            </div>
+          </div>
+        </div>
+        <div class="tool-body">
+
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
+            <div class="fld">
+              <label class="flbl" for="currentBand">Current IELTS Band <span>1.0 – 8.5</span></label>
+              <select class="fsel" id="currentBand">
+                <option value="">— Select current band —</option>
+                <option value="1">Band 1.0</option>
+                <option value="1.5">Band 1.5</option>
+                <option value="2">Band 2.0</option>
+                <option value="2.5">Band 2.5</option>
+                <option value="3">Band 3.0</option>
+                <option value="3.5">Band 3.5</option>
+                <option value="4">Band 4.0</option>
+                <option value="4.5">Band 4.5</option>
+                <option value="5">Band 5.0</option>
+                <option value="5.5">Band 5.5</option>
+                <option value="6">Band 6.0</option>
+                <option value="6.5">Band 6.5</option>
+                <option value="7">Band 7.0</option>
+                <option value="7.5">Band 7.5</option>
+                <option value="8">Band 8.0</option>
+                <option value="8.5">Band 8.5</option>
+              </select>
+            </div>
+            <div class="fld">
+              <label class="flbl" for="targetBand">Target IELTS Band <span>2.0 – 9.0</span></label>
+              <select class="fsel" id="targetBand">
+                <option value="">— Select target band —</option>
+                <option value="2">Band 2.0</option>
+                <option value="2.5">Band 2.5</option>
+                <option value="3">Band 3.0</option>
+                <option value="3.5">Band 3.5</option>
+                <option value="4">Band 4.0</option>
+                <option value="4.5">Band 4.5</option>
+                <option value="5">Band 5.0</option>
+                <option value="5.5">Band 5.5</option>
+                <option value="6">Band 6.0</option>
+                <option value="6.5">Band 6.5</option>
+                <option value="7">Band 7.0</option>
+                <option value="7.5">Band 7.5</option>
+                <option value="8">Band 8.0</option>
+                <option value="8.5">Band 8.5</option>
+                <option value="9">Band 9.0</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="fld">
+            <label class="flbl" for="studyHours">Average Daily Study Hours <span>Select one</span></label>
+            <select class="fsel" id="studyHours">
+              <option value="">— Select daily hours —</option>
+              <option value="1">1 Hour / Day</option>
+              <option value="2">2 Hours / Day</option>
+              <option value="3">3 Hours / Day</option>
+              <option value="4">4 Hours / Day</option>
+              <option value="5">5+ Hours / Day</option>
+            </select>
+            <div class="score-range" style="margin-top:10px">
+              <span class="sr-item" onclick="document.getElementById('studyHours').value='1'">1hr – Light</span>
+              <span class="sr-item" onclick="document.getElementById('studyHours').value='2'">2hrs – Moderate</span>
+              <span class="sr-item" onclick="document.getElementById('studyHours').value='3'">3hrs – Strong</span>
+              <span class="sr-item" onclick="document.getElementById('studyHours').value='4'">4hrs – Intensive</span>
+              <span class="sr-item" onclick="document.getElementById('studyHours').value='5'">5hrs+ – Max</span>
+            </div>
+          </div>
+
+          <div class="hint-box">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            <div>Preparation time is an <strong>estimate based on your band gap and study intensity</strong>. Actual results depend on your consistency, learning pace, and quality of practice materials. Use this timeline as a <strong>planning guide</strong>, not a guarantee.</div>
+          </div>
+
+          <div class="btn-row">
+            <button class="chk-btn" onclick="calcPrepTime()">⏱️ Calculate My Prep Time</button>
+            <button class="rst-btn" onclick="resetTool()">↺ Reset</button>
+          </div>
+
+          <!-- RESULT -->
+          <div id="resultArea">
+            <div class="res-banner" id="resBanner">
+              <div class="meter-wrap">
+                <svg class="meter-svg" viewBox="0 0 100 100">
+                  <circle class="meter-bg" cx="50" cy="50" r="45"/>
+                  <circle class="meter-fill" id="meterFill" cx="50" cy="50" r="45" stroke-dasharray="283" stroke-dashoffset="283"/>
+                </svg>
+                <div class="meter-center">
+                  <div class="meter-pct" id="meterPct">–</div>
+                  <div class="meter-lbl" id="meterLbl">Gap</div>
+                </div>
+              </div>
+              <div class="res-info">
+                <div class="res-icon" id="resIcon"></div>
+                <div class="res-title" id="resTitle"></div>
+                <div class="res-sub" id="resSub"></div>
+                <div class="res-tag" id="resTag"></div>
+              </div>
+            </div>
+
+            <!-- Stat cards -->
+            <div class="stat-grid" id="statGrid"></div>
+
+            <!-- Weekly focus bars -->
+            <div class="time-compare">
+              <div class="tc-title">📊 Suggested Weekly Study Distribution</div>
+              <div id="weeklyBars"></div>
+            </div>
+
+            <!-- Practice focus areas -->
+            <div class="focus-grid" id="focusGrid"></div>
+
+            <!-- Personalised advice -->
+            <div class="sugg-box" id="suggBox"></div>
+
+            <div class="warn-box">
+              <span style="font-size:20px;flex-shrink:0">⚠️</span>
+              <div style="font-size:13.5px;color:var(--ink2);line-height:1.72"><strong>Note:</strong> These preparation estimates are based on commonly observed timelines for IELTS candidates. Individual results may vary significantly based on your starting proficiency, learning pace, study quality, and consistency. Always create a personalised study plan with the help of a qualified IELTS tutor if possible. <strong>No data you enter is stored or shared.</strong></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TABLE SECTION -->
+<section class="tbl-sec" id="score-table">
+  <div class="w">
+    <div style="max-width:860px;margin:0 auto">
+      <div class="rev" style="text-align:center;margin-bottom:36px">
+        <div class="pill" style="margin-bottom:14px">Reference Tables</div>
+        <h2 style="font-family:var(--fd);font-size:clamp(22px,3.5vw,36px);font-weight:800;color:var(--ink);margin-bottom:10px">IELTS <span style="color:var(--blue)">Preparation Time Guide</span></h2>
+        <p style="font-size:15px;color:var(--ink3);max-width:520px;margin:0 auto;line-height:1.75">Estimated preparation durations by band gap and study intensity — use these as a starting reference for your planning.</p>
+      </div>
+
+      <div class="tbl-wr rev">
+        <table>
+          <thead><tr><th>Band Improvement</th><th>Estimated Time (2 hrs/day)</th><th>Intensity Needed</th><th>Typical Profile</th></tr></thead>
+          <tbody>
+            <tr class="row-pass"><td><strong>0.5 Band</strong></td><td><strong>2–4 Weeks</strong></td><td><span class="tbadge g">Light to Moderate</span></td><td>Minor skill gaps; consolidation focus</td></tr>
+            <tr class="row-pass"><td><strong>1.0 Band</strong></td><td><strong>1–2 Months</strong></td><td><span class="tbadge g">Moderate</span></td><td>Solid foundation; targeted practice needed</td></tr>
+            <tr class="row-avg"><td><strong>1.5 Bands</strong></td><td><strong>2–3 Months</strong></td><td><span class="tbadge a">Strong</span></td><td>Noticeable gaps; structured plan required</td></tr>
+            <tr class="row-avg"><td><strong>2.0 Bands</strong></td><td><strong>3–4 Months</strong></td><td><span class="tbadge a">Intensive</span></td><td>Significant development across all skills</td></tr>
+            <tr class="row-avg"><td><strong>2.5 Bands</strong></td><td><strong>4–5 Months</strong></td><td><span class="tbadge a">Intensive</span></td><td>Major proficiency building required</td></tr>
+            <tr class="row-fail"><td><strong>3.0+ Bands</strong></td><td><strong>5–8 Months</strong></td><td><span class="tbadge r">Very Intensive</span></td><td>Full language development programme needed</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="tbl-wr rev" style="margin-top:32px">
+        <table>
+          <thead><tr><th>Daily Study Hours</th><th>Weekly Hours</th><th>Intensity Level</th><th>Best For</th></tr></thead>
+          <tbody>
+            <tr><td><strong>1 Hour / Day</strong></td><td>7 hrs/week</td><td><span class="tbadge b">Light</span></td><td>Working professionals; long-term plan (6+ months)</td></tr>
+            <tr><td><strong>2 Hours / Day</strong></td><td>14 hrs/week</td><td><span class="tbadge g">Moderate</span></td><td>Students with classes; balanced 2–4 month plan</td></tr>
+            <tr><td><strong>3 Hours / Day</strong></td><td>21 hrs/week</td><td><span class="tbadge a">Strong</span></td><td>Dedicated students; 1–3 month target</td></tr>
+            <tr><td><strong>4 Hours / Day</strong></td><td>28 hrs/week</td><td><span class="tbadge a">Intensive</span></td><td>Full-time preparation; 4–8 week push</td></tr>
+            <tr><td><strong>5+ Hours / Day</strong></td><td>35+ hrs/week</td><td><span class="tbadge r">Very Intensive</span></td><td>Immersive crash course; short-term deadline</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:12.5px;color:var(--ink4);margin-top:12px;text-align:center">* These are general estimates. Actual preparation timelines vary by individual. Consistent quality practice matters more than raw hours.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TIPS SECTION -->
+<section class="tips-sec">
+  <div class="w">
+    <div style="text-align:center;margin-bottom:36px" class="rev">
+      <div class="pill" style="margin-bottom:14px">Study Strategies</div>
+      <h2 style="font-family:var(--fd);font-size:clamp(22px,3.5vw,36px);font-weight:800;color:var(--ink);margin-bottom:10px">How to <span style="color:var(--blue)">Make Every Hour Count</span></h2>
+      <p style="font-size:15px;color:var(--ink3);max-width:480px;margin:0 auto">Effective IELTS preparation is about smart practice, not just long hours. These strategies get more out of each session.</p>
+    </div>
+    <div class="tips-grid rev">
+      <div class="tip-card">
+        <div class="tip-ico">📆</div>
+        <div class="tip-title">Fix a Daily Slot</div>
+        <div class="tip-desc">Study at the same time each day. Consistency builds habit — even 60 minutes at a fixed time beats 4 hours of scattered weekend cramming.</div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-ico">🎯</div>
+        <div class="tip-title">Rotate All Four Skills</div>
+        <div class="tip-desc">Spend time on Listening, Reading, Writing, and Speaking each week. Neglecting one section can pull down your overall band significantly.</div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-ico">📝</div>
+        <div class="tip-title">Review Errors Daily</div>
+        <div class="tip-desc">After every practice test, analyse every wrong answer. Understanding why you got something wrong is the fastest way to avoid repeating mistakes.</div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-ico">🔁</div>
+        <div class="tip-title">Use Official Materials</div>
+        <div class="tip-desc">Cambridge IELTS books (1–18) and the British Council practice tests are the closest to real exam conditions. Prioritise these over third-party materials.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STORY SECTION -->
+<section class="story-sec">
+  <div class="wa">
+    <div class="rev" style="text-align:center;margin-bottom:36px">
+      <div class="pill" style="margin-bottom:14px">A Student's Story</div>
+      <h2 style="font-family:var(--fd);font-size:clamp(22px,3.5vw,36px);font-weight:800;color:var(--ink)">Arjun's <span style="color:var(--blue)">IELTS Journey</span></h2>
+    </div>
+    <div class="story-card rev">
+      <div class="sq">"</div>
+      <div class="sb">
+        <p>Arjun was a mechanical engineer from Nagpur with a dream — a postgraduate seat at a university in Melbourne. The offer letter said Band 6.5. His practice test had returned Band 5.0. His boss wouldn't give more than two months of unpaid leave before he had to decide.</p>
+        <p style="margin-top:14px">He sat at his hostel room one evening, staring at the numbers. "1.5 bands in 8 weeks. Possible nahi hai yaar," his roommate said, turning back to his phone. But Arjun had one thing working for him — he had a plan. He knew exactly where his time was going: 1 hour on Listening during his morning commute, 45 minutes of Reading at lunch, Writing practice every other evening, and Speaking with a study partner twice a week.</p>
+        <p style="margin-top:14px">He didn't need to study more hours. He needed to study the right hours. Eight weeks later, Arjun opened his results on his phone standing outside the test centre: <strong>Listening 7.0 · Reading 6.5 · Writing 6.0 · Speaking 7.0 · Overall 6.5.</strong></p>
+        <p style="margin-top:14px">The offer accepted. The visa filed. The flight booked.</p>
+        <p style="margin-top:14px">A plan — even an imperfect one — will always beat no plan. This calculator gives you the starting point. The rest is yours.</p>
+      </div>
+      <div class="sauth">
+        <div class="savt">🎓</div>
+        <div>
+          <div class="sname">Arjun M.</div>
+          <div class="srole">IELTS 6.5 Achiever · Nagpur → Melbourne</div>
+        </div>
+      </div>
+      <div class="founder-msg">
+        <div class="fm-ico">💬</div>
+        <div class="fm-txt">
+          <strong>Raj Bhai says:</strong> "Bahut saare students poochte hain — 'Bhai, kitna time lagega?' The honest answer is: it depends on your gap and your hours. Is calculator mein wahi formula dala hai. But remember — one missed day doesn't ruin a plan. Just show up the next day. That's all."
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GUIDE SECTION -->
+<section class="guide-sec" id="guide">
+  <div class="wa">
+    <div class="rev" style="text-align:center;margin-bottom:36px">
+      <div class="pill" style="margin-bottom:14px">Complete IELTS Prep Guide</div>
+      <h2 style="font-family:var(--fd);font-size:clamp(22px,3.5vw,36px);font-weight:800;color:var(--ink)">How Long Does <span style="color:var(--blue)">IELTS Preparation</span> Take?</h2>
+    </div>
+    <div class="guide-body rev">
+
+      <h2>Understanding IELTS Band Scores and Preparation Time</h2>
+      <p>The IELTS (International English Language Testing System) is scored on a 9-band scale in increments of 0.5. Each half-band improvement represents a meaningful jump in English language ability — and a corresponding increase in preparation effort. The time it takes to close a gap of 1.0 band is not simply twice the time needed for 0.5; it can require significantly more structured work because higher bands demand deeper vocabulary, better inference skills, and greater fluency under exam pressure.</p>
+
+      <div class="ibox">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        <div><strong>Key insight:</strong> Most IELTS candidates need between 4 and 20 weeks of focused preparation to move by 0.5–1.0 band. Larger gaps of 2.0+ bands typically require 3–6 months of consistent, structured study across all four skills.</div>
+      </div>
+
+      <h2>The Band Gap Framework</h2>
+      <p>The single biggest predictor of preparation time is your <strong>band gap</strong> — the difference between where you are and where you need to be. Here is how to interpret common gaps:</p>
+
+      <!-- Timeline -->
+      <div class="timeline">
+        <div class="tl-row">
+          <div class="tl-dot" style="background:var(--green)"></div>
+          <div class="tl-line"></div>
+          <div class="tl-body">
+            <div class="tl-title">0.5 Band Gap — Consolidation Phase</div>
+            <div class="tl-desc">You are close. The skills are mostly there — you are losing marks to careless errors, timing, or specific weak question types. A targeted 2–4 week sprint focusing on those exact problem areas is usually enough. Mock tests, timed practice, and error review are your main tools.</div>
+            <span class="tl-tag" style="background:var(--green-xl);color:var(--green);border:1px solid var(--green-s)">2–4 Weeks</span>
+          </div>
+        </div>
+        <div class="tl-row">
+          <div class="tl-dot" style="background:var(--teal)"></div>
+          <div class="tl-line"></div>
+          <div class="tl-body">
+            <div class="tl-title">1.0 Band Gap — Skill-Building Phase</div>
+            <div class="tl-desc">This is the most common starting position for candidates applying to undergraduate and some postgraduate programmes. At this gap you need to actively build the skill — not just fix errors. Expect 1–2 months of structured study, ideally covering all four skills weekly with mock tests every 10–14 days to track progress.</div>
+            <span class="tl-tag" style="background:var(--teal);color:#fff">1–2 Months</span>
+          </div>
+        </div>
+        <div class="tl-row">
+          <div class="tl-dot" style="background:var(--amber)"></div>
+          <div class="tl-line"></div>
+          <div class="tl-body">
+            <div class="tl-title">1.5–2.0 Band Gap — Development Phase</div>
+            <div class="tl-desc">A gap of 1.5 to 2.0 bands means your English proficiency itself needs to improve — not just your exam technique. Vocabulary expansion, grammar accuracy, and listening exposure to native-speed audio all need time. Expect 2–4 months of disciplined preparation. Many candidates in this range benefit from a structured course or tutor alongside self-study.</div>
+            <span class="tl-tag" style="background:var(--amber-xl);color:#92400e;border:1px solid var(--amber-s)">2–4 Months</span>
+          </div>
+        </div>
+        <div class="tl-row">
+          <div class="tl-dot" style="background:var(--red)"></div>
+          <div class="tl-line"></div>
+          <div class="tl-body">
+            <div class="tl-title">2.5+ Band Gap — Foundation Phase</div>
+            <div class="tl-desc">A gap this large means significant general English development is needed, not just IELTS preparation. Daily English exposure — reading newspapers, listening to podcasts, speaking practice — must supplement targeted IELTS work. Expect 4–8 months minimum, and consider whether your exam date is realistic. Rushing this gap increases the chance of an expensive retake.</div>
+            <span class="tl-tag" style="background:var(--red-xl);color:var(--red);border:1px solid var(--red-s)">4–8 Months</span>
+          </div>
+        </div>
+      </div>
+
+      <h2>How Daily Study Hours Affect Your Timeline</h2>
+      <p>Study hours multiply or shrink your preparation window dramatically. The relationship is not perfectly linear — more hours per day also means faster fatigue, so quality tends to drop — but as a planning guide, here is what to expect:</p>
+      <ul>
+        <li><strong>1 Hour/Day:</strong> Sustainable for full-time workers. Add approximately 30–50% to any estimated timeline. Best paired with a 3–6 month window and a clear weekly schedule.</li>
+        <li><strong>2 Hours/Day:</strong> The standard planning benchmark. Most timeline estimates are based on this intensity. Enough time to cover all four skills in a balanced weekly rotation.</li>
+        <li><strong>3 Hours/Day:</strong> Significantly accelerates progress. Reduce the standard timeline estimate by roughly 25–30%. Works well when exam is 4–8 weeks away.</li>
+        <li><strong>4–5+ Hours/Day:</strong> Intensive crash-course mode. Risk of burnout beyond 3 weeks. Use this intensity only for the final 2–3 weeks of a longer preparation period, or when a deadline is urgent.</li>
+      </ul>
+
+      <div class="ibox a">
+        <svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        <div><strong>Important:</strong> Study hours alone do not determine progress. A candidate who reviews errors carefully for 90 minutes will almost always improve faster than one who completes practice tests for 3 hours without reflection. <strong>Quality of review matters more than quantity of time.</strong></div>
+      </div>
+
+      <h2>What to Study Based on Your Band Gap</h2>
+      <p>The right preparation focus shifts depending on how large your gap is. Here is a practical framework:</p>
+      <ul>
+        <li><strong>0.5 Band Gap:</strong> Timed mock tests (2–3 per week) + specific question type drills + vocabulary for your weak skill</li>
+        <li><strong>1.0 Band Gap:</strong> Mix of mock tests, targeted skill modules, writing feedback, and structured vocabulary building</li>
+        <li><strong>1.5–2.0 Band Gap:</strong> All four skills weekly, grammar correction routine, extensive reading and listening, writing practice with review</li>
+        <li><strong>2.5+ Band Gap:</strong> General English development first (news reading, podcasts, conversations), then progressive introduction of IELTS-specific formats</li>
+      </ul>
+
+      <h2>Common IELTS Preparation Mistakes to Avoid</h2>
+      <ul>
+        <li>Focusing only on Reading and Listening while neglecting Writing and Speaking — all four sections count equally toward your overall band</li>
+        <li>Doing practice tests without reviewing wrong answers carefully — practice without analysis gives very little improvement</li>
+        <li>Using low-quality third-party materials — always prioritise Cambridge IELTS books and official British Council / IDP resources</li>
+        <li>Booking the exam too early — setting a deadline before you are ready wastes money and can affect visa timelines</li>
+        <li>Studying in isolation — speaking practice requires a partner, not just yourself. Join a study group or find an online speaking partner</li>
+        <li>Underestimating Writing Task 2 — it carries the most weight in the Writing module and takes the longest time to improve</li>
+      </ul>
+
+      <div class="ibox g">
+        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+        <div><strong>Pro tip:</strong> Use this Preparation Time Calculator to set a realistic study start date — then work backwards from your exam date. If the calculator suggests 10 weeks and your exam is in 6 weeks, you either need to increase your daily hours significantly or consider rescheduling to a more realistic date.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- DISCLAIMER BAR -->
+<div class="disc">
+  <div class="w">
+    <div class="disc-in">
+      <span style="font-size:18px;flex-shrink:0">⚠️</span>
+      <div><strong>Disclaimer:</strong> The IELTS Preparation Time Calculator provides general preparation estimates based on commonly observed timelines. Results vary by individual learning pace, prior English exposure, consistency, and quality of study materials. This tool is for planning guidance only and does not guarantee any specific IELTS band outcome. For confirmed scores, always refer to your official IELTS Test Report Form issued by the test centre.</div>
+    </div>
+  </div>
+</div>
+
+<!-- FAQ SECTION -->
+<section class="faq-sec" id="faq">
+  <div class="w">
+    <div class="rev" style="text-align:center;margin-bottom:36px">
+      <div class="pill" style="margin-bottom:14px">Common Questions</div>
+      <h2 style="font-family:var(--fd);font-size:clamp(22px,3.5vw,36px);font-weight:800;color:var(--ink)">Frequently Asked <span style="color:var(--blue)">Questions</span></h2>
+    </div>
+    <div class="fql">
+
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">What is the IELTS Preparation Time Calculator?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">The IELTS Preparation Time Calculator estimates how long it may take to reach a target IELTS band score based on your current performance and daily study commitment. It generates a realistic preparation timeline, intensity rating, and weekly study focus recommendations.</div></div></div>
+
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">Can this calculator guarantee a specific IELTS score?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">No. Actual results depend on preparation quality, your prior English language proficiency, consistency of practice, and the quality of study materials you use. The calculator gives a planning estimate, not a guarantee. Use it to set a realistic study window and exam date.</div></div></div>
+
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">How much time is usually needed to improve by 1 band?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">At 2 hours of study per day, most candidates take approximately 1–2 months to improve by 1.0 band. This assumes consistent, structured practice covering all four skills (Listening, Reading, Writing, Speaking) with regular mock tests and error analysis. At 1 hour/day, extend this to 2–3 months; at 3–4 hours/day, some candidates close a 1.0 band gap in 4–6 weeks.</div></div></div>
+
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">Does daily study time affect preparation speed?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">Yes, significantly. More daily hours compress your timeline — but only up to a point. Beyond 4–5 hours per day, diminishing returns set in due to mental fatigue. The most effective approach is 2–3 hours of focused, deliberate practice with review, rather than passive reading or video watching for 5+ hours.</div></div></div>
+
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">Can beginners use this calculator?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">Yes. The calculator works for candidates at any stage — whether you are just starting with no IELTS exposure or preparing to retake the exam to improve your score. If you do not have an official band score yet, use your estimated band from a full-length practice test as your current band input.</div></div></div>
+
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">Is 30 minutes of study per day enough?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">30 minutes per day is better than nothing, but for meaningful IELTS score improvement it is generally not sufficient. At that intensity, even a 0.5 band improvement could take 2–3 months or more. If time is a constraint, focus your 30 minutes on your single weakest skill each day and supplement with passive English exposure (podcasts, articles) throughout the day.</div></div></div>
+
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">Should I focus on all four IELTS sections?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">Yes. Your overall IELTS band is the average of all four section bands (Listening, Reading, Writing, Speaking), rounded to the nearest 0.5. Neglecting even one section can hold your overall band below your target. A common mistake is preparing heavily for Reading and Listening while underinvesting in Writing and Speaking — the two sections where candidates lose the most marks.</div></div></div>
+
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">Can I prepare for IELTS while working full-time?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">Many candidates successfully reach their target band while working full-time. The key is building a fixed routine — even 60–90 minutes per day, consistently applied over 2–4 months, can achieve meaningful band improvement. Use commute time for Listening practice, lunch breaks for Reading, and evenings for Writing. Schedule one longer session (2–3 hours) on weekends for full mock tests.</div></div></div>
+
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">Does the calculator create a study plan?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">The calculator provides an estimated preparation timeline, weekly study hours recommendation, study intensity rating, and suggested practice focus areas. It does not generate a day-by-day study schedule. Use the results as the foundation for building your own personalised plan — or take the output to an IELTS tutor to structure a more detailed programme.</div></div></div>
+
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">Who should use this calculator?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">This calculator is useful for students applying to English-speaking universities, professionals seeking skilled migration or work visas, and anyone planning their IELTS preparation timeline. It is particularly helpful when you have a fixed exam date and need to check whether your current study intensity is on track to meet your target in time.</div></div></div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-sec">
+  <div class="w">
+    <div class="contact-card rev">
+      <h3>🙋 Have Questions or Suggestions?</h3>
+      <p>Found an issue with the calculator or have an idea for a new IELTS tool? Raj Bhai reads every message personally. Your feedback helps make these tools better for thousands of IELTS aspirants every day.</p>
+      <a href="mailto:contact@rajdailytools.in" class="btn-bl">📬 Contact Raj Bhai</a>
+      <div class="priv-note">✅ No spam. No newsletters. Just a real reply when it matters.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="w">
+    <div class="cta-in">
+      <div class="pill">More IELTS Tools</div>
+      <h2>Explore the Full <em>IELTS Toolkit</em></h2>
+      <p>Band calculators, readiness checkers, eligibility tools — all free, all designed for serious IELTS candidates.</p>
+      <div class="cta-btns">
+        <a href="https://rajdailytools.in/ielts-reading-band-score-calculator.html" class="btn-gold">📖 Reading Band Calculator</a>
+        <a href="https://rajdailytools.in/ielts-complete-score-predictor.html" class="btn-ghost">🎯 Complete Score Predictor →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-inner">
+    <div class="ft-top">
+      <div class="ft-brand">
+        <a href="/" class="logo">
+          <div class="lb"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+          <div><div class="ln">Raj<span>Daily</span>Tools</div><div class="ls" style="color:#475569">Smart Tools for Daily Life</div></div>
+        </a>
+        <p class="ft-desc">Free, accurate tools for IELTS preparation, government exams, finance, and daily decisions — built for Indian users by Raj Bhai.</p>
+        <div class="ft-soc">
+          <a href="#" class="fts">𝕏</a>
+          <a href="#" class="fts">in</a>
+          <a href="#" class="fts">▶</a>
+        </div>
+      </div>
+      <div class="fc">
+        <h4>IELTS Tools</h4>
+        <ul>
+          <li><a href="https://rajdailytools.in/ielts-reading-band-score-calculator.html">Reading Band Calculator</a></li>
+          <li><a href="https://rajdailytools.in/ielts-listening-band-score-calculator.html">Listening Band Calculator</a></li>
+          <li><a href="https://rajdailytools.in/ielts-writing-task-2-band-score-calculator.html">Writing Task 2 Calculator</a></li>
+          <li><a href="http://rajdailytools.in/ielts-speaking-band-score-calculator.html">Speaking Band Calculator</a></li>
+          <li><a href="https://rajdailytools.in/ielts-complete-score-predictor.html">Complete Score Predictor</a></li>
+          <li><a href="https://rajdailytools.in/ielts-target-band-calculator.html">Target Band Calculator</a></li>
+        </ul>
+      </div>
+      <div class="fc">
+        <h4>More IELTS</h4>
+        <ul>
+          <li><a href="https://rajdailytools.in/ielts-academic-eligibility-checker.html">Academic Eligibility Checker</a></li>
+          <li><a href="https://rajdailytools.in/ielts-university-eligibility-checker.html">University Eligibility Checker</a></li>
+          <li><a href="https://rajdailytools.in/ielts-exam-readiness-checker.html">Exam Readiness Checker</a></li>
+          <li><a href="https://rajdailytools.in/ielts-band-requirement-finder.html">Band Requirement Finder</a></li>
+          <li><a href="https://rajdailytools.in/ielts-visa-eligibility-checker.html">Visa Eligibility Checker</a></li>
+          <li><a href="https://rajdailytools.in/IELTS-Score-Improvement-Tracker.html">Score Improvement Tracker</a></li>
+        </ul>
+      </div>
+      <div class="fc">
+        <h4>RajDailyTools</h4>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/categories">All Categories</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/contact">Contact</a></li>
+          <li><a href="/privacy">Privacy Policy</a></li>
+          <li><a href="/sitemap.xml">Sitemap</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ft-btm">
+      <div class="ft-cp">© 2025 <b>RajDailyTools.in</b> · All Rights Reserved · Made with ❤️ for Indian aspirants</div>
+      <div class="ft-tag">Free tools for IELTS preparation, government exams, finance, and daily decisions.</div>
+    </div>
+  </div>
+</footer>
+
+<button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+/* ══ MOBILE DRAWER ══ */
+function cD(){document.getElementById('drw').classList.remove('on');document.getElementById('dov').classList.remove('on')}
+document.getElementById('brg').onclick=()=>{document.getElementById('drw').classList.add('on');document.getElementById('dov').classList.add('on')}
+document.getElementById('dov').onclick=cD;
+document.getElementById('dx').onclick=cD;
+
+/* ══ SCROLL REVEAL ══ */
+const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+document.querySelectorAll('.rev').forEach(el=>io.observe(el));
+
+/* ══ BACK TO TOP ══ */
+window.addEventListener('scroll',()=>{document.getElementById('btt').classList.toggle('on',scrollY>380)});
+
+/* ══ FAQ ACCORDION ══ */
+document.querySelectorAll('.fq-q').forEach(q=>{
+  q.addEventListener('click',()=>{
+    const fq=q.parentElement;
+    const open=fq.classList.contains('open');
+    document.querySelectorAll('.fq').forEach(f=>f.classList.remove('open'));
+    if(!open)fq.classList.add('open');
+  });
+});
+
+/* ══ CALCULATOR LOGIC ══ */
+
+/* Base weeks at 2 hrs/day for each 0.5-band increment */
+const BASE_WEEKS={
+  0.5:{min:2,max:4},
+  1.0:{min:4,max:8},
+  1.5:{min:8,max:13},
+  2.0:{min:13,max:17},
+  2.5:{min:17,max:22},
+  3.0:{min:22,max:30},
+  3.5:{min:26,max:34},
+  4.0:{min:30,max:39}
+};
+
+/* Hour multiplier — relative to 2hr/day baseline */
+const HOUR_MULTIPLIER={
+  1:1.55,
+  2:1.0,
+  3:0.72,
+  4:0.58,
+  5:0.48
+};
+
+const INTENSITY_MAP={
+  1:{label:'Light',colour:'b',emoji:'🌱'},
+  2:{label:'Moderate',colour:'g',emoji:'📚'},
+  3:{label:'Strong',colour:'a',emoji:'💪'},
+  4:{label:'Intensive',colour:'r',emoji:'🔥'},
+  5:{label:'Very Intensive',colour:'r',emoji:'⚡'}
+};
+
+function getBandWeeks(gap){
+  // Round to nearest 0.5
+  const r=Math.round(gap*2)/2;
+  const key=Math.min(r,4.0);
+  return BASE_WEEKS[key]||BASE_WEEKS[4.0];
+}
+
+function formatDuration(weeks){
+  if(weeks<2)return'Less than 2 weeks';
+  if(weeks<=4)return`${Math.round(weeks)} Weeks`;
+  if(weeks<8)return`${Math.round(weeks)} Weeks (~${Math.round(weeks/4.33)} Month${Math.round(weeks/4.33)>1?'s':''})`;
+  const months=Math.round(weeks/4.33);
+  return`~${months} Month${months>1?'s':''}`;
+}
+
+function calcPrepTime(){
+  const cur=parseFloat(document.getElementById('currentBand').value);
+  const tgt=parseFloat(document.getElementById('targetBand').value);
+  const hrs=parseInt(document.getElementById('studyHours').value);
+
+  /* Validation */
+  let err=false;
+  if(isNaN(cur)){document.getElementById('currentBand').classList.add('err');err=true;}else{document.getElementById('currentBand').classList.remove('err');}
+  if(isNaN(tgt)){document.getElementById('targetBand').classList.add('err');err=true;}else{document.getElementById('targetBand').classList.remove('err');}
+  if(isNaN(hrs)){document.getElementById('studyHours').classList.add('err');err=true;}else{document.getElementById('studyHours').classList.remove('err');}
+  if(err)return;
+
+  if(tgt<=cur){
+    alert('Target band must be higher than your current band.');
+    return;
+  }
+
+  const gap=Math.round((tgt-cur)*10)/10;
+  const baseRange=getBandWeeks(gap);
+  const mult=HOUR_MULTIPLIER[hrs]||1.0;
+  const minW=Math.ceil(baseRange.min*mult);
+  const maxW=Math.ceil(baseRange.max*mult);
+  const totalHoursMin=minW*7*hrs;
+  const totalHoursMax=maxW*7*hrs;
+  const weeklyHrs=hrs*7;
+
+  /* Intensity — gap-adjusted */
+  const intensityBase=gap>=3?4:(gap>=2?3:(gap>=1?2:1));
+  const hrBonus=hrs>=4?1:0;
+  const intensity=Math.min(5,intensityBase+hrBonus);
+  const iData=INTENSITY_MAP[hrs]||INTENSITY_MAP[3];
+
+  /* Banner */
+  const banner=document.getElementById('resBanner');
+  const bannerCls=gap<=1?'pass':(gap<=2?'avg':'low');
+  banner.className=`res-banner ${bannerCls}`;
+
+  /* Meter — gap as % of 4.5 max */
+  const pct=Math.min(100,Math.round((gap/4.5)*100));
+  const circ=283;
+  const mFill=document.getElementById('meterFill');
+  const strokeColour=gap<=1?'var(--green)':(gap<=2?'var(--amber)':'var(--red)');
+  mFill.style.stroke=strokeColour;
+  setTimeout(()=>{mFill.style.strokeDashoffset=circ-(circ*(pct/100));},120);
+  document.getElementById('meterPct').textContent=gap%1===0?gap.toFixed(1):gap;
+  document.getElementById('meterLbl').textContent='Band Gap';
+
+  const icon=gap<=1?'🎯':(gap<=2?'📅':'⏳');
+  document.getElementById('resIcon').textContent=icon;
+  document.getElementById('resTitle').textContent=`${formatDuration(minW)} – ${formatDuration(maxW)}`;
+  document.getElementById('resSub').textContent=`To move from Band ${cur} → Band ${tgt} at ${hrs} hour${hrs>1?'s':''}/day of focused study.`;
+  const rt=document.getElementById('resTag');
+  rt.className=`res-tag ${bannerCls}`;
+  rt.innerHTML=`${iData.emoji} ${iData.label} Intensity`;
+
+  /* Stat cards */
+  document.getElementById('statGrid').innerHTML=`
+    <div class="sc blue"><div class="sc-ico">📐</div><div class="sc-val">${gap%1===0?gap.toFixed(1):gap}</div><div class="sc-lbl">Band Gap</div></div>
+    <div class="sc green"><div class="sc-ico">⏱️</div><div class="sc-val">${formatDuration(minW)}</div><div class="sc-lbl">Optimistic Timeline</div></div>
+    <div class="sc amber"><div class="sc-ico">📅</div><div class="sc-val">${formatDuration(maxW)}</div><div class="sc-lbl">Realistic Timeline</div></div>
+    <div class="sc purple"><div class="sc-ico">🕐</div><div class="sc-val">${weeklyHrs} hrs</div><div class="sc-lbl">Study Per Week</div></div>
+  `;
+
+  /* Weekly bars — skill distribution by gap */
+  let skills;
+  if(gap<=1){
+    skills=[
+      {label:'Mock Tests & Review',pct:35,cls:'g'},
+      {label:'Weak Skill Drills',pct:30,cls:'b'},
+      {label:'Vocabulary & Grammar',pct:20,cls:'a'},
+      {label:'Speaking Practice',pct:15,cls:'p'}
+    ];
+  } else if(gap<=2){
+    skills=[
+      {label:'Reading Practice',pct:25,cls:'b'},
+      {label:'Listening Practice',pct:25,cls:'g'},
+      {label:'Writing Practice',pct:30,cls:'a'},
+      {label:'Speaking Practice',pct:20,cls:'r'}
+    ];
+  } else {
+    skills=[
+      {label:'General English Input',pct:30,cls:'g'},
+      {label:'Writing Development',pct:25,cls:'a'},
+      {label:'Listening & Reading',pct:25,cls:'b'},
+      {label:'Speaking & Vocab',pct:20,cls:'r'}
+    ];
+  }
+
+  let barsHTML='';
+  skills.forEach(s=>{
+    const hoursEach=Math.round((s.pct/100)*weeklyHrs*10)/10;
+    barsHTML+=`
+      <div class="tc-row">
+        <div class="tc-lbl">${s.label}</div>
+        <div class="tc-bar-track"><div class="tc-bar-fill ${s.cls}" data-w="${s.pct}%" style="width:0%">${s.pct}%</div></div>
+        <div class="tc-val">${hoursEach}h/wk</div>
+      </div>`;
+  });
+  document.getElementById('weeklyBars').innerHTML=barsHTML;
+  setTimeout(()=>{document.querySelectorAll('.tc-bar-fill').forEach(b=>{b.style.width=b.dataset.w||'0%'})},200);
+
+  /* Focus cards */
+  let focusCards;
+  if(gap<=0.5){
+    focusCards=[
+      {ico:'⏱️',title:'Timed Practice Tests',desc:'Do 2–3 full mock tests per week under real exam conditions. Timing pressure is your main challenge at this gap.'},
+      {ico:'🔍',title:'Error Analysis',desc:'After every test, review every wrong answer. At 0.5-band gap, careless errors and not a lack of ability are your biggest obstacle.'},
+      {ico:'📖',title:'Skim & Scan Drills',desc:'For Reading, practise locating answers quickly without reading every word — this alone can add 2–3 correct answers per test.'},
+      {ico:'✍️',title:'Writing Task 2 Structure',desc:'If Writing is your weak section, lock in a clear introduction-body-conclusion template you can apply under pressure consistently.'}
+    ];
+  } else if(gap<=1){
+    focusCards=[
+      {ico:'📚',title:'Structured Skill Modules',desc:'Dedicate specific sessions to each skill each week. Do not let any of the four sections go more than 3 days without practice.'},
+      {ico:'🎧',title:'Daily Listening Exposure',desc:'Listen to BBC Radio 4, TED Talks, or podcasts every day — even during commute. IELTS Listening tests the ability to catch detail in natural speech.'},
+      {ico:'📝',title:'Writing with Feedback',desc:'Write at least two Writing Task 2 essays per week. Get feedback — from a tutor, a study partner, or by comparing to model answers carefully.'},
+      {ico:'🗣️',title:'Speaking Partner Twice/Week',desc:'Find an online study partner for 20-minute speaking sessions. Fluency improves through real conversation, not solo preparation.'}
+    ];
+  } else {
+    focusCards=[
+      {ico:'📰',title:'Daily English Reading',desc:'Read one English news article or essay every day outside IELTS materials. Growing your vocabulary and inference skills needs consistent input over months.'},
+      {ico:'🏗️',title:'Grammar Foundation',desc:'At this gap level, grammar accuracy in Writing and Speaking is holding you back. Invest time in targeted grammar work — conditionals, passive voice, articles.'},
+      {ico:'🔁',title:'Spaced Repetition Vocab',desc:'Use an Anki deck for IELTS vocabulary. Learning 10 new words daily adds 300+ words per month — a meaningful advantage by exam day.'},
+      {ico:'🎯',title:'Realistic Exam Date',desc:'A gap of ' + gap + ' bands at ' + hrs + ' hr/day typically needs ' + formatDuration(minW) + '–' + formatDuration(maxW) + '. Do not book your exam before this window closes — a retake wastes money and time.'}
+    ];
+  }
+
+  let focusHTML='';
+  focusCards.forEach(f=>{
+    focusHTML+=`<div class="focus-card"><div class="focus-ico">${f.ico}</div><div class="focus-body"><h4>${f.title}</h4><p>${f.desc}</p></div></div>`;
+  });
+  document.getElementById('focusGrid').innerHTML=focusHTML;
+
+  /* Suggestion text */
+  let msg='';
+  if(gap<=0.5){
+    msg=`<strong style="display:block;font-family:var(--fd);font-size:14px;margin-bottom:10px">🎯 You Are Very Close — Final Sprint Mode</strong><p style="font-size:14px;color:var(--ink2);line-height:1.82">A gap of just ${gap} band at ${hrs} hour${hrs>1?'s':''}/day means you could be exam-ready in <strong>${formatDuration(minW)}–${formatDuration(maxW)}</strong>. At this stage, full mock tests under timed conditions — not more content study — will give you the biggest gain. Identify the specific question types where you are losing marks and drill those in your final week. If Writing is your weakest section, use the <a href="https://rajdailytools.in/ielts-writing-task-2-band-score-calculator.html" style="color:var(--blue);font-weight:700">Writing Task 2 Calculator</a> to diagnose where your marks are going.</p>`;
+  } else if(gap<=1){
+    msg=`<strong style="display:block;font-family:var(--fd);font-size:14px;margin-bottom:10px">📚 Solid Plan Needed — ${formatDuration(minW)}–${formatDuration(maxW)} Ahead</strong><p style="font-size:14px;color:var(--ink2);line-height:1.82">A ${gap}-band gap at ${hrs} hr/day is a manageable, well-defined challenge. Build a weekly schedule covering all four skills, do mock tests every 10–14 days, and review every error carefully. The biggest risk at this gap is neglecting Writing and Speaking in favour of the easier-to-measure Reading and Listening scores. All four sections count equally toward your overall band. Track your section scores after each mock to see where your improvement is — and where it is not — using our <a href="https://rajdailytools.in/IELTS-Score-Improvement-Tracker.html" style="color:var(--blue);font-weight:700">Score Improvement Tracker</a>.</p>`;
+  } else if(gap<=2){
+    msg=`<strong style="display:block;font-family:var(--fd);font-size:14px;margin-bottom:10px">💪 Significant Commitment Required — ${formatDuration(minW)}–${formatDuration(maxW)}</strong><p style="font-size:14px;color:var(--ink2);line-height:1.82">A ${gap}-band gap means your English proficiency itself needs to grow, not just your exam technique. At ${hrs} hr/day, expect ${formatDuration(minW)} on the optimistic end and ${formatDuration(maxW)} as a realistic target. Consider whether your planned exam date allows this time. If not, postponing your booking by 4–6 weeks now is far less costly than a retake later. Focus on vocabulary growth, writing with feedback, and daily English exposure alongside targeted IELTS practice.</p>`;
+  } else {
+    msg=`<strong style="display:block;font-family:var(--fd);font-size:14px;margin-bottom:10px">⏳ Long-Term Development Needed — ${formatDuration(minW)}–${formatDuration(maxW)}</strong><p style="font-size:14px;color:var(--ink2);line-height:1.82">A gap of ${gap} bands is substantial. At ${hrs} hr/day this will realistically take <strong>${formatDuration(minW)}–${formatDuration(maxW)}</strong> of consistent effort. Before focusing heavily on IELTS-specific practice, invest in general English development — extensive reading, daily listening, and spoken English practice. Start IELTS-format practice alongside this from month 2 onwards. Setting a realistic exam date 5–6 months away will give you the best chance of hitting your target on the first attempt.</p>`;
+  }
+  document.getElementById('suggBox').innerHTML=msg;
+
+  /* Show result */
+  const ra=document.getElementById('resultArea');
+  ra.style.display='block';
+  ra.style.animation='none';ra.offsetHeight;
+  ra.style.animation='resultIn .45s var(--ease) both';
+  setTimeout(()=>ra.scrollIntoView({behavior:'smooth',block:'nearest'}),120);
+}
+
+function resetTool(){
+  document.getElementById('currentBand').value='';
+  document.getElementById('targetBand').value='';
+  document.getElementById('studyHours').value='';
+  document.getElementById('resultArea').style.display='none';
+  window.scrollTo({top:document.getElementById('tool').offsetTop-80,behavior:'smooth'});
+}
+</script>
+</body>
+</html>
