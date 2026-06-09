@@ -1,0 +1,1172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PTE University Eligibility Checker 2026 – Check University Admission Eligibility Using PTE Score</title>
+<meta name="description" content="Check your university admission eligibility using your PTE Academic score. Compare score ranges, study levels, and admission readiness for international universities.">
+<meta name="keywords" content="PTE university eligibility checker, PTE Academic admission, PTE score university, PTE study abroad, PTE admission readiness, PTE international university, PTE score requirements 2026">
+<meta name="robots" content="index, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ══════════════════════════════════════
+   DESIGN TOKENS
+══════════════════════════════════════ */
+:root{
+  --blue:#2563eb;--blue-d:#1d4ed8;--blue-xl:#eff6ff;--blue-s:#dbeafe;
+  --amber:#f59e0b;--green:#10b981;--red:#ef4444;--purple:#8b5cf6;
+  --orange:#f97316;--teal:#14b8a6;
+  --green-xl:#f0fdf4;--green-s:#bbf7d0;
+  --red-xl:#fef2f2;--red-s:#fecaca;
+  --amber-xl:#fffbeb;--amber-s:#fde68a;
+  --purple-xl:#faf5ff;--purple-s:#ddd6fe;
+  --yellow:#eab308;--yellow-xl:#fefce8;--yellow-s:#fef08a;
+  --ink:#0f172a;--ink2:#334155;--ink3:#64748b;--ink4:#94a3b8;
+  --line:#e2e8f0;--surf:#f8fafc;--white:#fff;
+  --s1:0 1px 3px rgba(15,23,42,.06),0 1px 2px rgba(15,23,42,.04);
+  --s2:0 4px 16px rgba(15,23,42,.08),0 2px 6px rgba(15,23,42,.04);
+  --s3:0 12px 40px rgba(15,23,42,.11),0 3px 10px rgba(15,23,42,.06);
+  --s4:0 24px 64px rgba(15,23,42,.13),0 6px 20px rgba(15,23,42,.07);
+  --sb:0 8px 32px rgba(37,99,235,.20);
+  --fd:'Sora',sans-serif;--fb:'DM Sans',sans-serif;
+  --ease:cubic-bezier(.4,0,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);color:var(--ink);background:var(--white);overflow-x:hidden;-webkit-font-smoothing:antialiased;line-height:1.6}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+button{cursor:pointer;border:none;background:none;font-family:var(--fb)}
+.w{max-width:1180px;margin:0 auto;padding:0 24px}
+.wa{max-width:880px;margin:0 auto;padding:0 24px}
+select,input{appearance:none;-webkit-appearance:none}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+@keyframes resultIn{from{opacity:0;transform:translateY(18px) scale(.97)}to{opacity:1;transform:none}}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}
+.rev{opacity:0;transform:translateY(22px);transition:opacity .55s var(--ease),transform .55s var(--ease)}
+.rev.in{opacity:1;transform:none}
+
+/* ══ HEADER ══ */
+.hdr{position:sticky;top:0;z-index:999;background:rgba(255,255,255,.96);backdrop-filter:blur(20px);border-bottom:1px solid var(--line);box-shadow:var(--s1)}
+.hdi{display:flex;align-items:center;justify-content:space-between;height:66px}
+.logo{display:flex;align-items:center;gap:10px}
+.lb{width:36px;height:36px;background:var(--blue);border-radius:9px;display:flex;align-items:center;justify-content:center;box-shadow:var(--sb);flex-shrink:0}
+.lb svg{width:18px;height:18px;fill:#fff}
+.ln{font-family:var(--fd);font-size:19px;font-weight:800;color:var(--ink);line-height:1}
+.ln span{color:var(--blue)}
+.ls{font-size:10px;color:var(--ink4);letter-spacing:.04em}
+nav.dn{display:flex;align-items:center;gap:2px}
+nav.dn a{font-size:13.5px;font-weight:500;color:var(--ink2);padding:7px 13px;border-radius:8px;transition:.2s}
+nav.dn a:hover{color:var(--blue);background:var(--blue-xl)}
+.hcta{background:var(--blue);color:#fff;font-family:var(--fd);font-weight:600;font-size:13px;padding:8px 18px;border-radius:8px;box-shadow:var(--sb);transition:.2s}
+.hcta:hover{background:var(--blue-d);transform:translateY(-1px)}
+.brg{display:none;flex-direction:column;gap:4.5px;padding:8px;border-radius:8px}
+.brg span{display:block;width:20px;height:2px;background:var(--ink);border-radius:2px;transition:.28s}
+.dov{display:none;position:fixed;inset:0;background:rgba(15,23,42,.45);z-index:1040;backdrop-filter:blur(3px)}
+.dov.on{display:block}
+.drw{position:fixed;top:0;right:-100%;width:270px;height:100vh;background:#fff;z-index:1050;padding:22px;box-shadow:var(--s4);transition:right .32s var(--ease);overflow-y:auto}
+.drw.on{right:0}
+.dh{display:flex;align-items:center;justify-content:space-between;margin-bottom:26px}
+.dx{width:33px;height:33px;border-radius:7px;background:var(--surf);display:flex;align-items:center;justify-content:center;color:var(--ink3);font-size:17px}
+nav.mn{display:flex;flex-direction:column;gap:3px}
+nav.mn a{display:block;font-size:14px;font-weight:500;color:var(--ink2);padding:11px 13px;border-radius:8px;transition:.2s}
+nav.mn a:hover{color:var(--blue);background:var(--blue-xl)}
+
+/* ══ HERO ══ */
+.hero{position:relative;overflow:hidden;background:linear-gradient(150deg,#f0f7ff 0%,#fff 46%,#f0fdf4 100%);padding:64px 0 72px}
+.hero::before{content:'';position:absolute;top:-140px;right:-180px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(37,99,235,.08) 0%,transparent 68%);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-80px;left:-100px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(20,184,166,.06) 0%,transparent 68%);pointer-events:none}
+.blob{position:absolute;border-radius:50%;pointer-events:none;animation:float 6s ease-in-out infinite}
+.b1{width:13px;height:13px;background:rgba(37,99,235,.18);top:22%;right:14%;animation-delay:0s}
+.b2{width:9px;height:9px;background:rgba(20,184,166,.22);top:58%;right:26%;animation-delay:2.2s}
+.b3{width:11px;height:11px;background:rgba(245,158,11,.18);top:36%;right:6%;animation-delay:4s}
+.bc{display:flex;align-items:center;gap:7px;font-size:12.5px;color:var(--ink3);margin-bottom:22px;position:relative;z-index:1;flex-wrap:wrap}
+.bc a{color:var(--blue);font-weight:600}
+.pill{display:inline-flex;align-items:center;gap:7px;font-family:var(--fd);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);background:var(--blue-xl);padding:5px 14px;border-radius:100px;margin-bottom:18px}
+.pill::before{content:'';width:6px;height:6px;background:var(--blue);border-radius:50%}
+.hero-inner{position:relative;z-index:1;max-width:720px;animation:fadeUp .5s ease both}
+.hero h1{font-family:var(--fd);font-size:clamp(26px,4.5vw,50px);font-weight:800;line-height:1.1;color:var(--ink);margin-bottom:14px}
+.hero h1 span{color:var(--blue)}
+.hero-sub{font-size:16px;color:var(--ink3);line-height:1.8;margin-bottom:22px;max-width:600px}
+.hero-chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.chip{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;padding:6px 14px;border-radius:100px;background:#fff;border:1.5px solid var(--line);color:var(--ink2);box-shadow:var(--s1);transition:.22s}
+.chip:hover{border-color:var(--blue);color:var(--blue);transform:translateY(-1px)}
+.hero-meta{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:24px}
+.upd{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:700;color:var(--blue);background:var(--blue-xl);padding:6px 14px;border-radius:100px;border:1.5px solid var(--blue-s)}
+.mi{font-size:13px;color:var(--ink3);font-weight:500}
+
+/* HOW TO USE */
+.howto{background:var(--amber-xl);border:2px solid var(--amber-s);border-radius:16px;padding:22px 26px;max-width:560px;margin-bottom:24px}
+.howto-ttl{display:flex;align-items:center;gap:9px;font-family:var(--fd);font-size:15px;font-weight:800;color:var(--ink);margin-bottom:13px}
+.howto-steps{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.hs{display:flex;align-items:flex-start;gap:10px;font-size:13.5px;color:var(--ink2);line-height:1.6}
+.sn{width:24px;height:24px;background:var(--amber);color:#fff;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex-shrink:0;margin-top:1px}
+
+/* related tools */
+.rel-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;position:relative;z-index:1}
+.rg-box{border-radius:14px;padding:14px 14px 12px;display:flex;flex-direction:column;gap:8px;transition:.22s;border:1.5px solid}
+.rg-box:hover{transform:translateY(-3px);box-shadow:var(--s3)}
+.rg-box.c1{background:linear-gradient(135deg,#fffbeb,#fef3c7);border-color:var(--amber-s)}
+.rg-box.c2{background:linear-gradient(135deg,var(--green-xl),#dcfce7);border-color:var(--green-s)}
+.rg-box.c3{background:linear-gradient(135deg,var(--blue-xl),var(--blue-s));border-color:var(--blue-s)}
+.rg-box.c4{background:linear-gradient(135deg,var(--purple-xl),#ede9fe);border-color:var(--purple-s)}
+.rg-ico{font-size:22px}
+.rg-txt h4{font-family:var(--fd);font-size:12px;font-weight:800;color:var(--ink);margin-bottom:2px}
+.rg-txt p{font-size:11px;color:var(--ink3);line-height:1.5}
+.btn-xs{display:inline-flex;align-items:center;gap:4px;font-family:var(--fd);font-weight:700;font-size:11px;padding:5px 10px;border-radius:7px;transition:.22s;margin-top:4px}
+.btn-xs.a{background:var(--amber);color:#fff}.btn-xs.a:hover{background:#d97706}
+.btn-xs.g{background:var(--green);color:#fff}.btn-xs.g:hover{background:#059669}
+.btn-xs.b{background:var(--blue);color:#fff}.btn-xs.b:hover{background:var(--blue-d)}
+.btn-xs.p{background:var(--purple);color:#fff}.btn-xs.p:hover{background:#7c3aed}
+.btn-xs.t{background:var(--teal);color:#fff}.btn-xs.t:hover{background:#0d9488}
+
+/* ══ TOOL SECTION ══ */
+.tool-sec{background:var(--surf);padding:80px 0}
+.tool-wrap{max-width:860px;margin:0 auto}
+.tool-card{background:#fff;border:1.5px solid var(--line);border-radius:28px;overflow:hidden;box-shadow:var(--s4)}
+.tool-hdr{background:linear-gradient(135deg,#0f172a 0%,#0f4c75 50%,#1e88e5 100%);padding:32px 40px;position:relative;overflow:hidden}
+.tool-hdr::before{content:'';position:absolute;top:-60px;right:-60px;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,.07)}
+.tool-hdr::after{content:'';position:absolute;bottom:-40px;left:-40px;width:180px;height:180px;border-radius:50%;background:rgba(255,255,255,.04)}
+.run-dots{position:absolute;bottom:20px;right:40px;display:flex;gap:5px;opacity:.3;z-index:0}
+.run-dot{width:6px;height:6px;border-radius:50%;background:#fff}
+.th{position:relative;z-index:1}
+.th h2{font-family:var(--fd);font-size:21px;font-weight:800;color:#fff;margin-bottom:6px}
+.th p{font-size:14px;color:rgba(255,255,255,.82);line-height:1.65}
+.th-badges{display:flex;flex-wrap:wrap;gap:9px;margin-top:14px}
+.thb{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:rgba(255,255,255,.9);background:rgba(255,255,255,.13);padding:5px 12px;border-radius:100px}
+.tool-body{padding:36px 40px}
+
+/* form fields */
+.fsel{padding:12px 16px;font-size:15px;font-weight:700;font-family:var(--fd);color:var(--ink);background:#fff;border:1.5px solid var(--line);border-radius:10px;outline:none;transition:.22s;width:100%;cursor:pointer}
+.fsel:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(37,99,235,.10)}
+.finp{padding:12px 16px;font-size:22px;font-weight:800;font-family:var(--fd);color:var(--ink);background:#fff;border:1.5px solid var(--line);border-radius:10px;outline:none;transition:.22s;width:100%;text-align:center}
+.finp:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(37,99,235,.10)}
+.finp.err{border-color:var(--red);box-shadow:0 0 0 3px rgba(239,68,68,.10)}
+.fld{display:flex;flex-direction:column;gap:7px;margin-bottom:20px}
+.flbl{font-size:13px;font-weight:700;color:var(--ink2)}
+.flbl span{font-size:11px;font-weight:500;color:var(--ink4);margin-left:5px;background:var(--surf);padding:2px 7px;border-radius:5px;border:1px solid var(--line)}
+.score-range{display:flex;gap:8px;margin-top:8px;flex-wrap:wrap}
+.sr-item{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:600;padding:4px 11px;border-radius:100px;border:1.5px solid var(--line);background:var(--surf);color:var(--ink3);cursor:pointer;transition:.2s}
+.sr-item:hover{border-color:var(--blue);color:var(--blue);background:var(--blue-xl)}
+.hint-box{display:flex;align-items:flex-start;gap:9px;font-size:13px;color:var(--ink2);background:var(--blue-xl);border:1.5px solid var(--blue-s);border-radius:10px;padding:11px 14px;margin:16px 0;line-height:1.65}
+.hint-box svg{width:16px;height:16px;stroke:var(--blue);fill:none;stroke-width:2;flex-shrink:0;margin-top:2px}
+.btn-row{display:flex;gap:12px;margin-top:4px}
+.chk-btn{flex:1;padding:17px;background:linear-gradient(135deg,#0f172a 0%,#0f4c75 50%,#1e88e5 100%);color:#fff;font-family:var(--fd);font-weight:800;font-size:16px;border-radius:12px;box-shadow:0 8px 32px rgba(15,76,117,.28);transition:all .25s var(--ease);display:flex;align-items:center;justify-content:center;gap:10px}
+.chk-btn:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(15,76,117,.40)}
+.chk-btn:active{transform:translateY(0)}
+.rst-btn{padding:17px 24px;background:var(--surf);color:var(--ink3);font-family:var(--fd);font-weight:700;font-size:15px;border-radius:12px;border:1.5px solid var(--line);transition:.22s;display:flex;align-items:center;gap:8px}
+.rst-btn:hover{background:var(--red-xl);color:var(--red);border-color:var(--red-s)}
+
+/* ══ RESULT ══ */
+#resultArea{display:none;margin-top:28px;animation:resultIn .45s var(--ease) both}
+.res-banner{border-radius:20px;padding:28px;margin-bottom:22px;position:relative;overflow:hidden;display:flex;align-items:center;gap:24px;flex-wrap:wrap}
+.res-banner.pass{background:linear-gradient(135deg,var(--green-xl),#d1fae5);border:2px solid var(--green-s)}
+.res-banner.avg{background:var(--amber-xl);border:2px solid var(--amber-s)}
+.res-banner.low{background:var(--red-xl);border:2px solid var(--red-s)}
+.res-banner::before{content:'';position:absolute;inset:0;opacity:.04;background-image:repeating-linear-gradient(45deg,currentColor 0,currentColor 1px,transparent 0,transparent 50%);background-size:12px 12px;pointer-events:none}
+.meter-wrap{flex-shrink:0;position:relative;width:100px;height:100px}
+.meter-svg{width:100px;height:100px;transform:rotate(-90deg)}
+.meter-bg{fill:none;stroke:rgba(0,0,0,.08);stroke-width:10}
+.meter-fill{fill:none;stroke-width:10;stroke-linecap:round;transition:stroke-dashoffset 1.2s var(--ease)}
+.meter-center{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.meter-pct{font-family:var(--fd);font-size:20px;font-weight:800;color:var(--ink);line-height:1}
+.meter-lbl{font-size:10px;font-weight:700;color:var(--ink3);text-transform:uppercase;letter-spacing:.06em}
+.res-info{flex:1}
+.res-icon{font-size:32px;margin-bottom:6px}
+.res-title{font-family:var(--fd);font-size:22px;font-weight:800;color:var(--ink);line-height:1.1;margin-bottom:6px}
+.res-sub{font-size:14px;color:var(--ink3);line-height:1.65}
+.res-tag{display:inline-flex;align-items:center;gap:6px;font-family:var(--fd);font-size:13px;font-weight:700;padding:5px 14px;border-radius:100px;margin-top:10px}
+.res-tag.pass{background:var(--green);color:#fff}
+.res-tag.avg{background:var(--amber);color:#fff}
+.res-tag.low{background:var(--red);color:#fff}
+
+/* readiness bars */
+.time-compare{background:var(--surf);border:1.5px solid var(--line);border-radius:16px;padding:22px 24px;margin-bottom:18px}
+.tc-title{font-family:var(--fd);font-size:14px;font-weight:700;color:var(--ink);margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.tc-row{display:flex;align-items:center;gap:14px;margin-bottom:12px}
+.tc-lbl{font-size:12.5px;font-weight:600;color:var(--ink2);width:130px;flex-shrink:0}
+.tc-bar-track{flex:1;height:20px;background:var(--line);border-radius:10px;overflow:hidden}
+.tc-bar-fill{height:100%;border-radius:10px;display:flex;align-items:center;padding-left:10px;font-size:11px;font-weight:700;color:#fff;transition:width 1.2s var(--ease)}
+.tc-bar-fill.g{background:linear-gradient(90deg,var(--green),#059669)}
+.tc-bar-fill.a{background:linear-gradient(90deg,var(--amber),#d97706)}
+.tc-bar-fill.r{background:linear-gradient(90deg,var(--red),#dc2626)}
+.tc-bar-fill.b{background:linear-gradient(90deg,var(--blue),var(--blue-d))}
+.tc-val{font-size:13px;font-weight:700;width:60px;flex-shrink:0;text-align:right}
+
+/* eligibility milestone cards */
+.grade-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:13px;margin-bottom:18px}
+.gc{border-radius:13px;padding:16px 14px;text-align:center;border:1.5px solid;transition:.22s}
+.gc:hover{transform:translateY(-2px);box-shadow:var(--s2)}
+.gc.active-pass{background:var(--green-xl);border-color:var(--green-s)}
+.gc.active-avg{background:var(--amber-xl);border-color:var(--amber-s)}
+.gc.active-fail{background:var(--red-xl);border-color:var(--red-s)}
+.gc.inactive{background:var(--surf);border-color:var(--line);opacity:.7}
+.gc-ico{font-size:24px;margin-bottom:6px}
+.gc-title{font-family:var(--fd);font-size:13px;font-weight:700;color:var(--ink);margin-bottom:3px}
+.gc-val{font-size:12px;color:var(--ink3);line-height:1.55}
+
+.sugg-box{background:var(--blue-xl);border:1.5px solid var(--blue-s);border-radius:13px;padding:16px 18px;font-size:14px;color:var(--ink2);line-height:1.78}
+.warn-box{background:var(--amber-xl);border:1.5px solid var(--amber-s);border-radius:12px;padding:14px 18px;display:flex;gap:10px;font-size:13.5px;color:var(--ink2);line-height:1.7;margin-top:14px}
+
+/* score detail mini-cards */
+.detail-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:18px}
+.dcard{background:#fff;border:1.5px solid var(--line);border-radius:14px;padding:16px;text-align:center;transition:.22s}
+.dcard:hover{box-shadow:var(--s2);border-color:var(--blue-s)}
+.dcard-ico{font-size:24px;margin-bottom:6px}
+.dcard-lbl{font-size:11px;font-weight:700;color:var(--ink3);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px}
+.dcard-val{font-family:var(--fd);font-size:18px;font-weight:800;color:var(--ink)}
+.dcard-sub{font-size:11px;color:var(--ink4);margin-top:3px}
+
+/* ══ TABLE SECTION ══ */
+.tbl-sec{background:#fff;padding:72px 0}
+.tbl-wr{overflow-x:auto;margin-bottom:20px}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+thead th{background:linear-gradient(135deg,#0f172a 0%,#0f4c75 100%);color:#fff;padding:14px 16px;text-align:left;font-family:var(--fd);font-size:13px;font-weight:700;letter-spacing:.03em}
+tbody tr{border-bottom:1px solid var(--line);transition:.2s}
+tbody tr:hover{background:var(--blue-xl)}
+tbody td{padding:12px 16px;color:var(--ink2);vertical-align:middle}
+.row-pass{background:var(--green-xl)!important}
+.row-avg{background:var(--amber-xl)!important}
+.row-fail{background:var(--red-xl)!important}
+.tbadge{display:inline-flex;font-size:11px;font-weight:700;padding:3px 8px;border-radius:100px}
+.tbadge.g{background:var(--green-xl);color:var(--green);border:1px solid var(--green-s)}
+.tbadge.a{background:var(--amber-xl);color:#92400e;border:1px solid var(--amber-s)}
+.tbadge.r{background:var(--red-xl);color:var(--red);border:1px solid var(--red-s)}
+.tbadge.b{background:var(--blue-xl);color:var(--blue);border:1px solid var(--blue-s)}
+
+/* ══ TIPS SECTION ══ */
+.tips-sec{background:var(--surf);padding:72px 0}
+.tips-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.tip-card{background:#fff;border:1.5px solid var(--line);border-radius:16px;padding:22px 18px;text-align:center;transition:.28s}
+.tip-card:hover{transform:translateY(-4px);box-shadow:var(--s3);border-color:var(--blue-s)}
+.tip-ico{font-size:32px;margin-bottom:12px}
+.tip-title{font-family:var(--fd);font-size:14px;font-weight:800;color:var(--ink);margin-bottom:8px}
+.tip-desc{font-size:13px;color:var(--ink3);line-height:1.7}
+
+/* ══ STORY ══ */
+.story-sec{background:#fff;padding:72px 0}
+.story-card{background:var(--surf);border:1.5px solid var(--line);border-radius:24px;padding:40px;box-shadow:var(--s3);position:relative;overflow:hidden}
+.story-card::before{content:'';position:absolute;top:0;left:0;bottom:0;width:5px;background:linear-gradient(180deg,var(--blue) 0%,var(--teal) 100%);border-radius:5px 0 0 5px}
+.sq{font-size:54px;color:var(--blue-s);font-family:Georgia,serif;line-height:1;padding-left:8px}
+.sb{font-size:15.5px;color:var(--ink2);line-height:1.9;padding:0 8px}
+.sauth{display:flex;align-items:center;gap:14px;margin-top:22px;padding-top:20px;border-top:1px solid var(--line)}
+.savt{width:48px;height:48px;background:var(--blue);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+.sname{font-family:var(--fd);font-size:15px;font-weight:700;color:var(--ink)}
+.srole{font-size:12.5px;color:var(--ink3)}
+.founder-msg{background:linear-gradient(135deg,var(--blue-xl),var(--blue-s));border:1.5px solid var(--blue-s);border-radius:14px;padding:20px 22px;margin-top:20px;display:flex;gap:13px}
+.fm-ico{font-size:26px;flex-shrink:0}
+.fm-txt{font-size:14px;color:var(--ink2);line-height:1.75;font-style:italic}
+.fm-txt strong{color:var(--ink);font-weight:700;font-style:normal}
+
+/* ══ GUIDE ══ */
+.guide-sec{background:var(--surf);padding:72px 0}
+.guide-body h2{font-family:var(--fd);font-size:21px;font-weight:800;color:var(--ink);margin:28px 0 11px;line-height:1.3}
+.guide-body h2:first-child{margin-top:0}
+.guide-body p{font-size:15px;color:var(--ink3);line-height:1.85;margin-bottom:14px}
+.guide-body ul{display:flex;flex-direction:column;gap:8px;margin:12px 0 16px}
+.guide-body li{display:flex;align-items:flex-start;gap:10px;font-size:14.5px;color:var(--ink3);line-height:1.7}
+.guide-body li::before{content:'✓';width:18px;height:18px;background:var(--blue);color:#fff;border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;flex-shrink:0;margin-top:3px}
+.guide-body strong{color:var(--ink2);font-weight:700}
+.ibox{background:var(--blue-xl);border:1.5px solid var(--blue-s);border-radius:13px;padding:15px 18px;margin:16px 0;display:flex;gap:11px;font-size:14px;color:var(--ink2);line-height:1.7}
+.ibox svg{width:17px;height:17px;stroke:var(--blue);fill:none;stroke-width:2;flex-shrink:0;margin-top:2px}
+.ibox.g{background:var(--green-xl);border-color:var(--green-s)}
+.ibox.g svg{stroke:var(--green)}
+.ibox.a{background:var(--amber-xl);border-color:var(--amber-s)}
+.ibox.a svg{stroke:var(--amber)}
+.ex-card{background:#fff;border:1.5px solid var(--line);border-radius:16px;padding:24px;margin:16px 0;box-shadow:var(--s2)}
+.ex-row{display:flex;align-items:center;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--line);font-size:14.5px;color:var(--ink2)}
+.ex-row:last-child{border-bottom:none;font-weight:800;font-size:16px;color:var(--ink)}
+.ex-band{display:inline-flex;align-items:center;justify-content:center;min-width:46px;height:46px;border-radius:12px;background:var(--blue);color:#fff;font-family:var(--fd);font-size:18px;font-weight:800;padding:0 8px}
+
+/* mistake cards */
+.mistake-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:16px 0}
+.mistake-card{background:#fff;border:1.5px solid var(--red-s);border-radius:13px;padding:16px 18px;display:flex;gap:12px;align-items:flex-start}
+.mistake-ico{font-size:20px;flex-shrink:0;margin-top:2px}
+.mistake-body h4{font-family:var(--fd);font-size:13px;font-weight:800;color:var(--ink);margin-bottom:4px}
+.mistake-body p{font-size:12.5px;color:var(--ink3);line-height:1.6}
+
+/* ══ FAQ ══ */
+.faq-sec{background:#fff;padding:72px 0}
+.fql{max-width:780px;margin:0 auto}
+.fq{background:var(--surf);border:1.5px solid var(--line);border-radius:13px;margin-bottom:10px;overflow:hidden}
+.fq-q{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;cursor:pointer;gap:14px;transition:.2s}
+.fq-q:hover{background:var(--blue-xl)}
+.fq-t{font-weight:600;font-size:15px;color:var(--ink);line-height:1.4}
+.fq-i{width:28px;height:28px;border-radius:50%;background:var(--blue-xl);color:var(--blue);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;transition:transform .28s,background .2s}
+.fq.open .fq-i{transform:rotate(45deg);background:var(--blue);color:#fff}
+.fq-a{max-height:0;overflow:hidden;transition:max-height .38s var(--ease)}
+.fq-ai{padding:0 22px 18px;font-size:14.5px;color:var(--ink3);line-height:1.78}
+.fq.open .fq-a{max-height:500px}
+
+/* ══ DISC / CONTACT / CTA / FOOTER ══ */
+.disc{background:var(--amber-xl);border-top:1px solid var(--amber-s);border-bottom:1px solid var(--amber-s);padding:15px 0}
+.disc-in{display:flex;align-items:flex-start;gap:12px;font-size:13.5px;color:var(--ink2);line-height:1.7}
+.contact-sec{background:var(--surf);padding:60px 0}
+.contact-card{max-width:580px;margin:0 auto;background:#fff;border:1.5px solid var(--line);border-radius:20px;padding:32px;text-align:center;box-shadow:var(--s2)}
+.contact-card h3{font-family:var(--fd);font-size:19px;font-weight:800;color:var(--ink);margin-bottom:10px}
+.contact-card p{font-size:15px;color:var(--ink3);line-height:1.75;margin-bottom:20px}
+.btn-bl{display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:#fff;font-family:var(--fd);font-weight:700;font-size:14.5px;padding:12px 26px;border-radius:8px;box-shadow:var(--sb);transition:.22s}
+.btn-bl:hover{background:var(--blue-d);transform:translateY(-1px)}
+.priv-note{font-size:12px;color:var(--ink4);margin-top:14px}
+.cta{background:linear-gradient(140deg,#0f172a 0%,#0f4c75 100%);padding:80px 0;text-align:center;position:relative;overflow:hidden}
+.cta::before{content:'';position:absolute;top:-80px;left:50%;transform:translateX(-50%);width:800px;height:380px;background:radial-gradient(ellipse,rgba(30,136,229,.22) 0%,transparent 68%);pointer-events:none}
+.cta-in{position:relative;z-index:1}
+.cta .pill{color:#93c5fd;background:rgba(255,255,255,.1);margin-bottom:18px}
+.cta .pill::before{background:#93c5fd}
+.cta h2{font-family:var(--fd);font-size:clamp(24px,4vw,42px);font-weight:800;color:#fff;line-height:1.15;margin-bottom:12px}
+.cta h2 em{color:#fbbf24;font-style:normal}
+.cta p{font-size:16px;color:rgba(255,255,255,.72);max-width:480px;margin:0 auto 32px;line-height:1.78}
+.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn-gold{display:inline-flex;align-items:center;gap:8px;background:var(--amber);color:#fff;font-family:var(--fd);font-weight:800;font-size:15px;padding:14px 30px;border-radius:8px;box-shadow:0 8px 28px rgba(245,158,11,.35);transition:.22s}
+.btn-gold:hover{background:#d97706;transform:translateY(-3px)}
+.btn-ghost{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.09);border:1.5px solid rgba(255,255,255,.22);color:#fff;font-family:var(--fd);font-weight:600;font-size:14px;padding:13px 26px;border-radius:8px;transition:.2s}
+.btn-ghost:hover{background:rgba(255,255,255,.16)}
+footer{background:#0f172a;padding:52px 0 0}
+.ft-inner{max-width:1180px;margin:0 auto;padding:0 24px}
+.ft-top{display:grid;grid-template-columns:1.9fr 1fr 1fr 1fr;gap:44px;margin-bottom:44px}
+.ft-brand .ln{color:#fff}.ft-brand .ls{color:#475569}
+.ft-desc{font-size:13.5px;color:#64748b;line-height:1.78;max-width:265px;margin:13px 0 20px}
+.ft-soc{display:flex;gap:9px}
+.fts{width:34px;height:34px;border-radius:7px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;color:#94a3b8;font-size:13px;transition:.2s}
+.fts:hover{background:var(--blue);color:#fff}
+.fc h4{font-family:var(--fd);font-size:12px;font-weight:700;color:#fff;margin-bottom:14px;letter-spacing:.06em;text-transform:uppercase}
+.fc ul{display:flex;flex-direction:column;gap:8px}
+.fc ul a{font-size:13.5px;color:#64748b;transition:.18s}
+.fc ul a:hover{color:#93c5fd}
+.ft-btm{border-top:1px solid rgba(255,255,255,.07);padding:20px 0;text-align:center}
+.ft-cp{font-size:12.5px;color:#475569}
+.ft-cp b{color:#64748b}
+.ft-tag{font-size:12px;color:#334155;margin-top:4px;font-style:italic}
+.btt{position:fixed;bottom:26px;right:26px;z-index:500;width:43px;height:43px;background:var(--blue);color:#fff;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:17px;box-shadow:var(--sb);opacity:0;pointer-events:none;transform:translateY(14px);transition:.28s var(--ease)}
+.btt.on{opacity:1;pointer-events:auto;transform:translateY(0)}
+.btt:hover{transform:translateY(-3px)}
+
+/* RESPONSIVE */
+@media(max-width:1060px){.ft-top{grid-template-columns:1fr 1fr}.tips-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:860px){
+  nav.dn,.hcta{display:none}.brg{display:flex}
+  .tool-body{padding:24px 22px}.tool-hdr{padding:24px 22px}
+  .grade-grid{grid-template-columns:1fr 1fr}.howto-steps{grid-template-columns:1fr}
+  .rel-grid{grid-template-columns:1fr 1fr}.mistake-grid{grid-template-columns:1fr}
+  .detail-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+  .ft-top{grid-template-columns:1fr}.rel-grid{grid-template-columns:1fr}
+  .tips-grid{grid-template-columns:1fr 1fr}.cta-btns{flex-direction:column;align-items:center}
+  .story-card{padding:26px 20px}.res-banner{flex-direction:column;align-items:flex-start;gap:16px}
+  .grade-grid{grid-template-columns:1fr 1fr}.tc-lbl{width:90px}
+  .btn-row{flex-direction:column}.detail-grid{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="hdr">
+  <div class="w">
+    <div class="hdi">
+      <a href="/" class="logo">
+        <div class="lb"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+        <div><div class="ln">Raj<span>Daily</span>Tools</div><div class="ls">Smart Tools for Daily Life</div></div>
+      </a>
+      <nav class="dn">
+        <a href="/">Home</a><a href="/categories">Categories</a>
+        <a href="/#popular">Popular</a><a href="/about">About</a><a href="/contact">Contact</a>
+      </nav>
+      <a href="/categories" class="hcta">All Tools →</a>
+      <button class="brg" id="brg"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="dov" id="dov"></div>
+<div class="drw" id="drw">
+  <div class="dh">
+    <div class="logo">
+      <div class="lb" style="width:30px;height:30px;border-radius:7px"><svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#fff"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+      <div class="ln" style="font-size:16px">Raj<span>Daily</span>Tools</div>
+    </div>
+    <button class="dx" id="dx">✕</button>
+  </div>
+  <nav class="mn">
+    <a href="/" onclick="cD()">🏠 Home</a>
+    <a href="/categories" onclick="cD()">🗂️ Categories</a>
+    <a href="/#popular" onclick="cD()">⭐ Popular</a>
+    <a href="/about" onclick="cD()">👤 About</a>
+    <a href="/contact" onclick="cD()">📬 Contact</a>
+  </nav>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+  <div class="w">
+    <div class="bc">
+      <a href="/">Home</a><span style="color:var(--ink4)">›</span>
+      <a href="/categories">Tools</a><span style="color:var(--ink4)">›</span>
+      <span>PTE University Eligibility Checker</span>
+    </div>
+    <div class="hero-inner">
+      <div class="pill">PTE Study Abroad Tools</div>
+      <h1>PTE <span>University Eligibility</span> Checker 2026</h1>
+      <p class="hero-sub">Enter your PTE Academic score, study level, and destination to instantly check your <strong>university admission eligibility and readiness</strong>. Supports 8 major study-abroad destinations with competitiveness ratings.</p>
+      <div class="hero-chips">
+        <span class="chip">🎓 8 Countries Supported</span>
+        <span class="chip">📊 Readiness Score</span>
+        <span class="chip">🏆 Competitiveness Rating</span>
+        <span class="chip">🆓 100% Free</span>
+      </div>
+      <div class="hero-meta">
+        <div class="upd">📅 Updated for 2025–26</div>
+        <span class="mi">✅ All study levels</span>
+        <span class="mi">🔒 No data stored</span>
+      </div>
+      <!-- HOW TO USE -->
+      <div class="howto">
+        <div class="howto-ttl">💡 How to Use This Tool</div>
+        <div class="howto-steps">
+          <div class="hs"><span class="sn">1</span>Enter your PTE Academic score</div>
+          <div class="hs"><span class="sn">2</span>Select your study level</div>
+          <div class="hs"><span class="sn">3</span>Choose your destination country</div>
+          <div class="hs"><span class="sn">4</span>Select university competitiveness</div>
+          <div class="hs"><span class="sn">5</span>Click Check Eligibility</div>
+          <div class="hs"><span class="sn">6</span>Review your admission readiness report</div>
+        </div>
+      </div>
+      <!-- RELATED TOOLS -->
+      <div class="rel-grid">
+        <div class="rg-box c1">
+          <div class="rg-ico">📊</div>
+          <div class="rg-txt">
+            <h4>PTE Score Calculator</h4>
+            <p>Calculate your overall PTE Academic score</p>
+            <a href="https://rajdailytools.in/pte-score-calculator-2026.html" target="_blank" rel="noopener" class="btn-xs a">Use Now →</a>
+          </div>
+        </div>
+        <div class="rg-box c2">
+          <div class="rg-ico">🔮</div>
+          <div class="rg-txt">
+            <h4>PTE Score Predictor</h4>
+            <p>Predict your expected PTE score before the test</p>
+            <a href="https://rajdailytools.in/pte-score-predictor-2026.html" target="_blank" rel="noopener" class="btn-xs g">Use Now →</a>
+          </div>
+        </div>
+        <div class="rg-box c3">
+          <div class="rg-ico">✅</div>
+          <div class="rg-txt">
+            <h4>PTE Eligibility Checker</h4>
+            <p>Check if you meet PTE exam eligibility criteria</p>
+            <a href="https://rajdailytools.in/pte-eligibility-checker-2026.html" target="_blank" rel="noopener" class="btn-xs b">Use Now →</a>
+          </div>
+        </div>
+        <div class="rg-box c4">
+          <div class="rg-ico">🔄</div>
+          <div class="rg-txt">
+            <h4>PTE to IELTS Converter</h4>
+            <p>Convert your PTE score to IELTS equivalent</p>
+            <a href="https://rajdailytools.in/pte-to-ielts-converter-2026.html" target="_blank" rel="noopener" class="btn-xs p">Use Now →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOOL SECTION -->
+<section class="tool-sec" id="tool">
+  <div class="w">
+    <div class="tool-wrap">
+      <div class="tool-card rev">
+        <div class="tool-hdr">
+          <div class="run-dots">
+            <div class="run-dot"></div><div class="run-dot"></div><div class="run-dot"></div>
+            <div class="run-dot"></div><div class="run-dot"></div><div class="run-dot"></div>
+          </div>
+          <div class="th">
+            <h2>🎓 PTE University Eligibility Checker 2026</h2>
+            <p>Enter your PTE Academic score, select your study level and destination country, then choose university competitiveness. The checker instantly evaluates your admission eligibility and provides a personalised readiness report.</p>
+            <div class="th-badges">
+              <span class="thb">🌍 8 Countries</span>
+              <span class="thb">🎓 All Study Levels</span>
+              <span class="thb">📊 Readiness Score</span>
+              <span class="thb">🔒 No Data Stored</span>
+            </div>
+          </div>
+        </div>
+        <div class="tool-body">
+
+          <div class="fld">
+            <label class="flbl" for="pteScore">Your PTE Academic Score <span>10 – 90</span></label>
+            <input class="finp" type="number" id="pteScore" placeholder="e.g. 68" min="10" max="90" autocomplete="off">
+            <div class="score-range">
+              <span class="sr-item" onclick="setScore(50)">50 — Basic</span>
+              <span class="sr-item" onclick="setScore(58)">58 — Moderate</span>
+              <span class="sr-item" onclick="setScore(65)">65 — Strong</span>
+              <span class="sr-item" onclick="setScore(75)">75 — Competitive</span>
+              <span class="sr-item" onclick="setScore(85)">85 — Expert</span>
+            </div>
+          </div>
+
+          <div class="fld">
+            <label class="flbl" for="studyLevel">Study Level <span>Select one</span></label>
+            <select class="fsel" id="studyLevel">
+              <option value="diploma">Diploma</option>
+              <option value="bachelor">Bachelor's Degree</option>
+              <option value="master" selected>Master's Degree</option>
+              <option value="mba">MBA</option>
+              <option value="phd">PhD</option>
+            </select>
+          </div>
+
+          <div class="fld">
+            <label class="flbl" for="country">Destination Country <span>Select one</span></label>
+            <select class="fsel" id="country">
+              <option value="australia">🇦🇺 Australia</option>
+              <option value="canada">🇨🇦 Canada</option>
+              <option value="uk">🇬🇧 United Kingdom</option>
+              <option value="usa">🇺🇸 United States</option>
+              <option value="nz">🇳🇿 New Zealand</option>
+              <option value="ireland">🇮🇪 Ireland</option>
+              <option value="germany">🇩🇪 Germany</option>
+              <option value="singapore">🇸🇬 Singapore</option>
+            </select>
+          </div>
+
+          <div class="fld">
+            <label class="flbl" for="uniType">University Competitiveness <span>Select one</span></label>
+            <select class="fsel" id="uniType">
+              <option value="standard">Standard</option>
+              <option value="competitive" selected>Competitive</option>
+              <option value="highly">Highly Competitive</option>
+            </select>
+          </div>
+
+          <div class="hint-box">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            <div>PTE Academic scores range from <strong>10 to 90</strong>. Most universities worldwide set minimum PTE scores between <strong>50 and 79</strong> depending on the program and level. Competitive and highly selective institutions typically require higher scores than published minimums. This checker evaluates your current score against common admission benchmarks.</div>
+          </div>
+
+          <div class="btn-row">
+            <button class="chk-btn" onclick="checkEligibility()">🎓 Check My Eligibility</button>
+            <button class="rst-btn" onclick="resetTool()">↺ Reset</button>
+          </div>
+
+          <!-- RESULT -->
+          <div id="resultArea">
+
+            <div class="res-banner" id="resBanner">
+              <div class="meter-wrap">
+                <svg class="meter-svg" viewBox="0 0 100 100">
+                  <circle class="meter-bg" cx="50" cy="50" r="45"/>
+                  <circle class="meter-fill" id="meterFill" cx="50" cy="50" r="45" stroke-dasharray="283" stroke-dashoffset="283"/>
+                </svg>
+                <div class="meter-center">
+                  <div class="meter-pct" id="meterPct">–</div>
+                  <div class="meter-lbl" id="meterLbl">Readiness</div>
+                </div>
+              </div>
+              <div class="res-info">
+                <div class="res-icon" id="resIcon"></div>
+                <div class="res-title" id="resTitle"></div>
+                <div class="res-sub" id="resSub"></div>
+                <div class="res-tag" id="resTag"></div>
+              </div>
+            </div>
+
+            <!-- detail mini-cards -->
+            <div class="detail-grid" id="detailGrid"></div>
+
+            <!-- milestone cards -->
+            <div class="grade-grid" id="gradeGrid"></div>
+
+            <!-- readiness bars -->
+            <div class="time-compare">
+              <div class="tc-title">📊 Admission Readiness — Score vs Typical Requirements</div>
+              <div id="scoreBars"></div>
+            </div>
+
+            <div class="sugg-box" id="suggBox"></div>
+            <div class="warn-box">
+              <span style="font-size:20px;flex-shrink:0">⚠️</span>
+              <div style="font-size:13.5px;color:var(--ink2);line-height:1.72"><strong>Note:</strong> This tool provides general admission readiness guidance for educational planning purposes only. Official university admission requirements vary by institution, program, and intake year. Admission decisions depend on multiple academic and institutional factors beyond English proficiency alone. Always verify requirements directly with the institution before applying. <strong>No data you enter is stored or shared.</strong></div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REFERENCE TABLE SECTION -->
+<section class="tbl-sec" id="score-table">
+  <div class="w">
+    <div style="max-width:860px;margin:0 auto">
+      <div class="rev" style="text-align:center;margin-bottom:36px">
+        <div class="pill" style="margin-bottom:14px">PTE Score Reference Table</div>
+        <h2 style="font-family:var(--fd);font-size:clamp(22px,3.5vw,36px);font-weight:800;color:var(--ink);margin-bottom:10px">PTE Score <span style="color:var(--blue)">Eligibility Level Reference</span></h2>
+        <p style="font-size:15px;color:var(--ink3);max-width:520px;margin:0 auto;line-height:1.75">General PTE Academic score ranges commonly used by universities for admission assessment across different competitiveness levels.</p>
+      </div>
+
+      <div class="tbl-wr rev">
+        <table>
+          <thead><tr><th>PTE Score</th><th>Eligibility Level</th><th>Typical University Tier</th><th>Common Use</th></tr></thead>
+          <tbody>
+            <tr class="row-pass"><td><strong>79 – 90</strong></td><td><strong>Highly Competitive</strong></td><td><span class="tbadge g">Top Universities</span></td><td>Elite programs, PhD, competitive PG admissions</td></tr>
+            <tr class="row-pass"><td><strong>75 – 78</strong></td><td><strong>Strong / Competitive</strong></td><td><span class="tbadge g">Competitive</span></td><td>Most postgraduate and professional programs</td></tr>
+            <tr class="row-pass"><td><strong>65 – 74</strong></td><td><strong>Strong Eligibility</strong></td><td><span class="tbadge g">Good Universities</span></td><td>Master's, MBA, skilled migration pathways</td></tr>
+            <tr class="row-avg"><td><strong>58 – 64</strong></td><td><strong>Moderate Eligibility</strong></td><td><span class="tbadge a">Standard</span></td><td>Bachelor's, diploma, standard PG programs</td></tr>
+            <tr class="row-avg"><td><strong>50 – 57</strong></td><td><strong>Basic Eligibility</strong></td><td><span class="tbadge a">Foundation</span></td><td>Diploma, foundation programs, conditional entry</td></tr>
+            <tr class="row-fail"><td><strong>Below 50</strong></td><td><strong>Limited Eligibility</strong></td><td><span class="tbadge r">Pre-Entry</span></td><td>English pathway programs, preparatory courses</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:12.5px;color:var(--ink4);margin-top:12px;text-align:center">* Score ranges are indicative based on commonly published admission benchmarks. Exact requirements vary by institution, program, and intake. Always verify with the specific university.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TIPS SECTION -->
+<section class="tips-sec">
+  <div class="w">
+    <div style="text-align:center;margin-bottom:36px" class="rev">
+      <div class="pill" style="margin-bottom:14px">Score Improvement Tips</div>
+      <h2 style="font-family:var(--fd);font-size:clamp(22px,3.5vw,36px);font-weight:800;color:var(--ink);margin-bottom:10px">How to <span style="color:var(--blue)">Strengthen Your Application</span></h2>
+      <p style="font-size:15px;color:var(--ink3);max-width:480px;margin:0 auto">Practical strategies to improve your PTE score and maximise your chances of university admission.</p>
+    </div>
+    <div class="tips-grid rev">
+      <div class="tip-card">
+        <div class="tip-ico">🎯</div>
+        <div class="tip-title">Know Your Target Score</div>
+        <div class="tip-desc">Before preparing, identify the exact PTE score required by your target university and program. Many institutions publish minimum scores online. Knowing your gap — the difference between your current score and the requirement — gives your preparation a clear, measurable objective rather than vague improvement.</div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-ico">🗣️</div>
+        <div class="tip-title">Focus on Speaking and Writing</div>
+        <div class="tip-desc">PTE Speaking and Writing sections are the most impactful for overall score improvement. Practise Read Aloud, Describe Image, and Summarise Written Text consistently. These tasks test multiple skills simultaneously — fluency, vocabulary, and coherence — and improving them has an outsized effect on your total PTE score.</div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-ico">📚</div>
+        <div class="tip-title">Use Official Practice Tests</div>
+        <div class="tip-desc">PTE Academic offers scored practice tests through Pearson's official platform. These replicate the actual test environment, scoring, and timing precisely. Taking at least two to three scored practice tests before the real exam helps you understand your exact weak points and builds familiarity with the computer-based interface.</div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-ico">📅</div>
+        <div class="tip-title">Plan Your Timeline Strategically</div>
+        <div class="tip-desc">University application deadlines are fixed. Work backwards from your target intake — factor in the time needed to improve your score, book and sit the test, receive results, gather documents, and submit applications. Most students need 8–16 weeks of focused preparation to move one meaningful score band in PTE Academic.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOUNDER STORY SECTION -->
+<section class="story-sec">
+  <div class="w">
+    <div class="wa">
+      <div class="rev" style="text-align:center;margin-bottom:32px">
+        <div class="pill" style="margin-bottom:14px">From Raj Bhai's Desk</div>
+        <h2 style="font-family:var(--fd);font-size:clamp(20px,3vw,32px);font-weight:800;color:var(--ink)">The Dream to Study <span style="color:var(--blue)">Abroad is Real</span></h2>
+      </div>
+      <div class="story-card rev">
+        <div class="sq">"</div>
+        <div class="sb">
+          Mujhe yaad hai jab ek student ne mujhse pucha — <em>"Bhai, mera PTE score 64 hai. Kya Australia mein Masters ho sakta hai?"</em> Uske paas score tha, determination thi, lekin koi clear answer nahi tha. Usne teen different websites check kiye, sab alag-alag information — aur result tha confusion, anxiety, aur wasted time.<br><br>
+          Yahi wajah hai ki humne ye tool banaya. Ek hi jagah pe — <strong>apna PTE score daalo, country aur study level select karo — aur seedha pata chalo ki aap eligible ho ya nahi.</strong> No jargon, no confusing tables, no paisa. Bas ek honest assessment jo aapko aage le jaaye.<br><br>
+          Study abroad ka sapna bohot logon ka hai — aur ye tool us sapne ko thoda aur clear aur achievable banana chahta hai.
+        </div>
+        <div class="sauth">
+          <div class="savt">🎓</div>
+          <div>
+            <div class="sname">Raj Bhai — Founder, RajDailyTools</div>
+            <div class="srole">Building free tools for India's study-abroad aspirants</div>
+          </div>
+        </div>
+        <div class="founder-msg">
+          <div class="fm-ico">💬</div>
+          <div class="fm-txt">"<strong>PTE score milna kafi nahi hai — sahi university ko sahi score ke saath apply karna padta hai.</strong> Ye tool wahi gap fill karta hai — no fees, no registration, just honest eligibility guidance for every Indian student with a big dream."</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GUIDE SECTION -->
+<section class="guide-sec" id="guide">
+  <div class="w">
+    <div class="wa">
+      <div class="rev" style="text-align:center;margin-bottom:36px">
+        <div class="pill" style="margin-bottom:14px">Detailed Guide</div>
+        <h2 style="font-family:var(--fd);font-size:clamp(22px,3.5vw,36px);font-weight:800;color:var(--ink);margin-bottom:10px">PTE University Eligibility — <span style="color:var(--blue)">Complete Guide</span></h2>
+      </div>
+      <div class="guide-body rev">
+
+        <h2>Why Check University Eligibility With Your PTE Score?</h2>
+        <p>University admission requirements vary significantly across countries and institutions. A PTE score of 65 may be sufficient for a standard Bachelor's program in one country but fall short of a competitive Master's program in another. Checking eligibility before applying helps students make informed application decisions, avoid wasted application fees, and focus their preparation time where it matters most.</p>
+
+        <h2>What Is PTE Academic?</h2>
+        <p>PTE Academic (Pearson Test of English Academic) is a computer-based English proficiency test widely accepted by universities, colleges, and immigration authorities across Australia, the UK, Canada, the USA, New Zealand, Ireland, Singapore, and Germany. Scores range from 10 to 90, with most institutions setting minimums between 50 and 79 depending on the program level and selectivity.</p>
+
+        <div class="ibox">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          <div>PTE Academic results are typically available within <strong>1–5 business days</strong> of the test, making it one of the fastest English test result turnaround times — a significant advantage for students working to tight application deadlines.</div>
+        </div>
+
+        <h2>How Does This Eligibility Checker Work?</h2>
+        <p>The checker combines four inputs — your PTE score, study level, destination country, and university competitiveness — to generate an eligibility assessment and readiness score. The logic applies common minimum score thresholds published by universities in each country and adjusts them based on program level and institutional selectivity. A competitive university in Australia typically requires a higher PTE score than a standard university offering the same degree level.</p>
+
+        <h2>Real-Life Example</h2>
+        <div class="ex-card">
+          <div class="ex-row"><span>PTE Score</span><strong>68</strong></div>
+          <div class="ex-row"><span>Study Level</span><strong>Master's Degree</strong></div>
+          <div class="ex-row"><span>Destination Country</span><strong>Australia</strong></div>
+          <div class="ex-row"><span>University Type</span><strong>Competitive</strong></div>
+          <div class="ex-row"><span>Eligibility Level</span><span class="ex-band">Strong</span></div>
+          <div class="ex-row"><span>Admission Readiness</span><strong>84 / 100</strong></div>
+          <div class="ex-row"><span>Competitiveness Rating</span><strong>High</strong></div>
+        </div>
+
+        <h2>Can Higher Scores Improve Competitiveness?</h2>
+        <p>Higher English proficiency scores may strengthen overall application profiles and increase competitiveness, particularly for postgraduate programs, scholarships, and programs that use PTE scores as a differentiating factor beyond meeting the published minimum. Many universities state a minimum but assess applications holistically — a score well above the minimum signals strong English ability and can positively influence admission decisions.</p>
+
+        <h2>Who Should Use This Tool?</h2>
+        <ul>
+          <li>Study-abroad students planning their university applications</li>
+          <li>Master's and MBA applicants evaluating international programs</li>
+          <li>PhD applicants checking research program requirements</li>
+          <li>Students currently preparing for PTE wanting to set a target score</li>
+          <li>International education aspirants comparing destination countries</li>
+        </ul>
+
+        <div class="ibox g">
+          <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          <div><strong>Score Strategy:</strong> If your current PTE score is 62 and your target university in Australia requires 65 for a Master's program, that is only a 3-point gap. Focused preparation on the Speaking section — specifically Read Aloud and Describe Image — is often the fastest way to close a small score gap before reapplying or applying for the next intake.</div>
+        </div>
+
+        <h2>Common Application Mistakes</h2>
+        <div class="mistake-grid">
+          <div class="mistake-card">
+            <div class="mistake-ico">❌</div>
+            <div class="mistake-body"><h4>Applying Without Checking Requirements</h4><p>Many students apply with a score below the published minimum and are rejected outright, wasting application fees and valuable time.</p></div>
+          </div>
+          <div class="mistake-card">
+            <div class="mistake-ico">❌</div>
+            <div class="mistake-body"><h4>Ignoring Competitiveness Levels</h4><p>Meeting the published minimum score does not guarantee a competitive application. Highly ranked programs often prefer scores well above the stated minimum.</p></div>
+          </div>
+          <div class="mistake-card">
+            <div class="mistake-ico">❌</div>
+            <div class="mistake-body"><h4>Using Outdated Score Information</h4><p>University PTE requirements can change between intakes. Always verify the current intake requirements directly from the official admissions page before submitting an application.</p></div>
+          </div>
+          <div class="mistake-card">
+            <div class="mistake-ico">❌</div>
+            <div class="mistake-body"><h4>Focusing Only on Minimum Requirements</h4><p>Aiming for the bare minimum leaves no margin for error and puts you at a disadvantage against applicants with higher scores in competitive applicant pools.</p></div>
+          </div>
+          <div class="mistake-card">
+            <div class="mistake-ico">❌</div>
+            <div class="mistake-body"><h4>Not Planning Score Improvement Timeline</h4><p>Leaving PTE preparation too close to application deadlines creates unnecessary pressure. Most students benefit from at least two to three months of structured preparation before the test.</p></div>
+          </div>
+          <div class="mistake-card">
+            <div class="mistake-ico">❌</div>
+            <div class="mistake-body"><h4>Applying Without an Improvement Plan</h4><p>If your current score does not meet requirements, identifying which skills to improve and how long improvement is likely to take is more productive than repeatedly sitting the test without a structured plan.</p></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ SECTION -->
+<section class="faq-sec" id="faq">
+  <div class="w">
+    <div class="rev" style="text-align:center;margin-bottom:40px">
+      <div class="pill" style="margin-bottom:14px">Frequently Asked Questions</div>
+      <h2 style="font-family:var(--fd);font-size:clamp(22px,3.5vw,36px);font-weight:800;color:var(--ink);margin-bottom:10px">PTE University Eligibility — <span style="color:var(--blue)">Common Questions</span></h2>
+      <p style="font-size:15px;color:var(--ink3);max-width:500px;margin:0 auto;line-height:1.75">Clear answers to the questions study-abroad aspirants ask most about PTE score requirements and university admission.</p>
+    </div>
+    <div class="fql" id="faqList">
+
+      <div class="fq rev">
+        <div class="fq-q"><span class="fq-t">What is the PTE University Eligibility Checker?</span><div class="fq-i">+</div></div>
+        <div class="fq-a"><div class="fq-ai">The PTE University Eligibility Checker is a free tool that evaluates your university admission readiness using your PTE Academic score. You enter your PTE score, study level, destination country, and university competitiveness level, and the tool provides an eligibility assessment, an admission readiness score out of 100, a competitiveness rating, and targeted improvement suggestions — all in seconds.</div></div>
+      </div>
+
+      <div class="fq rev">
+        <div class="fq-q"><span class="fq-t">Can this tool guarantee university admission?</span><div class="fq-i">+</div></div>
+        <div class="fq-a"><div class="fq-ai">No. University admission decisions depend on multiple academic and institutional factors well beyond English proficiency scores alone — including academic transcripts, letters of recommendation, statements of purpose, prior work experience, and available places in the program. This tool provides a general readiness assessment based on common score benchmarks. It is a planning guide, not an admission guarantee. Always verify requirements with the official institution before applying.</div></div>
+      </div>
+
+      <div class="fq rev">
+        <div class="fq-q"><span class="fq-t">Is a higher PTE score always better for admission?</span><div class="fq-i">+</div></div>
+        <div class="fq-a"><div class="fq-ai">Yes, generally. While universities publish minimum score requirements, a score well above the minimum strengthens the English proficiency component of your application profile. For highly competitive programs and scholarships, a higher PTE score can be a meaningful differentiating factor. Aiming above the published minimum is always a stronger application strategy than targeting the bare threshold.</div></div>
+      </div>
+
+      <div class="fq rev">
+        <div class="fq-q"><span class="fq-t">Does it work for undergraduate students?</span><div class="fq-i">+</div></div>
+        <div class="fq-a"><div class="fq-ai">Yes. The tool supports Diploma, Bachelor's Degree, Master's Degree, MBA, and PhD study levels. Select "Bachelor's Degree" or "Diploma" in the Study Level field to evaluate undergraduate admission eligibility for your target country and university type.</div></div>
+      </div>
+
+      <div class="fq rev">
+        <div class="fq-q"><span class="fq-t">Which countries does this tool support?</span><div class="fq-i">+</div></div>
+        <div class="fq-a"><div class="fq-ai">The tool currently supports eight major study-abroad destinations: Australia, Canada, United Kingdom, United States, New Zealand, Ireland, Germany, and Singapore. These are the most common destinations for international students using PTE Academic scores for university admission. Each country has different typical score expectations, which the tool accounts for in its eligibility assessment.</div></div>
+      </div>
+
+      <div class="fq rev">
+        <div class="fq-q"><span class="fq-t">What is the difference between Standard, Competitive, and Highly Competitive university types?</span><div class="fq-i">+</div></div>
+        <div class="fq-a"><div class="fq-ai">Standard universities typically have lower minimum PTE score requirements and accept a broader range of academic backgrounds. Competitive universities are well-regarded institutions where meeting the minimum score puts you in a stronger position but does not guarantee admission. Highly Competitive refers to elite and top-ranked universities — the Group of Eight in Australia, Russell Group in the UK, Ivy League or top-ranked in the USA — where published minimums are higher and applicant pools are more selective. Choosing the right category helps the tool provide a more relevant eligibility assessment for your specific target institution.</div></div>
+      </div>
+
+      <div class="fq rev">
+        <div class="fq-q"><span class="fq-t">Can I use this tool before taking the PTE test?</span><div class="fq-i">+</div></div>
+        <div class="fq-a"><div class="fq-ai">Yes. You can use the tool with a target score — enter the PTE score you are aiming to achieve — to check whether that target would be sufficient for your planned university and study level. This helps you set a meaningful preparation goal and understand exactly what score you need to be competitive at your chosen destination and institution type.</div></div>
+      </div>
+
+      <div class="fq rev">
+        <div class="fq-q"><span class="fq-t">Is this tool free and does it require registration?</span><div class="fq-i">+</div></div>
+        <div class="fq-a"><div class="fq-ai">Yes, this tool is completely free to use with no registration required. Simply enter your details and click Check Eligibility. No personal data is collected, stored, or shared. You can use it as many times as needed to compare different score scenarios, countries, and study levels without any cost or account.</div></div>
+      </div>
+
+      <div class="fq rev">
+        <div class="fq-q"><span class="fq-t">How is the Admission Readiness Score calculated?</span><div class="fq-i">+</div></div>
+        <div class="fq-a"><div class="fq-ai">The Admission Readiness Score is a composite metric out of 100 that combines your base PTE eligibility level with adjustments for study level demands, destination country score expectations, and university competitiveness. A score near 100 indicates your PTE score comfortably meets and exceeds typical requirements for your chosen combination. A lower score suggests your current PTE score may be close to or below what is commonly expected, and improvement may strengthen your application.</div></div>
+      </div>
+
+      <div class="fq rev">
+        <div class="fq-q"><span class="fq-t">Is this tool mobile-friendly?</span><div class="fq-i">+</div></div>
+        <div class="fq-a"><div class="fq-ai">Yes. The PTE University Eligibility Checker is fully responsive and works on mobile phones, tablets, and desktop computers. The layout adapts automatically to different screen sizes so you can check your eligibility from any device at any time.</div></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- DISCLAIMER -->
+<div class="disc">
+  <div class="w">
+    <div class="disc-in">
+      <span style="font-size:18px;flex-shrink:0">⚠️</span>
+      <div><strong>Disclaimer:</strong> This PTE University Eligibility Checker is an independent educational planning tool. It is not affiliated with, endorsed by, or connected to Pearson, PTE Academic, or any university or educational institution. Eligibility assessments are based on general published admission benchmarks and are provided for planning purposes only. Official admission requirements vary by institution, program, and intake. Always verify requirements directly with the relevant university or institution before making application decisions.</div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<section class="contact-sec">
+  <div class="w">
+    <div class="contact-card rev">
+      <h3>📬 Questions or Feedback?</h3>
+      <p>If this tool helped you plan your study-abroad journey or you have a suggestion to make it better, we would love to hear from you. We are always improving RajDailyTools to serve students preparing for PTE Academic and planning international education.</p>
+      <a href="mailto:contact@rajdailytools.in" class="btn-bl">📧 Contact Us</a>
+      <p class="priv-note">🔒 We do not collect or store any information entered into our tools. Your privacy is fully protected.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="w">
+    <div class="cta-in">
+      <div class="pill">Free PTE Tools</div>
+      <h2>More PTE Preparation?<br><em>Explore All Our Tools</em></h2>
+      <p>From score calculators to eligibility checkers — everything you need to plan your study-abroad journey and reach your target score, completely free.</p>
+      <div class="cta-btns">
+        <a href="/categories" class="btn-gold">🎯 Explore All Tools</a>
+        <a href="#tool" class="btn-ghost">🎓 Check Eligibility Again ↑</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-inner">
+    <div class="ft-top">
+      <div class="ft-brand">
+        <div class="logo" style="margin-bottom:4px">
+          <div class="lb"><svg viewBox="0 0 24 24" fill="#fff"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+          <div><div class="ln">Raj<span>Daily</span>Tools</div><div class="ls">Smart Tools for Daily Life</div></div>
+        </div>
+        <p class="ft-desc">India's most ambitious free tools platform. Built by Raj Bhai. Solving daily life problems, one tool at a time.</p>
+        <div class="ft-soc">
+          <a href="https://www.facebook.com/share/1Dq3Y1k7mG/" target="_blank" class="fts">f</a>
+          <a href="https://x.com/Educator4ll" target="_blank" class="fts">𝕏</a>
+          <a href="https://youtube.com/@rajdailytools" target="_blank" class="fts">▶</a>
+          <a href="https://www.instagram.com/rajdailytools" target="_blank" class="fts">📷</a>
+        </div>
+      </div>
+      <div class="fc"><h4>PTE Tools</h4><ul>
+        <li><a href="https://rajdailytools.in/pte-score-calculator-2026.html">PTE Score Calculator</a></li>
+        <li><a href="https://rajdailytools.in/pte-score-predictor-2026.html">PTE Score Predictor</a></li>
+        <li><a href="https://rajdailytools.in/pte-eligibility-checker-2026.html">PTE Eligibility Checker</a></li>
+        <li><a href="https://rajdailytools.in/pte-readiness-checker-2026.html">PTE Readiness Checker</a></li>
+        <li><a href="https://rajdailytools.in/pte-to-ielts-converter-2026.html">PTE to IELTS Converter</a></li>
+      </ul></div>
+      <div class="fc"><h4>Categories</h4><ul>
+        <li><a href="/education-tools">Education Tools</a></li>
+        <li><a href="/finance-tools">Finance Tools</a></li>
+        <li><a href="/calculator-tools">Calculator Tools</a></li>
+        <li><a href="/health-tools">Health Tools</a></li>
+        <li><a href="/text-tools">Text Tools</a></li>
+      </ul></div>
+      <div class="fc"><h4>Company</h4><ul>
+        <li><a href="/about">About Us</a></li>
+        <li><a href="/contact">Contact</a></li>
+        <li><a href="/privacy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
+      </ul></div>
+    </div>
+    <div class="ft-btm">
+      <p class="ft-cp">Copyright © 2026 <b>RajDailyTools</b>. All rights reserved. Designed by <b>RajDailyTools</b></p>
+      <p class="ft-tag">Made with ❤️ in India — "Solving daily life problems with smart tools"</p>
+    </div>
+  </div>
+</footer>
+<button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+/* ── Drawer ── */
+const brg=document.getElementById('brg'),drw=document.getElementById('drw'),dov=document.getElementById('dov');
+function oD(){drw.classList.add('on');dov.classList.add('on');document.body.style.overflow='hidden'}
+function cD(){drw.classList.remove('on');dov.classList.remove('on');document.body.style.overflow=''}
+brg.addEventListener('click',oD);
+document.getElementById('dx').addEventListener('click',cD);
+dov.addEventListener('click',cD);
+
+/* ── Back to Top ── */
+const btt=document.getElementById('btt');
+window.addEventListener('scroll',()=>btt.classList.toggle('on',scrollY>380),{passive:true});
+
+/* ── Reveal on scroll ── */
+const rvObs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      const s=[...(e.target.parentElement?.children||[])];
+      e.target.style.transitionDelay=(s.indexOf(e.target)%4)*0.08+'s';
+      e.target.classList.add('in');
+      rvObs.unobserve(e.target);
+    }
+  });
+},{threshold:0.06,rootMargin:'0px 0px -20px 0px'});
+document.querySelectorAll('.rev').forEach(el=>rvObs.observe(el));
+
+/* ── FAQ Accordion ── */
+document.getElementById('faqList').addEventListener('click',function(e){
+  const q=e.target.closest('.fq-q');
+  if(!q)return;
+  const item=q.closest('.fq'),open=item.classList.contains('open');
+  document.querySelectorAll('.fq.open').forEach(i=>i.classList.remove('open'));
+  if(!open)item.classList.add('open');
+});
+
+/* ── Quick Score Pills ── */
+function setScore(val){
+  document.getElementById('pteScore').value=val;
+  document.getElementById('pteScore').focus();
+}
+
+/* ══════════════════════════════════════
+   PTE UNIVERSITY ELIGIBILITY LOGIC
+══════════════════════════════════════ */
+
+/* Country minimum score adjustments (master's, competitive baseline) */
+const countryData={
+  australia:{name:'Australia',flag:'🇦🇺',minStd:58,minComp:65,minHigh:73},
+  canada:    {name:'Canada',   flag:'🇨🇦',minStd:56,minComp:63,minHigh:71},
+  uk:        {name:'United Kingdom',flag:'🇬🇧',minStd:59,minComp:66,minHigh:74},
+  usa:       {name:'United States',flag:'🇺🇸',minStd:57,minComp:64,minHigh:72},
+  nz:        {name:'New Zealand',flag:'🇳🇿',minStd:55,minComp:62,minHigh:70},
+  ireland:   {name:'Ireland',  flag:'🇮🇪',minStd:56,minComp:63,minHigh:70},
+  germany:   {name:'Germany',  flag:'🇩🇪',minStd:53,minComp:60,minHigh:68},
+  singapore: {name:'Singapore',flag:'🇸🇬',minStd:60,minComp:67,minHigh:75},
+};
+
+/* Study level score adjustments (delta from baseline) */
+const levelData={
+  diploma: {name:'Diploma',         delta:-6},
+  bachelor:{name:"Bachelor's Degree",delta:-3},
+  master:  {name:"Master's Degree",  delta:0},
+  mba:     {name:'MBA',             delta:3},
+  phd:     {name:'PhD',             delta:5},
+};
+
+function getRequiredScore(country,studyLevel,uniType){
+  const c=countryData[country];
+  const l=levelData[studyLevel];
+  let base;
+  if(uniType==='standard')     base=c.minStd;
+  else if(uniType==='competitive') base=c.minComp;
+  else                          base=c.minHigh;
+  return base + l.delta;
+}
+
+function getPTEEligibilityLevel(score){
+  if(score>=75) return {label:'Highly Competitive',cls:'pass',icon:'🏆',color:'var(--green)'};
+  if(score>=65) return {label:'Strong Eligibility', cls:'pass',icon:'✅',color:'var(--green)'};
+  if(score>=58) return {label:'Moderate Eligibility',cls:'avg',icon:'⚠️',color:'var(--amber)'};
+  if(score>=50) return {label:'Basic Eligibility',  cls:'avg',icon:'📘',color:'var(--amber)'};
+  return            {label:'Limited Eligibility',   cls:'low',icon:'🔴',color:'var(--red)'};
+}
+
+function calcReadinessScore(pte,required){
+  if(pte>=required+10) return Math.min(100,90+Math.round((pte-required-10)*0.5));
+  if(pte>=required)    return Math.round(70+(pte-required)*2);
+  if(pte>=required-5)  return Math.round(50+(pte-required+5)*4);
+  if(pte>=required-10) return Math.round(30+(pte-required+10)*4);
+  return Math.max(5,Math.round(30+(pte-required)*2));
+}
+
+function checkEligibility(){
+  const pteRaw=document.getElementById('pteScore').value.trim();
+  const studyLevel=document.getElementById('studyLevel').value;
+  const country=document.getElementById('country').value;
+  const uniType=document.getElementById('uniType').value;
+
+  const inp=document.getElementById('pteScore');
+  inp.classList.remove('err');
+
+  if(pteRaw===''||isNaN(pteRaw)){inp.classList.add('err');inp.focus();return;}
+  const pte=parseInt(pteRaw,10);
+  if(pte<10||pte>90){inp.classList.add('err');inp.focus();return;}
+
+  const required=getRequiredScore(country,studyLevel,uniType);
+  const readiness=calcReadinessScore(pte,required);
+  const eligibility=getPTEEligibilityLevel(pte);
+  const cd=countryData[country];
+  const ld=levelData[studyLevel];
+  const uniLabel=uniType==='standard'?'Standard':uniType==='competitive'?'Competitive':'Highly Competitive';
+  const gap=required-pte;
+
+  /* — Banner — */
+  const banner=document.getElementById('resBanner');
+  banner.className='res-banner '+eligibility.cls;
+
+  /* — Meter — */
+  const circ=283;
+  const offset=circ-(readiness/100)*circ;
+  const mf=document.getElementById('meterFill');
+  mf.style.stroke=eligibility.color;
+  mf.style.strokeDashoffset=circ;
+  setTimeout(()=>mf.style.strokeDashoffset=offset,50);
+  document.getElementById('meterPct').textContent=readiness;
+  document.getElementById('meterLbl').textContent='/ 100';
+
+  /* — Main result text — */
+  document.getElementById('resIcon').textContent=eligibility.icon;
+  document.getElementById('resTitle').textContent=eligibility.label;
+  document.getElementById('resSub').innerHTML=
+    `PTE Score <strong>${pte}</strong> · ${ld.name} · ${cd.flag} ${cd.name} · ${uniLabel} University`;
+  const tagEl=document.getElementById('resTag');
+  tagEl.textContent='Admission Readiness: '+readiness+' / 100';
+  tagEl.className='res-tag '+eligibility.cls;
+
+  /* — Detail mini-cards — */
+  const competRating=readiness>=85?'High':readiness>=70?'Good':readiness>=55?'Moderate':'Limited';
+  const appStrength=readiness>=85?'Strong':readiness>=70?'Above Average':readiness>=55?'Average':'Needs Improvement';
+  const recRange=required+' – '+(required+10);
+  document.getElementById('detailGrid').innerHTML=`
+    <div class="dcard">
+      <div class="dcard-ico">🎯</div>
+      <div class="dcard-lbl">Required Score</div>
+      <div class="dcard-val">${required}</div>
+      <div class="dcard-sub">Typical minimum for your selection</div>
+    </div>
+    <div class="dcard">
+      <div class="dcard-ico">🏆</div>
+      <div class="dcard-lbl">Competitiveness</div>
+      <div class="dcard-val">${competRating}</div>
+      <div class="dcard-sub">Your competitive standing</div>
+    </div>
+    <div class="dcard">
+      <div class="dcard-ico">💼</div>
+      <div class="dcard-lbl">Application Strength</div>
+      <div class="dcard-val" style="font-size:14px">${appStrength}</div>
+      <div class="dcard-sub">English proficiency component</div>
+    </div>
+  `;
+
+  /* — Eligibility milestone cards — */
+  const milestones=[
+    {score:50,label:'Basic',icon:'📘',use:'Foundation / Diploma'},
+    {score:58,label:'Moderate',icon:'📗',use:'Bachelor\'s programs'},
+    {score:65,label:'Strong',icon:'🎓',use:'Most PG / Master\'s'},
+    {score:75,label:'Highly Competitive',icon:'🏆',use:'Top programs / PhD'},
+  ];
+  let gradeHTML='';
+  milestones.forEach(m=>{
+    const achieved=pte>=m.score;
+    const isCurrent=(pte>=m.score)&&(milestones.indexOf(m)===milestones.length-1||(pte<milestones[milestones.indexOf(m)+1].score));
+    let cls='inactive';
+    if(isCurrent){cls=m.score>=65?'active-pass':'active-avg';}
+    else if(achieved){cls='active-pass';}
+    gradeHTML+=`
+      <div class="gc ${cls}">
+        <div class="gc-ico">${achieved?m.icon:'🔒'}</div>
+        <div class="gc-title">${m.label}</div>
+        <div class="gc-val">${m.use}<br><span style="font-size:10px">${achieved?'✓ Achieved':'Need '+m.score}</span>${isCurrent?' 👈 Your level':''}</div>
+      </div>
+    `;
+  });
+  document.getElementById('gradeGrid').innerHTML=gradeHTML;
+
+  /* — Progress bars — */
+  const bars=[
+    {label:'Your PTE Score',pct:Math.round((pte-10)/80*100),cls:pte>=required?'g':'r',val:pte},
+    {label:'Required Score',pct:Math.round((required-10)/80*100),cls:'b',val:required},
+    {label:'Recommended Target',pct:Math.round(((required+8)-10)/80*100),cls:'a',val:required+8},
+    {label:'Highly Competitive',pct:Math.round((75-10)/80*100),cls:'g',val:'75+'},
+  ];
+  let barsHTML='';
+  bars.forEach(b=>{
+    barsHTML+=`
+      <div class="tc-row">
+        <div class="tc-lbl">${b.label}</div>
+        <div class="tc-bar-track">
+          <div class="tc-bar-fill ${b.cls}" data-w="${b.pct}%" style="width:0%">${b.val}</div>
+        </div>
+        <div class="tc-val">${b.val}</div>
+      </div>
+    `;
+  });
+  document.getElementById('scoreBars').innerHTML=barsHTML;
+  setTimeout(()=>{document.querySelectorAll('.tc-bar-fill').forEach(b=>{b.style.width=b.dataset.w||'0%'})},200);
+
+  /* — Suggestion text — */
+  let msg='';
+  if(pte>=required+10){
+    msg=`<strong>🏆 Excellent Positioning — PTE ${pte} (${cd.flag} ${cd.name}, ${ld.name}).</strong> Your score comfortably exceeds the typical requirement of ${required} for a ${uniLabel} university at this level. You are in a strong competitive position. Your English proficiency component is well above the threshold, which may positively influence holistic admission assessments at selective institutions. Focus on the other components of your application — academic transcripts, statement of purpose, and references — to build the strongest overall profile.`;
+  } else if(pte>=required){
+    msg=`<strong>✅ Eligible — PTE ${pte} (${cd.flag} ${cd.name}, ${ld.name}).</strong> Your score meets the typical requirement of ${required} for a ${uniLabel} university at this study level. You are eligible from an English proficiency standpoint. However, at a ${uniLabel} level, many competitive applicants score above the minimum. If possible, targeting ${required+5} to ${required+10} would strengthen your position in the applicant pool and provide a comfortable buffer above the threshold.`;
+  } else if(gap<=5){
+    msg=`<strong>⚠️ Close — PTE ${pte} (${cd.flag} ${cd.name}, ${ld.name}).</strong> You are just ${gap} point${gap>1?'s':''} below the typical requirement of ${required}. This is a small and achievable gap. Focus on your weakest PTE section — for most candidates at this score range, a targeted improvement in Speaking (Read Aloud, Describe Image) or Writing (Summarise Written Text) can close a 3–5 point gap within 4–8 weeks of structured practice. Retake the test as soon as you have addressed these specific weak points.`;
+  } else if(gap<=10){
+    msg=`<strong>🔴 Score Gap — PTE ${pte} (${cd.flag} ${cd.name}, ${ld.name}).</strong> Your current score is ${gap} points below the typical requirement of ${required}. This gap is achievable with focused preparation but will likely require 8–12 weeks of structured study. Identify the two PTE sections where you are scoring lowest and drill those specifically. Consider using Pearson's official scored practice tests to benchmark your improvement accurately before retaking the exam.`;
+  } else {
+    msg=`<strong>❌ Significant Gap — PTE ${pte} (${cd.flag} ${cd.name}, ${ld.name}).</strong> Your current score is ${gap} points below the typical requirement of ${required}. A gap of this size will require substantial preparation — typically 12–20 weeks of dedicated study across all four PTE skills. Start with a diagnostic test to identify your weakest areas, then build a structured weekly study plan. Consider whether an alternative destination country or a less competitive university tier might be a more achievable entry point while you continue improving your score.`;
+  }
+  document.getElementById('suggBox').innerHTML=`<strong style="display:block;font-family:var(--fd);font-size:14px;margin-bottom:10px">🎓 Your Eligibility Analysis</strong><p style="font-size:14px;color:var(--ink2);line-height:1.82">${msg}</p>`;
+
+  /* — Show result — */
+  const ra=document.getElementById('resultArea');
+  ra.style.display='block';
+  ra.style.animation='none';ra.offsetHeight;
+  ra.style.animation='resultIn .45s var(--ease) both';
+  setTimeout(()=>ra.scrollIntoView({behavior:'smooth',block:'nearest'}),120);
+}
+
+function resetTool(){
+  document.getElementById('pteScore').value='';
+  document.getElementById('pteScore').placeholder='e.g. 68';
+  document.getElementById('resultArea').style.display='none';
+  window.scrollTo({top:document.getElementById('tool').offsetTop-80,behavior:'smooth'});
+}
+
+/* Enter key */
+document.getElementById('pteScore').addEventListener('keydown',function(e){
+  if(e.key==='Enter')checkEligibility();
+});
+</script>
+</body>
+</html>
