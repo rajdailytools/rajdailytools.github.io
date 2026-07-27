@@ -3,13 +3,35 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About RajDailyTools | Free Online Tools Platform</title>
-<meta name="description" content="Learn about RajDailyTools – built by Raj Singh Sengar, a BSc Physics graduate with a vision to create 80+ free online tools for students, professionals, and everyday users across India and the globe.">
+<title>About RajDailyTools | Exam Preparation & Recruitment Guides</title>
+<meta name="description" content="RajDailyTools is an educational platform helping students and government job aspirants across India with trusted exam guides, eligibility checkers, recruitment information and smart calculators.">
 <meta name="robots" content="index, follow">
-<meta property="og:title" content="About RajDailyTools | Free Online Tools Platform">
-<meta property="og:description" content="Built by someone who understands your daily problems. RajDailyTools — 300+ free tools for India and the world.">
+<meta property="og:title" content="About RajDailyTools | Exam Preparation & Recruitment Guides">
+<meta property="og:description" content="Helping Students & Aspirants Prepare Smarter Every Day. Trusted guides, eligibility checkers and calculators for SSC, Army, Police, Railway and more.">
+<link rel="canonical" href="https://rajdailytools.in/about.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "name": "About RajDailyTools",
+  "url": "https://rajdailytools.in/about.html",
+  "description": "RajDailyTools is an educational platform helping students and government job aspirants across India with trusted exam guides, eligibility checkers, recruitment information and smart calculators.",
+  "mainEntity": {
+    "@type": "EducationalOrganization",
+    "name": "RajDailyTools",
+    "url": "https://rajdailytools.in/",
+    "slogan": "Helping Students & Aspirants Prepare Smarter Every Day.",
+    "sameAs": [
+      "https://www.facebook.com/rajdailytools",
+      "https://x.com/Educator4ll",
+      "https://www.youtube.com/@rajdailytools",
+      "https://www.instagram.com/rajdailytools"
+    ]
+  }
+}
+</script>
 <style>
 /* ═══════════════════════════════════════════
    DESIGN TOKENS — matches homepage exactly
@@ -56,6 +78,7 @@ a { text-decoration: none; color: inherit; }
 ul { list-style: none; }
 button { cursor: pointer; border: none; background: none; font-family: var(--font-body); }
 img { display: block; max-width: 100%; }
+:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
 
 .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 .section     { padding: 88px 0; }
@@ -81,7 +104,7 @@ img { display: block; max-width: 100%; }
 .section-heading span { color: var(--blue); }
 .section-sub {
   font-size: 17px; color: var(--text-3);
-  max-width: 560px; line-height: 1.7;
+  max-width: 580px; line-height: 1.7;
 }
 .section-header { margin-bottom: 48px; }
 .section-header.center { text-align: center; }
@@ -114,7 +137,7 @@ img { display: block; max-width: 100%; }
 }
 
 /* ═══════════════════════════════════════════
-   HEADER — exact homepage clone
+   HEADER
 ═══════════════════════════════════════════ */
 .site-header {
   position: sticky; top: 0; z-index: 1000;
@@ -125,7 +148,7 @@ img { display: block; max-width: 100%; }
 }
 .header-inner {
   display: flex; align-items: center; justify-content: space-between;
-  height: 68px;
+  height: 68px; gap: 12px;
 }
 .logo {
   display: flex; align-items: center; gap: 10px;
@@ -140,21 +163,43 @@ img { display: block; max-width: 100%; }
 .logo-text { display: flex; flex-direction: column; line-height: 1; }
 .logo-name { font-size: 20px; font-weight: 800; color: var(--text); }
 .logo-name span { color: var(--blue); }
-.logo-sub { font-size: 10px; font-weight: 400; color: var(--text-3); letter-spacing: .05em; }
+.logo-tagline-small { font-size: 10px; font-weight: 400; color: var(--text-3); letter-spacing: .05em; }
 
 .desktop-nav { display: flex; align-items: center; gap: 4px; }
-.desktop-nav a {
+.desktop-nav > a {
   font-size: 14px; font-weight: 500; color: var(--text-2);
   padding: 8px 14px; border-radius: var(--radius-sm); transition: all .2s;
 }
-.desktop-nav a:hover,
-.desktop-nav a.active { color: var(--blue); background: var(--blue-xlight); }
+.desktop-nav > a:hover, .desktop-nav > a.active { color: var(--blue); background: var(--blue-xlight); }
+
+/* Nav dropdown */
+.nav-dropdown { position: relative; }
+.nav-dropdown-toggle {
+  display: flex; align-items: center; gap: 5px;
+  font-size: 14px; font-weight: 500; color: var(--text-2);
+  padding: 8px 14px; border-radius: var(--radius-sm);
+  transition: all .2s; background: none; border: none; cursor: pointer;
+  font-family: var(--font-body);
+}
+.nav-dropdown-toggle:hover, .nav-dropdown-toggle:focus-visible { color: var(--blue); background: var(--blue-xlight); }
+.nav-dropdown-toggle svg { width: 11px; height: 11px; stroke: currentColor; fill: none; stroke-width: 2.5; transition: transform .2s; }
+.nav-dropdown:hover .nav-dropdown-toggle svg, .nav-dropdown:focus-within .nav-dropdown-toggle svg { transform: rotate(180deg); }
+.nav-dropdown-menu {
+  position: absolute; top: calc(100% + 8px); left: 0; min-width: 210px;
+  background: #fff; border: 1px solid var(--border); border-radius: var(--radius);
+  box-shadow: var(--shadow-lg); padding: 8px;
+  opacity: 0; visibility: hidden; transform: translateY(8px);
+  transition: opacity .2s, visibility .2s, transform .2s; z-index: 300;
+}
+.nav-dropdown:hover .nav-dropdown-menu, .nav-dropdown:focus-within .nav-dropdown-menu, .nav-dropdown.force-open .nav-dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+.nav-dropdown-menu a { display: block; padding: 10px 14px; border-radius: 8px; font-size: 14px; font-weight: 500; color: var(--text-2); transition: all .15s; }
+.nav-dropdown-menu a:hover { background: var(--blue-xlight); color: var(--blue); }
 
 .header-cta {
   background: var(--blue); color: #fff;
   font-family: var(--font-display); font-weight: 600; font-size: 14px;
   padding: 9px 20px; border-radius: var(--radius-sm);
-  transition: all .2s; box-shadow: var(--shadow-blue);
+  transition: all .2s; box-shadow: var(--shadow-blue); white-space: nowrap;
 }
 .header-cta:hover { background: var(--blue-dark); transform: translateY(-1px); }
 
@@ -175,7 +220,7 @@ img { display: block; max-width: 100%; }
 }
 .drawer-overlay.open { display: block; }
 .mobile-drawer {
-  position: fixed; top: 0; right: -100%; width: 280px; height: 100vh;
+  position: fixed; top: 0; right: -100%; width: 290px; height: 100vh;
   background: #fff; z-index: 1100; padding: 24px;
   box-shadow: var(--shadow-lg);
   transition: right .35s cubic-bezier(.4,0,.2,1);
@@ -190,17 +235,35 @@ img { display: block; max-width: 100%; }
   width: 36px; height: 36px; border-radius: 8px;
   background: var(--surface); color: var(--text-3);
   display: flex; align-items: center; justify-content: center;
-  font-size: 20px;
+  font-size: 20px; cursor: pointer; border: none; flex-shrink: 0;
 }
+.drawer-close:hover { background: #fee2e2; color: #ef4444; }
+
 .mobile-nav { display: flex; flex-direction: column; gap: 4px; }
 .mobile-nav a {
   font-size: 15px; font-weight: 500; color: var(--text-2);
-  padding: 12px 16px; border-radius: var(--radius-sm); transition: all .2s;
+  padding: 13px 16px; border-radius: var(--radius-sm);
+  transition: all .2s; display: block;
 }
 .mobile-nav a:hover { color: var(--blue); background: var(--blue-xlight); }
 
+.mobile-nav-group { border-radius: var(--radius-sm); }
+.mobile-nav-toggle {
+  display: flex; align-items: center; justify-content: space-between; width: 100%;
+  font-size: 15px; font-weight: 500; color: var(--text-2);
+  padding: 13px 16px; border-radius: var(--radius-sm);
+  background: none; border: none; cursor: pointer; font-family: var(--font-body);
+  transition: all .2s;
+}
+.mobile-nav-toggle:hover { color: var(--blue); background: var(--blue-xlight); }
+.mobile-nav-toggle svg { width: 13px; height: 13px; stroke: currentColor; fill: none; stroke-width: 2.5; transition: transform .25s; }
+.mobile-nav-group.open .mobile-nav-toggle svg { transform: rotate(180deg); }
+.mobile-nav-submenu { max-height: 0; overflow: hidden; transition: max-height .3s ease; padding-left: 10px; }
+.mobile-nav-group.open .mobile-nav-submenu { max-height: 320px; }
+.mobile-nav-submenu a { font-size: 14px; padding: 11px 16px; }
+
 /* ═══════════════════════════════════════════
-   PAGE HERO (breadcrumb strip)
+   PAGE HERO
 ═══════════════════════════════════════════ */
 .page-hero {
   background: linear-gradient(160deg, #f0f7ff 0%, #ffffff 60%, #fef9ee 100%);
@@ -231,7 +294,7 @@ img { display: block; max-width: 100%; }
   align-items: center; position: relative; z-index: 1;
 }
 
-/* Founder Card */
+/* Founder mini-card in hero */
 .founder-card {
   background: #fff; border: 1.5px solid var(--border);
   border-radius: var(--radius-xl); overflow: hidden;
@@ -246,8 +309,7 @@ img { display: block; max-width: 100%; }
   width: 130px; height: 130px; border-radius: 50%;
   object-fit: cover;
   border: 4px solid rgba(255,255,255,.4);
-  box-shadow: 0 0 0 4px rgba(255,255,255,.15),
-              0 8px 32px rgba(37,99,235,.35);
+  box-shadow: 0 0 0 4px rgba(255,255,255,.15), 0 8px 32px rgba(37,99,235,.35);
   display: block;
 }
 .founder-card-body { padding: 22px 24px 28px; }
@@ -259,10 +321,7 @@ img { display: block; max-width: 100%; }
   font-size: 13px; color: var(--text-3);
   font-weight: 500; margin-bottom: 18px;
 }
-.founder-tags {
-  display: flex; flex-wrap: wrap; gap: 8px;
-  justify-content: center;
-}
+.founder-tags { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
 .founder-tag {
   display: inline-flex; align-items: center; gap: 6px;
   font-size: 12px; font-weight: 600; padding: 5px 12px;
@@ -270,28 +329,22 @@ img { display: block; max-width: 100%; }
   color: var(--blue); border: 1px solid var(--blue-subtle);
 }
 
-/* Hero right content */
-.hero-content {
-  animation: fadeUp .6s .15s ease both;
-}
+.hero-content { animation: fadeUp .6s .15s ease both; }
 .hero-content .section-label { margin-bottom: 20px; }
 .hero-content h1 {
   font-family: var(--font-display);
-  font-size: clamp(28px, 4vw, 50px);
+  font-size: clamp(28px, 4vw, 48px);
   font-weight: 800; line-height: 1.15;
-  color: var(--text); margin-bottom: 20px;
+  color: var(--text); margin-bottom: 10px;
 }
 .hero-content h1 span { color: var(--blue); }
+.hero-tagline { font-size: 17px; font-weight: 600; color: var(--blue); margin-bottom: 18px; }
 .hero-content p {
   font-size: 16px; color: var(--text-3);
   line-height: 1.8; margin-bottom: 14px;
 }
-.hero-actions {
-  display: flex; gap: 14px; flex-wrap: wrap; margin-top: 28px;
-}
-.hero-stats {
-  display: flex; gap: 32px; margin-top: 36px; flex-wrap: wrap;
-}
+.hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 28px; }
+.hero-stats { display: flex; gap: 32px; margin-top: 36px; flex-wrap: wrap; }
 .stat .stat-num {
   font-family: var(--font-display); font-size: 26px;
   font-weight: 800; color: var(--text);
@@ -300,14 +353,11 @@ img { display: block; max-width: 100%; }
 .stat .stat-label { font-size: 13px; color: var(--text-3); font-weight: 500; }
 
 /* ═══════════════════════════════════════════
-   HIGHLIGHTS (4 cards)
+   HIGHLIGHTS / VALUES (shared hl-grid)
 ═══════════════════════════════════════════ */
 .highlights { background: var(--surface); }
-.hl-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-}
+.values { background: var(--white); }
+.hl-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
 .hl-card {
   background: #fff; border: 1.5px solid var(--border);
   border-radius: var(--radius-lg); padding: 28px 22px;
@@ -322,48 +372,135 @@ img { display: block; max-width: 100%; }
 .hl-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); border-color: transparent; }
 .hl-card:hover::before { transform: scaleX(1); }
 .hl-icon {
-  font-size: 36px; margin-bottom: 14px;
-  width: 64px; height: 64px;
+  font-size: 32px; margin-bottom: 14px;
+  width: 60px; height: 60px;
   background: var(--hl-bg, var(--blue-xlight));
   border-radius: 16px;
   display: flex; align-items: center; justify-content: center;
   margin: 0 auto 16px;
 }
-.hl-title {
-  font-family: var(--font-display); font-size: 15px;
-  font-weight: 700; color: var(--text); margin-bottom: 8px;
-}
+.hl-title { font-family: var(--font-display); font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 8px; }
 .hl-desc { font-size: 13px; color: var(--text-3); line-height: 1.6; }
+
+/* ═══════════════════════════════════════════
+   FOUNDER SECTION (dedicated)
+═══════════════════════════════════════════ */
+.fnd { background: #fff; }
+.fnd-inner { display: grid; grid-template-columns: 1fr 1.6fr; gap: 60px; align-items: center; }
+.fnd-visual {
+  background: linear-gradient(135deg, var(--blue) 0%, #1e40af 100%);
+  border-radius: var(--radius-xl); padding: 48px 36px; text-align: center;
+  box-shadow: var(--shadow-blue); position: relative; overflow: hidden;
+}
+.fnd-visual::before {
+  content: ''; position: absolute; top: -50px; right: -50px;
+  width: 200px; height: 200px;
+  background: rgba(255,255,255,.06); border-radius: 50%;
+}
+.fnd-avatar {
+  width: 96px; height: 96px; border-radius: 50%;
+  background: rgba(255,255,255,.15);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 42px; margin: 0 auto 18px; border: 3px solid rgba(255,255,255,.3);
+}
+.fnd-name { font-family: var(--font-display); font-size: 24px; font-weight: 800; color: #fff; margin-bottom: 6px; }
+.fnd-role { font-size: 14px; color: rgba(255,255,255,.75); margin-bottom: 20px; }
+.fnd-badges { display: flex; flex-direction: column; gap: 10px; }
+.fnd-badge {
+  background: rgba(255,255,255,.12); border-radius: var(--radius-sm);
+  padding: 10px 16px; font-size: 13px; color: rgba(255,255,255,.9); font-weight: 500;
+  display: flex; align-items: center; gap: 8px; text-align: left;
+}
+.fnd-content .section-label { margin-bottom: 14px; }
+.fnd-content h2 { font-family: var(--font-display); font-size: 32px; font-weight: 800; line-height: 1.2; color: var(--text); margin-bottom: 16px; }
+.fnd-content h2 span { color: var(--blue); }
+.fnd-content p { font-size: 16px; color: var(--text-3); line-height: 1.8; margin-bottom: 16px; }
+.fnd-highlights { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 24px; }
+.fh-item {
+  background: var(--surface); border: 1.5px solid var(--border); border-radius: var(--radius);
+  padding: 16px; display: flex; align-items: flex-start; gap: 12px;
+  box-shadow: var(--shadow-sm);
+}
+.fh-icon { font-size: 22px; flex-shrink: 0; }
+.fh-text { font-size: 13px; font-weight: 600; color: var(--text-2); line-height: 1.4; }
+
+/* ═══════════════════════════════════════════
+   OUR STORY
+═══════════════════════════════════════════ */
+.story { background: var(--surface); }
+.story-inner { display: grid; grid-template-columns: 1fr 1.2fr; gap: 72px; align-items: center; }
+.story-visual {
+  background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+  border-radius: var(--radius-xl); padding: 40px 32px;
+  box-shadow: var(--shadow-lg);
+}
+.story-quote {
+  font-family: var(--font-display); font-size: 18px;
+  font-weight: 300; color: rgba(255,255,255,.85);
+  line-height: 1.8; margin-bottom: 28px;
+  border-left: 3px solid rgba(255,255,255,.3);
+  padding-left: 20px; font-style: italic;
+}
+.story-sig { display: flex; align-items: center; gap: 14px; }
+.story-sig-img {
+  width: 52px; height: 52px; border-radius: 50%; object-fit: cover;
+  border: 2px solid rgba(255,255,255,.3);
+}
+.story-sig-name { font-family: var(--font-display); font-size: 15px; font-weight: 700; color: #fff; }
+.story-sig-role { font-size: 12px; color: rgba(255,255,255,.6); }
+
+.story-content h2 { font-family: var(--font-display); font-size: 32px; font-weight: 800; line-height: 1.2; color: var(--text); margin-bottom: 18px; }
+.story-content h2 span { color: var(--blue); }
+.story-content p { font-size: 16px; color: var(--text-3); line-height: 1.85; margin-bottom: 14px; }
+.story-points { margin-top: 24px; display: flex; flex-direction: column; gap: 12px; }
+.story-point {
+  display: flex; align-items: flex-start; gap: 14px;
+  background: #fff; border: 1.5px solid var(--border);
+  border-radius: var(--radius); padding: 16px;
+  box-shadow: var(--shadow-sm); transition: border-color .2s;
+}
+.story-point:hover { border-color: var(--blue-subtle); }
+.sp-icon { font-size: 22px; flex-shrink: 0; margin-top: 2px; }
+.sp-text { font-size: 14px; font-weight: 600; color: var(--text-2); line-height: 1.5; }
+.sp-sub  { font-size: 13px; font-weight: 400; color: var(--text-3); }
 
 /* ═══════════════════════════════════════════
    MISSION / VISION / PROMISE
 ═══════════════════════════════════════════ */
 .mvp { background: #fff; }
-.mvp-grid {
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
-}
-.mvp-card {
-  border-radius: var(--radius-lg); padding: 36px 28px;
-  text-align: center; transition: all .25s;
-}
+.mvp-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.mvp-card { border-radius: var(--radius-lg); padding: 36px 28px; text-align: center; transition: all .25s; }
 .mvp-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); }
 .mvp-card.blue  { background: linear-gradient(135deg,#eff6ff,#dbeafe); border: 1.5px solid #bfdbfe; }
 .mvp-card.amber { background: linear-gradient(135deg,#fffbeb,#fef3c7); border: 1.5px solid #fde68a; }
 .mvp-card.green { background: linear-gradient(135deg,#f0fdf4,#dcfce7); border: 1.5px solid #bbf7d0; }
-.mvp-icon { font-size: 44px; margin-bottom: 20px; }
-.mvp-title {
-  font-family: var(--font-display); font-size: 20px;
-  font-weight: 800; color: var(--text); margin-bottom: 12px;
-}
+.mvp-icon { font-size: 40px; margin-bottom: 18px; }
+.mvp-title { font-family: var(--font-display); font-size: 20px; font-weight: 800; color: var(--text); margin-bottom: 12px; }
 .mvp-desc { font-size: 15px; color: var(--text-3); line-height: 1.7; }
 
 /* ═══════════════════════════════════════════
-   CATEGORIES — exact homepage cards
+   WHY CHOOSE (8 cards)
 ═══════════════════════════════════════════ */
-.categories { background: var(--surface); }
-.cat-grid {
-  display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;
+.why-choose { background: var(--surface); }
+.why-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.why-card {
+  background: #fff; border: 1.5px solid var(--border);
+  border-radius: var(--radius-lg); padding: 26px 22px; transition: all .25s;
 }
+.why-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); border-color: transparent; }
+.why-icon-wrap {
+  width: 50px; height: 50px; border-radius: 13px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px; margin-bottom: 16px; background: var(--blue-xlight);
+}
+.why-title { font-family: var(--font-display); font-weight: 700; font-size: 16px; color: var(--text); margin-bottom: 6px; }
+.why-desc { font-size: 13px; color: var(--text-3); line-height: 1.6; }
+
+/* ═══════════════════════════════════════════
+   EXAMS WE COVER (cat-grid)
+═══════════════════════════════════════════ */
+.categories { background: #fff; }
+.cat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
 .cat-card {
   background: #fff; border: 1.5px solid var(--border);
   border-radius: var(--radius-lg); padding: 28px 22px;
@@ -383,78 +520,41 @@ img { display: block; max-width: 100%; }
   font-size: 24px; margin-bottom: 16px;
   background: var(--cat-bg, var(--blue-xlight));
 }
-.cat-title {
-  font-family: var(--font-display); font-weight: 700;
-  font-size: 15px; color: var(--text); margin-bottom: 6px;
-}
+.cat-title { font-family: var(--font-display); font-weight: 700; font-size: 15px; color: var(--text); margin-bottom: 6px; }
 .cat-desc { font-size: 13px; color: var(--text-3); line-height: 1.6; margin-bottom: 14px; }
-.cat-link {
-  font-size: 13px; font-weight: 600; color: var(--blue);
-  display: flex; align-items: center; gap: 4px;
-}
+.cat-link { font-size: 13px; font-weight: 600; color: var(--blue); display: flex; align-items: center; gap: 4px; }
 .cat-link svg { width: 14px; height: 14px; transition: transform .2s; }
 .cat-card:hover .cat-link svg { transform: translateX(4px); }
+.cat-note {
+  text-align: center; font-size: 14px; color: var(--text-3);
+  margin-top: 32px; max-width: 640px; margin-left: auto; margin-right: auto;
+}
 
 /* ═══════════════════════════════════════════
-   STORY / TIMELINE
+   STUDENT SUPPORT (help-grid)
 ═══════════════════════════════════════════ */
-.story { background: #fff; }
-.story-inner {
-  display: grid; grid-template-columns: 1fr 1.2fr; gap: 72px; align-items: center;
+.student-support { background: var(--surface); }
+.help-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.help-card {
+  background: #fff; border: 1.5px solid var(--border);
+  border-radius: var(--radius-lg); padding: 26px 22px; transition: all .25s;
 }
-.story-visual {
-  background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
-  border-radius: var(--radius-xl); padding: 40px 32px;
-  box-shadow: var(--shadow-lg);
+.help-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); border-color: transparent; }
+.help-icon-wrap {
+  width: 50px; height: 50px; border-radius: 13px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px; margin-bottom: 16px; background: var(--blue-xlight);
 }
-.story-quote {
-  font-family: var(--font-display); font-size: 18px;
-  font-weight: 300; color: rgba(255,255,255,.85);
-  line-height: 1.8; margin-bottom: 28px;
-  border-left: 3px solid rgba(255,255,255,.3);
-  padding-left: 20px; font-style: italic;
-}
-.story-sig {
-  display: flex; align-items: center; gap: 14px;
-}
-.story-sig-img {
-  width: 52px; height: 52px; border-radius: 50%; object-fit: cover;
-  border: 2px solid rgba(255,255,255,.3);
-}
-.story-sig-name {
-  font-family: var(--font-display); font-size: 15px;
-  font-weight: 700; color: #fff;
-}
-.story-sig-role { font-size: 12px; color: rgba(255,255,255,.6); }
-
-.story-content h2 {
-  font-family: var(--font-display); font-size: 34px;
-  font-weight: 800; line-height: 1.2; color: var(--text); margin-bottom: 18px;
-}
-.story-content h2 span { color: var(--blue); }
-.story-content p {
-  font-size: 16px; color: var(--text-3); line-height: 1.85;
-  margin-bottom: 14px;
-}
-.story-points { margin-top: 24px; display: flex; flex-direction: column; gap: 12px; }
-.story-point {
-  display: flex; align-items: flex-start; gap: 14px;
-  background: var(--surface); border: 1.5px solid var(--border);
-  border-radius: var(--radius); padding: 16px;
-  box-shadow: var(--shadow-sm); transition: border-color .2s;
-}
-.story-point:hover { border-color: var(--blue-subtle); }
-.sp-icon { font-size: 22px; flex-shrink: 0; margin-top: 2px; }
-.sp-text { font-size: 14px; font-weight: 600; color: var(--text-2); line-height: 1.5; }
-.sp-sub  { font-size: 13px; font-weight: 400; color: var(--text-3); }
+.help-title { font-family: var(--font-display); font-weight: 700; font-size: 16px; color: var(--text); margin-bottom: 6px; }
+.help-desc { font-size: 13px; color: var(--text-3); line-height: 1.6; }
 
 /* ═══════════════════════════════════════════
    FAQ
 ═══════════════════════════════════════════ */
-.faq-section { background: var(--surface); }
+.faq-section { background: #fff; }
 .faq-list { max-width: 780px; margin: 0 auto; }
 .faq-item {
-  background: #fff; border: 1.5px solid var(--border);
+  background: var(--surface); border: 1.5px solid var(--border);
   border-radius: var(--radius); margin-bottom: 12px; overflow: hidden;
 }
 .faq-q {
@@ -473,10 +573,10 @@ img { display: block; max-width: 100%; }
 .faq-item.open .faq-icon { transform: rotate(45deg); background: var(--blue); color: #fff; }
 .faq-a { max-height: 0; overflow: hidden; transition: max-height .35s cubic-bezier(.4,0,.2,1); }
 .faq-a-inner { padding: 0 24px 20px; font-size: 15px; color: var(--text-3); line-height: 1.75; }
-.faq-item.open .faq-a { max-height: 300px; }
+.faq-item.open .faq-a { max-height: 320px; }
 
 /* ═══════════════════════════════════════════
-   CTA SECTION
+   CTA
 ═══════════════════════════════════════════ */
 .cta-section {
   background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
@@ -492,21 +592,21 @@ img { display: block; max-width: 100%; }
 .cta-label { color: #93c5fd; }
 .cta-section h2 {
   font-family: var(--font-display);
-  font-size: clamp(28px, 4vw, 46px);
+  font-size: clamp(28px, 4vw, 44px);
   font-weight: 800; color: #fff;
   line-height: 1.2; margin-bottom: 16px;
 }
 .cta-section h2 span { color: #fbbf24; }
 .cta-section p {
   font-size: 17px; color: rgba(255,255,255,.75);
-  max-width: 520px; margin: 0 auto 36px; line-height: 1.75;
+  max-width: 540px; margin: 0 auto 36px; line-height: 1.75;
 }
 .cta-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
 .btn-gold {
   display: inline-flex; align-items: center; gap: 8px;
   background: #f59e0b; color: #fff;
   font-family: var(--font-display); font-weight: 700; font-size: 16px;
-  padding: 15px 34px; border-radius: var(--radius-sm);
+  padding: 15px 32px; border-radius: var(--radius-sm);
   box-shadow: 0 8px 28px rgba(245,158,11,.35); transition: all .2s;
 }
 .btn-gold:hover { background: #d97706; transform: translateY(-2px); box-shadow: 0 14px 36px rgba(245,158,11,.45); }
@@ -523,37 +623,37 @@ img { display: block; max-width: 100%; }
 /* ═══════════════════════════════════════════
    FOOTER
 ═══════════════════════════════════════════ */
-.site-footer { background: #0f172a; padding: 48px 0 28px; }
-.footer-top {
-  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 48px;
-}
-.footer-brand p { font-size: 14px; color: #e2e8f0; line-height: 1.75; max-width: 270px; margin: 14px 0 20px; }
+.site-footer { background: #0f172a; padding: 72px 0 0; }
+.footer-top { display: grid; grid-template-columns: 1.8fr 1fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 56px; }
+.footer-brand .logo { margin-bottom: 16px; }
+.footer-brand .logo-name { color: #fff; }
+.footer-brand .logo-tagline-small { color: #475569; }
+.footer-brand p { font-size: 14px; color: #e2e8f0; line-height: 1.75; max-width: 280px; margin-bottom: 24px; }
 .footer-socials { display: flex; gap: 10px; }
 .social-btn {
   width: 36px; height: 36px; border-radius: 8px;
-  background: rgba(255,255,255,.08);
-  display: flex; align-items: center; justify-content: center;
-  color: #94a3b8; font-size: 15px; transition: all .2s;
+  background: rgba(255,255,255,.08); display: flex; align-items: center; justify-content: center;
+  color: #94a3b8; font-size: 16px; transition: all .2s;
 }
 .social-btn:hover { background: var(--blue); color: #fff; }
 .footer-col h4 {
-  font-family: var(--font-display); font-size: 13px; font-weight: 700;
-  color: #fff; margin-bottom: 16px; letter-spacing: .04em; text-transform: uppercase;
+  font-family: var(--font-display); font-size: 14px; font-weight: 700;
+  color: #fff; margin-bottom: 18px; letter-spacing: .04em;
 }
-.footer-col ul { display: flex; flex-direction: column; gap: 9px; }
-.footer-col ul a { font-size: 14px; color: #e2e8f0; transition: color .2s; }
-.footer-col ul a:hover { color: #93c5fd; }
+.footer-col ul { display: flex; flex-direction: column; gap: 10px; }
+.footer-col ul a { font-size: 14px; color: #cbd5e1; transition: color .2s; }
+.footer-col ul a:hover { color: #fff; }
 .footer-bottom {
   border-top: 1px solid rgba(255,255,255,.07);
-  padding-top: 24px;
+  padding: 24px 0;
   display: flex; align-items: center; justify-content: space-between;
-  flex-wrap: wrap; gap: 14px;
+  flex-wrap: wrap; gap: 16px;
 }
-.footer-copy { font-size: 13px; color: #e2e8f0; }
+.footer-copy { font-size: 13px; color: #cbd5e1; }
 .footer-copy span { color: #e2e8f0; }
 .footer-legal { display: flex; gap: 20px; }
-.footer-legal a { font-size: 13px; color: #e2e8f0; transition: color .2s; }
-.footer-legal a:hover { color: #93c5fd; }
+.footer-legal a { font-size: 13px; color: #cbd5e1; transition: color .2s; }
+.footer-legal a:hover { color: #fff; }
 
 /* Back to top */
 .back-to-top {
@@ -570,78 +670,136 @@ img { display: block; max-width: 100%; }
 /* ═══════════════════════════════════════════
    ANIMATIONS
 ═══════════════════════════════════════════ */
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(28px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-.reveal {
-  opacity: 0; transform: translateY(22px);
-  transition: opacity .55s ease, transform .55s ease;
-}
+@keyframes fadeUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
+.reveal { opacity: 0; transform: translateY(22px); transition: opacity .55s ease, transform .55s ease; }
 .reveal.visible { opacity: 1; transform: translateY(0); }
 
 /* ═══════════════════════════════════════════
    RESPONSIVE
 ═══════════════════════════════════════════ */
 @media (max-width: 1100px) {
-  .cat-grid  { grid-template-columns: repeat(2,1fr); }
-  .hl-grid   { grid-template-columns: repeat(2,1fr); }
-  .footer-top { grid-template-columns: 1fr 1fr; }
+  .cat-grid, .hl-grid, .why-grid, .help-grid { grid-template-columns: repeat(2,1fr); }
+  .footer-top { grid-template-columns: 1fr 1fr 1fr; }
 }
 @media (max-width: 900px) {
   .desktop-nav, .header-cta { display: none; }
   .hamburger { display: flex; }
   .page-hero-inner { grid-template-columns: 1fr; }
   .story-inner { grid-template-columns: 1fr; }
+  .fnd-inner { grid-template-columns: 1fr; }
   .mvp-grid { grid-template-columns: 1fr; }
   .page-hero { padding: 40px 0 56px; }
 }
 @media (max-width: 600px) {
-  .cat-grid, .hl-grid { grid-template-columns: 1fr; }
+  .cat-grid, .hl-grid, .why-grid, .help-grid { grid-template-columns: 1fr; }
   .footer-top { grid-template-columns: 1fr; }
   .section { padding: 60px 0; }
   .hero-stats { gap: 18px; }
   .footer-bottom { flex-direction: column; text-align: center; }
   .story-quote { font-size: 15px; }
   .hero-actions { flex-direction: column; }
+  .fnd-highlights { grid-template-columns: 1fr; }
 }
 </style>
 </head>
 <body>
 
+<!-- ═══════ DRAWER OVERLAY ═══════ -->
+<div class="drawer-overlay" id="drawerOverlay"></div>
+
+<!-- ═══════ MOBILE DRAWER ═══════ -->
+<div class="mobile-drawer" id="mobileDrawer">
+  <div class="drawer-head">
+    <div class="logo">
+      <div class="logo-icon">
+        <svg viewBox="0 0 24 24" fill="white"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+      </div>
+      <div class="logo-text"><span class="logo-name">Raj<span>Daily</span>Tools</span></div>
+    </div>
+    <button class="drawer-close" id="drawerClose" aria-label="Close menu">✕</button>
+  </div>
+  <nav class="mobile-nav">
+    <a href="index.html">🏠 Home</a>
+
+    <div class="mobile-nav-group" id="mExamsGroup">
+      <button class="mobile-nav-toggle" aria-expanded="false" aria-controls="mExamsMenu">
+        🎯 Exams
+        <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="mobile-nav-submenu" id="mExamsMenu">
+        <a href="/exams/ssc.html">SSC</a>
+        <a href="/exams/army.html">Army</a>
+        <a href="/exams/police.html">Police</a>
+        <a href="/exams/railway.html">Railway</a>
+      </div>
+    </div>
+
+    <div class="mobile-nav-group" id="mBlogGroup">
+      <button class="mobile-nav-toggle" aria-expanded="false" aria-controls="mBlogMenu">
+        📰 Blog
+        <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="mobile-nav-submenu" id="mBlogMenu">
+        <a href="/blog/index.html">Latest Articles</a>
+        <a href="/blog/ssc.html">SSC</a>
+        <a href="/blog/army.html">Army</a>
+        <a href="/blog/police.html">Police</a>
+        <a href="/blog/railway.html">Railway</a>
+      </div>
+    </div>
+
+    <a href="about.html">👤 About</a>
+    <a href="contact.html">📬 Contact</a>
+  </nav>
+</div>
+
 <!-- ═══════ HEADER ═══════ -->
 <header class="site-header">
   <div class="container">
     <div class="header-inner">
-      <a href="/" class="logo">
+      <a href="index.html" class="logo">
         <div class="logo-icon">
           <svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
         </div>
         <div class="logo-text">
           <span class="logo-name">Raj<span>Daily</span>Tools</span>
-          <span class="logo-sub">Smart Tools for Daily Life</span>
+          <span class="logo-tagline-small">Exam Prep &amp; Career Resource</span>
         </div>
       </a>
-
       <nav class="desktop-nav">
+        <a href="index.html">Home</a>
 
-<a href="index.html">Home</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+            Exams
+            <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="nav-dropdown-menu">
+            <a href="/exams/ssc.html">SSC</a>
+            <a href="/exams/army.html">Army</a>
+            <a href="/exams/police.html">Police</a>
+            <a href="/exams/railway.html">Railway</a>
+          </div>
+        </div>
 
-<a href="categories.html">Categories</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+            Blog
+            <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="nav-dropdown-menu">
+            <a href="/blog/index.html">Latest Articles</a>
+            <a href="/blog/ssc.html">SSC</a>
+            <a href="/blog/army.html">Army</a>
+            <a href="/blog/police.html">Police</a>
+            <a href="/blog/railway.html">Railway</a>
+          </div>
+        </div>
 
-<a href="popular.html">Popular</a>
-
-<a href="latest.html">Latest</a>
-
-<a href="about.html">About</a>
-
-<a href="faq.html">FAQ</a>
-
-<a href="contact.html">Contact</a>
-
-</nav>
-      <a href="categories.html" class="header-cta">Explore Tools →</a>
-
+        <a href="about.html" class="active">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <a href="/exams-tools-category.html" class="header-cta">Explore Exams →</a>
       <button class="hamburger" id="menuBtn" aria-label="Open menu">
         <span></span><span></span><span></span>
       </button>
@@ -649,83 +807,52 @@ img { display: block; max-width: 100%; }
   </div>
 </header>
 
-<!-- Mobile Drawer -->
-<div class="drawer-overlay" id="drawerOverlay"></div>
-<div class="mobile-drawer" id="mobileDrawer">
-  <div class="drawer-head">
-    <div class="logo">
-      <div class="logo-icon" style="width:32px;height:32px;border-radius:8px;">
-        <svg viewBox="0 0 24 24" style="width:16px;height:16px;fill:#fff;"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
-      </div>
-      <div class="logo-text"><span class="logo-name" style="font-size:17px;">Raj<span>Daily</span>Tools</span></div>
-    </div>
-    <button class="drawer-close" id="drawerClose">✕</button>
-  </div>
-  <nav class="mobile-nav">
-
-<a href="index.html" onclick="closeDrawer()">🏠 Home</a>
-
-<a href="categories.html" onclick="closeDrawer()">📂 Categories</a>
-
-<a href="popular.html" onclick="closeDrawer()">⭐ Popular</a>
-
-<a href="latest.html" onclick="closeDrawer()">🆕 Latest</a>
-
-<a href="about.html" onclick="closeDrawer()">👤 About</a>
-
-<a href="faq.html" onclick="closeDrawer()">❓ FAQ</a>
-
-<a href="contact.html" onclick="closeDrawer()">📬 Contact</a>
-
-</nav>
-</div>
-
 <!-- ═══════ PAGE HERO ═══════ -->
 <section class="page-hero">
   <div class="container">
     <div class="breadcrumb">
-      <a href="/">Home</a><span>›</span><span>About Us</span>
+      <a href="index.html">Home</a><span>›</span><span>About Us</span>
     </div>
     <div class="page-hero-inner">
 
-      <!-- Founder Card -->
+      <!-- Identity Card -->
       <div class="founder-card">
         <div class="founder-card-img-wrap">
           <img
             src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEikX0m8DNysfOF85RwJxIFEVILF8_tS2Mtq72P_JHavl9ATJ2BzHsMm-FAGCV1tgHTEgkqZ8j4Mcfqe_WC2Epwpze7b921awwJpZG6R7Js8etDSKrGeDbvFnDA0wPBjZO7ahD4X5x3ZuYJTB1wvdqIrrHwxJrimwUC5tTQYmkbbblsc_ZLF7kF3Ulba09Y/s1600/1000829652.jpg"
-            alt="Raj Singh Sengar– Founder of RajDailyTools"
+            alt="Raj Bhai – Founder of RajDailyTools"
             class="founder-img"
             loading="eager"
-            onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'width:130px;height:130px;border-radius:50%;background:rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;font-size:54px;margin:0 auto;\'>👨‍💻</div>';"
+            onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'width:130px;height:130px;border-radius:50%;background:rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;font-size:54px;margin:0 auto;\'>👨‍🏫</div>';"
           >
         </div>
         <div class="founder-card-body">
-          <div class="founder-name">Raj Singh Sengar</div>
-          <div class="founder-role">Founder &amp; Visionary, RajDailyTools</div>
+          <div class="founder-name">Raj Bhai</div>
+          <div class="founder-role">Founder, RajDailyTools</div>
           <div class="founder-tags">
             <span class="founder-tag">🎓 BSc Physics Graduate</span>
-            <span class="founder-tag">💻 COPA ITI Certified</span>
-            <span class="founder-tag">🇮🇳 Building for Bharat</span>
-            <span class="founder-tag">🎯 Vision: 80+ Tools</span>
+            <span class="founder-tag">📚 Exam Prep Guides</span>
+            <span class="founder-tag">🇮🇳 Built for Indian Aspirants</span>
           </div>
         </div>
       </div>
 
       <!-- Hero Text -->
       <div class="hero-content">
-        <div class="section-label">About the Founder</div>
-        <h1>Built by Someone Who<br><span>Understands Your Problems</span></h1>
-        <p>I created RajDailyTools because I faced the same frustrations that millions of students and working professionals experience every day — scattered tools, slow websites, paywalls, and no single trustworthy platform to solve daily life calculations.</p>
-        <p>As a BSc Physics graduate and COPA ITI certified professional, I understand both the science of accuracy and the technology of building. This platform is my answer to a real-world gap.</p>
-        <p>My goal is to convert real-life calculations, tasks, and information into simple online tools that anyone can use instantly — no login, no cost, no complexity.</p>
+        <div class="section-label">About RajDailyTools</div>
+        <h1>About <span>RajDailyTools</span></h1>
+        <p class="hero-tagline">Helping Students &amp; Aspirants Prepare Smarter Every Day.</p>
+        <p>RajDailyTools is an educational platform dedicated to helping students and government job aspirants across India through trusted educational resources, recruitment information, exam guides, eligibility checkers, and practical calculators.</p>
+        <p>We bring together everything an aspirant usually has to search for across multiple websites — eligibility rules, physical standards, syllabus, exam patterns, and preparation strategies — and present it in one clear, reliable place.</p>
+        <p>Our goal is simple: to simplify exam preparation through reliable information and easy-to-use resources, so you can focus on preparing instead of searching.</p>
         <div class="hero-actions">
-          <a href="/categories.html" class="btn-primary">Explore All Tools →</a>
-          <a href="/contact.html" class="btn-secondary">💬 Contact Me</a>
+          <a href="/exams-tools-category.html" class="btn-primary">Explore Exams →</a>
+          <a href="contact.html" class="btn-secondary">💬 Contact Us</a>
         </div>
         <div class="hero-stats">
-          <div class="stat"><div class="stat-num">80<span>+</span></div><div class="stat-label">Tools Planned</div></div>
-          <div class="stat"><div class="stat-num">8<span>+</span></div><div class="stat-label">Categories</div></div>
-          <div class="stat"><div class="stat-num">100<span>%</span></div><div class="stat-label">Free Forever</div></div>
+          <div class="stat"><div class="stat-num">185<span>+</span></div><div class="stat-label">Guides &amp; Resources</div></div>
+          <div class="stat"><div class="stat-num">4<span>+</span></div><div class="stat-label">Exam Categories</div></div>
+          <div class="stat"><div class="stat-num">100<span>%</span></div><div class="stat-label">Free to Access</div></div>
         </div>
       </div>
 
@@ -737,73 +864,104 @@ img { display: block; max-width: 100%; }
 <section class="section highlights">
   <div class="container">
     <div class="section-header center">
-      <div class="section-label">Why Choose Us</div>
+      <div class="section-label">What We Offer</div>
       <h2 class="section-heading">What Makes <span>RajDailyTools</span> Different</h2>
-      <p class="section-sub">Four core pillars that make this platform stand apart from the rest.</p>
+      <p class="section-sub">Four core pillars that guide every guide, checker, and calculator we build.</p>
     </div>
     <div class="hl-grid">
       <div class="hl-card reveal" style="--hl-color:#2563eb;--hl-bg:#eff6ff;">
-        <div class="hl-icon">🚀</div>
-        <div class="hl-title">80+ Tools Vision</div>
-        <div class="hl-desc">A growing platform for free online tools..</div>
+        <div class="hl-icon">📚</div>
+        <div class="hl-title">Trusted Educational Resources</div>
+        <div class="hl-desc">Guides and articles researched carefully and reviewed for accuracy before publishing.</div>
       </div>
-      <div class="hl-card reveal" style="--hl-color:#10b981;--hl-bg:#f0fdf4;">
-        <div class="hl-icon">🆓</div>
-        <div class="hl-title">100% Free Platform</div>
-        <div class="hl-desc">No subscriptions, no premium plans, no hidden charges. Every tool is and will always remain free for everyone.</div>
+      <div class="hl-card reveal" style="--hl-color:#6366f1;--hl-bg:#eef2ff;">
+        <div class="hl-icon">🎯</div>
+        <div class="hl-title">Government Exam Guides</div>
+        <div class="hl-desc">Clear, structured guides covering eligibility, syllabus, and preparation strategies.</div>
       </div>
       <div class="hl-card reveal" style="--hl-color:#f59e0b;--hl-bg:#fffbeb;">
-        <div class="hl-icon">🌍</div>
-        <div class="hl-title">Made in India for Global Users</div>
-        <div class="hl-desc">Built with an Indian heart and a global mindset. Designed for Bharat, optimised for the world.</div>
+        <div class="hl-icon">📋</div>
+        <div class="hl-title">Smart Eligibility Checkers</div>
+        <div class="hl-desc">Interactive calculators built into our guides so you can check eligibility instantly.</div>
       </div>
-      <div class="hl-card reveal" style="--hl-color:#8b5cf6;--hl-bg:#f5f3ff;">
-        <div class="hl-icon">⚡</div>
-        <div class="hl-title">Accurate &amp; Fast Calculations</div>
-        <div class="hl-desc">Accurate & Fast Calculations Designed for accuracy with careful testing to deliver reliable results in seconds..</div>
+      <div class="hl-card reveal" style="--hl-color:#10b981;--hl-bg:#f0fdf4;">
+        <div class="hl-icon">🧑‍🎓</div>
+        <div class="hl-title">Student-First Approach</div>
+        <div class="hl-desc">Every page is written and organised with the student's time and understanding in mind.</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══════ STORY ═══════ -->
+<!-- ═══════ FOUNDER SECTION ═══════ -->
+<section class="section fnd">
+  <div class="container">
+    <div class="fnd-inner">
+      <div class="fnd-visual reveal">
+        <div class="fnd-avatar">👨‍🏫</div>
+        <div class="fnd-name">Raj Bhai</div>
+        <div class="fnd-role">Founder, RajDailyTools</div>
+        <div class="fnd-badges">
+          <div class="fnd-badge">🎓 BSc Physics Graduate</div>
+          <div class="fnd-badge">📖 Focused on Educational Content</div>
+          <div class="fnd-badge">🇮🇳 Serving Students Across India</div>
+        </div>
+      </div>
+      <div class="fnd-content reveal">
+        <div class="section-label">From the Founder</div>
+        <h2>Built to Help Students<br>Understand <span>What Matters</span></h2>
+        <p>RajDailyTools is built around one simple idea — that preparing for a government exam shouldn't mean struggling to find or understand basic information. Eligibility rules, physical standards, and recruitment notifications are often scattered and written in language that's hard to follow.</p>
+        <p>My focus has been on turning that complexity into guides that are easy to read and calculators that give instant, accurate answers, so aspirants can spend their time preparing instead of searching.</p>
+        <p>This platform is a continuous work in progress. Every guide is reviewed for accuracy, and I try to keep improving it based on what students actually need.</p>
+        <div class="fnd-highlights">
+          <div class="fh-item"><div class="fh-icon">📚</div><div class="fh-text">Guides written in simple, everyday language</div></div>
+          <div class="fh-item"><div class="fh-icon">📐</div><div class="fh-text">Calculators built into educational guides</div></div>
+          <div class="fh-item"><div class="fh-icon">🎯</div><div class="fh-text">Free access — no login required</div></div>
+          <div class="fh-item"><div class="fh-icon">🇮🇳</div><div class="fh-text">Made in India for Indian aspirants</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ OUR STORY ═══════ -->
 <section class="section story">
   <div class="container">
     <div class="story-inner">
       <div class="story-visual reveal">
         <div class="story-quote">
-          "I realised that the best tools shouldn't be locked behind paywalls or require a PhD to operate. They should be simple, fast, and free — available to every student in a small town and every professional in a big city alike."
+          "I noticed that students often had to visit multiple websites to understand eligibility, physical standards, syllabus, exam pattern and recruitment information. RajDailyTools was created to bring reliable educational resources together in one place."
         </div>
         <div class="story-sig">
           <img
             src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEikX0m8DNysfOF85RwJxIFEVILF8_tS2Mtq72P_JHavl9ATJ2BzHsMm-FAGCV1tgHTEgkqZ8j4Mcfqe_WC2Epwpze7b921awwJpZG6R7Js8etDSKrGeDbvFnDA0wPBjZO7ahD4X5x3ZuYJTB1wvdqIrrHwxJrimwUC5tTQYmkbbblsc_ZLF7kF3Ulba09Y/s1600/1000829652.jpg"
-            alt="Raj singh sengar "
+            alt="Raj Bhai, Founder of RajDailyTools"
             class="story-sig-img"
             onerror="this.style.display='none';"
           >
           <div>
-            <div class="story-sig-name">Raj singh Sengar</div>
+            <div class="story-sig-name">Raj Bhai</div>
             <div class="story-sig-role">Founder, RajDailyTools</div>
           </div>
         </div>
       </div>
       <div class="story-content reveal">
         <div class="section-label">The Story Behind It All</div>
-        <h2>From Real Problems<br>to <span>Real Solutions</span></h2>
-        <p>I built RajDailyTools to solve daily life problems using digital tools. My goal is to convert real-life calculations, tasks, and information into simple online tools that anyone can use instantly — without needing any technical knowledge.</p>
-        <p>To continuously expand RajDailyTools by creating high-quality, free online tools that make everyday tasks simpler, faster, and more accessible for everyone.</p>
+        <h2>From Scattered Information<br>to <span>One Trusted Place</span></h2>
+        <p>RajDailyTools started as a response to a problem many aspirants face — recruitment information spread across dozens of tabs, outdated PDFs, and confusing forum posts. We wanted a single place where students could find clear, dependable answers.</p>
+        <p>Today, that idea has grown into a collection of guides, articles, career resources, and calculators built to support every stage of exam preparation — from checking basic eligibility to understanding physical standards and planning a study routine.</p>
         <div class="story-points">
           <div class="story-point">
-            <div class="sp-icon">🎓</div>
-            <div><div class="sp-text">BSc Physics + COPA ITI</div><div class="sp-sub">Academic foundation behind every precise calculation on this platform</div></div>
+            <div class="sp-icon">📖</div>
+            <div><div class="sp-text">Guides &amp; Articles</div><div class="sp-sub">Eligibility, syllabus, exam pattern, and recruitment guides written in plain language</div></div>
           </div>
           <div class="story-point">
-            <div class="sp-icon">🔧</div>
-            <div><div class="sp-text">New Tools Every Week</div><div class="sp-sub">Continuously expanding our collection of 80+ free online tools with new tools added regularly.</div></div>
+            <div class="sp-icon">🎯</div>
+            <div><div class="sp-text">Preparation &amp; Career Resources</div><div class="sp-sub">Strategies and career guidance to help aspirants plan their next steps</div></div>
           </div>
           <div class="story-point">
-            <div class="sp-icon">💡</div>
-            <div><div class="sp-text">Community-Driven Roadmap</div><div class="sp-sub">Tools built on real suggestions from real users across India and the globe</div></div>
+            <div class="sp-icon">🧮</div>
+            <div><div class="sp-text">Smart Calculators</div><div class="sp-sub">Practical calculators built directly into our guides for instant eligibility checks</div></div>
           </div>
         </div>
       </div>
@@ -817,86 +975,211 @@ img { display: block; max-width: 100%; }
     <div class="section-header center">
       <div class="section-label">Our Foundations</div>
       <h2 class="section-heading">Mission. Vision. <span>Promise.</span></h2>
-      <p class="section-sub">Three unwavering commitments that shape everything we build at RajDailyTools.</p>
+      <p class="section-sub">Three commitments that shape every guide, checker, and decision at RajDailyTools.</p>
     </div>
     <div class="mvp-grid">
       <div class="mvp-card blue reveal">
         <div class="mvp-icon">🎯</div>
         <div class="mvp-title">Our Mission</div>
-        <div class="mvp-desc">To provide free, powerful, and accurate tools for solving daily life problems — accessible to every person in India and the world, regardless of their background or income.</div>
+        <div class="mvp-desc">Help students prepare smarter through trusted educational content that's easy to understand and free to access.</div>
       </div>
       <div class="mvp-card amber reveal">
         <div class="mvp-icon">🔭</div>
         <div class="mvp-title">Our Vision</div>
-        <div class="mvp-desc">To build a trusted platform that provides accurate, reliable, and easy-to-use free online tools for everyone..</div>
+        <div class="mvp-desc">Become one of India's trusted educational resources for exam preparation and recruitment guidance.</div>
       </div>
       <div class="mvp-card green reveal">
         <div class="mvp-icon">🤝</div>
         <div class="mvp-title">Our Promise</div>
-        <div class="mvp-desc">No forced login. No hidden charges. No data selling. Fast, reliable, and honest tools — always. RajDailyTools is and will remain free forever. That's our commitment to you.</div>
+        <div class="mvp-desc">Provide useful, updated, and easy-to-understand information while continuously improving the platform for aspirants.</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══════ CATEGORIES ═══════ -->
-<section class="section categories" id="categories">
+<!-- ═══════ WHY CHOOSE RAJDAILYTOOLS ═══════ -->
+<section class="section why-choose">
   <div class="container">
     <div class="section-header center">
-      <div class="section-label">All Categories</div>
-      <h2 class="section-heading">Tools for <span>Every Need</span></h2>
-      <p class="section-sub">From students to professionals — we have the right tool for every daily challenge you face.</p>
+      <div class="section-label">Why RajDailyTools</div>
+      <h2 class="section-heading">Why Choose <span>RajDailyTools</span></h2>
+      <p class="section-sub">Built with students and aspirants in mind, from the language we use to the way every guide is organised.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card reveal">
+        <div class="why-icon-wrap">🛡️</div>
+        <div class="why-title">Trusted Guides</div>
+        <div class="why-desc">Every guide is researched carefully and reviewed for accuracy before publishing.</div>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-icon-wrap">💬</div>
+        <div class="why-title">Easy Language</div>
+        <div class="why-desc">Written in simple, clear language so eligibility rules and exam patterns are easy to follow.</div>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-icon-wrap">🧑‍🎓</div>
+        <div class="why-title">Student Friendly</div>
+        <div class="why-desc">Pages are organised around what students actually need, with no unnecessary clutter.</div>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-icon-wrap">🆓</div>
+        <div class="why-title">Free Educational Resources</div>
+        <div class="why-desc">All guides, articles, and calculators are free to use, with no hidden charges.</div>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-icon-wrap">🔄</div>
+        <div class="why-title">Regular Updates</div>
+        <div class="why-desc">Guides are reviewed and updated as official notifications and exam patterns change.</div>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-icon-wrap">🧮</div>
+        <div class="why-title">Useful Calculators</div>
+        <div class="why-desc">Practical calculators built directly into our guides for instant, accurate checks.</div>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-icon-wrap">📱</div>
+        <div class="why-title">Responsive Website</div>
+        <div class="why-desc">Every page works smoothly on mobile, so you can prepare from your phone anywhere.</div>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-icon-wrap">🇮🇳</div>
+        <div class="why-title">Made for Indian Aspirants</div>
+        <div class="why-desc">Built specifically around Indian exam patterns, categories, and recruitment processes.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ EXAMS WE COVER ═══════ -->
+<section class="section categories" id="exams">
+  <div class="container">
+    <div class="section-header center">
+      <div class="section-label">All Exam Categories</div>
+      <h2 class="section-heading">Exams We <span>Cover</span></h2>
+      <p class="section-sub">Eligibility guides, syllabus, physical standards, and preparation resources for every exam we cover.</p>
     </div>
     <div class="cat-grid">
-      <a href="/education-tools-category.html" class="cat-card reveal" style="--cat-color:#2563eb;--cat-bg:#eff6ff;">
-        <div class="cat-icon-wrap">🎓</div>
-        <div class="cat-title">Education Tools</div>
-        <div class="cat-desc">GPA calculator, grade tracker, study planners, and tools for students at every level.</div>
-        <span class="cat-link">Explore Tools <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></span>
+      <a href="/exams/ssc.html" class="cat-card reveal" style="--cat-color:#2563eb;--cat-bg:#eff6ff;">
+        <div class="cat-icon-wrap">📘</div>
+        <div class="cat-title">SSC</div>
+        <div class="cat-desc">SSC CGL and SSC GD eligibility, exam patterns, and preparation guides.</div>
+        <span class="cat-link">Explore SSC <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></span>
       </a>
-      <a href="/finance-tools-category.html" class="cat-card reveal" style="--cat-color:#f59e0b;--cat-bg:#fffbeb;">
-        <div class="cat-icon-wrap">💰</div>
-        <div class="cat-title">Finance Tools</div>
-        <div class="cat-desc">EMI calculator, SIP planner, loan interest, tax estimator, and money management tools.</div>
-        <span class="cat-link">Explore Tools <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></span>
-      </a>
-      <a href="/converter-tools-category.html" class="cat-card reveal" style="--cat-color:#10b981;--cat-bg:#f0fdf4;">
-        <div class="cat-icon-wrap">🔄</div>
-        <div class="cat-title">Converter Tools</div>
-        <div class="cat-desc">Unit converter, currency converter, temperature, length, weight, and more conversions.</div>
-        <span class="cat-link">Explore Tools <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></span>
-      </a>
-      <a href="/calculator-tools-category.html" class="cat-card reveal" style="--cat-color:#ef4444;--cat-bg:#fef2f2;">
-        <div class="cat-icon-wrap">🧮</div>
-        <div class="cat-title">Calculator Tools</div>
-        <div class="cat-desc">Scientific calculator, percentage, discount, tip calculator, and 100+ math tools.</div>
-        <span class="cat-link">Explore Tools <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></span>
-      </a>
-      <a href="/health-tools-category-1.html" class="cat-card reveal" style="--cat-color:#ec4899;--cat-bg:#fdf2f8;">
-        <div class="cat-icon-wrap">❤️</div>
-        <div class="cat-title">Health Tools</div>
-        <div class="cat-desc">BMI calculator, calorie tracker, water intake, sleep tracker, and wellness tools.</div>
-        <span class="cat-link">Explore Tools <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></span>
-      </a>
-      <a href="/text-tools-category.html" class="cat-card reveal" style="--cat-color:#0ea5e9;--cat-bg:#f0f9ff;">
-        <div class="cat-icon-wrap">📝</div>
-        <div class="cat-title">Text Tools</div>
-        <div class="cat-desc">Word counter, case converter, text formatter, lorem ipsum generator, and writing tools.</div>
-        <span class="cat-link">Explore Tools <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></span>
-      </a>
-      <a href="/useful-tools-category.html" class="cat-card reveal" style="--cat-color:#64748b;--cat-bg:#f8fafc;">
-        <div class="cat-icon-wrap">🛠️</div>
-        <div class="cat-title">Other Tools</div>
-        <div class="cat-desc">PDF tools, image compressor, color picker, base64 encoder, and many more utilities.</div>
-        <span class="cat-link">Explore Tools <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></span>
-      </a>
-         <a href="/exams-tools-category.html" class="cat-card" style="--cat-color:#6366f1;--cat-bg:#eef2ff;">
+      <a href="/exams/army.html" class="cat-card reveal" style="--cat-color:#6366f1;--cat-bg:#eef2ff;">
         <div class="cat-icon-wrap">🪖</div>
-        <div class="cat-title">Exams & Govt Tools</div>
-        <div class="cat-desc">Army, SSC GD, SSC CGL, NDA, Agniveer, Police and Defence exam eligibility & rank tools.</div>
-        <span class="cat-link">Explore Tools <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></span>
-       </a>
+        <div class="cat-title">Army</div>
+        <div class="cat-desc">Indian Army recruitment guides, physical standards, and preparation resources.</div>
+        <span class="cat-link">Explore Army <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></span>
       </a>
+      <a href="/exams/police.html" class="cat-card reveal" style="--cat-color:#f59e0b;--cat-bg:#fffbeb;">
+        <div class="cat-icon-wrap">👮</div>
+        <div class="cat-title">Police</div>
+        <div class="cat-desc">State police recruitment eligibility, physical test standards, and exam guides.</div>
+        <span class="cat-link">Explore Police <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="/exams/railway.html" class="cat-card reveal" style="--cat-color:#10b981;--cat-bg:#f0fdf4;">
+        <div class="cat-icon-wrap">🚆</div>
+        <div class="cat-title">Railway</div>
+        <div class="cat-desc">Railway Recruitment Board (RRB) eligibility, exam patterns, and preparation resources.</div>
+        <span class="cat-link">Explore Railway <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+    </div>
+    <p class="cat-note">We're steadily expanding into more categories, including UPSC, Banking, Teaching, State PSC, NDA, Air Force, and Navy.</p>
+  </div>
+</section>
+
+<!-- ═══════ STUDENT SUPPORT ═══════ -->
+<section class="section student-support">
+  <div class="container">
+    <div class="section-header center">
+      <div class="section-label">How We Help</div>
+      <h2 class="section-heading">How RajDailyTools Helps <span>Students</span></h2>
+      <p class="section-sub">From understanding eligibility to planning your preparation schedule, here's how we support your exam journey.</p>
+    </div>
+    <div class="help-grid">
+      <div class="help-card reveal">
+        <div class="help-icon-wrap">📋</div>
+        <div class="help-title">Understand Eligibility</div>
+        <div class="help-desc">Clear breakdowns of age limits, qualifications, and category-wise criteria for every exam.</div>
+      </div>
+      <div class="help-card reveal">
+        <div class="help-icon-wrap">🎯</div>
+        <div class="help-title">Prepare Better</div>
+        <div class="help-desc">Structured guides that help you focus on what actually matters for your exam.</div>
+      </div>
+      <div class="help-card reveal">
+        <div class="help-icon-wrap">🏛️</div>
+        <div class="help-title">Understand Recruitment</div>
+        <div class="help-desc">Recruitment processes and notifications explained in plain, easy-to-follow language.</div>
+      </div>
+      <div class="help-card reveal">
+        <div class="help-icon-wrap">🧭</div>
+        <div class="help-title">Plan Careers</div>
+        <div class="help-desc">Guidance on career paths and long-term planning across government roles.</div>
+      </div>
+      <div class="help-card reveal">
+        <div class="help-icon-wrap">🧮</div>
+        <div class="help-title">Use Calculators Inside Articles</div>
+        <div class="help-desc">Interactive calculators embedded directly in our guides for instant eligibility checks.</div>
+      </div>
+      <div class="help-card reveal">
+        <div class="help-icon-wrap">📏</div>
+        <div class="help-title">Understand Physical Standards</div>
+        <div class="help-desc">Height, weight, chest, and running standards explained clearly for defence and police exams.</div>
+      </div>
+      <div class="help-card reveal">
+        <div class="help-icon-wrap">📖</div>
+        <div class="help-title">Read Exam Guides</div>
+        <div class="help-desc">Detailed guides covering syllabus and exam patterns so you know what to expect.</div>
+      </div>
+      <div class="help-card reveal">
+        <div class="help-icon-wrap">⏱️</div>
+        <div class="help-title">Save Preparation Time</div>
+        <div class="help-desc">Everything you need in one place, so you spend less time searching and more time preparing.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ VALUES ═══════ -->
+<section class="section values">
+  <div class="container">
+    <div class="section-header center">
+      <div class="section-label">What We Stand For</div>
+      <h2 class="section-heading">Our <span>Values</span></h2>
+      <p class="section-sub">The principles that guide how we research, write, and maintain every guide on RajDailyTools.</p>
+    </div>
+    <div class="hl-grid">
+      <div class="hl-card reveal" style="--hl-color:#2563eb;--hl-bg:#eff6ff;">
+        <div class="hl-icon">🎯</div>
+        <div class="hl-title">Accuracy</div>
+        <div class="hl-desc">Information is checked carefully before it's published on the platform.</div>
+      </div>
+      <div class="hl-card reveal" style="--hl-color:#10b981;--hl-bg:#f0fdf4;">
+        <div class="hl-icon">🤝</div>
+        <div class="hl-title">Trust</div>
+        <div class="hl-desc">We aim to be a source students can rely on, guide after guide.</div>
+      </div>
+      <div class="hl-card reveal" style="--hl-color:#f59e0b;--hl-bg:#fffbeb;">
+        <div class="hl-icon">🔓</div>
+        <div class="hl-title">Accessibility</div>
+        <div class="hl-desc">Free access, no login walls, and content written for every reader.</div>
+      </div>
+      <div class="hl-card reveal" style="--hl-color:#8b5cf6;--hl-bg:#f5f3ff;">
+        <div class="hl-icon">🧑‍🎓</div>
+        <div class="hl-title">Student Focus</div>
+        <div class="hl-desc">Every decision is made with the student's time and understanding in mind.</div>
+      </div>
+      <div class="hl-card reveal" style="--hl-color:#ec4899;--hl-bg:#fdf2f8;">
+        <div class="hl-icon">🔧</div>
+        <div class="hl-title">Continuous Improvement</div>
+        <div class="hl-desc">We keep refining guides and calculators as exams and rules evolve.</div>
+      </div>
+      <div class="hl-card reveal" style="--hl-color:#0ea5e9;--hl-bg:#f0f9ff;">
+        <div class="hl-icon">🔍</div>
+        <div class="hl-title">Transparency</div>
+        <div class="hl-desc">Clear, honest information — no exaggerated claims or misleading promises.</div>
+      </div>
     </div>
   </div>
 </section>
@@ -910,37 +1193,42 @@ img { display: block; max-width: 100%; }
     </div>
     <div class="faq-list" id="faqList">
       <div class="faq-item reveal">
-        <div class="faq-q"><span class="faq-q-text">Is RajDailyTools free to use?</span><span class="faq-icon">+</span></div>
-        <div class="faq-a"><div class="faq-a-inner">Yes, absolutely! Every single tool on RajDailyTools is 100% free. No subscriptions, no premium tiers, no hidden fees — now, and forever. Our mission is to make powerful tools accessible to everyone, especially students and people who cannot afford expensive software.</div></div>
+        <div class="faq-q"><span class="faq-q-text">What is RajDailyTools?</span><span class="faq-icon">+</span></div>
+        <div class="faq-a"><div class="faq-a-inner">RajDailyTools is an educational platform that helps students and government job aspirants prepare for competitive exams in India through detailed guides, eligibility checkers, recruitment information, and smart calculators — all in one place.</div></div>
       </div>
       <div class="faq-item reveal">
-        <div class="faq-q"><span class="faq-q-text">Do I need to create an account to use the tools?</span><span class="faq-icon">+</span></div>
-        <div class="faq-a"><div class="faq-a-inner">No login or registration is required to use any tool on our platform. Just open the tool page and start using it immediately. We respect your time and privacy — no forced sign-ups, no email harvesting, ever.</div></div>
+        <div class="faq-q"><span class="faq-q-text">Which exams are covered?</span><span class="faq-icon">+</span></div>
+        <div class="faq-a"><div class="faq-a-inner">We currently cover SSC (CGL and GD), Indian Army, Police recruitment, and Railway (RRB) exams, with more categories such as UPSC, Banking, Teaching, State PSC, NDA, Air Force, and Navy being added over time.</div></div>
       </div>
       <div class="faq-item reveal">
-        <div class="faq-q"><span class="faq-q-text">Are the calculations and results accurate?</span><span class="faq-icon">+</span></div>
-        <div class="faq-a"><div class="faq-a-inner">Yes. Every tool is built by Raj Singh Sengar — a BSc Physics graduate — with thorough formula verification and testing. We follow standard industry formulas and conventions. For critical financial or medical decisions, we recommend cross-verifying with a certified professional.</div></div>
+        <div class="faq-q"><span class="faq-q-text">Are the calculators free?</span><span class="faq-icon">+</span></div>
+        <div class="faq-a"><div class="faq-a-inner">Yes. Every calculator and guide on RajDailyTools is free to use. There are no subscriptions or premium tiers.</div></div>
       </div>
       <div class="faq-item reveal">
-        <div class="faq-q"><span class="faq-q-text">Can I suggest a new tool to be built?</span><span class="faq-icon">+</span></div>
-        <div class="faq-a"><div class="faq-a-inner">Absolutely! Tool suggestions from users are what shape our roadmap. Email your idea to contact@rajdailytools.com or use the Contact page. If your suggestion solves a real problem for many users, we'll build it and credit you for the idea.</div></div>
+        <div class="faq-q"><span class="faq-q-text">How often is information updated?</span><span class="faq-icon">+</span></div>
+        <div class="faq-a"><div class="faq-a-inner">We regularly review our guides to reflect the latest official notifications, eligibility criteria, and exam patterns as they change.</div></div>
       </div>
       <div class="faq-item reveal">
-        <div class="faq-q"><span class="faq-q-text">Is my data safe when I use these tools?</span><span class="faq-icon">+</span></div>
-        <div class="faq-a"><div class="faq-a-inner">Yes. Most tools run entirely in your browser — your data never leaves your device. We do not collect, store, or sell personal data. Your privacy is a core value, not an afterthought. We are also fully AdSense compliant and follow Google's publisher policies.</div></div>
+        <div class="faq-q"><span class="faq-q-text">Can I rely on the eligibility guides?</span><span class="faq-icon">+</span></div>
+        <div class="faq-a"><div class="faq-a-inner">Our guides are researched carefully and reviewed for accuracy. That said, recruitment rules can change, so we always recommend cross-checking critical details against the official notification before applying.</div></div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q"><span class="faq-q-text">How can I contact RajDailyTools?</span><span class="faq-icon">+</span></div>
+        <div class="faq-a"><div class="faq-a-inner">You can reach us anytime at rajdailytools@gmail.com or through our Contact page. We welcome questions, corrections, and suggestions for new guides.</div></div>
       </div>
     </div>
   </div>
 </section>
+
 <!-- ═══════ CTA ═══════ -->
 <section class="cta-section">
   <div class="container">
     <div class="section-label cta-label">Ready to Begin?</div>
-    <h2>Explore <span>80+ Tools</span> Now</h2>
-    <p>Stop searching across multiple websites. Everything you need — calculators, converters, text tools, health tools — is right here, free, and ready to use in seconds.</p>
+    <h2>Start <span>Preparing</span> Today</h2>
+    <p>Explore eligibility guides, exam patterns, and calculators for SSC, Army, Police, and Railway — all in one trusted place, free to use.</p>
     <div class="cta-btns">
-      <a href="/categories.html" class="btn-gold">🚀 Explore Tools Now</a>
-      <a href="/contact.html" class="btn-ghost">💬 Get in Touch</a>
+      <a href="/exams-tools-category.html" class="btn-gold">🎯 Explore Exams</a>
+      <a href="/blog/index.html" class="btn-ghost">📰 Browse Latest Guides</a>
     </div>
   </div>
 </section>
@@ -954,69 +1242,65 @@ img { display: block; max-width: 100%; }
           <div class="logo-icon"><svg viewBox="0 0 24 24" fill="white"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
           <div class="logo-text">
             <span class="logo-name">Raj<span>Daily</span>Tools</span>
-            <span class="logo-sub">Smart Tools for Daily Life</span>
+            <span class="logo-tagline-small">Helping Students &amp; Aspirants Prepare Smarter Every Day.</span>
           </div>
         </div>
-        <p>RajDailyTools provides a growing collection of free online tools designed for students, professionals, and everyday users. We regularly add new tools to make everyday tasks easier, faster, and more accurate..</p>
-      
+        <p>RajDailyTools provides trusted educational resources, exam preparation guides, recruitment information, eligibility checkers and smart calculators designed to help students and aspirants across India prepare with confidence.</p>
+        <div class="footer-socials">
+          <a href="https://www.facebook.com/rajdailytools" class="social-btn" aria-label="Facebook" target="_blank" rel="noopener">📘</a>
+          <a href="https://x.com/Educator4ll" class="social-btn" aria-label="X (Twitter)" target="_blank" rel="noopener">✖️</a>
+          <a href="https://www.youtube.com/@rajdailytools" class="social-btn" aria-label="YouTube" target="_blank" rel="noopener">▶️</a>
+          <a href="https://www.instagram.com/rajdailytools" class="social-btn" aria-label="Instagram" target="_blank" rel="noopener">📸</a>
         </div>
       </div>
-     
       <div class="footer-col">
-         
-        <h4>Categories</h4>
+        <h4>Exams</h4>
         <ul>
-          <li><a href="/education-tools-category.html">Education Tools</a></li>
-          <li><a href="/finance-tools-category.html">Finance Tools</a></li>
-          <li><a href="/converter-tools-category.html">Converter Tools</a></li>
-          <li><a href="/calculator-tools-category.html">Calculator Tools</a></li>
-          <li><a href="/text-tools-category.html">Text Tools</a></li>
+          <li><a href="/exams/ssc.html">SSC</a></li>
+          <li><a href="/exams/army.html">Army</a></li>
+          <li><a href="/exams/police.html">Police</a></li>
+          <li><a href="/exams/railway.html">Railway</a></li>
         </ul>
       </div>
-   <div class="footer-col">  
-  <h4>Popular Tools</h4>
-  <ul>
-    <li><a href="/agniveer-age-calculator-2026.html">Agniveer Age Calculator</a></li>
-    <li><a href="/army-1-mile-running-calculator.html">Army 1 Mile Running Calculator</a></li>
-    <li><a href="/army-height-weight-checker.html">Army Height Weight Checker</a></li>
-    <li><a href="/army-bmi-calculator-2026.html">Army BMI Calculator</a></li>
-    <li><a href="/army-eligibility-checker-2026.html">Army Eligibility Checker</a></li>
-    <li><a href="/army-running-time-calculator-1600m-2026.html">Army Running Time Calculator</a></li>
-    <li><a href="/army-running-improvement-planner-1600m.html">Army Running Improvement Planner</a></li>
-    <li><a href="/army-medical-fitness-checker.html">Army Medical Fitness Checker</a></li>
-    <li><a href="/army-document-checklist-generator-1.html">Army Document Checklist</a></li>
-    <li><a href="/ssc-cgl-age-limit-2026-calculator.html">SSC CGL Age Limit Calculator</a></li>
-    <li><a href="/ssc-cgl-eligibility-2026.html">SSC CGL Eligibility Checker</a></li>
-    <li><a href="/ssc-cgl-home-posting-chance-checker.html">SSC CGL Home Posting Chance Checker</a></li>
-    <li><a href="/ssc-cgl-rank-predictor-2026-2.html">SSC CGL Rank Predictor</a></li>
-    <li><a href="/ssc-gd-eligibility-2026.html">SSC GD Eligibility Checker</a></li>
-    <li><a href="/ssc-gd-merit-marks-calculator-2026.html">SSC GD Merit Marks Calculator</a></li>
-  </ul>
-   </div>   
-    <div class="footer-col">
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="#exams">Exam Guides</a></li>
+          <li><a href="/blog/index.html">Latest Articles</a></li>
+          <li><a href="/blog/index.html">Blog</a></li>
+          <li><a href="/exams-tools-category.html">Calculators</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
         <h4>Company</h4>
         <ul>
-          <li><a href="/about">About Us</a></li>
-          <li><a href="/contact.html">Contact</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="/privacy.html">Privacy Policy</a></li>
           <li><a href="/terms.html">Terms of Service</a></li>
-          <li><a href="/disclaimer">Disclaimer</a></li>
+          <li><a href="/disclaimer.html">Disclaimer</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <p class="footer-copy">© 2026 <span>RajDailyTools</span>. All rights reserved. Made with ❤️ in India by Raj Singh Sengar. &nbsp;|&nbsp; Powered by <span>RajDailyTools</span></p>
+      <p class="footer-copy">© 2026 <span>RajDailyTools</span>. All rights reserved.</p>
       <div class="footer-legal">
         <a href="/privacy.html">Privacy Policy</a>
         <a href="/terms.html">Terms of Service</a>
-        <a href="/disclaimer">Disclaimer</a>
-        <a href="/sitemap">Sitemap</a>
+        <a href="/disclaimer.html">Disclaimer</a>
+        <a href="/sitemap.xml">Sitemap</a>
       </div>
     </div>
   </div>
 </footer>
 
 <!-- Back to top -->
-<button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">↑</button>
+<button class="back-to-top" id="backToTop" title="Back to top">↑</button>
 
 <script>
   /* ── Mobile Drawer ── */
@@ -1032,6 +1316,48 @@ img { display: block; max-width: 100%; }
   drawerClose.addEventListener('click', closeDrawer);
   drawerOverlay.addEventListener('click', closeDrawer);
 
+  document.querySelectorAll('.mobile-nav > a').forEach(link => link.addEventListener('click', closeDrawer));
+  document.querySelectorAll('.mobile-nav-submenu a').forEach(link => link.addEventListener('click', closeDrawer));
+
+  /* ── Mobile nav accordion (Exams / Blog) ── */
+  document.querySelectorAll('.mobile-nav-toggle').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      const group = btn.closest('.mobile-nav-group');
+      const isOpen = group.classList.contains('open');
+      document.querySelectorAll('.mobile-nav-group.open').forEach(g => {
+        g.classList.remove('open');
+        g.querySelector('.mobile-nav-toggle').setAttribute('aria-expanded', 'false');
+      });
+      if (!isOpen) {
+        group.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+
+  /* ── Desktop nav dropdown (keyboard/click support) ── */
+  document.querySelectorAll('.nav-dropdown-toggle').forEach(function(btn) {
+    btn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      const dropdown = btn.closest('.nav-dropdown');
+      const isOpen = dropdown.classList.contains('force-open');
+      document.querySelectorAll('.nav-dropdown.force-open').forEach(d => {
+        d.classList.remove('force-open');
+        d.querySelector('.nav-dropdown-toggle').setAttribute('aria-expanded', 'false');
+      });
+      if (!isOpen) {
+        dropdown.classList.add('force-open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+  document.addEventListener('click', function() {
+    document.querySelectorAll('.nav-dropdown.force-open').forEach(d => {
+      d.classList.remove('force-open');
+      d.querySelector('.nav-dropdown-toggle').setAttribute('aria-expanded', 'false');
+    });
+  });
+
   /* ── FAQ Accordion ── */
   document.getElementById('faqList').addEventListener('click', function(e) {
     const q = e.target.closest('.faq-q');
@@ -1044,6 +1370,7 @@ img { display: block; max-width: 100%; }
 
   /* ── Back to Top ── */
   const backToTop = document.getElementById('backToTop');
+  backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
   window.addEventListener('scroll', () => {
     backToTop.classList.toggle('visible', window.scrollY > 400);
   }, { passive: true });
@@ -1062,15 +1389,6 @@ img { display: block; max-width: 100%; }
     el.style.transitionDelay = (i % 4) * 0.08 + 's';
     revealObserver.observe(el);
   });
-
-  /* ── Active nav on scroll ── */
-  window.addEventListener('scroll', () => {
-    document.querySelectorAll('.desktop-nav a').forEach(a => {
-      const href = a.getAttribute('href');
-      if (href === '/about') { a.classList.add('active'); }
-      else { a.classList.remove('active'); }
-    });
-  }, { passive: true });
 </script>
 </body>
 </html>
