@@ -10,12 +10,28 @@
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="RajDailyTools – Smart Tools for Daily Life Challenges. 300+ Free Online Tools for students, professionals, and everyone.">
-<title>RajDailyTools – Smart Tools for Daily Life Challenges</title>
+<meta name="description" content="RajDailyTools – India's Exam Preparation & Recruitment Resource. Trusted guides, eligibility checkers, syllabus, and preparation resources for SSC, Army, Police, Railway and more.">
+<title>RajDailyTools – India's Exam Preparation & Recruitment Resource</title>
+<link rel="canonical" href="https://rajdailytools.in/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7904570219926540"
      crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "EducationalOrganization",
+  "name": "RajDailyTools",
+  "url": "https://rajdailytools.in/",
+  "description": "India's exam preparation and recruitment resource platform providing guides, eligibility checkers, syllabus and preparation resources for SSC, Army, Police, Railway and more.",
+  "sameAs": [
+    "https://www.facebook.com/rajdailytools",
+    "https://x.com/Educator4ll",
+    "https://www.youtube.com/@rajdailytools",
+    "https://www.instagram.com/rajdailytools"
+  ]
+}
+</script>
 <style>
   :root {
     --blue: #2563eb;
@@ -59,6 +75,7 @@
   img { max-width: 100%; display: block; }
   ul { list-style: none; }
   button { cursor: pointer; border: none; background: none; font-family: var(--font-body); }
+  :focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
 
   .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
   .section { padding: 88px 0; }
@@ -103,7 +120,7 @@
   .logo-icon {
     width: 38px; height: 38px; background: var(--blue);
     border-radius: 10px; display: flex; align-items: center; justify-content: center;
-    box-shadow: var(--shadow-blue);
+    box-shadow: var(--shadow-blue); flex-shrink: 0;
   }
   .logo-icon svg { width: 20px; height: 20px; fill: white; }
   .logo-text { display: flex; flex-direction: column; line-height: 1; }
@@ -112,12 +129,35 @@
   .logo-tagline-small { font-size: 10px; font-weight: 400; color: var(--text-3); letter-spacing: 0.05em; }
 
   .desktop-nav { display: flex; align-items: center; gap: 4px; }
-  .desktop-nav a {
+  .desktop-nav > a {
     font-size: 14px; font-weight: 500; color: var(--text-2);
     padding: 8px 14px; border-radius: var(--radius-sm);
     transition: all 0.2s;
   }
-  .desktop-nav a:hover { color: var(--blue); background: var(--blue-xlight); }
+  .desktop-nav > a:hover { color: var(--blue); background: var(--blue-xlight); }
+
+  /* Nav dropdown */
+  .nav-dropdown { position: relative; }
+  .nav-dropdown-toggle {
+    display: flex; align-items: center; gap: 5px;
+    font-size: 14px; font-weight: 500; color: var(--text-2);
+    padding: 8px 14px; border-radius: var(--radius-sm);
+    transition: all 0.2s; background: none; border: none; cursor: pointer;
+    font-family: var(--font-body);
+  }
+  .nav-dropdown-toggle:hover, .nav-dropdown-toggle:focus-visible { color: var(--blue); background: var(--blue-xlight); }
+  .nav-dropdown-toggle svg { width: 11px; height: 11px; stroke: currentColor; fill: none; stroke-width: 2.5; transition: transform 0.2s; }
+  .nav-dropdown:hover .nav-dropdown-toggle svg, .nav-dropdown:focus-within .nav-dropdown-toggle svg { transform: rotate(180deg); }
+  .nav-dropdown-menu {
+    position: absolute; top: calc(100% + 8px); left: 0; min-width: 210px;
+    background: white; border: 1px solid var(--border); border-radius: var(--radius);
+    box-shadow: var(--shadow-lg); padding: 8px;
+    opacity: 0; visibility: hidden; transform: translateY(8px);
+    transition: opacity 0.2s, visibility 0.2s, transform 0.2s; z-index: 300;
+  }
+  .nav-dropdown:hover .nav-dropdown-menu, .nav-dropdown:focus-within .nav-dropdown-menu, .nav-dropdown.force-open .nav-dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+  .nav-dropdown-menu a { display: block; padding: 10px 14px; border-radius: 8px; font-size: 14px; font-weight: 500; color: var(--text-2); transition: all 0.15s; }
+  .nav-dropdown-menu a:hover { background: var(--blue-xlight); color: var(--blue); }
 
   .header-cta {
     background: var(--blue); color: white; font-weight: 600; font-size: 14px;
@@ -172,6 +212,21 @@
   }
   .mobile-nav a:hover { color: var(--blue); background: var(--blue-xlight); }
 
+  .mobile-nav-group { border-radius: var(--radius-sm); }
+  .mobile-nav-toggle {
+    display: flex; align-items: center; justify-content: space-between; width: 100%;
+    font-size: 15px; font-weight: 500; color: var(--text-2);
+    padding: 13px 16px; border-radius: var(--radius-sm);
+    background: none; border: none; cursor: pointer; font-family: var(--font-body);
+    transition: all 0.2s;
+  }
+  .mobile-nav-toggle:hover { color: var(--blue); background: var(--blue-xlight); }
+  .mobile-nav-toggle svg { width: 13px; height: 13px; stroke: currentColor; fill: none; stroke-width: 2.5; transition: transform 0.25s; }
+  .mobile-nav-group.open .mobile-nav-toggle svg { transform: rotate(180deg); }
+  .mobile-nav-submenu { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; padding-left: 10px; }
+  .mobile-nav-group.open .mobile-nav-submenu { max-height: 320px; }
+  .mobile-nav-submenu a { font-size: 14px; padding: 11px 16px; }
+
   /* ============ HERO ============ */
   .hero {
     background: linear-gradient(160deg, #f0f7ff 0%, #ffffff 50%, #fef9ee 100%);
@@ -207,8 +262,8 @@
   @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.6;transform:scale(1.2)} }
 
   .hero h1 {
-    font-family: var(--font-display); font-size: clamp(32px, 5vw, 58px);
-    font-weight: 800; line-height: 1.1; color: var(--text); margin-bottom: 10px;
+    font-family: var(--font-display); font-size: clamp(32px, 5vw, 54px);
+    font-weight: 800; line-height: 1.15; color: var(--text); margin-bottom: 10px;
   }
   .hero h1 span { color: var(--blue); }
   .hero-tagline {
@@ -216,13 +271,13 @@
     font-weight: 600; color: var(--text-3); margin-bottom: 20px;
   }
   .hero-desc {
-    font-size: 16px; color: var(--text-3); line-height: 1.75; margin-bottom: 36px; max-width: 480px;
+    font-size: 16px; color: var(--text-3); line-height: 1.75; margin-bottom: 36px; max-width: 500px;
   }
   .hero-search {
     display: flex; align-items: center;
     background: white; border: 1.5px solid var(--border);
     border-radius: var(--radius); overflow: hidden;
-    box-shadow: var(--shadow-md); max-width: 500px; margin-bottom: 32px;
+    box-shadow: var(--shadow-md); max-width: 520px; margin-bottom: 32px;
     transition: border-color 0.2s, box-shadow 0.2s;
   }
   .hero-search:focus-within { border-color: var(--blue); box-shadow: 0 0 0 4px rgba(37,99,235,0.1), var(--shadow-md); }
@@ -241,7 +296,7 @@
   .hero-search-btn:hover { background: var(--blue-dark); }
 
   /* Search Results Dropdown */
-  .search-results-wrap { position: relative; max-width: 500px; }
+  .search-results-wrap { position: relative; max-width: 520px; }
   .search-dropdown {
     display: none; position: absolute; top: calc(100% + 6px); left: 0; right: 0;
     background: white; border: 1.5px solid var(--border); border-radius: var(--radius);
@@ -282,7 +337,7 @@
   .stat-num span { color: var(--blue); }
   .stat-label { font-size: 13px; color: var(--text-3); font-weight: 500; }
 
-  /* Hero Visual / Dashboard */
+  /* Hero Visual / Education Dashboard */
   .hero-visual { position: relative; }
   .hero-dashboard {
     background: white; border-radius: var(--radius-xl);
@@ -332,15 +387,15 @@
   .hd-sd-item:last-child { border-bottom: none; }
   .hd-sd-item:hover { background: var(--blue-xlight); color: var(--blue); }
 
-  .hd-tools { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-bottom: 16px; }
+  .hd-tools { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 10px; margin-bottom: 16px; }
   .hd-tool {
-    background: var(--surface); border-radius: 10px; padding: 14px 10px;
+    background: var(--surface); border-radius: 10px; padding: 14px 8px;
     display: flex; flex-direction: column; align-items: center; gap: 6px;
     transition: all 0.2s; cursor: pointer; border: 1px solid var(--border);
     text-decoration: none;
   }
   .hd-tool:hover { background: var(--blue-xlight); border-color: var(--blue-subtle); transform: translateY(-2px); }
-  .hd-tool-icon { font-size: 22px; }
+  .hd-tool-icon { font-size: 20px; }
   .hd-tool-name { font-size: 10px; font-weight: 600; color: var(--text-2); text-align: center; }
 
   .hd-bar { height: 8px; background: var(--blue-subtle); border-radius: 4px; margin-bottom: 8px; }
@@ -365,19 +420,19 @@
   .ticker { background: var(--blue); padding: 12px 0; overflow: hidden; }
   .ticker-track {
     display: flex; align-items: center; white-space: nowrap;
-    animation: ticker 40s linear infinite;
+    animation: ticker 42s linear infinite;
   }
   .ticker-track:hover { animation-play-state: paused; }
-  .ticker-track span {
+  .ticker-track a {
     font-size: 13px; font-weight: 500; color: rgba(255,255,255,0.9);
     padding: 0 24px; cursor: pointer; transition: color 0.2s;
     text-decoration: none; display: inline-block;
   }
-  .ticker-track span:hover { color: white; text-decoration: underline; }
-  .ticker-sep { color: rgba(255,255,255,0.4) !important; cursor: default !important; }
+  .ticker-track a:hover { color: white; text-decoration: underline; }
+  .ticker-sep { color: rgba(255,255,255,0.4) !important; cursor: default !important; padding: 0 8px; }
   @keyframes ticker { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
 
-  /* ============ CATEGORIES ============ */
+  /* ============ EXAMS (categories) ============ */
   .categories { background: var(--white); }
   .cat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
   .cat-card {
@@ -408,9 +463,9 @@
   .cat-link svg { width: 14px; height: 14px; transition: transform 0.2s; }
   .cat-card:hover .cat-link svg { transform: translateX(4px); }
 
-  /* ============ POPULAR TOOLS ============ */
+  /* ============ POPULAR GUIDES ============ */
   .popular { background: var(--surface); }
-  .tools-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+  .tools-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
   .tool-card {
     background: white; border: 1.5px solid var(--border);
     border-radius: var(--radius); padding: 22px 18px;
@@ -432,7 +487,7 @@
   .tool-arrow { color: var(--text-4); font-size: 16px; transition: all 0.2s; }
   .tool-card:hover .tool-arrow { color: var(--blue); transform: translateX(3px); }
 
-  /* ============ LATEST TOOLS ============ */
+  /* ============ LATEST RESOURCES ============ */
   .latest { background: white; }
   .latest-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
   .latest-card {
@@ -454,22 +509,48 @@
   .latest-date { font-size: 12px; color: var(--text-4); font-weight: 500; }
   .latest-use { font-size: 13px; font-weight: 600; color: var(--blue); display: flex; align-items: center; gap: 4px; }
 
-  /* ============ PROBLEMS ============ */
-  .problems { background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%); }
-  .problems .section-label { background: rgba(255,255,255,0.1); color: #93c5fd; }
-  .problems .section-heading { color: white; }
-  .problems .section-sub { color: #93c5fd; }
-  .problems-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-  .problem-card {
-    background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
-    border-radius: var(--radius-lg); padding: 28px 24px; transition: all 0.25s;
+  /* ============ BLOG ============ */
+  .blog-section { background: var(--surface); }
+  .blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+  .blog-card {
+    background: white; border: 1.5px solid var(--border);
+    border-radius: var(--radius-lg); padding: 26px; position: relative;
+    transition: all 0.25s; display: block;
   }
-  .problem-card:hover { background: rgba(255,255,255,0.1); transform: translateY(-4px); }
-  .problem-icon { font-size: 32px; margin-bottom: 16px; }
-  .problem-title { font-family: var(--font-display); font-size: 17px; font-weight: 700; color: white; margin-bottom: 10px; }
-  .problem-desc { font-size: 14px; color: #94a3b8; line-height: 1.7; }
+  .blog-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: var(--blue-subtle); }
+  .blog-badge {
+    position: absolute; top: 16px; right: 16px;
+    background: var(--blue-xlight); color: var(--blue);
+    font-size: 10px; font-weight: 700; padding: 3px 10px;
+    border-radius: 100px; letter-spacing: 0.08em;
+  }
+  .blog-card-icon { font-size: 28px; margin-bottom: 14px; }
+  .blog-card-title { font-family: var(--font-display); font-weight: 700; font-size: 17px; margin-bottom: 8px; }
+  .blog-card-desc { font-size: 13px; color: var(--text-3); line-height: 1.6; margin-bottom: 18px; }
+  .blog-card-footer { display: flex; align-items: center; justify-content: space-between; }
+  .blog-meta { font-size: 12px; color: var(--text-4); font-weight: 500; }
+  .blog-read { font-size: 13px; font-weight: 600; color: var(--blue); display: flex; align-items: center; gap: 4px; }
 
-  /* ============ FOUNDER ============ */
+  /* ============ WHY CHOOSE / STUDENT HELP ============ */
+  .why-choose { background: white; }
+  .student-help { background: var(--surface); }
+  .why-grid, .help-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+  .why-card, .help-card {
+    background: white; border: 1.5px solid var(--border);
+    border-radius: var(--radius-lg); padding: 26px 22px;
+    transition: all 0.25s;
+  }
+  .student-help .help-card { background: var(--white); }
+  .why-card:hover, .help-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); border-color: transparent; }
+  .why-icon-wrap, .help-icon-wrap {
+    width: 50px; height: 50px; border-radius: 13px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px; margin-bottom: 16px; background: var(--blue-xlight);
+  }
+  .why-title, .help-title { font-family: var(--font-display); font-weight: 700; font-size: 16px; color: var(--text); margin-bottom: 6px; }
+  .why-desc, .help-desc { font-size: 13px; color: var(--text-3); line-height: 1.6; }
+
+  /* ============ FOUNDER / ABOUT ============ */
   .founder { background: var(--surface); }
   .founder-inner {
     display: grid; grid-template-columns: 1fr 1.6fr; gap: 60px; align-items: center;
@@ -590,7 +671,7 @@
   /* ============ FOOTER ============ */
   .site-footer { background: #0f172a; padding: 72px 0 0; }
   .footer-top {
-    display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 56px;
+    display: grid; grid-template-columns: 1.8fr 1fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 56px;
   }
   .footer-brand .logo { margin-bottom: 16px; }
   .footer-brand .logo-name { color: white; }
@@ -638,7 +719,11 @@
   @media (max-width: 1100px) {
     .cat-grid { grid-template-columns: repeat(2, 1fr); }
     .tools-grid { grid-template-columns: repeat(2, 1fr); }
-    .footer-top { grid-template-columns: 1fr 1fr; }
+    .latest-grid { grid-template-columns: repeat(2, 1fr); }
+    .blog-grid { grid-template-columns: repeat(2, 1fr); }
+    .why-grid, .help-grid { grid-template-columns: repeat(2, 1fr); }
+    .footer-top { grid-template-columns: 1fr 1fr 1fr; }
+    .hd-tools { grid-template-columns: repeat(3, 1fr); }
   }
   @media (max-width: 900px) {
     .desktop-nav, .header-cta { display: none; }
@@ -646,14 +731,12 @@
     .hero-inner { grid-template-columns: 1fr; }
     .hero-visual { display: none; }
     .hero { padding: 60px 0 72px; }
-    .problems-grid { grid-template-columns: 1fr 1fr; }
     .mvp-grid { grid-template-columns: 1fr; }
     .founder-inner { grid-template-columns: 1fr; }
     .contact-inner { grid-template-columns: 1fr; }
-    .latest-grid { grid-template-columns: 1fr 1fr; }
   }
   @media (max-width: 600px) {
-    .cat-grid, .tools-grid, .latest-grid, .problems-grid { grid-template-columns: 1fr; }
+    .cat-grid, .tools-grid, .latest-grid, .blog-grid, .why-grid, .help-grid { grid-template-columns: 1fr; }
     .footer-top { grid-template-columns: 1fr; }
     .section { padding: 60px 0; }
     .hero-stats { gap: 20px; }
@@ -682,12 +765,36 @@
   </div>
   <nav class="mobile-nav">
     <a href="index.html">🏠 Home</a>
-    <a href="categories.html">📂 Categories</a>
-    <a href="popular.html">⭐ Popular</a>
-    <a href="latest.html">🆕 Latest</a>
-    <a href="about.html">👤 About</a>
-    <a href="faq.html">❓ FAQ</a>
-    <a href="contact.html">📬 Contact</a>
+
+    <div class="mobile-nav-group" id="mExamsGroup">
+      <button class="mobile-nav-toggle" aria-expanded="false" aria-controls="mExamsMenu">
+        🎯 Exams
+        <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="mobile-nav-submenu" id="mExamsMenu">
+        <a href="/exams/ssc.html">SSC</a>
+        <a href="/exams/army.html">Army</a>
+        <a href="/exams/police.html">Police</a>
+        <a href="/exams/railway.html">Railway</a>
+      </div>
+    </div>
+
+    <div class="mobile-nav-group" id="mBlogGroup">
+      <button class="mobile-nav-toggle" aria-expanded="false" aria-controls="mBlogMenu">
+        📰 Blog
+        <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="mobile-nav-submenu" id="mBlogMenu">
+        <a href="/blog/index.html">Latest Articles</a>
+        <a href="/blog/ssc.html">SSC</a>
+        <a href="/blog/army.html">Army</a>
+        <a href="/blog/police.html">Police</a>
+        <a href="/blog/railway.html">Railway</a>
+      </div>
+    </div>
+
+    <a href="#about">👤 About</a>
+    <a href="#contact">📬 Contact</a>
   </nav>
 </div>
 
@@ -701,19 +808,43 @@
         </div>
         <div class="logo-text">
           <span class="logo-name">Raj<span>Daily</span>Tools</span>
-          <span class="logo-tagline-small">Smart Tools for Daily Life</span>
+          <span class="logo-tagline-small">Exam Prep &amp; Career Resource</span>
         </div>
       </a>
       <nav class="desktop-nav">
         <a href="index.html">Home</a>
-        <a href="categories.html">Categories</a>
-        <a href="popular.html">Popular</a>
-        <a href="latest.html">Latest</a>
-        <a href="about.html">About</a>
-        <a href="faq.html">FAQ</a>
-        <a href="contact.html">Contact</a>
+
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+            Exams
+            <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="nav-dropdown-menu">
+            <a href="/exams/ssc.html">SSC</a>
+            <a href="/exams/army.html">Army</a>
+            <a href="/exams/police.html">Police</a>
+            <a href="/exams/railway.html">Railway</a>
+          </div>
+        </div>
+
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+            Blog
+            <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="nav-dropdown-menu">
+            <a href="/blog/index.html">Latest Articles</a>
+            <a href="/blog/ssc.html">SSC</a>
+            <a href="/blog/army.html">Army</a>
+            <a href="/blog/police.html">Police</a>
+            <a href="/blog/railway.html">Railway</a>
+          </div>
+        </div>
+
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
       </nav>
-      <a href="categories.html" class="header-cta">Explore Tools →</a>
+      <a href="#exams" class="header-cta">Explore Exams →</a>
       <button class="hamburger" id="menuBtn" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
@@ -728,18 +859,18 @@
       <div class="hero-content">
         <div class="hero-badge">
           <span class="dot"></span>
-          80+ Free Online Tools &nbsp;•&nbsp; Free Forever
+          185+ Guides &amp; Resources &nbsp;•&nbsp; Updated Regularly
         </div>
-        <h1>Your Daily Life<br><span>Problem Solver</span></h1>
-        <p class="hero-tagline">Smart Tools for Daily Life Challenges</p>
-        <p class="hero-desc">A growing platform providing free online tools for students, professionals, and everyday users..</p>
+        <h1>India's Exam Preparation<br><span>&amp; Recruitment Resource</span></h1>
+        <p class="hero-tagline">Helping Students &amp; Aspirants Prepare Smarter Every Day.</p>
+        <p class="hero-desc">RajDailyTools brings together exam guides, eligibility information, recruitment updates, and preparation resources for students and aspirants across India. Alongside detailed guides, we provide smart calculators built directly into our articles so you can check eligibility, understand exam patterns, and plan your preparation with confidence.</p>
 
         <div class="search-results-wrap">
           <div class="hero-search">
             <div class="hero-search-icon">
               <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
             </div>
-            <input type="text" id="heroSearchInput" placeholder="Search tools… e.g. EMI Calculator" autocomplete="off">
+            <input type="text" id="heroSearchInput" placeholder="Search exams, guides, articles or calculators..." autocomplete="off">
             <button class="hero-search-btn" id="heroSearchBtn">Search</button>
           </div>
           <div class="search-dropdown" id="heroSearchDropdown">
@@ -748,21 +879,76 @@
         </div>
 
         <div class="hero-actions">
-          <a href="https://rajdailytools.in/exams-tools-category.html" class="btn-primary">Browse Army Tools →</a>
+          <a href="#exams" class="btn-primary">Explore Exams →</a>
+          <a href="#guides" class="btn-secondary">⭐ Popular Guides</a>
         </div>
 
         <div class="hero-stats">
-          <div class="stat"><span class="stat-num">80<span>+</span></span><span class="stat-label">Free Online Tools</span></div>
-          <div class="stat"><span class="stat-num">8<span>+</span></span><span class="stat-label">Categories</span></div>
-          <div class="stat"><span class="stat-num">100<span>%</span></span><span class="stat-label">Free to Use</span></div>
+          <div class="stat"><span class="stat-num">185<span>+</span></span><span class="stat-label">Guides &amp; Resources</span></div>
+          <div class="stat"><span class="stat-num">4<span>+</span></span><span class="stat-label">Exam Categories</span></div>
+          <div class="stat"><span class="stat-num">100<span>%</span></span><span class="stat-label">Free to Access</span></div>
         </div>
       </div>
 
-      <!-- DASHBOARD VISUAL -->
+      <!-- EDUCATION DASHBOARD VISUAL -->
+      <div class="hero-visual">
+        <div class="hero-dashboard">
+          <div class="hd-topbar">
+            <div class="hd-dot r"></div>
+            <div class="hd-dot y"></div>
+            <div class="hd-dot g"></div>
+            <span class="hd-title">RajDailyTools Education Dashboard</span>
+          </div>
+          <div class="hd-search-wrap">
+            <div class="hd-search">
+              <span style="font-size:15px">🔍</span>
+              <input type="text" id="dashSearchInput" placeholder="Search guides…" autocomplete="off">
+              <button class="hd-search-submit" id="dashSearchBtn">Search</button>
+            </div>
+            <div class="hd-search-dropdown" id="dashSearchDropdown"></div>
+          </div>
+          <div class="hd-tools">
+            <a href="/exams/ssc.html" class="hd-tool">
+              <div class="hd-tool-icon">📘</div>
+              <div class="hd-tool-name">SSC</div>
+            </a>
+            <a href="/exams/army.html" class="hd-tool">
+              <div class="hd-tool-icon">🪖</div>
+              <div class="hd-tool-name">Army</div>
+            </a>
+            <a href="/exams/police.html" class="hd-tool">
+              <div class="hd-tool-icon">👮</div>
+              <div class="hd-tool-name">Police</div>
+            </a>
+            <a href="/exams/railway.html" class="hd-tool">
+              <div class="hd-tool-icon">🚆</div>
+              <div class="hd-tool-name">Railway</div>
+            </a>
+            <a href="/blog/index.html" class="hd-tool">
+              <div class="hd-tool-icon">📰</div>
+              <div class="hd-tool-name">Latest Guide</div>
+            </a>
+            <a href="https://rajdailytools.in/government-exam-height-eligibility-checker-india.html" class="hd-tool" target="_blank">
+              <div class="hd-tool-icon">📋</div>
+              <div class="hd-tool-name">Eligibility</div>
+            </a>
+            <a href="https://rajdailytools.in/agniveer-1600m-running-time-calculator-2026.html" class="hd-tool" target="_blank">
+              <div class="hd-tool-icon">🏃</div>
+              <div class="hd-tool-name">Physical Test</div>
+            </a>
+            <a href="/guides/preparation.html" class="hd-tool">
+              <div class="hd-tool-icon">🎯</div>
+              <div class="hd-tool-name">Preparation</div>
+            </a>
+          </div>
+          <div class="hd-bar w80"></div>
+          <div class="hd-bar w60"></div>
+          <div class="hd-bar w70"></div>
+        </div>
         <div class="hero-float-card top">
-          <div class="float-icon">⚡</div>
+          <div class="float-icon">📚</div>
           <div class="float-text">
-            <span class="float-label">Instant Results</span>
+            <span class="float-label">Trusted Guides</span>
             <span class="float-sub">No login required</span>
           </div>
         </div>
@@ -770,7 +956,7 @@
           <div class="float-icon">🇮🇳</div>
           <div class="float-text">
             <span class="float-label">Made in India</span>
-            <span class="float-sub">For India &amp; World</span>
+            <span class="float-sub">For Indian Aspirants</span>
           </div>
         </div>
       </div>
@@ -778,98 +964,416 @@
   </div>
 </section>
 
-<
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-track" id="tickerTrack">
+    <a href="https://rajdailytools.in/ssc-cgl-eligibility-2026.html">📘 SSC CGL Eligibility 2026</a>
+    <span class="ticker-sep">•</span>
+    <a href="https://rajdailytools.in/ssc-gd-eligibility-2026.html">🚔 SSC GD Eligibility 2026</a>
+    <span class="ticker-sep">•</span>
+    <a href="https://rajdailytools.in/army-running-time-calculator-1600m-2026.html">🏃 Army Running Time Calculator</a>
+    <span class="ticker-sep">•</span>
+    <a href="https://rajdailytools.in/mp-police-eligibility-2026.html">👮 MP Police Eligibility 2026</a>
+    <span class="ticker-sep">•</span>
+    <a href="https://rajdailytools.in/agniveer-1600m-running-time-calculator-2026.html">🎖️ Agniveer 1600m Running Time Calculator</a>
+    <span class="ticker-sep">•</span>
+    <a href="https://rajdailytools.in/ssc-cgl-rank-predictor-2026-2.html">🏆 SSC CGL Rank Predictor</a>
+    <span class="ticker-sep">•</span>
+    <a href="https://rajdailytools.in/government-exam-height-eligibility-checker-india.html">📐 Govt Exam Height Eligibility Checker</a>
+    <span class="ticker-sep">•</span>
+    <a href="https://rajdailytools.in/ssc-gd-height-eligibility-checker-2026.html">📏 SSC GD Height Eligibility Checker</a>
+    <span class="ticker-sep">•</span>
+    <a href="https://rajdailytools.in/army-promotion-timeline-tool-1.html">🎖️ Army Promotion Timeline Tool</a>
+    <span class="ticker-sep">•</span>
+    <a href="https://rajdailytools.in/ssc-cgl-negative-marking-calculator-2026.html">➖ SSC CGL Negative Marking Calculator</a>
+    <span class="ticker-sep">•</span>
+    <!-- Duplicate for seamless loop -->
+    <a href="https://rajdailytools.in/ssc-cgl-eligibility-2026.html">📘 SSC CGL Eligibility 2026</a>
+    <span class="ticker-sep">•</span>
+    <a href="https://rajdailytools.in/ssc-gd-eligibility-2026.html">🚔 SSC GD Eligibility 2026</a>
+    <span class="ticker-sep">•</span>
+    <a href="https://rajdailytools.in/army-running-time-calculator-1600m-2026.html">🏃 Army Running Time Calculator</a>
+    <span class="ticker-sep">•</span>
+    <a href="https://rajdailytools.in/mp-police-eligibility-2026.html">👮 MP Police Eligibility 2026</a>
+    <span class="ticker-sep">•</span>
+    <a href="https://rajdailytools.in/agniveer-1600m-running-time-calculator-2026.html">🎖️ Agniveer 1600m Running Time Calculator</a>
+    <span class="ticker-sep">•</span>
+    <a href="https://rajdailytools.in/ssc-cgl-rank-predictor-2026-2.html">🏆 SSC CGL Rank Predictor</a>
+    <span class="ticker-sep">•</span>
+    <a href="https://rajdailytools.in/government-exam-height-eligibility-checker-india.html">📐 Govt Exam Height Eligibility Checker</a>
+    <span class="ticker-sep">•</span>
+    <a href="https://rajdailytools.in/ssc-gd-height-eligibility-checker-2026.html">📏 SSC GD Height Eligibility Checker</a>
+    <span class="ticker-sep">•</span>
+    <a href="https://rajdailytools.in/army-promotion-timeline-tool-1.html">🎖️ Army Promotion Timeline Tool</a>
+    <span class="ticker-sep">•</span>
+    <a href="https://rajdailytools.in/ssc-cgl-negative-marking-calculator-2026.html">➖ SSC CGL Negative Marking Calculator</a>
+  </div>
+</div>
 
-<!-- CATEGORIES -->
-<section class="section categories" id="categories">
+<!-- EXAMS -->
+<section class="section categories" id="exams">
   <div class="container">
     <div class="section-header center">
-      <div class="section-label">All Categories</div>
-      <h2 class="section-heading">Tools for <span>Every Need</span></h2>
-      <p class="section-sub">From students to professionals — we have the right tool for every daily challenge you face.</p>
+      <div class="section-label">All Exam Categories</div>
+      <h2 class="section-heading">Explore <span>Exams</span></h2>
+      <p class="section-sub">Eligibility guides, syllabus, physical standards, and preparation resources for every exam we cover — with more categories being added regularly.</p>
     </div>
     <div class="cat-grid">
-      
-      <a href="/exams-tools-category.html" class="cat-card" style="--cat-color:#6366f1;--cat-bg:#eef2ff;">
+      <a href="/exams/ssc.html" class="cat-card" style="--cat-color:#2563eb;--cat-bg:#eff6ff;">
+        <div class="cat-icon-wrap">📘</div>
+        <div class="cat-title">SSC</div>
+        <div class="cat-desc">SSC CGL and SSC GD eligibility guides, exam patterns, negative marking, and rank prediction resources.</div>
+        <span class="cat-link">Explore SSC <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="/exams/army.html" class="cat-card" style="--cat-color:#6366f1;--cat-bg:#eef2ff;">
         <div class="cat-icon-wrap">🪖</div>
-        <div class="cat-title">Exams & Govt Tools</div>
-        <div class="cat-desc">Army, SSC GD, SSC CGL, NDA, Agniveer, Police and Defence exam eligibility & rank tools.</div>
-        <span class="cat-link">Explore Tools <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></span>
+        <div class="cat-title">Army</div>
+        <div class="cat-desc">Indian Army recruitment guides, physical standards, running time, and promotion timeline resources.</div>
+        <span class="cat-link">Explore Army <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="/exams/police.html" class="cat-card" style="--cat-color:#f59e0b;--cat-bg:#fffbeb;">
+        <div class="cat-icon-wrap">👮</div>
+        <div class="cat-title">Police</div>
+        <div class="cat-desc">State police recruitment eligibility, physical test standards, and exam preparation guides.</div>
+        <span class="cat-link">Explore Police <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="/exams/railway.html" class="cat-card" style="--cat-color:#10b981;--cat-bg:#f0fdf4;">
+        <div class="cat-icon-wrap">🚆</div>
+        <div class="cat-title">Railway</div>
+        <div class="cat-desc">Railway Recruitment Board (RRB) eligibility, exam patterns, and preparation resources.</div>
+        <span class="cat-link">Explore Railway <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></span>
       </a>
     </div>
   </div>
 </section>
 
+<!-- POPULAR GUIDES -->
+<section class="section popular" id="guides">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Most Read</div>
+      <h2 class="section-heading">Popular <span>Guides</span></h2>
+      <p class="section-sub">The eligibility guides and calculators aspirants rely on most to plan their preparation.</p>
+    </div>
+    <div class="tools-grid">
+      <a href="https://rajdailytools.in/agniveer-1600m-running-time-calculator-2026.html" class="tool-card" target="_blank">
+        <div class="tool-card-icon">🏃</div>
+        <div class="tool-card-title">Agniveer 1600m Running Time Calculator</div>
+        <div class="tool-card-desc">Check your 1600m running time against Agniveer physical standards instantly.</div>
+        <div class="tool-card-meta"><span class="tool-tag">Army</span><span class="tool-arrow">→</span></div>
+      </a>
+      <a href="https://rajdailytools.in/government-exam-height-eligibility-checker-india.html" class="tool-card" target="_blank">
+        <div class="tool-card-icon">📐</div>
+        <div class="tool-card-title">Government Exam Height Eligibility Checker</div>
+        <div class="tool-card-desc">Check height eligibility criteria across government recruitment exams in India.</div>
+        <div class="tool-card-meta"><span class="tool-tag">Eligibility</span><span class="tool-arrow">→</span></div>
+      </a>
+      <a href="https://rajdailytools.in/mp-police-eligibility-2026.html" class="tool-card" target="_blank">
+        <div class="tool-card-icon">👮</div>
+        <div class="tool-card-title">MP Police Eligibility 2026</div>
+        <div class="tool-card-desc">Complete MP Police eligibility criteria including age, education, and physical standards.</div>
+        <div class="tool-card-meta"><span class="tool-tag">Police</span><span class="tool-arrow">→</span></div>
+      </a>
+      <a href="https://rajdailytools.in/ssc-gd-height-eligibility-checker-2026.html" class="tool-card" target="_blank">
+        <div class="tool-card-icon">📏</div>
+        <div class="tool-card-title">SSC GD Height Eligibility Checker</div>
+        <div class="tool-card-desc">Check SSC GD height eligibility by category and region in a few seconds.</div>
+        <div class="tool-card-meta"><span class="tool-tag">SSC</span><span class="tool-arrow">→</span></div>
+      </a>
+      <a href="https://rajdailytools.in/ssc-gd-eligibility-2026.html" class="tool-card" target="_blank">
+        <div class="tool-card-icon">🚔</div>
+        <div class="tool-card-title">SSC GD Eligibility 2026</div>
+        <div class="tool-card-desc">Complete SSC GD Constable eligibility guide covering age, education, and category rules.</div>
+        <div class="tool-card-meta"><span class="tool-tag">SSC</span><span class="tool-arrow">→</span></div>
+      </a>
+      <a href="https://rajdailytools.in/army-promotion-timeline-tool-1.html" class="tool-card" target="_blank">
+        <div class="tool-card-icon">🎖️</div>
+        <div class="tool-card-title">Army Promotion Timeline Tool</div>
+        <div class="tool-card-desc">Understand typical Indian Army promotion timelines across ranks and years of service.</div>
+        <div class="tool-card-meta"><span class="tool-tag">Army</span><span class="tool-arrow">→</span></div>
+      </a>
+    </div>
+  </div>
+</section>
 
-<!-- DAILY PROBLEMS -->
-<section class="section problems">
+<!-- LATEST RESOURCES -->
+<section class="section latest" id="resources">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Just Published</div>
+      <h2 class="section-heading">Latest <span>Resources</span></h2>
+      <p class="section-sub">Freshly published guides and calculators — be among the first to use them.</p>
+    </div>
+    <div class="latest-grid">
+      <a href="https://rajdailytools.in/ssc-cgl-category-eligibility-checker-2026.html" class="latest-card" target="_blank">
+        <span class="new-badge">NEW</span>
+        <div class="latest-card-icon">📋</div>
+        <div class="latest-card-title">SSC CGL Category Eligibility Checker</div>
+        <div class="latest-card-desc">Check your SSC CGL eligibility instantly based on your reservation category.</div>
+        <div class="latest-card-footer">
+          <span class="latest-date">2026</span>
+          <span class="latest-use">Read Guide →</span>
+        </div>
+      </a>
+      <a href="https://rajdailytools.in/ssc-cgl-eligibility-2026.html" class="latest-card" target="_blank">
+        <span class="new-badge">NEW</span>
+        <div class="latest-card-icon">🏢</div>
+        <div class="latest-card-title">SSC CGL Eligibility 2026</div>
+        <div class="latest-card-desc">Complete SSC CGL 2026 eligibility criteria covering age, education, and category rules.</div>
+        <div class="latest-card-footer">
+          <span class="latest-date">2026</span>
+          <span class="latest-use">Read Guide →</span>
+        </div>
+      </a>
+      <a href="https://rajdailytools.in/ssc-cgl-exam-pattern-checker-2026.html" class="latest-card" target="_blank">
+        <span class="new-badge">NEW</span>
+        <div class="latest-card-icon">📝</div>
+        <div class="latest-card-title">SSC CGL Exam Pattern Checker</div>
+        <div class="latest-card-desc">Understand the SSC CGL exam pattern, tiers, and marking scheme in detail.</div>
+        <div class="latest-card-footer">
+          <span class="latest-date">2026</span>
+          <span class="latest-use">Read Guide →</span>
+        </div>
+      </a>
+      <a href="https://rajdailytools.in/ssc-cgl-home-posting-chance-checker.html" class="latest-card" target="_blank">
+        <span class="new-badge">NEW</span>
+        <div class="latest-card-icon">🏠</div>
+        <div class="latest-card-title">SSC CGL Home Posting Chance Checker</div>
+        <div class="latest-card-desc">Estimate your chances of a home-state posting based on your preferences and rank.</div>
+        <div class="latest-card-footer">
+          <span class="latest-date">2026</span>
+          <span class="latest-use">Read Guide →</span>
+        </div>
+      </a>
+      <a href="https://rajdailytools.in/ssc-cgl-negative-marking-calculator-2026.html" class="latest-card" target="_blank">
+        <span class="new-badge">NEW</span>
+        <div class="latest-card-icon">➖</div>
+        <div class="latest-card-title">SSC CGL Negative Marking Calculator</div>
+        <div class="latest-card-desc">Calculate your expected score after negative marking for wrong answers.</div>
+        <div class="latest-card-footer">
+          <span class="latest-date">2026</span>
+          <span class="latest-use">Read Guide →</span>
+        </div>
+      </a>
+      <a href="https://rajdailytools.in/ssc-cgl-physical-eligibility-checker-2026.html" class="latest-card" target="_blank">
+        <span class="new-badge">NEW</span>
+        <div class="latest-card-icon">🩺</div>
+        <div class="latest-card-title">SSC CGL Physical Eligibility Checker</div>
+        <div class="latest-card-desc">Check physical eligibility requirements for SSC CGL posts that require them.</div>
+        <div class="latest-card-footer">
+          <span class="latest-date">2026</span>
+          <span class="latest-use">Read Guide →</span>
+        </div>
+      </a>
+      <a href="https://rajdailytools.in/ssc-cgl-rank-predictor-2026-2.html" class="latest-card" target="_blank">
+        <span class="new-badge">NEW</span>
+        <div class="latest-card-icon">🏆</div>
+        <div class="latest-card-title">SSC CGL Rank Predictor</div>
+        <div class="latest-card-desc">Estimate your probable SSC CGL rank based on your expected score.</div>
+        <div class="latest-card-footer">
+          <span class="latest-date">2026</span>
+          <span class="latest-use">Read Guide →</span>
+        </div>
+      </a>
+      <a href="https://rajdailytools.in/ssc-gd-age-eligibility-calculator-2026.html" class="latest-card" target="_blank">
+        <span class="new-badge">NEW</span>
+        <div class="latest-card-icon">🎂</div>
+        <div class="latest-card-title">SSC GD Age Eligibility Calculator</div>
+        <div class="latest-card-desc">Check your age eligibility for SSC GD Constable recruitment by category.</div>
+        <div class="latest-card-footer">
+          <span class="latest-date">2026</span>
+          <span class="latest-use">Read Guide →</span>
+        </div>
+      </a>
+      <a href="https://rajdailytools.in/ssc-gd-attempt-eligibility-tool-2026.html" class="latest-card" target="_blank">
+        <span class="new-badge">NEW</span>
+        <div class="latest-card-icon">🔁</div>
+        <div class="latest-card-title">SSC GD Attempt Eligibility Tool</div>
+        <div class="latest-card-desc">Check how many attempts you have used and how many remain for SSC GD.</div>
+        <div class="latest-card-footer">
+          <span class="latest-date">2026</span>
+          <span class="latest-use">Read Guide →</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- BLOG / LATEST ARTICLES -->
+<section class="section blog-section" id="blog">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">From the Blog</div>
+      <h2 class="section-heading">Latest <span>Articles</span></h2>
+      <p class="section-sub">In-depth hubs bringing together every guide and calculator for a single exam category.</p>
+    </div>
+    <div class="blog-grid">
+      <a href="https://rajdailytools.in/army-tools-hub-2026.html" class="blog-card" target="_blank">
+        <span class="blog-badge">HUB</span>
+        <div class="blog-card-icon">🪖</div>
+        <div class="blog-card-title">Indian Army Tools Hub 2026</div>
+        <div class="blog-card-desc">A complete collection of Army eligibility, physical standard, and career guides in one place — with search and category filters.</div>
+        <div class="blog-card-footer">
+          <span class="blog-meta">Army</span>
+          <span class="blog-read">Read Hub →</span>
+        </div>
+      </a>
+      <a href="https://rajdailytools.in/ssc-gd-tools-hub.html" class="blog-card" target="_blank">
+        <span class="blog-badge">HUB</span>
+        <div class="blog-card-icon">🚔</div>
+        <div class="blog-card-title">SSC GD Tools Hub</div>
+        <div class="blog-card-desc">Every SSC GD eligibility checker, physical standard guide, and calculator organised in a single hub page.</div>
+        <div class="blog-card-footer">
+          <span class="blog-meta">SSC GD</span>
+          <span class="blog-read">Read Hub →</span>
+        </div>
+      </a>
+      <a href="https://rajdailytools.in/ssc-cgl-tools-hub.html" class="blog-card" target="_blank">
+        <span class="blog-badge">HUB</span>
+        <div class="blog-card-icon">📘</div>
+        <div class="blog-card-title">SSC CGL Tools Hub</div>
+        <div class="blog-card-desc">A dedicated hub covering SSC CGL eligibility, exam pattern, rank prediction, and posting guides.</div>
+        <div class="blog-card-footer">
+          <span class="blog-meta">SSC CGL</span>
+          <span class="blog-read">Read Hub →</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE RAJDAILYTOOLS -->
+<section class="section why-choose">
   <div class="container">
     <div class="section-header center">
       <div class="section-label">Why RajDailyTools</div>
-      <h2 class="section-heading" style="color:white;">We Solve <span style="color:#93c5fd;">Real Problems</span></h2>
-      <p class="section-sub" style="color:#94a3b8;margin:0 auto;">Every tool on this platform is built to solve a specific challenge that people face in their real daily lives.</p>
+      <h2 class="section-heading">Why Choose <span>RajDailyTools</span></h2>
+      <p class="section-sub">Built with students and aspirants in mind, from the language we use to the way every guide is organised.</p>
     </div>
-    <div class="problems-grid">
-      <div class="problem-card">
-        <div class="problem-icon">🎓</div>
-        <div class="problem-title">Students Struggle Daily</div>
-        <div class="problem-desc">From calculating CGPA to converting units in physics problems — students need fast, accurate tools at fingertips. We built exactly that.</div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon-wrap">🛡️</div>
+        <div class="why-title">Trusted Information</div>
+        <div class="why-desc">Every guide is researched from official notifications and reviewed for accuracy before publishing.</div>
       </div>
-      <div class="problem-card">
-        <div class="problem-icon">💼</div>
-        <div class="problem-title">Professionals Need Speed</div>
-        <div class="problem-desc">Working professionals need quick calculations — EMI, tax, salary breakdowns — without opening complex spreadsheets every time.</div>
+      <div class="why-card">
+        <div class="why-icon-wrap">💬</div>
+        <div class="why-title">Easy Language</div>
+        <div class="why-desc">Written in simple, clear language so eligibility rules and exam patterns are easy to understand.</div>
       </div>
-      <div class="problem-card">
-        <div class="problem-icon">🏠</div>
-        <div class="problem-title">Families Plan Finances</div>
-        <div class="problem-desc">Indian families making important financial decisions need trustworthy, easy-to-use tools for loans, savings, and investments.</div>
+      <div class="why-card">
+        <div class="why-icon-wrap">🆓</div>
+        <div class="why-title">Free Resources</div>
+        <div class="why-desc">All guides, articles, and calculators are free to use, with no hidden charges or premium tiers.</div>
       </div>
-      <div class="problem-card">
-        <div class="problem-icon">📲</div>
-        <div class="problem-title">Always on Mobile</div>
-        <div class="problem-desc">Our tools are fully mobile-optimized. Use them anywhere, anytime — no app download, no login, just open and solve.</div>
+      <div class="why-card">
+        <div class="why-icon-wrap">🧮</div>
+        <div class="why-title">Smart Calculators</div>
+        <div class="why-desc">Interactive calculators built directly into our guides so you can check eligibility instantly.</div>
       </div>
-      <div class="problem-card">
-        <div class="problem-icon">🌐</div>
-        <div class="problem-title">Language Barrier</div>
-        <div class="problem-desc">Many tools online are in English only. We're building towards Hindi + multilingual support to serve Bharat's 1.4 billion people.</div>
+      <div class="why-card">
+        <div class="why-icon-wrap">📱</div>
+        <div class="why-title">Mobile Friendly</div>
+        <div class="why-desc">Every page is designed mobile-first, so you can prepare from your phone anywhere, anytime.</div>
       </div>
-      <div class="problem-card">
-        <div class="problem-icon">⚡</div>
-        <div class="problem-title">Speed is Everything</div>
-        <div class="problem-desc">Slow, ad-heavy websites waste time. RajDailyTools is engineered to be lightning-fast, giving you results in under a second.</div>
+      <div class="why-card">
+        <div class="why-icon-wrap">🔄</div>
+        <div class="why-title">Regular Updates</div>
+        <div class="why-desc">Guides are reviewed and updated as official notifications and exam patterns change.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon-wrap">🔓</div>
+        <div class="why-title">No Login Required</div>
+        <div class="why-desc">Access every guide and calculator instantly — no account or registration needed.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon-wrap">🇮🇳</div>
+        <div class="why-title">Designed for Indian Students</div>
+        <div class="why-desc">Built specifically around Indian exam patterns, categories, and recruitment processes.</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ABOUT FOUNDER -->
+<!-- STUDENT HELP -->
+<section class="section student-help">
+  <div class="container">
+    <div class="section-header center">
+      <div class="section-label">How We Help</div>
+      <h2 class="section-heading">How RajDailyTools Helps <span>Students</span></h2>
+      <p class="section-sub">From understanding eligibility to planning your preparation schedule, here's how we support your exam journey.</p>
+    </div>
+    <div class="help-grid">
+      <div class="help-card">
+        <div class="help-icon-wrap">📋</div>
+        <div class="help-title">Understanding Eligibility</div>
+        <div class="help-desc">Clear breakdowns of age limits, education qualifications, and category-wise criteria for every exam.</div>
+      </div>
+      <div class="help-card">
+        <div class="help-icon-wrap">🎯</div>
+        <div class="help-title">Preparing Smarter</div>
+        <div class="help-desc">Structured guides that help you focus on what actually matters for your exam.</div>
+      </div>
+      <div class="help-card">
+        <div class="help-icon-wrap">📏</div>
+        <div class="help-title">Checking Physical Standards</div>
+        <div class="help-desc">Height, weight, chest, and running time standards explained clearly for defence and police exams.</div>
+      </div>
+      <div class="help-card">
+        <div class="help-icon-wrap">📝</div>
+        <div class="help-title">Learning Exam Patterns</div>
+        <div class="help-desc">Detailed exam pattern breakdowns so you know exactly what to expect on exam day.</div>
+      </div>
+      <div class="help-card">
+        <div class="help-icon-wrap">🧭</div>
+        <div class="help-title">Planning Career Paths</div>
+        <div class="help-desc">Guidance on career options, promotions, and long-term planning across government roles.</div>
+      </div>
+      <div class="help-card">
+        <div class="help-icon-wrap">🧮</div>
+        <div class="help-title">Using Calculators Inside Guides</div>
+        <div class="help-desc">Interactive calculators embedded directly in our guides so you can check eligibility instantly.</div>
+      </div>
+      <div class="help-card">
+        <div class="help-icon-wrap">⏱️</div>
+        <div class="help-title">Saving Preparation Time</div>
+        <div class="help-desc">Everything you need in one place, so you spend less time searching and more time preparing.</div>
+      </div>
+      <div class="help-card">
+        <div class="help-icon-wrap">🇮🇳</div>
+        <div class="help-title">Serving Aspirants Across India</div>
+        <div class="help-desc">Resources designed for students and aspirants preparing for exams across every Indian state.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT / FOUNDER -->
 <section class="section founder" id="about">
   <div class="container">
     <div class="founder-inner">
       <div class="founder-visual">
         <div class="founder-avatar">👨‍💻</div>
         <div class="founder-name">Raj Singh Sengar</div>
-        <div class="founder-role">Founder &amp; Visionary, RajDailyTools</div>
+        <div class="founder-role">Founder, RajDailyTools</div>
         <div class="founder-badges">
           <div class="founder-badge">🎓 BSc Physics Graduate</div>
           <div class="founder-badge">💻 COPA ITI Certified</div>
-          <div class="founder-badge">🇮🇳 Building for Bharat</div>
-          <div class="founder-badge">🎯 Vision: 80+ Free Tools</div>
+          <div class="founder-badge">🇮🇳 Serving Students Across India</div>
+          <div class="founder-badge">📚 185+ Guides &amp; Growing</div>
         </div>
       </div>
       <div class="founder-content">
-        <div class="section-label">About the Founder</div>
-        <h2>Built by Someone Who<br><span>Understands Your Problems</span></h2>
-        <p>Hi, I'm Raj Bhai — a BSc Physics graduate and COPA ITI certified professional from India. I built RajDailyTools because I faced the same frustrations millions of students and working professionals face every day: no single, trustworthy, fast, and free platform to solve daily life calculations.</p>
-        <p>My vision is bold but clear: build 80+ free tools that solve real problems for real people — students, professionals, homemakers, and small business owners across India and the world.</p>
-        <p>Every tool on this platform is built with love, precision, and a deep understanding of what people actually need. No bloatware, no paywalls, no nonsense.</p>
+        <div class="section-label">About RajDailyTools</div>
+        <h2>Built by Someone Who<br><span>Understands Your Journey</span></h2>
+        <p>Hi, I'm Raj Bhai — a BSc Physics graduate and COPA ITI certified professional from India. RajDailyTools started as a way to help students and aspirants who were struggling to find clear, trustworthy information about exam eligibility, recruitment processes, and preparation strategies scattered across the internet.</p>
+        <p>Today, RajDailyTools is an educational platform dedicated to helping students and aspirants through practical guides, recruitment information, educational resources, and smart calculators — all built with care and attention to accuracy.</p>
+        <p>Every guide is researched from official notifications and reviewed regularly to reflect the latest eligibility criteria and exam patterns.</p>
         <div class="founder-highlights">
-          <div class="fh-item"><div class="fh-icon">🚀</div><div class="fh-text">Growing Collection of 80+ Free Online Tools</div></div>
-          <div class="fh-item"><div class="fh-icon">🎯</div><div class="fh-text">100% Free philosophy — no hidden charges ever</div></div>
-          <div class="fh-item"><div class="fh-icon">🇮🇳</div><div class="fh-text">Made in India for India and the global audience</div></div>
-          <div class="fh-item"><div class="fh-icon">📐</div><div class="fh-text">Physics-trained precision in every calculation</div></div>
+          <div class="fh-item"><div class="fh-icon">📚</div><div class="fh-text">185+ Guides, Articles &amp; Calculators</div></div>
+          <div class="fh-item"><div class="fh-icon">🎯</div><div class="fh-text">100% Free — no hidden charges ever</div></div>
+          <div class="fh-item"><div class="fh-icon">🇮🇳</div><div class="fh-text">Made in India for Indian aspirants</div></div>
+          <div class="fh-item"><div class="fh-icon">📐</div><div class="fh-text">Physics-trained precision in every calculator</div></div>
         </div>
       </div>
     </div>
@@ -882,23 +1386,23 @@
     <div class="section-header center">
       <div class="section-label">Our Foundations</div>
       <h2 class="section-heading">Mission. Vision. <span>Promise.</span></h2>
-      <p class="section-sub">Three pillars that guide every tool we build and every decision we make.</p>
+      <p class="section-sub">Three pillars that guide every guide, calculator, and decision we make.</p>
     </div>
     <div class="mvp-grid">
       <div class="mvp-card blue">
         <div class="mvp-icon">🎯</div>
         <div class="mvp-title">Our Mission</div>
-        <div class="mvp-desc">To democratize access to powerful, accurate, and beautiful tools for every person in India and beyond — completely free, forever.</div>
+        <div class="mvp-desc">To help students and aspirants across India access clear, reliable, and easy-to-understand exam preparation resources — completely free.</div>
       </div>
       <div class="mvp-card amber">
         <div class="mvp-icon">🔭</div>
         <div class="mvp-title">Our Vision</div>
-        <div class="mvp-desc">To continuously expand our collection of 80+ free online tools while maintaining accuracy, reliability, and a great user experience..</div>
+        <div class="mvp-desc">To become a trusted companion for exam aspirants by continuously expanding our guides and eligibility resources across more exam categories, including UPSC, Banking, Teaching, and State PSC exams.</div>
       </div>
       <div class="mvp-card green">
         <div class="mvp-icon">🤝</div>
         <div class="mvp-title">Our Promise</div>
-        <div class="mvp-desc">Zero paywalls. Zero mandatory logins. Zero data selling. RajDailyTools will always be free, fast, and trustworthy. That's our commitment to you.</div>
+        <div class="mvp-desc">No paywalls, no mandatory logins, and no misleading claims. Just honest, well-researched information to help you prepare with confidence.</div>
       </div>
     </div>
   </div>
@@ -913,32 +1417,32 @@
     </div>
     <div class="faq-list" id="faqList">
       <div class="faq-item">
-        <div class="faq-q"><span class="faq-q-text">Is RajDailyTools completely free to use?</span><span class="faq-icon">+</span></div>
-        <div class="faq-a"><div class="faq-a-inner">Yes, absolutely! Every tool on RajDailyTools is 100% free. No subscriptions, no premium tiers, no hidden fees. We believe powerful tools should be accessible to everyone, especially students and people who can't afford expensive software.</div></div>
+        <div class="faq-q"><span class="faq-q-text">What is RajDailyTools?</span><span class="faq-icon">+</span></div>
+        <div class="faq-a"><div class="faq-a-inner">RajDailyTools is an educational platform that helps students and aspirants prepare for competitive exams in India through detailed guides, eligibility checkers, recruitment updates, and smart calculators — all in one place.</div></div>
       </div>
       <div class="faq-item">
-        <div class="faq-q"><span class="faq-q-text">Do I need to create an account or login?</span><span class="faq-icon">+</span></div>
-        <div class="faq-a"><div class="faq-a-inner">No login or registration is required to use any tool. Just visit the tool page and start using it instantly. We respect your time and privacy — no forced sign-ups ever.</div></div>
+        <div class="faq-q"><span class="faq-q-text">Which exams are covered?</span><span class="faq-icon">+</span></div>
+        <div class="faq-a"><div class="faq-a-inner">We currently cover SSC (CGL and GD), Indian Army, Police recruitment, and Railway (RRB) exams, with more categories like UPSC, Banking, Teaching, State PSC, NDA, Air Force, and Navy being added over time.</div></div>
       </div>
       <div class="faq-item">
-        <div class="faq-q"><span class="faq-q-text">Are the calculations accurate and reliable?</span><span class="faq-icon">+</span></div>
-        <div class="faq-a"><div class="faq-a-inner">Yes. Each tool is built by Raj Bhai — a BSc Physics graduate — with thorough testing and validation. We follow standard formulas and industry conventions. For critical financial decisions, we recommend cross-verifying with a certified professional.</div></div>
+        <div class="faq-q"><span class="faq-q-text">Are calculators free?</span><span class="faq-icon">+</span></div>
+        <div class="faq-a"><div class="faq-a-inner">Yes. Every calculator and guide on RajDailyTools is completely free to use. There are no hidden charges or premium tiers.</div></div>
       </div>
       <div class="faq-item">
-        <div class="faq-q"><span class="faq-q-text">Does RajDailyTools work on mobile phones?</span><span class="faq-icon">+</span></div>
-        <div class="faq-a"><div class="faq-a-inner">Yes! Every tool is designed mobile-first. The entire platform is fully responsive and optimized for smartphones, tablets, and desktops. No app download needed — just open your browser and use.</div></div>
+        <div class="faq-q"><span class="faq-q-text">Is registration required?</span><span class="faq-icon">+</span></div>
+        <div class="faq-a"><div class="faq-a-inner">No. You can access all guides, articles, and calculators without creating an account or logging in.</div></div>
       </div>
       <div class="faq-item">
-        <div class="faq-q"><span class="faq-q-text">How many tools does RajDailyTools currently have?</span><span class="faq-icon">+</span></div>
-        <div class="faq-a"><div class="faq-a-inner">We are actively building and launching new tools every week. Our founder's vision is to reach 300+ Free Tools across all categories. Check our Latest Tools section to see what's newly launched.</div></div>
+        <div class="faq-q"><span class="faq-q-text">How often is content updated?</span><span class="faq-icon">+</span></div>
+        <div class="faq-a"><div class="faq-a-inner">We regularly review and update our guides to reflect the latest official notifications, eligibility criteria, and exam patterns.</div></div>
       </div>
       <div class="faq-item">
-        <div class="faq-q"><span class="faq-q-text">Can I suggest a tool that should be built?</span><span class="faq-icon">+</span></div>
-        <div class="faq-a"><div class="faq-a-inner">Absolutely! We love user suggestions. Email us at rajdailytools@gmail.com with your tool idea. If it solves a real problem for many people, we'll build it and credit you for the suggestion.</div></div>
+        <div class="faq-q"><span class="faq-q-text">Can I suggest a guide or calculator?</span><span class="faq-icon">+</span></div>
+        <div class="faq-a"><div class="faq-a-inner">Absolutely! We welcome suggestions. Email us at rajdailytools@gmail.com with your idea, and if it helps many aspirants, we'll consider building it.</div></div>
       </div>
       <div class="faq-item">
-        <div class="faq-q"><span class="faq-q-text">Is my data safe when I use these tools?</span><span class="faq-icon">+</span></div>
-        <div class="faq-a"><div class="faq-a-inner">Yes. Most of our tools run entirely in your browser — your data never leaves your device. We don't collect, store, or sell personal data. Your privacy is our priority.</div></div>
+        <div class="faq-q"><span class="faq-q-text">Is my data safe when I use these calculators?</span><span class="faq-icon">+</span></div>
+        <div class="faq-a"><div class="faq-a-inner">Yes. Most of our calculators run entirely in your browser — your data never leaves your device. We don't collect, store, or sell personal data.</div></div>
       </div>
     </div>
   </div>
@@ -951,7 +1455,7 @@
       <div class="contact-info">
         <div class="section-label">Get in Touch</div>
         <h2>Have a Question or<br><span>Feedback for Us?</span></h2>
-        <p>We'd love to hear from you. Whether it's a tool suggestion, bug report, partnership inquiry, or just a hello — our team is here to help and respond within 24 hours.</p>
+        <p>We'd love to hear from you. Whether it's a guide suggestion, a correction, a partnership inquiry, or just a hello — our team is here to help and aims to respond within 24 hours.</p>
         <div class="contact-emails">
           <div class="contact-email-item">
             <div class="email-icon">📧</div>
@@ -972,9 +1476,9 @@
       </div>
       <div class="contact-card">
         <div class="contact-card-icon">💡</div>
-        <h3>Suggest a Tool</h3>
-        <p>Have an idea for a tool that solves a real problem? Share it with us and we'll consider building it for our growing library of 300+ Free Tools.</p>
-        <a href="mailto:rajdailytools@gmail.com?subject=Tool Suggestion" class="btn-white">Share Your Idea →</a>
+        <h3>Suggest a Guide</h3>
+        <p>Have an idea for a guide or calculator that would help aspirants? Share it with us and we'll consider adding it to our growing library of resources.</p>
+        <a href="mailto:rajdailytools@gmail.com?subject=Guide Suggestion" class="btn-white">Share Your Idea →</a>
       </div>
     </div>
   </div>
@@ -989,30 +1493,58 @@
           <div class="logo-icon"><svg viewBox="0 0 24 24" fill="white"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
           <div class="logo-text">
             <span class="logo-name">Raj<span>Daily</span>Tools</span>
-            <span class="logo-tagline-small">Smart Tools for Daily Life</span>
+            <span class="logo-tagline-small">Helping Students &amp; Aspirants Prepare Smarter Every Day.</span>
           </div>
         </div>
-        <p>RajDailyTools provides a growing collection of free online tools for students, professionals, and everyday users. New tools are added regularly to help make everyday tasks simpler and faster.</p>
+        <p>RajDailyTools provides trusted exam preparation guides, recruitment resources, educational articles and smart calculators to help students prepare with confidence.</p>
+        <div class="footer-socials">
+          <a href="https://www.facebook.com/rajdailytools" class="social-btn" aria-label="Facebook" target="_blank" rel="noopener">📘</a>
+          <a href="https://x.com/Educator4ll" class="social-btn" aria-label="X (Twitter)" target="_blank" rel="noopener">✖️</a>
+          <a href="https://www.youtube.com/@rajdailytools" class="social-btn" aria-label="YouTube" target="_blank" rel="noopener">▶️</a>
+          <a href="https://www.instagram.com/rajdailytools" class="social-btn" aria-label="Instagram" target="_blank" rel="noopener">📸</a>
+        </div>
       </div>
-      
+      <div class="footer-col">
+        <h4>Exams</h4>
+        <ul>
+          <li><a href="/exams/ssc.html">SSC</a></li>
+          <li><a href="/exams/army.html">Army</a></li>
+          <li><a href="/exams/police.html">Police</a></li>
+          <li><a href="/exams/railway.html">Railway</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="#guides">Guides</a></li>
+          <li><a href="/blog/index.html">Blog</a></li>
+          <li><a href="#resources">Calculators</a></li>
+          <li><a href="/blog/index.html">Latest Articles</a></li>
+        </ul>
+      </div>
       <div class="footer-col">
         <h4>Company</h4>
         <ul>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
           <li><a href="/privacy.html">Privacy Policy</a></li>
           <li><a href="/terms.html">Terms of Service</a></li>
-          <li><a href="/disclaimer">Disclaimer</a></li>
+          <li><a href="/disclaimer.html">Disclaimer</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <p class="footer-copy">© 2026<span>RajDailyTools</span>. All rights reserved. Made with ❤️ in India by Raj Bhai.</p>
+      <p class="footer-copy">© 2026 <span>RajDailyTools</span>. All rights reserved.</p>
       <div class="footer-legal">
-        <a href="privacy.html">Privacy Policy</a>
-        <a href="terms.html">Terms of Service</a>
-        <a href="disclaimer.html">Disclaimer</a>
-        <a href="sitemap.xml">Sitemap</a>
+        <a href="/privacy.html">Privacy Policy</a>
+        <a href="/terms.html">Terms of Service</a>
+        <a href="/disclaimer.html">Disclaimer</a>
+        <a href="/sitemap.xml">Sitemap</a>
       </div>
     </div>
   </div>
@@ -1022,79 +1554,8 @@
 <button class="back-to-top" id="backToTop" title="Back to top">↑</button>
 
 <script>
-// ============ ALL TOOLS DATA ============
-const ALL_TOOLS = [
-  // Calculator
-  { name: 'Courier Charges Calculator', url: 'https://rajdailytools.in/courier-charges-calculator.html', icon: '📦', cat: 'Calculator' },
-  { name: 'Download Time Calculator', url: 'https://rajdailytools.in/download-time-calculator.html', icon: '⬇️', cat: 'Calculator' },
-  { name: 'Early Retirement Penalty Calculator', url: 'https://rajdailytools.in/early-retirement-penalty-calculator.html', icon: '⏰', cat: 'Calculator' },
-  { name: 'Age Calculator India', url: 'https://rajdailytools.in/age-calculator-india.html', icon: '🎂', cat: 'Calculator' },
-  { name: 'Age To Total Days Lived Calculator', url: 'https://rajdailytools.in/Age-to-total-days-lived-calculator.html', icon: '🎂', cat: 'Calculator' },
-  { name: 'Length Converter', url: 'https://rajdailytools.in/Length-converter.html', icon: '📏', cat: 'Calculator' },
-  // Health
-  { name: 'Steps to Fat Burn Calculator', url: 'https://rajdailytools.in/steps-to-fat-burn-calculator.html', icon: '🔥', cat: 'Health' },
-  { name: 'BMI Calculator', url: 'https://rajdailytools.in/bmi-calculator.html', icon: '❤️', cat: 'Health' },
-  { name: 'Calories to Weight Gain Converter', url: 'https://rajdailytools.in/calories-to-weight-gain-converter.html', icon: '🥗', cat: 'Health' },
-  { name: 'TDEE Calculator', url: 'https://rajdailytools.in/tdee-calculator.html', icon: '🏃', cat: 'Health' },
-  { name: 'Screen Time Brain Impact Calculator', url: 'https://rajdailytools.in/screen-time-brain-impact-calculator.html', icon: '📱', cat: 'Health' },
-  { name: 'Color Blindness Test Online Free', url: 'https://rajdailytools.in/color-blindness-test-online-free-2026.html', icon: '👁️', cat: 'Health' },
-  // Converter
-  { name: 'Energy Converter', url: 'https://rajdailytools.in/energy-converter.html', icon: '⚡', cat: 'Converter' },
-  { name: 'Global Time Converter', url: 'https://rajdailytools.in/global-time-converter.html', icon: '🌍', cat: 'Converter' },
-  { name: 'Text to Slug Converter', url: 'https://rajdailytools.in/text-to-slug-converter.html', icon: '🔗', cat: 'Converter' },
-  { name: 'Meta Tag Generator', url: 'https://rajdailytools.in/meta-tag-generator.html', icon: '🏷️', cat: 'Converter' },
-  { name: 'Indian Number Format Converter', url: 'https://rajdailytools.in/indian-number-format-converter.html', icon: '🔢', cat: 'Converter' },
-  { name: 'Unit Converter (All Types)', url: 'https://rajdailytools.in/unit-converter.html', icon: '📐', cat: 'Converter' },
-  { name: 'Text Case Converter', url: 'https://rajdailytools.in/text-case-converter.html', icon: '🔤', cat: 'Converter' },
-  { name: 'Base64 Encoder / Decoder', url: 'https://rajdailytools.in/base64-encoder-decoder.html', icon: '💻', cat: 'Converter' },
-  // Text
-  { name: 'Text Sorter Tool', url: 'https://rajdailytools.in/text-sorter-tool-1.html', icon: '🔤', cat: 'Text' },
-  { name: 'Word Counter Tool', url: 'https://rajdailytools.in/word-counter-tool.html', icon: '📝', cat: 'Text' },
-  { name: 'Plagiarism Checker', url: 'https://rajdailytools.in/plagiarism-checker-tool.html', icon: '🔍', cat: 'Text' },
-  { name: 'Remove Extra Spaces Tool', url: 'https://rajdailytools.in/remove-extra-spaces-tool.html', icon: '✂️', cat: 'Text' },
-  { name: 'Keyword Density Checker', url: 'https://rajdailytools.in/Keyword-density-checker.html', icon: '📊', cat: 'Text' },
-  { name: 'Sitemap Generator', url: 'https://rajdailytools.in/sitemap-generator.html', icon: '🗺️', cat: 'Text' },
-  // Finance
-  { name: 'Bonus Tax Calculator India', url: 'https://rajdailytools.in/bonus-tax-calculator-india.html', icon: '💸', cat: 'Finance' },
-  { name: 'Advanced EMI Calculator', url: 'https://rajdailytools.in/advanced-emi-calculator-global.html', icon: '🧮', cat: 'Finance' },
-  { name: 'Compound Interest Calculator', url: 'https://rajdailytools.in/compound-interest-calculator.html', icon: '📈', cat: 'Finance' },
-  { name: 'Credit Card Interest Calculator', url: 'https://rajdailytools.in/credit-card-interest-calculator.html', icon: '💳', cat: 'Finance' },
-  { name: 'Crypto Converter', url: 'https://rajdailytools.in/crypto-converter.html', icon: '₿', cat: 'Finance' },
-  { name: 'Currency Converter Live USD to INR', url: 'https://rajdailytools.in/currency-converter-live-usd-to-inr-1.html', icon: '💱', cat: 'Finance' },
-  { name: 'Freelance Rate Calculator', url: 'https://rajdailytools.in/freelance-rate-calculator.html', icon: '💼', cat: 'Finance' },
-  { name: 'ETF Return Calculator', url: 'https://rajdailytools.in/etf-return-calculator.html', icon: '📊', cat: 'Finance' },
-  { name: 'FIRE Calculator', url: 'https://rajdailytools.in/fire-calculator.html', icon: '🔥', cat: 'Finance' },
-  { name: 'USA Salary Calculator', url: 'https://rajdailytools.in/usa-salary-calculator.html', icon: '🇺🇸', cat: 'Finance' },
-  { name: 'UK Salary Calculator', url: 'https://rajdailytools.in/uk-salary-calculator.html', icon: '🇬🇧', cat: 'Finance' },
-  { name: 'Profit Margin Calculator', url: 'https://rajdailytools.in/profit-margin-calculator.html', icon: '💹', cat: 'Finance' },
-  { name: 'Stock Profit Calculator', url: 'https://rajdailytools.in/stock-profit-calculator.html', icon: '📉', cat: 'Finance' },
-  { name: 'Monthly Survival Budget Calculator', url: 'https://rajdailytools.in/monthly-survival-budget-calculator.html', icon: '📋', cat: 'Finance' },
-  { name: 'SIP Calculator Advanced', url: 'https://rajdailytools.in/sip-calculator-advanced.html', icon: '💰', cat: 'Finance' },
-  { name: 'Future Net Worth Predictor', url: 'https://rajdailytools.in/future-net-worth-predictor.html', icon: '🔭', cat: 'Finance' },
-  { name: 'Salary Converter USA', url: 'https://rajdailytools.in/salary-converter-usa.html', icon: '💵', cat: 'Finance' },
-  { name: 'IRA Calculator USA', url: 'https://rajdailytools.in/ira-calculator-usa.html', icon: '🏦', cat: 'Finance' },
-  { name: 'Net Worth Tracker', url: 'https://rajdailytools.in/net-worth-tracker-rajdailytools.html', icon: '💎', cat: 'Finance' },
-  { name: 'Credit Card Minimum Payment Calculator India', url: 'https://rajdailytools.in/credit-card-minimum-payment-calculator-india.html', icon: '💳', cat: 'Finance' },
-  { name: 'Credit Card Late Fee Calculator India', url: 'https://rajdailytools.in/credit-card-late-fee-calculator-india.html', icon: '💳', cat: 'Finance' },
-  { name: 'Early Retirement Penalty Calculator', url: 'https://rajdailytools.in/Early-retirement-penalty-calculator.html', icon: '🏖️', cat: 'Finance' },
-  { name: 'How Long To Save 1 Million', url: 'https://rajdailytools.in/How-long-to-save-1-million.html', icon: '🐷', cat: 'Finance' },
-  { name: 'Australia Salary Calculator', url: 'https://rajdailytools.in/Australia-salary-calculator.html', icon: '💰', cat: 'Finance' },
-  { name: 'Time To Financial Freedom Simulator', url: 'https://rajdailytools.in/time-to-financial-freedom-simulator.html', icon: '💰', cat: 'Finance' },
-  { name: 'Global GST Tax Calculator 1', url: 'https://rajdailytools.in/Global-gst-tax-calculator-1.html', icon: '🧾', cat: 'Finance' },
-  { name: 'US Salary After Tax Calculator', url: 'https://rajdailytools.in/us-salary-after-tax-calculator-2026.html', icon: '🧾', cat: 'Finance' },
-  { name: 'Business Expense Tracker', url: 'https://rajdailytools.in/Business-expense-tracker.html', icon: '💰', cat: 'Finance' },
-  { name: 'Electricity Bill Calculator India', url: 'https://rajdailytools.in/Electricity-bill-calculator-india.html', icon: '💡', cat: 'Finance' },
-  { name: 'Income Tax Calculator India', url: 'https://rajdailytools.in/Income-tax-calculator-india-2026.html', icon: '🧾', cat: 'Finance' },
-  { name: 'Internet Usage Electricity Cost Calculator', url: 'https://rajdailytools.in/Internet-usage-electricity-cost-calculator.html', icon: '💡', cat: 'Finance' },
-  { name: 'MP Electricity Bill Calculator', url: 'https://rajdailytools.in/Mp-electricity-bill-calculator-2026.html', icon: '💡', cat: 'Finance' },
-  // Other
-  { name: 'Should I Stay or Leave Relationship Tool', url: 'https://rajdailytools.in/should-i-stay-or-leave-relationship-tool.html', icon: '💔', cat: 'Other' },
-  { name: 'Daily Routine Effectiveness Checker', url: 'https://rajdailytools.in/daily-routine-effectiveness-checker.html', icon: '📅', cat: 'Other' },
-  { name: 'Free Janam Kundli Online Maker', url: 'https://rajdailytools.in/free-janam-kundli-online-maker.html', icon: '🌙', cat: 'Other' },
-  { name: 'How Poor Will Inflation Make Me Calculator', url: 'https://rajdailytools.in/how-poor-will-inflation-make-me-calculator.html', icon: '📉', cat: 'Other' },
-  { name: 'Introvert Extrovert Test', url: 'https://rajdailytools.in/introvert-extrovert-test.html', icon: '🧠', cat: 'Other' },
-  { name: 'Mangal Dosha Calculator', url: 'https://rajdailytools.in/mangal-dosha-calculator.html', icon: '🪐', cat: 'Other' },
-  { name: 'Mangal Dosha Marriage Compatibility', url: 'https://rajdailytools.in/mangal-dosha-marriage-compatibility.html', icon: '💍', cat: 'Other' },
+// ============ SITE CONTENT DATA (guides, calculators, exam hubs, blog) ============
+const SITE_CONTENT = [
   // Army
   { name: 'Army Eligibility Checker', url: 'https://rajdailytools.in/army-eligibility-checker-2026.html', icon: '🪖', cat: 'Army' },
   { name: 'Army Running Time Calculator 1600m', url: 'https://rajdailytools.in/army-running-time-calculator-1600m-2026.html', icon: '🏃', cat: 'Army' },
@@ -1102,16 +1563,16 @@ const ALL_TOOLS = [
   { name: 'Army Running Marks Calculator 1600m', url: 'https://rajdailytools.in/army-running-marks-calculator-1600m.html', icon: '🏃', cat: 'Army' },
   { name: 'Army Running Score Predictor 1600m', url: 'https://rajdailytools.in/army-running-score-predictor-1600m.html', icon: '🏃', cat: 'Army' },
   { name: 'Army Running Time By Age 1600m', url: 'https://rajdailytools.in/army-running-time-by-age-1600m.html', icon: '🏃', cat: 'Army' },
-  { name: 'Army Promotion Timeline Tool 1', url: 'https://rajdailytools.in/army-promotion-timeline-tool-1.html', icon: '🎖️', cat: 'Army' },
+  { name: 'Army Promotion Timeline Tool', url: 'https://rajdailytools.in/army-promotion-timeline-tool-1.html', icon: '🎖️', cat: 'Army' },
   { name: 'Army Medical Fitness Checker', url: 'https://rajdailytools.in/army-medical-fitness-checker.html', icon: '🩺', cat: 'Army' },
-  { name: 'Army Document Checklist Generator 1', url: 'https://rajdailytools.in/army-document-checklist-generator-1.html', icon: '📋', cat: 'Army' },
+  { name: 'Army Document Checklist Generator', url: 'https://rajdailytools.in/army-document-checklist-generator-1.html', icon: '📋', cat: 'Army' },
   { name: 'Army Rally Competition Analyzer', url: 'https://rajdailytools.in/army-rally-competition-analyzer.html', icon: '📊', cat: 'Army' },
   { name: 'Army Form Mistake Checker', url: 'https://rajdailytools.in/army-form-mistake-checker.html', icon: '📝', cat: 'Army' },
   { name: 'Army Pension Calculator', url: 'https://rajdailytools.in/army-pension-calculator.html', icon: '💰', cat: 'Army' },
   { name: 'Army Eye Test Simulator', url: 'https://rajdailytools.in/army-eye-test-simulator.html', icon: '👁️', cat: 'Army' },
-  { name: 'Army Chest Measurement Calculator Check Expansion And Eligibility', url: 'https://rajdailytools.in/Army-Chest-measurement-Calculator-Check-Expansion-and-Eligibility.html', icon: '📏', cat: 'Army' },
+  { name: 'Army Chest Measurement Calculator', url: 'https://rajdailytools.in/Army-Chest-measurement-Calculator-Check-Expansion-and-Eligibility.html', icon: '📏', cat: 'Army' },
   { name: 'Army Height Checker Region Wise', url: 'https://rajdailytools.in/army-height-checker-region-wise-2026.html', icon: '📐', cat: 'Army' },
-  { name: 'Agniveer 1600m Running Time Calculator', url: 'https://rajdailytools.in/Agniveer-1600m-running-time-calculator-2026.html', icon: '🏃', cat: 'Army' },
+  { name: 'Agniveer 1600m Running Time Calculator', url: 'https://rajdailytools.in/agniveer-1600m-running-time-calculator-2026.html', icon: '🏃', cat: 'Army' },
   { name: 'Army 1 Mile Running Calculator', url: 'https://rajdailytools.in/Army-1-mile-running-calculator.html', icon: '🏃', cat: 'Army' },
   { name: 'Army BMI Calculator', url: 'https://rajdailytools.in/Army-bmi-calculator-2026.html', icon: '⚖️', cat: 'Army' },
   { name: 'Army Flat Foot Detector', url: 'https://rajdailytools.in/Army-flat-foot-detector.html', icon: '🦶', cat: 'Army' },
@@ -1119,7 +1580,7 @@ const ALL_TOOLS = [
   { name: 'Army Merit Score Calculator', url: 'https://rajdailytools.in/Army-merit-score-calculator.html', icon: '🪖', cat: 'Army' },
   { name: 'TA Officer Eligibility Checker', url: 'https://rajdailytools.in/TA-Officer-Eligibility-Checker-2026.html', icon: '🎖️', cat: 'Army' },
   { name: 'TA Officer Selection Chance Calculator', url: 'https://rajdailytools.in/TA-Officer-Selection-Chance-Calculator-2026.html', icon: '🎖️', cat: 'Army' },
-  { name: 'Territorial Army Officer Selection Chance Calculator', url: 'https://rajdailytools.in/Territorial-Army-Officer-Selection-Chance-Calculator-2026.html', icon: '🎖️', cat: 'Army' },
+  { name: 'Indian Army Tools Hub 2026', url: 'https://rajdailytools.in/army-tools-hub-2026.html', icon: '🗂️', cat: 'Army' },
   // SSC GD
   { name: 'SSC GD Running Marks Calculator', url: 'https://rajdailytools.in/ssc-gd-running-marks-calculator-2026.html', icon: '🏃', cat: 'SSC GD' },
   { name: 'SSC GD Height Eligibility Checker', url: 'https://rajdailytools.in/ssc-gd-height-eligibility-checker-2026.html', icon: '📐', cat: 'SSC GD' },
@@ -1127,27 +1588,21 @@ const ALL_TOOLS = [
   { name: 'SSC GD Merit Marks Calculator', url: 'https://rajdailytools.in/ssc-gd-merit-marks-calculator-2026.html', icon: '📊', cat: 'SSC GD' },
   { name: 'SSC GD Force Preference Predictor', url: 'https://rajdailytools.in/ssc-gd-force-preference-predictor-2026.html', icon: '⭐', cat: 'SSC GD' },
   { name: 'SSC GD Female Eligibility Checker', url: 'https://rajdailytools.in/ssc-gd-female-eligibility-checker-2026.html', icon: '👩', cat: 'SSC GD' },
-  { name: 'SSC GD Salary Calculator', url: 'https://rajdailytools.in/ssc-gd-salary-calculator-2026.html', icon: '💰', cat: 'SSC GD' },
-  { name: 'SSC GD Posting State Predictor', url: 'https://rajdailytools.in/ssc-gd-posting-state-predictor-2026.html', icon: '📍', cat: 'SSC GD' },
-  { name: 'SSC GD Admit Card Finder', url: 'https://rajdailytools.in/ssc-gd-admit-card-finder-2026.html', icon: '🎫', cat: 'SSC GD' },
-  { name: 'SSC GD Exam Date Countdown', url: 'https://rajdailytools.in/ssc-gd-exam-date-countdown-2026.html', icon: '⏳', cat: 'SSC GD' },
-  { name: 'SSC GD Salary After 5 Years', url: 'https://rajdailytools.in/ssc-gd-salary-after-5-years.html', icon: '💰', cat: 'SSC GD' },
   { name: 'SSC GD Document Checklist Tool', url: 'https://rajdailytools.in/ssc-gd-document-checklist-tool-2026.html', icon: '📋', cat: 'SSC GD' },
   { name: 'SSC GD Home Posting Chance Tool', url: 'https://rajdailytools.in/ssc-gd-home-posting-chance-tool-2026.html', icon: '📍', cat: 'SSC GD' },
   { name: 'SSC GD Chest Eligibility Checker', url: 'https://rajdailytools.in/ssc-gd-chest-eligibility-checker-2026.html', icon: '📏', cat: 'SSC GD' },
-  { name: 'SSC GD Promotion Calculator', url: 'https://rajdailytools.in/ssc-gd-promotion-calculator-2026.html', icon: '🎖️', cat: 'SSC GD' },
   { name: 'SSC GD Attempt Eligibility Tool', url: 'https://rajdailytools.in/ssc-gd-attempt-eligibility-tool-2026.html', icon: '🔁', cat: 'SSC GD' },
   { name: 'SSC GD Medical Fitness Checker', url: 'https://rajdailytools.in/ssc-gd-medical-fitness-checker-2026.html', icon: '🩺', cat: 'SSC GD' },
   { name: 'SSC GD Eye Sight Eligibility Checker', url: 'https://rajdailytools.in/ssc-gd-eye-sight-eligibility-checker-2026.html', icon: '👁️', cat: 'SSC GD' },
-  { name: 'SSC GD Tattoo Eligibility Checker', url: 'https://rajdailytools.in/ssc-gd-tattoo-eligibility-checker-2026.html', icon: '🎨', cat: 'SSC GD' },
   { name: 'SSC GD Cut Off Predictor', url: 'https://rajdailytools.in/ssc-gd-cut-off-predictor-2026.html', icon: '📈', cat: 'SSC GD' },
-  { name: 'SSC GD Normalization Calculator', url: 'https://rajdailytools.in/ssc-gd-normalization-calculator-2026.html', icon: '📉', cat: 'SSC GD' },
   { name: 'SSC GD Age Eligibility Calculator', url: 'https://rajdailytools.in/ssc-gd-age-eligibility-calculator-2026.html', icon: '🎂', cat: 'SSC GD' },
+  { name: 'SSC GD Eligibility 2026', url: 'https://rajdailytools.in/ssc-gd-eligibility-2026.html', icon: '🚔', cat: 'SSC GD' },
+  { name: 'SSC GD Tools Hub', url: 'https://rajdailytools.in/ssc-gd-tools-hub.html', icon: '🗂️', cat: 'SSC GD' },
   // SSC CGL
   { name: 'SSC CGL Age Limit 2026 Calculator', url: 'https://rajdailytools.in/ssc-cgl-age-limit-2026-calculator.html', icon: '🎂', cat: 'SSC CGL' },
-  { name: 'SSC CGL Eligibility', url: 'https://rajdailytools.in/ssc-cgl-eligibility-2026.html', icon: '🏢', cat: 'SSC CGL' },
-  { name: 'SSC CGL 2026 Rank Predictor', url: 'https://rajdailytools.in/SSC-CGL-2026-Rank-Predictor.html', icon: '🏆', cat: 'SSC CGL' },
-  { name: 'SSC CGL Document Verification Checklist 2026 Complete DV Documents List', url: 'https://rajdailytools.in/SSC-CGL-Document-Verification-Checklist-2026-Complete-DV-Documents-List.html', icon: '📋', cat: 'SSC CGL' },
+  { name: 'SSC CGL Eligibility 2026', url: 'https://rajdailytools.in/ssc-cgl-eligibility-2026.html', icon: '🏢', cat: 'SSC CGL' },
+  { name: 'SSC CGL Rank Predictor', url: 'https://rajdailytools.in/ssc-cgl-rank-predictor-2026-2.html', icon: '🏆', cat: 'SSC CGL' },
+  { name: 'SSC CGL Document Verification Checklist', url: 'https://rajdailytools.in/SSC-CGL-Document-Verification-Checklist-2026-Complete-DV-Documents-List.html', icon: '📋', cat: 'SSC CGL' },
   { name: 'SSC CGL Post Eligibility Finder', url: 'https://rajdailytools.in/SSC-CGL-Post-Eligibility-Finder-2026.html', icon: '🗂️', cat: 'SSC CGL' },
   { name: 'SSC CGL Qualification Checker', url: 'https://rajdailytools.in/SSC-CGL-Qualification-Checker.html', icon: '🎓', cat: 'SSC CGL' },
   { name: 'SSC CGL Age Relaxation Checker', url: 'https://rajdailytools.in/ssc-cgl-age-relaxation-checker-2026.html', icon: '🎂', cat: 'SSC CGL' },
@@ -1157,83 +1612,38 @@ const ALL_TOOLS = [
   { name: 'SSC CGL Home Posting Chance Checker', url: 'https://rajdailytools.in/ssc-cgl-home-posting-chance-checker.html', icon: '🏠', cat: 'SSC CGL' },
   { name: 'SSC CGL Negative Marking Calculator', url: 'https://rajdailytools.in/ssc-cgl-negative-marking-calculator-2026.html', icon: '➖', cat: 'SSC CGL' },
   { name: 'SSC CGL Physical Eligibility Checker', url: 'https://rajdailytools.in/ssc-cgl-physical-eligibility-checker-2026.html', icon: '🩺', cat: 'SSC CGL' },
-  { name: 'SSC CGL Rank Predictor 2026 2', url: 'https://rajdailytools.in/ssc-cgl-rank-predictor-2026-2.html', icon: '🏆', cat: 'SSC CGL' },
   { name: 'SSC CGL Signature Resizer', url: 'https://rajdailytools.in/ssc-cgl-signature-resizer-2026.html', icon: '✍️', cat: 'SSC CGL' },
   { name: 'SSC Maths Practice Tool', url: 'https://rajdailytools.in/ssc-maths-practice-tool-2026.html', icon: '➗', cat: 'SSC CGL' },
+  { name: 'SSC CGL Tools Hub', url: 'https://rajdailytools.in/ssc-cgl-tools-hub.html', icon: '🗂️', cat: 'SSC CGL' },
   // Defence
   { name: 'Agniveer Age Calculator', url: 'https://rajdailytools.in/agniveer-age-calculator-2026.html', icon: '🎖️', cat: 'Defence' },
   { name: 'NDA Eligibility Checker', url: 'https://rajdailytools.in/nda-eligibility-checker-2026.html', icon: '✈️', cat: 'Defence' },
   { name: 'NDA Age Limit Calculator', url: 'https://rajdailytools.in/nda-age-limit-calculator-2026.html', icon: '✈️', cat: 'Defence' },
   { name: 'Defence Exam Eligibility Checker', url: 'https://rajdailytools.in/defence-exam-eligibility-checker-2026.html', icon: '🛡️', cat: 'Defence' },
   { name: 'NDA Eligibility For Female', url: 'https://rajdailytools.in/Nda-eligibility-for-female-2026.html', icon: '👩', cat: 'Defence' },
-  { name: 'UPSSSC AGTA Age Calculator 2026 Check Eligibility Instantly', url: 'https://rajdailytools.in/UPSSSC-AGTA-Age-Calculator-2026-Check-Eligibility-Instantly.html', icon: '📋', cat: 'Defence' },
-  { name: 'UPSSSC ASO Recruitment 2026 Eligibility Calculator', url: 'https://rajdailytools.in/upsssc-aso-recruitment-2026-eligibility-calculator.html', icon: '📋', cat: 'Defence' },
-  { name: 'UPTET Online Form 2026 Eligibility Checker', url: 'https://rajdailytools.in/uptet-online-form-2026-Eligibility-checker.html', icon: '📚', cat: 'Defence' },
-  { name: 'Police Running Time Calculator India', url: 'https://rajdailytools.in/Police-running-time-calculator-india-2026.html', icon: '🏃', cat: 'Defence' },
-  // Police/Govt Exam
-  { name: 'Police Running Time Calculator India', url: 'https://rajdailytools.in/police-running-time-calculator-india.html', icon: '👮', cat: 'Police/Govt Exam' },
-  { name: 'KV Age Calculator', url: 'https://rajdailytools.in/kv-age-calculator-2026.html', icon: '🎂', cat: 'Police/Govt Exam' },
-  { name: 'KV Priority Category Checker', url: 'https://rajdailytools.in/kv-priority-category-checker-2026.html', icon: '📋', cat: 'Police/Govt Exam' },
-  { name: 'KV Admission Documents List', url: 'https://rajdailytools.in/kv-admission-documents-list-2026.html', icon: '📄', cat: 'Police/Govt Exam' },
-  { name: 'KV Lottery Result', url: 'https://rajdailytools.in/kv-lottery-result-2026.html', icon: '🎟️', cat: 'Police/Govt Exam' },
-  { name: 'SSC GD Eligibility', url: 'https://rajdailytools.in/ssc-gd-eligibility-2026.html', icon: '🚔', cat: 'Police/Govt Exam' },
-  { name: 'Government Exam Height Eligibility Checker India', url: 'https://rajdailytools.in/government-exam-height-eligibility-checker-india.html', icon: '📐', cat: 'Police/Govt Exam' },
-  { name: 'MP Police Eligibility', url: 'https://rajdailytools.in/mp-police-eligibility-2026.html', icon: '👮', cat: 'Police/Govt Exam' },
-  { name: 'RRB Alp Eligibility Calculator', url: 'https://rajdailytools.in/rrb-alp-eligibility-calculator-2026.html', icon: '🚆', cat: 'Police/Govt Exam' },
-  { name: 'CRPF Tradesman Age Calculator', url: 'https://rajdailytools.in/crpf-tradesman-age-calculator-2026.html', icon: '🛡️', cat: 'Police/Govt Exam' },
-  { name: 'NCL Recruitment 2026 Eligibility Calculator', url: 'https://rajdailytools.in/ncl-recruitment-2026-eligibility-calculator.html', icon: '⛏️', cat: 'Police/Govt Exam' },
-  { name: 'Patna HC Typist Age Calculator', url: 'https://rajdailytools.in/patna-hc-typist-age-calculator-2026.html', icon: '⚖️', cat: 'Police/Govt Exam' },
-  // Education
-  { name: 'IELTS Admission Chance Checker', url: 'https://rajdailytools.in/IELTS-Admission-Chance-Checker.html', icon: '🚪', cat: 'Education' },
-  { name: 'IELTS Score Improvement Tracker', url: 'https://rajdailytools.in/IELTS-Score-Improvement-Tracker.html', icon: '📈', cat: 'Education' },
-  { name: 'IELTS Academic Eligibility Checker', url: 'https://rajdailytools.in/Ielts-academic-eligibility-checker.html', icon: '🎓', cat: 'Education' },
-  { name: 'IELTS Band Requirement Finder', url: 'https://rajdailytools.in/Ielts-band-requirement-finder.html', icon: '📏', cat: 'Education' },
-  { name: 'IELTS Complete Score Predictor', url: 'https://rajdailytools.in/Ielts-complete-score-predictor.html', icon: '📊', cat: 'Education' },
-  { name: 'IELTS Country Eligibility Checker', url: 'https://rajdailytools.in/Ielts-country-eligibility-checker.html', icon: '🌍', cat: 'Education' },
-  { name: 'IELTS Exam Readiness Checker', url: 'https://rajdailytools.in/Ielts-exam-readiness-checker.html', icon: '✅', cat: 'Education' },
-  { name: 'IELTS Listening Band Score Calculator', url: 'https://rajdailytools.in/Ielts-listening-band-score-calculator.html', icon: '🎧', cat: 'Education' },
-  { name: 'IELTS Overall Band Score Calculator', url: 'https://rajdailytools.in/Ielts-overall-band-score-calculator.html', icon: '📊', cat: 'Education' },
-  { name: 'IELTS Preparation Time Calculator', url: 'https://rajdailytools.in/Ielts-preparation-time-calculator.html', icon: '⏱️', cat: 'Education' },
-  { name: 'IELTS Profile Strength Calculator', url: 'https://rajdailytools.in/Ielts-profile-strength-calculator.html', icon: '💪', cat: 'Education' },
-  { name: 'IELTS Reading Band Score Calculator', url: 'https://rajdailytools.in/Ielts-reading-band-score-calculator.html', icon: '📖', cat: 'Education' },
-  { name: 'IELTS Scholarship Eligibility Checker', url: 'https://rajdailytools.in/Ielts-scholarship-eligibility-checker.html', icon: '🎓', cat: 'Education' },
-  { name: 'IELTS Score Validity Checker', url: 'https://rajdailytools.in/Ielts-score-validity-checker.html', icon: '⏳', cat: 'Education' },
-  { name: 'IELTS Speaking Band Score Calculator', url: 'https://rajdailytools.in/Ielts-speaking-band-score-calculator.html', icon: '🗣️', cat: 'Education' },
-  { name: 'IELTS Study Abroad Readiness Calculator', url: 'https://rajdailytools.in/Ielts-study-abroad-readiness-calculator.html', icon: '✈️', cat: 'Education' },
-  { name: 'IELTS Study Planner Generator', url: 'https://rajdailytools.in/Ielts-study-planner-generator.html', icon: '🗓️', cat: 'Education' },
-  { name: 'IELTS Target Band Calculator', url: 'https://rajdailytools.in/Ielts-target-band-calculator.html', icon: '🎯', cat: 'Education' },
-  { name: 'IELTS To PTE Converter', url: 'https://rajdailytools.in/Ielts-to-pte-converter-2026.html', icon: '🔁', cat: 'Education' },
-  { name: 'IELTS Tools Hub', url: 'https://rajdailytools.in/Ielts-tools-hub.html', icon: '🗂️', cat: 'Education' },
-  { name: 'IELTS University Eligibility Checker', url: 'https://rajdailytools.in/Ielts-university-eligibility-checker.html', icon: '🏫', cat: 'Education' },
-  { name: 'IELTS Visa Eligibility Checker', url: 'https://rajdailytools.in/Ielts-visa-eligibility-checker.html', icon: '🛂', cat: 'Education' },
-  { name: 'IELTS Writing Task 1 Band Score Calculator', url: 'https://rajdailytools.in/Ielts-writing-task-1-band-score-calculator.html', icon: '✍️', cat: 'Education' },
-  { name: 'IELTS Writing Task 2 Band Score Calculator', url: 'https://rajdailytools.in/Ielts-writing-task-2-band-score-calculator.html', icon: '✍️', cat: 'Education' },
-  { name: 'PTE Preparation Time Calculator', url: 'https://rajdailytools.in/pte-preparation-time-calculator-2026.html', icon: '⏱️', cat: 'Education' },
-  { name: 'PTE Readiness Checker', url: 'https://rajdailytools.in/pte-readiness-checker-2026.html', icon: '✅', cat: 'Education' },
-  { name: 'PTE Result Date Calculator', url: 'https://rajdailytools.in/pte-result-date-calculator-2026.html', icon: '📅', cat: 'Education' },
-  { name: 'PTE Score Calculator', url: 'https://rajdailytools.in/pte-score-calculator-2026.html', icon: '📊', cat: 'Education' },
-  { name: 'PTE Score Predictor', url: 'https://rajdailytools.in/pte-score-predictor-2026.html', icon: '📈', cat: 'Education' },
-  { name: 'PTE Score Validity Checker', url: 'https://rajdailytools.in/pte-score-validity-checker-2026(1).html', icon: '⏳', cat: 'Education' },
-  { name: 'PTE Study Planner', url: 'https://rajdailytools.in/pte-study-planner-2026.html', icon: '🗓️', cat: 'Education' },
-  { name: 'PTE To IELTS Converter', url: 'https://rajdailytools.in/pte-to-ielts-converter-2026.html', icon: '🔁', cat: 'Education' },
-  { name: 'PTE University Eligibility Checker', url: 'https://rajdailytools.in/pte-university-eligibility-checker-2026.html', icon: '🏫', cat: 'Education' },
-  { name: 'PTE Eligibility Checker', url: 'https://rajdailytools.in/Pte-eligibility-checker-2026.html', icon: '📋', cat: 'Education' },
-  { name: 'International CGPA to GPA Converter', url: 'https://rajdailytools.in/Internationa-CGPA-to-GPA-Converter-RajDailyTools.html', icon: '🎓', cat: 'Education' },
-  { name: 'Maths Practice Tool Online', url: 'https://rajdailytools.in/Maths-practice-tool-online.html', icon: '➗', cat: 'Education' },
+  // Police / Railway / Govt Exam
+  { name: 'Police Running Time Calculator India', url: 'https://rajdailytools.in/police-running-time-calculator-india.html', icon: '👮', cat: 'Police' },
+  { name: 'MP Police Eligibility 2026', url: 'https://rajdailytools.in/mp-police-eligibility-2026.html', icon: '👮', cat: 'Police' },
+  { name: 'Government Exam Height Eligibility Checker India', url: 'https://rajdailytools.in/government-exam-height-eligibility-checker-india.html', icon: '📐', cat: 'Eligibility' },
+  { name: 'RRB ALP Eligibility Calculator', url: 'https://rajdailytools.in/rrb-alp-eligibility-calculator-2026.html', icon: '🚆', cat: 'Railway' },
+  { name: 'CRPF Tradesman Age Calculator', url: 'https://rajdailytools.in/crpf-tradesman-age-calculator-2026.html', icon: '🛡️', cat: 'Police' },
+  { name: 'KV Age Calculator', url: 'https://rajdailytools.in/kv-age-calculator-2026.html', icon: '🎂', cat: 'Govt Exam' },
+  { name: 'KV Priority Category Checker', url: 'https://rajdailytools.in/kv-priority-category-checker-2026.html', icon: '📋', cat: 'Govt Exam' },
+  { name: 'Patna HC Typist Age Calculator', url: 'https://rajdailytools.in/patna-hc-typist-age-calculator-2026.html', icon: '⚖️', cat: 'Govt Exam' },
 ];
 
 // ============ SEARCH FUNCTION ============
 function searchTools(query) {
   if (!query || query.length < 2) return [];
   const q = query.toLowerCase();
-  return ALL_TOOLS.filter(t =>
+  return SITE_CONTENT.filter(t =>
     t.name.toLowerCase().includes(q) || t.cat.toLowerCase().includes(q)
   ).slice(0, 8);
 }
 
-function renderDropdown(results, container, inputEl) {
+function renderDropdown(results, container) {
   if (results.length === 0) {
-    container.innerHTML = '<div class="search-no-result">No tools found. Try different keywords.</div>';
+    container.innerHTML = '<div class="search-no-result">No guides found. Try different keywords.</div>';
   } else {
     container.innerHTML = results.map(t =>
       `<div class="search-result-item" onclick="window.open('${t.url}','_blank');document.getElementById('${container.id}').classList.remove('open')">
@@ -1256,14 +1666,14 @@ const heroBtn = document.getElementById('heroSearchBtn');
 heroInput.addEventListener('input', function() {
   const val = this.value.trim();
   if (val.length < 2) { heroDropdown.classList.remove('open'); return; }
-  renderDropdown(searchTools(val), heroDropdown, heroInput);
+  renderDropdown(searchTools(val), heroDropdown);
 });
 
 heroInput.addEventListener('keydown', function(e) {
   if (e.key === 'Enter') {
     const results = searchTools(this.value.trim());
     if (results.length > 0) window.open(results[0].url, '_blank');
-    else renderDropdown([], heroDropdown, heroInput);
+    else renderDropdown([], heroDropdown);
   }
   if (e.key === 'Escape') heroDropdown.classList.remove('open');
 });
@@ -1271,9 +1681,7 @@ heroInput.addEventListener('keydown', function(e) {
 heroBtn.addEventListener('click', function() {
   const val = heroInput.value.trim();
   if (!val) return;
-  const results = searchTools(val);
-  if (results.length > 0) { renderDropdown(results, heroDropdown, heroInput); }
-  else renderDropdown([], heroDropdown, heroInput);
+  renderDropdown(searchTools(val), heroDropdown);
 });
 
 document.addEventListener('click', function(e) {
@@ -1342,9 +1750,50 @@ menuBtn.addEventListener('click', openDrawer);
 drawerClose.addEventListener('click', closeDrawer);
 drawerOverlay.addEventListener('click', closeDrawer);
 
-// Close drawer links
-document.querySelectorAll('.mobile-nav a').forEach(link => {
+document.querySelectorAll('.mobile-nav > a').forEach(link => {
   link.addEventListener('click', closeDrawer);
+});
+document.querySelectorAll('.mobile-nav-submenu a').forEach(link => {
+  link.addEventListener('click', closeDrawer);
+});
+
+// ============ MOBILE NAV ACCORDION (Exams / Blog) ============
+document.querySelectorAll('.mobile-nav-toggle').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    const group = btn.closest('.mobile-nav-group');
+    const isOpen = group.classList.contains('open');
+    document.querySelectorAll('.mobile-nav-group.open').forEach(g => {
+      g.classList.remove('open');
+      g.querySelector('.mobile-nav-toggle').setAttribute('aria-expanded', 'false');
+    });
+    if (!isOpen) {
+      group.classList.add('open');
+      btn.setAttribute('aria-expanded', 'true');
+    }
+  });
+});
+
+// ============ DESKTOP NAV DROPDOWN (keyboard/click support) ============
+document.querySelectorAll('.nav-dropdown-toggle').forEach(function(btn) {
+  btn.addEventListener('click', function(e) {
+    e.stopPropagation();
+    const dropdown = btn.closest('.nav-dropdown');
+    const isOpen = dropdown.classList.contains('force-open');
+    document.querySelectorAll('.nav-dropdown.force-open').forEach(d => {
+      d.classList.remove('force-open');
+      d.querySelector('.nav-dropdown-toggle').setAttribute('aria-expanded', 'false');
+    });
+    if (!isOpen) {
+      dropdown.classList.add('force-open');
+      btn.setAttribute('aria-expanded', 'true');
+    }
+  });
+});
+document.addEventListener('click', function() {
+  document.querySelectorAll('.nav-dropdown.force-open').forEach(d => {
+    d.classList.remove('force-open');
+    d.querySelector('.nav-dropdown-toggle').setAttribute('aria-expanded', 'false');
+  });
 });
 
 // ============ FAQ ACCORDION ============
@@ -1375,7 +1824,7 @@ const observer = new IntersectionObserver(function(entries) {
   });
 }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
 
-document.querySelectorAll('.cat-card, .tool-card, .latest-card, .problem-card, .mvp-card, .faq-item').forEach(el => {
+document.querySelectorAll('.cat-card, .tool-card, .latest-card, .blog-card, .why-card, .help-card, .mvp-card, .faq-item').forEach(el => {
   el.style.opacity = '0';
   el.style.transform = 'translateY(22px)';
   el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
