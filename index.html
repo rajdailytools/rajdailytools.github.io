@@ -531,6 +531,52 @@
   .blog-meta { font-size: 12px; color: var(--text-4); font-weight: 500; }
   .blog-read { font-size: 13px; font-weight: 600; color: var(--blue); display: flex; align-items: center; gap: 4px; }
 
+  /* ============ ARTICLE CARDS (Popular / Latest / Trending) ============ */
+  .popular-articles { background: white; }
+  .latest-articles { background: var(--surface); }
+  .trending-articles { background: white; }
+  .article-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; }
+  .article-grid.cols-3 { grid-template-columns: repeat(3, 1fr); }
+  .article-card {
+    background: white; border: 1.5px solid var(--border);
+    border-radius: var(--radius-lg); overflow: hidden;
+    transition: all 0.3s ease; display: flex; flex-direction: column;
+    box-shadow: var(--shadow-sm);
+  }
+  .article-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); border-color: var(--blue-subtle); }
+  .article-thumb-wrap {
+    position: relative; width: 100%; aspect-ratio: 4 / 3; overflow: hidden;
+    background: var(--surface);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .article-thumb-wrap img {
+    width: 100%; height: 100%; object-fit: contain; object-position: center;
+    transition: transform 0.4s ease;
+  }
+  .article-card:hover .article-thumb-wrap img { transform: scale(1.04); }
+  .article-updated-badge {
+    position: absolute; top: 12px; left: 12px;
+    background: linear-gradient(135deg, #10b981, #059669); color: white;
+    font-size: 10px; font-weight: 700; letter-spacing: 0.06em;
+    padding: 4px 11px; border-radius: 100px; box-shadow: 0 4px 12px rgba(16,185,129,0.35);
+  }
+  .article-trending-badge {
+    position: absolute; top: 12px; left: 12px;
+    background: linear-gradient(135deg, var(--accent), #d97706); color: white;
+    font-size: 10px; font-weight: 700; letter-spacing: 0.06em;
+    padding: 4px 11px; border-radius: 100px; box-shadow: 0 4px 12px rgba(245,158,11,0.35);
+  }
+  .article-body { padding: 18px 20px 20px; display: flex; flex-direction: column; flex: 1; }
+  .article-title {
+    font-family: var(--font-display); font-weight: 700; font-size: 15.5px;
+    color: var(--text); line-height: 1.35; margin-bottom: 12px; flex: 1;
+  }
+  .article-footer { display: flex; align-items: center; justify-content: space-between; padding-top: 12px; border-top: 1px solid var(--border); }
+  .article-readtime { font-size: 12px; color: var(--text-4); font-weight: 500; display: flex; align-items: center; gap: 5px; }
+  .article-readtime svg { width: 13px; height: 13px; stroke: currentColor; fill: none; stroke-width: 2; }
+  .article-readmore { font-size: 13px; font-weight: 600; color: var(--blue); display: flex; align-items: center; gap: 4px; }
+  .article-card:hover .article-readmore { gap: 7px; }
+
   /* ============ WHY CHOOSE / STUDENT HELP ============ */
   .why-choose { background: white; }
   .student-help { background: var(--surface); }
@@ -721,6 +767,7 @@
     .tools-grid { grid-template-columns: repeat(2, 1fr); }
     .latest-grid { grid-template-columns: repeat(2, 1fr); }
     .blog-grid { grid-template-columns: repeat(2, 1fr); }
+    .article-grid, .article-grid.cols-3 { grid-template-columns: repeat(2, 1fr); }
     .why-grid, .help-grid { grid-template-columns: repeat(2, 1fr); }
     .footer-top { grid-template-columns: 1fr 1fr 1fr; }
     .hd-tools { grid-template-columns: repeat(3, 1fr); }
@@ -736,7 +783,7 @@
     .contact-inner { grid-template-columns: 1fr; }
   }
   @media (max-width: 600px) {
-    .cat-grid, .tools-grid, .latest-grid, .blog-grid, .why-grid, .help-grid { grid-template-columns: 1fr; }
+    .cat-grid, .tools-grid, .latest-grid, .blog-grid, .article-grid, .article-grid.cols-3, .why-grid, .help-grid { grid-template-columns: 1fr; }
     .footer-top { grid-template-columns: 1fr; }
     .section { padding: 60px 0; }
     .hero-stats { gap: 20px; }
@@ -772,27 +819,17 @@
         <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
       </button>
       <div class="mobile-nav-submenu" id="mExamsMenu">
-        <a href="/exams/ssc.html">SSC</a>
-        <a href="/exams/army.html">Army</a>
-        <a href="/exams/police.html">Police</a>
-        <a href="/exams/railway.html">Railway</a>
+        <a href="https://rajdailytools.in/ssc-gd-tools-hub.html">SSC GD</a>
+        <a href="https://rajdailytools.in/ssc-cgl-tools-hub.html">SSC CGL</a>
+        <a href="https://rajdailytools.in/ssc-mts-eligibility-2026.html">SSC MTS</a>
+        <a href="https://rajdailytools.in/ssc-selection-post-phase-14-syllabus-2026.html">SSC Selection Post</a>
+        <a href="https://rajdailytools.in/mp-police-eligibility-2026.html">Police</a>
+        <a href="https://rajdailytools.in/army-tools-hub-2026.html">Army</a>
       </div>
     </div>
 
-    <div class="mobile-nav-group" id="mBlogGroup">
-      <button class="mobile-nav-toggle" aria-expanded="false" aria-controls="mBlogMenu">
-        📰 Blog
-        <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
-      </button>
-      <div class="mobile-nav-submenu" id="mBlogMenu">
-        <a href="/blog/index.html">Latest Articles</a>
-        <a href="/blog/ssc.html">SSC</a>
-        <a href="/blog/army.html">Army</a>
-        <a href="/blog/police.html">Police</a>
-        <a href="/blog/railway.html">Railway</a>
-      </div>
-    </div>
-
+    <a href="#popular">⭐ Popular</a>
+    <a href="#latest">🆕 Latest</a>
     <a href="#about">👤 About</a>
     <a href="#contact">📬 Contact</a>
   </nav>
@@ -820,27 +857,17 @@
             <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
           </button>
           <div class="nav-dropdown-menu">
-            <a href="/exams/ssc.html">SSC</a>
-            <a href="/exams/army.html">Army</a>
-            <a href="/exams/police.html">Police</a>
-            <a href="/exams/railway.html">Railway</a>
+            <a href="https://rajdailytools.in/ssc-gd-tools-hub.html">SSC GD</a>
+            <a href="https://rajdailytools.in/ssc-cgl-tools-hub.html">SSC CGL</a>
+            <a href="https://rajdailytools.in/ssc-mts-eligibility-2026.html">SSC MTS</a>
+            <a href="https://rajdailytools.in/ssc-selection-post-phase-14-syllabus-2026.html">SSC Selection Post</a>
+            <a href="https://rajdailytools.in/mp-police-eligibility-2026.html">Police</a>
+            <a href="https://rajdailytools.in/army-tools-hub-2026.html">Army</a>
           </div>
         </div>
 
-        <div class="nav-dropdown">
-          <button class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">
-            Blog
-            <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="nav-dropdown-menu">
-            <a href="/blog/index.html">Latest Articles</a>
-            <a href="/blog/ssc.html">SSC</a>
-            <a href="/blog/army.html">Army</a>
-            <a href="/blog/police.html">Police</a>
-            <a href="/blog/railway.html">Railway</a>
-          </div>
-        </div>
-
+        <a href="#popular">Popular</a>
+        <a href="#latest">Latest</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -1042,6 +1069,188 @@
         <div class="cat-title">Railway</div>
         <div class="cat-desc">Railway Recruitment Board (RRB) eligibility, exam patterns, and preparation resources.</div>
         <span class="cat-link">Explore Railway <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- POPULAR ARTICLES -->
+<section class="section popular-articles" id="popular">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Most Read</div>
+      <h2 class="section-heading">Popular <span>Articles</span></h2>
+      <p class="section-sub">The eligibility guides and checkers aspirants read the most, right now.</p>
+    </div>
+    <div class="article-grid">
+      <a href="https://rajdailytools.in/mp-police-eligibility-2026.html" class="article-card" target="_blank">
+        <div class="article-thumb-wrap">
+          <span class="article-updated-badge">Updated</span>
+          <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiOd6kjhKRljP9eo4Vfcu5IvMTKr_51EqmwljqHhC3CM4L9sMsPzC2lF9ZoiquQi8eWq1u2sy4FKe8a1vGFC7wpsRIfe3QDPDfRRUauAR7RVvtVhExhF5Pxe9L2_36qzwPukaRKeTuWbkyvYCc02BHrJ0rFOHZdW5Na3ACxy9GNHxXBIQ8pUT5_NSMsrs5R/s1600/1000854628.png" alt="MP Police Eligibility 2026" loading="lazy" width="400" height="300">
+        </div>
+        <div class="article-body">
+          <div class="article-title">MP Police Eligibility 2026</div>
+          <div class="article-footer">
+            <span class="article-readtime"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg>4 min read</span>
+            <span class="article-readmore">Read More →</span>
+          </div>
+        </div>
+      </a>
+      <a href="https://rajdailytools.in/agniveer-age-calculator-2026.html" class="article-card" target="_blank">
+        <div class="article-thumb-wrap">
+          <span class="article-updated-badge">Updated</span>
+          <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiLqS4LWJ86gQpvXLCdWRrI9c9RM8q5LTM-tQEtq_cqbQCUrVXN3xDwlWoP4OBHuvLbe76t3nptzn6huSANHsVdkonaYvfoQX3rKehGOh9lqHi5VdXBLHaUYGXWW04_dFYtEwdfxdswwMkIKAf62uhmEDhDOLENfuhs4vNm-_aAS8eouposaW-QbQzR4gEC/s1600/1000854609.png" alt="Agniveer Age Calculator 2026" loading="lazy" width="400" height="300">
+        </div>
+        <div class="article-body">
+          <div class="article-title">Agniveer Age Calculator 2026</div>
+          <div class="article-footer">
+            <span class="article-readtime"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg>3 min read</span>
+            <span class="article-readmore">Read More →</span>
+          </div>
+        </div>
+      </a>
+      <a href="https://rajdailytools.in/ssc-selection-post-phase-14-documents-required-2026.html" class="article-card" target="_blank">
+        <div class="article-thumb-wrap">
+          <span class="article-updated-badge">Updated</span>
+          <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiI8h6kPd7Wxbw5SmRut5j8bvo547znN94n7-uGv9F-cw4iPB6iJkVs09tRunmuNafArv0feSyGGeyXpaGxfHcKhtmkPBozZQCuq460ysIBzUSZ7EzxCJZL95aww5tB4NHjtngZ8iKlexrfkPT3uWK4KUqHewx9-ylFNsh2GDMHHxkZEHo00Fv5XQpXoAeJ/s1600/1000854636.png" alt="SSC Selection Post Phase 14 Documents Required 2026" loading="lazy" width="400" height="300">
+        </div>
+        <div class="article-body">
+          <div class="article-title">SSC Selection Post Phase 14 Documents Required 2026</div>
+          <div class="article-footer">
+            <span class="article-readtime"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg>5 min read</span>
+            <span class="article-readmore">Read More →</span>
+          </div>
+        </div>
+      </a>
+      <a href="https://rajdailytools.in/government-exam-height-eligibility-checker-india.html" class="article-card" target="_blank">
+        <div class="article-thumb-wrap">
+          <span class="article-updated-badge">Updated</span>
+          <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhrUpcvKNHvkg43GABhS5P6qXFwQsV6m7QERXDCd-6wyCDFABvMowxVSgPAHrZZz6MN55lu3kaTXRmRnlgVIt1xvxPdiOlG82264TSD5cVh86nKQ52t3hppgA4m2aeXGJ5g3TVgP0vpBWW7ASGK77pCxSE11Pjfse9UcJ9_l6NRfEg5FQJoA2DTHc4mDD94/s1600/1000854629.png" alt="Government Exam Height Eligibility Checker India" loading="lazy" width="400" height="300">
+        </div>
+        <div class="article-body">
+          <div class="article-title">Government Exam Height Eligibility Checker</div>
+          <div class="article-footer">
+            <span class="article-readtime"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg>4 min read</span>
+            <span class="article-readmore">Read More →</span>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- LATEST ARTICLES -->
+<section class="section latest-articles" id="latest">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Just Published</div>
+      <h2 class="section-heading">Latest <span>Articles</span></h2>
+      <p class="section-sub">Freshly published eligibility guides — be among the first to read them.</p>
+    </div>
+    <div class="article-grid">
+      <a href="https://rajdailytools.in/ssc-chsl-eligibility-2026.html" class="article-card" target="_blank">
+        <div class="article-thumb-wrap">
+          <span class="article-updated-badge">Updated</span>
+          <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi7bZpUt0UfmSLcRz45WruSH6YxLn4yV8ESdNroY3IwcxKS_ln_hZ_A6DO8qJ8f7Eg0dM35DmIVDG72JY9SbWiUiwUsVEGz7fJ9D1frmzG8haousM4G4N9nN5h0E4iiUa6_Wl2Iq7DElS4RGuWygKkh5Gdy9hb8HiYnPUxCzSE53HkNKZlxO6imcBYtkF99/s1600/1000854616.png" alt="SSC CHSL Eligibility 2026" loading="lazy" width="400" height="300">
+        </div>
+        <div class="article-body">
+          <div class="article-title">SSC CHSL Eligibility 2026</div>
+          <div class="article-footer">
+            <span class="article-readtime"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg>4 min read</span>
+            <span class="article-readmore">Read More →</span>
+          </div>
+        </div>
+      </a>
+      <a href="https://rajdailytools.in/ssc-selection-post-phase-14-syllabus-2026.html" class="article-card" target="_blank">
+        <div class="article-thumb-wrap">
+          <span class="article-updated-badge">Updated</span>
+          <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiPIDM00691QodTOAiuZEmVd52nS5-N8IFHVN107RLh-xf1bERMT23Gmpzr4a2CCWXHtZyYeHbsRVSkYKzSxZ01PzLPVy1nii70n9lRjtDNjbg2l14lLVIROmajOdFNtNjMV-ZerJp4Vo6JfK_NfHYY3UD22IT0S9osKGljs6zoCmYu0rrrnCR2NQpAm2P3/s1600/1000854582.png" alt="SSC Selection Post Phase 14 Syllabus 2026" loading="lazy" width="400" height="300">
+        </div>
+        <div class="article-body">
+          <div class="article-title">SSC Selection Post Phase 14 Syllabus 2026</div>
+          <div class="article-footer">
+            <span class="article-readtime"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg>6 min read</span>
+            <span class="article-readmore">Read More →</span>
+          </div>
+        </div>
+      </a>
+      <a href="https://rajdailytools.in/ssc-cgl-eligibility-2026.html" class="article-card" target="_blank">
+        <div class="article-thumb-wrap">
+          <span class="article-updated-badge">Updated</span>
+          <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgjRSCI0S6zQkZEZrdd73kMtR2IxCwhIFxv-Cd2F53weAg5xC79-N2eQGW31iFeLWYaaLlI_JrexJuNcF46jG1AahH4K27JxnjOR5RSnOL8gounQzBKobWAdNdEzUUHpYOJmkfFn56V4KZ2GDg-doBrqz1WDwA4syiNAGkigXjayBDCS1UOYjFeVsNbfy-u/s1600/1000854580.png" alt="SSC CGL Eligibility 2026" loading="lazy" width="400" height="300">
+        </div>
+        <div class="article-body">
+          <div class="article-title">SSC CGL Eligibility 2026</div>
+          <div class="article-footer">
+            <span class="article-readtime"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg>5 min read</span>
+            <span class="article-readmore">Read More →</span>
+          </div>
+        </div>
+      </a>
+      <a href="https://rajdailytools.in/ssc-chsl-signature-size-2026.html" class="article-card" target="_blank">
+        <div class="article-thumb-wrap">
+          <span class="article-updated-badge">Updated</span>
+          <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiEE1l7pU7JxfiaJ8fFb_4be1-xxGw9nPieop3RowlKb4fh4aokZyAvdbp9716xHJF4ICUNi7g8qY8U_GuPivDGUiM1vLcKXx1joscThSUh-VYbI7WIZB03JVdK8ZO7mYsn_uHE8aXQv9JiiPhbKuqFkJoU9fXSdndWqtLPv9MchUWmaKdQsm2SXMAA4s1n/s1600/1000854861.png" alt="SSC CHSL Signature Size 2026" loading="lazy" width="400" height="300">
+        </div>
+        <div class="article-body">
+          <div class="article-title">SSC CHSL Signature Size 2026</div>
+          <div class="article-footer">
+            <span class="article-readtime"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg>3 min read</span>
+            <span class="article-readmore">Read More →</span>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- TRENDING ARTICLES -->
+<section class="section trending-articles" id="trending">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Hot Right Now</div>
+      <h2 class="section-heading">Trending <span>Articles</span></h2>
+      <p class="section-sub">What aspirants across India are searching for this week.</p>
+    </div>
+    <div class="article-grid cols-3">
+      <a href="https://rajdailytools.in/ssc-mts-eligibility-2026.html" class="article-card" target="_blank">
+        <div class="article-thumb-wrap">
+          <span class="article-trending-badge">🔥 Trending</span>
+          <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEieloIVH_6bVBninnKcoq4qLtryUErTIuKCnq7CWm8xpzDAeaha3715PDbWLUONkiAxzEYoC7V-MpQLWuPkwg2Sk11Jrr879nMbN9Fb9tc0Skho7xk8Vr2QF9LNDFNorlNwk6T018nabmJNANVno9bUkSgvRANVyQ6TcV1At2c-Lkdb8U2Cr7pMZZDNvYxS/s1600/1000854633.png" alt="SSC MTS Eligibility 2026" loading="lazy" width="400" height="300">
+        </div>
+        <div class="article-body">
+          <div class="article-title">SSC MTS Eligibility 2026</div>
+          <div class="article-footer">
+            <span class="article-readtime"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg>4 min read</span>
+            <span class="article-readmore">Read More →</span>
+          </div>
+        </div>
+      </a>
+      <a href="https://rajdailytools.in/ssc-gd-salary-after-5-years.html" class="article-card" target="_blank">
+        <div class="article-thumb-wrap">
+          <span class="article-trending-badge">🔥 Trending</span>
+          <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg74zJ7K6-iGLnX6Qo3jD5fVjQqBptm6x-vTCVj6QZzhKWSb9UinBDlUZTw0jJpthp0jVVTSk9EG9RlNJdozqi0Q4zjCPeEuIcbrPD0PnBp9I_kQ02ycG001zlhCj8JmJg1fwgFwy_0HgdKChUlaajls4OACeE5HkgCtsNecbdx9QdpulUYAlkh6UCV714H/s1600/1000854617.png" alt="SSC GD Salary After 5 Years" loading="lazy" width="400" height="300">
+        </div>
+        <div class="article-body">
+          <div class="article-title">SSC GD Salary After 5 Years</div>
+          <div class="article-footer">
+            <span class="article-readtime"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg>5 min read</span>
+            <span class="article-readmore">Read More →</span>
+          </div>
+        </div>
+      </a>
+      <a href="https://rajdailytools.in/agniveer-age-calculator-2026.html" class="article-card" target="_blank">
+        <div class="article-thumb-wrap">
+          <span class="article-trending-badge">🔥 Trending</span>
+          <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg7yxf-6dlS_UjxIOtxV2s3W3kuzoX1iQLzAqMdXlEDSU5nZRZwmHLu2GZzcVpkBR82iRlYcJgzL10-yK3n49oUY_0xsr5ZNNzr4jTACbVOqDdbgVKdJ84Ey0JbgcwO9l-nvzN74RSScP0wI0UBqLbgJqgVgf2ZF5x6LMy0TcBdujd9hkdu1vccUL8IRujW/s1600/1000854632.png" alt="Agniveer Age Calculator 2026" loading="lazy" width="400" height="300">
+        </div>
+        <div class="article-body">
+          <div class="article-title">Agniveer Age Calculator 2026</div>
+          <div class="article-footer">
+            <span class="article-readtime"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg>3 min read</span>
+            <span class="article-readmore">Read More →</span>
+          </div>
+        </div>
       </a>
     </div>
   </div>
