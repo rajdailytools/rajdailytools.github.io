@@ -2505,249 +2505,1121 @@ style="width:100%;height:auto;border-radius:16px;margin:24px 0;box-shadow:0 10px
 </footer>
 
 <script>
-  
-// ─── AGE RECKONING DATE ─────────────────────────────────────────────────
-const CRUCIAL_DATE = new Date('2025-08-01');
+  <script>
+
+// ─── IBPS CRP CSA-XVI 2026 — AGE RECKONING DATE ────────────────────────
+const CRUCIAL_DATE = new Date('2026-08-01');
 
 const POST_RULES = {
-  mts: { minAge: 18, maxAge: 25, label: 'MTS' },
-  hav: { minAge: 18, maxAge: 27, label: 'Havaldar' }
+  csa: {
+    minAge: 20,
+    maxAge: 28,
+    label: 'IBPS CSA-XVI'
+  }
 };
 
+// ─── AGE CALCULATOR ─────────────────────────────────────────────────────
 function calcAge(dobStr, onDate) {
   const dob = new Date(dobStr);
+
   let age = onDate.getFullYear() - dob.getFullYear();
   const m = onDate.getMonth() - dob.getMonth();
-  if (m < 0 || (m === 0 && onDate.getDate() < dob.getDate())) age--;
+
+  if (
+    m < 0 ||
+    (m === 0 && onDate.getDate() < dob.getDate())
+  ) {
+    age--;
+  }
+
   return age;
 }
 
+// ─── AGE RELAXATION ─────────────────────────────────────────────────────
 function getRelaxation(category, pwbd, esm) {
+
   if (pwbd === 'yes') {
-    if (category === 'sc' || category === 'st') return { years: 15, note: 'PwBD (SC/ST)' };
-    if (category === 'obc') return { years: 13, note: 'PwBD (OBC)' };
-    return { years: 10, note: 'PwBD (UR/EWS)' };
+
+    if (category === 'sc' || category === 'st') {
+      return {
+        years: 15,
+        note: 'PwBD (SC/ST)'
+      };
+    }
+
+    if (category === 'obc') {
+      return {
+        years: 13,
+        note: 'PwBD (OBC)'
+      };
+    }
+
+    return {
+      years: 10,
+      note: 'PwBD (UR/EWS)'
+    };
   }
-  if (category === 'sc' || category === 'st') return { years: 5, note: 'SC/ST' };
-  if (category === 'obc') return { years: 3, note: 'OBC' };
-  if (esm === 'yes') return { years: 3, note: 'Ex-Servicemen (approx., after deduction of military service)' };
-  return { years: 0, note: 'No relaxation applicable' };
+
+  if (category === 'sc' || category === 'st') {
+    return {
+      years: 5,
+      note: 'SC/ST'
+    };
+  }
+
+  if (category === 'obc') {
+    return {
+      years: 3,
+      note: 'OBC (NCL)'
+    };
+  }
+
+  if (esm === 'yes') {
+    return {
+      years: 3,
+      note: 'Ex-Servicemen — as applicable under notification'
+    };
+  }
+
+  return {
+    years: 0,
+    note: 'No relaxation applicable'
+  };
 }
 
-const AGE_ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>';
+// ─── AGE PREVIEW ICON ──────────────────────────────────────────────────
+const AGE_ICON =
+'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">' +
+'<circle cx="12" cy="12" r="10"/>' +
+'<path d="M12 6v6l4 2"/>' +
+'</svg>';
+
+
+// ─── DOB CHANGE ─────────────────────────────────────────────────────────
 document.getElementById('dob').addEventListener('change', function() {
+
   const val = this.value;
   const prev = document.getElementById('agePreview');
-  if (!val) { prev.innerHTML = AGE_ICON + 'Your age will appear here'; return; }
+
+  if (!val) {
+    prev.innerHTML =
+      AGE_ICON + 'Your age will appear here';
+    return;
+  }
+
   const age = calcAge(val, CRUCIAL_DATE);
-  prev.innerHTML = AGE_ICON + `Age as on 01-08-2025: ${age} years`;
+
+  prev.innerHTML =
+    AGE_ICON +
+    `Age as on 01-08-2026: ${age} years`;
 });
 
+
+// ─── LAST RESULT ────────────────────────────────────────────────────────
 let LAST_RESULT_TEXT = '';
 
+
+// ─── MAIN BUTTON ────────────────────────────────────────────────────────
 function checkEligibility() {
+
   const btn = document.getElementById('checkBtn');
+
   btn.classList.add('loading');
 
   setTimeout(() => {
+
     btn.classList.remove('loading');
+
     runEligibilityCheck();
+
   }, 550);
 }
 
+
+// ─── ELIGIBILITY CHECK ─────────────────────────────────────────────────
 function runEligibilityCheck() {
-  const post = document.getElementById('post').value;
-  const dob = document.getElementById('dob').value;
-  const category = document.getElementById('category').value;
-  const qual = document.getElementById('qual').value;
-  const pwbd = document.getElementById('pwbd').value;
-  const esm = document.getElementById('esm').value;
-  const nat = document.getElementById('nat').value;
 
-  if (!dob) { alert('Please enter your Date of Birth.'); return; }
+  const post =
+    document.getElementById('post').value;
 
-  const age = calcAge(dob, CRUCIAL_DATE);
-  const rule = POST_RULES[post];
-  const relax = getRelaxation(category, pwbd, esm);
-  const maxAgeAllowed = rule.maxAge + relax.years;
+  const dob =
+    document.getElementById('dob').value;
 
+  const category =
+    document.getElementById('category').value;
+
+  const qual =
+    document.getElementById('qual').value;
+
+  const pwbd =
+    document.getElementById('pwbd').value;
+
+  const esm =
+    document.getElementById('esm').value;
+
+  const nat =
+    document.getElementById('nat').value;
+
+  // Additional IBPS-specific fields
+  const computer =
+    document.getElementById('computer')
+      ? document.getElementById('computer').value
+      : 'yes';
+
+  const language =
+    document.getElementById('language')
+      ? document.getElementById('language').value
+      : 'yes';
+
+
+  // ─── DOB REQUIRED ────────────────────────────────────────────────────
+  if (!dob) {
+
+    alert('Please enter your Date of Birth.');
+
+    return;
+  }
+
+
+  const age =
+    calcAge(dob, CRUCIAL_DATE);
+
+  const rule =
+    POST_RULES[post] || POST_RULES.csa;
+
+  const relax =
+    getRelaxation(category, pwbd, esm);
+
+  const maxAgeAllowed =
+    rule.maxAge + relax.years;
+
+
+  // ─── REASONS ─────────────────────────────────────────────────────────
   const reasons = [];
+
   let eligible = true;
 
-  if (nat === 'no') { eligible = false; reasons.push('Nationality criteria not met as per Para 5 of the official notification.'); }
-  if (qual === 'no') { eligible = false; reasons.push('Matriculation (10th Pass) or equivalent qualification not yet completed (required as on 01-08-2025).'); }
-  if (age < rule.minAge) { eligible = false; reasons.push(`Age is below the minimum required age of ${rule.minAge} years.`); }
-  if (age > maxAgeAllowed) { eligible = false; reasons.push(`Age exceeds the maximum allowed age of ${maxAgeAllowed} years (${rule.maxAge} + ${relax.years} relaxation for ${relax.note}).`); }
 
-  // ── additive: individual criterion pass/fail, purely for dashboard display ──
-  const ageOk = age >= rule.minAge && age <= maxAgeAllowed;
-  const qualOk = qual === 'yes';
-  const natOk = nat === 'yes';
-  const catOk = true; // category itself is never a disqualifier, only feeds relaxation
-  const docsOk = eligible; // documents assumed ready only if provisionally eligible
+  // NATIONALITY
+  if (nat === 'no') {
 
-  const banner = document.getElementById('resultBanner');
-  const badge = document.getElementById('rh-badge');
-  const detailList = document.getElementById('detailList');
-  const reasonBox = document.getElementById('reasonBox');
-  const statusGrid = document.getElementById('statusGrid');
-  const nextStepsBox = document.getElementById('nextStepsBox');
-  const nextStepsList = document.getElementById('nextStepsList');
+    eligible = false;
 
-  if (eligible) {
-    banner.className = 'result-header rh-pass';
-    document.getElementById('rh-title').textContent = `✅ You Appear Eligible for ${rule.label}`;
-    document.getElementById('rh-sub').textContent = `Age as on 01-08-2025: ${age} years | Allowed Range: ${rule.minAge}–${maxAgeAllowed} years`;
-    badge.className = 'rh-badge pass'; badge.textContent = '✅ Eligible';
-    reasonBox.innerHTML = `<div class="ibox g"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg><div><strong>Official Advice:</strong> You appear to meet the eligibility conditions as per the official SSC notification. Keep your certificates ready — final eligibility is confirmed only at Document Verification.</div></div>`;
-  } else {
-    banner.className = 'result-header rh-fail';
-    document.getElementById('rh-title').textContent = `❌ Not Eligible for ${rule.label}`;
-    document.getElementById('rh-sub').textContent = `Age as on 01-08-2025: ${age} years | Allowed Range: ${rule.minAge}–${maxAgeAllowed} years`;
-    badge.className = 'rh-badge fail'; badge.textContent = '❌ Not Eligible';
-    reasonBox.innerHTML = `<div class="ibox r"><svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg><div><strong>Reason(s):</strong><br>${reasons.join('<br>')}</div></div>`;
+    reasons.push(
+      'Nationality criteria not satisfied as per the official IBPS CSA notification.'
+    );
   }
 
-  // score ring (0–4 criteria passed, purely presentational)
-  const criteria = [ageOk, qualOk, natOk, docsOk];
-  const passedCount = criteria.filter(Boolean).length;
-  const pct = Math.round((passedCount / criteria.length) * 100);
-  const ring = document.getElementById('scoreRingBar');
+
+  // GRADUATION
+  if (qual === 'no') {
+
+    eligible = false;
+
+    reasons.push(
+      'Required Graduation qualification is not completed as required by the notification.'
+    );
+  }
+
+
+  // COMPUTER KNOWLEDGE
+  if (computer === 'no') {
+
+    eligible = false;
+
+    reasons.push(
+      'Required working/basic computer knowledge condition is not satisfied.'
+    );
+  }
+
+
+  // LOCAL LANGUAGE
+  if (language === 'no') {
+
+    eligible = false;
+
+    reasons.push(
+      'Local language proficiency requirement for the applied State/UT is not satisfied.'
+    );
+  }
+
+
+  // AGE
+  if (age < rule.minAge) {
+
+    eligible = false;
+
+    reasons.push(
+      `Age is below the minimum required age of ${rule.minAge} years.`
+    );
+  }
+
+
+  if (age > maxAgeAllowed) {
+
+    eligible = false;
+
+    reasons.push(
+      `Age exceeds the maximum allowed age of ${maxAgeAllowed} years (${rule.maxAge} + ${relax.years} years relaxation).`
+    );
+  }
+
+
+  // ─── CRITERION STATUS ────────────────────────────────────────────────
+  const ageOk =
+    age >= rule.minAge &&
+    age <= maxAgeAllowed;
+
+  const qualOk =
+    qual === 'yes';
+
+  const natOk =
+    nat === 'yes';
+
+  const computerOk =
+    computer === 'yes';
+
+  const languageOk =
+    language === 'yes';
+
+  const catOk = true;
+
+  const docsOk =
+    eligible;
+
+
+  // ─── DOM ELEMENTS ────────────────────────────────────────────────────
+  const banner =
+    document.getElementById('resultBanner');
+
+  const badge =
+    document.getElementById('rh-badge');
+
+  const detailList =
+    document.getElementById('detailList');
+
+  const reasonBox =
+    document.getElementById('reasonBox');
+
+  const statusGrid =
+    document.getElementById('statusGrid');
+
+  const nextStepsBox =
+    document.getElementById('nextStepsBox');
+
+  const nextStepsList =
+    document.getElementById('nextStepsList');
+
+
+  // ─── RESULT BANNER ───────────────────────────────────────────────────
+  if (eligible) {
+
+    banner.className =
+      'result-header rh-pass';
+
+    document.getElementById('rh-title').textContent =
+      '✅ You Appear Eligible for IBPS CSA-XVI';
+
+    document.getElementById('rh-sub').textContent =
+      `Age as on 01-08-2026: ${age} years | Allowed Range: ${rule.minAge}–${maxAgeAllowed} years`;
+
+    badge.className =
+      'rh-badge pass';
+
+    badge.textContent =
+      '✅ Eligible';
+
+
+    reasonBox.innerHTML = `
+      <div class="ibox g">
+        <svg viewBox="0 0 24 24">
+          <path d="M9 12l2 2 4-4"/>
+          <circle cx="12" cy="12" r="10"/>
+        </svg>
+        <div>
+          <strong>Official Advice:</strong>
+          You appear to meet the basic eligibility conditions for IBPS CRP CSA-XVI based on the details entered. Keep your educational, category and other supporting documents ready. Final eligibility remains subject to IBPS verification and all conditions of the official notification.
+        </div>
+      </div>
+    `;
+
+  } else {
+
+    banner.className =
+      'result-header rh-fail';
+
+    document.getElementById('rh-title').textContent =
+      '❌ Not Eligible for IBPS CSA-XVI';
+
+    document.getElementById('rh-sub').textContent =
+      `Age as on 01-08-2026: ${age} years | Allowed Range: ${rule.minAge}–${maxAgeAllowed} years`;
+
+    badge.className =
+      'rh-badge fail';
+
+    badge.textContent =
+      '❌ Not Eligible';
+
+
+    reasonBox.innerHTML = `
+      <div class="ibox r">
+        <svg viewBox="0 0 24 24">
+          <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+          <line x1="12" y1="9" x2="12" y2="13"/>
+          <line x1="12" y1="17" x2="12.01" y2="17"/>
+        </svg>
+        <div>
+          <strong>Reason(s):</strong><br>
+          ${reasons.join('<br>')}
+        </div>
+      </div>
+    `;
+  }
+
+
+  // ─── SCORE RING ──────────────────────────────────────────────────────
+  const criteria = [
+    ageOk,
+    qualOk,
+    natOk,
+    computerOk,
+    languageOk
+  ];
+
+  const passedCount =
+    criteria.filter(Boolean).length;
+
+  const pct =
+    Math.round(
+      (passedCount / criteria.length) * 100
+    );
+
+  const ring =
+    document.getElementById('scoreRingBar');
+
   const circumference = 364;
-  ring.style.stroke = eligible ? 'var(--green)' : (pct >= 50 ? 'var(--amber)' : 'var(--red)');
-  ring.style.strokeDashoffset = circumference - (circumference * pct / 100);
-  document.getElementById('scoreRingNum').textContent = pct + '%';
 
+  if (ring) {
+
+    ring.style.stroke =
+      eligible
+        ? 'var(--green)'
+        : (pct >= 50
+          ? 'var(--amber)'
+          : 'var(--red)');
+
+    ring.style.strokeDashoffset =
+      circumference -
+      (circumference * pct / 100);
+  }
+
+  const scoreNum =
+    document.getElementById('scoreRingNum');
+
+  if (scoreNum) {
+    scoreNum.textContent =
+      pct + '%';
+  }
+
+
+  // ─── STATUS GRID ─────────────────────────────────────────────────────
   statusGrid.innerHTML = `
-    <div class="status-chip ${ageOk ? 'ok' : 'bad'}"><div class="sc-ico">${ageOk ? '<svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>' : '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>'}</div><div class="sc-txt"><span class="sc-title">Age Status</span><span class="sc-val">${age} yrs (need ${rule.minAge}–${maxAgeAllowed})</span></div></div>
-    <div class="status-chip ${qualOk ? 'ok' : 'bad'}"><div class="sc-ico">${qualOk ? '<svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>' : '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>'}</div><div class="sc-txt"><span class="sc-title">Qualification Status</span><span class="sc-val">${qualOk ? 'Matriculation Passed' : 'Not completed'}</span></div></div>
-    <div class="status-chip ${natOk ? 'ok' : 'bad'}"><div class="sc-ico">${natOk ? '<svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>' : '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>'}</div><div class="sc-txt"><span class="sc-title">Nationality Status</span><span class="sc-val">${natOk ? 'Criteria Met' : 'Not Met'}</span></div></div>
-    <div class="status-chip warn"><div class="sc-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div><div class="sc-txt"><span class="sc-title">Category Status</span><span class="sc-val">${category.toUpperCase()} — ${relax.years} yr relaxation</span></div></div>
-    <div class="status-chip ${docsOk ? 'ok' : 'warn'}"><div class="sc-ico">${docsOk ? '<svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>' : '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>'}</div><div class="sc-txt"><span class="sc-title">Documents Status</span><span class="sc-val">${docsOk ? 'Keep certificates ready for DV' : 'Verify before applying'}</span></div></div>
+
+    <div class="status-chip ${ageOk ? 'ok' : 'bad'}">
+
+      <div class="sc-ico">
+        ${ageOk
+          ? '<svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>'
+          : '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>'
+        }
+      </div>
+
+      <div class="sc-txt">
+        <span class="sc-title">Age Status</span>
+        <span class="sc-val">
+          ${age} yrs (need ${rule.minAge}–${maxAgeAllowed})
+        </span>
+      </div>
+
+    </div>
+
+
+    <div class="status-chip ${qualOk ? 'ok' : 'bad'}">
+
+      <div class="sc-ico">
+        ${qualOk
+          ? '<svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>'
+          : '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>'
+        }
+      </div>
+
+      <div class="sc-txt">
+        <span class="sc-title">Qualification Status</span>
+        <span class="sc-val">
+          ${qualOk
+            ? 'Graduation Completed'
+            : 'Not completed'
+          }
+        </span>
+      </div>
+
+    </div>
+
+
+    <div class="status-chip ${natOk ? 'ok' : 'bad'}">
+
+      <div class="sc-ico">
+        ${natOk
+          ? '<svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>'
+          : '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>'
+        }
+      </div>
+
+      <div class="sc-txt">
+        <span class="sc-title">Nationality Status</span>
+        <span class="sc-val">
+          ${natOk ? 'Criteria Met' : 'Not Met'}
+        </span>
+      </div>
+
+    </div>
+
+
+    <div class="status-chip ${languageOk ? 'ok' : 'bad'}">
+
+      <div class="sc-ico">
+        ${languageOk
+          ? '<svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>'
+          : '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>'
+        }
+      </div>
+
+      <div class="sc-txt">
+        <span class="sc-title">Local Language</span>
+        <span class="sc-val">
+          ${languageOk
+            ? 'Requirement Met'
+            : 'Requirement Not Met'
+          }
+        </span>
+      </div>
+
+    </div>
+
+
+    <div class="status-chip ${computerOk ? 'ok' : 'bad'}">
+
+      <div class="sc-ico">
+        ${computerOk
+          ? '<svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>'
+          : '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>'
+        }
+      </div>
+
+      <div class="sc-txt">
+        <span class="sc-title">Computer Knowledge</span>
+        <span class="sc-val">
+          ${computerOk
+            ? 'Requirement Met'
+            : 'Requirement Not Met'
+          }
+        </span>
+      </div>
+
+    </div>
+
+
+    <div class="status-chip warn">
+
+      <div class="sc-ico">
+        <svg viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="10"/>
+          <line x1="12" y1="8" x2="12" y2="12"/>
+          <line x1="12" y1="16" x2="12.01" y2="16"/>
+        </svg>
+      </div>
+
+      <div class="sc-txt">
+        <span class="sc-title">Category Status</span>
+
+        <span class="sc-val">
+          ${category.toUpperCase()} —
+          ${relax.years} yr relaxation
+        </span>
+      </div>
+
+    </div>
+
+
+    <div class="status-chip ${docsOk ? 'ok' : 'warn'}">
+
+      <div class="sc-ico">
+        ${docsOk
+          ? '<svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>'
+          : '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>'
+        }
+      </div>
+
+      <div class="sc-txt">
+
+        <span class="sc-title">
+          Documents Status
+        </span>
+
+        <span class="sc-val">
+          ${docsOk
+            ? 'Keep documents ready'
+            : 'Verify before applying'
+          }
+        </span>
+
+      </div>
+
+    </div>
+
   `;
 
+
+  // ─── DETAIL LIST ─────────────────────────────────────────────────────
   detailList.innerHTML = `
-    <div class="dl-item"><span class="dli">🎂</span><div><strong>Age as on 01-08-2025:</strong> ${age} years</div></div>
-    <div class="dl-item"><span class="dli">📏</span><div><strong>Base Age Range for ${rule.label}:</strong> ${rule.minAge}–${rule.maxAge} years</div></div>
-    <div class="dl-item"><span class="dli">📜</span><div><strong>Relaxation Applied:</strong> ${relax.years} years (${relax.note})</div></div>
-    <div class="dl-item"><span class="dli">🎓</span><div><strong>Qualification:</strong> ${qual === 'yes' ? 'Matriculation Passed or Equivalent ✔' : 'Not completed ✘'}</div></div>
+
+    <div class="dl-item">
+      <span class="dli">🎂</span>
+      <div>
+        <strong>Age as on 01-08-2026:</strong>
+        ${age} years
+      </div>
+    </div>
+
+
+    <div class="dl-item">
+      <span class="dli">📏</span>
+      <div>
+        <strong>Base Age Range:</strong>
+        ${rule.minAge}–${rule.maxAge} years
+      </div>
+    </div>
+
+
+    <div class="dl-item">
+      <span class="dli">📜</span>
+      <div>
+        <strong>Relaxation Applied:</strong>
+        ${relax.years} years
+        (${relax.note})
+      </div>
+    </div>
+
+
+    <div class="dl-item">
+      <span class="dli">🎓</span>
+      <div>
+        <strong>Qualification:</strong>
+        ${qual === 'yes'
+          ? 'Graduation Passed / Completed ✔'
+          : 'Not completed ✘'
+        }
+      </div>
+    </div>
+
+
+    <div class="dl-item">
+      <span class="dli">💻</span>
+      <div>
+        <strong>Computer Knowledge:</strong>
+        ${computer === 'yes'
+          ? 'Requirement Met ✔'
+          : 'Requirement Not Met ✘'
+        }
+      </div>
+    </div>
+
+
+    <div class="dl-item">
+      <span class="dli">🗣️</span>
+      <div>
+        <strong>Local Language:</strong>
+        ${language === 'yes'
+          ? 'Requirement Met ✔'
+          : 'Requirement Not Met ✘'
+        }
+      </div>
+    </div>
+
   `;
 
+
+  // ─── NEXT STEPS ──────────────────────────────────────────────────────
   if (eligible) {
-    nextStepsBox.style.display = 'block';
+
+    nextStepsBox.style.display =
+      'block';
+
     nextStepsList.innerHTML = `
-      <li>Read the full official notification on <strong>ssc.gov.in</strong> before applying.</li>
-      <li>Keep your Matriculation certificate, category certificate (if applicable) and photo ID ready.</li>
-      <li>Apply online within the application window and pay the fee (if applicable) before the last date.</li>
-      <li>Recheck your Date of Birth entry — it must exactly match your Matriculation certificate.</li>
+
+      <li>
+        Read the complete official IBPS CSA-XVI notification before applying.
+      </li>
+
+      <li>
+        Keep your Graduation certificate/marksheets,
+        category certificate (if applicable), photo ID and
+        other required documents ready.
+      </li>
+
+      <li>
+        Make sure your local language proficiency requirement
+        for the selected State/UT is satisfied.
+      </li>
+
+      <li>
+        Confirm your computer knowledge requirement and
+        other conditions before submitting the application.
+      </li>
+
+      <li>
+        Recheck your Date of Birth and all details before final submission.
+      </li>
+
     `;
+
   } else {
-    nextStepsBox.style.display = 'block';
+
+    nextStepsBox.style.display =
+      'block';
+
     nextStepsList.innerHTML = `
-      <li>Re-verify the details you entered — small mistakes in DOB or category can change the result.</li>
-      <li>Check the official notification for any category-specific relaxation you may qualify for.</li>
-      <li>If you still believe you are eligible, confirm directly from the official notification on <strong>ssc.gov.in</strong>.</li>
+
+      <li>
+        Re-check the Date of Birth entered in the tool.
+      </li>
+
+      <li>
+        Verify whether you satisfy the Graduation requirement
+        prescribed for IBPS CSA-XVI.
+      </li>
+
+      <li>
+        Check your State/UT local language eligibility.
+      </li>
+
+      <li>
+        Verify nationality, category and applicable age-relaxation
+        conditions from the official notification.
+      </li>
+
+      <li>
+        If you believe you are eligible, confirm your eligibility
+        directly from the latest official IBPS notification.
+      </li>
+
     `;
   }
 
-  LAST_RESULT_TEXT = `SSC MTS Eligibility Result\n` +
-    `Post: ${rule.label}\n` +
-    `Status: ${eligible ? 'Eligible' : 'Not Eligible'}\n` +
-    `Age as on 01-08-2025: ${age} years\n` +
-    `Allowed Age Range: ${rule.minAge}–${maxAgeAllowed} years (Relaxation: ${relax.years} yrs — ${relax.note})\n` +
-    `Qualification: ${qual === 'yes' ? 'Matriculation Passed or Equivalent' : 'Not completed'}\n` +
-    (reasons.length ? `Reason(s): ${reasons.join(' | ')}\n` : '') +
-    `Checked on: https://rajdailytools.in/ssc-mts-eligibility-2026.html`;
 
-  const ra = document.getElementById('resultArea');
-  ra.style.display = 'block';
-  ra.style.animation = 'none'; ra.offsetHeight;
-  ra.style.animation = 'resultIn .42s cubic-bezier(.4,0,.2,1) both';
-  setTimeout(() => ra.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 120);
+  // ─── RESULT TEXT ─────────────────────────────────────────────────────
+  LAST_RESULT_TEXT =
+    `IBPS CRP CSA-XVI Eligibility Result\n` +
+
+    `Post: Customer Service Associate (CSA)\n` +
+
+    `Status: ${
+      eligible
+        ? 'Eligible'
+        : 'Not Eligible'
+    }\n` +
+
+    `Age as on 01-08-2026: ${
+      age
+    } years\n` +
+
+    `Allowed Age Range: ${
+      rule.minAge
+    }–${
+      maxAgeAllowed
+    } years (Relaxation: ${
+      relax.years
+    } yrs — ${
+      relax.note
+    })\n` +
+
+    `Qualification: ${
+      qual === 'yes'
+        ? 'Graduation Completed'
+        : 'Not completed'
+    }\n` +
+
+    `Computer Knowledge: ${
+      computer === 'yes'
+        ? 'Requirement Met'
+        : 'Requirement Not Met'
+    }\n` +
+
+    `Local Language: ${
+      language === 'yes'
+        ? 'Requirement Met'
+        : 'Requirement Not Met'
+    }\n` +
+
+    `Nationality: ${
+      nat === 'yes'
+        ? 'Criteria Met'
+        : 'Not Met'
+    }\n` +
+
+    (
+      reasons.length
+        ? `Reason(s): ${
+            reasons.join(' | ')
+          }\n`
+        : ''
+    ) +
+
+    `Checked on: https://rajdailytools.in/ibps-csa-eligibility-2026.html`;
+
+
+  // ─── SHOW RESULT ─────────────────────────────────────────────────────
+  const ra =
+    document.getElementById('resultArea');
+
+  ra.style.display =
+    'block';
+
+  ra.style.animation =
+    'none';
+
+  ra.offsetHeight;
+
+  ra.style.animation =
+    'resultIn .42s cubic-bezier(.4,0,.2,1) both';
+
+  setTimeout(() => {
+
+    ra.scrollIntoView({
+      behavior: 'smooth',
+      block: 'nearest'
+    });
+
+  }, 120);
 }
 
+
+// ─── DOWNLOAD RESULT ───────────────────────────────────────────────────
 function downloadResult() {
+
   if (!LAST_RESULT_TEXT) return;
-  const blob = new Blob([LAST_RESULT_TEXT], { type: 'text/plain' });
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  a.href = url; a.download = 'ssc-mts-eligibility-result.txt';
-  document.body.appendChild(a); a.click(); document.body.removeChild(a);
+
+  const blob =
+    new Blob(
+      [LAST_RESULT_TEXT],
+      { type: 'text/plain' }
+    );
+
+  const url =
+    URL.createObjectURL(blob);
+
+  const a =
+    document.createElement('a');
+
+  a.href = url;
+
+  a.download =
+    'ibps-csa-xvi-eligibility-result.txt';
+
+  document.body.appendChild(a);
+
+  a.click();
+
+  document.body.removeChild(a);
+
   URL.revokeObjectURL(url);
 }
 
+
+// ─── COPY RESULT ────────────────────────────────────────────────────────
 function copyResult() {
+
   if (!LAST_RESULT_TEXT) return;
-  navigator.clipboard?.writeText(LAST_RESULT_TEXT).then(() => {
-    const btn = document.getElementById('copyResultBtn');
-    const old = btn.innerHTML;
-    btn.innerHTML = '✅ Copied!';
-    setTimeout(() => { btn.innerHTML = old; }, 2000);
-  });
+
+  navigator.clipboard
+    ?.writeText(LAST_RESULT_TEXT)
+    .then(() => {
+
+      const btn =
+        document.getElementById(
+          'copyResultBtn'
+        );
+
+      const old =
+        btn.innerHTML;
+
+      btn.innerHTML =
+        '✅ Copied!';
+
+      setTimeout(() => {
+
+        btn.innerHTML =
+          old;
+
+      }, 2000);
+
+    });
 }
 
+
+// ─── RIPPLE ─────────────────────────────────────────────────────────────
 function rippleFx(e) {
-  const host = e.currentTarget;
-  const rect = host.getBoundingClientRect();
-  const circle = document.createElement('span');
-  const size = Math.max(rect.width, rect.height);
-  circle.className = 'ripple';
-  circle.style.width = circle.style.height = size + 'px';
-  circle.style.left = (e.clientX - rect.left - size / 2) + 'px';
-  circle.style.top = (e.clientY - rect.top - size / 2) + 'px';
+
+  const host =
+    e.currentTarget;
+
+  const rect =
+    host.getBoundingClientRect();
+
+  const circle =
+    document.createElement('span');
+
+  const size =
+    Math.max(
+      rect.width,
+      rect.height
+    );
+
+  circle.className =
+    'ripple';
+
+  circle.style.width =
+    circle.style.height =
+    size + 'px';
+
+  circle.style.left =
+    (
+      e.clientX -
+      rect.left -
+      size / 2
+    ) + 'px';
+
+  circle.style.top =
+    (
+      e.clientY -
+      rect.top -
+      size / 2
+    ) + 'px';
+
   host.appendChild(circle);
-  setTimeout(() => circle.remove(), 650);
+
+  setTimeout(() => {
+
+    circle.remove();
+
+  }, 650);
 }
 
+
+// ─── RESET TOOL ─────────────────────────────────────────────────────────
 function resetTool() {
-  document.getElementById('post').value = 'mts';
-  document.getElementById('dob').value = '';
-  document.getElementById('category').value = 'ur';
-  document.getElementById('qual').value = 'yes';
-  document.getElementById('pwbd').value = 'no';
-  document.getElementById('esm').value = 'no';
-  document.getElementById('nat').value = 'yes';
-  document.getElementById('agePreview').innerHTML = AGE_ICON + 'Your age will appear here';
-  document.getElementById('resultArea').style.display = 'none';
-  document.getElementById('statusGrid').innerHTML = '';
-  document.getElementById('nextStepsBox').style.display = 'none';
-  window.scrollTo({ top: document.getElementById('checker').offsetTop - 80, behavior: 'smooth' });
-}
 
-function copyLink() {
-  navigator.clipboard?.writeText('https://rajdailytools.in/ssc-mts-eligibility-2026.html').then(() => {
-    const btn = document.getElementById('copyLinkBtn');
-    const old = btn.textContent;
-    btn.textContent = '✅ Copied!';
-    setTimeout(() => { btn.textContent = old; }, 2000);
+  document.getElementById('post').value =
+    'csa';
+
+  document.getElementById('dob').value =
+    '';
+
+  document.getElementById('category').value =
+    'ur';
+
+  document.getElementById('qual').value =
+    'yes';
+
+  document.getElementById('pwbd').value =
+    'no';
+
+  document.getElementById('esm').value =
+    'no';
+
+  document.getElementById('nat').value =
+    'yes';
+
+  if (document.getElementById('computer')) {
+    document.getElementById('computer').value =
+      'yes';
+  }
+
+  if (document.getElementById('language')) {
+    document.getElementById('language').value =
+      'yes';
+  }
+
+  document.getElementById('agePreview').innerHTML =
+    AGE_ICON +
+    'Your age will appear here';
+
+  document.getElementById('resultArea').style.display =
+    'none';
+
+  document.getElementById('statusGrid').innerHTML =
+    '';
+
+  document.getElementById('nextStepsBox').style.display =
+    'none';
+
+  window.scrollTo({
+    top:
+      document.getElementById('checker').offsetTop - 80,
+    behavior:
+      'smooth'
   });
 }
 
+
+// ─── COPY PAGE LINK ────────────────────────────────────────────────────
+function copyLink() {
+
+  navigator.clipboard
+    ?.writeText(
+      'https://rajdailytools.in/ibps-csa-eligibility-2026.html'
+    )
+    .then(() => {
+
+      const btn =
+        document.getElementById(
+          'copyLinkBtn'
+        );
+
+      const old =
+        btn.textContent;
+
+      btn.textContent =
+        '✅ Copied!';
+
+      setTimeout(() => {
+
+        btn.textContent =
+          old;
+
+      }, 2000);
+
+    });
+}
+
+
+// ─── BOOKMARK ───────────────────────────────────────────────────────────
 function toggleBookmark() {
-  const btn = document.getElementById('bmkBtn');
-  const lbl = document.getElementById('bmkLbl');
-  const on = btn.classList.toggle('bmk-on');
-  lbl.textContent = on ? 'Bookmarked' : 'Bookmark';
+
+  const btn =
+    document.getElementById('bmkBtn');
+
+  const lbl =
+    document.getElementById('bmkLbl');
+
+  const on =
+    btn.classList.toggle('bmk-on');
+
+  lbl.textContent =
+    on
+      ? 'Bookmarked'
+      : 'Bookmark';
 }
 
+
+// ─── FAQ ────────────────────────────────────────────────────────────────
 function toggleFAQ(el) {
-  const fq = el.closest('.fq');
-  const isOpen = fq.classList.contains('open');
-  document.querySelectorAll('.fq').forEach(f => f.classList.remove('open'));
-  if (!isOpen) fq.classList.add('open');
+
+  const fq =
+    el.closest('.fq');
+
+  const isOpen =
+    fq.classList.contains('open');
+
+  document
+    .querySelectorAll('.fq')
+    .forEach(f =>
+      f.classList.remove('open')
+    );
+
+  if (!isOpen) {
+    fq.classList.add('open');
+  }
 }
 
-function oD() { document.getElementById('drw').classList.add('on'); document.getElementById('dov').classList.add('on'); }
-function cD() { document.getElementById('drw').classList.remove('on'); document.getElementById('dov').classList.remove('on'); }
 
-const obs = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); } });
-}, { threshold: 0.1 });
-document.querySelectorAll('.rev, .rev-l, .rev-r, .rev-s').forEach(el => obs.observe(el));
+// ─── DRAWER ─────────────────────────────────────────────────────────────
+function oD() {
 
-window.addEventListener('scroll', () => {
-  document.getElementById('btt').classList.toggle('on', window.scrollY > 380);
-});
+  document
+    .getElementById('drw')
+    .classList.add('on');
+
+  document
+    .getElementById('dov')
+    .classList.add('on');
+}
+
+function cD() {
+
+  document
+    .getElementById('drw')
+    .classList.remove('on');
+
+  document
+    .getElementById('dov')
+    .classList.remove('on');
+}
+
+
+// ─── SCROLL ANIMATION ──────────────────────────────────────────────────
+const obs =
+  new IntersectionObserver(
+    entries => {
+
+      entries.forEach(e => {
+
+        if (e.isIntersecting) {
+
+          e.target.classList.add('in');
+
+          obs.unobserve(e.target);
+        }
+
+      });
+
+    },
+    {
+      threshold: 0.1
+    }
+  );
+
+
+document
+  .querySelectorAll(
+    '.rev, .rev-l, .rev-r, .rev-s'
+  )
+  .forEach(el =>
+    obs.observe(el)
+  );
+
+
+// ─── BACK TO TOP ────────────────────────────────────────────────────────
+window.addEventListener(
+  'scroll',
+  () => {
+
+    const btt =
+      document.getElementById('btt');
+
+    if (btt) {
+
+      btt.classList.toggle(
+        'on',
+        window.scrollY > 380
+      );
+
+    }
+
+  }
+);
+
 </script>
 </body>
 </html>
+    
