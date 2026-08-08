@@ -36,6 +36,7 @@
   --sb:0 8px 32px rgba(37,99,235,.20);
   --fd:'Sora',sans-serif;--fb:'DM Sans',sans-serif;
   --ease:cubic-bezier(.4,0,.2,1);
+  --radius:14px;--radius-sm:8px;--radius-lg:20px;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -44,6 +45,7 @@ a{text-decoration:none;color:inherit}
 ul{list-style:none}
 button{cursor:pointer;border:none;background:none;font-family:var(--fb)}
 .w{max-width:1180px;margin:0 auto;padding:0 24px}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
 .wa{max-width:860px;margin:0 auto;padding:0 24px}
 select,input{appearance:none;-webkit-appearance:none}
 @keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
@@ -85,31 +87,51 @@ select,input{appearance:none;-webkit-appearance:none}
 .cvt-btn .ripple,.hcta .ripple{background:rgba(255,255,255,.45)}
 .rst-btn .ripple,.sbtn .ripple{background:rgba(37,99,235,.18)}
 
-/* HEADER */
-.hdr{position:sticky;top:0;z-index:999;background:rgba(255,255,255,.96);backdrop-filter:blur(20px);border-bottom:1px solid var(--line);box-shadow:var(--s1)}
-.hdi{display:flex;align-items:center;justify-content:space-between;height:66px}
-.logo{display:flex;align-items:center;gap:10px}
-.lb{width:36px;height:36px;background:var(--blue);border-radius:9px;display:flex;align-items:center;justify-content:center;box-shadow:var(--sb);flex-shrink:0}
-.lb svg{width:18px;height:18px;fill:#fff}
-.ln{font-family:var(--fd);font-size:19px;font-weight:800;color:var(--ink);line-height:1}
-.ln span{color:var(--blue)}
-.ls{font-size:10px;color:var(--ink4);letter-spacing:.04em}
-nav.dn{display:flex;align-items:center;gap:2px}
-nav.dn a{font-size:13.5px;font-weight:500;color:var(--ink2);padding:7px 13px;border-radius:8px;transition:.2s}
-nav.dn a:hover{color:var(--blue);background:var(--blue-xl)}
-.hcta{background:var(--blue);color:#fff;font-family:var(--fd);font-weight:600;font-size:13px;padding:8px 18px;border-radius:8px;box-shadow:var(--sb);transition:.2s}
-.hcta:hover{background:var(--blue-d);transform:translateY(-1px)}
-.brg{display:none;flex-direction:column;gap:4.5px;padding:8px;border-radius:8px}
-.brg span{display:block;width:20px;height:2px;background:var(--ink);border-radius:2px;transition:.28s}
-.dov{display:none;position:fixed;inset:0;background:rgba(15,23,42,.45);z-index:1040;backdrop-filter:blur(3px)}
-.dov.on{display:block}
-.drw{position:fixed;top:0;right:-100%;width:270px;height:100vh;background:#fff;z-index:1050;padding:22px;box-shadow:var(--s4);transition:right .32s var(--ease);overflow-y:auto}
-.drw.on{right:0}
-.dh{display:flex;align-items:center;justify-content:space-between;margin-bottom:26px}
-.dx{width:33px;height:33px;border-radius:7px;background:var(--surf);display:flex;align-items:center;justify-content:center;color:var(--ink3);font-size:17px}
-nav.mn{display:flex;flex-direction:column;gap:3px}
-nav.mn a{display:block;font-size:14px;font-weight:500;color:var(--ink2);padding:11px 13px;border-radius:8px;transition:.2s}
-nav.mn a:hover{color:var(--blue);background:var(--blue-xl)}
+/* HEADER (RajDailyTools site header — matches index.html) */
+.site-header{position:sticky;top:0;z-index:999;background:rgba(255,255,255,.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--line);box-shadow:var(--s1)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{display:flex;align-items:center;gap:10px;font-family:var(--fd);font-weight:800;font-size:22px;color:var(--ink)}
+.logo-icon{width:38px;height:38px;background:var(--blue);border-radius:10px;display:flex;align-items:center;justify-content:center;box-shadow:var(--sb);flex-shrink:0}
+.logo-icon svg{width:20px;height:20px;fill:#fff}
+.logo-text{display:flex;flex-direction:column;line-height:1}
+.logo-name{font-size:20px;font-weight:800;color:var(--ink)}
+.logo-name span{color:var(--blue)}
+.logo-tagline-small{font-size:10px;font-weight:400;color:var(--ink3);letter-spacing:.05em}
+.desktop-nav{display:flex;align-items:center;gap:4px}
+.desktop-nav>a{font-size:14px;font-weight:500;color:var(--ink2);padding:8px 14px;border-radius:var(--radius-sm);transition:all .2s}
+.desktop-nav>a:hover{color:var(--blue);background:var(--blue-xl)}
+.nav-dropdown{position:relative}
+.nav-dropdown-toggle{display:flex;align-items:center;gap:5px;font-size:14px;font-weight:500;color:var(--ink2);padding:8px 14px;border-radius:var(--radius-sm);transition:all .2s;background:none;border:none;cursor:pointer;font-family:var(--fb)}
+.nav-dropdown-toggle:hover,.nav-dropdown-toggle:focus-visible{color:var(--blue);background:var(--blue-xl)}
+.nav-dropdown-toggle svg{width:11px;height:11px;stroke:currentColor;fill:none;stroke-width:2.5;transition:transform .2s}
+.nav-dropdown:hover .nav-dropdown-toggle svg,.nav-dropdown:focus-within .nav-dropdown-toggle svg{transform:rotate(180deg)}
+.nav-dropdown-menu{position:absolute;top:calc(100% + 8px);left:0;min-width:210px;background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--s4);padding:8px;opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .2s,visibility .2s,transform .2s;z-index:300}
+.nav-dropdown:hover .nav-dropdown-menu,.nav-dropdown:focus-within .nav-dropdown-menu,.nav-dropdown.force-open .nav-dropdown-menu{opacity:1;visibility:visible;transform:translateY(0)}
+.nav-dropdown-menu a{display:block;padding:10px 14px;border-radius:8px;font-size:14px;font-weight:500;color:var(--ink2);transition:all .15s}
+.nav-dropdown-menu a:hover{background:var(--blue-xl);color:var(--blue)}
+.header-cta{background:var(--blue);color:#fff;font-weight:600;font-size:14px;padding:9px 20px;border-radius:var(--radius-sm);transition:all .2s;box-shadow:var(--sb)}
+.header-cta:hover{background:var(--blue-d);transform:translateY(-1px)}
+.hamburger{display:none;flex-direction:column;gap:5px;padding:8px;border-radius:var(--radius-sm);cursor:pointer;background:none;border:none}
+.hamburger span{display:block;width:22px;height:2px;background:var(--ink);border-radius:2px;transition:all .3s}
+.drawer-overlay{display:none;position:fixed;inset:0;background:rgba(15,23,42,.5);z-index:1050;backdrop-filter:blur(2px)}
+.drawer-overlay.open{display:block}
+.mobile-drawer{position:fixed;top:0;right:-100%;width:300px;height:100vh;background:#fff;z-index:1100;padding:24px;box-shadow:var(--s4);transition:right .35s var(--ease);overflow-y:auto;display:flex;flex-direction:column}
+.mobile-drawer.open{right:0}
+.drawer-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:32px}
+.drawer-close{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--ink3);font-size:20px;background:var(--surf);cursor:pointer;border:none;flex-shrink:0}
+.drawer-close:hover{background:#fee2e2;color:#ef4444}
+.mobile-nav{display:flex;flex-direction:column;gap:4px}
+.mobile-nav a{font-size:15px;font-weight:500;color:var(--ink2);padding:13px 16px;border-radius:var(--radius-sm);transition:all .2s;display:block}
+.mobile-nav a:hover{color:var(--blue);background:var(--blue-xl)}
+.mobile-nav-group{border-radius:var(--radius-sm)}
+.mobile-nav-toggle{display:flex;align-items:center;justify-content:space-between;width:100%;font-size:15px;font-weight:500;color:var(--ink2);padding:13px 16px;border-radius:var(--radius-sm);background:none;border:none;cursor:pointer;font-family:var(--fb);transition:all .2s}
+.mobile-nav-toggle:hover{color:var(--blue);background:var(--blue-xl)}
+.mobile-nav-toggle svg{width:13px;height:13px;stroke:currentColor;fill:none;stroke-width:2.5;transition:transform .25s}
+.mobile-nav-group.open .mobile-nav-toggle svg{transform:rotate(180deg)}
+.mobile-nav-submenu{max-height:0;overflow:hidden;transition:max-height .3s ease;padding-left:10px}
+.mobile-nav-group.open .mobile-nav-submenu{max-height:320px}
+.mobile-nav-submenu a{font-size:14px;padding:11px 16px}
+@media(max-width:900px){.desktop-nav,.header-cta{display:none}.hamburger{display:flex}}
 
 /* HERO */
 .hero{position:relative;overflow:hidden;background:linear-gradient(150deg,#ebf4ff 0%,#fff 46%,#f0fdf4 100%);padding:68px 0 80px}
@@ -546,7 +568,7 @@ footer{background:#0f172a;padding:0 0 0}
   "@type":"BreadcrumbList",
   "itemListElement":[
     {"@type":"ListItem","position":1,"name":"Home","item":"https://rajdailytools.in/"},
-    {"@type":"ListItem","position":2,"name":"SSC Exam Tools","item":"https://rajdailytools.in/categories.html"},
+    {"@type":"ListItem","position":2,"name":"Banking Exams","item":"https://rajdailytools.in/categories.html"},
     {"@type":"ListItem","position":3,"name":"IBPS CSA Eligibility 2026","item":"https://rajdailytools.in/ibps-csa-eligibility-2026.html"}
   ]
 }
@@ -555,11 +577,11 @@ footer{background:#0f172a;padding:0 0 0}
 {
   "@context":"https://schema.org",
   "@type":"Article",
-  "headline":""headline":"IBPS CSA Eligibility 2026 – Age Limit, Qualification, Nationality, Reservation & Complete Eligibility Criteria"",
-  "description":""description":"Official IBPS CSA Eligibility 2026 guide including age limit, educational qualification, nationality, reservation, age relaxation and complete eligibility criteria.".",
+  "headline":"IBPS CSA Eligibility 2026 – Age Limit, Qualification, Nationality, Reservation & Complete Eligibility Criteria",
+  "description":"Official IBPS CSA Eligibility 2026 guide including age limit, educational qualification, nationality, reservation, age relaxation and complete eligibility criteria.",
   "author":{"@type":"Organization","name":"RajDailyTools Editorial Team"},
   "publisher":{"@type":"Organization","name":"RajDailyTools","logo":{"@type":"ImageObject","url":"https://rajdailytools.in/logo.png"}},
-  "mainEntityOfPage":""https://rajdailytools.in/ibps-csa-eligibility-2026.html"",
+  "mainEntityOfPage":{"@type":"WebPage","@id":"https://rajdailytools.in/ibps-csa-eligibility-2026.html"},
   "datePublished":"2026-08-07",
   "dateModified":"2026-08-07"
 }
@@ -689,6 +711,7 @@ footer{background:#0f172a;padding:0 0 0}
 "text":"The official IBPS CSA notification can be downloaded from the official IBPS website."
 }
 }
+]
 }
 </script>
 </head>
@@ -696,41 +719,84 @@ footer{background:#0f172a;padding:0 0 0}
 
 <button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
 
-<!-- HEADER -->
-<header class="hdr">
-  <div class="w"><div class="hdi">
-    <a href="https://rajdailytools.in/" class="logo">
-      <div class="lb"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
-      <div><div class="ln">Raj<span>Daily</span>Tools</div><div class="ls">Free Tools for India</div></div>
-    </a>
-    <nav class="dn">
-      <a href="https://rajdailytools.in/">Home</a>
-      <a href="https://rajdailytools.in/categories.html">Categories</a>
-      <a href="https://rajdailytools.in/popular.html">Popular</a>
-      <a href="https://rajdailytools.in/about.html">About</a>
-      <a href="https://rajdailytools.in/contact.html">Contact</a>
-    </nav>
-    <a href="https://rajdailytools.in/" class="hcta">🏠 All Tools</a>
-    <button class="brg" id="brg" onclick="oD()"><span></span><span></span><span></span></button>
-  </div></div>
-</header>
-<div class="dov" id="dov" onclick="cD()"></div>
-<div class="drw" id="drw">
-  <div class="dh">
+<!-- DRAWER OVERLAY -->
+<div class="drawer-overlay" id="drawerOverlay"></div>
+
+<!-- MOBILE DRAWER -->
+<div class="mobile-drawer" id="mobileDrawer">
+  <div class="drawer-head">
     <div class="logo">
-      <div class="lb" style="width:30px;height:30px;border-radius:7px"><svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#fff"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
-      <div class="ln" style="font-size:16px">Raj<span>Daily</span>Tools</div>
+      <div class="logo-icon">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polygon points="12,1 22,5.2 12,9.4 2,5.2" fill="white"/><rect x="8.3" y="7.6" width="7.4" height="2.3" rx="0.6" fill="white"/><line x1="18.6" y1="5.6" x2="18.6" y2="9.3" stroke="white" stroke-width="1" stroke-linecap="round"/><circle cx="18.6" cy="10.1" r="0.9" fill="white"/><path d="M3 11.3 L11.4 10.2 L11.4 20.6 L3 21.7 Z" fill="white"/><path d="M21 11.3 L12.6 10.2 L12.6 20.6 L21 21.7 Z" fill="white"/><circle cx="19.5" cy="18.8" r="2.7" fill="#0f172a" stroke="white" stroke-width="0.6"/><circle cx="19.5" cy="18.8" r="0.9" fill="white"/><g stroke="white" stroke-width="0.8"><line x1="19.5" y1="15.6" x2="19.5" y2="16.5"/><line x1="19.5" y1="21.1" x2="19.5" y2="22"/><line x1="16.3" y1="18.8" x2="17.2" y2="18.8"/><line x1="21.8" y1="18.8" x2="22.7" y2="18.8"/><line x1="17.1" y1="16.4" x2="17.7" y2="17"/><line x1="21.3" y1="20.6" x2="21.9" y2="21.2"/><line x1="21.9" y1="16.4" x2="21.3" y2="17"/><line x1="17.7" y1="20.6" x2="17.1" y2="21.2"/></g></svg>
+      </div>
+      <div class="logo-text">
+        <span class="logo-name">Raj<span>Daily</span>Tools</span>
+      </div>
     </div>
-    <button class="dx" id="dx" onclick="cD()">✕</button>
+    <button class="drawer-close" id="drawerClose" aria-label="Close menu">✕</button>
   </div>
-  <nav class="mn">
-    <a href="https://rajdailytools.in/" onclick="cD()">🏠 Home</a>
-    <a href="https://rajdailytools.in/categories.html" onclick="cD()">🗂️ Categories</a>
-    <a href="https://rajdailytools.in/popular.html" onclick="cD()">⭐ Popular</a>
-    <a href="https://rajdailytools.in/about.html" onclick="cD()">👤 About</a>
-    <a href="https://rajdailytools.in/contact.html" onclick="cD()">📬 Contact</a>
+  <nav class="mobile-nav">
+    <a href="https://rajdailytools.in/">🏠 Home</a>
+
+    <div class="mobile-nav-group" id="mExamsGroup">
+      <button class="mobile-nav-toggle" aria-expanded="false" aria-controls="mExamsMenu">
+        🎯 Exams
+        <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="mobile-nav-submenu" id="mExamsMenu">
+        <a href="https://rajdailytools.in/ssc-cgl-2026.html">SSC CGL</a>
+        <a href="https://rajdailytools.in/ssc-selection-post-phase-14-2026.html">SSC Selection Post</a>
+        <a href="https://rajdailytools.in/army-tools-hub-2026.html">Army</a>
+      </div>
+    </div>
+
+    <a href="https://rajdailytools.in/popular.html">⭐ Popular</a>
+    <a href="https://rajdailytools.in/latest.html">🆕 Latest</a>
+    <a href="https://rajdailytools.in/about.html">👤 About</a>
+    <a href="https://rajdailytools.in/contact.html">📬 Contact</a>
   </nav>
 </div>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="container">
+    <div class="header-inner">
+      <a href="https://rajdailytools.in/" class="logo">
+        <div class="logo-icon">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polygon points="12,1 22,5.2 12,9.4 2,5.2" fill="white"/><rect x="8.3" y="7.6" width="7.4" height="2.3" rx="0.6" fill="white"/><line x1="18.6" y1="5.6" x2="18.6" y2="9.3" stroke="white" stroke-width="1" stroke-linecap="round"/><circle cx="18.6" cy="10.1" r="0.9" fill="white"/><path d="M3 11.3 L11.4 10.2 L11.4 20.6 L3 21.7 Z" fill="white"/><path d="M21 11.3 L12.6 10.2 L12.6 20.6 L21 21.7 Z" fill="white"/><circle cx="19.5" cy="18.8" r="2.7" fill="#0f172a" stroke="white" stroke-width="0.6"/><circle cx="19.5" cy="18.8" r="0.9" fill="white"/><g stroke="white" stroke-width="0.8"><line x1="19.5" y1="15.6" x2="19.5" y2="16.5"/><line x1="19.5" y1="21.1" x2="19.5" y2="22"/><line x1="16.3" y1="18.8" x2="17.2" y2="18.8"/><line x1="21.8" y1="18.8" x2="22.7" y2="18.8"/><line x1="17.1" y1="16.4" x2="17.7" y2="17"/><line x1="21.3" y1="20.6" x2="21.9" y2="21.2"/><line x1="21.9" y1="16.4" x2="21.3" y2="17"/><line x1="17.7" y1="20.6" x2="17.1" y2="21.2"/></g></svg>
+        </div>
+        <div class="logo-text">
+          <span class="logo-name">Raj<span>Daily</span>Tools</span>
+          <span class="logo-tagline-small">Exam Prep &amp; Career Resource</span>
+        </div>
+      </a>
+      <nav class="desktop-nav">
+        <a href="https://rajdailytools.in/">Home</a>
+
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+            Exams
+            <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="nav-dropdown-menu">
+            <a href="https://rajdailytools.in/ssc-cgl-2026.html">SSC CGL</a>
+            <a href="https://rajdailytools.in/ssc-selection-post-phase-14-syllabus-2026.html">SSC Selection Post</a>
+            <a href="https://rajdailytools.in/army-tools-hub-2026.html">Army</a>
+          </div>
+        </div>
+
+        <a href="https://rajdailytools.in/popular.html">Popular</a>
+        <a href="https://rajdailytools.in/latest.html">Latest</a>
+        <a href="https://rajdailytools.in/about.html">About</a>
+        <a href="https://rajdailytools.in/contact.html">Contact</a>
+      </nav>
+      <a href="https://rajdailytools.in/#exams" class="header-cta">Explore Exams →</a>
+      <button class="hamburger" id="menuBtn" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
 
 <!-- HERO -->
 <section class="hero">
@@ -807,7 +873,7 @@ footer{background:#0f172a;padding:0 0 0}
 
       <div class="cta-row-hero">
 
-        <a href="#checker" class="hero-btn-primary ripple-host" onclick="rippleFx(event)">
+        <a href="https://rajdailytools.in/ibps-csa-eligibility-calculator.html" class="hero-btn-primary ripple-host" onclick="rippleFx(event)">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M9 12l2 2 4-4"/>
             <circle cx="12" cy="12" r="10"/>
@@ -1033,15 +1099,6 @@ footer{background:#0f172a;padding:0 0 0}
   </div>
 </section>
 
-<img
-src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhwk6H5cS6PC8omt7WZSOCtc8Zp3WbmD68B_6xPQKrhk0ppO22wPsQLTx934d-OXzcujrATdTKOAqTRaKmYS5OGo6bN__0C-TuXkc1tjEEaH4rSTCEaUD3U1g-emsE5uBqVj5jlHwV67Q9srojNGPKzlJPVkVe63g_mKkbjFPEriiYkAUGov1D9p45d-7mG/s1600/1000853493.png"
-alt="SSC MTS Eligibility 2026 Overview"
-loading="lazy"
-decoding="async"
-width="1600"
-height="900"
-style="width:100%;height:auto;border-radius:16px;margin:24px 0;box-shadow:0 10px 30px rgba(0,0,0,.08);">
-  
 <!-- QUICK SUMMARY -->
 <section class="qs-sec">
   <div class="w">
@@ -1118,23 +1175,19 @@ style="width:100%;height:auto;border-radius:16px;margin:24px 0;box-shadow:0 10px
 
         <a href="#qualification">5. Educational Qualification</a>
 
-        <a href="#computer">6. Computer Knowledge Requirement</a>
+        <a href="#reservation">6. Reservation & Application Fee</a>
 
-        <a href="#language">7. Local Language Proficiency</a>
+        <a href="#flowchart">7. Eligibility Verification Flowchart</a>
 
-        <a href="#documents">8. Required Documents</a>
+        <a href="#timeline">8. Application Timeline</a>
 
-        <a href="#checker">9. IBPS Eligibility Checker</a>
+        <a href="#examples">9. Eligibility Examples</a>
 
-        <a href="#howto">10. How to Use the Eligibility Checker</a>
+        <a href="#tips">10. Important Eligibility Guidelines</a>
 
-        <a href="#examples">11. Eligibility Examples</a>
+        <a href="#faq">11. Frequently Asked Questions</a>
 
-        <a href="#tips">12. Important Eligibility Guidelines</a>
-
-        <a href="#faq">13. Frequently Asked Questions</a>
-
-        <a href="#sources">14. Official IBPS Notification</a>
+        <a href="#sources">12. Official IBPS Notification</a>
 
       </div>
 
@@ -1391,15 +1444,6 @@ style="width:100%;height:auto;border-radius:16px;margin:24px 0;box-shadow:0 10px
         <p class="sec-sub">Permissible relaxation in upper age limit as per the Official IBPS CRP CSA-XVI Notification</p>
       </div>
 
-      <img
-      src="YOUR-IBPS-AGE-RELAXATION-IMAGE.png"
-      alt="IBPS CSA Category-wise Age Relaxation 2026"
-      loading="lazy"
-      decoding="async"
-      width="1600"
-      height="900"
-      style="width:100%;height:auto;border-radius:16px;margin:24px 0;box-shadow:0 10px 30px rgba(0,0,0,.08);">
-
       <div class="tbl-wr rev">
 
         <table class="main-tbl">
@@ -1652,26 +1696,6 @@ style="width:100%;height:auto;border-radius:16px;margin:24px 0;box-shadow:0 10px
 
       </ul>
 
-    </div>
-  </div>
-</section>
-
-<!-- HOW TO USE -->
-<section class="howto-sec" id="howto">
-  <div class="wa">
-    <div class="sec-hd rev">
-      <div class="sec-h">How to Use the <span>Eligibility Checker</span></div>
-      <p class="sec-sub">5 simple steps to check your SSC MTS eligibility instantly</p>
-    </div>
-    <div class="howto-box rev">
-      <div class="howto-title">📋 Step-by-Step Guide</div>
-      <div class="howto-steps">
-        <div class="hw-step"><div class="sn">1</div><div><strong>Select Post</strong> — Choose MTS (18–25 years) or Havaldar (18–27 years).</div></div>
-        <div class="hw-step"><div class="sn">2</div><div><strong>Enter Date of Birth</strong> — As per your Matriculation Certificate.</div></div>
-        <div class="hw-step"><div class="sn">3</div><div><strong>Select Category & Qualification</strong> — Choose your category, PwBD/ESM status and whether you have passed Matriculation.</div></div>
-        <div class="hw-step"><div class="sn">4</div><div><strong>Select Nationality</strong> — Confirm you meet the nationality criteria.</div></div>
-        <div class="hw-step"><div class="sn">5</div><div><strong>Click Check My Eligibility</strong> — Instantly see your eligibility status with the reason, based on the official notification.</div></div>
-      </div>
     </div>
   </div>
 </section>
@@ -1965,20 +1989,31 @@ style="width:100%;height:auto;border-radius:16px;margin:24px 0;box-shadow:0 10px
       </p>
 
       <p>
-        Isi liye humne ye <strong>IBPS CSA Eligibility Checker</strong> develop kiya hai.
-        Is tool ki madad se aap apni age, category, educational qualification aur
-        anya eligibility details verify karke turant dekh sakte hain ki aap official
+        Isi liye humne ek dedicated <strong>IBPS CSA Eligibility Checker</strong> banaya hai.
+        Us free tool ki madad se aap apni age, category, educational qualification aur
+        anya eligibility details enter karke turant dekh sakte hain ki aap official
         eligibility criteria ko fulfil karte hain ya nahi.
       </p>
 
-      <div class="story-highlight">
-        ✅ Check your IBPS CSA Eligibility instantly based on the Official Notification.
-      </div>
+      <a class="story-highlight" href="https://rajdailytools.in/ibps-csa-eligibility-calculator.html">
+        ✅ Check Your IBPS CSA Eligibility Instantly →
+      </a>
 
     </div>
 
   </div>
 </section>
+
+<!-- FAQ -->
+<section class="faq-sec" id="faq">
+  <div class="w">
+
+    <div class="sec-hd rev">
+      <div class="sec-h">Frequently Asked <span>Questions</span></div>
+      <p class="sec-sub">Common IBPS CSA Eligibility 2026 questions answered as per the Official IBPS CRP CSA-XVI Notification</p>
+    </div>
+
+    <div class="fql rev">
 
 <div class="fq"><div class="fq-q" onclick="toggleFAQ(this)"><span class="fq-t">What is the minimum educational qualification for IBPS CSA 2026?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">Candidates must possess a Bachelor's Degree (Graduation) in any discipline from a University recognized by the Government of India or an equivalent qualification recognized by the Central Government. The candidate must possess the qualification on the date specified in the official notification.</div></div></div>
 
@@ -2009,6 +2044,11 @@ style="width:100%;height:auto;border-radius:16px;margin:24px 0;box-shadow:0 10px
 <div class="fq"><div class="fq-q" onclick="toggleFAQ(this)"><span class="fq-t">Can foreign nationals apply for IBPS CSA?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">Only candidates covered under the nationality conditions prescribed in the official notification are eligible to apply.</div></div></div>
 
 <div class="fq"><div class="fq-q" onclick="toggleFAQ(this)"><span class="fq-t">Where can I download the official IBPS CSA notification?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">The official IBPS CSA notification can be downloaded from the official IBPS website.</div></div></div>
+
+    </div>
+  </div>
+</section>
+
 <!-- RELATED -->
 <section class="rel-sec">
   <div class="w">
@@ -2180,7 +2220,7 @@ style="width:100%;height:auto;border-radius:16px;margin:24px 0;box-shadow:0 10px
         <button class="fb-btn" onclick="this.textContent='Thanks! 🙏'">👍 Yes</button>
         <button class="fb-btn" onclick="this.textContent='Thanks for the feedback'">👎 No</button>
       </div>
-      <a class="rpt-link" href="mailto:rajdailytools@gmail.com?subject=Error%20Report:%20SSC%20MTS%20Eligibility%202026">🚩 Report an Error in this Article</a>
+      <a class="rpt-link" href="mailto:rajdailytools@gmail.com?subject=Error%20Report:%20IBPS%20CSA%20Eligibility%202026">🚩 Report an Error in this Article</a>
     </div>
   </div>
 </section>
@@ -2226,7 +2266,7 @@ style="width:100%;height:auto;border-radius:16px;margin:24px 0;box-shadow:0 10px
 
     <div class="cta-btns">
 
-      <a href="#checker" class="btn-gold">
+      <a href="https://rajdailytools.in/ibps-csa-eligibility-calculator.html" class="btn-gold">
         ✅ Check My Eligibility
       </a>
 
@@ -2351,869 +2391,12 @@ style="width:100%;height:auto;border-radius:16px;margin:24px 0;box-shadow:0 10px
 </footer>
 
 <script>
-  <script>
-
-// ─── IBPS CRP CSA-XVI 2026 — AGE RECKONING DATE ────────────────────────
-const CRUCIAL_DATE = new Date('2026-08-01');
-
-const POST_RULES = {
-  csa: {
-    minAge: 20,
-    maxAge: 28,
-    label: 'IBPS CSA-XVI'
-  }
-};
-
-// ─── AGE CALCULATOR ─────────────────────────────────────────────────────
-function calcAge(dobStr, onDate) {
-  const dob = new Date(dobStr);
-
-  let age = onDate.getFullYear() - dob.getFullYear();
-  const m = onDate.getMonth() - dob.getMonth();
-
-  if (
-    m < 0 ||
-    (m === 0 && onDate.getDate() < dob.getDate())
-  ) {
-    age--;
-  }
-
-  return age;
-}
-
-// ─── AGE RELAXATION ─────────────────────────────────────────────────────
-function getRelaxation(category, pwbd, esm) {
-
-  if (pwbd === 'yes') {
-
-    if (category === 'sc' || category === 'st') {
-      return {
-        years: 15,
-        note: 'PwBD (SC/ST)'
-      };
-    }
-
-    if (category === 'obc') {
-      return {
-        years: 13,
-        note: 'PwBD (OBC)'
-      };
-    }
-
-    return {
-      years: 10,
-      note: 'PwBD (UR/EWS)'
-    };
-  }
-
-  if (category === 'sc' || category === 'st') {
-    return {
-      years: 5,
-      note: 'SC/ST'
-    };
-  }
-
-  if (category === 'obc') {
-    return {
-      years: 3,
-      note: 'OBC (NCL)'
-    };
-  }
-
-  if (esm === 'yes') {
-    return {
-      years: 3,
-      note: 'Ex-Servicemen — as applicable under notification'
-    };
-  }
-
-  return {
-    years: 0,
-    note: 'No relaxation applicable'
-  };
-}
-
-// ─── AGE PREVIEW ICON ──────────────────────────────────────────────────
-const AGE_ICON =
-'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">' +
-'<circle cx="12" cy="12" r="10"/>' +
-'<path d="M12 6v6l4 2"/>' +
-'</svg>';
-
-
-// ─── DOB CHANGE ─────────────────────────────────────────────────────────
-document.getElementById('dob').addEventListener('change', function() {
-
-  const val = this.value;
-  const prev = document.getElementById('agePreview');
-
-  if (!val) {
-    prev.innerHTML =
-      AGE_ICON + 'Your age will appear here';
-    return;
-  }
-
-  const age = calcAge(val, CRUCIAL_DATE);
-
-  prev.innerHTML =
-    AGE_ICON +
-    `Age as on 01-08-2026: ${age} years`;
-});
-
-
-// ─── LAST RESULT ────────────────────────────────────────────────────────
-let LAST_RESULT_TEXT = '';
-
-
-// ─── MAIN BUTTON ────────────────────────────────────────────────────────
-function checkEligibility() {
-
-  const btn = document.getElementById('checkBtn');
-
-  btn.classList.add('loading');
-
-  setTimeout(() => {
-
-    btn.classList.remove('loading');
-
-    runEligibilityCheck();
-
-  }, 550);
-}
-
-
-// ─── ELIGIBILITY CHECK ─────────────────────────────────────────────────
-function runEligibilityCheck() {
-
-  const post =
-    document.getElementById('post').value;
-
-  const dob =
-    document.getElementById('dob').value;
-
-  const category =
-    document.getElementById('category').value;
-
-  const qual =
-    document.getElementById('qual').value;
-
-  const pwbd =
-    document.getElementById('pwbd').value;
-
-  const esm =
-    document.getElementById('esm').value;
-
-  const nat =
-    document.getElementById('nat').value;
-
-  // Additional IBPS-specific fields
-  const computer =
-    document.getElementById('computer')
-      ? document.getElementById('computer').value
-      : 'yes';
-
-  const language =
-    document.getElementById('language')
-      ? document.getElementById('language').value
-      : 'yes';
-
-
-  // ─── DOB REQUIRED ────────────────────────────────────────────────────
-  if (!dob) {
-
-    alert('Please enter your Date of Birth.');
-
-    return;
-  }
-
-
-  const age =
-    calcAge(dob, CRUCIAL_DATE);
-
-  const rule =
-    POST_RULES[post] || POST_RULES.csa;
-
-  const relax =
-    getRelaxation(category, pwbd, esm);
-
-  const maxAgeAllowed =
-    rule.maxAge + relax.years;
-
-
-  // ─── REASONS ─────────────────────────────────────────────────────────
-  const reasons = [];
-
-  let eligible = true;
-
-
-  // NATIONALITY
-  if (nat === 'no') {
-
-    eligible = false;
-
-    reasons.push(
-      'Nationality criteria not satisfied as per the official IBPS CSA notification.'
-    );
-  }
-
-
-  // GRADUATION
-  if (qual === 'no') {
-
-    eligible = false;
-
-    reasons.push(
-      'Required Graduation qualification is not completed as required by the notification.'
-    );
-  }
-
-
-  // COMPUTER KNOWLEDGE
-  if (computer === 'no') {
-
-    eligible = false;
-
-    reasons.push(
-      'Required working/basic computer knowledge condition is not satisfied.'
-    );
-  }
-
-
-  // LOCAL LANGUAGE
-  if (language === 'no') {
-
-    eligible = false;
-
-    reasons.push(
-      'Local language proficiency requirement for the applied State/UT is not satisfied.'
-    );
-  }
-
-
-  // AGE
-  if (age < rule.minAge) {
-
-    eligible = false;
-
-    reasons.push(
-      `Age is below the minimum required age of ${rule.minAge} years.`
-    );
-  }
-
-
-  if (age > maxAgeAllowed) {
-
-    eligible = false;
-
-    reasons.push(
-      `Age exceeds the maximum allowed age of ${maxAgeAllowed} years (${rule.maxAge} + ${relax.years} years relaxation).`
-    );
-  }
-
-
-  // ─── CRITERION STATUS ────────────────────────────────────────────────
-  const ageOk =
-    age >= rule.minAge &&
-    age <= maxAgeAllowed;
-
-  const qualOk =
-    qual === 'yes';
-
-  const natOk =
-    nat === 'yes';
-
-  const computerOk =
-    computer === 'yes';
-
-  const languageOk =
-    language === 'yes';
-
-  const catOk = true;
-
-  const docsOk =
-    eligible;
-
-
-  // ─── DOM ELEMENTS ────────────────────────────────────────────────────
-  const banner =
-    document.getElementById('resultBanner');
-
-  const badge =
-    document.getElementById('rh-badge');
-
-  const detailList =
-    document.getElementById('detailList');
-
-  const reasonBox =
-    document.getElementById('reasonBox');
-
-  const statusGrid =
-    document.getElementById('statusGrid');
-
-  const nextStepsBox =
-    document.getElementById('nextStepsBox');
-
-  const nextStepsList =
-    document.getElementById('nextStepsList');
-
-
-  // ─── RESULT BANNER ───────────────────────────────────────────────────
-  if (eligible) {
-
-    banner.className =
-      'result-header rh-pass';
-
-    document.getElementById('rh-title').textContent =
-      '✅ You Appear Eligible for IBPS CSA-XVI';
-
-    document.getElementById('rh-sub').textContent =
-      `Age as on 01-08-2026: ${age} years | Allowed Range: ${rule.minAge}–${maxAgeAllowed} years`;
-
-    badge.className =
-      'rh-badge pass';
-
-    badge.textContent =
-      '✅ Eligible';
-
-
-    reasonBox.innerHTML = `
-      <div class="ibox g">
-        <svg viewBox="0 0 24 24">
-          <path d="M9 12l2 2 4-4"/>
-          <circle cx="12" cy="12" r="10"/>
-        </svg>
-        <div>
-          <strong>Official Advice:</strong>
-          You appear to meet the basic eligibility conditions for IBPS CRP CSA-XVI based on the details entered. Keep your educational, category and other supporting documents ready. Final eligibility remains subject to IBPS verification and all conditions of the official notification.
-        </div>
-      </div>
-    `;
-
-  } else {
-
-    banner.className =
-      'result-header rh-fail';
-
-    document.getElementById('rh-title').textContent =
-      '❌ Not Eligible for IBPS CSA-XVI';
-
-    document.getElementById('rh-sub').textContent =
-      `Age as on 01-08-2026: ${age} years | Allowed Range: ${rule.minAge}–${maxAgeAllowed} years`;
-
-    badge.className =
-      'rh-badge fail';
-
-    badge.textContent =
-      '❌ Not Eligible';
-
-
-    reasonBox.innerHTML = `
-      <div class="ibox r">
-        <svg viewBox="0 0 24 24">
-          <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
-          <line x1="12" y1="9" x2="12" y2="13"/>
-          <line x1="12" y1="17" x2="12.01" y2="17"/>
-        </svg>
-        <div>
-          <strong>Reason(s):</strong><br>
-          ${reasons.join('<br>')}
-        </div>
-      </div>
-    `;
-  }
-
-
-  // ─── SCORE RING ──────────────────────────────────────────────────────
-  const criteria = [
-    ageOk,
-    qualOk,
-    natOk,
-    computerOk,
-    languageOk
-  ];
-
-  const passedCount =
-    criteria.filter(Boolean).length;
-
-  const pct =
-    Math.round(
-      (passedCount / criteria.length) * 100
-    );
-
-  const ring =
-    document.getElementById('scoreRingBar');
-
-  const circumference = 364;
-
-  if (ring) {
-
-    ring.style.stroke =
-      eligible
-        ? 'var(--green)'
-        : (pct >= 50
-          ? 'var(--amber)'
-          : 'var(--red)');
-
-    ring.style.strokeDashoffset =
-      circumference -
-      (circumference * pct / 100);
-  }
-
-  const scoreNum =
-    document.getElementById('scoreRingNum');
-
-  if (scoreNum) {
-    scoreNum.textContent =
-      pct + '%';
-  }
-
-
-  // ─── STATUS GRID ─────────────────────────────────────────────────────
-  statusGrid.innerHTML = `
-
-    <div class="status-chip ${ageOk ? 'ok' : 'bad'}">
-
-      <div class="sc-ico">
-        ${ageOk
-          ? '<svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>'
-          : '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>'
-        }
-      </div>
-
-      <div class="sc-txt">
-        <span class="sc-title">Age Status</span>
-        <span class="sc-val">
-          ${age} yrs (need ${rule.minAge}–${maxAgeAllowed})
-        </span>
-      </div>
-
-    </div>
-
-
-    <div class="status-chip ${qualOk ? 'ok' : 'bad'}">
-
-      <div class="sc-ico">
-        ${qualOk
-          ? '<svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>'
-          : '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>'
-        }
-      </div>
-
-      <div class="sc-txt">
-        <span class="sc-title">Qualification Status</span>
-        <span class="sc-val">
-          ${qualOk
-            ? 'Graduation Completed'
-            : 'Not completed'
-          }
-        </span>
-      </div>
-
-    </div>
-
-
-    <div class="status-chip ${natOk ? 'ok' : 'bad'}">
-
-      <div class="sc-ico">
-        ${natOk
-          ? '<svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>'
-          : '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>'
-        }
-      </div>
-
-      <div class="sc-txt">
-        <span class="sc-title">Nationality Status</span>
-        <span class="sc-val">
-          ${natOk ? 'Criteria Met' : 'Not Met'}
-        </span>
-      </div>
-
-    </div>
-
-
-    <div class="status-chip ${languageOk ? 'ok' : 'bad'}">
-
-      <div class="sc-ico">
-        ${languageOk
-          ? '<svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>'
-          : '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>'
-        }
-      </div>
-
-      <div class="sc-txt">
-        <span class="sc-title">Local Language</span>
-        <span class="sc-val">
-          ${languageOk
-            ? 'Requirement Met'
-            : 'Requirement Not Met'
-          }
-        </span>
-      </div>
-
-    </div>
-
-
-    <div class="status-chip ${computerOk ? 'ok' : 'bad'}">
-
-      <div class="sc-ico">
-        ${computerOk
-          ? '<svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>'
-          : '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>'
-        }
-      </div>
-
-      <div class="sc-txt">
-        <span class="sc-title">Computer Knowledge</span>
-        <span class="sc-val">
-          ${computerOk
-            ? 'Requirement Met'
-            : 'Requirement Not Met'
-          }
-        </span>
-      </div>
-
-    </div>
-
-
-    <div class="status-chip warn">
-
-      <div class="sc-ico">
-        <svg viewBox="0 0 24 24">
-          <circle cx="12" cy="12" r="10"/>
-          <line x1="12" y1="8" x2="12" y2="12"/>
-          <line x1="12" y1="16" x2="12.01" y2="16"/>
-        </svg>
-      </div>
-
-      <div class="sc-txt">
-        <span class="sc-title">Category Status</span>
-
-        <span class="sc-val">
-          ${category.toUpperCase()} —
-          ${relax.years} yr relaxation
-        </span>
-      </div>
-
-    </div>
-
-
-    <div class="status-chip ${docsOk ? 'ok' : 'warn'}">
-
-      <div class="sc-ico">
-        ${docsOk
-          ? '<svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>'
-          : '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>'
-        }
-      </div>
-
-      <div class="sc-txt">
-
-        <span class="sc-title">
-          Documents Status
-        </span>
-
-        <span class="sc-val">
-          ${docsOk
-            ? 'Keep documents ready'
-            : 'Verify before applying'
-          }
-        </span>
-
-      </div>
-
-    </div>
-
-  `;
-
-
-  // ─── DETAIL LIST ─────────────────────────────────────────────────────
-  detailList.innerHTML = `
-
-    <div class="dl-item">
-      <span class="dli">🎂</span>
-      <div>
-        <strong>Age as on 01-08-2026:</strong>
-        ${age} years
-      </div>
-    </div>
-
-
-    <div class="dl-item">
-      <span class="dli">📏</span>
-      <div>
-        <strong>Base Age Range:</strong>
-        ${rule.minAge}–${rule.maxAge} years
-      </div>
-    </div>
-
-
-    <div class="dl-item">
-      <span class="dli">📜</span>
-      <div>
-        <strong>Relaxation Applied:</strong>
-        ${relax.years} years
-        (${relax.note})
-      </div>
-    </div>
-
-
-    <div class="dl-item">
-      <span class="dli">🎓</span>
-      <div>
-        <strong>Qualification:</strong>
-        ${qual === 'yes'
-          ? 'Graduation Passed / Completed ✔'
-          : 'Not completed ✘'
-        }
-      </div>
-    </div>
-
-
-    <div class="dl-item">
-      <span class="dli">💻</span>
-      <div>
-        <strong>Computer Knowledge:</strong>
-        ${computer === 'yes'
-          ? 'Requirement Met ✔'
-          : 'Requirement Not Met ✘'
-        }
-      </div>
-    </div>
-
-
-    <div class="dl-item">
-      <span class="dli">🗣️</span>
-      <div>
-        <strong>Local Language:</strong>
-        ${language === 'yes'
-          ? 'Requirement Met ✔'
-          : 'Requirement Not Met ✘'
-        }
-      </div>
-    </div>
-
-  `;
-
-
-  // ─── NEXT STEPS ──────────────────────────────────────────────────────
-  if (eligible) {
-
-    nextStepsBox.style.display =
-      'block';
-
-    nextStepsList.innerHTML = `
-
-      <li>
-        Read the complete official IBPS CSA-XVI notification before applying.
-      </li>
-
-      <li>
-        Keep your Graduation certificate/marksheets,
-        category certificate (if applicable), photo ID and
-        other required documents ready.
-      </li>
-
-      <li>
-        Make sure your local language proficiency requirement
-        for the selected State/UT is satisfied.
-      </li>
-
-      <li>
-        Confirm your computer knowledge requirement and
-        other conditions before submitting the application.
-      </li>
-
-      <li>
-        Recheck your Date of Birth and all details before final submission.
-      </li>
-
-    `;
-
-  } else {
-
-    nextStepsBox.style.display =
-      'block';
-
-    nextStepsList.innerHTML = `
-
-      <li>
-        Re-check the Date of Birth entered in the tool.
-      </li>
-
-      <li>
-        Verify whether you satisfy the Graduation requirement
-        prescribed for IBPS CSA-XVI.
-      </li>
-
-      <li>
-        Check your State/UT local language eligibility.
-      </li>
-
-      <li>
-        Verify nationality, category and applicable age-relaxation
-        conditions from the official notification.
-      </li>
-
-      <li>
-        If you believe you are eligible, confirm your eligibility
-        directly from the latest official IBPS notification.
-      </li>
-
-    `;
-  }
-
-
-  // ─── RESULT TEXT ─────────────────────────────────────────────────────
-  LAST_RESULT_TEXT =
-    `IBPS CRP CSA-XVI Eligibility Result\n` +
-
-    `Post: Customer Service Associate (CSA)\n` +
-
-    `Status: ${
-      eligible
-        ? 'Eligible'
-        : 'Not Eligible'
-    }\n` +
-
-    `Age as on 01-08-2026: ${
-      age
-    } years\n` +
-
-    `Allowed Age Range: ${
-      rule.minAge
-    }–${
-      maxAgeAllowed
-    } years (Relaxation: ${
-      relax.years
-    } yrs — ${
-      relax.note
-    })\n` +
-
-    `Qualification: ${
-      qual === 'yes'
-        ? 'Graduation Completed'
-        : 'Not completed'
-    }\n` +
-
-    `Computer Knowledge: ${
-      computer === 'yes'
-        ? 'Requirement Met'
-        : 'Requirement Not Met'
-    }\n` +
-
-    `Local Language: ${
-      language === 'yes'
-        ? 'Requirement Met'
-        : 'Requirement Not Met'
-    }\n` +
-
-    `Nationality: ${
-      nat === 'yes'
-        ? 'Criteria Met'
-        : 'Not Met'
-    }\n` +
-
-    (
-      reasons.length
-        ? `Reason(s): ${
-            reasons.join(' | ')
-          }\n`
-        : ''
-    ) +
-
-    `Checked on: https://rajdailytools.in/ibps-csa-eligibility-2026.html`;
-
-
-  // ─── SHOW RESULT ─────────────────────────────────────────────────────
-  const ra =
-    document.getElementById('resultArea');
-
-  ra.style.display =
-    'block';
-
-  ra.style.animation =
-    'none';
-
-  ra.offsetHeight;
-
-  ra.style.animation =
-    'resultIn .42s cubic-bezier(.4,0,.2,1) both';
-
-  setTimeout(() => {
-
-    ra.scrollIntoView({
-      behavior: 'smooth',
-      block: 'nearest'
-    });
-
-  }, 120);
-}
-
-
-// ─── DOWNLOAD RESULT ───────────────────────────────────────────────────
-function downloadResult() {
-
-  if (!LAST_RESULT_TEXT) return;
-
-  const blob =
-    new Blob(
-      [LAST_RESULT_TEXT],
-      { type: 'text/plain' }
-    );
-
-  const url =
-    URL.createObjectURL(blob);
-
-  const a =
-    document.createElement('a');
-
-  a.href = url;
-
-  a.download =
-    'ibps-csa-xvi-eligibility-result.txt';
-
-  document.body.appendChild(a);
-
-  a.click();
-
-  document.body.removeChild(a);
-
-  URL.revokeObjectURL(url);
-}
-
-
-// ─── COPY RESULT ────────────────────────────────────────────────────────
-function copyResult() {
-
-  if (!LAST_RESULT_TEXT) return;
-
-  navigator.clipboard
-    ?.writeText(LAST_RESULT_TEXT)
-    .then(() => {
-
-      const btn =
-        document.getElementById(
-          'copyResultBtn'
-        );
-
-      const old =
-        btn.innerHTML;
-
-      btn.innerHTML =
-        '✅ Copied!';
-
-      setTimeout(() => {
-
-        btn.innerHTML =
-          old;
-
-      }, 2000);
-
-    });
-}
-
-
-// ─── RIPPLE ─────────────────────────────────────────────────────────────
+// Calculator logic removed — the interactive eligibility checker now lives
+// on its own dedicated page. This script only powers this page's UI:
+// mobile drawer, dropdown/accordion menus, FAQ accordion, share/copy/
+// bookmark buttons, ripple effect, scroll-reveal animations and back-to-top.
+
+// ─── BUTTON RIPPLE EFFECT ────────────────────────────────────────────────
 function rippleFx(e) {
 
   const host =
@@ -3260,63 +2443,6 @@ function rippleFx(e) {
 
   }, 650);
 }
-
-
-// ─── RESET TOOL ─────────────────────────────────────────────────────────
-function resetTool() {
-
-  document.getElementById('post').value =
-    'csa';
-
-  document.getElementById('dob').value =
-    '';
-
-  document.getElementById('category').value =
-    'ur';
-
-  document.getElementById('qual').value =
-    'yes';
-
-  document.getElementById('pwbd').value =
-    'no';
-
-  document.getElementById('esm').value =
-    'no';
-
-  document.getElementById('nat').value =
-    'yes';
-
-  if (document.getElementById('computer')) {
-    document.getElementById('computer').value =
-      'yes';
-  }
-
-  if (document.getElementById('language')) {
-    document.getElementById('language').value =
-      'yes';
-  }
-
-  document.getElementById('agePreview').innerHTML =
-    AGE_ICON +
-    'Your age will appear here';
-
-  document.getElementById('resultArea').style.display =
-    'none';
-
-  document.getElementById('statusGrid').innerHTML =
-    '';
-
-  document.getElementById('nextStepsBox').style.display =
-    'none';
-
-  window.scrollTo({
-    top:
-      document.getElementById('checker').offsetTop - 80,
-    behavior:
-      'smooth'
-  });
-}
-
 
 // ─── COPY PAGE LINK ────────────────────────────────────────────────────
 function copyLink() {
@@ -3389,27 +2515,52 @@ function toggleFAQ(el) {
 }
 
 
-// ─── DRAWER ─────────────────────────────────────────────────────────────
+// ─── MOBILE DRAWER (open/close) ──────────────────────────────────────────
 function oD() {
 
   document
-    .getElementById('drw')
-    .classList.add('on');
+    .getElementById('mobileDrawer')
+    .classList.add('open');
 
   document
-    .getElementById('dov')
-    .classList.add('on');
+    .getElementById('drawerOverlay')
+    .classList.add('open');
+
+  document.body.style.overflow = 'hidden';
 }
 
 function cD() {
 
   document
-    .getElementById('drw')
-    .classList.remove('on');
+    .getElementById('mobileDrawer')
+    .classList.remove('open');
 
   document
-    .getElementById('dov')
-    .classList.remove('on');
+    .getElementById('drawerOverlay')
+    .classList.remove('open');
+
+  document.body.style.overflow = '';
+}
+
+const menuBtnEl = document.getElementById('menuBtn');
+if (menuBtnEl) menuBtnEl.addEventListener('click', oD);
+
+const drawerCloseEl = document.getElementById('drawerClose');
+if (drawerCloseEl) drawerCloseEl.addEventListener('click', cD);
+
+const drawerOverlayEl = document.getElementById('drawerOverlay');
+if (drawerOverlayEl) drawerOverlayEl.addEventListener('click', cD);
+
+// ─── MOBILE "EXAMS" ACCORDION SUBMENU ────────────────────────────────────
+const mExamsGroup = document.getElementById('mExamsGroup');
+if (mExamsGroup) {
+  const toggleBtn = mExamsGroup.querySelector('.mobile-nav-toggle');
+  if (toggleBtn) {
+    toggleBtn.addEventListener('click', () => {
+      const isOpen = mExamsGroup.classList.toggle('open');
+      toggleBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+  }
 }
 
 
