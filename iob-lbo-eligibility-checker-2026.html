@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IOB LBO Eligibility Checker 2026-27 – Check Your Eligibility</title>
+<meta name="description" content="Check your basic eligibility for IOB LBO 2026-27 — age, education, nationality & local language — based on the official IOB notification.">
+<meta name="keywords" content="IOB LBO eligibility checker 2026, IOB Local Bank Officer eligibility 2026-27, IOB LBO age qualification checker, IOB LBO eligibility criteria, Indian Overseas Bank LBO recruitment">
+<meta name="robots" content="index, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"IOB LBO 2026-27 ke liye basic eligibility criteria kya hain?","acceptedAnswer":{"@type":"Answer","text":"Official notification (Advt No. HRDD/RECT/02/2026-27) ke anusaar candidate ka Citizen of India (ya eligible nationality category) hona, age 20-30 years (relaxation applicable), any discipline me graduation degree, aur applied state ki local language proficiency zaroori hai."}},
+    {"@type":"Question","name":"Kya ye tool final eligibility confirm karta hai?","acceptedAnswer":{"@type":"Answer","text":"Nahi. Ye tool sirf ek preliminary basic eligibility check deta hai jo aapke diye gaye inputs par based hai. Final eligibility Indian Overseas Bank dwara document verification ke baad hi decide hoti hai."}},
+    {"@type":"Question","name":"Agar maine local language 10th/12th me nahi padhi to kya karna hoga?","acceptedAnswer":{"@type":"Answer","text":"Aapko Personal Interview se pehle Local Language Proficiency Test (LPT) clear karni hogi, jaisa official notification me bataya gaya hai."}}
+  ]
+}
+</script>
+<style>
+/* ══════════════════════════════════════
+   DESIGN TOKENS (RajDailyTools system)
+══════════════════════════════════════ */
+:root{
+  --blue:#2563eb;--blue-d:#1d4ed8;--blue-xl:#eff6ff;--blue-s:#dbeafe;
+  --amber:#f59e0b;--green:#10b981;--red:#ef4444;--purple:#8b5cf6;
+  --orange:#f97316;--teal:#14b8a6;
+  --green-xl:#f0fdf4;--green-s:#bbf7d0;
+  --red-xl:#fef2f2;--red-s:#fecaca;
+  --amber-xl:#fffbeb;--amber-s:#fde68a;
+  --purple-xl:#faf5ff;--purple-s:#ddd6fe;
+  --yellow:#eab308;--yellow-xl:#fefce8;--yellow-s:#fef08a;
+  --ink:#0f172a;--ink2:#334155;--ink3:#64748b;--ink4:#94a3b8;
+  --line:#e2e8f0;--surf:#f8fafc;--white:#fff;
+  --s1:0 1px 3px rgba(15,23,42,.06),0 1px 2px rgba(15,23,42,.04);
+  --s2:0 4px 16px rgba(15,23,42,.08),0 2px 6px rgba(15,23,42,.04);
+  --s3:0 12px 40px rgba(15,23,42,.11),0 3px 10px rgba(15,23,42,.06);
+  --s4:0 24px 64px rgba(15,23,42,.13),0 6px 20px rgba(15,23,42,.07);
+  --sb:0 8px 32px rgba(37,99,235,.20);
+  --fd:'Sora',sans-serif;--fb:'DM Sans',sans-serif;
+  --ease:cubic-bezier(.4,0,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);color:var(--ink);background:var(--white);overflow-x:hidden;-webkit-font-smoothing:antialiased;line-height:1.6}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+button{cursor:pointer;border:none;background:none;font-family:var(--fb)}
+.w{max-width:1180px;margin:0 auto;padding:0 24px}
+.wa{max-width:880px;margin:0 auto;padding:0 24px}
+select,input{appearance:none;-webkit-appearance:none}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+@keyframes resultIn{from{opacity:0;transform:translateY(18px) scale(.97)}to{opacity:1;transform:none}}
+@keyframes meterFill{from{stroke-dashoffset:283}to{stroke-dashoffset:var(--dash)}}
+.rev{opacity:0;transform:translateY(22px);transition:opacity .55s var(--ease),transform .55s var(--ease)}
+.rev.in{opacity:1;transform:none}
+
+/* ══ HEADER ══ */
+.hdr{position:sticky;top:0;z-index:999;background:rgba(255,255,255,.96);backdrop-filter:blur(20px);border-bottom:1px solid var(--line);box-shadow:var(--s1)}
+.hdi{display:flex;align-items:center;justify-content:space-between;height:66px}
+.logo{display:flex;align-items:center;gap:10px}
+.lb{width:36px;height:36px;background:var(--blue);border-radius:9px;display:flex;align-items:center;justify-content:center;box-shadow:var(--sb);flex-shrink:0}
+.lb svg{width:18px;height:18px;fill:#fff}
+.ln{font-family:var(--fd);font-size:19px;font-weight:800;color:var(--ink);line-height:1}
+.ln span{color:var(--blue)}
+.ls{font-size:10px;color:var(--ink4);letter-spacing:.04em}
+nav.dn{display:flex;align-items:center;gap:2px}
+nav.dn a{font-size:13.5px;font-weight:500;color:var(--ink2);padding:7px 13px;border-radius:8px;transition:.2s}
+nav.dn a:hover{color:var(--blue);background:var(--blue-xl)}
+.hcta{background:var(--blue);color:#fff;font-family:var(--fd);font-weight:600;font-size:13px;padding:8px 18px;border-radius:8px;box-shadow:var(--sb);transition:.2s}
+.hcta:hover{background:var(--blue-d);transform:translateY(-1px)}
+.brg{display:none;flex-direction:column;gap:4.5px;padding:8px;border-radius:8px}
+.brg span{display:block;width:20px;height:2px;background:var(--ink);border-radius:2px;transition:.28s}
+.dov{display:none;position:fixed;inset:0;background:rgba(15,23,42,.45);z-index:1040;backdrop-filter:blur(3px)}
+.dov.on{display:block}
+.drw{position:fixed;top:0;right:-100%;width:270px;height:100vh;background:#fff;z-index:1050;padding:22px;box-shadow:var(--s4);transition:right .32s var(--ease);overflow-y:auto}
+.drw.on{right:0}
+.dh{display:flex;align-items:center;justify-content:space-between;margin-bottom:26px}
+.dx{width:33px;height:33px;border-radius:7px;background:var(--surf);display:flex;align-items:center;justify-content:center;color:var(--ink3);font-size:17px}
+nav.mn{display:flex;flex-direction:column;gap:3px}
+nav.mn a{display:block;font-size:14px;font-weight:500;color:var(--ink2);padding:11px 13px;border-radius:8px;transition:.2s}
+nav.mn a:hover{color:var(--blue);background:var(--blue-xl)}
+
+/* ══ HERO ══ */
+.hero{position:relative;overflow:hidden;background:linear-gradient(150deg,#ebf4ff 0%,#fff 46%,#fdf0f0 100%);padding:64px 0 72px}
+.hero::before{content:'';position:absolute;top:-140px;right:-180px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(37,99,235,.08) 0%,transparent 68%);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-80px;left:-100px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(249,115,22,.05) 0%,transparent 68%);pointer-events:none}
+.blob{position:absolute;border-radius:50%;pointer-events:none;animation:float 6s ease-in-out infinite}
+.b1{width:13px;height:13px;background:rgba(37,99,235,.18);top:22%;right:14%;animation-delay:0s}
+.b2{width:9px;height:9px;background:rgba(249,115,22,.22);top:58%;right:26%;animation-delay:2.2s}
+.b3{width:11px;height:11px;background:rgba(16,185,129,.18);top:36%;right:6%;animation-delay:4s}
+.bc{display:flex;align-items:center;gap:7px;font-size:12.5px;color:var(--ink3);margin-bottom:22px;position:relative;z-index:1;flex-wrap:wrap}
+.bc a{color:var(--blue);font-weight:600}
+.pill{display:inline-flex;align-items:center;gap:7px;font-family:var(--fd);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);background:var(--blue-xl);padding:5px 14px;border-radius:100px;margin-bottom:18px}
+.pill::before{content:'';width:6px;height:6px;background:var(--blue);border-radius:50%}
+.hero-inner{position:relative;z-index:1;max-width:720px;animation:fadeUp .5s ease both}
+.hero h1{font-family:var(--fd);font-size:clamp(26px,4.5vw,50px);font-weight:800;line-height:1.1;color:var(--ink);margin-bottom:14px}
+.hero h1 span{color:var(--blue)}
+.hero-sub{font-size:16px;color:var(--ink3);line-height:1.8;margin-bottom:22px;max-width:600px}
+.hero-chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.chip{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;padding:6px 14px;border-radius:100px;background:#fff;border:1.5px solid var(--line);color:var(--ink2);box-shadow:var(--s1);transition:.22s}
+.chip:hover{border-color:var(--blue);color:var(--blue);transform:translateY(-1px)}
+.hero-meta{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:24px}
+.upd{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:700;color:var(--blue);background:var(--blue-xl);padding:6px 14px;border-radius:100px;border:1.5px solid var(--blue-s)}
+.mi{font-size:13px;color:var(--ink3);font-weight:500}
+
+/* HOW TO USE */
+.howto{background:var(--amber-xl);border:2px solid var(--amber-s);border-radius:16px;padding:22px 26px;max-width:560px;margin-bottom:24px}
+.howto-ttl{display:flex;align-items:center;gap:9px;font-family:var(--fd);font-size:15px;font-weight:800;color:var(--ink);margin-bottom:13px}
+.howto-steps{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.hs{display:flex;align-items:flex-start;gap:10px;font-size:13.5px;color:var(--ink2);line-height:1.6}
+.sn{width:24px;height:24px;background:var(--amber);color:#fff;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex-shrink:0;margin-top:1px}
+
+/* related tools */
+.rel-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;position:relative;z-index:1}
+.rg-box{border-radius:14px;padding:14px 14px 12px;display:flex;flex-direction:column;gap:8px;transition:.22s;border:1.5px solid}
+.rg-box:hover{transform:translateY(-3px);box-shadow:var(--s3)}
+.rg-box.army{background:linear-gradient(135deg,#fffbeb,#fef3c7);border-color:var(--amber-s)}
+.rg-box.ht{background:linear-gradient(135deg,var(--green-xl),#dcfce7);border-color:var(--green-s)}
+.rg-box.ssc{background:linear-gradient(135deg,var(--blue-xl),var(--blue-s));border-color:var(--blue-s)}
+.rg-box.mp{background:linear-gradient(135deg,var(--purple-xl),#ede9fe);border-color:var(--purple-s)}
+.rg-ico{font-size:22px}
+.rg-txt h4{font-family:var(--fd);font-size:12px;font-weight:800;color:var(--ink);margin-bottom:2px}
+.rg-txt p{font-size:11px;color:var(--ink3);line-height:1.5}
+.btn-xs{display:inline-flex;align-items:center;gap:4px;font-family:var(--fd);font-weight:700;font-size:11px;padding:5px 10px;border-radius:7px;transition:.22s;margin-top:4px}
+.btn-xs.a{background:var(--amber);color:#fff}.btn-xs.a:hover{background:#d97706}
+.btn-xs.g{background:var(--green);color:#fff}.btn-xs.g:hover{background:#059669}
+.btn-xs.b{background:var(--blue);color:#fff}.btn-xs.b:hover{background:var(--blue-d)}
+.btn-xs.p{background:var(--purple);color:#fff}.btn-xs.p:hover{background:#7c3aed}
+
+/* ══ TOOL SECTION ══ */
+.tool-sec{background:var(--surf);padding:80px 0}
+.tool-wrap{max-width:860px;margin:0 auto}
+.tool-card{background:#fff;border:1.5px solid var(--line);border-radius:28px;overflow:hidden;box-shadow:var(--s4)}
+.tool-hdr{background:linear-gradient(135deg,#0f172a 0%,#1e3a8a 50%,#1d4ed8 100%);padding:32px 40px;position:relative;overflow:hidden}
+.tool-hdr::before{content:'';position:absolute;top:-60px;right:-60px;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,.07)}
+.tool-hdr::after{content:'';position:absolute;bottom:-40px;left:-40px;width:180px;height:180px;border-radius:50%;background:rgba(255,255,255,.04)}
+.th{position:relative;z-index:1}
+.th h2{font-family:var(--fd);font-size:21px;font-weight:800;color:#fff;margin-bottom:6px}
+.th p{font-size:14px;color:rgba(255,255,255,.82);line-height:1.65}
+.th-badges{display:flex;flex-wrap:wrap;gap:9px;margin-top:14px}
+.thb{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:rgba(255,255,255,.9);background:rgba(255,255,255,.13);padding:5px 12px;border-radius:100px}
+.tool-body{padding:36px 40px}
+
+/* form */
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+.fld{display:flex;flex-direction:column;gap:7px}
+.flbl{font-size:13px;font-weight:700;color:var(--ink2)}
+.flbl span{font-size:11px;font-weight:500;color:var(--ink4);margin-left:5px;background:var(--surf);padding:2px 7px;border-radius:5px;border:1px solid var(--line)}
+.finp,.fsel{padding:12px 16px;font-size:14.5px;color:var(--ink);background:#fff;border:1.5px solid var(--line);border-radius:10px;outline:none;transition:.22s;font-family:var(--fb);width:100%}
+.finp:focus,.fsel:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(37,99,235,.10)}
+.fsel{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2364748b' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:40px}
+.finp[readonly]{background:var(--surf);color:var(--ink3);cursor:not-allowed}
+.hint-box{display:flex;align-items:flex-start;gap:9px;font-size:13px;color:var(--ink2);background:var(--blue-xl);border:1.5px solid var(--blue-s);border-radius:10px;padding:11px 14px;margin:16px 0;line-height:1.65}
+.hint-box svg{width:16px;height:16px;stroke:var(--blue);fill:none;stroke-width:2;flex-shrink:0;margin-top:2px}
+.btn-row{display:flex;gap:12px}
+.chk-btn{flex:1;padding:17px;background:linear-gradient(135deg,#0f172a 0%,#1e3a8a 50%,#2563eb 100%);color:#fff;font-family:var(--fd);font-weight:800;font-size:16px;border-radius:12px;box-shadow:0 8px 32px rgba(30,58,138,.30);transition:all .25s var(--ease);display:flex;align-items:center;justify-content:center;gap:10px}
+.chk-btn:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(30,58,138,.40)}
+.chk-btn:active{transform:translateY(0)}
+.rst-btn{padding:17px 24px;background:#fff;color:var(--ink2);font-family:var(--fd);font-weight:700;font-size:14px;border-radius:12px;border:1.5px solid var(--line);transition:.22s}
+.rst-btn:hover{border-color:var(--red-s);color:var(--red);background:var(--red-xl)}
+
+/* ══ RESULT ══ */
+#resultArea{display:none;margin-top:28px;animation:resultIn .45s var(--ease) both}
+.res-banner{border-radius:20px;padding:28px;margin-bottom:22px;position:relative;overflow:hidden;display:flex;align-items:center;gap:24px;flex-wrap:wrap}
+.res-banner.pass{background:linear-gradient(135deg,var(--green-xl),#d1fae5);border:2px solid var(--green-s)}
+.res-banner.fail{background:var(--red-xl);border:2px solid var(--red-s)}
+.res-banner::before{content:'';position:absolute;inset:0;opacity:.04;background-image:repeating-linear-gradient(45deg,currentColor 0,currentColor 1px,transparent 0,transparent 50%);background-size:12px 12px;pointer-events:none}
+.meter-wrap{flex-shrink:0;position:relative;width:100px;height:100px}
+.meter-svg{width:100px;height:100px;transform:rotate(-90deg)}
+.meter-bg{fill:none;stroke:rgba(0,0,0,.08);stroke-width:10}
+.meter-fill{fill:none;stroke-width:10;stroke-linecap:round;transition:stroke-dashoffset 1.2s var(--ease)}
+.meter-center{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.meter-pct{font-family:var(--fd);font-size:17px;font-weight:800;color:var(--ink);line-height:1;text-align:center}
+.meter-lbl{font-size:9.5px;font-weight:700;color:var(--ink3);text-transform:uppercase;letter-spacing:.05em;margin-top:3px}
+.res-info{flex:1}
+.res-icon{font-size:32px;margin-bottom:6px}
+.res-title{font-family:var(--fd);font-size:22px;font-weight:800;color:var(--ink);line-height:1.1;margin-bottom:6px}
+.res-sub{font-size:14px;color:var(--ink3);line-height:1.65}
+.res-tag{display:inline-flex;align-items:center;gap:6px;font-family:var(--fd);font-size:13px;font-weight:700;padding:5px 14px;border-radius:100px;margin-top:10px}
+.res-tag.pass{background:var(--green);color:#fff}
+.res-tag.fail{background:var(--red);color:#fff}
+
+/* condition cards */
+.cond-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:18px}
+.cond-card{border-radius:14px;padding:15px 17px;border:1.5px solid var(--line);background:var(--surf)}
+.cond-card.pass{border-color:var(--green-s);background:var(--green-xl)}
+.cond-card.fail{border-color:var(--red-s);background:var(--red-xl)}
+.cond-card.cond{border-color:var(--amber-s);background:var(--amber-xl)}
+.cc-h{display:flex;align-items:center;gap:8px;font-family:var(--fd);font-size:13.5px;font-weight:800;color:var(--ink);margin-bottom:5px}
+.cc-p{font-size:12.5px;color:var(--ink3);line-height:1.65}
+
+/* age breakdown card */
+.age-brk{background:var(--surf);border:1.5px solid var(--line);border-radius:16px;padding:22px 24px;margin-bottom:18px}
+.ab-title{font-family:var(--fd);font-size:14px;font-weight:700;color:var(--ink);margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.ab-row{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:10px 0;border-bottom:1px dashed var(--line);font-size:13.5px}
+.ab-row:last-child{border-bottom:none}
+.ab-lbl{color:var(--ink2);font-weight:600}
+.ab-val{color:var(--ink);font-weight:800;font-family:var(--fd)}
+.ab-val.g{color:var(--green)}
+.ab-val.r{color:var(--red)}
+.ab-val.a{color:var(--amber)}
+
+.sugg-box{background:var(--blue-xl);border:1.5px solid var(--blue-s);border-radius:13px;padding:16px 18px;font-size:14px;color:var(--ink2);line-height:1.78}
+.warn-box{background:var(--amber-xl);border:1.5px solid var(--amber-s);border-radius:12px;padding:14px 18px;display:flex;gap:10px;font-size:13.5px;color:var(--ink2);line-height:1.7;margin-top:14px}
+
+/* ══ TABLE SECTION ══ */
+.tbl-sec{background:#fff;padding:72px 0}
+.tbl-wr{overflow-x:auto;margin-bottom:20px;border-radius:12px;border:1px solid var(--line)}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+thead th{background:linear-gradient(135deg,#0f172a 0%,#1e3a8a 100%);color:#fff;padding:14px 16px;text-align:left;font-family:var(--fd);font-size:13px;font-weight:700;letter-spacing:.03em;white-space:nowrap}
+tbody tr{border-bottom:1px solid var(--line);transition:.2s}
+tbody tr:hover{background:var(--blue-xl)}
+tbody td{padding:12px 16px;color:var(--ink2);vertical-align:middle}
+.row-pass{background:var(--green-xl)!important}
+.row-info{background:var(--blue-xl)!important}
+.tbadge{display:inline-flex;font-size:11px;font-weight:700;padding:3px 8px;border-radius:100px;white-space:nowrap}
+.tbadge.g{background:var(--green-xl);color:var(--green);border:1px solid var(--green-s)}
+.tbadge.b{background:var(--blue-xl);color:var(--blue);border:1px solid var(--blue-s)}
+
+/* ══ STORY ══ */
+.story-sec{background:var(--surf);padding:72px 0}
+.story-card{background:#fff;border:1.5px solid var(--line);border-radius:24px;padding:40px;box-shadow:var(--s3);position:relative;overflow:hidden}
+.story-card::before{content:'';position:absolute;top:0;left:0;bottom:0;width:5px;background:linear-gradient(180deg,var(--blue) 0%,var(--orange) 100%);border-radius:5px 0 0 5px}
+.sq{font-size:54px;color:var(--blue-s);font-family:Georgia,serif;line-height:1;padding-left:8px}
+.sb{font-size:15.5px;color:var(--ink2);line-height:1.9;padding:0 8px}
+.sauth{display:flex;align-items:center;gap:14px;margin-top:22px;padding-top:20px;border-top:1px solid var(--line)}
+.savt{width:48px;height:48px;background:var(--blue);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+.sname{font-family:var(--fd);font-size:15px;font-weight:700;color:var(--ink)}
+.srole{font-size:12.5px;color:var(--ink3)}
+.founder-msg{background:linear-gradient(135deg,var(--blue-xl),var(--blue-s));border:1.5px solid var(--blue-s);border-radius:14px;padding:20px 22px;margin-top:20px;display:flex;gap:13px}
+.fm-ico{font-size:26px;flex-shrink:0}
+.fm-txt{font-size:14px;color:var(--ink2);line-height:1.75;font-style:italic}
+.fm-txt strong{color:var(--ink);font-weight:700;font-style:normal}
+
+/* ══ GUIDE ══ */
+.guide-sec{background:#fff;padding:72px 0}
+.guide-body h2{font-family:var(--fd);font-size:21px;font-weight:800;color:var(--ink);margin:28px 0 11px;line-height:1.3}
+.guide-body h2:first-child{margin-top:0}
+.guide-body p{font-size:15px;color:var(--ink3);line-height:1.85;margin-bottom:14px}
+.guide-body ul{display:flex;flex-direction:column;gap:8px;margin:12px 0 16px}
+.guide-body li{display:flex;align-items:flex-start;gap:10px;font-size:14.5px;color:var(--ink3);line-height:1.7}
+.guide-body li::before{content:'✓';width:18px;height:18px;background:var(--blue);color:#fff;border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;flex-shrink:0;margin-top:3px}
+.guide-body strong{color:var(--ink2);font-weight:700}
+.ibox{background:var(--blue-xl);border:1.5px solid var(--blue-s);border-radius:13px;padding:15px 18px;margin:16px 0;display:flex;gap:11px;font-size:14px;color:var(--ink2);line-height:1.7}
+.ibox svg{width:17px;height:17px;stroke:var(--blue);fill:none;stroke-width:2;flex-shrink:0;margin-top:2px}
+.ibox.a{background:var(--amber-xl);border-color:var(--amber-s)}
+.ibox.a svg{stroke:var(--amber)}
+
+/* example cards */
+.ex-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0 16px}
+.ex-card{background:var(--surf);border:1.5px solid var(--line);border-radius:14px;padding:16px 18px}
+.ex-card.pass{border-color:var(--green-s);background:var(--green-xl)}
+.ex-card.fail{border-color:var(--red-s);background:var(--red-xl)}
+.ex-h{font-family:var(--fd);font-size:13px;font-weight:800;color:var(--ink);margin-bottom:6px}
+.ex-p{font-size:12.5px;color:var(--ink3);line-height:1.7}
+.ex-p b{color:var(--ink2)}
+
+/* ══ FAQ ══ */
+.faq-sec{background:var(--surf);padding:72px 0}
+.fql{max-width:780px;margin:0 auto}
+.fq{background:#fff;border:1.5px solid var(--line);border-radius:13px;margin-bottom:10px;overflow:hidden}
+.fq-q{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;cursor:pointer;gap:14px;transition:.2s}
+.fq-q:hover{background:var(--blue-xl)}
+.fq-t{font-weight:600;font-size:15px;color:var(--ink);line-height:1.4}
+.fq-i{width:28px;height:28px;border-radius:50%;background:var(--blue-xl);color:var(--blue);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;transition:transform .28s,background .2s}
+.fq.open .fq-i{transform:rotate(45deg);background:var(--blue);color:#fff}
+.fq-a{max-height:0;overflow:hidden;transition:max-height .35s var(--ease)}
+.fq-ai{padding:0 22px 18px;font-size:14.5px;color:var(--ink3);line-height:1.78}
+.fq.open .fq-a{max-height:400px}
+
+/* ══ DISC / CONTACT / CTA / FOOTER ══ */
+.disc{background:var(--amber-xl);border-top:1px solid var(--amber-s);border-bottom:1px solid var(--amber-s);padding:15px 0}
+.disc-in{display:flex;align-items:flex-start;gap:12px;font-size:13.5px;color:var(--ink2);line-height:1.7}
+.contact-sec{background:#fff;padding:60px 0}
+.contact-card{max-width:580px;margin:0 auto;background:var(--surf);border:1.5px solid var(--line);border-radius:20px;padding:32px;text-align:center;box-shadow:var(--s2)}
+.contact-card h3{font-family:var(--fd);font-size:19px;font-weight:800;color:var(--ink);margin-bottom:10px}
+.contact-card p{font-size:15px;color:var(--ink3);line-height:1.75;margin-bottom:20px}
+.btn-bl{display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:#fff;font-family:var(--fd);font-weight:700;font-size:14.5px;padding:12px 26px;border-radius:8px;box-shadow:var(--sb);transition:.22s}
+.btn-bl:hover{background:var(--blue-d);transform:translateY(-1px)}
+.priv-note{font-size:12px;color:var(--ink4);margin-top:14px}
+.cta{background:linear-gradient(140deg,#0f172a 0%,#1e3a8a 100%);padding:80px 0;text-align:center;position:relative;overflow:hidden}
+.cta::before{content:'';position:absolute;top:-80px;left:50%;transform:translateX(-50%);width:800px;height:380px;background:radial-gradient(ellipse,rgba(37,99,235,.22) 0%,transparent 68%);pointer-events:none}
+.cta-in{position:relative;z-index:1}
+.cta .pill{color:#93c5fd;background:rgba(255,255,255,.1);margin-bottom:18px}
+.cta .pill::before{background:#93c5fd}
+.cta h2{font-family:var(--fd);font-size:clamp(24px,4vw,42px);font-weight:800;color:#fff;line-height:1.15;margin-bottom:12px}
+.cta h2 em{color:#fbbf24;font-style:normal}
+.cta p{font-size:16px;color:rgba(255,255,255,.72);max-width:480px;margin:0 auto 32px;line-height:1.78}
+.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn-gold{display:inline-flex;align-items:center;gap:8px;background:var(--amber);color:#fff;font-family:var(--fd);font-weight:800;font-size:15px;padding:14px 30px;border-radius:8px;box-shadow:0 8px 28px rgba(245,158,11,.35);transition:.22s}
+.btn-gold:hover{background:#d97706;transform:translateY(-3px)}
+.btn-ghost{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.09);border:1.5px solid rgba(255,255,255,.22);color:#fff;font-family:var(--fd);font-weight:600;font-size:14px;padding:13px 26px;border-radius:8px;transition:.2s}
+.btn-ghost:hover{background:rgba(255,255,255,.16)}
+footer{background:#0f172a;padding:52px 0 0}
+.ft-inner{max-width:1180px;margin:0 auto;padding:0 24px}
+.ft-top{display:grid;grid-template-columns:1.9fr 1fr 1fr 1fr;gap:44px;margin-bottom:44px}
+.ft-brand .ln{color:#fff}.ft-brand .ls{color:#475569}
+.ft-desc{font-size:13.5px;color:#64748b;line-height:1.78;max-width:265px;margin:13px 0 20px}
+.ft-soc{display:flex;gap:9px}
+.fts{width:34px;height:34px;border-radius:7px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;color:#94a3b8;font-size:13px;transition:.2s}
+.fts:hover{background:var(--blue);color:#fff}
+.fc h4{font-family:var(--fd);font-size:12px;font-weight:700;color:#fff;margin-bottom:14px;letter-spacing:.06em;text-transform:uppercase}
+.fc ul{display:flex;flex-direction:column;gap:8px}
+.fc ul a{font-size:13.5px;color:#64748b;transition:.18s}
+.fc ul a:hover{color:#93c5fd}
+.ft-btm{border-top:1px solid rgba(255,255,255,.07);padding:20px 0;text-align:center}
+.ft-cp{font-size:12.5px;color:#475569}
+.ft-cp b{color:#64748b}
+.ft-tag{font-size:12px;color:#334155;margin-top:4px;font-style:italic}
+.btt{position:fixed;bottom:26px;right:26px;z-index:500;width:43px;height:43px;background:var(--blue);color:#fff;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:17px;box-shadow:var(--sb);opacity:0;pointer-events:none;transform:translateY(14px);transition:.28s var(--ease)}
+.btt.on{opacity:1;pointer-events:auto;transform:translateY(0)}
+.btt:hover{transform:translateY(-3px)}
+
+/* RESPONSIVE */
+@media(max-width:1060px){.ft-top{grid-template-columns:1fr 1fr}}
+@media(max-width:860px){
+  nav.dn,.hcta{display:none}.brg{display:flex}
+  .tool-body{padding:24px 22px}.tool-hdr{padding:24px 22px}
+  .fgrid{grid-template-columns:1fr}
+  .rel-grid{grid-template-columns:1fr 1fr}
+  .ex-grid{grid-template-columns:1fr}
+  .cond-grid{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+  .ft-top{grid-template-columns:1fr}.rel-grid{grid-template-columns:1fr}
+  .cta-btns{flex-direction:column;align-items:center}
+  .story-card{padding:26px 20px}
+  .res-banner{flex-direction:column;align-items:flex-start;gap:16px}
+  .ab-row{flex-direction:column;align-items:flex-start;gap:2px}
+  .btn-row{flex-direction:column}
+  .tbl-wr{overflow-x:auto}
+  table{min-width:520px}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="hdr">
+  <div class="w">
+    <div class="hdi">
+      <a href="/" class="logo">
+        <div class="lb"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+        <div><div class="ln">Raj<span>Daily</span>Tools</div><div class="ls">Smart Tools for Daily Life</div></div>
+      </a>
+      <nav class="dn">
+        <a href="/">Home</a><a href="/categories">Categories</a>
+        <a href="/popular.html">Popular</a><a href="/about">About</a><a href="/contact">Contact</a>
+      </nav>
+      <a href="/categories" class="hcta">All Tools →</a>
+      <button class="brg" id="brg"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="dov" id="dov"></div>
+<div class="drw" id="drw">
+  <div class="dh">
+    <div class="logo">
+      <div class="lb" style="width:30px;height:30px;border-radius:7px"><svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#fff"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+      <div class="ln" style="font-size:16px">Raj<span>Daily</span>Tools</div>
+    </div>
+    <button class="dx" id="dx">✕</button>
+  </div>
+  <nav class="mn">
+    <a href="/" onclick="cD()">🏠 Home</a>
+    <a href="/categories" onclick="cD()">🗂️ Categories</a>
+    <a href="/popular.html" onclick="cD()">⭐ Popular</a>
+    <a href="/about" onclick="cD()">👤 About</a>
+    <a href="/contact" onclick="cD()">📬 Contact</a>
+  </nav>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+  <div class="w">
+    <div class="bc">
+      <a href="/">Home</a><span style="color:var(--ink4)">›</span>
+      <a href="/categories">Tools</a><span style="color:var(--ink4)">›</span>
+      <span>IOB LBO Eligibility Checker</span>
+    </div>
+    <div class="hero-inner">
+      <div class="pill">IOB LBO Recruitment 2026-27</div>
+      <h1>IOB LBO <span>Eligibility Checker</span> 2026-27</h1>
+      <p class="hero-sub">Check your basic eligibility for <strong>Indian Overseas Bank Local Bank Officer (LBO) – JMGS I recruitment 2026-27</strong> (Advt No. HRDD/RECT/02/2026-27). Enter your details to get an instant preliminary check across age, educational qualification, nationality and local language requirements — based strictly on the official notification.</p>
+      <div class="hero-chips">
+        <span class="chip">🏦 IOB LBO – JMGS I</span>
+        <span class="chip">📅 Cut-off: 01.08.2026</span>
+        <span class="chip">🎓 Graduate + Age 20–30</span>
+        <span class="chip">🆓 100% Free</span>
+      </div>
+      <div class="hero-meta">
+        <div class="upd">📅 Based on Official Notification Dated 07.08.2026</div>
+        <span class="mi">✅ Advt No. HRDD/RECT/02/2026-27</span>
+        <span class="mi">🔒 No data stored</span>
+      </div>
+      <!-- HOW TO USE -->
+      <div class="howto">
+        <div class="howto-ttl">💡 How to Use This Tool</div>
+        <div class="howto-steps">
+          <div class="hs"><span class="sn">1</span>Select your state & enter Date of Birth</div>
+          <div class="hs"><span class="sn">2</span>Choose category & relaxation, if any</div>
+          <div class="hs"><span class="sn">3</span>Answer education, language & nationality</div>
+          <div class="hs"><span class="sn">4</span>Click "Check Eligibility" & view result</div>
+        </div>
+      </div>
+      <!-- RELATED TOOLS -->
+      <div class="rel-grid">
+        <div class="rg-box ssc">
+          <div class="rg-ico">📆</div>
+          <div class="rg-txt">
+            <h4>IOB LBO Age Calculator</h4>
+            <p>Exact age (Y/M/D) & category relaxation</p>
+            <a href="https://rajdailytools.in/iob-lbo-age-calculator-2026.html" target="_blank" rel="noopener" class="btn-xs b">Check Now →</a>
+          </div>
+        </div>
+        <div class="rg-box ht">
+          <div class="rg-ico">📏</div>
+          <div class="rg-txt">
+            <h4>All Govt Exams Height Checker</h4>
+            <p>Check height for 20+ government exams</p>
+            <a href="https://rajdailytools.github.io/government-exam-height-eligibility-checker-india.html" target="_blank" rel="noopener" class="btn-xs g">Check Now →</a>
+          </div>
+        </div>
+        <div class="rg-box mp">
+          <div class="rg-ico">💰</div>
+          <div class="rg-txt">
+            <h4>IOB LBO Salary Calculator</h4>
+            <p>Estimate in-hand salary for JMGS-I officers</p>
+            <a href="https://rajdailytools.in/iob-lbo-salary-calculator-2026.html" target="_blank" rel="noopener" class="btn-xs p">Check Now →</a>
+          </div>
+        </div>
+        <div class="rg-box army">
+          <div class="rg-ico">📄</div>
+          <div class="rg-txt">
+            <h4>IOB LBO Document Checklist</h4>
+            <p>Documents required for Personal Interview</p>
+            <a href="https://rajdailytools.in/iob-lbo-document-checklist-2026.html" target="_blank" rel="noopener" class="btn-xs a">Check Now →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOOL SECTION -->
+<section class="tool-sec" id="tool">
+  <div class="w">
+    <div class="tool-wrap">
+      <div class="tool-card rev">
+        <div class="tool-hdr">
+          <div class="th">
+            <h2>🏦 IOB LBO Eligibility Checker 2026-27</h2>
+            <p>Answer the questions below for an instant preliminary check on your basic eligibility for IOB LBO 2026-27 — based strictly on the official notification. This is not a final eligibility confirmation.</p>
+            <div class="th-badges">
+              <span class="thb">📋 4 Criteria Checked</span>
+              <span class="thb">✅ Instant Result</span>
+              <span class="thb">🎯 Official Rules Only</span>
+              <span class="thb">🔒 No Data Stored</span>
+            </div>
+          </div>
+        </div>
+        <div class="tool-body">
+
+          <!-- ROW 1: State + DOB -->
+          <div class="fgrid">
+            <div class="fld">
+              <label class="flbl" for="state">State Applied For <span>Required</span></label>
+              <select class="fsel" id="state">
+                <option value="tn">Tamil Nadu — Local Language: Tamil</option>
+                <option value="ka">Karnataka — Local Language: Kannada</option>
+                <option value="mh">Maharashtra — Local Language: Marathi</option>
+                <option value="gj">Gujarat — Local Language: Gujarati</option>
+              </select>
+            </div>
+            <div class="fld">
+              <label class="flbl" for="dob">Date of Birth <span>Required</span></label>
+              <input class="finp" type="date" id="dob">
+            </div>
+          </div>
+
+          <!-- ROW 2: Category + Additional relaxation -->
+          <div class="fgrid">
+            <div class="fld">
+              <label class="flbl" for="category">Category <span>For age relaxation</span></label>
+              <select class="fsel" id="category">
+                <option value="gen">General / EWS (No Relaxation)</option>
+                <option value="obc">OBC (Non-Creamy Layer) — 3 yrs</option>
+                <option value="sc">SC (Scheduled Caste) — 5 yrs</option>
+                <option value="st">ST (Scheduled Tribe) — 5 yrs</option>
+              </select>
+            </div>
+            <div class="fld">
+              <label class="flbl" for="addcat">Additional Relaxation <span>Optional</span></label>
+              <select class="fsel" id="addcat">
+                <option value="none">None</option>
+                <option value="pwbd">Persons with Benchmark Disabilities (PwBD) — 10 yrs</option>
+                <option value="riot">Persons affected by 1984 Riots — 5 yrs</option>
+                <option value="exsm">Ex-servicemen / Commissioned Officers (min. 5 yrs service) — 5 yrs</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- ROW 3: Education + Language -->
+          <div class="fgrid">
+            <div class="fld">
+              <label class="flbl" for="edu">Educational Qualification <span>Required</span></label>
+              <select class="fsel" id="edu">
+                <option value="yes">Yes — I hold a Degree (Graduation) in any discipline from a recognized University</option>
+                <option value="no">No — I do not hold a graduation degree/valid marksheet yet</option>
+              </select>
+            </div>
+            <div class="fld">
+              <label class="flbl" for="lang">Studied Local Language in 10th/12th? <span>Required</span></label>
+              <select class="fsel" id="lang">
+                <option value="yes">Yes — Studied the state's local language as a subject</option>
+                <option value="no">No — Did not study it in 10th or 12th</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- ROW 4: Nationality -->
+          <div class="fgrid" style="grid-template-columns:1fr">
+            <div class="fld">
+              <label class="flbl" for="nat">Nationality / Citizenship <span>Required</span></label>
+              <select class="fsel" id="nat">
+                <option value="india">Citizen of India</option>
+                <option value="nepal">Subject of Nepal</option>
+                <option value="bhutan">Subject of Bhutan</option>
+                <option value="tibet">Tibetan refugee (settled in India before 01.01.1962) with GoI eligibility certificate</option>
+                <option value="migrant">Person of Indian origin migrated from Pakistan/Burma/Sri Lanka/East African countries/Vietnam with GoI eligibility certificate</option>
+                <option value="none">None of the above</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="hint-box">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            <div>Cut-off date for age & educational qualification is <strong>01.08.2026</strong>. Base age limit: <strong>20–30 years</strong>. Candidates who have not studied the applied state's local language in 10th/12th must clear a <strong>Local Language Proficiency Test (LPT)</strong> before the Personal Interview — this does not disqualify you at this stage.</div>
+          </div>
+
+          <div class="btn-row">
+            <button class="chk-btn" onclick="checkEligibility()">🏦 Check Eligibility</button>
+            <button class="rst-btn" onclick="resetForm()">↺ Reset</button>
+          </div>
+
+          <!-- RESULT -->
+          <div id="resultArea">
+            <div class="res-banner" id="resBanner">
+              <div class="meter-wrap">
+                <svg class="meter-svg" viewBox="0 0 100 100">
+                  <circle class="meter-bg" cx="50" cy="50" r="45"/>
+                  <circle class="meter-fill" id="meterFill" cx="50" cy="50" r="45" stroke-dasharray="283" stroke-dashoffset="283"/>
+                </svg>
+                <div class="meter-center">
+                  <div class="meter-pct" id="meterPct">0/3</div>
+                  <div class="meter-lbl" id="meterLbl">Criteria Met</div>
+                </div>
+              </div>
+              <div class="res-info">
+                <div class="res-icon" id="resIcon"></div>
+                <div class="res-title" id="resTitle"></div>
+                <div class="res-sub" id="resSub"></div>
+                <div class="res-tag" id="resTag"></div>
+              </div>
+            </div>
+
+            <div class="cond-grid" id="condGrid"></div>
+
+            <div class="age-brk" id="ageBrk">
+              <div class="ab-title">📋 Detailed Eligibility Breakdown</div>
+              <div id="abRows"></div>
+            </div>
+
+            <div class="sugg-box" id="suggBox"></div>
+            <div class="warn-box">
+              <span style="font-size:20px;flex-shrink:0">⚠️</span>
+              <div style="font-size:13.5px;color:var(--ink2);line-height:1.72"><strong>Important:</strong> This is only a preliminary basic eligibility check based on the information you entered. Final eligibility is subject to verification by Indian Overseas Bank and all conditions mentioned in the official notification. <strong>We do not collect or store any personal data.</strong></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TABLE SECTION -->
+<section class="tbl-sec" id="rules-table">
+  <div class="w">
+    <div style="max-width:860px;margin:0 auto">
+      <div class="rev" style="text-align:center;margin-bottom:36px">
+        <div class="pill" style="margin-bottom:14px">Official Notification Rules</div>
+        <h2 style="font-family:var(--fd);font-size:clamp(22px,3.5vw,36px);font-weight:800;color:var(--ink);margin-bottom:10px">IOB LBO <span style="color:var(--blue)">Eligibility Criteria 2026-27</span></h2>
+        <p style="font-size:15px;color:var(--ink3);max-width:520px;margin:0 auto;line-height:1.75">Extracted strictly from the official notification, Advt No. HRDD/RECT/02/2026-27, dated 07.08.2026.</p>
+      </div>
+
+      <h3 style="font-family:var(--fd);font-size:17px;font-weight:700;color:var(--ink);margin-bottom:12px">📋 Basic Eligibility Requirements</h3>
+      <div class="tbl-wr rev">
+        <table>
+          <thead><tr><th>Eligibility Requirement</th><th>Official Requirement</th></tr></thead>
+          <tbody>
+            <tr class="row-info"><td><strong>Post</strong></td><td>Local Bank Officer (LBO) – JMGS I</td></tr>
+            <tr><td><strong>Nationality</strong></td><td>Citizen of India, or subject of Nepal/Bhutan, or Tibetan refugee (before 01.01.1962), or person of Indian origin migrated from Pakistan/Burma/Sri Lanka/East African countries/Vietnam with GoI eligibility certificate</td></tr>
+            <tr class="row-info"><td><strong>Age Limit</strong></td><td>Minimum 20 years, Maximum 30 years, as on cut-off date 01.08.2026 (category relaxation applicable)</td></tr>
+            <tr><td><strong>Educational Qualification</strong></td><td>Degree (Graduation) in any discipline from a University recognized by the Govt. of India, or equivalent qualification recognized by the Central Government</td></tr>
+            <tr class="row-info"><td><strong>Local Language</strong></td><td>Proficiency (reading, writing, speaking) in the local language of the applied state; LPT required before Personal Interview if not studied in 10th/12th</td></tr>
+            <tr><td><strong>State Applied For</strong></td><td>Only ONE state; no change permitted after registration</td></tr>
+            <tr class="row-info"><td><strong>Online Registration Window</strong></td><td>08.08.2026 to 24.08.2026</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 style="font-family:var(--fd);font-size:17px;font-weight:700;color:var(--ink);margin:24px 0 12px">🗺️ State-wise Local Language</h3>
+      <div class="tbl-wr rev">
+        <table>
+          <thead><tr><th>State</th><th>Mandatory Local Language</th><th>Vacancies</th></tr></thead>
+          <tbody>
+            <tr class="row-pass"><td><strong>Tamil Nadu</strong></td><td>Tamil</td><td>100</td></tr>
+            <tr class="row-pass"><td><strong>Karnataka</strong></td><td>Kannada</td><td>50</td></tr>
+            <tr class="row-pass"><td><strong>Maharashtra</strong></td><td>Marathi</td><td>50</td></tr>
+            <tr class="row-pass"><td><strong>Gujarat</strong></td><td>Gujarati</td><td>50</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 style="font-family:var(--fd);font-size:17px;font-weight:700;color:var(--ink);margin:24px 0 12px">🎯 Age Relaxation (Upper Age Limit)</h3>
+      <div class="tbl-wr rev">
+        <table>
+          <thead><tr><th>Category</th><th>Relaxation</th><th>Resulting Max Age</th></tr></thead>
+          <tbody>
+            <tr class="row-pass"><td><strong>SC / ST</strong></td><td>5 years</td><td><span class="tbadge g">35 years</span></td></tr>
+            <tr class="row-pass"><td><strong>OBC (Non-Creamy Layer)</strong></td><td>3 years</td><td><span class="tbadge g">33 years</span></td></tr>
+            <tr class="row-pass"><td><strong>Persons with Benchmark Disabilities (PwBD)</strong></td><td>10 years</td><td><span class="tbadge g">40 years</span></td></tr>
+            <tr class="row-pass"><td><strong>Persons affected by 1984 Riots</strong></td><td>5 years</td><td><span class="tbadge g">35 years</span></td></tr>
+            <tr class="row-pass"><td><strong>Ex-servicemen / Commissioned Officers (min. 5 yrs military service)</strong></td><td>5 years</td><td><span class="tbadge g">35 years</span></td></tr>
+            <tr class="row-info"><td><strong>Cumulative (SC/ST/OBC + one more eligible category)</strong></td><td>Combined relaxation</td><td><span class="tbadge b">Capped at 50 years</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:12.5px;color:var(--ink4);margin-top:12px;text-align:center">* Cumulative relaxation is available only to SC/ST/OBC candidates combined with one additional eligible category, subject to a maximum upper age limit of 50 years, as per the official notification.</p>
+    </div>
+  </div>
+</section>
+
+<!-- STORY -->
+<section class="story-sec">
+  <div class="wa">
+    <div class="rev" style="text-align:center;margin-bottom:36px">
+      <div class="pill" style="margin-bottom:14px">Why I Built This</div>
+      <h2 style="font-family:var(--fd);font-size:clamp(22px,3.4vw,34px);font-weight:800;color:var(--ink);margin-bottom:8px">Priya ki <span style="color:var(--blue)">Kahaani</span></h2>
+      <p style="font-size:15px;color:var(--ink3)">Jo confusion Priya ko thi, wahi confusion har banking aspirant ko hoti hai.</p>
+    </div>
+    <div class="story-card rev">
+      <div class="sq">"</div>
+      <div class="sb">
+        Jab maine Priya ke liye <strong>IOB LBO Age Calculator</strong> banaya, to usne dobara message kiya — <em>"Raj Bhai, age to clear ho gayi, lekin main confuse hoon ki mujhe apply karne se pehle aur kya-kya check karna chahiye? Graduation zaroori hai kya, aur agar maine Gujarati 12th mein nahi padhi to?"</em><br><br>
+        <strong>Yehi wo gap tha jo maine notice kiya</strong> — sirf age check karna kaafi nahi hota. Nationality, educational qualification, aur local language proficiency — ye sab bhi eligibility ka hissa hain, aur inhe alag-alag official notification ke section se dhundna time-consuming ho jaata hai.<br><br>
+        <strong>Isi wajah se maine ye Eligibility Checker banaya</strong> — taaki har aspirant apni age, qualification, nationality aur local language requirement, sab ek jagah, official notification ke hisaab se, ek click mein check kar sake. 🏦
+      </div>
+      <div class="sauth">
+        <div class="savt">👨‍💻</div>
+        <div>
+          <div class="sname">Raj Bhai</div>
+          <div class="srole">Founder, RajDailyTools · BSc Physics · COPA ITI Certified</div>
+        </div>
+      </div>
+    </div>
+    <div class="founder-msg rev" style="margin-top:18px">
+      <div class="fm-ico">💡</div>
+      <div class="fm-txt">
+        <strong>Founder's Message:</strong> "RajDailyTools ka mission hai real-life problems ko simple aur smart tools ke through solve karna. Har banking aspirant ko official notification ke hisaab se accurate, data-driven clarity milni chahiye — guesswork nahi."
+        <br><span style="font-size:13px;color:var(--ink3);font-style:normal;margin-top:6px;display:block">— Raj Bhai, Founder, RajDailyTools</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GUIDE -->
+<section class="guide-sec">
+  <div class="wa">
+    <div class="rev">
+      <div class="pill" style="margin-bottom:14px">Complete Guide</div>
+      <h2 style="font-family:var(--fd);font-size:clamp(22px,3.5vw,36px);font-weight:800;color:var(--ink);margin-bottom:8px">IOB LBO Eligibility <span style="color:var(--blue)">Complete Guide 2026-27</span></h2>
+      <p style="font-size:15px;color:var(--ink3);margin-bottom:32px">Har eligibility criteria ka detailed explanation — sab kuch official notification ke hisaab se.</p>
+    </div>
+    <div class="guide-body rev">
+      <h2>Nationality / Citizenship</h2>
+      <p>Official notification ke anusaar candidate ko in mein se koi ek category ka hona chahiye:</p>
+      <ul>
+        <li>Citizen of India</li>
+        <li>Subject of Nepal</li>
+        <li>Subject of Bhutan</li>
+        <li>Tibetan refugee jo 1 January 1962 se pehle permanently settle hone ki niyat se India aaya ho</li>
+        <li>Pakistan, Burma, Sri Lanka, East African countries (Kenya, Uganda, Tanzania, Zambia, Malawi, Zaire, Ethiopia) ya Vietnam se migrate hua Indian-origin person, permanently settle hone ki niyat se</li>
+      </ul>
+      <div class="ibox">
+        <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        <div><strong>Important:</strong> Categories 2-5 ke candidates ke paas notification se pehle Government of India dwara issued eligibility certificate hona zaroori hai.</div>
+      </div>
+
+      <h2>Age Limit</h2>
+      <p>Minimum age <strong>20 saal</strong> aur maximum age <strong>30 saal</strong> honi chahiye, cut-off date <strong>01.08.2026</strong> ke hisaab se. SC/ST/OBC/PwBD/Ex-servicemen/1984-riot affected candidates ko upar diye gaye table ke anusaar relaxation milti hai. Detailed age breakdown ke liye hamara <a href="https://rajdailytools.in/iob-lbo-age-calculator-2026.html" target="_blank" rel="noopener" style="color:var(--blue);font-weight:700">IOB LBO Age Calculator</a> bhi use kar sakte hain.</p>
+
+      <h2>Educational Qualification</h2>
+      <p>Candidate ke paas <strong>kisi bhi discipline mein Degree (Graduation)</strong> honi chahiye, Government of India dwara recognized University se, ya Central Government dwara recognized equivalent qualification. Candidate ke paas <strong>valid Mark-sheet / Degree Certificate</strong> hona zaroori hai jo ye prove kare ki wo online registration ke din graduate hai, aur registration ke time percentage of marks bhi indicate karna hoga.</p>
+
+      <h2>Local Language Proficiency</h2>
+      <p>Candidate ko apply kiye gaye state ki local language mein <strong>reading, writing aur speaking</strong> proficient hona chahiye — jaisa vacancy table mein diya gaya hai (Tamil Nadu-Tamil, Karnataka-Kannada, Maharashtra-Marathi, Gujarat-Gujarati). Agar candidate ne 10th ya 12th standard mein ye subject nahi padha, to Personal Interview se pehle <strong>Local Language Proficiency Test (LPT)</strong> clear karni hogi. LPT clear na karne par further selection process ke liye consider nahi kiya jayega.</p>
+      <div class="ibox a">
+        <svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        <div><strong>Note:</strong> Candidate ek hi state ke liye apply kar sakta hai. Registration ke baad state change karne ki permission nahi hai.</div>
+      </div>
+
+      <h2>Worked Examples</h2>
+      <div class="ex-grid rev">
+        <div class="ex-card pass">
+          <div class="ex-h">✅ Example 1 — All Criteria Met</div>
+          <div class="ex-p">Citizen of India, DOB <b>15 June 2000</b> (age 26 as on 01.08.2026), Graduate, Tamil Nadu applicant who studied Tamil in 12th → <b>Basic Eligibility Criteria Met</b></div>
+        </div>
+        <div class="ex-card pass">
+          <div class="ex-h">✅ Example 2 — Language Conditional</div>
+          <div class="ex-p">Citizen of India, SC category, DOB <b>10 March 1995</b> (age 31, within relaxed max 35), Graduate, Gujarat applicant, did not study Gujarati in 10th/12th → <b>Basic Criteria Met, LPT Required</b></div>
+        </div>
+        <div class="ex-card fail">
+          <div class="ex-h">❌ Example 3 — Not a Graduate</div>
+          <div class="ex-p">Citizen of India, DOB <b>1 January 2000</b>, age criteria met, but does not yet hold a valid graduation degree/marksheet → <b>Educational Qualification Not Met</b></div>
+        </div>
+        <div class="ex-card fail">
+          <div class="ex-h">❌ Example 4 — Age Not Met</div>
+          <div class="ex-p">Citizen of India, General category, DOB <b>1 January 1990</b> (age 36), Graduate → <b>Age Criteria Not Met</b> (max permissible age is 30 for General)</div>
+        </div>
+      </div>
+
+      <h2>Document Verification</h2>
+      <p>Documents like Nationality proof, Date of Birth proof, Educational certificates, Language proficiency proof (10th/12th marksheet) aur Category certificates (as applicable) must be produced in original with photocopies at the time of Personal Interview. <strong>This eligibility checker cannot verify documents — final eligibility depends on document verification by Indian Overseas Bank.</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-sec">
+  <div class="w">
+    <div style="text-align:center;margin-bottom:40px" class="rev">
+      <div class="pill" style="margin-bottom:14px">FAQs</div>
+      <h2 style="font-family:var(--fd);font-size:clamp(22px,3.5vw,36px);font-weight:800;color:var(--ink);margin-bottom:10px">Frequently Asked <span style="color:var(--blue)">Questions</span></h2>
+      <p style="font-size:15px;color:var(--ink3);max-width:480px;margin:0 auto">IOB LBO 2026-27 eligibility ke baare mein common sawaal.</p>
+    </div>
+    <div class="fql" id="faqList">
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">IOB LBO 2026-27 ke liye basic eligibility criteria kya hain?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">Official notification (Advt No. HRDD/RECT/02/2026-27) ke anusaar candidate ka <strong>Citizen of India</strong> (ya eligible nationality category), <strong>age 20-30 years</strong> (relaxation applicable), <strong>any discipline me graduation degree</strong>, aur applied state ki <strong>local language proficiency</strong> honi chahiye.</div></div></div>
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">Kya ye tool final eligibility confirm karta hai?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">Nahi. Ye tool sirf ek <strong>preliminary basic eligibility check</strong> deta hai jo aapke diye gaye inputs par based hai. <strong>Final eligibility Indian Overseas Bank dwara document verification ke baad hi decide hoti hai.</strong></div></div></div>
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">Agar maine local language 10th/12th me nahi padhi to kya karna hoga?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">Aapko Personal Interview se pehle <strong>Local Language Proficiency Test (LPT)</strong> clear karni hogi, jaisa official notification me bataya gaya hai. Isse aapki basic eligibility disqualify nahi hoti, lekin LPT clear karna zaroori hai.</div></div></div>
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">Kya main ek se zyada state ke liye apply kar sakta hoon?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">Nahi. Official notification ke anusaar candidate <strong>sirf ek state ke liye apply</strong> kar sakta hai, aur registration ke baad state change karne ki permission nahi hai.</div></div></div>
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">Educational qualification ke liye kya specific degree chahiye?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">Nahi, koi specific discipline required nahi hai. <strong>Kisi bhi discipline mein Degree (Graduation)</strong>, Government of India dwara recognized University se, ya equivalent qualification chahiye — aur registration ke din valid marksheet/degree certificate hona zaroori hai.</div></div></div>
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">Kya experience IOB LBO 2026-27 ke liye mandatory hai?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">Nahi, experience eligibility criteria ka hissa nahi hai. Halaanki, official notification ke anusaar Scheduled Commercial Bank mein prior Officer service ke liye <strong>advance increment</strong> mil sakta hai (max 2 increments), agar job profile match kare — lekin ye eligibility ke liye required nahi hai.</div></div></div>
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">Kya ye calculator official IOB result deta hai?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">Nahi. Ye tool sirf eligibility ka preliminary estimate deta hai. <strong>Final eligibility aur selection Indian Overseas Bank ke official process se hi decide hoti hai.</strong></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-sec">
+  <div class="w">
+    <div class="contact-card rev">
+      <h3>💬 Questions or Suggestions?</h3>
+      <p>Agar IOB LBO notification mein koi update mile ya tool mein koi error lage, please contact karein. Aspirants ke liye hum jaldi update karte hain.</p>
+      <a href="/contact" class="btn-bl">📩 Contact Us</a>
+      <p class="priv-note">🔒 We do not collect or store any personal data. All processing is done locally in your browser.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="w">
+    <div class="cta-in">
+      <div class="pill">More IOB LBO Tools</div>
+      <h2>Check Your Exact <em>Age Breakdown Too</em></h2>
+      <p>Eligibility check ho gayi — ab apna exact age (years, months, days) aur relaxation breakdown bhi dekhein with our IOB LBO Age Calculator.</p>
+      <div class="cta-btns">
+        <a href="https://rajdailytools.in/iob-lbo-age-calculator-2026.html" target="_blank" class="btn-gold">📆 IOB LBO Age Calculator</a>
+        <a href="/categories" class="btn-ghost">🚀 Explore All Tools</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-inner">
+    <div class="ft-top">
+      <div class="ft-brand">
+        <div class="logo" style="margin-bottom:4px">
+          <div class="lb"><svg viewBox="0 0 24 24" fill="#fff"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+          <div><div class="ln">Raj<span>Daily</span>Tools</div><div class="ls">Smart Tools for Daily Life</div></div>
+        </div>
+        <p class="ft-desc">RajDailyTools provides a growing collection of free online tools for students, professionals, and everyday users. New tools are added regularly to help make everyday tasks simpler and faster</p>
+      </div>
+      <div class="fc"><h4>Company</h4><ul>
+        <li><a href="/about">About Us</a></li>
+        <li><a href="/contact">Contact</a></li>
+        <li><a href="/privacy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
+      </ul></div>
+    </div>
+    <div class="ft-btm">
+      <p class="ft-cp">Copyright © 2026 <b>RajDailyTools</b>. All rights reserved. Designed by <b>RajDailyTools</b></p>
+      <p class="ft-tag">Made with ❤️ in India — "Solving daily life problems with smart tools"</p>
+    </div>
+  </div>
+</footer>
+<button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<!-- DISC -->
+<div class="disc">
+  <div class="wa">
+    <div class="disc-in">
+      <span style="font-size:20px;flex-shrink:0">⚠️</span>
+      <div><strong>Disclaimer:</strong> This tool provides only a preliminary/informational basic eligibility check. It is not the official IOB website. Final eligibility is determined solely by Indian Overseas Bank as per the official IOB LBO notification (Advt No. HRDD/RECT/02/2026-27) — which is the final authority. RajDailyTools is an independent educational platform. Always verify all conditions from <a href="https://www.iob.bank.in" target="_blank" rel="noopener" style="color:var(--blue);font-weight:700">www.iob.bank.in</a> before applying. <strong>We do not collect or store any personal data.</strong></div>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ── Drawer ── */
+const brg=document.getElementById('brg'),drw=document.getElementById('drw'),dov=document.getElementById('dov');
+function oD(){drw.classList.add('on');dov.classList.add('on');document.body.style.overflow='hidden'}
+function cD(){drw.classList.remove('on');dov.classList.remove('on');document.body.style.overflow=''}
+brg.addEventListener('click',oD);document.getElementById('dx').addEventListener('click',cD);dov.addEventListener('click',cD);
+const btt=document.getElementById('btt');
+window.addEventListener('scroll',()=>btt.classList.toggle('on',scrollY>380),{passive:true});
+const rvObs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){const s=[...(e.target.parentElement?.children||[])];e.target.style.transitionDelay=(s.indexOf(e.target)%4)*0.08+'s';e.target.classList.add('in');rvObs.unobserve(e.target);}});
+},{threshold:0.06,rootMargin:'0px 0px -20px 0px'});
+document.querySelectorAll('.rev').forEach(el=>rvObs.observe(el));
+document.getElementById('faqList').addEventListener('click',function(e){
+  const q=e.target.closest('.fq-q');if(!q)return;
+  const item=q.closest('.fq'),open=item.classList.contains('open');
+  document.querySelectorAll('.fq.open').forEach(i=>i.classList.remove('open'));
+  if(!open)item.classList.add('open');
+});
+
+/* ══════════════════════════════════════
+   IOB LBO ELIGIBILITY CHECKER LOGIC
+   Source of truth: Advt No. HRDD/RECT/02/2026-27, dated 07.08.2026
+══════════════════════════════════════ */
+const CUTOFF = new Date(2026, 7, 1); // 01 August 2026 (month is 0-indexed)
+const BASE_MIN_AGE = 20;
+const BASE_MAX_AGE = 30;
+const CUMULATIVE_MAX_AGE = 50; // absolute ceiling per notification
+
+const CAT_RELAX = { gen: 0, obc: 3, sc: 5, st: 5 };
+const ADD_RELAX = { none: 0, pwbd: 10, riot: 5, exsm: 5 };
+const CAT_LABEL = { gen: 'General / EWS', obc: 'OBC (Non-Creamy Layer)', sc: 'SC', st: 'ST' };
+const ADD_LABEL = { none: 'None', pwbd: 'PwBD', riot: '1984 Riot-Affected', exsm: 'Ex-servicemen / Commissioned Officer' };
+const STATE_LABEL = { tn: 'Tamil Nadu', ka: 'Karnataka', mh: 'Maharashtra', gj: 'Gujarat' };
+const STATE_LANG = { tn: 'Tamil', ka: 'Kannada', mh: 'Marathi', gj: 'Gujarati' };
+const NAT_LABEL = {
+  india: 'Citizen of India',
+  nepal: 'Subject of Nepal',
+  bhutan: 'Subject of Bhutan',
+  tibet: 'Tibetan refugee (before 01.01.1962) with eligibility certificate',
+  migrant: 'Person of Indian origin (migrated, with eligibility certificate)',
+  none: 'None of the listed categories'
+};
+
+function daysInMonth(year, monthIndexOneBased){
+  return new Date(year, monthIndexOneBased, 0).getDate();
+}
+
+function calcAge(dob, cutoff){
+  let y = cutoff.getFullYear() - dob.getFullYear();
+  let m = cutoff.getMonth() - dob.getMonth();
+  let d = cutoff.getDate() - dob.getDate();
+  if(d < 0){
+    m -= 1;
+    let prevMonthIndex = cutoff.getMonth();
+    let prevMonthYear = cutoff.getFullYear();
+    if(prevMonthIndex === 0){ prevMonthIndex = 12; prevMonthYear -= 1; }
+    d += daysInMonth(prevMonthYear, prevMonthIndex);
+  }
+  if(m < 0){
+    y -= 1;
+    m += 12;
+  }
+  return { years: y, months: m, days: d };
+}
+
+function addYearsToDate(dt, years){
+  const d = new Date(dt.getTime());
+  d.setFullYear(d.getFullYear() + years);
+  return d;
+}
+
+function fmtDate(dt){
+  const opts = { day: '2-digit', month: 'long', year: 'numeric' };
+  return dt.toLocaleDateString('en-GB', opts);
+}
+
+function resetForm(){
+  document.getElementById('state').value = 'tn';
+  document.getElementById('dob').value = '';
+  document.getElementById('category').value = 'gen';
+  document.getElementById('addcat').value = 'none';
+  document.getElementById('edu').value = 'yes';
+  document.getElementById('lang').value = 'yes';
+  document.getElementById('nat').value = 'india';
+  document.getElementById('resultArea').style.display = 'none';
+}
+
+function condCard(pass, cls, icon, title, desc){
+  return `<div class="cond-card ${cls}"><div class="cc-h">${icon} ${title}</div><div class="cc-p">${desc}</div></div>`;
+}
+
+function checkEligibility(){
+  const state = document.getElementById('state').value;
+  const dobVal = document.getElementById('dob').value;
+  const category = document.getElementById('category').value;
+  const addcat = document.getElementById('addcat').value;
+  const edu = document.getElementById('edu').value;
+  const lang = document.getElementById('lang').value;
+  const nat = document.getElementById('nat').value;
+
+  if(!dobVal){ alert('Please enter your Date of Birth.'); return; }
+
+  const dob = new Date(dobVal + 'T00:00:00');
+  if(isNaN(dob.getTime())){ alert('Please enter a valid Date of Birth.'); return; }
+
+  const today = new Date();
+  today.setHours(0,0,0,0);
+  if(dob > today){ alert('Date of Birth cannot be in the future.'); return; }
+
+  if(dob > CUTOFF){
+    alert('Date of Birth cannot be after the official cut-off date (01 August 2026).');
+    return;
+  }
+
+  /* ── AGE CHECK ── */
+  const catRelax = CAT_RELAX[category] || 0;
+  const addRelax = ADD_RELAX[addcat] || 0;
+  let totalRelax = 0;
+  let cumulativeApplied = false;
+
+  if(catRelax > 0 && addRelax > 0){
+    totalRelax = Math.min(catRelax + addRelax, CUMULATIVE_MAX_AGE - BASE_MAX_AGE);
+    cumulativeApplied = true;
+  } else {
+    totalRelax = Math.max(catRelax, addRelax);
+  }
+
+  const maxPermissibleAge = BASE_MAX_AGE + totalRelax;
+  const age = calcAge(dob, CUTOFF);
+
+  const minDOB_allowed = addYearsToDate(CUTOFF, -BASE_MIN_AGE);
+  const maxDOB_allowed = addYearsToDate(CUTOFF, -maxPermissibleAge);
+
+  const meetsMin = dob <= minDOB_allowed;
+  const meetsMax = dob >= maxDOB_allowed;
+  const ageMet = meetsMin && meetsMax;
+
+  /* ── OTHER CHECKS ── */
+  const eduMet = edu === 'yes';
+  const natMet = nat !== 'none';
+  const langMetDirect = lang === 'yes';
+
+  /* Core gating criteria: Nationality, Age, Education */
+  const coreMet = [natMet, ageMet, eduMet].filter(Boolean).length;
+  const overall = natMet && ageMet && eduMet;
+
+  /* ── BANNER ── */
+  const banner = document.getElementById('resBanner');
+  banner.className = `res-banner ${overall ? 'pass' : 'fail'}`;
+
+  document.getElementById('meterPct').textContent = `${coreMet}/3`;
+  document.getElementById('meterLbl').textContent = 'Criteria Met';
+  const meterFill = document.getElementById('meterFill');
+  const circumference = 283;
+  const pct = (coreMet/3)*100;
+  const dashOffset = Math.round(circumference - (pct/100)*circumference);
+  meterFill.style.stroke = overall ? 'var(--green)' : 'var(--red)';
+  meterFill.style.strokeDashoffset = circumference;
+  setTimeout(()=>{ meterFill.style.strokeDashoffset = dashOffset; }, 200);
+
+  document.getElementById('resIcon').textContent = overall ? '✅' : '❌';
+  document.getElementById('resTitle').textContent = overall ? 'Basic Eligibility Criteria Met' : 'Basic Eligibility Criteria Not Met';
+  document.getElementById('resSub').textContent = `${STATE_LABEL[state]} (${STATE_LANG[state]}) — Age as on 01 August 2026: ${age.years}y ${age.months}m ${age.days}d`;
+  const tag = document.getElementById('resTag');
+  tag.className = `res-tag ${overall ? 'pass' : 'fail'}`;
+  tag.textContent = overall ? '✅ Basic eligibility criteria appear to be satisfied' : '❌ One or more eligibility conditions are not satisfied';
+
+  /* ── CONDITION CARDS ── */
+  let condHTML = '';
+  condHTML += condCard(natMet, natMet ? 'pass' : 'fail', natMet ? '✓' : '✕', 'Nationality / Citizenship', natMet ? `Meets requirement — ${NAT_LABEL[nat]}` : 'Does not meet requirement as per the official notification');
+  condHTML += condCard(ageMet, ageMet ? 'pass' : 'fail', ageMet ? '✓' : '✕', 'Age Criteria', ageMet ? `Meets requirement — ${age.years}y ${age.months}m ${age.days}d (max permissible: ${maxPermissibleAge} yrs)` : `Does not meet requirement — age must be between ${BASE_MIN_AGE} and ${maxPermissibleAge} years`);
+  condHTML += condCard(eduMet, eduMet ? 'pass' : 'fail', eduMet ? '✓' : '✕', 'Educational Qualification', eduMet ? 'Meets requirement — holds a recognized Graduation degree' : 'Does not meet requirement — graduation degree/valid marksheet not yet held');
+  condHTML += condCard(langMetDirect, langMetDirect ? 'pass' : 'cond', langMetDirect ? '✓' : '⚠', 'Local Language Proficiency', langMetDirect ? `Meets requirement — studied ${STATE_LANG[state]} in 10th/12th` : `Conditional — Local Language Proficiency Test (LPT) in ${STATE_LANG[state]} required before Personal Interview`);
+  document.getElementById('condGrid').innerHTML = condHTML;
+
+  /* ── BREAKDOWN ROWS ── */
+  let rowsHTML = '';
+  rowsHTML += `<div class="ab-row"><span class="ab-lbl">State Applied For</span><span class="ab-val">${STATE_LABEL[state]} (${STATE_LANG[state]})</span></div>`;
+  rowsHTML += `<div class="ab-row"><span class="ab-lbl">Nationality Selected</span><span class="ab-val">${NAT_LABEL[nat]}</span></div>`;
+  rowsHTML += `<div class="ab-row"><span class="ab-lbl">Nationality Criteria Met?</span><span class="ab-val ${natMet?'g':'r'}">${natMet ? 'Yes' : 'No'}</span></div>`;
+  rowsHTML += `<div class="ab-row"><span class="ab-lbl">Date of Birth</span><span class="ab-val">${fmtDate(dob)}</span></div>`;
+  rowsHTML += `<div class="ab-row"><span class="ab-lbl">Cut-off Date</span><span class="ab-val">01 August 2026</span></div>`;
+  rowsHTML += `<div class="ab-row"><span class="ab-lbl">Exact Age on Cut-off Date</span><span class="ab-val">${age.years}y ${age.months}m ${age.days}d</span></div>`;
+  rowsHTML += `<div class="ab-row"><span class="ab-lbl">Category Selected</span><span class="ab-val">${CAT_LABEL[category]}${addcat!=='none' ? ' + ' + ADD_LABEL[addcat] : ''}</span></div>`;
+  rowsHTML += `<div class="ab-row"><span class="ab-lbl">Applicable Age Relaxation</span><span class="ab-val">${totalRelax > 0 ? '+' + totalRelax + ' years' + (cumulativeApplied ? ' (cumulative, capped at 50)' : '') : 'Not Applicable'}</span></div>`;
+  rowsHTML += `<div class="ab-row"><span class="ab-lbl">Maximum Permissible Age</span><span class="ab-val">${maxPermissibleAge} years</span></div>`;
+  rowsHTML += `<div class="ab-row"><span class="ab-lbl">Age Criteria Met?</span><span class="ab-val ${ageMet?'g':'r'}">${ageMet ? 'Yes' : 'No'}</span></div>`;
+  rowsHTML += `<div class="ab-row"><span class="ab-lbl">Educational Qualification Met?</span><span class="ab-val ${eduMet?'g':'r'}">${eduMet ? 'Yes' : 'No'}</span></div>`;
+  rowsHTML += `<div class="ab-row"><span class="ab-lbl">Local Language Requirement</span><span class="ab-val ${langMetDirect?'g':'a'}">${langMetDirect ? 'Met via 10th/12th' : 'LPT Required Before Interview'}</span></div>`;
+  document.getElementById('abRows').innerHTML = rowsHTML;
+
+  /* ── SUMMARY MESSAGE ── */
+  let msg = '';
+  if(overall){
+    msg = `<strong>✅ Aapke diye gaye inputs ke hisaab se, aap IOB LBO 2026-27 (${STATE_LABEL[state]}) ke basic eligibility criteria — nationality, age aur educational qualification — meet karte hain.</strong> `;
+    if(!langMetDirect){
+      msg += `Aapko Personal Interview se pehle <strong>${STATE_LANG[state]} Local Language Proficiency Test (LPT)</strong> clear karni hogi. `;
+    }
+    msg += `<strong>Final eligibility is subject to verification by Indian Overseas Bank and all conditions mentioned in the official notification.</strong>`;
+  } else {
+    let issues = [];
+    if(!natMet) issues.push('nationality/citizenship criteria');
+    if(!ageMet) issues.push('age criteria');
+    if(!eduMet) issues.push('educational qualification criteria');
+    msg = `<strong>❌ Aapke diye gaye inputs ke hisaab se, aap ${issues.join(', ')} ko meet nahi kar rahe.</strong> Kripya official notification se dobara verify karein — <strong>final eligibility is subject to verification by Indian Overseas Bank.</strong>`;
+  }
+  document.getElementById('suggBox').innerHTML = `<strong style="display:block;font-family:var(--fd);font-size:14px;margin-bottom:8px">💡 Result Summary</strong><p style="font-size:14px;color:var(--ink2);line-height:1.72">${msg}</p>`;
+
+  const ra = document.getElementById('resultArea');
+  ra.style.display = 'block';
+  ra.style.animation = 'none'; ra.offsetHeight;
+  ra.style.animation = 'resultIn .45s var(--ease) both';
+  setTimeout(()=>ra.scrollIntoView({behavior:'smooth', block:'nearest'}), 120);
+}
+</script>
+</body>
+</html>
