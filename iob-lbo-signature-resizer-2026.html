@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IOB LBO Signature Resizer 2026 – Resize Signature for IOB LBO</title>
+<meta name="description" content="Free IOB LBO Signature Resizer 2026 — resize your signature to the official 140x60 px, 10-20KB format for IOB Local Bank Officer recruitment. 100% browser-based, no upload.">
+<meta name="keywords" content="IOB LBO signature resizer 2026, IOB LBO signature size, IOB Local Bank Officer signature format, IOB LBO signature 140x60, IOB LBO photo signature requirements">
+<meta name="robots" content="index, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"IOB LBO 2026-27 ke liye signature ka size kya hona chahiye?","acceptedAnswer":{"@type":"Answer","text":"Official notification (Advt No. HRDD/RECT/02/2026-27), Annexure I ke anusaar signature ka preferred dimension 140 x 60 pixels hai aur file size 10KB se 20KB ke beech honi chahiye, 20KB se zyada nahi."}},
+    {"@type":"Question","name":"IOB LBO signature kis format mein upload karni hai?","acceptedAnswer":{"@type":"Answer","text":"Official scanning guidelines ke anusaar image file JPG ya JPEG format mein honi chahiye."}},
+    {"@type":"Question","name":"Kya ye tool signature ko server par upload karta hai?","acceptedAnswer":{"@type":"Answer","text":"Nahi. Ye tool 100% aapke browser ke andar (client-side) process hota hai. Aapki signature RajDailyTools ke server par upload nahi hoti."}}
+  ]
+}
+</script>
+<style>
+/* ══════════════════════════════════════
+   DESIGN TOKENS (RajDailyTools system)
+══════════════════════════════════════ */
+:root{
+  --blue:#2563eb;--blue-d:#1d4ed8;--blue-xl:#eff6ff;--blue-s:#dbeafe;
+  --amber:#f59e0b;--green:#10b981;--red:#ef4444;--purple:#8b5cf6;
+  --orange:#f97316;--teal:#14b8a6;
+  --green-xl:#f0fdf4;--green-s:#bbf7d0;
+  --red-xl:#fef2f2;--red-s:#fecaca;
+  --amber-xl:#fffbeb;--amber-s:#fde68a;
+  --purple-xl:#faf5ff;--purple-s:#ddd6fe;
+  --yellow:#eab308;--yellow-xl:#fefce8;--yellow-s:#fef08a;
+  --ink:#0f172a;--ink2:#334155;--ink3:#64748b;--ink4:#94a3b8;
+  --line:#e2e8f0;--surf:#f8fafc;--white:#fff;
+  --s1:0 1px 3px rgba(15,23,42,.06),0 1px 2px rgba(15,23,42,.04);
+  --s2:0 4px 16px rgba(15,23,42,.08),0 2px 6px rgba(15,23,42,.04);
+  --s3:0 12px 40px rgba(15,23,42,.11),0 3px 10px rgba(15,23,42,.06);
+  --s4:0 24px 64px rgba(15,23,42,.13),0 6px 20px rgba(15,23,42,.07);
+  --sb:0 8px 32px rgba(37,99,235,.20);
+  --fd:'Sora',sans-serif;--fb:'DM Sans',sans-serif;
+  --ease:cubic-bezier(.4,0,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);color:var(--ink);background:var(--white);overflow-x:hidden;-webkit-font-smoothing:antialiased;line-height:1.6}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+button{cursor:pointer;border:none;background:none;font-family:var(--fb)}
+.w{max-width:1180px;margin:0 auto;padding:0 24px}
+.wa{max-width:880px;margin:0 auto;padding:0 24px}
+select,input{appearance:none;-webkit-appearance:none}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+@keyframes resultIn{from{opacity:0;transform:translateY(18px) scale(.97)}to{opacity:1;transform:none}}
+.rev{opacity:0;transform:translateY(22px);transition:opacity .55s var(--ease),transform .55s var(--ease)}
+.rev.in{opacity:1;transform:none}
+
+/* ══ HEADER ══ */
+.hdr{position:sticky;top:0;z-index:999;background:rgba(255,255,255,.96);backdrop-filter:blur(20px);border-bottom:1px solid var(--line);box-shadow:var(--s1)}
+.hdi{display:flex;align-items:center;justify-content:space-between;height:66px}
+.logo{display:flex;align-items:center;gap:10px}
+.lb{width:36px;height:36px;background:var(--blue);border-radius:9px;display:flex;align-items:center;justify-content:center;box-shadow:var(--sb);flex-shrink:0}
+.lb svg{width:18px;height:18px;fill:#fff}
+.ln{font-family:var(--fd);font-size:19px;font-weight:800;color:var(--ink);line-height:1}
+.ln span{color:var(--blue)}
+.ls{font-size:10px;color:var(--ink4);letter-spacing:.04em}
+nav.dn{display:flex;align-items:center;gap:2px}
+nav.dn a{font-size:13.5px;font-weight:500;color:var(--ink2);padding:7px 13px;border-radius:8px;transition:.2s}
+nav.dn a:hover{color:var(--blue);background:var(--blue-xl)}
+.hcta{background:var(--blue);color:#fff;font-family:var(--fd);font-weight:600;font-size:13px;padding:8px 18px;border-radius:8px;box-shadow:var(--sb);transition:.2s}
+.hcta:hover{background:var(--blue-d);transform:translateY(-1px)}
+.brg{display:none;flex-direction:column;gap:4.5px;padding:8px;border-radius:8px}
+.brg span{display:block;width:20px;height:2px;background:var(--ink);border-radius:2px;transition:.28s}
+.dov{display:none;position:fixed;inset:0;background:rgba(15,23,42,.45);z-index:1040;backdrop-filter:blur(3px)}
+.dov.on{display:block}
+.drw{position:fixed;top:0;right:-100%;width:270px;height:100vh;background:#fff;z-index:1050;padding:22px;box-shadow:var(--s4);transition:right .32s var(--ease);overflow-y:auto}
+.drw.on{right:0}
+.dh{display:flex;align-items:center;justify-content:space-between;margin-bottom:26px}
+.dx{width:33px;height:33px;border-radius:7px;background:var(--surf);display:flex;align-items:center;justify-content:center;color:var(--ink3);font-size:17px}
+nav.mn{display:flex;flex-direction:column;gap:3px}
+nav.mn a{display:block;font-size:14px;font-weight:500;color:var(--ink2);padding:11px 13px;border-radius:8px;transition:.2s}
+nav.mn a:hover{color:var(--blue);background:var(--blue-xl)}
+
+/* ══ HERO ══ */
+.hero{position:relative;overflow:hidden;background:linear-gradient(150deg,#ebf4ff 0%,#fff 46%,#fdf0f0 100%);padding:64px 0 72px}
+.hero::before{content:'';position:absolute;top:-140px;right:-180px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(37,99,235,.08) 0%,transparent 68%);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-80px;left:-100px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(249,115,22,.05) 0%,transparent 68%);pointer-events:none}
+.blob{position:absolute;border-radius:50%;pointer-events:none;animation:float 6s ease-in-out infinite}
+.b1{width:13px;height:13px;background:rgba(37,99,235,.18);top:22%;right:14%;animation-delay:0s}
+.b2{width:9px;height:9px;background:rgba(249,115,22,.22);top:58%;right:26%;animation-delay:2.2s}
+.b3{width:11px;height:11px;background:rgba(16,185,129,.18);top:36%;right:6%;animation-delay:4s}
+.bc{display:flex;align-items:center;gap:7px;font-size:12.5px;color:var(--ink3);margin-bottom:22px;position:relative;z-index:1;flex-wrap:wrap}
+.bc a{color:var(--blue);font-weight:600}
+.pill{display:inline-flex;align-items:center;gap:7px;font-family:var(--fd);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);background:var(--blue-xl);padding:5px 14px;border-radius:100px;margin-bottom:18px}
+.pill::before{content:'';width:6px;height:6px;background:var(--blue);border-radius:50%}
+.hero-inner{position:relative;z-index:1;max-width:720px;animation:fadeUp .5s ease both}
+.hero h1{font-family:var(--fd);font-size:clamp(26px,4.5vw,50px);font-weight:800;line-height:1.1;color:var(--ink);margin-bottom:14px}
+.hero h1 span{color:var(--blue)}
+.hero-sub{font-size:16px;color:var(--ink3);line-height:1.8;margin-bottom:22px;max-width:600px}
+.hero-chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.chip{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;padding:6px 14px;border-radius:100px;background:#fff;border:1.5px solid var(--line);color:var(--ink2);box-shadow:var(--s1);transition:.22s}
+.chip:hover{border-color:var(--blue);color:var(--blue);transform:translateY(-1px)}
+.hero-meta{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:24px}
+.upd{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:700;color:var(--blue);background:var(--blue-xl);padding:6px 14px;border-radius:100px;border:1.5px solid var(--blue-s)}
+.mi{font-size:13px;color:var(--ink3);font-weight:500}
+
+/* HOW TO USE */
+.howto{background:var(--amber-xl);border:2px solid var(--amber-s);border-radius:16px;padding:22px 26px;max-width:560px;margin-bottom:24px}
+.howto-ttl{display:flex;align-items:center;gap:9px;font-family:var(--fd);font-size:15px;font-weight:800;color:var(--ink);margin-bottom:13px}
+.howto-steps{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.hs{display:flex;align-items:flex-start;gap:10px;font-size:13.5px;color:var(--ink2);line-height:1.6}
+.sn{width:24px;height:24px;background:var(--amber);color:#fff;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex-shrink:0;margin-top:1px}
+
+/* related tools */
+.rel-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;position:relative;z-index:1}
+.rg-box{border-radius:14px;padding:14px 14px 12px;display:flex;flex-direction:column;gap:8px;transition:.22s;border:1.5px solid}
+.rg-box:hover{transform:translateY(-3px);box-shadow:var(--s3)}
+.rg-box.army{background:linear-gradient(135deg,#fffbeb,#fef3c7);border-color:var(--amber-s)}
+.rg-box.ht{background:linear-gradient(135deg,var(--green-xl),#dcfce7);border-color:var(--green-s)}
+.rg-box.ssc{background:linear-gradient(135deg,var(--blue-xl),var(--blue-s));border-color:var(--blue-s)}
+.rg-box.mp{background:linear-gradient(135deg,var(--purple-xl),#ede9fe);border-color:var(--purple-s)}
+.rg-ico{font-size:22px}
+.rg-txt h4{font-family:var(--fd);font-size:12px;font-weight:800;color:var(--ink);margin-bottom:2px}
+.rg-txt p{font-size:11px;color:var(--ink3);line-height:1.5}
+.btn-xs{display:inline-flex;align-items:center;gap:4px;font-family:var(--fd);font-weight:700;font-size:11px;padding:5px 10px;border-radius:7px;transition:.22s;margin-top:4px}
+.btn-xs.a{background:var(--amber);color:#fff}.btn-xs.a:hover{background:#d97706}
+.btn-xs.g{background:var(--green);color:#fff}.btn-xs.g:hover{background:#059669}
+.btn-xs.b{background:var(--blue);color:#fff}.btn-xs.b:hover{background:var(--blue-d)}
+.btn-xs.p{background:var(--purple);color:#fff}.btn-xs.p:hover{background:#7c3aed}
+
+/* ══ TOOL SECTION ══ */
+.tool-sec{background:var(--surf);padding:80px 0}
+.tool-wrap{max-width:860px;margin:0 auto}
+.tool-card{background:#fff;border:1.5px solid var(--line);border-radius:28px;overflow:hidden;box-shadow:var(--s4)}
+.tool-hdr{background:linear-gradient(135deg,#0f172a 0%,#1e3a8a 50%,#1d4ed8 100%);padding:32px 40px;position:relative;overflow:hidden}
+.tool-hdr::before{content:'';position:absolute;top:-60px;right:-60px;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,.07)}
+.tool-hdr::after{content:'';position:absolute;bottom:-40px;left:-40px;width:180px;height:180px;border-radius:50%;background:rgba(255,255,255,.04)}
+.th{position:relative;z-index:1}
+.th h2{font-family:var(--fd);font-size:21px;font-weight:800;color:#fff;margin-bottom:6px}
+.th p{font-size:14px;color:rgba(255,255,255,.82);line-height:1.65}
+.th-badges{display:flex;flex-wrap:wrap;gap:9px;margin-top:14px}
+.thb{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:rgba(255,255,255,.9);background:rgba(255,255,255,.13);padding:5px 12px;border-radius:100px}
+.tool-body{padding:36px 40px}
+
+/* form */
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+.fld{display:flex;flex-direction:column;gap:7px}
+.flbl{font-size:13px;font-weight:700;color:var(--ink2)}
+.flbl span{font-size:11px;font-weight:500;color:var(--ink4);margin-left:5px;background:var(--surf);padding:2px 7px;border-radius:5px;border:1px solid var(--line)}
+.finp,.fsel{padding:12px 16px;font-size:14.5px;color:var(--ink);background:#fff;border:1.5px solid var(--line);border-radius:10px;outline:none;transition:.22s;font-family:var(--fb);width:100%}
+.finp:focus,.fsel:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(37,99,235,.10)}
+.fsel{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2364748b' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:40px}
+.finp[readonly]{background:var(--surf);color:var(--ink3);cursor:not-allowed}
+.hint-box{display:flex;align-items:flex-start;gap:9px;font-size:13px;color:var(--ink2);background:var(--blue-xl);border:1.5px solid var(--blue-s);border-radius:10px;padding:11px 14px;margin:16px 0;line-height:1.65}
+.hint-box svg{width:16px;height:16px;stroke:var(--blue);fill:none;stroke-width:2;flex-shrink:0;margin-top:2px}
+.btn-row{display:flex;gap:12px}
+.chk-btn{flex:1;padding:17px;background:linear-gradient(135deg,#0f172a 0%,#1e3a8a 50%,#2563eb 100%);color:#fff;font-family:var(--fd);font-weight:800;font-size:16px;border-radius:12px;box-shadow:0 8px 32px rgba(30,58,138,.30);transition:all .25s var(--ease);display:flex;align-items:center;justify-content:center;gap:10px}
+.chk-btn:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(30,58,138,.40)}
+.chk-btn:active{transform:translateY(0)}
+.chk-btn:disabled{opacity:.5;cursor:not-allowed;transform:none}
+.rst-btn{padding:17px 24px;background:#fff;color:var(--ink2);font-family:var(--fd);font-weight:700;font-size:14px;border-radius:12px;border:1.5px solid var(--line);transition:.22s}
+.rst-btn:hover{border-color:var(--red-s);color:var(--red);background:var(--red-xl)}
+
+/* UPLOAD ZONE */
+.upz{border:2.5px dashed var(--blue-s);border-radius:16px;background:var(--blue-xl);padding:32px 22px;text-align:center;cursor:pointer;transition:.22s;margin-bottom:16px}
+.upz:hover,.upz.drag{border-color:var(--blue);background:#e0ecff}
+.upz-ico{font-size:34px;margin-bottom:8px}
+.upz-ttl{font-family:var(--fd);font-weight:800;font-size:15px;color:var(--ink);margin-bottom:4px}
+.upz-sub{font-size:12.5px;color:var(--ink3)}
+.upz input[type=file]{display:none}
+.file-info{display:none;align-items:center;gap:12px;background:var(--surf);border:1.5px solid var(--line);border-radius:12px;padding:12px 16px;margin-bottom:16px;font-size:13px;color:var(--ink2);flex-wrap:wrap}
+.file-info.on{display:flex}
+.file-info b{color:var(--ink)}
+.file-info .chg{margin-left:auto;font-family:var(--fd);font-weight:700;font-size:12px;color:var(--blue);cursor:pointer}
+
+/* OFFICIAL PRESET BOX */
+.preset-box{background:linear-gradient(135deg,var(--green-xl),#dcfce7);border:1.5px solid var(--green-s);border-radius:16px;padding:20px 22px;margin-bottom:18px}
+.preset-ttl{display:flex;align-items:center;gap:8px;font-family:var(--fd);font-weight:800;font-size:14.5px;color:var(--ink);margin-bottom:14px}
+.preset-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.preset-cell{background:#fff;border:1px solid var(--green-s);border-radius:10px;padding:10px 12px;text-align:center}
+.preset-cell .pl{font-size:10.5px;color:var(--ink3);font-weight:600;text-transform:uppercase;letter-spacing:.03em;margin-bottom:3px}
+.preset-cell .pv{font-family:var(--fd);font-size:14px;font-weight:800;color:var(--ink)}
+
+/* CUSTOM SECTION */
+.adv-toggle{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;background:var(--surf);border:1.5px solid var(--line);border-radius:12px;cursor:pointer;margin-bottom:0;font-family:var(--fd);font-weight:700;font-size:13.5px;color:var(--ink2)}
+.adv-toggle .car{transition:.28s}
+.adv-toggle.open .car{transform:rotate(180deg)}
+.adv-body{max-height:0;overflow:hidden;transition:max-height .35s var(--ease)}
+.adv-body.open{max-height:900px;margin-top:14px}
+.lock-row{display:flex;align-items:center;gap:9px;font-size:13px;color:var(--ink2);font-weight:600;margin-bottom:16px}
+.tgl{position:relative;width:38px;height:22px;background:var(--line);border-radius:100px;transition:.22s;flex-shrink:0}
+.tgl::after{content:'';position:absolute;top:2px;left:2px;width:18px;height:18px;background:#fff;border-radius:50%;transition:.22s;box-shadow:var(--s1)}
+.tgl.on{background:var(--blue)}
+.tgl.on::after{left:18px}
+.chk-row{display:flex;flex-wrap:wrap;gap:18px;margin:14px 0}
+.chk-item{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--ink2);font-weight:600;cursor:pointer}
+.qslider{width:100%;accent-color:var(--blue);cursor:pointer}
+.qval{font-family:var(--fd);font-weight:800;color:var(--blue);font-size:13px}
+
+/* PREVIEW / COMPARISON */
+#previewArea{display:none;margin-top:28px;animation:resultIn .45s var(--ease) both}
+.cmp-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:18px}
+.cmp-box{background:var(--surf);border:1.5px solid var(--line);border-radius:16px;padding:16px;text-align:center}
+.cmp-box.proc{border-color:var(--green-s);background:var(--green-xl)}
+.cmp-lbl{font-family:var(--fd);font-size:12px;font-weight:800;color:var(--ink3);text-transform:uppercase;letter-spacing:.04em;margin-bottom:10px}
+.cmp-box.proc .cmp-lbl{color:var(--green)}
+.cmp-imgwrap{background:repeating-conic-gradient(#f1f5f9 0% 25%,#fff 0% 50%) 0 0/16px 16px;border:1px solid var(--line);border-radius:10px;display:flex;align-items:center;justify-content:center;min-height:100px;padding:10px;margin-bottom:10px}
+.cmp-imgwrap img{max-width:100%;max-height:120px;display:block}
+.cmp-meta{font-size:12px;color:var(--ink3);line-height:1.7}
+.cmp-meta b{color:var(--ink)}
+
+.age-brk{background:var(--surf);border:1.5px solid var(--line);border-radius:16px;padding:22px 24px;margin-bottom:18px}
+.ab-title{font-family:var(--fd);font-size:14px;font-weight:700;color:var(--ink);margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.ab-row{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:10px 0;border-bottom:1px dashed var(--line);font-size:13.5px}
+.ab-row:last-child{border-bottom:none}
+.ab-lbl{color:var(--ink2);font-weight:600}
+.ab-val{color:var(--ink);font-weight:800;font-family:var(--fd)}
+.ab-val.g{color:var(--green)}
+.ab-val.r{color:var(--red)}
+
+.sugg-box{background:var(--blue-xl);border:1.5px solid var(--blue-s);border-radius:13px;padding:16px 18px;font-size:14px;color:var(--ink2);line-height:1.78}
+.warn-box{background:var(--amber-xl);border:1.5px solid var(--amber-s);border-radius:12px;padding:14px 18px;display:flex;gap:10px;font-size:13.5px;color:var(--ink2);line-height:1.7;margin-top:14px}
+.err-box{background:var(--red-xl);border:1.5px solid var(--red-s);border-radius:12px;padding:14px 18px;display:none;gap:10px;font-size:13.5px;color:var(--ink2);line-height:1.7;margin-bottom:16px}
+.err-box.on{display:flex}
+.dl-btn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;padding:17px;background:var(--green);color:#fff;font-family:var(--fd);font-weight:800;font-size:16px;border-radius:12px;box-shadow:0 8px 32px rgba(16,185,129,.30);transition:.25s var(--ease);margin-top:6px}
+.dl-btn:hover{background:#059669;transform:translateY(-2px)}
+.dl-btn:disabled{opacity:.5;cursor:not-allowed;transform:none}
+
+/* ══ TABLE SECTION ══ */
+.tbl-sec{background:#fff;padding:72px 0}
+.tbl-wr{overflow-x:auto;margin-bottom:20px;border-radius:12px;border:1px solid var(--line)}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+thead th{background:linear-gradient(135deg,#0f172a 0%,#1e3a8a 100%);color:#fff;padding:14px 16px;text-align:left;font-family:var(--fd);font-size:13px;font-weight:700;letter-spacing:.03em;white-space:nowrap}
+tbody tr{border-bottom:1px solid var(--line);transition:.2s}
+tbody tr:hover{background:var(--blue-xl)}
+tbody td{padding:12px 16px;color:var(--ink2);vertical-align:middle}
+.row-pass{background:var(--green-xl)!important}
+.row-info{background:var(--blue-xl)!important}
+.tbadge{display:inline-flex;font-size:11px;font-weight:700;padding:3px 8px;border-radius:100px;white-space:nowrap}
+.tbadge.g{background:var(--green-xl);color:var(--green);border:1px solid var(--green-s)}
+.tbadge.b{background:var(--blue-xl);color:var(--blue);border:1px solid var(--blue-s)}
+
+/* ══ STORY ══ */
+.story-sec{background:var(--surf);padding:72px 0}
+.story-card{background:#fff;border:1.5px solid var(--line);border-radius:24px;padding:40px;box-shadow:var(--s3);position:relative;overflow:hidden}
+.story-card::before{content:'';position:absolute;top:0;left:0;bottom:0;width:5px;background:linear-gradient(180deg,var(--blue) 0%,var(--orange) 100%);border-radius:5px 0 0 5px}
+.sq{font-size:54px;color:var(--blue-s);font-family:Georgia,serif;line-height:1;padding-left:8px}
+.sb{font-size:15.5px;color:var(--ink2);line-height:1.9;padding:0 8px}
+.sauth{display:flex;align-items:center;gap:14px;margin-top:22px;padding-top:20px;border-top:1px solid var(--line)}
+.savt{width:48px;height:48px;background:var(--blue);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+.sname{font-family:var(--fd);font-size:15px;font-weight:700;color:var(--ink)}
+.srole{font-size:12.5px;color:var(--ink3)}
+.founder-msg{background:linear-gradient(135deg,var(--blue-xl),var(--blue-s));border:1.5px solid var(--blue-s);border-radius:14px;padding:20px 22px;margin-top:20px;display:flex;gap:13px}
+.fm-ico{font-size:26px;flex-shrink:0}
+.fm-txt{font-size:14px;color:var(--ink2);line-height:1.75;font-style:italic}
+.fm-txt strong{color:var(--ink);font-weight:700;font-style:normal}
+
+/* ══ GUIDE ══ */
+.guide-sec{background:#fff;padding:72px 0}
+.guide-body h2{font-family:var(--fd);font-size:21px;font-weight:800;color:var(--ink);margin:28px 0 11px;line-height:1.3}
+.guide-body h2:first-child{margin-top:0}
+.guide-body p{font-size:15px;color:var(--ink3);line-height:1.85;margin-bottom:14px}
+.guide-body ul{display:flex;flex-direction:column;gap:8px;margin:12px 0 16px}
+.guide-body li{display:flex;align-items:flex-start;gap:10px;font-size:14.5px;color:var(--ink3);line-height:1.7}
+.guide-body li::before{content:'✓';width:18px;height:18px;background:var(--blue);color:#fff;border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;flex-shrink:0;margin-top:3px}
+.guide-body strong{color:var(--ink2);font-weight:700}
+.ibox{background:var(--blue-xl);border:1.5px solid var(--blue-s);border-radius:13px;padding:15px 18px;margin:16px 0;display:flex;gap:11px;font-size:14px;color:var(--ink2);line-height:1.7}
+.ibox svg{width:17px;height:17px;stroke:var(--blue);fill:none;stroke-width:2;flex-shrink:0;margin-top:2px}
+.ibox.a{background:var(--amber-xl);border-color:var(--amber-s)}
+.ibox.a svg{stroke:var(--amber)}
+
+/* example cards */
+.ex-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0 16px}
+.ex-card{background:var(--surf);border:1.5px solid var(--line);border-radius:14px;padding:16px 18px}
+.ex-card.pass{border-color:var(--green-s);background:var(--green-xl)}
+.ex-card.fail{border-color:var(--red-s);background:var(--red-xl)}
+.ex-h{font-family:var(--fd);font-size:13px;font-weight:800;color:var(--ink);margin-bottom:6px}
+.ex-p{font-size:12.5px;color:var(--ink3);line-height:1.7}
+.ex-p b{color:var(--ink2)}
+
+/* ══ FAQ ══ */
+.faq-sec{background:var(--surf);padding:72px 0}
+.fql{max-width:780px;margin:0 auto}
+.fq{background:#fff;border:1.5px solid var(--line);border-radius:13px;margin-bottom:10px;overflow:hidden}
+.fq-q{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;cursor:pointer;gap:14px;transition:.2s}
+.fq-q:hover{background:var(--blue-xl)}
+.fq-t{font-weight:600;font-size:15px;color:var(--ink);line-height:1.4}
+.fq-i{width:28px;height:28px;border-radius:50%;background:var(--blue-xl);color:var(--blue);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;transition:transform .28s,background .2s}
+.fq.open .fq-i{transform:rotate(45deg);background:var(--blue);color:#fff}
+.fq-a{max-height:0;overflow:hidden;transition:max-height .35s var(--ease)}
+.fq-ai{padding:0 22px 18px;font-size:14.5px;color:var(--ink3);line-height:1.78}
+.fq.open .fq-a{max-height:400px}
+
+/* ══ DISC / CONTACT / CTA / FOOTER ══ */
+.disc{background:var(--amber-xl);border-top:1px solid var(--amber-s);border-bottom:1px solid var(--amber-s);padding:15px 0}
+.disc-in{display:flex;align-items:flex-start;gap:12px;font-size:13.5px;color:var(--ink2);line-height:1.7}
+.contact-sec{background:#fff;padding:60px 0}
+.contact-card{max-width:580px;margin:0 auto;background:var(--surf);border:1.5px solid var(--line);border-radius:20px;padding:32px;text-align:center;box-shadow:var(--s2)}
+.contact-card h3{font-family:var(--fd);font-size:19px;font-weight:800;color:var(--ink);margin-bottom:10px}
+.contact-card p{font-size:15px;color:var(--ink3);line-height:1.75;margin-bottom:20px}
+.btn-bl{display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:#fff;font-family:var(--fd);font-weight:700;font-size:14.5px;padding:12px 26px;border-radius:8px;box-shadow:var(--sb);transition:.22s}
+.btn-bl:hover{background:var(--blue-d);transform:translateY(-1px)}
+.priv-note{font-size:12px;color:var(--ink4);margin-top:14px}
+.cta{background:linear-gradient(140deg,#0f172a 0%,#1e3a8a 100%);padding:80px 0;text-align:center;position:relative;overflow:hidden}
+.cta::before{content:'';position:absolute;top:-80px;left:50%;transform:translateX(-50%);width:800px;height:380px;background:radial-gradient(ellipse,rgba(37,99,235,.22) 0%,transparent 68%);pointer-events:none}
+.cta-in{position:relative;z-index:1}
+.cta .pill{color:#93c5fd;background:rgba(255,255,255,.1);margin-bottom:18px}
+.cta .pill::before{background:#93c5fd}
+.cta h2{font-family:var(--fd);font-size:clamp(24px,4vw,42px);font-weight:800;color:#fff;line-height:1.15;margin-bottom:12px}
+.cta h2 em{color:#fbbf24;font-style:normal}
+.cta p{font-size:16px;color:rgba(255,255,255,.72);max-width:480px;margin:0 auto 32px;line-height:1.78}
+.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn-gold{display:inline-flex;align-items:center;gap:8px;background:var(--amber);color:#fff;font-family:var(--fd);font-weight:800;font-size:15px;padding:14px 30px;border-radius:8px;box-shadow:0 8px 28px rgba(245,158,11,.35);transition:.22s}
+.btn-gold:hover{background:#d97706;transform:translateY(-3px)}
+.btn-ghost{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.09);border:1.5px solid rgba(255,255,255,.22);color:#fff;font-family:var(--fd);font-weight:600;font-size:14px;padding:13px 26px;border-radius:8px;transition:.2s}
+.btn-ghost:hover{background:rgba(255,255,255,.16)}
+footer{background:#0f172a;padding:52px 0 0}
+.ft-inner{max-width:1180px;margin:0 auto;padding:0 24px}
+.ft-top{display:grid;grid-template-columns:1.9fr 1fr 1fr 1fr;gap:44px;margin-bottom:44px}
+.ft-brand .ln{color:#fff}.ft-brand .ls{color:#475569}
+.ft-desc{font-size:13.5px;color:#64748b;line-height:1.78;max-width:265px;margin:13px 0 20px}
+.fc h4{font-family:var(--fd);font-size:12px;font-weight:700;color:#fff;margin-bottom:14px;letter-spacing:.06em;text-transform:uppercase}
+.fc ul{display:flex;flex-direction:column;gap:8px}
+.fc ul a{font-size:13.5px;color:#64748b;transition:.18s}
+.fc ul a:hover{color:#93c5fd}
+.ft-btm{border-top:1px solid rgba(255,255,255,.07);padding:20px 0;text-align:center}
+.ft-cp{font-size:12.5px;color:#475569}
+.ft-cp b{color:#64748b}
+.ft-tag{font-size:12px;color:#334155;margin-top:4px;font-style:italic}
+.btt{position:fixed;bottom:26px;right:26px;z-index:500;width:43px;height:43px;background:var(--blue);color:#fff;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:17px;box-shadow:var(--sb);opacity:0;pointer-events:none;transform:translateY(14px);transition:.28s var(--ease)}
+.btt.on{opacity:1;pointer-events:auto;transform:translateY(0)}
+.btt:hover{transform:translateY(-3px)}
+
+/* RESPONSIVE */
+@media(max-width:1060px){.ft-top{grid-template-columns:1fr 1fr}}
+@media(max-width:860px){
+  nav.dn,.hcta{display:none}.brg{display:flex}
+  .tool-body{padding:24px 22px}.tool-hdr{padding:24px 22px}
+  .fgrid{grid-template-columns:1fr}
+  .rel-grid{grid-template-columns:1fr 1fr}
+  .ex-grid{grid-template-columns:1fr}
+  .preset-grid{grid-template-columns:1fr 1fr}
+  .cmp-grid{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+  .ft-top{grid-template-columns:1fr}.rel-grid{grid-template-columns:1fr}
+  .cta-btns{flex-direction:column;align-items:center}
+  .story-card{padding:26px 20px}
+  .ab-row{flex-direction:column;align-items:flex-start;gap:2px}
+  .btn-row{flex-direction:column}
+  .tbl-wr{overflow-x:auto}
+  table{min-width:520px}
+  .preset-grid{grid-template-columns:1fr 1fr}
+  .chk-row{flex-direction:column;gap:10px}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="hdr">
+  <div class="w">
+    <div class="hdi">
+      <a href="/" class="logo">
+        <div class="lb"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+        <div><div class="ln">Raj<span>Daily</span>Tools</div><div class="ls">Smart Tools for Daily Life</div></div>
+      </a>
+      <nav class="dn">
+        <a href="/">Home</a><a href="/categories">Categories</a>
+        <a href="/popular.html">Popular</a><a href="/about">About</a><a href="/contact">Contact</a>
+      </nav>
+      <a href="/categories" class="hcta">All Tools →</a>
+      <button class="brg" id="brg"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="dov" id="dov"></div>
+<div class="drw" id="drw">
+  <div class="dh">
+    <div class="logo">
+      <div class="lb" style="width:30px;height:30px;border-radius:7px"><svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#fff"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+      <div class="ln" style="font-size:16px">Raj<span>Daily</span>Tools</div>
+    </div>
+    <button class="dx" id="dx">✕</button>
+  </div>
+  <nav class="mn">
+    <a href="/" onclick="cD()">🏠 Home</a>
+    <a href="/categories" onclick="cD()">🗂️ Categories</a>
+    <a href="/popular.html" onclick="cD()">⭐ Popular</a>
+    <a href="/about" onclick="cD()">👤 About</a>
+    <a href="/contact" onclick="cD()">📬 Contact</a>
+  </nav>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+  <div class="w">
+    <div class="bc">
+      <a href="/">Home</a><span style="color:var(--ink4)">›</span>
+      <a href="/categories">Tools</a><span style="color:var(--ink4)">›</span>
+      <span>IOB LBO Signature Resizer</span>
+    </div>
+    <div class="hero-inner">
+      <div class="pill">IOB LBO Recruitment 2026-27</div>
+      <h1>IOB LBO <span>Signature Resizer</span> 2026</h1>
+      <p class="hero-sub">Resize your signature to the <strong>official IOB Local Bank Officer (LBO) 2026-27</strong> specifications (Advt No. HRDD/RECT/02/2026-27, Annexure I) — 140 x 60 pixels, 10KB–20KB, JPG/JPEG. Upload, resize with one click, preview, and download — entirely in your browser.</p>
+      <div class="hero-chips">
+        <span class="chip">📐 140 × 60 px</span>
+        <span class="chip">💾 10KB – 20KB</span>
+        <span class="chip">🖼️ JPG / JPEG</span>
+        <span class="chip">🆓 100% Free</span>
+      </div>
+      <div class="hero-meta">
+        <div class="upd">📅 Based on Official Notification Dated 07.08.2026</div>
+        <span class="mi">✅ Advt No. HRDD/RECT/02/2026-27</span>
+        <span class="mi">🔒 Processed locally — not uploaded</span>
+      </div>
+      <!-- HOW TO USE -->
+      <div class="howto">
+        <div class="howto-ttl">💡 How to Use This Tool</div>
+        <div class="howto-steps">
+          <div class="hs"><span class="sn">1</span>Upload your signature image</div>
+          <div class="hs"><span class="sn">2</span>Click "Resize for IOB LBO"</div>
+          <div class="hs"><span class="sn">3</span>Check the preview & file size</div>
+          <div class="hs"><span class="sn">4</span>Download the resized signature</div>
+        </div>
+      </div>
+      <!-- RELATED TOOLS -->
+      <div class="rel-grid">
+        <div class="rg-box ssc">
+          <div class="rg-ico">📅</div>
+          <div class="rg-txt">
+            <h4>IOB LBO Age Calculator</h4>
+            <p>Check exact age eligibility as on cut-off date</p>
+            <a href="https://rajdailytools.in/iob-lbo-age-calculator-2026.html" target="_blank" rel="noopener" class="btn-xs b">Check Now →</a>
+          </div>
+        </div>
+        <div class="rg-box ht">
+          <div class="rg-ico">🏦</div>
+          <div class="rg-txt">
+            <h4>IOB LBO Eligibility Checker</h4>
+            <p>Full eligibility — age, qualification, nationality</p>
+            <a href="https://rajdailytools.in/iob-lbo-eligibility-checker-2026.html" target="_blank" rel="noopener" class="btn-xs g">Check Now →</a>
+          </div>
+        </div>
+        <div class="rg-box mp">
+          <div class="rg-ico">🖼️</div>
+          <div class="rg-txt">
+            <h4>IOB LBO Photo Resizer</h4>
+            <p>Resize your passport photo to official size</p>
+            <a href="https://rajdailytools.in/iob-lbo-photo-resizer-2026.html" target="_blank" rel="noopener" class="btn-xs p">Check Now →</a>
+          </div>
+        </div>
+        <div class="rg-box army">
+          <div class="rg-ico">📄</div>
+          <div class="rg-txt">
+            <h4>IOB LBO Document Checklist</h4>
+            <p>Documents required for Personal Interview</p>
+            <a href="https://rajdailytools.in/iob-lbo-document-checklist-2026.html" target="_blank" rel="noopener" class="btn-xs a">Check Now →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOOL SECTION -->
+<section class="tool-sec" id="tool">
+  <div class="w">
+    <div class="tool-wrap">
+      <div class="tool-card rev">
+        <div class="tool-hdr">
+          <div class="th">
+            <h2>✍️ IOB LBO Signature Resizer 2026-27</h2>
+            <p>Upload your signature image. We'll resize it to the official IOB LBO dimensions (140 × 60 px) and help you get it within the 10KB–20KB file-size range — 100% in your browser.</p>
+            <div class="th-badges">
+              <span class="thb">📐 Official 140×60 px</span>
+              <span class="thb">💾 10-20 KB Target</span>
+              <span class="thb">🎨 Custom Size Option</span>
+              <span class="thb">🔒 No Upload to Server</span>
+            </div>
+          </div>
+        </div>
+        <div class="tool-body">
+
+          <div class="err-box" id="errBox"><span style="font-size:20px;flex-shrink:0">⚠️</span><div id="errMsg"></div></div>
+
+          <!-- STEP 1: UPLOAD -->
+          <div class="upz" id="upz">
+            <div class="upz-ico">✍️</div>
+            <div class="upz-ttl">Choose Signature Image</div>
+            <div class="upz-sub">JPG, JPEG, PNG or WEBP — click here or drag & drop</div>
+            <input type="file" id="fileInput" accept=".jpg,.jpeg,.png,.webp,image/jpeg,image/png,image/webp">
+          </div>
+          <div class="file-info" id="fileInfo">
+            <span>📄 <b id="fiName"></b></span>
+            <span>📐 <b id="fiDims"></b></span>
+            <span>💾 <b id="fiSize"></b></span>
+            <span class="chg" id="fiChange">Change file</span>
+          </div>
+
+          <!-- OFFICIAL PRESET -->
+          <div class="preset-box">
+            <div class="preset-ttl">✅ IOB LBO Official Signature Requirements</div>
+            <div class="preset-grid">
+              <div class="preset-cell"><div class="pl">Width</div><div class="pv">140 px</div></div>
+              <div class="preset-cell"><div class="pl">Height</div><div class="pv">60 px</div></div>
+              <div class="preset-cell"><div class="pl">Max Size</div><div class="pv">20 KB</div></div>
+              <div class="preset-cell"><div class="pl">Format</div><div class="pv">JPG/JPEG</div></div>
+            </div>
+          </div>
+
+          <div class="btn-row">
+            <button class="chk-btn" id="officialBtn" onclick="resizeOfficial()" disabled>✍️ Resize for IOB LBO</button>
+            <button class="rst-btn" onclick="resetTool()">↺ Reset</button>
+          </div>
+
+          <!-- ADVANCED / CUSTOM -->
+          <div class="adv-toggle" id="advToggle" style="margin-top:18px">
+            <span>⚙️ Advanced: Custom Size & Optimization</span>
+            <span class="car">▾</span>
+          </div>
+          <div class="adv-body" id="advBody">
+            <div class="fgrid" style="margin-top:14px">
+              <div class="fld">
+                <label class="flbl" for="cWidth">Custom Width <span>px</span></label>
+                <input class="finp" type="number" id="cWidth" min="20" max="2000" value="140">
+              </div>
+              <div class="fld">
+                <label class="flbl" for="cHeight">Custom Height <span>px</span></label>
+                <input class="finp" type="number" id="cHeight" min="20" max="2000" value="60">
+              </div>
+            </div>
+            <div class="lock-row">
+              <div class="tgl" id="lockTgl" onclick="toggleLock()"></div>
+              <span>Lock Aspect Ratio (auto-calculate height from width)</span>
+            </div>
+
+            <div class="fld" style="margin-bottom:14px">
+              <label class="flbl" for="qSlider">Image Quality <span id="qval" class="qval">85%</span></label>
+              <input class="qslider" type="range" id="qSlider" min="10" max="100" value="85">
+            </div>
+
+            <div class="chk-row">
+              <label class="chk-item"><input type="checkbox" id="chkWhite" checked> White Background</label>
+              <label class="chk-item"><input type="checkbox" id="chkGray"> Grayscale</label>
+              <label class="chk-item">Output Format
+                <select class="fsel" id="outFormat" style="width:auto;padding:6px 30px 6px 10px;margin-left:6px">
+                  <option value="jpeg" selected>JPG</option>
+                  <option value="png">PNG</option>
+                </select>
+              </label>
+            </div>
+
+            <div class="btn-row">
+              <button class="chk-btn" onclick="applyCustom()" disabled id="customBtn">🎨 Apply Custom Size</button>
+            </div>
+
+            <div class="fgrid" style="margin-top:16px;grid-template-columns:2fr 1fr">
+              <div class="fld">
+                <label class="flbl" for="targetKB">Target File Size <span>KB (best-effort)</span></label>
+                <input class="finp" type="number" id="targetKB" min="5" max="100" value="18">
+              </div>
+              <div class="fld" style="justify-content:flex-end">
+                <button class="rst-btn" style="width:100%" onclick="optimizeFileSize()" id="optBtn" disabled>⚡ Optimize Size</button>
+              </div>
+            </div>
+
+            <div class="hint-box">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+              <div>File-size optimization adjusts JPEG quality automatically. Browsers cannot guarantee an exact byte count — the actual output size is always shown below so you can verify before uploading.</div>
+            </div>
+          </div>
+
+          <!-- PREVIEW -->
+          <canvas id="outCanvas" style="display:none"></canvas>
+          <div id="previewArea">
+            <div class="cmp-grid">
+              <div class="cmp-box">
+                <div class="cmp-lbl">Original</div>
+                <div class="cmp-imgwrap"><img id="origPreview" alt="Original signature"></div>
+                <div class="cmp-meta" id="origMeta"></div>
+              </div>
+              <div class="cmp-box proc">
+                <div class="cmp-lbl">Processed (Ready for IOB LBO)</div>
+                <div class="cmp-imgwrap"><img id="procPreview" alt="Processed signature"></div>
+                <div class="cmp-meta" id="procMeta"></div>
+              </div>
+            </div>
+
+            <div class="age-brk">
+              <div class="ab-title">📋 Output Details</div>
+              <div id="abRows"></div>
+            </div>
+
+            <div class="sugg-box" id="suggBox"></div>
+            <div class="warn-box" id="warnBox" style="display:none">
+              <span style="font-size:20px;flex-shrink:0">⚠️</span>
+              <div id="warnMsg"></div>
+            </div>
+
+            <button class="dl-btn" id="dlBtn" onclick="downloadSignature()" disabled>⬇️ Download Signature</button>
+          </div>
+
+          <div class="warn-box" style="margin-top:18px">
+            <span style="font-size:20px;flex-shrink:0">🔒</span>
+            <div style="font-size:13.5px;color:var(--ink2);line-height:1.72">Your signature is processed locally in your browser and is <strong>not uploaded to RajDailyTools</strong> or any external server.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TABLE SECTION -->
+<section class="tbl-sec" id="rules-table">
+  <div class="w">
+    <div style="max-width:860px;margin:0 auto">
+      <div class="rev" style="text-align:center;margin-bottom:36px">
+        <div class="pill" style="margin-bottom:14px">Official Notification Rules</div>
+        <h2 style="font-family:var(--fd);font-size:clamp(22px,3.5vw,36px);font-weight:800;color:var(--ink);margin-bottom:10px">IOB LBO <span style="color:var(--blue)">Signature Size & Upload Requirements 2026</span></h2>
+        <p style="font-size:15px;color:var(--ink3);max-width:520px;margin:0 auto;line-height:1.75">Extracted strictly from the official notification, Advt No. HRDD/RECT/02/2026-27, Annexure I, dated 07.08.2026.</p>
+      </div>
+
+      <div class="tbl-wr rev">
+        <table>
+          <thead><tr><th>Requirement</th><th>Official Requirement</th></tr></thead>
+          <tbody>
+            <tr class="row-info"><td><strong>Image Format</strong></td><td>JPG / JPEG (per the general document-scanning instructions in Annexure I)</td></tr>
+            <tr><td><strong>Dimensions</strong></td><td>140 × 60 pixels (preferred)</td></tr>
+            <tr class="row-info"><td><strong>File Size</strong></td><td>Between 10KB and 20KB — must not exceed 20KB</td></tr>
+            <tr><td><strong>Background</strong></td><td>Not specified in the provided official notification</td></tr>
+            <tr class="row-info"><td><strong>Signature Type</strong></td><td>Handwritten signature on white paper with black ink pen; must NOT be in capital letters</td></tr>
+            <tr><td><strong>Other Instructions</strong></td><td>Signature must match the signature given on the attendance sheet/call letter at the time of examination, failing which the candidate will be disqualified</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:12.5px;color:var(--ink4);margin-top:12px;text-align:center">* Where a requirement is not explicitly stated in the official notification, it is marked "Not specified" rather than assumed.</p>
+    </div>
+  </div>
+</section>
+
+<!-- STORY -->
+<section class="story-sec">
+  <div class="wa">
+    <div class="rev" style="text-align:center;margin-bottom:36px">
+      <div class="pill" style="margin-bottom:14px">Why I Built This</div>
+      <h2 style="font-family:var(--fd);font-size:clamp(22px,3.4vw,34px);font-weight:800;color:var(--ink);margin-bottom:8px">Priya ki <span style="color:var(--blue)">Kahaani</span></h2>
+      <p style="font-size:15px;color:var(--ink3)">Jo confusion Priya ko thi, wahi confusion har banking aspirant ko hoti hai.</p>
+    </div>
+    <div class="story-card rev">
+      <div class="sq">"</div>
+      <div class="sb">
+        Age calculator banane ke kuch din baad <strong>Priya ne mujhe phir se message kiya</strong> — is baar wo apni signature ko lekar pareshaan thi.<br><br>
+        Usne poocha — <em>"Raj Bhai, mera scanned signature 45KB ka hai aur dimensions bhi match nahi kar rahe. IOB LBO application form baar-baar reject kar raha hai. Ab main kya karu?"</em><br><br>
+        <strong>Ye ek bahut common problem hai</strong> — mobile se scan kiya gaya signature aksar sahi dimension ya file size mein nahi hota, aur candidates ko samajh nahi aata ki compress kaise karein bina quality kharab kiye.<br><br>
+        <strong>Isi wajah se maine ye Signature Resizer banaya — taaki har aspirant apni signature ko official 140×60 px aur 10-20KB size mein, ek click mein, bina kisi third-party app ke, resize kar sake.</strong> ✍️
+      </div>
+      <div class="sauth">
+        <div class="savt">👨‍💻</div>
+        <div>
+          <div class="sname">Raj Bhai</div>
+          <div class="srole">Founder, RajDailyTools · BSc Physics · COPA ITI Certified</div>
+        </div>
+      </div>
+    </div>
+    <div class="founder-msg rev" style="margin-top:18px">
+      <div class="fm-ico">💡</div>
+      <div class="fm-txt">
+        <strong>Founder's Message:</strong> "RajDailyTools ka mission hai real-life problems ko simple aur smart tools ke through solve karna. Har banking aspirant ko official notification ke hisaab se accurate, data-driven clarity milni chahiye — guesswork nahi."
+        <br><span style="font-size:13px;color:var(--ink3);font-style:normal;margin-top:6px;display:block">— Raj Bhai, Founder, RajDailyTools</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GUIDE -->
+<section class="guide-sec">
+  <div class="wa">
+    <div class="rev">
+      <div class="pill" style="margin-bottom:14px">Complete Guide</div>
+      <h2 style="font-family:var(--fd);font-size:clamp(22px,3.5vw,36px);font-weight:800;color:var(--ink);margin-bottom:8px">IOB LBO Signature Resizing <span style="color:var(--blue)">Complete Guide 2026-27</span></h2>
+      <p style="font-size:15px;color:var(--ink3);margin-bottom:32px">Signature specification, resizing logic aur common mistakes — sab kuch official notification ke hisaab se.</p>
+    </div>
+    <div class="guide-body rev">
+      <h2>Signature Kaise Resize Hoti Hai?</h2>
+      <p>Ye tool aapke uploaded signature image ko browser ke <strong>Canvas API</strong> ke through process karta hai. "Resize for IOB LBO" click karne par tool aapki signature ko <strong>140 × 60 pixels</strong> ke canvas ke center mein fit karta hai — bina distort kiye — aur JPEG quality adjust karke file size ko <strong>10KB–20KB</strong> range ke jitna kareeb possible le jaata hai.</p>
+
+      <h2>Official Requirement (Annexure I)</h2>
+      <p>Official notification ke Annexure I ke anusaar, signature scan karte samay <strong>white paper par black ink pen</strong> se sign karna hai. Preferred dimension <strong>140 x 60 pixels</strong> hai aur <strong>file size 10KB se 20KB ke beech</strong> honi chahiye — 20KB se zyada bilkul nahi. Signature <strong>capital letters mein nahi</strong> honi chahiye.</p>
+      <ul>
+        <li>Dimensions: 140 × 60 pixels (preferred)</li>
+        <li>File Size: 10KB – 20KB (max 20KB)</li>
+        <li>Format: JPG / JPEG</li>
+        <li>Signature attendance sheet/call letter ke signature se match honi chahiye</li>
+      </ul>
+
+      <div class="ibox">
+        <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        <div><strong>Key Insight:</strong> Background colour ke liye official notification mein signature ke liye alag se koi requirement specify nahi ki gayi hai — is wajah se ye tool by default white background use karta hai lekin aap ise optional rakh sakte hain.</div>
+      </div>
+
+      <h2>Common Mistakes</h2>
+      <div class="ex-grid rev">
+        <div class="ex-card fail">
+          <div class="ex-h">❌ Mistake 1 — Wrong Dimensions</div>
+          <div class="ex-p">Mobile camera se click ki gayi signature aksar 1000+ pixels wide hoti hai, jo 140×60 se bahut zyada hai — application form isse reject kar deta hai.</div>
+        </div>
+        <div class="ex-card fail">
+          <div class="ex-h">❌ Mistake 2 — File Size Too Large</div>
+          <div class="ex-p">High-resolution scan ki file size 100KB+ ho sakti hai — jabki official limit sirf 20KB hai.</div>
+        </div>
+        <div class="ex-card pass">
+          <div class="ex-h">✅ Correct Approach</div>
+          <div class="ex-p">Signature ko 140×60 px par resize karke, JPEG quality adjust karke 10-20KB range mein le aayein — is tool se ek click mein ho jayega.</div>
+        </div>
+        <div class="ex-card pass">
+          <div class="ex-h">✅ Verify Before Upload</div>
+          <div class="ex-p">Download karne ke baad, preview mein final width, height aur file size zaroor check kar lein.</div>
+        </div>
+      </div>
+
+      <div class="ibox a">
+        <svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        <div><strong>Important:</strong> Attendance sheet ya call letter par sign karte samay wahi signature style use karein jo aapne application form mein upload ki thi — mismatch hone par candidature disqualify ho sakti hai, jaisa official notification mein bataya gaya hai.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DISC -->
+<div class="disc">
+  <div class="wa">
+    <div class="disc-in">
+      <span style="font-size:20px;flex-shrink:0">⚠️</span>
+      <div><strong>Disclaimer:</strong> This tool helps prepare a signature image for the IOB LBO application. Final eligibility and acceptance of the uploaded signature is determined solely by Indian Overseas Bank as per the official IOB LBO notification (Advt No. HRDD/RECT/02/2026-27) and the online application portal — which is the final authority. RajDailyTools is an independent educational platform and is not the official IOB website. Always verify from <a href="https://www.iob.bank.in" target="_blank" rel="noopener" style="color:var(--blue);font-weight:700">www.iob.bank.in</a>. <strong>We do not collect or store any personal data.</strong></div>
+    </div>
+  </div>
+</div>
+
+<!-- FAQ -->
+<section class="faq-sec">
+  <div class="w">
+    <div style="text-align:center;margin-bottom:40px" class="rev">
+      <div class="pill" style="margin-bottom:14px">FAQs</div>
+      <h2 style="font-family:var(--fd);font-size:clamp(22px,3.5vw,36px);font-weight:800;color:var(--ink);margin-bottom:10px">Frequently Asked <span style="color:var(--blue)">Questions</span></h2>
+      <p style="font-size:15px;color:var(--ink3);max-width:480px;margin:0 auto">IOB LBO 2026-27 signature resizing ke baare mein common sawaal.</p>
+    </div>
+    <div class="fql" id="faqList">
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">IOB LBO 2026-27 ke liye signature ka size kya hona chahiye?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">Official notification (Advt No. HRDD/RECT/02/2026-27), Annexure I ke anusaar signature ka preferred dimension <strong>140 x 60 pixels</strong> hai aur file size <strong>10KB se 20KB</strong> ke beech honi chahiye, 20KB se zyada nahi.</div></div></div>
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">IOB LBO signature kis image format mein upload karni hai?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">Official scanning guidelines ke anusaar image file <strong>JPG ya JPEG format</strong> mein honi chahiye.</div></div></div>
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">Agar meri signature bahut badi ho to kya karu?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">Bas apni signature upload karein aur <strong>"Resize for IOB LBO"</strong> button click karein — tool automatically ise 140×60 px aur 10-20KB range ke kareeb resize kar dega.</div></div></div>
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">Kya main custom dimensions enter kar sakta hoon?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">Haan, "Advanced: Custom Size & Optimization" section mein aap apni khud ki width aur height enter kar sakte hain, aspect-ratio lock ke saath ya bina.</div></div></div>
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">Kya main mobile par signature resize kar sakta hoon?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">Bilkul, ye tool fully mobile-friendly hai aur kisi bhi smartphone browser mein kaam karta hai.</div></div></div>
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">Kya meri signature RajDailyTools par upload hoti hai?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">Nahi. Ye tool <strong>100% aapke browser ke andar (client-side)</strong> process hota hai. Aapki signature kisi server par upload nahi hoti aur na hi store ki jaati hai.</div></div></div>
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">Kya main resized signature ko download kar sakta hoon?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">Haan, resize karne ke baad "Download Signature" button click karke aap final image seedhe apne device par save kar sakte hain.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-sec">
+  <div class="w">
+    <div class="contact-card rev">
+      <h3>💬 Questions or Suggestions?</h3>
+      <p>Agar IOB LBO notification mein koi update mile ya tool mein koi error lage, please contact karein. Aspirants ke liye hum jaldi update karte hain.</p>
+      <a href="/contact" class="btn-bl">📩 Contact Us</a>
+      <p class="priv-note">🔒 We do not collect or store any personal data. All processing is done locally in your browser.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="w">
+    <div class="cta-in">
+      <div class="pill">More IOB LBO Tools</div>
+      <h2>Check Full <em>IOB LBO Eligibility Too</em></h2>
+      <p>Signature ready ho gayi — ab age aur full eligibility bhi check karein with our IOB LBO tools.</p>
+      <div class="cta-btns">
+        <a href="https://rajdailytools.in/iob-lbo-eligibility-checker-2026.html" target="_blank" class="btn-gold">🏦 IOB LBO Eligibility Checker</a>
+        <a href="/categories" class="btn-ghost">🚀 Explore All Tools</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-inner">
+    <div class="ft-top">
+      <div class="ft-brand">
+        <div class="logo" style="margin-bottom:4px">
+          <div class="lb"><svg viewBox="0 0 24 24" fill="#fff"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+          <div><div class="ln">Raj<span>Daily</span>Tools</div><div class="ls">Smart Tools for Daily Life</div></div>
+        </div>
+        <p class="ft-desc">RajDailyTools provides a growing collection of free online tools for students, professionals, and everyday users. New tools are added regularly to help make everyday tasks simpler and faster</p>
+      </div>
+      <div class="fc"><h4>Company</h4><ul>
+        <li><a href="/about">About Us</a></li>
+        <li><a href="/contact">Contact</a></li>
+        <li><a href="/privacy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
+      </ul></div>
+    </div>
+    <div class="ft-btm">
+      <p class="ft-cp">Copyright © 2026 <b>RajDailyTools</b>. All rights reserved. Designed by <b>RajDailyTools</b></p>
+      <p class="ft-tag">Made with ❤️ in India — "Solving daily life problems with smart tools"</p>
+    </div>
+  </div>
+</footer>
+<button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+/* ── Drawer ── */
+const brg=document.getElementById('brg'),drw=document.getElementById('drw'),dov=document.getElementById('dov');
+function oD(){drw.classList.add('on');dov.classList.add('on');document.body.style.overflow='hidden'}
+function cD(){drw.classList.remove('on');dov.classList.remove('on');document.body.style.overflow=''}
+brg.addEventListener('click',oD);document.getElementById('dx').addEventListener('click',cD);dov.addEventListener('click',cD);
+const btt=document.getElementById('btt');
+window.addEventListener('scroll',()=>btt.classList.toggle('on',scrollY>380),{passive:true});
+const rvObs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){const s=[...(e.target.parentElement?.children||[])];e.target.style.transitionDelay=(s.indexOf(e.target)%4)*0.08+'s';e.target.classList.add('in');rvObs.unobserve(e.target);}});
+},{threshold:0.06,rootMargin:'0px 0px -20px 0px'});
+document.querySelectorAll('.rev').forEach(el=>rvObs.observe(el));
+document.getElementById('faqList').addEventListener('click',function(e){
+  const q=e.target.closest('.fq-q');if(!q)return;
+  const item=q.closest('.fq'),open=item.classList.contains('open');
+  document.querySelectorAll('.fq.open').forEach(i=>i.classList.remove('open'));
+  if(!open)item.classList.add('open');
+});
+
+/* ══════════════════════════════════════
+   IOB LBO SIGNATURE RESIZER LOGIC
+   Source of truth: Advt No. HRDD/RECT/02/2026-27, Annexure I, dated 07.08.2026
+   All processing is 100% client-side (Canvas API). No image ever leaves the browser.
+══════════════════════════════════════ */
+const OFFICIAL_W = 140, OFFICIAL_H = 60;
+const OFFICIAL_MIN_KB = 10, OFFICIAL_MAX_KB = 20;
+const ALLOWED_TYPES = ['image/jpeg','image/jpg','image/png','image/webp'];
+const MAX_UPLOAD_BYTES = 15 * 1024 * 1024; // 15MB sanity cap for the source file
+
+let originalImg = null;
+let originalFileSize = 0;
+let originalFileName = '';
+let aspectLocked = true;
+let lastOutputBlob = null;
+let lastOutputW = 0, lastOutputH = 0, lastOutputFormat = 'jpeg';
+
+const $ = id => document.getElementById(id);
+
+/* ── Upload handling ── */
+const upz = $('upz'), fileInput = $('fileInput');
+upz.addEventListener('click', () => fileInput.click());
+upz.addEventListener('dragover', e => { e.preventDefault(); upz.classList.add('drag'); });
+upz.addEventListener('dragleave', () => upz.classList.remove('drag'));
+upz.addEventListener('drop', e => {
+  e.preventDefault(); upz.classList.remove('drag');
+  if (e.dataTransfer.files && e.dataTransfer.files[0]) handleFile(e.dataTransfer.files[0]);
+});
+fileInput.addEventListener('change', e => { if (e.target.files[0]) handleFile(e.target.files[0]); });
+$('fiChange').addEventListener('click', e => { e.stopPropagation(); fileInput.click(); });
+
+function showError(msg){
+  $('errMsg').innerHTML = msg;
+  $('errBox').classList.add('on');
+  setTimeout(()=>$('errBox').classList.remove('on'), 6000);
+}
+
+function handleFile(file){
+  if (!ALLOWED_TYPES.includes(file.type)) {
+    showError('Unsupported file type. Please upload a JPG, JPEG, PNG or WEBP image.');
+    return;
+  }
+  if (file.size > MAX_UPLOAD_BYTES) {
+    showError('This image is too large. Please choose a file under 15MB.');
+    return;
+  }
+  const reader = new FileReader();
+  reader.onerror = () => showError('Could not read this file. It may be corrupted — please try another image.');
+  reader.onload = e => {
+    const img = new Image();
+    img.onerror = () => showError('This image appears to be corrupted or is not a valid image file.');
+    img.onload = () => {
+      originalImg = img;
+      originalFileSize = file.size;
+      originalFileName = file.name;
+      $('fiName').textContent = file.name.length > 24 ? file.name.slice(0,21)+'…' : file.name;
+      $('fiDims').textContent = `${img.width} × ${img.height} px`;
+      $('fiSize').textContent = fmtSize(file.size);
+      $('fileInfo').classList.add('on');
+      $('origPreview').src = e.target.result;
+      $('origMeta').innerHTML = `<b>${img.width} × ${img.height} px</b><br>${fmtSize(file.size)}`;
+      $('officialBtn').disabled = false;
+      $('customBtn').disabled = false;
+      $('optBtn').disabled = false;
+      $('cWidth').value = OFFICIAL_W;
+      $('cHeight').value = OFFICIAL_H;
+    };
+    img.src = e.target.result;
+  };
+  reader.readAsDataURL(file);
+}
+
+function fmtSize(bytes){
+  const kb = bytes / 1024;
+  return kb < 1 ? bytes + ' B' : kb.toFixed(1) + ' KB';
+}
+
+/* ── Advanced toggle ── */
+$('advToggle').addEventListener('click', () => {
+  $('advToggle').classList.toggle('open');
+  $('advBody').classList.toggle('open');
+});
+
+/* ── Aspect lock ── */
+function toggleLock(){
+  aspectLocked = !aspectLocked;
+  $('lockTgl').classList.toggle('on', aspectLocked);
+}
+$('lockTgl').classList.add('on'); // default ON
+$('cWidth').addEventListener('input', () => {
+  if (aspectLocked && originalImg) {
+    const ratio = originalImg.height / originalImg.width;
+    $('cHeight').value = Math.max(1, Math.round($('cWidth').value * ratio));
+  }
+});
+
+/* ── Quality slider ── */
+$('qSlider').addEventListener('input', () => { $('qval').textContent = $('qSlider').value + '%'; });
+
+/* ── Core draw function: fits image into target box, centered, optional white bg / grayscale ── */
+function renderToCanvas(img, w, h, whiteBg, grayscale){
+  const canvas = $('outCanvas');
+  canvas.width = w; canvas.height = h;
+  const ctx = canvas.getContext('2d');
+  ctx.clearRect(0, 0, w, h);
+  if (whiteBg) { ctx.fillStyle = '#ffffff'; ctx.fillRect(0, 0, w, h); }
+  const scale = Math.min(w / img.width, h / img.height);
+  const nw = img.width * scale, nh = img.height * scale;
+  const nx = (w - nw) / 2, ny = (h - nh) / 2;
+  ctx.drawImage(img, nx, ny, nw, nh);
+  if (grayscale) {
+    const data = ctx.getImageData(0, 0, w, h);
+    const d = data.data;
+    for (let i = 0; i < d.length; i += 4) {
+      const g = 0.299*d[i] + 0.587*d[i+1] + 0.114*d[i+2];
+      d[i] = d[i+1] = d[i+2] = g;
+    }
+    ctx.putImageData(data, 0, 0);
+  }
+  return canvas;
+}
+
+function canvasToBlob(canvas, format, quality){
+  return new Promise(resolve => {
+    const mime = format === 'png' ? 'image/png' : 'image/jpeg';
+    canvas.toBlob(blob => resolve(blob), mime, quality);
+  });
+}
+
+/* ── One-click official resize ── */
+async function resizeOfficial(){
+  if (!originalImg) { showError('Please upload a signature image first.'); return; }
+  const canvas = renderToCanvas(originalImg, OFFICIAL_W, OFFICIAL_H, true, false);
+  // Try to land the JPEG inside the official 10-20KB band by searching quality
+  let best = null;
+  for (let q = 0.95; q >= 0.1; q -= 0.05) {
+    const blob = await canvasToBlob(canvas, 'jpeg', q);
+    const kb = blob.size / 1024;
+    if (kb <= OFFICIAL_MAX_KB) { best = { blob, q, kb }; if (kb >= OFFICIAL_MIN_KB) break; }
+  }
+  if (!best) {
+    const blob = await canvasToBlob(canvas, 'jpeg', 0.1);
+    best = { blob, q: 0.1, kb: blob.size / 1024 };
+  }
+  lastOutputBlob = best.blob;
+  lastOutputW = OFFICIAL_W; lastOutputH = OFFICIAL_H; lastOutputFormat = 'jpeg';
+  showPreview(best.blob, OFFICIAL_W, OFFICIAL_H, 'JPG', true);
+}
+
+/* ── Custom resize ── */
+async function applyCustom(){
+  if (!originalImg) { showError('Please upload a signature image first.'); return; }
+  let w = parseInt($('cWidth').value, 10);
+  let h = parseInt($('cHeight').value, 10);
+  if (!w || !h || w < 10 || h < 10 || w > 3000 || h > 3000) {
+    showError('Please enter valid width and height (10–3000 px).');
+    return;
+  }
+  const format = $('outFormat').value;
+  const whiteBg = $('chkWhite').checked || format === 'jpeg';
+  const grayscale = $('chkGray').checked;
+  const quality = parseInt($('qSlider').value, 10) / 100;
+  const canvas = renderToCanvas(originalImg, w, h, whiteBg, grayscale);
+  const blob = await canvasToBlob(canvas, format, quality);
+  lastOutputBlob = blob; lastOutputW = w; lastOutputH = h; lastOutputFormat = format;
+  const isOfficial = (w === OFFICIAL_W && h === OFFICIAL_H && format === 'jpeg');
+  showPreview(blob, w, h, format.toUpperCase(), isOfficial);
+}
+
+/* ── Optimize file size (best-effort, JPEG only) ── */
+async function optimizeFileSize(){
+  if (!originalImg) { showError('Please upload a signature image first.'); return; }
+  if (!lastOutputBlob) { showError('Please resize the image first (Official or Custom), then optimize.'); return; }
+  const targetKB = parseFloat($('targetKB').value) || 18;
+  const canvas = renderToCanvas(originalImg, lastOutputW, lastOutputH, true, $('chkGray').checked);
+  let best = null;
+  for (let q = 1.0; q >= 0.05; q -= 0.05) {
+    const blob = await canvasToBlob(canvas, 'jpeg', q);
+    const kb = blob.size / 1024;
+    if (!best || Math.abs(kb - targetKB) < Math.abs(best.kb - targetKB)) best = { blob, kb, q };
+    if (kb <= targetKB) break;
+  }
+  lastOutputBlob = best.blob; lastOutputFormat = 'jpeg';
+  const isOfficial = (lastOutputW === OFFICIAL_W && lastOutputH === OFFICIAL_H);
+  showPreview(best.blob, lastOutputW, lastOutputH, 'JPG', isOfficial);
+}
+
+/* ── Preview + info rendering ── */
+function showPreview(blob, w, h, formatLabel, isOfficial){
+  const url = URL.createObjectURL(blob);
+  $('procPreview').src = url;
+  const kb = blob.size / 1024;
+  $('procMeta').innerHTML = `<b>${w} × ${h} px</b><br>${fmtSize(blob.size)}`;
+
+  let rowsHTML = '';
+  rowsHTML += `<div class="ab-row"><span class="ab-lbl">Output Width</span><span class="ab-val">${w} px</span></div>`;
+  rowsHTML += `<div class="ab-row"><span class="ab-lbl">Output Height</span><span class="ab-val">${h} px</span></div>`;
+  rowsHTML += `<div class="ab-row"><span class="ab-lbl">File Size</span><span class="ab-val">${fmtSize(blob.size)}</span></div>`;
+  rowsHTML += `<div class="ab-row"><span class="ab-lbl">Format</span><span class="ab-val">${formatLabel}</span></div>`;
+  rowsHTML += `<div class="ab-row"><span class="ab-lbl">Matches Official Dimensions (140×60)?</span><span class="ab-val ${(w===OFFICIAL_W&&h===OFFICIAL_H)?'g':'r'}">${(w===OFFICIAL_W&&h===OFFICIAL_H) ? 'Yes' : 'No'}</span></div>`;
+  const withinSize = kb <= OFFICIAL_MAX_KB && kb >= OFFICIAL_MIN_KB;
+  rowsHTML += `<div class="ab-row"><span class="ab-lbl">Within Official Size (10-20 KB)?</span><span class="ab-val ${withinSize?'g':'r'}">${withinSize ? 'Yes' : 'No'}</span></div>`;
+  $('abRows').innerHTML = rowsHTML;
+
+  const warnBox = $('warnBox');
+  if (kb > OFFICIAL_MAX_KB) {
+    warnBox.style.display = 'flex';
+    $('warnMsg').innerHTML = `<strong>File size (${fmtSize(blob.size)}) exceeds the official 20KB limit.</strong> Try lowering the Image Quality slider and click "Apply Custom Size" again, or use "Optimize Size".`;
+  } else if (kb < OFFICIAL_MIN_KB) {
+    warnBox.style.display = 'flex';
+    $('warnMsg').innerHTML = `<strong>File size (${fmtSize(blob.size)}) is below the official 10KB minimum.</strong> This can happen with very simple/small signatures — browsers cannot force a minimum file size. Verify against the actual application portal before uploading.`;
+  } else {
+    warnBox.style.display = 'none';
+  }
+
+  $('suggBox').innerHTML = `<strong style="display:block;font-family:var(--fd);font-size:14px;margin-bottom:8px">💡 Result Summary</strong><p style="font-size:14px;color:var(--ink2);line-height:1.72">${isOfficial && withinSize ? 'Your signature now matches the official IOB LBO dimensions (140×60 px) and falls within the 10-20KB file-size range. You can download and use it for your application.' : 'Your signature has been resized. Please check the dimensions and file size above against the official requirement before uploading it to the IOB LBO application portal.'}</p>`;
+
+  const pa = $('previewArea');
+  pa.style.display = 'block';
+  pa.style.animation = 'none'; pa.offsetHeight;
+  pa.style.animation = 'resultIn .45s var(--ease) both';
+  $('dlBtn').disabled = false;
+  setTimeout(()=>pa.scrollIntoView({behavior:'smooth', block:'nearest'}), 120);
+}
+
+/* ── Download ── */
+function downloadSignature(){
+  if (!lastOutputBlob) { showError('Please resize your signature before downloading.'); return; }
+  const ext = lastOutputFormat === 'png' ? 'png' : 'jpg';
+  const filename = `iob-lbo-signature-2026.${ext}`;
+  const url = URL.createObjectURL(lastOutputBlob);
+  const a = document.createElement('a');
+  a.href = url; a.download = filename;
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
+  setTimeout(()=>URL.revokeObjectURL(url), 4000);
+}
+
+/* ── Reset ── */
+function resetTool(){
+  originalImg = null; lastOutputBlob = null;
+  fileInput.value = '';
+  $('fileInfo').classList.remove('on');
+  $('previewArea').style.display = 'none';
+  $('officialBtn').disabled = true;
+  $('customBtn').disabled = true;
+  $('optBtn').disabled = true;
+  $('dlBtn').disabled = true;
+  $('errBox').classList.remove('on');
+}
+</script>
+</body>
+</html>
