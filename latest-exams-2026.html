@@ -426,8 +426,16 @@ footer{background:var(--ink);color:#cbd5e1;padding-top:0}
 // appear in Latest Exams, Previous Year Questions (PYQs) AND Previous Year
 // Cut-Offs. No need to edit HTML anywhere else.
 //
+// url: the exam's real RajDailyTools recruitment page. If you don't have
+// the real URL yet, use "#" and add a "// TODO: Add actual RajDailyTools
+// URL for [Exam Name]" comment above the object — never invent a URL.
+//
 // pyqUrl / cutoffUrl: point these to the page you'll create later. It's OK
 // if that page doesn't exist yet — the card will still show and link there.
+//
+// pyqInfo: a short line shown on the PYQ card (e.g. "2025 Exam • Memory
+// Based"). If you don't have that detail yet, leave it as
+// "Latest Available PYQs" — never invent a year or exam type.
 //
 // ===== ADD NEW EXAMS HERE =====
 // Sorted automatically by updatedDate (latest first).
@@ -443,11 +451,13 @@ const exams = [
     updatedDate: "2026-08-12",
     updatedDisplay: "12 Aug 2026",
     category: "Banking",
-    url: "#IBPS-CSA-LINK",
+    // TODO: Add actual RajDailyTools URL for IBPS Clerk (CSA)
+    url: "#",
     searchableText: "ibps clerk csa 16th online form 2026 banking",
     stage: "Prelims + Mains",
     pyqUrl: "/ibps-clerk-csa-pyqs-2025.html",
-    cutoffUrl: "/ibps-clerk-csa-previous-year-cutoff.html"
+    cutoffUrl: "/ibps-clerk-csa-previous-year-cutoff.html",
+    pyqInfo: "Latest Available PYQs"
   },
   {
     title: "GIMS Noida Staff Nurse",
@@ -459,11 +469,13 @@ const exams = [
     updatedDate: "2026-08-12",
     updatedDisplay: "12 Aug 2026",
     category: "Medical",
-    url: "#GIMS-STAFF-NURSE-LINK",
+    // TODO: Add actual RajDailyTools URL for GIMS Noida Staff Nurse
+    url: "#",
     searchableText: "gims noida staff nurse online form 2026 medical",
     stage: "Written Exam",
     pyqUrl: "/gims-noida-staff-nurse-pyqs-2025.html",
-    cutoffUrl: "/gims-noida-staff-nurse-previous-year-cutoff.html"
+    cutoffUrl: "/gims-noida-staff-nurse-previous-year-cutoff.html",
+    pyqInfo: "Latest Available PYQs"
   },
   {
     title: "IOB LBO",
@@ -475,11 +487,12 @@ const exams = [
     updatedDate: "2026-08-12",
     updatedDisplay: "12 Aug 2026",
     category: "Banking",
-    url: "#IOB-LBO-LINK",
+    url: "https://rajdailytools.in/iob-lbo-recruitment-hub-2026.html",
     searchableText: "iob lbo local bank officer online form 2026 banking",
     stage: "Online Exam + Interview",
     pyqUrl: "/iob-lbo-pyqs-2025.html",
-    cutoffUrl: "/iob-lbo-previous-year-cutoff.html"
+    cutoffUrl: "/iob-lbo-previous-year-cutoff.html",
+    pyqInfo: "Latest Available PYQs"
   },
   {
     title: "SBI Junior Associate Clerk",
@@ -491,11 +504,13 @@ const exams = [
     updatedDate: "2026-08-12",
     updatedDisplay: "12 Aug 2026",
     category: "Banking",
-    url: "#SBI-CLERK-BACKLOG-LINK",
+    // TODO: Add actual RajDailyTools URL for SBI Junior Associate Clerk
+    url: "#",
     searchableText: "sbi junior associate clerk backlog online form 2026 banking",
     stage: "Prelims + Mains",
     pyqUrl: "/sbi-clerk-backlog-pyqs-2025.html",
-    cutoffUrl: "/sbi-clerk-backlog-previous-year-cutoff.html"
+    cutoffUrl: "/sbi-clerk-backlog-previous-year-cutoff.html",
+    pyqInfo: "Latest Available PYQs"
   }
 ];
 
@@ -517,7 +532,7 @@ function renderExams(list) {
   }
 
   grid.innerHTML = list.map(ex => `
-    <div class="exam-card hover-lift">
+    <a href="${ex.url}" class="exam-card hover-lift" aria-label="View details for ${ex.title}">
       <div class="ecard-top">
         <span class="ecard-cat">${ex.category}</span>
         <span class="ecard-updated">Updated: ${ex.updatedDisplay}</span>
@@ -529,8 +544,8 @@ function renderExams(list) {
         <span class="ecd-arrow">→</span>
         <div class="ecd"><span class="ecd-lbl">Apply End</span><span class="ecd-val">${ex.applyEnd}</span></div>
       </div>
-      <a href="${ex.url}" class="ecard-btn ripple-host" onclick="rippleFx(event)">View Details →</a>
-    </div>
+      <span class="ecard-btn">View Details →</span>
+    </a>
   `).join('');
 }
 
@@ -540,7 +555,7 @@ function renderPyqs(list) {
     grid.innerHTML = `
       <div class="no-result show">
         <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-        <p>No PYQ exam found.</p>
+        <p>No matching exam found.</p>
       </div>`;
     return;
   }
@@ -551,6 +566,7 @@ function renderPyqs(list) {
         <div class="pyq-txt">
           <div class="pyq-name">${ex.title}</div>
           <span class="pyq-badge">PYQs</span>
+          <div class="pyq-sub">${ex.pyqInfo}</div>
         </div>
       </div>
       <span class="pyq-btn">Practice PYQs →</span>
@@ -564,7 +580,7 @@ function renderCutoffs(list) {
     grid.innerHTML = `
       <div class="no-result show">
         <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-        <p>No previous year cut-off found.</p>
+        <p>No matching exam found.</p>
       </div>`;
     return;
   }
