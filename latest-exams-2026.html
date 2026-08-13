@@ -169,6 +169,31 @@ nav.mn a:hover{color:var(--blue);background:var(--blue-xl)}
 .pyq-name{font-family:var(--fd);font-size:12.5px;font-weight:700;color:var(--ink);line-height:1.3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .pyq-sub{font-size:11px;color:var(--ink4);font-weight:600}
 .pyq-btn{display:flex;align-items:center;gap:4px;font-size:11.5px;font-weight:700;color:var(--blue);flex-shrink:0}
+.pyq-badge{display:inline-flex;align-items:center;font-size:9.5px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;color:var(--purple);background:var(--purple-xl);padding:2px 8px;border-radius:100px;margin-top:3px}
+
+/* SECTION SEARCH (PYQ / CUT-OFF) */
+.sec-search{max-width:480px;margin:0 0 22px}
+.sec-search .search-box{padding:11px 15px;border-radius:12px}
+.sec-search .search-box svg{width:16px;height:16px}
+.sec-search .search-box input{font-size:13.5px}
+
+/* CUT-OFF GRID */
+.cutoff-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+@media(max-width:980px){.cutoff-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.cutoff-grid{grid-template-columns:1fr}}
+.cutoff-card{display:flex;align-items:center;justify-content:space-between;gap:10px;background:#fff;border:1.5px solid var(--line);border-radius:14px;padding:15px 16px;transition:.22s var(--ease)}
+.cutoff-card:hover{border-color:var(--blue-s);box-shadow:var(--s2);transform:translateY(-3px)}
+.cutoff-l{display:flex;align-items:center;gap:11px;min-width:0}
+.cutoff-ico{width:34px;height:34px;border-radius:9px;background:var(--amber-xl);color:var(--amber);display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0}
+.cutoff-txt{min-width:0}
+.cutoff-name{font-family:var(--fd);font-size:12.5px;font-weight:700;color:var(--ink);line-height:1.3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cutoff-sub{font-size:11px;color:var(--ink4);font-weight:600}
+.cutoff-stage{font-size:10px;color:var(--ink3);font-weight:600;margin-top:1px}
+.cutoff-btn{display:flex;align-items:center;gap:4px;font-size:11.5px;font-weight:700;color:var(--blue);flex-shrink:0}
+.no-result{display:none;flex-direction:column;align-items:center;text-align:center;padding:40px 20px;gap:8px;grid-column:1/-1}
+.no-result.show{display:flex}
+.no-result svg{width:32px;height:32px;stroke:var(--ink4);fill:none;stroke-width:1.6}
+.no-result p{font-size:13.5px;font-weight:700;color:var(--ink3)}
 
 /* FOOTER */
 footer{background:var(--ink);color:#cbd5e1;padding-top:0}
@@ -285,9 +310,33 @@ footer{background:var(--ink);color:#cbd5e1;padding-top:0}
 <section class="sec alt" id="pyqs">
   <div class="w">
     <div class="sec-hd">
-      <h2 class="sec-h">Previous Year <span>Questions</span></h2>
+      <h2 class="sec-h">📚 Previous Year <span>Questions (PYQs)</span></h2>
+    </div>
+    <div class="sec-search">
+      <div class="search-box">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" id="pyqSearch" placeholder="Search PYQs by exam name..." aria-label="Search PYQs by exam name" oninput="filterPyqs()">
+        <button class="clr-btn ripple-host" id="pyqClrBtn" onclick="rippleFx(event);clearPyqSearch()" aria-label="Clear PYQ search">✕</button>
+      </div>
     </div>
     <div class="pyq-grid" id="pyqGrid"></div>
+  </div>
+</section>
+
+<!-- PREVIOUS YEAR CUT-OFFS -->
+<section class="sec" id="cutoffs">
+  <div class="w">
+    <div class="sec-hd">
+      <h2 class="sec-h">📊 Previous Year <span>Cut-Offs</span></h2>
+    </div>
+    <div class="sec-search">
+      <div class="search-box">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" id="cutoffSearch" placeholder="Search previous year cut-off..." aria-label="Search previous year cut-off" oninput="filterCutoffs()">
+        <button class="clr-btn ripple-host" id="cutoffClrBtn" onclick="rippleFx(event);clearCutoffSearch()" aria-label="Clear cut-off search">✕</button>
+      </div>
+    </div>
+    <div class="cutoff-grid" id="cutoffGrid"></div>
   </div>
 </section>
 
@@ -372,7 +421,15 @@ footer{background:var(--ink);color:#cbd5e1;padding-top:0}
 
 <script>
 // ══════════════════════════════════════════════════════════════════════
-// LATEST EXAMS DATA — add a new exam by adding one object to this array.
+// LATEST EXAMS DATA — SINGLE SOURCE OF TRUTH
+// Add a new exam by adding ONE object to this array — it will automatically
+// appear in Latest Exams, Previous Year Questions (PYQs) AND Previous Year
+// Cut-Offs. No need to edit HTML anywhere else.
+//
+// pyqUrl / cutoffUrl: point these to the page you'll create later. It's OK
+// if that page doesn't exist yet — the card will still show and link there.
+//
+// ===== ADD NEW EXAMS HERE =====
 // Sorted automatically by updatedDate (latest first).
 // ══════════════════════════════════════════════════════════════════════
 const exams = [
@@ -387,7 +444,10 @@ const exams = [
     updatedDisplay: "12 Aug 2026",
     category: "Banking",
     url: "#IBPS-CSA-LINK",
-    searchableText: "ibps clerk csa 16th online form 2026 banking"
+    searchableText: "ibps clerk csa 16th online form 2026 banking",
+    stage: "Prelims + Mains",
+    pyqUrl: "/ibps-clerk-csa-pyqs-2025.html",
+    cutoffUrl: "/ibps-clerk-csa-previous-year-cutoff.html"
   },
   {
     title: "GIMS Noida Staff Nurse",
@@ -400,7 +460,10 @@ const exams = [
     updatedDisplay: "12 Aug 2026",
     category: "Medical",
     url: "#GIMS-STAFF-NURSE-LINK",
-    searchableText: "gims noida staff nurse online form 2026 medical"
+    searchableText: "gims noida staff nurse online form 2026 medical",
+    stage: "Written Exam",
+    pyqUrl: "/gims-noida-staff-nurse-pyqs-2025.html",
+    cutoffUrl: "/gims-noida-staff-nurse-previous-year-cutoff.html"
   },
   {
     title: "IOB LBO",
@@ -413,7 +476,10 @@ const exams = [
     updatedDisplay: "12 Aug 2026",
     category: "Banking",
     url: "#IOB-LBO-LINK",
-    searchableText: "iob lbo local bank officer online form 2026 banking"
+    searchableText: "iob lbo local bank officer online form 2026 banking",
+    stage: "Online Exam + Interview",
+    pyqUrl: "/iob-lbo-pyqs-2025.html",
+    cutoffUrl: "/iob-lbo-previous-year-cutoff.html"
   },
   {
     title: "SBI Junior Associate Clerk",
@@ -426,15 +492,11 @@ const exams = [
     updatedDisplay: "12 Aug 2026",
     category: "Banking",
     url: "#SBI-CLERK-BACKLOG-LINK",
-    searchableText: "sbi junior associate clerk backlog online form 2026 banking"
+    searchableText: "sbi junior associate clerk backlog online form 2026 banking",
+    stage: "Prelims + Mains",
+    pyqUrl: "/sbi-clerk-backlog-pyqs-2025.html",
+    cutoffUrl: "/sbi-clerk-backlog-previous-year-cutoff.html"
   }
-];
-
-const pyqs = [
-  { name: "IBPS Clerk / CSA", sub: "Previous Year Questions", url: "#IBPS-CSA-PYQ" },
-  { name: "GIMS Staff Nurse", sub: "Previous Year Questions", url: "#GIMS-PYQ" },
-  { name: "IOB LBO", sub: "Previous Year Questions", url: "#IOB-LBO-PYQ" },
-  { name: "SBI Jr. Associate Clerk", sub: "Previous Year Questions", url: "#SBI-BACKLOG-PYQ" }
 ];
 
 const vacancyIcon = '<svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>';
@@ -472,20 +534,81 @@ function renderExams(list) {
   `).join('');
 }
 
-function renderPyqs() {
+function renderPyqs(list) {
   const grid = document.getElementById('pyqGrid');
-  grid.innerHTML = pyqs.map(p => `
-    <a href="${p.url}" class="pyq-card hover-lift">
+  if (list.length === 0) {
+    grid.innerHTML = `
+      <div class="no-result show">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <p>No PYQ exam found.</p>
+      </div>`;
+    return;
+  }
+  grid.innerHTML = list.map(ex => `
+    <a href="${ex.pyqUrl}" class="pyq-card hover-lift">
       <div class="pyq-l">
         <div class="pyq-ico">📄</div>
         <div class="pyq-txt">
-          <div class="pyq-name">${p.name}</div>
-          <div class="pyq-sub">${p.sub}</div>
+          <div class="pyq-name">${ex.title}</div>
+          <span class="pyq-badge">PYQs</span>
         </div>
       </div>
-      <span class="pyq-btn">View →</span>
+      <span class="pyq-btn">Practice PYQs →</span>
     </a>
   `).join('');
+}
+
+function renderCutoffs(list) {
+  const grid = document.getElementById('cutoffGrid');
+  if (list.length === 0) {
+    grid.innerHTML = `
+      <div class="no-result show">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <p>No previous year cut-off found.</p>
+      </div>`;
+    return;
+  }
+  grid.innerHTML = list.map(ex => `
+    <a href="${ex.cutoffUrl}" class="cutoff-card hover-lift">
+      <div class="cutoff-l">
+        <div class="cutoff-ico">📊</div>
+        <div class="cutoff-txt">
+          <div class="cutoff-name">${ex.title}</div>
+          <div class="cutoff-sub">Previous Year Cut-Off</div>
+          <div class="cutoff-stage">${ex.stage}</div>
+        </div>
+      </div>
+      <span class="cutoff-btn">View Cut-Off →</span>
+    </a>
+  `).join('');
+}
+
+function filterPyqs() {
+  const q = document.getElementById('pyqSearch').value.trim().toLowerCase();
+  document.getElementById('pyqClrBtn').classList.toggle('show', q.length > 0);
+  const list = q ? exams.filter(ex => ex.title.toLowerCase().includes(q) || ex.organization.toLowerCase().includes(q)) : exams;
+  renderPyqs(list);
+}
+
+function clearPyqSearch() {
+  document.getElementById('pyqSearch').value = '';
+  document.getElementById('pyqClrBtn').classList.remove('show');
+  renderPyqs(exams);
+  document.getElementById('pyqSearch').focus();
+}
+
+function filterCutoffs() {
+  const q = document.getElementById('cutoffSearch').value.trim().toLowerCase();
+  document.getElementById('cutoffClrBtn').classList.toggle('show', q.length > 0);
+  const list = q ? exams.filter(ex => ex.title.toLowerCase().includes(q) || ex.organization.toLowerCase().includes(q)) : exams;
+  renderCutoffs(list);
+}
+
+function clearCutoffSearch() {
+  document.getElementById('cutoffSearch').value = '';
+  document.getElementById('cutoffClrBtn').classList.remove('show');
+  renderCutoffs(exams);
+  document.getElementById('cutoffSearch').focus();
 }
 
 function getSortedExams() {
@@ -533,7 +656,8 @@ window.addEventListener('scroll', () => {
 });
 
 renderExams(getSortedExams());
-renderPyqs();
+renderPyqs(exams);
+renderCutoffs(exams);
 </script>
 </body>
 </html>
