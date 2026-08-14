@@ -132,10 +132,10 @@ nav.mn a:hover{color:var(--blue);background:var(--blue-xl)}
 .sec-count{font-size:12.5px;font-weight:700;color:var(--ink3);background:#fff;border:1.5px solid var(--line);padding:5px 12px;border-radius:100px}
 
 /* EXAM GRID */
-.exam-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-@media(max-width:980px){.exam-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:640px){.exam-grid{grid-template-columns:1fr}}
-.exam-card{background:#fff;border:1.5px solid var(--line);border-radius:16px;padding:18px 18px 16px;box-shadow:var(--s1);display:flex;flex-direction:column;gap:11px;animation:cardIn .4s var(--ease) both}
+.exam-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;width:100%}
+@media(max-width:980px){.exam-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:640px){.exam-grid{grid-template-columns:minmax(0,1fr)}}
+.exam-card{background:#fff;border:1.5px solid var(--line);border-radius:16px;padding:18px 18px 16px;box-shadow:var(--s1);display:flex;flex-direction:column;gap:11px;animation:cardIn .4s var(--ease) both;min-width:0;max-width:100%}
 .exam-card:hover{border-color:var(--blue-s);box-shadow:var(--s3)}
 .ecard-top{display:flex;align-items:center;justify-content:space-between;gap:8px}
 .ecard-cat{font-size:10.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--blue);background:var(--blue-xl);padding:4px 10px;border-radius:100px}
@@ -147,9 +147,10 @@ nav.mn a:hover{color:var(--blue);background:var(--blue-xl)}
 .ecard-dates{display:flex;align-items:center;gap:8px;background:var(--surf);border:1px solid var(--line);border-radius:10px;padding:9px 12px}
 .ecd{display:flex;flex-direction:column;gap:1px;flex:1;min-width:0}
 .ecd-lbl{font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:.03em;color:var(--ink4)}
-.ecd-val{font-size:12px;font-weight:700;color:var(--ink2);white-space:nowrap}
+.ecd-val{font-size:12px;font-weight:700;color:var(--ink2);white-space:normal;word-break:break-word}
 .ecd-arrow{color:var(--ink4);font-size:12px;flex-shrink:0}
-.ecard-btn{display:flex;align-items:center;justify-content:center;gap:6px;background:var(--blue);color:#fff;font-family:var(--fd);font-weight:700;font-size:13px;padding:10px 16px;border-radius:10px;transition:.22s;position:relative;overflow:hidden;margin-top:2px}
+.ecard-title{overflow-wrap:break-word;word-break:break-word}
+.ecard-btn{display:flex;align-items:center;justify-content:center;gap:6px;background:var(--blue);color:#fff;font-family:var(--fd);font-weight:700;font-size:13px;padding:10px 16px;border-radius:10px;transition:.22s;position:relative;overflow:hidden;margin-top:2px;width:100%;box-sizing:border-box}
 .ecard-btn:hover{background:var(--blue-d);transform:translateY(-2px);box-shadow:var(--sb)}
 .empty-state{display:none;flex-direction:column;align-items:center;text-align:center;padding:50px 20px;gap:10px;grid-column:1/-1}
 .empty-state.show{display:flex}
@@ -158,10 +159,10 @@ nav.mn a:hover{color:var(--blue);background:var(--blue-xl)}
 .empty-state span{font-size:12.5px;color:var(--ink4)}
 
 /* PYQ GRID */
-.pyq-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-@media(max-width:980px){.pyq-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:520px){.pyq-grid{grid-template-columns:1fr}}
-.pyq-card{display:flex;align-items:center;justify-content:space-between;gap:10px;background:#fff;border:1.5px solid var(--line);border-radius:14px;padding:15px 16px;transition:.22s var(--ease)}
+.pyq-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;width:100%}
+@media(max-width:980px){.pyq-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:520px){.pyq-grid{grid-template-columns:minmax(0,1fr)}}
+.pyq-card{display:flex;align-items:center;justify-content:space-between;gap:10px;background:#fff;border:1.5px solid var(--line);border-radius:14px;padding:15px 16px;transition:.22s var(--ease);min-width:0;max-width:100%}
 .pyq-card:hover{border-color:var(--blue-s);box-shadow:var(--s2);transform:translateY(-3px)}
 .pyq-l{display:flex;align-items:center;gap:11px;min-width:0}
 .pyq-ico{width:34px;height:34px;border-radius:9px;background:var(--purple-xl);color:var(--purple);display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0}
@@ -178,10 +179,10 @@ nav.mn a:hover{color:var(--blue);background:var(--blue-xl)}
 .sec-search .search-box input{font-size:13.5px}
 
 /* CUT-OFF GRID */
-.cutoff-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-@media(max-width:980px){.cutoff-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:520px){.cutoff-grid{grid-template-columns:1fr}}
-.cutoff-card{display:flex;align-items:center;justify-content:space-between;gap:10px;background:#fff;border:1.5px solid var(--line);border-radius:14px;padding:15px 16px;transition:.22s var(--ease)}
+.cutoff-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;width:100%}
+@media(max-width:980px){.cutoff-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:520px){.cutoff-grid{grid-template-columns:minmax(0,1fr)}}
+.cutoff-card{display:flex;align-items:center;justify-content:space-between;gap:10px;background:#fff;border:1.5px solid var(--line);border-radius:14px;padding:15px 16px;transition:.22s var(--ease);min-width:0;max-width:100%}
 .cutoff-card:hover{border-color:var(--blue-s);box-shadow:var(--s2);transform:translateY(-3px)}
 .cutoff-l{display:flex;align-items:center;gap:11px;min-width:0}
 .cutoff-ico{width:34px;height:34px;border-radius:9px;background:var(--amber-xl);color:var(--amber);display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0}
@@ -289,7 +290,7 @@ footer{background:var(--ink);color:#cbd5e1;padding-top:0}
           <input type="text" id="examSearch" placeholder="Search exams..." aria-label="Search exams" oninput="filterExams()">
           <button class="clr-btn ripple-host" id="clrBtn" onclick="rippleFx(event);clearSearch()" aria-label="Clear search">✕</button>
         </div>
-        <p class="search-hint">Try “SSC”, “IBPS”, “Clerk”, “Staff Nurse” or “LBO”</p>
+        <p class="search-hint">Try “RRB”, “SBI”, “UPSSSC”, “Apprentice” or “JE”</p>
       </div>
     </div>
   </div>
@@ -442,74 +443,381 @@ footer{background:var(--ink);color:#cbd5e1;padding-top:0}
 // ══════════════════════════════════════════════════════════════════════
 const exams = [
   {
-    title: "IBPS Clerk (CSA)",
-    shortTitle: "16th Online Form 2026",
-    organization: "IBPS",
-    vacancies: "11,403",
-    applyStart: "01 Aug 2026",
-    applyEnd: "21 Aug 2026",
-    updatedDate: "2026-08-12",
-    updatedDisplay: "12 Aug 2026",
-    category: "Banking",
-    // TODO: Add actual RajDailyTools URL for IBPS Clerk (CSA)
-    url: "#",
-    searchableText: "ibps clerk csa 16th online form 2026 banking",
-    stage: "Prelims + Mains",
-    pyqUrl: "/ibps-clerk-csa-pyqs-2025.html",
-    cutoffUrl: "/ibps-clerk-csa-previous-year-cutoff.html",
-    pyqInfo: "Latest Available PYQs"
-  },
-  {
-    title: "GIMS Noida Staff Nurse",
+    title: "Bihar STET",
     shortTitle: "Online Form 2026",
-    organization: "GIMS Noida",
-    vacancies: "100 Posts",
-    applyStart: "10 Aug 2026",
-    applyEnd: "07 Sep 2026",
-    updatedDate: "2026-08-12",
-    updatedDisplay: "12 Aug 2026",
-    category: "Medical",
-    // TODO: Add actual RajDailyTools URL for GIMS Noida Staff Nurse
+    organization: "Bihar STET",
+    vacancies: "N/A",
+    applyStart: "17 Aug 2026",
+    applyEnd: "31 Aug 2026",
+    updatedDate: "2026-08-14",
+    updatedDisplay: "14 Aug 2026",
+    category: "Teaching",
+    // TODO: Add actual RajDailyTools URL for Bihar STET Online Form 2026
     url: "#",
-    searchableText: "gims noida staff nurse online form 2026 medical",
-    stage: "Written Exam",
-    pyqUrl: "/gims-noida-staff-nurse-pyqs-2025.html",
-    cutoffUrl: "/gims-noida-staff-nurse-previous-year-cutoff.html",
+    searchableText: "bihar stet online form 2026 teaching",
+    stage: "Cut-Off Details Coming Soon",
+    pyqUrl: "/bihar-stet-2026-pyqs.html",
+    cutoffUrl: "/bihar-stet-2026-previous-year-cutoff.html",
     pyqInfo: "Latest Available PYQs"
   },
   {
-    title: "IOB LBO",
-    shortTitle: "Local Bank Officer — Online Form 2026",
-    organization: "Indian Overseas Bank",
-    vacancies: "250 Posts",
+    title: "RRB Junior Engineer (JE)",
+    shortTitle: "Online Form 2026",
+    organization: "Railway Recruitment Board (RRB)",
+    vacancies: "3,993",
+    applyStart: "14 Aug 2026",
+    applyEnd: "13 Sep 2026",
+    updatedDate: "2026-08-14",
+    updatedDisplay: "14 Aug 2026",
+    category: "Railway",
+    // TODO: Add actual RajDailyTools URL for RRB Junior Engineer (JE) Online Form 2026
+    url: "#",
+    searchableText: "rrb junior engineer je online form 2026 railway",
+    stage: "Cut-Off Details Coming Soon",
+    pyqUrl: "/rrb-je-2026-pyqs.html",
+    cutoffUrl: "/rrb-je-2026-previous-year-cutoff.html",
+    pyqInfo: "Latest Available PYQs"
+  },
+  {
+    title: "SBI Junior Associates Clerk",
+    shortTitle: "9,124 Posts — Online Form 2026",
+    organization: "State Bank of India (SBI)",
+    vacancies: "9,124",
+    applyStart: "11 Aug 2026",
+    applyEnd: "31 Aug 2026",
+    updatedDate: "2026-08-14",
+    updatedDisplay: "14 Aug 2026",
+    category: "Banking",
+    // TODO: Add actual RajDailyTools URL for SBI Junior Associates Clerk Online Form 2026
+    url: "#",
+    searchableText: "sbi junior associates clerk online form 2026 banking 9124 posts",
+    stage: "Cut-Off Details Coming Soon",
+    pyqUrl: "/sbi-junior-associates-clerk-2026-pyqs.html",
+    cutoffUrl: "/sbi-junior-associates-clerk-2026-previous-year-cutoff.html",
+    pyqInfo: "Latest Available PYQs"
+  },
+  {
+    title: "UPSSSC PET",
+    shortTitle: "Online Form 2026",
+    organization: "UPSSSC",
+    vacancies: "N/A",
+    applyStart: "03 Aug 2026",
+    applyEnd: "01 Sep 2026",
+    updatedDate: "2026-08-14",
+    updatedDisplay: "14 Aug 2026",
+    category: "UPSSSC",
+    // TODO: Add actual RajDailyTools URL for UPSSSC PET Online Form 2026
+    url: "#",
+    searchableText: "upsssc pet online form 2026",
+    stage: "Cut-Off Details Coming Soon",
+    pyqUrl: "/upsssc-pet-2026-pyqs.html",
+    cutoffUrl: "/upsssc-pet-2026-previous-year-cutoff.html",
+    pyqInfo: "Latest Available PYQs"
+  },
+  {
+    title: "ISRO Assistant & Junior Personal Assistant",
+    shortTitle: "Online Form 2026",
+    organization: "ISRO",
+    vacancies: "242",
+    applyStart: "27 Jul 2026",
+    applyEnd: "20 Aug 2026 (Extended)",
+    updatedDate: "2026-08-14",
+    updatedDisplay: "14 Aug 2026",
+    category: "PSU",
+    // TODO: Add actual RajDailyTools URL for ISRO Assistant & Junior Personal Assistant Online Form 2026
+    url: "#",
+    searchableText: "isro assistant junior personal assistant online form 2026 psu",
+    stage: "Cut-Off Details Coming Soon",
+    pyqUrl: "/isro-assistant-jpa-2026-pyqs.html",
+    cutoffUrl: "/isro-assistant-jpa-2026-previous-year-cutoff.html",
+    pyqInfo: "Latest Available PYQs"
+  },
+  {
+    title: "UPSSSC Livestock Extension Officer",
+    shortTitle: "Online Form 2026",
+    organization: "UPSSSC",
+    vacancies: "1,251",
+    applyStart: "09 Sep 2026",
+    applyEnd: "29 Sep 2026",
+    updatedDate: "2026-08-14",
+    updatedDisplay: "14 Aug 2026",
+    category: "UPSSSC",
+    // TODO: Add actual RajDailyTools URL for UPSSSC Livestock Extension Officer Online Form 2026
+    url: "#",
+    searchableText: "upsssc livestock extension officer online form 2026",
+    stage: "Cut-Off Details Coming Soon",
+    pyqUrl: "/upsssc-livestock-extension-officer-2026-pyqs.html",
+    cutoffUrl: "/upsssc-livestock-extension-officer-2026-previous-year-cutoff.html",
+    pyqInfo: "Latest Available PYQs"
+  },
+  {
+    title: "Railway ICF Apprentice",
+    shortTitle: "Online Form 2026",
+    organization: "Indian Railways (ICF)",
+    vacancies: "1,010",
+    applyStart: "08 Aug 2026",
+    applyEnd: "07 Sep 2026",
+    updatedDate: "2026-08-14",
+    updatedDisplay: "14 Aug 2026",
+    category: "Railway",
+    // TODO: Add actual RajDailyTools URL for Railway ICF Apprentice Online Form 2026
+    url: "#",
+    searchableText: "railway icf apprentice online form 2026",
+    stage: "Cut-Off Details Coming Soon",
+    pyqUrl: "/icf-apprentice-2026-pyqs.html",
+    cutoffUrl: "/icf-apprentice-2026-previous-year-cutoff.html",
+    pyqInfo: "Latest Available PYQs"
+  },
+  {
+    title: "RCF Kapurthala Apprentice",
+    shortTitle: "Online Form 2026",
+    organization: "Rail Coach Factory (RCF) Kapurthala",
+    vacancies: "734",
+    applyStart: "07 Aug 2026",
+    applyEnd: "05 Sep 2026",
+    updatedDate: "2026-08-14",
+    updatedDisplay: "14 Aug 2026",
+    category: "Railway",
+    // TODO: Add actual RajDailyTools URL for RCF Kapurthala Apprentice Online Form 2026
+    url: "#",
+    searchableText: "rcf kapurthala apprentice online form 2026 railway",
+    stage: "Cut-Off Details Coming Soon",
+    pyqUrl: "/rcf-kapurthala-apprentice-2026-pyqs.html",
+    cutoffUrl: "/rcf-kapurthala-apprentice-2026-previous-year-cutoff.html",
+    pyqInfo: "Latest Available PYQs"
+  },
+  {
+    title: "Himachal Pradesh High Court Various Post",
+    shortTitle: "Online Form 2026",
+    organization: "Himachal Pradesh High Court",
+    vacancies: "388",
+    applyStart: "10 Aug 2026",
+    applyEnd: "10 Sep 2026",
+    updatedDate: "2026-08-14",
+    updatedDisplay: "14 Aug 2026",
+    category: "Judiciary",
+    // TODO: Add actual RajDailyTools URL for Himachal Pradesh High Court Various Post Online Form 2026
+    url: "#",
+    searchableText: "himachal pradesh high court various post online form 2026 judiciary",
+    stage: "Cut-Off Details Coming Soon",
+    pyqUrl: "/hp-high-court-various-post-2026-pyqs.html",
+    cutoffUrl: "/hp-high-court-various-post-2026-previous-year-cutoff.html",
+    pyqInfo: "Latest Available PYQs"
+  },
+  {
+    title: "IOCL Marketing Division (NR) Apprentice",
+    shortTitle: "Online Form 2026",
+    organization: "Indian Oil Corporation Ltd (IOCL)",
+    vacancies: "433",
+    applyStart: "07 Aug 2026",
+    applyEnd: "06 Sep 2026",
+    updatedDate: "2026-08-14",
+    updatedDisplay: "14 Aug 2026",
+    category: "PSU",
+    // TODO: Add actual RajDailyTools URL for IOCL Marketing Division NR Apprentice Online Form 2026
+    url: "#",
+    searchableText: "iocl marketing division nr apprentice online form 2026 psu",
+    stage: "Cut-Off Details Coming Soon",
+    pyqUrl: "/iocl-marketing-division-nr-apprentice-2026-pyqs.html",
+    cutoffUrl: "/iocl-marketing-division-nr-apprentice-2026-previous-year-cutoff.html",
+    pyqInfo: "Latest Available PYQs"
+  },
+  {
+    title: "AAI Junior Executive & Manager",
+    shortTitle: "Online Form 2026",
+    organization: "Airports Authority of India (AAI)",
+    vacancies: "389",
+    applyStart: "08 Aug 2026",
+    applyEnd: "07 Sep 2026",
+    updatedDate: "2026-08-14",
+    updatedDisplay: "14 Aug 2026",
+    category: "Aviation",
+    // TODO: Add actual RajDailyTools URL for AAI Junior Executive & Manager Online Form 2026
+    url: "#",
+    searchableText: "aai junior executive manager online form 2026 aviation",
+    stage: "Cut-Off Details Coming Soon",
+    pyqUrl: "/aai-junior-executive-manager-2026-pyqs.html",
+    cutoffUrl: "/aai-junior-executive-manager-2026-previous-year-cutoff.html",
+    pyqInfo: "Latest Available PYQs"
+  },
+  {
+    title: "BPSC School Teacher TRE 4.0",
+    shortTitle: "32,388 Posts — Online Form 2026",
+    organization: "Bihar Public Service Commission (BPSC)",
+    vacancies: "32,388",
+    applyStart: "Aug 2026 (Tentative)",
+    applyEnd: "Sep 2026 (Tentative)",
+    updatedDate: "2026-08-14",
+    updatedDisplay: "14 Aug 2026",
+    category: "Teaching",
+    // TODO: Add actual RajDailyTools URL for BPSC School Teacher TRE 4.0 Online Form 2026
+    url: "#",
+    searchableText: "bpsc school teacher tre 4.0 online form 2026 teaching 32388 posts",
+    stage: "Cut-Off Details Coming Soon",
+    pyqUrl: "/bpsc-tre-4-2026-pyqs.html",
+    cutoffUrl: "/bpsc-tre-4-2026-previous-year-cutoff.html",
+    pyqInfo: "Latest Available PYQs"
+  },
+  {
+    title: "RCFL Management Trainee (MT)",
+    shortTitle: "Online Form 2026",
+    organization: "RCF Ltd (RCFL)",
+    vacancies: "94",
     applyStart: "08 Aug 2026",
     applyEnd: "24 Aug 2026",
-    updatedDate: "2026-08-12",
-    updatedDisplay: "12 Aug 2026",
-    category: "Banking",
-    url: "https://rajdailytools.in/iob-lbo-recruitment-hub-2026.html",
-    searchableText: "iob lbo local bank officer online form 2026 banking",
-    stage: "Online Exam + Interview",
-    pyqUrl: "/iob-lbo-pyqs-2025.html",
-    cutoffUrl: "/iob-lbo-previous-year-cutoff.html",
+    updatedDate: "2026-08-14",
+    updatedDisplay: "14 Aug 2026",
+    category: "PSU",
+    // TODO: Add actual RajDailyTools URL for RCFL Management Trainee MT Online Form 2026
+    url: "#",
+    searchableText: "rcfl management trainee mt online form 2026 psu",
+    stage: "Cut-Off Details Coming Soon",
+    pyqUrl: "/rcfl-management-trainee-2026-pyqs.html",
+    cutoffUrl: "/rcfl-management-trainee-2026-previous-year-cutoff.html",
     pyqInfo: "Latest Available PYQs"
   },
   {
-    title: "SBI Junior Associate Clerk",
-    shortTitle: "Backlog — Online Form 2026",
-    organization: "State Bank of India",
-    vacancies: "1,538 Posts",
-    applyStart: "07 Aug 2026",
-    applyEnd: "27 Aug 2026",
-    updatedDate: "2026-08-12",
-    updatedDisplay: "12 Aug 2026",
-    category: "Banking",
-    // TODO: Add actual RajDailyTools URL for SBI Junior Associate Clerk
+    title: "RRVUNL JE & Junior Assistant",
+    shortTitle: "Online Form 2026",
+    organization: "Rajasthan Rajya Vidyut Utpadan Nigam Ltd (RRVUNL)",
+    vacancies: "2,005",
+    applyStart: "05 Aug 2026",
+    applyEnd: "25 Aug 2026",
+    updatedDate: "2026-08-14",
+    updatedDisplay: "14 Aug 2026",
+    category: "State PSC",
+    // TODO: Add actual RajDailyTools URL for RRVUNL JE, Junior Assistant Online Form 2026
     url: "#",
-    searchableText: "sbi junior associate clerk backlog online form 2026 banking",
-    stage: "Prelims + Mains",
-    pyqUrl: "/sbi-clerk-backlog-pyqs-2025.html",
-    cutoffUrl: "/sbi-clerk-backlog-previous-year-cutoff.html",
+    searchableText: "rrvunl je junior engineer junior assistant online form 2026",
+    stage: "Cut-Off Details Coming Soon",
+    pyqUrl: "/rrvunl-je-junior-assistant-2026-pyqs.html",
+    cutoffUrl: "/rrvunl-je-junior-assistant-2026-previous-year-cutoff.html",
+    pyqInfo: "Latest Available PYQs"
+  },
+  {
+    title: "BSIP Lucknow Scientist B",
+    shortTitle: "Online Form 2026",
+    organization: "Birbal Sahni Institute of Palaeosciences (BSIP)",
+    vacancies: "19",
+    applyStart: "10 Aug 2026",
+    applyEnd: "04 Sep 2026",
+    updatedDate: "2026-08-14",
+    updatedDisplay: "14 Aug 2026",
+    category: "Research",
+    // TODO: Add actual RajDailyTools URL for BSIP Lucknow Scientist B Online Form 2026
+    url: "#",
+    searchableText: "bsip lucknow scientist b online form 2026 research",
+    stage: "Cut-Off Details Coming Soon",
+    pyqUrl: "/bsip-lucknow-scientist-b-2026-pyqs.html",
+    cutoffUrl: "/bsip-lucknow-scientist-b-2026-previous-year-cutoff.html",
+    pyqInfo: "Latest Available PYQs"
+  },
+  {
+    title: "Bank of Baroda SO",
+    shortTitle: "Online Form 2026",
+    organization: "Bank of Baroda",
+    vacancies: "206",
+    applyStart: "06 Aug 2026",
+    applyEnd: "26 Aug 2026",
+    updatedDate: "2026-08-14",
+    updatedDisplay: "14 Aug 2026",
+    category: "Banking",
+    // TODO: Add actual RajDailyTools URL for Bank of Baroda SO Online Form 2026
+    url: "#",
+    searchableText: "bank of baroda so online form 2026 banking",
+    stage: "Cut-Off Details Coming Soon",
+    pyqUrl: "/bank-of-baroda-so-2026-pyqs.html",
+    cutoffUrl: "/bank-of-baroda-so-2026-previous-year-cutoff.html",
+    pyqInfo: "Latest Available PYQs"
+  },
+  {
+    title: "ITBP CAPF Medical Officer",
+    shortTitle: "Online Form 2026",
+    organization: "Indo-Tibetan Border Police (ITBP)",
+    vacancies: "282",
+    applyStart: "10 Aug 2026",
+    applyEnd: "08 Sep 2026",
+    updatedDate: "2026-08-14",
+    updatedDisplay: "14 Aug 2026",
+    category: "Defence",
+    // TODO: Add actual RajDailyTools URL for ITBP CAPF Medical Officer Online Form 2026
+    url: "#",
+    searchableText: "itbp capf medical officer online form 2026 defence",
+    stage: "Cut-Off Details Coming Soon",
+    pyqUrl: "/itbp-capf-medical-officer-2026-pyqs.html",
+    cutoffUrl: "/itbp-capf-medical-officer-2026-previous-year-cutoff.html",
+    pyqInfo: "Latest Available PYQs"
+  },
+  {
+    title: "UPPSC Architectural Assistant & Various Post",
+    shortTitle: "Online Form 2026",
+    organization: "UPPSC",
+    vacancies: "37",
+    applyStart: "03 Aug 2026",
+    applyEnd: "03 Sep 2026",
+    updatedDate: "2026-08-14",
+    updatedDisplay: "14 Aug 2026",
+    category: "State PSC",
+    // TODO: Add actual RajDailyTools URL for UPPSC Architectural Assistant Various Post Online Form 2026
+    url: "#",
+    searchableText: "uppsc architectural assistant various post online form 2026",
+    stage: "Cut-Off Details Coming Soon",
+    pyqUrl: "/uppsc-architectural-assistant-2026-pyqs.html",
+    cutoffUrl: "/uppsc-architectural-assistant-2026-previous-year-cutoff.html",
+    pyqInfo: "Latest Available PYQs"
+  },
+  {
+    title: "UPPSC Computer Operator & Various Post",
+    shortTitle: "Online Form 2026",
+    organization: "UPPSC",
+    vacancies: "10",
+    applyStart: "03 Aug 2026",
+    applyEnd: "03 Sep 2026",
+    updatedDate: "2026-08-14",
+    updatedDisplay: "14 Aug 2026",
+    category: "State PSC",
+    // TODO: Add actual RajDailyTools URL for UPPSC Computer Operator Various Post Online Form 2026
+    url: "#",
+    searchableText: "uppsc computer operator various post online form 2026",
+    stage: "Cut-Off Details Coming Soon",
+    pyqUrl: "/uppsc-computer-operator-2026-pyqs.html",
+    cutoffUrl: "/uppsc-computer-operator-2026-previous-year-cutoff.html",
+    pyqInfo: "Latest Available PYQs"
+  },
+  {
+    title: "Patna High Court Assistant",
+    shortTitle: "Online Form 2026",
+    organization: "Patna High Court",
+    vacancies: "68",
+    applyStart: "28 Jul 2026",
+    applyEnd: "27 Aug 2026",
+    updatedDate: "2026-08-14",
+    updatedDisplay: "14 Aug 2026",
+    category: "Judiciary",
+    // TODO: Add actual RajDailyTools URL for Patna High Court Assistant Online Form 2026
+    url: "#",
+    searchableText: "patna high court assistant online form 2026 judiciary",
+    stage: "Cut-Off Details Coming Soon",
+    pyqUrl: "/patna-high-court-assistant-2026-pyqs.html",
+    cutoffUrl: "/patna-high-court-assistant-2026-previous-year-cutoff.html",
+    pyqInfo: "Latest Available PYQs"
+  },
+  {
+    title: "Rajasthan Safai Karmchari",
+    shortTitle: "Online Form 2026",
+    organization: "Rajasthan Government",
+    vacancies: "24,752",
+    applyStart: "15 Aug 2026",
+    applyEnd: "28 Sep 2026",
+    updatedDate: "2026-08-14",
+    updatedDisplay: "14 Aug 2026",
+    category: "State Govt",
+    // TODO: Add actual RajDailyTools URL for Rajasthan Safai Karmchari Online Form 2026
+    url: "#",
+    searchableText: "rajasthan safai karmchari online form 2026 state govt",
+    stage: "Cut-Off Details Coming Soon",
+    pyqUrl: "/rajasthan-safai-karmchari-2026-pyqs.html",
+    cutoffUrl: "/rajasthan-safai-karmchari-2026-previous-year-cutoff.html",
     pyqInfo: "Latest Available PYQs"
   }
 ];
@@ -538,7 +846,7 @@ function renderExams(list) {
         <span class="ecard-updated">Updated: ${ex.updatedDisplay}</span>
       </div>
       <h3 class="ecard-title">${ex.title}<small>${ex.shortTitle}</small></h3>
-      <div class="ecard-vacancy">${vacancyIcon}${ex.vacancies} Vacancies</div>
+      <div class="ecard-vacancy">${vacancyIcon}${ex.vacancies === 'N/A' ? 'N/A' : ex.vacancies + ' Vacancies'}</div>
       <div class="ecard-dates">
         <div class="ecd"><span class="ecd-lbl">Apply Start</span><span class="ecd-val">${ex.applyStart}</span></div>
         <span class="ecd-arrow">→</span>
