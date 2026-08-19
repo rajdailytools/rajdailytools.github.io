@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RRB JE Eligibility Checker 2026 – Check Your Eligibility (JE/DMS CEN 04/2026)</title>
+<meta name="description" content="Check your eligibility for RRB Junior Engineer (JE) & Depot Material Superintendent (DMS) Recruitment 2026, CEN No. 04/2026 — age, qualification, discipline and PwBD suitability, based on the official notification.">
+<meta name="keywords" content="RRB JE eligibility checker 2026, RRB JE DMS CEN 04/2026, RRB Junior Engineer eligibility, RRB DMS eligibility, RRB JE age limit 2026, RRB JE qualification">
+<meta name="robots" content="index, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#2563eb;--blue-d:#1d4ed8;--blue-xl:#eff6ff;--blue-s:#dbeafe;
+  --amber:#f59e0b;--green:#10b981;--red:#ef4444;--purple:#8b5cf6;
+  --orange:#f97316;--teal:#14b8a6;
+  --green-xl:#f0fdf4;--green-s:#bbf7d0;
+  --red-xl:#fef2f2;--red-s:#fecaca;
+  --amber-xl:#fffbeb;--amber-s:#fde68a;
+  --purple-xl:#faf5ff;--purple-s:#ddd6fe;
+  --yellow:#eab308;--yellow-xl:#fefce8;--yellow-s:#fef08a;
+  --ink:#0f172a;--ink2:#334155;--ink3:#64748b;--ink4:#94a3b8;
+  --line:#e2e8f0;--surf:#f8fafc;--white:#fff;
+  --s1:0 1px 3px rgba(15,23,42,.06),0 1px 2px rgba(15,23,42,.04);
+  --s2:0 4px 16px rgba(15,23,42,.08),0 2px 6px rgba(15,23,42,.04);
+  --s3:0 12px 40px rgba(15,23,42,.11),0 3px 10px rgba(15,23,42,.06);
+  --s4:0 24px 64px rgba(15,23,42,.13),0 6px 20px rgba(15,23,42,.07);
+  --sb:0 8px 32px rgba(37,99,235,.20);
+  --fd:'Sora',sans-serif;--fb:'DM Sans',sans-serif;
+  --ease:cubic-bezier(.4,0,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);color:var(--ink);background:var(--white);overflow-x:hidden;-webkit-font-smoothing:antialiased;line-height:1.6}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+button{cursor:pointer;border:none;background:none;font-family:var(--fb)}
+.w{max-width:1180px;margin:0 auto;padding:0 24px}
+.wa{max-width:880px;margin:0 auto;padding:0 24px}
+select,input{appearance:none;-webkit-appearance:none}
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+@keyframes resultIn{from{opacity:0;transform:translateY(18px) scale(.97)}to{opacity:1;transform:none}}
+.rev{opacity:0;transform:translateY(22px);transition:opacity .55s var(--ease),transform .55s var(--ease)}
+.rev.in{opacity:1;transform:none}
+
+/* HEADER */
+.hdr{position:sticky;top:0;z-index:999;background:rgba(255,255,255,.96);backdrop-filter:blur(20px);border-bottom:1px solid var(--line);box-shadow:var(--s1)}
+.hdi{display:flex;align-items:center;justify-content:space-between;height:66px}
+.logo{display:flex;align-items:center;gap:10px}
+.lb{width:36px;height:36px;background:var(--blue);border-radius:9px;display:flex;align-items:center;justify-content:center;box-shadow:var(--sb);flex-shrink:0}
+.lb svg{width:18px;height:18px;fill:#fff}
+.ln{font-family:var(--fd);font-size:19px;font-weight:800;color:var(--ink);line-height:1}
+.ln span{color:var(--blue)}
+.ls{font-size:10px;color:var(--ink4);letter-spacing:.04em}
+nav.dn{display:flex;align-items:center;gap:2px}
+nav.dn a{font-size:13.5px;font-weight:500;color:var(--ink2);padding:7px 13px;border-radius:8px;transition:.2s}
+nav.dn a:hover{color:var(--blue);background:var(--blue-xl)}
+.hcta{background:var(--blue);color:#fff;font-family:var(--fd);font-weight:600;font-size:13px;padding:8px 18px;border-radius:8px;box-shadow:var(--sb);transition:.2s}
+.hcta:hover{background:var(--blue-d);transform:translateY(-1px)}
+.brg{display:none;flex-direction:column;gap:4.5px;padding:8px;border-radius:8px}
+.brg span{display:block;width:20px;height:2px;background:var(--ink);border-radius:2px;transition:.28s}
+.dov{display:none;position:fixed;inset:0;background:rgba(15,23,42,.45);z-index:1040;backdrop-filter:blur(3px)}
+.dov.on{display:block}
+.drw{position:fixed;top:0;right:-100%;width:270px;height:100vh;background:#fff;z-index:1050;padding:22px;box-shadow:var(--s4);transition:right .32s var(--ease);overflow-y:auto}
+.drw.on{right:0}
+.dh{display:flex;align-items:center;justify-content:space-between;margin-bottom:26px}
+.dx{width:33px;height:33px;border-radius:7px;background:var(--surf);display:flex;align-items:center;justify-content:center;color:var(--ink3);font-size:17px}
+nav.mn{display:flex;flex-direction:column;gap:3px}
+nav.mn a{display:block;font-size:14px;font-weight:500;color:var(--ink2);padding:11px 13px;border-radius:8px;transition:.2s}
+nav.mn a:hover{color:var(--blue);background:var(--blue-xl)}
+
+/* HERO */
+.hero{position:relative;overflow:hidden;background:linear-gradient(150deg,#ebf4ff 0%,#fff 46%,#fdf0f0 100%);padding:64px 0 60px}
+.hero::before{content:'';position:absolute;top:-140px;right:-180px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(37,99,235,.08) 0%,transparent 68%);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-80px;left:-100px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(249,115,22,.05) 0%,transparent 68%);pointer-events:none}
+.blob{position:absolute;border-radius:50%;pointer-events:none;animation:float 6s ease-in-out infinite}
+.b1{width:13px;height:13px;background:rgba(37,99,235,.18);top:22%;right:14%;animation-delay:0s}
+.b2{width:9px;height:9px;background:rgba(249,115,22,.22);top:58%;right:26%;animation-delay:2.2s}
+.b3{width:11px;height:11px;background:rgba(16,185,129,.18);top:36%;right:6%;animation-delay:4s}
+.bc{display:flex;align-items:center;gap:7px;font-size:12.5px;color:var(--ink3);margin-bottom:22px;position:relative;z-index:1;flex-wrap:wrap}
+.bc a{color:var(--blue);font-weight:600}
+.pill{display:inline-flex;align-items:center;gap:7px;font-family:var(--fd);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);background:var(--blue-xl);padding:5px 14px;border-radius:100px;margin-bottom:18px}
+.pill::before{content:'';width:6px;height:6px;background:var(--blue);border-radius:50%}
+.hero-inner{position:relative;z-index:1;max-width:760px;animation:fadeUp .5s ease both}
+.hero h1{font-family:var(--fd);font-size:clamp(24px,4.2vw,44px);font-weight:800;line-height:1.15;color:var(--ink);margin-bottom:14px}
+.hero h1 span{color:var(--blue)}
+.hero-sub{font-size:16px;color:var(--ink3);line-height:1.8;margin-bottom:22px;max-width:640px}
+.hero-chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.chip{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;padding:6px 14px;border-radius:100px;background:#fff;border:1.5px solid var(--line);color:var(--ink2);box-shadow:var(--s1)}
+.hero-meta{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:24px}
+.upd{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:700;color:var(--blue);background:var(--blue-xl);padding:6px 14px;border-radius:100px;border:1.5px solid var(--blue-s)}
+.mi{font-size:13px;color:var(--ink3);font-weight:500}
+.howto{background:var(--amber-xl);border:2px solid var(--amber-s);border-radius:16px;padding:22px 26px;max-width:640px}
+.howto-ttl{display:flex;align-items:center;gap:9px;font-family:var(--fd);font-size:15px;font-weight:800;color:var(--ink);margin-bottom:13px}
+.howto-steps{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.hs{display:flex;align-items:flex-start;gap:10px;font-size:13.5px;color:var(--ink2);line-height:1.6}
+.sn{width:24px;height:24px;background:var(--amber);color:#fff;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex-shrink:0;margin-top:1px}
+
+/* TOOL */
+.tool-sec{background:var(--surf);padding:64px 0}
+.tool-wrap{max-width:880px;margin:0 auto}
+.tool-card{background:#fff;border:1.5px solid var(--line);border-radius:28px;overflow:hidden;box-shadow:var(--s4)}
+.tool-hdr{background:linear-gradient(135deg,#0f172a 0%,#1e3a8a 50%,#1d4ed8 100%);padding:32px 40px;position:relative;overflow:hidden}
+.tool-hdr::before{content:'';position:absolute;top:-60px;right:-60px;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,.07)}
+.th{position:relative;z-index:1}
+.th h2{font-family:var(--fd);font-size:20px;font-weight:800;color:#fff;margin-bottom:6px}
+.th p{font-size:14px;color:rgba(255,255,255,.82);line-height:1.65}
+.th-badges{display:flex;flex-wrap:wrap;gap:9px;margin-top:14px}
+.thb{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:rgba(255,255,255,.9);background:rgba(255,255,255,.13);padding:5px 12px;border-radius:100px}
+.tool-body{padding:36px 40px}
+.sec-lbl{font-family:var(--fd);font-size:13px;font-weight:800;color:var(--blue);text-transform:uppercase;letter-spacing:.05em;margin:22px 0 10px}
+.sec-lbl:first-child{margin-top:0}
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+.fld{display:flex;flex-direction:column;gap:7px}
+.flbl{font-size:13px;font-weight:700;color:var(--ink2)}
+.flbl span{font-size:11px;font-weight:500;color:var(--ink4);margin-left:5px;background:var(--surf);padding:2px 7px;border-radius:5px;border:1px solid var(--line)}
+.finp,.fsel{padding:12px 16px;font-size:14.5px;color:var(--ink);background:#fff;border:1.5px solid var(--line);border-radius:10px;outline:none;transition:.22s;font-family:var(--fb);width:100%}
+.finp:focus,.fsel:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(37,99,235,.10)}
+.fsel{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2364748b' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:40px}
+.ro-row{display:flex;gap:8px;flex-wrap:wrap}
+.ro{position:relative}
+.ro input{position:absolute;opacity:0;width:0;height:0}
+.ro label{display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:600;color:var(--ink2);padding:10px 18px;border-radius:9px;border:1.5px solid var(--line);background:#fff;cursor:pointer;transition:.22s}
+.ro input:checked+label{border-color:var(--blue);background:var(--blue-xl);color:var(--blue)}
+.ro label:hover{border-color:var(--blue-s);background:var(--blue-xl)}
+.hint-box{display:flex;align-items:flex-start;gap:9px;font-size:13px;color:var(--ink2);background:var(--blue-xl);border:1.5px solid var(--blue-s);border-radius:10px;padding:11px 14px;margin:14px 0;line-height:1.65}
+.hint-box svg{width:16px;height:16px;stroke:var(--blue);fill:none;stroke-width:2;flex-shrink:0;margin-top:2px}
+.post-info{display:none;background:var(--surf);border:1.5px solid var(--line);border-radius:12px;padding:14px 16px;margin-bottom:16px;font-size:13px;color:var(--ink2);line-height:1.7}
+.post-info b{color:var(--ink)}
+.chk-btn{width:100%;padding:17px;background:linear-gradient(135deg,#0f172a 0%,#1e3a8a 50%,#2563eb 100%);color:#fff;font-family:var(--fd);font-weight:800;font-size:16px;border-radius:12px;box-shadow:0 8px 32px rgba(30,58,138,.30);transition:all .25s var(--ease);display:flex;align-items:center;justify-content:center;gap:10px;margin-top:8px}
+.chk-btn:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(30,58,138,.40)}
+.rst-btn{width:100%;padding:12px;background:#fff;color:var(--ink2);font-family:var(--fd);font-weight:700;font-size:13.5px;border-radius:10px;border:1.5px solid var(--line);margin-top:10px;transition:.2s}
+.rst-btn:hover{border-color:var(--ink3)}
+.err-box{display:none;background:var(--red-xl);border:1.5px solid var(--red-s);border-radius:10px;padding:12px 16px;margin:14px 0;font-size:13.5px;color:#991b1b;font-weight:600}
+
+/* RESULT */
+#resultArea{display:none;margin-top:28px;animation:resultIn .45s var(--ease) both}
+.res-banner{border-radius:20px;padding:26px 28px;margin-bottom:20px;position:relative;overflow:hidden;display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+.res-banner.pass{background:linear-gradient(135deg,var(--green-xl),#d1fae5);border:2px solid var(--green-s)}
+.res-banner.avg{background:var(--amber-xl);border:2px solid var(--amber-s)}
+.res-banner.fail{background:var(--red-xl);border:2px solid var(--red-s)}
+.res-icowrap{flex-shrink:0;width:78px;height:78px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:38px;background:#fff;box-shadow:var(--s2)}
+.res-info{flex:1;min-width:200px}
+.res-title{font-family:var(--fd);font-size:21px;font-weight:800;color:var(--ink);line-height:1.15;margin-bottom:6px}
+.res-sub{font-size:14px;color:var(--ink3);line-height:1.65}
+.res-tag{display:inline-flex;align-items:center;gap:6px;font-family:var(--fd);font-size:13px;font-weight:700;padding:5px 14px;border-radius:100px;margin-top:10px}
+.res-tag.pass{background:var(--green);color:#fff}
+.res-tag.avg{background:var(--amber);color:#fff}
+.res-tag.fail{background:var(--red);color:#fff}
+.brk-title{font-family:var(--fd);font-size:14px;font-weight:700;color:var(--ink);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.brk-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:20px}
+.bc-card{border-radius:14px;padding:16px 16px;border:1.5px solid;background:var(--surf);border-color:var(--line)}
+.bc-card.pass{background:var(--green-xl);border-color:var(--green-s)}
+.bc-card.fail{background:var(--red-xl);border-color:var(--red-s)}
+.bc-card.check{background:var(--amber-xl);border-color:var(--amber-s)}
+.bc-card.na{background:var(--surf);border-color:var(--line);opacity:.72}
+.bc-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px}
+.bc-name{font-family:var(--fd);font-size:12.5px;font-weight:800;color:var(--ink)}
+.bc-badge{font-size:10.5px;font-weight:800;padding:3px 9px;border-radius:100px;letter-spacing:.03em}
+.bc-badge.pass{background:var(--green);color:#fff}
+.bc-badge.fail{background:var(--red);color:#fff}
+.bc-badge.check{background:var(--amber);color:#fff}
+.bc-badge.na{background:var(--ink4);color:#fff}
+.bc-detail{font-size:12px;color:var(--ink3);line-height:1.6}
+.sugg-box{background:var(--blue-xl);border:1.5px solid var(--blue-s);border-radius:13px;padding:16px 18px;font-size:13.5px;color:var(--ink2);line-height:1.78;margin-bottom:16px}
+.warn-box{background:var(--amber-xl);border:1.5px solid var(--amber-s);border-radius:12px;padding:14px 18px;display:flex;gap:10px;font-size:13px;color:var(--ink2);line-height:1.7}
+
+/* generic content sections */
+.sec{padding:60px 0}
+.sec.alt{background:var(--surf)}
+.sec-head{text-align:center;margin-bottom:34px}
+.sec-head h2{font-family:var(--fd);font-size:clamp(21px,3.3vw,32px);font-weight:800;color:var(--ink);margin-bottom:10px}
+.sec-head p{font-size:14.5px;color:var(--ink3);max-width:560px;margin:0 auto;line-height:1.75}
+.tbl-wr{overflow-x:auto;margin-bottom:22px;border-radius:14px;border:1.5px solid var(--line)}
+table{width:100%;border-collapse:collapse;font-size:13.2px}
+thead th{background:linear-gradient(135deg,#0f172a 0%,#1e3a8a 100%);color:#fff;padding:12px 15px;text-align:left;font-family:var(--fd);font-size:12.5px;font-weight:700;letter-spacing:.02em}
+tbody tr{border-bottom:1px solid var(--line)}
+tbody tr:last-child{border-bottom:none}
+tbody tr:hover{background:var(--blue-xl)}
+tbody td{padding:11px 15px;color:var(--ink2);vertical-align:middle}
+.tbadge{display:inline-flex;font-size:11px;font-weight:700;padding:3px 8px;border-radius:100px}
+.tbadge.g{background:var(--green-xl);color:var(--green);border:1px solid var(--green-s)}
+.tbadge.r{background:var(--red-xl);color:var(--red);border:1px solid var(--red-s)}
+.notes-list{max-width:820px;margin:0 auto;display:flex;flex-direction:column;gap:10px}
+.note-item{display:flex;gap:12px;align-items:flex-start;background:#fff;border:1.5px solid var(--line);border-radius:12px;padding:14px 18px;font-size:14px;color:var(--ink2);line-height:1.7}
+.note-ico{flex-shrink:0;font-size:16px}
+.src-card{max-width:600px;margin:0 auto;background:#fff;border:1.5px solid var(--line);border-radius:20px;padding:30px;text-align:center;box-shadow:var(--s2)}
+.src-card h3{font-family:var(--fd);font-size:17px;font-weight:800;color:var(--ink);margin-bottom:8px}
+.src-card p{font-size:13.5px;color:var(--ink3);margin-bottom:16px;line-height:1.7}
+.btn-bl{display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:#fff;font-family:var(--fd);font-weight:700;font-size:14px;padding:12px 24px;border-radius:8px;box-shadow:var(--sb);transition:.22s}
+.btn-bl:hover{background:var(--blue-d);transform:translateY(-1px)}
+
+/* FAQ */
+.faq-sec{background:#fff;padding:64px 0}
+.fql{max-width:780px;margin:0 auto}
+.fq{background:var(--surf);border:1.5px solid var(--line);border-radius:13px;margin-bottom:10px;overflow:hidden}
+.fq-q{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;cursor:pointer;gap:14px;transition:.2s}
+.fq-q:hover{background:var(--blue-xl)}
+.fq-t{font-weight:600;font-size:14.5px;color:var(--ink);line-height:1.4}
+.fq-i{width:28px;height:28px;border-radius:50%;background:var(--blue-xl);color:var(--blue);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;transition:transform .28s,background .2s}
+.fq.open .fq-i{transform:rotate(45deg);background:var(--blue);color:#fff}
+.fq-a{max-height:0;overflow:hidden;transition:max-height .35s var(--ease)}
+.fq-ai{padding:0 22px 18px;font-size:14px;color:var(--ink3);line-height:1.78}
+.fq.open .fq-a{max-height:400px}
+
+/* DISC / FOOTER */
+.disc{background:var(--amber-xl);border-top:1px solid var(--amber-s);border-bottom:1px solid var(--amber-s);padding:15px 0}
+.disc-in{display:flex;align-items:flex-start;gap:12px;font-size:13.5px;color:var(--ink2);line-height:1.7}
+footer{background:#0f172a;padding:52px 0 0}
+.ft-inner{max-width:1180px;margin:0 auto;padding:0 24px}
+.ft-top{display:grid;grid-template-columns:1.9fr 1fr;gap:44px;margin-bottom:44px}
+.ft-brand .ln{color:#fff}.ft-brand .ls{color:#475569}
+.ft-desc{font-size:13.5px;color:#64748b;line-height:1.78;max-width:340px;margin:13px 0 20px}
+.fc h4{font-family:var(--fd);font-size:12px;font-weight:700;color:#fff;margin-bottom:14px;letter-spacing:.06em;text-transform:uppercase}
+.fc ul{display:flex;flex-direction:column;gap:8px}
+.fc ul a{font-size:13.5px;color:#64748b;transition:.18s}
+.fc ul a:hover{color:#93c5fd}
+.ft-btm{border-top:1px solid rgba(255,255,255,.07);padding:20px 0;text-align:center}
+.ft-cp{font-size:12.5px;color:#475569}
+.ft-cp b{color:#64748b}
+.ft-tag{font-size:12px;color:#334155;margin-top:4px;font-style:italic}
+.btt{position:fixed;bottom:26px;right:26px;z-index:500;width:43px;height:43px;background:var(--blue);color:#fff;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:17px;box-shadow:var(--sb);opacity:0;pointer-events:none;transform:translateY(14px);transition:.28s var(--ease)}
+.btt.on{opacity:1;pointer-events:auto;transform:translateY(0)}
+
+@media(max-width:860px){
+  nav.dn,.hcta{display:none}.brg{display:flex}
+  .tool-body{padding:24px 22px}.tool-hdr{padding:24px 22px}
+  .fgrid{grid-template-columns:1fr}
+  .howto-steps{grid-template-columns:1fr}
+  .brk-grid{grid-template-columns:1fr}
+  .ft-top{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+  .res-banner{flex-direction:column;align-items:flex-start}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="hdr">
+  <div class="w">
+    <div class="hdi">
+      <a href="/" class="logo">
+        <div class="lb"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+        <div><div class="ln">Raj<span>Daily</span>Tools</div><div class="ls">Smart Tools for Daily Life</div></div>
+      </a>
+      <nav class="dn">
+        <a href="/">Home</a><a href="/categories">Categories</a>
+        <a href="/popular.html">Popular</a><a href="/about">About</a><a href="/contact">Contact</a>
+      </nav>
+      <a href="/categories" class="hcta">All Tools →</a>
+      <button class="brg" id="brg"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="dov" id="dov"></div>
+<div class="drw" id="drw">
+  <div class="dh">
+    <div class="logo">
+      <div class="lb" style="width:30px;height:30px;border-radius:7px"><svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#fff"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+      <div class="ln" style="font-size:16px">Raj<span>Daily</span>Tools</div>
+    </div>
+    <button class="dx" id="dx">✕</button>
+  </div>
+  <nav class="mn">
+    <a href="/" onclick="cD()">🏠 Home</a>
+    <a href="/categories" onclick="cD()">🗂️ Categories</a>
+    <a href="/popular.html" onclick="cD()">⭐ Popular</a>
+    <a href="/about" onclick="cD()">👤 About</a>
+    <a href="/contact" onclick="cD()">📬 Contact</a>
+  </nav>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+  <div class="w">
+    <div class="bc">
+      <a href="/">Home</a><span style="color:var(--ink4)">›</span>
+      <a href="/categories">Tools</a><span style="color:var(--ink4)">›</span>
+      <span>RRB JE Eligibility Checker</span>
+    </div>
+    <div class="hero-inner">
+      <div class="pill">RRB Recruitment 2026</div>
+      <h1>RRB JE Eligibility <span>Checker 2026</span></h1>
+      <p class="hero-sub">Instantly check your eligibility for <strong>RRB Junior Engineer (JE) &amp; Depot Material Superintendent (DMS) Recruitment 2026 — CEN No. 04/2026</strong>. Enter your date of birth, category, engineering discipline and PwBD status to see a detailed post-wise eligibility breakdown, based strictly on the official notification.</p>
+      <div class="hero-chips">
+        <span class="chip">🎯 CEN No. 04/2026</span>
+        <span class="chip">📋 37 JE / DMS Posts</span>
+        <span class="chip">🎂 Age &amp; Qualification Check</span>
+        <span class="chip">♿ PwBD Suitability</span>
+        <span class="chip">🆓 100% Free</span>
+      </div>
+      <div class="hero-meta">
+        <div class="upd">📅 Based on official CEN 04/2026</div>
+        <span class="mi">🔒 No data stored — runs in your browser</span>
+      </div>
+      <div class="howto">
+        <div class="howto-ttl">💡 How to Use This Tool</div>
+        <div class="howto-steps">
+          <div class="hs"><span class="sn">1</span>Select the relevant JE/DMS post.</div>
+          <div class="hs"><span class="sn">2</span>Enter/select your details — DOB, category, qualification.</div>
+          <div class="hs"><span class="sn">3</span>Click "Check Eligibility".</div>
+          <div class="hs"><span class="sn">4</span>Review the result and verify with the official notification before applying.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOOL -->
+<section class="tool-sec" id="tool">
+  <div class="w">
+    <div class="tool-wrap">
+      <div class="tool-card rev">
+        <div class="tool-hdr">
+          <div class="th">
+            <h2>🛠️ RRB JE / DMS Eligibility Checker — CEN No. 04/2026</h2>
+            <p>Fill in your details below. The checker evaluates age, educational qualification/discipline, and PwBD suitability against the exact post you select, as per the official CEN 04/2026.</p>
+            <div class="th-badges">
+              <span class="thb">✅ Eligible / ❌ Not Eligible / ⚠️ Check Required</span>
+              <span class="thb">🔒 Local calculation only</span>
+            </div>
+          </div>
+        </div>
+        <div class="tool-body">
+
+          <div class="sec-lbl">Step 1 — Select Post</div>
+          <div class="fld" style="margin-bottom:6px">
+            <label class="flbl" for="post">Post applying for <span>Required</span></label>
+            <select class="fsel" id="post" onchange="showPostInfo()"></select>
+          </div>
+          <div class="post-info" id="postInfo"></div>
+
+          <div class="sec-lbl">Step 2 — Personal &amp; Category Details</div>
+          <div class="fgrid">
+            <div class="fld">
+              <label class="flbl" for="dob">Date of Birth <span>Required</span></label>
+              <input class="finp" type="date" id="dob">
+            </div>
+            <div class="fld">
+              <label class="flbl" for="category">Community / Category <span>Required</span></label>
+              <select class="fsel" id="category">
+                <option value="UR">Unreserved (UR)</option>
+                <option value="EWS">EWS</option>
+                <option value="OBC">OBC (Non-Creamy Layer)</option>
+                <option value="SC">SC</option>
+                <option value="ST">ST</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="fgrid">
+            <div class="fld">
+              <label class="flbl">Ex-Serviceman? <span>Optional — affects age relaxation</span></label>
+              <div class="ro-row">
+                <div class="ro"><input type="radio" name="exsm" id="exN" value="no" checked><label for="exN">No</label></div>
+                <div class="ro"><input type="radio" name="exsm" id="exY" value="yes"><label for="exY">Yes</label></div>
+              </div>
+            </div>
+            <div class="fld">
+              <label class="flbl">Person with Benchmark Disability (PwBD)? <span>Optional</span></label>
+              <div class="ro-row">
+                <div class="ro"><input type="radio" name="pwbd" id="pwN" value="no" checked onchange="togglePwbd()"><label for="pwN">No</label></div>
+                <div class="ro"><input type="radio" name="pwbd" id="pwY" value="yes" onchange="togglePwbd()"><label for="pwY">Yes</label></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="fgrid" id="pwbdFields" style="display:none">
+            <div class="fld">
+              <label class="flbl" for="pwbdType">Disability Category <span>Required</span></label>
+              <select class="fsel" id="pwbdType" onchange="toggleLD()">
+                <option value="VI">Blindness / Low Vision (VI)</option>
+                <option value="HI">Deaf / Hard of Hearing (HI)</option>
+                <option value="LD">Locomotor Disability (LD)</option>
+                <option value="MD">Multiple Disabilities (MD)</option>
+              </select>
+            </div>
+            <div class="fld" id="ldWrap" style="display:none">
+              <label class="flbl" for="ldType">Locomotor Disability Type <span>Required</span></label>
+              <select class="fsel" id="ldType">
+                <option value="OA">One Arm (OA)</option>
+                <option value="OL">One Leg — full leg (OL)</option>
+                <option value="OL-BK">One Leg — below knee only</option>
+                <option value="LC">Leprosy Cured (LC)</option>
+                <option value="DW">Dwarfism (DW)</option>
+                <option value="AAV">Acid Attack Victim (AAV)</option>
+                <option value="SD">Spinal Deformity — no neuro/limb dysfunction (SD)</option>
+                <option value="SI">Spinal Injury — no neuro/limb dysfunction (SI)</option>
+                <option value="other">Other (BA / BL / OAL / CP / MDy etc.)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="sec-lbl">Step 3 — Educational Qualification</div>
+          <div class="fgrid">
+            <div class="fld">
+              <label class="flbl" for="qlevel">Qualification Held <span>Required</span></label>
+              <select class="fsel" id="qlevel">
+                <option value="diploma3">3-Year Diploma in Engineering (completed)</option>
+                <option value="degree">B.E. / B.Tech Degree in Engineering (completed)</option>
+                <option value="diplomaShort">Diploma of less than 3 years duration</option>
+                <option value="awaited">Result awaited / provisional (final exam not yet declared)</option>
+              </select>
+            </div>
+            <div class="fld">
+              <label class="flbl" for="discipline">Engineering Discipline <span>Required</span></label>
+              <select class="fsel" id="discipline"></select>
+            </div>
+          </div>
+
+          <div class="fld" style="margin-bottom:16px">
+            <label class="flbl">Nationality / Citizenship <span>Required</span></label>
+            <div class="ro-row">
+              <div class="ro"><input type="radio" name="nat" id="natY" value="yes" checked><label for="natY">Indian citizen (or eligible under Para 4.0)</label></div>
+              <div class="ro"><input type="radio" name="nat" id="natN" value="no"><label for="natN">No / Not sure</label></div>
+            </div>
+          </div>
+
+          <div class="hint-box">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            <div>Age is reckoned <strong>as on 01-01-2027</strong>. Qualification must be held <strong>on or before the closing date, 13-09-2026</strong>. Candidates awaiting their final qualifying result are not eligible to apply.</div>
+          </div>
+
+          <div class="err-box" id="errBox"></div>
+          <button class="chk-btn" onclick="checkEligibility()">🔍 Check Eligibility</button>
+          <button class="rst-btn" onclick="resetForm()">↺ Reset</button>
+
+          <!-- RESULT -->
+          <div id="resultArea">
+            <div class="res-banner" id="resBanner">
+              <div class="res-icowrap" id="resIcoWrap"><span id="resIcon"></span></div>
+              <div class="res-info">
+                <div class="res-title" id="resTitle"></div>
+                <div class="res-sub" id="resSub"></div>
+                <div class="res-tag" id="resTag"></div>
+              </div>
+            </div>
+
+            <div class="brk-title">📋 Eligibility Breakdown</div>
+            <div class="brk-grid" id="brkGrid"></div>
+
+            <div class="sugg-box" id="suggBox"></div>
+            <div class="warn-box">
+              <span style="font-size:18px;flex-shrink:0">⚠️</span>
+              <div>This eligibility checker is provided for informational purposes and is based on the official recruitment notification. Candidates should verify their eligibility and final application status with the official recruiting authority before applying. Final eligibility is subject to verification by the RRB concerned.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ELIGIBILITY CRITERIA -->
+<section class="sec" id="criteria">
+  <div class="w">
+    <div class="sec-head rev">
+      <div class="pill">Official Criteria</div>
+      <h2>RRB JE/DMS 2026 <span style="color:var(--blue)">Eligibility Criteria</span></h2>
+      <p>Age limits, relaxation and discipline mapping — reproduced from CEN No. 04/2026.</p>
+    </div>
+
+    <h3 style="font-family:var(--fd);font-size:16px;font-weight:700;color:var(--ink);margin-bottom:10px">Age Limit (as on 01-01-2027)</h3>
+    <div class="tbl-wr rev">
+      <table>
+        <thead><tr><th>Category</th><th>Lower Age Limit (not born after)</th><th>Upper Age Limit (DOB not earlier than)</th></tr></thead>
+        <tbody>
+          <tr><td>UR / EWS</td><td>01-01-2009</td><td>02-01-1994</td></tr>
+          <tr><td>OBC-NCL</td><td>01-01-2009</td><td>02-01-1991</td></tr>
+          <tr><td>SC / ST</td><td>01-01-2009</td><td>02-01-1989</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 style="font-family:var(--fd);font-size:16px;font-weight:700;color:var(--ink);margin:22px 0 10px">Age Relaxation (Upper Age Limit)</h3>
+    <div class="tbl-wr rev">
+      <table>
+        <thead><tr><th>Category / Community</th><th>Relaxation in Upper Age Limit</th></tr></thead>
+        <tbody>
+          <tr><td>SC &amp; ST</td><td>5 Years</td></tr>
+          <tr><td>OBC (Non-Creamy Layer)</td><td>3 Years</td></tr>
+          <tr><td>Ex-Servicemen — UR &amp; EWS</td><td>3 Years (after deduction of service length)</td></tr>
+          <tr><td>Ex-Servicemen — OBC-NCL</td><td>6 Years (after deduction of service length)</td></tr>
+          <tr><td>Ex-Servicemen — SC &amp; ST</td><td>8 Years (after deduction of service length)</td></tr>
+          <tr><td>PwBD — UR &amp; EWS</td><td>10 Years</td></tr>
+          <tr><td>PwBD — OBC-NCL</td><td>13 Years</td></tr>
+          <tr><td>PwBD — SC &amp; ST</td><td>15 Years</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:12.5px;color:var(--ink4);margin-bottom:22px">Relaxations are not cumulative — a candidate eligible on more than one ground gets only the maximum applicable relaxation (Para 5.2).</p>
+
+    <h3 style="font-family:var(--fd);font-size:16px;font-weight:700;color:var(--ink);margin-bottom:10px">Educational Qualification by Post Group</h3>
+    <div class="tbl-wr rev">
+      <table>
+        <thead><tr><th>Post Group</th><th>Accepted Discipline(s)</th></tr></thead>
+        <tbody>
+          <tr><td>JE / Electrical (all sub-departments), JE / Diesel Electrical</td><td>Mechanical, Electrical or Electronics Engineering (Diploma/Degree)</td></tr>
+          <tr><td>JE / Civil (Engineering department, incl. Bridge, P.Way, Works, Design)</td><td>Civil Engineering (Diploma/Degree) or B.Sc. Civil Engineering (3-year)</td></tr>
+          <tr><td>JE / Track Machine</td><td>Mechanical, Production, Automobile, Electrical, Electronics, or Instrumentation &amp; Control Engineering</td></tr>
+          <tr><td>JE / Mechanical (Carriage &amp; Wagon, Diesel Mechanical, Millwright, Design, etc.)</td><td>Mechanical, Electrical, Electronics, Manufacturing, Mechatronics, Industrial, Machining, Instrumentation &amp; Control, Tools &amp; Machining, Tools &amp; Die Making, Automobile or Production Engineering</td></tr>
+          <tr><td>JE / S&amp;T (all sub-departments)</td><td>Electrical, Electronics, Information Technology, Communication Engineering, Computer Science &amp; Engineering, Computer Engineering, or Computer Science</td></tr>
+          <tr><td>Depot Material Superintendent (DMS)</td><td>3-Year Diploma in Engineering — ANY discipline</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:12.5px;color:var(--ink4)">A combination of any sub-stream of the listed basic streams is also acceptable (Annexure A). Higher qualifications such as B.E./B.Tech are acceptable in lieu of a 3-year diploma in the same discipline.</p>
+  </div>
+</section>
+
+<!-- IMPORTANT NOTES -->
+<section class="sec alt" id="notes">
+  <div class="w">
+    <div class="sec-head rev">
+      <div class="pill">Read Before Applying</div>
+      <h2>Important <span style="color:var(--blue)">Notes</span></h2>
+    </div>
+    <div class="notes-list rev">
+      <div class="note-item"><span class="note-ico">⚠️</span><span>Candidates awaiting the result of their final qualifying exam are <strong>NOT eligible to apply</strong> (Para 1.2 / 6.0(c)).</span></div>
+      <div class="note-item"><span class="note-ico">⚠️</span><span>Only <strong>one application per candidate</strong> against this CEN is allowed. Multiple applications to different RRBs, or the same RRB, will lead to <strong>rejection of all applications</strong> and debarment (Para 1.3, 13.0(a)).</span></div>
+      <div class="note-item"><span class="note-ico">ℹ️</span><span>Eligibility declared in the online application is <strong>provisional</strong>. Original documents are verified only at the Document Verification (DV) stage (Para 1.13, 13.4.3).</span></div>
+      <div class="note-item"><span class="note-ico">ℹ️</span><span>Community/category, PwBD and Ex-Serviceman status can be corrected — for a fee — only during the modification window, <strong>16-09-2026 to 25-09-2026</strong> (Para 14.7, 17.0).</span></div>
+      <div class="note-item"><span class="note-ico">ℹ️</span><span>Negative marking of <strong>1/3rd mark per wrong answer</strong> applies in both stages of CBT (Para 13.1, 13.2).</span></div>
+      <div class="note-item"><span class="note-ico">✅</span><span>Recruitment process: <strong>1st Stage CBT → 2nd Stage CBT → Document Verification → Medical Examination</strong> (Para 13.0).</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- OFFICIAL SOURCE -->
+<section class="sec" id="source">
+  <div class="w">
+    <div class="src-card rev">
+      <h3>📄 Official Source</h3>
+      <p>Source: RRB CEN No. 04/2026 — Detailed Centralised Employment Notice for Junior Engineer (JE) &amp; Depot Material Superintendent (DMS) Recruitment. Always cross-check the latest notification, corrigenda and important notices before applying.</p>
+      <a href="https://rrb.indianrailways.gov.in/" target="_blank" rel="noopener" class="btn-bl">🔗 Visit Official RRB Website</a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-sec">
+  <div class="wa">
+    <div class="sec-head rev">
+      <div class="pill">FAQs</div>
+      <h2>Frequently Asked <span style="color:var(--blue)">Questions</span></h2>
+    </div>
+    <div class="fql" id="faqList">
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">What is the educational qualification for RRB JE 2026?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">A 3-year diploma or a degree in the engineering discipline mapped to your chosen post's department (see the Eligibility Criteria table above / Annexure A of CEN 04/2026), held on or before 13-09-2026.</div></div></div>
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">What is the age limit for CEN No. 04/2026?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">18 to 33 years as on 01-01-2027 for UR/EWS candidates (DOB between 02-01-1994 and 01-01-2009), with wider DOB limits for OBC-NCL and SC/ST candidates as per Para 5.1.</div></div></div>
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">Is age relaxation available?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">Yes — SC/ST get 5 years, OBC-NCL get 3 years, and further relaxation applies for PwBD and Ex-Servicemen candidates as per Para 5.2. Relaxations are not cumulative; only the maximum applicable relaxation is given.</div></div></div>
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">Can a candidate with a different (non-matching) engineering branch apply?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">Only if the discipline is explicitly listed for the chosen post/department in Annexure A, or is a recognised combination of the listed basic streams. Unrelated disciplines are not accepted for that specific post — except DMS, which accepts a diploma in any engineering discipline.</div></div></div>
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">Is work experience required for JE/DMS posts?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">No experience requirement is mentioned in CEN No. 04/2026 for JE or DMS posts.</div></div></div>
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">Can PwBD candidates apply for any JE/DMS post?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">Only for posts identified suitable for their specific disability and sub-category, as listed in Annexure A. Candidates with Visual Impairment (VI) are not identified suitable for any post under this CEN.</div></div></div>
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">Does this tool guarantee eligibility or selection?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">No. This is an informational checker based on the official notification. Eligibility remains provisional until verified by the RRB concerned at the time of Document Verification.</div></div></div>
+      <div class="fq rev"><div class="fq-q"><span class="fq-t">Where can I read the full official notification?</span><span class="fq-i">+</span></div><div class="fq-a"><div class="fq-ai">On the official RRB website: rrb.indianrailways.gov.in. Beware of fake or unofficial websites.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- DISCLAIMER -->
+<section class="disc">
+  <div class="w disc-in">
+    <span style="font-size:18px">⚠️</span>
+    <div>This eligibility checker is provided for informational purposes and is based on the official recruitment notification. Candidates should verify their eligibility and final application status with the official recruiting authority before applying.</div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-inner">
+    <div class="ft-top">
+      <div class="ft-brand">
+        <div class="logo" style="margin-bottom:4px">
+          <div class="lb"><svg viewBox="0 0 24 24" fill="#fff"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z"/></svg></div>
+          <div><div class="ln">Raj<span>Daily</span>Tools</div><div class="ls">Smart Tools for Daily Life</div></div>
+        </div>
+        <p class="ft-desc">RajDailyTools provides a growing collection of free online tools for students, professionals, and everyday users. New tools are added regularly to help make everyday tasks simpler and faster.</p>
+      </div>
+      <div class="fc"><h4>Company</h4><ul>
+        <li><a href="/about">About Us</a></li>
+        <li><a href="/contact">Contact</a></li>
+        <li><a href="/privacy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
+      </ul></div>
+    </div>
+    <div class="ft-btm">
+      <p class="ft-cp">Copyright © 2026 <b>RajDailyTools</b>. All rights reserved. Designed by <b>RajDailyTools</b></p>
+      <p class="ft-tag">Made with ❤️ in India — "Solving daily life problems with smart tools"</p>
+    </div>
+  </div>
+</footer>
+<button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+/* ══════════════════════════════════════
+   NAV / UI BEHAVIOUR
+══════════════════════════════════════ */
+const brg=document.getElementById('brg'),drw=document.getElementById('drw'),dov=document.getElementById('dov');
+function oD(){drw.classList.add('on');dov.classList.add('on');document.body.style.overflow='hidden'}
+function cD(){drw.classList.remove('on');dov.classList.remove('on');document.body.style.overflow=''}
+brg.addEventListener('click',oD);document.getElementById('dx').addEventListener('click',cD);dov.addEventListener('click',cD);
+const btt=document.getElementById('btt');
+window.addEventListener('scroll',()=>btt.classList.toggle('on',scrollY>380),{passive:true});
+const rvObs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');rvObs.unobserve(e.target);}});
+},{threshold:0.06,rootMargin:'0px 0px -20px 0px'});
+document.querySelectorAll('.rev').forEach(el=>rvObs.observe(el));
+document.getElementById('faqList').addEventListener('click',function(e){
+  const q=e.target.closest('.fq-q');if(!q)return;
+  const item=q.closest('.fq'),open=item.classList.contains('open');
+  document.querySelectorAll('.fq.open').forEach(i=>i.classList.remove('open'));
+  if(!open)item.classList.add('open');
+});
+
+/* ══════════════════════════════════════
+   EXAM_CONFIG — CEN No. 04/2026 (JE/DMS)
+   Recruitment-specific data. Keep this block
+   separate from the checker engine below so
+   future CENs only require replacing EXAM_CONFIG.
+══════════════════════════════════════ */
+const EXAM_CONFIG = {
+  examName: "RRB Junior Engineer (JE) / Depot Material Superintendent (DMS) Recruitment 2026",
+  notificationNumber: "CEN No. 04/2026",
+  closingDate: "2026-09-13",
+  ageRefDate: "2027-01-01",
+  officialSource: { name: "RRB CEN No. 04/2026 Official Notification", url: "https://rrb.indianrailways.gov.in/" },
+
+  ageRules: {
+    notBornAfter: "2009-01-01",
+    urBaseline: "1994-01-02",
+    categoryCutoff: { UR:"1994-01-02", EWS:"1994-01-02", OBC:"1991-01-02", SC:"1989-01-02", ST:"1989-01-02" },
+    pwbdRelaxYears: { UR:10, EWS:10, OBC:13, SC:15, ST:15 },
+    exsmRelaxYears: { UR:3, EWS:3, OBC:6, SC:8, ST:8 }
+  },
+
+  qualificationGroups: {
+    G1: { label:"Mechanical / Electrical / Electronics Engineering", disciplines:["mech","elec","electronics"] },
+    G2: { label:"Civil Engineering (or B.Sc. Civil Engineering, 3-year)", disciplines:["civil"] },
+    G3: { label:"Mechanical / Production / Automobile / Electrical / Electronics / Instrumentation & Control Engineering", disciplines:["mech","prod","auto","elec","electronics","instru"] },
+    G4: { label:"Mechanical / Electrical / Electronics / Manufacturing / Mechatronics / Industrial / Machining / Instrumentation & Control / Tools & Machining / Tools & Die Making / Automobile / Production Engineering", disciplines:["mech","elec","electronics","mfg","mechatronics","industrial","machining","toolsmach","toolsdie","auto","prod","instru"] },
+    G5: { label:"Electrical / Electronics / Information Technology / Communication Engineering / Computer Science & Engineering / Computer Engineering / Computer Science", disciplines:["elec","electronics","it","comm","cse","ce","cs"] },
+    G6: { label:"Any Engineering Discipline (3-Year Diploma)", disciplines:["any"] }
+  },
+
+  disciplines: [
+    {code:"mech", label:"Mechanical Engineering"},
+    {code:"prod", label:"Production Engineering"},
+    {code:"auto", label:"Automobile Engineering"},
+    {code:"mfg", label:"Manufacturing Engineering"},
+    {code:"mechatronics", label:"Mechatronics Engineering"},
+    {code:"industrial", label:"Industrial Engineering"},
+    {code:"machining", label:"Machining Engineering"},
+    {code:"toolsmach", label:"Tools and Machining Engineering"},
+    {code:"toolsdie", label:"Tools and Die Making Engineering"},
+    {code:"elec", label:"Electrical Engineering"},
+    {code:"electronics", label:"Electronics Engineering"},
+    {code:"instru", label:"Instrumentation and Control Engineering"},
+    {code:"it", label:"Information Technology"},
+    {code:"comm", label:"Communication Engineering"},
+    {code:"cse", label:"Computer Science and Engineering"},
+    {code:"ce", label:"Computer Engineering"},
+    {code:"cs", label:"Computer Science"},
+    {code:"civil", label:"Civil Engineering"},
+    {code:"combo", label:"Combination of sub-streams of the above (hybrid branch name)"},
+    {code:"other", label:"Other engineering discipline (not listed above)"}
+  ],
+
+  posts: [
+    {cat:1, name:"Junior Engineer / Design / Electrical", dept:"Electrical", sub:"R and D", medical:"B2", qGroup:"G1", pwbd:{vi:false,hi:false,ld:[],md:false}},
+    {cat:2, name:"Junior Engineer / Electrical", dept:"Electrical", sub:"Production Unit", medical:"C1", qGroup:"G1", pwbd:{vi:false,hi:true,ld:["OL","LC","DW","AAV","SD","SI"],md:true}},
+    {cat:3, name:"Junior Engineer / Electrical (Workshop)", dept:"Electrical", sub:"Workshop", medical:"C1", qGroup:"G1", pwbd:{vi:false,hi:true,ld:["OL","LC","DW","AAV","SD","SI"],md:true}},
+    {cat:4, name:"Junior Engineer / Electrical / Design Drawing and Estimation", dept:"Electrical", sub:"Design and Drawing", medical:"C1", qGroup:"G1", pwbd:{vi:false,hi:true,ld:["OL","LC","DW","AAV","SD","SI"],md:true}},
+    {cat:5, name:"Junior Engineer / Electrical / Design Drawing and Estimation", dept:"Electrical", sub:"Production Unit", medical:"C1", qGroup:"G1", pwbd:{vi:false,hi:true,ld:["OL","LC","DW","AAV","SD","SI"],md:true}},
+    {cat:6, name:"Junior Engineer / Electrical / EMU", dept:"Electrical", sub:"EMU", medical:"A3", qGroup:"G1", pwbd:{vi:false,hi:true,ld:["OL","LC","DW","AAV","SD","SI"],md:true}},
+    {cat:7, name:"Junior Engineer / Electrical / General Services", dept:"Electrical", sub:"General Services", medical:"B1", qGroup:"G1", pwbd:{vi:false,hi:true,ld:["OL","LC","DW","AAV","SD","SI"],md:true}},
+    {cat:8, name:"Junior Engineer / Electrical / TRD", dept:"Electrical", sub:"TRD", medical:"A3", qGroup:"G1", pwbd:{vi:false,hi:false,ld:[],md:false}},
+    {cat:9, name:"Junior Engineer / Electrical / TRS", dept:"Electrical", sub:"TRS", medical:"A3", qGroup:"G1", pwbd:{vi:false,hi:true,ld:["OL","LC","DW","AAV","SD","SI"],md:true}},
+
+    {cat:10, name:"Junior Engineer (Research) / Civil", dept:"Engineering", sub:"R and D", medical:"B1", qGroup:"G2", pwbd:{vi:false,hi:false,ld:["OL","LC","DW","AAV","SD","SI"],md:false}},
+    {cat:11, name:"Junior Engineer / Bridge", dept:"Engineering", sub:"Bridge", medical:"A3", qGroup:"G2", pwbd:{vi:false,hi:false,ld:["OL","LC","DW","AAV","SD","SI"],md:false}},
+    {cat:12, name:"Junior Engineer / Civil", dept:"Engineering", sub:"R and D", medical:"B1", qGroup:"G2", pwbd:{vi:false,hi:false,ld:["OL","LC","DW","AAV","SD","SI"],md:false}},
+    {cat:13, name:"Junior Engineer / Civil / Design Drawing and Estimation", dept:"Engineering", sub:"Design and Drawing", medical:"C1", qGroup:"G2", pwbd:{vi:false,hi:false,ld:["OL-BK","LC","DW","AAV","SD","SI"],md:false}},
+    {cat:14, name:"Junior Engineer / Civil / Design Drawing and Estimation", dept:"Engineering", sub:"Production Unit", medical:"C1", qGroup:"G2", pwbd:{vi:false,hi:false,ld:["OL-BK","LC","DW","AAV","SD","SI"],md:false}},
+    {cat:15, name:"Junior Engineer / Design / Civil", dept:"Engineering", sub:"R and D", medical:"B2", qGroup:"G2", pwbd:{vi:false,hi:false,ld:["OL","LC","DW","AAV","SD","SI"],md:false}},
+    {cat:16, name:"Junior Engineer / P. Way", dept:"Engineering", sub:"Production Unit", medical:"A3", qGroup:"G2", pwbd:{vi:false,hi:false,ld:["OL","LC","DW","AAV","SD","SI"],md:false}},
+    {cat:17, name:"Junior Engineer / P. Way", dept:"Engineering", sub:"P. Way", medical:"A3", qGroup:"G2", pwbd:{vi:false,hi:false,ld:["OL","LC","DW","AAV","SD","SI"],md:false}},
+    {cat:18, name:"Junior Engineer / Works", dept:"Engineering", sub:"Works", medical:"B1", qGroup:"G2", pwbd:{vi:false,hi:false,ld:["OL","LC","DW","AAV","SD","SI"],md:false}},
+    {cat:19, name:"Junior Engineer / Works", dept:"Engineering", sub:"Production Unit", medical:"C1", qGroup:"G2", pwbd:{vi:false,hi:false,ld:["OL","LC","DW","AAV","SD","SI"],md:false}},
+
+    {cat:20, name:"Junior Engineer / Track Machine", dept:"Engineering", sub:"Track Machine", medical:"A3", qGroup:"G3", pwbd:{vi:false,hi:false,ld:["OL","LC","DW","AAV","SD","SI"],md:false}},
+
+    {cat:21, name:"Junior Engineer / Carriage and Wagon", dept:"Mechanical", sub:"Carriage and Wagon", medical:"B1", qGroup:"G4", pwbd:{vi:false,hi:false,ld:["OL","LC","DW","AAV","SD","SI"],md:false}},
+    {cat:22, name:"Junior Engineer / Design / C and W", dept:"Mechanical", sub:"R and D", medical:"B2", qGroup:"G4", pwbd:{vi:false,hi:false,ld:["OL","LC","DW","AAV","SD","SI"],md:false}},
+    {cat:23, name:"Junior Engineer / Design / Mechanical", dept:"Mechanical", sub:"Production Unit", medical:"C1", qGroup:"G4", pwbd:{vi:false,hi:true,ld:["OL","LC","DW","AAV","SD","SI"],md:true}},
+    {cat:24, name:"Junior Engineer / Design / MP", dept:"Mechanical", sub:"R and D", medical:"B2", qGroup:"G4", pwbd:{vi:false,hi:false,ld:["OL","LC","DW","AAV","SD","SI"],md:false}},
+    {cat:25, name:"Junior Engineer / Diesel Mechanical", dept:"Mechanical", sub:"Diesel Shed", medical:"B1", qGroup:"G4", pwbd:{vi:false,hi:false,ld:["OA","OL","LC","DW","AAV","SD","SI"],md:false}},
+    {cat:26, name:"Junior Engineer / Mechanical", dept:"Mechanical", sub:"Production Unit", medical:"C1", qGroup:"G4", pwbd:{vi:false,hi:true,ld:["OA","OL","LC","DW","AAV","SD","SI"],md:true}},
+    {cat:27, name:"Junior Engineer / Mechanical (Workshop)", dept:"Mechanical", sub:"Workshop", medical:"C1", qGroup:"G4", pwbd:{vi:false,hi:true,ld:["OA","OL","LC","DW","AAV","SD","SI"],md:true}},
+    {cat:28, name:"Junior Engineer / Mechanical / Design Drawing and Estimation", dept:"Mechanical", sub:"Production Unit", medical:"C1", qGroup:"G4", pwbd:{vi:false,hi:true,ld:["OL","LC","DW","AAV","SD","SI"],md:true}},
+    {cat:29, name:"Junior Engineer / Mechanical / Design Drawing and Estimation", dept:"Mechanical", sub:"Design and Drawing", medical:"C1", qGroup:"G4", pwbd:{vi:false,hi:true,ld:["OL","LC","DW","AAV","SD","SI"],md:true}},
+    {cat:30, name:"Junior Engineer / Millwright", dept:"Mechanical", sub:"Workshop", medical:"C1", qGroup:"G4", pwbd:{vi:false,hi:true,ld:["OL","LC","DW","AAV","SD","SI"],md:true}},
+
+    {cat:31, name:"Junior Engineer / Diesel Electrical", dept:"Mechanical", sub:"Diesel Shed", medical:"B1", qGroup:"G1", pwbd:{vi:false,hi:false,ld:["OA","OL","LC","DW","AAV","SD","SI"],md:false}},
+
+    {cat:32, name:"Junior Engineer / Design / S and T", dept:"S and T", sub:"R and D", medical:"B2", qGroup:"G5", pwbd:{vi:false,hi:false,ld:["OL","LC","DW","AAV","SD","SI"],md:false}},
+    {cat:33, name:"Junior Engineer / S and T (Workshop)", dept:"S and T", sub:"Workshop", medical:"C1", qGroup:"G5", pwbd:{vi:false,hi:false,ld:["OA","OL","LC","DW","AAV","SD","SI"],md:false}},
+    {cat:34, name:"Junior Engineer / S and T / Design Drawing and Estimation", dept:"S and T", sub:"Design and Drawing", medical:"C1", qGroup:"G5", pwbd:{vi:false,hi:true,ld:["OL","LC","DW","AAV","SD","SI"],md:true}},
+    {cat:35, name:"Junior Engineer / S and T / Signal", dept:"S and T", sub:"Signal", medical:"A3", qGroup:"G5", pwbd:{vi:false,hi:false,ld:[],md:false}},
+    {cat:36, name:"Junior Engineer / S and T / Telecommunication", dept:"S and T", sub:"Telecommunication", medical:"A3", qGroup:"G5", pwbd:{vi:false,hi:false,ld:["OA","OL","LC","DW","AAV","SD","SI"],md:false}},
+
+    {cat:37, name:"Depot Material Superintendent", dept:"Stores", sub:"Stores Depot", medical:"C1", qGroup:"G6", pwbd:{vi:false,hi:true,ld:["OA","OL","LC","DW","AAV","SD","SI"],md:true}}
+  ]
+};
+
+/* ══════════════════════════════════════
+   CORE CHECKER ENGINE — reusable for future CENs
+══════════════════════════════════════ */
+function populatePostSelect(){
+  const sel=document.getElementById('post');
+  const groups={};
+  EXAM_CONFIG.posts.forEach(p=>{ (groups[p.dept]=groups[p.dept]||[]).push(p); });
+  let html='';
+  Object.keys(groups).forEach(dept=>{
+    html+=`<optgroup label="${dept}">`;
+    groups[dept].forEach(p=>{
+      html+=`<option value="${p.cat}">${p.name} (${p.sub})</option>`;
+    });
+    html+='</optgroup>';
+  });
+  sel.innerHTML=html;
+}
+
+function populateDisciplineSelect(){
+  const sel=document.getElementById('discipline');
+  sel.innerHTML=EXAM_CONFIG.disciplines.map(d=>`<option value="${d.code}">${d.label}</option>`).join('');
+}
+
+function getPost(){
+  const id=parseInt(document.getElementById('post').value,10);
+  return EXAM_CONFIG.posts.find(p=>p.cat===id);
+}
+
+function showPostInfo(){
+  const p=getPost();
+  const box=document.getElementById('postInfo');
+  if(!p){box.style.display='none';return;}
+  const pwbdBits=[];
+  if(p.pwbd.hi) pwbdBits.push('HI (Deaf/HH)');
+  if(p.pwbd.ld.length) pwbdBits.push('LD ('+p.pwbd.ld.join(', ')+')');
+  if(p.pwbd.md) pwbdBits.push('MD');
+  const pwbdTxt = pwbdBits.length ? pwbdBits.join(' · ') : 'Not identified suitable for any PwBD category';
+  box.innerHTML = `<b>${p.name}</b> — Department: <b>${p.dept}</b> (${p.sub}) &nbsp;|&nbsp; Medical Standard: <b>${p.medical}</b><br>Qualification required: <b>${EXAM_CONFIG.qualificationGroups[p.qGroup].label}</b><br>PwBD suitability: ${pwbdTxt}`;
+  box.style.display='block';
+}
+
+function togglePwbd(){
+  const yes=document.getElementById('pwY').checked;
+  document.getElementById('pwbdFields').style.display=yes?'grid':'none';
+  if(yes) toggleLD();
+}
+function toggleLD(){
+  const isLD=document.getElementById('pwbdType').value==='LD';
+  document.getElementById('ldWrap').style.display=isLD?'flex':'none';
+}
+
+function parseDate(s){ const d=new Date(s+'T00:00:00'); return d; }
+
+function subtractYears(dateStr,years){
+  const d=new Date(dateStr+'T00:00:00');
+  d.setFullYear(d.getFullYear()-years);
+  return d;
+}
+
+function ageBreakdown(dob,refDate){
+  let y=refDate.getFullYear()-dob.getFullYear();
+  let m=refDate.getMonth()-dob.getMonth();
+  let d=refDate.getDate()-dob.getDate();
+  if(d<0){ m--; const prevMonth=new Date(refDate.getFullYear(),refDate.getMonth(),0).getDate(); d+=prevMonth; }
+  if(m<0){ y--; m+=12; }
+  return {y,m,d};
+}
+
+function fmtDate(d){
+  return d.toLocaleDateString('en-GB',{day:'2-digit',month:'2-digit',year:'numeric'});
+}
+
+function ldMatches(postLD,userCode){
+  if(!postLD || postLD.length===0) return false;
+  if(userCode==='other') return 'check';
+  if(userCode==='OL-BK') return postLD.includes('OL-BK') || postLD.includes('OL');
+  if(userCode==='OL') return postLD.includes('OL') ? true : (postLD.includes('OL-BK') ? 'check' : false);
+  return postLD.includes(userCode);
+}
+
+function resetForm(){
+  document.getElementById('dob').value='';
+  document.getElementById('category').value='UR';
+  document.getElementById('exN').checked=true;
+  document.getElementById('pwN').checked=true;
+  togglePwbd();
+  document.getElementById('qlevel').value='diploma3';
+  document.getElementById('discipline').value='mech';
+  document.getElementById('natY').checked=true;
+  document.getElementById('resultArea').style.display='none';
+  document.getElementById('errBox').style.display='none';
+  window.scrollTo({top:document.getElementById('tool').offsetTop-80,behavior:'smooth'});
+}
+
+function checkEligibility(){
+  const errBox=document.getElementById('errBox');
+  errBox.style.display='none';
+
+  const post=getPost();
+  const dobVal=document.getElementById('dob').value;
+  const category=document.getElementById('category').value;
+  const exsm=document.getElementById('exY').checked;
+  const pwbd=document.getElementById('pwY').checked;
+  const pwbdType=pwbd?document.getElementById('pwbdType').value:null;
+  const ldType=pwbd&&pwbdType==='LD'?document.getElementById('ldType').value:null;
+  const qlevel=document.getElementById('qlevel').value;
+  const discipline=document.getElementById('discipline').value;
+  const natOk=document.getElementById('natY').checked;
+
+  if(!post){ errBox.textContent='Please select a post.'; errBox.style.display='block'; return; }
+  if(!dobVal){ errBox.textContent='Please enter your date of birth.'; errBox.style.display='block'; return; }
+
+  const dob=parseDate(dobVal);
+  const refDate=parseDate(EXAM_CONFIG.ageRefDate);
+  const notBornAfter=parseDate(EXAM_CONFIG.ageRules.notBornAfter);
+
+  /* ---- Age check ---- */
+  let earliestAllowed=parseDate(EXAM_CONFIG.ageRules.categoryCutoff[category]);
+  if(pwbd){
+    const relax=EXAM_CONFIG.ageRules.pwbdRelaxYears[category];
+    const alt=subtractYears(EXAM_CONFIG.ageRules.urBaseline,relax);
+    if(alt<earliestAllowed) earliestAllowed=alt;
+  }
+  if(exsm){
+    const relax=EXAM_CONFIG.ageRules.exsmRelaxYears[category];
+    const alt=subtractYears(EXAM_CONFIG.ageRules.urBaseline,relax);
+    if(alt<earliestAllowed) earliestAllowed=alt;
+  }
+  const ageOk = dob<=notBornAfter && dob>=earliestAllowed;
+  const age=ageBreakdown(dob,refDate);
+  const ageDetail = `Age as on 01-01-2027: <b>${age.y} yrs, ${age.m} mo, ${age.d} days</b>. Allowed DOB range for your inputs: <b>${fmtDate(earliestAllowed)}</b> to <b>${fmtDate(notBornAfter)}</b>.`;
+
+  /* ---- Qualification check ---- */
+  let qualState='fail', qualDetail='';
+  if(qlevel==='awaited'){
+    qualState='fail'; qualDetail='Candidates awaiting the final qualifying result are not eligible to apply (Para 1.2 / 6.0(c)).';
+  } else if(qlevel==='diplomaShort'){
+    qualState='fail'; qualDetail='A minimum 3-year diploma (or an equivalent/higher degree) in an eligible discipline is required.';
+  } else {
+    const group=EXAM_CONFIG.qualificationGroups[post.qGroup];
+    if(discipline==='combo'){
+      qualState='check'; qualDetail=`Required for this post: ${group.label}. A combination of basic streams may qualify — please verify the exact combination against Annexure A.`;
+    } else if(post.qGroup==='G6'){
+      qualState='pass'; qualDetail='Depot Material Superintendent accepts a 3-year diploma in any engineering discipline.';
+    } else if(discipline==='other'){
+      qualState='fail'; qualDetail=`Required for this post: ${group.label}. Your selected discipline is not listed for this post.`;
+    } else if(group.disciplines.includes(discipline)){
+      qualState='pass'; qualDetail=`Matches required discipline for this post: ${group.label}.`;
+    } else {
+      qualState='fail'; qualDetail=`Required for this post: ${group.label}. Your selected discipline does not match.`;
+    }
+  }
+
+  /* ---- PwBD suitability check (only if applicable) ---- */
+  let pwbdState='na', pwbdDetail='Not applicable — PwBD status not indicated.';
+  if(pwbd){
+    if(pwbdType==='VI'){
+      pwbdState = post.pwbd.vi ? 'pass' : 'fail';
+      pwbdDetail = post.pwbd.vi ? 'Post is identified suitable for VI candidates.' : 'This post is not identified suitable for candidates with Visual Impairment (VI).';
+    } else if(pwbdType==='HI'){
+      pwbdState = post.pwbd.hi ? 'pass' : 'fail';
+      pwbdDetail = post.pwbd.hi ? 'Post is identified suitable for Deaf / Hard of Hearing (HI) candidates.' : 'This post is not identified suitable for HI candidates.';
+    } else if(pwbdType==='MD'){
+      pwbdState = post.pwbd.md ? 'pass' : 'fail';
+      pwbdDetail = post.pwbd.md ? 'Post is identified suitable for Multiple Disabilities (MD), for combinations independently eligible.' : 'This post is not identified suitable for MD candidates.';
+    } else if(pwbdType==='LD'){
+      const m=ldMatches(post.pwbd.ld,ldType);
+      pwbdState = m===true?'pass':(m==='check'?'check':'fail');
+      pwbdDetail = m===true ? `Post accepts your Locomotor Disability type. Suitable types for this post: ${post.pwbd.ld.join(', ')||'none'}.`
+        : m==='check' ? `Please verify your exact sub-type against the certificate. Suitable types for this post: ${post.pwbd.ld.join(', ')||'none'}.`
+        : `This post does not list your Locomotor Disability type as suitable. Suitable types for this post: ${post.pwbd.ld.join(', ')||'none'}.`;
+    }
+  }
+
+  /* ---- Nationality ---- */
+  const natState = natOk ? 'pass' : 'fail';
+  const natDetail = natOk ? 'Meets nationality/citizenship requirement (Para 4.0).' : 'Must be a citizen of India/Nepal/Bhutan, or a person of Indian origin as defined in Para 4.0, with the required eligibility certificate where applicable.';
+
+  /* ---- Overall verdict ---- */
+  let overall='pass';
+  if(!ageOk || qualState==='fail' || natState==='fail' || pwbdState==='fail') overall='fail';
+  else if(qualState==='check' || pwbdState==='check') overall='check';
+
+  renderResult({post,ageOk,ageDetail,qualState,qualDetail,pwbdState,pwbdDetail,pwbd,natState,natDetail,overall});
+}
+
+function renderResult(r){
+  const banner=document.getElementById('resBanner');
+  const icoWrap=document.getElementById('resIcoWrap');
+  const icon=document.getElementById('resIcon');
+  const title=document.getElementById('resTitle');
+  const sub=document.getElementById('resSub');
+  const tag=document.getElementById('resTag');
+  const cls = r.overall==='pass'?'pass':(r.overall==='check'?'avg':'fail');
+  banner.className='res-banner '+cls;
+  icon.textContent = r.overall==='pass'?'✅':(r.overall==='check'?'⚠️':'❌');
+  title.textContent = r.overall==='pass' ? 'Eligible' : (r.overall==='check' ? 'Check Required / Conditional' : 'Not Eligible');
+  sub.textContent = `Post: ${r.post.name} (${r.post.sub}) — Department: ${r.post.dept}`;
+  tag.className='res-tag '+cls;
+  tag.textContent = r.overall==='pass' ? '✅ Eligible' : (r.overall==='check' ? '⚠️ Verify Before Applying' : '❌ Not Eligible');
+
+  const ageCls = r.ageOk?'pass':'fail';
+  const qualCls = r.qualState;
+  const natCls = r.natState;
+  const pwbdCls = r.pwbd ? r.pwbdState : 'na';
+
+  const cards=[
+    {name:'Nationality', cls:natCls, detail:r.natDetail},
+    {name:'Age', cls:ageCls, detail:r.ageDetail},
+    {name:'Educational Qualification / Discipline', cls:qualCls, detail:r.qualDetail},
+    {name:'PwBD Suitability (Selected Post)', cls:pwbdCls, detail:r.pwbdDetail}
+  ];
+  const badgeLabel={pass:'PASS',fail:'FAIL',check:'CHECK',na:'N/A'};
+  document.getElementById('brkGrid').innerHTML = cards.map(c=>`
+    <div class="bc-card ${c.cls}">
+      <div class="bc-top"><span class="bc-name">${c.name}</span><span class="bc-badge ${c.cls}">${badgeLabel[c.cls]}</span></div>
+      <div class="bc-detail">${c.detail}</div>
+    </div>
+  `).join('');
+
+  let suggHtml='';
+  if(r.overall==='pass'){
+    suggHtml = `<strong>✅ You appear eligible for ${r.post.name}</strong>, based on the details entered. Proceed to the official RRB website to complete your online application before the closing date (13-09-2026), and keep your original certificates ready for Document Verification.`;
+  } else if(r.overall==='check'){
+    suggHtml = `<strong>⚠️ Some conditions need manual verification</strong> before you can confirm eligibility for ${r.post.name}. Please review the flagged items above against Annexure A of CEN No. 04/2026, or consult the RRB helpdesk if unsure.`;
+  } else {
+    suggHtml = `<strong>❌ Based on the details entered, you do not currently meet all eligibility conditions</strong> for ${r.post.name}. Review the FAIL items in the breakdown above — you may be eligible for a different post, category option, or after your qualification is complete.`;
+  }
+  document.getElementById('suggBox').innerHTML = `<strong style="display:block;font-family:var(--fd);font-size:14px;margin-bottom:8px">💡 Summary</strong><p>${suggHtml}</p>`;
+
+  const ra=document.getElementById('resultArea');
+  ra.style.display='block';
+  ra.style.animation='none';ra.offsetHeight;
+  ra.style.animation='resultIn .45s var(--ease) both';
+  setTimeout(()=>ra.scrollIntoView({behavior:'smooth',block:'nearest'}),120);
+}
+
+/* ---- init ---- */
+populatePostSelect();
+populateDisciplineSelect();
+showPostInfo();
+</script>
+</body>
+</html>
