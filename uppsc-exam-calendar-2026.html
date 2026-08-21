@@ -1281,91 +1281,150 @@ footer{background:var(--ink);color:#cbd5e1;padding-top:0}
     </div>
   </div>
 </footer>
+<script>
 const faqData = [
-  { q: "What is the UPPSC Exam Calendar 2026?", a: "The UPPSC Exam Calendar 2026 provides the tentative examination schedule for various recruitment examinations conducted by the Uttar Pradesh Public Service Commission." },
-  { q: "Is the UPPSC Exam Calendar 2026 revised?", a: "Yes. This page presents the UPPSC Exam Calendar 2026 schedule based on the official calendar information provided by the Uttar Pradesh Public Service Commission." },
-  { q: "Are UPPSC exam dates final?", a: "No. The dates mentioned in the UPPSC Exam Calendar are tentative and may be changed by the Commission." },
-  { q: "Where can I check the UPPSC Exam Calendar 2026?", a: "Candidates can check the latest UPPSC Exam Calendar 2026 through the official Uttar Pradesh Public Service Commission website." },
-  { q: "Does the UPPSC calendar include Preliminary and Mains dates?", a: "Yes. Depending on the examination, the UPPSC calendar may provide Preliminary, Mains/Written, Interview and other examination schedule details where applicable." },
-  { q: "Where can I check the latest changes in UPPSC exam dates?", a: "Candidates should regularly check the official UPPSC website for revised examination dates, notifications and other official updates." }
+  {
+    q: "What is the UPPSC Exam Calendar 2026?",
+    a: "The UPPSC Exam Calendar 2026 provides the tentative examination schedule for various examinations conducted by the Uttar Pradesh Public Service Commission (UPPSC)."
+  },
+  {
+    q: "Has the UPPSC Exam Calendar 2026 been released?",
+    a: "Yes. The UPPSC Exam Calendar 2026 provides the proposed examination dates for various examinations scheduled during 2026."
+  },
+  {
+    q: "Are UPPSC exam dates final?",
+    a: "No. The dates mentioned in the UPPSC Exam Calendar are proposed/tentative and may be changed by the Uttar Pradesh Public Service Commission."
+  },
+  {
+    q: "Where can I check the UPPSC Exam Calendar 2026?",
+    a: "Candidates can check the latest UPPSC Exam Calendar and examination-related updates through the official Uttar Pradesh Public Service Commission website."
+  },
+  {
+    q: "Does the UPPSC calendar include different types of examinations?",
+    a: "Yes. The calendar contains the proposed dates for various UPPSC examinations, including recruitment examinations for different posts and services."
+  },
+  {
+    q: "Can UPPSC exam dates be changed?",
+    a: "Yes. UPPSC has stated that the proposed dates are tentative and may be changed in special circumstances."
+  },
+  {
+    q: "Where can I check the latest changes in UPPSC exam dates?",
+    a: "Candidates should regularly check the official UPPSC website and official notices for any changes, postponements or revised examination dates."
+  },
+  {
+    q: "What is the UPPSC Combined State / Upper Subordinate Services exam date in 2026?",
+    a: "According to the provided UPPSC Examination Calendar 2026, the Preliminary Examination for Combined State / Upper Subordinate Services Examination 2026 is proposed for 6 December 2026."
+  }
 ];
 
 function escHtml(str) {
   return String(str == null ? "" : str)
     .replace(/&/g, "&amp;")
     .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;");
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
 }
 
 function renderFAQ() {
-  const list = document.getElementById('faqList');
+  const list = document.getElementById("faqList");
+
+  if (!list) return;
+
   list.innerHTML = faqData.map((f, i) => `
     <div class="faq-item" id="faq-${i}">
       <div class="faq-q" onclick="toggleFaq(${i})">
         <span>${escHtml(f.q)}</span>
-        <svg viewBox="0 0 24 24">
+
+        <svg viewBox="0 0 24 24" aria-hidden="true">
           <line x1="12" y1="5" x2="12" y2="19"/>
           <line x1="5" y1="12" x2="19" y2="12"/>
         </svg>
       </div>
+
       <div class="faq-a" id="faq-a-${i}">
         <p>${escHtml(f.a)}</p>
       </div>
     </div>
-  `).join('');
+  `).join("");
 }
 
 function toggleFaq(i) {
   const item = document.getElementById(`faq-${i}`);
   const ans = document.getElementById(`faq-a-${i}`);
-  const isOpen = item.classList.contains('on');
 
-  document.querySelectorAll('.faq-item.on').forEach(el => {
-    el.classList.remove('on');
-    document.getElementById(
-      el.id.replace('faq-', 'faq-a-')
-    ).style.maxHeight = null;
+  if (!item || !ans) return;
+
+  const isOpen = item.classList.contains("on");
+
+  document.querySelectorAll(".faq-item.on").forEach(el => {
+    el.classList.remove("on");
+
+    const answer = el.querySelector(".faq-a");
+    if (answer) {
+      answer.style.maxHeight = null;
+    }
   });
 
   if (!isOpen) {
-    item.classList.add('on');
-    ans.style.maxHeight = ans.scrollHeight + 'px';
+    item.classList.add("on");
+    ans.style.maxHeight = ans.scrollHeight + "px";
   }
 }
 
 function rippleFx(e) {
   const host = e.currentTarget;
+
+  if (!host) return;
+
   const rect = host.getBoundingClientRect();
-  const circle = document.createElement('span');
+  const circle = document.createElement("span");
   const size = Math.max(rect.width, rect.height);
 
-  circle.className = 'ripple';
-  circle.style.width = circle.style.height = size + 'px';
-  circle.style.left = (e.clientX - rect.left - size / 2) + 'px';
-  circle.style.top = (e.clientY - rect.top - size / 2) + 'px';
+  circle.className = "ripple";
+  circle.style.width = size + "px";
+  circle.style.height = size + "px";
+  circle.style.left = (e.clientX - rect.left - size / 2) + "px";
+  circle.style.top = (e.clientY - rect.top - size / 2) + "px";
 
   host.appendChild(circle);
-  setTimeout(() => circle.remove(), 650);
+
+  setTimeout(() => {
+    circle.remove();
+  }, 650);
 }
 
+/* Mobile Drawer */
 function oD() {
-  document.getElementById('drw').classList.add('on');
-  document.getElementById('dov').classList.add('on');
+  const drawer = document.getElementById("drw");
+  const overlay = document.getElementById("dov");
+
+  if (drawer) drawer.classList.add("on");
+  if (overlay) overlay.classList.add("on");
 }
 
 function cD() {
-  document.getElementById('drw').classList.remove('on');
-  document.getElementById('dov').classList.remove('on');
+  const drawer = document.getElementById("drw");
+  const overlay = document.getElementById("dov");
+
+  if (drawer) drawer.classList.remove("on");
+  if (overlay) overlay.classList.remove("on");
 }
 
-window.addEventListener('scroll', () => {
-  document.getElementById('btt').classList.toggle(
-    'on',
-    window.scrollY > 380
-  );
+/* Back To Top */
+window.addEventListener("scroll", function() {
+  const btt = document.getElementById("btt");
+
+  if (btt) {
+    btt.classList.toggle("on", window.scrollY > 380);
+  }
 });
 
-renderFAQ();
+/* Initialize FAQ */
+document.addEventListener("DOMContentLoaded", function() {
+  renderFAQ();
+});
 </script>
+
 </body>
 </html>
