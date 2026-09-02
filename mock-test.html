@@ -1,0 +1,1645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CBT Mock Test Examination - High Density System</title>
+  <meta name="description" content="All-in-one standalone Computer-Based Test (CBT) engine with embedded EXAM_DATA, real-time question palette, auto-save, bilingual questions, on-screen calculator, rough notepad, and comprehensive analytics scorecard.">
+  <style>
+    /* ==========================================================================
+       High Density CBT Theme Variables & Reset
+       ========================================================================== */
+    :root {
+      --navy-dark: #1a237e;
+      --navy-light: #283593;
+      --navy-subtle: #e8eaf6;
+      --accent-amber: #ffab40;
+      --accent-blue: #1a237e;
+      --accent-blue-light: #2196f3;
+      --bg-page: #f0f2f5;
+      --bg-surface: #ffffff;
+      --bg-surface-subtle: #f8f9fa;
+      --border-color: #e0e0e0;
+      --border-subtle: #eeeeee;
+      --text-main: #333333;
+      --text-muted: #666666;
+      --text-inverse: #ffffff;
+
+      --status-answered: #2e7d32;
+      --status-unanswered: #c62828;
+      --status-notvisited: #9e9e9e;
+      --status-marked: #7b1fa2;
+      --status-review-ans: #7b1fa2;
+
+      --font-base: 'Segoe UI', Tahoma, Geneva, Verdana, -apple-system, sans-serif;
+      --font-size-ui: 14px;
+      --font-size-q: 16px;
+    }
+
+    body.dark-theme {
+      --navy-dark: #0f172a;
+      --navy-light: #1e293b;
+      --navy-subtle: #1e293b;
+      --accent-amber: #fbbf24;
+      --accent-blue: #3b82f6;
+      --bg-page: #090d16;
+      --bg-surface: #111827;
+      --bg-surface-subtle: #182234;
+      --border-color: #2e384d;
+      --border-subtle: #1f293d;
+      --text-main: #f1f5f9;
+      --text-muted: #94a3b8;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      width: 100%; height: 100%;
+      font-family: var(--font-base);
+      font-size: var(--font-size-ui);
+      color: var(--text-main);
+      background-color: var(--bg-page);
+      line-height: 1.5;
+      overflow: hidden;
+    }
+
+    body.font-sm { --font-size-ui: 13px; --font-size-q: 14px; }
+    body.font-md { --font-size-ui: 14px; --font-size-q: 16px; }
+    body.font-lg { --font-size-ui: 16px; --font-size-q: 18px; }
+    body.font-xl { --font-size-ui: 18px; --font-size-q: 20px; }
+
+    /* Button Styles */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+      font-family: inherit; font-size: 13px; font-weight: 600; padding: 7px 16px;
+      border-radius: 4px; border: 1px solid #ccc; cursor: pointer;
+      transition: all 0.15s ease-in-out; user-select: none; text-decoration: none;
+    }
+    .btn:disabled { opacity: 0.5; cursor: not-allowed; }
+    .btn-primary { background-color: var(--navy-dark); color: #fff; border-color: var(--navy-dark); }
+    .btn-primary:hover { background-color: var(--navy-light); }
+    .btn-secondary { background-color: #f5f5f5; color: #333; border-color: #ccc; }
+    .btn-secondary:hover { background-color: #e8e8e8; }
+    body.dark-theme .btn-secondary { background-color: #1e293b; color: #f1f5f9; border-color: #334155; }
+    .btn-outline { background-color: #fff; color: #333; border-color: #ccc; }
+    .btn-outline:hover { background-color: #f8f9fa; }
+    body.dark-theme .btn-outline { background-color: #111827; color: #f1f5f9; border-color: #374151; }
+    .btn-danger { background-color: #d32f2f; color: #fff; border: none; }
+    .btn-danger:hover { background-color: #b71c1c; }
+    .btn-sm { padding: 4px 10px; font-size: 12px; }
+
+    /* Badges */
+    .badge {
+      display: inline-flex; align-items: center; gap: 4px; font-size: 11px;
+      font-weight: 700; text-transform: uppercase; padding: 2px 8px; border-radius: 4px;
+    }
+    .badge-blue { background: #e3f2fd; color: #1565c0; }
+    .badge-green { background: #e8f5e9; color: #2e7d32; }
+    .badge-amber { background: #fff3e0; color: #e65100; }
+    .badge-purple { background: #f3e5f5; color: #7b1fa2; }
+    .badge-gray { background: #eeeeee; color: #616161; }
+
+    /* App Shell */
+    #cbt-app-shell { display: flex; flex-direction: column; height: 100vh; width: 100vw; }
+
+    /* Header */
+    .cbt-header {
+      background-color: var(--navy-dark); color: #fff; height: 58px;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 16px; border-bottom: 3px solid var(--accent-amber); flex-shrink: 0;
+    }
+    .cbt-brand { display: flex; align-items: center; gap: 10px; }
+    .cbt-brand-logo {
+      height: 32px; width: 32px; background: #fff; color: var(--navy-dark);
+      border-radius: 4px; display: flex; align-items: center; justify-content: center;
+      font-weight: 800; font-size: 14px;
+    }
+    .cbt-exam-title { font-size: 15px; font-weight: 600; }
+    .cbt-exam-sub { font-size: 11px; color: #c5cae9; }
+    .cbt-header-controls { display: flex; align-items: center; gap: 8px; }
+
+    .timer-box {
+      background: rgba(255, 255, 255, 0.1); padding: 5px 12px; border-radius: 4px;
+      font-family: monospace; font-size: 1.15rem; font-weight: bold;
+      border: 1px solid rgba(255, 255, 255, 0.3); color: #fff; display: flex; align-items: center; gap: 6px;
+    }
+    .timer-box.warning { background: #b71c1c; border-color: #ff5252; animation: blink 1s infinite alternate; }
+    @keyframes blink { from { opacity: 1; } to { opacity: 0.7; } }
+
+    /* Section Tabs */
+    .cbt-section-bar {
+      background: #fff; border-bottom: 1px solid var(--border-color);
+      display: flex; align-items: center; justify-content: space-between;
+      height: 38px; padding: 0 12px; flex-shrink: 0; overflow-x: auto;
+    }
+    body.dark-theme .cbt-section-bar { background: #111827; }
+    .cbt-section-tabs { display: flex; height: 100%; overflow-x: auto; }
+    .cbt-section-tab {
+      padding: 0 16px; display: flex; align-items: center; gap: 6px;
+      font-size: 13px; font-weight: 600; cursor: pointer;
+      border-right: 1px solid var(--border-color); color: #666; background: transparent;
+      border-top: none; border-left: none; border-bottom: 2px solid transparent; white-space: nowrap;
+    }
+    .cbt-section-tab.active { background: #e8eaf6; color: var(--navy-dark); border-bottom-color: var(--navy-dark); }
+    body.dark-theme .cbt-section-tab.active { background: #1e293b; color: #60a5fa; border-bottom-color: #3b82f6; }
+    .tab-count { background: rgba(0,0,0,0.08); padding: 1px 6px; border-radius: 10px; font-size: 11px; }
+
+    /* Main Layout */
+    .cbt-main-body { display: flex; flex: 1; min-height: 0; overflow: hidden; }
+
+    /* Question Pane */
+    .cbt-question-pane {
+      flex: 1; display: flex; flex-direction: column; background: #fff;
+      border-right: 1px solid var(--border-color); min-width: 0; overflow: hidden;
+    }
+    body.dark-theme .cbt-question-pane { background: #111827; }
+
+    .cbt-q-header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 8px 18px; border-bottom: 1px solid var(--border-subtle); flex-shrink: 0;
+    }
+    .cbt-q-num-badge { font-size: 15px; font-weight: 700; color: var(--navy-dark); }
+    body.dark-theme .cbt-q-num-badge { color: #60a5fa; }
+
+    .cbt-q-scroll-area { flex: 1; padding: 18px 22px; overflow-y: auto; font-size: var(--font-size-q); }
+    .cbt-q-text { font-size: 16px; font-weight: 500; line-height: 1.6; margin-bottom: 20px; white-space: pre-line; }
+
+    .cbt-options-list { display: flex; flex-direction: column; gap: 10px; }
+    .cbt-option-card {
+      display: flex; align-items: center; gap: 12px; padding: 10px 14px;
+      border-radius: 6px; border: 1px solid var(--border-subtle); background: #fff;
+      cursor: pointer; transition: all 0.15s;
+    }
+    body.dark-theme .cbt-option-card { background: #111827; border-color: #1f293d; }
+    .cbt-option-card:hover { background-color: #f8f9fa; border-color: #ccc; }
+    .cbt-option-card.selected { background-color: #e3f2fd; border-color: #2196f3; }
+    body.dark-theme .cbt-option-card.selected { background-color: #1e3a8a33; border-color: #3b82f6; }
+
+    .cbt-option-circle {
+      width: 18px; height: 18px; border: 2px solid #999; border-radius: 50%; flex-shrink: 0;
+    }
+    .cbt-option-card.selected .cbt-option-circle {
+      border-color: #2196f3; background-color: #2196f3; box-shadow: inset 0 0 0 3px #fff;
+    }
+    .cbt-option-key { font-weight: 700; font-size: 14px; color: var(--navy-dark); min-width: 18px; }
+    body.dark-theme .cbt-option-key { color: #60a5fa; }
+    .cbt-option-content { flex: 1; font-size: 15px; }
+
+    .cbt-q-footer {
+      height: 56px; padding: 0 16px; border-top: 1px solid var(--border-color);
+      display: flex; align-items: center; justify-content: space-between; flex-shrink: 0; gap: 8px;
+    }
+    .cbt-footer-left, .cbt-footer-right { display: flex; align-items: center; gap: 6px; }
+
+    /* Right Palette Sidebar */
+    .cbt-palette-pane {
+      width: 290px; display: flex; flex-direction: column; background: #fff;
+      flex-shrink: 0; overflow: hidden; border-left: 1px solid var(--border-color);
+    }
+    body.dark-theme .cbt-palette-pane { background: #111827; }
+
+    .cbt-candidate-card {
+      padding: 10px 14px; border-bottom: 1px solid var(--border-color);
+      display: flex; align-items: center; gap: 10px;
+    }
+    .cbt-candidate-avatar {
+      width: 44px; height: 50px; background: #ddd; border: 1px solid #ccc;
+      border-radius: 3px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem;
+    }
+    .cbt-cand-label { font-size: 10px; color: #777; text-transform: uppercase; }
+    .cbt-cand-name { font-weight: 700; font-size: 13px; color: var(--navy-dark); }
+    body.dark-theme .cbt-cand-name { color: #60a5fa; }
+    .cbt-cand-roll { font-size: 11px; color: #666; }
+
+    .cbt-legend-wrap { padding: 8px 12px; border-bottom: 1px solid var(--border-color); background: #fafafa; font-size: 11px; }
+    body.dark-theme .cbt-legend-wrap { background: #182234; }
+    .cbt-legend-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 8px; }
+    .cbt-legend-item { display: flex; align-items: center; gap: 6px; }
+    .cbt-legend-chip {
+      width: 22px; height: 22px; display: inline-flex; align-items: center;
+      justify-content: center; font-size: 10px; font-weight: 700; flex-shrink: 0;
+    }
+
+    /* Authentic Status Shapes */
+    .answered { background: var(--status-answered); color: #fff; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; }
+    .not-answered { background: var(--status-unanswered); color: #fff; border-top-left-radius: 10px; border-top-right-radius: 10px; }
+    .not-visited { background: #fff; border: 1px solid #ccc; color: #333; }
+    body.dark-theme .not-visited { background: #1e293b; border-color: #334155; color: #f1f5f9; }
+    .marked { background: var(--status-marked); color: #fff; border-radius: 50%; }
+    .ans-marked { background: var(--status-review-ans); color: #fff; border-radius: 50%; position: relative; }
+    .ans-marked::after {
+      content: '✓'; position: absolute; bottom: -2px; right: -2px;
+      background: #4caf50; color: #fff; font-size: 8px; font-weight: 900;
+      width: 9px; height: 9px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    }
+
+    .cbt-palette-content { flex: 1; padding: 10px; overflow-y: auto; }
+    .cbt-palette-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 5px; }
+    .cbt-palette-btn {
+      height: 34px; display: flex; align-items: center; justify-content: center;
+      font-size: 12px; font-weight: 600; border: 1px solid #eee; cursor: pointer; transition: transform 0.1s;
+    }
+    .cbt-palette-btn:hover { transform: scale(1.05); }
+    .cbt-palette-btn.current {
+      background: var(--navy-dark) !important; color: #fff !important;
+      border: 2px solid var(--accent-amber) !important; font-weight: 700;
+    }
+
+    .cbt-palette-footer {
+      padding: 10px 12px; background: #e8eaf6; border-top: 1px solid var(--border-color);
+      flex-shrink: 0; display: flex; flex-direction: column; gap: 8px;
+    }
+    body.dark-theme .cbt-palette-footer { background: #182234; }
+    .palette-quick-links { display: flex; justify-content: space-between; padding: 0 4px; }
+    .palette-quick-link-btn {
+      background: none; border: none; color: #1a237e; font-size: 10px;
+      font-weight: 700; text-transform: uppercase; text-decoration: underline; cursor: pointer;
+    }
+    body.dark-theme .palette-quick-link-btn { color: #93c5fd; }
+
+    /* Modals */
+    .cbt-modal-backdrop {
+      position: fixed; inset: 0; background: rgba(10, 15, 30, 0.7); backdrop-filter: blur(2px);
+      display: flex; align-items: center; justify-content: center; z-index: 100; padding: 1rem;
+      opacity: 0; pointer-events: none; transition: opacity 0.2s;
+    }
+    .cbt-modal-backdrop.open { opacity: 1; pointer-events: auto; }
+    .cbt-modal-box {
+      background: #fff; color: var(--text-main); border-radius: 8px; width: 100%;
+      max-width: 620px; max-height: 90vh; display: flex; flex-direction: column;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.3); border: 1px solid var(--border-color); overflow: hidden;
+    }
+    body.dark-theme .cbt-modal-box { background: #111827; }
+    .cbt-modal-header {
+      padding: 10px 16px; background: var(--navy-dark); color: #fff;
+      display: flex; align-items: center; justify-content: space-between; border-bottom: 2px solid var(--accent-amber);
+    }
+    .cbt-modal-body { padding: 16px; overflow-y: auto; }
+    .cbt-modal-footer {
+      padding: 10px 16px; background: #f8f9fa; border-top: 1px solid var(--border-color);
+      display: flex; justify-content: flex-end; gap: 8px;
+    }
+    body.dark-theme .cbt-modal-footer { background: #182234; }
+
+    /* Calculator & Notepad */
+    .calc-display {
+      background: #1a237e; color: #ffab40; font-family: monospace; font-size: 1.5rem;
+      text-align: right; padding: 8px 12px; border-radius: 4px; margin-bottom: 10px;
+    }
+    .calc-keypad { display: grid; grid-template-columns: repeat(4, 1fr); gap: 5px; }
+    .calc-btn {
+      padding: 8px; font-size: 14px; font-weight: 700; border-radius: 4px;
+      background: #f5f5f5; border: 1px solid #ccc; cursor: pointer;
+    }
+    .calc-btn.op { background: #e8eaf6; color: var(--navy-dark); }
+    .calc-btn.equal { background: var(--navy-dark); color: #fff; grid-column: span 2; }
+
+    .scratchpad-textarea {
+      width: 100%; height: 220px; padding: 10px; font-family: monospace; font-size: 13px;
+      border-radius: 4px; border: 1px solid var(--border-color); background: #fff; color: #333;
+    }
+    body.dark-theme .scratchpad-textarea { background: #111827; color: #f1f5f9; }
+
+    /* Result View */
+    .result-view-container {
+      flex: 1; overflow-y: auto; padding: 20px; max-width: 1100px; margin: 0 auto; width: 100%;
+    }
+    .scorecard-hero {
+      background: #fff; border: 1px solid var(--border-color); border-radius: 8px;
+      padding: 18px; margin-bottom: 16px; border-top: 3px solid var(--navy-dark);
+    }
+    body.dark-theme .scorecard-hero { background: #111827; }
+    .scorecard-hero-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 16px; align-items: center; }
+    .score-circle-wrap {
+      text-align: center; background: #f8f9fa; border-radius: 6px; padding: 14px; border: 1px solid var(--border-color);
+    }
+    body.dark-theme .score-circle-wrap { background: #182234; }
+    .score-val { font-size: 2.6rem; font-weight: 800; color: var(--navy-dark); line-height: 1; }
+    body.dark-theme .score-val { color: #60a5fa; }
+    .stat-pills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+    .stat-pill {
+      background: #f8f9fa; border: 1px solid var(--border-color); border-radius: 6px;
+      padding: 8px; text-align: center;
+    }
+    body.dark-theme .stat-pill { background: #182234; }
+    .stat-pill-num { font-size: 1.25rem; font-weight: 800; }
+    .stat-pill-label { font-size: 11px; color: #666; text-transform: uppercase; }
+
+    .cbt-summary-table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 13px; }
+    .cbt-summary-table th, .cbt-summary-table td { border: 1px solid var(--border-color); padding: 7px 9px; text-align: center; }
+    .cbt-summary-table th { background: #f0f2f5; font-weight: 700; color: var(--navy-dark); }
+    body.dark-theme .cbt-summary-table th { background: #1e293b; color: #93c5fd; }
+
+    .review-q-card {
+      background: #fff; border: 1px solid var(--border-color); border-radius: 6px;
+      padding: 14px; margin-bottom: 12px;
+    }
+    body.dark-theme .review-q-card { background: #111827; }
+    .explanation-box {
+      background: #f1f8e9; border: 1px solid #c5e1a5; border-radius: 4px; padding: 10px 12px; margin-top: 10px;
+    }
+    body.dark-theme .explanation-box { background: #052e1633; border-color: #14532d; }
+
+    /* Mobile */
+    @media (max-width: 860px) {
+      .cbt-palette-pane {
+        position: fixed; top: 0; right: -290px; height: 100vh; z-index: 50;
+        box-shadow: -4px 0 20px rgba(0,0,0,0.25); transition: right 0.25s;
+      }
+      .cbt-palette-pane.mobile-open { right: 0; }
+      .scorecard-hero-grid { grid-template-columns: 1fr; }
+      .stat-pills-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+  <div id="cbt-app-shell">
+    <!-- Dynamic Component Container rendered by JS -->
+  </div>
+
+  <!-- Embedded All-In-One CBT Engine Script -->
+  <script>
+    /* ==========================================================================
+       EMBEDDED DEMO EXAM DATA (Config + Question Bank)
+       Completely standalone — zero external JSON file dependencies or remote fetch.
+       ========================================================================== */
+    const EXAM_DATA = {
+      exam: {
+        id: "raj-demo-2026",
+        examName: "RajDailyTools Demo Competitive Exam 2026",
+        organization: "RajDailyTools Assessment Services",
+        year: "2026",
+        examCode: "RDT-CBT-2026",
+        durationMinutes: 30,
+        totalQuestions: 20,
+        totalMarks: 40,
+        defaultMarksPerQuestion: 2,
+        defaultNegativeMarks: 0.5,
+        languages: ["en", "hi"],
+        defaultLanguage: "en",
+        calculatorEnabled: true,
+        notepadEnabled: true,
+        candidateInfo: {
+          name: "Candidate Name",
+          rollNo: "RDT-2026-98432",
+          systemNo: "C042"
+        },
+        sections: [
+          { id: "sec_reasoning", name: "Reasoning Ability", hindiName: "तर्कशक्ति (Reasoning)", order: 1, marksPerQuestion: 2, negativeMarks: 0.5 },
+          { id: "sec_quant", name: "Quantitative Aptitude", hindiName: "संख्यात्मक अभियोग्यता (Quant)", order: 2, marksPerQuestion: 2, negativeMarks: 0.5 },
+          { id: "sec_english", name: "English Language", hindiName: "अंग्रेजी भाषा (English)", order: 3, marksPerQuestion: 2, negativeMarks: 0.5 },
+          { id: "sec_ga", name: "General Awareness", hindiName: "सामान्य जागरूकता (GA)", order: 4, marksPerQuestion: 2, negativeMarks: 0.5 }
+        ],
+        instructions: {
+          en: [
+            "The exam countdown timer at the top right displays your remaining time.",
+            "The Question Palette on the right shows question statuses (Not Visited, Not Answered, Answered, Marked for Review).",
+            "Click 'Save & Next' to save your chosen answer and proceed.",
+            "Click 'Mark for Review & Next' to flag a question for later review.",
+            "Click 'Clear Response' to deselect an option.",
+            "Switch sections freely using the section tabs bar."
+          ],
+          hi: [
+            "शीर्ष दाईं ओर उलटी गिनती टाइमर आपकी परीक्षा समाप्त करने के लिए उपलब्ध शेष समय प्रदर्शित करेगा।",
+            "स्क्रीन के दाईं ओर प्रदर्शित प्रश्न पैलेट रंग कोड का उपयोग करके प्रत्येक प्रश्न की स्थिति दिखाएगा।",
+            "वर्तमान उत्तर को सुरक्षित करने और अगले प्रश्न पर जाने के लिए 'Save & Next' पर क्लिक करें।",
+            "समीक्षा के लिए चिह्नित करने हेतु 'Mark for Review & Next' पर क्लिक करें।",
+            "उत्तर हटाने के लिए 'Clear Response' पर क्लिक करें।",
+            "वर्ग (Section) बदलने के लिए शीर्ष पर संबंधित टैब पर क्लिक करें।"
+          ]
+        }
+      },
+      questions: [
+        {
+          id: "Q101", sectionId: "sec_reasoning", subject: "Reasoning Ability", topic: "Number Series", difficulty: "Easy", marks: 2, negativeMarks: 0.5,
+          question: { en: "Find the missing number in the given series:\n4, 9, 19, 39, 79, ?", hi: "दी गई श्रृंखला में लुप्त संख्या ज्ञात कीजिए:\n4, 9, 19, 39, 79, ?" },
+          options: [
+            { id: "A", text: { en: "149", hi: "149" } },
+            { id: "B", text: { en: "159", hi: "159" } },
+            { id: "C", text: { en: "169", hi: "169" } },
+            { id: "D", text: { en: "139", hi: "139" } }
+          ],
+          correctOption: "B",
+          explanation: { en: "Pattern: (Previous Number × 2) + 1. 79 × 2 + 1 = 159.", hi: "पैटर्न: (संख्या × 2) + 1. 79 × 2 + 1 = 159." }
+        },
+        {
+          id: "Q102", sectionId: "sec_reasoning", subject: "Reasoning Ability", topic: "Blood Relations", difficulty: "Medium", marks: 2, negativeMarks: 0.5,
+          question: { en: "Pointing towards a photograph, Priya said, 'He is the only son of the mother of my father's only sister.' How is the person related to Priya?", hi: "एक तस्वीर की ओर इशारा करते हुए प्रिया ने कहा, 'वह मेरे पिता की इकलौती बहन की माँ का इकलौता बेटा है।' वह व्यक्ति प्रिया से किस प्रकार संबंधित है?" },
+          options: [
+            { id: "A", text: { en: "Uncle", hi: "चाचा/मामा" } },
+            { id: "B", text: { en: "Brother", hi: "भाई" } },
+            { id: "C", text: { en: "Father", hi: "पिता" } },
+            { id: "D", text: { en: "Grandfather", hi: "दादा" } }
+          ],
+          correctOption: "C",
+          explanation: { en: "Priya's father's only sister's mother is Priya's grandmother; her only son is Priya's father.", hi: "प्रिया के पिता की इकलौती बहन की माँ दादी हैं, और उनका इकलौता बेटा प्रिया के पिता हैं।" }
+        },
+        {
+          id: "Q103", sectionId: "sec_reasoning", subject: "Reasoning Ability", topic: "Coding-Decoding", difficulty: "Easy", marks: 2, negativeMarks: 0.5,
+          question: { en: "In a certain code, if 'LIGHT' is coded as 'MJHIU', how is 'FLAME' coded?", hi: "यदि 'LIGHT' को 'MJHIU' लिखा जाता है, तो 'FLAME' को क्या लिखा जाएगा?" },
+          options: [
+            { id: "A", text: { en: "GMBNE", hi: "GMBNE" } },
+            { id: "B", text: { en: "GMBNF", hi: "GMBNF" } },
+            { id: "C", text: { en: "HNCNE", hi: "HNCNE" } },
+            { id: "D", text: { en: "EMZLD", hi: "EMZLD" } }
+          ],
+          correctOption: "B",
+          explanation: { en: "Shift each letter by +1: F->G, L->M, A->B, M->N, E->F => GMBNF.", hi: "प्रत्येक अक्षर में +1: F->G, L->M, A->B, M->N, E->F => GMBNF." }
+        },
+        {
+          id: "Q104", sectionId: "sec_reasoning", subject: "Reasoning Ability", topic: "Direction Sense", difficulty: "Medium", marks: 2, negativeMarks: 0.5,
+          question: { en: "Rohan walks 12 km towards North, then turns right and walks 5 km. How far is he from his starting point?", hi: "रोहन उत्तर दिशा में 12 किमी चलता है, फिर दाएं मुड़कर 5 किमी चलता है। वह प्रारंभिक बिंदु से कितनी दूर है?" },
+          options: [
+            { id: "A", text: { en: "13 km", hi: "13 किमी" } },
+            { id: "B", text: { en: "17 km", hi: "17 किमी" } },
+            { id: "C", text: { en: "15 km", hi: "15 किमी" } },
+            { id: "D", text: { en: "10 km", hi: "10 किमी" } }
+          ],
+          correctOption: "A",
+          explanation: { en: "Distance = √(12² + 5²) = √169 = 13 km.", hi: "दूरी = √(12² + 5²) = √169 = 13 किमी।" }
+        },
+        {
+          id: "Q105", sectionId: "sec_reasoning", subject: "Reasoning Ability", topic: "Syllogism", difficulty: "Hard", marks: 2, negativeMarks: 0.5,
+          question: { en: "Statements: All Books are Pens. Some Pens are Erasers.\nConclusions:\nI. Some Books are Erasers.\nII. Some Pens are Books.", hi: "कथन: सभी पुस्तकें पेन हैं। कुछ पेन रबड़ हैं।\nनिष्कर्ष:\nI. कुछ पुस्तकें रबड़ हैं।\nII. कुछ पेन पुस्तकें हैं।" },
+          options: [
+            { id: "A", text: { en: "Only I follows", hi: "केवल I अनुसरण करता है" } },
+            { id: "B", text: { en: "Only II follows", hi: "केवल II अनुसरण करता है" } },
+            { id: "C", text: { en: "Both follow", hi: "दोनों अनुसरण करते हैं" } },
+            { id: "D", text: { en: "Neither follows", hi: "कोई अनुसरण नहीं करता" } }
+          ],
+          correctOption: "B",
+          explanation: { en: "Since all Books are Pens, definitely some Pens are Books (II follows).", hi: "चूँकि सभी पुस्तकें पेन हैं, अतः कुछ पेन पुस्तकें अवश्य हैं (केवल II अनुसरण करता है)।" }
+        },
+        {
+          id: "Q201", sectionId: "sec_quant", subject: "Quantitative Aptitude", topic: "Percentages", difficulty: "Easy", marks: 2, negativeMarks: 0.5,
+          question: { en: "If price increases by 25%, by what percentage must consumption decrease to keep expenditure constant?", hi: "यदि कीमत में 25% वृद्धि होती है, तो खर्च स्थिर रखने के लिए खपत में कितने प्रतिशत कमी करनी होगी?" },
+          options: [
+            { id: "A", text: { en: "20%", hi: "20%" } },
+            { id: "B", text: { en: "25%", hi: "25%" } },
+            { id: "C", text: { en: "16.66%", hi: "16.66%" } },
+            { id: "D", text: { en: "15%", hi: "15%" } }
+          ],
+          correctOption: "A",
+          explanation: { en: "[25 / (100 + 25)] × 100 = 20%.", hi: "[25 / (100 + 25)] × 100 = 20%." }
+        },
+        {
+          id: "Q202", sectionId: "sec_quant", subject: "Quantitative Aptitude", topic: "Profit and Loss", difficulty: "Medium", marks: 2, negativeMarks: 0.5,
+          question: { en: "A dealer sells an article for ₹840 at a gain of 20%. What was the cost price?", hi: "एक व्यापारी ₹840 में 20% लाभ पर वस्तु बेचता है। क्रय मूल्य क्या था?" },
+          options: [
+            { id: "A", text: { en: "₹700", hi: "₹700" } },
+            { id: "B", text: { en: "₹720", hi: "₹720" } },
+            { id: "C", text: { en: "₹680", hi: "₹680" } },
+            { id: "D", text: { en: "₹750", hi: "₹750" } }
+          ],
+          correctOption: "A",
+          explanation: { en: "CP = 840 / 1.20 = ₹700.", hi: "क्रय मूल्य = 840 / 1.20 = ₹700." }
+        },
+        {
+          id: "Q203", sectionId: "sec_quant", subject: "Quantitative Aptitude", topic: "Time and Work", difficulty: "Medium", marks: 2, negativeMarks: 0.5,
+          question: { en: "Pipe A fills a tank in 6 hours and Pipe B empties it in 8 hours. If opened together, in how many hours will it be filled?", hi: "पाइप A टंकी को 6 घंटे में भरता है और पाइप B 8 घंटे में खाली करता है। दोनों मिलकर कितने समय में भरेंगे?" },
+          options: [
+            { id: "A", text: { en: "18 hours", hi: "18 घंटे" } },
+            { id: "B", text: { en: "24 hours", hi: "24 घंटे" } },
+            { id: "C", text: { en: "14 hours", hi: "14 घंटे" } },
+            { id: "D", text: { en: "12 hours", hi: "12 घंटे" } }
+          ],
+          correctOption: "B",
+          explanation: { en: "Rate = 1/6 - 1/8 = 1/24. Time = 24 hours.", hi: "दर = 1/6 - 1/8 = 1/24. समय = 24 घंटे।" }
+        },
+        {
+          id: "Q204", sectionId: "sec_quant", subject: "Quantitative Aptitude", topic: "Interest", difficulty: "Hard", marks: 2, negativeMarks: 0.5,
+          question: { en: "Difference between SI and CI on ₹10,000 for 2 years at 10% per annum is:", hi: "₹10,000 पर 10% की दर से 2 वर्ष के साधारण व चक्रवृद्धि ब्याज का अंतर है:" },
+          options: [
+            { id: "A", text: { en: "₹50", hi: "₹50" } },
+            { id: "B", text: { en: "₹100", hi: "₹100" } },
+            { id: "C", text: { en: "₹150", hi: "₹150" } },
+            { id: "D", text: { en: "₹200", hi: "₹200" } }
+          ],
+          correctOption: "B",
+          explanation: { en: "Diff = P × (R/100)² = 10000 × (10/100)² = ₹100.", hi: "अंतर = P × (R/100)² = 10000 × 0.01 = ₹100." }
+        },
+        {
+          id: "Q205", sectionId: "sec_quant", subject: "Quantitative Aptitude", topic: "Speed & Distance", difficulty: "Easy", marks: 2, negativeMarks: 0.5,
+          question: { en: "A train 150 meters long travels at 54 km/h. How much time does it take to pass a pole?", hi: "150 मीटर लंबी रेलगाड़ी 54 किमी/घंटा की गति से खंभे को पार करने में कितना समय लेगी?" },
+          options: [
+            { id: "A", text: { en: "8 seconds", hi: "8 सेकंड" } },
+            { id: "B", text: { en: "10 seconds", hi: "10 सेकंड" } },
+            { id: "C", text: { en: "12 seconds", hi: "12 सेकंड" } },
+            { id: "D", text: { en: "15 seconds", hi: "15 सेकंड" } }
+          ],
+          correctOption: "B",
+          explanation: { en: "Speed = 54 × 5/18 = 15 m/s. Time = 150 / 15 = 10 s.", hi: "गति = 54 × 5/18 = 15 मी/सेकंड। समय = 150 / 15 = 10 सेकंड।" }
+        },
+        {
+          id: "Q301", sectionId: "sec_english", subject: "English Language", topic: "Vocabulary", difficulty: "Easy", marks: 2, negativeMarks: 0.5,
+          question: { en: "Select the word SYNONYMOUS in meaning to: 'CANDID'", hi: "'CANDID' का समानार्थक शब्द चुनिए:" },
+          options: [
+            { id: "A", text: { en: "Deceptive", hi: "धोखेबाज" } },
+            { id: "B", text: { en: "Frank and Honest", hi: "स्पष्टवादी व ईमानदार" } },
+            { id: "C", text: { en: "Secretive", hi: "गुप्त" } },
+            { id: "D", text: { en: "Careless", hi: "लापरवाह" } }
+          ],
+          correctOption: "B",
+          explanation: { en: "Candid means straightforward and frank.", hi: "Candid का अर्थ निष्कपट और स्पष्टवादी होता है।" }
+        },
+        {
+          id: "Q302", sectionId: "sec_english", subject: "English Language", topic: "Error Spotting", difficulty: "Medium", marks: 2, negativeMarks: 0.5,
+          question: { en: "Identify error segment: 'Neither the teacher (A) / nor the students (B) / was present in class (C)'", hi: "त्रुटिपूर्ण भाग चुनिए: 'Neither the teacher (A) / nor the students (B) / was present in class (C)'" },
+          options: [
+            { id: "A", text: { en: "Neither the teacher", hi: "Neither the teacher" } },
+            { id: "B", text: { en: "nor the students", hi: "nor the students" } },
+            { id: "C", text: { en: "was present in class", hi: "was present in class" } },
+            { id: "D", text: { en: "No Error", hi: "No Error" } }
+          ],
+          correctOption: "C",
+          explanation: { en: "Subject 'the students' is plural, verb should be 'were present'.", hi: "निकटतम कर्ता 'students' बहुवचन है, अतः 'were' होना चाहिए।" }
+        },
+        {
+          id: "Q303", sectionId: "sec_english", subject: "English Language", topic: "Idioms", difficulty: "Medium", marks: 2, negativeMarks: 0.5,
+          question: { en: "Meaning of idiom: 'To beat around the bush'", hi: "'To beat around the bush' मुहावरे का अर्थ क्या है?" },
+          options: [
+            { id: "A", text: { en: "To clear a path", hi: "रास्ता साफ करना" } },
+            { id: "B", text: { en: "To avoid talking about what is important", hi: "मुद्दे की बात टालना" } },
+            { id: "C", text: { en: "To achieve two goals", hi: "दो लक्ष्य हासिल करना" } },
+            { id: "D", text: { en: "To work hard", hi: "कड़ी मेहनत करना" } }
+          ],
+          correctOption: "B",
+          explanation: { en: "Means discussing things without addressing the main point.", hi: "मुद्दे पर न आकर इधर-उधर की बातें करना।" }
+        },
+        {
+          id: "Q304", sectionId: "sec_english", subject: "English Language", topic: "Prepositions", difficulty: "Easy", marks: 2, negativeMarks: 0.5,
+          question: { en: "Fill in the blank: 'The committee congratulated the team ______ their victory.'", hi: "रिक्त स्थान भरें: 'The committee congratulated the team ______ their victory.'" },
+          options: [
+            { id: "A", text: { en: "for", hi: "for" } },
+            { id: "B", text: { en: "on", hi: "on" } },
+            { id: "C", text: { en: "with", hi: "with" } },
+            { id: "D", text: { en: "at", hi: "at" } }
+          ],
+          correctOption: "B",
+          explanation: { en: "Standard preposition with 'congratulate' is 'on'.", hi: "'Congratulate' के साथ 'on' का प्रयोग होता है।" }
+        },
+        {
+          id: "Q305", sectionId: "sec_english", subject: "English Language", topic: "One Word", difficulty: "Hard", marks: 2, negativeMarks: 0.5,
+          question: { en: "One word for: 'A person who loves and collects books'", hi: "वाक्यांश के लिए एक शब्द: 'पुस्तकों से प्रेम और संग्रह करने वाला व्यक्ति'" },
+          options: [
+            { id: "A", text: { en: "Bibliophile", hi: "Bibliophile" } },
+            { id: "B", text: { en: "Philanthropist", hi: "Philanthropist" } },
+            { id: "C", text: { en: "Polyglot", hi: "Polyglot" } },
+            { id: "D", text: { en: "Numismatist", hi: "Numismatist" } }
+          ],
+          correctOption: "A",
+          explanation: { en: "Bibliophile = book lover.", hi: "Bibliophile = पुस्तक प्रेमी।" }
+        },
+        {
+          id: "Q401", sectionId: "sec_ga", subject: "General Awareness", topic: "Polity", difficulty: "Easy", marks: 2, negativeMarks: 0.5,
+          question: { en: "Which Article provides the 'Right to Constitutional Remedies'?", hi: "कौन सा अनुच्छेद 'संवैधानिक उपचारों का अधिकार' प्रदान करता है?" },
+          options: [
+            { id: "A", text: { en: "Article 19", hi: "अनुच्छेद 19" } },
+            { id: "B", text: { en: "Article 21", hi: "अनुच्छेद 21" } },
+            { id: "C", text: { en: "Article 32", hi: "अनुच्छेद 32" } },
+            { id: "D", text: { en: "Article 44", hi: "अनुच्छेद 44" } }
+          ],
+          correctOption: "C",
+          explanation: { en: "Article 32 is called the 'Heart and Soul' of the Constitution.", hi: "अनुच्छेद 32 को संविधान का 'हृदय और आत्मा' कहा जाता है।" }
+        },
+        {
+          id: "Q402", sectionId: "sec_ga", subject: "General Awareness", topic: "Science", difficulty: "Easy", marks: 2, negativeMarks: 0.5,
+          question: { en: "Which organelle is called the 'Powerhouse of the Cell'?", hi: "किस कोशिकांग को 'कोशिका का पावरहाउस' कहा जाता है?" },
+          options: [
+            { id: "A", text: { en: "Ribosome", hi: "राइबोसोम" } },
+            { id: "B", text: { en: "Mitochondria", hi: "माइटोकॉन्ड्रिया" } },
+            { id: "C", text: { en: "Golgi Body", hi: "गॉल्जी उपकरण" } },
+            { id: "D", text: { en: "Lysosome", hi: "लाइसोसोम" } }
+          ],
+          correctOption: "B",
+          explanation: { en: "Mitochondria generates cellular energy (ATP).", hi: "माइटोकॉन्ड्रिया एटीपी के रूप में ऊर्जा बनाता है।" }
+        },
+        {
+          id: "Q403", sectionId: "sec_ga", subject: "General Awareness", topic: "Geography", difficulty: "Medium", marks: 2, negativeMarks: 0.5,
+          question: { en: "Which is the largest freshwater lake in India by surface area?", hi: "भारत की सबसे बड़ी मीठे पानी की झील कौन सी है?" },
+          options: [
+            { id: "A", text: { en: "Chilika Lake", hi: "चिल्का झील" } },
+            { id: "B", text: { en: "Wular Lake", hi: "वूलर झील" } },
+            { id: "C", text: { en: "Loktak Lake", hi: "लोकटक झील" } },
+            { id: "D", text: { en: "Vembanad Lake", hi: "वेम्बनाड झील" } }
+          ],
+          correctOption: "B",
+          explanation: { en: "Wular Lake in Jammu & Kashmir.", hi: "जम्मू और कश्मीर में स्थित वूलर झील।" }
+        },
+        {
+          id: "Q404", sectionId: "sec_ga", subject: "General Awareness", topic: "Economy", difficulty: "Medium", marks: 2, negativeMarks: 0.5,
+          question: { en: "Rate at which RBI lends short-term funds to commercial banks is:", hi: "वह दर जिस पर RBI वाणिज्यिक बैंकों को अल्पकालिक ऋण देता है:" },
+          options: [
+            { id: "A", text: { en: "Reverse Repo Rate", hi: "रिवर्स रेपो दर" } },
+            { id: "B", text: { en: "Repo Rate", hi: "रेपो दर" } },
+            { id: "C", text: { en: "Bank Rate", hi: "बैंक दर" } },
+            { id: "D", text: { en: "CRR", hi: "नकद आरक्षित अनुपात" } }
+          ],
+          correctOption: "B",
+          explanation: { en: "Repo Rate is the policy repurchase rate of RBI.", hi: "रेपो दर (Repo Rate) पर RBI ऋण प्रदान करता है।" }
+        },
+        {
+          id: "Q405", sectionId: "sec_ga", subject: "General Awareness", topic: "History", difficulty: "Medium", marks: 2, negativeMarks: 0.5,
+          question: { en: "In which Congress session was the 'Purna Swaraj' resolution passed in 1929?", hi: "1929 में कांग्रेस के किस अधिवेशन में 'पूर्ण स्वराज' संकल्प पारित हुआ?" },
+          options: [
+            { id: "A", text: { en: "Lahore Session", hi: "लाहौर अधिवेशन" } },
+            { id: "B", text: { en: "Belgaum Session", hi: "बेलगाम अधिवेशन" } },
+            { id: "C", text: { en: "Karachi Session", hi: "कराची अधिवेशन" } },
+            { id: "D", text: { en: "Calcutta Session", hi: "कलकत्ता अधिवेशन" } }
+          ],
+          correctOption: "A",
+          explanation: { en: "1929 Lahore Session presided by Pt. Jawaharlal Nehru.", hi: "पं. जवाहरलाल नेहरू की अध्यक्षता में 1929 का लाहौर अधिवेशन।" }
+        }
+      ]
+    };
+
+    /* ==========================================================================
+       Complete CBT Engine Controller
+       ========================================================================== */
+    class StandaloneCBTEngine {
+      constructor(data) {
+        this.exam = data.exam;
+        this.questions = data.questions;
+        this.currentLang = this.exam.defaultLanguage || 'en';
+        this.currentSecIndex = 0;
+        this.currentQIndex = 0;
+        this.responses = {}; // { [qid]: { selectedOption, status, visited, timeSpent } }
+        this.timerSeconds = this.exam.durationMinutes * 60;
+        this.timerInterval = null;
+        this.isSubmitted = false;
+        this.calcVal = "0";
+
+        this.initResponses();
+        this.init();
+      }
+
+      initResponses() {
+        const saved = localStorage.getItem(`rdt_cbt_standalone_${this.exam.id}`);
+        if (saved) {
+          try {
+            const parsed = JSON.parse(saved);
+            this.responses = parsed.responses || {};
+            this.timerSeconds = parsed.timerSeconds || this.timerSeconds;
+            this.isSubmitted = parsed.isSubmitted || false;
+            return;
+          } catch(e) {}
+        }
+
+        this.questions.forEach((q) => {
+          this.responses[q.id] = {
+            selectedOption: null,
+            status: 'not-visited',
+            visited: false,
+            timeSpent: 0
+          };
+        });
+      }
+
+      saveState() {
+        if (this.isSubmitted) return;
+        localStorage.setItem(`rdt_cbt_standalone_${this.exam.id}`, JSON.stringify({
+          responses: this.responses,
+          timerSeconds: this.timerSeconds,
+          isSubmitted: this.isSubmitted
+        }));
+      }
+
+      get activeSection() {
+        return this.exam.sections[this.currentSecIndex];
+      }
+
+      get sectionQuestions() {
+        return this.questions.filter(q => q.sectionId === this.activeSection.id);
+      }
+
+      get currentQuestion() {
+        return this.sectionQuestions[this.currentQIndex] || this.questions[0];
+      }
+
+      init() {
+        const shell = document.getElementById('cbt-app-shell');
+        if (this.isSubmitted) {
+          this.renderResultView(shell);
+          return;
+        }
+
+        this.markCurrentVisited();
+        this.renderExamInterface(shell);
+        this.startTimer();
+      }
+
+      markCurrentVisited() {
+        const q = this.currentQuestion;
+        if (!q) return;
+        const r = this.responses[q.id];
+        if (!r.visited) {
+          r.visited = true;
+          if (r.status === 'not-visited') {
+            r.status = 'not-answered';
+          }
+        }
+        this.saveState();
+      }
+
+      startTimer() {
+        if (this.timerInterval) clearInterval(this.timerInterval);
+        this.timerInterval = setInterval(() => {
+          if (this.timerSeconds > 0) {
+            this.timerSeconds--;
+            const q = this.currentQuestion;
+            if (q && this.responses[q.id]) {
+              this.responses[q.id].timeSpent = (this.responses[q.id].timeSpent || 0) + 1;
+            }
+            this.updateTimerDisplay();
+            if (this.timerSeconds % 10 === 0) this.saveState();
+          } else {
+            clearInterval(this.timerInterval);
+            alert('Time is up! Submitting your exam automatically.');
+            this.submitExam();
+          }
+        }, 1000);
+      }
+
+      updateTimerDisplay() {
+        const el = document.getElementById('cbt-timer-digits');
+        const box = document.getElementById('cbt-timer-box');
+        if (!el) return;
+        const m = Math.floor(this.timerSeconds / 60);
+        const s = this.timerSeconds % 60;
+        el.textContent = `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+        if (this.timerSeconds < 300) {
+          box?.classList.add('warning');
+        }
+      }
+
+      renderExamInterface(shell) {
+        shell.innerHTML = `
+          <!-- Header Bar -->
+          <header class="cbt-header">
+            <div class="cbt-brand">
+              <div class="cbt-brand-logo">R</div>
+              <div>
+                <div class="cbt-exam-title">${this.escapeHTML(this.exam.examName)}</div>
+                <div class="cbt-exam-sub">${this.escapeHTML(this.exam.organization)}</div>
+              </div>
+            </div>
+            <div class="cbt-header-controls">
+              <div class="timer-box" id="cbt-timer-box">
+                <span style="font-size:10px;text-transform:uppercase;color:#c5cae9;">Time Left</span>
+                <span id="cbt-timer-digits">--:--</span>
+              </div>
+              <button id="btn-theme-toggle" class="btn btn-secondary btn-sm" title="Toggle Theme">🌙</button>
+              <button id="btn-fullscreen-toggle" class="btn btn-secondary btn-sm" title="Fullscreen">⛶</button>
+              <button id="btn-toggle-sidebar" class="btn btn-secondary btn-sm" style="display:none;" title="Palette">☰</button>
+            </div>
+          </header>
+
+          <!-- Section Tabs Bar -->
+          <div class="cbt-section-bar">
+            <div class="cbt-section-tabs" id="cbt-sec-tabs"></div>
+            <div style="display:flex;align-items:center;gap:6px;">
+              <span style="font-size:11px;font-weight:700;">View In:</span>
+              <select id="lang-select" class="btn btn-secondary btn-sm" style="padding:2px 6px;">
+                <option value="en" ${this.currentLang === 'en' ? 'selected' : ''}>English</option>
+                <option value="hi" ${this.currentLang === 'hi' ? 'selected' : ''}>हिंदी (Hindi)</option>
+              </select>
+              <button id="btn-font-dec" class="btn btn-outline btn-sm">A-</button>
+              <button id="btn-font-inc" class="btn btn-outline btn-sm">A+</button>
+            </div>
+          </div>
+
+          <!-- Main Layout -->
+          <div class="cbt-main-body">
+            <!-- Left Question Area -->
+            <main class="cbt-question-pane">
+              <div class="cbt-q-header">
+                <span class="cbt-q-num-badge" id="cbt-q-num">Question No. 1</span>
+                <div style="display:flex;gap:6px;">
+                  <span class="badge badge-green" id="cbt-mark-chip">+2.00</span>
+                  <span class="badge badge-amber" id="cbt-neg-chip">-0.50</span>
+                </div>
+              </div>
+
+              <div class="cbt-q-scroll-area">
+                <div class="cbt-q-text" id="cbt-q-body"></div>
+                <div class="cbt-options-list" id="cbt-opts-list"></div>
+              </div>
+
+              <footer class="cbt-q-footer">
+                <div class="cbt-footer-left">
+                  <button id="btn-mark-review" class="btn btn-outline">Mark for Review & Next</button>
+                  <button id="btn-clear-resp" class="btn btn-outline">Clear Response</button>
+                </div>
+                <div class="cbt-footer-right">
+                  <button id="btn-prev-q" class="btn btn-secondary">&larr; Previous</button>
+                  <button id="btn-save-next" class="btn btn-primary">Save & Next &rarr;</button>
+                </div>
+              </footer>
+            </main>
+
+            <!-- Right Question Palette -->
+            <aside class="cbt-palette-pane" id="cbt-sidebar">
+              <div class="cbt-candidate-card">
+                <div class="cbt-candidate-avatar">👤</div>
+                <div>
+                  <div class="cbt-cand-label">Candidate Name:</div>
+                  <div class="cbt-cand-name">${this.escapeHTML(this.exam.candidateInfo.name)}</div>
+                  <div class="cbt-cand-roll">Roll No: ${this.escapeHTML(this.exam.candidateInfo.rollNo)}</div>
+                </div>
+              </div>
+
+              <div class="cbt-legend-wrap">
+                <div class="cbt-legend-grid">
+                  <div class="cbt-legend-item"><span class="cbt-legend-chip answered" id="leg-ans">0</span> Answered</div>
+                  <div class="cbt-legend-item"><span class="cbt-legend-chip not-answered" id="leg-notans">0</span> Not Answered</div>
+                  <div class="cbt-legend-item"><span class="cbt-legend-chip not-visited" id="leg-notvis">0</span> Not Visited</div>
+                  <div class="cbt-legend-item"><span class="cbt-legend-chip marked" id="leg-mark">0</span> Marked for Review</div>
+                  <div class="cbt-legend-item" style="grid-column:span 2;"><span class="cbt-legend-chip ans-marked" id="leg-ansmark">0</span> Answered & Marked for Review</div>
+                </div>
+              </div>
+
+              <div class="cbt-palette-content">
+                <div style="font-size:11px;font-weight:700;color:#666;margin-bottom:6px;text-transform:uppercase;" id="pal-sec-name">SECTION QUESTIONS</div>
+                <div class="cbt-palette-grid" id="cbt-palette-grid"></div>
+              </div>
+
+              <div class="cbt-palette-footer">
+                <button id="btn-submit-test" class="btn btn-danger" style="width:100%;padding:10px;font-weight:700;letter-spacing:0.05em;">SUBMIT TEST</button>
+                <div class="palette-quick-links">
+                  <button id="btn-quick-calc" class="palette-quick-link-btn">Calculator</button>
+                  <button id="btn-quick-pad" class="palette-quick-link-btn">Notepad</button>
+                  <button id="btn-quick-inst" class="palette-quick-link-btn">Instructions</button>
+                </div>
+              </div>
+            </aside>
+          </div>
+
+          <!-- Modals (Submit Summary, Calculator, Notepad, Instructions) -->
+          <div id="modal-submit" class="cbt-modal-backdrop">
+            <div class="cbt-modal-box">
+              <div class="cbt-modal-header">
+                <span>Final Exam Submission Summary</span>
+                <button class="btn btn-sm btn-secondary modal-close" data-close="modal-submit">&times;</button>
+              </div>
+              <div class="cbt-modal-body" id="submit-modal-content"></div>
+              <div class="cbt-modal-footer">
+                <button class="btn btn-secondary modal-close" data-close="modal-submit">Cancel & Return</button>
+                <button id="btn-confirm-submit" class="btn btn-danger">Yes, Final Submit Test</button>
+              </div>
+            </div>
+          </div>
+
+          <div id="modal-calc" class="cbt-modal-backdrop">
+            <div class="cbt-modal-box" style="max-width:320px;">
+              <div class="cbt-modal-header">
+                <span>Standard Calculator</span>
+                <button class="btn btn-sm btn-secondary modal-close" data-close="modal-calc">&times;</button>
+              </div>
+              <div class="cbt-modal-body">
+                <div class="calc-display" id="calc-display">0</div>
+                <div class="calc-keypad" id="calc-keypad">
+                  <button class="calc-btn op" data-k="C">C</button>
+                  <button class="calc-btn op" data-k="DEL">DEL</button>
+                  <button class="calc-btn op" data-k="%">%</button>
+                  <button class="calc-btn op" data-k="/">÷</button>
+                  <button class="calc-btn" data-k="7">7</button>
+                  <button class="calc-btn" data-k="8">8</button>
+                  <button class="calc-btn" data-k="9">9</button>
+                  <button class="calc-btn op" data-k="*">×</button>
+                  <button class="calc-btn" data-k="4">4</button>
+                  <button class="calc-btn" data-k="5">5</button>
+                  <button class="calc-btn" data-k="6">6</button>
+                  <button class="calc-btn op" data-k="-">-</button>
+                  <button class="calc-btn" data-k="1">1</button>
+                  <button class="calc-btn" data-k="2">2</button>
+                  <button class="calc-btn" data-k="3">3</button>
+                  <button class="calc-btn op" data-k="+">+</button>
+                  <button class="calc-btn" data-k="0">0</button>
+                  <button class="calc-btn" data-k=".">.</button>
+                  <button class="calc-btn equal" data-k="=">=</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="modal-scratchpad" class="cbt-modal-backdrop">
+            <div class="cbt-modal-box" style="max-width:480px;">
+              <div class="cbt-modal-header">
+                <span>Rough Scratchpad (Auto-saved)</span>
+                <button class="btn btn-sm btn-secondary modal-close" data-close="modal-scratchpad">&times;</button>
+              </div>
+              <div class="cbt-modal-body">
+                <textarea class="scratchpad-textarea" id="scratchpad-text" placeholder="Type quick rough calculations or notes here..."></textarea>
+              </div>
+            </div>
+          </div>
+
+          <div id="modal-inst" class="cbt-modal-backdrop">
+            <div class="cbt-modal-box">
+              <div class="cbt-modal-header">
+                <span>Exam Instructions & Guidelines</span>
+                <button class="btn btn-sm btn-secondary modal-close" data-close="modal-inst">&times;</button>
+              </div>
+              <div class="cbt-modal-body" id="inst-modal-body"></div>
+              <div class="cbt-modal-footer">
+                <button class="btn btn-primary modal-close" data-close="modal-inst">Close</button>
+              </div>
+            </div>
+          </div>
+        `;
+
+        this.bindEvents();
+        this.renderSectionTabs();
+        this.renderQuestion();
+        this.renderPalette();
+        this.updateLegendCounts();
+        this.updateTimerDisplay();
+
+        // Check responsive sidebar toggle
+        if (window.innerWidth <= 860) {
+          document.getElementById('btn-toggle-sidebar').style.display = 'inline-flex';
+        }
+      }
+
+      bindEvents() {
+        // Theme
+        document.getElementById('btn-theme-toggle')?.addEventListener('click', () => {
+          const isDark = document.body.classList.toggle('dark-theme');
+          document.getElementById('btn-theme-toggle').textContent = isDark ? '☀️' : '🌙';
+        });
+
+        // Fullscreen
+        document.getElementById('btn-fullscreen-toggle')?.addEventListener('click', () => {
+          if (!document.fullscreenElement) {
+            document.documentElement.requestFullscreen().catch(()=>{});
+          } else {
+            document.exitFullscreen().catch(()=>{});
+          }
+        });
+
+        // Mobile Sidebar Toggle
+        document.getElementById('btn-toggle-sidebar')?.addEventListener('click', () => {
+          document.getElementById('cbt-sidebar')?.classList.toggle('mobile-open');
+        });
+
+        // Font size
+        document.getElementById('btn-font-inc')?.addEventListener('click', () => {
+          document.body.classList.remove('font-sm', 'font-md');
+          document.body.classList.add('font-lg');
+        });
+        document.getElementById('btn-font-dec')?.addEventListener('click', () => {
+          document.body.classList.remove('font-lg', 'font-xl');
+          document.body.classList.add('font-sm');
+        });
+
+        // Language toggle
+        document.getElementById('lang-select')?.addEventListener('change', (e) => {
+          this.currentLang = e.target.value;
+          this.renderQuestion();
+          this.renderSectionTabs();
+        });
+
+        // Navigation actions
+        document.getElementById('btn-save-next')?.addEventListener('click', () => this.handleSaveAndNext());
+        document.getElementById('btn-mark-review')?.addEventListener('click', () => this.handleMarkReviewAndNext());
+        document.getElementById('btn-clear-resp')?.addEventListener('click', () => this.handleClearResponse());
+        document.getElementById('btn-prev-q')?.addEventListener('click', () => this.handlePrevQuestion());
+
+        // Modals Open
+        document.getElementById('btn-quick-calc')?.addEventListener('click', () => {
+          document.getElementById('modal-calc')?.classList.add('open');
+        });
+        document.getElementById('btn-quick-pad')?.addEventListener('click', () => {
+          const pad = document.getElementById('scratchpad-text');
+          if (pad) pad.value = localStorage.getItem(`rdt_pad_${this.exam.id}`) || '';
+          document.getElementById('modal-scratchpad')?.classList.add('open');
+        });
+        document.getElementById('btn-quick-inst')?.addEventListener('click', () => {
+          this.renderInstructionsModal();
+          document.getElementById('modal-inst')?.classList.add('open');
+        });
+
+        // Submit buttons
+        document.getElementById('btn-submit-test')?.addEventListener('click', () => this.openSubmitSummaryModal());
+        document.getElementById('btn-confirm-submit')?.addEventListener('click', () => {
+          document.getElementById('modal-submit')?.classList.remove('open');
+          this.submitExam();
+        });
+
+        // Modal closers
+        document.querySelectorAll('.modal-close').forEach(b => {
+          b.addEventListener('click', () => {
+            const target = b.getAttribute('data-close');
+            document.getElementById(target)?.classList.remove('open');
+          });
+        });
+
+        // Notepad autosave
+        document.getElementById('scratchpad-text')?.addEventListener('input', (e) => {
+          localStorage.setItem(`rdt_pad_${this.exam.id}`, e.target.value);
+        });
+
+        // Calculator Keypad
+        document.getElementById('calc-keypad')?.addEventListener('click', (e) => {
+          const btn = e.target.closest('.calc-btn');
+          if (!btn) return;
+          this.handleCalcKey(btn.getAttribute('data-k'));
+        });
+      }
+
+      handleCalcKey(key) {
+        const d = document.getElementById('calc-display');
+        if (key === 'C') {
+          this.calcVal = '0';
+        } else if (key === 'DEL') {
+          this.calcVal = this.calcVal.length > 1 ? this.calcVal.slice(0, -1) : '0';
+        } else if (key === '=') {
+          try {
+            const sanitized = this.calcVal.replace(/×/g, '*').replace(/÷/g, '/');
+            this.calcVal = String(Function(`'use strict'; return (${sanitized})`)());
+          } catch(e) {
+            this.calcVal = 'Error';
+          }
+        } else {
+          if (this.calcVal === '0' || this.calcVal === 'Error') this.calcVal = key;
+          else this.calcVal += key;
+        }
+        if (d) d.textContent = this.calcVal;
+      }
+
+      renderSectionTabs() {
+        const container = document.getElementById('cbt-sec-tabs');
+        if (!container) return;
+        container.innerHTML = '';
+
+        this.exam.sections.forEach((sec, idx) => {
+          const btn = document.createElement('button');
+          btn.className = `cbt-section-tab ${idx === this.currentSecIndex ? 'active' : ''}`;
+          const qCount = this.questions.filter(q => q.sectionId === sec.id).length;
+          const secName = this.currentLang === 'hi' && sec.hindiName ? sec.hindiName : sec.name;
+          btn.innerHTML = `<span>${secName}</span><span class="tab-count">${qCount}</span>`;
+          btn.addEventListener('click', () => {
+            this.currentSecIndex = idx;
+            this.currentQIndex = 0;
+            this.markCurrentVisited();
+            this.renderSectionTabs();
+            this.renderQuestion();
+            this.renderPalette();
+            document.getElementById('cbt-sidebar')?.classList.remove('mobile-open');
+          });
+          container.appendChild(btn);
+        });
+      }
+
+      renderQuestion() {
+        const q = this.currentQuestion;
+        if (!q) return;
+
+        const globalIdx = this.questions.findIndex(x => x.id === q.id) + 1;
+        document.getElementById('cbt-q-num').textContent = `Question No. ${globalIdx} (${this.activeSection.name})`;
+        document.getElementById('cbt-mark-chip').textContent = `+${q.marks || this.activeSection.marksPerQuestion}`;
+        document.getElementById('cbt-neg-chip').textContent = `-${q.negativeMarks || this.activeSection.negativeMarks}`;
+
+        const qText = (q.question && q.question[this.currentLang]) || (q.question && q.question.en) || '';
+        document.getElementById('cbt-q-body').textContent = qText;
+
+        const optsContainer = document.getElementById('cbt-opts-list');
+        optsContainer.innerHTML = '';
+
+        const resp = this.responses[q.id];
+        (q.options || []).forEach(opt => {
+          const optText = (opt.text && opt.text[this.currentLang]) || (opt.text && opt.text.en) || '';
+          const isSelected = resp.selectedOption === opt.id;
+
+          const card = document.createElement('div');
+          card.className = `cbt-option-card ${isSelected ? 'selected' : ''}`;
+          card.innerHTML = `
+            <div class="cbt-option-circle"></div>
+            <span class="cbt-option-key">${opt.id}.</span>
+            <div class="cbt-option-content">${this.escapeHTML(optText)}</div>
+          `;
+          card.addEventListener('click', () => {
+            resp.selectedOption = opt.id;
+            this.renderQuestion();
+            this.saveState();
+          });
+          optsContainer.appendChild(card);
+        });
+
+        // Prev button disable check
+        const btnPrev = document.getElementById('btn-prev-q');
+        if (btnPrev) btnPrev.disabled = (this.currentSecIndex === 0 && this.currentQIndex === 0);
+      }
+
+      renderPalette() {
+        const grid = document.getElementById('cbt-palette-grid');
+        const secTitle = document.getElementById('pal-sec-name');
+        if (!grid) return;
+        grid.innerHTML = '';
+        if (secTitle) secTitle.textContent = `${this.activeSection.name} (${this.sectionQuestions.length} Qs)`;
+
+        this.sectionQuestions.forEach((q, idx) => {
+          const r = this.responses[q.id];
+          const isCurrent = idx === this.currentQIndex;
+          const btn = document.createElement('div');
+          btn.className = `cbt-palette-btn ${r.status} ${isCurrent ? 'current' : ''}`;
+          btn.textContent = idx + 1;
+          btn.title = `Question ${idx + 1} - ${r.status}`;
+          btn.addEventListener('click', () => {
+            this.currentQIndex = idx;
+            this.markCurrentVisited();
+            this.renderQuestion();
+            this.renderPalette();
+            this.updateLegendCounts();
+            document.getElementById('cbt-sidebar')?.classList.remove('mobile-open');
+          });
+          grid.appendChild(btn);
+        });
+      }
+
+      updateLegendCounts() {
+        let ans = 0, notans = 0, notvis = 0, mark = 0, ansmark = 0;
+        Object.values(this.responses).forEach(r => {
+          if (r.status === 'answered') ans++;
+          else if (r.status === 'not-answered') notans++;
+          else if (r.status === 'marked') mark++;
+          else if (r.status === 'ans-marked') ansmark++;
+          else notvis++;
+        });
+
+        const s = (id, v) => { const el = document.getElementById(id); if (el) el.textContent = v; };
+        s('leg-ans', ans);
+        s('leg-notans', notans);
+        s('leg-notvis', notvis);
+        s('leg-mark', mark);
+        s('leg-ansmark', ansmark);
+      }
+
+      handleSaveAndNext() {
+        const q = this.currentQuestion;
+        const r = this.responses[q.id];
+        if (r.selectedOption) {
+          r.status = 'answered';
+        } else {
+          r.status = 'not-answered';
+        }
+        this.saveState();
+        this.goToNextQuestion();
+      }
+
+      handleMarkReviewAndNext() {
+        const q = this.currentQuestion;
+        const r = this.responses[q.id];
+        if (r.selectedOption) {
+          r.status = 'ans-marked';
+        } else {
+          r.status = 'marked';
+        }
+        this.saveState();
+        this.goToNextQuestion();
+      }
+
+      handleClearResponse() {
+        const q = this.currentQuestion;
+        const r = this.responses[q.id];
+        r.selectedOption = null;
+        r.status = 'not-answered';
+        this.saveState();
+        this.renderQuestion();
+        this.renderPalette();
+        this.updateLegendCounts();
+      }
+
+      handlePrevQuestion() {
+        if (this.currentQIndex > 0) {
+          this.currentQIndex--;
+        } else if (this.currentSecIndex > 0) {
+          this.currentSecIndex--;
+          this.currentQIndex = this.sectionQuestions.length - 1;
+          this.renderSectionTabs();
+        }
+        this.markCurrentVisited();
+        this.renderQuestion();
+        this.renderPalette();
+        this.updateLegendCounts();
+      }
+
+      goToNextQuestion() {
+        if (this.currentQIndex < this.sectionQuestions.length - 1) {
+          this.currentQIndex++;
+        } else if (this.currentSecIndex < this.exam.sections.length - 1) {
+          this.currentSecIndex++;
+          this.currentQIndex = 0;
+          this.renderSectionTabs();
+        } else {
+          // Last question of last section reached, prompt final review
+          this.openSubmitSummaryModal();
+          return;
+        }
+        this.markCurrentVisited();
+        this.renderQuestion();
+        this.renderPalette();
+        this.updateLegendCounts();
+      }
+
+      renderInstructionsModal() {
+        const body = document.getElementById('inst-modal-body');
+        if (!body) return;
+        const list = (this.exam.instructions && this.exam.instructions[this.currentLang]) || (this.exam.instructions && this.exam.instructions.en) || [];
+        body.innerHTML = `
+          <ul style="padding-left:1.25rem;line-height:1.7;font-size:0.95rem;">
+            ${list.map(item => `<li style="margin-bottom:0.5rem;">${item}</li>`).join('')}
+          </ul>
+        `;
+      }
+
+      openSubmitSummaryModal() {
+        const container = document.getElementById('submit-modal-content');
+        if (!container) return;
+
+        let totalQ = this.questions.length;
+        let attempted = 0, markedCount = 0;
+
+        let tableRows = '';
+        this.exam.sections.forEach(sec => {
+          const qs = this.questions.filter(q => q.sectionId === sec.id);
+          let secAns = 0, secNotAns = 0, secMarked = 0, secNotVis = 0;
+
+          qs.forEach(q => {
+            const r = this.responses[q.id];
+            if (r.status === 'answered' || r.status === 'ans-marked') secAns++;
+            if (r.status === 'not-answered') secNotAns++;
+            if (r.status === 'marked') secMarked++;
+            if (r.status === 'not-visited') secNotVis++;
+          });
+
+          attempted += secAns;
+          markedCount += secMarked;
+
+          tableRows += `
+            <tr>
+              <td style="text-align:left;font-weight:700;">${sec.name}</td>
+              <td>${qs.length}</td>
+              <td style="color:#2e7d32;font-weight:700;">${secAns}</td>
+              <td style="color:#c62828;">${secNotAns}</td>
+              <td style="color:#7b1fa2;">${secMarked}</td>
+              <td style="color:#666;">${secNotVis}</td>
+            </tr>
+          `;
+        });
+
+        container.innerHTML = `
+          <p style="font-size:0.9rem;margin-bottom:1rem;color:var(--text-muted);">
+            Please review your question response breakdown across all sections before final submission:
+          </p>
+          <table class="cbt-summary-table">
+            <thead>
+              <tr>
+                <th>Section</th>
+                <th>Total</th>
+                <th>Answered</th>
+                <th>Not Answered</th>
+                <th>Marked</th>
+                <th>Not Visited</th>
+              </tr>
+            </thead>
+            <tbody>${tableRows}</tbody>
+          </table>
+          <div style="display:flex;justify-content:space-around;background:var(--bg-surface-subtle);padding:12px;border-radius:6px;margin-top:1rem;font-weight:700;">
+            <span>Total Answered: <strong style="color:#2e7d32;">${attempted} / ${totalQ}</strong></span>
+            <span>Marked for Review: <strong style="color:#7b1fa2;">${markedCount}</strong></span>
+          </div>
+        `;
+
+        document.getElementById('modal-submit')?.classList.add('open');
+      }
+
+      submitExam() {
+        clearInterval(this.timerInterval);
+        this.isSubmitted = true;
+        this.saveState();
+
+        const shell = document.getElementById('cbt-app-shell');
+        this.renderResultView(shell);
+      }
+
+      /* ==========================================================================
+         Result & Comprehensive Analytics View
+         ========================================================================== */
+      calculateResult() {
+        let totalMarksEarned = 0;
+        let maxPossibleMarks = 0;
+        let totalCorrect = 0;
+        let totalWrong = 0;
+        let totalAttempted = 0;
+
+        const secMap = {};
+        this.exam.sections.forEach(s => {
+          secMap[s.id] = {
+            id: s.id, name: s.name, totalQuestions: 0, attempted: 0,
+            correct: 0, wrong: 0, marksEarned: 0, maxMarks: 0, timeSpent: 0
+          };
+        });
+
+        const topicMap = {};
+
+        const reviewList = this.questions.map((q, idx) => {
+          const r = this.responses[q.id] || {};
+          const pos = q.marks || this.exam.defaultMarksPerQuestion || 2;
+          const neg = q.negativeMarks !== undefined ? q.negativeMarks : (this.exam.defaultNegativeMarks || 0.5);
+          maxPossibleMarks += pos;
+
+          const sec = secMap[q.sectionId];
+          if (sec) {
+            sec.totalQuestions++;
+            sec.maxMarks += pos;
+            sec.timeSpent += (r.timeSpent || 0);
+          }
+
+          const top = q.topic || 'General';
+          if (!topicMap[top]) topicMap[top] = { topic: top, total: 0, attempted: 0, correct: 0 };
+          topicMap[top].total++;
+
+          const isAttempted = (r.status === 'answered' || r.status === 'ans-marked') && !!r.selectedOption;
+          let isCorrect = false;
+          let marksAwarded = 0;
+
+          if (isAttempted) {
+            totalAttempted++;
+            if (sec) sec.attempted++;
+            topicMap[top].attempted++;
+
+            if (r.selectedOption === q.correctOption) {
+              isCorrect = true;
+              totalCorrect++;
+              marksAwarded = pos;
+              totalMarksEarned += pos;
+              if (sec) { sec.correct++; sec.marksEarned += pos; }
+              topicMap[top].correct++;
+            } else {
+              totalWrong++;
+              marksAwarded = -neg;
+              totalMarksEarned -= neg;
+              if (sec) { sec.wrong++; sec.marksEarned -= neg; }
+            }
+          }
+
+          return {
+            ...q,
+            questionIndex: idx + 1,
+            userSelectedOption: r.selectedOption,
+            isAttempted,
+            isCorrect,
+            marksAwarded,
+            timeSpentSec: r.timeSpent || 0
+          };
+        });
+
+        const totalUnattempted = this.questions.length - totalAttempted;
+        const accuracy = totalAttempted > 0 ? Math.round((totalCorrect / totalAttempted) * 100) : 0;
+        const scorePercent = maxPossibleMarks > 0 ? Math.max(0, Math.round((totalMarksEarned / maxPossibleMarks) * 100)) : 0;
+
+        return {
+          totalMarksEarned: Math.max(0, totalMarksEarned),
+          maxPossibleMarks,
+          totalCorrect,
+          totalWrong,
+          totalAttempted,
+          totalUnattempted,
+          accuracy,
+          scorePercent,
+          sectionBreakdown: Object.values(secMap),
+          topicBreakdown: Object.values(topicMap),
+          questionReview: reviewList
+        };
+      }
+
+      renderResultView(shell) {
+        const result = this.calculateResult();
+
+        shell.innerHTML = `
+          <!-- Header Bar -->
+          <header class="cbt-header no-print">
+            <div class="cbt-brand">
+              <div class="cbt-brand-logo">R</div>
+              <div>
+                <div class="cbt-exam-title">${this.escapeHTML(this.exam.examName)} - Scorecard</div>
+                <div class="cbt-exam-sub">RajDailyTools Advanced Assessment Analytics</div>
+              </div>
+            </div>
+            <div class="cbt-header-controls">
+              <button onclick="window.print()" class="btn btn-secondary btn-sm">🖨️ Print / Save PDF</button>
+              <button id="btn-retake-exam" class="btn btn-primary btn-sm">🔄 Retake Test</button>
+            </div>
+          </header>
+
+          <main class="result-view-container">
+            <!-- Scorecard Hero -->
+            <section class="scorecard-hero">
+              <div class="scorecard-hero-grid">
+                <div class="score-circle-wrap">
+                  <div class="score-val">${result.totalMarksEarned.toFixed(2)}</div>
+                  <div style="font-size:13px;color:var(--text-muted);font-weight:600;margin-bottom:6px;">out of ${result.maxPossibleMarks} Marks</div>
+                  <span class="badge ${result.scorePercent >= 40 ? 'badge-green' : 'badge-amber'}">
+                    ${result.scorePercent >= 40 ? 'Qualified / Passed' : 'Needs Improvement'}
+                  </span>
+                </div>
+
+                <div class="stat-pills-grid">
+                  <div class="stat-pill">
+                    <span class="stat-pill-num" style="color:var(--accent-blue);">${result.accuracy}%</span>
+                    <span class="stat-pill-label">Accuracy</span>
+                  </div>
+                  <div class="stat-pill">
+                    <span class="stat-pill-num" style="color:#2e7d32;">${result.totalCorrect}</span>
+                    <span class="stat-pill-label">Correct</span>
+                  </div>
+                  <div class="stat-pill">
+                    <span class="stat-pill-num" style="color:#c62828;">${result.totalWrong}</span>
+                    <span class="stat-pill-label">Wrong</span>
+                  </div>
+                  <div class="stat-pill">
+                    <span class="stat-pill-num" style="color:#666;">${result.totalUnattempted}</span>
+                    <span class="stat-pill-label">Unattempted</span>
+                  </div>
+                  <div class="stat-pill">
+                    <span class="stat-pill-num" style="color:#7b1fa2;">${result.scorePercent}%</span>
+                    <span class="stat-pill-label">Percentage</span>
+                  </div>
+                  <div class="stat-pill">
+                    <span class="stat-pill-num" style="color:#2196f3;">${result.totalAttempted} / ${this.questions.length}</span>
+                    <span class="stat-pill-label">Attempted</span>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Section-wise Breakdown -->
+            <section style="background:var(--bg-surface);border:1px solid var(--border-color);border-radius:8px;padding:16px;margin-bottom:16px;">
+              <h2 style="font-size:1.15rem;font-weight:700;margin-bottom:10px;">Section-wise Performance Breakdown</h2>
+              <div style="overflow-x:auto;">
+                <table class="cbt-summary-table">
+                  <thead>
+                    <tr>
+                      <th>Section Name</th>
+                      <th>Total Qs</th>
+                      <th>Attempted</th>
+                      <th>Correct</th>
+                      <th>Wrong</th>
+                      <th>Marks</th>
+                      <th>Accuracy</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    ${result.sectionBreakdown.map(s => {
+                      const acc = s.attempted > 0 ? ((s.correct / s.attempted) * 100).toFixed(1) : '0.0';
+                      return `
+                        <tr>
+                          <td style="text-align:left;font-weight:700;">${s.name}</td>
+                          <td>${s.totalQuestions}</td>
+                          <td>${s.attempted}</td>
+                          <td style="color:#2e7d32;font-weight:700;">${s.correct}</td>
+                          <td style="color:#c62828;font-weight:700;">${s.wrong}</td>
+                          <td style="font-weight:800;color:var(--navy-dark);">${s.marksEarned.toFixed(2)} / ${s.maxMarks}</td>
+                          <td><strong>${acc}%</strong></td>
+                        </tr>
+                      `;
+                    }).join('')}
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            <!-- Question Review & Bilingual Solutions -->
+            <section style="background:var(--bg-surface);border:1px solid var(--border-color);border-radius:8px;padding:16px;margin-bottom:16px;">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;flex-wrap:wrap;gap:8px;">
+                <div>
+                  <h2 style="font-size:1.15rem;font-weight:700;">Detailed Question Solutions</h2>
+                  <p style="font-size:0.85rem;color:var(--text-muted);">Step-by-step bilingual explanations for all questions.</p>
+                </div>
+                <div style="display:flex;gap:6px;">
+                  <select id="res-filter-status" class="btn btn-secondary btn-sm">
+                    <option value="all">All Questions</option>
+                    <option value="correct">Correct Only</option>
+                    <option value="incorrect">Incorrect Only</option>
+                    <option value="unattempted">Unattempted Only</option>
+                  </select>
+                  <select id="res-lang-select" class="btn btn-secondary btn-sm">
+                    <option value="en">English Explanations</option>
+                    <option value="hi">हिंदी व्याख्या (Hindi)</option>
+                  </select>
+                </div>
+              </div>
+
+              <div id="res-review-list"></div>
+            </section>
+          </main>
+        `;
+
+        // Bind retake
+        document.getElementById('btn-retake-exam')?.addEventListener('click', () => {
+          if (confirm('Do you want to retake this exam from the beginning? Previous responses will be reset.')) {
+            localStorage.removeItem(`rdt_cbt_standalone_${this.exam.id}`);
+            window.location.reload();
+          }
+        });
+
+        const renderFilteredReview = () => {
+          const filter = document.getElementById('res-filter-status').value;
+          const lang = document.getElementById('res-lang-select').value;
+          const list = document.getElementById('res-review-list');
+          list.innerHTML = '';
+
+          const filtered = result.questionReview.filter(q => {
+            if (filter === 'correct') return q.isCorrect;
+            if (filter === 'incorrect') return q.isAttempted && !q.isCorrect;
+            if (filter === 'unattempted') return !q.isAttempted;
+            return true;
+          });
+
+          if (filtered.length === 0) {
+            list.innerHTML = '<div style="padding:2rem;text-align:center;color:var(--text-muted);">No questions match the filter.</div>';
+            return;
+          }
+
+          filtered.forEach(q => {
+            const card = document.createElement('div');
+            card.className = 'review-q-card';
+            const qText = (q.question && q.question[lang]) || (q.question && q.question.en) || '';
+            const expText = (q.explanation && q.explanation[lang]) || (q.explanation && q.explanation.en) || 'No explanation provided.';
+
+            let badgeHtml = '<span class="badge badge-gray">Unattempted</span>';
+            if (q.isAttempted && q.isCorrect) badgeHtml = '<span class="badge badge-green">✓ Correct (+ Marks)</span>';
+            else if (q.isAttempted && !q.isCorrect) badgeHtml = '<span class="badge badge-amber" style="background:#fee2e2;color:#991b1b;">✗ Incorrect (Negative Deducted)</span>';
+
+            let optsHtml = '<div class="cbt-options-list" style="margin-top:10px;">';
+            (q.options || []).forEach(opt => {
+              const optText = (opt.text && opt.text[lang]) || (opt.text && opt.text.en) || '';
+              const isCorrect = opt.id === q.correctOption;
+              const isUser = opt.id === q.userSelectedOption;
+
+              let border = 'var(--border-subtle)';
+              let bg = 'var(--bg-surface)';
+              let tag = '';
+
+              if (isCorrect) {
+                border = '#2e7d32'; bg = '#e8f5e9';
+                tag = '<span class="badge badge-green" style="margin-left:auto;">✓ Correct Answer</span>';
+              }
+              if (isUser && !isCorrect) {
+                border = '#c62828'; bg = '#ffebee';
+                tag = '<span class="badge badge-amber" style="margin-left:auto;background:#fee2e2;color:#991b1b;">✗ Your Choice</span>';
+              } else if (isUser && isCorrect) {
+                tag = '<span class="badge badge-green" style="margin-left:auto;">✓ Your Choice (Correct)</span>';
+              }
+
+              optsHtml += `
+                <div class="cbt-option-card" style="border-color:${border};background:${bg};cursor:default;">
+                  <span class="cbt-option-key">${opt.id}.</span>
+                  <div class="cbt-option-content">${this.escapeHTML(optText)}</div>
+                  ${tag}
+                </div>
+              `;
+            });
+            optsHtml += '</div>';
+
+            card.innerHTML = `
+              <div style="display:flex;justify-content:space-between;margin-bottom:8px;align-items:center;flex-wrap:wrap;gap:6px;">
+                <div>
+                  <strong>Q${q.questionIndex}.</strong>
+                  <span class="badge badge-blue">${q.subject}</span>
+                  <span class="badge badge-gray">${q.topic}</span>
+                </div>
+                <div>
+                  ${badgeHtml}
+                  <span style="font-size:12px;font-weight:700;margin-left:6px;color:var(--navy-dark);">Score: ${q.marksAwarded.toFixed(2)}</span>
+                </div>
+              </div>
+              <div class="cbt-q-text" style="margin-bottom:8px;">${qText}</div>
+              ${optsHtml}
+              <div class="explanation-box">
+                <strong style="color:#2e7d32;display:block;margin-bottom:4px;">💡 Solution & Explanation:</strong>
+                <div style="white-space:pre-line;font-size:14px;">${expText}</div>
+              </div>
+            `;
+            list.appendChild(card);
+          });
+        };
+
+        document.getElementById('res-filter-status').addEventListener('change', renderFilteredReview);
+        document.getElementById('res-lang-select').addEventListener('change', renderFilteredReview);
+        renderFilteredReview();
+      }
+
+      escapeHTML(str) {
+        if (!str) return '';
+        return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+      }
+    }
+
+    // Auto-boot standalone engine on page load
+    document.addEventListener('DOMContentLoaded', () => {
+      window.cbtEngine = new StandaloneCBTEngine(EXAM_DATA);
+    });
+  </script>
+</body>
+</html>
